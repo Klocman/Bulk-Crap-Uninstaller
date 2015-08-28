@@ -96,7 +96,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ObjectListView, Version=2.8.1.17558, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\_Lib\ObjectListView\2.9.0\ObjectListView.dll</HintPath>
+      <HintPath>..\..\.Lib\ObjectListView\2.9.0\ObjectListView.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
