@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>Tworzenie punktu przywracania...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>Szukanie pozostałości...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>Odświeżanie listy dezinstalatorów...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>Usuwanie pozostałości...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>Szukanie aktualizacji...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>Żaden element nie spełnia kryteriów wyszukiwania</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>Eksport programu BCUninstaller | Wersja | Data | Rozmiar | Rejestr| Typ dezinstalatora | Komenda dezinstalacji | Komenda cichej dezinstalacji | Komentarze</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value> Portable</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>Błąd dostępu do API</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>Tworzenia kopii zapasowej rejestru nie powiodło się, czy chcesz kontynuować mimo to?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>Szczegóły błędu: </value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>Usuwanie pozostałości</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+
+Szczegóły błędu:
+</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>Czy chcesz utworzyć kopię zapasową rejestru przed kontynuowaniem?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>Będzie można cofnąć wszystkie zmiany w rejestrze klikając ją dwukrotnie.
+
+Pliki i katalogi będą przenoszone do kosza, można przywrócić je stamtąd.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>Akcja nie powiodła się</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>Musisz wybrać tylko jedną pozycję dla tego działania</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>Wybierz dokładnie jedną pozycję  z listy. Jeśli używasz pól wyboru upewnij się że są zaznaczone.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>Szukaj aktualizacji</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>Otwórz treści sieciowe</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>Nie można połączyć się z internetem, brak dostępnych sieci.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>Upewnij się, że kabel sieciowy jest podłączony. Jeśli korzystasz z Wi-Fi sprawdź, czy masz dobrą siłę sygnału.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>Wyślij feedback</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>Chciałbyś wysłać opinię dotyczącą BCU?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>To zajmie Ci mniej niż minutę, ale znacznie pomoże w rozwoju programu! Wszystkie opinie i komentarze są mile widziane!
+
+Możesz wysłać ją później poprzez pozycję w górnym menu (Pomoc-&gt; Wyślij feedback).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>Obecna wersja jest aktualna</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Nie znaleziono aktualizacji, masz najnowszą wersję programu.
+
+Czekasz na nowe funkcje lub poprawę błędów? Daj mi znać poprzez menu "Pomoc-&gt;Wyślij feedback".</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Podczas wyszukiwania aktualizacji wystąpił błąd. </value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Upewnij się że BCUninstaller nie jest blokowany przez twojego firewalla i że masz sprawne połączenie z internetem.
+
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Nowa wersja {0} jest dostępna, zaktualizować teraz?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller automatycznie ściągnie aktualizację  i zainstaluje ją po restarcie programu.
+
+Lista zmian:
+- {0}
+
+Uwaga: Podczas aktualizacji folder "Update" i plik "Update.zip" w folderze BCU zostaną usunięte.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Odinstaluj używając MsiExec</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>Wybrana pozycja nie może zostać odinstalowana poprzez MsiExec</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>Pozycja nie posiada prawidłowego kodu produktu (GUID) potrzebnego do tej akcji.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Zatrzymaj dezinstalację</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Czy na pewno chcesz zatrzymać dezinstalację?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>Przedwczesne zatrzymanie nie przywróci wprowadzonych zmian. Obecnie działający dezinstalator nie zostanie zamknięty, musi zostać zatrzymany ręcznie.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Utwórz punkt przywracania</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Tworzenie punktu przywracania nie powiodło się</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value> [x64]</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value> DEBUG</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Postęp dezinstalacji</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Możesz opuścić komputer, pozostałe aplikacje odinstalują się automatycznie</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>Pozostałe dezinstalatory powinny być w stanie skończyć pracę bez twojej interwencji. Mimo to sprawdzaj co jakiś czas czy któryś z dezinstalatorów nie napotkał nieoczekiwanego błędu.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Usuwanie pozostałości</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Czy na pewno chcesz zmodyfikować pozycje z niską pewnością?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>Usuwanie elementów o niskim poziomie pewności jest bardzo niebezpieczne, dokładnie sprawdź każdą pozycję przed usunięciem.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Usuń klucze z rejestru</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć wybrane pozycje?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>Następujące elementy zostaną usunięte z rejestru i znikną z listy aplikacji, ale nie zostaną odinstalowane.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>Eksport nie powiódł się</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Napotkano błąd podczas zapisywania eksportowanych danych</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Jeśli błąd będzie się powtarzał spróbować zapisać do innego katalogu, na przykład na pulpicie.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller odinstalowuje {0} aplikacji</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Zmień nazwę dezinstalatora</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>Dostarczane nazwa jest pusta lub zawiera niedozwolone znaki</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Upewnij się że nie zostały użyte następujące znaki:
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Czy wyszukać pozostałości po odinstalowanych aplikacjach?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Pamiętaj że ta funkcja jest przeznaczona dla zaawansowanych użytkowników którzy rozumieją jej działanie. Usunięcie pozostałości nie jest wymagane - nie spowolnią one systemu, jedynie zajmą niewielką ilość miejsca na dysku.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Nie znaleziono pozostałości</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Nie znaleziono żadnych pozostałości. Dla pewności można uruchomić inny program czyszczący śmieci, np. CCleaner.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Nie znaleziono nic do skopiowania. Wybrane dezinstalatory nie posiadały tych informacji lub nie wybrałeś żadnego dezinstalatora.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Kopiuj do schowka</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Otwórz foldery</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Ta akcja otworzy {0} folderów na raz, czy kontynuować?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Szukaj online</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Nie ma nic do wyszukania</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>Odinstaluj BCUninstaller</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>Czy na pewno chcesz odinstalować BCUninstaller?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Jeżeli masz chwilę wstąp na stronę programu (http://klocmansoftware.weebly.com/) i napisz co skłoniło cię do odinstalowania BCU.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Czy utworzyć punkt przywracania przed dezinstalacją?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>If you are unsure if applications you are uninstalling are important or required to system stability it is recommended to create a restore point. 
+ If anything breaks after the procedure you can then use System Restore to roll back the changes.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Wystąpił błąd podczas otwierania wyszukiwarki.</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Zapisz listę dezinstalatorów</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Zapisanie listy do pliku nie powiodło się.</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Czy na pewno zresetować wszystkie ustawienia?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Niektóre aplikacje nie mogą zostać cicho odinstalowane</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Niektóre pozycje są zabezpieczone i nie mogą być zmienione</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>Wybrana pozycja jest zabezpieczona i nie może zostać zmieniona</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>Napotkano błąd podczas otwierania adresu.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Czy chcesz zachować aktualne zaznaczenie?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Napotkano błąd podczas otwierania folderu.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Otwarcie plików nie powiodło się</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Nie wybrano żadnych dezinstalatorów, nic do odinstalowania</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Dezinstaluj pozycje</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>Aby odinstalować aplikacje należy najpierw wybrać je z listy. Jeśli używasz pól wyboru, upewnij się, że są one zaznaczone.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Jeżeli zachowasz zaznaczenie zostanie ono połączone z otworzoną listą/listami</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Ta akcja otworzy {0} adresów na raz, czy kontynuować?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>Otwórz adresy URL</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Brak adresów do otwarcia</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Modyfikuj zabezpieczone pozycje</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Zabezpieczone pozycje:
+{0}
+
+Aby zmienić te ustawienia musisz wyłączyć zabezpieczenia w pasku ustawień.Możesz usunąć te pozycje z zadania i kontynuować lub anulować zadanie.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Zabezpieczona pozycja: {0}
+
+Aby zmienić tą pozycję musisz wyłączyć zabezpieczenia w pasku ustawień</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>Następujące pozycje nie posiadają cichych dezinstalatorów:
+{0}
+
+Pozostawić je w zadaniu i użyć 'głośnych' dezinstalatorów czy całkowicie usunąć je z zadania?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Cicha dezinstalacja</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Przywróć ustawienia domyślne</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Wszystkie ustawienia zostaną utracone na stałe. BCUninstaller będzie musiał ponownie uruchomić się do przeprowadzenia tej akcji.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Otwórz listę dezinstalatorów</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>Punkt przywracania nie został utworzony, nie będzie możliwości cofnięcia zmian! Czy chcesz kontynuować dezinstalację mimo to?</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>Zmiana nazwy "{0}"</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Zmień nazwę dezinstalatora</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>Zadanie zakończone</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Odinstalowywanie</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Zapamiętaj wybór</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>Plik nie istnieje na dysku.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Aplikacja jest odinstalowywana Instalator systemu Windows (MsiExec).</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Brak</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>Znaleziono GUID</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>Brak GUID</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Nieznany</value>
+    <comment>Used when a value is not known or supported, for example unknown size</comment>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Zaznacz do...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Nie znaleziono pliku.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Wykonywanie komend po dezinstalacji...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Wykonywanie komend przed dezinstalacją...</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Gotowy</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>Wybrano {0} dezinstalatorów</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>Razem {0} dezinstalatorów, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>Wykonanie następującej komendy nie powiodło się:
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>Błąd wykonania komendy</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Domyślny</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Niektóre ustawienia nie zostaną wprowadzone do momentu ponownego uruchomienia aplikacji.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Czy chcesz ponownie uruchomić BCU aby zastosować nowe ustawienia?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Zmień ustawienia aplikacji</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>Brak certyfikatu</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Przetwarzanie dezinstalatorów {0}/{1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>Wybranie opcji "Zakończ" natychmiast zamknie uruchomiony dezinstalator i może spowodować nie dokończenie dezinstalacji. Zazwyczaj należy uruchomić dezinstalator jeszcze raz, aby dokończyć dezinstalację.
+
+Alternatywnie można pominąć czekanie na ten proces. Pomijanie pozwoli kontynuować pracę podczas dezinstalacji, zadanie przechodzi do następnej pozycji. Należy pamiętać, że niektóre dezinstalatory mogą nie działać, aż zakończy się proces pomijania.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Czy chcesz pominąć czekanie na uruchomiony dezinstalator?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Pomiń aktualnie uruchomione zadanie</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>Inna dezinstalacja w toku. Proszę czekać na zakończenie procesu i spróbować ponownie.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Ocena: {0}
+
+Pozytywy:
+{1}
+
+Negatywy:
+{2}
+</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Szczegóły oceny</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Ta aplikacja nie posiada prawidłowego wpisu w rejestrze</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Ta aplikacja nie posiada prawidłowego dezinstalatora</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Ładowanie funkcji systemu Windows...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+    <value>Odświeżanie informacji o autostarcie...</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Brak katalogów do otwarcia</value>
+  </data>
+</root>

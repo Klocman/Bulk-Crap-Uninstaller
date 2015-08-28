@@ -1,0 +1,56 @@
+--- nusoap.php.org	2013-11-12 14:04:05.000000000 +0100
++++ nusoap.php	2013-11-08 21:13:00.000000000 +0100
+@@ -148,8 +148,8 @@
+ 	* @var      string
+ 	* @access   public
+ 	*/
+-    var $soap_defencoding = 'ISO-8859-1';
+-	//var $soap_defencoding = 'UTF-8';
++    //var $soap_defencoding = 'ISO-8859-1';
++	var $soap_defencoding = 'UTF-8';
+ 
+ 	/**
+ 	* namespaces in an array of prefix => uri
+@@ -1052,24 +1052,24 @@
+ 	* @return	string	The serialization of the fault instance.
+ 	* @access   public
+ 	*/
+-	function serialize(){
+-		$ns_string = '';
+-		foreach($this->namespaces as $k => $v){
+-			$ns_string .= "\n  xmlns:$k=\"$v\"";
+-		}
+-		$return_msg =
+-			'<?xml version="1.0" encoding="'.$this->soap_defencoding.'"?>'.
+-			'<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"'.$ns_string.">\n".
+-				'<SOAP-ENV:Body>'.
+-				'<SOAP-ENV:Fault>'.
+-					$this->serialize_val($this->faultcode, 'faultcode').
+-					$this->serialize_val($this->faultactor, 'faultactor').
+-					$this->serialize_val($this->faultstring, 'faultstring').
+-					$this->serialize_val($this->faultdetail, 'detail').
+-				'</SOAP-ENV:Fault>'.
+-				'</SOAP-ENV:Body>'.
+-			'</SOAP-ENV:Envelope>';
+-		return $return_msg;
++	function serialize() {
++      $ns_string = '';
++      foreach( $this->namespaces as $k => $v ) {
++        $ns_string .= "\n  xmlns:$k=\"$v\"";
++      }
++      $return_msg =
++        '<?xml version="1.0" encoding="' . $this->soap_defencoding . '"?>' .
++        '<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"' . $ns_string . ">\n" .
++          '<SOAP-ENV:Body>' .
++            '<SOAP-ENV:Fault>' .
++              $this->serialize_val( $this->faultcode,   'faultcode'   ) .
++              $this->serialize_val( $this->faultstring, 'faultstring' ) .
++              $this->serialize_val( $this->faultactor,  'faultactor'  ) .
++              $this->serialize_val( $this->faultdetail, 'detail'      ) .
++            '</SOAP-ENV:Fault>' .
++          '</SOAP-ENV:Body>' .
++        '</SOAP-ENV:Envelope>';
++      return $return_msg;
+ 	}
+ }
+ 

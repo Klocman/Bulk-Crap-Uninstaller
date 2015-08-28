@@ -1,0 +1,2712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;buttonPrev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="p3advSyscompTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 27</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="p1languageHeading.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;p5LinkContact.Parent" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Welcome to BCUninstaller!</value>
+  </data>
+  <data name="p3advProtectTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 23</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeSubheading.Name" xml:space="preserve">
+    <value>p1welcomeSubheading</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscomp.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscompTitle.Name" xml:space="preserve">
+    <value>p3advSyscompTitle</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 59</value>
+  </data>
+  <data name="&gt;&gt;p3advProtect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorOrphansTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pCorOrphansMessage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="spacer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="p1welcomeHeading.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 17</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
+    <value>page1</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="p5LinkContact.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;spacer3.Name" xml:space="preserve">
+    <value>spacer3</value>
+  </data>
+  <data name="p1languageHeading.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="p4netDesc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;buttonLanguageApply.Name" xml:space="preserve">
+    <value>buttonLanguageApply</value>
+  </data>
+  <data name="p4netDesc3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc3.Name" xml:space="preserve">
+    <value>p4netDesc3</value>
+  </data>
+  <data name="checkBoxGroups.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 109</value>
+  </data>
+  <data name="&gt;&gt;p1languageDesc.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 250</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscompTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorOrphansComment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxListSysComp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc1.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;p5finishTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="p5LinkContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="&gt;&gt;spacer4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;spacer2.Name" xml:space="preserve">
+    <value>spacer2</value>
+  </data>
+  <data name="flowLayoutPanel3.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="p3advSyscompTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p2viewCertsTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="spacer3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1073, 6</value>
+  </data>
+  <data name="&gt;&gt;checkBoxDiisableProtection.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="p4netDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p3advTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 26</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>Protected items are marked with the "NoRemove" tag, which means that the publisher doesn't want you to remove them. This tag is often used by large software packages to prevent you from uninstalling their individual parts.</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelNavigation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
+    <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;p4netErrors.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>Network access</value>
+  </data>
+  <data name="p4netDesc3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxInvalidTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="p2viewAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="p4netUsageAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 19</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGroups.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p5finishHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 38</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvalidTest.Name" xml:space="preserve">
+    <value>checkBoxInvalidTest</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansMessage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="checkBoxUpdateSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;pCorDesc.Name" xml:space="preserve">
+    <value>pCorDesc</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="p4netTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 26</value>
+  </data>
+  <data name="p3advProtectTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="p2viewAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>● To send anonymous usage statistics.</value>
+  </data>
+  <data name="panelNavigation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 352</value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>All of the uninstallers found in your system are in the main list view. Here are some ways to browse this data:</value>
+  </data>
+  <data name="p3advProtectAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorViewInvalid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pageCorrupted.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p5LinkHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="p1languageHeading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 64</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>Invalid uninstallers are marked in grey.</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;p4netTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonExit.Name" xml:space="preserve">
+    <value>buttonExit</value>
+  </data>
+  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;p2viewCertsTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelNavigation.Name" xml:space="preserve">
+    <value>panelNavigation</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalidTitle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pCorViewInvalidTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p1languageExtradetails.Name" xml:space="preserve">
+    <value>p1languageExtradetails</value>
+  </data>
+  <data name="scrollPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="p3advSyscompTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p3advSyscomp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 27</value>
+  </data>
+  <data name="p1welcomeHeading.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="p2viewCerts.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p4netUpdateAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 19</value>
+  </data>
+  <data name="checkBoxListProtected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="flowLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;p2viewAdd.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="p3advProtectTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 0</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Show orphaned applications in the list</value>
+  </data>
+  <data name="&gt;&gt;p2viewAdd.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="checkBoxOrphans.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonMore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="p3advSyscomp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxGroups.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pCorViewinvalidComment.Name" xml:space="preserve">
+    <value>pCorViewinvalidComment</value>
+  </data>
+  <data name="p1languageExtradetails.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p1languageExtradetails.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FirstStartBox</value>
+  </data>
+  <data name="&gt;&gt;page3.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="page5.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="spacer4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;p2viewCerts.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;buttonPrev.Parent" xml:space="preserve">
+    <value>panelNavigation</value>
+  </data>
+  <data name="pCorDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 30</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel9.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscomp.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonFinish.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 27.75pt, style=Bold</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>Protected uninstallers</value>
+  </data>
+  <data name="&gt;&gt;buttonFinish.Name" xml:space="preserve">
+    <value>buttonFinish</value>
+  </data>
+  <data name="buttonNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;pageNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscompTitle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Open the homepage</value>
+  </data>
+  <data name="pCorOrphansMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;p5finishHomepage.Name" xml:space="preserve">
+    <value>p5finishHomepage</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansTitle.Name" xml:space="preserve">
+    <value>pCorOrphansTitle</value>
+  </data>
+  <data name="pCorViewInvalid.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="pCorViewinvalidComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 13</value>
+  </data>
+  <data name="&gt;&gt;p3advTitle.Name" xml:space="preserve">
+    <value>p3advTitle</value>
+  </data>
+  <data name="&gt;&gt;page3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc2.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="buttonPrev.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectAdd.Name" xml:space="preserve">
+    <value>p3advProtectAdd</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="page5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 10, 0</value>
+  </data>
+  <data name="&gt;&gt;p2viewCerts.Name" xml:space="preserve">
+    <value>p2viewCerts</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="pCorOrphansMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;p4netErrors.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc2.Name" xml:space="preserve">
+    <value>p4netDesc2</value>
+  </data>
+  <data name="p2viewTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;p5finishContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxUpdateSearch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonExit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="spacer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>● To search for program updates.</value>
+  </data>
+  <data name="&gt;&gt;buttonFinish.Parent" xml:space="preserve">
+    <value>panel12</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvalidTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscompTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="checkBoxListProtected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 228</value>
+  </data>
+  <data name="p3advTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;spacer3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;spacer1.Name" xml:space="preserve">
+    <value>spacer1</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail3.Name" xml:space="preserve">
+    <value>p2viewDetail3</value>
+  </data>
+  <data name="pCorOrphansTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="p2viewDetail2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="p4netTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="panelNavigation.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="p2viewDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 30</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p1languageDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 98</value>
+  </data>
+  <data name="p4netDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;p1languageHeading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="page5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1821, 6</value>
+  </data>
+  <data name="&gt;&gt;spacer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p2viewTitle.Name" xml:space="preserve">
+    <value>p2viewTitle</value>
+  </data>
+  <data name="p2viewAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;p1languageHeading.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2184, 6</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>You can force BCUninstaller to use a specific localization if the default language is incorrect. A restart will be performed to apply the new language.</value>
+  </data>
+  <data name="&gt;&gt;buttonLanguageApply.Parent" xml:space="preserve">
+    <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;p4netTitle.Name" xml:space="preserve">
+    <value>p4netTitle</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCheckboxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxSendStats.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="p2viewDetail1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>You can now start using BCUninstaller. If you have any questions or would like to suggest a new feature visit the link below.</value>
+  </data>
+  <data name="p3advSyscompTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="p5finishHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 55</value>
+  </data>
+  <data name="p5finishTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="p5LinkContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 42</value>
+  </data>
+  <data name="buttonMore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="p2viewCerts.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p3advProtect.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="flowLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Highlight invalid uninstallers</value>
+  </data>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 27</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGroups.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOrphans.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansComment.Name" xml:space="preserve">
+    <value>pCorOrphansComment</value>
+  </data>
+  <data name="spacer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="buttonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="checkBoxDiisableProtection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxSendStats.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="p3advProtectAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="p3advDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>You can search for updates manually from the menu bar.</value>
+  </data>
+  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
+    <value>checkBoxListSysComp</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2162, 6</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonLanguageApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxCertTest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectAdd.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="p1linkLabelContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxDiisableProtection.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListProtected.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;p1languageExtradetails.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;p3advProtect.Name" xml:space="preserve">
+    <value>p3advProtect</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListProtected.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p2viewCerts.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;p3advDesc.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;spacer4.Name" xml:space="preserve">
+    <value>spacer4</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSendStats.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Parent" xml:space="preserve">
+    <value>panel9</value>
+  </data>
+  <data name="p1languageExtradetails.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Welcome to BCUninstaller</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscomp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p2viewTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="p5LinkHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 93</value>
+  </data>
+  <data name="buttonPrev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="p4netErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 104</value>
+  </data>
+  <data name="scrollPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="p4netDesc2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="page1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="spacer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="p5finishTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansComment.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Finish setup</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListSysComp.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="checkBoxOrphans.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;p3advDesc.Name" xml:space="preserve">
+    <value>p3advDesc</value>
+  </data>
+  <data name="&gt;&gt;p4netTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p2viewDetail3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorViewInvalid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="p3advProtectAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOrphans.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="pCorOrphansTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="spacer4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="buttonPrev.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pageNetwork.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListProtected.Name" xml:space="preserve">
+    <value>checkBoxListProtected</value>
+  </data>
+  <data name="p4netUsageAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOrphans.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="pCorDesc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="checkBoxSendStats.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p2viewDetail1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 59</value>
+  </data>
+  <data name="&gt;&gt;p1linkLabelContact.Name" xml:space="preserve">
+    <value>p1linkLabelContact</value>
+  </data>
+  <data name="pCorViewinvalidComment.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="p2viewDetail3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 89</value>
+  </data>
+  <data name="p4netUpdateAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p3advProtect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 55</value>
+  </data>
+  <data name="p4netDesc3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 89</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Show uninstallers marked as "protected"</value>
+  </data>
+  <data name="&gt;&gt;p4netUsageAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCorTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="p4netUsageAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p2viewDetail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="pCorViewinvalidComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 150</value>
+  </data>
+  <data name="&gt;&gt;p5LinkHomepage.Parent" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="p5finishTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pageCorrupted.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="buttonPrev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 13</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="page1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="p1languageDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 43</value>
+  </data>
+  <data name="&gt;&gt;buttonNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="p3advDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 30</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
+    <value>comboBoxLanguage</value>
+  </data>
+  <data name="&gt;&gt;p2viewAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="scrollPanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p4netErrors.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;spacer4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pCorOrphansTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 163</value>
+  </data>
+  <data name="p3advProtectTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="p2viewDetail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;p2viewTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>Orphaned applications</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p1languageHeading.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="pCorViewInvalid.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>System components</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="p5finishHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="p1welcomeSubheading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 26</value>
+  </data>
+  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 222</value>
+  </data>
+  <data name="page3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;p4netErrors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeHeading.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Show uninstallers marked as "system components"</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 175</value>
+  </data>
+  <data name="checkBoxSendStats.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="p5finishTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;p5finishHomepage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p1welcomeHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 34</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>You can read detailed change logs and check out more of my software on the homepage.</value>
+  </data>
+  <data name="&gt;&gt;p4netUsageAdd.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="pCorViewInvalidTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>354, 399</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>page1</value>
+  </data>
+  <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;page5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 102</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>Every time an error occurs you will be asked if you want to send it. You can check what data is being sent in error and usage reports by inspecting their respective XML files in BCUninstaller's directory. The sent data is not shared with any third parties.</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>Sending these statistics will help improve BCUninstaller.</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;p3advTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>This wizard will give you a quick tour and help configure the application.</value>
+  </data>
+  <data name="p2viewTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 128</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;buttonFinish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="p4netDesc2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="page2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;p1languageExtradetails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="page5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="p1linkLabelContact.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p5finishTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="page3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 6</value>
+  </data>
+  <data name="&gt;&gt;pageNetwork.Name" xml:space="preserve">
+    <value>pageNetwork</value>
+  </data>
+  <data name="p3advSyscompTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;p1languageDesc.Name" xml:space="preserve">
+    <value>p1languageDesc</value>
+  </data>
+  <data name="buttonFinish.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 58</value>
+  </data>
+  <data name="checkBoxGroups.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="p3advProtect.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pageCorrupted.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;page2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail2.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="checkBoxOrphans.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;buttonPrev.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="p3advProtectAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 0</value>
+  </data>
+  <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 254</value>
+  </data>
+  <data name="page1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUpdateSearch.Name" xml:space="preserve">
+    <value>checkBoxUpdateSearch</value>
+  </data>
+  <data name="&gt;&gt;pCorViewinvalidComment.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCheckboxes.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;p1languageDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="spacer4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>Show uninstallers in groups</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p1linkLabelContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewDetail2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 15</value>
+  </data>
+  <data name="pCorTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="p5finishHomepage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p2viewAdd.Name" xml:space="preserve">
+    <value>p2viewAdd</value>
+  </data>
+  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 166</value>
+  </data>
+  <data name="&gt;&gt;p5finishContact.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListSysComp.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansMessage.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="p4netDesc1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonMore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 19</value>
+  </data>
+  <data name="p2viewDetail3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 17</value>
+  </data>
+  <data name="pCorTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;p1linkLabelContact.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeHeading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p1welcomeSubheading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 38</value>
+  </data>
+  <data name="checkBoxListSysComp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="spacer4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1799, 6</value>
+  </data>
+  <data name="panel12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
+    <value>page2</value>
+  </data>
+  <data name="&gt;&gt;page5.Name" xml:space="preserve">
+    <value>page5</value>
+  </data>
+  <data name="&gt;&gt;buttonMore.Parent" xml:space="preserve">
+    <value>panel12</value>
+  </data>
+  <data name="p3advDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p1languageHeading.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p4netUpdateAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 194</value>
+  </data>
+  <data name="&gt;&gt;p2viewCerts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorDesc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeSubheading.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pCorViewInvalid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 86</value>
+  </data>
+  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="page1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="pCorOrphansComment.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;buttonMore.Name" xml:space="preserve">
+    <value>buttonMore</value>
+  </data>
+  <data name="p2viewCertsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 27</value>
+  </data>
+  <data name="&gt;&gt;page1.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="p2viewDetail1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 15</value>
+  </data>
+  <data name="scrollPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 399</value>
+  </data>
+  <data name="p3advSyscomp.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="p4netUpdateAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 6</value>
+  </data>
+  <data name="&gt;&gt;pageCorrupted.Name" xml:space="preserve">
+    <value>pageCorrupted</value>
+  </data>
+  <data name="p3advSyscompTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 56</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Name" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Exit wizard</value>
+  </data>
+  <data name="p5finishContact.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 4</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>Certified uninstallers</value>
+  </data>
+  <data name="p2viewCerts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 42</value>
+  </data>
+  <data name="&gt;&gt;spacer3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 102</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalid.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="panelNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 47</value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>This will let you uninstall protected items.</value>
+  </data>
+  <data name="buttonPrev.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBoxInvalidTest.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p2viewDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;p3advProtect.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;spacer2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="p1linkLabelContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 206</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectTitle.Name" xml:space="preserve">
+    <value>p3advProtectTitle</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;page1.Name" xml:space="preserve">
+    <value>page1</value>
+  </data>
+  <data name="page3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;p3advDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 110</value>
+  </data>
+  <data name="checkBoxSendStats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="page2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="pCorOrphansComment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="p4netDesc2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="p2viewAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 26</value>
+  </data>
+  <data name="checkBoxCertTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxGroups.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>More settings</value>
+  </data>
+  <data name="&gt;&gt;spacer1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="p3advSyscomp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 83</value>
+  </data>
+  <data name="pCorViewInvalidTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;p5LinkContact.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="page2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 6</value>
+  </data>
+  <data name="checkBoxCertTest.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pCorOrphansMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 42</value>
+  </data>
+  <data name="checkBoxCertTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="page5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="pCorViewinvalidComment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGroups.Name" xml:space="preserve">
+    <value>checkBoxGroups</value>
+  </data>
+  <data name="checkBoxOrphans.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="p1welcomeHeading.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="pCorViewinvalidComment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="flowLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pCorViewinvalidComment.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="page3.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;p3advDesc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p3advSyscomp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 42</value>
+  </data>
+  <data name="flowLayoutPanel6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;p4netErrors.Name" xml:space="preserve">
+    <value>p4netErrors</value>
+  </data>
+  <data name="&gt;&gt;p5finishContact.Name" xml:space="preserve">
+    <value>p5finishContact</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>Applications marked as "system components" are hidden from most of the basic uninstall managers. This tag does NOT mean that the application is a part of the operating system.</value>
+  </data>
+  <data name="pCorOrphansComment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;p3advSyscomp.Name" xml:space="preserve">
+    <value>p3advSyscomp</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansComment.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>Disable protection of uninstallers marked as "protected"</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p2viewCertsTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p5LinkHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>Advanced users</value>
+  </data>
+  <data name="&gt;&gt;p4netUpdateAdd.Name" xml:space="preserve">
+    <value>p4netUpdateAdd</value>
+  </data>
+  <data name="p4netDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 29</value>
+  </data>
+  <data name="&gt;&gt;pCorTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p4netDesc1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="p2viewAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;page3.Name" xml:space="preserve">
+    <value>page3</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCertTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p5finishTitle.Name" xml:space="preserve">
+    <value>p5finishTitle</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="p1welcomeHeading.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="p1languageDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxListSysComp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="p3advProtectTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 3</value>
+  </data>
+  <data name="checkBoxCheckboxes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="p2viewDetail3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 4</value>
+  </data>
+  <data name="p4netUsageAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 190</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUpdateSearch.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="p2viewDetail2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc3.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panelNavigation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p1languageDesc.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 268</value>
+  </data>
+  <data name="pageNetwork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeHeading.Name" xml:space="preserve">
+    <value>p1welcomeHeading</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>Corrupted or missing uninstallers</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="buttonNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 13</value>
+  </data>
+  <data name="p4netTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="&gt;&gt;pageNetwork.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;p5LinkContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxSendStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 216</value>
+  </data>
+  <data name="p2viewTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="spacer1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc1.Name" xml:space="preserve">
+    <value>p4netDesc1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;buttonNext.Name" xml:space="preserve">
+    <value>buttonNext</value>
+  </data>
+  <data name="&gt;&gt;buttonPrev.Name" xml:space="preserve">
+    <value>buttonPrev</value>
+  </data>
+  <data name="&gt;&gt;p1languageHeading.Name" xml:space="preserve">
+    <value>p1languageHeading</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Highlight certified uninstallers</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxGroups.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 17</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvalidTest.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;p3advTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxCheckboxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 131</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCertTest.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="checkBoxInvalidTest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="p1welcomeHeading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="spacer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="&gt;&gt;checkBoxDiisableProtection.Name" xml:space="preserve">
+    <value>checkBoxDiisableProtection</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 102</value>
+  </data>
+  <data name="p5finishContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p2viewCertsTitle.Name" xml:space="preserve">
+    <value>p2viewCertsTitle</value>
+  </data>
+  <data name="pCorDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1436, 6</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>Uninstaller list view</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail2.Name" xml:space="preserve">
+    <value>p2viewDetail2</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalidTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>Corrupted uninstallers</value>
+  </data>
+  <data name="p1linkLabelContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
+  </data>
+  <data name="&gt;&gt;page1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p1languageDesc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="checkBoxListProtected.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="p3advProtect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 17</value>
+  </data>
+  <data name="p4netDesc1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>Over time you may find that some applications will refuse to uninstall, or will just disappear from most of the uninstall managers.</value>
+  </data>
+  <data name="p3advProtectTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 147</value>
+  </data>
+  <data name="&gt;&gt;buttonExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p4netErrors.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;p3advProtectAdd.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="p1languageDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalid.Name" xml:space="preserve">
+    <value>pCorViewInvalid</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalidTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="checkBoxListProtected.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="spacer3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="pCorOrphansComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 39</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSendStats.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="p2viewDetail2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 74</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;p4netUpdateAdd.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="p4netUsageAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 6</value>
+  </data>
+  <data name="p5finishContact.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxGroups.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail3.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="scrollPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 131</value>
+  </data>
+  <data name="pCorDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 29</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
+    <value>page5</value>
+  </data>
+  <data name="&gt;&gt;p5finishTitle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>In some cases uninstallers can get corrupted, making them impossible to uninstall. BCUninstaller can remove these entries easily using the "Uninstall manually" option.</value>
+  </data>
+  <data name="p4netUsageAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 235</value>
+  </data>
+  <data name="&gt;&gt;pCorViewinvalidComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonLanguageApply.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="p5finishHomepage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 4</value>
+  </data>
+  <data name="spacer3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 21</value>
+  </data>
+  <data name="&gt;&gt;spacer4.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="pCorViewinvalidComment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p4netTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="pCorTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 26</value>
+  </data>
+  <data name="p2viewCertsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 38</value>
+  </data>
+  <data name="&gt;&gt;pCorViewInvalidTitle.Name" xml:space="preserve">
+    <value>pCorViewInvalidTitle</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSendStats.Name" xml:space="preserve">
+    <value>checkBoxSendStats</value>
+  </data>
+  <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
+    <value>page5</value>
+  </data>
+  <data name="&gt;&gt;panelNavigation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p4netErrors.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 8</value>
+  </data>
+  <data name="pCorViewInvalid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 42</value>
+  </data>
+  <data name="buttonFinish.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>Sometimes whole applications can be left on your drive even after being uninstalled. This can also happen if only the uninstaller is removed.</value>
+  </data>
+  <data name="&gt;&gt;checkBoxDiisableProtection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>Uninstallers can be signed with certificates issued by relevant authorities. If the certificate passes validation the software package has not been altered and is reputable.</value>
+  </data>
+  <data name="&gt;&gt;page1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansMessage.Name" xml:space="preserve">
+    <value>pCorOrphansMessage</value>
+  </data>
+  <data name="&gt;&gt;p4netUsageAdd.Name" xml:space="preserve">
+    <value>p4netUsageAdd</value>
+  </data>
+  <data name="p1welcomeSubheading.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p4netUpdateAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p5LinkHomepage.Name" xml:space="preserve">
+    <value>p5LinkHomepage</value>
+  </data>
+  <data name="p5finishTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 56</value>
+  </data>
+  <data name="p3advProtectAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 269</value>
+  </data>
+  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="p1languageExtradetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 174</value>
+  </data>
+  <data name="p2viewTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 26</value>
+  </data>
+  <data name="p4netDesc2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 15</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc.Name" xml:space="preserve">
+    <value>p4netDesc</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansTitle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;buttonNext.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;page5.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="pageNetwork.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;buttonNext.Parent" xml:space="preserve">
+    <value>panelNavigation</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCheckboxes.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;page3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxInvalidTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;checkBoxDiisableProtection.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="buttonLanguageApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 2</value>
+  </data>
+  <data name="pCorOrphansTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 27</value>
+  </data>
+  <data name="&gt;&gt;checkBoxGroups.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>BCUninstaller can attempt to connect to the internet for the following reasons:</value>
+  </data>
+  <data name="p4netErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 68</value>
+  </data>
+  <data name="p2viewDetail2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p2viewTitle.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>While BCUninstaller can be used as a basic uninstaller, most of its functions are aimed at power users. Proceed with caution!</value>
+  </data>
+  <data name="&gt;&gt;p4netUpdateAdd.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="p3advProtect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 170</value>
+  </data>
+  <data name="p2viewCerts.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCertTest.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="pCorTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;p5LinkHomepage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;page2.Name" xml:space="preserve">
+    <value>page2</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeSubheading.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="p4netUpdateAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="p2viewDetail1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;page2.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCheckboxes.Name" xml:space="preserve">
+    <value>checkBoxCheckboxes</value>
+  </data>
+  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p5finishContact.Parent" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 17</value>
+  </data>
+  <data name="p2viewDetail3.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonNext.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="spacer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>710, 6</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>Select using checkboxes</value>
+  </data>
+  <data name="p2viewCertsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 150</value>
+  </data>
+  <data name="p5finishTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 6</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
+    <value>page3</value>
+  </data>
+  <data name="&gt;&gt;p5finishHomepage.Parent" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="p3advTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxUpdateSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;panelNavigation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>pageCorrupted</value>
+  </data>
+  <data name="&gt;&gt;p4netTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Automatically send anonymous usage statistics</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUpdateSearch.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>Setup has been finished</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUpdateSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewDetail1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panel12.Name" xml:space="preserve">
+    <value>panel12</value>
+  </data>
+  <data name="p3advTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
+    <value>checkBoxOrphans</value>
+  </data>
+  <data name="p4netDesc1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 59</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 17</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeSubheading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pCorViewinvalidComment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;p3advTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="checkBoxListProtected.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Automatically look for updates on application start</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>Orphaned applications are marked in red.
+If the original uninstaller isn't found you will have to use the "Uninstall manually" option to remove them.</value>
+  </data>
+  <data name="&gt;&gt;spacer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="page2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="buttonMore.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="flowLayoutPanel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;p2viewCertsTitle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pageCorrupted.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="p1languageExtradetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 32</value>
+  </data>
+  <data name="pCorTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 370</value>
+  </data>
+  <data name="spacer2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="flowLayoutPanel2.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="p4netDesc1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 15</value>
+  </data>
+  <data name="&gt;&gt;checkBoxCertTest.Name" xml:space="preserve">
+    <value>checkBoxCertTest</value>
+  </data>
+  <data name="p4netDesc3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 15</value>
+  </data>
+  <data name="&gt;&gt;panel12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p5LinkContact.Name" xml:space="preserve">
+    <value>p5LinkContact</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>Open the contact form</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="flowLayoutPanel5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonFinish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="p5LinkHomepage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pCorDesc.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="flowLayoutPanel5.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="p3advProtect.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="spacer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 6</value>
+  </data>
+  <data name="&gt;&gt;pCorOrphansTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>Verified uninstallers are marked in green, unverified are in blue.
+Warning: Verification can take a long time.</value>
+  </data>
+  <data name="&gt;&gt;pCorTitle.Name" xml:space="preserve">
+    <value>pCorTitle</value>
+  </data>
+  <data name="p3advDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 26</value>
+  </data>
+  <data name="p2viewAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 241</value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>● Sort uninstallers by any column. Freely rearrange columns.</value>
+  </data>
+  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 17</value>
+  </data>
+  <data name="&gt;&gt;checkBoxListSysComp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p4netDesc3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="comboBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 6, 3, 3</value>
+  </data>
+  <data name="p1languageHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 34</value>
+  </data>
+  <data name="&gt;&gt;p5LinkHomepage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonExit.Parent" xml:space="preserve">
+    <value>panelNavigation</value>
+  </data>
+  <data name="p3advTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="checkBoxDiisableProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="p5finishContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="checkBoxCheckboxes.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="p2viewDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 29</value>
+  </data>
+  <data name="&gt;&gt;spacer2.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="p1welcomeSubheading.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>● Group similar uninstallers</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail.Name" xml:space="preserve">
+    <value>p2viewDetail</value>
+  </data>
+  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
+  </data>
+  <data name="pageNetwork.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
+    <value>pageNetwork</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ulk crap
+uninstaller</value>
+  </data>
+  <data name="checkBoxCheckboxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="p4netUpdateAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;spacer1.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="pCorOrphansTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="checkBoxOrphans.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pageCorrupted.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;p4netUsageAdd.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="&gt;&gt;p5finishTitle.Parent" xml:space="preserve">
+    <value>page5</value>
+  </data>
+  <data name="&gt;&gt;buttonLanguageApply.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pageNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1458, 6</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="p4netTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="p2viewCertsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSendStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="pCorOrphansComment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>● Use filters and search for keywords (in all columns)</value>
+  </data>
+  <data name="pCorOrphansTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;page5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p4netDesc2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 74</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Open the contact form</value>
+  </data>
+  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="p1languageExtradetails.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonLanguageApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="checkBoxListProtected.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>If you are willing to help translate BCUninstaller to your language, click on the link below to contact me. All help is greatly appreciated!</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pageCorrupted.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1095, 6</value>
+  </data>
+  <data name="checkBoxCertTest.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p4netTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="p1languageHeading.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 3</value>
+  </data>
+  <data name="&gt;&gt;pCorDesc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="p2viewCerts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 177</value>
+  </data>
+  <data name="flowLayoutPanel4.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 102</value>
+  </data>
+  <data name="&gt;&gt;pageCorrupted.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p3advProtectAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 13</value>
+  </data>
+  <data name="checkBoxListSysComp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;p1welcomeHeading.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 370</value>
+  </data>
+  <data name="panel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 101</value>
+  </data>
+  <data name="&gt;&gt;p1linkLabelContact.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;p5finishHomepage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBoxGroups.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="p5LinkContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
+  </data>
+  <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 144</value>
+  </data>
+  <data name="panel12.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="pCorOrphansMessage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>● To upload error reports.</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;page2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxCheckboxes.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;p4netDesc2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvalidTest.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail1.Name" xml:space="preserve">
+    <value>p2viewDetail1</value>
+  </data>
+  <data name="p2viewCertsTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pCorDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>Selected language</value>
+  </data>
+  <data name="p4netDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 30</value>
+  </data>
+  <data name="buttonLanguageApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;spacer3.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="p3advTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 235</value>
+  </data>
+  <data name="checkBoxCheckboxes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pCorTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;p2viewDetail1.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pCorTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="scrollPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>cs</value>
+  </metadata>
+</root>

@@ -1,0 +1,164 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="BulkCrapUninstaller.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UninstallerListUseCheckboxes" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UninstallerListUseGroups" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FilterHideMicrosoft" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AdvancedDisableProtection" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WindowPosition" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="WindowSize" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Size"
+             Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="MiscFirstRun" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdvancedIntelligentUninstallerSorting" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WindowState" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="UninstallerListViewState" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ToolbarsShowToolbar" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ToolbarsShowSettings" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FilterShowSystemComponents" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WindowUseSystemTheme" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FilterShowProtected" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FilterShowUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MessagesRestorePoints" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="Klocman.YesNoAsk" Scope="User">
+      <Value Profile="(Default)">Ask</Value>
+    </Setting>
+    <Setting Name="AdvancedSimulate" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MiscVersion" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Debug" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MessagesRemoveJunk" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="Klocman.YesNoAsk" Scope="User">
+      <Value Profile="(Default)">Ask</Value>
+    </Setting>
+    <Setting Name="MiscCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MessagesAskToBackup" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MessagesAskRemoveLoudItems" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MiscFeedbackNagShown" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MiscSendStatistics" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExternalPreCommands" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExternalPostCommands" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.String" Scope="User">
+      <Value Profile="(Default)">../CCleaner/CCleaner.exe /AUTO</Value>
+    </Setting>
+    <Setting Name="ToolbarsShowStatusbar" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExternalEnable" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Language" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MiscUserId" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AdvancedTestCertificates" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdvancedTestInvalid" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdvancedDisplayOrphans" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UninstallerListSortOrder" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Windows.Forms.SortOrder" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="UninstallerListSortColumn" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UninstallerListShowLegend" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FoldersCustomProgramDirs" Provider="PortableSettingsProvider.PortableSettingsProvider"
+             Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

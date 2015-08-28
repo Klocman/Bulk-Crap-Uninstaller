@@ -1,0 +1,14 @@
+using Klocman.Localising;
+using UninstallTools.Properties;
+
+namespace UninstallTools.Junk
+{
+    public enum Confidence
+    {
+        [LocalisedName(typeof (Localisation), "Confidence_Unknown")] Unknown = 0,
+        [LocalisedName(typeof (Localisation), "Confidence_Bad")] Bad = 5,
+        [LocalisedName(typeof (Localisation), "Confidence_Questionable")] Questionable = 7,
+        [LocalisedName(typeof (Localisation), "Confidence_Good")] Good = 9,
+        [LocalisedName(typeof (Localisation), "Confidence_VeryGood")] VeryGood = 12
+    }
+}

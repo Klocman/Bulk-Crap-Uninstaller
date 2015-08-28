@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Ukončit průvodce</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Pokračovat</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>Další nastavení</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Ukončete průvodce</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 38</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>Nyní můžete začít používat BCUninstaller. Máte-li jakékoli dotazy nebo chcete-li navrhnout novou funkci navštivte odkaz níže.</value>
+  </data>
+  <data name="p5LinkContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Otevřete kontaktní formulář</value>
+  </data>
+  <data name="p5finishHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 38</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>Můžete si přečíst podrobné protokoly změn a podívejte se na více mého softwaru na domovské stránce.</value>
+  </data>
+  <data name="p5LinkHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Otevřete domovskou stránku</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>Instalační program byl dokončen</value>
+  </data>
+  <data name="p4netTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 26</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>Přístup k síti</value>
+  </data>
+  <data name="p4netDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 16</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>BCUninstaller se může připojit k internetu z následujících důvodů:</value>
+  </data>
+  <data name="p4netDesc1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 46</value>
+  </data>
+  <data name="p4netDesc1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 15</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>● Chcete-li hledat aktualizací programu.</value>
+  </data>
+  <data name="p4netDesc2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 61</value>
+  </data>
+  <data name="p4netDesc2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 15</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>● Chcete-li nahrát chybové hlášení.</value>
+  </data>
+  <data name="p4netDesc3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 76</value>
+  </data>
+  <data name="p4netDesc3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 15</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>● Chcete-li poslat anonymní statistiku používání.</value>
+  </data>
+  <data name="p4netErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 91</value>
+  </data>
+  <data name="p4netErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 81</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>Pokaždé, když dojde k chybě, budete dotázáni, zda ji chcete odeslat. Můžete zkontrolovat, jaké údaje jsou odesílány ve zprávách o chybách a používání programu, kontrolou XML soubory v adresáři BCUninstaller .Odeslaná data nejsou poskytována třetími stranám.</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 17</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Automaticky hledat aktualizace při startu aplikace</value>
+  </data>
+  <data name="p4netUpdateAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 19</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>Můžete vyhledávat aktualizace ručně  na liště nabídky.</value>
+  </data>
+  <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Automaticky posílat anonymní statistiku používání programu</value>
+  </data>
+  <data name="p4netUsageAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 19</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>Odesláním této statistiky pomůže zlepšit BCUninstaller.</value>
+  </data>
+  <data name="pCorTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 26</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>Poškozený odinstalátor</value>
+  </data>
+  <data name="pCorDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 42</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>Časem možná zjistíte, že některé aplikace se odmítnou odinstalovat, nebo si jen tak zmizí  z většiny manažerů pro odinstalování.</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 72</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 27</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>Poškozený nebo chybějící odinstalátor</value>
+  </data>
+  <data name="pCorViewInvalid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 99</value>
+  </data>
+  <data name="pCorViewInvalid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 42</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>V některých případech odinstalátor může být poškozen, a není nemožná odinstalace. BCUninstaller umožňuje odebrat tyto položky snadno pomocí volby "Odinstalovat ručně".</value>
+  </data>
+  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 144</value>
+  </data>
+  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Zvýraznit neplatné odinstalátory</value>
+  </data>
+  <data name="pCorViewinvalidComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 163</value>
+  </data>
+  <data name="pCorViewinvalidComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 13</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>Neplatné odinstalátory jsou označeny šedě.</value>
+  </data>
+  <data name="pCorOrphansTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 176</value>
+  </data>
+  <data name="pCorOrphansTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 27</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>Osamocené aplikace</value>
+  </data>
+  <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 203</value>
+  </data>
+  <data name="pCorOrphansMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 42</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>Někdy celé aplikace mohou být ponechána na disku, i poté, co byl odinstalovány. To se také může stát, když se pouze program na odinstalaci odstraní.</value>
+  </data>
+  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 248</value>
+  </data>
+  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 17</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Zobrazit osamocené aplikace v seznamu</value>
+  </data>
+  <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 267</value>
+  </data>
+  <data name="pCorOrphansComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 39</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>Osamocené aplikace jsou označeny červeně.
+Pokud původní odinstalátor není nalezen, budete muset použít volbu "Odinstalovat ručně", k jejich odstranění.</value>
+  </data>
+  <data name="p3advTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 26</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>Zkušení uživatelé</value>
+  </data>
+  <data name="p3advDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 39</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>Zatímco BCUninstaller může být použit jako základní odinstalátor, většina z jeho funkcí jsou zaměřeny pro zkušené uživatele. Postupujte opatrně!</value>
+  </data>
+  <data name="p3advSyscompTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="p3advSyscompTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 27</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>Systémové součásti</value>
+  </data>
+  <data name="p3advSyscomp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 96</value>
+  </data>
+  <data name="p3advSyscomp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 42</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>Aplikace označené jako "součásti systému", jsou skryty pro většinu základních manažerů pro odinstalování. Tato značka Neznamená, že aplikace je součástí operačního systému.</value>
+  </data>
+  <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 141</value>
+  </data>
+  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 17</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Zobrazit odinstalátory označené jako "součástí systému"</value>
+  </data>
+  <data name="p3advProtectTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 160</value>
+  </data>
+  <data name="p3advProtectTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 23</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>Chráněné odinstalátory</value>
+  </data>
+  <data name="p3advProtect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 183</value>
+  </data>
+  <data name="p3advProtect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 55</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>Chráněné položky jsou označeny "NoRemove" značka, což znamená, že vydavatel nechce jejich odstranění. Tato značka je často používána u velkých softwarových balíčků, aby vám zabránila odinstalování jejich jednotlivých částí.</value>
+  </data>
+  <data name="checkBoxListProtected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 241</value>
+  </data>
+  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 17</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Zobrazit odinstalátory označené jako "chráněné"</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 263</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>Zakázat ochranu odinstalátorů označených jako "chráněné"</value>
+  </data>
+  <data name="p3advProtectAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 282</value>
+  </data>
+  <data name="p3advProtectAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 13</value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>To vám umožní odinstalovat chráněné položky.</value>
+  </data>
+  <data name="p2viewTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 26</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>Odinstalátor zobrazení seznamu</value>
+  </data>
+  <data name="p2viewDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 42</value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>Všechny odinstalátory nalezené ve vašem systému jsou v hlavním zobrazení seznamu. Zde jsou některé způsoby, jak procházet tyto údaje:</value>
+  </data>
+  <data name="p2viewDetail1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 72</value>
+  </data>
+  <data name="p2viewDetail1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 15</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>● Pomocí filtrů a hledání klíčových slov (ve všech sloupcích)</value>
+  </data>
+  <data name="p2viewDetail2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 87</value>
+  </data>
+  <data name="p2viewDetail2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 28</value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>● Řadit odinstalátory podle libovolného sloupce. Volně uspořádání sloupců.</value>
+  </data>
+  <data name="p2viewDetail3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 115</value>
+  </data>
+  <data name="p2viewDetail3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 17</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>● Seskupení podobných odinstalátorů</value>
+  </data>
+  <data name="checkBoxGroups.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 135</value>
+  </data>
+  <data name="checkBoxGroups.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 17</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>Zobrazit odinstalátory ve skupinách</value>
+  </data>
+  <data name="checkBoxCheckboxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 157</value>
+  </data>
+  <data name="checkBoxCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>Vyberte pomocí zaškrtávacích políček</value>
+  </data>
+  <data name="p2viewCertsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 176</value>
+  </data>
+  <data name="p2viewCertsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 27</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>Certifikované odinstalátory</value>
+  </data>
+  <data name="p2viewCerts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 203</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>Odinstalátory mohou být podepsána certifikáty vydanými příslušnými orgány. Pokud certifikát projde validace, softwarový balík nebyl změněn a je seriózní.</value>
+  </data>
+  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 248</value>
+  </data>
+  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 17</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Zvýraznit certifikované odinstalátory</value>
+  </data>
+  <data name="p2viewAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 267</value>
+  </data>
+  <data name="p2viewAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 39</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>Ověřené odinstalátory jsou označeny zeleně, neověřené jsou v modré barvě.
+Upozornění: Ověření může trvat delší dobu.</value>
+  </data>
+  <data name="p1welcomeHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 34</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Vítejte v BCUninstaller!</value>
+  </data>
+  <data name="p1welcomeSubheading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 26</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Tento průvodce umožní rychlou prohlídku a pomůže s konfiguraci aplikace.</value>
+  </data>
+  <data name="p1languageHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 34</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>Výběr jazyka</value>
+  </data>
+  <data name="p1languageDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 30</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>Můžete vynutit BCUninstaller použít konkrétní lokalizaci, pokud výchozí jazyk je nesprávný. Po restartu bude aplikován nový jazyk.</value>
+  </data>
+  <data name="buttonLanguageApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 2</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 131</value>
+  </data>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 27</value>
+  </data>
+  <data name="p1languageExtradetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 161</value>
+  </data>
+  <data name="p1languageExtradetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 45</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>Pokud jste ochotni pomoci s překladem BCUninstaller do Vašeho jazyka, klikněte na odkaz níže, aby jste mě kontaktovali. Veškerou pomoc velmi ocenim!</value>
+  </data>
+  <data name="p1linkLabelContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>Otevřete kontaktní formulář</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vítejte v BCUninstaller</value>
+  </data>
+</root>

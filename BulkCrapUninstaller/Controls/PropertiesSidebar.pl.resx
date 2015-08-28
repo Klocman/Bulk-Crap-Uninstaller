@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxBatchSortQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 15</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
+    <value>Inteligentne sortowanie</value>
+  </data>
+  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
+    <value>Zmodyfikuj kolejność wpisów podczas odinstalowywania do bardziej inteligentnej .
+Jeśli ta opcja jest dezinstalatory niepełnosprawnych realizowane są w kolejności alfabetycznej.
+Przede wszystkim ta opcja sprawi że ciche dezinstalatory uruchomią się na końcu, umożliwiając
+pozostawić procesu bez nadzoru. Największe aplikacje zostaną odinstalowane pierwsze, w celu
+uniknięcia odinstalowywania ich części oddzielnie.</value>
+  </data>
+  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 24</value>
+  </data>
+  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Wyświetlaj porzucone</value>
+  </data>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>Pokaż aplikacje które nie mają żadnych zarejestrowanych dezinstalatorów. Nie są one widoczne w większości menedżerów aplikacji, ale wciąż zajmują miejsce. Porzucone elementy są oznaczone kolorem czerwonym. 
+
+Uwaga: Przed usunięciem tych aplikacji sprawdź dwukrotnie czy nie są jeszcze potrzebne!</value>
+  </data>
+  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 47</value>
+  </data>
+  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 17</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Zaznacz uszkodzone</value>
+  </data>
+  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
+    <value>Użyj szarego tła do identyfikacji uszkodzonych lub brakujących dezinstalatorów.</value>
+  </data>
+  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 70</value>
+  </data>
+  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 17</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Zaznacz certyfikowane</value>
+  </data>
+  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
+    <value>Użyj kolorów do identyfikacji certyfikowanych programów odinstalowujących. 
+Jeśli certyfikat został pomyślnie zweryfikowany użyj zielonego tła, w innym przypadku użyj niebieskiego tła.
+
+Uwaga: Weryfikacja może zająć dużo czasu.</value>
+  </data>
+  <data name="checkBoxDiisableProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 93</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 17</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>Wyłącz zabezpieczenie</value>
+  </data>
+  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
+    <value>Umożliwia odinstalowanie zabezpieczonych przedmiotów (z tagiem NoRemove),
+modyfikowanie rejestru i wiele innych niebezpiecznych rzeczy.</value>
+  </data>
+  <data name="checkBoxSimulate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxSimulate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 116</value>
+  </data>
+  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="checkBoxSimulate.Text" xml:space="preserve">
+    <value>Symuluj dezinstalację</value>
+  </data>
+  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
+    <value>Wykonaj wszystkie kroki ale nie uruchamiaj dezinstalatorów.
+Głównie do debugowania i straszenia znajomych.</value>
+  </data>
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 136</value>
+  </data>
+  <data name="flowLayoutPanel4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 176</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 155</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Zaawansowane</value>
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
+    <value>Ukryj pozycje Microsoftu</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
+    <value>Odfiltruj wszystko co zostało opublikowane przez firmę Microsoft.</value>
+  </data>
+  <data name="checkBoxListSysComp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Pokaż elementy systemowe</value>
+  </data>
+  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
+    <value>Niektóre dezinstalatory mogą być oznaczone jako "składniki systemu", aby ukryć je z listy Dodaj / Usuń programy.
+Sterowniki są często oznaczone tym tagiem.</value>
+  </data>
+  <data name="checkBoxListProtected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 17</value>
+  </data>
+  <data name="checkBoxListProtected.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Pokaż zabezpieczone</value>
+  </data>
+  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
+    <value>Chronione elementy są oznaczone tagiem "NoRemove", co oznacza, że wydawca nie chce abyś je usunął.</value>
+  </data>
+  <data name="checkBoxShowUpdates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="checkBoxShowUpdates.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
+    <value>Pokaż uaktualnienia</value>
+  </data>
+  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
+    <value>Aktualizacje innych zainstalowanych aplikacji. Zazwyczaj są usuwane razem z ich nadrzędną aplikacją, więc nie wymagają uwagi.</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 16</value>
+  </data>
+  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 111</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Filtrowanie</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxViewCheckboxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
+    <value>Zaznaczaj polami wyboru</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
+    <value>Zmienia styl zaznaczenia na liście do pól wyboru. Są one bezpieczniejsze, ponieważ
+pojedyncze kliknięcie nie może odznaczyć wszystkiego.
+
+Możesz zaznaczyć kilka pozycji podświetlając je i naciskając spację.</value>
+  </data>
+  <data name="checkBoxViewGroups.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="checkBoxViewGroups.Text" xml:space="preserve">
+    <value>Grupuj podobne pozycje</value>
+  </data>
+  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
+    <value>Grupuj elementy według kolumny którą posortowana jest lista.
+Grupowanie większości kolumn używa inteligentnych filtrów.</value>
+  </data>
+  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ustawienia listy</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>
