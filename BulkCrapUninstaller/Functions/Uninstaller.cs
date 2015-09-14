@@ -72,11 +72,23 @@ namespace BulkCrapUninstaller.Functions
             return true;
         }
 
-        private static bool CheckForRunningProcesses(IEnumerable<ApplicationUninstallerEntry> entries)
+        private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries)
         {
             var filters = entries.SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
                 .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
 
+            return CheckForRunningProcesses(filters);
+        }
+
+        private static bool CheckForRunningProcessesBeforeCleanup(IEnumerable<JunkNode> entries)
+        {
+            var filters = entries.Select(x => x.FullName).Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
+
+            return CheckForRunningProcesses(filters);
+        }
+
+        private static bool CheckForRunningProcesses(string[] filters)
+        {
             var myId = Process.GetCurrentProcess().Id;
             var idsToCheck = new List<int>();
             foreach (var pr in Process.GetProcesses())
@@ -87,7 +99,7 @@ namespace BulkCrapUninstaller.Functions
                         continue;
 
                     if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
-                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS)))
+                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM)))
                         continue;
 
                     var filenames = pr.Modules.Cast<ProcessModule>().Select(x => x.FileName)
@@ -147,7 +159,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    if (!CheckForRunningProcesses(targets))
+                    if (!CheckForRunningProcessesBeforeUninstall(targets))
                         return;
 
                     if (!SystemRestore.BeginSysRestore(targets.Count))
@@ -173,7 +185,7 @@ namespace BulkCrapUninstaller.Functions
                                                        || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped
                                                        && !bulkUninstallEntry.UninstallerEntry.RegKeyStillExists())
                                                  select bulkUninstallEntry.UninstallerEntry;
-                    
+
                     SearchForAndRemoveJunk(junkRemoveTargetsQuery, allUninstallers);
 
                     if (_settings.ExternalEnable && _settings.ExternalPostCommands.IsNotEmpty())
@@ -238,34 +250,36 @@ namespace BulkCrapUninstaller.Functions
                     {
                         using (var junkWindow = new JunkRemoveWindow(junk))
                         {
-                            if (junkWindow.ShowDialog() == DialogResult.OK)
+                            if (junkWindow.ShowDialog() != DialogResult.OK) return;
+
+                            var selectedJunk = junkWindow.SelectedJunk.ToList();
+
+                            if (!CheckForRunningProcessesBeforeCleanup(selectedJunk)) return;
+
+                            //Removing the junk
+                            LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
                             {
-                                //Removing the junk
-                                var selectedJunk = junkWindow.SelectedJunk.ToList();
-                                LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
+                                var top = selectedJunk.Count;
+                                controller.SetMaximum(top);
+                                var itemsRemoved = 0; // current value
+                                foreach (var junkNode in selectedJunk)
                                 {
-                                    var top = selectedJunk.Count;
-                                    controller.SetMaximum(top);
-                                    var itemsRemoved = 0; // current value
-                                    foreach (var junkNode in selectedJunk)
+                                    controller.SetProgress(itemsRemoved++);
+
+                                    if (_settings.AdvancedSimulate)
                                     {
-                                        controller.SetProgress(itemsRemoved++);
-
-                                        if (_settings.AdvancedSimulate)
-                                        {
-                                            Thread.Sleep(100);
-                                        }
-                                        else
-                                        {
-                                            try { junkNode.Delete(); }
-                                            catch (Exception ex) { Debug.WriteLine("Exception while removing junk: " + ex.ToString()); }
-                                        }
+                                        Thread.Sleep(100);
                                     }
-                                });
+                                    else
+                                    {
+                                        try { junkNode.Delete(); }
+                                        catch (Exception ex) { Debug.WriteLine("Exception while removing junk: " + ex.ToString()); }
+                                    }
+                                }
+                            });
 
-                                if (isAdvancedUninstall)
-                                    listRefreshNeeded = true;
-                            }
+                            if (isAdvancedUninstall)
+                                listRefreshNeeded = true;
                         }
                     }
                     else
@@ -378,7 +392,7 @@ namespace BulkCrapUninstaller.Functions
                     return;
                 }
 
-                if (!CheckForRunningProcesses(new[] { selected }))
+                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }))
                     return;
 
                 try
