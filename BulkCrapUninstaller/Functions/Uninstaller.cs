@@ -101,7 +101,7 @@ namespace BulkCrapUninstaller.Functions
                         if (!Path.IsPathRooted(filename))
                             return false;
 
-                        return filename.StartsWith(filter);
+                        return filename.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase);
                     })))
                     {
                         idsToCheck.Add(pr.Id);
