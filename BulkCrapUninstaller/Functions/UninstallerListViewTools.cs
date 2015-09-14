@@ -18,6 +18,7 @@ using UninstallTools.Dialogs;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
 using UninstallTools.Uninstaller;
+using System.Diagnostics;
 
 namespace BulkCrapUninstaller.Functions
 {
