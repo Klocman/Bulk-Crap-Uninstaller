@@ -406,7 +406,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void donateButton_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"http://klocmansoftware.weebly.com/about.html") });
+            OpenUrls(new[] { new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52") });
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -462,8 +462,16 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Settings.MiscFeedbackNagShown = true;
 
             //TODO better feedback submit window
-            if (MessageBoxes.AskToSubmitFeedback())
-                OpenSubmitFeedbackWindow(sender, e);
+            switch (MessageBoxes.AskToSubmitFeedback())
+            {
+                    case CustomMessageBox.PressedButton.Left:
+                    PremadeDialogs.ProcessStartSafe(@"https://sourceforge.net/projects/bulk-crap-uninstaller/");
+                    break;
+
+                case CustomMessageBox.PressedButton.Middle:
+                    OpenSubmitFeedbackWindow(sender, e);
+                    break;
+            }
         }
 
         private void MainWindow_Resize(object sender, EventArgs e)
@@ -647,13 +655,15 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenSubmitFeedbackWindow(object sender, EventArgs e)
         {
-            if (WindowsTools.IsNetworkAvailable())
+            PremadeDialogs.ProcessStartSafe(@"http://klocmansoftware.weebly.com/feedback--contact.html");
+
+            /*if (WindowsTools.IsNetworkAvailable())
             {
                 FeedbackWindow.ShowFeedbackDialog();
                 _setMan.Selected.Settings.MiscFeedbackNagShown = true;
             }
             else
-                MessageBoxes.NoNetworkConnected();
+                MessageBoxes.NoNetworkConnected();*/
         }
 
         private void OpenUninstallerLocation(object sender, EventArgs eventArgs)

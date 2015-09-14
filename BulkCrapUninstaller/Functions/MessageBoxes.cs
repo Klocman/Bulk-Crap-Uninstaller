@@ -22,14 +22,13 @@ namespace BulkCrapUninstaller.Functions
 
         public static Form DefaultOwner { get; set; }
 
-        internal static bool AskToSubmitFeedback()
+        internal static CustomMessageBox.PressedButton AskToSubmitFeedback()
         {
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Submit_feedback,
                     Localisable.MessageBoxes_AskToSubmitFeedback_Message,
                     Localisable.MessageBoxes_AskToSubmitFeedback_Details,
-                    SystemIcons.Question, Buttons.ButtonSubmit, Buttons.ButtonClose)) ==
-                   CustomMessageBox.PressedButton.Middle;
+                    SystemIcons.Question, Buttons.ButtonRate, Buttons.ButtonSubmit, Buttons.ButtonClose));
         }
 
         internal static PressedButton BackupFailedQuestion(string exMessage)

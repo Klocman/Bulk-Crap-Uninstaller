@@ -148,7 +148,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -220,7 +220,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -313,7 +313,7 @@
     <value>listLegend1</value>
   </data>
   <data name="&gt;&gt;listLegend1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;listLegend1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -719,7 +719,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 17</value>
+    <value>306, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -2106,13 +2106,13 @@
     <value>facebookStatusButton1</value>
   </data>
   <data name="&gt;&gt;facebookStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Name" xml:space="preserve">
     <value>twitterStatusButton1</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
     <value>donateButton</value>
@@ -2730,13 +2730,13 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Name" xml:space="preserve">
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=2.11.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
