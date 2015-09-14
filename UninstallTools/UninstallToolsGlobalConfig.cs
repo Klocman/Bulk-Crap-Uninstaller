@@ -23,8 +23,14 @@ namespace UninstallTools
             "users", "data"
         };
 
+        /// <summary>
+        /// Custom "Program Files" directories. Use with dirs that get used to install applications to.
+        /// </summary>
         public static string[] CustomProgramFiles { get; set; }
 
+        /// <summary>
+        /// Directiories containing programs, both built in "Program Files" and user-defined ones.
+        /// </summary>
         internal static IEnumerable<string> AllProgramFiles
             => StockProgramFiles.Concat(CustomProgramFiles ?? Enumerable.Empty<string>());
 

@@ -10,13 +10,12 @@ namespace UninstallTools.Junk
             IEnumerable<ApplicationUninstallerEntry> allUninstallers)
         {
             var targetEntries = uninstallers as IList<ApplicationUninstallerEntry> ?? uninstallers.ToList();
-            var allEntries = allUninstallers as IList<ApplicationUninstallerEntry> ?? allUninstallers.ToList();
+
+            var otherUninstallers = allUninstallers.Except(targetEntries).ToList();
 
             var result = new List<JunkNode>(targetEntries.Count());
             foreach (var uninstaller in targetEntries)
             {
-                var otherUninstallers = allEntries.Except(targetEntries).ToList();
-
                 var dj = new DriveJunk(uninstaller, otherUninstallers);
                 result.AddRange(dj.FindJunk());
 

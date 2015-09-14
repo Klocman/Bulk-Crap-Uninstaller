@@ -17,8 +17,8 @@ namespace UninstallTools.Junk
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
         private static readonly string KeyLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node";
 
-        public RegistryJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> allEntries)
-            : base(entry, allEntries)
+        public RegistryJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+            : base(entry, otherUninstallers)
         {
         }
 

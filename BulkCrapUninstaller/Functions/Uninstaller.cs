@@ -165,6 +165,9 @@ namespace BulkCrapUninstaller.Functions
                     if (!SystemRestore.BeginSysRestore(targets.Count))
                         return;
 
+                    // No turning back at this point (kind of)
+                    listRefreshNeeded = true;
+
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
                         LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePreUninstallCommands,
@@ -195,7 +198,6 @@ namespace BulkCrapUninstaller.Functions
                     }
 
                     SystemRestore.EndSysRestore();
-                    listRefreshNeeded = true;
                 }
                 else
                 {
@@ -248,21 +250,20 @@ namespace BulkCrapUninstaller.Functions
         /// <summary>
         /// Returns true if things were actually removed, false if user cancelled the operation.
         /// </summary>
-        /// <param name="getJunk">Delegate that returns junk items to remove. 
+        /// <param name="junkGetter">Delegate that returns junk items to remove. 
         /// It will be ran on a separate thread with a progress bar.</param>
         /// <returns></returns>
-        private bool SearchForAndRemoveJunk(Func<IEnumerable<JunkNode>> getJunk)
+        private bool SearchForAndRemoveJunk(Func<IEnumerable<JunkNode>> junkGetter)
         {
             var junk = new List<JunkNode>();
             var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
                 x =>
                 {
-                    junk.AddRange(getJunk());
+                    junk.AddRange(junkGetter());
                 });
 
             if (error != null)
             {
-                //error when searching for stuff
                 PremadeDialogs.GenericError(error);
             }
             else if (junk.Any(x => x.Confidence.GetRawConfidence() >= 0))
