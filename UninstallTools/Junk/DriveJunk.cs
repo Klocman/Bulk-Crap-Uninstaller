@@ -14,8 +14,8 @@ namespace UninstallTools.Junk
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
         private IEnumerable<string> _otherInstallLocations;
 
-        public DriveJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> allEntries)
-            : base(entry, allEntries)
+        public DriveJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+            : base(entry, otherUninstallers)
         {
         }
 
@@ -101,19 +101,24 @@ namespace UninstallTools.Junk
         public override IEnumerable<JunkNode> FindJunk()
         {
             var output = new List<DriveJunkNode>();
-            if (Uninstaller.InstallLocation.IsNotEmpty())
+
+            var uninLoc = Uninstaller.UninstallerLocation;
+            if (uninLoc.IsNotEmpty()
+                && UninstallToolsGlobalConfig.AllProgramFiles.Any(
+                    x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase))
+                && !OtherInstallLocations.Any(x => uninLoc.StartsWith(x) || x.StartsWith(uninLoc)))
             {
-                try
+                var resultNode = GetJunkNodeFromLocation(uninLoc);
+                if (resultNode != null)
+                    output.Add(resultNode);
+            }
+            
+            if (Uninstaller.InstallLocation.IsNotEmpty())
                 {
-                    var resultNode = GetInstallLocationJunkNode();
+                    var resultNode = GetJunkNodeFromLocation(Uninstaller.InstallLocation);
                     if (resultNode != null)
                         output.Add(resultNode);
                 }
-                catch
-                {
-                    // Exception while looking for junk
-                }
-            }
 
             foreach (var folder in FoldersToCheck)
             {
@@ -190,14 +195,19 @@ namespace UninstallTools.Junk
             }
         }
 
-        private DriveJunkNode GetInstallLocationJunkNode()
+        private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;
+
+        private DriveJunkNode GetJunkNodeFromLocation(string directory)
         {
-            var dirInfo = new DirectoryInfo(Uninstaller.InstallLocation);
-            var winDirInfo = PathTools.GetWindowsDirectory();
-            if (dirInfo.Exists && !dirInfo.FullName.Contains(winDirInfo.FullName) && dirInfo.Parent != null)
+            try
             {
-                var newNode = new DriveJunkNode(Path.GetDirectoryName(Uninstaller.InstallLocation),
-                    Path.GetFileName(Uninstaller.InstallLocation), Uninstaller.DisplayName);
+                var dirInfo = new DirectoryInfo(directory);
+
+                if (dirInfo.FullName.Contains(FullWindowsDirectoryName) || !dirInfo.Exists || dirInfo.Parent == null)
+                    return null;
+
+                var newNode = new DriveJunkNode(Path.GetDirectoryName(directory),
+                    Path.GetFileName(directory), Uninstaller.DisplayName);
                 newNode.Confidence.Add(ConfidencePart.ExplicitConnection);
 
                 var generatedConfidence = GenerateConfidence(dirInfo.Name, dirInfo.Parent.FullName, 1, true);
@@ -208,7 +218,10 @@ namespace UninstallTools.Junk
 
                 return newNode;
             }
-            return null;
+            catch
+            {
+                return null;
+            }
         }
     }
 }
