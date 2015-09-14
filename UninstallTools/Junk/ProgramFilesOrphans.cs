@@ -33,7 +33,6 @@ namespace UninstallTools.Junk
         public static readonly ConfidencePart ConfidencePublisherIsUsed = new ConfidencePart(-4,
             Localisation.Confidence_PF_PublisherIsUsed);
 
-        private static IEnumerable<DirectoryInfo> _foldersToCheck;
         private readonly string[] _otherInstallLocations;
         private readonly string[] _otherNames;
         private readonly string[] _otherPublishers;
@@ -53,41 +52,14 @@ namespace UninstallTools.Junk
                 applicationUninstallerEntries.Select(x => x.DisplayNameTrimmed).Where(x => x != null && x.Length > 3)
                     .Distinct().ToArray();
         }
-
-        private static IEnumerable<DirectoryInfo> FoldersToCheck
-        {
-            get
-            {
-                if (_foldersToCheck == null)
-                {
-                    var result = new List<DirectoryInfo>(2);
-
-                    foreach (var item in UninstallToolsGlobalConfig.AllProgramFiles)
-                    {
-                        try
-                        {
-                            var dirinfo = new DirectoryInfo(item);
-                            if (dirinfo.Exists && !result.Any(x => x.FullName.Equals(dirinfo.FullName)))
-                                result.Add(dirinfo);
-                        }
-                        catch
-                        {
-                            // Not enough rights to access the folder or the folder is not valid
-                        }
-                    }
-                    _foldersToCheck = result;
-                }
-                return _foldersToCheck;
-            }
-        }
-
+        
         public IEnumerable<JunkNode> FindJunk()
         {
             var output = new List<ProgramFilesJunkNode>();
 
-            foreach (var folder in FoldersToCheck)
+            foreach (var kvp in UninstallToolsGlobalConfig.GetProgramFilesDirectories(true))
             {
-                FindJunkRecursively(output, folder, 0);
+                FindJunkRecursively(output, kvp.Key, 0);
             }
 
             return DriveJunk.RemoveDuplicates(output.Cast<DriveJunkNode>()).Cast<JunkNode>();

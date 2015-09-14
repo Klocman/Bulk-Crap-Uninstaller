@@ -34,28 +34,7 @@ namespace UninstallTools.Uninstaller
             var existingUninstallers = existingUninstallerEntries as IList<ApplicationUninstallerEntry> ??
                                        existingUninstallerEntries.ToList();
 
-            // Get the directiories to look inside of for programs
-            var pfDirectories = new List<KeyValuePair<DirectoryInfo, bool>>(2);
-
-            var pf64 = new DirectoryInfo(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES));
-            var pf32 = new DirectoryInfo(WindowsTools.GetProgramFilesX86Path());
-            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(pf32, false));
-            if (!pf32.FullName.Equals(pf64.FullName))
-                pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(pf64, true));
-
-            foreach (var dir in UninstallToolsGlobalConfig.CustomProgramFiles.Distinct())
-            {
-                try
-                {
-                    var di = new DirectoryInfo(dir);
-                    if (di.Exists)
-                        pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(di, false));
-                }
-                catch
-                {
-                    // Ignore missing or inaccessible directories
-                }
-            }
+            var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
 
             // Get sub directories which should contain the programs
             var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool>>(),
