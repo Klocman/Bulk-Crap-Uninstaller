@@ -64,7 +64,6 @@ namespace BulkCrapUninstaller.Forms
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
-            this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.tabPageExternal = new System.Windows.Forms.TabPage();
             this.tabPageFolders = new System.Windows.Forms.TabPage();
             this.groupBoxProgramFolders = new System.Windows.Forms.GroupBox();
@@ -73,6 +72,8 @@ namespace BulkCrapUninstaller.Forms
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
+            this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -144,6 +145,7 @@ namespace BulkCrapUninstaller.Forms
             // flowLayoutPanel3
             // 
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
+            this.flowLayoutPanel3.Controls.Add(this.checkBoxAutoLoad);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxUpdateSearch);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxSendStats);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -317,11 +319,6 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
-            // propertiesSidebar1
-            // 
-            resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
-            this.propertiesSidebar1.Name = "propertiesSidebar1";
-            // 
             // tabPageExternal
             // 
             this.tabPageExternal.Controls.Add(this.groupBoxExternal);
@@ -373,6 +370,17 @@ namespace BulkCrapUninstaller.Forms
             this.panel4.Controls.Add(this.button2);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // checkBoxAutoLoad
+            // 
+            resources.ApplyResources(this.checkBoxAutoLoad, "checkBoxAutoLoad");
+            this.checkBoxAutoLoad.Name = "checkBoxAutoLoad";
+            this.checkBoxAutoLoad.UseVisualStyleBackColor = true;
+            // 
+            // propertiesSidebar1
+            // 
+            resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
+            this.propertiesSidebar1.Name = "propertiesSidebar1";
             // 
             // SettingsWindow
             // 
@@ -472,5 +480,6 @@ namespace BulkCrapUninstaller.Forms
         private FlowLayoutPanel flowLayoutPanel5;
         private Label labelProgramFolders;
         private TextBox textBoxProgramFolders;
+        private CheckBox checkBoxAutoLoad;
     }
 }

@@ -241,6 +241,10 @@ namespace BulkCrapUninstaller.Functions
                 {
                     OpenUninstallLists(false, args.SubArray(1, args.Length - 1));
                 }
+                else if(_settings.Settings.MiscAutoLoadDefaultList)
+                {
+                    OpenUninstallLists(false, "Default.xml");
+                }
             }
         }
 

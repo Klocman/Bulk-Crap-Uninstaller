@@ -40,7 +40,7 @@ namespace UninstallTools.Lists
         {
             var result = new UninstallList();
 
-            foreach (var file in files.Where(File.Exists))
+            foreach (var file in files.Where(x=>!string.IsNullOrEmpty(x) && File.Exists(x)))
             {
                 result._items.AddRange(Path.GetExtension(file)
                     .Equals(".xml", StringComparison.InvariantCultureIgnoreCase)

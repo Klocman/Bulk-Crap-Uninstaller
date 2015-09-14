@@ -28,6 +28,7 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxLoud, x => x.MessagesAskRemoveLoudItems, this);
             _settings.BindControl(checkBoxUpdateSearch, x => x.MiscCheckForUpdates, this);
             _settings.BindControl(checkBoxSendStats, x => x.MiscSendStatistics, this);
+            _settings.BindControl(checkBoxAutoLoad, x => x.MiscAutoLoadDefaultList, this);
 
             _settings.BindControl(checkBoxEnableExternal, x => x.ExternalEnable, this);
             _settings.BindControl(textBoxPreUninstall, x => x.ExternalPreCommands, this);
