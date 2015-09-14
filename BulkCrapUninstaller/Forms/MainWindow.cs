@@ -464,7 +464,7 @@ namespace BulkCrapUninstaller.Forms
             switch (MessageBoxes.AskToSubmitFeedback())
             {
                     case CustomMessageBox.PressedButton.Left:
-                    PremadeDialogs.ProcessStartSafe(@"https://sourceforge.net/projects/bulk-crap-uninstaller/");
+                    PremadeDialogs.ProcessStartSafe(@"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
                     break;
 
                 case CustomMessageBox.PressedButton.Middle:
