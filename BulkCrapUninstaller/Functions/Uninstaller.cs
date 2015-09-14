@@ -232,60 +232,8 @@ namespace BulkCrapUninstaller.Functions
 
                 if (isAdvancedUninstall || MessageBoxes.LookForJunkQuestion())
                 {
-                    List<JunkNode> junk = null;
-                    var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
-                        x =>
-                        {
-                            junk =
-                                JunkManager.FindJunk(selectedUninstallers,
-                                    allUninstallers.Where(y => y.RegKeyStillExists())).ToList();
-                        });
-
-                    if (error != null)
-                    {
-                        //error when searching for stuff
-                        PremadeDialogs.GenericError(error);
-                    }
-                    else if (junk != null && junk.Any(x => x.Confidence.GetRawConfidence() >= 0))
-                    {
-                        using (var junkWindow = new JunkRemoveWindow(junk))
-                        {
-                            if (junkWindow.ShowDialog() != DialogResult.OK) return;
-
-                            var selectedJunk = junkWindow.SelectedJunk.ToList();
-
-                            if (!CheckForRunningProcessesBeforeCleanup(selectedJunk)) return;
-
-                            //Removing the junk
-                            LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
-                            {
-                                var top = selectedJunk.Count;
-                                controller.SetMaximum(top);
-                                var itemsRemoved = 0; // current value
-                                foreach (var junkNode in selectedJunk)
-                                {
-                                    controller.SetProgress(itemsRemoved++);
-
-                                    if (_settings.AdvancedSimulate)
-                                    {
-                                        Thread.Sleep(100);
-                                    }
-                                    else
-                                    {
-                                        try { junkNode.Delete(); }
-                                        catch (Exception ex) { Debug.WriteLine("Exception while removing junk: " + ex.ToString()); }
-                                    }
-                                }
-                            });
-
-                            if (isAdvancedUninstall)
-                                listRefreshNeeded = true;
-                        }
-                    }
-                    else
-                    {
-                        MessageBoxes.NoJunkFoundInfo();
-                    }
+                    listRefreshNeeded = SearchForAndRemoveJunk(() => JunkManager.FindJunk(selectedUninstallers,
+                            allUninstallers.Where(y => y.RegKeyStillExists())));
                 }
             }
             finally
@@ -297,6 +245,74 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
+        /// <summary>
+        /// Returns true if things were actually removed, false if user cancelled the operation.
+        /// </summary>
+        /// <param name="getJunk">Delegate that returns junk items to remove. 
+        /// It will be ran on a separate thread with a progress bar.</param>
+        /// <returns></returns>
+        private bool SearchForAndRemoveJunk(Func<IEnumerable<JunkNode>> getJunk)
+        {
+            var junk = new List<JunkNode>();
+            var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
+                x =>
+                {
+                    junk.AddRange(getJunk());
+                });
+
+            if (error != null)
+            {
+                //error when searching for stuff
+                PremadeDialogs.GenericError(error);
+            }
+            else if (junk.Any(x => x.Confidence.GetRawConfidence() >= 0))
+            {
+                using (var junkWindow = new JunkRemoveWindow(junk))
+                {
+                    if (junkWindow.ShowDialog() != DialogResult.OK) return false;
+
+                    var selectedJunk = junkWindow.SelectedJunk.ToList();
+
+                    if (!CheckForRunningProcessesBeforeCleanup(selectedJunk)) return false;
+
+                    //Removing the junk
+                    LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
+                    {
+                        var top = selectedJunk.Count;
+                        controller.SetMaximum(top);
+                        var itemsRemoved = 0; // current value
+                        foreach (var junkNode in selectedJunk)
+                        {
+                            controller.SetProgress(itemsRemoved++);
+
+                            if (_settings.AdvancedSimulate)
+                            {
+                                Thread.Sleep(100);
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    junkNode.Delete();
+                                }
+                                catch (Exception ex)
+                                {
+                                    Debug.WriteLine("Exception while removing junk: " + ex.ToString());
+                                }
+                            }
+                        }
+                    });
+
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBoxes.NoJunkFoundInfo();
+            }
+            return false;
+        }
+
         public void SearchForAndRemoveProgramFilesJunk(IEnumerable<ApplicationUninstallerEntry> allUninstallers)
         {
             if (!TryGetUninstallLock()) return;
@@ -305,53 +321,8 @@ namespace BulkCrapUninstaller.Functions
             {
                 _lockApplication(true);
 
-                List<JunkNode> junk = null;
-                var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
-                    x =>
-                    {
-                        junk =
-                            JunkManager.FindProgramFilesJunk(allUninstallers.Where(y => y.RegKeyStillExists())).ToList();
-                    });
-
-                if (error != null)
-                {
-                    //error when searching for stuff
-                    PremadeDialogs.GenericError(error);
-                }
-                else if (junk != null && junk.Any(x => x.Confidence.GetRawConfidence() >= 0))
-                {
-                    using (var junkWindow = new JunkRemoveWindow(junk))
-                    {
-                        if (junkWindow.ShowDialog() == DialogResult.OK)
-                        {
-                            //Removing the junk
-                            var selectedJunk = junkWindow.SelectedJunk.ToList();
-                            LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
-                            {
-                                var top = selectedJunk.Count;
-                                controller.SetMaximum(top);
-                                var itemsRemoved = 0; // current value
-                                foreach (var junkNode in selectedJunk)
-                                {
-                                    controller.SetProgress(itemsRemoved++);
-
-                                    if (_settings.AdvancedSimulate)
-                                    {
-                                        Thread.Sleep(100);
-                                    }
-                                    else
-                                    {
-                                        junkNode.Delete();
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBoxes.NoJunkFoundInfo();
-                }
+                SearchForAndRemoveJunk(() => JunkManager.FindProgramFilesJunk(allUninstallers
+                    .Where(y => y.RegKeyStillExists())));
             }
             finally
             {
