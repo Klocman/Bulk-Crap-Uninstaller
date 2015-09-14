@@ -1429,4 +1429,7 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>250, 150</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>BCUninstaller</value>
+  </data>
 </root>

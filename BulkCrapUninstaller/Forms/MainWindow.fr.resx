@@ -909,4 +909,7 @@ dans une liste...</value>
   <data name="disableAutostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Désactiver démar. auto</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>BCUninstaller</value>
+  </data>
 </root>

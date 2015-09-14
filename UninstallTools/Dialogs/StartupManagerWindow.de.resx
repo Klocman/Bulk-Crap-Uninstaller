@@ -241,4 +241,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Autostart Manager</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
 </root>

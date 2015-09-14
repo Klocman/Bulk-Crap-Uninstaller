@@ -232,4 +232,7 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   <data name="tabPageFolders.Text" xml:space="preserve">
     <value>Foldery</value>
   </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Automatycznie otwórz listę "Default.xml" na starcie</value>
+  </data>
 </root>

@@ -1442,4 +1442,10 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>150, 150</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>BCUninstaller</value>
+  </data>
+  <data name="olvColumnIs64.Text" xml:space="preserve">
+    <value>64bit</value>
+  </data>
 </root>

@@ -1410,4 +1410,7 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Automaticky otevřený seznam "Default.xml" na startu</value>
+  </data>
 </root>

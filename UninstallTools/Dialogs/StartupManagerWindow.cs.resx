@@ -232,4 +232,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Manager po spuštění</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
 </root>

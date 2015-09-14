@@ -258,4 +258,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="groupBoxProgramFolders.Text" xml:space="preserve">
     <value>Dossiers d'installation des programmes</value>
   </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Automatiquement liste ouverte "Default.xml" au démarrage</value>
+  </data>
 </root>
