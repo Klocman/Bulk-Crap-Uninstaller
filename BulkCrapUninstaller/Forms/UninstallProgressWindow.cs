@@ -6,7 +6,6 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
-using UninstallTools;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
@@ -31,8 +30,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnStatus.AspectGetter = BulkUninstallTask.StatusAspectGetter;
             olvColumnIsSilent.AspectGetter = BulkUninstallTask.IsSilentAspectGetter;
         }
-
-        /// <exception cref="ArgumentNullException">The value of 'targetStatus' cannot be null. </exception>
+        
         public void SetTargetStatus(BulkUninstallTask targetStatus)
         {
             if (targetStatus == null)
@@ -58,8 +56,8 @@ namespace BulkCrapUninstaller.Forms
             if (_skipMessageboxThread != null && _skipMessageboxThread.IsAlive)
             {
                 _abortSkipMessageboxThread = true;
-                while (_abortSkipMessageboxThread)
-                    Thread.Sleep(200);
+                _skipMessageboxThread.Join();
+                this.SafeInvoke(() => Enabled = true);
             }
         }
 
