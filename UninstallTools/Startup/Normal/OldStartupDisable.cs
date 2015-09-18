@@ -57,15 +57,22 @@ namespace UninstallTools.Startup.Normal
                         var hkey = subKey.GetValue("hkey") as string;
                         var item = subKey.GetValue("item") as string;
                         var command = subKey.GetValue("command") as string;
-                        if (key == null || hkey == null || item == null || command == null)
+                        if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(hkey) 
+                            || string.IsNullOrEmpty(item) || string.IsNullOrEmpty(command))
                             continue;
 
-                        var location = Path.Combine(RegistryTools.GetKeyRoot(hkey, false), key);
+                        var location = Path.Combine(RegistryTools.GetKeyRoot(hkey, true), key);
 
-                        var runLocation =
-                            StartupEntryFactory.RunLocations.FirstOrDefault(x => PathTools.PathsEqual(x.Path, location));
+                        if (string.IsNullOrEmpty(location?.Trim()))
+                            continue;
 
-                        yield return new StartupEntry(runLocation, item, command) {DisabledStore = true};
+                        var runLocation = StartupEntryFactory.RunLocations
+                            .FirstOrDefault(x => PathTools.PathsEqual(location, x.Path));
+
+                        if (runLocation == null)
+                            throw new InvalidDataException("Invalid or unknown startup registry key: " + location);
+
+                        yield return new StartupEntry(runLocation, item, command) { DisabledStore = true };
                     }
                 }
             }
