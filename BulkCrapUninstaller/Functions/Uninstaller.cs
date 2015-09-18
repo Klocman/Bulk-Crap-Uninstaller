@@ -82,7 +82,11 @@ namespace BulkCrapUninstaller.Functions
 
         private static bool CheckForRunningProcessesBeforeCleanup(IEnumerable<JunkNode> entries)
         {
-            var filters = entries.Select(x => x.FullName).Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
+            var filters = entries
+                .Where(e => !(e is RegistryJunkNode))
+                .Select(x => x.FullName)
+                .Where(s => !string.IsNullOrEmpty(s))
+                .Distinct().ToArray();
 
             return CheckForRunningProcesses(filters);
         }
@@ -98,14 +102,16 @@ namespace BulkCrapUninstaller.Functions
                     if (pr.Id == myId)
                         continue;
 
-                    if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
+                    if (string.IsNullOrEmpty(pr.MainModule?.FileName) ||
                         pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM)))
                         continue;
 
-                    var filenames = pr.Modules.Cast<ProcessModule>().Select(x => x.FileName)
-                        .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToList();
+                    var filenames = pr.Modules.Cast<ProcessModule>()
+                        .Select(x => x.FileName)
+                        .Where(s => !string.IsNullOrEmpty(s))
+                        .Distinct();
 
-                    if (filters.Any(filter => filenames.Any(filename =>
+                    if (filenames.Any(filename => filters.Any(filter =>
                     {
                         if (string.IsNullOrEmpty(filename))
                             return false;
@@ -213,30 +219,31 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
-        public void SearchForAndRemoveJunk(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
+        private void SearchForAndRemoveJunk(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
             IEnumerable<ApplicationUninstallerEntry> allUninstallers)
         {
-            SearchForAndRemoveJunk(selectedUninstallers, allUninstallers, false);
+            //if (!TryGetUninstallLock()) return;
+            //var listRefreshNeeded = false;
+
+            if (MessageBoxes.LookForJunkQuestion())
+            {
+                SearchForAndRemoveJunk(
+                    () => JunkManager.FindJunk(selectedUninstallers, allUninstallers.Where(y => y.RegKeyStillExists())));
+            }
         }
 
-        public void SearchForAndRemoveJunk(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
-            IEnumerable<ApplicationUninstallerEntry> allUninstallers, bool isAdvancedUninstall)
+        public void AdvancedUninstall(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
+            IEnumerable<ApplicationUninstallerEntry> allUninstallers)
         {
             if (!TryGetUninstallLock()) return;
             var listRefreshNeeded = false;
 
             try
             {
-                if (isAdvancedUninstall)
-                {
-                    _lockApplication(true);
-                }
+                _lockApplication(true);
 
-                if (isAdvancedUninstall || MessageBoxes.LookForJunkQuestion())
-                {
-                    listRefreshNeeded = SearchForAndRemoveJunk(() => JunkManager.FindJunk(selectedUninstallers,
-                            allUninstallers.Where(y => y.RegKeyStillExists())));
-                }
+                listRefreshNeeded = SearchForAndRemoveJunk(
+                    () => JunkManager.FindJunk(selectedUninstallers, allUninstallers.Where(y => y.RegKeyStillExists())));
             }
             finally
             {

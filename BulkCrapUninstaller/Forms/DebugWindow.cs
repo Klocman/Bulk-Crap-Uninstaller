@@ -164,7 +164,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void TestJunkSearcher(object sender, EventArgs e)
         {
-            _uninstaller.SearchForAndRemoveJunk(_listView.SelectedUninstallers,
+            _uninstaller.AdvancedUninstall(_listView.SelectedUninstallers,
                 _listView.AllUninstallers.Except(_listView.SelectedUninstallers));
         }
 

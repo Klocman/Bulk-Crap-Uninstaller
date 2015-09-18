@@ -774,7 +774,7 @@ namespace BulkCrapUninstaller.Forms
                 return;
             }
 
-            _uninstaller.SearchForAndRemoveJunk(items, _listView.AllUninstallers, true);
+            _uninstaller.AdvancedUninstall(items, _listView.AllUninstallers);
         }
 
         private void RunLoudUninstall(object x, EventArgs y)
