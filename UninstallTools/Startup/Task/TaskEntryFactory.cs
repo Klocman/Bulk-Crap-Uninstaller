@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
+using System.Linq;
 
 namespace UninstallTools.Startup.Task
 {
@@ -9,7 +10,11 @@ namespace UninstallTools.Startup.Task
     {
         public static IEnumerable<TaskEntry> GetTaskStartupEntries()
         {
-            foreach (var task in TaskService.Instance.RootFolder.Tasks)
+            TaskCollection tasks;
+            try { tasks = TaskService.Instance.RootFolder.Tasks; }
+            catch { yield break; }
+
+            foreach (var task in tasks)
             {
                 var rootElement = XDocument.Parse(task.Xml).Root;
                 var xmlNamespace = rootElement?.Name.Namespace ?? string.Empty;
