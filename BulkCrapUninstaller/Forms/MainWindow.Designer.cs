@@ -271,7 +271,6 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.AllowColumnReorder = true;
             this.uninstallerObjectListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.uninstallerObjectListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.uninstallerObjectListView.CellEditUseWholeCell = false;
             this.uninstallerObjectListView.CheckBoxes = true;
             this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnDisplayName,
