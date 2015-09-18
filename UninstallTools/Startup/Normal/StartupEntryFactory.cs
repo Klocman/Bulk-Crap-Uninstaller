@@ -58,7 +58,7 @@ namespace UninstallTools.Startup.Normal
         private static IEnumerable<StartupEntry> GetDriveStartupItems(StartupPointData point)
         {
             if (!Directory.Exists(point.Path))
-                Directory.CreateDirectory(point.Path);
+                yield break;
 
             foreach (var name in Directory.GetFiles(point.Path)
                 .Where(name => ".lnk".Equals(Path.GetExtension(name), StringComparison.CurrentCultureIgnoreCase)))
