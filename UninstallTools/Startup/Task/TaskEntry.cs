@@ -35,8 +35,16 @@ namespace UninstallTools.Startup.Task
 
         public override bool Disabled
         {
-            get { return !SourceTask.Enabled; }
-            set { SourceTask.Enabled = !value; }
+            //HACK: For now if it's impossible to check disabled state, assume not disabled
+            get
+            {
+                try { return !SourceTask.Enabled; }
+                catch (FileNotFoundException) { }
+                catch (System.Runtime.InteropServices.COMException) { }
+                return false;
+            }
+            //TODO: Give some sort of message instead of crashing if not supported, maybe disable disable buttons
+            set { SourceTask.Enabled = !value; } 
         }
 
         public override string ParentShortName
