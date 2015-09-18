@@ -23,24 +23,30 @@ namespace UninstallTools.Startup
         public static void AssignStartupEntries(IEnumerable<ApplicationUninstallerEntry> uninstallers,
             IEnumerable<StartupEntryBase> startupEntries)
         {
+            //if (startupEntries == null || uninstallers == null)
+            //    return;
+
             var startups = startupEntries.ToList();
+
+            if (startups.Count == 0)
+                return;
 
             foreach (var uninstaller in uninstallers)
             {
                 var positives = startups.Where(x =>
                 {
-                    if (x.ProgramNameTrimmed.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase))
+                    if (x.ProgramNameTrimmed?.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase) == true)
                         return true;
 
                     if (x.CommandFilePath == null)
                         return false;
 
                     if (!string.IsNullOrEmpty(uninstaller.InstallLocation) &&
-                        x.CommandFilePath.StartsWith(uninstaller.InstallLocation))
+                        x.CommandFilePath.StartsWith(uninstaller.InstallLocation, StringComparison.OrdinalIgnoreCase))
                         return true;
 
                     if (!string.IsNullOrEmpty(uninstaller.UninstallerLocation) &&
-                        x.CommandFilePath.StartsWith(uninstaller.UninstallerLocation))
+                        x.CommandFilePath.StartsWith(uninstaller.UninstallerLocation, StringComparison.OrdinalIgnoreCase))
                         return true;
 
                     return false;
@@ -108,7 +114,7 @@ namespace UninstallTools.Startup
                         .Where(x => !string.IsNullOrEmpty(x.Value))
                         .ToList();
 
-                foreach (var filter in new[] {"Product name", "Friendly name", "Program Name"})
+                foreach (var filter in new[] { "Product name", "Friendly name", "Program Name" })
                 {
                     var result =
                         attribs.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase));
@@ -119,7 +125,7 @@ namespace UninstallTools.Startup
                     }
                 }
 
-                foreach (var filter in new[] {"Company", "Publisher"})
+                foreach (var filter in new[] { "Company", "Publisher" })
                 {
                     var result =
                         attribs.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase));
