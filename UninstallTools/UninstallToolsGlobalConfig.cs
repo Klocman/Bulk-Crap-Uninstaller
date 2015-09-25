@@ -55,7 +55,7 @@ namespace UninstallTools
         {
             return //dir.Name.StartsWith("Windows ") //Probably overkill
                    DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.Ordinal))
-                   || dir.Attributes.Contains(FileAttributes.System);
+                   || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
         }
 
         /// <summary>

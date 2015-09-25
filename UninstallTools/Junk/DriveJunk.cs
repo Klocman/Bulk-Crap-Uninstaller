@@ -160,7 +160,7 @@ namespace UninstallTools.Junk
         {
             try
             {
-                if (directory.Attributes.Contains(FileAttributes.System))
+                if ((directory.Attributes & FileAttributes.System) == FileAttributes.System)
                     return;
 
                 var dirs = directory.GetDirectories();
