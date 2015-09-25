@@ -296,17 +296,17 @@ namespace UninstallTools.Uninstaller
         /// </summary>
         public string[] GetMainExecutableCandidates()
         {
-            var trimmedDispName = DisplayNameTrimmed;
-            if (string.IsNullOrEmpty(trimmedDispName))
-            {
-                trimmedDispName = DisplayName;
-                if (string.IsNullOrEmpty(trimmedDispName))
-                    // Impossible to search for the executable without knowing the app name
-                    _mainExecutableCandidates = new string[] {};
-            }
-
             if (_mainExecutableCandidates == null)
             {
+                var trimmedDispName = DisplayNameTrimmed;
+                if (string.IsNullOrEmpty(trimmedDispName))
+                {
+                    trimmedDispName = DisplayName;
+                    if (string.IsNullOrEmpty(trimmedDispName))
+                        // Impossible to search for the executable without knowing the app name
+                        _mainExecutableCandidates = new string[] { };
+                }
+
                 foreach (var targetDir in new[] {InstallLocation, UninstallerLocation}
                     .Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)))
                 {
@@ -322,6 +322,8 @@ namespace UninstallTools.Uninstaller
                             select file;
 
                         _mainExecutableCandidates = query.ToArray();
+                        if (_mainExecutableCandidates.Length > 0)
+                            break;
                     }
                 }
             }
