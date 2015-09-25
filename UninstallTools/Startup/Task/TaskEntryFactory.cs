@@ -16,10 +16,21 @@ namespace UninstallTools.Startup.Task
 
             foreach (var task in tasks)
             {
-                var rootElement = XDocument.Parse(task.Xml).Root;
-                var xmlNamespace = rootElement?.Name.Namespace ?? string.Empty;
-                var actionRoot = rootElement?.Element(xmlNamespace + "Actions");
-                if (actionRoot == null) continue;
+                XNamespace xmlNamespace;
+                XElement actionRoot;
+
+                try
+                {
+                    var rootElement = XDocument.Parse(task.Xml).Root;
+                    xmlNamespace = rootElement?.Name.Namespace ?? XNamespace.None;
+                    actionRoot = rootElement?.Element(xmlNamespace + "Actions");
+                }
+                catch
+                {
+                    continue;
+                }
+
+                if (actionRoot == null || actionRoot.IsEmpty || xmlNamespace == XNamespace.None) continue;
 
                 foreach (var actionElement in actionRoot.Elements())
                 {
