@@ -139,6 +139,24 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to getRating.
+        /// </summary>
+        internal static string DbCommandGetRating {
+            get {
+                return ResourceManager.GetString("DbCommandGetRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sendRating.
+        /// </summary>
+        internal static string DbCommandSetRating {
+            get {
+                return ResourceManager.GetString("DbCommandSetRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sendStats.
         /// </summary>
         internal static string DbCommandStats {

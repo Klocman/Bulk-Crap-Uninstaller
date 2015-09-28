@@ -94,6 +94,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.7\lib\net20\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectListView.Official.2.8.1\lib\net20\ObjectListView.dll</HintPath>
       <Private>True</Private>
@@ -170,6 +174,7 @@
     <Compile Include="Functions\Uninstaller.cs" />
     <Compile Include="Functions\UninstallerListViewTools.cs" />
     <Compile Include="Functions\UpdateGrabber.cs" />
+    <Compile Include="Functions\UserStats.cs" />
     <Compile Include="NBugConfigurator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Forms\PropertiesWindow.cs">
