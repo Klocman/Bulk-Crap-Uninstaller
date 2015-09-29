@@ -9,7 +9,6 @@ using Klocman.Binding;
 using Klocman.Events;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Forms
 {

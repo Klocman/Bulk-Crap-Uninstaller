@@ -7,12 +7,10 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
 using Klocman.Tools;
-using UninstallTools;
 using UninstallTools.Junk;
 
 namespace BulkCrapUninstaller.Forms
@@ -25,7 +23,7 @@ namespace BulkCrapUninstaller.Forms
         public JunkRemoveWindow(IEnumerable<JunkNode> junk)
         {
             InitializeComponent();
-            
+
             Icon = Resources.Icon_Logo;
 
             SetupListView(junk);

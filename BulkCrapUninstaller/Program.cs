@@ -14,12 +14,13 @@ using UninstallTools.Uninstaller;
 namespace BulkCrapUninstaller
 {
     //TODO This is a leftover class, extract the self installed detection logic and get rid of it
-    internal static class Program
+    public static class Program
     {
         private static string _applicationGuid;
         private static DirectoryInfo _assemblyLocation;
         private static string _installedRegistryKeyName;
         private static bool? _isInstalled;
+        private static string _dbConnectionString;
 
         public static string ApplicationGuid
         {
@@ -56,6 +57,17 @@ namespace BulkCrapUninstaller
         ///     Do not call before CheckForOldSettings() completes
         /// </summary>
         public static bool EnableDebug => Debugger.IsAttached || Settings.Default.Debug;
+
+        public static string DbConnectionString
+        {
+            get
+            {
+                return _dbConnectionString ??
+                       (_dbConnectionString =
+                           EnableDebug ? Resources.DbDebugConnectionString : Resources.DbConnectionString);
+            }
+            set { _dbConnectionString = value; }
+        }
 
         public static string InstalledRegistryKeyName
         {

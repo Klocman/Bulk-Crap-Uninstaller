@@ -33,6 +33,7 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnPublisher = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRating = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnDisplayVersion = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnInstallDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnSize = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -94,6 +95,7 @@ namespace BulkCrapUninstaller.Forms
             this.sourceLocationOpenInExplorerContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openWebPageContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lookUpOnlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
@@ -132,6 +134,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advancedOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -253,6 +256,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.uninstallerObjectListView.AllColumns.Add(this.olvColumnDisplayName);
             this.uninstallerObjectListView.AllColumns.Add(this.olvColumnPublisher);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnRating);
             this.uninstallerObjectListView.AllColumns.Add(this.olvColumnDisplayVersion);
             this.uninstallerObjectListView.AllColumns.Add(this.olvColumnInstallDate);
             this.uninstallerObjectListView.AllColumns.Add(this.olvColumnSize);
@@ -275,6 +279,7 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnDisplayName,
             this.olvColumnPublisher,
+            this.olvColumnRating,
             this.olvColumnDisplayVersion,
             this.olvColumnInstallDate,
             this.olvColumnSize,
@@ -296,6 +301,7 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
+            this.uninstallerObjectListView.OwnerDraw = true;
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;
             this.uninstallerObjectListView.ShowItemToolTips = true;
@@ -322,6 +328,14 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnPublisher
             // 
             resources.ApplyResources(this.olvColumnPublisher, "olvColumnPublisher");
+            // 
+            // olvColumnRating
+            // 
+            this.olvColumnRating.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.olvColumnRating.IsEditable = false;
+            this.olvColumnRating.Searchable = false;
+            resources.ApplyResources(this.olvColumnRating, "olvColumnRating");
+            this.olvColumnRating.UseFiltering = false;
             // 
             // olvColumnDisplayVersion
             // 
@@ -575,6 +589,7 @@ namespace BulkCrapUninstaller.Forms
             this.openInExplorerContextMenuStripItem,
             this.openWebPageContextMenuStripItem,
             this.lookUpOnlineToolStripMenuItem,
+            this.rateToolStripMenuItem,
             this.toolStripSeparator7,
             this.propertiesContextMenuStripItem});
             this.uninstallListContextMenuStrip.Name = "uninstallListContextMenuStrip";
@@ -733,6 +748,13 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.lookUpOnlineToolStripMenuItem, "lookUpOnlineToolStripMenuItem");
             this.lookUpOnlineToolStripMenuItem.Name = "lookUpOnlineToolStripMenuItem";
             this.lookUpOnlineToolStripMenuItem.Click += new System.EventHandler(this.SearchOnlineForSelection);
+            // 
+            // rateToolStripMenuItem
+            // 
+            this.rateToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.star;
+            this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
+            resources.ApplyResources(this.rateToolStripMenuItem, "rateToolStripMenuItem");
+            this.rateToolStripMenuItem.Click += new System.EventHandler(this.rateToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
@@ -894,6 +916,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripMenuItem1,
             this.toolStripMenuItem14,
             this.onlineSearchToolStripMenuItem,
+            this.rateToolStripMenuItem1,
             this.toolStripSeparator15,
             this.propertiesToolStripMenuItem});
             resources.ApplyResources(this.basicOperationsToolStripMenuItem, "basicOperationsToolStripMenuItem");
@@ -1002,6 +1025,13 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.onlineSearchToolStripMenuItem, "onlineSearchToolStripMenuItem");
             this.onlineSearchToolStripMenuItem.Name = "onlineSearchToolStripMenuItem";
             this.onlineSearchToolStripMenuItem.Click += new System.EventHandler(this.SearchOnlineForSelection);
+            // 
+            // rateToolStripMenuItem1
+            // 
+            this.rateToolStripMenuItem1.Image = global::BulkCrapUninstaller.Properties.Resources.star;
+            this.rateToolStripMenuItem1.Name = "rateToolStripMenuItem1";
+            resources.ApplyResources(this.rateToolStripMenuItem1, "rateToolStripMenuItem1");
+            this.rateToolStripMenuItem1.Click += new System.EventHandler(this.rateToolStripMenuItem_Click);
             // 
             // toolStripSeparator15
             // 
@@ -1462,6 +1492,9 @@ namespace BulkCrapUninstaller.Forms
         internal OLVColumn olvColumnStartup;
         private Panel listViewPanel;
         private ToolStripMenuItem disableAutostartToolStripMenuItem;
+        internal OLVColumn olvColumnRating;
+        private ToolStripMenuItem rateToolStripMenuItem;
+        private ToolStripMenuItem rateToolStripMenuItem1;
     }
 }
 

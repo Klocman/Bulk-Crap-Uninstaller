@@ -5,15 +5,14 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
 using Klocman.Forms.Tools;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Forms
 {
     public partial class FirstStartBox : Form
     {
         private const int PageCount = 5;
-        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private readonly int _pageWidth;
+        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private int _pageNumber;
         private int _targetXPos;
 

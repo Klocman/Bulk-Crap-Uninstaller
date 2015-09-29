@@ -22,6 +22,13 @@ namespace BulkCrapUninstaller.Functions
 
         public static Form DefaultOwner { get; set; }
 
+        public static void RatingsUnavailableWarning()
+        {
+            MessageBox.Show(DefaultOwner,
+                "Ratings can't be used with applications that are not installed properly.",
+                "Rate an application", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         internal static CustomMessageBox.PressedButton AskToSubmitFeedback()
         {
             return CustomMessageBox.ShowDialog(DefaultOwner,
@@ -212,7 +219,8 @@ namespace BulkCrapUninstaller.Functions
         {
             if (sourceDirCount <= 0)
             {
-                MessageBox.Show(Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen, Localisable.MessageBoxes_Title_Open_directories,
+                MessageBox.Show(Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen,
+                    Localisable.MessageBoxes_Title_Open_directories,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return false;

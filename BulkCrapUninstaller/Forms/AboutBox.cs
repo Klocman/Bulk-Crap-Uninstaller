@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Tools;

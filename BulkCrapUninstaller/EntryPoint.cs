@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
+using Klocman.Forms.Tools;
 using Klocman.Subsystems.Update;
 using Microsoft.VisualBasic.ApplicationServices;
 
@@ -32,7 +33,7 @@ namespace BulkCrapUninstaller
             }
             catch (Exception ex)
             {
-                Klocman.Forms.Tools.PremadeDialogs.GenericError(ex);
+                PremadeDialogs.GenericError(ex);
             }
         }
 
@@ -42,8 +43,14 @@ namespace BulkCrapUninstaller
             Program.PrepareSettings();
             NBugConfigurator.SetupNBug();
             CultureConfigurator.SetupCulture();
-            try { UpdateSystem.ProcessPendingUpdates(); }
-            catch (Exception ex) { Klocman.Forms.Tools.PremadeDialogs.GenericError(ex); }
+            try
+            {
+                UpdateSystem.ProcessPendingUpdates();
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
 
             // Necessary to put form constructor here for objectlistbox. It flips out if
             // the main form is created inside of the EntryPoint constructor.
@@ -59,7 +66,7 @@ namespace BulkCrapUninstaller
             }
             catch (Exception ex)
             {
-                Klocman.Forms.Tools.PremadeDialogs.GenericError(ex);
+                PremadeDialogs.GenericError(ex);
             }
         }
     }

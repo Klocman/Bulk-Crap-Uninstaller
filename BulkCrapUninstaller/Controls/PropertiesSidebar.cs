@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Controls
 {

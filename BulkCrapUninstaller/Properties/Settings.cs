@@ -1,5 +1,4 @@
 ﻿using Klocman.Binding;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Properties
 {
@@ -12,6 +11,7 @@ namespace BulkCrapUninstaller.Properties
     {
         private SettingBinder<Settings> _settingManager;
 
-        public SettingBinder<Settings> SettingBinder => _settingManager ?? (_settingManager = new SettingBinder<Settings>(this));
+        public SettingBinder<Settings> SettingBinder
+            => _settingManager ?? (_settingManager = new SettingBinder<Settings>(this));
     }
 }

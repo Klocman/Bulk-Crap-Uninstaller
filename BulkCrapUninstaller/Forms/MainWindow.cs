@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Forms;
@@ -42,7 +43,7 @@ namespace BulkCrapUninstaller.Forms
         public MainWindow()
         {
             InitializeComponent();
-            
+
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
@@ -79,7 +80,7 @@ namespace BulkCrapUninstaller.Forms
 
                 if (y.Value == y.Maximum)
                     result = string.Empty;
-                else if ((y.Value - 1) % 7 == 0)
+                else if ((y.Value - 1)%7 == 0)
                     result = string.Format(Localisable.MainWindow_Statusbar_ProcessingUninstallers,
                         y.Value, y.Maximum);
 
@@ -116,9 +117,10 @@ namespace BulkCrapUninstaller.Forms
             twitterStatusButton1.TargetSite = Resources.HomepageUrl;
 
             // Tracking
-            UsageManager.DataSender = new DatabaseStatSender(Resources.DbConnectionString,
+            UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
-            FormClosed += (x, y) => UsageTrackerSendData(); //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
+            FormClosed += (x, y) => UsageTrackerSendData();
+                //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
 
             // Misc
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
@@ -312,7 +314,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void cleanUpTheSystemCCleanerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"https://www.piriform.com/ccleaner", UriKind.Absolute) });
+            OpenUrls(new[] {new Uri(@"https://www.piriform.com/ccleaner", UriKind.Absolute)});
         }
 
         private void ClipboardCopyFullInformation(object x, EventArgs y)
@@ -405,7 +407,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void donateButton_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52") });
+            OpenUrls(new[]
+            {new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52")});
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -463,8 +466,9 @@ namespace BulkCrapUninstaller.Forms
             //TODO better feedback submit window
             switch (MessageBoxes.AskToSubmitFeedback())
             {
-                    case CustomMessageBox.PressedButton.Left:
-                    PremadeDialogs.ProcessStartSafe(@"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
+                case CustomMessageBox.PressedButton.Left:
+                    PremadeDialogs.ProcessStartSafe(
+                        @"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
                     break;
 
                 case CustomMessageBox.PressedButton.Middle:
@@ -509,7 +513,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 ResumeLayout();
             }
-            // BUG Can throw on some systems, not sure what is causing it
+                // BUG Can throw on some systems, not sure what is causing it
             catch (ObjectDisposedException)
             {
                 Application.DoEvents();
@@ -711,7 +715,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void removeMalwareSpyBotToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"https://www.safer-networking.org/", UriKind.Absolute) });
+            OpenUrls(new[] {new Uri(@"https://www.safer-networking.org/", UriKind.Absolute)});
         }
 
         private void RenameEntries(object sender, EventArgs eventArgs)
@@ -973,7 +977,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void updateApplicationsNiniteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"https://ninite.com/", UriKind.Absolute) });
+            OpenUrls(new[] {new Uri(@"https://ninite.com/", UriKind.Absolute)});
         }
 
         private void UpdateUninstallListContextMenuStrip(object sender, CancelEventArgs e)
@@ -1041,11 +1045,11 @@ namespace BulkCrapUninstaller.Forms
                 UsageManager.FinishCollectingData();
 
                 if (Program.EnableDebug || !WindowsTools.IsNetworkAvailable()) return;
-                
+
                 var count = UsageManager.AppLaunchCount;
 
                 //Reduce frequency of the uploads
-                if (count != 2 && (count <= 0 || count % 5 != 0)) return;
+                if (count != 2 && (count <= 0 || count%5 != 0)) return;
 
                 try
                 {
@@ -1102,6 +1106,24 @@ namespace BulkCrapUninstaller.Forms
 
                 uninstallerObjectListView.RefreshObject(uninstaller);
             }
+        }
+
+        private void rateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selection = _listView.SelectedUninstallers.Where(x => !string.IsNullOrEmpty(x.RegistryKeyName)).ToList();
+
+            if (!selection.Any())
+            {
+                MessageBoxes.RatingsUnavailableWarning();
+                return;
+            }
+
+            var result = RatingPopup.ShowRateDialog(this, selection.Count + " items");
+
+            if (result == UninstallerRating.Unknown)
+                return;
+
+            _listView.SetRatings(selection, result);
         }
     }
 }

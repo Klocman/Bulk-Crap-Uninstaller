@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -94,8 +93,14 @@ namespace BulkCrapUninstaller.Functions
                 Selected.Settings.MiscVersion = Program.AssemblyVersion.ToString();
             }
 
-            try { Selected.Settings.Save(); }
-            catch { /*Failed to save settings, probably read only drive TODO: info box*/ }
+            try
+            {
+                Selected.Settings.Save();
+            }
+            catch
+            {
+                /*Failed to save settings, probably read only drive TODO: info box*/
+            }
         }
     }
 }

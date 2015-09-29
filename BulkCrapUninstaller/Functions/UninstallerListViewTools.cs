@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Forms;
+using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
 using Klocman.Events;
@@ -14,11 +15,11 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.IO;
 using Klocman.Localising;
+using Klocman.Tools;
 using UninstallTools.Dialogs;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
 using UninstallTools.Uninstaller;
-using System.Diagnostics;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -36,6 +37,10 @@ namespace BulkCrapUninstaller.Functions
         private readonly UninstallerIconGetter _iconGetter = new UninstallerIconGetter();
         private readonly TypedObjectListView<ApplicationUninstallerEntry> _listView;
         private readonly List<object> _objectsToUpdate = new List<object>();
+
+        private readonly UninstallerRatingManager _ratingManager
+            = new UninstallerRatingManager(WindowsTools.GetUniqueUserId());
+
         private readonly MainWindow _reference;
         private readonly UninstallListItem _searchItem = new UninstallListItem();
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
@@ -127,6 +132,7 @@ namespace BulkCrapUninstaller.Functions
         public void Dispose()
         {
             _iconGetter?.Dispose();
+            _ratingManager.Dispose();
             StopProcessingThread(false);
         }
 
@@ -212,7 +218,7 @@ namespace BulkCrapUninstaller.Functions
                 var oldList = _listView.ListView.SmallImageList;
                 _listView.ListView.SmallImageList = _iconGetter.IconList;
                 oldList?.Dispose();
-                
+
                 _listView.ListView.SetObjects(AllUninstallers);
             }
             finally
@@ -241,7 +247,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     OpenUninstallLists(false, args.SubArray(1, args.Length - 1));
                 }
-                else if(_settings.Settings.MiscAutoLoadDefaultList)
+                else if (_settings.Settings.MiscAutoLoadDefaultList)
                 {
                     OpenUninstallLists(false, "Default.xml");
                 }
@@ -441,6 +447,9 @@ namespace BulkCrapUninstaller.Functions
 
             _iconGetter.UpdateIconList(detectedUninstallers);
             ReassignStartupEntries(false);
+
+            //TODO move away
+            _ratingManager.RefreshStats();
         }
 
         private bool ListViewFilter(object obj)
@@ -455,11 +464,11 @@ namespace BulkCrapUninstaller.Functions
 
             if (entry.UninstallerKind != UninstallerType.Dism
                 && ((_settings.Settings.FilterHideMicrosoft && entry.Publisher.IsNotEmpty() &&
-                 entry.Publisher.Contains("Microsoft"))
-                || (!_settings.Settings.AdvancedDisplayOrphans && !entry.IsRegistered)
-                || (!_settings.Settings.FilterShowProtected && entry.IsProtected)
-                || (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent)
-                || (!_settings.Settings.FilterShowUpdates && entry.IsUpdate)))
+                     entry.Publisher.Contains("Microsoft"))
+                    || (!_settings.Settings.AdvancedDisplayOrphans && !entry.IsRegistered)
+                    || (!_settings.Settings.FilterShowProtected && entry.IsProtected)
+                    || (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent)
+                    || (!_settings.Settings.FilterShowUpdates && entry.IsUpdate)))
                 return false;
 
             if (string.IsNullOrEmpty(_searchItem.FilterText)) return true;
@@ -481,7 +490,7 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnStartup.AspectGetter = x =>
             {
                 var obj = x as ApplicationUninstallerEntry;
-                return (obj?.StartupEntries != null && obj.StartupEntries.Any(e=>!e.Disabled)).ToYesNo();
+                return (obj?.StartupEntries != null && obj.StartupEntries.Any(e => !e.Disabled)).ToYesNo();
             };
 
             _reference.olvColumnPublisher.AspectName = ApplicationUninstallerEntry.RegistryNamePublisher;
@@ -547,6 +556,59 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnSize.GroupKeyGetter = ListViewDelegates.ColumnSizeGroupKeyGetter;
             _reference.olvColumnSize.GroupKeyToTitleConverter = x => x.ToString();
 
+            // Rating stuff
+            _reference.olvColumnRating.AspectGetter = x =>
+            {
+                var entry = (x as ApplicationUninstallerEntry);
+                if (string.IsNullOrEmpty(entry?.RegistryKeyName))
+                    return UninstallerRatingManager.RatingEntry.NotAvailable;
+                return _ratingManager.GetRating(entry.RegistryKeyName);
+            };
+
+            _reference.olvColumnRating.Renderer = new RatingRenderer();
+
+            _reference.olvColumnRating.GroupKeyGetter = x =>
+            {
+                var model = x as ApplicationUninstallerEntry;
+
+                if (string.IsNullOrEmpty(model?.RegistryKeyName))
+                    return Localisable.NotAvailable;
+
+                var rating = _ratingManager.GetRating(model.RegistryKeyName);
+
+                if (rating.IsEmpty || (!rating.AverageRating.HasValue && !rating.MyRating.HasValue))
+                    return Localisable.Unknown;
+
+                return (rating.MyRating.HasValue ? "Your rating:" : "Average rating:") + " " +
+                       UninstallerRatingManager.ToRating(rating.MyRating ?? (int) rating.AverageRating);
+            };
+
+            _reference.uninstallerObjectListView.CellClick += (x, y) =>
+            {
+                if (y.Column == null || !y.Column.Equals(_reference.olvColumnRating))
+                    return;
+
+                var model = y.Model as ApplicationUninstallerEntry;
+
+                if (model == null)
+                    return;
+
+                if (string.IsNullOrEmpty(model.RegistryKeyName))
+                {
+                    MessageBoxes.RatingsUnavailableWarning();
+                    return;
+                }
+
+                var result = RatingPopup.ShowRateDialog(_reference,
+                    model.DisplayName, _reference.uninstallerObjectListView.PointToScreen(y.Location));
+
+                if (result == UninstallerRating.Unknown)
+                    return;
+
+                _ratingManager.SetMyRating(model.RegistryKeyName, result);
+            };
+            // Rating stuff end
+
             _reference.uninstallerObjectListView.PrimarySortColumn = _reference.olvColumnDisplayName;
             _reference.uninstallerObjectListView.SecondarySortColumn = _reference.olvColumnPublisher;
             _reference.uninstallerObjectListView.Sorting = SortOrder.Ascending;
@@ -562,7 +624,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _objectsToUpdate.Add(y.Tag);
 
-                    if (y.Value == y.Maximum || (y.Value) % 25 == 0)
+                    if (y.Value == y.Maximum || (y.Value)%25 == 0)
                     {
                         _listView.ListView.RefreshObjects(_objectsToUpdate);
                         _objectsToUpdate.Clear();
@@ -571,6 +633,17 @@ namespace BulkCrapUninstaller.Functions
             };
 
             _listView.ListView.AfterSorting += (x, y) => { AfterFiltering?.Invoke(x, y); };
+        }
+
+        public void SetRatings(IEnumerable<ApplicationUninstallerEntry> entries, UninstallerRating rating)
+        {
+            if (rating == UninstallerRating.Unknown)
+                return;
+
+            foreach (var entry in entries)
+            {
+                _ratingManager.SetMyRating(entry.RegistryKeyName, rating);
+            }
         }
 
         private void StartProcessingThread(IEnumerable<ApplicationUninstallerEntry> itemsToProcess)
@@ -634,21 +707,9 @@ namespace BulkCrapUninstaller.Functions
                 }
 
                 UninstallerPostprocessingProgressUpdate?.Invoke(this,
-                    new CountingUpdateEventArgs(0, targetList.Count, currentCount) { Tag = uninstaller });
+                    new CountingUpdateEventArgs(0, targetList.Count, currentCount) {Tag = uninstaller});
                 currentCount++;
             }
-        }
-
-        public sealed class ListRefreshEventArgs : EventArgs
-        {
-            public ListRefreshEventArgs(bool value, bool firstRefresh)
-            {
-                NewValue = value;
-                FirstRefresh = firstRefresh;
-            }
-
-            public bool NewValue { get; private set; }
-            public bool FirstRefresh { get; private set; }
         }
 
         internal void ReassignStartupEntries(bool refreshListView)
@@ -664,6 +725,18 @@ namespace BulkCrapUninstaller.Functions
 
             if (refreshListView)
                 RefreshList();
+        }
+
+        public sealed class ListRefreshEventArgs : EventArgs
+        {
+            public ListRefreshEventArgs(bool value, bool firstRefresh)
+            {
+                NewValue = value;
+                FirstRefresh = firstRefresh;
+            }
+
+            public bool NewValue { get; private set; }
+            public bool FirstRefresh { get; private set; }
         }
     }
 }

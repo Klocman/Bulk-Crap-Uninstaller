@@ -12,10 +12,10 @@ namespace BulkCrapUninstaller.Forms
 {
     sealed partial class UninstallProgressWindow : Form
     {
+        private bool _abortSkipMessageboxThread;
         private Thread _boxThread;
         private BulkUninstallTask _currentTargetStatus;
         private bool _lastWasQuiet;
-        private bool _abortSkipMessageboxThread;
         private CustomMessageBox _skipMessageBox;
         private Thread _skipMessageboxThread;
         private CustomMessageBox _walkAwayBox;
@@ -30,7 +30,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnStatus.AspectGetter = BulkUninstallTask.StatusAspectGetter;
             olvColumnIsSilent.AspectGetter = BulkUninstallTask.IsSilentAspectGetter;
         }
-        
+
         public void SetTargetStatus(BulkUninstallTask targetStatus)
         {
             if (targetStatus == null)

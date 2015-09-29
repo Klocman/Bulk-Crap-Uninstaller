@@ -38,7 +38,9 @@ namespace BulkCrapUninstaller
                 }
             }
 
-            if (!currentCulture.Name.ContainsAny(SupportedLanguages.Select(x => x.Parent.Name), StringComparison.OrdinalIgnoreCase))
+            if (
+                !currentCulture.Name.ContainsAny(SupportedLanguages.Select(x => x.Parent.Name),
+                    StringComparison.OrdinalIgnoreCase))
                 currentCulture = SupportedLanguages.First();
 
             ProcessTools.SetDefaultCulture(currentCulture);
