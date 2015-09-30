@@ -282,7 +282,7 @@ namespace UninstallTools.Dialogs
         {
             foreach (var command in Selection)
             {
-                if (!PremadeDialogs.ProcessStartSafe(command.Command))
+                if (!PremadeDialogs.StartProcessSafely(command.Command))
                     break;
             }
         }

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
-using UninstallTools;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms

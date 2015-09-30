@@ -2,9 +2,7 @@
 using System.Reflection;
 using System.Threading;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Forms;
-using Klocman.Subsystems;
 using Klocman.Subsystems.Update;
 using Klocman.Tools;
 

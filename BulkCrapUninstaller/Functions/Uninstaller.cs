@@ -23,13 +23,12 @@ namespace BulkCrapUninstaller.Functions
         private readonly Action _initiateListRefresh;
         private readonly Action<bool> _lockApplication;
         private readonly Settings _settings = Settings.Default;
+        private readonly object _uninstallLock = new object();
 
         /// <summary>
         ///     Uninstall tasks will wait until this is released to continue. Keep it short to prevent ui unresponsiveness.
         /// </summary>
         public readonly object PublicUninstallLock = new object();
-
-        private readonly object _uninstallLock = new object();
 
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
         internal Uninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback)
@@ -49,7 +48,8 @@ namespace BulkCrapUninstaller.Functions
         /// <returns></returns>
         public bool ExportUninstallers(IEnumerable<ApplicationUninstallerEntry> itemsToExport, string filename)
         {
-            var applicationUninstallerEntries = itemsToExport as IList<ApplicationUninstallerEntry> ?? itemsToExport.ToList();
+            var applicationUninstallerEntries = itemsToExport as IList<ApplicationUninstallerEntry> ??
+                                                itemsToExport.ToList();
             if (applicationUninstallerEntries.Count <= 0)
                 return false;
 
@@ -74,7 +74,7 @@ namespace BulkCrapUninstaller.Functions
 
         private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries)
         {
-            var filters = entries.SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
+            var filters = entries.SelectMany(e => new[] {e.InstallLocation, e.UninstallerLocation})
                 .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
 
             return CheckForRunningProcesses(filters);
@@ -189,11 +189,11 @@ namespace BulkCrapUninstaller.Functions
                     }
 
                     var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallEntries
-                                                 where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
-                                                       || bulkUninstallEntry.CurrentStatus == UninstallStatus.Invalid
-                                                       || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped
-                                                       && !bulkUninstallEntry.UninstallerEntry.RegKeyStillExists())
-                                                 select bulkUninstallEntry.UninstallerEntry;
+                        where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
+                              || bulkUninstallEntry.CurrentStatus == UninstallStatus.Invalid
+                              || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped
+                                  && !bulkUninstallEntry.UninstallerEntry.RegKeyStillExists())
+                        select bulkUninstallEntry.UninstallerEntry;
 
                     SearchForAndRemoveJunk(junkRemoveTargetsQuery, allUninstallers);
 
@@ -255,19 +255,18 @@ namespace BulkCrapUninstaller.Functions
         }
 
         /// <summary>
-        /// Returns true if things were actually removed, false if user cancelled the operation.
+        ///     Returns true if things were actually removed, false if user cancelled the operation.
         /// </summary>
-        /// <param name="junkGetter">Delegate that returns junk items to remove. 
-        /// It will be ran on a separate thread with a progress bar.</param>
+        /// <param name="junkGetter">
+        ///     Delegate that returns junk items to remove.
+        ///     It will be ran on a separate thread with a progress bar.
+        /// </param>
         /// <returns></returns>
         private bool SearchForAndRemoveJunk(Func<IEnumerable<JunkNode>> junkGetter)
         {
             var junk = new List<JunkNode>();
             var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
-                x =>
-                {
-                    junk.AddRange(junkGetter());
-                });
+                x => { junk.AddRange(junkGetter()); });
 
             if (error != null)
             {
@@ -371,7 +370,7 @@ namespace BulkCrapUninstaller.Functions
                     return;
                 }
 
-                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }))
+                if (!CheckForRunningProcessesBeforeUninstall(new[] {selected}))
                     return;
 
                 try
@@ -460,7 +459,7 @@ namespace BulkCrapUninstaller.Functions
         }
 
         /// <summary>
-        /// Attempt to get the lock and display error popup if the process fails.
+        ///     Attempt to get the lock and display error popup if the process fails.
         /// </summary>
         /// <returns>True if lock was succesfully acquired, otherwise false.</returns>
         private bool TryGetUninstallLock()

@@ -2,7 +2,6 @@
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
 using Klocman.IO;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Functions
 {

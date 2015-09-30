@@ -139,6 +139,24 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to getRatings.
+        /// </summary>
+        internal static string DbCommandGetRating {
+            get {
+                return ResourceManager.GetString("DbCommandGetRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sendRating.
+        /// </summary>
+        internal static string DbCommandSetRating {
+            get {
+                return ResourceManager.GetString("DbCommandSetRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sendStats.
         /// </summary>
         internal static string DbCommandStats {
@@ -148,11 +166,37 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;.
+        ///   Looks up a localized string similar to server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;.
         /// </summary>
         internal static string DbConnectionString {
             get {
                 return ResourceManager.GetString("DbConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to server=192.168.100.200;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;.
+        /// </summary>
+        internal static string DbDebugConnectionString {
+            get {
+                return ResourceManager.GetString("DbDebugConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;
+        ///&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;
+        ///  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;user_ratings&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;
+        ///    &lt;xs:complexType&gt;
+        ///      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;
+        ///        &lt;xs:element name=&quot;user_ratings&quot;&gt;
+        ///          &lt;xs:complexType&gt;
+        ///            &lt;xs:sequence&gt;
+        ///              &lt;xs:element name=&quot;applica [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DbRatingSchema {
+            get {
+                return ResourceManager.GetString("DbRatingSchema", resourceCulture);
             }
         }
         
@@ -308,6 +352,16 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap moon_full {
+            get {
+                object obj = ResourceManager.GetObject("moon_full", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap os_windows_8 {
             get {
                 object obj = ResourceManager.GetObject("os.windows.8", resourceCulture);
@@ -321,6 +375,56 @@ namespace BulkCrapUninstaller.Properties {
         internal static System.Drawing.Bitmap page_copy {
             get {
                 object obj = ResourceManager.GetObject("page.copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating1 {
+            get {
+                object obj = ResourceManager.GetObject("rating1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating2 {
+            get {
+                object obj = ResourceManager.GetObject("rating2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating3 {
+            get {
+                object obj = ResourceManager.GetObject("rating3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating4 {
+            get {
+                object obj = ResourceManager.GetObject("rating4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating5 {
+            get {
+                object obj = ResourceManager.GetObject("rating5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -351,6 +455,16 @@ namespace BulkCrapUninstaller.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star {
+            get {
+                object obj = ResourceManager.GetObject("star", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

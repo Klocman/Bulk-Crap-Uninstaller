@@ -2,7 +2,6 @@
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
-using UninstallTools;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
@@ -30,7 +29,7 @@ namespace BulkCrapUninstaller.Functions
             if (entry != null)
             {
                 var result = entry.BundleProviderKey;
-                 if(!result.IsEmpty())
+                if (!result.IsEmpty())
                     return string.Format("{0:B}", result).ToUpper();
             }
             return string.Empty;
@@ -42,7 +41,7 @@ namespace BulkCrapUninstaller.Functions
             if (entry != null)
             {
                 var result = entry.BundleProviderKey;
-                 if(result.Equals(Guid.Empty))
+                if (result.Equals(Guid.Empty))
                     return Localisable.GuidFound;
             }
             return Localisable.GuidMissing;
@@ -77,7 +76,7 @@ namespace BulkCrapUninstaller.Functions
             var applicationUninstallerEntry = x as ApplicationUninstallerEntry;
             if (applicationUninstallerEntry != null)
                 return applicationUninstallerEntry.EstimatedSize.GetRawSize();
-            return (long)0;
+            return (long) 0;
         }
 
         internal static object ColumnUninstallStringGroupKeyGetter(object rowObj)

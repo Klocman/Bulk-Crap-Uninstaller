@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Tools;
@@ -59,38 +58,38 @@ namespace BulkCrapUninstaller.Forms
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"http://objectlistview.sourceforge.net");
+            PremadeDialogs.StartProcessSafely(@"http://objectlistview.sourceforge.net");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(
+            PremadeDialogs.StartProcessSafely(
                 @"http://www.codeproject.com/Articles/20917/Creating-a-Custom-Settings-Provider");
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"https://github.com/Templarian/WindowsIcons/");
+            PremadeDialogs.StartProcessSafely(@"https://github.com/Templarian/WindowsIcons/");
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(Resources.HomepageUrl);
+            PremadeDialogs.StartProcessSafely(Resources.HomepageUrl);
         }
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"https://nbug.codeplex.com/");
+            PremadeDialogs.StartProcessSafely(@"https://nbug.codeplex.com/");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"http://dotnetzip.codeplex.com/");
+            PremadeDialogs.StartProcessSafely(@"http://dotnetzip.codeplex.com/");
         }
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"http://taskscheduler.codeplex.com/");
+            PremadeDialogs.StartProcessSafely(@"http://taskscheduler.codeplex.com/");
         }
     }
 }

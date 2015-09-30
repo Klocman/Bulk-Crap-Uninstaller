@@ -42,7 +42,7 @@ namespace BulkCrapUninstaller.Forms
         public MainWindow()
         {
             InitializeComponent();
-            
+
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
@@ -116,9 +116,10 @@ namespace BulkCrapUninstaller.Forms
             twitterStatusButton1.TargetSite = Resources.HomepageUrl;
 
             // Tracking
-            UsageManager.DataSender = new DatabaseStatSender(Resources.DbConnectionString,
+            UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
-            FormClosed += (x, y) => UsageTrackerSendData(); //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
+            FormClosed += (x, y) => UsageTrackerSendData();
+            //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
 
             // Misc
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
@@ -291,6 +292,12 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe(RefreshList, x => x.FilterShowUpdates, this);
             settings.Subscribe(RefreshList, x => x.FilterShowSystemComponents, this);
             settings.Subscribe(RefreshList, x => x.FilterShowProtected, this);
+
+            settings.Subscribe((sender, args) =>
+            {
+                olvColumnRating.IsVisible = args.NewValue;
+                uninstallerObjectListView.RebuildColumns();
+            }, x => x.MiscUserRatings, this);
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -405,7 +412,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void donateButton_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] { new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52") });
+            OpenUrls(new[]
+            {new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52")});
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -463,8 +471,9 @@ namespace BulkCrapUninstaller.Forms
             //TODO better feedback submit window
             switch (MessageBoxes.AskToSubmitFeedback())
             {
-                    case CustomMessageBox.PressedButton.Left:
-                    PremadeDialogs.ProcessStartSafe(@"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
+                case CustomMessageBox.PressedButton.Left:
+                    PremadeDialogs.StartProcessSafely(
+                        @"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
                     break;
 
                 case CustomMessageBox.PressedButton.Middle:
@@ -654,7 +663,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenSubmitFeedbackWindow(object sender, EventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"http://klocmansoftware.weebly.com/feedback--contact.html");
+            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/feedback--contact.html");
 
             /*if (WindowsTools.IsNetworkAvailable())
             {
@@ -1041,7 +1050,7 @@ namespace BulkCrapUninstaller.Forms
                 UsageManager.FinishCollectingData();
 
                 if (Program.EnableDebug || !WindowsTools.IsNetworkAvailable()) return;
-                
+
                 var count = UsageManager.AppLaunchCount;
 
                 //Reduce frequency of the uploads
@@ -1102,6 +1111,11 @@ namespace BulkCrapUninstaller.Forms
 
                 uninstallerObjectListView.RefreshObject(uninstaller);
             }
+        }
+
+        private void rateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _listView.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
     }
 }

@@ -5,15 +5,14 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
 using Klocman.Forms.Tools;
-using Klocman.Subsystems;
 
 namespace BulkCrapUninstaller.Forms
 {
     public partial class FirstStartBox : Form
     {
         private const int PageCount = 5;
-        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private readonly int _pageWidth;
+        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private int _pageNumber;
         private int _targetXPos;
 
@@ -46,6 +45,7 @@ namespace BulkCrapUninstaller.Forms
             // Network
             _settings.BindControl(checkBoxSendStats, x => x.MiscSendStatistics, this);
             _settings.BindControl(checkBoxUpdateSearch, x => x.MiscCheckForUpdates, this);
+            _settings.BindControl(checkBoxRatings, x => x.MiscUserRatings, this);
 
             comboBoxLanguage.Items.Add(Localisable.DefaultLanguage);
             foreach (var languageCode in CultureConfigurator.SupportedLanguages.OrderBy(x => x.DisplayName))
@@ -112,12 +112,12 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenContactForm(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(Resources.ContactUrl);
+            PremadeDialogs.StartProcessSafely(Resources.ContactUrl);
         }
 
         private void OpenHomepage(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(Resources.HomepageUrl);
+            PremadeDialogs.StartProcessSafely(Resources.HomepageUrl);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

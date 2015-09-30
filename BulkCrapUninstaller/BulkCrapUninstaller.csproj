@@ -94,6 +94,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.7\lib\net20\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectListView.Official.2.8.1\lib\net20\ObjectListView.dll</HintPath>
       <Private>True</Private>
@@ -155,6 +159,12 @@
     <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RatingPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RatingPopup.Designer.cs">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +175,11 @@
     <Compile Include="Functions\ListViewDelegates.cs" />
     <Compile Include="Functions\MessageBoxes.cs" />
     <Compile Include="Functions\Properties.cs" />
+    <Compile Include="Functions\Ratings\RatingRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Functions\Ratings\UninstallerRating.cs" />
+    <Compile Include="Functions\Ratings\UninstallerRatingManager.cs" />
     <Compile Include="Functions\SettingTools.cs" />
     <Compile Include="Functions\SystemRestore.cs" />
     <Compile Include="Functions\Uninstaller.cs" />
@@ -353,6 +368,9 @@
     <EmbeddedResource Include="Controls\PropertiesSidebar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RatingPopup.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsWindow.cs.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -445,6 +463,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\rating5.png" />
+    <None Include="Resources\rating4.png" />
+    <None Include="Resources\rating3.png" />
+    <None Include="Resources\rating1.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\moon.full.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\message.png" />
     <None Include="Resources\checkmark.uncrossed.png" />

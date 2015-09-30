@@ -22,6 +22,20 @@ namespace BulkCrapUninstaller.Functions
 
         public static Form DefaultOwner { get; set; }
 
+        public static void RatingsDisabled()
+        {
+            MessageBox.Show(DefaultOwner,
+                Localisable.MessageBoxes_RatingsDisabled_Message,
+                Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void RatingUnavailable()
+        {
+            MessageBox.Show(DefaultOwner,
+                Localisable.MessageBoxes_RatingUnavailable_Message,
+                Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         internal static CustomMessageBox.PressedButton AskToSubmitFeedback()
         {
             return CustomMessageBox.ShowDialog(DefaultOwner,
@@ -212,7 +226,8 @@ namespace BulkCrapUninstaller.Functions
         {
             if (sourceDirCount <= 0)
             {
-                MessageBox.Show(Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen, Localisable.MessageBoxes_Title_Open_directories,
+                MessageBox.Show(Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen,
+                    Localisable.MessageBoxes_Title_Open_directories,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return false;

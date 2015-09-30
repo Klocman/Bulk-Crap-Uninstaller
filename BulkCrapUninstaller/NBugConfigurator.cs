@@ -3,7 +3,6 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Subsystems.Tracking;
 using Klocman.Tools;
 using NBug;
@@ -57,7 +56,7 @@ namespace BulkCrapUninstaller
 
             public NBugDatabaseSenderWrapper()
             {
-                sender = new DatabaseStatSender(Resources.DbConnectionString,
+                sender = new DatabaseStatSender(Program.DbConnectionString,
                     Resources.DbCommandCrash, Properties.Settings.Default.MiscUserId);
             }
 
