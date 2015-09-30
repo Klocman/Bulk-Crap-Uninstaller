@@ -761,6 +761,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ratings not available.
+        /// </summary>
+        internal static string MessageBoxes_RatingErrorTitle {
+            get {
+                return ResourceManager.GetString("MessageBoxes_RatingErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have to enable ratings from the settings first..
+        /// </summary>
+        internal static string MessageBoxes_RatingsDisabled_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_RatingsDisabled_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can&apos;t rate applications that are not installed properly..
+        /// </summary>
+        internal static string MessageBoxes_RatingUnavailable_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_RatingUnavailable_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember choice.
         /// </summary>
         internal static string MessageBoxes_RememberChoiceCheckbox {
@@ -1273,6 +1300,15 @@ namespace BulkCrapUninstaller.Properties {
         internal static string PropertiesWindow_Table_Value {
             get {
                 return ResourceManager.GetString("PropertiesWindow_Table_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} applications.
+        /// </summary>
+        internal static string RateTitle_Counted {
+            get {
+                return ResourceManager.GetString("RateTitle_Counted", resourceCulture);
             }
         }
         

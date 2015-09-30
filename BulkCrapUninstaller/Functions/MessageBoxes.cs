@@ -22,11 +22,18 @@ namespace BulkCrapUninstaller.Functions
 
         public static Form DefaultOwner { get; set; }
 
-        public static void RatingsUnavailableWarning()
+        public static void RatingsDisabled()
         {
             MessageBox.Show(DefaultOwner,
-                "Ratings can't be used with applications that are not installed properly.",
-                "Rate an application", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Localisable.MessageBoxes_RatingsDisabled_Message,
+                Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void RatingUnavailable()
+        {
+            MessageBox.Show(DefaultOwner,
+                Localisable.MessageBoxes_RatingUnavailable_Message,
+                Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         internal static CustomMessageBox.PressedButton AskToSubmitFeedback()

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
-using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Forms;
@@ -80,7 +79,7 @@ namespace BulkCrapUninstaller.Forms
 
                 if (y.Value == y.Maximum)
                     result = string.Empty;
-                else if ((y.Value - 1)%7 == 0)
+                else if ((y.Value - 1) % 7 == 0)
                     result = string.Format(Localisable.MainWindow_Statusbar_ProcessingUninstallers,
                         y.Value, y.Maximum);
 
@@ -120,7 +119,7 @@ namespace BulkCrapUninstaller.Forms
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
             FormClosed += (x, y) => UsageTrackerSendData();
-                //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
+            //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
 
             // Misc
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
@@ -293,6 +292,12 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe(RefreshList, x => x.FilterShowUpdates, this);
             settings.Subscribe(RefreshList, x => x.FilterShowSystemComponents, this);
             settings.Subscribe(RefreshList, x => x.FilterShowProtected, this);
+
+            settings.Subscribe((sender, args) =>
+            {
+                olvColumnRating.IsVisible = args.NewValue;
+                uninstallerObjectListView.RebuildColumns();
+            }, x => x.MiscUserRatings, this);
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -314,7 +319,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void cleanUpTheSystemCCleanerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] {new Uri(@"https://www.piriform.com/ccleaner", UriKind.Absolute)});
+            OpenUrls(new[] { new Uri(@"https://www.piriform.com/ccleaner", UriKind.Absolute) });
         }
 
         private void ClipboardCopyFullInformation(object x, EventArgs y)
@@ -513,7 +518,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 ResumeLayout();
             }
-                // BUG Can throw on some systems, not sure what is causing it
+            // BUG Can throw on some systems, not sure what is causing it
             catch (ObjectDisposedException)
             {
                 Application.DoEvents();
@@ -715,7 +720,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void removeMalwareSpyBotToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] {new Uri(@"https://www.safer-networking.org/", UriKind.Absolute)});
+            OpenUrls(new[] { new Uri(@"https://www.safer-networking.org/", UriKind.Absolute) });
         }
 
         private void RenameEntries(object sender, EventArgs eventArgs)
@@ -977,7 +982,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void updateApplicationsNiniteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[] {new Uri(@"https://ninite.com/", UriKind.Absolute)});
+            OpenUrls(new[] { new Uri(@"https://ninite.com/", UriKind.Absolute) });
         }
 
         private void UpdateUninstallListContextMenuStrip(object sender, CancelEventArgs e)
@@ -1049,7 +1054,7 @@ namespace BulkCrapUninstaller.Forms
                 var count = UsageManager.AppLaunchCount;
 
                 //Reduce frequency of the uploads
-                if (count != 2 && (count <= 0 || count%5 != 0)) return;
+                if (count != 2 && (count <= 0 || count % 5 != 0)) return;
 
                 try
                 {
@@ -1110,20 +1115,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var selection = _listView.SelectedUninstallers.Where(x => !string.IsNullOrEmpty(x.RegistryKeyName)).ToList();
-
-            if (!selection.Any())
-            {
-                MessageBoxes.RatingsUnavailableWarning();
-                return;
-            }
-
-            var result = RatingPopup.ShowRateDialog(this, selection.Count + " items");
-
-            if (result == UninstallerRating.Unknown)
-                return;
-
-            _listView.SetRatings(selection, result);
+            _listView.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
     }
 }

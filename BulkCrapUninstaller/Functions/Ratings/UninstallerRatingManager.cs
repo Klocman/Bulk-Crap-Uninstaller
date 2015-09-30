@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text;
 using BulkCrapUninstaller.Properties;
+using Klocman.Extensions;
 using MySql.Data.MySqlClient;
 
 namespace BulkCrapUninstaller.Functions.Ratings
 {
     public class UninstallerRatingManager : IDisposable
     {
+        //public DateTime LastCasheFetchTime { get; private set; }
+
+        /// <summary>
+        ///     Always lock before locking _ratingsToSend
+        /// </summary>
         private readonly object _casheLock = new object();
 
         private readonly Dictionary<string, UninstallerRating> _ratingsToSend =
@@ -20,9 +27,15 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public UninstallerRatingManager(long userId)
         {
             UserId = userId;
+
+            _cashe = new DataTable();
+            using (var reader = new StringReader(Resources.DbRatingSchema))
+                _cashe.ReadXmlSchema(reader);
         }
 
         private long UserId { get; }
+
+        public int RatingCount => _cashe == null ? 0 : _cashe.Rows.Count;
 
         public IEnumerable<RatingEntry> Items
         {
@@ -32,22 +45,19 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     return Enumerable.Empty<RatingEntry>();
 
                 return from DataRow row in _cashe.Rows
-                    select ToRatingEntry(row);
+                       select ToRatingEntry(row);
             }
         }
 
         public void Dispose()
         {
+            lock (_casheLock)
+                _cashe?.Dispose();
             lock (_ratingsToSend)
-            {
-                SendRatings();
-                lock (_casheLock)
-                    _cashe?.Dispose();
                 _ratingsToSend.Clear();
-            }
         }
 
-        public void RefreshStats()
+        public void FetchRatings()
         {
             using (var connection = new MySqlConnection(Program.DbConnectionString))
             {
@@ -64,11 +74,25 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 {
                     _cashe?.Dispose();
                     _cashe = dt;
+
+                    // Reapply any pending user ratings to the new datatable
+                    lock (_ratingsToSend)
+                    {
+                        foreach (var rating in _ratingsToSend)
+                        {
+                            var stored = GetCasheEntry(rating.Key);
+                            var newRating = (int)rating.Value;
+                            if (stored != null)
+                                stored[2] = newRating;
+                            else
+                                _cashe.Rows.Add(rating.Key, newRating, newRating);
+                        }
+                    }
                 }
             }
         }
 
-        public void SendRatings()
+        public void UploadRatings()
         {
             using (var connection = new MySqlConnection(Program.DbConnectionString))
             {
@@ -78,6 +102,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
                 command.Parameters.AddWithValue("@appParam", string.Empty);
                 command.Parameters.AddWithValue("@rating", 0);
+
                 connection.Open();
 
                 lock (_ratingsToSend)
@@ -85,10 +110,12 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     foreach (var uninstallerRating in _ratingsToSend)
                     {
                         command.Parameters["@appParam"].Value = uninstallerRating.Key;
-                        command.Parameters["@rating"].Value = (int) uninstallerRating.Value;
+                        command.Parameters["@rating"].Value = (int)uninstallerRating.Value;
 
                         command.ExecuteNonQuery();
                     }
+
+                    _ratingsToSend.Clear();
                 }
             }
         }
@@ -113,7 +140,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             lock (_casheLock)
             {
                 var stored = GetCasheEntry(appKey);
-                var newRating = (int) rating;
+                var newRating = (int)rating;
                 if (stored != null)
                     stored[2] = newRating;
                 else
@@ -134,8 +161,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return new RatingEntry
             {
                 ApplicationName = row[0] as string,
-                AverageRating = row.IsNull(1) ? (int?) null : Convert.ToInt32(row[1]),
-                MyRating = row.IsNull(2) ? (int?) null : Convert.ToInt32(row[2])
+                AverageRating = row.IsNull(1) ? (int?)null : Convert.ToInt32(row[1]),
+                MyRating = row.IsNull(2) ? (int?)null : Convert.ToInt32(row[2])
             };
         }
 
@@ -148,31 +175,63 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public void SerializeCashe(string fileName)
         {
             lock (_casheLock)
-            {
-                File.Delete(fileName);
-                _cashe.WriteXml(fileName);
-            }
+                lock (_ratingsToSend)
+                {
+                    File.Delete(fileName);
+                    _cashe.WriteXml(fileName);
+
+                    var sendCasheName = fileName + ".out";
+                    File.Delete(sendCasheName);
+                    if (_ratingsToSend.Any())
+                    {
+                        using (var writer = new StringWriter())
+                        {
+                            _ratingsToSend.Serialize(writer);
+                            File.WriteAllText(sendCasheName, writer.GetStringBuilder().ToString(), Encoding.Unicode);
+                        }
+                    }
+                }
+        }
+
+        public void DeleteCashe(string fileName)
+        {
+            File.Delete(fileName);
+            var sendCasheName = fileName + ".out";
+            File.Delete(sendCasheName);
         }
 
         public void DeserializeCashe(string fileName)
         {
             lock (_casheLock)
-            {
-                _cashe?.Dispose();
-                _cashe = new DataTable();
+                lock (_ratingsToSend)
+                {
+                    if (File.Exists(fileName))
+                    {
+                        _cashe?.Dispose();
+                        _cashe = new DataTable();
 
-                using (var reader = new StringReader(Resources.DbRatingSchema))
-                    _cashe.ReadXmlSchema(reader);
+                        using (var reader = new StringReader(Resources.DbRatingSchema))
+                            _cashe.ReadXmlSchema(reader);
 
-                _cashe.ReadXml(fileName);
-            }
+                        _cashe.ReadXml(fileName);
+                    }
+
+                    var sendCasheName = fileName + ".out";
+                    if (File.Exists(sendCasheName))
+                    {
+                        using (var reader = new StringReader(File.ReadAllText(sendCasheName, Encoding.Unicode)))
+                        {
+                            _ratingsToSend.Deserialize(reader);
+                        }
+                    }
+                }
         }
 
         public static UninstallerRating ToRating(int val)
         {
-            if (val <= ((int) UninstallerRating.Bad + (int) UninstallerRating.Neutral)/2)
+            if (val <= ((int)UninstallerRating.Bad + (int)UninstallerRating.Neutral) / 2)
                 return UninstallerRating.Bad;
-            if (val >= ((int) UninstallerRating.Good + (int) UninstallerRating.Neutral)/2)
+            if (val >= ((int)UninstallerRating.Good + (int)UninstallerRating.Neutral) / 2)
                 return UninstallerRating.Good;
 
             return UninstallerRating.Neutral;
@@ -203,8 +262,16 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
             public override bool Equals(object obj)
             {
-                return obj is RatingEntry && Equals((RatingEntry) obj);
+                return obj is RatingEntry && Equals((RatingEntry)obj);
             }
+        }
+
+        public void ClearRatings()
+        {
+            lock (_cashe)
+                _cashe.Rows.Clear();
+            lock (_ratingsToSend)
+                _ratingsToSend.Clear();
         }
     }
 }

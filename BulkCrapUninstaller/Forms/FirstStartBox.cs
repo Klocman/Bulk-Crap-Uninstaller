@@ -45,6 +45,7 @@ namespace BulkCrapUninstaller.Forms
             // Network
             _settings.BindControl(checkBoxSendStats, x => x.MiscSendStatistics, this);
             _settings.BindControl(checkBoxUpdateSearch, x => x.MiscCheckForUpdates, this);
+            _settings.BindControl(checkBoxRatings, x => x.MiscUserRatings, this);
 
             comboBoxLanguage.Items.Add(Localisable.DefaultLanguage);
             foreach (var languageCode in CultureConfigurator.SupportedLanguages.OrderBy(x => x.DisplayName))

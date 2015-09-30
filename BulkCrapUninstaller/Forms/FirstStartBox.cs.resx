@@ -546,8 +546,4 @@ Upozornění: Ověření může trvat delší dobu.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Vítejte v BCUninstaller</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ulk crap
-uninstaller</value>
-  </data>
 </root>

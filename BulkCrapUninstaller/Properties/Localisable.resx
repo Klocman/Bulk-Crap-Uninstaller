@@ -603,4 +603,17 @@ The lists are separated by a single newline.</comment>
     <value>Not available</value>
     <comment>Used on application list when value is not available</comment>
   </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Ratings not available</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>You have to enable ratings from the settings first.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>You can't rate applications that are not installed properly.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} applications</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
 </root>
