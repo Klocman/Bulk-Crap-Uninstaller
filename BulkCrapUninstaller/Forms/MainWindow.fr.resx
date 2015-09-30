@@ -912,4 +912,13 @@ dans une liste...</value>
   <data name="label1.Text" xml:space="preserve">
     <value>BCUninstaller</value>
   </data>
+  <data name="olvColumnRating.Text" xml:space="preserve">
+    <value>Benutzer-Bewertung</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Passez en revue...</value>
+  </data>
+  <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Passez en revue...</value>
+  </data>
 </root>

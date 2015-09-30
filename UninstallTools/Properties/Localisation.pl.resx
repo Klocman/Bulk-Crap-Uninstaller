@@ -415,4 +415,7 @@
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>Browser Helper Object</value>
   </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Nieprawidłowy lub nieznany klucz startowy:</value>
+  </data>
 </root>

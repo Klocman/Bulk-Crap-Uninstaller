@@ -1388,4 +1388,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>BCUninstaller</value>
   </data>
+  <data name="olvColumnRating.Text" xml:space="preserve">
+    <value>Note de l'utilisateur</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bewerten...</value>
+  </data>
+  <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Bewerten...</value>
+  </data>
 </root>

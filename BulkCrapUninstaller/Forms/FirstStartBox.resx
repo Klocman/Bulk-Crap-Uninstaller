@@ -901,7 +901,7 @@
     <value>13</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
-    <value>Enable user application ratings</value>
+    <value>Enable user ratings of applications</value>
   </data>
   <data name="&gt;&gt;checkBoxRatings.Name" xml:space="preserve">
     <value>checkBoxRatings</value>

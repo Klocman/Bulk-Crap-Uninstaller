@@ -261,4 +261,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Automatiquement liste ouverte "Default.xml" au démarrage</value>
   </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Activer notes des utilisateurs d'applications</value>
+  </data>
 </root>

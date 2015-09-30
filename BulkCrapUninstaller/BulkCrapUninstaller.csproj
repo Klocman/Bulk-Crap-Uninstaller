@@ -368,6 +368,18 @@
     <EmbeddedResource Include="Controls\PropertiesSidebar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RatingPopup.cs.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RatingPopup.de.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RatingPopup.fr.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RatingPopup.pl.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RatingPopup.resx">
       <DependentUpon>RatingPopup.cs</DependentUpon>
     </EmbeddedResource>

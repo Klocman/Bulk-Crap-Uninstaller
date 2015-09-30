@@ -261,4 +261,7 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Automatisch offene Liste "Default.xml" beim Start</value>
   </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Aktivieren nutzerbewertungen von Applikationen</value>
+  </data>
 </root>

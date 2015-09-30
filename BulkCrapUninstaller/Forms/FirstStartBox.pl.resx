@@ -607,4 +607,10 @@ uninstaller</value>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>Więcej ustawień</value>
   </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Aby pobrać i wysłać oceny aplikacji</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Włącz oceny użytkowników dla aplikacji</value>
+  </data>
 </root>

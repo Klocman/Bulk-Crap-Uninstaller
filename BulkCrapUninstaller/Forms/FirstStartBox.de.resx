@@ -627,4 +627,10 @@ uninstaller</value>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>Weitere Einstellungen</value>
   </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Um abzurufen und laden Sie Anwendungs Wertungen</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Aktivieren nutzerbewertungen von Applikationen</value>
+  </data>
 </root>

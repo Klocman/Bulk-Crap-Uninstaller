@@ -41,8 +41,8 @@
             // 
             // buttonGood
             // 
-            this.buttonGood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.buttonGood, "buttonGood");
+            this.buttonGood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonGood.ForeColor = System.Drawing.Color.Black;
             this.buttonGood.Name = "buttonGood";
             this.buttonGood.UseVisualStyleBackColor = false;
@@ -50,8 +50,8 @@
             // 
             // buttonBad
             // 
-            this.buttonBad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.buttonBad, "buttonBad");
+            this.buttonBad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonBad.ForeColor = System.Drawing.Color.Black;
             this.buttonBad.Name = "buttonBad";
             this.buttonBad.UseVisualStyleBackColor = false;
@@ -66,17 +66,17 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.buttonBad);
             this.groupBox1.Controls.Add(this.buttonNormal);
             this.groupBox1.Controls.Add(this.buttonGood);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // buttonNormal
             // 
-            this.buttonNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.buttonNormal, "buttonNormal");
+            this.buttonNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonNormal.ForeColor = System.Drawing.Color.Black;
             this.buttonNormal.Name = "buttonNormal";
             this.buttonNormal.UseVisualStyleBackColor = false;
@@ -84,8 +84,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonCancel);
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Name = "panel1";
             // 
             // RatingPopup

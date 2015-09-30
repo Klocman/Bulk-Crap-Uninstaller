@@ -599,4 +599,21 @@ The lists are separated by a single newline.</comment>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>Aucun dossier à ouvrir</value>
   </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <comment>Used on application list when value is not available</comment>
+    <value>Indisponible</value>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Avis non disponible</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Vous devez activer le cotes des paramètres en premier.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Vous ne pouvez pas noter les applications qui ne sont pas installés correctement.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+    <value>{0} applications</value>
+  </data>
 </root>

@@ -622,4 +622,10 @@ uninstaller</value>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>Plus de réglages</value>
   </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Pour chercher et télécharger des cotes d'application</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Activer notes des utilisateurs d'applications</value>
+  </data>
 </root>

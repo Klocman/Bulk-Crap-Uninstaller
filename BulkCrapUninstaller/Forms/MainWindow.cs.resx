@@ -1448,4 +1448,13 @@
   <data name="olvColumnIs64.Text" xml:space="preserve">
     <value>64bit</value>
   </data>
+  <data name="olvColumnRating.Text" xml:space="preserve">
+    <value>Hodnocení uživatele</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hodnotit...</value>
+  </data>
+  <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Hodnotit...</value>
+  </data>
 </root>
