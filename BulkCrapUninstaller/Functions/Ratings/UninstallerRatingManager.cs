@@ -239,6 +239,14 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public struct RatingEntry : IEquatable<RatingEntry>
         {
+            public override int GetHashCode()
+            {
+                unchecked
+                {
+                    return (AverageRating.GetHashCode()*397) ^ MyRating.GetHashCode();
+                }
+            }
+
             public string ApplicationName { get; set; }
             public int? AverageRating { get; set; }
             public int? MyRating { get; set; }
@@ -254,15 +262,13 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
             public bool Equals(RatingEntry other)
             {
-                return AverageRating == other.AverageRating
-                       && MyRating == other.MyRating
-                       && ApplicationName != null
-                       && ApplicationName.Equals(other.ApplicationName);
+                return AverageRating == other.AverageRating && MyRating == other.MyRating;
             }
 
             public override bool Equals(object obj)
             {
-                return obj is RatingEntry && Equals((RatingEntry)obj);
+                if (ReferenceEquals(null, obj)) return false;
+                return obj is RatingEntry && Equals((RatingEntry) obj);
             }
         }
 

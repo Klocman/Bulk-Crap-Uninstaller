@@ -96,8 +96,8 @@ namespace BulkCrapUninstaller.Functions
             // Prevent the thread from accessing disposed resources before getting aborted.
             _reference.FormClosed += (x, y) => StopProcessingThread(false);
 
-            _settings.Subscribe((sender, args) => ProcessRatingsInitialize(), x=>x.MiscUserRatings, this);
-            //ProcessRatingsInitialize();
+            _settings.Subscribe((sender, args) => ProcessRatingsInitialize(), x => x.MiscUserRatings, this);
+            //ProcessRatingsInitialize(); Is always called once at the start by the above
         }
 
         private void ProcessRatingsFinalize()
@@ -109,6 +109,13 @@ namespace BulkCrapUninstaller.Functions
                     try
                     {
                         _ratingManager.UploadRatings();
+                    }
+                    catch
+                    {
+                        //TODO: Handle this better?
+                    }
+                    try
+                    {
                         _ratingManager.SerializeCashe(RatingCacheFilename);
                     }
                     catch
@@ -144,6 +151,14 @@ namespace BulkCrapUninstaller.Functions
                     }
                     catch (Exception ex)
                     {
+                        try
+                        {
+                            _ratingManager.DeleteCashe(RatingCacheFilename);
+                        }
+                        catch
+                        {
+                            //TODO: Handle this better?
+                        }
                         PremadeDialogs.GenericError(ex);
                     }
 
@@ -153,9 +168,9 @@ namespace BulkCrapUninstaller.Functions
                         {
                             _ratingManager.FetchRatings();
                         }
-                        catch (Exception ex)
+                        catch //(Exception ex)
                         {
-                            PremadeDialogs.GenericError(ex);
+                            //PremadeDialogs.GenericError(ex);
                         }
                     }
                 })

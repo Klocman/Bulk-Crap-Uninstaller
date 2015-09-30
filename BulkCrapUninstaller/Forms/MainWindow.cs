@@ -472,7 +472,7 @@ namespace BulkCrapUninstaller.Forms
             switch (MessageBoxes.AskToSubmitFeedback())
             {
                 case CustomMessageBox.PressedButton.Left:
-                    PremadeDialogs.ProcessStartSafe(
+                    PremadeDialogs.StartProcessSafely(
                         @"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
                     break;
 
@@ -663,7 +663,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenSubmitFeedbackWindow(object sender, EventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(@"http://klocmansoftware.weebly.com/feedback--contact.html");
+            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/feedback--contact.html");
 
             /*if (WindowsTools.IsNetworkAvailable())
             {

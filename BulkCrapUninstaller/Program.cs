@@ -28,8 +28,8 @@ namespace BulkCrapUninstaller
             {
                 if (string.IsNullOrEmpty(_applicationGuid))
                 {
-                    var assembly = typeof (Program).Assembly;
-                    var attribute = (GuidAttribute) assembly.GetCustomAttributes(typeof (GuidAttribute), true)[0];
+                    var assembly = typeof(Program).Assembly;
+                    var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
                     _applicationGuid = attribute.Value;
                 }
                 return _applicationGuid;
@@ -42,7 +42,7 @@ namespace BulkCrapUninstaller
             {
                 if (_assemblyLocation == null)
                 {
-                    var location = Assembly.GetAssembly(typeof (Program)).Location;
+                    var location = Assembly.GetAssembly(typeof(Program)).Location;
                     if (location.Substring(location.LastIndexOf('\\')).Contains('.'))
                         location = PathTools.GetDirectory(location);
                     _assemblyLocation = new DirectoryInfo(location);
@@ -63,8 +63,7 @@ namespace BulkCrapUninstaller
             get
             {
                 return _dbConnectionString ??
-                       (_dbConnectionString =
-                           EnableDebug ? Resources.DbDebugConnectionString : Resources.DbConnectionString);
+                    (_dbConnectionString = EnableDebug ? Resources.DbDebugConnectionString : Resources.DbConnectionString);
             }
             set { _dbConnectionString = value; }
         }

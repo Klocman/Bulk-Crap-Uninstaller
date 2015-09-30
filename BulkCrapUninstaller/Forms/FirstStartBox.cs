@@ -112,12 +112,12 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenContactForm(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(Resources.ContactUrl);
+            PremadeDialogs.StartProcessSafely(Resources.ContactUrl);
         }
 
         private void OpenHomepage(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.ProcessStartSafe(Resources.HomepageUrl);
+            PremadeDialogs.StartProcessSafely(Resources.HomepageUrl);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

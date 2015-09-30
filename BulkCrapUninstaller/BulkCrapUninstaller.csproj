@@ -466,7 +466,6 @@
     <None Include="Resources\rating5.png" />
     <None Include="Resources\rating4.png" />
     <None Include="Resources\rating3.png" />
-    <None Include="Resources\rating2.png" />
     <None Include="Resources\rating1.png" />
     <None Include="Resources\star.png" />
     <None Include="Resources\moon.full.png" />
