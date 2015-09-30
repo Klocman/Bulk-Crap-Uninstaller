@@ -681,7 +681,7 @@ namespace BulkCrapUninstaller.Functions
 
             _reference.uninstallerObjectListView.CellClick += (x, y) =>
             {
-                if (y.Column == null || !y.Column.Equals(_reference.olvColumnRating))
+                if (y.Column == null || (y.ModifierKeys != Keys.None) || !y.Column.Equals(_reference.olvColumnRating))
                     return;
 
                 var model = y.Model as ApplicationUninstallerEntry;
