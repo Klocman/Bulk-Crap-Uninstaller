@@ -47,6 +47,7 @@ namespace UninstallTools.Startup.Normal
 
             using (var regDisKey = RegistryTools.CreateSubKeyRecursively(RegistryDisabledKey.Path))
             {
+                var badLocations = new List<string>();
                 foreach (var subKeyName in regDisKey.GetSubKeyNames())
                 {
                     using (var subKey = regDisKey.OpenSubKey(subKeyName))
@@ -63,18 +64,22 @@ namespace UninstallTools.Startup.Normal
 
                         var location = Path.Combine(RegistryTools.GetKeyRoot(hkey, true), key);
 
-                        if (string.IsNullOrEmpty(location?.Trim()))
+                        if (string.IsNullOrEmpty(location.Trim()))
                             continue;
 
                         var runLocation = StartupEntryFactory.RunLocations
                             .FirstOrDefault(x => PathTools.PathsEqual(location, x.Path));
 
                         if (runLocation == null)
-                            throw new InvalidDataException("Invalid or unknown startup registry key: " + location);
-
-                        yield return new StartupEntry(runLocation, item, command) { DisabledStore = true };
+                            badLocations.Add(location);
+                        else
+                            yield return new StartupEntry(runLocation, item, command) { DisabledStore = true };
                     }
                 }
+
+                if(badLocations.Any())
+                    throw new InvalidDataException(Localisation.Error_InvalidRegKeys + "\n"
+                        + string.Join("\n", badLocations.Distinct().OrderBy(x=>x).ToArray()));
             }
 
             using (var hddDisKey = RegistryTools.CreateSubKeyRecursively(DriveDisabledKey.Path))

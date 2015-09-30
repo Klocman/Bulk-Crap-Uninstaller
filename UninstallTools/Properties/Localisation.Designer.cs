@@ -340,6 +340,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid or unknown startup registry key(s):.
+        /// </summary>
+        internal static string Error_InvalidRegKeys {
+            get {
+                return ResourceManager.GetString("Error_InvalidRegKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estimated size.
         /// </summary>
         internal static string EstimatedSize {
@@ -835,7 +844,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value can&apos;t contain newlines.
+        ///   Looks up a localized string similar to Value cannot contain newlines.
         /// </summary>
         internal static string UninstallListItem_NewLineInValue {
             get {
@@ -844,7 +853,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value can&apos;t be null or empty.
+        ///   Looks up a localized string similar to Value cannot be null or empty.
         /// </summary>
         internal static string UninstallListItem_ValueEmpty {
             get {

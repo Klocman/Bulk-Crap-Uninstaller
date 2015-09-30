@@ -415,4 +415,7 @@
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>Value cannot contain newlines</value>
   </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Invalid or unknown startup registry key(s):</value>
+  </data>
 </root>
