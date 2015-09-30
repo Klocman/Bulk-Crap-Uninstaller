@@ -590,5 +590,29 @@ namespace BulkCrapUninstaller.Properties {
                 this["MiscUserRatings"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1990-01-01")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public global::System.DateTime MiscRatingCacheDate {
+            get {
+                return ((global::System.DateTime)(this["MiscRatingCacheDate"]));
+            }
+            set {
+                this["MiscRatingCacheDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("02:00:00")]
+        public global::System.TimeSpan _CacheUpdateRate {
+            get {
+                return ((global::System.TimeSpan)(this["_CacheUpdateRate"]));
+            }
+        }
     }
 }
