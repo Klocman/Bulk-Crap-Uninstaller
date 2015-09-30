@@ -392,16 +392,6 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rating2 {
-            get {
-                object obj = ResourceManager.GetObject("rating2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap rating3 {
             get {
                 object obj = ResourceManager.GetObject("rating3", resourceCulture);
