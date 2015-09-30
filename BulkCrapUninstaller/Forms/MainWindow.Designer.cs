@@ -331,7 +331,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // olvColumnRating
             // 
-            this.olvColumnRating.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.olvColumnRating.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.olvColumnRating.IsEditable = false;
             this.olvColumnRating.Searchable = false;
             resources.ApplyResources(this.olvColumnRating, "olvColumnRating");

@@ -47,7 +47,7 @@ namespace BulkCrapUninstaller.Forms
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
             BindControlsToSettings();
-
+            
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
             Opacity = 0;
