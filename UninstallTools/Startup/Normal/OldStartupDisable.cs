@@ -62,7 +62,7 @@ namespace UninstallTools.Startup.Normal
                             || string.IsNullOrEmpty(item) || string.IsNullOrEmpty(command))
                             continue;
 
-                        var location = Path.Combine(RegistryTools.GetKeyRoot(hkey, true), key);
+                        var location = Path.Combine(RegistryTools.GetKeyRoot(hkey, false), key);
 
                         if (string.IsNullOrEmpty(location.Trim()))
                             continue;
