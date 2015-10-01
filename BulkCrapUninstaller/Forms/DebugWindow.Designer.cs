@@ -59,6 +59,7 @@ namespace BulkCrapUninstaller.Forms
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -314,6 +315,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Controls.Add(this.button8);
+            this.flowLayoutPanel1.Controls.Add(this.button9);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -404,6 +406,18 @@ namespace BulkCrapUninstaller.Forms
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.AutoSize = true;
+            this.button9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button9.Location = new System.Drawing.Point(244, 32);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(65, 23);
+            this.button9.TabIndex = 11;
+            this.button9.Text = "Soft crash";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.SoftCrash);
+            // 
             // DebugWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,5 +479,6 @@ namespace BulkCrapUninstaller.Forms
         private Button button6;
         private Button button7;
         private Button button8;
+        private Button button9;
     }
 }

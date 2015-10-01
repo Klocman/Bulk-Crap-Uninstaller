@@ -35,7 +35,7 @@ namespace BulkCrapUninstaller.Forms
             checkBoxDebug.Checked = Settings.Default.Debug;
 
             var messageboxes =
-                typeof (MessageBoxes).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+                typeof(MessageBoxes).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
             foreach (var x in messageboxes)
             {
                 var wr = new ComboBoxWrapper<MethodInfo>(x, y =>
@@ -110,29 +110,29 @@ namespace BulkCrapUninstaller.Forms
                 var methodInfo = wrapper.WrappedObject;
                 var parameters = methodInfo.GetParameters();
                 if (parameters.Length == 0)
-                    methodInfo.Invoke(null, new object[] {});
+                    methodInfo.Invoke(null, new object[] { });
                 else
                 {
                     var first = parameters.First();
                     if (first.ParameterType.IsArray)
                     {
-                        methodInfo.Invoke(null, new object[] {textBoxMessages.Lines});
+                        methodInfo.Invoke(null, new object[] { textBoxMessages.Lines });
                     }
-                    else if (first.ParameterType == typeof (int))
+                    else if (first.ParameterType == typeof(int))
                     {
-                        methodInfo.Invoke(null, new object[] {(int) numericUpDownMessages.Value});
+                        methodInfo.Invoke(null, new object[] { (int)numericUpDownMessages.Value });
                     }
-                    else if (first.ParameterType == typeof (Form))
+                    else if (first.ParameterType == typeof(Form))
                     {
-                        methodInfo.Invoke(null, new object[] {_reference});
+                        methodInfo.Invoke(null, new object[] { _reference });
                     }
-                    else if (first.ParameterType == typeof (Exception))
+                    else if (first.ParameterType == typeof(Exception))
                     {
-                        methodInfo.Invoke(null, new object[] {new Exception(textBoxMessages.Text)});
+                        methodInfo.Invoke(null, new object[] { new Exception(textBoxMessages.Text) });
                     }
                     else
                     {
-                        methodInfo.Invoke(null, new object[] {textBoxMessages.Text});
+                        methodInfo.Invoke(null, new object[] { textBoxMessages.Text });
                     }
                 }
             }
@@ -172,6 +172,16 @@ namespace BulkCrapUninstaller.Forms
         {
             MessageBox.Show(string.Join(Environment.NewLine,
                 _reference.globalHotkeys1.GetHotkeyList().Select(x => x.ToString()).ToArray()));
+        }
+
+        private void SoftCrash(object sender, EventArgs e)
+        {
+            try
+            {
+                throw new ArithmeticException("Soft crash test", new IndexOutOfRangeException("Yer a bit bored, eh?"));
+            }
+            catch (Exception ex)
+            { PremadeDialogs.GenericError(ex); }
         }
     }
 }
