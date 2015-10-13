@@ -148,7 +148,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -220,7 +220,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -313,7 +313,7 @@
     <value>listLegend1</value>
   </data>
   <data name="&gt;&gt;listLegend1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;listLegend1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -616,6 +616,18 @@
   </data>
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Invert selection</value>
+  </data>
+  <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 29</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
+    <value>Find by window...</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
@@ -1281,6 +1293,12 @@
   </data>
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 6</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Find by window...</value>
   </data>
   <data name="searchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2078,6 +2096,18 @@
   <data name="&gt;&gt;toolStripButtonSelInv.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
+    <value>toolStripSeparator23</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonWindowSearcher.Name" xml:space="preserve">
+    <value>toolStripButtonWindowSearcher</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonWindowSearcher.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
     <value>toolStripSeparator21</value>
   </data>
@@ -2130,13 +2160,13 @@
     <value>facebookStatusButton1</value>
   </data>
   <data name="&gt;&gt;facebookStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Name" xml:space="preserve">
     <value>twitterStatusButton1</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
     <value>donateButton</value>
@@ -2766,13 +2796,19 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Name" xml:space="preserve">
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;findByWindowToolStripMenuItem.Name" xml:space="preserve">
+    <value>findByWindowToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findByWindowToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
