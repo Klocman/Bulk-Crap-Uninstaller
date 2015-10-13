@@ -157,7 +157,8 @@ namespace BulkCrapUninstaller.Forms
 
                 _listView.Dispose();
             }
-            base.Dispose(disposing);
+            try { base.Dispose(disposing); }
+            catch (InvalidOperationException) { }
         }
 
         private void SearchCriteriaChanged(object sender, EventArgs e)
