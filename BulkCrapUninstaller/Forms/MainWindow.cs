@@ -1119,7 +1119,7 @@ namespace BulkCrapUninstaller.Forms
             _listView.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
 
-        private void toolStripButtonWindowSearcher_Click(object sender, EventArgs e)
+        private void OpenWindowSearcher(object sender, EventArgs e)
         {
             var result = WindowTargeterDialog.ShowDialog(this, true);
             var process = result?.GetRunningProcess();
@@ -1129,8 +1129,8 @@ namespace BulkCrapUninstaller.Forms
             var results = Uninstaller.GetApplicationsFromProcess(_listView.AllUninstallers, process)
                 .Select(x=>x.DisplayName).Distinct().OrderBy(x=>x).ToList();
 
-            if(results.Any())
-                filterEditor1.Search(string.Join("|", results.Select(Regex.Escape).ToArray()), FilterComparisonMethod.Regex);
+            filterEditor1.Search(results.Any() ? string.Join("|", results.Select(Regex.Escape).ToArray()) : @"a^",
+                FilterComparisonMethod.Regex);
 
             //MessageBox.Show(process.MainWindowTitle);
         }

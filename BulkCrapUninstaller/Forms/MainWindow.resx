@@ -2438,6 +2438,12 @@
   <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;findByWindowToolStripMenuItem.Name" xml:space="preserve">
+    <value>findByWindowToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findByWindowToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;searchToolStripMenuItem.Name" xml:space="preserve">
     <value>searchToolStripMenuItem</value>
   </data>
@@ -2803,12 +2809,6 @@
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
     <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;findByWindowToolStripMenuItem.Name" xml:space="preserve">
-    <value>findByWindowToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;findByWindowToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
