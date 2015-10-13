@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.cs.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisation.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.sl.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup\Browser\BrowserEntryFactory.cs" />
     <Compile Include="Startup\Browser\BrowserHelperEntry.cs" />
     <Compile Include="Startup\Normal\IStartupDisable.cs" />
@@ -251,7 +256,10 @@
     <EmbeddedResource Include="Dialogs\UninstallListSaveDialog.sl.resx">
       <DependentUpon>UninstallListSaveDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.sl.resx" />
+    <EmbeddedResource Include="Properties\Localisation.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.sl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.cs.Designer.cs</LastGenOutput>

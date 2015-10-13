@@ -231,6 +231,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisable.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisable.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisable.sl.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -439,7 +444,10 @@
     <EmbeddedResource Include="Forms\UninstallProgressWindow.sl.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.sl.resx" />
+    <EmbeddedResource Include="Properties\Localisable.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisable.sl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisable.cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisable.cs.Designer.cs</LastGenOutput>
