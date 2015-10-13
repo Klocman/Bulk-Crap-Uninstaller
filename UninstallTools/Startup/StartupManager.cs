@@ -41,7 +41,7 @@ namespace UninstallTools.Startup
                     if (x.CommandFilePath == null)
                         return false;
 
-                    if (!string.IsNullOrEmpty(uninstaller.InstallLocation) &&
+                    if (uninstaller.IsInstallLocationValid() &&
                         x.CommandFilePath.StartsWith(uninstaller.InstallLocation, StringComparison.OrdinalIgnoreCase))
                         return true;
 

@@ -146,7 +146,7 @@ namespace UninstallTools.Uninstaller
             {
                 if (entry.UninstallerKind == UninstallerType.Msiexec)
                 {
-                    if (!string.IsNullOrEmpty(entry.InstallLocation))
+                    if (entry.IsInstallLocationValid())
                         result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates());
 
                     // If no certs were found check the MSI store
@@ -240,7 +240,7 @@ namespace UninstallTools.Uninstaller
 
             string resultPath;
             // Check the install location first, it is most likely to have the program executables
-            if (!string.IsNullOrEmpty(entry.InstallLocation))
+            if (entry.IsInstallLocationValid())
             {
                 var result = TryGetIconHelper(entry, out resultPath);
                 if (result != null)
@@ -263,8 +263,8 @@ namespace UninstallTools.Uninstaller
             }
 
             // Finally try finding other executables in the uninstaller's dir. 
-            // Check the InstallLocation for null again to prevent TryGetIconHelper from running twice
-            if (string.IsNullOrEmpty(entry.InstallLocation))
+            // Check the InstallLocation again to prevent TryGetIconHelper from running twice
+            if (!entry.IsInstallLocationValid())
             {
                 var result = TryGetIconHelper(entry, out resultPath);
                 if (result != null)

@@ -7,7 +7,6 @@ using System.Security.Permissions;
 using System.Threading;
 using Klocman.Extensions;
 using Klocman.IO;
-using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Properties;
@@ -78,13 +77,12 @@ namespace UninstallTools.Uninstaller
                 var detectedEntries = ApplicationUninstallerFactory.TryCreateFromDirectory(directory.Key,
                     directory.Value);
 
-                results.AddRange(detectedEntries.Where(entry => !existingUninstallers.Any(x =>
+                results.AddRange(detectedEntries.Where(detected => !existingUninstallers.Any(existing =>
                 {
-                    if (x.DisplayName.Contains(entry.DisplayNameTrimmed))
+                    if (existing.DisplayName.Contains(detected.DisplayNameTrimmed))
                     {
-                        return string.IsNullOrEmpty(x.InstallLocation)
-                               ||
-                               entry.InstallLocation.Contains(x.InstallLocation,
+                        return !existing.IsInstallLocationValid() ||
+                               detected.InstallLocation.Contains(existing.InstallLocation,
                                    StringComparison.CurrentCultureIgnoreCase);
                     }
                     return false;

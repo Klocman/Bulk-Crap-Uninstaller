@@ -56,18 +56,15 @@ namespace UninstallTools.Junk
                 if (_otherInstallLocations == null && OtherUninstallers != null)
                 {
                     var result = new List<string>();
-                    foreach (var item in OtherUninstallers)
+                    foreach (var item in OtherUninstallers.Where(item => item.IsInstallLocationValid()))
                     {
-                        if (item.InstallLocation.IsNotEmpty())
+                        try
                         {
-                            try
-                            {
-                                result.Add(new DirectoryInfo(item.InstallLocation).FullName);
-                            }
-                            catch
-                            {
-                                // Invalid install location or security exception
-                            }
+                            result.Add(new DirectoryInfo(item.InstallLocation).FullName);
+                        }
+                        catch
+                        {
+                            // Invalid install location or security exception
                         }
                     }
                     _otherInstallLocations = result;
@@ -113,7 +110,7 @@ namespace UninstallTools.Junk
                     output.Add(resultNode);
             }
             
-            if (Uninstaller.InstallLocation.IsNotEmpty())
+            if (Uninstaller.IsInstallLocationValid())
                 {
                     var resultNode = GetJunkNodeFromLocation(Uninstaller.InstallLocation);
                     if (resultNode != null)

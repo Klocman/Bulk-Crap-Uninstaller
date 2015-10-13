@@ -101,6 +101,13 @@ namespace UninstallTools.Uninstaller
         [LocalisedName(typeof (Localisation), "InstallLocation")]
         public string InstallLocation { get; internal set; }
 
+        /// <summary>
+        /// Check if the install location is not empty and is not a system directory
+        /// </summary>
+        public bool IsInstallLocationValid()
+            => !string.IsNullOrEmpty(InstallLocation?.Trim()) &&
+            !UninstallToolsGlobalConfig.AllProgramFiles.Any(x => PathTools.PathsEqual(x, InstallLocation));
+
         [LocalisedName(typeof (Localisation), "InstallSource")]
         public string InstallSource { get; internal set; }
 

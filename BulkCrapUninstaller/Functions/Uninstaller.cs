@@ -91,6 +91,20 @@ namespace BulkCrapUninstaller.Functions
             return CheckForRunningProcesses(filters);
         }
 
+        public static IEnumerable<ApplicationUninstallerEntry> GetApplicationsFromProcess(
+            IEnumerable<ApplicationUninstallerEntry> allApplications, Process targetProcess)
+        {
+            var mainFilename = targetProcess.MainModule.FileName;
+            return from app in allApplications
+                where
+                    (app.IsInstallLocationValid() &&
+                     mainFilename.Contains(app.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                    ||
+                    (!string.IsNullOrEmpty(app.UninstallerLocation) &&
+                     mainFilename.Contains(app.UninstallerLocation, StringComparison.InvariantCultureIgnoreCase))
+                select app;
+        } 
+
         private static bool CheckForRunningProcesses(string[] filters)
         {
             var myId = Process.GetCurrentProcess().Id;
