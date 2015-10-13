@@ -57,10 +57,12 @@ namespace BulkCrapUninstaller.Forms
             this.imageBox = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,6 +72,7 @@ namespace BulkCrapUninstaller.Forms
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelName
@@ -243,13 +246,20 @@ namespace BulkCrapUninstaller.Forms
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.flowLayoutPanel2);
             resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.label3);
+            this.flowLayoutPanel2.Controls.Add(this.label2);
+            this.flowLayoutPanel2.Controls.Add(this.label4);
+            this.flowLayoutPanel2.Controls.Add(this.label5);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label3
             // 
@@ -270,6 +280,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // AboutBox
             // 
@@ -302,7 +317,8 @@ namespace BulkCrapUninstaller.Forms
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,11 +349,13 @@ namespace BulkCrapUninstaller.Forms
         private Panel panel2;
         private Panel panel4;
         private GroupBox groupBox4;
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private FlowLayoutPanel flowLayoutPanel1;
         private LinkLabel linkLabel7;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Label label1;
+        private Label label3;
+        private Label label2;
         private Label label4;
+        private Label label5;
     }
 }
