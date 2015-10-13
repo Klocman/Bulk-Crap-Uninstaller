@@ -454,7 +454,7 @@ Voulez-vous utiliser les désinstalleurs "causants" pour ces éléments, ou doiv
     <value>Ouvrir la liste de désinstallation</value>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
-    <value>Le point de restauration N'A PAS ETE CREE, vous ne pourrez pas restaurer les changements ! Voulez-vous continuer quand même la désinstallation ?</value>
+    <value>Le point de restauration N'A PAS ETE CRÉÉ, vous ne pourrez pas restaurer les changements ! Voulez-vous continuer quand même la désinstallation ?</value>
   </data>
   <data name="MainWindow_Rename_Description" xml:space="preserve">
     <value>Renommer "{0}"</value>
@@ -568,12 +568,12 @@ Alternativement, vous pouvez passer l'attente de ce processus. Passer laissera l
     <value>Une autre tâche de désinstallation est déjà en cours. Merci d'attendre qu'elle ait fini puis réessayer.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
-    <value>Taux : {0}
+    <value>Notes : {0}
 
-Positifs :
+Positives :
 {1}
 
-Négatifs :
+Négatives :
 {2}</value>
     <comment>{0} - Rating as a string
 {1} - List of strings of positive parts of the rating
@@ -581,7 +581,7 @@ Négatifs :
 The lists are separated by a single newline.</comment>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
-    <value>Détails du taux</value>
+    <value>Détails de la note</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
     <value>Cette application n'a pas une entrée de registre valide</value>
@@ -604,13 +604,13 @@ The lists are separated by a single newline.</comment>
     <value>Indisponible</value>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
-    <value>Avis non disponible</value>
+    <value>Notes non disponibles</value>
   </data>
   <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
-    <value>Vous devez activer le cotes des paramètres en premier.</value>
+    <value>Vous devez d'abord activer les notes dans les réglages.</value>
   </data>
   <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
-    <value>Vous ne pouvez pas noter les applications qui ne sont pas installés correctement.</value>
+    <value>Vous ne pouvez pas noter les applications qui ne sont pas installées correctement.</value>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>

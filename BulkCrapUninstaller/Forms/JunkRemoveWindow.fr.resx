@@ -176,7 +176,7 @@
     <value>3, 45</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Taux de confiance</value>
+    <value>Niveau de confiance</value>
   </data>
   <data name="headerConfInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 59</value>

@@ -133,7 +133,7 @@
     <value>0</value>
   </data>
   <data name="buttonGood.Text" xml:space="preserve">
-    <value>Utiles | Bonne qualité</value>
+    <value>Utile | Bonne qualité</value>
   </data>
   <data name="&gt;&gt;buttonGood.Name" xml:space="preserve">
     <value>buttonGood</value>
@@ -160,7 +160,7 @@
     <value>2</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>Jonque | Potentiellement dangereux</value>
+    <value>Déchet | Potentiellement dangereux</value>
   </data>
   <data name="&gt;&gt;buttonBad.Name" xml:space="preserve">
     <value>buttonBad</value>
@@ -214,7 +214,7 @@
     <value>1</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Discutable | Mauvaise qualité</value>
+    <value>Douteux | Mauvaise qualité</value>
   </data>
   <data name="&gt;&gt;buttonNormal.Name" xml:space="preserve">
     <value>buttonNormal</value>
@@ -244,7 +244,7 @@
     <value>0</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Partagez votre note</value>
+    <value>Partager votre note avec d'autres</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -298,7 +298,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Rate</value>
+    <value>Note</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RatingPopup</value>

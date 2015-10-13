@@ -124,7 +124,7 @@
     <value>Chaîne de désinstallation</value>
   </data>
   <data name="QuietUninstallString" xml:space="preserve">
-    <value>Chaine de désinstallation silencieuse</value>
+    <value>Chaîne de désinstallation silencieuse</value>
   </data>
   <data name="RegistryPath" xml:space="preserve">
     <value>Chemin du registre</value>
@@ -414,5 +414,8 @@
   </data>
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>La valeur ne peut contenir de nouvelles lignes</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Clé(s) de registre de démarrage invalide(s) ou inconnue(s)</value>
   </data>
 </root>
