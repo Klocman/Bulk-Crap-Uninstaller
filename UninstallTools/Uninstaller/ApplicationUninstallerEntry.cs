@@ -305,13 +305,15 @@ namespace UninstallTools.Uninstaller
         {
             if (_mainExecutableCandidates == null)
             {
+                _mainExecutableCandidates = new string[] { };
+
                 var trimmedDispName = DisplayNameTrimmed;
                 if (string.IsNullOrEmpty(trimmedDispName))
                 {
                     trimmedDispName = DisplayName;
                     if (string.IsNullOrEmpty(trimmedDispName))
                         // Impossible to search for the executable without knowing the app name
-                        _mainExecutableCandidates = new string[] { };
+                        return _mainExecutableCandidates;
                 }
 
                 foreach (var targetDir in new[] {InstallLocation, UninstallerLocation}

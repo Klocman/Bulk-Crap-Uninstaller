@@ -59,10 +59,10 @@ namespace UninstallTools.Uninstaller
         {
             if (uninstallerKey == null)
                 throw new ArgumentNullException(nameof(uninstallerKey));
-
+            
             var tempEntry = GetBasicInformation(uninstallerKey);
             tempEntry.IsRegistered = true;
-
+            
             // Check for invalid registry key
             if (tempEntry.RawDisplayName == null)
             {
@@ -82,7 +82,8 @@ namespace UninstallTools.Uninstaller
 
             tempEntry.Is64Bit = is64Bit;
             tempEntry.IsUpdate = GetIsUpdate(uninstallerKey);
-
+            
+            // Figure out what we are dealing with
             tempEntry.UninstallerKind = GetUninstallerType(uninstallerKey);
             tempEntry.BundleProviderKey = GetGuid(uninstallerKey);
 
@@ -96,7 +97,8 @@ namespace UninstallTools.Uninstaller
             }
 
             // Fill in missing fields with information that can now be obtained
-            FillInMissingInfo(tempEntry, tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
+            if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
+                ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
 
             // Finish up setting file/folder paths
             if (tempEntry.InstallLocation != null)
@@ -415,46 +417,43 @@ namespace UninstallTools.Uninstaller
         }
 
         /// <summary>
-        ///     Properties type and guid are REQUIRED. They don't have to be set on the entry, but should be.
+        ///     A valid guid is REQUIRED. It doesn't have to be set on the entry, but should be.
         ///     IMPORTANT: Run at the very end of the object creation!
         /// </summary>
-        private static void FillInMissingInfo(ApplicationUninstallerEntry entry, UninstallerType type, Guid guid)
+        private static void ApplyMsiInfo(ApplicationUninstallerEntry entry, Guid guid)
         {
-            if (type == UninstallerType.Msiexec)
+            //IMPORTANT: If MsiGetProductInfo returns null it means that the guid is invalid or app is not installed
+            if (MsiTools.MsiGetProductInfo(guid, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME) == null)
+                return;
+
+            FillInMissingInfoMsiHelper(() => entry.RawDisplayName, x => entry.RawDisplayName = x, guid,
+                MsiWrapper.INSTALLPROPERTY.INSTALLEDPRODUCTNAME, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME);
+            FillInMissingInfoMsiHelper(() => entry.DisplayVersion, x => entry.DisplayVersion = x, guid,
+                MsiWrapper.INSTALLPROPERTY.VERSIONSTRING, MsiWrapper.INSTALLPROPERTY.VERSION);
+            FillInMissingInfoMsiHelper(() => entry.Publisher, x => entry.Publisher = x, guid,
+                MsiWrapper.INSTALLPROPERTY.PUBLISHER);
+            FillInMissingInfoMsiHelper(() => entry.InstallLocation, x => entry.InstallLocation = x, guid,
+                MsiWrapper.INSTALLPROPERTY.INSTALLLOCATION);
+            FillInMissingInfoMsiHelper(() => entry.InstallSource, x => entry.InstallSource = x, guid,
+                MsiWrapper.INSTALLPROPERTY.INSTALLSOURCE);
+            FillInMissingInfoMsiHelper(() => entry.DisplayIcon, x => entry.DisplayIcon = x, guid,
+                MsiWrapper.INSTALLPROPERTY.PRODUCTICON);
+            FillInMissingInfoMsiHelper(() => entry.AboutUrl, x => entry.AboutUrl = x, guid,
+                MsiWrapper.INSTALLPROPERTY.HELPLINK, MsiWrapper.INSTALLPROPERTY.URLUPDATEINFO,
+                MsiWrapper.INSTALLPROPERTY.URLINFOABOUT);
+
+            if (!entry.InstallDate.IsDefault()) return;
+            var temp = MsiTools.MsiGetProductInfo(guid, MsiWrapper.INSTALLPROPERTY.INSTALLDATE);
+            if (!temp.IsNotEmpty()) return;
+            try
             {
-                //IMPORTANT: If MsiGetProductInfo returns null it means that the guid is invalid or app is not installed
-                if (MsiTools.MsiGetProductInfo(guid, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME) == null)
-                    return;
-
-                FillInMissingInfoMsiHelper(() => entry.RawDisplayName, x => entry.RawDisplayName = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.INSTALLEDPRODUCTNAME, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME);
-                FillInMissingInfoMsiHelper(() => entry.DisplayVersion, x => entry.DisplayVersion = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.VERSIONSTRING, MsiWrapper.INSTALLPROPERTY.VERSION);
-                FillInMissingInfoMsiHelper(() => entry.Publisher, x => entry.Publisher = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.PUBLISHER);
-                FillInMissingInfoMsiHelper(() => entry.InstallLocation, x => entry.InstallLocation = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.INSTALLLOCATION);
-                FillInMissingInfoMsiHelper(() => entry.InstallSource, x => entry.InstallSource = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.INSTALLSOURCE);
-                FillInMissingInfoMsiHelper(() => entry.DisplayIcon, x => entry.DisplayIcon = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.PRODUCTICON);
-                FillInMissingInfoMsiHelper(() => entry.AboutUrl, x => entry.AboutUrl = x, guid,
-                    MsiWrapper.INSTALLPROPERTY.HELPLINK, MsiWrapper.INSTALLPROPERTY.URLUPDATEINFO,
-                    MsiWrapper.INSTALLPROPERTY.URLINFOABOUT);
-
-                if (!entry.InstallDate.IsDefault()) return;
-                var temp = MsiTools.MsiGetProductInfo(guid, MsiWrapper.INSTALLPROPERTY.INSTALLDATE);
-                if (!temp.IsNotEmpty()) return;
-                try
-                {
-                    entry.InstallDate = new DateTime(int.Parse(temp.Substring(0, 4)),
-                        int.Parse(temp.Substring(4, 2)),
-                        int.Parse(temp.Substring(6, 2)));
-                }
-                catch
-                {
-                    // Date had invalid format, default to nothing
-                }
+                entry.InstallDate = new DateTime(int.Parse(temp.Substring(0, 4)),
+                    int.Parse(temp.Substring(4, 2)),
+                    int.Parse(temp.Substring(6, 2)));
+            }
+            catch
+            {
+                // Date had invalid format, default to nothing
             }
         }
 
