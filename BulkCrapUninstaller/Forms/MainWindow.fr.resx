@@ -913,12 +913,21 @@ dans une liste...</value>
     <value>BCUninstaller</value>
   </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
-    <value>Benutzer-Bewertung</value>
+    <value>Note de l'utilisateur</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>Passez en revue...</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Passez en revue...</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
+    <value>Trouver au moyen de la fenêtre...</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Trouver au moyen de la fenêtre...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bulk Crap Uninstaller</value>
   </data>
 </root>
