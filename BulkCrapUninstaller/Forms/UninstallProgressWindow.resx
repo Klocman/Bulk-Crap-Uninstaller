@@ -142,16 +142,16 @@
     <value>panel3</value>
   </data>
   <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 32</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 23</value>
+    <value>412, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -169,13 +169,13 @@
     <value>panel3</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 32</value>
+    <value>340, 3</value>
   </data>
   <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -196,7 +196,7 @@
     <value>panel3</value>
   </data>
   <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="olvColumnStatus.Text" xml:space="preserve">
     <value>Status</value>
@@ -220,10 +220,10 @@
     <value>Fill</value>
   </data>
   <data name="objectListView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>8, 65</value>
   </data>
   <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 194</value>
+    <value>402, 188</value>
   </data>
   <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -232,7 +232,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.8.1.17558, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -271,32 +271,83 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="buttonSkip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>252, 17</value>
+  </metadata>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="buttonSkip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 3</value>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 22</value>
   </data>
-  <data name="buttonSkip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Run uninstaller</value>
   </data>
-  <data name="buttonSkip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="toolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="buttonSkip.Text" xml:space="preserve">
+  <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 22</value>
+  </data>
+  <data name="toolStripButton4.Text" xml:space="preserve">
     <value>Skip</value>
   </data>
-  <data name="&gt;&gt;buttonSkip.Name" xml:space="preserve">
-    <value>buttonSkip</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="&gt;&gt;buttonSkip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;buttonSkip.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
-  <data name="&gt;&gt;buttonSkip.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="toolStripButton2.Text" xml:space="preserve">
+    <value>Open install location</value>
+  </data>
+  <data name="toolStripButton5.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButton5.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="toolStripButton3.Text" xml:space="preserve">
+    <value>Uninstallation settings</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 25</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -329,19 +380,19 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 123</value>
+    <value>7, 124</value>
   </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 8</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 242</value>
+    <value>418, 261</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -371,7 +422,7 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>432, 372</value>
+    <value>432, 392</value>
   </data>
   <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -407,7 +458,7 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>7, 64</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 59</value>
+    <value>418, 60</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -470,25 +521,67 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>olvColumnStatus</value>
   </data>
   <data name="&gt;&gt;olvColumnStatus.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.17558, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnIsSilent.Name" xml:space="preserve">
     <value>olvColumnIsSilent</value>
   </data>
   <data name="&gt;&gt;olvColumnIsSilent.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.17558, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Name" xml:space="preserve">
     <value>olvColumnName</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.17558, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton4.Name" xml:space="preserve">
+    <value>toolStripButton4</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
+    <value>toolStripButton2</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton5.Name" xml:space="preserve">
+    <value>toolStripButton5</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton3.Name" xml:space="preserve">
+    <value>toolStripButton3</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Name" xml:space="preserve">
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=2.9.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UninstallProgressWindow</value>

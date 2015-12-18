@@ -131,5 +131,23 @@
     <Setting Name="_CacheUpdateRate" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.TimeSpan" Scope="Application">
       <Value Profile="(Default)">02:00:00</Value>
     </Setting>
+    <Setting Name="UninstallPreventShutdown" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UninstallConcurrency" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UninstallConcurrentMaxCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="UninstallConcurrentLessCollisionProtection" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UninstallConcurrentOneLoud" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UninstallConcurrentDisableManualCollisionProtection" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

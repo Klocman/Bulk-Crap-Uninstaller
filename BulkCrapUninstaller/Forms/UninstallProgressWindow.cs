@@ -89,7 +89,7 @@ namespace BulkCrapUninstaller.Forms
                 _boxThread = null;
             }
 
-            buttonSkip.Enabled = false;
+            // TODO buttonSkip.Enabled = false;
             label1.Text = Localisable.UninstallProgressWindow_TaskDone;
             progressBar1.Value = progressBar1.Maximum;
             buttonClose.Text = Buttons.ButtonClose;
@@ -109,7 +109,7 @@ namespace BulkCrapUninstaller.Forms
                     OpenWalkAwayMessagebox();
                 }
 
-                buttonSkip.Enabled = true;
+                // TODO buttonSkip.Enabled = true;
                 buttonClose.Enabled = true;
 
                 var currentUninstallerStatus = _currentTargetStatus.CurrentUninstallerStatus;

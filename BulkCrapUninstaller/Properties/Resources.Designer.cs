@@ -103,9 +103,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkmark_pencil {
+        internal static System.Drawing.Bitmap checkmarkpencil {
             get {
-                object obj = ResourceManager.GetObject("checkmark.pencil", resourceCulture);
+                object obj = ResourceManager.GetObject("checkmarkpencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkmark_uncrossed {
+        internal static System.Drawing.Bitmap checkmarkuncrossed {
             get {
-                object obj = ResourceManager.GetObject("checkmark.uncrossed", resourceCulture);
+                object obj = ResourceManager.GetObject("checkmarkuncrossed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_open {
+        internal static System.Drawing.Bitmap folderopen {
             get {
-                object obj = ResourceManager.GetObject("folder.open", resourceCulture);
+                object obj = ResourceManager.GetObject("folderopen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -292,29 +292,29 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap layer_delete {
-            get {
-                object obj = ResourceManager.GetObject("layer.delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap layer_down {
-            get {
-                object obj = ResourceManager.GetObject("layer.down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap layer1 {
             get {
                 object obj = ResourceManager.GetObject("layer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layerdelete {
+            get {
+                object obj = ResourceManager.GetObject("layerdelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layerdown {
+            get {
+                object obj = ResourceManager.GetObject("layerdown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -332,9 +332,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnify_browse {
+        internal static System.Drawing.Bitmap magnifybrowse {
             get {
-                object obj = ResourceManager.GetObject("magnify.browse", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifybrowse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -342,9 +342,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnify_forward {
+        internal static System.Drawing.Bitmap magnifyforward {
             get {
-                object obj = ResourceManager.GetObject("magnify.forward", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifyforward", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -372,9 +372,9 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap os_windows_8 {
+        internal static System.Drawing.Bitmap oswindows8 {
             get {
-                object obj = ResourceManager.GetObject("os.windows.8", resourceCulture);
+                object obj = ResourceManager.GetObject("oswindows8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -382,9 +382,19 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap page_copy {
+        internal static System.Drawing.Bitmap pagecopy {
             get {
-                object obj = ResourceManager.GetObject("page.copy", resourceCulture);
+                object obj = ResourceManager.GetObject("pagecopy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap properties {
+            get {
+                object obj = ResourceManager.GetObject("properties", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

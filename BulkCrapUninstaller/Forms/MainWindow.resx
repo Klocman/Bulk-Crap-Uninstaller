@@ -148,7 +148,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -220,7 +220,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -313,7 +313,7 @@
     <value>listLegend1</value>
   </data>
   <data name="&gt;&gt;listLegend1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;listLegend1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -680,22 +680,6 @@
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
-  </data>
-  <data name="toolStripButtonProperties.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJVSURBVGhD7ZixahRRFIYXIoSQwm2CRR7AImiRQjBvYGFn
-        CjtbX8I+CnapUgS0sxBSpbbIEwQRREJAIWKjhQSRsOb/YSOHn7uzd845M05kP/gY2Ox+d88ms3MnowUL
-        FoT406Hv4CrshdIbyLS3YUqLZ9vLMKWFu7DzYXTBCNpSOx1GF4ugrYPCY50NowtF0NYy7G0YXSRCqdXb
-        MLpAhFmtXobReISmVufDaDjCvFanw2g0Qk2rs2E0GKG21TSMG41F0JZHN2khoC2PbtJCQFse3aSFgLY8
-        ukkLOUlbPy3kJG39tJCTtPXTQk6OYMr6NhIKFeCF7xF8DT/C7/AcnsJD+BSOp8cfcJCDPIQnUPvqV/gE
-        3oJvoBsNR1mCO3ACtd3kHrwB3WgwykuozVp3oRuNRXgMtXcBX8H7cDyZTFZwvANfwJ9Qn8+GCw154Rb8
-        C7StM7gFZ8GBeOLb1/CccW3nbYR64QlrOxf49O/h2AiecxcH/c2w1RoboF74jWM7+7AWPa9c3142QL18
-        hn8700+6iulz7Xt4D1tjA9TLL+jqYJA1HOxrv8HW2AD1EunchPa1vMq3xgaol8w/rU+wNTZAvejJzit1
-        LXqyv4WtsQHqZRvaTtXXL+C1ZFBfv9wn8U/Cts4wzCaOsxjkBXEd6iDUblH4Brm134CD3KJwCN5vaKut
-        qZvGNj6HWUOkb+NrnTcEN5DH8ljJqxurMKX4PGuGuA15k/UA8lb3A+Q58Rvy51e3urwYplB6I03WDjF4
-        /oshCP/1f+2HILrLvZZDkGfwHwwxGl0CXqDpvLlkNawAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="toolStripButtonProperties.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1509,25 +1493,6 @@
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
   </data>
-  <data name="propertiesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAMBSURBVGhD3Zc/axRRFMWz/1hcC21cCz+AhWhhIeg3sLDT
-        Ip2tX8JeBTurFIJ2KQQr20nhJxARJIigkGBjChFxg+O5y165e+e4M+9f3PXCj92c3Dn3nWzezputqqr+
-        C6i4iVBxE6HiJkJFBVUXZG88Hp9mc2OgouIGlyBbGCoqbmgpsoShouIGliQ5DBUVN6xmPV3xXoSkMFRU
-        3KDcQV4SLToMFRU3JGuQyWQyxmu2MFRU3ICsQUTLGYaKijPPHkTIFYaKijMuEkTIEYaKijMtFkRIDUNF
-        xRkWDSKkhKGi4syKBxFWhWH9ChUVZ5Q1SAzMV6GiEmLUhveKgfkqVFRCjNrwXjEwX4WKSohRG94rBuar
-        UFEJMSpByHwqKiFGJQiZT0UlxKgEIfOpqIQYlQD1uut8KirWpM0oFLnx9Xq92/B9Dt6Dr+A7+AhegXv4
-        /Vl5BUdg/YKgboEP6ruCQ4S5OxwOz+P9LvNSqKgYwzmsJ4TpdDqAzwPwy/p2YAeBhsxToaLizJKDoB5b
-        v0CeME+FioozSgqC2rZeC47BM3Bd9sNsNjuF95fBI/AN+P5t5i1QUXEm0UHkCI7rPzu/A3CD9QsoCSQb
-        315z+LfjfEOwOJPoILJhnddxXdfXWK8FPVfQu/TJiBfrbQgWayCwni6gdq0PeMr6GCi/r+i3V0OwOIOU
-        IJ+sj/ylWR9j8anYdbxlfQ3B4gxSgvyI9UGQc/Za8IX1NQSLM0gJEu0zGo3OuOuPWF9DsDiDdfnX2md9
-        DcHiDFKC+M2+w/oYKL/ZX9A+JirOICXIHesDOn39ouResj5fv3JOwvX7zu8AYa6yfgG1fjfEwWBwAdf7
-        IMKfI4osUI72/X7/En5evyPKIoQ8byx5RZDv0BjIw4wh8h7jA2gLIQfIN05jzB+s2No8VFScaVdaQ2Af
-        XFw8ZN0E8qj7Dsie+Akk5PxRV26GbF0MKiootpBVdArBZqVCxVj+VQiBirGg9szCTyyEQMVYUEun3AXF
-        QwhUjAV13wQ4sRBVVW39Bng0yMW/D77PAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -2160,13 +2125,13 @@
     <value>facebookStatusButton1</value>
   </data>
   <data name="&gt;&gt;facebookStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Name" xml:space="preserve">
     <value>twitterStatusButton1</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
     <value>donateButton</value>
@@ -2802,13 +2767,13 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Name" xml:space="preserve">
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

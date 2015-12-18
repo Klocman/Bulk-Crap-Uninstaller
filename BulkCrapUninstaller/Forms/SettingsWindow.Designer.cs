@@ -42,6 +42,7 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
             this.checkBoxSendStats = new System.Windows.Forms.CheckBox();
+            this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -73,8 +74,9 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBoxRatings = new System.Windows.Forms.CheckBox();
+            this.uninstallationSettings1 = new BulkCrapUninstaller.Controls.UninstallationSettings();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -95,6 +97,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxProgramFolders.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +172,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxSendStats, "checkBoxSendStats");
             this.checkBoxSendStats.Name = "checkBoxSendStats";
             this.checkBoxSendStats.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRatings
+            // 
+            resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
+            this.checkBoxRatings.Name = "checkBoxRatings";
+            this.checkBoxRatings.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -313,6 +322,7 @@ namespace BulkCrapUninstaller.Forms
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageGeneral);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPageExternal);
             this.tabControl.Controls.Add(this.tabPageFolders);
             this.tabControl.Controls.Add(this.tabPageMisc);
@@ -378,17 +388,23 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.uninstallationSettings1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button2);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
-            // checkBoxRatings
+            // uninstallationSettings1
             // 
-            resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
-            this.checkBoxRatings.Name = "checkBoxRatings";
-            this.checkBoxRatings.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.uninstallationSettings1, "uninstallationSettings1");
+            this.uninstallationSettings1.Name = "uninstallationSettings1";
             // 
             // SettingsWindow
             // 
@@ -440,6 +456,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel5.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -490,5 +507,7 @@ namespace BulkCrapUninstaller.Forms
         private TextBox textBoxProgramFolders;
         private CheckBox checkBoxAutoLoad;
         private CheckBox checkBoxRatings;
+        private TabPage tabPage1;
+        private Controls.UninstallationSettings uninstallationSettings1;
     }
 }

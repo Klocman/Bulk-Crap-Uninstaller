@@ -121,6 +121,12 @@
     <Compile Include="Controls\ListLegend.Designer.cs">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UninstallationSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UninstallationSettings.Designer.cs">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="CultureConfigurator.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Forms\AboutBox.cs">
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PropertiesSidebar.sl.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallationSettings.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.cs.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

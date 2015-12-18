@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,7 +153,7 @@
   <data name="moon_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moon.full.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checkmark.pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="checkmarkpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -162,7 +162,7 @@
   <data name="checkmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnify.browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="magnifybrowse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.browse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -183,7 +183,7 @@
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="layer.down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layerdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HomepageUrl" xml:space="preserve">
@@ -198,16 +198,16 @@
   <data name="rating4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder.open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="folderopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder.open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DbConnectionString" xml:space="preserve">
     <value>server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
   </data>
-  <data name="layer.delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layerdelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page.copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pagecopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page.copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_bcu_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -240,7 +240,7 @@
   <data name="DbCommandGetRating" xml:space="preserve">
     <value>getRatings</value>
   </data>
-  <data name="os.windows.8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="oswindows8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\os.windows.8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -255,17 +255,36 @@
   <data name="rating5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnify.forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="magnifyforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.forward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bigImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bigImage.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checkmark.uncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="checkmarkuncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.uncrossed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="centerline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\centerline.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAMBSURBVGhD3Zc/axRRFMWz/1hcC21cCz+AhWhhIeg3sLDT
+        Ip2tX8JeBTurFIJ2KQQr20nhJxARJIigkGBjChFxg+O5y165e+e4M+9f3PXCj92c3Dn3nWzezputqqr+
+        C6i4iVBxE6HiJkJFBVUXZG88Hp9mc2OgouIGlyBbGCoqbmgpsoShouIGliQ5DBUVN6xmPV3xXoSkMFRU
+        3KDcQV4SLToMFRU3JGuQyWQyxmu2MFRU3ICsQUTLGYaKijPPHkTIFYaKijMuEkTIEYaKijMtFkRIDUNF
+        xRkWDSKkhKGi4syKBxFWhWH9ChUVZ5Q1SAzMV6GiEmLUhveKgfkqVFRCjNrwXjEwX4WKSohRG94rBuar
+        UFEJMSpByHwqKiFGJQiZT0UlxKgEIfOpqIQYlQD1uut8KirWpM0oFLnx9Xq92/B9Dt6Dr+A7+AhegXv4
+        /Vl5BUdg/YKgboEP6ruCQ4S5OxwOz+P9LvNSqKgYwzmsJ4TpdDqAzwPwy/p2YAeBhsxToaLizJKDoB5b
+        v0CeME+FioozSgqC2rZeC47BM3Bd9sNsNjuF95fBI/AN+P5t5i1QUXEm0UHkCI7rPzu/A3CD9QsoCSQb
+        315z+LfjfEOwOJPoILJhnddxXdfXWK8FPVfQu/TJiBfrbQgWayCwni6gdq0PeMr6GCi/r+i3V0OwOIOU
+        IJ+sj/ylWR9j8anYdbxlfQ3B4gxSgvyI9UGQc/Za8IX1NQSLM0gJEu0zGo3OuOuPWF9DsDiDdfnX2md9
+        DcHiDFKC+M2+w/oYKL/ZX9A+JirOICXIHesDOn39ouResj5fv3JOwvX7zu8AYa6yfgG1fjfEwWBwAdf7
+        IMKfI4osUI72/X7/En5evyPKIoQ8byx5RZDv0BjIw4wh8h7jA2gLIQfIN05jzB+s2No8VFScaVdaQ2Af
+        XFw8ZN0E8qj7Dsie+Akk5PxRV26GbF0MKiootpBVdArBZqVCxVj+VQiBirGg9szCTyyEQMVYUEun3AXF
+        QwhUjAV13wQ4sRBVVW39Bng0yMW/D77PAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>

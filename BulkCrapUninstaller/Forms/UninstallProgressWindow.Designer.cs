@@ -41,8 +41,15 @@ namespace BulkCrapUninstaller.Forms
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonSkip = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -50,6 +57,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -111,20 +119,70 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // buttonSkip
-            // 
-            resources.ApplyResources(this.buttonSkip, "buttonSkip");
-            this.buttonSkip.Name = "buttonSkip";
-            this.buttonSkip.UseVisualStyleBackColor = true;
-            this.buttonSkip.Click += new System.EventHandler(this.OpenSkipMessagebox);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.objectListView1);
+            this.groupBox1.Controls.Add(this.toolStrip1);
             this.groupBox1.Controls.Add(this.label2);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton4,
+            this.toolStripSeparator2,
+            this.toolStripButton2,
+            this.toolStripButton5,
+            this.toolStripSeparator1,
+            this.toolStripButton3});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Name = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::BulkCrapUninstaller.Properties.Resources.layerdown;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
+            resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
+            this.toolStripButton4.Name = "toolStripButton4";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::BulkCrapUninstaller.Properties.Resources.fullscreen;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
+            this.toolStripButton2.Name = "toolStripButton2";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
+            resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
+            this.toolStripButton5.Name = "toolStripButton5";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::BulkCrapUninstaller.Properties.Resources.settings;
+            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
+            this.toolStripButton3.Name = "toolStripButton3";
             // 
             // label2
             // 
@@ -137,7 +195,6 @@ namespace BulkCrapUninstaller.Forms
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonSkip);
             this.panel3.Controls.Add(this.progressBar1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.buttonClose);
@@ -147,7 +204,7 @@ namespace BulkCrapUninstaller.Forms
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.layer_delete;
+            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.layerdelete;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -173,6 +230,8 @@ namespace BulkCrapUninstaller.Forms
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -191,7 +250,6 @@ namespace BulkCrapUninstaller.Forms
         private OLVColumn olvColumnIsSilent;
         private OLVColumn olvColumnName;
         private ObjectListView objectListView1;
-        private Button buttonSkip;
         private GroupBox groupBox1;
         private Label label2;
         private Label label3;
@@ -199,5 +257,13 @@ namespace BulkCrapUninstaller.Forms
         private Panel panel3;
         private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton toolStripButton3;
+        private ToolStripButton toolStripButton4;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton toolStripButton5;
     }
 }

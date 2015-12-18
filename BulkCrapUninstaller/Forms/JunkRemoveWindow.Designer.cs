@@ -216,7 +216,7 @@ namespace BulkCrapUninstaller.Forms
             // openToolStripMenuItem
             // 
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-            this.openToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.folder_open;
+            this.openToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.folderopen;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -227,14 +227,14 @@ namespace BulkCrapUninstaller.Forms
             // 
             // copyToClipboardToolStripMenuItem
             // 
-            this.copyToClipboardToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.page_copy;
+            this.copyToClipboardToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.pagecopy;
             this.copyToClipboardToolStripMenuItem.Name = "copyToClipboardToolStripMenuItem";
             resources.ApplyResources(this.copyToClipboardToolStripMenuItem, "copyToClipboardToolStripMenuItem");
             this.copyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyToClipboardToolStripMenuItem_Click);
             // 
             // detailsToolStripMenuItem
             // 
-            this.detailsToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.magnify_browse;
+            this.detailsToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.magnifybrowse;
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
             resources.ApplyResources(this.detailsToolStripMenuItem, "detailsToolStripMenuItem");
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);

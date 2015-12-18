@@ -614,5 +614,77 @@ namespace BulkCrapUninstaller.Properties {
                 return ((global::System.TimeSpan)(this["_CacheUpdateRate"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UninstallPreventShutdown {
+            get {
+                return ((bool)(this["UninstallPreventShutdown"]));
+            }
+            set {
+                this["UninstallPreventShutdown"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UninstallConcurrency {
+            get {
+                return ((bool)(this["UninstallConcurrency"]));
+            }
+            set {
+                this["UninstallConcurrency"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int UninstallConcurrentMaxCount {
+            get {
+                return ((int)(this["UninstallConcurrentMaxCount"]));
+            }
+            set {
+                this["UninstallConcurrentMaxCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UninstallConcurrentLessCollisionProtection {
+            get {
+                return ((bool)(this["UninstallConcurrentLessCollisionProtection"]));
+            }
+            set {
+                this["UninstallConcurrentLessCollisionProtection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UninstallConcurrentOneLoud {
+            get {
+                return ((bool)(this["UninstallConcurrentOneLoud"]));
+            }
+            set {
+                this["UninstallConcurrentOneLoud"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UninstallConcurrentDisableManualCollisionProtection {
+            get {
+                return ((bool)(this["UninstallConcurrentDisableManualCollisionProtection"]));
+            }
+            set {
+                this["UninstallConcurrentDisableManualCollisionProtection"] = value;
+            }
+        }
     }
 }

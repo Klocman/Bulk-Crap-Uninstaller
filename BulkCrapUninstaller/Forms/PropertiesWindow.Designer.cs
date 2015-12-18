@@ -63,7 +63,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // copyToClipboardToolStripMenuItem
             // 
-            this.copyToClipboardToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.page_copy;
+            this.copyToClipboardToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.pagecopy;
             this.copyToClipboardToolStripMenuItem.Name = "copyToClipboardToolStripMenuItem";
             resources.ApplyResources(this.copyToClipboardToolStripMenuItem, "copyToClipboardToolStripMenuItem");
             this.copyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyToClipboardToolStripMenuItem_Click);

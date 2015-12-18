@@ -516,6 +516,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // toolStripButtonProperties
             // 
+            this.toolStripButtonProperties.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
             resources.ApplyResources(this.toolStripButtonProperties, "toolStripButtonProperties");
             this.toolStripButtonProperties.Name = "toolStripButtonProperties";
             this.toolStripButtonProperties.Click += new System.EventHandler(this.OpenProperties);
@@ -781,7 +782,7 @@ namespace BulkCrapUninstaller.Forms
             // propertiesContextMenuStripItem
             // 
             resources.ApplyResources(this.propertiesContextMenuStripItem, "propertiesContextMenuStripItem");
-            this.propertiesContextMenuStripItem.Image = global::BulkCrapUninstaller.Properties.Resources.magnify_browse;
+            this.propertiesContextMenuStripItem.Image = global::BulkCrapUninstaller.Properties.Resources.magnifybrowse;
             this.propertiesContextMenuStripItem.Name = "propertiesContextMenuStripItem";
             this.propertiesContextMenuStripItem.Click += new System.EventHandler(this.OpenProperties);
             // 
@@ -1065,8 +1066,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // propertiesToolStripMenuItem
             // 
-            resources.ApplyResources(this.propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
+            this.propertiesToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            resources.ApplyResources(this.propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.OpenProperties);
             // 
             // advancedOperationsToolStripMenuItem
