@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
+using Klocman.Binding;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
@@ -12,6 +17,13 @@ namespace BulkCrapUninstaller.Forms
 {
     sealed partial class UninstallProgressWindow : Form
     {
+        [DllImport("user32.dll")]
+        extern static bool ShutdownBlockReasonCreate(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] string pwszReason);
+
+        [DllImport("user32.dll")]
+        extern static bool ShutdownBlockReasonDestroy(IntPtr hWnd);
+        
+        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortSkipMessageboxThread;
         private Thread _boxThread;
         private BulkUninstallTask _currentTargetStatus;
@@ -29,6 +41,20 @@ namespace BulkCrapUninstaller.Forms
             olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
             olvColumnStatus.AspectGetter = BulkUninstallTask.StatusAspectGetter;
             olvColumnIsSilent.AspectGetter = BulkUninstallTask.IsSilentAspectGetter;
+
+            _settings.Subscribe((sender, args) =>
+            {
+                if (args.NewValue) ShutdownBlockReasonCreate(Handle, "Bulk uninstallation is in progress.");
+                else ShutdownBlockReasonDestroy(Handle);
+            }, settings => settings.UninstallPreventShutdown, this);
+
+            Shown += (sender, args) => _settings.SendUpdates(this);
+            FormClosed += (o, eventArgs) =>
+            {
+                _settings.RemoveHandlers(this);
+                if (_settings.Settings.UninstallPreventShutdown)
+                    ShutdownBlockReasonDestroy(Handle);
+            };
         }
 
         public void SetTargetStatus(BulkUninstallTask targetStatus)
@@ -216,6 +242,55 @@ namespace BulkCrapUninstaller.Forms
         private void UninstallProgressWindow_Shown(object sender, EventArgs e)
         {
             //Height = MinimumSize.Height;
+        }
+
+        private void toolStripButtonSettings_Click(object sender, EventArgs e)
+        {
+            using (var sw = new SettingsWindow())
+            {
+                sw.OpenedTab = 1;
+                sw.ShowDialog();
+            }
+        }
+
+        IEnumerable<BulkUninstallEntry> SelectedTaskEntries => objectListView1.SelectedObjects.Cast<BulkUninstallEntry>();
+
+        IEnumerable<ApplicationUninstallerEntry> SelectedUninstallerEntries => SelectedTaskEntries.Select(x => x.UninstallerEntry);
+
+        private void toolStripButtonProperties_Click(object sender, EventArgs e)
+        {
+            using (var propertiesWindow = new PropertiesWindow())
+            {
+                propertiesWindow.ShowPropertiesDialog(SelectedUninstallerEntries);
+            }
+        }
+
+        private void toolStripButtonFolderOpen_Click(object sender, EventArgs e)
+        {
+            var sourceDirs = SelectedUninstallerEntries.Where(x => x.InstallLocation.IsNotEmpty())
+                    .Select(y => y.InstallLocation).ToList();
+
+            if (MessageBoxes.OpenDirectoriesMessageBox(sourceDirs.Count))
+            {
+                try
+                {
+                    sourceDirs.ForEach(x => Process.Start(x));
+                }
+                catch (Exception ex)
+                {
+                    MessageBoxes.OpenDirectoryError(ex);
+                }
+            }
+        }
+
+        private void toolStripButtonRun_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonSkip_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

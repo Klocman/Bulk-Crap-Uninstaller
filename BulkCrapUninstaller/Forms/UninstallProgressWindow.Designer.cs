@@ -43,13 +43,13 @@ namespace BulkCrapUninstaller.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRun = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSkip = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFolderOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonProperties = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -109,7 +109,6 @@ namespace BulkCrapUninstaller.Forms
             this.objectListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowItemToolTips = true;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
@@ -132,57 +131,62 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton4,
+            this.toolStripButtonRun,
+            this.toolStripButtonSkip,
             this.toolStripSeparator2,
-            this.toolStripButton2,
-            this.toolStripButton5,
+            this.toolStripButtonFolderOpen,
+            this.toolStripButtonProperties,
             this.toolStripSeparator1,
-            this.toolStripButton3});
+            this.toolStripButtonSettings});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButtonRun
             // 
-            this.toolStripButton1.Image = global::BulkCrapUninstaller.Properties.Resources.layerdown;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButtonRun.Image = global::BulkCrapUninstaller.Properties.Resources.layerdown;
+            resources.ApplyResources(this.toolStripButtonRun, "toolStripButtonRun");
+            this.toolStripButtonRun.Name = "toolStripButtonRun";
+            this.toolStripButtonRun.Click += new System.EventHandler(this.toolStripButtonRun_Click);
             // 
-            // toolStripButton4
+            // toolStripButtonSkip
             // 
-            this.toolStripButton4.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
-            resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
-            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButtonSkip.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
+            resources.ApplyResources(this.toolStripButtonSkip, "toolStripButtonSkip");
+            this.toolStripButtonSkip.Name = "toolStripButtonSkip";
+            this.toolStripButtonSkip.Click += new System.EventHandler(this.toolStripButtonSkip_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
-            // toolStripButton2
+            // toolStripButtonFolderOpen
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::BulkCrapUninstaller.Properties.Resources.fullscreen;
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
-            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButtonFolderOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFolderOpen.Image = global::BulkCrapUninstaller.Properties.Resources.fullscreen;
+            resources.ApplyResources(this.toolStripButtonFolderOpen, "toolStripButtonFolderOpen");
+            this.toolStripButtonFolderOpen.Name = "toolStripButtonFolderOpen";
+            this.toolStripButtonFolderOpen.Click += new System.EventHandler(this.toolStripButtonFolderOpen_Click);
             // 
-            // toolStripButton5
+            // toolStripButtonProperties
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
-            resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
-            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButtonProperties.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonProperties.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
+            resources.ApplyResources(this.toolStripButtonProperties, "toolStripButtonProperties");
+            this.toolStripButtonProperties.Name = "toolStripButtonProperties";
+            this.toolStripButtonProperties.Click += new System.EventHandler(this.toolStripButtonProperties_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // toolStripButton3
+            // toolStripButtonSettings
             // 
-            this.toolStripButton3.Image = global::BulkCrapUninstaller.Properties.Resources.settings;
-            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
-            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButtonSettings.Image = global::BulkCrapUninstaller.Properties.Resources.settings;
+            resources.ApplyResources(this.toolStripButtonSettings, "toolStripButtonSettings");
+            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
+            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
             // 
             // label2
             // 
@@ -258,12 +262,12 @@ namespace BulkCrapUninstaller.Forms
         private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
+        private ToolStripButton toolStripButtonRun;
+        private ToolStripButton toolStripButtonFolderOpen;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
+        private ToolStripButton toolStripButtonSettings;
+        private ToolStripButton toolStripButtonSkip;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton5;
+        private ToolStripButton toolStripButtonProperties;
     }
 }

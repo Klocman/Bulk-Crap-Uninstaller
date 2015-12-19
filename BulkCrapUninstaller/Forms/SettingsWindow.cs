@@ -17,6 +17,8 @@ namespace BulkCrapUninstaller.Forms
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _restartNeeded;
 
+        public int OpenedTab { get { return tabControl.SelectedIndex; } set { tabControl.SelectedIndex = value; } }
+
         public SettingsWindow()
         {
             InitializeComponent();
@@ -61,12 +63,9 @@ namespace BulkCrapUninstaller.Forms
         {
             Close();
 
-            if (_restartNeeded)
+            if (_restartNeeded && MessageBoxes.RestartNeededForSettingChangeQuestion())
             {
-                if (MessageBoxes.RestartNeededForSettingChangeQuestion())
-                {
-                    EntryPoint.Restart();
-                }
+                EntryPoint.Restart();
             }
         }
 
