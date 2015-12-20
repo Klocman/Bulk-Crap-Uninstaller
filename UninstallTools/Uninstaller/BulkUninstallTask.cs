@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
@@ -189,6 +190,13 @@ namespace UninstallTools.Uninstaller
                                  (x.InstallLocation.StartsWith(target.InstallLocation, StringComparison.InvariantCultureIgnoreCase) ||
                                   target.InstallLocation.StartsWith(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase))))
                 return true;
+
+            if (target.UninstallerKind == UninstallerType.Msiexec)
+            {
+                var processes = Process.GetProcessesByName("msiexec");
+                if(processes.Length > 1)
+                    return true;
+            }
 
             return false;
         }
