@@ -317,6 +317,17 @@ namespace BulkCrapUninstaller.Forms
                                                                         && x.CurrentStatus != UninstallStatus.Completed
                                                                         && x.CurrentStatus != UninstallStatus.Invalid
                                                                         && x.CurrentStatus != UninstallStatus.Protected);
+            toolStripButtonTerminate.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Uninstalling);
+        }
+
+        private void toolStripButtonTerminate_Click(object sender, EventArgs e)
+        {
+            SelectedTaskEntries.ForEach(x => x.SkipWaiting(true));
+        }
+
+        private void toolStripButtonSkip_Click(object sender, EventArgs e)
+        {
+            SelectedTaskEntries.ForEach(x => x.SkipWaiting(false));
         }
     }
 }

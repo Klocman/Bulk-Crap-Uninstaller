@@ -46,6 +46,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonRun = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSkip = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonTerminate = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFolderOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonProperties = new System.Windows.Forms.ToolStripButton();
@@ -141,6 +142,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRun,
             this.toolStripButtonSkip,
+            this.toolStripButtonTerminate,
             this.toolStripSeparator2,
             this.toolStripButtonFolderOpen,
             this.toolStripButtonProperties,
@@ -161,7 +163,15 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.toolStripButtonSkip, "toolStripButtonSkip");
             this.toolStripButtonSkip.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
             this.toolStripButtonSkip.Name = "toolStripButtonSkip";
-            this.toolStripButtonSkip.Click += new System.EventHandler(this.OpenSkipMessagebox);
+            this.toolStripButtonSkip.Click += new System.EventHandler(this.toolStripButtonSkip_Click);
+            // 
+            // toolStripButtonTerminate
+            // 
+            this.toolStripButtonTerminate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonTerminate, "toolStripButtonTerminate");
+            this.toolStripButtonTerminate.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
+            this.toolStripButtonTerminate.Name = "toolStripButtonTerminate";
+            this.toolStripButtonTerminate.Click += new System.EventHandler(this.toolStripButtonTerminate_Click);
             // 
             // toolStripSeparator2
             // 
@@ -276,5 +286,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripButtonProperties;
         private OLVColumn olvColumnId;
+        private ToolStripButton toolStripButtonTerminate;
     }
 }
