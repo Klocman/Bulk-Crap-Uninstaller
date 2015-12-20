@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using Klocman.Tools;
 using UninstallTools.Uninstaller;
 
@@ -97,10 +98,10 @@ namespace UninstallTools.Junk
                     }
                 }
             }
-            catch (ArgumentException)
-            {
-                // Reg key invalid
-            }
+            // Reg key invalid
+            catch (ArgumentException) { }
+            catch (SecurityException) { }
+            catch (ObjectDisposedException) { }
         }
     }
 }
