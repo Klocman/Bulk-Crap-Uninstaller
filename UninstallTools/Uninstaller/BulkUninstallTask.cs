@@ -117,7 +117,7 @@ namespace UninstallTools.Uninstaller
             if (targetList == null || configuration == null)
                 throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
 
-            while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting))
+            while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting || x.IsRunning))
             {
                 do
                 {
@@ -150,9 +150,6 @@ namespace UninstallTools.Uninstaller
                 // Fire the event now so the interface can be updated to show the "Uninstalling" tag
                 OnStatusChanged?.Invoke(this, EventArgs.Empty);
             }
-
-            while (AllUninstallersList.Any(x => x.IsRunning))
-                Thread.Sleep(300);
 
             Finished = true;
             Dispose();
