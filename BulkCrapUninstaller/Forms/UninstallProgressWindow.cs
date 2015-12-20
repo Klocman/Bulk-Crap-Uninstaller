@@ -154,7 +154,8 @@ namespace BulkCrapUninstaller.Forms
                 if (_walkAwayBox == null && //TODO do it with less enumerations
                     _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && //there is at least one loud
                     _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && //and one quiet uninstaller
-                    !_currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent && x.CurrentStatus == UninstallStatus.Waiting))
+                    !_currentTargetStatus.AllUninstallersList.Any(x =>!x.IsSilent && 
+                    (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
 
