@@ -58,7 +58,7 @@ namespace UninstallTools.Startup.Normal
                         var hkey = subKey.GetValue("hkey") as string;
                         var item = subKey.GetValue("item") as string;
                         var command = subKey.GetValue("command") as string;
-                        if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(hkey) 
+                        if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(hkey)
                             || string.IsNullOrEmpty(item) || string.IsNullOrEmpty(command))
                             continue;
 
@@ -77,9 +77,11 @@ namespace UninstallTools.Startup.Normal
                     }
                 }
 
+#if DEBUG
                 if(badLocations.Any())
                     throw new InvalidDataException(Localisation.Error_InvalidRegKeys + "\n"
                         + string.Join("\n", badLocations.Distinct().OrderBy(x=>x).ToArray()));
+#endif
             }
 
             using (var hddDisKey = RegistryTools.CreateSubKeyRecursively(DriveDisabledKey.Path))
