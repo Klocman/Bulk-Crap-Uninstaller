@@ -40,7 +40,14 @@ namespace BulkCrapUninstaller.Forms
                 else ShutdownBlockReasonDestroy(Handle);
             }, settings => settings.UninstallPreventShutdown, this);
 
-            Shown += (sender, args) => _settings.SendUpdates(this);
+            _settings.SendUpdates(this);
+
+            FormClosing += (sender, args) =>
+            {
+                if (args.CloseReason == CloseReason.WindowsShutDown && _settings.Settings.UninstallPreventShutdown)
+                    args.Cancel = true;
+            };
+
             FormClosed += (o, eventArgs) =>
             {
                 _settings.RemoveHandlers(this);
