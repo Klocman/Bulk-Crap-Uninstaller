@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
+using Klocman.Native;
+using Klocman.Tools;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
@@ -67,7 +69,7 @@ namespace UninstallTools.Uninstaller
                 IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
+            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
             worker.Start(new KeyValuePair<bool, bool>(preferQuiet, simulate));
         }
 
@@ -75,7 +77,7 @@ namespace UninstallTools.Uninstaller
 
         private void UninstallThread(object parameters)
         {
-            var kvp = (KeyValuePair<bool, bool>) parameters;
+            var kvp = (KeyValuePair<bool, bool>)parameters;
             var preferQuiet = kvp.Key;
             var simulate = kvp.Value;
             Exception error = null;
@@ -96,7 +98,10 @@ namespace UninstallTools.Uninstaller
                         if (_skipLevel == SkipCurrentLevel.Skip)
                             break;
 
-                        childProcesses = uninstaller.GetChildProcesses().ToList();
+                        childProcesses = uninstaller.GetChildProcesses().Where(
+                            p => !p.ProcessName.Contains("explorer", StringComparison.InvariantCultureIgnoreCase))
+                            .ToList();
+
                         if (!uninstaller.HasExited)
                             childProcesses.Add(uninstaller);
 
@@ -106,17 +111,17 @@ namespace UninstallTools.Uninstaller
                             try
                             {
                                 counters = (from process in childProcesses
-                                    let processName = process.ProcessName
-                                    let perfCounters = new[]
-                                    {
+                                            let processName = process.ProcessName
+                                            let perfCounters = new[]
+                                            {
                                         new PerformanceCounter("Process", "% Processor Time", processName, true),
                                         new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
                                     }
-                                    select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
-                                        perfCounters,
-                                        new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}
-                                        // Important to enumerate them now, they will collect data when we sleep
-                                        )).ToList();
+                                            select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
+                                                perfCounters,
+                                                new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }
+                                                // Important to enumerate them now, they will collect data when we sleep
+                                                )).ToList();
                             }
                             catch
                             {
