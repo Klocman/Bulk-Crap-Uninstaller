@@ -126,7 +126,7 @@ namespace UninstallTools.Uninstaller
                         AllUninstallersList.ForEach(x => x.SkipWaiting(false));
                         break;
                     }
-                    Thread.Sleep(300);
+                    Thread.Sleep(500);
                 } while (AllUninstallersList.Count(x => x.IsRunning) >= ConcurrentUninstallerCount);
 
                 var running = AllUninstallersList.Where(x => x.CurrentStatus == UninstallStatus.Uninstalling).ToList();
