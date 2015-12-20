@@ -151,10 +151,10 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                if (_walkAwayBox == null && //_currentTargetStatus.Configuration.QuietAreSorted &&
-                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) &&
-                    !_currentTargetStatus.AllUninstallersList.Any(
-                        x => !x.IsSilent && x.CurrentStatus == UninstallStatus.Waiting))
+                if (_walkAwayBox == null && //TODO do it with less enumerations
+                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && //there is at least one loud
+                    _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && //and one quiet uninstaller
+                    !_currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent && x.CurrentStatus == UninstallStatus.Waiting))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
 
