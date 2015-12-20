@@ -29,8 +29,8 @@ namespace UninstallTools.Uninstaller
         public bool IsRunning { get; private set; }
         public bool Finished { get; private set; }
 
-        SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
-        readonly object _operationLock = new object();
+        private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
+        private readonly object _operationLock = new object();
 
         public void SkipWaiting(bool terminate)
         {
@@ -41,7 +41,7 @@ namespace UninstallTools.Uninstaller
 
                 if (!IsRunning && CurrentStatus == UninstallStatus.Waiting)
                     CurrentStatus = UninstallStatus.Skipped;
-                
+
                 _skipLevel = terminate ? SkipCurrentLevel.Terminate : SkipCurrentLevel.Skip;
             }
         }
@@ -55,7 +55,7 @@ namespace UninstallTools.Uninstaller
             {
                 if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
                     return;
-                
+
                 if (UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists())
                 {
                     CurrentStatus = UninstallStatus.Completed;
@@ -67,11 +67,11 @@ namespace UninstallTools.Uninstaller
                 IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
+            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
             worker.Start(new KeyValuePair<bool, bool>(preferQuiet, simulate));
         }
 
-        bool canRetry = true;
+        private bool _canRetry = true;
 
         private void UninstallThread(object parameters)
         {
@@ -106,17 +106,17 @@ namespace UninstallTools.Uninstaller
                             try
                             {
                                 counters = (from process in childProcesses
-                                            let processName = process.ProcessName
-                                            let perfCounters = new[]
-                                            {
-                                    new PerformanceCounter("Process", "% Processor Time", processName, true),
-                                    new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
-                                }
-                                            select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
-                                                perfCounters,
-                                                new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }
-                                                // Important to enumerate them now, they will collect data when we sleep
-                                                )).ToList();
+                                    let processName = process.ProcessName
+                                    let perfCounters = new[]
+                                    {
+                                        new PerformanceCounter("Process", "% Processor Time", processName, true),
+                                        new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
+                                    }
+                                    select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
+                                        perfCounters,
+                                        new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}
+                                        // Important to enumerate them now, they will collect data when we sleep
+                                        )).ToList();
                             }
                             catch
                             {
@@ -127,7 +127,7 @@ namespace UninstallTools.Uninstaller
 
                         Thread.Sleep(1000);
 
-                        if (counters != null)
+                        if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec) //Has problems with Msiexec
                         {
                             try
                             {
@@ -164,10 +164,10 @@ namespace UninstallTools.Uninstaller
                         }
 
                         // Kill the uninstaller (and children) if user told us to or if it was idle for too long
-                        if (_skipLevel == SkipCurrentLevel.Terminate || idleCounter > 15)
+                        if (_skipLevel == SkipCurrentLevel.Terminate || idleCounter > 40)
                         {
                             uninstaller.Kill(true);
-                            if (idleCounter > 15)
+                            if (idleCounter > 40)
                                 throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
                             break;
                         }
@@ -208,13 +208,16 @@ namespace UninstallTools.Uninstaller
                 CurrentStatus = UninstallStatus.Completed;
             }
 
-            if (retry && canRetry)
+            if (retry && _canRetry)
             {
                 CurrentStatus = UninstallStatus.Waiting;
-                canRetry = false;
+                _canRetry = false;
+            }
+            else
+            {
+                Finished = true;
             }
 
-            Finished = true;
             IsRunning = false;
         }
 
