@@ -76,7 +76,7 @@ namespace UninstallTools.Startup.Normal
                             yield return new StartupEntry(runLocation, item, command) { DisabledStore = true };
                     }
                 }
-
+                
 #if DEBUG
                 if(badLocations.Any())
                     throw new InvalidDataException(Localisation.Error_InvalidRegKeys + "\n"

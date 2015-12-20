@@ -76,8 +76,10 @@ namespace UninstallTools.Uninstaller
             var kvp = (KeyValuePair<bool, bool>) parameters;
             var preferQuiet = kvp.Key;
             var simulate = kvp.Value;
-
+            var retry = true;
             Exception error = null;
+            
+            RetryLabel:
             try
             {
                 var uninstaller = UninstallerEntry.RunUninstaller(preferQuiet, simulate);
@@ -175,7 +177,13 @@ namespace UninstallTools.Uninstaller
                     {
                         var exitVar = uninstaller.ExitCode;
                         if (exitVar != 0)
-                            throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+                        {
+                            if (!retry)
+                                throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+
+                            retry = false;
+                            goto RetryLabel;
+                        }
                     }
                 }
             }
