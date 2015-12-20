@@ -240,6 +240,12 @@
   <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="olvColumnId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="olvColumnId.Width" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -361,6 +367,9 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="toolStripButtonRun.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripButtonRun.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -369,6 +378,9 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
     <value>Run uninstaller now</value>
+  </data>
+  <data name="toolStripButtonSkip.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripButtonSkip.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -382,6 +394,9 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="toolStripButtonFolderOpen.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripButtonFolderOpen.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -390,6 +405,9 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   </data>
   <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
     <value>Open install location</value>
+  </data>
+  <data name="toolStripButtonProperties.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripButtonProperties.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -533,6 +551,12 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>olvColumnName</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnId.Name" xml:space="preserve">
+    <value>olvColumnId</value>
+  </data>
+  <data name="&gt;&gt;olvColumnId.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripButtonRun.Name" xml:space="preserve">

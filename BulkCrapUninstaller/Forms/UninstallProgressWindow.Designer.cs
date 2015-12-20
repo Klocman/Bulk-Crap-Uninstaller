@@ -40,6 +40,7 @@ namespace BulkCrapUninstaller.Forms
             this.olvColumnIsSilent = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -97,10 +98,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             // objectListView1
             // 
+            this.objectListView1.AllColumns.Add(this.olvColumnId);
             this.objectListView1.AllColumns.Add(this.olvColumnStatus);
             this.objectListView1.AllColumns.Add(this.olvColumnIsSilent);
             this.objectListView1.AllColumns.Add(this.olvColumnName);
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnId,
             this.olvColumnStatus,
             this.olvColumnIsSilent,
             this.olvColumnName});
@@ -112,6 +115,11 @@ namespace BulkCrapUninstaller.Forms
             this.objectListView1.ShowItemToolTips = true;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.objectListView1.SelectedIndexChanged += new System.EventHandler(this.objectListView1_SelectedIndexChanged);
+            // 
+            // olvColumnId
+            // 
+            resources.ApplyResources(this.olvColumnId, "olvColumnId");
             // 
             // label3
             // 
@@ -143,17 +151,17 @@ namespace BulkCrapUninstaller.Forms
             // 
             // toolStripButtonRun
             // 
-            this.toolStripButtonRun.Image = global::BulkCrapUninstaller.Properties.Resources.layerdown;
             resources.ApplyResources(this.toolStripButtonRun, "toolStripButtonRun");
+            this.toolStripButtonRun.Image = global::BulkCrapUninstaller.Properties.Resources.layerdown;
             this.toolStripButtonRun.Name = "toolStripButtonRun";
             this.toolStripButtonRun.Click += new System.EventHandler(this.toolStripButtonRun_Click);
             // 
             // toolStripButtonSkip
             // 
-            this.toolStripButtonSkip.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
             resources.ApplyResources(this.toolStripButtonSkip, "toolStripButtonSkip");
+            this.toolStripButtonSkip.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
             this.toolStripButtonSkip.Name = "toolStripButtonSkip";
-            this.toolStripButtonSkip.Click += new System.EventHandler(this.toolStripButtonSkip_Click);
+            this.toolStripButtonSkip.Click += new System.EventHandler(this.OpenSkipMessagebox);
             // 
             // toolStripSeparator2
             // 
@@ -163,16 +171,16 @@ namespace BulkCrapUninstaller.Forms
             // toolStripButtonFolderOpen
             // 
             this.toolStripButtonFolderOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFolderOpen.Image = global::BulkCrapUninstaller.Properties.Resources.fullscreen;
             resources.ApplyResources(this.toolStripButtonFolderOpen, "toolStripButtonFolderOpen");
+            this.toolStripButtonFolderOpen.Image = global::BulkCrapUninstaller.Properties.Resources.fullscreen;
             this.toolStripButtonFolderOpen.Name = "toolStripButtonFolderOpen";
             this.toolStripButtonFolderOpen.Click += new System.EventHandler(this.toolStripButtonFolderOpen_Click);
             // 
             // toolStripButtonProperties
             // 
             this.toolStripButtonProperties.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonProperties.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
             resources.ApplyResources(this.toolStripButtonProperties, "toolStripButtonProperties");
+            this.toolStripButtonProperties.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
             this.toolStripButtonProperties.Name = "toolStripButtonProperties";
             this.toolStripButtonProperties.Click += new System.EventHandler(this.toolStripButtonProperties_Click);
             // 
@@ -229,8 +237,6 @@ namespace BulkCrapUninstaller.Forms
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UninstallProgressWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UninstallProgressWindow_FormClosing);
-            this.Shown += new System.EventHandler(this.UninstallProgressWindow_Shown);
-            this.Resize += new System.EventHandler(this.UninstallProgressWindow_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -269,5 +275,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripButton toolStripButtonSkip;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripButtonProperties;
+        private OLVColumn olvColumnId;
     }
 }

@@ -30,7 +30,6 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
-            this.checkBoxConcurrentLessCollisionProtection = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrentOneLoud = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrent = new System.Windows.Forms.CheckBox();
             this.numericUpDownMaxConcurrent = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +44,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkBoxManualNoCollisionProtection);
-            this.groupBox3.Controls.Add(this.checkBoxConcurrentLessCollisionProtection);
             this.groupBox3.Controls.Add(this.checkBoxConcurrentOneLoud);
             this.groupBox3.Controls.Add(this.checkBoxConcurrent);
             this.groupBox3.Controls.Add(this.numericUpDownMaxConcurrent);
@@ -53,7 +51,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 43);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(298, 143);
+            this.groupBox3.Size = new System.Drawing.Size(298, 118);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Concurrent uninstallation";
@@ -62,23 +60,12 @@
             // 
             this.checkBoxManualNoCollisionProtection.AutoSize = true;
             this.checkBoxManualNoCollisionProtection.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkBoxManualNoCollisionProtection.Location = new System.Drawing.Point(6, 106);
+            this.checkBoxManualNoCollisionProtection.Location = new System.Drawing.Point(6, 82);
             this.checkBoxManualNoCollisionProtection.Name = "checkBoxManualNoCollisionProtection";
             this.checkBoxManualNoCollisionProtection.Size = new System.Drawing.Size(224, 30);
             this.checkBoxManualNoCollisionProtection.TabIndex = 7;
             this.checkBoxManualNoCollisionProtection.Text = "Disable collision prevention when running \r\nuninstallers manually";
             this.checkBoxManualNoCollisionProtection.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxConcurrentLessCollisionProtection
-            // 
-            this.checkBoxConcurrentLessCollisionProtection.AutoSize = true;
-            this.checkBoxConcurrentLessCollisionProtection.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkBoxConcurrentLessCollisionProtection.Location = new System.Drawing.Point(19, 83);
-            this.checkBoxConcurrentLessCollisionProtection.Name = "checkBoxConcurrentLessCollisionProtection";
-            this.checkBoxConcurrentLessCollisionProtection.Size = new System.Drawing.Size(184, 17);
-            this.checkBoxConcurrentLessCollisionProtection.TabIndex = 6;
-            this.checkBoxConcurrentLessCollisionProtection.Text = "Use less strict collision prevention";
-            this.checkBoxConcurrentLessCollisionProtection.UseVisualStyleBackColor = true;
             // 
             // checkBoxConcurrentOneLoud
             // 
@@ -177,7 +164,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBoxConcurrentLessCollisionProtection;
         private System.Windows.Forms.CheckBox checkBoxConcurrentOneLoud;
         private System.Windows.Forms.CheckBox checkBoxConcurrent;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxConcurrent;

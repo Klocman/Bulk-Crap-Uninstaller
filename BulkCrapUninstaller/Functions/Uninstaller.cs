@@ -116,7 +116,7 @@ namespace BulkCrapUninstaller.Functions
                     if (pr.Id == myId)
                         continue;
 
-                    if (string.IsNullOrEmpty(pr.MainModule?.FileName) ||
+                    if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
                         pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM)))
                         continue;
 
@@ -195,6 +195,9 @@ namespace BulkCrapUninstaller.Functions
                     }
 
                     var status = ApplicationUninstallerManager.RunBulkUninstall(targets, GetConfiguration(quiet));
+                    status.OneLoudLimit = _settings.UninstallConcurrentOneLoud;
+                    status.ConcurrentUninstallerCount = _settings.UninstallConcurrency ? _settings.UninstallConcurrentMaxCount : 1;
+                    status.Start();
 
                     using (var uninstallWindow = new UninstallProgressWindow())
                     {
@@ -202,7 +205,7 @@ namespace BulkCrapUninstaller.Functions
                         uninstallWindow.ShowDialog();
                     }
 
-                    var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallEntries
+                    var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallersList
                         where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
                               || bulkUninstallEntry.CurrentStatus == UninstallStatus.Invalid
                               || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped

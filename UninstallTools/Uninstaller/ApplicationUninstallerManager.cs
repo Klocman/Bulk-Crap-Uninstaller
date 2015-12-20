@@ -242,7 +242,7 @@ namespace UninstallTools.Uninstaller
                 ? query.ToList()
                 : targetList.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
 
-            return StartNewUninstallerThread(targetList, configuration);
+            return new BulkUninstallTask(targetList, configuration);
         }
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace UninstallTools.Uninstaller
 
                 if (simulate)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(5000);
                     return null;
                 }
 
@@ -427,202 +427,7 @@ namespace UninstallTools.Uninstaller
             }
             return keysToCheck;
         }
-
-        private static BulkUninstallTask StartNewUninstallerThread(IList<BulkUninstallEntry> targetList,
-            BulkUninstallConfiguration configuration)
-        {
-            var returnStatus = new BulkUninstallTask(targetList, configuration);
-            var worker = new Thread(UninstallWorkerThread) {Name = "RunBulkUninstall_Worker"};
-            worker.Start(returnStatus);
-            return returnStatus;
-        }
-
-        private static void UninstallWorkerThread(object status)
-        {
-            var returnStatus = status as BulkUninstallTask;
-            if (returnStatus == null)
-                throw new ArgumentNullException(nameof(status));
-
-            var targetList = returnStatus.AllUninstallersList;
-            var configuration = returnStatus.Configuration;
-            if (targetList == null || configuration == null)
-                throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
-
-            for (var i = 0; i < targetList.Count; i++)
-            {
-                //returnStatus.FireOnStatusChanged();
-
-                var currentUninstaller = targetList[i];
-                returnStatus.CurrentUninstallerStatus = currentUninstaller;
-                returnStatus.CurrentTask = i + 1;
-
-                if (currentUninstaller.CurrentStatus == UninstallStatus.Invalid
-                    || currentUninstaller.CurrentStatus == UninstallStatus.Protected)
-                {
-                    continue;
-                }
-
-                if (currentUninstaller.UninstallerEntry.IsRegistered &&
-                    !currentUninstaller.UninstallerEntry.RegKeyStillExists())
-                {
-                    currentUninstaller.CurrentStatus = UninstallStatus.Completed;
-                    continue;
-                }
-
-                if (returnStatus.Aborted)
-                {
-                    currentUninstaller.CurrentStatus = UninstallStatus.Skipped;
-                    continue;
-                }
-
-                currentUninstaller.CurrentStatus = UninstallStatus.Uninstalling;
-                // Fire the event now so the interface can be updated to show the "Uninstalling" tag
-                returnStatus.FireOnStatusChanged();
-
-                var result = ProcessUninstaller(currentUninstaller, configuration, ref returnStatus.SkipCurrent);
-
-                // Take care of the aftermath
-                if (returnStatus.SkipCurrent != BulkUninstallTask.SkipCurrentLevel.None)
-                {
-                    returnStatus.SkipCurrent = BulkUninstallTask.SkipCurrentLevel.None;
-
-                    currentUninstaller.CurrentStatus = UninstallStatus.Skipped;
-                    currentUninstaller.CurrentError = new OperationCanceledException(Localisation.ManagerError_Skipped);
-                }
-                else if (result != null)
-                {
-                    //Localisation.ManagerError_PrematureWorkerStop is unused
-                    currentUninstaller.CurrentStatus = UninstallStatus.Failed;
-                    currentUninstaller.CurrentError = result;
-                }
-                else
-                {
-                    currentUninstaller.CurrentStatus = UninstallStatus.Completed;
-                }
-            }
-            returnStatus.Finished = true;
-            returnStatus.Dispose();
-        }
-
-        /// <summary>
-        ///     Run the uninstaller and wait for it to finish. Optionally terminate it or skip waiting for it. Returns
-        ///     exception/error if any.
-        /// </summary>
-        /// <param name="currentUninstaller">Uninstaller to uninstall</param>
-        /// <param name="configuration">Config to use</param>
-        /// <param name="skipLevel">Reference to variable changed when user wants to terminate or skip</param>
-        private static Exception ProcessUninstaller(BulkUninstallEntry currentUninstaller,
-            BulkUninstallConfiguration configuration, ref BulkUninstallTask.SkipCurrentLevel skipLevel)
-        {
-            try
-            {
-                var uninstaller = currentUninstaller.UninstallerEntry.RunUninstaller(
-                    configuration.PreferQuiet, configuration.Simulate);
-
-                // Can be null during simulation
-                if (uninstaller == null) return null;
-
-                var checkCounters = configuration.PreferQuiet &&
-                                    currentUninstaller.UninstallerEntry.QuietUninstallPossible;
-                List<Process> childProcesses;
-                var idleCounter = 0;
-
-                do
-                {
-                    if (skipLevel == BulkUninstallTask.SkipCurrentLevel.Skip)
-                        break;
-
-                    childProcesses = uninstaller.GetChildProcesses().ToList();
-                    if (!uninstaller.HasExited)
-                        childProcesses.Add(uninstaller);
-
-                    List<KeyValuePair<PerformanceCounter[], CounterSample[]>> counters = null;
-                    if (checkCounters)
-                    {
-                        try
-                        {
-                            counters = (from process in childProcesses
-                                let processName = process.ProcessName
-                                let perfCounters = new[]
-                                {
-                                    new PerformanceCounter("Process", "% Processor Time", processName, true),
-                                    new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
-                                }
-                                select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
-                                    perfCounters,
-                                    new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}
-                                    // Important to enumerate them now, they will collect data when we sleep
-                                    )).ToList();
-                        }
-                        catch
-                        {
-                            // Ignore errors caused by processes ending at bad times 
-                            // BUG: Will leak objects without disposing if it crashes in middle of work
-                        }
-                    }
-
-                    Thread.Sleep(1000);
-
-                    if (counters != null)
-                    {
-                        try
-                        {
-                            var anyWorking = false;
-                            foreach (var c in counters)
-                            {
-                                var c0 = CounterSample.Calculate(c.Value[0], c.Key[0].NextSample());
-                                var c1 = CounterSample.Calculate(c.Value[1], c.Key[1].NextSample());
-
-                                Debug.WriteLine("CPU " + c0 + "%, IO " + c1 + "B");
-
-                                // Check if process seems to be doing anything. Use 1% for CPU and 10KB for I/O
-                                if (c0 <= 1 && c1 <= 10240) continue;
-
-                                anyWorking = true;
-                                break;
-                            }
-
-                            idleCounter = anyWorking ? 0 : idleCounter + 1;
-                        }
-                        catch
-                        {
-                            // Ignore errors caused by processes ending at bad times
-                        }
-                        finally
-                        {
-                            // Remember to dispose of the counters
-                            counters.ForEach(x =>
-                            {
-                                x.Key[0].Dispose();
-                                x.Key[1].Dispose();
-                            });
-                        }
-                    }
-
-                    // Kill the uninstaller (and children) if user told us to or if it was idle for too long
-                    if (skipLevel == BulkUninstallTask.SkipCurrentLevel.Terminate || idleCounter > 15)
-                    {
-                        uninstaller.Kill(true);
-                        if (idleCounter > 15)
-                            throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
-                        break;
-                    }
-                } while (!uninstaller.HasExited || childProcesses.Any());
-
-                if (skipLevel == BulkUninstallTask.SkipCurrentLevel.None)
-                {
-                    var exitVar = uninstaller.ExitCode;
-                    if (exitVar != 0)
-                        throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex;
-            }
-            return null;
-        }
-
+        
         public class GetUninstallerListProgress
         {
             internal GetUninstallerListProgress(int totalCount)

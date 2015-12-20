@@ -17,17 +17,10 @@ namespace BulkCrapUninstaller.Forms
 {
     sealed partial class UninstallProgressWindow : Form
     {
-        [DllImport("user32.dll")]
-        extern static bool ShutdownBlockReasonCreate(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] string pwszReason);
-
-        [DllImport("user32.dll")]
-        extern static bool ShutdownBlockReasonDestroy(IntPtr hWnd);
-        
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortSkipMessageboxThread;
         private Thread _boxThread;
         private BulkUninstallTask _currentTargetStatus;
-        private bool _lastWasQuiet;
         private CustomMessageBox _skipMessageBox;
         private Thread _skipMessageboxThread;
         private CustomMessageBox _walkAwayBox;
@@ -38,9 +31,8 @@ namespace BulkCrapUninstaller.Forms
 
             Icon = Resources.Icon_Logo;
 
-            olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
-            olvColumnStatus.AspectGetter = BulkUninstallTask.StatusAspectGetter;
-            olvColumnIsSilent.AspectGetter = BulkUninstallTask.IsSilentAspectGetter;
+
+            toolStrip1.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable());
 
             _settings.Subscribe((sender, args) =>
             {
@@ -55,7 +47,29 @@ namespace BulkCrapUninstaller.Forms
                 if (_settings.Settings.UninstallPreventShutdown)
                     ShutdownBlockReasonDestroy(Handle);
             };
+
+            olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
+            olvColumnStatus.AspectGetter = BulkUninstallTask.StatusAspectGetter;
+            olvColumnIsSilent.AspectGetter = BulkUninstallTask.IsSilentAspectGetter;
+            olvColumnId.AspectName = nameof(BulkUninstallEntry.Id);
+
+            olvColumnStatus.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.CurrentStatus;
+            objectListView1.PrimarySortColumn = olvColumnStatus;
+            objectListView1.SecondarySortColumn = olvColumnId;
         }
+
+        private IEnumerable<BulkUninstallEntry> SelectedTaskEntries
+            => objectListView1.SelectedObjects.Cast<BulkUninstallEntry>();
+
+        private IEnumerable<ApplicationUninstallerEntry> SelectedUninstallerEntries
+            => SelectedTaskEntries.Select(x => x.UninstallerEntry);
+
+        [DllImport("user32.dll")]
+        private static extern bool ShutdownBlockReasonCreate(IntPtr hWnd,
+            [MarshalAs(UnmanagedType.LPWStr)] string pwszReason);
+
+        [DllImport("user32.dll")]
+        private static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
 
         public void SetTargetStatus(BulkUninstallTask targetStatus)
         {
@@ -64,10 +78,9 @@ namespace BulkCrapUninstaller.Forms
 
             _currentTargetStatus = targetStatus;
 
-            _lastWasQuiet = _currentTargetStatus.CurrentUninstallerStatus.IsSilent;
-            progressBar1.Maximum = _currentTargetStatus.TaskCount;
+            progressBar1.Maximum = _currentTargetStatus.AllUninstallersList.Count;
 
-            objectListView1.SetObjects(_currentTargetStatus.AllUninstallEntries);
+            objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList);
             _currentTargetStatus.OnStatusChanged += currentTargetStatus_OnCurrentTaskChanged;
             currentTargetStatus_OnCurrentTaskChanged(this, EventArgs.Empty);
         }
@@ -93,7 +106,11 @@ namespace BulkCrapUninstaller.Forms
 
             objectListView1.SafeInvoke(() =>
             {
-                objectListView1.SetObjects(_currentTargetStatus.AllUninstallEntries, true);
+                //objectListView1.RefreshObjects(_currentTargetStatus.AllUninstallersList.ToList());
+                //objectListView1.RebuildColumns();
+
+                objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
+
                 if (_currentTargetStatus.Finished)
                 {
                     OnTaskFinished();
@@ -115,7 +132,6 @@ namespace BulkCrapUninstaller.Forms
                 _boxThread = null;
             }
 
-            // TODO buttonSkip.Enabled = false;
             label1.Text = Localisable.UninstallProgressWindow_TaskDone;
             progressBar1.Value = progressBar1.Maximum;
             buttonClose.Text = Buttons.ButtonClose;
@@ -128,25 +144,33 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                if (!_lastWasQuiet && _currentTargetStatus.Configuration.QuietAreSorted &&
-                    (_currentTargetStatus.CurrentUninstallerStatus.IsSilent))
+                if (_walkAwayBox == null && //_currentTargetStatus.Configuration.QuietAreSorted &&
+                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) &&
+                    !_currentTargetStatus.AllUninstallersList.Any(
+                        x => !x.IsSilent && x.CurrentStatus == UninstallStatus.Waiting))
                 {
-                    _lastWasQuiet = true;
-                    OpenWalkAwayMessagebox();
+                    _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
+
+                    Enabled = false;
+                    _walkAwayBox.FormClosed += (x1, y1) => Enabled = true;
                 }
 
-                // TODO buttonSkip.Enabled = true;
                 buttonClose.Enabled = true;
 
-                var currentUninstallerStatus = _currentTargetStatus.CurrentUninstallerStatus;
-                label1.Text = string.Format("{0} {1}/{2}: {3}", Localisable.UninstallProgressWindow_Uninstalling,
-                    _currentTargetStatus.CurrentTask, _currentTargetStatus.TaskCount,
-                    currentUninstallerStatus.UninstallerEntry.DisplayName);
+                var progress = _currentTargetStatus.AllUninstallersList
+                    .Count(x => x.CurrentStatus != UninstallStatus.Waiting);
+                var statusString = string.Join("; ", _currentTargetStatus.AllUninstallersList
+                    .Where(x1 => x1.CurrentStatus == UninstallStatus.Uninstalling)
+                    .Select(x2 => x2.UninstallerEntry.DisplayName).ToArray());
 
-                objectListView1.EnsureVisible(objectListView1.IndexOf(currentUninstallerStatus));
+                label1.Text = $"{Localisable.UninstallProgressWindow_Uninstalling} " +
+                              $"{progress}" +
+                              $"/{_currentTargetStatus.AllUninstallersList.Count}: {statusString}";
+
+                //objectListView1.EnsureVisible(objectListView1.IndexOf(currentUninstallerStatus));
 
                 buttonClose.Text = Buttons.ButtonCancel;
-                progressBar1.Value = _currentTargetStatus.CurrentTask - 1;
+                progressBar1.Value = Math.Max(0, progress - 1);
                 progressBar1.Style = ProgressBarStyle.Continuous;
             }
             catch
@@ -161,25 +185,22 @@ namespace BulkCrapUninstaller.Forms
         {
             CloseSkipMessagebox();
 
+            var selected = SelectedTaskEntries.Where(x => !x.Finished).ToList();
+            if (selected.Count == 0)
+                return;
+
             _skipMessageBox = MessageBoxes.TaskSkipCurrentKillTaskQuestion(this);
             Enabled = false;
             _skipMessageBox.FormClosed += (x, y) => Enabled = true;
 
             _skipMessageboxThread = new Thread(SkipMesssageboxThread);
-            _skipMessageboxThread.Start();
+            _skipMessageboxThread.Start(selected);
         }
 
-        private void OpenWalkAwayMessagebox()
+        private void SkipMesssageboxThread(object items)
         {
-            _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
-
-            Enabled = false;
-            _walkAwayBox.FormClosed += (x, y) => Enabled = true;
-        }
-
-        private void SkipMesssageboxThread()
-        {
-            if (_skipMessageBox == null)
+            var selected = items as IEnumerable<BulkUninstallEntry>;
+            if (_skipMessageBox == null || selected == null)
                 return;
 
             try
@@ -198,10 +219,10 @@ namespace BulkCrapUninstaller.Forms
                 switch (_skipMessageBox.Result)
                 {
                     case CustomMessageBox.PressedButton.Left:
-                        _currentTargetStatus.SkipWaitingForCurrent(true);
+                        selected.ForEach(x => x.SkipWaiting(true));
                         break;
                     case CustomMessageBox.PressedButton.Middle:
-                        _currentTargetStatus.SkipWaitingForCurrent(false);
+                        selected.ForEach(x => x.SkipWaiting(false));
                         break;
                 }
             }
@@ -212,6 +233,8 @@ namespace BulkCrapUninstaller.Forms
                 {
                     if (!_skipMessageBox.IsDisposed)
                         _skipMessageBox.Dispose();
+
+                    currentTargetStatus_OnCurrentTaskChanged(this, EventArgs.Empty);
                 });
             }
         }
@@ -234,16 +257,6 @@ namespace BulkCrapUninstaller.Forms
             e.Cancel = true;
         }
 
-        private void UninstallProgressWindow_Resize(object sender, EventArgs e)
-        {
-            //linkLabel1.Text = Height > MinimumSize.Height ? "Show less information" : "Show more information";
-        }
-
-        private void UninstallProgressWindow_Shown(object sender, EventArgs e)
-        {
-            //Height = MinimumSize.Height;
-        }
-
         private void toolStripButtonSettings_Click(object sender, EventArgs e)
         {
             using (var sw = new SettingsWindow())
@@ -251,11 +264,11 @@ namespace BulkCrapUninstaller.Forms
                 sw.OpenedTab = 1;
                 sw.ShowDialog();
             }
+
+            _currentTargetStatus.OneLoudLimit = _settings.Settings.UninstallConcurrentOneLoud;
+            _currentTargetStatus.ConcurrentUninstallerCount = _settings.Settings.UninstallConcurrency
+                ? _settings.Settings.UninstallConcurrentMaxCount : 1;
         }
-
-        IEnumerable<BulkUninstallEntry> SelectedTaskEntries => objectListView1.SelectedObjects.Cast<BulkUninstallEntry>();
-
-        IEnumerable<ApplicationUninstallerEntry> SelectedUninstallerEntries => SelectedTaskEntries.Select(x => x.UninstallerEntry);
 
         private void toolStripButtonProperties_Click(object sender, EventArgs e)
         {
@@ -268,7 +281,7 @@ namespace BulkCrapUninstaller.Forms
         private void toolStripButtonFolderOpen_Click(object sender, EventArgs e)
         {
             var sourceDirs = SelectedUninstallerEntries.Where(x => x.InstallLocation.IsNotEmpty())
-                    .Select(y => y.InstallLocation).ToList();
+                .Select(y => y.InstallLocation).ToList();
 
             if (MessageBoxes.OpenDirectoriesMessageBox(sourceDirs.Count))
             {
@@ -285,12 +298,25 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolStripButtonRun_Click(object sender, EventArgs e)
         {
+            //TODO collision info
+            SelectedTaskEntries.ForEach(x => _currentTargetStatus.RunSingle(x, _settings.Settings.UninstallConcurrentDisableManualCollisionProtection));
 
+            currentTargetStatus_OnCurrentTaskChanged(sender, e);
         }
 
-        private void toolStripButtonSkip_Click(object sender, EventArgs e)
+        private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            toolStripButtonFolderOpen.Enabled = SelectedTaskEntries.Any(x => x.UninstallerEntry.InstallLocation.IsNotEmpty());
+            toolStripButtonProperties.Enabled = SelectedTaskEntries.Any();
 
+            toolStripButtonRun.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Waiting
+                                                                        || x.CurrentStatus == UninstallStatus.Failed
+                                                                        || x.CurrentStatus == UninstallStatus.Skipped);
+
+            toolStripButtonSkip.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus != UninstallStatus.Skipped
+                                                                        && x.CurrentStatus != UninstallStatus.Completed
+                                                                        && x.CurrentStatus != UninstallStatus.Invalid
+                                                                        && x.CurrentStatus != UninstallStatus.Protected);
         }
     }
 }
