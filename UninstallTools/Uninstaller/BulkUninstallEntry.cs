@@ -71,15 +71,15 @@ namespace UninstallTools.Uninstaller
             worker.Start(new KeyValuePair<bool, bool>(preferQuiet, simulate));
         }
 
+        bool canRetry = true;
+
         private void UninstallThread(object parameters)
         {
             var kvp = (KeyValuePair<bool, bool>) parameters;
             var preferQuiet = kvp.Key;
             var simulate = kvp.Value;
-            var retry = true;
             Exception error = null;
-            
-            RetryLabel:
+            var retry = false;
             try
             {
                 var uninstaller = UninstallerEntry.RunUninstaller(preferQuiet, simulate);
@@ -178,11 +178,8 @@ namespace UninstallTools.Uninstaller
                         var exitVar = uninstaller.ExitCode;
                         if (exitVar != 0)
                         {
-                            if (!retry)
-                                throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
-
-                            retry = false;
-                            goto RetryLabel;
+                            retry = true;
+                            throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
                         }
                     }
                 }
@@ -209,6 +206,12 @@ namespace UninstallTools.Uninstaller
             else
             {
                 CurrentStatus = UninstallStatus.Completed;
+            }
+
+            if (retry && canRetry)
+            {
+                CurrentStatus = UninstallStatus.Waiting;
+                canRetry = false;
             }
 
             Finished = true;
