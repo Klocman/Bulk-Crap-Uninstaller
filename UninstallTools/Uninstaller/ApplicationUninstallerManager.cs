@@ -151,6 +151,8 @@ namespace UninstallTools.Uninstaller
                 }
             }
 
+            applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetSpecialUninstallers());
+
             return applicationUninstallers;
         }
 

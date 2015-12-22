@@ -48,6 +48,79 @@ namespace UninstallTools.Uninstaller
             return results;
         }
 
+        private static ApplicationUninstallerEntry GetOneDrive()
+        {
+            var result = new ApplicationUninstallerEntry();
+
+            // Check if installed
+            try
+            {
+                using (var key = RegistryTools.OpenRegistryKey(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\OneDrive", false))
+                {
+                    result.RegistryPath = key.Name;
+                    result.RegistryKeyName = key.GetKeyName();
+                    
+                    result.InstallLocation = key.GetValue("CurrentVersionPath") as string;
+                    if (!Directory.Exists(result.InstallLocation))
+                        return null;
+
+                    result.DisplayIcon = key.GetValue("OneDriveTrigger") as string;
+                    result.DisplayVersion = key.GetValue("Version") as string;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            
+            // Check if the uninstaller is available
+            var systemRoot = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
+            var uninstallPath = Path.Combine(systemRoot, @"System32\OneDriveSetup.exe");
+            if (!File.Exists(uninstallPath))
+            {
+                uninstallPath = Path.Combine(systemRoot, @"SysWOW64\OneDriveSetup.exe");
+                if (!File.Exists(uninstallPath))
+                    uninstallPath = null;
+            }
+
+            if(uninstallPath != null)
+            {
+                result.IsValid = true;
+                result.UninstallString = $"\"{uninstallPath}\" /uninstall";
+                result.QuietUninstallString = result.UninstallString;
+                if (!File.Exists(result.DisplayIcon))
+                    result.DisplayIcon = uninstallPath;
+            }
+            
+            result.AboutUrl = @"https://onedrive.live.com/";
+            result.RawDisplayName = "OneDrive";
+            result.Publisher = "Microsoft Corporation";
+            result.EstimatedSize = FileSize.FromKilobytes(1024 * 90);
+            result.Is64Bit = false;
+            result.IsRegistered = true;
+
+            result.UninstallerKind = UninstallerType.Unknown;
+            
+            result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
+
+            if (!string.IsNullOrEmpty(result.DisplayIcon))
+                result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Get uninstallers that were pre-defined in BCU.
+        /// </summary>
+        public static IEnumerable<ApplicationUninstallerEntry> GetSpecialUninstallers()
+        {
+            var items = new List<ApplicationUninstallerEntry>();
+            var i = GetOneDrive();
+            if (i != null)
+                items.Add(i);
+            return items;
+        }
+
         /// <summary>
         ///     Tries to create a new uninstaller entry. If the registry key doesn't contain valid uninstaller
         ///     information, null is returned. It will throw ArgumentNullException if passed uninstallerKey is null.
@@ -59,10 +132,10 @@ namespace UninstallTools.Uninstaller
         {
             if (uninstallerKey == null)
                 throw new ArgumentNullException(nameof(uninstallerKey));
-            
+
             var tempEntry = GetBasicInformation(uninstallerKey);
             tempEntry.IsRegistered = true;
-            
+
             // Check for invalid registry key
             if (tempEntry.RawDisplayName == null)
             {
@@ -82,7 +155,7 @@ namespace UninstallTools.Uninstaller
 
             tempEntry.Is64Bit = is64Bit;
             tempEntry.IsUpdate = GetIsUpdate(uninstallerKey);
-            
+
             // Figure out what we are dealing with
             tempEntry.UninstallerKind = GetUninstallerType(uninstallerKey);
             tempEntry.BundleProviderKey = GetGuid(uninstallerKey);
@@ -301,6 +374,8 @@ namespace UninstallTools.Uninstaller
             return path;
         }
 
+        static bool GetExtendedAttributesNotSupported = false;
+
         private static void CreateFromDirectoryHelper(List<ApplicationUninstallerEntry> results, DirectoryInfo directory,
             int level)
         {
@@ -371,24 +446,31 @@ namespace UninstallTools.Uninstaller
                 entry.DisplayIcon = compareBestMatchFile.FullName;
                 entry.IconBitmap = Icon.ExtractAssociatedIcon(compareBestMatchFile.FullName);
 
-                try
+                if (!GetExtendedAttributesNotSupported)
                 {
-                    var attribs =
-                        compareBestMatchFile.GetExtendedAttributes().Where(x => !string.IsNullOrEmpty(x.Value)).ToList();
-                    entry.Publisher = GetAttribMatch(attribs, new[] {"Company", "Publisher"}) ?? entry.Publisher;
-                    entry.RawDisplayName =
-                        GetAttribMatch(attribs, new[] {"Product name", "Friendly name", "Program Name"}) ??
-                        entry.RawDisplayName;
-                    entry.DisplayVersion = GetAttribMatch(attribs, new[] {"Product version", "File version"});
-                }
-                catch
-                {
-                    // Something was not supported by the OS, oh well
-                    // TODO: Either change the method of getting attribs or indicate that it is a problem
+                    try
+                    {
+                        var attribs =
+                            compareBestMatchFile.GetExtendedAttributes().Where(x => !string.IsNullOrEmpty(x.Value)).ToList();
+                        entry.Publisher = GetAttribMatch(attribs, new[] { "Company", "Publisher" }) ?? entry.Publisher;
+                        entry.RawDisplayName =
+                            GetAttribMatch(attribs, new[] { "Product name", "Friendly name", "Program Name" }) ??
+                            entry.RawDisplayName;
+                        entry.DisplayVersion = GetAttribMatch(attribs, new[] { "Product version", "File version" });
+                    }
+                    catch(InvalidCastException)
+                    {
+                        // Not supported by the OS, oh well
+                        GetExtendedAttributesNotSupported = true;
+                    }
+                    catch
+                    {
+                        // TODO: Either change the method of getting attribs or indicate that it is a problem
+                    }
                 }
 
                 // Attempt to find an uninstaller application
-                var uninstallerFilters = new[] {"unins0", "uninstall", "uninst", "uninstaller"};
+                var uninstallerFilters = new[] { "unins0", "uninstall", "uninst", "uninstaller" };
                 var uninstaller = files.Concat(Directory.GetFiles(directory.FullName, "*.bat",
                     SearchOption.TopDirectoryOnly))
                     .FirstOrDefault(file =>
@@ -485,10 +567,10 @@ namespace UninstallTools.Uninstaller
             var attribList = attribs as IList<KeyValuePair<string, string>> ?? attribs.ToList();
 
             return (from filter in keywords
-                select attribList.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase))
+                    select attribList.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase))
                 into match
-                where !match.IsDefault()
-                select match.Value).FirstOrDefault();
+                    where !match.IsDefault()
+                    select match.Value).FirstOrDefault();
         }
 
         private static ApplicationUninstallerEntry GetBasicInformation(RegistryKey uninstallerKey)
@@ -512,14 +594,14 @@ namespace UninstallTools.Uninstaller
                     uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameInstallLocation) as string,
                 InstallSource = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameInstallSource) as string,
                 SystemComponent =
-                    (int) uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameSystemComponent, 0) != 0,
+                    (int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameSystemComponent, 0) != 0,
                 DisplayIcon = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameDisplayIcon) as string
             };
         }
 
         private static FileSize GetEstimatedSize(RegistryKey uninstallerKey)
         {
-            var tempSize = (int) uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameEstimatedSize, 0);
+            var tempSize = (int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameEstimatedSize, 0);
             return FileSize.FromKilobytes(tempSize);
         }
 
@@ -572,7 +654,7 @@ namespace UninstallTools.Uninstaller
 
             var releaseType = uninstallerKey.GetValue("ReleaseType", string.Empty) as string;
             if (releaseType.IsNotEmpty() &&
-                releaseType.ContainsAny(new[] {"Update", "Hotfix"}, StringComparison.OrdinalIgnoreCase))
+                releaseType.ContainsAny(new[] { "Update", "Hotfix" }, StringComparison.OrdinalIgnoreCase))
                 return true;
 
             var defaultValue = uninstallerKey.GetValue(null) as string;
@@ -603,7 +685,7 @@ namespace UninstallTools.Uninstaller
 
         private static bool GetProtectedFlag(RegistryKey uninstallerKey)
         {
-            return ((int) uninstallerKey.GetValue("NoRemove", 0) != 0);
+            return ((int)uninstallerKey.GetValue("NoRemove", 0) != 0);
         }
 
         private static string GetUninstallerFilename(string uninstallString, UninstallerType type, Guid bundleKey)
@@ -646,7 +728,7 @@ namespace UninstallTools.Uninstaller
         private static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
         {
             // Detect MSI installer based on registry entry (the proper way)
-            if ((int) uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameWindowsInstaller, 0) != 0)
+            if ((int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameWindowsInstaller, 0) != 0)
             {
                 return UninstallerType.Msiexec;
             }
@@ -671,7 +753,7 @@ namespace UninstallTools.Uninstaller
                 // Detect MSI installer based on the uninstall string
                 //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
                 if (PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
-                    new[] {@"\Package Cache\{", @"}\", ".exe"}, StringComparison.OrdinalIgnoreCase))
+                    new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 {
                     return UninstallerType.Msiexec;
                 }
@@ -734,7 +816,7 @@ namespace UninstallTools.Uninstaller
         {
             if (string.IsNullOrEmpty(path))
                 return false;
-            if (path.ContainsAny(new[] {"msiexec ", "msiexec.exe"}, StringComparison.OrdinalIgnoreCase))
+            if (path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase))
                 return true;
 
             return path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
@@ -745,12 +827,12 @@ namespace UninstallTools.Uninstaller
             try
             {
                 // Look for icons with known names in InstallLocation and UninstallerLocation
-                var query = from targetDir in new[] {entry.InstallLocation, entry.UninstallerLocation}
-                    where !string.IsNullOrEmpty(targetDir) && Directory.Exists(targetDir)
-                    from iconName in IconNames
-                    let combinedIconPath = Path.Combine(targetDir, iconName)
-                    where File.Exists(combinedIconPath)
-                    select combinedIconPath;
+                var query = from targetDir in new[] { entry.InstallLocation, entry.UninstallerLocation }
+                            where !string.IsNullOrEmpty(targetDir) && Directory.Exists(targetDir)
+                            from iconName in IconNames
+                            let combinedIconPath = Path.Combine(targetDir, iconName)
+                            where File.Exists(combinedIconPath)
+                            select combinedIconPath;
 
                 var iconPath = query.FirstOrDefault();
                 if (iconPath != null)

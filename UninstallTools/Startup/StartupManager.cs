@@ -100,10 +100,11 @@ namespace UninstallTools.Startup
                 .Concat(BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>());
         }
 
+        static bool GetExtendedAttributesNotSupported = false;
         internal static ExtractedInfo GetInfoFromFileAttributes(string sourceFile)
         {
             var resultInfo = new ExtractedInfo();
-            if (!File.Exists(sourceFile))
+            if (GetExtendedAttributesNotSupported || !File.Exists(sourceFile))
                 return resultInfo;
 
             // Fill in properties by gathering info from the command and the executable it is pointing at.
@@ -136,9 +137,14 @@ namespace UninstallTools.Startup
                     }
                 }
             }
+            catch (InvalidCastException)
+            {
+                // Interface is not supported, don't bother trying again
+                GetExtendedAttributesNotSupported = true;
+            }
             catch
             {
-                // Skip rest on error
+                // Return whatever could be gathered on error
             }
 
             return resultInfo;
