@@ -305,8 +305,8 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.FullRowSelect = true;
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
-            this.uninstallerObjectListView.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.uninstallerObjectListView.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.SelectedBackColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.SelectedForeColor = System.Drawing.Color.Empty;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;

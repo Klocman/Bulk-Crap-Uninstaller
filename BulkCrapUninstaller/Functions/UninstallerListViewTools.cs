@@ -666,7 +666,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 var entry = (x as ApplicationUninstallerEntry);
                 if (string.IsNullOrEmpty(entry?.RegistryKeyName))
-                    return UninstallerRatingManager.RatingEntry.NotAvailable;
+                    return RatingEntry.NotAvailable;
                 return _ratingManager.GetRating(entry.RegistryKeyName);
             };
 
@@ -687,7 +687,7 @@ namespace BulkCrapUninstaller.Functions
                     return Localisable.Unknown;
 
                 return (rating.MyRating.HasValue ? "Your rating:" : "Average rating:") + " " +
-                       UninstallerRatingManager.ToRating(rating.MyRating ?? (int)rating.AverageRating);
+                       RatingEntry.ToRating(rating.MyRating ?? (int)rating.AverageRating);
             };
 
             _reference.uninstallerObjectListView.CellClick += (x, y) =>

@@ -1313,6 +1313,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average rating: {0}; My rating: {1}.
+        /// </summary>
+        internal static string RatingEntry_ToString {
+            get {
+                return ResourceManager.GetString("RatingEntry_ToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are no entries matching your search string..
         /// </summary>
         internal static string SearchNothingFoundMessage {

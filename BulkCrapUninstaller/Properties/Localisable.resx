@@ -616,4 +616,7 @@ The lists are separated by a single newline.</comment>
     <value>{0} applications</value>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Average rating: {0}; My rating: {1}</value>
+  </data>
 </root>

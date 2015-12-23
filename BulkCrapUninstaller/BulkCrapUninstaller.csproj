@@ -181,6 +181,7 @@
     <Compile Include="Functions\ListViewDelegates.cs" />
     <Compile Include="Functions\MessageBoxes.cs" />
     <Compile Include="Functions\Properties.cs" />
+    <Compile Include="Functions\Ratings\RatingEntry.cs" />
     <Compile Include="Functions\Ratings\RatingRenderer.cs">
       <SubType>Component</SubType>
     </Compile>

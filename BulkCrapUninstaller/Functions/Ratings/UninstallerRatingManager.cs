@@ -35,7 +35,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         private long UserId { get; }
 
-        public int RatingCount => _cashe == null ? 0 : _cashe.Rows.Count;
+        public int RatingCount => _cashe?.Rows.Count ?? 0;
 
         public IEnumerable<RatingEntry> Items
         {
@@ -45,7 +45,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     return Enumerable.Empty<RatingEntry>();
 
                 return from DataRow row in _cashe.Rows
-                       select ToRatingEntry(row);
+                    select ToRatingEntry(row);
             }
         }
 
@@ -81,7 +81,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                         foreach (var rating in _ratingsToSend)
                         {
                             var stored = GetCasheEntry(rating.Key);
-                            var newRating = (int)rating.Value;
+                            var newRating = (int) rating.Value;
                             if (stored != null)
                                 stored[2] = newRating;
                             else
@@ -110,7 +110,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     foreach (var uninstallerRating in _ratingsToSend)
                     {
                         command.Parameters["@appParam"].Value = uninstallerRating.Key;
-                        command.Parameters["@rating"].Value = (int)uninstallerRating.Value;
+                        command.Parameters["@rating"].Value = (int) uninstallerRating.Value;
 
                         command.ExecuteNonQuery();
                     }
@@ -140,7 +140,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             lock (_casheLock)
             {
                 var stored = GetCasheEntry(appKey);
-                var newRating = (int)rating;
+                var newRating = (int) rating;
                 if (stored != null)
                     stored[2] = newRating;
                 else
@@ -161,8 +161,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return new RatingEntry
             {
                 ApplicationName = row[0] as string,
-                AverageRating = row.IsNull(1) ? (int?)null : Convert.ToInt32(row[1]),
-                MyRating = row.IsNull(2) ? (int?)null : Convert.ToInt32(row[2])
+                AverageRating = row.IsNull(1) ? (int?) null : Convert.ToInt32(row[1]),
+                MyRating = row.IsNull(2) ? (int?) null : Convert.ToInt32(row[2])
             };
         }
 
@@ -225,51 +225,6 @@ namespace BulkCrapUninstaller.Functions.Ratings
                         }
                     }
                 }
-        }
-
-        public static UninstallerRating ToRating(int val)
-        {
-            if (val <= ((int)UninstallerRating.Bad + (int)UninstallerRating.Neutral) / 2)
-                return UninstallerRating.Bad;
-            if (val >= ((int)UninstallerRating.Good + (int)UninstallerRating.Neutral) / 2)
-                return UninstallerRating.Good;
-
-            return UninstallerRating.Neutral;
-        }
-
-        public struct RatingEntry : IEquatable<RatingEntry>
-        {
-            public override int GetHashCode()
-            {
-                unchecked
-                {
-                    return (AverageRating.GetHashCode()*397) ^ MyRating.GetHashCode();
-                }
-            }
-
-            public string ApplicationName { get; set; }
-            public int? AverageRating { get; set; }
-            public int? MyRating { get; set; }
-            public bool IsEmpty => ApplicationName == null && !AverageRating.HasValue && !MyRating.HasValue;
-            public static RatingEntry Empty { get; } = default(RatingEntry);
-
-            public static RatingEntry NotAvailable { get; } = new RatingEntry
-            {
-                AverageRating = int.MinValue,
-                MyRating = int.MinValue,
-                ApplicationName = Localisable.NotAvailable
-            };
-
-            public bool Equals(RatingEntry other)
-            {
-                return AverageRating == other.AverageRating && MyRating == other.MyRating;
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (ReferenceEquals(null, obj)) return false;
-                return obj is RatingEntry && Equals((RatingEntry) obj);
-            }
         }
 
         public void ClearRatings()

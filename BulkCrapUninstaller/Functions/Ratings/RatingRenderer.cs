@@ -25,9 +25,9 @@ namespace BulkCrapUninstaller.Functions.Ratings
             Image baseImage = Resources.star;
 
             // Convert our aspect to a numeric value
-            var aspect = (UninstallerRatingManager.RatingEntry) Aspect;
+            var aspect = (RatingEntry) Aspect;
 
-            if (aspect.Equals(UninstallerRatingManager.RatingEntry.NotAvailable))
+            if (aspect.Equals(RatingEntry.NotAvailable))
             {
                 DrawText(g, r, Localisable.NotAvailable);
             }
