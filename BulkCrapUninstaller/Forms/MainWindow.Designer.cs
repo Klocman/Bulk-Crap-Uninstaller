@@ -180,6 +180,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
+            this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -278,6 +279,7 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.AllowColumnReorder = true;
             this.uninstallerObjectListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.uninstallerObjectListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.uninstallerObjectListView.CellEditUseWholeCell = false;
             this.uninstallerObjectListView.CheckBoxes = true;
             this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnDisplayName,
@@ -303,8 +305,9 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.FullRowSelect = true;
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
+            this.uninstallerObjectListView.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.HighlightForegroundColor = System.Drawing.Color.Empty;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
-            this.uninstallerObjectListView.OwnerDraw = true;
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;
             this.uninstallerObjectListView.ShowItemToolTips = true;
@@ -871,6 +874,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12,
             this.useSystemThemeToolStripMenuItem,
             this.toolStripSeparator20,
+            this.viewWindowsStoreAppsToolStripMenuItem,
             this.findByWindowToolStripMenuItem,
             this.searchToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
@@ -1331,6 +1335,12 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1.StopWhenFormIsDisabled = true;
             this.globalHotkeys1.SuppressKeyPresses = true;
             // 
+            // viewWindowsStoreAppsToolStripMenuItem
+            // 
+            this.viewWindowsStoreAppsToolStripMenuItem.Name = "viewWindowsStoreAppsToolStripMenuItem";
+            resources.ApplyResources(this.viewWindowsStoreAppsToolStripMenuItem, "viewWindowsStoreAppsToolStripMenuItem");
+            this.viewWindowsStoreAppsToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsStoreAppsToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -1525,6 +1535,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripButton toolStripButtonWindowSearcher;
         private ToolStripSeparator toolStripSeparator23;
         private ToolStripMenuItem findByWindowToolStripMenuItem;
+        private ToolStripMenuItem viewWindowsStoreAppsToolStripMenuItem;
     }
 }
 

@@ -14,6 +14,7 @@ using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.IO;
+using Klocman.Localising;
 using Klocman.Native;
 using Klocman.Subsystems;
 using Klocman.Subsystems.Tracking;
@@ -294,6 +295,7 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe(RefreshList, x => x.FilterShowUpdates, this);
             settings.Subscribe(RefreshList, x => x.FilterShowSystemComponents, this);
             settings.Subscribe(RefreshList, x => x.FilterShowProtected, this);
+            settings.Subscribe(RefreshList, x => x.FilterShowStoreApps, this);
 
             settings.Subscribe((sender, args) =>
             {
@@ -1134,6 +1136,12 @@ namespace BulkCrapUninstaller.Forms
                 FilterComparisonMethod.Regex);
 
             //MessageBox.Show(process.MainWindowTitle);
+        }
+
+        private void viewWindowsStoreAppsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _setMan.Selected.Settings.FilterShowStoreApps = true;
+            filterEditor1.Search(UninstallerType.StoreApp.GetLocalisedName(), FilterComparisonMethod.Equals);
         }
     }
 }
