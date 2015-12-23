@@ -45,6 +45,7 @@ namespace UninstallTools.Uninstaller
         private bool? _certificateValid;
         private string[] _mainExecutableCandidates;
         private string _quietUninstallString;
+        private string _ratingId;
         private string _uninstallerLocation;
         private string _uninstallString;
         internal Icon IconBitmap = null;
@@ -101,13 +102,6 @@ namespace UninstallTools.Uninstaller
         [LocalisedName(typeof (Localisation), "InstallLocation")]
         public string InstallLocation { get; internal set; }
 
-        /// <summary>
-        /// Check if the install location is not empty and is not a system directory
-        /// </summary>
-        public bool IsInstallLocationValid()
-            => !string.IsNullOrEmpty(InstallLocation?.Trim()) &&
-            !UninstallToolsGlobalConfig.AllProgramFiles.Any(x => PathTools.PathsEqual(x, InstallLocation));
-
         [LocalisedName(typeof (Localisation), "InstallSource")]
         public string InstallSource { get; internal set; }
 
@@ -160,6 +154,12 @@ namespace UninstallTools.Uninstaller
                 return _quietUninstallString;
             }
             internal set { _quietUninstallString = value; }
+        }
+
+        public string RatingId
+        {
+            get { return string.IsNullOrEmpty(_ratingId) ? RegistryKeyName : _ratingId; }
+            set { _ratingId = value; }
         }
 
         [LocalisedName(typeof (Localisation), "RegistryKeyName")]
@@ -228,6 +228,13 @@ namespace UninstallTools.Uninstaller
         }
 
         internal string RawDisplayName { get; set; }
+
+        /// <summary>
+        ///     Check if the install location is not empty and is not a system directory
+        /// </summary>
+        public bool IsInstallLocationValid()
+            => !string.IsNullOrEmpty(InstallLocation?.Trim()) &&
+               !UninstallToolsGlobalConfig.AllProgramFiles.Any(x => PathTools.PathsEqual(x, InstallLocation));
 
         public static string GetFuzzyDirectory(string fullCommand)
         {
@@ -305,7 +312,7 @@ namespace UninstallTools.Uninstaller
         {
             if (_mainExecutableCandidates == null)
             {
-                _mainExecutableCandidates = new string[] { };
+                _mainExecutableCandidates = new string[] {};
 
                 var trimmedDispName = DisplayNameTrimmed;
                 if (string.IsNullOrEmpty(trimmedDispName))

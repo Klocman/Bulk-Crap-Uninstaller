@@ -551,10 +551,8 @@ namespace BulkCrapUninstaller.Functions
         {
             var entry = obj as ApplicationUninstallerEntry;
 
-            if (entry == null || (Program.IsInstalled && entry.RegistryKeyName.IsNotEmpty()
-                                  &&
-                                  entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
-                                      StringComparison.CurrentCulture)))
+            if (entry == null || (Program.IsInstalled && entry.RegistryKeyName.IsNotEmpty() &&
+                                  entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName, StringComparison.CurrentCulture)))
                 return false;
 
             if (_settings.Settings.FilterHideMicrosoft && entry.Publisher.IsNotEmpty() && entry.Publisher.Contains("Microsoft"))
@@ -665,9 +663,9 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnRating.AspectGetter = x =>
             {
                 var entry = (x as ApplicationUninstallerEntry);
-                if (string.IsNullOrEmpty(entry?.RegistryKeyName))
+                if (string.IsNullOrEmpty(entry?.RatingId))
                     return RatingEntry.NotAvailable;
-                return _ratingManager.GetRating(entry.RegistryKeyName);
+                return _ratingManager.GetRating(entry.RatingId);
             };
 
             _reference.olvColumnRating.Renderer = new RatingRenderer();
@@ -677,11 +675,11 @@ namespace BulkCrapUninstaller.Functions
                 var model = x as ApplicationUninstallerEntry;
 
                 if (!_settings.Settings.MiscUserRatings
-                    || string.IsNullOrEmpty(model?.RegistryKeyName)
+                    || string.IsNullOrEmpty(model?.RatingId)
                     || _ratingManager.RatingCount <= 0)
                     return Localisable.NotAvailable;
 
-                var rating = _ratingManager.GetRating(model.RegistryKeyName);
+                var rating = _ratingManager.GetRating(model.RatingId);
 
                 if (rating.IsEmpty || (!rating.AverageRating.HasValue && !rating.MyRating.HasValue))
                     return Localisable.Unknown;
@@ -736,7 +734,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 MessageBoxes.RatingsDisabled();
             }
-            else if (!entries.Any() || entries.All(x => string.IsNullOrEmpty(x.RegistryKeyName)))
+            else if (!entries.Any() || entries.All(x => string.IsNullOrEmpty(x.RatingId)))
             {
                 MessageBoxes.RatingUnavailable();
             }
@@ -751,9 +749,9 @@ namespace BulkCrapUninstaller.Functions
                 if (result == UninstallerRating.Unknown)
                     return;
 
-                foreach (var entry in entries.Where(x => !string.IsNullOrEmpty(x.RegistryKeyName)))
+                foreach (var entry in entries.Where(x => !string.IsNullOrEmpty(x.RatingId)))
                 {
-                    _ratingManager.SetMyRating(entry.RegistryKeyName, result);
+                    _ratingManager.SetMyRating(entry.RatingId, result);
                 }
             }
         }

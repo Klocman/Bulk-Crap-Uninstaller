@@ -48,7 +48,7 @@ namespace UninstallTools.Uninstaller
 
         public static IEnumerable<ApplicationUninstallerEntry> GetStoreApps()
         {
-            if(!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
+            if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
                 yield break;
 
             var psi = new ProcessStartInfo(StoreAppHelperPath, "/query")
@@ -63,7 +63,7 @@ namespace UninstallTools.Uninstaller
             var process = Process.Start(psi);
 
             var output = process?.StandardOutput.ReadToEnd();
-            if(string.IsNullOrEmpty(output))
+            if (string.IsNullOrEmpty(output))
                 yield break;
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
@@ -83,30 +83,36 @@ namespace UninstallTools.Uninstaller
                 //Trim the labels
                 for (var i = 0; i < current.Count; i++)
                     current[i] = current[i].Substring(current[i].IndexOf(" ", StringComparison.Ordinal)).Trim();
-
-                var result = new ApplicationUninstallerEntry();
-                result.UninstallString = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
-                result.QuietUninstallString = result.UninstallString;
-                result.RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1];
-                result.Publisher = current[2];
-                if (File.Exists(current[3]))
+                
+                if (Directory.Exists(current[4]))
                 {
-                    result.DisplayIcon = current[3];
-                    result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                    var result = new ApplicationUninstallerEntry();
+
+                    result.InstallLocation = current[4];
+                    result.RatingId = current[0];
+                    result.UninstallString = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
+                    result.QuietUninstallString = result.UninstallString;
+                    result.RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1];
+                    result.Publisher = current[2];
+                    result.IsValid = true;
+                    result.UninstallerKind = UninstallerType.StoreApp;
+
+                    if (File.Exists(current[3]))
+                    {
+                        result.DisplayIcon = current[3];
+                        result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                    }
+
+                    result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
+
+                    if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        result.SystemComponent = true;
+                        result.IsProtected = true;
+                    }
+
+                    yield return result;
                 }
-                result.InstallLocation = current[4];
-                result.IsValid = true;
-                result.UninstallerKind = UninstallerType.StoreApp;
-
-                result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
-
-                if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    result.SystemComponent = true;
-                    result.IsProtected = true;
-                }
-
-                yield return result;
 
                 parts = parts.Skip(5).ToArray();
                 current = parts.Take(5).ToList();
@@ -147,7 +153,7 @@ namespace UninstallTools.Uninstaller
                     result.RegistryKeyName = key.GetKeyName();
 
                     result.InstallLocation = key.GetValue("CurrentVersionPath") as string;
-                    if (!Directory.Exists(result.InstallLocation))
+                    if (result.InstallLocation == null || !Directory.Exists(result.InstallLocation))
                         return null;
 
                     result.DisplayIcon = key.GetValue("OneDriveTrigger") as string;
@@ -466,7 +472,7 @@ namespace UninstallTools.Uninstaller
             return path;
         }
 
-        static bool GetExtendedAttributesNotSupported = false;
+        static bool _getExtendedAttributesNotSupported;
 
         private static void CreateFromDirectoryHelper(List<ApplicationUninstallerEntry> results, DirectoryInfo directory,
             int level)
@@ -538,7 +544,7 @@ namespace UninstallTools.Uninstaller
                 entry.DisplayIcon = compareBestMatchFile.FullName;
                 entry.IconBitmap = Icon.ExtractAssociatedIcon(compareBestMatchFile.FullName);
 
-                if (!GetExtendedAttributesNotSupported)
+                if (!_getExtendedAttributesNotSupported)
                 {
                     try
                     {
@@ -553,7 +559,7 @@ namespace UninstallTools.Uninstaller
                     catch (InvalidCastException)
                     {
                         // Not supported by the OS, oh well
-                        GetExtendedAttributesNotSupported = true;
+                        _getExtendedAttributesNotSupported = true;
                     }
                     catch
                     {
