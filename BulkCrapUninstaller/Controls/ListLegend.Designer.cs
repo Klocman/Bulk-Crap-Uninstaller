@@ -36,6 +36,7 @@
             this.labelUnverified = new System.Windows.Forms.Label();
             this.labelVerified = new System.Windows.Forms.Label();
             this.labelLegend = new System.Windows.Forms.Label();
+            this.labelStoreApp = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelUnverified, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelVerified, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelLegend, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelStoreApp, 0, 6);
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.EnabledChanged += new System.EventHandler(this.tableLayoutPanel1_EnabledChanged);
@@ -55,50 +57,57 @@
             // 
             // labelWinFeature
             // 
-            resources.ApplyResources(this.labelWinFeature, "labelWinFeature");
-            this.labelWinFeature.BackColor = System.Drawing.Color.SkyBlue;
+            this.labelWinFeature.BackColor = System.Drawing.Color.SlateBlue;
             this.labelWinFeature.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelWinFeature, "labelWinFeature");
             this.labelWinFeature.Name = "labelWinFeature";
             this.labelWinFeature.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelOrphaned
             // 
-            resources.ApplyResources(this.labelOrphaned, "labelOrphaned");
             this.labelOrphaned.BackColor = System.Drawing.Color.LightPink;
             this.labelOrphaned.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelOrphaned, "labelOrphaned");
             this.labelOrphaned.Name = "labelOrphaned";
             this.labelOrphaned.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelInvalid
             // 
-            resources.ApplyResources(this.labelInvalid, "labelInvalid");
             this.labelInvalid.BackColor = System.Drawing.Color.LightSteelBlue;
             this.labelInvalid.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelInvalid, "labelInvalid");
             this.labelInvalid.Name = "labelInvalid";
             this.labelInvalid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelUnverified
             // 
-            resources.ApplyResources(this.labelUnverified, "labelUnverified");
             this.labelUnverified.BackColor = System.Drawing.Color.Aquamarine;
             this.labelUnverified.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelUnverified, "labelUnverified");
             this.labelUnverified.Name = "labelUnverified";
             this.labelUnverified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelVerified
             // 
-            resources.ApplyResources(this.labelVerified, "labelVerified");
             this.labelVerified.BackColor = System.Drawing.Color.PaleGreen;
             this.labelVerified.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelVerified, "labelVerified");
             this.labelVerified.Name = "labelVerified";
             this.labelVerified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelLegend
             // 
-            resources.ApplyResources(this.labelLegend, "labelLegend");
             this.labelLegend.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelLegend, "labelLegend");
             this.labelLegend.Name = "labelLegend";
             this.labelLegend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // labelStoreApp
+            // 
+            this.labelStoreApp.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelStoreApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.labelStoreApp, "labelStoreApp");
+            this.labelStoreApp.Name = "labelStoreApp";
             // 
             // ListLegend
             // 
@@ -121,5 +130,6 @@
         private System.Windows.Forms.Label labelUnverified;
         private System.Windows.Forms.Label labelVerified;
         private System.Windows.Forms.Label labelLegend;
+        private System.Windows.Forms.Label labelStoreApp;
     }
 }

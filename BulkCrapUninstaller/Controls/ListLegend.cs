@@ -18,6 +18,7 @@ namespace BulkCrapUninstaller.Controls
             labelUnverified.BackColor = Constants.UnverifiedColor;
             labelVerified.BackColor = Constants.VerifiedColor;
             labelWinFeature.BackColor = Constants.WindowsFeatureColor;
+            labelStoreApp.BackColor = Constants.WindowsStoreAppColor;
         }
 
         private void OnMouseDown(object sender, MouseEventArgs e)
