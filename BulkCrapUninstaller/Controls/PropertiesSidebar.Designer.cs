@@ -48,13 +48,13 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxListSysComp = new System.Windows.Forms.CheckBox();
             this.checkBoxListProtected = new System.Windows.Forms.CheckBox();
             this.checkBoxShowUpdates = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowStoreApps = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxViewCheckboxes = new System.Windows.Forms.CheckBox();
             this.checkBoxViewGroups = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
-            this.checkBoxShowStoreApps = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -168,6 +168,12 @@ namespace BulkCrapUninstaller.Controls
             this.toolTip1.SetToolTip(this.checkBoxShowUpdates, resources.GetString("checkBoxShowUpdates.ToolTip"));
             this.checkBoxShowUpdates.UseVisualStyleBackColor = true;
             // 
+            // checkBoxShowStoreApps
+            // 
+            resources.ApplyResources(this.checkBoxShowStoreApps, "checkBoxShowStoreApps");
+            this.checkBoxShowStoreApps.Name = "checkBoxShowStoreApps";
+            this.checkBoxShowStoreApps.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
@@ -199,12 +205,6 @@ namespace BulkCrapUninstaller.Controls
             // usageTracker1
             // 
             this.usageTracker1.ContainerControl = this;
-            // 
-            // checkBoxShowStoreApps
-            // 
-            resources.ApplyResources(this.checkBoxShowStoreApps, "checkBoxShowStoreApps");
-            this.checkBoxShowStoreApps.Name = "checkBoxShowStoreApps";
-            this.checkBoxShowStoreApps.UseVisualStyleBackColor = true;
             // 
             // PropertiesSidebar
             // 

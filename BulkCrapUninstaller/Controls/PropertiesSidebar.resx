@@ -124,143 +124,10 @@
   <data name="flowLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;checkBoxBatchSortQuiet.Name" xml:space="preserve">
-    <value>checkBoxBatchSortQuiet</value>
-  </data>
-  <data name="&gt;&gt;checkBoxBatchSortQuiet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxBatchSortQuiet.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxBatchSortQuiet.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
-    <value>checkBoxOrphans</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Name" xml:space="preserve">
-    <value>checkBoxInvalidTest</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.Name" xml:space="preserve">
-    <value>checkBoxCertTest</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Name" xml:space="preserve">
-    <value>checkBoxDiisableProtection</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSimulate.Name" xml:space="preserve">
-    <value>checkBoxSimulate</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSimulate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSimulate.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSimulate.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="flowLayoutPanel4.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
-  </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 138</value>
-  </data>
-  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 199</value>
-  </data>
-  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 3, 5, 3</value>
-  </data>
-  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 157</value>
-  </data>
-  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Advanced</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
-  </metadata>
   <data name="checkBoxBatchSortQuiet.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxBatchSortQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -273,6 +140,9 @@
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Intelligent uninstaller sorting</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>202, 17</value>
+  </metadata>
   <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
     <value>Modify order of the entries when uninstalling to a more intelligent one.
 If this option is disabled uninstallers are executed in alphabetical order.
@@ -295,6 +165,7 @@ avoid uninstalling their parts separately.</value>
   <data name="checkBoxOrphans.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxOrphans.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -337,13 +208,13 @@ Warning: Double check before removing these applications, they might still be ne
     <value>3, 49</value>
   </data>
   <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
+    <value>159, 17</value>
   </data>
   <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Highlight invalid uninstallers</value>
+    <value>Highlight missing uninstallers</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Use grey color to identify uninstallers that are corrupted or missing.</value>
@@ -456,6 +327,63 @@ Useful for debugging, making screenshots and scaring coworkers.</value>
   </data>
   <data name="&gt;&gt;checkBoxSimulate.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="flowLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel4.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 16</value>
+  </data>
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 138</value>
+  </data>
+  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 199</value>
+  </data>
+  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 157</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -674,104 +602,8 @@ Drivers are often marked with this tag.</value>
   <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 10</value>
-  </data>
-  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 3, 5, 3</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 65</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>List view settings</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Name" xml:space="preserve">
-    <value>checkBoxViewCheckboxes</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Name" xml:space="preserve">
-    <value>checkBoxViewGroups</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 46</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="checkBoxViewCheckboxes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -837,9 +669,66 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="&gt;&gt;checkBoxViewGroups.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
-  </metadata>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 16</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 46</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 10</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 65</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>List view settings</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>299, 17</value>
   </metadata>

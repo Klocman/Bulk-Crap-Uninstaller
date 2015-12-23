@@ -130,7 +130,7 @@
     <value>3, 100</value>
   </data>
   <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelWinFeature.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -160,7 +160,7 @@
     <value>3, 80</value>
   </data>
   <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelOrphaned.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -190,13 +190,13 @@
     <value>3, 60</value>
   </data>
   <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelInvalid.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Invalid uninstaller</value>
+    <value>Missing uninstaller</value>
   </data>
   <data name="labelInvalid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -220,7 +220,7 @@
     <value>3, 40</value>
   </data>
   <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelUnverified.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -250,7 +250,7 @@
     <value>3, 20</value>
   </data>
   <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelVerified.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -280,7 +280,7 @@
     <value>3, 0</value>
   </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelLegend.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -313,7 +313,7 @@
     <value>3, 120</value>
   </data>
   <data name="labelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+    <value>125, 20</value>
   </data>
   <data name="labelStoreApp.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -346,7 +346,7 @@
     <value>8</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 146</value>
+    <value>131, 144</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -373,7 +373,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 146</value>
+    <value>131, 144</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ListLegend</value>
