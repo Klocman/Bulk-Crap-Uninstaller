@@ -59,7 +59,7 @@ namespace UninstallTools.Uninstaller
                 {
                     result.RegistryPath = key.Name;
                     result.RegistryKeyName = key.GetKeyName();
-                    
+
                     result.InstallLocation = key.GetValue("CurrentVersionPath") as string;
                     if (!Directory.Exists(result.InstallLocation))
                         return null;
@@ -72,7 +72,7 @@ namespace UninstallTools.Uninstaller
             {
                 return null;
             }
-            
+
             // Check if the uninstaller is available
             var systemRoot = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
             var uninstallPath = Path.Combine(systemRoot, @"System32\OneDriveSetup.exe");
@@ -83,7 +83,7 @@ namespace UninstallTools.Uninstaller
                     uninstallPath = null;
             }
 
-            if(uninstallPath != null)
+            if (uninstallPath != null)
             {
                 result.IsValid = true;
                 result.UninstallString = $"\"{uninstallPath}\" /uninstall";
@@ -91,7 +91,7 @@ namespace UninstallTools.Uninstaller
                 if (!File.Exists(result.DisplayIcon))
                     result.DisplayIcon = uninstallPath;
             }
-            
+
             result.AboutUrl = @"https://onedrive.live.com/";
             result.RawDisplayName = "OneDrive";
             result.Publisher = "Microsoft Corporation";
@@ -100,11 +100,17 @@ namespace UninstallTools.Uninstaller
             result.IsRegistered = true;
 
             result.UninstallerKind = UninstallerType.Unknown;
-            
+
             result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
 
             if (!string.IsNullOrEmpty(result.DisplayIcon))
                 result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
+
+            /*
+             TODO Delete these keys to remove OneDrive from explorer. Add to junk remove, or as an extra step to the uninstallation.
+             "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" 
+             "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}"
+            */
 
             return result;
         }
@@ -458,7 +464,7 @@ namespace UninstallTools.Uninstaller
                             entry.RawDisplayName;
                         entry.DisplayVersion = GetAttribMatch(attribs, new[] { "Product version", "File version" });
                     }
-                    catch(InvalidCastException)
+                    catch (InvalidCastException)
                     {
                         // Not supported by the OS, oh well
                         GetExtendedAttributesNotSupported = true;
