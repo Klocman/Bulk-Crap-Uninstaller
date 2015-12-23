@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace StoreAppHelper
 {
@@ -17,7 +18,7 @@ namespace StoreAppHelper
             if (args.Length == 0)
                 return InvalidArgumentCode;
 
-            if (args.Length == 1 && string.Equals(args[1], @"/query", StringComparison.OrdinalIgnoreCase))
+            if (args.Length == 1 && string.Equals(args[0], @"/query", StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
