@@ -58,6 +58,9 @@ namespace StoreAppHelper
                 var dir = package.InstalledLocation.Path;
                 var file = Path.Combine(dir, "AppxManifest.xml");
 
+                if(!File.Exists(file) || package.IsFramework)
+                    continue;
+
                 var contents = File.ReadAllText(file);
                 var start = contents.IndexOf("<Properties>", StringComparison.Ordinal);
                 var end = contents.IndexOf("</Properties>", StringComparison.Ordinal);
@@ -69,12 +72,11 @@ namespace StoreAppHelper
                 var publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value;
 
                 var installPath = package.InstalledLocation.Path;
-
-                if (package.IsFramework) continue;
-
+                
+                var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
                 yield return new App(package.Id.FullName,
-                    ExtractDisplayName(installPath, package.Id.Name, displayName),
-                    publisherDisplayName,
+                    string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
+                    ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
                     ExtractDisplayIcon(installPath, logoPath),
                     installPath);
             }
