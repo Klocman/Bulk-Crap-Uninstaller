@@ -808,6 +808,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windows Store App.
+        /// </summary>
+        internal static string UninstallerType_StoreApp {
+            get {
+                return ResourceManager.GetString("UninstallerType_StoreApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
         internal static string UninstallerType_Unknown {

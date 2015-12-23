@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -26,6 +28,90 @@ namespace UninstallTools.Uninstaller
             "DisplayIcon.ico", "Icon.ico", "app.ico", "appicon.ico",
             "application.ico", "logo.ico"
         };
+
+        private static string _assemblyLocation;
+        private static string AssemblyLocation
+        {
+            get
+            {
+                if (_assemblyLocation == null)
+                {
+                    _assemblyLocation = Assembly.GetExecutingAssembly().Location;
+                    if (_assemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
+                        _assemblyLocation = PathTools.GetDirectory(_assemblyLocation);
+                }
+                return _assemblyLocation;
+            }
+        }
+
+        private static string StoreAppHelperPath => Path.Combine(AssemblyLocation, @"StoreAppHelper.exe");
+
+        public static IEnumerable<ApplicationUninstallerEntry> GetStoreApps()
+        {
+            if(!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
+                yield break;
+
+            var psi = new ProcessStartInfo(StoreAppHelperPath, "/query")
+            {
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = false,
+                CreateNoWindow = true,
+                StandardOutputEncoding = Encoding.GetEncoding(850)
+            };
+
+            var process = Process.Start(psi);
+
+            var output = process?.StandardOutput.ReadToEnd();
+            if(string.IsNullOrEmpty(output))
+                yield break;
+
+            var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
+
+            var parts = output.SplitNewlines(StringSplitOptions.None);
+            var current = parts.Take(5).ToList();
+            while (current.Count == 5)
+            {
+                /*
+               @"FullName: "
+               @"DisplayName: "
+               @"PublisherDisplayName: "
+               @"Logo: "
+               @"InstalledLocation: "
+               */
+
+                //Trim the labels
+                for (var i = 0; i < current.Count; i++)
+                    current[i] = current[i].Substring(current[i].IndexOf(" ", StringComparison.Ordinal)).Trim();
+
+                var result = new ApplicationUninstallerEntry();
+                result.UninstallString = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
+                result.QuietUninstallString = result.UninstallString;
+                result.RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1];
+                result.Publisher = current[2];
+                if (File.Exists(current[3]))
+                {
+                    result.DisplayIcon = current[3];
+                    result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                }
+                result.InstallLocation = current[4];
+                result.IsValid = true;
+                result.UninstallerKind = UninstallerType.StoreApp;
+
+                result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
+
+                if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    result.SystemComponent = true;
+                    result.IsProtected = true;
+                }
+
+                yield return result;
+
+                parts = parts.Skip(5).ToArray();
+                current = parts.Take(5).ToList();
+            }
+        }
 
         public static IEnumerable<ApplicationUninstallerEntry> TryCreateFromDirectory(DirectoryInfo directory,
             bool is64Bit)

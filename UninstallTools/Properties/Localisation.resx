@@ -418,4 +418,7 @@
   <data name="Error_InvalidRegKeys" xml:space="preserve">
     <value>Invalid or unknown startup registry key(s):</value>
   </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Store App</value>
+  </data>
 </root>
