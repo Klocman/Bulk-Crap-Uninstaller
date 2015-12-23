@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 15</value>
+    <value>135, 17</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
@@ -139,9 +139,6 @@ Przede wszystkim ta opcja sprawi że ciche dezinstalatory uruchomią się na ko�
 pozostawić procesu bez nadzoru. Największe aplikacje zostaną odinstalowane pierwsze, w celu
 uniknięcia odinstalowywania ich części oddzielnie.</value>
   </data>
-  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 24</value>
-  </data>
   <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 17</value>
   </data>
@@ -153,9 +150,6 @@ uniknięcia odinstalowywania ich części oddzielnie.</value>
 
 Uwaga: Przed usunięciem tych aplikacji sprawdź dwukrotnie czy nie są jeszcze potrzebne!</value>
   </data>
-  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 47</value>
-  </data>
   <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
   </data>
@@ -164,9 +158,6 @@ Uwaga: Przed usunięciem tych aplikacji sprawdź dwukrotnie czy nie są jeszcze 
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Użyj szarego tła do identyfikacji uszkodzonych lub brakujących dezinstalatorów.</value>
-  </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 70</value>
   </data>
   <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -183,9 +174,6 @@ Uwaga: Weryfikacja może zająć dużo czasu.</value>
   <data name="checkBoxDiisableProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 93</value>
-  </data>
   <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 17</value>
   </data>
@@ -199,11 +187,8 @@ modyfikowanie rejestru i wiele innych niebezpiecznych rzeczy.</value>
   <data name="checkBoxSimulate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxSimulate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 116</value>
-  </data>
   <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
+    <value>126, 17</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
     <value>Symuluj dezinstalację</value>
@@ -212,23 +197,11 @@ modyfikowanie rejestru i wiele innych niebezpiecznych rzeczy.</value>
     <value>Wykonaj wszystkie kroki ale nie uruchamiaj dezinstalatorów.
 Głównie do debugowania i straszenia znajomych.</value>
   </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 136</value>
-  </data>
-  <data name="flowLayoutPanel4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 176</value>
   </data>
-  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 155</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Zaawansowane</value>
-  </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -291,17 +264,11 @@ Sterowniki są często oznaczone tym tagiem.</value>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 16</value>
   </data>
-  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 111</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrowanie</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxViewCheckboxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -328,13 +295,7 @@ Możesz zaznaczyć kilka pozycji podświetlając je i naciskając spację.</valu
     <value>Grupuj elementy według kolumny którą posortowana jest lista.
 Grupowanie większości kolumn używa inteligentnych filtrów.</value>
   </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Ustawienia listy</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

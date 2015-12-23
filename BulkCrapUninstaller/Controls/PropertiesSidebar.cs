@@ -20,6 +20,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxShowUpdates, x => x.FilterShowUpdates, this);
             _settings.BindControl(checkBoxListSysComp, x => x.FilterShowSystemComponents, this);
             _settings.BindControl(checkBoxListProtected, x => x.FilterShowProtected, this);
+            _settings.BindControl(checkBoxShowStoreApps, x => x.FilterShowStoreApps, this);
 
             _settings.BindControl(checkBoxBatchSortQuiet, x => x.AdvancedIntelligentUninstallerSorting, this);
             _settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);

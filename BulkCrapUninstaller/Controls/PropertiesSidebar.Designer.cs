@@ -54,6 +54,7 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxViewGroups = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.checkBoxShowStoreApps = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,7 +69,6 @@ namespace BulkCrapUninstaller.Controls
             this.groupBox4.Controls.Add(this.flowLayoutPanel4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // flowLayoutPanel4
             // 
@@ -80,7 +80,6 @@ namespace BulkCrapUninstaller.Controls
             this.flowLayoutPanel4.Controls.Add(this.checkBoxDiisableProtection);
             this.flowLayoutPanel4.Controls.Add(this.checkBoxSimulate);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.toolTip1.SetToolTip(this.flowLayoutPanel4, resources.GetString("flowLayoutPanel4.ToolTip"));
             // 
             // checkBoxBatchSortQuiet
             // 
@@ -130,7 +129,6 @@ namespace BulkCrapUninstaller.Controls
             this.groupBox2.Controls.Add(this.flowLayoutPanel2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // flowLayoutPanel2
             // 
@@ -139,8 +137,8 @@ namespace BulkCrapUninstaller.Controls
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListSysComp);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListProtected);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxShowUpdates);
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxShowStoreApps);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.toolTip1.SetToolTip(this.flowLayoutPanel2, resources.GetString("flowLayoutPanel2.ToolTip"));
             // 
             // checkBoxListHideMicrosoft
             // 
@@ -176,7 +174,6 @@ namespace BulkCrapUninstaller.Controls
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // flowLayoutPanel1
             // 
@@ -184,7 +181,6 @@ namespace BulkCrapUninstaller.Controls
             this.flowLayoutPanel1.Controls.Add(this.checkBoxViewCheckboxes);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxViewGroups);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.toolTip1.SetToolTip(this.flowLayoutPanel1, resources.GetString("flowLayoutPanel1.ToolTip"));
             // 
             // checkBoxViewCheckboxes
             // 
@@ -204,6 +200,12 @@ namespace BulkCrapUninstaller.Controls
             // 
             this.usageTracker1.ContainerControl = this;
             // 
+            // checkBoxShowStoreApps
+            // 
+            resources.ApplyResources(this.checkBoxShowStoreApps, "checkBoxShowStoreApps");
+            this.checkBoxShowStoreApps.Name = "checkBoxShowStoreApps";
+            this.checkBoxShowStoreApps.UseVisualStyleBackColor = true;
+            // 
             // PropertiesSidebar
             // 
             resources.ApplyResources(this, "$this");
@@ -212,7 +214,6 @@ namespace BulkCrapUninstaller.Controls
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "PropertiesSidebar";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -252,5 +253,6 @@ namespace BulkCrapUninstaller.Controls
         private CheckBox checkBoxCertTest;
         private CheckBox checkBoxInvalidTest;
         private CheckBox checkBoxOrphans;
+        private CheckBox checkBoxShowStoreApps;
     }
 }
