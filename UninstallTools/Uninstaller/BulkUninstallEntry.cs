@@ -5,14 +5,18 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
-using Klocman.Native;
-using Klocman.Tools;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
 {
     public class BulkUninstallEntry
     {
+        private readonly object _operationLock = new object();
+
+        private bool _canRetry = true;
+
+        private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
+
         internal BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
             UninstallStatus startingStatus)
         {
@@ -30,9 +34,6 @@ namespace UninstallTools.Uninstaller
 
         public bool IsRunning { get; private set; }
         public bool Finished { get; private set; }
-
-        private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
-        private readonly object _operationLock = new object();
 
         public void SkipWaiting(bool terminate)
         {
@@ -69,15 +70,13 @@ namespace UninstallTools.Uninstaller
                 IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
+            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
             worker.Start(new KeyValuePair<bool, bool>(preferQuiet, simulate));
         }
 
-        private bool _canRetry = true;
-
         private void UninstallThread(object parameters)
         {
-            var kvp = (KeyValuePair<bool, bool>)parameters;
+            var kvp = (KeyValuePair<bool, bool>) parameters;
             var preferQuiet = kvp.Key;
             var simulate = kvp.Value;
             Exception error = null;
@@ -111,17 +110,17 @@ namespace UninstallTools.Uninstaller
                             try
                             {
                                 counters = (from process in childProcesses
-                                            let processName = process.ProcessName
-                                            let perfCounters = new[]
-                                            {
+                                    let processName = process.ProcessName
+                                    let perfCounters = new[]
+                                    {
                                         new PerformanceCounter("Process", "% Processor Time", processName, true),
                                         new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
                                     }
-                                            select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
-                                                perfCounters,
-                                                new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }
-                                                // Important to enumerate them now, they will collect data when we sleep
-                                                )).ToList();
+                                    select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
+                                        perfCounters,
+                                        new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}
+                                        // Important to enumerate them now, they will collect data when we sleep
+                                        )).ToList();
                             }
                             catch
                             {
@@ -132,7 +131,8 @@ namespace UninstallTools.Uninstaller
 
                         Thread.Sleep(1000);
 
-                        if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec) //Has problems with Msiexec
+                        if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec)
+                            //Has problems with Msiexec
                         {
                             try
                             {
@@ -183,8 +183,38 @@ namespace UninstallTools.Uninstaller
                         var exitVar = uninstaller.ExitCode;
                         if (exitVar != 0)
                         {
-                            retry = true;
-                            throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && exitVar == 1602)
+                            {
+                                // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
+                                _skipLevel = SkipCurrentLevel.Skip;
+                            }
+                            else if (exitVar == -1073741510)
+                            {
+                                /* 3221225786 / 0xC000013A / -1073741510 
+                                The application terminated as a result of a CTRL+C. 
+                                Indicates that the application has been terminated either by user's 
+                                keyboard input CTRL+C or CTRL+Break or closing command prompt window. */
+                                _skipLevel = SkipCurrentLevel.Terminate;
+                            }
+                            else
+                            {
+                                switch (exitVar)
+                                {
+                                    // The system cannot find the file specified. Indicates that the file can not be found in specified location.
+                                    case 2:
+                                    // The system cannot find the path specified. Indicates that the specified path can not be found.
+                                    case 3:
+                                    // Access is denied. Indicates that user has no access right to specified resource.
+                                    case 5:
+                                    // Program is not recognized as an internal or external command, operable program or batch file. 
+                                    case 9009:
+                                        break;
+                                    default:
+                                        retry = true;
+                                        break;
+                                }
+                                throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+                            }
                         }
                     }
                 }
