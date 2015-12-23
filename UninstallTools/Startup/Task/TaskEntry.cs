@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
 using UninstallTools.Properties;
@@ -40,6 +41,7 @@ namespace UninstallTools.Startup.Task
             {
                 try { return !SourceTask.Enabled; }
                 catch (FileNotFoundException) { }
+                catch (InvalidCastException) { }
                 catch (System.Runtime.InteropServices.COMException) { }
                 return false;
             }
