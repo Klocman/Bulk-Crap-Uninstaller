@@ -118,6 +118,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.useSystemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findByWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.basicOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -180,7 +181,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
-            this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -305,8 +305,8 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.FullRowSelect = true;
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
-            this.uninstallerObjectListView.SelectedBackColor = System.Drawing.Color.Empty;
-            this.uninstallerObjectListView.SelectedForeColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.HighlightForegroundColor = System.Drawing.Color.Empty;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;
@@ -338,6 +338,8 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnRating
             // 
             this.olvColumnRating.IsEditable = false;
+            this.olvColumnRating.MaximumWidth = 80;
+            this.olvColumnRating.MinimumWidth = 80;
             this.olvColumnRating.Searchable = false;
             resources.ApplyResources(this.olvColumnRating, "olvColumnRating");
             this.olvColumnRating.UseFiltering = false;
@@ -923,6 +925,12 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator20.Name = "toolStripSeparator20";
             resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
             // 
+            // viewWindowsStoreAppsToolStripMenuItem
+            // 
+            this.viewWindowsStoreAppsToolStripMenuItem.Name = "viewWindowsStoreAppsToolStripMenuItem";
+            resources.ApplyResources(this.viewWindowsStoreAppsToolStripMenuItem, "viewWindowsStoreAppsToolStripMenuItem");
+            this.viewWindowsStoreAppsToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsStoreAppsToolStripMenuItem_Click);
+            // 
             // findByWindowToolStripMenuItem
             // 
             this.findByWindowToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.centerline;
@@ -1334,12 +1342,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1.ContainerControl = this;
             this.globalHotkeys1.StopWhenFormIsDisabled = true;
             this.globalHotkeys1.SuppressKeyPresses = true;
-            // 
-            // viewWindowsStoreAppsToolStripMenuItem
-            // 
-            this.viewWindowsStoreAppsToolStripMenuItem.Name = "viewWindowsStoreAppsToolStripMenuItem";
-            resources.ApplyResources(this.viewWindowsStoreAppsToolStripMenuItem, "viewWindowsStoreAppsToolStripMenuItem");
-            this.viewWindowsStoreAppsToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsStoreAppsToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

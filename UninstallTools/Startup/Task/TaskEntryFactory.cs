@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
-using System.Linq;
 
 namespace UninstallTools.Startup.Task
 {
