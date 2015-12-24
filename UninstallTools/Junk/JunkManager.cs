@@ -13,7 +13,7 @@ namespace UninstallTools.Junk
 
             var otherUninstallers = allUninstallers.Except(targetEntries).ToList();
 
-            var result = new List<JunkNode>(targetEntries.Count());
+            var result = new List<JunkNode>(targetEntries.Count);
             foreach (var uninstaller in targetEntries)
             {
                 var dj = new DriveJunk(uninstaller, otherUninstallers);

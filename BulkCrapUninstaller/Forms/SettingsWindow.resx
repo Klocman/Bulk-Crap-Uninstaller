@@ -142,7 +142,7 @@
     <value>True</value>
   </data>
   <data name="textBoxPreUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 81</value>
+    <value>352, 88</value>
   </data>
   <data name="textBoxPreUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +217,7 @@
     <value>True</value>
   </data>
   <data name="textBoxPostUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 78</value>
+    <value>352, 86</value>
   </data>
   <data name="textBoxPostUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -283,10 +283,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 209</value>
+    <value>356, 224</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>104</value>
+    <value>111</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -349,7 +349,7 @@
     <value>3, 116</value>
   </data>
   <data name="groupBoxMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 181</value>
+    <value>368, 168</value>
   </data>
   <data name="groupBoxMisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -433,7 +433,7 @@
     <value>2, 0, 2, 2</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 107</value>
+    <value>362, 94</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1216,7 +1216,7 @@
     <value>6, 5, 6, 6</value>
   </data>
   <data name="groupBoxExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 340</value>
+    <value>368, 355</value>
   </data>
   <data name="groupBoxExternal.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1395,13 +1395,142 @@ BCU will wait until the currently running command completes before executing the
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 424</value>
+    <value>394, 439</value>
+  </data>
+  <data name="&gt;&gt;tabPageGeneral.Name" xml:space="preserve">
+    <value>tabPageGeneral</value>
+  </data>
+  <data name="&gt;&gt;tabPageGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageGeneral.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabPageExternal.Name" xml:space="preserve">
+    <value>tabPageExternal</value>
+  </data>
+  <data name="&gt;&gt;tabPageExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageExternal.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageExternal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabPageFolders.Name" xml:space="preserve">
+    <value>tabPageFolders</value>
+  </data>
+  <data name="&gt;&gt;tabPageFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageFolders.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageFolders.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Name" xml:space="preserve">
+    <value>tabPageMisc</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 387</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 393</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 40</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bulk Crap Uninstaller Settings</value>
+  </data>
+  <data name="&gt;&gt;usageTracker1.Name" xml:space="preserve">
+    <value>usageTracker1</value>
+  </data>
+  <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingsWindow</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Name" xml:space="preserve">
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1416,7 +1545,7 @@ BCU will wait until the currently running command completes before executing the
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 346</value>
+    <value>374, 361</value>
   </data>
   <data name="tabPageGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1436,23 +1565,38 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="uninstallationSettings1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="propertiesSidebar1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="propertiesSidebar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="propertiesSidebar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 340</value>
+  <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 355</value>
   </data>
-  <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
+  <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar1.Name" xml:space="preserve">
+    <value>propertiesSidebar1</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
+    <value>tabPageGeneral</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Name" xml:space="preserve">
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -1467,7 +1611,7 @@ BCU will wait until the currently running command completes before executing the
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 346</value>
+    <value>374, 361</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1487,6 +1631,30 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="uninstallationSettings1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 355</value>
+  </data>
+  <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;uninstallationSettings1.Name" xml:space="preserve">
+    <value>uninstallationSettings1</value>
+  </data>
+  <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;uninstallationSettings1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tabPageExternal.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -1494,7 +1662,7 @@ BCU will wait until the currently running command completes before executing the
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 346</value>
+    <value>374, 361</value>
   </data>
   <data name="tabPageExternal.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1533,7 +1701,7 @@ BCU will wait until the currently running command completes before executing the
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPageFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 346</value>
+    <value>374, 361</value>
   </data>
   <data name="tabPageFolders.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1552,129 +1720,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;tabPageFolders.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="tabPageMisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageMisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 346</value>
-  </data>
-  <data name="tabPageMisc.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPageMisc.Text" xml:space="preserve">
-    <value>Miscellaneous</value>
-  </data>
-  <data name="&gt;&gt;tabPageMisc.Name" xml:space="preserve">
-    <value>tabPageMisc</value>
-  </data>
-  <data name="&gt;&gt;tabPageMisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageMisc.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPageMisc.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 372</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 378</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 40</value>
-  </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstaller Settings</value>
-  </data>
-  <data name="&gt;&gt;usageTracker1.Name" xml:space="preserve">
-    <value>usageTracker1</value>
-  </data>
-  <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingsWindow</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="propertiesSidebar1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="propertiesSidebar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="propertiesSidebar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 340</value>
-  </data>
-  <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.Name" xml:space="preserve">
-    <value>propertiesSidebar1</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
-    <value>tabPageGeneral</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="groupBoxProgramFolders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1713,7 +1758,7 @@ BCU will wait until the currently running command completes before executing the
     <value>6, 5, 6, 6</value>
   </data>
   <data name="groupBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 340</value>
+    <value>368, 355</value>
   </data>
   <data name="groupBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1743,7 +1788,7 @@ BCU will wait until the currently running command completes before executing the
     <value>True</value>
   </data>
   <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 178</value>
+    <value>356, 193</value>
   </data>
   <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1844,5 +1889,32 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   </data>
   <data name="&gt;&gt;labelProgramFolders.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tabPageMisc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageMisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageMisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>374, 361</value>
+  </data>
+  <data name="tabPageMisc.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPageMisc.Text" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Name" xml:space="preserve">
+    <value>tabPageMisc</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageMisc.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
 </root>

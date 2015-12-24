@@ -399,7 +399,7 @@ namespace UninstallTools.Uninstaller
                     return $@"MsiExec.exe /X{bundleProviderKey:B}";
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(mode), mode, "Unknown mode");
+                    throw new ArgumentOutOfRangeException(nameof(mode), mode, @"Unknown mode");
             }
         }
 

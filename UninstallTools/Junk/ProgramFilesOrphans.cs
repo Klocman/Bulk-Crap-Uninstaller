@@ -134,7 +134,7 @@ namespace UninstallTools.Junk
                     if (questionableDirName)
                         newNode.Confidence.Add(ConfidencePart.QuestionableDirectoryName);
 
-                    if (allFiles.Count() > 100)
+                    if (allFiles.Length > 100)
                         newNode.Confidence.Add(ConfidenceManyFilesPresent);
 
                     // Remove 2 points for every sublevel
