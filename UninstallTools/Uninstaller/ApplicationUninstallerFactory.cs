@@ -57,7 +57,7 @@ namespace UninstallTools.Uninstaller
                 RedirectStandardOutput = true,
                 RedirectStandardError = false,
                 CreateNoWindow = true,
-                StandardOutputEncoding = Encoding.GetEncoding(850)
+                StandardOutputEncoding = Encoding.Unicode  
             };
 
             var process = Process.Start(psi);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace StoreAppHelper
@@ -22,6 +23,7 @@ namespace StoreAppHelper
             {
                 try
                 {
+                    Console.OutputEncoding = Encoding.Unicode;
                     var result = AppManager.QueryApps();
                     foreach (var app in result)
                     {
