@@ -22,16 +22,9 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxListProtected, x => x.FilterShowProtected, this);
             _settings.BindControl(checkBoxShowStoreApps, x => x.FilterShowStoreApps, this);
 
-            _settings.BindControl(checkBoxBatchSortQuiet, x => x.AdvancedIntelligentUninstallerSorting, this);
             _settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);
             _settings.BindControl(checkBoxCertTest, x => x.AdvancedTestCertificates, this);
             _settings.BindControl(checkBoxOrphans, x => x.AdvancedDisplayOrphans, this);
-            _settings.BindControl(checkBoxDiisableProtection, x => x.AdvancedDisableProtection, this);
-            _settings.BindControl(checkBoxSimulate, x => x.AdvancedSimulate, this);
-
-            _settings.Subscribe(
-                (x, y) => checkBoxSimulate.ForeColor = y.NewValue ? Color.OrangeRed : SystemColors.ControlText,
-                x => x.AdvancedSimulate, this);
 
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);
