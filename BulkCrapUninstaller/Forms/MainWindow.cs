@@ -27,7 +27,7 @@ using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
 {
-    sealed partial class MainWindow : Form
+    internal sealed partial class MainWindow : Form
     {
         private readonly UninstallerListViewTools _listView;
         private readonly SettingTools _setMan;
@@ -127,10 +127,8 @@ namespace BulkCrapUninstaller.Forms
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
             _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-
-            filterEditor1.FilterTextChanged += SearchCriteriaChanged;
+            
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
-            filterEditor1.ComparisonMethod = FilterComparisonMethod.Any;
 
             MessageBoxes.DefaultOwner = this;
             LoadingDialog.DefaultOwner = this;
@@ -164,7 +162,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SearchCriteriaChanged(object sender, EventArgs e)
         {
-            _listView.UpdateColumnFiltering(filterEditor1.FilterText, filterEditor1.ComparisonMethod);
+            _listView.UpdateColumnFiltering();
         }
 
         public void LockApplication(bool value)
@@ -334,7 +332,7 @@ namespace BulkCrapUninstaller.Forms
         private void ClipboardCopyGuids(object x, EventArgs y)
         {
             ImportExport.CopyToClipboard(_listView.SelectedUninstallers.Select(z =>
-                string.Format("{0} - {1}", z.DisplayName, z.BundleProviderKey.ToString("B").ToUpper())));
+                $"{z.DisplayName} - {z.BundleProviderKey.ToString("B").ToUpper()}"));
         }
 
         private void ClipboardCopyProgramName(object x, EventArgs y)
@@ -345,13 +343,13 @@ namespace BulkCrapUninstaller.Forms
         private void ClipboardCopyRegistryPath(object x, EventArgs y)
         {
             ImportExport.CopyToClipboard(
-                _listView.SelectedUninstallers.Select(z => string.Format("{0} - {1}", z.DisplayName, z.RegistryPath)));
+                _listView.SelectedUninstallers.Select(z => $"{z.DisplayName} - {z.RegistryPath}"));
         }
 
         private void ClipboardCopyUninstallString(object x, EventArgs y)
         {
             ImportExport.CopyToClipboard(
-                _listView.SelectedUninstallers.Select(z => string.Format("{0} - {1}", z.DisplayName, z.UninstallString)));
+                _listView.SelectedUninstallers.Select(z => $"{z.DisplayName} - {z.UninstallString}"));
         }
 
         private void createBackupFileDialog_FileOk(object sender, CancelEventArgs e)

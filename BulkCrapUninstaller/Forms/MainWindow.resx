@@ -136,7 +136,7 @@
     <value>Top</value>
   </data>
   <data name="propertiesSidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 87</value>
+    <value>6, 148</value>
   </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 356</value>
@@ -201,6 +201,9 @@
   <data name="filterEditor1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="filterEditor1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="filterEditor1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -210,8 +213,11 @@
   <data name="filterEditor1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="filterEditor1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 0</value>
+  </data>
   <data name="filterEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 60</value>
+    <value>163, 121</value>
   </data>
   <data name="filterEditor1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -238,7 +244,7 @@
     <value>8, 4, 8, 8</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 85</value>
+    <value>179, 146</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

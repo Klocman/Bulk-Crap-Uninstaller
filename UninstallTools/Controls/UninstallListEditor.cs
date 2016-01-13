@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using Klocman.Events;
 using Klocman.Forms.Tools;
-using Klocman.Localising;
 using UninstallTools.Lists;
-using UninstallTools.Properties;
 
 namespace UninstallTools.Controls
 {
@@ -19,11 +15,8 @@ namespace UninstallTools.Controls
         {
             InitializeComponent();
 
-            filterEditor.FilterTextChanged += FilterEditor_FilterTextChanged;
-            filterEditor.ComparisonMethodChanged += FilterEditor_ComparisonMethodChanged;
-
-            // Initialize the preview box
-            textBoxPreview_TextChanged(this, EventArgs.Empty);
+            filterEditor.ComparisonMethodChanged += OnFiltersChanged;
+            filterEditor.LostFocus += EditorFocusLost;
         }
 
         [ReadOnly(true)]
@@ -45,7 +38,7 @@ namespace UninstallTools.Controls
 
         [ReadOnly(true)]
         [Browsable(false)]
-        public UninstallListItem CurrentlySelected
+        private UninstallListItem CurrentlySelected
         {
             get
             {
@@ -55,25 +48,22 @@ namespace UninstallTools.Controls
             }
         }
 
-        [ReadOnly(true)]
-        [Browsable(false)]
-        public IEnumerable<string> TestItems { get; set; }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var item = GetNewItem();
-            if (item == null)
+            //var item = GetNewItem();
+            //if (item == null)
             {
-                CurrentList.AddItems(new[] {Localisation.UninstallListEditor_NewFilter});
+                var newItem = new UninstallListItem();
+                CurrentList.Add(newItem);
                 PopulateList();
-                item = GetNewItem();
+                //item = GetNewItem();
             }
 
-            if (item != null)
+            /*if (item != null)
             {
                 item.EnsureVisible();
                 item.Selected = true;
-            }
+            }*/
         }
 
         private void buttonImport_Click(object sender, EventArgs e)
@@ -93,52 +83,38 @@ namespace UninstallTools.Controls
 
         private void EditorFocusLost(object sender, EventArgs e)
         {
-            RefreshSelectedItem();
+            RefreshSelectedFilter();
         }
 
-        private void FilterEditor_ComparisonMethodChanged(object sender,
-            PropertyChangedEventArgs<FilterComparisonMethod> e)
-        {
-            var selection = CurrentlySelected;
-
-            if (selection == null)
-                return;
-
-            selection.ComparisonMethod = e.NewValue;
-
-            RefreshPreview();
-        }
-
-        private void FilterEditor_FilterTextChanged(object sender, PropertyChangedEventArgs<string> e)
-        {
-            var selection = CurrentlySelected;
-            selection.FilterText = e.NewValue;
-
-            RefreshPreview();
-        }
-
-        private ListViewItem GetNewItem()
+        /*private ListViewItem GetNewItem()
         {
             return listView1.Items.Cast<ListViewItem>().FirstOrDefault(x =>
             {
                 var tag = x.Tag as UninstallListItem;
                 return tag != null && tag.FilterText.Equals(Localisation.UninstallListEditor_NewFilter);
             });
-        }
+        }*/
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RefreshConditionList();
+        }
+
+        private void RefreshConditionList()
+        {
+            listBox1.SelectedItem = null;
+            listBox1.Items.Clear();
+
             var selection = CurrentlySelected;
-
-            if (selection == null)
+            if (selection?.ComparisonEntries != null)
             {
-                groupBoxEditor.Enabled = false;
-                return;
+                groupBoxConditions.Enabled = true;
+                listBox1.Items.AddRange(selection.ComparisonEntries.AsEnumerable().Reverse().ToArray());
             }
-            groupBoxEditor.Enabled = true;
-
-            filterEditor.FilterText = selection.FilterText;
-            filterEditor.ComparisonMethod = selection.ComparisonMethod;
+            else
+            {
+                groupBoxConditions.Enabled = false;
+            }
         }
 
         private void openFileDialog_FileOk(object sender, CancelEventArgs e)
@@ -157,43 +133,53 @@ namespace UninstallTools.Controls
 
         private void PopulateList()
         {
-            groupBoxEditor.Enabled = false;
+            groupBoxConditions.Enabled = false;
 
             listView1.Items.Clear();
             listView1.Items.AddRange(CurrentList.Items.Select(x => new ListViewItem(
-                new[] {x.FilterText, x.ComparisonMethod.GetLocalisedName()})
-            {Tag = x}).ToArray());
+                new[] { x.ToString() }) //TODO rest of the columns
+            { Tag = x }).ToArray());
         }
 
-        private void RefreshPreview()
+        private void OnFiltersChanged(object sender, EventArgs e)
         {
-            try
-            {
-                textBoxPreview.Text = string.Join(Environment.NewLine,
-                    TestItems.Where(x => CurrentlySelected.TestString(x)).ToArray());
-            }
-            catch
-            {
-                textBoxPreview.Text = Localisation.UninstallListEditor_InvalidFilter;
-            }
+            FiltersChanged?.Invoke(sender, e);
         }
 
-        private void RefreshSelectedItem()
+        public event EventHandler FiltersChanged;
+
+        private void RefreshSelectedFilter()
         {
             if (listView1.SelectedItems.Count <= 0)
                 return;
 
             var item = listView1.SelectedItems[0];
             var tag = CurrentlySelected;
-            item.SubItems[0].Text = tag.FilterText;
-            item.SubItems[1].Text = tag.ComparisonMethod.GetLocalisedName();
+            item.SubItems[0].Text = tag.ToString();
+            //item.SubItems[1].Text = tag.ComparisonMethod.GetLocalisedName(); TODO
             item.EnsureVisible();
         }
 
-        private void textBoxPreview_TextChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxPreview.Text))
-                textBoxPreview.Text = Localisation.UninstallListEditor_NothingMatched;
+            var item = listBox1.SelectedItem as ComparisonEntry;
+            if (item != null && !ReferenceEquals(filterEditor.TargetComparisonEntry, item))
+                filterEditor.TargetComparisonEntry = item;
+        }
+
+        private void toolStripButtonAddCondition_Click(object sender, EventArgs e)
+        {
+            CurrentlySelected.ComparisonEntries.Add(new ComparisonEntry());
+
+            RefreshConditionList();
+        }
+
+        private void toolStripButtonRemoveCondition_Click(object sender, EventArgs e)
+        {
+            var item = listBox1.SelectedItem as ComparisonEntry;
+            if (item == null) return;
+            CurrentlySelected.ComparisonEntries.Remove(item);
+            RefreshConditionList();
         }
     }
 }

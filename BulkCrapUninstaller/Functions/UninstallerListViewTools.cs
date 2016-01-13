@@ -17,7 +17,6 @@ using Klocman.Forms.Tools;
 using Klocman.IO;
 using Klocman.Localising;
 using Klocman.Tools;
-using UninstallTools.Dialogs;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
 using UninstallTools.Uninstaller;
@@ -47,7 +46,7 @@ namespace BulkCrapUninstaller.Functions
             = new UninstallerRatingManager(WindowsTools.GetUniqueUserId());
 
         private readonly MainWindow _reference;
-        private readonly UninstallListItem _searchItem = new UninstallListItem();
+        private readonly ComparisonEntry _filteringComparisonEntry = new ComparisonEntry { FilterText = string.Empty };
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortPostprocessingThread;
         private Thread _finalizerThread;
@@ -59,6 +58,8 @@ namespace BulkCrapUninstaller.Functions
             _reference = reference;
             _listView = new TypedObjectListView<ApplicationUninstallerEntry>(reference.uninstallerObjectListView);
             SetupListView();
+
+            _reference.filterEditor1.TargetComparisonEntry = _filteringComparisonEntry;
 
             // Start the processing thread when user changes the test certificates option
             _settings.Subscribe((x, y) =>
@@ -347,7 +348,7 @@ namespace BulkCrapUninstaller.Functions
                 }
                 else if (_settings.Settings.MiscAutoLoadDefaultList)
                 {
-                    OpenUninstallLists(false, "Default.xml");
+                    //OpenUninstallLists(false, "Default.xml"); TODO
                 }
             }
         }
@@ -368,6 +369,8 @@ namespace BulkCrapUninstaller.Functions
         /// <returns></returns>
         public bool OpenUninstallLists(bool addSelection, params string[] fileNames)
         {
+            throw new NotImplementedException();
+            /*
             try
             {
                 var uninstallList = fileNames.Length > 0
@@ -404,7 +407,7 @@ namespace BulkCrapUninstaller.Functions
                 return false;
             }
 
-            return true;
+            return true;*/
         }
 
         /// <summary>
@@ -444,6 +447,8 @@ namespace BulkCrapUninstaller.Functions
         /// <returns></returns>
         public bool SaveUninstallList()
         {
+            throw new NotImplementedException();
+            /*
             try
             {
                 UninstallListSaveDialog.Show(SelectedUninstallers.Select(x => x.DisplayName),
@@ -454,7 +459,7 @@ namespace BulkCrapUninstaller.Functions
                 MessageBoxes.SaveUninstallListError(ex.Message);
                 return false;
             }
-            return true;
+            return true;*/
         }
 
         public void SelectAllItems(object sender, EventArgs e)
@@ -506,12 +511,9 @@ namespace BulkCrapUninstaller.Functions
             } while (_finalizerThread.IsAlive);
         }
 
-        public void UpdateColumnFiltering(string searchString, FilterComparisonMethod method)
+        public void UpdateColumnFiltering()
         {
-            _searchItem.FilterText = searchString;
-            _searchItem.ComparisonMethod = method;
-
-            _listView.ListView.EmptyListMsg = !string.IsNullOrEmpty(searchString)
+            _listView.ListView.EmptyListMsg = !string.IsNullOrEmpty(_filteringComparisonEntry.FilterText)
                 ? Localisable.SearchNothingFoundMessage
                 : null;
 
@@ -574,11 +576,13 @@ namespace BulkCrapUninstaller.Functions
                     return false;
             }
 
-            if (string.IsNullOrEmpty(_searchItem.FilterText)) return true;
+            if (string.IsNullOrEmpty(_filteringComparisonEntry.FilterText)) return true;
+
+            //var stringsToCompare = new[] {entry.DisplayName, entry.Publisher, entry.UninstallString, entry.Comment,
+            //    entry.UninstallerKind.GetLocalisedName(), entry.InstallLocation, entry.AboutUrl, entry.InstallSource, entry.QuietUninstallString };
+            //return stringsToCompare.Any(str => str.IsNotEmpty() && _filteringComparisonEntry.TestEntry(str));
             
-            var stringsToCompare = new[] {entry.DisplayName, entry.Publisher, entry.UninstallString, entry.Comment,
-                entry.UninstallerKind.GetLocalisedName(), entry.InstallLocation, entry.AboutUrl, entry.InstallSource, entry.QuietUninstallString };
-            return stringsToCompare.Any(str => str.IsNotEmpty() && _searchItem.TestString(str));
+            return _filteringComparisonEntry.TestEntry(entry) == true;
         }
 
         private void SetupListView()

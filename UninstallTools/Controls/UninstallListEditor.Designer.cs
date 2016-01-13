@@ -29,30 +29,60 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallListEditor));
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBoxFilterList = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonImport = new System.Windows.Forms.Button();
-            this.groupBoxEditor = new System.Windows.Forms.GroupBox();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderMethod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderProperty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddFilter = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRemoveFilter = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAddFiltersFromList = new System.Windows.Forms.ToolStripButton();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBoxConditions = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxPreview = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddCondition = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRemoveCondition = new System.Windows.Forms.ToolStripButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.filterEditor = new UninstallTools.Controls.FilterEditor();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.groupBoxFilterList.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.groupBoxEditor.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBoxConditions.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBoxFilterList);
+            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             // 
             // groupBoxFilterList
             // 
             this.groupBoxFilterList.Controls.Add(this.listView1);
-            this.groupBoxFilterList.Controls.Add(this.flowLayoutPanel2);
+            this.groupBoxFilterList.Controls.Add(this.toolStrip1);
             resources.ApplyResources(this.groupBoxFilterList, "groupBoxFilterList");
             this.groupBoxFilterList.Name = "groupBoxFilterList";
             this.groupBoxFilterList.TabStop = false;
@@ -60,8 +90,9 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeaderName,
+            this.columnHeaderMethod,
+            this.columnHeaderProperty});
             resources.ApplyResources(this.listView1, "listView1");
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -70,80 +101,121 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
+            this.listView1.ShowItemToolTips = true;
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // columnHeaderName
             // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            resources.ApplyResources(this.columnHeaderName, "columnHeaderName");
             // 
-            // columnHeader2
+            // columnHeaderMethod
             // 
-            resources.ApplyResources(this.columnHeader2, "columnHeader2");
+            resources.ApplyResources(this.columnHeaderMethod, "columnHeaderMethod");
             // 
-            // flowLayoutPanel2
+            // columnHeaderProperty
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.Controls.Add(this.buttonAdd);
-            this.flowLayoutPanel2.Controls.Add(this.buttonRemove);
-            this.flowLayoutPanel2.Controls.Add(this.buttonImport);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            resources.ApplyResources(this.columnHeaderProperty, "columnHeaderProperty");
             // 
-            // buttonAdd
+            // toolStrip1
             // 
-            resources.ApplyResources(this.buttonAdd, "buttonAdd");
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddFilter,
+            this.toolStripButtonRemoveFilter,
+            this.toolStripButtonAddFiltersFromList});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Name = "toolStrip1";
             // 
-            // buttonRemove
+            // toolStripButtonAddFilter
             // 
-            resources.ApplyResources(this.buttonRemove, "buttonRemove");
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            resources.ApplyResources(this.toolStripButtonAddFilter, "toolStripButtonAddFilter");
+            this.toolStripButtonAddFilter.Name = "toolStripButtonAddFilter";
+            this.toolStripButtonAddFilter.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // buttonImport
+            // toolStripButtonRemoveFilter
             // 
-            resources.ApplyResources(this.buttonImport, "buttonImport");
-            this.buttonImport.Name = "buttonImport";
-            this.buttonImport.UseVisualStyleBackColor = true;
-            this.buttonImport.Click += new System.EventHandler(this.buttonImport_Click);
+            resources.ApplyResources(this.toolStripButtonRemoveFilter, "toolStripButtonRemoveFilter");
+            this.toolStripButtonRemoveFilter.Name = "toolStripButtonRemoveFilter";
+            this.toolStripButtonRemoveFilter.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
-            // groupBoxEditor
+            // toolStripButtonAddFiltersFromList
             // 
-            this.groupBoxEditor.Controls.Add(this.panel1);
-            this.groupBoxEditor.Controls.Add(this.filterEditor);
-            resources.ApplyResources(this.groupBoxEditor, "groupBoxEditor");
-            this.groupBoxEditor.Name = "groupBoxEditor";
-            this.groupBoxEditor.TabStop = false;
+            resources.ApplyResources(this.toolStripButtonAddFiltersFromList, "toolStripButtonAddFiltersFromList");
+            this.toolStripButtonAddFiltersFromList.Name = "toolStripButtonAddFiltersFromList";
+            this.toolStripButtonAddFiltersFromList.Click += new System.EventHandler(this.buttonImport_Click);
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBoxConditions);
+            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
+            // 
+            // groupBoxConditions
+            // 
+            this.groupBoxConditions.Controls.Add(this.panel1);
+            resources.ApplyResources(this.groupBoxConditions, "groupBoxConditions");
+            this.groupBoxConditions.Name = "groupBoxConditions";
+            this.groupBoxConditions.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBoxPreview);
-            this.panel1.Controls.Add(this.label3);
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.toolStrip2);
             this.panel1.Name = "panel1";
             // 
-            // textBoxPreview
+            // listBox1
             // 
-            resources.ApplyResources(this.textBoxPreview, "textBoxPreview");
-            this.textBoxPreview.Name = "textBoxPreview";
-            this.textBoxPreview.ReadOnly = true;
-            this.textBoxPreview.TextChanged += new System.EventHandler(this.textBoxPreview_TextChanged);
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // label3
+            // toolStrip2
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddCondition,
+            this.toolStripButtonRemoveCondition});
+            resources.ApplyResources(this.toolStrip2, "toolStrip2");
+            this.toolStrip2.Name = "toolStrip2";
+            // 
+            // toolStripButtonAddCondition
+            // 
+            resources.ApplyResources(this.toolStripButtonAddCondition, "toolStripButtonAddCondition");
+            this.toolStripButtonAddCondition.Name = "toolStripButtonAddCondition";
+            this.toolStripButtonAddCondition.Click += new System.EventHandler(this.toolStripButtonAddCondition_Click);
+            // 
+            // toolStripButtonRemoveCondition
+            // 
+            resources.ApplyResources(this.toolStripButtonRemoveCondition, "toolStripButtonRemoveCondition");
+            this.toolStripButtonRemoveCondition.Name = "toolStripButtonRemoveCondition";
+            this.toolStripButtonRemoveCondition.Click += new System.EventHandler(this.toolStripButtonRemoveCondition_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.filterEditor);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
             // 
             // filterEditor
             // 
             resources.ApplyResources(this.filterEditor, "filterEditor");
             this.filterEditor.Name = "filterEditor";
-            this.filterEditor.Leave += new System.EventHandler(this.EditorFocusLost);
             // 
             // openFileDialog
             // 
@@ -155,15 +227,25 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBoxFilterList);
-            this.Controls.Add(this.groupBoxEditor);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "UninstallListEditor";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.groupBoxFilterList.ResumeLayout(false);
             this.groupBoxFilterList.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.groupBoxEditor.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBoxConditions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,17 +254,23 @@
 
         private System.Windows.Forms.GroupBox groupBoxFilterList;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.GroupBox groupBoxEditor;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxPreview;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonImport;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.ColumnHeader columnHeaderMethod;
+        private System.Windows.Forms.GroupBox groupBoxConditions;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ColumnHeader columnHeaderProperty;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddFilter;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRemoveFilter;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddFiltersFromList;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddCondition;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRemoveCondition;
+        private System.Windows.Forms.GroupBox groupBox1;
         private FilterEditor filterEditor;
     }
 }

@@ -36,6 +36,11 @@ namespace UninstallTools.Controls
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxCompareMethod = new System.Windows.Forms.ComboBox();
             this.searchBox1 = new Klocman.Controls.SearchBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxInvert = new System.Windows.Forms.CheckBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelText
@@ -58,8 +63,8 @@ namespace UninstallTools.Controls
             // 
             resources.ApplyResources(this.comboBoxCompareMethod, "comboBoxCompareMethod");
             this.comboBoxCompareMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCompareMethod.FormattingEnabled = true;
             this.comboBoxCompareMethod.Name = "comboBoxCompareMethod";
+            this.comboBoxCompareMethod.Sorted = true;
             this.comboBoxCompareMethod.SelectedIndexChanged += new System.EventHandler(this.comboBoxCompareMethod_SelectedIndexChanged);
             // 
             // searchBox1
@@ -69,16 +74,47 @@ namespace UninstallTools.Controls
             this.searchBox1.Name = "searchBox1";
             this.searchBox1.SearchTextChanged += new System.Action<Klocman.Controls.SearchBox, System.EventArgs>(this.searchBox1_SearchTextChanged);
             // 
+            // comboBox1
+            // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.checkBoxInvert);
+            this.panel1.Name = "panel1";
+            // 
+            // checkBoxInvert
+            // 
+            resources.ApplyResources(this.checkBoxInvert, "checkBoxInvert");
+            this.checkBoxInvert.Name = "checkBoxInvert";
+            this.checkBoxInvert.UseVisualStyleBackColor = true;
+            this.checkBoxInvert.CheckedChanged += new System.EventHandler(this.checkBoxInvert_CheckedChanged);
+            // 
             // FilterEditor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxCompareMethod);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxFilterText);
             this.Controls.Add(this.labelText);
             this.Controls.Add(this.searchBox1);
+            this.MinimumSize = new System.Drawing.Size(100, 0);
             this.Name = "FilterEditor";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,5 +127,9 @@ namespace UninstallTools.Controls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxCompareMethod;
         private Klocman.Controls.SearchBox searchBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBoxInvert;
     }
 }

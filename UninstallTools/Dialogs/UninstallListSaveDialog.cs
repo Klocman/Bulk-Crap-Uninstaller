@@ -9,20 +9,20 @@ namespace UninstallTools.Dialogs
 {
     public partial class UninstallListSaveDialog : Form
     {
-        private UninstallListSaveDialog(IEnumerable<string> initialItems, IEnumerable<string> testItems)
+        private UninstallListSaveDialog()//IEnumerable<string> initialItems, IEnumerable<string> testItems)
         {
             InitializeComponent();
 
             var tempList = new UninstallList();
-            tempList.AddItems(initialItems);
+            //tempList.AddItems(initialItems);
             uninstallListEditor1.CurrentList = tempList;
 
-            uninstallListEditor1.TestItems = testItems;
+            //uninstallListEditor1.TestItems = testItems;
         }
 
-        public static bool Show(IEnumerable<string> initialItems, IEnumerable<string> testItems)
+        public static bool ShowSaveDialog()//IEnumerable<string> initialItems, IEnumerable<string> testItems)
         {
-            using (var dialog = new UninstallListSaveDialog(initialItems, testItems))
+            using (var dialog = new UninstallListSaveDialog())//initialItems, testItems))
                 return dialog.ShowDialog() == DialogResult.OK;
         }
 

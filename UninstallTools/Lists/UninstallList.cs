@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using Klocman.Extensions;
 
 namespace UninstallTools.Lists
@@ -22,7 +23,8 @@ namespace UninstallTools.Lists
         private static readonly string XmlElementName = "Filter";
         private static readonly string XmlFilterTextName = "FilterText";
         private static readonly string XmlRootName = "Filters";
-        private List<UninstallListItem> _items = new List<UninstallListItem>();
+        
+        public List<UninstallListItem> _items = new List<UninstallListItem>();
         //public static readonly string ListExtension = "txt";
         public UninstallList()
         {
@@ -58,6 +60,12 @@ namespace UninstallTools.Lists
             CleanUp();
         }
 
+        public void Add(UninstallListItem item)
+        {
+            _items.Add(item);
+            CleanUp();
+        }
+
         public void AddItems(IEnumerable<UninstallListItem> items)
         {
             _items.AddRange(items);
@@ -66,6 +74,14 @@ namespace UninstallTools.Lists
 
         public void SaveToFile(string fileName)
         {
+            var serializer = new XmlSerializer(typeof(UninstallList));
+            using (var writer = new XmlTextWriter(fileName, Encoding.Unicode))
+            {
+                writer.Formatting = Formatting.Indented;
+                serializer.Serialize(writer, this);
+
+            }
+            /*
             var rootElement = new XElement(XmlRootName);
             var document = new XDocument(new XDeclaration("1.0", "UTF-16", "yes"), rootElement);
 
@@ -80,7 +96,7 @@ namespace UninstallTools.Lists
             {
                 writer.Formatting = Formatting.Indented;
                 document.Save(writer);
-            }
+            }*/
         }
 
         internal void Remove(UninstallListItem item)
@@ -91,6 +107,15 @@ namespace UninstallTools.Lists
 
         private static IEnumerable<UninstallListItem> ParseXml(string file)
         {
+            var serializer = new XmlSerializer(typeof(UninstallList));
+            using (var reader = new XmlTextReader(file))
+            {
+                //reader.Encoding = Encoding.Unicode;
+                var list = serializer.Deserialize(reader) as UninstallList;
+                return list.Items;
+
+            }
+            /*
             var document = XDocument.Load(file);
             var items = new List<UninstallListItem>();
 
@@ -118,12 +143,12 @@ namespace UninstallTools.Lists
                 items.Add(item);
             }
 
-            return items;
+            return items;*/
         }
 
         private void CleanUp()
         {
-            _items = _items.DistinctBy(x => x.FilterText).OrderBy(x => x.FilterText).ToList();
+            //_items = _items.DistinctBy(x => x.FilterText).OrderBy(x => x.FilterText).ToList();
         }
     }
 }

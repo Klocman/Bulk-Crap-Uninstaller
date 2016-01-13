@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Klocman.Forms.Tools;
@@ -9,7 +8,7 @@ namespace UninstallTools.Dialogs
 {
     public partial class UninstallListOpenDialog : Form
     {
-        private UninstallListOpenDialog(IEnumerable<string> previewItems)
+        private UninstallListOpenDialog()//IEnumerable<string> previewItems)
         {
             InitializeComponent();
 
@@ -34,14 +33,14 @@ namespace UninstallTools.Dialogs
             }
 
             uninstallListEditor1.CurrentList = tempList;
-            uninstallListEditor1.TestItems = previewItems;
+            //uninstallListEditor1.TestItems = previewItems;
         }
 
         public UninstallList Result => uninstallListEditor1.CurrentList;
 
-        public static UninstallList Show(IEnumerable<string> previewItems)
+        public static UninstallList ShowOpenDialog()//IEnumerable<string> previewItems)
         {
-            using (var dialog = new UninstallListOpenDialog(previewItems))
+            using (var dialog = new UninstallListOpenDialog())
             {
                 if ((dialog.DialogResult != DialogResult.Abort) && (dialog.ShowDialog() == DialogResult.OK))
                 {

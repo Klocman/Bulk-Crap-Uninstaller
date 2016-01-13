@@ -305,8 +305,8 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.FullRowSelect = true;
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
-            this.uninstallerObjectListView.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.uninstallerObjectListView.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.SelectedBackColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.SelectedForeColor = System.Drawing.Color.Empty;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;
@@ -1519,7 +1519,6 @@ namespace BulkCrapUninstaller.Forms
         private ListLegend listLegend1;
         private ToolStripMenuItem showColorLegendToolStripMenuItem;
         private GroupBox groupBox1;
-        private UninstallTools.Controls.FilterEditor filterEditor1;
         private ToolStripSeparator toolStripSeparator21;
         private ToolStripButton toolStripButtonSelAll;
         private ToolStripButton toolStripButtonSelInv;
@@ -1538,6 +1537,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator23;
         private ToolStripMenuItem findByWindowToolStripMenuItem;
         private ToolStripMenuItem viewWindowsStoreAppsToolStripMenuItem;
+        internal UninstallTools.Controls.FilterEditor filterEditor1;
     }
 }
 
