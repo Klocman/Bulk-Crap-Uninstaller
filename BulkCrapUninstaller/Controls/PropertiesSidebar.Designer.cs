@@ -169,6 +169,7 @@ namespace BulkCrapUninstaller.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MinimumSize = new System.Drawing.Size(170, 170);
             this.Name = "PropertiesSidebar";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -23,11 +23,7 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.filterEditor1 = new UninstallTools.Controls.FilterEditor();
+            this.uninstallListEditor1 = new UninstallTools.Controls.UninstallListEditor();
             this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
@@ -72,6 +68,12 @@ namespace BulkCrapUninstaller.Forms
             this.facebookStatusButton1 = new Klocman.Controls.FacebookStatusButton();
             this.twitterStatusButton1 = new Klocman.Controls.TwitterStatusButton();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
+            this.settingsSidebarPanel = new System.Windows.Forms.Panel();
+            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonAdvFiltering = new System.Windows.Forms.Button();
+            this.filterEditor1 = new UninstallTools.Controls.FilterEditor();
             this.uninstallListContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.uninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quietUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -184,12 +186,12 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.listViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).BeginInit();
             this.toolStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.settingsSidebarPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.uninstallListContextMenuStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -202,7 +204,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            this.splitContainer1.Panel1.Controls.Add(this.uninstallListEditor1);
             // 
             // splitContainer1.Panel2
             // 
@@ -211,36 +213,10 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             // 
-            // panel1
+            // uninstallListEditor1
             // 
-            this.panel1.Controls.Add(this.propertiesSidebar);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // propertiesSidebar
-            // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // groupBox1
-            // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.filterEditor1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // filterEditor1
-            // 
-            resources.ApplyResources(this.filterEditor1, "filterEditor1");
-            this.filterEditor1.Name = "filterEditor1";
-            this.filterEditor1.ShowAsSearch = true;
+            resources.ApplyResources(this.uninstallListEditor1, "uninstallListEditor1");
+            this.uninstallListEditor1.Name = "uninstallListEditor1";
             // 
             // listLegend1
             // 
@@ -305,8 +281,8 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallerObjectListView.FullRowSelect = true;
             this.uninstallerObjectListView.GridLines = true;
             this.uninstallerObjectListView.HideSelection = false;
-            this.uninstallerObjectListView.SelectedBackColor = System.Drawing.Color.Empty;
-            this.uninstallerObjectListView.SelectedForeColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.uninstallerObjectListView.HighlightForegroundColor = System.Drawing.Color.Empty;
             this.uninstallerObjectListView.Name = "uninstallerObjectListView";
             this.uninstallerObjectListView.ShowGroups = false;
             this.uninstallerObjectListView.ShowImagesOnSubItems = true;
@@ -596,6 +572,45 @@ namespace BulkCrapUninstaller.Forms
             this.donateButton.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.donateButton.Name = "donateButton";
             this.donateButton.Click += new System.EventHandler(this.donateButton_Click);
+            // 
+            // settingsSidebarPanel
+            // 
+            resources.ApplyResources(this.settingsSidebarPanel, "settingsSidebarPanel");
+            this.settingsSidebarPanel.Controls.Add(this.propertiesSidebar);
+            this.settingsSidebarPanel.Controls.Add(this.label1);
+            this.settingsSidebarPanel.Controls.Add(this.groupBox1);
+            this.settingsSidebarPanel.Name = "settingsSidebarPanel";
+            // 
+            // propertiesSidebar
+            // 
+            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
+            this.propertiesSidebar.Name = "propertiesSidebar";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.buttonAdvFiltering);
+            this.groupBox1.Controls.Add(this.filterEditor1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // buttonAdvFiltering
+            // 
+            resources.ApplyResources(this.buttonAdvFiltering, "buttonAdvFiltering");
+            this.buttonAdvFiltering.Name = "buttonAdvFiltering";
+            this.buttonAdvFiltering.UseVisualStyleBackColor = true;
+            this.buttonAdvFiltering.Click += new System.EventHandler(this.buttonAdvFiltering_Click);
+            // 
+            // filterEditor1
+            // 
+            resources.ApplyResources(this.filterEditor1, "filterEditor1");
+            this.filterEditor1.Name = "filterEditor1";
+            this.filterEditor1.ShowAsSearch = true;
             // 
             // uninstallListContextMenuStrip
             // 
@@ -1348,6 +1363,7 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.settingsSidebarPanel);
             this.Controls.Add(this.menuStrip);
             this.KeyPreview = true;
             this.Name = "MainWindow";
@@ -1359,16 +1375,16 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.listViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.settingsSidebarPanel.ResumeLayout(false);
+            this.settingsSidebarPanel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.uninstallListContextMenuStrip.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -1401,7 +1417,7 @@ namespace BulkCrapUninstaller.Forms
         private ContextMenuStrip uninstallListContextMenuStrip;
         private ToolStripMenuItem uninstallContextMenuStripItem;
         private ToolStripMenuItem propertiesContextMenuStripItem;
-        private Panel panel1;
+        private Panel settingsSidebarPanel;
         private MenuStrip menuStrip;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem reloadUninstallersToolStripMenuItem;
@@ -1538,6 +1554,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem findByWindowToolStripMenuItem;
         private ToolStripMenuItem viewWindowsStoreAppsToolStripMenuItem;
         internal UninstallTools.Controls.FilterEditor filterEditor1;
+        private UninstallTools.Controls.UninstallListEditor uninstallListEditor1;
+        private Button buttonAdvFiltering;
     }
 }
 

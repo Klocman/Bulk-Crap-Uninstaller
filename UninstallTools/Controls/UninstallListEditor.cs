@@ -25,15 +25,22 @@ namespace UninstallTools.Controls
         {
             get
             {
-                if (_currentList == null)
-                    throw new InvalidOperationException("CurrentList has to be set before use of this control");
                 return _currentList;
             }
             set
             {
                 _currentList = value;
+                Enabled = _currentList != null;
                 PopulateList();
+                OnCurrentListChanged(this, EventArgs.Empty);
             }
+        }
+
+        public event EventHandler CurrentListChanged;
+
+        private void OnCurrentListChanged(object sender, EventArgs e)
+        {
+            CurrentListChanged?.Invoke(sender, e);
         }
 
         [ReadOnly(true)]
@@ -134,8 +141,10 @@ namespace UninstallTools.Controls
         private void PopulateList()
         {
             groupBoxConditions.Enabled = false;
-
             listView1.Items.Clear();
+
+            if (CurrentList == null) return;
+
             listView1.Items.AddRange(CurrentList.Items.Select(x => new ListViewItem(
                 new[] { x.ToString() }) //TODO rest of the columns
             { Tag = x }).ToArray());
@@ -143,6 +152,7 @@ namespace UninstallTools.Controls
 
         private void OnFiltersChanged(object sender, EventArgs e)
         {
+            RefreshConditionList();
             FiltersChanged?.Invoke(sender, e);
         }
 

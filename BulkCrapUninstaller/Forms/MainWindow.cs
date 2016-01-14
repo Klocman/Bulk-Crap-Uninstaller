@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
+using Klocman;
+using Klocman.Events;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
@@ -49,7 +51,9 @@ namespace BulkCrapUninstaller.Forms
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
             BindControlsToSettings();
-            
+
+            uninstallListEditor1.CurrentListChanged += RefreshSidebarVisibility;
+
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
             Opacity = 0;
@@ -259,8 +263,8 @@ namespace BulkCrapUninstaller.Forms
                 if (!listLegend1.Visible && settings.Settings.UninstallerListShowLegend)
                     settings.Settings.UninstallerListShowLegend = false;
             };
-
-            settings.Subscribe((x, y) => splitContainer1.Panel1Collapsed = !y.NewValue,
+            
+            settings.Subscribe(RefreshSidebarVisibility,
                 x => x.ToolbarsShowSettings, this);
             settings.Subscribe((x, y) => toolStrip.Visible = y.NewValue,
                 x => x.ToolbarsShowToolbar, this);
@@ -300,6 +304,17 @@ namespace BulkCrapUninstaller.Forms
                 olvColumnRating.IsVisible = args.NewValue;
                 uninstallerObjectListView.RebuildColumns();
             }, x => x.MiscUserRatings, this);
+        }
+
+        private void RefreshSidebarVisibility(object sender, EventArgs e)
+        {
+            var ulistOpen = uninstallListEditor1.CurrentList != null;
+            splitContainer1.Panel1Collapsed = !ulistOpen;
+            splitContainer1.Panel1.Enabled = ulistOpen;
+
+            var sidebarOpen = _setMan.Selected.Settings.ToolbarsShowSettings && !ulistOpen;
+            settingsSidebarPanel.Visible = sidebarOpen;
+            settingsSidebarPanel.Enabled = sidebarOpen;
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1140,6 +1155,11 @@ namespace BulkCrapUninstaller.Forms
         {
             _setMan.Selected.Settings.FilterShowStoreApps = true;
             filterEditor1.Search(UninstallerType.StoreApp.GetLocalisedName(), FilterComparisonMethod.Equals);
+        }
+
+        private void buttonAdvFiltering_Click(object sender, EventArgs e)
+        {
+            uninstallListEditor1.CurrentList = new UninstallList(); //TODO auto generate from settings
         }
     }
 }

@@ -29,7 +29,7 @@ namespace UninstallTools.Lists
         /// <summary>
         ///     Comparison rules of this filter
         /// </summary>
-        public List<ComparisonEntry> ComparisonEntries { get; set; }
+        public List<ComparisonEntry> ComparisonEntries { get; set; } = new List<ComparisonEntry>();
 
 
         /// <summary>
