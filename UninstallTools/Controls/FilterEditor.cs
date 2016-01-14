@@ -13,12 +13,12 @@ namespace UninstallTools.Controls
     {
         private static readonly LocalisedEnumWrapper[] FilteringOptions;
         private static readonly Dictionary<string, ComparisonTargetInfo> PropertyTargets;
-        private ComparisonEntry _targetComparisonEntry;
+        private FilterCondition _targetFilterCondition;
 
         static FilterEditor()
         {
-            FilteringOptions = Enum.GetValues(typeof(FilterComparisonMethod))
-                .Cast<FilterComparisonMethod>().Select(x => new LocalisedEnumWrapper(x)).ToArray();
+            FilteringOptions = Enum.GetValues(typeof(ComparisonMethod))
+                .Cast<ComparisonMethod>().Select(x => new LocalisedEnumWrapper(x)).ToArray();
 
             PropertyTargets = new Dictionary<string, ComparisonTargetInfo>();
             foreach (var comparisonTarget in ComparisonTargetInfo.ComparisonTargets.OrderBy(x => x.DisplayName))
@@ -62,16 +62,16 @@ namespace UninstallTools.Controls
 
         [Browsable(false)]
         [ReadOnly(true)]
-        public ComparisonEntry TargetComparisonEntry
+        public FilterCondition TargetFilterCondition
         {
             get
             {
 
-                return _targetComparisonEntry;
+                return _targetFilterCondition;
             }
             set
             {
-                _targetComparisonEntry = value;
+                _targetFilterCondition = value;
 
                 RefreshEditor();
                 //event
@@ -80,7 +80,7 @@ namespace UninstallTools.Controls
 
         public void RefreshEditor()
         {
-            if (_targetComparisonEntry == null)
+            if (_targetFilterCondition == null)
             {
                 Enabled = false;
                 textBoxFilterText.Text = string.Empty;
@@ -89,26 +89,27 @@ namespace UninstallTools.Controls
                 comboBoxCompareMethod.SelectedIndex = 0;
                 return;
             }
+            Enabled = true;
 
-            var option = FilteringOptions.FirstOrDefault(x => _targetComparisonEntry.ComparisonMethod.Equals(x.TargetEnum));
+            var option = FilteringOptions.FirstOrDefault(x => _targetFilterCondition.ComparisonMethod.Equals(x.TargetEnum));
             comboBoxCompareMethod.SelectedItem = option ?? FilteringOptions[0];
 
-            comboBox1.SelectedIndex = string.IsNullOrEmpty(_targetComparisonEntry.TargetPropertyId)
+            comboBox1.SelectedIndex = string.IsNullOrEmpty(_targetFilterCondition.TargetPropertyId)
                 ? 0
-                : Math.Max(0, comboBox1.Items.IndexOf(PropertyTargets[_targetComparisonEntry.TargetPropertyId].DisplayName));
+                : Math.Max(0, comboBox1.Items.IndexOf(PropertyTargets.First(x=>x.Value.Id.Equals(_targetFilterCondition.TargetPropertyId)).Key));
 
-            if (textBoxFilterText.Text != _targetComparisonEntry.FilterText)
-                textBoxFilterText.Text = _targetComparisonEntry.FilterText;
+            if (textBoxFilterText.Text != _targetFilterCondition.FilterText)
+                textBoxFilterText.Text = _targetFilterCondition.FilterText;
 
-            if (searchBox1.SearchString != _targetComparisonEntry.FilterText)
+            if (searchBox1.SearchString != _targetFilterCondition.FilterText)
             {
                 searchBox1.SearchTextChanged -= searchBox1_SearchTextChanged;
-                searchBox1.Search(_targetComparisonEntry.FilterText);
+                searchBox1.Search(_targetFilterCondition.FilterText);
                 searchBox1.SearchTextChanged += searchBox1_SearchTextChanged;
             }
 
-            if (checkBoxInvert.Checked != _targetComparisonEntry.InvertResults)
-                checkBoxInvert.Checked = _targetComparisonEntry.InvertResults;
+            if (checkBoxInvert.Checked != _targetFilterCondition.InvertResults)
+                checkBoxInvert.Checked = _targetFilterCondition.InvertResults;
         }
 
         [DefaultValue(false)]
@@ -145,10 +146,10 @@ namespace UninstallTools.Controls
                 textBoxFilterText.Focus();
         }
 
-        public void Search(string searchStr, FilterComparisonMethod method, bool negate = false)
+        public void Search(string searchStr, ComparisonMethod method, bool negate = false)
         {
-            _targetComparisonEntry.ComparisonMethod = method;
-            _targetComparisonEntry.InvertResults = negate;
+            _targetFilterCondition.ComparisonMethod = method;
+            _targetFilterCondition.InvertResults = negate;
 
             searchBox1.SearchTextChanged -= searchBox1_SearchTextChanged;
             searchBox1.Search(searchStr);
@@ -161,41 +162,41 @@ namespace UninstallTools.Controls
         private void comboBoxCompareMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             var localisedEnumWrapper = comboBoxCompareMethod.SelectedItem as LocalisedEnumWrapper;
-            if (localisedEnumWrapper == null || _targetComparisonEntry == null
-                || _targetComparisonEntry.ComparisonMethod == (FilterComparisonMethod)localisedEnumWrapper.TargetEnum)
+            if (localisedEnumWrapper == null || _targetFilterCondition == null
+                || _targetFilterCondition.ComparisonMethod == (ComparisonMethod)localisedEnumWrapper.TargetEnum)
                 return;
 
-            _targetComparisonEntry.ComparisonMethod = (FilterComparisonMethod)localisedEnumWrapper.TargetEnum;
+            _targetFilterCondition.ComparisonMethod = (ComparisonMethod)localisedEnumWrapper.TargetEnum;
             OnComparisonMethodChanged(sender, e);
         }
 
         private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
         {
-            if (_targetComparisonEntry == null || _targetComparisonEntry.FilterText == arg1.SearchString) return;
+            if (_targetFilterCondition == null || _targetFilterCondition.FilterText == arg1.SearchString) return;
 
-            _targetComparisonEntry.FilterText = arg1.SearchString;
+            _targetFilterCondition.FilterText = arg1.SearchString;
             OnComparisonMethodChanged(arg1, arg2);
         }
 
         private void textBoxFilterText_TextChanged(object sender, EventArgs e)
         {
-            if (_targetComparisonEntry == null || _targetComparisonEntry.FilterText == textBoxFilterText.Text) return;
+            if (_targetFilterCondition == null || _targetFilterCondition.FilterText == textBoxFilterText.Text) return;
 
-            _targetComparisonEntry.FilterText = textBoxFilterText.Text;
+            _targetFilterCondition.FilterText = textBoxFilterText.Text;
             OnComparisonMethodChanged(sender, e);
         }
 
         private void checkBoxInvert_CheckedChanged(object sender, EventArgs e)
         {
-            if (_targetComparisonEntry == null || _targetComparisonEntry.InvertResults == checkBoxInvert.Checked) return;
+            if (_targetFilterCondition == null || _targetFilterCondition.InvertResults == checkBoxInvert.Checked) return;
 
-            _targetComparisonEntry.InvertResults = checkBoxInvert.Checked;
+            _targetFilterCondition.InvertResults = checkBoxInvert.Checked;
             OnComparisonMethodChanged(sender, e);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_targetComparisonEntry == null)
+            if (_targetFilterCondition == null)
                 return;
 
             textBoxFilterText.AutoCompleteCustomSource.Clear();
@@ -209,10 +210,10 @@ namespace UninstallTools.Controls
                 //textBoxFilterText.Text = SelectedTargetInfo.PossibleStrings.First();
             }
 
-            if (_targetComparisonEntry.TargetPropertyId
+            if (_targetFilterCondition.TargetPropertyId
                 .Equals(targetInfo.Id, StringComparison.InvariantCultureIgnoreCase)) return;
 
-            _targetComparisonEntry.TargetPropertyId = targetInfo.Id;
+            _targetFilterCondition.TargetPropertyId = targetInfo.Id;
             OnComparisonMethodChanged(sender, e);
         }
     }

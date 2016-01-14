@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
-using Klocman;
-using Klocman.Events;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
@@ -31,6 +29,8 @@ namespace BulkCrapUninstaller.Forms
 {
     internal sealed partial class MainWindow : Form
     {
+        private string MainTitleBarText { get; }
+
         private readonly UninstallerListViewTools _listView;
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
@@ -52,7 +52,15 @@ namespace BulkCrapUninstaller.Forms
             _setMan.LoadSettings();
             BindControlsToSettings();
 
-            uninstallListEditor1.CurrentListChanged += RefreshSidebarVisibility;
+            advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
+            advancedFilters1.CurrentListChanged +=
+                (sender, args) => _listView.FilteringOverride = advancedFilters1.CurrentList;
+            advancedFilters1.FiltersChanged += (sender, args) =>
+            {
+                if (_listView.FilteringOverride != null)
+                    _listView.UpdateColumnFiltering();
+            };
+            advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
 
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
@@ -102,10 +110,11 @@ namespace BulkCrapUninstaller.Forms
 
             // Setup the main window
             Icon = Resources.Icon_Logo;
-            Text = Text.Append(" v", Program.AssemblyVersion.ToString(Program.AssemblyVersion.Build != 0 ? 3 : 2))
+            MainTitleBarText = Text.Append(" v", Program.AssemblyVersion.ToString(Program.AssemblyVersion.Build != 0 ? 3 : 2))
                 .AppendIf(!Program.IsInstalled, Localisable.StrIsPortable)
                 .AppendIf(ProcessTools.Is64BitProcess, Localisable.Str64Bit)
                 .AppendIf(Program.EnableDebug, Localisable.StrDebug);
+            Text = MainTitleBarText;
 
             _styleController = new WindowStyleController(this);
 
@@ -131,14 +140,26 @@ namespace BulkCrapUninstaller.Forms
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
             _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-            
+
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
 
             MessageBoxes.DefaultOwner = this;
             LoadingDialog.DefaultOwner = this;
             PremadeDialogs.DefaultOwner = this;
-            
+
             SetupHotkeys();
+        }
+
+        private void RefreshTitleBar(object sender, EventArgs e)
+        {
+            //TODO unsaved / no filename
+
+            var result = MainTitleBarText;
+            if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFilename))
+            {
+                result = $"{result} [{advancedFilters1.CurrentListFilename}]";
+            }
+            Text = result;
         }
 
         /// <summary>
@@ -211,7 +232,7 @@ namespace BulkCrapUninstaller.Forms
         private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_listView.DisplayWindowsFeatures())
-                filterEditor1.Search("Dism.exe", FilterComparisonMethod.StartsWith);
+                filterEditor1.Search("Dism.exe", ComparisonMethod.StartsWith);
         }
 
         private void advancedOperationsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
@@ -263,7 +284,7 @@ namespace BulkCrapUninstaller.Forms
                 if (!listLegend1.Visible && settings.Settings.UninstallerListShowLegend)
                     settings.Settings.UninstallerListShowLegend = false;
             };
-            
+
             settings.Subscribe(RefreshSidebarVisibility,
                 x => x.ToolbarsShowSettings, this);
             settings.Subscribe((x, y) => toolStrip.Visible = y.NewValue,
@@ -308,7 +329,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void RefreshSidebarVisibility(object sender, EventArgs e)
         {
-            var ulistOpen = uninstallListEditor1.CurrentList != null;
+            var ulistOpen = advancedFilters1.CurrentList != null;
             splitContainer1.Panel1Collapsed = !ulistOpen;
             splitContainer1.Panel1.Enabled = ulistOpen;
 
@@ -1143,10 +1164,10 @@ namespace BulkCrapUninstaller.Forms
             if (process == null) return;
 
             var results = Uninstaller.GetApplicationsFromProcess(_listView.AllUninstallers, process)
-                .Select(x=>x.DisplayName).Distinct().OrderBy(x=>x).ToList();
+                .Select(x => x.DisplayName).Distinct().OrderBy(x => x).ToList();
 
             filterEditor1.Search(results.Any() ? string.Join("|", results.Select(Regex.Escape).ToArray()) : @"a^",
-                FilterComparisonMethod.Regex);
+                ComparisonMethod.Regex);
 
             //MessageBox.Show(process.MainWindowTitle);
         }
@@ -1154,12 +1175,11 @@ namespace BulkCrapUninstaller.Forms
         private void viewWindowsStoreAppsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _setMan.Selected.Settings.FilterShowStoreApps = true;
-            filterEditor1.Search(UninstallerType.StoreApp.GetLocalisedName(), FilterComparisonMethod.Equals);
+            filterEditor1.Search(UninstallerType.StoreApp.GetLocalisedName(), ComparisonMethod.Equals);
         }
-
         private void buttonAdvFiltering_Click(object sender, EventArgs e)
         {
-            uninstallListEditor1.CurrentList = new UninstallList(); //TODO auto generate from settings
+            advancedFilters1.LoadUninstallList(new UninstallList()); //TODO auto generate from settings
         }
     }
 }

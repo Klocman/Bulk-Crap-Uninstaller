@@ -125,33 +125,33 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 24</value>
   </data>
-  <data name="uninstallListEditor1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="advancedFilters1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="uninstallListEditor1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="advancedFilters1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="uninstallListEditor1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>310, 0</value>
-  </data>
-  <data name="uninstallListEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 508</value>
+  <data name="advancedFilters1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 506</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="uninstallListEditor1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="advancedFilters1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;uninstallListEditor1.Name" xml:space="preserve">
-    <value>uninstallListEditor1</value>
+  <data name="&gt;&gt;advancedFilters1.Name" xml:space="preserve">
+    <value>advancedFilters1</value>
   </data>
-  <data name="&gt;&gt;uninstallListEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.UninstallListEditor, UninstallTools, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;uninstallListEditor1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;uninstallListEditor1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;advancedFilters1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="splitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 2</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -376,49 +376,6 @@
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Reload uninstallers</value>
   </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="toolStripButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFdSURBVGhD7dehS8VQFIDxgYLBYjMYLILVZLBbzFYNgs1q
-        MQoGMdoV/wCjxS6CxWATQbPFYhKZfkd24TIO292d7uzh+eCHj4173HvM3WfheZ7neZ73/1rAM746OMeo
-        msINtIttM6q2oF1kilF1C+0iU/xq2i+w0ittoJVeaQOt9EobaKVX2sDgGhOT9gbEJ1YwMWlvQoSddx3a
-        eQuNd4i24B3ytWMa99Uxa613iLboENIOtPMWztBYfcErZivyun7egtwh82isvmgX0hHq56wcoLV4wQPk
-        72IR8inE56y8QO6O1uJFG3KALhAft7SNpMKCn0dbWZar0TFrd0hOFsSPttx/kv7CGpKTBWHz20R9mJVL
-        dCpsfjN4gjZ0aB9YQqeOq5/70IZaOEHn5NEmm80btKFDk014DlmdQhtqYQ9ZLUOeWtrQoT1CNuSsrqAN
-        tRA2ZM/zPM/zPM/LrSi+AcolLVcO8kgZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton7.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="toolStripButton7.Text" xml:space="preserve">
-    <value>Open uninstall lists...</value>
-  </data>
-  <data name="toolStripButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVGhD7Zm9DcIwFAbTMgBj0DAAYgQaNqBCrMM8iHUY
-        gSLwPSk09lOU2HrEiu6kkxv/XZMU7gAAoEV28taIdpdirvLTiHaXYlYf8pbPIG1v78yQkJeMwvb2ziTE
-        IKQCQsYgpAJCxlh9yGr+7EtIiEFIgIQYhARIiEFIgH8JuchzobbW2zM1PqTv+63GIoa17r6JhBiETIWQ
-        mZSEHGX2ddKcvcaMlkMe0pt3lxmEzIQQx0VDJj296TIbjT9O0pt3kBnDWm9+atXTGwAABNB1XwrCm1F2
-        tP9AAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton6.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="toolStripButton6.Text" xml:space="preserve">
-    <value>Create uninstall list...</value>
-  </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
@@ -550,7 +507,7 @@
     <value>Uninstall quietly</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
+    <value>6, 23</value>
   </data>
   <data name="toolStripButtonProperties.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -560,6 +517,27 @@
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Properties</value>
+  </data>
+  <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="toolStripButton7.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="toolStripButton7.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="toolStripButton8.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -848,6 +826,9 @@
   </data>
   <data name="buttonAdvFiltering.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="buttonAdvFiltering.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonAdvFiltering.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 138</value>
@@ -2090,24 +2071,6 @@
   <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Name" xml:space="preserve">
-    <value>toolStripButton7</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton6.Name" xml:space="preserve">
-    <value>toolStripButton6</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
     <value>toolStripSeparator22</value>
   </data>
@@ -2172,6 +2135,24 @@
     <value>toolStripButtonProperties</value>
   </data>
   <data name="&gt;&gt;toolStripButtonProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
+    <value>toolStripSeparator24</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton7.Name" xml:space="preserve">
+    <value>toolStripButton7</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Name" xml:space="preserve">
+    <value>toolStripButton8</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripLabelStatus.Name" xml:space="preserve">

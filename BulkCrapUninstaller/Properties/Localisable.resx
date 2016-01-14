@@ -133,7 +133,7 @@
     <value>Searching for updates...</value>
   </data>
   <data name="SearchNothingFoundMessage" xml:space="preserve">
-    <value>There are no entries matching your search string.</value>
+    <value>There are no entries matching your search criteria.</value>
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>BCUninstaller export

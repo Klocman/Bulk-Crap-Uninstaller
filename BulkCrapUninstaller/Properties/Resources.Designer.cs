@@ -211,6 +211,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default.bcul.
+        /// </summary>
+        internal static string DefaultUninstallListFilename {
+            get {
+                return ResourceManager.GetString("DefaultUninstallListFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap delete {

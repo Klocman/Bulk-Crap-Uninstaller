@@ -23,7 +23,7 @@ namespace UninstallTools.Dialogs
 
                 try
                 {
-                    tempList = UninstallList.FromFiles(openFileDialog.FileNames);
+                    tempList = UninstallList.ReadFromFile(openFileDialog.FileName);
                     break;
                 }
                 catch (Exception ex)

@@ -270,21 +270,24 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        bf0GeDTIxb8Pvs8AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="DefaultUninstallListFilename" xml:space="preserve">
+    <value>Default.bcul</value>
   </data>
 </root>

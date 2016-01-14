@@ -421,4 +421,7 @@
   <data name="UninstallerType_StoreApp" xml:space="preserve">
     <value>Windows Store App</value>
   </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>New condition</value>
+  </data>
 </root>

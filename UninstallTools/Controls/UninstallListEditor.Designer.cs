@@ -33,20 +33,26 @@
             this.groupBoxFilterList = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderMethod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderProperty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderConditions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddFilter = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemoveFilter = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddFiltersFromList = new System.Windows.Forms.ToolStripButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBoxFilterSettings = new System.Windows.Forms.GroupBox();
+            this.textBoxFilterName = new System.Windows.Forms.TextBox();
+            this.labelFilterType = new System.Windows.Forms.Label();
+            this.comboBoxFilterType = new System.Windows.Forms.ComboBox();
+            this.labelFilterName = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBoxConditions = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxConditions = new System.Windows.Forms.ListBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddCondition = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRemoveCondition = new System.Windows.Forms.ToolStripButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxConditionEditor = new System.Windows.Forms.GroupBox();
             this.filterEditor = new UninstallTools.Controls.FilterEditor();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,18 +60,18 @@
             this.splitContainer1.SuspendLayout();
             this.groupBoxFilterList.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBoxFilterSettings.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBoxConditions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxConditionEditor.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.Name = "splitContainer1";
@@ -73,6 +79,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.groupBoxFilterList);
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBoxFilterSettings);
             resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             // 
             // splitContainer1.Panel2
@@ -91,8 +99,8 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName,
-            this.columnHeaderMethod,
-            this.columnHeaderProperty});
+            this.columnHeaderType,
+            this.columnHeaderConditions});
             resources.ApplyResources(this.listView1, "listView1");
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -105,19 +113,19 @@
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.OnSelectedFilterChanged);
             // 
             // columnHeaderName
             // 
             resources.ApplyResources(this.columnHeaderName, "columnHeaderName");
             // 
-            // columnHeaderMethod
+            // columnHeaderType
             // 
-            resources.ApplyResources(this.columnHeaderMethod, "columnHeaderMethod");
+            resources.ApplyResources(this.columnHeaderType, "columnHeaderType");
             // 
-            // columnHeaderProperty
+            // columnHeaderConditions
             // 
-            resources.ApplyResources(this.columnHeaderProperty, "columnHeaderProperty");
+            resources.ApplyResources(this.columnHeaderConditions, "columnHeaderConditions");
             // 
             // toolStrip1
             // 
@@ -131,21 +139,66 @@
             // 
             // toolStripButtonAddFilter
             // 
+            this.toolStripButtonAddFilter.Image = global::UninstallTools.Properties.Resources.add;
             resources.ApplyResources(this.toolStripButtonAddFilter, "toolStripButtonAddFilter");
             this.toolStripButtonAddFilter.Name = "toolStripButtonAddFilter";
             this.toolStripButtonAddFilter.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // toolStripButtonRemoveFilter
             // 
+            this.toolStripButtonRemoveFilter.Image = global::UninstallTools.Properties.Resources.minus;
             resources.ApplyResources(this.toolStripButtonRemoveFilter, "toolStripButtonRemoveFilter");
             this.toolStripButtonRemoveFilter.Name = "toolStripButtonRemoveFilter";
             this.toolStripButtonRemoveFilter.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // toolStripButtonAddFiltersFromList
             // 
+            this.toolStripButtonAddFiltersFromList.Image = global::UninstallTools.Properties.Resources.folder_open;
             resources.ApplyResources(this.toolStripButtonAddFiltersFromList, "toolStripButtonAddFiltersFromList");
             this.toolStripButtonAddFiltersFromList.Name = "toolStripButtonAddFiltersFromList";
             this.toolStripButtonAddFiltersFromList.Click += new System.EventHandler(this.buttonImport_Click);
+            // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // groupBoxFilterSettings
+            // 
+            this.groupBoxFilterSettings.Controls.Add(this.textBoxFilterName);
+            this.groupBoxFilterSettings.Controls.Add(this.labelFilterType);
+            this.groupBoxFilterSettings.Controls.Add(this.comboBoxFilterType);
+            this.groupBoxFilterSettings.Controls.Add(this.labelFilterName);
+            resources.ApplyResources(this.groupBoxFilterSettings, "groupBoxFilterSettings");
+            this.groupBoxFilterSettings.Name = "groupBoxFilterSettings";
+            this.groupBoxFilterSettings.TabStop = false;
+            // 
+            // textBoxFilterName
+            // 
+            resources.ApplyResources(this.textBoxFilterName, "textBoxFilterName");
+            this.textBoxFilterName.Name = "textBoxFilterName";
+            this.textBoxFilterName.TextChanged += new System.EventHandler(this.textBoxFilterName_TextChanged);
+            // 
+            // labelFilterType
+            // 
+            resources.ApplyResources(this.labelFilterType, "labelFilterType");
+            this.labelFilterType.Name = "labelFilterType";
+            // 
+            // comboBoxFilterType
+            // 
+            resources.ApplyResources(this.comboBoxFilterType, "comboBoxFilterType");
+            this.comboBoxFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterType.FormattingEnabled = true;
+            this.comboBoxFilterType.Items.AddRange(new object[] {
+            resources.GetString("comboBoxFilterType.Items"),
+            resources.GetString("comboBoxFilterType.Items1")});
+            this.comboBoxFilterType.Name = "comboBoxFilterType";
+            this.comboBoxFilterType.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterType_SelectedIndexChanged);
+            // 
+            // labelFilterName
+            // 
+            resources.ApplyResources(this.labelFilterName, "labelFilterName");
+            this.labelFilterName.Name = "labelFilterName";
             // 
             // splitContainer2
             // 
@@ -156,12 +209,10 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.groupBoxConditions);
-            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
+            this.splitContainer2.Panel2.Controls.Add(this.groupBoxConditionEditor);
             // 
             // groupBoxConditions
             // 
@@ -173,16 +224,16 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.listBoxConditions);
             this.panel1.Controls.Add(this.toolStrip2);
             this.panel1.Name = "panel1";
             // 
-            // listBox1
+            // listBoxConditions
             // 
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            resources.ApplyResources(this.listBoxConditions, "listBoxConditions");
+            this.listBoxConditions.FormattingEnabled = true;
+            this.listBoxConditions.Name = "listBoxConditions";
+            this.listBoxConditions.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // toolStrip2
             // 
@@ -195,22 +246,24 @@
             // 
             // toolStripButtonAddCondition
             // 
+            this.toolStripButtonAddCondition.Image = global::UninstallTools.Properties.Resources.add;
             resources.ApplyResources(this.toolStripButtonAddCondition, "toolStripButtonAddCondition");
             this.toolStripButtonAddCondition.Name = "toolStripButtonAddCondition";
             this.toolStripButtonAddCondition.Click += new System.EventHandler(this.toolStripButtonAddCondition_Click);
             // 
             // toolStripButtonRemoveCondition
             // 
+            this.toolStripButtonRemoveCondition.Image = global::UninstallTools.Properties.Resources.minus;
             resources.ApplyResources(this.toolStripButtonRemoveCondition, "toolStripButtonRemoveCondition");
             this.toolStripButtonRemoveCondition.Name = "toolStripButtonRemoveCondition";
             this.toolStripButtonRemoveCondition.Click += new System.EventHandler(this.toolStripButtonRemoveCondition_Click);
             // 
-            // groupBox1
+            // groupBoxConditionEditor
             // 
-            this.groupBox1.Controls.Add(this.filterEditor);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.groupBoxConditionEditor.Controls.Add(this.filterEditor);
+            resources.ApplyResources(this.groupBoxConditionEditor, "groupBoxConditionEditor");
+            this.groupBoxConditionEditor.Name = "groupBoxConditionEditor";
+            this.groupBoxConditionEditor.TabStop = false;
             // 
             // filterEditor
             // 
@@ -236,6 +289,8 @@
             this.groupBoxFilterList.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBoxFilterSettings.ResumeLayout(false);
+            this.groupBoxFilterSettings.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
@@ -244,8 +299,8 @@
             this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxConditionEditor.ResumeLayout(false);
+            this.groupBoxConditionEditor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,10 +310,10 @@
         private System.Windows.Forms.GroupBox groupBoxFilterList;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
-        private System.Windows.Forms.ColumnHeader columnHeaderMethod;
+        private System.Windows.Forms.ColumnHeader columnHeaderType;
         private System.Windows.Forms.GroupBox groupBoxConditions;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.ColumnHeader columnHeaderProperty;
+        private System.Windows.Forms.ColumnHeader columnHeaderConditions;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddFilter;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemoveFilter;
@@ -268,9 +323,15 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddCondition;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxConditions;
         private System.Windows.Forms.ToolStripButton toolStripButtonRemoveCondition;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxConditionEditor;
         private FilterEditor filterEditor;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBoxFilterSettings;
+        private System.Windows.Forms.TextBox textBoxFilterName;
+        private System.Windows.Forms.Label labelFilterType;
+        private System.Windows.Forms.ComboBox comboBoxFilterType;
+        private System.Windows.Forms.Label labelFilterName;
     }
 }

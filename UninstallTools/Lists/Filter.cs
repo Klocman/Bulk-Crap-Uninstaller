@@ -8,14 +8,14 @@ using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Lists
 {
-    public class UninstallListItem
+    public class Filter : ITestEntry
     {
-        public UninstallListItem()
+        public Filter()
         {
-            ComparisonEntries.Add(new ComparisonEntry { FilterText = Localisation.UninstallListEditor_NewFilter });
+            ComparisonEntries.Add(new FilterCondition { FilterText = Localisation.UninstallListEditor_NewFilter });
         }
 
-        public UninstallListItem(string filterText)
+        public Filter(string filterText)
         {
             if (string.IsNullOrEmpty(filterText))
                 throw new ArgumentException(Localisation.UninstallListItem_ValueEmpty, nameof(filterText));
@@ -23,13 +23,20 @@ namespace UninstallTools.Lists
             if (filterText.ContainsAny(StringTools.NewLineChars, StringComparison.Ordinal))
                 throw new ArgumentException(Localisation.UninstallListItem_NewLineInValue, nameof(filterText));
 
-            ComparisonEntries.Add(new ComparisonEntry { FilterText = filterText });
+            ComparisonEntries.Add(new FilterCondition { FilterText = filterText });
         }
+
+        public string Name { get; set; } = Localisation.UninstallListEditor_NewFilter;
+
+        /// <summary>
+        /// Exclude items matched by this entry from results of the parent uninstall list
+        /// </summary>
+        public bool Exclude { get; set; }
 
         /// <summary>
         ///     Comparison rules of this filter
         /// </summary>
-        public List<ComparisonEntry> ComparisonEntries { get; set; } = new List<ComparisonEntry>();
+        public List<FilterCondition> ComparisonEntries { get; set; } = new List<FilterCondition>();
 
 
         /// <summary>
@@ -51,11 +58,12 @@ namespace UninstallTools.Lists
 
         public override string ToString()
         {
-            if (ComparisonEntries.Count < 1)
-                return "Empty filter";
-            return ComparisonEntries.Count == 1
-                ? ComparisonEntries.First().ToString()
-                : $"Filter with {ComparisonEntries.Count} conditions";
+            return $"{Name} | {ExcludeToString(Exclude)}";
+        }
+
+        public static string ExcludeToString(bool exclude)
+        {
+            return exclude ? "Exclude" : "Include";
         }
     }
 }

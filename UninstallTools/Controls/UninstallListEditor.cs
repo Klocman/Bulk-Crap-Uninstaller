@@ -15,18 +15,21 @@ namespace UninstallTools.Controls
         {
             InitializeComponent();
 
+            comboBoxFilterType.SelectedIndex = 0;
+
             filterEditor.ComparisonMethodChanged += OnFiltersChanged;
             filterEditor.LostFocus += EditorFocusLost;
+
+            groupBoxFilterSettings.Enabled = false;
+            splitContainer1.Panel2.Enabled = false;
+            filterEditor.TargetFilterCondition = null;
         }
 
         [ReadOnly(true)]
         [Browsable(false)]
         public UninstallList CurrentList
         {
-            get
-            {
-                return _currentList;
-            }
+            get { return _currentList; }
             set
             {
                 _currentList = value;
@@ -35,42 +38,31 @@ namespace UninstallTools.Controls
                 OnCurrentListChanged(this, EventArgs.Empty);
             }
         }
-
-        public event EventHandler CurrentListChanged;
-
-        private void OnCurrentListChanged(object sender, EventArgs e)
-        {
-            CurrentListChanged?.Invoke(sender, e);
-        }
-
-        [ReadOnly(true)]
-        [Browsable(false)]
-        private UninstallListItem CurrentlySelected
+        
+        private Filter CurrentlySelected
         {
             get
             {
                 if (listView1.SelectedItems.Count <= 0)
                     return null;
-                return listView1.SelectedItems[0].Tag as UninstallListItem;
+                return listView1.SelectedItems[0].Tag as Filter;
             }
+        }
+
+        public event EventHandler CurrentListChanged;
+
+        private void OnCurrentListChanged(object sender, EventArgs e)
+        {
+            OnFiltersChanged(sender,e);
+            CurrentListChanged?.Invoke(sender, e);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //var item = GetNewItem();
-            //if (item == null)
-            {
-                var newItem = new UninstallListItem();
-                CurrentList.Add(newItem);
-                PopulateList();
-                //item = GetNewItem();
-            }
-
-            /*if (item != null)
-            {
-                item.EnsureVisible();
-                item.Selected = true;
-            }*/
+            var newItem = new Filter();
+            CurrentList.Add(newItem);
+            PopulateList();
+            OnFiltersChanged(sender, e);
         }
 
         private void buttonImport_Click(object sender, EventArgs e)
@@ -86,6 +78,7 @@ namespace UninstallTools.Controls
 
             CurrentList.Remove(item);
             PopulateList();
+            OnFiltersChanged(sender, e);
         }
 
         private void EditorFocusLost(object sender, EventArgs e)
@@ -93,30 +86,36 @@ namespace UninstallTools.Controls
             RefreshSelectedFilter();
         }
 
-        /*private ListViewItem GetNewItem()
+        private void OnSelectedFilterChanged(object sender, EventArgs e)
         {
-            return listView1.Items.Cast<ListViewItem>().FirstOrDefault(x =>
+            var selection = CurrentlySelected;
+            if (selection != null)
             {
-                var tag = x.Tag as UninstallListItem;
-                return tag != null && tag.FilterText.Equals(Localisation.UninstallListEditor_NewFilter);
-            });
-        }*/
+                textBoxFilterName.Text = selection.Name;
+                comboBoxFilterType.SelectedIndex = selection.Exclude ? 1 : 0;
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshConditionList();
+                splitContainer1.Panel2.Enabled = true;
+                groupBoxFilterSettings.Enabled = true;
+            }
+            else
+            {
+                groupBoxFilterSettings.Enabled = false;
+                splitContainer1.Panel2.Enabled = false;
+            }
+
+            PopulateConditions();
         }
 
-        private void RefreshConditionList()
+        private void PopulateConditions()
         {
-            listBox1.SelectedItem = null;
-            listBox1.Items.Clear();
+            listBoxConditions.SelectedItem = null;
+            listBoxConditions.Items.Clear();
 
             var selection = CurrentlySelected;
             if (selection?.ComparisonEntries != null)
             {
                 groupBoxConditions.Enabled = true;
-                listBox1.Items.AddRange(selection.ComparisonEntries.AsEnumerable().Reverse().ToArray());
+                listBoxConditions.Items.AddRange(selection.ComparisonEntries.AsEnumerable().Reverse().ToArray());
             }
             else
             {
@@ -128,7 +127,7 @@ namespace UninstallTools.Controls
         {
             try
             {
-                CurrentList.AddItems(UninstallList.FromFiles(openFileDialog.FileNames).Items);
+                CurrentList.AddItems(UninstallList.ReadFromFile(openFileDialog.FileName).Filters);
                 PopulateList();
             }
             catch (Exception ex)
@@ -143,19 +142,31 @@ namespace UninstallTools.Controls
             groupBoxConditions.Enabled = false;
             listView1.Items.Clear();
 
-            if (CurrentList == null) return;
+            textBoxFilterName.Text = string.Empty;
+            comboBoxFilterType.SelectedIndex = 0;
 
-            listView1.Items.AddRange(CurrentList.Items.Select(x => new ListViewItem(
-                new[] { x.ToString() }) //TODO rest of the columns
-            { Tag = x }).ToArray());
+            if (CurrentList == null)
+                return;
+
+            listView1.Items.AddRange(CurrentList.Filters.Select(x => new ListViewItem(
+                new[]
+                {
+                    x.Name,
+                    Filter.ExcludeToString(x.Exclude),
+                    x.ComparisonEntries.Count.ToString()
+                })
+            {Tag = x}).ToArray());
         }
 
         private void OnFiltersChanged(object sender, EventArgs e)
         {
-            RefreshConditionList();
+            listBoxConditions.Update();
             FiltersChanged?.Invoke(sender, e);
         }
-
+        
+        /// <summary>
+        /// Fires whenever the filters can potentially give a different result
+        /// </summary>
         public event EventHandler FiltersChanged;
 
         private void RefreshSelectedFilter()
@@ -165,31 +176,60 @@ namespace UninstallTools.Controls
 
             var item = listView1.SelectedItems[0];
             var tag = CurrentlySelected;
-            item.SubItems[0].Text = tag.ToString();
-            //item.SubItems[1].Text = tag.ComparisonMethod.GetLocalisedName(); TODO
+
+            item.SubItems[0].Text = tag.Name;
+            item.SubItems[1].Text = Filter.ExcludeToString(tag.Exclude);
+            item.SubItems[2].Text = tag.ComparisonEntries.Count.ToString();
             item.EnsureVisible();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = listBox1.SelectedItem as ComparisonEntry;
-            if (item != null && !ReferenceEquals(filterEditor.TargetComparisonEntry, item))
-                filterEditor.TargetComparisonEntry = item;
+            var item = listBoxConditions.SelectedItem as FilterCondition;
+            if (item == null)
+            {
+                filterEditor.TargetFilterCondition = item;
+            }
+            else if (!ReferenceEquals(filterEditor.TargetFilterCondition, item))
+            {
+                filterEditor.TargetFilterCondition = item;
+            }
         }
 
         private void toolStripButtonAddCondition_Click(object sender, EventArgs e)
         {
-            CurrentlySelected.ComparisonEntries.Add(new ComparisonEntry());
+            filterEditor.TargetFilterCondition = null;
 
-            RefreshConditionList();
+            CurrentlySelected.ComparisonEntries.Add(new FilterCondition());
+
+            PopulateConditions();
+            OnFiltersChanged(sender, e);
         }
 
         private void toolStripButtonRemoveCondition_Click(object sender, EventArgs e)
         {
-            var item = listBox1.SelectedItem as ComparisonEntry;
+            var item = listBoxConditions.SelectedItem as FilterCondition;
             if (item == null) return;
+            filterEditor.TargetFilterCondition = null;
+
             CurrentlySelected.ComparisonEntries.Remove(item);
-            RefreshConditionList();
+            PopulateConditions();
+            OnFiltersChanged(sender, e);
+        }
+
+        private void textBoxFilterName_TextChanged(object sender, EventArgs e)
+        {
+            if (CurrentlySelected == null) return;
+            CurrentlySelected.Name = textBoxFilterName.Text ?? string.Empty;
+            RefreshSelectedFilter();
+        }
+
+        private void comboBoxFilterType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CurrentlySelected == null) return;
+            CurrentlySelected.Exclude = comboBoxFilterType.SelectedIndex != 0;
+            RefreshSelectedFilter();
+            OnFiltersChanged(sender, e);
         }
     }
 }

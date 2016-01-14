@@ -4,9 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using System.Xml.Linq;
 using System.Xml.Serialization;
-using Klocman.Extensions;
+using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Lists
 {
@@ -17,69 +16,102 @@ namespace UninstallTools.Lists
     /*    </Filters>
     /*</summary>*/
 
-    public class UninstallList
+    public class UninstallList : ITestEntry
     {
+/*
         private static readonly string XmlComparisonMethodName = "ComparisonMethod";
         private static readonly string XmlElementName = "Filter";
         private static readonly string XmlFilterTextName = "FilterText";
-        private static readonly string XmlRootName = "Filters";
-        
-        public List<UninstallListItem> _items = new List<UninstallListItem>();
+        private static readonly string XmlRootName = "Filters";*/
         //public static readonly string ListExtension = "txt";
+
         public UninstallList()
         {
         }
 
-        public UninstallList(IEnumerable<UninstallListItem> items)
+        public UninstallList(IEnumerable<Filter> items)
         {
             AddItems(items);
-            CleanUp();
         }
 
-        public IEnumerable<UninstallListItem> Items => _items;
+        public List<Filter> Filters { get; set; } = new List<Filter>();
 
-        public static UninstallList FromFiles(params string[] files)
+        public static UninstallList ReadFromFile(string fileName)
         {
-            var result = new UninstallList();
-
-            foreach (var file in files.Where(x=>!string.IsNullOrEmpty(x) && File.Exists(x)))
+            var serializer = new XmlSerializer(typeof(UninstallList));
+            using (var reader = new XmlTextReader(fileName))
             {
-                result._items.AddRange(Path.GetExtension(file)
-                    .Equals(".xml", StringComparison.InvariantCultureIgnoreCase)
-                    ? ParseXml(file)
-                    : File.ReadAllLines(file).Select(x => new UninstallListItem(x)));
+                return serializer.Deserialize(reader) as UninstallList;
+            }
+        }
+
+        /// <summary>
+        ///     Test if the input matches this filter. Returns null if it did not hit any filter.
+        ///     If there are only exclude filters this assumes that everything is included.
+        /// </summary>
+        public bool? TestEntry(ApplicationUninstallerEntry input)
+        {
+            if (input == null || Filters.Count < 1) return null;
+
+            var excludes = new List<Filter>();
+            var includes = new List<Filter>();
+
+            foreach (var uninstallListItem in Filters)
+            {
+                if (uninstallListItem.Exclude)
+                    excludes.Add(uninstallListItem);
+                else
+                    includes.Add(uninstallListItem);
             }
 
-            result.CleanUp();
-            return result;
+            bool? excluded = null;
+
+            foreach (var uninstallListItem in excludes)
+            {
+                if (uninstallListItem.TestEntry(input) == true)
+                    return false;
+                excluded = false;
+            }
+
+            bool? included = null;
+
+            foreach (var uninstallListItem in includes)
+            {
+                if (uninstallListItem.TestEntry(input) == true)
+                {
+                    included = true;
+                    break;
+                }
+                included = false;
+            }
+
+            if (!included.HasValue)
+                return excluded.HasValue ? (bool?) true : null;
+            return included.Value;
         }
 
         public void AddItems(IEnumerable<string> items)
         {
-            _items.AddRange(items.Select(x => new UninstallListItem(x)));
-            CleanUp();
+            Filters.AddRange(items.Select(x => new Filter(x)));
         }
 
-        public void Add(UninstallListItem item)
+        public void Add(Filter item)
         {
-            _items.Add(item);
-            CleanUp();
+            Filters.Add(item);
         }
 
-        public void AddItems(IEnumerable<UninstallListItem> items)
+        public void AddItems(IEnumerable<Filter> items)
         {
-            _items.AddRange(items);
-            CleanUp();
+            Filters.AddRange(items);
         }
 
         public void SaveToFile(string fileName)
         {
-            var serializer = new XmlSerializer(typeof(UninstallList));
+            var serializer = new XmlSerializer(typeof (UninstallList));
             using (var writer = new XmlTextWriter(fileName, Encoding.Unicode))
             {
                 writer.Formatting = Formatting.Indented;
                 serializer.Serialize(writer, this);
-
             }
             /*
             var rootElement = new XElement(XmlRootName);
@@ -99,56 +131,44 @@ namespace UninstallTools.Lists
             }*/
         }
 
-        internal void Remove(UninstallListItem item)
+        internal void Remove(Filter item)
         {
-            if (_items.Contains(item))
-                _items.Remove(item);
+            if (Filters.Contains(item))
+                Filters.Remove(item);
         }
 
-        private static IEnumerable<UninstallListItem> ParseXml(string file)
+        /*
+    private static IEnumerable<Filter> ParseXml(string file)
+    {
+
+        var document = XDocument.Load(file);
+        var items = new List<UninstallListItem>();
+
+        if (document.Root == null) return items;
+
+        foreach (var filter in document.Root.Elements())
         {
-            var serializer = new XmlSerializer(typeof(UninstallList));
-            using (var reader = new XmlTextReader(file))
-            {
-                //reader.Encoding = Encoding.Unicode;
-                var list = serializer.Deserialize(reader) as UninstallList;
-                return list.Items;
+            var filterText = filter.Attribute(XmlFilterTextName);
+            if (string.IsNullOrEmpty(filterText?.Value))
+                continue;
 
+            var item = new UninstallListItem(filterText.Value);
+
+            var filterMethod = filter.Attribute(XmlComparisonMethodName);
+            if (filterMethod != null)
+            {
+                item.ComparisonMethod = (FilterComparisonMethod) Enum.Parse(
+                    typeof (FilterComparisonMethod), filterMethod.Value);
             }
-            /*
-            var document = XDocument.Load(file);
-            var items = new List<UninstallListItem>();
-
-            if (document.Root == null) return items;
-
-            foreach (var filter in document.Root.Elements())
+            else
             {
-                var filterText = filter.Attribute(XmlFilterTextName);
-                if (string.IsNullOrEmpty(filterText?.Value))
-                    continue;
-
-                var item = new UninstallListItem(filterText.Value);
-
-                var filterMethod = filter.Attribute(XmlComparisonMethodName);
-                if (filterMethod != null)
-                {
-                    item.ComparisonMethod = (FilterComparisonMethod) Enum.Parse(
-                        typeof (FilterComparisonMethod), filterMethod.Value);
-                }
-                else
-                {
-                    item.ComparisonMethod = FilterComparisonMethod.Equals;
-                }
-
-                items.Add(item);
+                item.ComparisonMethod = FilterComparisonMethod.Equals;
             }
 
-            return items;*/
+            items.Add(item);
         }
 
-        private void CleanUp()
-        {
-            //_items = _items.DistinctBy(x => x.FilterText).OrderBy(x => x.FilterText).ToList();
-        }
+        return items;
+    }*/
     }
 }

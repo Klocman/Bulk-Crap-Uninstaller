@@ -115,6 +115,12 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Controls\AdvancedFilters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvancedFilters.Designer.cs">
+      <DependentUpon>AdvancedFilters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ListLegend.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +255,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <EmbeddedResource Include="Controls\AdvancedFilters.resx">
+      <DependentUpon>AdvancedFilters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListLegend.cs.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>

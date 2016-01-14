@@ -835,6 +835,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New condition.
+        /// </summary>
+        internal static string UninstallListEditor_NewCondition {
+            get {
+                return ResourceManager.GetString("UninstallListEditor_NewCondition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New filter.
         /// </summary>
         internal static string UninstallListEditor_NewFilter {

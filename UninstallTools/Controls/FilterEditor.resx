@@ -345,6 +345,9 @@
   <data name="checkBoxInvert.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 4</value>
   </data>
+  <data name="checkBoxInvert.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 0, 0</value>
+  </data>
   <data name="checkBoxInvert.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
   </data>

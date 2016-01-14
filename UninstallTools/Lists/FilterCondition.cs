@@ -2,17 +2,22 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Klocman.Extensions;
-using Klocman.Localising;
+using UninstallTools.Properties;
 using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Lists
 {
-    public sealed class ComparisonEntry
+    public sealed class FilterCondition : ITestEntry
     {
-        public ComparisonEntry()
+        public FilterCondition() : this(Localisation.UninstallListEditor_NewCondition)
         {
+        }
+
+        public FilterCondition(string filterText)
+        {
+            FilterText = filterText;
             TargetProperty = ComparisonTargetInfo.AllTargetComparison;
-            ComparisonMethod = FilterComparisonMethod.Any;
+            ComparisonMethod = Lists.ComparisonMethod.Any;
         }
 
         /// <summary>
@@ -20,8 +25,9 @@ namespace UninstallTools.Lists
         /// </summary>
         public bool InvertResults { get; set; }
 
-        public FilterComparisonMethod ComparisonMethod { get; set; }
+        public ComparisonMethod ComparisonMethod { get; set; }
         public string FilterText { get; set; }
+
         public string TargetPropertyId
         {
             get { return TargetProperty?.Id ?? string.Empty; }
@@ -47,9 +53,10 @@ namespace UninstallTools.Lists
         /// </summary>
         public bool? TestEntry(ApplicationUninstallerEntry input)
         {
-            var targets = ReferenceEquals(TargetProperty, ComparisonTargetInfo.AllTargetComparison) 
-                ? ComparisonTargetInfo.ComparisonTargets.Where(x=>x.PossibleStrings == null).Select(x=>x.Getter(input))
-                : new [] { TargetProperty.Getter(input) };
+            var targets = ReferenceEquals(TargetProperty, ComparisonTargetInfo.AllTargetComparison)
+                ? ComparisonTargetInfo.ComparisonTargets.Where(x => x.PossibleStrings == null)
+                    .Select(x => x.Getter(input))
+                : new[] {TargetProperty.Getter(input)};
 
             bool? result = null;
 
@@ -59,29 +66,29 @@ namespace UninstallTools.Lists
                 {
                     switch (ComparisonMethod)
                     {
-                        case FilterComparisonMethod.Equals:
+                        case ComparisonMethod.Equals:
                             result = target.Equals(FilterText, StringComparison.InvariantCultureIgnoreCase);
                             break;
 
-                        case FilterComparisonMethod.Any:
+                        case ComparisonMethod.Any:
                             result = target.ContainsAny(
-                                FilterText.Split((char[])null, StringSplitOptions.RemoveEmptyEntries),
+                                FilterText.Split((char[]) null, StringSplitOptions.RemoveEmptyEntries),
                                 StringComparison.InvariantCultureIgnoreCase);
                             break;
 
-                        case FilterComparisonMethod.StartsWith:
+                        case ComparisonMethod.StartsWith:
                             result = target.StartsWith(FilterText, StringComparison.InvariantCultureIgnoreCase);
                             break;
 
-                        case FilterComparisonMethod.EndsWith:
+                        case ComparisonMethod.EndsWith:
                             result = target.EndsWith(FilterText, StringComparison.InvariantCultureIgnoreCase);
                             break;
 
-                        case FilterComparisonMethod.Contains:
+                        case ComparisonMethod.Contains:
                             result = target.Contains(FilterText, StringComparison.InvariantCultureIgnoreCase);
                             break;
 
-                        case FilterComparisonMethod.Regex:
+                        case ComparisonMethod.Regex:
                             result = Regex.IsMatch(target, FilterText, RegexOptions.CultureInvariant);
                             break;
 
@@ -108,7 +115,7 @@ namespace UninstallTools.Lists
 
         public override string ToString()
         {
-            return $"{FilterText} {ComparisonMethod.GetLocalisedName()} {TargetProperty.DisplayName}";
+            return $"{FilterText}"; // | {ComparisonMethod.GetLocalisedName()} {TargetProperty.DisplayName}";
         }
     }
 }

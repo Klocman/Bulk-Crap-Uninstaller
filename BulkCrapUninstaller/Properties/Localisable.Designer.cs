@@ -1322,7 +1322,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no entries matching your search string..
+        ///   Looks up a localized string similar to There are no entries matching your search criteria..
         /// </summary>
         internal static string SearchNothingFoundMessage {
             get {
