@@ -79,6 +79,8 @@ namespace BulkCrapUninstaller.Forms
                     y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries),
                 x => x.FoldersCustomProgramDirs, this);
 
+            _setMan.Selected.Subscribe((x, y) => listLegend1.CertificatesEnabled = y.NewValue, x => x.AdvancedTestCertificates, this);
+
             // Setup list view
             _listView = new UninstallerListViewTools(this);
 
@@ -90,11 +92,19 @@ namespace BulkCrapUninstaller.Forms
             {
                 if (!args.NewValue)
                 {
-                    propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+                    var e = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+                    propertiesSidebar.OrphansEnabled = e;
+                    listLegend1.OrphanedEnabled = e;
+
+                    e = _listView.AllUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
+                    propertiesSidebar.StoreAppsEnabled = e;
+                    listLegend1.StoreAppEnabled = e;
+
+                    listLegend1.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
+
                     propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
                     propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
                     propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
-                    propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
                 }
             };
             _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>

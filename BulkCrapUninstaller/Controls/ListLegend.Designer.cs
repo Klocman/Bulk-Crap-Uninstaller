@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListLegend));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelWinFeature = new System.Windows.Forms.Label();
             this.labelOrphaned = new System.Windows.Forms.Label();
             this.labelInvalid = new System.Windows.Forms.Label();
@@ -37,23 +36,7 @@
             this.labelVerified = new System.Windows.Forms.Label();
             this.labelLegend = new System.Windows.Forms.Label();
             this.labelStoreApp = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.labelWinFeature, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelOrphaned, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelInvalid, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelUnverified, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelVerified, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelLegend, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelStoreApp, 0, 6);
-            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.EnabledChanged += new System.EventHandler(this.tableLayoutPanel1_EnabledChanged);
-            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelWinFeature
             // 
@@ -114,16 +97,21 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.labelStoreApp);
+            this.Controls.Add(this.labelWinFeature);
+            this.Controls.Add(this.labelOrphaned);
+            this.Controls.Add(this.labelInvalid);
+            this.Controls.Add(this.labelUnverified);
+            this.Controls.Add(this.labelVerified);
+            this.Controls.Add(this.labelLegend);
+            this.MinimumSize = new System.Drawing.Size(130, 0);
             this.Name = "ListLegend";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.EnabledChanged += new System.EventHandler(this.ThisEnabledChanged);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelWinFeature;
         private System.Windows.Forms.Label labelOrphaned;
         private System.Windows.Forms.Label labelInvalid;
