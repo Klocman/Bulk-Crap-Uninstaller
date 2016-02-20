@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Klocman.Forms.Tools;
 using UninstallTools.Lists;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Controls
 {
@@ -59,7 +60,7 @@ namespace UninstallTools.Controls
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var newItem = new Filter();
+            var newItem = new Filter(Localisation.UninstallListEditor_NewFilter, null);
             CurrentList.Add(newItem);
             PopulateList();
             OnFiltersChanged(sender, e);
@@ -115,7 +116,7 @@ namespace UninstallTools.Controls
             if (selection?.ComparisonEntries != null)
             {
                 groupBoxConditions.Enabled = true;
-                listBoxConditions.Items.AddRange(selection.ComparisonEntries.AsEnumerable().Reverse().ToArray());
+                listBoxConditions.Items.AddRange(selection.ComparisonEntries.AsEnumerable().Reverse().Cast<object>().ToArray());
             }
             else
             {
@@ -188,7 +189,7 @@ namespace UninstallTools.Controls
             var item = listBoxConditions.SelectedItem as FilterCondition;
             if (item == null)
             {
-                filterEditor.TargetFilterCondition = item;
+                filterEditor.TargetFilterCondition = null;
             }
             else if (!ReferenceEquals(filterEditor.TargetFilterCondition, item))
             {

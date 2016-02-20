@@ -9,7 +9,7 @@ namespace UninstallTools.Lists
 {
     public sealed class FilterCondition : ITestEntry, ICloneable
     {
-        public FilterCondition() : this(Localisation.UninstallListEditor_NewCondition)
+        public FilterCondition() : this(null)
         {
         }
 
@@ -24,7 +24,7 @@ namespace UninstallTools.Lists
             else
                 TargetPropertyId = targetPropertyName;
 
-            FilterText = filterText;
+            FilterText = filterText ?? Localisation.UninstallListEditor_NewCondition;
             ComparisonMethod = comparisonMethod;
         }
         

@@ -12,7 +12,6 @@ namespace UninstallTools.Lists
     {
         public Filter()
         {
-            ComparisonEntries.Add(new FilterCondition { FilterText = Localisation.UninstallListEditor_NewFilter });
         }
 
         public Filter(string name, string filterText)
