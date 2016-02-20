@@ -327,9 +327,6 @@
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Automatically load Uninstall List named "Default.xml" on start</value>
   </data>
-  <data name="checkBoxAutoLoad.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;checkBoxAutoLoad.Name" xml:space="preserve">
     <value>checkBoxAutoLoad</value>
   </data>

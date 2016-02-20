@@ -164,7 +164,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.openProgramsAndFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cleanUpTheSystemCCleanerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeMalwareSpyBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateApplicationsNiniteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1216,7 +1215,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator13,
             this.openProgramsAndFeaturesToolStripMenuItem,
             this.cleanUpTheSystemCCleanerToolStripMenuItem,
-            this.removeMalwareSpyBotToolStripMenuItem,
             this.updateApplicationsNiniteToolStripMenuItem,
             this.toolStripSeparator19,
             this.settingsToolStripMenuItem});
@@ -1258,12 +1256,6 @@ namespace BulkCrapUninstaller.Forms
             this.cleanUpTheSystemCCleanerToolStripMenuItem.Name = "cleanUpTheSystemCCleanerToolStripMenuItem";
             resources.ApplyResources(this.cleanUpTheSystemCCleanerToolStripMenuItem, "cleanUpTheSystemCCleanerToolStripMenuItem");
             this.cleanUpTheSystemCCleanerToolStripMenuItem.Click += new System.EventHandler(this.cleanUpTheSystemCCleanerToolStripMenuItem_Click);
-            // 
-            // removeMalwareSpyBotToolStripMenuItem
-            // 
-            this.removeMalwareSpyBotToolStripMenuItem.Name = "removeMalwareSpyBotToolStripMenuItem";
-            resources.ApplyResources(this.removeMalwareSpyBotToolStripMenuItem, "removeMalwareSpyBotToolStripMenuItem");
-            this.removeMalwareSpyBotToolStripMenuItem.Click += new System.EventHandler(this.removeMalwareSpyBotToolStripMenuItem_Click);
             // 
             // updateApplicationsNiniteToolStripMenuItem
             // 
@@ -1528,7 +1520,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem openProgramsAndFeaturesToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator13;
         private ToolStripMenuItem cleanUpTheSystemCCleanerToolStripMenuItem;
-        private ToolStripMenuItem removeMalwareSpyBotToolStripMenuItem;
         private ToolStripMenuItem updateApplicationsNiniteToolStripMenuItem;
         private Klocman.Controls.FacebookStatusButton facebookStatusButton1;
         private Klocman.Controls.TwitterStatusButton twitterStatusButton1;

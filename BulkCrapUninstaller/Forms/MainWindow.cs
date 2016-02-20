@@ -84,30 +84,15 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
-            
+
             // Setup list view
             _listView = new UninstallerListViewTools(this);
+            _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
 
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
             _listView.AfterFiltering += RefreshStatusbarTotalLabel;
-            _listView.ListRefreshIsRunningChanged += (sender, args) =>
-            {
-                if (args.NewValue) return;
-
-                // If refresh has finished update the interface
-                propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
-                    x => x.UninstallerKind == UninstallerType.StoreApp);
-
-                propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
-                propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
-                propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
-                propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
-                propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
-
-                RefreshListLegend(sender, args);
-            };
             _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
                 string result = null;
@@ -121,6 +106,8 @@ namespace BulkCrapUninstaller.Forms
                 if (result != null)
                     this.SafeInvoke(() => toolStripLabelStatus.Text = result);
             };
+            _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
+            _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
 
             // Setup update manager, skip at first boot to let user change the setting
             UpdateGrabber.Setup();
@@ -158,10 +145,6 @@ namespace BulkCrapUninstaller.Forms
             //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
 
             // Misc
-            _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
-            _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
-            _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
 
             MessageBoxes.DefaultOwner = this;
@@ -789,11 +772,6 @@ namespace BulkCrapUninstaller.Forms
             _listView.InitiateListRefresh();
         }
 
-        private void removeMalwareSpyBotToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenUrls(new[] { new Uri(@"https://www.safer-networking.org/", UriKind.Absolute) });
-        }
-
         private void RenameEntries(object sender, EventArgs eventArgs)
         {
             if (_listView.SelectedUninstallerCount != 1)
@@ -1139,11 +1117,37 @@ namespace BulkCrapUninstaller.Forms
         private void _listView_ListRefreshIsRunningChanged(object sender,
             UninstallerListViewTools.ListRefreshEventArgs e)
         {
-            if (e.FirstRefresh && !e.NewValue)
+            if (e.NewValue) return;
+
+            if (e.FirstRefresh)
             {
                 _setMan.LoadSorting();
-                _listView.ListRefreshIsRunningChanged -= _listView_ListRefreshIsRunningChanged;
+
+                if (_setMan.Selected.Settings.MiscAutoLoadDefaultList)
+                {
+                    try
+                    {
+                        var defaultUninstallListPath = Path.Combine(Program.AssemblyLocation.FullName, Resources.DefaultUninstallListFilename);
+                        if (File.Exists(defaultUninstallListPath))
+                            advancedFilters1.LoadUninstallList(defaultUninstallListPath);
+                    }
+                    catch (Exception ex)
+                    { PremadeDialogs.GenericError(ex); }
+                }
+                return;
             }
+
+            // If refresh has finished update the interface
+            propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
+                x => x.UninstallerKind == UninstallerType.StoreApp);
+
+            propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+            propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
+            propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
+            propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
+            propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
+
+            RefreshListLegend(sender, e);
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
