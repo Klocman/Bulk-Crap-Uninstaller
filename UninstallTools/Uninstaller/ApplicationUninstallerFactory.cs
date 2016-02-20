@@ -99,8 +99,16 @@ namespace UninstallTools.Uninstaller
 
                     if (File.Exists(current[3]))
                     {
-                        result.DisplayIcon = current[3];
-                        result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                        try
+                        {
+                            result.DisplayIcon = current[3];
+                            result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                        }
+                        catch
+                        {
+                            result.DisplayIcon = null;
+                            result.IconBitmap = null;
+                        }
                     }
 
                     result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
