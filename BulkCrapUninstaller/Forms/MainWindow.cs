@@ -1134,7 +1134,6 @@ namespace BulkCrapUninstaller.Forms
                     catch (Exception ex)
                     { PremadeDialogs.GenericError(ex); }
                 }
-                return;
             }
 
             // If refresh has finished update the interface
