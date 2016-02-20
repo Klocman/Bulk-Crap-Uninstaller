@@ -124,7 +124,7 @@ namespace UninstallTools.Uninstaller
         /// <summary>
         ///     The application is present on the drive, but not in any of the application listings
         /// </summary>
-        [LocalisedName(typeof(Localisation), "IsOrphaned")]
+        [ComparisonTarget, LocalisedName(typeof(Localisation), "IsOrphaned")]
         public bool IsOrphaned { get; internal set; }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace UninstallTools.Uninstaller
         /// <summary>
         ///     True if the application can be uninstalled. False if the uninstaller is missing or is invalid (duh).
         /// </summary>
-        [LocalisedName(typeof (Localisation), "IsValid")]
+        [ComparisonTarget, LocalisedName(typeof (Localisation), "IsValid")]
         public bool IsValid { get; internal set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "ModifyPath")]

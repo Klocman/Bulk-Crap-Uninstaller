@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -22,22 +20,13 @@ namespace UninstallTools.Lists
 
         public List<Filter> Filters { get; set; } = new List<Filter>();
 
-        public static UninstallList ReadFromFile(string fileName)
-        {
-            var serializer = new XmlSerializer(typeof(UninstallList));
-            using (var reader = new XmlTextReader(fileName))
-            {
-                return serializer.Deserialize(reader) as UninstallList;
-            }
-        }
-
         /// <summary>
         ///     Test if the input matches this filter. Returns null if it did not hit any filter.
         ///     If there are only exclude filters this assumes that everything is included.
         /// </summary>
         public bool? TestEntry(ApplicationUninstallerEntry input)
         {
-            if (input == null || Filters.Count < 1) return null;
+            if (!Enabled || input == null || Filters.Count < 1) return null;
 
             var excludes = new List<Filter>();
             var includes = new List<Filter>();
@@ -76,9 +65,20 @@ namespace UninstallTools.Lists
             return included.Value;
         }
 
+        public bool Enabled { get; set; } = true;
+
+        public static UninstallList ReadFromFile(string fileName)
+        {
+            var serializer = new XmlSerializer(typeof (UninstallList));
+            using (var reader = new XmlTextReader(fileName))
+            {
+                return serializer.Deserialize(reader) as UninstallList;
+            }
+        }
+
         public void AddItems(IEnumerable<string> items)
         {
-            Filters.AddRange(items.Select(x => new Filter(x)));
+            Filters.AddRange(items.Select(x => new Filter(null, x)));
         }
 
         public void Add(Filter item)
@@ -106,6 +106,5 @@ namespace UninstallTools.Lists
             if (Filters.Contains(item))
                 Filters.Remove(item);
         }
-        
     }
 }

@@ -7,17 +7,33 @@ using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Lists
 {
-    public sealed class FilterCondition : ITestEntry
+    public sealed class FilterCondition : ITestEntry, ICloneable
     {
         public FilterCondition() : this(Localisation.UninstallListEditor_NewCondition)
         {
         }
 
-        public FilterCondition(string filterText)
+        public FilterCondition(string filterText) : this (filterText, ComparisonMethod.Any, null)
         {
+        }
+
+        public FilterCondition(string filterText, ComparisonMethod comparisonMethod, string targetPropertyName)
+        {
+            if (string.IsNullOrEmpty(targetPropertyName))
+                TargetProperty = ComparisonTargetInfo.AllTargetComparison;
+            else
+                TargetPropertyId = targetPropertyName;
+
             FilterText = filterText;
-            TargetProperty = ComparisonTargetInfo.AllTargetComparison;
-            ComparisonMethod = Lists.ComparisonMethod.Any;
+            ComparisonMethod = comparisonMethod;
+        }
+        
+        public object Clone()
+        {
+            return new FilterCondition (FilterText, ComparisonMethod, null)
+            {
+                TargetProperty = TargetProperty,
+            };
         }
 
         /// <summary>
@@ -53,6 +69,8 @@ namespace UninstallTools.Lists
         /// </summary>
         public bool? TestEntry(ApplicationUninstallerEntry input)
         {
+            if (!Enabled) return null;
+
             var targets = ReferenceEquals(TargetProperty, ComparisonTargetInfo.AllTargetComparison)
                 ? ComparisonTargetInfo.ComparisonTargets.Where(x => x.PossibleStrings == null)
                     .Select(x => x.Getter(input))
@@ -112,6 +130,8 @@ namespace UninstallTools.Lists
             if (!result.HasValue) return null;
             return InvertResults ? !result.Value : result.Value;
         }
+
+        public bool Enabled { get; set; } = true;
 
         public override string ToString()
         {

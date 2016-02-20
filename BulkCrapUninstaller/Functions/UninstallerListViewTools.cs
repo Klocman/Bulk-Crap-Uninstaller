@@ -38,6 +38,8 @@ namespace BulkCrapUninstaller.Functions
         private static readonly string RatingCacheFilename =
             Path.Combine(Program.AssemblyLocation.FullName, "RatingCashe.xml");
 
+        private readonly FilterCondition _filteringFilterCondition = new FilterCondition { FilterText = string.Empty };
+
         private readonly UninstallerIconGetter _iconGetter = new UninstallerIconGetter();
         private readonly TypedObjectListView<ApplicationUninstallerEntry> _listView;
         private readonly List<object> _objectsToUpdate = new List<object>();
@@ -46,24 +48,12 @@ namespace BulkCrapUninstaller.Functions
             = new UninstallerRatingManager(WindowsTools.GetUniqueUserId());
 
         private readonly MainWindow _reference;
-        private readonly FilterCondition _filteringFilterCondition = new FilterCondition { FilterText = string.Empty };
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortPostprocessingThread;
+        private ITestEntry _filteringOverride;
         private Thread _finalizerThread;
         private bool _firstRefresh = true;
         private bool _listRefreshIsRunning;
-        private ITestEntry _filteringOverride;
-
-        public ITestEntry FilteringOverride
-        {
-            get { return _filteringOverride; }
-            set
-            {
-                if (_filteringOverride == value) return;
-                _filteringOverride = value;
-                UpdateColumnFiltering();
-            }
-        }
 
         internal UninstallerListViewTools(MainWindow reference)
         {
@@ -116,6 +106,17 @@ namespace BulkCrapUninstaller.Functions
 
             _settings.Subscribe((sender, args) => ProcessRatingsInitialize(), x => x.MiscUserRatings, this);
             //ProcessRatingsInitialize(); Is always called once at the start by the above
+        }
+
+        public ITestEntry FilteringOverride
+        {
+            get { return _filteringOverride; }
+            set
+            {
+                if (_filteringOverride == value) return;
+                _filteringOverride = value;
+                UpdateColumnFiltering();
+            }
         }
 
         public IEnumerable<ApplicationUninstallerEntry> AllUninstallers { get; private set; }
@@ -211,7 +212,9 @@ namespace BulkCrapUninstaller.Functions
                     // If _ratingManager has no ratings it means that deserialization failed so we need to fetch from db
                     // Otherwise fetch at most every few hours, unless user manually clears the cache
                     if (!WindowsTools.IsNetworkAvailable() || (_ratingManager.RatingCount > 0
-                    && (DateTime.Now - _settings.Settings.MiscRatingCacheDate).Duration() < _settings.Settings._CacheUpdateRate))
+                                                               &&
+                                                               (DateTime.Now - _settings.Settings.MiscRatingCacheDate)
+                                                                   .Duration() < _settings.Settings._CacheUpdateRate))
                         return;
 
                     try
@@ -457,37 +460,49 @@ namespace BulkCrapUninstaller.Functions
             _iconGetter.UpdateIconList(detectedUninstallers);
             ReassignStartupEntries(false);
         }
-        /*
+
         /// <summary>
-        /// Return a filter roughly equivalent to basic filtering
+        ///     Return a filter equivalent to current basic filtering settings
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Filter> GenerateEquivalentFilter ()
+        public IEnumerable<Filter> GenerateEquivalentFilter()
         {
             var results = new List<Filter>();
-            if(_settings.Settings.FilterHideMicrosoft)
-            {
-                var filter = new Filter();
-                filter.Name = "Exclude Microsoft";
-                filter.Exclude = true;
-                filter.ComparisonEntries.Add(new FilterCondition("Microsoft")
-                {
-                    ComparisonMethod = ComparisonMethod.Contains,
-                    TargetPropertyId = nameof(ApplicationUninstallerEntry.Publisher)
-                });
-            }
+
+            if (string.IsNullOrEmpty(_filteringFilterCondition.FilterText))
+                results.Add(new Filter("Include all", false, new FilterCondition("!",
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned))
+                { InvertResults = true }));
+            else
+                results.Add(new Filter(_filteringFilterCondition.FilterText, false,
+                    (FilterCondition)_filteringFilterCondition.Clone()));
+
             if (_settings.Settings.FilterHideMicrosoft)
-            {
-                var filter = new Filter();
-                filter.Name = "Exclude Microsoft";
-                filter.Exclude = true;
-                filter.ComparisonEntries.Add(new FilterCondition("Microsoft")
-                {
-                    ComparisonMethod = ComparisonMethod.Contains,
-                    TargetPropertyId = nameof(ApplicationUninstallerEntry.Publisher)
-                });
-            }
-        }*/
+                results.Add(new Filter("Published by Microsoft", true, new FilterCondition("Microsoft",
+                    ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.Publisher))));
+
+            if (!_settings.Settings.FilterShowStoreApps)
+                results.Add(new Filter("Store Apps", true, new FilterCondition(nameof(UninstallerType.StoreApp),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind))));
+
+            if (!_settings.Settings.AdvancedDisplayOrphans)
+                results.Add(new Filter("Orphaned apps", true, new FilterCondition(true.ToString(),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned))));
+
+            if (!_settings.Settings.FilterShowProtected)
+                results.Add(new Filter("Protected apps", true, new FilterCondition(true.ToString(),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsProtected))));
+
+            if (!_settings.Settings.FilterShowSystemComponents)
+                results.Add(new Filter("System Components", true, new FilterCondition(true.ToString(),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.SystemComponent))));
+
+            if (!_settings.Settings.FilterShowUpdates)
+                results.Add(new Filter("Updates", true, new FilterCondition(true.ToString(),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate))));
+
+            return results;
+        }
 
         private bool ListViewFilter(object obj)
         {
@@ -501,7 +516,8 @@ namespace BulkCrapUninstaller.Functions
                 entry.Publisher.Contains("Microsoft"))
                 return false;
 
-            if (!_settings.Settings.FilterShowStoreApps && entry.UninstallerKind == UninstallerType.StoreApp) return false;
+            if (!_settings.Settings.FilterShowStoreApps && entry.UninstallerKind == UninstallerType.StoreApp)
+                return false;
 
             if (!_settings.Settings.AdvancedDisplayOrphans && entry.IsOrphaned) return false;
 
@@ -580,7 +596,7 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnAbout.AspectName = "AboutUrl";
             _reference.olvColumnAbout.GroupKeyGetter = x =>
             {
-                var entry = (x as ApplicationUninstallerEntry);
+                var entry = x as ApplicationUninstallerEntry;
                 if (string.IsNullOrEmpty(entry?.AboutUrl)) return Localisable.Empty;
                 return entry.GetUri()?.Host ?? Localisable.Unknown;
             };
@@ -599,7 +615,7 @@ namespace BulkCrapUninstaller.Functions
             // Rating stuff
             _reference.olvColumnRating.AspectGetter = x =>
             {
-                var entry = (x as ApplicationUninstallerEntry);
+                var entry = x as ApplicationUninstallerEntry;
                 if (string.IsNullOrEmpty(entry?.RatingId))
                     return RatingEntry.NotAvailable;
                 return _ratingManager.GetRating(entry.RatingId);
@@ -654,7 +670,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _objectsToUpdate.Add(y.Tag);
 
-                    if (y.Value == y.Maximum || (y.Value) % 25 == 0)
+                    if (y.Value == y.Maximum || y.Value % 25 == 0)
                     {
                         _listView.ListView.RefreshObjects(_objectsToUpdate);
                         _objectsToUpdate.Clear();

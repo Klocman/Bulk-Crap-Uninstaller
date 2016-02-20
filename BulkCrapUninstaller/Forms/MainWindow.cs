@@ -1179,7 +1179,7 @@ namespace BulkCrapUninstaller.Forms
         }
         private void buttonAdvFiltering_Click(object sender, EventArgs e)
         {
-            advancedFilters1.LoadUninstallList(new UninstallList()); //TODO auto generate from settings
+            advancedFilters1.LoadUninstallList(new UninstallList(_listView.GenerateEquivalentFilter()));
         }
     }
 }

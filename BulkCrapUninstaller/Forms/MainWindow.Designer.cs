@@ -23,6 +23,7 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
             this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
@@ -182,7 +183,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -213,6 +213,11 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            // 
+            // advancedFilters1
+            // 
+            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
+            this.advancedFilters1.Name = "advancedFilters1";
             // 
             // listLegend1
             // 
@@ -1353,11 +1358,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1.ContainerControl = this;
             this.globalHotkeys1.StopWhenFormIsDisabled = true;
             this.globalHotkeys1.SuppressKeyPresses = true;
-            // 
-            // advancedFilters1
-            // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
             // 
             // MainWindow
             // 

@@ -15,8 +15,11 @@ namespace UninstallTools.Lists
             ComparisonEntries.Add(new FilterCondition { FilterText = Localisation.UninstallListEditor_NewFilter });
         }
 
-        public Filter(string filterText)
+        public Filter(string name, string filterText)
         {
+            if (!string.IsNullOrEmpty(name))
+                Name = name;
+
             if (string.IsNullOrEmpty(filterText))
                 throw new ArgumentException(Localisation.UninstallListItem_ValueEmpty, nameof(filterText));
 
@@ -24,6 +27,14 @@ namespace UninstallTools.Lists
                 throw new ArgumentException(Localisation.UninstallListItem_NewLineInValue, nameof(filterText));
 
             ComparisonEntries.Add(new FilterCondition { FilterText = filterText });
+        }
+
+        public Filter(string name, bool exclude, params FilterCondition[] conditions)
+        {
+            if (!string.IsNullOrEmpty(name))
+                Name = name;
+            Exclude = exclude;
+            ComparisonEntries.AddRange(conditions);
         }
 
         public string Name { get; set; } = Localisation.UninstallListEditor_NewFilter;
@@ -44,7 +55,7 @@ namespace UninstallTools.Lists
         /// </summary>
         public bool? TestEntry(ApplicationUninstallerEntry input)
         {
-            if (input == null) return null;
+            if (!Enabled || input == null) return null;
 
             var filteredCompEntries = ComparisonEntries.Where(x => !string.IsNullOrEmpty(x.FilterText)).ToList();
             if (filteredCompEntries.Count < 1) return null;
@@ -55,6 +66,8 @@ namespace UninstallTools.Lists
 
             return tests.All(x => x);
         }
+
+        public bool Enabled { get; set; } = true;
 
         public override string ToString()
         {
