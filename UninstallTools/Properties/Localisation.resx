@@ -424,4 +424,8 @@
   <data name="UninstallListEditor_NewCondition" xml:space="preserve">
     <value>New condition</value>
   </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Is orphaned</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+  </data>
 </root>

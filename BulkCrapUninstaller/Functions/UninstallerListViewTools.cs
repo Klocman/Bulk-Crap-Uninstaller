@@ -59,7 +59,7 @@ namespace BulkCrapUninstaller.Functions
             get { return _filteringOverride; }
             set
             {
-                if(_filteringOverride == value) return;
+                if (_filteringOverride == value) return;
                 _filteringOverride = value;
                 UpdateColumnFiltering();
             }
@@ -346,22 +346,9 @@ namespace BulkCrapUninstaller.Functions
                 _listView.ListView.Focus();
             }
 
-            // Update first list refresh AFTER setting ListRefreshIsRunning to false
             if (_firstRefresh)
             {
                 _firstRefresh = false;
-
-                Application.DoEvents();
-
-                var args = Environment.GetCommandLineArgs();
-                if (args.Length > 1)
-                {
-                    OpenUninstallLists(false, args.SubArray(1, args.Length - 1));
-                }
-                else if (_settings.Settings.MiscAutoLoadDefaultList)
-                {
-                    //OpenUninstallLists(false, "Default.xml"); TODO
-                }
             }
         }
 
@@ -373,105 +360,10 @@ namespace BulkCrapUninstaller.Functions
             _listView.ListView.Focus();
         }
 
-        /// <summary>
-        ///     Select items from the uninstall list without asking user for any input.
-        /// </summary>
-        /// <param name="fileNames"></param>
-        /// <param name="addSelection">Add item from the list to the current selection or discard it before adding</param>
-        /// <returns></returns>
-        public bool OpenUninstallLists(bool addSelection, params string[] fileNames)
-        {
-            throw new NotImplementedException();
-            /*
-            try
-            {
-                var uninstallList = fileNames.Length > 0
-                    ? UninstallList.FromFiles(fileNames)
-                    : UninstallListOpenDialog.Show(FilteredUninstallers.Select(x => x.DisplayName));
-
-                if (uninstallList == null)
-                    return false;
-
-                if (addSelection)
-                {
-                    uninstallList.AddItems(SelectedUninstallers.Select(x => x.DisplayName));
-                }
-
-                DeselectAllItems(null, EventArgs.Empty);
-
-                var selectionList = FilteredUninstallers.Where(x => uninstallList.Items.Any(y =>
-                {
-                    try
-                    {
-                        return y.TestString(x.DisplayName);
-                    }
-                    catch
-                    {
-                        return false;
-                    }
-                })).ToList();
-
-                _listView.ListView.SelectObjects(selectionList);
-            }
-            catch (Exception ex)
-            {
-                MessageBoxes.OpenUninstallListError(ex.Message);
-                return false;
-            }
-
-            return true;*/
-        }
-
-        /// <summary>
-        ///     Select items from the uninstall list after asking the user for his decision.
-        /// </summary>
-        /// <returns></returns>
-        public bool OpenUninstallLists()
-        {
-            var addSelection = false;
-
-            if (SelectedUninstallerCount > 0)
-            {
-                switch (MessageBoxes.OpenUninstallListQuestion())
-                {
-                    case MessageBoxes.PressedButton.Yes:
-                        addSelection = true;
-                        break;
-                    case MessageBoxes.PressedButton.No:
-                        break;
-                    default:
-                        return false;
-                }
-            }
-
-            return OpenUninstallLists(addSelection);
-        }
-
         public void RefreshList()
         {
             _listView.ListView.UpdateColumnFiltering();
             //_listView.ListView.BuildList(true); No need, UpdateColumnFiltering already does this
-        }
-
-        /// <summary>
-        ///     Returns false if saving failed, otherwise returns true.
-        /// </summary>
-        /// <returns></returns>
-        public bool SaveUninstallList()
-        {
-            throw new NotImplementedException();
-            /*
-            try
-            {
-                UninstallListSaveDialog.Show(SelectedUninstallers.Select(x => x.DisplayName),
-                    FilteredUninstallers.Select(x => x.DisplayName));
-            }
-            catch (Exception ex)
-            {
-                MessageBoxes.SaveUninstallListError(ex.Message);
-                return false;
-            }
-            return true;*/
         }
 
         public void SelectAllItems(object sender, EventArgs e)
@@ -552,49 +444,74 @@ namespace BulkCrapUninstaller.Functions
                     if (x.CurrentCount == 1)
                         dialogInterface.SetMaximum(x.TotalCount * 2);
                 }));
-            
+
             if (Program.IsInstalled)
                 detectedUninstallers.RemoveAll(entry => entry.RegistryKeyName.IsNotEmpty() &&
                                                         entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
                                                             StringComparison.InvariantCultureIgnoreCase));
 
             AllUninstallers = detectedUninstallers;
-            
+
             dialogInterface.SetProgress(-1);
 
             _iconGetter.UpdateIconList(detectedUninstallers);
             ReassignStartupEntries(false);
         }
+        /*
+        /// <summary>
+        /// Return a filter roughly equivalent to basic filtering
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Filter> GenerateEquivalentFilter ()
+        {
+            var results = new List<Filter>();
+            if(_settings.Settings.FilterHideMicrosoft)
+            {
+                var filter = new Filter();
+                filter.Name = "Exclude Microsoft";
+                filter.Exclude = true;
+                filter.ComparisonEntries.Add(new FilterCondition("Microsoft")
+                {
+                    ComparisonMethod = ComparisonMethod.Contains,
+                    TargetPropertyId = nameof(ApplicationUninstallerEntry.Publisher)
+                });
+            }
+            if (_settings.Settings.FilterHideMicrosoft)
+            {
+                var filter = new Filter();
+                filter.Name = "Exclude Microsoft";
+                filter.Exclude = true;
+                filter.ComparisonEntries.Add(new FilterCondition("Microsoft")
+                {
+                    ComparisonMethod = ComparisonMethod.Contains,
+                    TargetPropertyId = nameof(ApplicationUninstallerEntry.Publisher)
+                });
+            }
+        }*/
 
         private bool ListViewFilter(object obj)
         {
             var entry = obj as ApplicationUninstallerEntry;
 
-            if (entry == null)
-                return false;
+            if (entry == null) return false;
 
-            if (FilteringOverride != null)
-                return FilteringOverride.TestEntry(entry) == true;
+            if (FilteringOverride != null) return FilteringOverride.TestEntry(entry) == true;
 
-            if (_settings.Settings.FilterHideMicrosoft && entry.Publisher.IsNotEmpty() &&
+            if (_settings.Settings.FilterHideMicrosoft && !string.IsNullOrEmpty(entry.Publisher) &&
                 entry.Publisher.Contains("Microsoft"))
                 return false;
 
-            if (entry.UninstallerKind != UninstallerType.Dism)
-            {
-                if (entry.UninstallerKind == UninstallerType.StoreApp)
-                {
-                    if (!_settings.Settings.FilterShowStoreApps)
-                        return false;
-                }
-                else if (!_settings.Settings.AdvancedDisplayOrphans && !entry.IsRegistered)
-                    return false;
+            if (!_settings.Settings.FilterShowStoreApps && entry.UninstallerKind == UninstallerType.StoreApp) return false;
 
-                if ((!_settings.Settings.FilterShowProtected && entry.IsProtected)
-                    || (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent)
-                    || (!_settings.Settings.FilterShowUpdates && entry.IsUpdate))
-                    return false;
-            }
+            if (!_settings.Settings.AdvancedDisplayOrphans && entry.IsOrphaned) return false;
+
+            /*if (entry.UninstallerKind != UninstallerType.Dism){}*/
+
+            if (!_settings.Settings.FilterShowProtected && entry.IsProtected) return false;
+
+            if (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent) return false;
+
+            if (!_settings.Settings.FilterShowUpdates && entry.IsUpdate) return false;
 
             if (string.IsNullOrEmpty(_filteringFilterCondition.FilterText)) return true;
 
@@ -800,7 +717,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 e.Item.BackColor = Constants.WindowsStoreAppColor;
             }
-            else if (!entry.IsRegistered)
+            else if (entry.IsOrphaned)
             {
                 e.Item.BackColor = Constants.UnregisteredColor;
             }

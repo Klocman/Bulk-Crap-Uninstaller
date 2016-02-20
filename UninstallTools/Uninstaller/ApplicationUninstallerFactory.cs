@@ -135,6 +135,7 @@ namespace UninstallTools.Uninstaller
 
                 tempEntry.UninstallerKind = UninstallerType.Unknown;
                 tempEntry.IsRegistered = false;
+                tempEntry.IsOrphaned = true;
             }
 
             return results;

@@ -448,6 +448,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is orphaned.
+        /// </summary>
+        internal static string IsOrphaned {
+            get {
+                return ResourceManager.GetString("IsOrphaned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is protected.
         /// </summary>
         internal static string IsProtected {

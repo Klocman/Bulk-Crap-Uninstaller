@@ -737,7 +737,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenUninstallLists(object sender, EventArgs e)
         {
-            _listView.OpenUninstallLists();
+            //todo _listView.OpenUninstallLists();
         }
 
         private void RefreshList(object sender, EventArgs e)
@@ -858,7 +858,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SaveUninstallList(object sender, EventArgs e)
         {
-            _listView.SaveUninstallList();
+            //todo _listView.SaveUninstallList();
         }
 
         private void SearchOnlineForSelection(object sender, EventArgs e)

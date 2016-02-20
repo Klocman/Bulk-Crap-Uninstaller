@@ -333,30 +333,6 @@
   <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBoxInvert.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxInvert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxInvert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxInvert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
-  </data>
-  <data name="checkBoxInvert.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 0, 0</value>
-  </data>
-  <data name="checkBoxInvert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
-  </data>
-  <data name="checkBoxInvert.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="checkBoxInvert.Text" xml:space="preserve">
-    <value>Invert results</value>
-  </data>
   <data name="&gt;&gt;checkBoxInvert.Name" xml:space="preserve">
     <value>checkBoxInvert</value>
   </data>
@@ -394,6 +370,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxInvert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxInvert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxInvert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxInvert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 4</value>
+  </data>
+  <data name="checkBoxInvert.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxInvert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="checkBoxInvert.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="checkBoxInvert.Text" xml:space="preserve">
+    <value>Invert results</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvert.Name" xml:space="preserve">
+    <value>checkBoxInvert</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvert.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxInvert.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

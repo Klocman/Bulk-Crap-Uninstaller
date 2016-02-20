@@ -122,6 +122,12 @@ namespace UninstallTools.Uninstaller
         public bool IsRegistered { get; internal set; }
 
         /// <summary>
+        ///     The application is present on the drive, but not in any of the application listings
+        /// </summary>
+        [LocalisedName(typeof(Localisation), "IsOrphaned")]
+        public bool IsOrphaned { get; internal set; }
+
+        /// <summary>
         ///     True if this is an update for another product
         /// </summary>
         [ComparisonTarget, LocalisedName(typeof (Localisation), "IsUpdate")]
