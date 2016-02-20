@@ -109,7 +109,6 @@ namespace BulkCrapUninstaller.Forms
             this.reloadUninstallersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.loadUninstallerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveUninstallerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -854,7 +853,6 @@ namespace BulkCrapUninstaller.Forms
             this.reloadUninstallersToolStripMenuItem,
             this.toolStripSeparator1,
             this.loadUninstallerListToolStripMenuItem,
-            this.saveUninstallerListToolStripMenuItem,
             this.exportSelectedToolStripMenuItem,
             this.toolStripSeparator10,
             this.exitToolStripMenuItem});
@@ -878,12 +876,6 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.loadUninstallerListToolStripMenuItem, "loadUninstallerListToolStripMenuItem");
             this.loadUninstallerListToolStripMenuItem.Name = "loadUninstallerListToolStripMenuItem";
             this.loadUninstallerListToolStripMenuItem.Click += new System.EventHandler(this.OpenUninstallLists);
-            // 
-            // saveUninstallerListToolStripMenuItem
-            // 
-            resources.ApplyResources(this.saveUninstallerListToolStripMenuItem, "saveUninstallerListToolStripMenuItem");
-            this.saveUninstallerListToolStripMenuItem.Name = "saveUninstallerListToolStripMenuItem";
-            this.saveUninstallerListToolStripMenuItem.Click += new System.EventHandler(this.SaveUninstallList);
             // 
             // exportSelectedToolStripMenuItem
             // 
@@ -1497,7 +1489,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem useSystemThemeToolStripMenuItem;
         private ToolStripMenuItem submitFeedbackToolStripMenuItem;
         private ToolTip toolTip1;
-        private ToolStripMenuItem saveUninstallerListToolStripMenuItem;
         private ToolStripMenuItem loadUninstallerListToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator10;
         private ToolStripMenuItem toolStripMenuItem8;

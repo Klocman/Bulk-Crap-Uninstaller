@@ -770,7 +770,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenUninstallLists(object sender, EventArgs e)
         {
-            //todo _listView.OpenUninstallLists();
+            advancedFilters1.LoadUninstallList();
         }
 
         private void RefreshList(object sender, EventArgs e)
@@ -889,11 +889,6 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private void SaveUninstallList(object sender, EventArgs e)
-        {
-            //todo _listView.SaveUninstallList();
-        }
-
         private void SearchOnlineForSelection(object sender, EventArgs e)
         {
             var items = _listView.SelectedUninstallers.Where(x => x.DisplayName.IsNotEmpty())
@@ -936,7 +931,6 @@ namespace BulkCrapUninstaller.Forms
             // File
             globalHotkeys1.Add(new HotkeyEntry(Keys.F5, reloadUninstallersToolStripMenuItem));
             globalHotkeys1.Add(new HotkeyEntry(Keys.O, false, true, false, loadUninstallerListToolStripMenuItem));
-            globalHotkeys1.Add(new HotkeyEntry(Keys.S, false, true, false, saveUninstallerListToolStripMenuItem));
             globalHotkeys1.Add(new HotkeyEntry(Keys.F4, true, false, false, exitToolStripMenuItem));
 
             // View

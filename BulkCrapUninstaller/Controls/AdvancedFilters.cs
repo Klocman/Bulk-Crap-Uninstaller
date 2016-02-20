@@ -41,12 +41,24 @@ namespace BulkCrapUninstaller.Controls
             uninstallListEditor1.CurrentList = list;
         }
 
+        /// <summary>
+        /// Load a list silently from filename
+        /// </summary>
+        /// <param name="filename">Filename of the list</param>
         public void LoadUninstallList(string filename)
         {
             var result = UninstallList.ReadFromFile(filename);
 
             CurrentListFilename = filename;
             uninstallListEditor1.CurrentList = result;
+        }
+
+        /// <summary>
+        /// Show file select gui
+        /// </summary>
+        public void LoadUninstallList()
+        {
+            toolStripButtonOpenUl_Click(this, EventArgs.Empty);
         }
 
         public string CurrentListFilename

@@ -1240,13 +1240,13 @@
 </value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Reload uninstallers</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 6</value>
+    <value>179, 6</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1264,39 +1264,22 @@
 </value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Open Uninstall List...</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAASpJREFUaEPtmcEJwkAQRd2jBViGFwsQS/BiB56C7ViPsR1LMAf9Aw4M6w+E4JhM
-        mIWH+LN/dt8lHly1bbsIaBgRGkaEhhGhYURoGBEaRoSGCta2lHKZA3IXdkeFhgpWA14zoWF3VGioSNkM
-        mhoXkSe4OyGz2ZkuIg+2/xfIbHOOJUXQTZHRyGxzjiVF0E2R0chsc44lRdBdvshiftmnIEXQTREPUgTd
-        FPEgRdBNEQ/8RUopZ3yexvDp0rkV/iJYG9YfgnTZTEKKoJsig0mRChoqUjaDerEieAsdkH29nbBnZ2cr
-        sxXButlnhqudraRIBQ0VKZtBvaQI+JfIoL/euq5bawffj/VzAbP2drYiXba/Ru7C+goNI0LDiNAwIjSM
-        CA0jQsOI0DAe7eoNogDreBk+IOUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="saveUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Create Uninstall List...</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Export selection...</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 6</value>
+    <value>179, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>E&amp;xit</value>
@@ -2408,12 +2391,6 @@
     <value>loadUninstallerListToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;loadUninstallerListToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveUninstallerListToolStripMenuItem.Name" xml:space="preserve">
-    <value>saveUninstallerListToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;saveUninstallerListToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;exportSelectedToolStripMenuItem.Name" xml:space="preserve">
