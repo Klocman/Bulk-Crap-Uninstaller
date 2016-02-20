@@ -115,12 +115,19 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Controls\AdvancedClipboardCopy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvancedClipboardCopy.Designer.cs">
+      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AdvancedFilters.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\AdvancedFilters.Designer.cs">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ClipboardCopyItem.cs" />
     <Compile Include="Controls\ListLegend.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +147,12 @@
     </Compile>
     <Compile Include="Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdvancedClipboardCopyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvancedClipboardCopyWindow.Designer.cs">
+      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DebugWindow.cs">
       <SubType>Form</SubType>
@@ -255,6 +268,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.resx">
+      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdvancedFilters.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.sl.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvancedClipboardCopyWindow.resx">
+      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugWindow.resx">
       <DependentUpon>DebugWindow.cs</DependentUpon>

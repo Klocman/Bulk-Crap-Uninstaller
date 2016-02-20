@@ -1214,5 +1214,10 @@ namespace BulkCrapUninstaller.Forms
         {
             advancedFilters1.LoadUninstallList(new UninstallList(_listView.GenerateEquivalentFilter()));
         }
+
+        private void OpenAdvancedClipboardCopy(object sender, EventArgs e)
+        {
+            AdvancedClipboardCopyWindow.ShowDialog(this, _listView.SelectedUninstallers);
+        }
     }
 }

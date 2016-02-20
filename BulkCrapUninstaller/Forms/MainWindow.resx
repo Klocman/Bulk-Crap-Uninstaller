@@ -1035,14 +1035,20 @@
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 6</value>
   </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Advanced...</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 6</value>
+  </data>
   <data name="fullInformationCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
   <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Full information</value>
-  </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 6</value>
   </data>
   <data name="programNameCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
@@ -1424,14 +1430,20 @@
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
   </data>
+  <data name="advancedClipCopyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Advanced...</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 6</value>
+  </data>
   <data name="copyFullInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Full information</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 6</value>
   </data>
   <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
@@ -2254,10 +2266,10 @@
   <data name="&gt;&gt;copyToClipboardContextMenuStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fullInformationCopyContextMenuStripItem.Name" xml:space="preserve">
-    <value>fullInformationCopyContextMenuStripItem</value>
+  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
+    <value>toolStripMenuItem9</value>
   </data>
-  <data name="&gt;&gt;fullInformationCopyContextMenuStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
@@ -2265,6 +2277,12 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fullInformationCopyContextMenuStripItem.Name" xml:space="preserve">
+    <value>fullInformationCopyContextMenuStripItem</value>
+  </data>
+  <data name="&gt;&gt;fullInformationCopyContextMenuStripItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;programNameCopyContextMenuStripItem.Name" xml:space="preserve">
     <value>programNameCopyContextMenuStripItem</value>
@@ -2512,10 +2530,10 @@
   <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyFullInformationToolStripMenuItem.Name" xml:space="preserve">
-    <value>copyFullInformationToolStripMenuItem</value>
+  <data name="&gt;&gt;advancedClipCopyToolStripMenuItem.Name" xml:space="preserve">
+    <value>advancedClipCopyToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;copyFullInformationToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;advancedClipCopyToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
@@ -2523,6 +2541,12 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copyFullInformationToolStripMenuItem.Name" xml:space="preserve">
+    <value>copyFullInformationToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copyFullInformationToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
     <value>toolStripMenuItem10</value>
