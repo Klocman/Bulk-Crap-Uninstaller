@@ -85,8 +85,18 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
-
             _listView.AfterFiltering += RefreshStatusbarTotalLabel;
+            _listView.ListRefreshIsRunningChanged += (sender, args) =>
+            {
+                if (!args.NewValue)
+                {
+                    propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+                    propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
+                    propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
+                    propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
+                    propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
+                }
+            };
             _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
                 string result = null;

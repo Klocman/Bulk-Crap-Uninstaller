@@ -29,5 +29,35 @@ namespace BulkCrapUninstaller.Controls
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);
         }
+
+        public bool SysCompEnabled
+        {
+            get { return checkBoxListSysComp.Enabled; }
+            set { checkBoxListSysComp.Enabled = value; }
+        }
+
+        public bool ProtectedEnabled
+        {
+            get { return checkBoxListProtected.Enabled; }
+            set { checkBoxListProtected.Enabled = value; }
+        }
+
+        public bool UpdatesEnabled
+        {
+            get { return checkBoxShowUpdates.Enabled; }
+            set { checkBoxShowUpdates.Enabled = value; }
+        }
+
+        public bool OrphansEnabled
+        {
+            get { return checkBoxOrphans.Enabled; }
+            set { checkBoxOrphans.Enabled = value; }
+        }
+
+        public bool StoreAppsEnabled
+        {
+            get { return checkBoxShowStoreApps.Enabled; }
+            set { checkBoxShowStoreApps.Enabled = value; }
+        }
     }
 }
