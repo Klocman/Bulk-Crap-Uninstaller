@@ -79,8 +79,12 @@ namespace BulkCrapUninstaller.Forms
                     y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries),
                 x => x.FoldersCustomProgramDirs, this);
 
-            _setMan.Selected.Subscribe((x, y) => listLegend1.CertificatesEnabled = y.NewValue, x => x.AdvancedTestCertificates, this);
-
+            listLegend1.WinFeatureEnabled = false;
+            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
+            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
+            _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
+            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
+            
             // Setup list view
             _listView = new UninstallerListViewTools(this);
 
@@ -90,22 +94,19 @@ namespace BulkCrapUninstaller.Forms
             _listView.AfterFiltering += RefreshStatusbarTotalLabel;
             _listView.ListRefreshIsRunningChanged += (sender, args) =>
             {
-                if (!args.NewValue)
-                {
-                    var e = _listView.AllUninstallers.Any(x => x.IsOrphaned);
-                    propertiesSidebar.OrphansEnabled = e;
-                    listLegend1.OrphanedEnabled = e;
+                if (args.NewValue) return;
 
-                    e = _listView.AllUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
-                    propertiesSidebar.StoreAppsEnabled = e;
-                    listLegend1.StoreAppEnabled = e;
+                // If refresh has finished update the interface
+                propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
+                    x => x.UninstallerKind == UninstallerType.StoreApp);
 
-                    listLegend1.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
+                propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+                propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
+                propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
+                propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
+                propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
 
-                    propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
-                    propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
-                    propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
-                }
+                RefreshListLegend(sender, args);
             };
             _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
@@ -168,6 +169,14 @@ namespace BulkCrapUninstaller.Forms
             PremadeDialogs.DefaultOwner = this;
 
             SetupHotkeys();
+        }
+
+        private void RefreshListLegend(object sender, EventArgs e)
+        {
+            listLegend1.CertificatesEnabled = _setMan.Selected.Settings.AdvancedTestCertificates;
+            listLegend1.InvalidEnabled = _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
+            listLegend1.StoreAppEnabled = _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
+            listLegend1.OrphanedEnabled = _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
         }
 
         private void RefreshTitleBar(object sender, EventArgs e)
@@ -252,7 +261,11 @@ namespace BulkCrapUninstaller.Forms
         private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_listView.DisplayWindowsFeatures())
+            {
                 filterEditor1.Search("Dism.exe", ComparisonMethod.StartsWith);
+                listLegend1.WinFeatureEnabled = true;
+            }
+            else listLegend1.WinFeatureEnabled = false;
         }
 
         private void advancedOperationsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)

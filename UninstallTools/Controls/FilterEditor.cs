@@ -150,11 +150,12 @@ namespace UninstallTools.Controls
         {
             _targetFilterCondition.ComparisonMethod = method;
             _targetFilterCondition.InvertResults = negate;
+            _targetFilterCondition.FilterText = searchStr;
 
             searchBox1.SearchTextChanged -= searchBox1_SearchTextChanged;
             searchBox1.Search(searchStr);
             searchBox1.SearchTextChanged += searchBox1_SearchTextChanged;
-
+            
             RefreshEditor();
             OnComparisonMethodChanged(this, EventArgs.Empty);
         }

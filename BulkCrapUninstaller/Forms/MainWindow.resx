@@ -171,11 +171,20 @@
   <data name="listLegend1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="listLegend1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="listLegend1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="listLegend1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 314</value>
+    <value>303, 317</value>
+  </data>
+  <data name="listLegend1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>130, 2</value>
   </data>
   <data name="listLegend1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 145</value>
+    <value>130, 142</value>
   </data>
   <data name="listLegend1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

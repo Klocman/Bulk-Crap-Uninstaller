@@ -59,5 +59,11 @@ namespace BulkCrapUninstaller.Controls
             get { return checkBoxShowStoreApps.Enabled; }
             set { checkBoxShowStoreApps.Enabled = value; }
         }
+
+        public bool InvalidEnabled
+        {
+            get { return checkBoxInvalidTest.Enabled; }
+            set { checkBoxInvalidTest.Enabled = value; }
+        }
     }
 }
