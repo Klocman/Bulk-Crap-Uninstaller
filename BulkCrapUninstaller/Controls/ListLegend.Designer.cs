@@ -104,7 +104,7 @@
             this.Controls.Add(this.labelUnverified);
             this.Controls.Add(this.labelVerified);
             this.Controls.Add(this.labelLegend);
-            this.MinimumSize = new System.Drawing.Size(130, 0);
+            this.MinimumSize = new System.Drawing.Size(145, 2);
             this.Name = "ListLegend";
             this.EnabledChanged += new System.EventHandler(this.ThisEnabledChanged);
             this.ResumeLayout(false);

@@ -117,47 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Fonctionnalité Windows</value>
-  </data>
-  <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Application orpheline</value>
   </data>
-  <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Désinstalleur invalide</value>
-  </data>
-  <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Certificat non vérifié</value>
   </data>
-  <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Certificat vérifié</value>
   </data>
-  <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Légende des couleurs</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 144</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 144</value>
   </data>
 </root>

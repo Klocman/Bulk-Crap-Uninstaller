@@ -126,7 +126,7 @@
     <value>0, 100</value>
   </data>
   <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelWinFeature.TabIndex" type="System.Int32, mscorlib">
@@ -136,7 +136,7 @@
     <value>Windows feature</value>
   </data>
   <data name="labelWinFeature.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelWinFeature.Name" xml:space="preserve">
     <value>labelWinFeature</value>
@@ -157,7 +157,7 @@
     <value>0, 80</value>
   </data>
   <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelOrphaned.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -166,7 +166,7 @@
     <value>Orphaned application</value>
   </data>
   <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelOrphaned.Name" xml:space="preserve">
     <value>labelOrphaned</value>
@@ -187,7 +187,7 @@
     <value>0, 60</value>
   </data>
   <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelInvalid.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -196,7 +196,7 @@
     <value>Missing uninstaller</value>
   </data>
   <data name="labelInvalid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelInvalid.Name" xml:space="preserve">
     <value>labelInvalid</value>
@@ -217,7 +217,7 @@
     <value>0, 40</value>
   </data>
   <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelUnverified.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -226,7 +226,7 @@
     <value>Unverified certificate</value>
   </data>
   <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelUnverified.Name" xml:space="preserve">
     <value>labelUnverified</value>
@@ -247,7 +247,7 @@
     <value>0, 20</value>
   </data>
   <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelVerified.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -256,7 +256,7 @@
     <value>Verified certificate</value>
   </data>
   <data name="labelVerified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelVerified.Name" xml:space="preserve">
     <value>labelVerified</value>
@@ -277,7 +277,7 @@
     <value>0, 0</value>
   </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelLegend.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -310,7 +310,7 @@
     <value>0, 120</value>
   </data>
   <data name="labelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>143, 20</value>
   </data>
   <data name="labelStoreApp.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -319,7 +319,7 @@
     <value>Windows Store App</value>
   </data>
   <data name="labelStoreApp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelStoreApp.Name" xml:space="preserve">
     <value>labelStoreApp</value>
@@ -346,7 +346,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 140</value>
+    <value>143, 140</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ListLegend</value>
