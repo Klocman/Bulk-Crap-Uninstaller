@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
@@ -20,31 +21,36 @@ namespace BulkCrapUninstaller.Controls
             labelWinFeature.BackColor = Constants.WindowsFeatureColor;
             labelStoreApp.BackColor = Constants.WindowsStoreAppColor;
         }
-        
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool InvalidEnabled
         {
             get { return labelInvalid.Visible; }
             set { labelInvalid.Visible = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool WinFeatureEnabled
         {
             get { return labelWinFeature.Visible; }
             set { labelWinFeature.Visible = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool CertificatesEnabled
         {
             get { return labelVerified.Visible; }
             set { labelVerified.Visible = value; labelUnverified.Visible = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool OrphanedEnabled
         {
             get { return labelOrphaned.Visible; }
             set { labelOrphaned.Visible = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool StoreAppEnabled
         {
             get { return labelStoreApp.Visible; }

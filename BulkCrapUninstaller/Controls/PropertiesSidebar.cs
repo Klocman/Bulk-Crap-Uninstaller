@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
@@ -30,36 +31,42 @@ namespace BulkCrapUninstaller.Controls
             Disposed += (x, y) => _settings.RemoveHandlers(this);
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool SysCompEnabled
         {
             get { return checkBoxListSysComp.Enabled; }
             set { checkBoxListSysComp.Enabled = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool ProtectedEnabled
         {
             get { return checkBoxListProtected.Enabled; }
             set { checkBoxListProtected.Enabled = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool UpdatesEnabled
         {
             get { return checkBoxShowUpdates.Enabled; }
             set { checkBoxShowUpdates.Enabled = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool OrphansEnabled
         {
             get { return checkBoxOrphans.Enabled; }
             set { checkBoxOrphans.Enabled = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool StoreAppsEnabled
         {
             get { return checkBoxShowStoreApps.Enabled; }
             set { checkBoxShowStoreApps.Enabled = value; }
         }
 
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool InvalidEnabled
         {
             get { return checkBoxInvalidTest.Enabled; }

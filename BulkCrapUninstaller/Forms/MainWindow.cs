@@ -156,10 +156,11 @@ namespace BulkCrapUninstaller.Forms
 
         private void RefreshListLegend(object sender, EventArgs e)
         {
-            listLegend1.CertificatesEnabled = _setMan.Selected.Settings.AdvancedTestCertificates;
-            listLegend1.InvalidEnabled = _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
-            listLegend1.StoreAppEnabled = _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
-            listLegend1.OrphanedEnabled = _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
+            var force = advancedFilters1.CurrentList != null;
+            listLegend1.CertificatesEnabled = force || _setMan.Selected.Settings.AdvancedTestCertificates;
+            listLegend1.InvalidEnabled = force || _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
+            listLegend1.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
+            listLegend1.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
         }
 
         private void RefreshTitleBar(object sender, EventArgs e)
@@ -352,6 +353,8 @@ namespace BulkCrapUninstaller.Forms
             var sidebarOpen = _setMan.Selected.Settings.ToolbarsShowSettings && !ulistOpen;
             settingsSidebarPanel.Visible = sidebarOpen;
             settingsSidebarPanel.Enabled = sidebarOpen;
+
+            RefreshListLegend(sender, e);
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Controls
 {
-    public sealed class ClipboardCopyItem
+    internal sealed class ClipboardCopyItem
     {
         public static IEnumerable<ClipboardCopyItem> Items { get; }
         private static Func<ApplicationUninstallerEntry, object>[] FormatGetterFuncs { get; }
