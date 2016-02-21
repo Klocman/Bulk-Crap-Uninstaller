@@ -146,11 +146,12 @@ namespace UninstallTools.Controls
                 textBoxFilterText.Focus();
         }
 
-        public void Search(string searchStr, ComparisonMethod method, bool negate = false)
+        public void Search(string searchStr, ComparisonMethod method, string targetPropertyName = null, bool negate = false)
         {
             _targetFilterCondition.ComparisonMethod = method;
             _targetFilterCondition.InvertResults = negate;
             _targetFilterCondition.FilterText = searchStr;
+            _targetFilterCondition.TargetPropertyId = targetPropertyName;
 
             searchBox1.SearchTextChanged -= searchBox1_SearchTextChanged;
             searchBox1.Search(searchStr);

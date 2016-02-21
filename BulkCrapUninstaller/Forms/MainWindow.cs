@@ -246,7 +246,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (_listView.DisplayWindowsFeatures())
             {
-                filterEditor1.Search("Dism.exe", ComparisonMethod.StartsWith);
+                filterEditor1.Search(nameof(UninstallerType.Dism), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
                 listLegend1.WinFeatureEnabled = true;
             }
             else listLegend1.WinFeatureEnabled = false;
@@ -1208,7 +1208,7 @@ namespace BulkCrapUninstaller.Forms
         private void viewWindowsStoreAppsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _setMan.Selected.Settings.FilterShowStoreApps = true;
-            filterEditor1.Search(UninstallerType.StoreApp.GetLocalisedName(), ComparisonMethod.Equals);
+            filterEditor1.Search(nameof(UninstallerType.StoreApp), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
         }
         private void buttonAdvFiltering_Click(object sender, EventArgs e)
         {

@@ -224,7 +224,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.listLegend1, "listLegend1");
             this.listLegend1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.listLegend1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listLegend1.CertificatesEnabled = true;
+            this.listLegend1.InvalidEnabled = true;
             this.listLegend1.Name = "listLegend1";
+            this.listLegend1.OrphanedEnabled = true;
+            this.listLegend1.StoreAppEnabled = true;
+            this.listLegend1.WinFeatureEnabled = true;
             // 
             // listViewPanel
             // 
@@ -589,6 +594,11 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
             this.propertiesSidebar.InvalidEnabled = true;
             this.propertiesSidebar.Name = "propertiesSidebar";
+            this.propertiesSidebar.OrphansEnabled = true;
+            this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.StoreAppsEnabled = true;
+            this.propertiesSidebar.SysCompEnabled = true;
+            this.propertiesSidebar.UpdatesEnabled = true;
             // 
             // label1
             // 
