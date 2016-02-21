@@ -151,12 +151,20 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                if (_walkAwayBox == null && //TODO do it with less enumerations
-                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && // There is at least one loud
-                    _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && // and one quiet uninstaller
-                    !_currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent && 
-                             (x.CurrentStatus == UninstallStatus.Waiting ||
-                              x.CurrentStatus == UninstallStatus.Uninstalling))) // No loud uninstallers are running or waiting
+                // Show the walk away box if there are no running/waiting loud uninstallers and at least one quiet unistaller running/waiting
+                // TODO do it with less enumerations / simplify
+                if (_walkAwayBox == null &&
+                    // There is at least one loud uninstaller
+                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) &&
+                    //_currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && // and one quiet uninstaller
+                    // There are no loud uninstallers running or waiting
+                    !_currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent &&
+                                                                       (x.CurrentStatus == UninstallStatus.Waiting ||
+                                                                        x.CurrentStatus == UninstallStatus.Uninstalling)) &&
+                    // There is at least one silent uninstaller running or waiting
+                    _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent &&
+                                                                        (x.CurrentStatus == UninstallStatus.Waiting ||
+                                                                        x.CurrentStatus == UninstallStatus.Uninstalling)))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
 
