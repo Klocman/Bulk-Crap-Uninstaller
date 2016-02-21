@@ -500,13 +500,15 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButton7.Image = global::BulkCrapUninstaller.Properties.Resources.settings;
             resources.ApplyResources(this.toolStripButton7, "toolStripButton7");
             this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // toolStripButton8
             // 
             this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::BulkCrapUninstaller.Properties.Resources.information;
+            this.toolStripButton8.Image = global::BulkCrapUninstaller.Properties.Resources.information_circle;
             resources.ApplyResources(this.toolStripButton8, "toolStripButton8");
             this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Click += new System.EventHandler(this.openHelpToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -1293,8 +1295,10 @@ namespace BulkCrapUninstaller.Forms
             // 
             // openHelpToolStripMenuItem
             // 
-            resources.ApplyResources(this.openHelpToolStripMenuItem, "openHelpToolStripMenuItem");
+            this.openHelpToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.information_circle;
             this.openHelpToolStripMenuItem.Name = "openHelpToolStripMenuItem";
+            resources.ApplyResources(this.openHelpToolStripMenuItem, "openHelpToolStripMenuItem");
+            this.openHelpToolStripMenuItem.Click += new System.EventHandler(this.openHelpToolStripMenuItem_Click);
             // 
             // startSetupWizardToolStripMenuItem
             // 

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Klocman.Extensions;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Controls
@@ -36,7 +33,9 @@ namespace BulkCrapUninstaller.Controls
         {
             try
             {
-                var pattern = checkBoxUnescape.Checked ? Regex.Unescape(textBoxPatternInput.Text) : textBoxPatternInput.Text;
+                var pattern = checkBoxUnescape.Checked
+                    ? Regex.Unescape(textBoxPatternInput.Text)
+                    : textBoxPatternInput.Text;
                 textBoxResults.Text = string.Join(Environment.NewLine,
                     Targets.Select(x => ClipboardCopyItem.GetStringFromPattern(pattern, x))
                         .ToArray());
@@ -59,6 +58,11 @@ namespace BulkCrapUninstaller.Controls
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             RefreshResult(sender, e);
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, "BCU_manual.html"));
         }
     }
 }

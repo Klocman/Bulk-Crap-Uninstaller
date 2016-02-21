@@ -549,6 +549,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\information.circle.png" />
     <None Include="Resources\centerline.png" />
     <None Include="Resources\rating5.png" />
     <None Include="Resources\rating4.png" />
@@ -591,6 +592,10 @@
     <Content Include="..\StoreAppHelper\bin\Release\StoreAppHelper.exe">
       <Link>StoreAppHelper.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\_Documentation\BCU_manual.html">
+      <Link>BCU_manual.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="logo.ico" />
     <None Include="Resources\logo.ico" />

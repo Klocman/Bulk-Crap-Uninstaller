@@ -1216,5 +1216,10 @@ namespace BulkCrapUninstaller.Forms
         {
             AdvancedClipboardCopyWindow.ShowDialog(this, _listView.SelectedUninstallers);
         }
+
+        private void openHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, "BCU_manual.html"));
+        }
     }
 }

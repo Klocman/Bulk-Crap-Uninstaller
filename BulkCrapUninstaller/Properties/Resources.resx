@@ -290,4 +290,7 @@
   <data name="DefaultUninstallListFilename" xml:space="preserve">
     <value>Default.bcul</value>
   </data>
+  <data name="information_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information.circle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

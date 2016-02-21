@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedClipboardCopy));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonHelp = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.comboBoxInsert = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBoxUnescape = new System.Windows.Forms.CheckBox();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.textBoxPatternInput = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxResults = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxUnescape = new System.Windows.Forms.CheckBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,11 +52,14 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // buttonHelp
+            // panel2
             // 
-            resources.ApplyResources(this.buttonHelp, "buttonHelp");
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this.comboBoxInsert);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.checkBoxUnescape);
+            this.panel2.Controls.Add(this.buttonHelp);
+            this.panel2.Name = "panel2";
             // 
             // comboBoxInsert
             // 
@@ -67,6 +70,25 @@
             resources.GetString("comboBoxInsert.Items")});
             this.comboBoxInsert.Name = "comboBoxInsert";
             this.comboBoxInsert.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // checkBoxUnescape
+            // 
+            resources.ApplyResources(this.checkBoxUnescape, "checkBoxUnescape");
+            this.checkBoxUnescape.Name = "checkBoxUnescape";
+            this.checkBoxUnescape.UseVisualStyleBackColor = true;
+            this.checkBoxUnescape.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // buttonHelp
+            // 
+            resources.ApplyResources(this.buttonHelp, "buttonHelp");
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // textBoxPatternInput
             // 
@@ -93,27 +115,6 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // checkBoxUnescape
-            // 
-            resources.ApplyResources(this.checkBoxUnescape, "checkBoxUnescape");
-            this.checkBoxUnescape.Name = "checkBoxUnescape";
-            this.checkBoxUnescape.UseVisualStyleBackColor = true;
-            this.checkBoxUnescape.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.comboBoxInsert);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.checkBoxUnescape);
-            this.panel2.Controls.Add(this.buttonHelp);
-            this.panel2.Name = "panel2";
-            // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
             // AdvancedClipboardCopy
             // 
             resources.ApplyResources(this, "$this");
@@ -124,10 +125,10 @@
             this.Name = "AdvancedClipboardCopy";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
