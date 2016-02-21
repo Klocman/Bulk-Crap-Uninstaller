@@ -490,21 +490,29 @@ namespace UninstallTools.Uninstaller
             if (level >= 2)
                 return;
 
-            // Get executables from this directory
-            var files = new List<string>(Directory.GetFiles(directory.FullName, "*.exe", SearchOption.TopDirectoryOnly));
-            var dirs = directory.GetDirectories();
+            // Get contents of this directory
+            List<string> files = null;
+            DirectoryInfo[] dirs = null;
 
-            // Check for the bin directory and add files from it to the scan
-            var binDirs =
-                dirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            // Potentially dangerous to process this directory.
-            if (files.Count > 40
+            try
+            {
+                files = new List<string>(Directory.GetFiles(directory.FullName, "*.exe", SearchOption.TopDirectoryOnly));
+                dirs = directory.GetDirectories();
+            }
+            catch (IOException) { }
+            catch (UnauthorizedAccessException) { }
+            
+            // Check if it is impossible or potentially dangerous to process this directory.
+            if (files == null || dirs == null || files.Count > 40
                 // Subdirs with names 3 and less are probably program's files.
                 || (level > 0 && directory.Name.Length < 4)
                 // This matches ISO language codes, much faster than a more specific compare
                 || (directory.Name.Length == 5 && directory.Name[2].Equals('-')))
                 return;
+
+            // Check for the bin directory and add files from it to the scan
+            var binDirs = dirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames, 
+                StringComparison.OrdinalIgnoreCase)).ToList();
 
             if (files.Count == 0 && !binDirs.Any())
             {
