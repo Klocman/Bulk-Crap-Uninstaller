@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems.Update;
 using Klocman.Tools;
+using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -170,11 +172,11 @@ namespace BulkCrapUninstaller.Functions
 
             var check = new CmbCheckboxSettings(Localisable.MessageBoxes_RememberChoiceCheckbox);
             var result =
-                (CustomMessageBox.ShowDialog(DefaultOwner,
+                CustomMessageBox.ShowDialog(DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Junk_Leftover_removal,
                         Localisable.MessageBoxes_LookForJunkQuestion_Message,
                         Localisable.MessageBoxes_LookForJunkQuestion_Details,
-                        SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo), check));
+                        SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo), check);
 
             if (check.Result.HasValue && check.Result.Value)
                 Settings.Default.MessagesRemoveJunk = result == CustomMessageBox.PressedButton.Middle
@@ -389,7 +391,7 @@ namespace BulkCrapUninstaller.Functions
                 Localisable.MessageBoxes_RestartNeededForSettingChangeQuestion_Message,
                 Localisable.MessageBoxes_RestartNeededForSettingChangeQuestion_Details,
                 SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo));
-            return (result == CustomMessageBox.PressedButton.Middle);
+            return result == CustomMessageBox.PressedButton.Middle;
         }
 
         internal static void SaveUninstallListError(string exMessage)
@@ -548,12 +550,12 @@ namespace BulkCrapUninstaller.Functions
             var changes = UpdateSystem.LatestReply.GetChanges().ToArray();
             var versionNumber = UpdateSystem.LatestReply.GetUpdateVersion().ToString(3);
 
-            return (CustomMessageBox.ShowDialog(DefaultOwner,
+            return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
                     string.Format(Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
                     string.Format(Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
                     SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) ==
-                    CustomMessageBox.PressedButton.Middle);
+                   CustomMessageBox.PressedButton.Middle;
         }
 
         internal static void UpdateFailed(string errorMessage)
@@ -573,6 +575,16 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_UpdateUptodate_Message,
                     Localisable.MessageBoxes_UpdateUptodate_Details,
                     SystemIcons.Information, Buttons.ButtonClose));
+        }
+
+        internal static void ForceRunUninstallFailedError(Form owner, IEnumerable<string> failed)
+        {
+            CustomMessageBox.ShowDialog(owner,
+                new CmbBasicSettings(Localisable.MessageBoxes_ForceRunUninstallFailedError_Title,
+                    Localisable.MessageBoxes_ForceRunUninstallFailedError_Header,
+                    string.Format(Localisable.MessageBoxes_ForceRunUninstallFailedError_Message,
+                        string.Join("\n", failed.ToArray())),
+                    SystemIcons.Error, Buttons.ButtonClose));
         }
     }
 }

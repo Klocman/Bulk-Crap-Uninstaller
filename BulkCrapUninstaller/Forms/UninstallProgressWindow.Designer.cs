@@ -103,14 +103,18 @@ namespace BulkCrapUninstaller.Forms
             this.objectListView1.AllColumns.Add(this.olvColumnStatus);
             this.objectListView1.AllColumns.Add(this.olvColumnIsSilent);
             this.objectListView1.AllColumns.Add(this.olvColumnName);
+            this.objectListView1.CellEditUseWholeCell = false;
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnId,
             this.olvColumnStatus,
             this.olvColumnIsSilent,
             this.olvColumnName});
+            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.objectListView1.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListView1.HighlightForegroundColor = System.Drawing.Color.Empty;
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowItemToolTips = true;

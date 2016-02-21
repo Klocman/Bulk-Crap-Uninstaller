@@ -491,6 +491,36 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to run some of the uninstallers.
+        /// </summary>
+        internal static string MessageBoxes_ForceRunUninstallFailedError_Header {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ForceRunUninstallFailedError_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Following  uninstallers failed to execute, likely because of a collision. Please wait for other uninstallers to finish and try again. 
+        ///{0}
+        ///
+        ///You can try disabling collision detection in the settings, but it is not recommended..
+        /// </summary>
+        internal static string MessageBoxes_ForceRunUninstallFailedError_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ForceRunUninstallFailedError_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Force uninstallation.
+        /// </summary>
+        internal static string MessageBoxes_ForceRunUninstallFailedError_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ForceRunUninstallFailedError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BCUninstaller is uninstalling {0} application(s).
         /// </summary>
         internal static string MessageBoxes_GetSystemRestoreDescription {

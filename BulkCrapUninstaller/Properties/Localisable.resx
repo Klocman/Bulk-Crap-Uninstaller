@@ -619,4 +619,16 @@ The lists are separated by a single newline.</comment>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Average rating: {0}; My rating: {1}</value>
   </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Following  uninstallers failed to execute, likely because of a collision. Please wait for other uninstallers to finish and try again. 
+{0}
+
+You can try disabling collision detection in the settings, but it is not recommended.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Force uninstallation</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Failed to run some of the uninstallers</value>
+  </data>
 </root>

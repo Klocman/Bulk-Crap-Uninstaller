@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
@@ -152,9 +154,9 @@ namespace BulkCrapUninstaller.Forms
             try
             {
                 if (_walkAwayBox == null && //TODO do it with less enumerations
-                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && //there is at least one loud
-                    _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && //and one quiet uninstaller
-                    !_currentTargetStatus.AllUninstallersList.Any(x =>!x.IsSilent && 
+                    _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && // There is at least one loud
+                    _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && // and one quiet uninstaller
+                    !_currentTargetStatus.AllUninstallersList.Any(x =>!x.IsSilent && // No loud uninstallers are running or waiting
                     (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
@@ -306,8 +308,10 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolStripButtonRun_Click(object sender, EventArgs e)
         {
-            //TODO collision info
-            SelectedTaskEntries.ForEach(x => _currentTargetStatus.RunSingle(x, _settings.Settings.UninstallConcurrentDisableManualCollisionProtection));
+            var failed = SelectedTaskEntries.Where(x=> !_currentTargetStatus.RunSingle(x, _settings.Settings.UninstallConcurrentDisableManualCollisionProtection)).ToList();
+
+            if (failed.Any())
+                MessageBoxes.ForceRunUninstallFailedError(this, failed.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
 
             currentTargetStatus_OnCurrentTaskChanged(sender, e);
         }
