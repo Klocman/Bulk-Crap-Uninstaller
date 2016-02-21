@@ -250,6 +250,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Removal of store app data is problematic.
+        /// </summary>
+        internal static string ConfidencePart_IsStoreApp {
+            get {
+                return ResourceManager.GetString("ConfidencePart_IsStoreApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registry entry of the uninstaller.
         /// </summary>
         internal static string ConfidencePart_IsUninstallerRegistryKey {

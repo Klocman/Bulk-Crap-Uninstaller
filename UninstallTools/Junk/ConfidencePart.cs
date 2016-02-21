@@ -31,6 +31,9 @@ namespace UninstallTools.Junk
         public static readonly ConfidencePart IsUninstallerRegistryKey = new ConfidencePart(20,
             Localisation.ConfidencePart_IsUninstallerRegistryKey);
 
+        public static readonly ConfidencePart IsStoreApp = new ConfidencePart(-10,
+            Localisation.ConfidencePart_IsStoreApp);
+
         public ConfidencePart(int change, string reason)
         {
             Change = change;

@@ -109,17 +109,25 @@ namespace UninstallTools.Junk
                 if (resultNode != null)
                     output.Add(resultNode);
             }
-            
+
             if (Uninstaller.IsInstallLocationValid())
-                {
-                    var resultNode = GetJunkNodeFromLocation(Uninstaller.InstallLocation);
-                    if (resultNode != null)
-                        output.Add(resultNode);
-                }
+            {
+                var resultNode = GetJunkNodeFromLocation(Uninstaller.InstallLocation);
+                if (resultNode != null)
+                    output.Add(resultNode);
+            }
 
             foreach (var folder in FoldersToCheck)
             {
                 FindJunkRecursively(output, folder, 0);
+            }
+
+            if (Uninstaller.UninstallerKind == UninstallerType.StoreApp)
+            {
+                foreach (var driveJunkNode in output)
+                {
+                    driveJunkNode.Confidence.Add(ConfidencePart.IsStoreApp);
+                }
             }
 
             return RemoveDuplicates(output).Cast<JunkNode>();
