@@ -44,15 +44,12 @@
             // 
             // uninstallListEditor1
             // 
-            this.uninstallListEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uninstallListEditor1.Location = new System.Drawing.Point(0, 29);
-            this.uninstallListEditor1.MinimumSize = new System.Drawing.Size(310, 0);
+            resources.ApplyResources(this.uninstallListEditor1, "uninstallListEditor1");
             this.uninstallListEditor1.Name = "uninstallListEditor1";
-            this.uninstallListEditor1.Size = new System.Drawing.Size(319, 483);
-            this.uninstallListEditor1.TabIndex = 2;
             // 
             // toolStripUninstallerList
             // 
+            resources.ApplyResources(this.toolStripUninstallerList, "toolStripUninstallerList");
             this.toolStripUninstallerList.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripUninstallerList.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.toolStripUninstallerList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -62,81 +59,65 @@
             this.toolStripButtonSaveUl,
             this.toolStripSeparator25,
             this.toolStripButtonSaveUlDef});
-            this.toolStripUninstallerList.Location = new System.Drawing.Point(0, 0);
             this.toolStripUninstallerList.Name = "toolStripUninstallerList";
-            this.toolStripUninstallerList.Size = new System.Drawing.Size(319, 29);
-            this.toolStripUninstallerList.TabIndex = 3;
             // 
             // toolStripButtonToBasicFilters
             // 
+            resources.ApplyResources(this.toolStripButtonToBasicFilters, "toolStripButtonToBasicFilters");
             this.toolStripButtonToBasicFilters.Image = global::BulkCrapUninstaller.Properties.Resources.magnifyforward;
-            this.toolStripButtonToBasicFilters.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonToBasicFilters.Name = "toolStripButtonToBasicFilters";
-            this.toolStripButtonToBasicFilters.Size = new System.Drawing.Size(104, 26);
-            this.toolStripButtonToBasicFilters.Text = "Basic filtering";
             this.toolStripButtonToBasicFilters.Click += new System.EventHandler(this.toolStripButtonToBasicFilters_Click);
             // 
             // toolStripSeparator3
             // 
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripButtonOpenUl
             // 
+            resources.ApplyResources(this.toolStripButtonOpenUl, "toolStripButtonOpenUl");
             this.toolStripButtonOpenUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonOpenUl.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpenUl.Image")));
-            this.toolStripButtonOpenUl.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpenUl.Name = "toolStripButtonOpenUl";
-            this.toolStripButtonOpenUl.Size = new System.Drawing.Size(26, 26);
-            this.toolStripButtonOpenUl.Text = "Open...";
             this.toolStripButtonOpenUl.Click += new System.EventHandler(this.toolStripButtonOpenUl_Click);
             // 
             // toolStripButtonSaveUl
             // 
+            resources.ApplyResources(this.toolStripButtonSaveUl, "toolStripButtonSaveUl");
             this.toolStripButtonSaveUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSaveUl.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSaveUl.Image")));
-            this.toolStripButtonSaveUl.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSaveUl.Name = "toolStripButtonSaveUl";
-            this.toolStripButtonSaveUl.Size = new System.Drawing.Size(26, 26);
-            this.toolStripButtonSaveUl.Text = "Save as...";
             this.toolStripButtonSaveUl.Click += new System.EventHandler(this.toolStripButtonSaveUl_Click);
             // 
             // toolStripSeparator25
             // 
+            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripButtonSaveUlDef
             // 
+            resources.ApplyResources(this.toolStripButtonSaveUlDef, "toolStripButtonSaveUlDef");
             this.toolStripButtonSaveUlDef.Image = global::BulkCrapUninstaller.Properties.Resources.save;
-            this.toolStripButtonSaveUlDef.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSaveUlDef.Name = "toolStripButtonSaveUlDef";
-            this.toolStripButtonSaveUlDef.Size = new System.Drawing.Size(111, 26);
-            this.toolStripButtonSaveUlDef.Text = "Save as default";
             this.toolStripButtonSaveUlDef.Click += new System.EventHandler(this.toolStripButtonSaveUlDef_Click);
             // 
             // saveUlDialog
             // 
             this.saveUlDialog.DefaultExt = "bcul";
-            this.saveUlDialog.Filter = "Uninstall lists|*.bcul";
-            this.saveUlDialog.Title = "Save an Uninstall List...";
+            resources.ApplyResources(this.saveUlDialog, "saveUlDialog");
             this.saveUlDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveUlDialog_FileOk);
             // 
             // openUlDialog
             // 
             this.openUlDialog.DefaultExt = "bcul";
-            this.openUlDialog.Filter = "Uninstall lists|*.bcul";
-            this.openUlDialog.Title = "Open an Uninstall List...";
+            resources.ApplyResources(this.openUlDialog, "openUlDialog");
             this.openUlDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openUlDialog_FileOk);
             // 
             // AdvancedFilters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uninstallListEditor1);
             this.Controls.Add(this.toolStripUninstallerList);
             this.Name = "AdvancedFilters";
-            this.Size = new System.Drawing.Size(319, 512);
             this.toolStripUninstallerList.ResumeLayout(false);
             this.toolStripUninstallerList.PerformLayout();
             this.ResumeLayout(false);
