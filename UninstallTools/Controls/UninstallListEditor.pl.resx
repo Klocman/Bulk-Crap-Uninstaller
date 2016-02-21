@@ -117,42 +117,84 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Tekst filtru</value>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Nazwa filtra</value>
   </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Metoda porównania</value>
+  <data name="columnHeaderType.Text" xml:space="preserve">
+    <value>Typ</value>
   </data>
-  <data name="buttonAdd.Text" xml:space="preserve">
+  <data name="columnHeaderConditions.Text" xml:space="preserve">
+    <value>Kondycje</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripButtonAddFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 22</value>
+  </data>
+  <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="buttonRemove.Text" xml:space="preserve">
+  <data name="toolStripButtonRemoveFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
     <value>Usuń</value>
   </data>
-  <data name="buttonImport.Text" xml:space="preserve">
+  <data name="toolStripButtonAddFiltersFromList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 22</value>
+  </data>
+  <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Dodaj z listy...</value>
   </data>
   <data name="groupBoxFilterList.Text" xml:space="preserve">
     <value>Lista filtrów</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 94</value>
+  <data name="textBoxFilterName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 17</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 16</value>
+  <data name="textBoxFilterName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 20</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Podgląd</value>
+  <data name="labelFilterType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 17</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+  <data name="labelFilterType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 19</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 110</value>
+  <data name="labelFilterType.Text" xml:space="preserve">
+    <value>Typ:</value>
   </data>
-  <data name="groupBoxEditor.Text" xml:space="preserve">
-    <value>Edytor</value>
+  <data name="comboBoxFilterType.Items" xml:space="preserve">
+    <value>Uwzględnij</value>
+  </data>
+  <data name="comboBoxFilterType.Items1" xml:space="preserve">
+    <value>Wyklucz</value>
+  </data>
+  <data name="labelFilterName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 19</value>
+  </data>
+  <data name="labelFilterName.Text" xml:space="preserve">
+    <value>Nazwa:</value>
+  </data>
+  <data name="groupBoxFilterSettings.Text" xml:space="preserve">
+    <value>Ustawienia filtra</value>
+  </data>
+  <data name="toolStripButtonAddCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 22</value>
+  </data>
+  <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="toolStripButtonRemoveCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="groupBoxConditions.Text" xml:space="preserve">
+    <value>Kondycje filtra</value>
+  </data>
+  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
+    <value>Edytor kondycji</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Listy dezinstalatorów (*.xml)|*.xml|Wszystkie pliki|*.*</value>

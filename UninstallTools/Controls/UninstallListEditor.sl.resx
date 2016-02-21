@@ -198,14 +198,8 @@
   <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Filtriraj besedilo</value>
-  </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>181</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Metoda primerjave</value>
   </data>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>125</value>
@@ -285,9 +279,6 @@
   <data name="buttonAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="buttonAdd.Text" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
   <data name="&gt;&gt;buttonAdd.Name" xml:space="preserve">
     <value>buttonAdd</value>
   </data>
@@ -309,9 +300,6 @@
   <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="buttonRemove.Text" xml:space="preserve">
-    <value>Odstrani</value>
-  </data>
   <data name="&gt;&gt;buttonRemove.Name" xml:space="preserve">
     <value>buttonRemove</value>
   </data>
@@ -332,9 +320,6 @@
   </data>
   <data name="buttonImport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="buttonImport.Text" xml:space="preserve">
-    <value>Dodaj s seznama...</value>
   </data>
   <data name="&gt;&gt;buttonImport.Name" xml:space="preserve">
     <value>buttonImport</value>
@@ -444,9 +429,6 @@
   <data name="groupBoxEditor.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="groupBoxEditor.Text" xml:space="preserve">
-    <value>Urejevalnik</value>
-  </data>
   <data name="&gt;&gt;groupBoxEditor.Name" xml:space="preserve">
     <value>groupBoxEditor</value>
   </data>
@@ -507,9 +489,6 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Predogled</value>
-  </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
@@ -563,5 +542,20 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
+    <value>Odstrani</value>
+  </data>
+  <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
+    <value>Dodaj s seznama...</value>
+  </data>
+  <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
+    <value>Odstrani</value>
   </data>
 </root>

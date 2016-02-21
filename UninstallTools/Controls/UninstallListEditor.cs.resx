@@ -117,15 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Filtr textu</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>181</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Srovnávací metoda</value>
   </data>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>125</value>
@@ -168,9 +162,6 @@
   <data name="buttonAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="buttonAdd.Text" xml:space="preserve">
-    <value>Přidat</value>
-  </data>
   <data name="&gt;&gt;buttonAdd.Name" xml:space="preserve">
     <value>buttonAdd</value>
   </data>
@@ -192,9 +183,6 @@
   <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="buttonRemove.Text" xml:space="preserve">
-    <value>Odstranit</value>
-  </data>
   <data name="&gt;&gt;buttonRemove.Name" xml:space="preserve">
     <value>buttonRemove</value>
   </data>
@@ -215,9 +203,6 @@
   </data>
   <data name="buttonImport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="buttonImport.Text" xml:space="preserve">
-    <value>Přidat ze seznamu ...</value>
   </data>
   <data name="&gt;&gt;buttonImport.Name" xml:space="preserve">
     <value>buttonImport</value>
@@ -336,9 +321,6 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Náhled</value>
-  </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
@@ -423,9 +405,6 @@
   <data name="groupBoxEditor.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="groupBoxEditor.Text" xml:space="preserve">
-    <value>Editor</value>
-  </data>
   <data name="&gt;&gt;groupBoxEditor.Name" xml:space="preserve">
     <value>groupBoxEditor</value>
   </data>
@@ -479,5 +458,20 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
+  <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
+    <value>Odstranit</value>
+  </data>
+  <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
+    <value>Přidat ze seznamu ...</value>
+  </data>
+  <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
+  <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
+    <value>Odstranit</value>
   </data>
 </root>
