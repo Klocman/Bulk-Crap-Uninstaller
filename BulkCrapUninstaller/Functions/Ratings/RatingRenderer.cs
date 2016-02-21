@@ -52,7 +52,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 }
                 // Calculate where the images should be drawn
                 var imageBounds = r;
-                imageBounds.Width = (_maxNumberImages*(imageScaledWidth + Spacing)) - Spacing;
+                imageBounds.Width = _maxNumberImages*(imageScaledWidth + Spacing) - Spacing;
                 imageBounds.Height = imageScaledHeight;
                 imageBounds = AlignRectangle(r, imageBounds);
 

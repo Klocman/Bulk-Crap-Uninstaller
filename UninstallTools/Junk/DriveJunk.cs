@@ -12,6 +12,8 @@ namespace UninstallTools.Junk
     public class DriveJunk : JunkBase
     {
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
+
+        private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;
         private IEnumerable<string> _otherInstallLocations;
 
         public DriveJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
@@ -152,7 +154,7 @@ namespace UninstallTools.Junk
         }
 
         // Returns true if another installer is still using this location
-        private bool CheckAgainstOtherInstallers(DirectoryInfo location)
+        private bool CheckAgainstOtherInstallers(FileSystemInfo location)
         {
             if (location == null)
                 return false;
@@ -161,7 +163,7 @@ namespace UninstallTools.Junk
             return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.OrdinalIgnoreCase));
         }
 
-        private void FindJunkRecursively(List<DriveJunkNode> returnList, DirectoryInfo directory, int level)
+        private void FindJunkRecursively(ICollection<DriveJunkNode> returnList, DirectoryInfo directory, int level)
         {
             try
             {
@@ -199,8 +201,6 @@ namespace UninstallTools.Junk
                 if (Debugger.IsAttached) throw;
             }
         }
-
-        private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;
 
         private DriveJunkNode GetJunkNodeFromLocation(string directory)
         {

@@ -52,11 +52,11 @@ namespace BulkCrapUninstaller
 
         private class NBugDatabaseSenderWrapper : ProtocolBase
         {
-            private readonly DatabaseStatSender sender;
+            private readonly DatabaseStatSender _sender;
 
             public NBugDatabaseSenderWrapper()
             {
-                sender = new DatabaseStatSender(Program.DbConnectionString,
+                _sender = new DatabaseStatSender(Program.DbConnectionString,
                     Resources.DbCommandCrash, Properties.Settings.Default.MiscUserId);
             }
 
@@ -65,7 +65,7 @@ namespace BulkCrapUninstaller
                 report.CustomInfo = new BugReportExtraInfo();
 
                 var data = string.Concat("<BugReport>", report.ToString(), exception.ToString(), "</BugReport>");
-                return sender.SendData(CompressionTools.ZipString(data));
+                return _sender.SendData(CompressionTools.ZipString(data));
             }
         }
     }

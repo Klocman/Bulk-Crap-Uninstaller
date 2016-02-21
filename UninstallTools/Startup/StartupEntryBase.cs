@@ -53,7 +53,7 @@ namespace UninstallTools.Startup
         /// <summary>
         ///     Combined ParentLongName and EntryLongName
         /// </summary>
-        public virtual string FullLongName => (ParentLongName != null && EntryLongName != null)
+        public virtual string FullLongName => ParentLongName != null && EntryLongName != null
             ? Path.Combine(ParentLongName, EntryLongName)
             : null;
 

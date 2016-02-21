@@ -225,11 +225,8 @@ namespace BulkCrapUninstaller.Forms
         {
             _listViewWrapper = new TypedObjectListView<JunkNode>(objectListViewMain);
 
-            var typedConfidenceColumn = new TypedColumn<JunkNode>(olvColumnSafety);
-            typedConfidenceColumn.AspectGetter = x => x.Confidence.GetConfidence().GetLocalisedName();
-
-            var typedPathColumn = new TypedColumn<JunkNode>(olvColumnPath);
-            typedPathColumn.GroupKeyGetter = x => x.GroupName ?? Localisable.Unknown;
+            olvColumnSafety.AspectGetter = x => (x as JunkNode)?.Confidence.GetConfidence().GetLocalisedName();
+            olvColumnPath.GroupKeyGetter = x => (x as JunkNode)?.GroupName ?? Localisable.Unknown;
 
             objectListViewMain.UseFiltering = true;
             objectListViewMain.AdditionalFilter = new ModelFilter(JunkListFilter);

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 
@@ -24,12 +23,12 @@ namespace UninstallTools
         };
 
         /// <summary>
-        /// Custom "Program Files" directories. Use with dirs that get used to install applications to.
+        ///     Custom "Program Files" directories. Use with dirs that get used to install applications to.
         /// </summary>
         public static string[] CustomProgramFiles { get; set; }
 
         /// <summary>
-        /// Directiories containing programs, both built in "Program Files" and user-defined ones.
+        ///     Directiories containing programs, both built in "Program Files" and user-defined ones.
         /// </summary>
         internal static IEnumerable<string> AllProgramFiles
             => StockProgramFiles.Concat(CustomProgramFiles ?? Enumerable.Empty<string>());
@@ -54,8 +53,8 @@ namespace UninstallTools
         internal static bool IsSystemDirectory(DirectoryInfo dir)
         {
             return //dir.Name.StartsWith("Windows ") //Probably overkill
-                   DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.Ordinal))
-                   || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
+                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.Ordinal))
+                || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
         }
 
         /// <summary>
@@ -64,7 +63,8 @@ namespace UninstallTools
         /// </summary>
         /// <param name="includeUserDirectories">Add user-defined directories.</param>
         /// <returns></returns>
-        public static IEnumerable<KeyValuePair<DirectoryInfo, bool>> GetProgramFilesDirectories(bool includeUserDirectories)
+        public static IEnumerable<KeyValuePair<DirectoryInfo, bool>> GetProgramFilesDirectories(
+            bool includeUserDirectories)
         {
             var pfDirectories = new List<KeyValuePair<DirectoryInfo, bool>>(2);
 

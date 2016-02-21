@@ -103,7 +103,7 @@ namespace BulkCrapUninstaller.Functions
                     (!string.IsNullOrEmpty(app.UninstallerLocation) &&
                      mainFilename.Contains(app.UninstallerLocation, StringComparison.InvariantCultureIgnoreCase))
                 select app;
-        } 
+        }
 
         private static bool CheckForRunningProcesses(string[] filters)
         {
@@ -196,7 +196,9 @@ namespace BulkCrapUninstaller.Functions
 
                     var status = ApplicationUninstallerManager.RunBulkUninstall(targets, GetConfiguration(quiet));
                     status.OneLoudLimit = _settings.UninstallConcurrentOneLoud;
-                    status.ConcurrentUninstallerCount = _settings.UninstallConcurrency ? _settings.UninstallConcurrentMaxCount : 1;
+                    status.ConcurrentUninstallerCount = _settings.UninstallConcurrency
+                        ? _settings.UninstallConcurrentMaxCount
+                        : 1;
                     status.Start();
 
                     using (var uninstallWindow = new UninstallProgressWindow())
@@ -447,7 +449,7 @@ namespace BulkCrapUninstaller.Functions
             Monitor.Exit(_uninstallLock);
         }
 
-        private void RunExternalCommands(string commands, LoadingDialog.LoadingDialogInterface controller)
+        private static void RunExternalCommands(string commands, LoadingDialog.LoadingDialogInterface controller)
         {
             var lines = commands.SplitNewlines(StringSplitOptions.RemoveEmptyEntries);
             controller.SetMaximum(lines.Length);

@@ -53,33 +53,21 @@ namespace StoreAppHelper
 
             var userSecurityId = WindowsIdentity.GetCurrent()?.User?.Value;
             var packages = packageManager.FindPackagesForUserWithPackageTypes(userSecurityId, PackageTypes.Main);
-            foreach (var package in packages)
-            {
-                var dir = package.InstalledLocation.Path;
-                var file = Path.Combine(dir, "AppxManifest.xml");
-
-                if(!File.Exists(file) || package.IsFramework)
-                    continue;
-
-                var contents = File.ReadAllText(file);
-                var start = contents.IndexOf("<Properties>", StringComparison.Ordinal);
-                var end = contents.IndexOf("</Properties>", StringComparison.Ordinal);
-                var xmlText = contents.Substring(start, end - start + 13);
-
-                var rootXml = XElement.Parse(xmlText);
-                var displayName = rootXml.Element("DisplayName")?.Value;
-                var logoPath = rootXml.Element("Logo")?.Value;
-                var publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value;
-
-                var installPath = package.InstalledLocation.Path;
-                
-                var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
-                yield return new App(package.Id.FullName,
-                    string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
-                    ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
-                    ExtractDisplayIcon(installPath, logoPath),
-                    installPath);
-            }
+            return from package in packages
+                   let file = Path.Combine(package.InstalledLocation.Path, "AppxManifest.xml")
+                   where File.Exists(file) && !package.IsFramework
+                   let contents = File.ReadAllText(file)
+                   let start = contents.IndexOf("<Properties>", StringComparison.Ordinal)
+                   let end = contents.IndexOf("</Properties>", StringComparison.Ordinal)
+                   let rootXml = XElement.Parse(contents.Substring(start, end - start + 13))
+                   let displayName = rootXml.Element("DisplayName")?.Value
+                   let logoPath = rootXml.Element("Logo")?.Value
+                   let publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value
+                   let installPath = package.InstalledLocation.Path
+                   let extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName)
+                   select new App(package.Id.FullName, string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
+                   ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
+                   ExtractDisplayIcon(installPath, logoPath), installPath);
         }
 
         private static string ExtractDisplayIcon(string appDir, string iconDir)

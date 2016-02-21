@@ -1084,9 +1084,9 @@ namespace BulkCrapUninstaller.Forms
                 //if (item.UninstallPossible) propertiesContextMenuStripItem.Enabled = true;
             }
 
-            openInExplorerContextMenuStripItem.Enabled = (installLocationOpenInExplorerContextMenuStripItem.Enabled ||
-                                                          uninstallerLocationOpenInExplorerContextMenuStripItem.Enabled ||
-                                                          sourceLocationOpenInExplorerContextMenuStripItem.Enabled);
+            openInExplorerContextMenuStripItem.Enabled = installLocationOpenInExplorerContextMenuStripItem.Enabled ||
+                                                         uninstallerLocationOpenInExplorerContextMenuStripItem.Enabled ||
+                                                         sourceLocationOpenInExplorerContextMenuStripItem.Enabled;
         }
 
         private void UsageTrackerSendData()

@@ -18,7 +18,8 @@ namespace UninstallTools.Junk
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
         private static readonly string KeyLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node";
 
-        public RegistryJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+        public RegistryJunk(ApplicationUninstallerEntry entry,
+            IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
             : base(entry, otherUninstallers)
         {
         }
@@ -68,7 +69,7 @@ namespace UninstallTools.Junk
             return returnVal;
         }
 
-        private void FindJunkRecursively(List<RegistryJunkNode> returnList, string softwareKey, int level)
+        private void FindJunkRecursively(ICollection<RegistryJunkNode> returnList, string softwareKey, int level)
         {
             try
             {
@@ -98,10 +99,16 @@ namespace UninstallTools.Junk
                     }
                 }
             }
-            // Reg key invalid
-            catch (ArgumentException) { }
-            catch (SecurityException) { }
-            catch (ObjectDisposedException) { }
+                // Reg key invalid
+            catch (ArgumentException)
+            {
+            }
+            catch (SecurityException)
+            {
+            }
+            catch (ObjectDisposedException)
+            {
+            }
         }
     }
 }

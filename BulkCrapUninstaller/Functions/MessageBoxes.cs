@@ -9,7 +9,6 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems.Update;
 using Klocman.Tools;
-using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {

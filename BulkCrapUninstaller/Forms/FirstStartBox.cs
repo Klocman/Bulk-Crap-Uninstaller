@@ -69,11 +69,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonLanguageApply_Click(object sender, EventArgs e)
         {
-            if (comboBoxLanguage.SelectedIndex == 0)
-                _settings.Settings.Language = string.Empty;
-            else
-                _settings.Settings.Language =
-                    ((ComboBoxWrapper<CultureInfo>) comboBoxLanguage.SelectedItem).WrappedObject.Name;
+            _settings.Settings.Language = comboBoxLanguage.SelectedIndex == 0 ? string.Empty : 
+                ((ComboBoxWrapper<CultureInfo>) comboBoxLanguage.SelectedItem).WrappedObject.Name;
 
             _settings.Settings.Save();
 

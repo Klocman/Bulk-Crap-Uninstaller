@@ -11,20 +11,11 @@ namespace UninstallTools.Startup.Normal
     {
         private static IStartupDisable _disableFunctions;
 
-        internal static IStartupDisable DisableFunctions
-        {
-            get
-            {
-                if (_disableFunctions == null)
-                {
-                    // 6.2 is windows 8 and 2012, they are using a new startup disable scheme
-                    _disableFunctions = Environment.OSVersion.Version < new Version(6, 2, 0, 0)
-                        ? new OldStartupDisable()
-                        : (IStartupDisable) new NewStartupDisable();
-                }
-                return _disableFunctions;
-            }
-        }
+        // 6.2 is windows 8 and 2012, they are using a new startup disable scheme
+        internal static IStartupDisable DisableFunctions => _disableFunctions ?? 
+            (_disableFunctions = Environment.OSVersion.Version < new Version(6, 2, 0, 0)
+                ? new OldStartupDisable()
+                : (IStartupDisable) new NewStartupDisable());
 
         /// <summary>
         ///     Delete startup entry data from registry and file system.

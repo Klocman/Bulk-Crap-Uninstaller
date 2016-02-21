@@ -86,17 +86,20 @@ namespace UninstallTools.Uninstaller
                 
                 if (Directory.Exists(current[4]))
                 {
-                    var result = new ApplicationUninstallerEntry();
-
-                    result.InstallLocation = current[4];
-                    result.RatingId = current[0];
-                    result.UninstallString = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
-                    result.QuietUninstallString = result.UninstallString;
-                    result.RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1];
-                    result.Publisher = current[2];
-                    result.IsValid = true;
-                    result.UninstallerKind = UninstallerType.StoreApp;
-
+                    var uninstallStr = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
+                    var result = new ApplicationUninstallerEntry
+                    {
+                        RatingId = current[0],
+                        UninstallString = uninstallStr,
+                        QuietUninstallString = uninstallStr,
+                        RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1],
+                        Publisher = current[2],
+                        IsValid = true,
+                        UninstallerKind = UninstallerType.StoreApp,
+                        InstallLocation = current[4],
+                        InstallDate = Directory.GetCreationTime(current[4])
+                    };
+                    
                     if (File.Exists(current[3]))
                     {
                         try
@@ -110,9 +113,7 @@ namespace UninstallTools.Uninstaller
                             result.IconBitmap = null;
                         }
                     }
-
-                    result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
-
+                    
                     if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
                     {
                         result.SystemComponent = true;
@@ -483,7 +484,7 @@ namespace UninstallTools.Uninstaller
 
         static bool _getExtendedAttributesNotSupported;
 
-        private static void CreateFromDirectoryHelper(List<ApplicationUninstallerEntry> results, DirectoryInfo directory,
+        private static void CreateFromDirectoryHelper(ICollection<ApplicationUninstallerEntry> results, DirectoryInfo directory,
             int level)
         {
             if (level >= 2)
@@ -792,7 +793,7 @@ namespace UninstallTools.Uninstaller
 
         private static bool GetProtectedFlag(RegistryKey uninstallerKey)
         {
-            return ((int)uninstallerKey.GetValue("NoRemove", 0) != 0);
+            return (int)uninstallerKey.GetValue("NoRemove", 0) != 0;
         }
 
         private static string GetUninstallerFilename(string uninstallString, UninstallerType type, Guid bundleKey)
@@ -873,8 +874,7 @@ namespace UninstallTools.Uninstaller
                 }
 
                 ProcessStartCommand ps;
-                if (ProcessStartCommand.TryParse(uninstallString, out ps) &&
-                    (Path.IsPathRooted(ps.FileName) && File.Exists(ps.FileName)))
+                if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) && File.Exists(ps.FileName))
                 {
                     try
                     {

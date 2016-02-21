@@ -73,14 +73,15 @@ namespace UninstallTools.Startup.Normal
                         if (runLocation == null)
                             badLocations.Add(location);
                         else
-                            yield return new StartupEntry(runLocation, item, command) { DisabledStore = true };
+                            yield return new StartupEntry(runLocation, item, command) {DisabledStore = true};
                     }
                 }
-                
+
 #if DEBUG
-                if(badLocations.Any())
+                if (badLocations.Any())
                     throw new InvalidDataException(Localisation.Error_InvalidRegKeys + "\n"
-                        + string.Join("\n", badLocations.Distinct().OrderBy(x=>x).ToArray()));
+                                                   +
+                                                   string.Join("\n", badLocations.Distinct().OrderBy(x => x).ToArray()));
 #endif
             }
 
@@ -289,7 +290,7 @@ namespace UninstallTools.Startup.Normal
             }
         }
 
-        private static string CreateDisabledEntryPath(StartupEntry startupEntry)
+        private static string CreateDisabledEntryPath(StartupEntryBase startupEntry)
         {
             return Path.Combine(DriveDisableBackupPath, startupEntry.EntryLongName + BackupExtension);
         }

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;

@@ -43,7 +43,7 @@ namespace UninstallTools.Junk
         /// <summary>
         ///     Full name of this entry. Combined ParentPath and Name.
         /// </summary>
-        public string FullName => (ParentPath != null && Name != null) ? Path.Combine(ParentPath, Name) : null;
+        public string FullName => ParentPath != null && Name != null ? Path.Combine(ParentPath, Name) : null;
 
         /// <summary>
         ///     Confidence that this entry is safe to remove

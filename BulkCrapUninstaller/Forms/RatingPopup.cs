@@ -7,7 +7,7 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class RatingPopup : Form
     {
-        private UninstallerRating result = UninstallerRating.Unknown;
+        private UninstallerRating _result = UninstallerRating.Unknown;
 
         private RatingPopup()
         {
@@ -29,30 +29,30 @@ namespace BulkCrapUninstaller.Forms
                 if (mouseLocation.IsEmpty)
                     window.StartPosition = FormStartPosition.CenterParent;
                 else
-                    window.Location = new Point(mouseLocation.X - (window.Size.Width/2),
-                        mouseLocation.Y - (window.Size.Height/2));
+                    window.Location = new Point(mouseLocation.X - window.Size.Width/2,
+                        mouseLocation.Y - window.Size.Height/2);
 
                 window.ShowDialog(owner);
 
-                return window.result;
+                return window._result;
             }
         }
 
         private void buttonGood_Click(object sender, EventArgs e)
         {
-            result = UninstallerRating.Good;
+            _result = UninstallerRating.Good;
             Close();
         }
 
         private void buttonNormal_Click(object sender, EventArgs e)
         {
-            result = UninstallerRating.Neutral;
+            _result = UninstallerRating.Neutral;
             Close();
         }
 
         private void buttonBad_Click(object sender, EventArgs e)
         {
-            result = UninstallerRating.Bad;
+            _result = UninstallerRating.Bad;
             Close();
         }
     }

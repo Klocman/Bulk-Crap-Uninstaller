@@ -52,7 +52,7 @@ namespace UninstallTools.Junk
                 applicationUninstallerEntries.Select(x => x.DisplayNameTrimmed).Where(x => x != null && x.Length > 3)
                     .Distinct().ToArray();
         }
-        
+
         public IEnumerable<JunkNode> FindJunk()
         {
             var output = new List<ProgramFilesJunkNode>();
@@ -66,7 +66,7 @@ namespace UninstallTools.Junk
         }
 
         //todo no subdirs present, include level?
-        private void FindJunkRecursively(List<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)
+        private void FindJunkRecursively(ICollection<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)
         {
             try
             {

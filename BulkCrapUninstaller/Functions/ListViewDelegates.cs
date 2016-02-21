@@ -15,12 +15,7 @@ namespace BulkCrapUninstaller.Functions
 
         internal static string BoolToYesNoAspectConverter(object rowObject)
         {
-            if (rowObject is bool)
-            {
-                var entry = (bool) rowObject;
-                return entry.ToYesNo();
-            }
-            return null;
+            return (rowObject as bool?)?.ToYesNo();
         }
 
         internal static object ColumnGuidAspectGetter(object rowObj)
@@ -30,7 +25,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 var result = entry.BundleProviderKey;
                 if (!result.IsEmpty())
-                    return string.Format("{0:B}", result).ToUpper();
+                    return $"{result:B}".ToUpper();
             }
             return string.Empty;
         }
