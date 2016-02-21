@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
@@ -17,14 +15,14 @@ using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
 {
-    sealed partial class UninstallProgressWindow : Form
+    internal sealed partial class UninstallProgressWindow : Form
     {
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-        private bool _abortSkipMessageboxThread;
+        //private bool _abortSkipMessageboxThread;
         private Thread _boxThread;
         private BulkUninstallTask _currentTargetStatus;
-        private CustomMessageBox _skipMessageBox;
-        private Thread _skipMessageboxThread;
+        //private CustomMessageBox _skipMessageBox;
+        //private Thread _skipMessageboxThread;
         private CustomMessageBox _walkAwayBox;
 
         public UninstallProgressWindow()
@@ -99,7 +97,7 @@ namespace BulkCrapUninstaller.Forms
             Close();
         }
 
-        private void CloseSkipMessagebox()
+        /*private void CloseSkipMessagebox()
         {
             if (_skipMessageboxThread != null && _skipMessageboxThread.IsAlive)
             {
@@ -107,11 +105,11 @@ namespace BulkCrapUninstaller.Forms
                 _skipMessageboxThread.Join();
                 this.SafeInvoke(() => Enabled = true);
             }
-        }
+        }*/
 
         private void currentTargetStatus_OnCurrentTaskChanged(object sender, EventArgs e)
         {
-            CloseSkipMessagebox();
+            //CloseSkipMessagebox();
 
             objectListView1.SafeInvoke(() =>
             {
@@ -156,8 +154,9 @@ namespace BulkCrapUninstaller.Forms
                 if (_walkAwayBox == null && //TODO do it with less enumerations
                     _currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent) && // There is at least one loud
                     _currentTargetStatus.AllUninstallersList.Any(x => x.IsSilent) && // and one quiet uninstaller
-                    !_currentTargetStatus.AllUninstallersList.Any(x =>!x.IsSilent && // No loud uninstallers are running or waiting
-                    (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)))
+                    !_currentTargetStatus.AllUninstallersList.Any(x => !x.IsSilent && 
+                             (x.CurrentStatus == UninstallStatus.Waiting ||
+                              x.CurrentStatus == UninstallStatus.Uninstalling))) // No loud uninstallers are running or waiting
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
 
@@ -191,7 +190,7 @@ namespace BulkCrapUninstaller.Forms
             ResumeLayout();
         }
 
-        private void OpenSkipMessagebox(object sender, EventArgs e)
+        /*private void OpenSkipMessagebox(object sender, EventArgs e)
         {
             CloseSkipMessagebox();
 
@@ -247,7 +246,7 @@ namespace BulkCrapUninstaller.Forms
                     currentTargetStatus_OnCurrentTaskChanged(this, EventArgs.Empty);
                 });
             }
-        }
+        }*/
 
         private void UninstallProgressWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -277,7 +276,8 @@ namespace BulkCrapUninstaller.Forms
 
             _currentTargetStatus.OneLoudLimit = _settings.Settings.UninstallConcurrentOneLoud;
             _currentTargetStatus.ConcurrentUninstallerCount = _settings.Settings.UninstallConcurrency
-                ? _settings.Settings.UninstallConcurrentMaxCount : 1;
+                ? _settings.Settings.UninstallConcurrentMaxCount
+                : 1;
         }
 
         private void toolStripButtonProperties_Click(object sender, EventArgs e)
@@ -308,28 +308,35 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolStripButtonRun_Click(object sender, EventArgs e)
         {
-            var failed = SelectedTaskEntries.Where(x=> !_currentTargetStatus.RunSingle(x, _settings.Settings.UninstallConcurrentDisableManualCollisionProtection)).ToList();
+            var failed =
+                SelectedTaskEntries.Where(
+                    x =>
+                        !_currentTargetStatus.RunSingle(x,
+                            _settings.Settings.UninstallConcurrentDisableManualCollisionProtection)).ToList();
 
             if (failed.Any())
-                MessageBoxes.ForceRunUninstallFailedError(this, failed.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
+                MessageBoxes.ForceRunUninstallFailedError(this,
+                    failed.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
 
             currentTargetStatus_OnCurrentTaskChanged(sender, e);
         }
 
         private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toolStripButtonFolderOpen.Enabled = SelectedTaskEntries.Any(x => x.UninstallerEntry.InstallLocation.IsNotEmpty());
+            toolStripButtonFolderOpen.Enabled =
+                SelectedTaskEntries.Any(x => x.UninstallerEntry.InstallLocation.IsNotEmpty());
             toolStripButtonProperties.Enabled = SelectedTaskEntries.Any();
 
             toolStripButtonRun.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Waiting
-                                                                        || x.CurrentStatus == UninstallStatus.Failed
-                                                                        || x.CurrentStatus == UninstallStatus.Skipped);
+                                                                      || x.CurrentStatus == UninstallStatus.Failed
+                                                                      || x.CurrentStatus == UninstallStatus.Skipped);
 
             toolStripButtonSkip.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus != UninstallStatus.Skipped
-                                                                        && x.CurrentStatus != UninstallStatus.Completed
-                                                                        && x.CurrentStatus != UninstallStatus.Invalid
-                                                                        && x.CurrentStatus != UninstallStatus.Protected);
-            toolStripButtonTerminate.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Uninstalling);
+                                                                       && x.CurrentStatus != UninstallStatus.Completed
+                                                                       && x.CurrentStatus != UninstallStatus.Invalid
+                                                                       && x.CurrentStatus != UninstallStatus.Protected);
+            toolStripButtonTerminate.Enabled =
+                SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Uninstalling);
         }
 
         private void toolStripButtonTerminate_Click(object sender, EventArgs e)
