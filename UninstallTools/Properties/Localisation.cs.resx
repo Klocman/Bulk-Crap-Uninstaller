@@ -415,4 +415,9 @@
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>Hodnota nemůže obsahovat znaky nového řádku</value>
   </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+    <value>
+    </value>
+  </data>
 </root>

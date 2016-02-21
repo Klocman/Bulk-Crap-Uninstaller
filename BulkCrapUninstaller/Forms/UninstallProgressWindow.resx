@@ -364,9 +364,6 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
   <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
     <value>toolStrip1</value>
   </data>

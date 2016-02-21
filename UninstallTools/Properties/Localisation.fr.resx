@@ -418,4 +418,9 @@
   <data name="Error_InvalidRegKeys" xml:space="preserve">
     <value>Clé(s) de registre de démarrage invalide(s) ou inconnue(s)</value>
   </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+    <value>
+    </value>
+  </data>
 </root>

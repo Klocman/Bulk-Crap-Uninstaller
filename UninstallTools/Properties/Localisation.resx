@@ -429,6 +429,6 @@
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
-    <value>Removal of store app data is problematic</value>
+    <value>Removal of Store App data is problematic</value>
   </data>
 </root>

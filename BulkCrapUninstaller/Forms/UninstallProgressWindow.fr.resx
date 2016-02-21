@@ -140,9 +140,6 @@
     <value>Les désinstalleurs sélectionnés vont  maintenant être exécutés un à la fois.
 Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour éviter d'attendre qu'il se termine. Cela peut arriver si le désinstalleur plante ou démarre un nouveau processus et ne le ferme pas. </value>
   </data>
-  <data name="buttonSkip.Text" xml:space="preserve">
-    <value>Passer</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Liste de désinstalleurs</value>
   </data>
@@ -154,5 +151,8 @@ Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour 
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Progression de la désinstallation</value>
+  </data>
+  <data name="toolStripButtonSkip.Text" xml:space="preserve">
+    <value>Passer</value>
   </data>
 </root>

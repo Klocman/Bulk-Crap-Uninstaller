@@ -315,10 +315,22 @@
     <EmbeddedResource Include="Controls\PropertiesSidebar.sl.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallationSettings.cs.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallationSettings.de.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallationSettings.fr.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallationSettings.pl.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallationSettings.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallationSettings.sl.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.cs.resx">

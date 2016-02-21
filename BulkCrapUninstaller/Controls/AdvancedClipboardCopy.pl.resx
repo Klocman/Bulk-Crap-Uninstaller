@@ -126,4 +126,7 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Wyniki</value>
   </data>
+  <data name="comboBoxInsert.Items" xml:space="preserve">
+    <value>Wstaw...</value>
+  </data>
 </root>

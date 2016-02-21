@@ -129,16 +129,6 @@
   <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentne sortowanie</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
-    <value>Zmodyfikuj kolejność wpisów podczas odinstalowywania do bardziej inteligentnej .
-Jeśli ta opcja jest dezinstalatory niepełnosprawnych realizowane są w kolejności alfabetycznej.
-Przede wszystkim ta opcja sprawi że ciche dezinstalatory uruchomią się na końcu, umożliwiając
-pozostawić procesu bez nadzoru. Największe aplikacje zostaną odinstalowane pierwsze, w celu
-uniknięcia odinstalowywania ich części oddzielnie.</value>
-  </data>
   <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 17</value>
   </data>
@@ -177,31 +167,14 @@ Uwaga: Weryfikacja może zająć dużo czasu.</value>
   <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 17</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Wyłącz zabezpieczenie</value>
-  </data>
-  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
-    <value>Umożliwia odinstalowanie zabezpieczonych przedmiotów (z tagiem NoRemove),
-modyfikowanie rejestru i wiele innych niebezpiecznych rzeczy.</value>
-  </data>
   <data name="checkBoxSimulate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 17</value>
   </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Symuluj dezinstalację</value>
-  </data>
-  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
-    <value>Wykonaj wszystkie kroki ale nie uruchamiaj dezinstalatorów.
-Głównie do debugowania i straszenia znajomych.</value>
-  </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 176</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Zaawansowane</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -297,5 +270,8 @@ Grupowanie większości kolumn używa inteligentnych filtrów.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Ustawienia listy</value>
+  </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Pokaż Store Apps</value>
   </data>
 </root>

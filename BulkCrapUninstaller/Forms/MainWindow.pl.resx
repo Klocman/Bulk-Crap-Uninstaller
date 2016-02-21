@@ -258,9 +258,6 @@
   <data name="toolStripButton6.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="toolStripButton6.Text" xml:space="preserve">
-    <value>Stwórz listę dezinstalatorów...</value>
-  </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
@@ -792,9 +789,6 @@
   <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Zapisz zaznaczenie do listy...</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
@@ -1282,9 +1276,6 @@
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 22</value>
   </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Text" xml:space="preserve">
-    <value>Usuń malware (Spybot)</value>
-  </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 22</value>
   </data>
@@ -1440,5 +1431,20 @@
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Oceń...</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
+    <value>Znajdź przez okno...</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="buttonAdvFiltering.Text" xml:space="preserve">
+    <value>Zaawansowane filtrowanie</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Znajdź przez okno...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bulk Crap Uninstaller</value>
   </data>
 </root>

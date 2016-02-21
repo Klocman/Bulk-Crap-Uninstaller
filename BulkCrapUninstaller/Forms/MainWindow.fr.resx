@@ -518,9 +518,6 @@
   <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 22</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Sauver/fusionner la liste de désinstallation...</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 22</value>
   </data>
@@ -788,9 +785,6 @@
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
   </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Text" xml:space="preserve">
-    <value>Supprimer les malwares (Spybot)</value>
-  </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
   </data>
@@ -883,10 +877,6 @@
   </data>
   <data name="toolStripButton7.Text" xml:space="preserve">
     <value>Charger une ou des listes existantes...</value>
-  </data>
-  <data name="toolStripButton6.Text" xml:space="preserve">
-    <value>Sauvegarder la sélection 
-dans une liste...</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Sélectionner tous les éléments</value>

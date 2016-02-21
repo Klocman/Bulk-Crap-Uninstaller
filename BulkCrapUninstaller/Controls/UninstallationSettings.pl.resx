@@ -156,19 +156,19 @@ dezinstalatorów ręcznie</value>
     <value>206, 17</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentne sortowanie deinstalatorów</value>
+    <value>Inteligentne sortowanie</value>
   </data>
   <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Wyłącz ochronę</value>
+    <value>Wyłącz zabezpieczenie</value>
   </data>
   <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 17</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Symulowanie dezinstalacji</value>
+    <value>Symuluj dezinstalację</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ustawienia ogólne</value>

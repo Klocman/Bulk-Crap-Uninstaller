@@ -121,16 +121,6 @@
   <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 17</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Tri intelligent des désinstalleurs</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
-    <value>Modifier l'ordre des entrées en désinstallant de façon plus intelligente.
-Si désactivé, les désinstalleurs sont exécutés par ordre alphabétique.
-Cette option fera notamment se lancer les désinstalleurs silencieux à la fin, vous permettant
-de laisser seul le processus. Les plus grosses applications seront désinstallées 
-en premier pour éviter de désinstaller leurs parties séparément.</value>
-  </data>
   <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 17</value>
   </data>
@@ -166,25 +156,8 @@ Attention : la vérification peut mettre longtemps à se terminer.</value>
   <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Désactiver la protection</value>
-  </data>
-  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
-    <value>Vous permet de désinstaller ou modifier les éléments protégés (avec la
-balise NoRemove).</value>
-  </data>
   <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 17</value>
-  </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simuler la désinstallation</value>
-  </data>
-  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
-    <value>Tout faire sauf réellement lancer le désinstalleur.
-Utile pour déboguer, faire des captures d'écran et effrayer les collègues.</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Avancé</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>

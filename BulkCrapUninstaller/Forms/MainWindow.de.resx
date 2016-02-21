@@ -234,9 +234,6 @@
         tP9AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton6.Text" xml:space="preserve">
-    <value>Auswahl in einer Liste speichern...</value>
-  </data>
   <data name="toolStripButtonSelAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -751,9 +748,6 @@
   <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 22</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uninstall-Liste &amp;speichern/mischen...</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 22</value>
   </data>
@@ -1235,9 +1229,6 @@
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
   </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Text" xml:space="preserve">
-    <value>Malware entfernen (Spybot)</value>
-  </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
   </data>
@@ -1396,5 +1387,8 @@
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Bewerten...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bulk Crap Uninstaller</value>
   </data>
 </root>

@@ -149,9 +149,6 @@
   <data name="buttonSkip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="buttonSkip.Text" xml:space="preserve">
-    <value>Pomiń</value>
-  </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -172,5 +169,23 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Status...</value>
+  </data>
+  <data name="toolStripButtonRun.Text" xml:space="preserve">
+    <value>Uruchom dezinstalator teraz</value>
+  </data>
+  <data name="toolStripButtonSkip.Text" xml:space="preserve">
+    <value>Pomiń</value>
+  </data>
+  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
+    <value>Otwórz lokalizację instalacji</value>
+  </data>
+  <data name="toolStripButtonProperties.Text" xml:space="preserve">
+    <value>Właściwości</value>
+  </data>
+  <data name="toolStripButtonSettings.Text" xml:space="preserve">
+    <value>Ustawienia</value>
   </data>
 </root>

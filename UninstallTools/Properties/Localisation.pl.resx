@@ -418,4 +418,14 @@
   <data name="Error_InvalidRegKeys" xml:space="preserve">
     <value>Nieprawidłowy lub nieznany klucz startowy:</value>
   </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Nowy warunek</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+    <value>Jest osierocony</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Usuwanie danych Store App jest problematyczne</value>
+  </data>
 </root>

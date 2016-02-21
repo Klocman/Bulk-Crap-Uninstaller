@@ -238,4 +238,7 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Włącz oceny użytkowników dla aplikacji</value>
   </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Dezinstalacja</value>
+  </data>
 </root>

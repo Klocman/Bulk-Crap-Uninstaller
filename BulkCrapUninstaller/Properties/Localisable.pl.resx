@@ -616,4 +616,19 @@ The lists are separated by a single newline.</comment>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
     <value>{0} aplikacji</value>
   </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Średnia ocena: {0}; Moja ocena: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Następujących dezinstalatorów nie udało się uruchomić, prawdopodobnie z powodu kolizji. Poczekaj aż inne dezinstalatory skonczą pracę i spróbuj ponownie.
+{0}
+
+Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest to zalecane.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Wymuś dezinstalację</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Nie powiodło się uruchomiene niektórych dezinstalatorów</value>
+  </data>
 </root>

@@ -121,11 +121,6 @@
   <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
-    <value>Spremeni vrstni red vnosov med odstranjevanjem z enim  več, bolj inteligentnim.
-Če je ta možnost onemogočena, se odstranjevalci izvajajo v abecednem vrstnem redu.
-Predvsem bo ta možnost omogočila, da bodo tihi odstranjevalci zagnani na koncu, kar vam omogoča zapustil sam proces. Največji aplikacije bodo najprej odstranjene, da bi se izognili ločenem odstranjevanju njihovih delov.</value>
-  </data>
   <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>
   </data>
@@ -175,9 +170,6 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
   <data name="searchBoxPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
-    <value>Omogoča vam, da odstranite ali spremenite zaščitene vnose (z oznako NeOdstrani).</value>
-  </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>
   </data>
@@ -192,9 +184,6 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
     <value>Izberi s potrditvenimi polji</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Napredno</value>
   </data>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -255,9 +244,6 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
   </data>
   <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simuliraj odstranitev</value>
   </data>
   <data name="checkBoxListHideMicrosoft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -336,9 +322,6 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentno razvrščanje odstranjevalca</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -480,9 +463,6 @@ Vozniki so pogosto označeni s to oznako.</value>
   <data name="checkBoxBatchSortQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Onemogoči zaščito</value>
-  </data>
   <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
     <value>checkBoxOrphans</value>
   </data>
@@ -617,10 +597,6 @@ Lahko označite več vnosov, tako da jih označite in pritisnete na preslednico.
   </data>
   <data name="&gt;&gt;checkBoxBatchSortQuiet.Name" xml:space="preserve">
     <value>checkBoxBatchSortQuiet</value>
-  </data>
-  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
-    <value>Stori vse, razen za delujoč odstranjevalec. 
-To je uporabno je za odpravljanje hroščev, izdelavo zaslonskih posnetkov in odganjanje sodelavcev.</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

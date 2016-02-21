@@ -326,9 +326,6 @@
     <value>Vybrané odinstalace budou nyní provedeny jedna po druhé.
 Pokud se zdá, že se proces zasekl, můžete kliknout na tlačítko "Přeskočit", aby se zabránilo čekání na dokončení. Tato situace může nastat, pokud odinstalace havaruje nebo zahájí nový proces, a není zavřen.</value>
   </data>
-  <data name="buttonSkip.Text" xml:space="preserve">
-    <value>Přeskočit</value>
-  </data>
   <data name="&gt;&gt;objectListView1.Name" xml:space="preserve">
     <value>objectListView1</value>
   </data>
@@ -500,4 +497,7 @@ Pokud se zdá, že se proces zasekl, můžete kliknout na tlačítko "Přeskoči
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="toolStripButtonSkip.Text" xml:space="preserve">
+    <value>Přeskočit</value>
+  </data>
 </root>

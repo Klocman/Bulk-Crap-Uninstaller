@@ -539,9 +539,6 @@
   <data name="toolStripButton6.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="toolStripButton6.Text" xml:space="preserve">
-    <value>Ustvari seznam odstranjevanja...</value>
-  </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
@@ -1210,9 +1207,6 @@
   <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ustvari seznam odstranjevanja...</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
@@ -1705,10 +1699,6 @@
   </data>
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
-  </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Text" xml:space="preserve">
-    <value>
-Odstrani zlonamerni program (Spybot)</value>
   </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>

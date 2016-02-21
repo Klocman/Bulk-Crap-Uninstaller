@@ -121,17 +121,6 @@
   <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Intelligente Sortierung</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
-    <value>Die Reihenfolge der Programmeinträge wird intelligent zusammengefasst. 
-Ist diese Option deaktiviert, werden die Deinstallationen in alphabetischer
-Reihenfolge ausgeführt. Insbesondere werden Hintergrund-Deinstallationen 
-zum Schluss durchgeführt, so dass Sie den Prozess unbeaufsichtigt laufen lassen 
-können. Große Anwendungen werden zuerst deinstalliert, um zu vermeiden, dass 
-man Teile getrennt deinstalliert muss</value>
-  </data>
   <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
   </data>
@@ -155,24 +144,8 @@ Achtung: Die Überprüfung kann einige Zeit in Anspruch nehmen.</value>
   <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Schutz deaktivieren</value>
-  </data>
-  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
-    <value>Ermöglicht das Deinstallieren oder Ändern geschützter Elemente (mit NoRemove-Tag).</value>
-  </data>
   <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
-  </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Deinstallation simulieren</value>
-  </data>
-  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
-    <value>Simuliert eine vollständige Deinstallation.
-Nützlich für die Fehlersuche, um Screenshots zu machen oder Mitarbeiter zu erschrecken</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Erweitert</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 17</value>

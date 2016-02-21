@@ -121,9 +121,6 @@
   <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.ToolTip" xml:space="preserve">
-    <value>Změna pořadí při odinstalaci položek podle vyšší inteligence. Je-li tato volba vypnuta odinstalace jsou prováděny v abecedním pořadí. V první řadě, je tato možnost tiché odinstalace spustí se na konci, což umožňuje proces ponechát bez dozoru. Největší aplikace budou odinstalovány jako první, aby se vyhnulo odinstalování jejich části odděleně.</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -168,9 +165,6 @@
   <data name="searchBoxPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="checkBoxDiisableProtection.ToolTip" xml:space="preserve">
-    <value>Chcete-li odinstalovat chráněných polžky (se štítkem NoRemove) upravit registry a mnoho dalších nebezpečných věcí.</value>
-  </data>
   <data name="&gt;&gt;searchBox1.Parent" xml:space="preserve">
     <value>searchBoxPanel</value>
   </data>
@@ -179,9 +173,6 @@
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
     <value>Vyberte pomocí zaškrtávacích políček</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Pokročilé</value>
   </data>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -236,9 +227,6 @@
   </data>
   <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simulace odinstalace</value>
   </data>
   <data name="checkBoxListHideMicrosoft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -317,9 +305,6 @@
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentní třídění odinstalace </value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -468,9 +453,6 @@
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 138</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Zakázat ochranu</value>
-  </data>
   <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
     <value>checkBoxOrphans</value>
   </data>
@@ -614,10 +596,6 @@
   </data>
   <data name="&gt;&gt;checkBoxBatchSortQuiet.Name" xml:space="preserve">
     <value>checkBoxBatchSortQuiet</value>
-  </data>
-  <data name="checkBoxSimulate.ToolTip" xml:space="preserve">
-    <value>Dělat vše vyjma skutečnosti spustit odinstalátor.
-Vhodné pro odladění, vytvořit snímky obrazovky i plašení spolupracovníků.</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

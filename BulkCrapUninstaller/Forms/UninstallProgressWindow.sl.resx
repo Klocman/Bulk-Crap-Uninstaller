@@ -283,9 +283,6 @@
   <data name="buttonSkip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="buttonSkip.Text" xml:space="preserve">
-    <value>Preskoči</value>
-  </data>
   <data name="&gt;&gt;buttonSkip.Name" xml:space="preserve">
     <value>buttonSkip</value>
   </data>
@@ -495,5 +492,8 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonSkip.Text" xml:space="preserve">
+    <value>Preskoči</value>
   </data>
 </root>
