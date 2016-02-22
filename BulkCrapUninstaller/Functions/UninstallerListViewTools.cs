@@ -458,7 +458,8 @@ namespace BulkCrapUninstaller.Functions
 
             AllUninstallers = detectedUninstallers;
 
-            dialogInterface.SetProgress(-1);
+            dialogInterface.SetProgress(1);
+            dialogInterface.SetMaximum(1);
 
             _iconGetter.UpdateIconList(detectedUninstallers);
             ReassignStartupEntries(false);
