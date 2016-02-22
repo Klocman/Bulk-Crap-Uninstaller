@@ -183,6 +183,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
+            this.startupSplashPictureBox = new System.Windows.Forms.PictureBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -194,6 +195,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBox1.SuspendLayout();
             this.uninstallListContextMenuStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startupSplashPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -1374,10 +1376,20 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1.StopWhenFormIsDisabled = true;
             this.globalHotkeys1.SuppressKeyPresses = true;
             // 
+            // startupSplashPictureBox
+            // 
+            resources.ApplyResources(this.startupSplashPictureBox, "startupSplashPictureBox");
+            this.startupSplashPictureBox.BackColor = System.Drawing.SystemColors.Window;
+            this.startupSplashPictureBox.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.startupSplashPictureBox.Image = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
+            this.startupSplashPictureBox.Name = "startupSplashPictureBox";
+            this.startupSplashPictureBox.TabStop = false;
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.startupSplashPictureBox);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.settingsSidebarPanel);
             this.Controls.Add(this.menuStrip);
@@ -1404,6 +1416,7 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallListContextMenuStrip.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startupSplashPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1572,6 +1585,7 @@ namespace BulkCrapUninstaller.Forms
         private AdvancedFilters advancedFilters1;
         private ToolStripMenuItem advancedClipCopyToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem9;
+        private PictureBox startupSplashPictureBox;
     }
 }
 

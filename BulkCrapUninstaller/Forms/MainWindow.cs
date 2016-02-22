@@ -14,7 +14,6 @@ using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.IO;
-using Klocman.Localising;
 using Klocman.Native;
 using Klocman.Subsystems;
 using Klocman.Subsystems.Tracking;
@@ -61,6 +60,9 @@ namespace BulkCrapUninstaller.Forms
                     _listView.UpdateColumnFiltering();
             };
             advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
+
+            startupSplashPictureBox.Location = Point.Empty;
+            startupSplashPictureBox.Size = Size;
 
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
@@ -1150,6 +1152,18 @@ namespace BulkCrapUninstaller.Forms
             propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
 
             RefreshListLegend(sender, e);
+            
+            if (e.FirstRefresh)
+            {
+                // Get rid of the image first to get a better effect
+                startupSplashPictureBox.Image = null;
+                Application.DoEvents();
+
+                startupSplashPictureBox.Visible = false;
+                startupSplashPictureBox.Enabled = false;
+                // Smooths the transition
+                Refresh();
+            }
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
