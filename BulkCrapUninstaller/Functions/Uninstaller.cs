@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
@@ -48,21 +47,23 @@ namespace BulkCrapUninstaller.Functions
         /// <returns></returns>
         public bool ExportUninstallers(IEnumerable<ApplicationUninstallerEntry> itemsToExport, string filename)
         {
-            var applicationUninstallerEntries = itemsToExport as IList<ApplicationUninstallerEntry> ??
+            var applicationUninstallerEntries = itemsToExport as List<ApplicationUninstallerEntry> ??
                                                 itemsToExport.ToList();
             if (applicationUninstallerEntries.Count <= 0)
                 return false;
 
+            /*
             var result = new StringBuilder();
             result.AppendLine(Localisable.StrExportHeader);
             result.AppendLine();
 
             foreach (var uninstaller in applicationUninstallerEntries)
                 result.AppendLine(uninstaller.ToLongString());
-
+                */
             try
             {
-                File.WriteAllText(filename, result.ToString());
+                UninstallTools.Uninstaller.ApplicationInfoExport.SerializeApplicationInfo(filename, applicationUninstallerEntries);
+                //File.WriteAllText(filename, result.ToString());
             }
             catch (Exception ex)
             {

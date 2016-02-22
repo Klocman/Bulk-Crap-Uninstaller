@@ -196,6 +196,7 @@
     <Compile Include="Forms\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\ApplicationInfoExport.cs" />
     <Compile Include="Functions\ImportExport.cs" />
     <Compile Include="Functions\ListViewDelegates.cs" />
     <Compile Include="Functions\MessageBoxes.cs" />

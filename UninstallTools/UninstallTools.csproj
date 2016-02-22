@@ -84,6 +84,7 @@
     <Compile Include="Startup\StartupEntryBase.cs" />
     <Compile Include="Startup\Task\TaskEntry.cs" />
     <Compile Include="Startup\Task\TaskEntryFactory.cs" />
+    <Compile Include="Uninstaller\ApplicationInfoExport.cs" />
     <Compile Include="Uninstaller\ApplicationUninstallerFactory.cs" />
     <Compile Include="Uninstaller\ApplicationUninstallerEntry.cs" />
     <Compile Include="Uninstaller\ApplicationUninstallerManager.cs" />
