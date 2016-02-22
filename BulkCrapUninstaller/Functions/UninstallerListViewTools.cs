@@ -322,10 +322,10 @@ namespace BulkCrapUninstaller.Functions
 
                 StopProcessingThread(false);
 
-                var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 345 - 35,
-                    _reference.Location.Y + _reference.Size.Height - 83 - 35);
+                var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 35,
+                    _reference.Location.Y + _reference.Size.Height - 35);
 
-                var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation);
+                var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
                 if (error != null)
                     PremadeDialogs.GenericError(error);
 
