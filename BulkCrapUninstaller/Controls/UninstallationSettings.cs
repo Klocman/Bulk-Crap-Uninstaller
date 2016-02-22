@@ -15,13 +15,18 @@ namespace BulkCrapUninstaller.Controls
         {
             InitializeComponent();
 
-            _settings.BindControl(checkBoxShutdown, settings => settings.UninstallPreventShutdown, this);
+            // Shutdown blocking not available below Windows Vista
+            if (Environment.OSVersion.Version < new Version(6, 0))
+                checkBoxShutdown.Enabled = false;
+            else
+                _settings.BindControl(checkBoxShutdown, settings => settings.UninstallPreventShutdown, this);
+
             _settings.BindControl(checkBoxConcurrent, settings => settings.UninstallConcurrency, this);
 
             _settings.BindControl(checkBoxConcurrentOneLoud, settings => settings.UninstallConcurrentOneLoud, this);
             _settings.BindControl(checkBoxManualNoCollisionProtection, settings => settings.UninstallConcurrentDisableManualCollisionProtection, this);
             //_settings.BindControl(checkBoxConcurrentLessCollisionProtection, settings => settings.UninstallConcurrentLessCollisionProtection, this);
-            
+
             _settings.Subscribe(OnMaxCountChanged, settings => settings.UninstallConcurrentMaxCount, this);
             numericUpDownMaxConcurrent.ValueChanged += NumericUpDownMaxConcurrentOnValueChanged;
 

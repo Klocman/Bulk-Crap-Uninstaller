@@ -34,11 +34,15 @@ namespace BulkCrapUninstaller.Forms
 
             toolStrip1.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable());
 
-            _settings.Subscribe((sender, args) =>
+            // Shutdown blocking not available below Windows Vista
+            if (Environment.OSVersion.Version >= new Version(6, 0))
             {
-                if (args.NewValue) ShutdownBlockReasonCreate(Handle, "Bulk uninstallation is in progress.");
-                else ShutdownBlockReasonDestroy(Handle);
-            }, settings => settings.UninstallPreventShutdown, this);
+                _settings.Subscribe((sender, args) =>
+                {
+                    if (args.NewValue) ShutdownBlockReasonCreate(Handle, "Bulk uninstallation is in progress.");
+                    else ShutdownBlockReasonDestroy(Handle);
+                }, settings => settings.UninstallPreventShutdown, this);
+            }
 
             _settings.SendUpdates(this);
 
@@ -51,7 +55,9 @@ namespace BulkCrapUninstaller.Forms
             FormClosed += (o, eventArgs) =>
             {
                 _settings.RemoveHandlers(this);
-                if (_settings.Settings.UninstallPreventShutdown)
+
+                // Shutdown blocking not available below Windows Vista
+                if (_settings.Settings.UninstallPreventShutdown && Environment.OSVersion.Version >= new Version(6, 0))
                     ShutdownBlockReasonDestroy(Handle);
             };
 
