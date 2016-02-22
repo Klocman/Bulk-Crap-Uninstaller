@@ -36,6 +36,8 @@ namespace BulkCrapUninstaller.Forms
         private readonly Uninstaller _uninstaller;
         private DebugWindow _debugWindow;
 
+        private readonly OverlaySplashScreen.SplashScreenControls _splash;
+
         /// <summary>
         ///     Set to false in the list view clicked event. Prevents firing of extra CellEditStarting events.
         ///     Used to fix buggy ObjectListView.
@@ -44,8 +46,13 @@ namespace BulkCrapUninstaller.Forms
 
         public MainWindow()
         {
+            Opacity = 0;
+            Application.DoEvents();
+
             InitializeComponent();
 
+            _splash = OverlaySplashScreen.CreateSplash(this, Resources._bcu_logo);
+            
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
@@ -60,13 +67,9 @@ namespace BulkCrapUninstaller.Forms
                     _listView.UpdateColumnFiltering();
             };
             advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
-
-            startupSplashPictureBox.Location = Point.Empty;
-            startupSplashPictureBox.Size = Size;
-
+            
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
-            Opacity = 0;
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable())
             {
                 RoundedEdges = true
@@ -541,34 +544,6 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private void MainWindow_Resize(object sender, EventArgs e)
-        {
-            /*
-            if (Width < 400 || Height < 370)
-            {
-                splitContainer1.Panel1Collapsed = true;
-                displaySettingsToolStripMenuItem.Enabled = false;
-            }
-            else
-            {
-                splitContainer1.Panel1Collapsed = !displaySettingsToolStripMenuItem.Checked;
-                displaySettingsToolStripMenuItem.Enabled = true;
-            }
-
-            if (Height < 300)
-            {
-                menuStrip.Visible = false;
-                toolStrip.Visible = false;
-                displayToolbarToolStripMenuItem.Enabled = false;
-            }
-            else
-            {
-                menuStrip.Visible = true;
-                toolStrip.Visible = displayToolbarToolStripMenuItem.Checked;
-                displayToolbarToolStripMenuItem.Enabled = true;
-            }*/
-        }
-
         private void MainWindow_Shown(object sender, EventArgs e)
         {
             _setMan.Selected.SendUpdates();
@@ -588,8 +563,10 @@ namespace BulkCrapUninstaller.Forms
             listLegend1.Top = listViewPanel.Height + listViewPanel.Top - listLegend1.Height - 30;
             listLegend1.Left = listViewPanel.Width + listViewPanel.Left - listLegend1.Width - 30;
 
+            _splash.Show();
             Opacity = 1;
-
+            Application.DoEvents();
+            
             _listView.InitiateListRefresh();
 
             if (_setMan.Selected.Settings.MiscFirstRun)
@@ -1166,6 +1143,9 @@ namespace BulkCrapUninstaller.Forms
             
             if (e.FirstRefresh)
             {
+                _splash.FadeOut();
+
+                /*
                 // Get rid of the image first to get a better effect
                 startupSplashPictureBox.Image = null;
                 Application.DoEvents();
@@ -1173,7 +1153,7 @@ namespace BulkCrapUninstaller.Forms
                 startupSplashPictureBox.Visible = false;
                 startupSplashPictureBox.Enabled = false;
                 // Smooths the transition
-                Refresh();
+                Refresh();*/
             }
         }
 
