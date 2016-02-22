@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions;
+using Klocman.Forms.Tools;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
@@ -29,7 +31,21 @@ namespace BulkCrapUninstaller.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(advancedClipboardCopy1.Result);
+            if (string.IsNullOrEmpty(advancedClipboardCopy1.Result))
+            {
+                MessageBoxes.NothingToCopy();
+            }
+            else
+            {
+                try
+                {
+                    Clipboard.SetText(advancedClipboardCopy1.Result);
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
