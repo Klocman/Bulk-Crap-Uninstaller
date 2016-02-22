@@ -1128,7 +1128,18 @@ namespace BulkCrapUninstaller.Forms
             {
                 _setMan.LoadSorting();
 
-                if (_setMan.Selected.Settings.MiscAutoLoadDefaultList)
+                var args = Environment.GetCommandLineArgs();
+                var dir = args.Skip(1).FirstOrDefault();
+                if (!string.IsNullOrEmpty(dir))
+                {
+                    try
+                    {
+                        advancedFilters1.LoadUninstallList(dir);
+                    }
+                    catch (Exception ex)
+                    { PremadeDialogs.GenericError(ex); }
+                }
+                if (advancedFilters1.CurrentList == null && _setMan.Selected.Settings.MiscAutoLoadDefaultList)
                 {
                     try
                     {
