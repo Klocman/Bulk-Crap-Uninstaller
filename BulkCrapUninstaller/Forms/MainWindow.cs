@@ -564,8 +564,6 @@ namespace BulkCrapUninstaller.Forms
             listLegend1.Left = listViewPanel.Width + listViewPanel.Left - listLegend1.Width - 30;
 
             _splash.Show();
-            Opacity = 1;
-            Application.DoEvents();
             
             _listView.InitiateListRefresh();
 
