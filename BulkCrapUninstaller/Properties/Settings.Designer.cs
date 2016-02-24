@@ -711,5 +711,77 @@ namespace BulkCrapUninstaller.Properties {
                 this["FilterShowStoreApps"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool QuietRetryFailedOnce {
+            get {
+                return ((bool)(this["QuietRetryFailedOnce"]));
+            }
+            set {
+                this["QuietRetryFailedOnce"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool QuietAutoKillStuck {
+            get {
+                return ((bool)(this["QuietAutoKillStuck"]));
+            }
+            set {
+                this["QuietAutoKillStuck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool QuietAutomatization {
+            get {
+                return ((bool)(this["QuietAutomatization"]));
+            }
+            set {
+                this["QuietAutomatization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool QuietAutomatizationKillStuck {
+            get {
+                return ((bool)(this["QuietAutomatizationKillStuck"]));
+            }
+            set {
+                this["QuietAutomatizationKillStuck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Setting {
+            get {
+                return ((bool)(this["Setting"]));
+            }
+            set {
+                this["Setting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MiscNet4NagShown {
+            get {
+                return ((bool)(this["MiscNet4NagShown"]));
+            }
+            set {
+                this["MiscNet4NagShown"] = value;
+            }
+        }
     }
 }

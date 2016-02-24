@@ -41,20 +41,28 @@
             this.checkBoxBatchSortQuiet = new System.Windows.Forms.CheckBox();
             this.checkBoxDiisableProtection = new System.Windows.Forms.CheckBox();
             this.checkBoxSimulate = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxAutoKillQuiet = new System.Windows.Forms.CheckBox();
+            this.checkBoxRetryQuiet = new System.Windows.Forms.CheckBox();
+            this.checkBoxGenerate = new System.Windows.Forms.CheckBox();
+            this.checkBoxGenerateStuck = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxConcurrent)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.checkBoxManualNoCollisionProtection);
             this.groupBox3.Controls.Add(this.checkBoxConcurrentOneLoud);
             this.groupBox3.Controls.Add(this.checkBoxConcurrent);
             this.groupBox3.Controls.Add(this.numericUpDownMaxConcurrent);
             this.groupBox3.Controls.Add(this.label2);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -141,11 +149,52 @@
             this.checkBoxSimulate.Name = "checkBoxSimulate";
             this.checkBoxSimulate.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxAutoKillQuiet);
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxRetryQuiet);
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxGenerate);
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxGenerateStuck);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // checkBoxAutoKillQuiet
+            // 
+            resources.ApplyResources(this.checkBoxAutoKillQuiet, "checkBoxAutoKillQuiet");
+            this.checkBoxAutoKillQuiet.Name = "checkBoxAutoKillQuiet";
+            this.checkBoxAutoKillQuiet.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRetryQuiet
+            // 
+            resources.ApplyResources(this.checkBoxRetryQuiet, "checkBoxRetryQuiet");
+            this.checkBoxRetryQuiet.Name = "checkBoxRetryQuiet";
+            this.checkBoxRetryQuiet.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGenerate
+            // 
+            resources.ApplyResources(this.checkBoxGenerate, "checkBoxGenerate");
+            this.checkBoxGenerate.Name = "checkBoxGenerate";
+            this.checkBoxGenerate.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGenerateStuck
+            // 
+            resources.ApplyResources(this.checkBoxGenerateStuck, "checkBoxGenerateStuck");
+            this.checkBoxGenerateStuck.Name = "checkBoxGenerateStuck";
+            this.checkBoxGenerateStuck.UseVisualStyleBackColor = true;
+            // 
             // UninstallationSettings
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "UninstallationSettings";
             this.groupBox3.ResumeLayout(false);
@@ -155,6 +204,10 @@
             this.groupBox2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +227,11 @@
         private System.Windows.Forms.CheckBox checkBoxBatchSortQuiet;
         private System.Windows.Forms.CheckBox checkBoxDiisableProtection;
         private System.Windows.Forms.CheckBox checkBoxSimulate;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox checkBoxAutoKillQuiet;
+        private System.Windows.Forms.CheckBox checkBoxRetryQuiet;
+        private System.Windows.Forms.CheckBox checkBoxGenerate;
+        private System.Windows.Forms.CheckBox checkBoxGenerateStuck;
     }
 }

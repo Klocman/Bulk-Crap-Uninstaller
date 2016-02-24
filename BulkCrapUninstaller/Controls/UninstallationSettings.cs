@@ -34,6 +34,17 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxDiisableProtection, x => x.AdvancedDisableProtection, this);
             _settings.BindControl(checkBoxSimulate, x => x.AdvancedSimulate, this);
 
+            _settings.BindControl(checkBoxAutoKillQuiet, x => x.QuietAutoKillStuck, this);
+            _settings.BindControl(checkBoxRetryQuiet, x => x.QuietRetryFailedOnce, this);
+            _settings.BindControl(checkBoxGenerate, x => x.QuietAutomatization, this);
+            _settings.BindControl(checkBoxGenerateStuck, x => x.QuietAutomatizationKillStuck, this);
+
+            if (!Program.Net4IsAvailable)
+            {
+                checkBoxGenerate.Enabled = false;
+                checkBoxGenerateStuck.Enabled = false; 
+            }
+
             _settings.Subscribe(
                 (x, y) => checkBoxSimulate.ForeColor = y.NewValue ? Color.OrangeRed : SystemColors.ControlText,
                 x => x.AdvancedSimulate, this);

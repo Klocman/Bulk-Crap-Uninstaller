@@ -572,6 +572,12 @@ namespace BulkCrapUninstaller.Forms
                 // Run the welcome wizard at first start of the application
                 OnFirstApplicationStart();
             }
+
+            if(!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+            {
+                _setMan.Selected.Settings.MiscNet4NagShown = true;
+                MessageBoxes.Net4MissingInfo();
+            }
         }
 
         private void msiInstallContextMenuStripItem_Click(object sender, EventArgs e)
@@ -596,6 +602,7 @@ namespace BulkCrapUninstaller.Forms
                 wizard.ShowDialog();
             }
 
+            // On first start the updates are not searched from constructor to give user a chance to disable them.
             BackgroundSearchForUpdates();
         }
 

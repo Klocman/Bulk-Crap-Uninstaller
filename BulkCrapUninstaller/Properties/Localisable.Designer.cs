@@ -567,6 +567,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The v4.0 framework is optional, but recommended. The features that rely on the framework will be disabled until you install it..
+        /// </summary>
+        internal static string MessageBoxes_Net4Missing_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_Net4Missing_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET Framework v4.0 was not found, some features will be disabled.
+        /// </summary>
+        internal static string MessageBoxes_Net4Missing_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_Net4Missing_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET Framework v4.0 not found.
+        /// </summary>
+        internal static string MessageBoxes_Net4Missing_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_Net4Missing_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like CCleaner..
         /// </summary>
         internal static string MessageBoxes_NoJunkFoundInfo_Details {

@@ -631,4 +631,13 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
     <value>Failed to run some of the uninstallers</value>
   </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0 not found</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0 was not found, some features will be disabled</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>The v4.0 framework is optional, but recommended. The features that rely on the framework will be disabled until you install it.</value>
+  </data>
 </root>

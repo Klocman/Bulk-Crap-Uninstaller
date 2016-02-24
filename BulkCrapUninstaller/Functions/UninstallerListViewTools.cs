@@ -457,7 +457,9 @@ namespace BulkCrapUninstaller.Functions
                                                             StringComparison.InvariantCultureIgnoreCase));
 
             //TODO optional, error checking and test for net4 + ask if not there /K
-            QuietUninstallTools.GenerateQuietCommands(detectedUninstallers);
+
+            if(_settings.Settings.QuietAutomatization && Program.Net4IsAvailable)
+                QuietUninstallTools.GenerateQuietCommands(detectedUninstallers, _settings.Settings.QuietAutomatizationKillStuck);
 
             AllUninstallers = detectedUninstallers;
 

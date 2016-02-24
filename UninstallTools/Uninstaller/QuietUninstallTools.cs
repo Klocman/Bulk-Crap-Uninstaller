@@ -26,18 +26,25 @@ namespace UninstallTools.Uninstaller
 
         private static string UninstallerAutomatizerPath => Path.Combine(AssemblyLocation, @"UninstallerAutomatizer.exe");
 
-        public static void GenerateQuietCommands(IEnumerable<ApplicationUninstallerEntry> entries)
+        /// <summary>
+        /// Generate missing quiet commands if possible
+        /// </summary>
+        /// <param name="entries">Entries to generate the quiet commands for</param>
+        /// <param name="automaticallyKillstuck">Generated entries should kill the process if it gets stuck waiting for user input or the process otherwise fails</param>
+        public static void GenerateQuietCommands(IEnumerable<ApplicationUninstallerEntry> entries, bool automaticallyKillstuck)
         {
-            var commandStart = $"\"{UninstallerAutomatizerPath}\" {UninstallerType.Nsis}";
+            var commandStart = $"\"{UninstallerAutomatizerPath}\" {UninstallerType.Nsis} ";
+            if (automaticallyKillstuck)
+                commandStart = commandStart.Append("/K ");
 
             foreach (var uninstallerEntry in entries)
             {
-                if (uninstallerEntry.UninstallerKind != UninstallerType.Nsis || 
-                    uninstallerEntry.QuietUninstallPossible || 
+                if (uninstallerEntry.UninstallerKind != UninstallerType.Nsis ||
+                    uninstallerEntry.QuietUninstallPossible ||
                     !uninstallerEntry.UninstallPossible)
                     continue;
 
-                uninstallerEntry.QuietUninstallString = commandStart + " " + uninstallerEntry.UninstallString;
+                uninstallerEntry.QuietUninstallString = commandStart + uninstallerEntry.UninstallString;
             }
         }
     }
