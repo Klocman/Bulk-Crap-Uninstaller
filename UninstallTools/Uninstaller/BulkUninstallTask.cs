@@ -145,7 +145,8 @@ namespace UninstallTools.Uninstaller
                         return false;
 
                     return true;
-                })?.RunUninstaller(configuration.PreferQuiet, configuration.Simulate);
+                })?.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet, 
+                    configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
 
                 // Fire the event now so the interface can be updated to show the "Uninstalling" tag
                 OnStatusChanged?.Invoke(this, EventArgs.Empty);
@@ -169,7 +170,8 @@ namespace UninstallTools.Uninstaller
                     return false;
             }
 
-            entry.RunUninstaller(Configuration.PreferQuiet, Configuration.Simulate);
+            entry.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(Configuration.AutoKillStuckQuiet,
+                    Configuration.RetryFailedQuiet, Configuration.PreferQuiet, Configuration.Simulate));
             return true;
         }
 

@@ -646,7 +646,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\*.dll" "$(TargetDir)"
+    <PostBuildEvent>copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\Castle.Core.dll" "$(TargetDir)"
+copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\TestStack.White.dll" "$(TargetDir)"
 copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\UninstallerAutomatizer.exe" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

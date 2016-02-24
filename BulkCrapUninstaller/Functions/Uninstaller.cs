@@ -440,8 +440,8 @@ namespace BulkCrapUninstaller.Functions
         private BulkUninstallConfiguration GetConfiguration(bool quiet)
         {
             return new BulkUninstallConfiguration(_settings.AdvancedDisableProtection, quiet,
-                _settings.AdvancedIntelligentUninstallerSorting,
-                _settings.AdvancedSimulate);
+                _settings.AdvancedIntelligentUninstallerSorting, _settings.AdvancedSimulate,
+                _settings.QuietAutoKillStuck, _settings.QuietRetryFailedOnce);
         }
 
         private void ReleaseUninstallLock()

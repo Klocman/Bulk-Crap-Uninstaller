@@ -12,14 +12,18 @@
         }*/
 
         public BulkUninstallConfiguration(bool ignoreProtection, bool preferQuiet, bool intelligentSort,
-            bool simulate)
+            bool simulate, bool autoKillStuckQuiet, bool retryFailedQuiet)
         {
             IgnoreProtection = ignoreProtection;
             PreferQuiet = preferQuiet;
             IntelligentSort = intelligentSort;
             Simulate = simulate;
+            AutoKillStuckQuiet = autoKillStuckQuiet;
+            RetryFailedQuiet = retryFailedQuiet;
         }
 
+        public bool AutoKillStuckQuiet { get; set; }
+        public bool RetryFailedQuiet { get; set; }
         public bool IgnoreProtection { get; set; }
         public bool IntelligentSort { get; set; }
         public bool PreferQuiet { get; set; }

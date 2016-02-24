@@ -52,7 +52,7 @@ namespace UninstallTools.Uninstaller
         /// <summary>
         ///     Run the uninstaller on a new thread.
         /// </summary>
-        internal void RunUninstaller(bool preferQuiet, bool simulate)
+        internal void RunUninstaller(RunUninstallerOptions options)
         {
             lock (_operationLock)
             {
@@ -70,25 +70,41 @@ namespace UninstallTools.Uninstaller
                 IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
-            worker.Start(new KeyValuePair<bool, bool>(preferQuiet, simulate));
+            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
+            worker.Start(options);
+        }
+
+        public sealed class RunUninstallerOptions
+        {
+            public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate)
+            {
+                AutoKillStuckQuiet = autoKillStuckQuiet;
+                RetryFailedQuiet = retryFailedQuiet;
+                PreferQuiet = preferQuiet;
+                Simulate = simulate;
+            }
+
+            public bool AutoKillStuckQuiet { get; }
+            public bool RetryFailedQuiet { get; }
+            public bool PreferQuiet { get; }
+            public bool Simulate { get; }
         }
 
         private void UninstallThread(object parameters)
         {
-            var kvp = (KeyValuePair<bool, bool>) parameters;
-            var preferQuiet = kvp.Key;
-            var simulate = kvp.Value;
+            var options = parameters as RunUninstallerOptions;
+            Debug.Assert(options != null, "options != null");
+
             Exception error = null;
             var retry = false;
             try
             {
-                var uninstaller = UninstallerEntry.RunUninstaller(preferQuiet, simulate);
+                var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate);
 
                 // Can be null during simulation
                 if (uninstaller != null)
                 {
-                    var checkCounters = preferQuiet && UninstallerEntry.QuietUninstallPossible;
+                    var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
                     List<Process> childProcesses;
                     var idleCounter = 0;
 
@@ -104,76 +120,24 @@ namespace UninstallTools.Uninstaller
                         if (!uninstaller.HasExited)
                             childProcesses.Add(uninstaller);
 
-                        List<KeyValuePair<PerformanceCounter[], CounterSample[]>> counters = null;
                         if (checkCounters)
                         {
-                            try
+                            if(TestUninstallerForStalls(childProcesses))
+                                idleCounter++;
+
+                            // Kill the uninstaller (and children) if they were idle/stalled for too long
+                            if (idleCounter > 40)
                             {
-                                counters = (from process in childProcesses
-                                    let processName = process.ProcessName
-                                    let perfCounters = new[]
-                                    {
-                                        new PerformanceCounter("Process", "% Processor Time", processName, true),
-                                        new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
-                                    }
-                                    select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
-                                        perfCounters,
-                                        new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}
-                                        // Important to enumerate them now, they will collect data when we sleep
-                                        )).ToList();
-                            }
-                            catch
-                            {
-                                // Ignore errors caused by processes ending at bad times 
-                                // BUG: Will leak objects without disposing if it crashes in middle of work
+                                uninstaller.Kill(true);
+                                throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
                             }
                         }
-
-                        Thread.Sleep(1000);
-
-                        if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec)
-                            //Has problems with Msiexec
-                        {
-                            try
-                            {
-                                var anyWorking = false;
-                                foreach (var c in counters)
-                                {
-                                    var c0 = CounterSample.Calculate(c.Value[0], c.Key[0].NextSample());
-                                    var c1 = CounterSample.Calculate(c.Value[1], c.Key[1].NextSample());
-
-                                    Debug.WriteLine("CPU " + c0 + "%, IO " + c1 + "B");
-
-                                    // Check if process seems to be doing anything. Use 1% for CPU and 10KB for I/O
-                                    if (c0 <= 1 && c1 <= 10240) continue;
-
-                                    anyWorking = true;
-                                    break;
-                                }
-
-                                idleCounter = anyWorking ? 0 : idleCounter + 1;
-                            }
-                            catch
-                            {
-                                // Ignore errors caused by processes ending at bad times
-                            }
-                            finally
-                            {
-                                // Remember to dispose of the counters
-                                counters.ForEach(x =>
-                                {
-                                    x.Key[0].Dispose();
-                                    x.Key[1].Dispose();
-                                });
-                            }
-                        }
+                        else Thread.Sleep(1000);
 
                         // Kill the uninstaller (and children) if user told us to or if it was idle for too long
-                        if (_skipLevel == SkipCurrentLevel.Terminate || idleCounter > 40)
+                        if (_skipLevel == SkipCurrentLevel.Terminate)
                         {
                             uninstaller.Kill(true);
-                            if (idleCounter > 40)
-                                throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
                             break;
                         }
                     } while (!uninstaller.HasExited || childProcesses.Any());
@@ -210,7 +174,8 @@ namespace UninstallTools.Uninstaller
                                     case 9009:
                                         break;
                                     default:
-                                        retry = true;
+                                        if(options.RetryFailedQuiet)
+                                            retry = true;
                                         break;
                                 }
                                 throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
@@ -254,6 +219,75 @@ namespace UninstallTools.Uninstaller
             }
 
             IsRunning = false;
+        }
+
+        /// <summary>
+        /// Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
+        /// </summary>
+        private bool TestUninstallerForStalls(List<Process> childProcesses)
+        {
+            List<KeyValuePair<PerformanceCounter[], CounterSample[]>> counters = null;
+            try
+            {
+                counters = (from process in childProcesses
+                            let processName = process.ProcessName
+                            let perfCounters = new[]
+                            {
+                                        new PerformanceCounter("Process", "% Processor Time", processName, true),
+                                        new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
+                                    }
+                            select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
+                                perfCounters,
+                                new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }
+                                // Important to enumerate them now, they will collect data when we sleep
+                                )).ToList();
+            }
+            catch
+            {
+                // Ignore errors caused by processes ending at bad times 
+                // BUG: Will leak objects without disposing if it crashes in middle of work
+            }
+
+            Thread.Sleep(1000);
+
+            //Has problems with Msiexec
+            if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec)
+            {
+                try
+                {
+                    var anyWorking = false;
+                    foreach (var c in counters)
+                    {
+                        var c0 = CounterSample.Calculate(c.Value[0], c.Key[0].NextSample());
+                        var c1 = CounterSample.Calculate(c.Value[1], c.Key[1].NextSample());
+
+                        Debug.WriteLine("CPU " + c0 + "%, IO " + c1 + "B");
+
+                        // Check if process seems to be doing anything. Use 1% for CPU and 10KB for I/O
+                        if (c0 <= 1 && c1 <= 10240) continue;
+
+                        anyWorking = true;
+                        break;
+                    }
+
+                    return !anyWorking;
+                }
+                catch
+                {
+                    // Ignore errors caused by processes ending at bad times
+                }
+                finally
+                {
+                    // Remember to dispose of the counters
+                    counters.ForEach(x =>
+                    {
+                        x.Key[0].Dispose();
+                        x.Key[1].Dispose();
+                    });
+                }
+            }
+
+            return false;
         }
 
         internal enum SkipCurrentLevel
