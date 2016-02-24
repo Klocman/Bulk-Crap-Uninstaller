@@ -143,6 +143,7 @@
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
     <Compile Include="Uninstaller\MsiUninstallModes.cs" />
+    <Compile Include="Uninstaller\QuietUninstallTools.cs" />
     <Compile Include="Uninstaller\UninstallerType.cs" />
     <Compile Include="Uninstaller\UninstallStatus.cs" />
     <Compile Include="UninstallToolsGlobalConfig.cs" />

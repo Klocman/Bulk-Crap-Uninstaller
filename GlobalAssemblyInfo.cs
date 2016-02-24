@@ -5,7 +5,7 @@
 // associated with an assembly.
 
 [assembly: AssemblyCompany("Marcin Szeniak")]
-[assembly: AssemblyCopyright("Copyright © 2015")]
+[assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

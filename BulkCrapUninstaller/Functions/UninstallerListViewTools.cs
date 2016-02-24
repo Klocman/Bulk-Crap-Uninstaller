@@ -456,6 +456,9 @@ namespace BulkCrapUninstaller.Functions
                                                         entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
                                                             StringComparison.InvariantCultureIgnoreCase));
 
+            //TODO optional, error checking and test for net4 + ask if not there /K
+            QuietUninstallTools.GenerateQuietCommands(detectedUninstallers);
+
             AllUninstallers = detectedUninstallers;
 
             dialogInterface.SetProgress(1);
