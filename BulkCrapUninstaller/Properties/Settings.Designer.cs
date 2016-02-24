@@ -82,7 +82,7 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250, 250")]
         public global::System.Drawing.Point WindowPosition {
             get {
                 return ((global::System.Drawing.Point)(this["WindowPosition"]));
