@@ -86,7 +86,7 @@ namespace UninstallTools.Uninstaller
                 
                 if (Directory.Exists(current[4]))
                 {
-                    var uninstallStr = $"{StoreAppHelperPath} /uninstall \"{current[0]}\"";
+                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{current[0]}\"";
                     var result = new ApplicationUninstallerEntry
                     {
                         RatingId = current[0],
