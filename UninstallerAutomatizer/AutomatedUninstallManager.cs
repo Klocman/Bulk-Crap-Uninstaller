@@ -54,68 +54,111 @@ namespace UninstallerAutomatizer
                     app = Application.Attach(uninstallProcess);
                 }
 
-                // Wait for the process to set up.
-                app.WaitWhileBusyAndAlive();
-                Thread.Sleep(100);
+                WaitForApplication(app);
+
+                // Use UI item counts to identify TODO Check using something better
+                var seenWindows = new List<int>();
 
                 while (!app.HasExited)
                 {
                     // NSIS uninstallers always have only one window open (by default)
                     var windows = app.GetWindows();
                     var target = windows.Single();
-                    
-                    // Wait for the window to become ready for input.
-                    target.WaitWhileBusy();
-                    Thread.Sleep(100);
 
-                    // target.IsClosed changes to true if window gets minimized?
+                    WaitForWindow(target);
+
+                    // BUG target.IsClosed changes to true if window gets minimized?
                     while (!target.IsClosed)
                     {
-                        var allButtons =
-                            target.GetMultiple(SearchCriteria.ByControlType(typeof (Button), WindowsFramework.Win32))
-                                .Cast<Button>();
+                        TryClickNextNsisButton(target);
+                        WaitForWindow(target);
 
-                        // Filter out buttons that should not be pressed like "Cancel".
-                        var buttons = allButtons.Where(x => x.Enabled)
-                            .Where(NotControlBoxButton)
-                            .Where(x => !x.Id.Equals(NsisCancelAutomationId, StringComparison.InvariantCulture))
-                            .ToList();
-
-                        if (buttons.Any())
-                        {
-                            var nextButton =
-                                buttons.FirstOrDefault(
-                                    x => x.Id.Equals(NsisForwardAutomationId, StringComparison.InvariantCulture));
-
-                            if (nextButton == null)
-                            {
-                                nextButton = TryGetByName(buttons);
-
-                                if (nextButton == null)
-                                    continue;
-                            }
-
-                            // Finally press the button, doesn't require messing with the mouse.
-                            nextButton.RaiseClickEvent();
-                        }
-
-                        target.WaitWhileBusy();
-                        Thread.Sleep(100);
-
-                        // Check for popups, they are opened as an extra window.
-                        windows = app.GetWindows();
-                        if (windows.Count > 1)
-                            throw new InvalidOperationException("Unexpected popup window detected");
+                        ProcessNsisPopups(app, target, seenWindows);
                     }
 
-                    app.WaitWhileBusyAndAlive();
-                    Thread.Sleep(100);
+                    WaitForApplication(app);
                 }
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException("Automatic uninstallation failed", e, 
+                throw new AutomatedUninstallException("Automatic uninstallation failed", e,
                     uninstallerCommand, app?.Process ?? pr);
+            }
+        }
+
+        /// <summary>
+        ///     Wait for the application to become ready for input.
+        /// </summary>
+        private static void WaitForApplication(Application app)
+        {
+            app.WaitWhileBusyAndAlive();
+            Thread.Sleep(100);
+        }
+
+        /// <summary>
+        ///     Wait for the window to become ready for input.
+        /// </summary>
+        private static void WaitForWindow(Window target)
+        {
+            target.WaitWhileBusy();
+            Thread.Sleep(100);
+        }
+
+        private static void ProcessNsisPopups(Application app, Window mainWindow, ICollection<int> seenWindows)
+        {
+            // Check for popups, they are opened as an extra window.
+            var currentWindows = app.GetWindows();
+            var popupWindow = currentWindows.SingleOrDefault(x => !x.Equals(mainWindow));
+
+            if (popupWindow == null) return;
+
+            if (seenWindows.Contains(popupWindow.Items.Count))
+                throw new InvalidOperationException("Reoccuring popup window detected");
+            seenWindows.Add(popupWindow.Items.Count);
+
+            while (!popupWindow.IsClosed)
+            {
+                TryClickNextNsisButton(popupWindow);
+
+                popupWindow.WaitWhileBusy();
+                Thread.Sleep(100);
+            }
+        }
+
+        /// <summary>
+        ///     Returns true if a button was clicked.
+        /// </summary>
+        private static void TryClickNextNsisButton(IUIItemContainer target)
+        {
+            var allButtons =
+                target.GetMultiple(SearchCriteria.ByControlType(typeof (Button), WindowsFramework.Win32))
+                    .Cast<Button>();
+
+            // Filter out buttons that should not be pressed like "Cancel".
+            var filteredButtons = allButtons.Where(x => x.Enabled).Where(NotControlBoxButton).ToList();
+
+            var buttons = filteredButtons.Count > 1
+                ? filteredButtons
+                    .Where(x => !x.Id.Equals(NsisCancelAutomationId, StringComparison.InvariantCulture))
+                    .ToList()
+                : filteredButtons;
+
+            if (buttons.Any())
+            {
+                var nextButton =
+                    buttons.FirstOrDefault(
+                        x => x.Id.Equals(NsisForwardAutomationId, StringComparison.InvariantCulture));
+
+                if (nextButton == null)
+                {
+                    nextButton = TryGetByName(buttons);
+
+                    if (nextButton == null)
+                        return;
+                }
+
+                // Finally press the button, doesn't require messing with the mouse.
+                nextButton.RaiseClickEvent();
             }
         }
 
