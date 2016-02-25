@@ -514,10 +514,10 @@ namespace BulkCrapUninstaller.Functions
                 SystemIcons.Question, Buttons.ButtonTerminate, Buttons.ButtonSkip, Buttons.ButtonCancel));
         }
 
-        internal static PressedButton TaskStopConfirmation()
+        internal static PressedButton TaskStopConfirmation(Form ownerForm)
         {
             switch (
-                CustomMessageBox.ShowDialog(DefaultOwner,
+                CustomMessageBox.ShowDialog(ownerForm,
                     new CmbBasicSettings(Localisable.MessageBoxes_TaskStopConfirmation_Title,
                         Localisable.MessageBoxes_TaskStopConfirmation_Message,
                         Localisable.MessageBoxes_TaskStopConfirmation_Details,

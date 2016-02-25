@@ -160,7 +160,7 @@ namespace BulkCrapUninstaller.Functions
         {
             if (!TryGetUninstallLock()) return;
             var listRefreshNeeded = false;
-
+            
             try
             {
                 var targets = new List<ApplicationUninstallerEntry>(selectedUninstallers);
@@ -205,7 +205,7 @@ namespace BulkCrapUninstaller.Functions
                     using (var uninstallWindow = new UninstallProgressWindow())
                     {
                         uninstallWindow.SetTargetStatus(status);
-                        uninstallWindow.ShowDialog();
+                        uninstallWindow.ShowDialog(MessageBoxes.DefaultOwner);
                     }
 
                     var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallersList

@@ -271,7 +271,7 @@ namespace BulkCrapUninstaller.Forms
                 return;
             }
 
-            if (MessageBoxes.TaskStopConfirmation() == MessageBoxes.PressedButton.Yes)
+            if (MessageBoxes.TaskStopConfirmation(this) == MessageBoxes.PressedButton.Yes)
             {
                 _currentTargetStatus.Aborted = true;
                 buttonClose.Enabled = false;
