@@ -55,11 +55,13 @@
             this.p4netDesc1 = new System.Windows.Forms.Label();
             this.p4netDesc2 = new System.Windows.Forms.Label();
             this.p4netDesc3 = new System.Windows.Forms.Label();
+            this.p4netDesc4 = new System.Windows.Forms.Label();
             this.p4netErrors = new System.Windows.Forms.Label();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
             this.p4netUpdateAdd = new System.Windows.Forms.Label();
             this.checkBoxSendStats = new System.Windows.Forms.CheckBox();
             this.p4netUsageAdd = new System.Windows.Forms.Label();
+            this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pageCorrupted = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -116,8 +118,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkBoxRatings = new System.Windows.Forms.CheckBox();
-            this.p4netDesc4 = new System.Windows.Forms.Label();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.panelNavigation.SuspendLayout();
             this.scrollPanel.SuspendLayout();
             this.page5.SuspendLayout();
@@ -208,6 +209,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.buttonMore);
+            this.panel12.Controls.Add(this.buttonHelp);
             this.panel12.Controls.Add(this.buttonFinish);
             resources.ApplyResources(this.panel12, "panel12");
             this.panel12.Name = "panel12";
@@ -321,6 +323,11 @@
             resources.ApplyResources(this.p4netDesc3, "p4netDesc3");
             this.p4netDesc3.Name = "p4netDesc3";
             // 
+            // p4netDesc4
+            // 
+            resources.ApplyResources(this.p4netDesc4, "p4netDesc4");
+            this.p4netDesc4.Name = "p4netDesc4";
+            // 
             // p4netErrors
             // 
             resources.ApplyResources(this.p4netErrors, "p4netErrors");
@@ -349,6 +356,13 @@
             // 
             resources.ApplyResources(this.p4netUsageAdd, "p4netUsageAdd");
             this.p4netUsageAdd.Name = "p4netUsageAdd";
+            // 
+            // checkBoxRatings
+            // 
+            resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
+            this.checkBoxRatings.Name = "checkBoxRatings";
+            this.checkBoxRatings.TabStop = false;
+            this.checkBoxRatings.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -704,17 +718,14 @@
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // checkBoxRatings
+            // buttonHelp
             // 
-            resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
-            this.checkBoxRatings.Name = "checkBoxRatings";
-            this.checkBoxRatings.TabStop = false;
-            this.checkBoxRatings.UseVisualStyleBackColor = true;
-            // 
-            // p4netDesc4
-            // 
-            resources.ApplyResources(this.p4netDesc4, "p4netDesc4");
-            this.p4netDesc4.Name = "p4netDesc4";
+            this.buttonHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonHelp, "buttonHelp");
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.TabStop = false;
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // FirstStartBox
             // 
@@ -847,5 +858,6 @@
         private System.Windows.Forms.Button buttonMore;
         private System.Windows.Forms.Label p4netDesc4;
         private System.Windows.Forms.CheckBox checkBoxRatings;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }

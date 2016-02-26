@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
@@ -179,6 +181,11 @@ namespace BulkCrapUninstaller.Forms
                 sw.ShowDialog(this);
 
             DialogResult = DialogResult.None;
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
         }
     }
 }

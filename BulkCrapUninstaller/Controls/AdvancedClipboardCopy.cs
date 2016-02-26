@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Properties;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Controls
@@ -62,7 +63,7 @@ namespace BulkCrapUninstaller.Controls
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, "BCU_manual.html"));
+            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
         }
     }
 }

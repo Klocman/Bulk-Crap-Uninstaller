@@ -260,6 +260,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BCU_manual.html.
+        /// </summary>
+        internal static string HelpFilename {
+            get {
+                return ResourceManager.GetString("HelpFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/.
         /// </summary>
         internal static string HomepageUrl {
