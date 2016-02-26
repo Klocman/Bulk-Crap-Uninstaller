@@ -142,9 +142,10 @@ namespace UninstallTools.Uninstaller
             {
                 tempEntry.Is64Bit = is64Bit;
 
-                tempEntry.UninstallerKind = UninstallerType.Unknown;
                 tempEntry.IsRegistered = false;
                 tempEntry.IsOrphaned = true;
+
+                tempEntry.UninstallerKind = tempEntry.UninstallPossible ? GetUninstallerType(tempEntry.UninstallString) : UninstallerType.Unknown;
             }
 
             return results;
@@ -864,7 +865,7 @@ namespace UninstallTools.Uninstaller
             var uninstallString =
                 uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameUninstallString) as string;
 
-            return uninstallString.IsNotEmpty() ? GetUninstallerType(uninstallString) : UninstallerType.Unknown;
+            return string.IsNullOrEmpty(uninstallString) ? UninstallerType.Unknown : GetUninstallerType(uninstallString);
         }
 
         private static UninstallerType GetUninstallerType(string uninstallString)
