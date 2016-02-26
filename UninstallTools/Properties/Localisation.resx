@@ -431,4 +431,7 @@
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
     <value>Removal of Store App data is problematic</value>
   </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Simple Delete</value>
+  </data>
 </root>

@@ -250,7 +250,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Removal of store app data is problematic.
+        ///   Looks up a localized string similar to Removal of Store App data is problematic.
         /// </summary>
         internal static string ConfidencePart_IsStoreApp {
             get {
@@ -813,6 +813,15 @@ namespace UninstallTools.Properties {
         internal static string UninstallerType_SdbInst {
             get {
                 return ResourceManager.GetString("UninstallerType_SdbInst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple Delete.
+        /// </summary>
+        internal static string UninstallerType_SimpleDelete {
+            get {
+                return ResourceManager.GetString("UninstallerType_SimpleDelete", resourceCulture);
             }
         }
         

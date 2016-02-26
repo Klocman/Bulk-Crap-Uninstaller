@@ -21,6 +21,8 @@ namespace UninstallTools.Uninstaller
         SdbInst,
         Dism, 
         [LocalisedName(typeof(Localisation), "UninstallerType_StoreApp")]
-        StoreApp
+        StoreApp,
+        [LocalisedName(typeof(Localisation), "UninstallerType_SimpleDelete")]
+        SimpleDelete
     }
 }
