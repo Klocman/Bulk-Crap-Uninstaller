@@ -386,30 +386,27 @@ namespace BulkCrapUninstaller.Forms
 
         private void ClipboardCopyFullInformation(object x, EventArgs y)
         {
-            ImportExport.CopyToClipboard(_listView.SelectedUninstallers.Select(z => z.ToLongString()));
+            ImportExport.CopyFullInformationToClipboard(_listView.SelectedUninstallers);
         }
 
         private void ClipboardCopyGuids(object x, EventArgs y)
         {
-            ImportExport.CopyToClipboard(_listView.SelectedUninstallers.Select(z =>
-                $"{z.DisplayName} - {z.BundleProviderKey.ToString("B").ToUpper()}"));
+            ImportExport.CopyGuidsToClipboard(_listView.SelectedUninstallers);
         }
 
         private void ClipboardCopyProgramName(object x, EventArgs y)
         {
-            ImportExport.CopyToClipboard(_listView.SelectedUninstallers.Select(z => z.DisplayName));
+            ImportExport.CopyNamesToClipboard(_listView.SelectedUninstallers);
         }
-
+        
         private void ClipboardCopyRegistryPath(object x, EventArgs y)
         {
-            ImportExport.CopyToClipboard(
-                _listView.SelectedUninstallers.Select(z => $"{z.DisplayName} - {z.RegistryPath}"));
+            ImportExport.CopyRegKeysToClipboard(_listView.SelectedUninstallers);
         }
 
         private void ClipboardCopyUninstallString(object x, EventArgs y)
         {
-            ImportExport.CopyToClipboard(
-                _listView.SelectedUninstallers.Select(z => $"{z.DisplayName} - {z.UninstallString}"));
+            ImportExport.CopyUninstallStringsToClipboard(_listView.SelectedUninstallers);
         }
 
         private void createBackupFileDialog_FileOk(object sender, CancelEventArgs e)
