@@ -351,6 +351,9 @@ namespace BulkCrapUninstaller.Forms
 
         private void RefreshSidebarVisibility(object sender, EventArgs e)
         {
+            this.BeginControlUpdate();
+            SuspendLayout();
+
             var ulistOpen = advancedFilters1.CurrentList != null;
             splitContainer1.Panel1Collapsed = !ulistOpen;
             splitContainer1.Panel1.Enabled = ulistOpen;
@@ -360,6 +363,9 @@ namespace BulkCrapUninstaller.Forms
             settingsSidebarPanel.Enabled = sidebarOpen;
 
             RefreshListLegend(sender, e);
+
+            ResumeLayout();
+            this.EndControlUpdate();
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
