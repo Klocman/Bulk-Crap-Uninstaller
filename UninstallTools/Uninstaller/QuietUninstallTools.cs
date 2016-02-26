@@ -30,21 +30,37 @@ namespace UninstallTools.Uninstaller
         /// Generate missing quiet commands if possible
         /// </summary>
         /// <param name="entries">Entries to generate the quiet commands for</param>
-        /// <param name="automaticallyKillstuck">Generated entries should kill the process if it gets stuck waiting for user input or the process otherwise fails</param>
-        public static void GenerateQuietCommands(IEnumerable<ApplicationUninstallerEntry> entries, bool automaticallyKillstuck)
+        /// <param name="automatizerKillstuck">Generated entries should kill the process if it gets stuck waiting for user input or the process otherwise fails</param>
+        public static void GenerateQuietCommands(IEnumerable<ApplicationUninstallerEntry> entries, bool automatizerKillstuck)
         {
-            var commandStart = $"\"{UninstallerAutomatizerPath}\" {UninstallerType.Nsis} ";
-            if (automaticallyKillstuck)
-                commandStart = commandStart.Append("/K ");
+            var nsisCommandStart = $"\"{UninstallerAutomatizerPath}\" {UninstallerType.Nsis} ";
+            if (automatizerKillstuck)
+                nsisCommandStart = nsisCommandStart.Append("/K ");
 
             foreach (var uninstallerEntry in entries)
             {
-                if (uninstallerEntry.UninstallerKind != UninstallerType.Nsis ||
-                    uninstallerEntry.QuietUninstallPossible ||
-                    !uninstallerEntry.UninstallPossible)
+                if (uninstallerEntry.QuietUninstallPossible || !uninstallerEntry.UninstallPossible)
                     continue;
 
-                uninstallerEntry.QuietUninstallString = commandStart + uninstallerEntry.UninstallString;
+                switch (uninstallerEntry.UninstallerKind)
+                {
+                    case UninstallerType.Nsis:
+                        uninstallerEntry.QuietUninstallString = nsisCommandStart + uninstallerEntry.UninstallString;
+                        break;
+
+                        case UninstallerType.InnoSetup:
+                        try
+                        {
+                            uninstallerEntry.QuietUninstallString =
+                                $"\"{ProcessTools.SeparateArgsFromCommand(uninstallerEntry.UninstallString).FileName}\" /SILENT";
+                        }
+                        catch (ArgumentException)
+                        { }
+                        catch (FormatException)
+                        { }
+                        break;
+
+                }
             }
         }
     }

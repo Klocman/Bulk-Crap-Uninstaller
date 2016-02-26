@@ -57,7 +57,7 @@ namespace UninstallTools.Uninstaller
                 RedirectStandardOutput = true,
                 RedirectStandardError = false,
                 CreateNoWindow = true,
-                StandardOutputEncoding = Encoding.Unicode  
+                StandardOutputEncoding = Encoding.Unicode
             };
 
             var process = Process.Start(psi);
@@ -83,7 +83,7 @@ namespace UninstallTools.Uninstaller
                 //Trim the labels
                 for (var i = 0; i < current.Count; i++)
                     current[i] = current[i].Substring(current[i].IndexOf(" ", StringComparison.Ordinal)).Trim();
-                
+
                 if (Directory.Exists(current[4]))
                 {
                     var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{current[0]}\"";
@@ -99,7 +99,7 @@ namespace UninstallTools.Uninstaller
                         InstallLocation = current[4],
                         InstallDate = Directory.GetCreationTime(current[4])
                     };
-                    
+
                     if (File.Exists(current[3]))
                     {
                         try
@@ -113,7 +113,7 @@ namespace UninstallTools.Uninstaller
                             result.IconBitmap = null;
                         }
                     }
-                    
+
                     if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
                     {
                         result.SystemComponent = true;
@@ -501,7 +501,7 @@ namespace UninstallTools.Uninstaller
             }
             catch (IOException) { }
             catch (UnauthorizedAccessException) { }
-            
+
             // Check if it is impossible or potentially dangerous to process this directory.
             if (files == null || dirs == null || files.Count > 40
                 // Subdirs with names 3 and less are probably program's files.
@@ -511,7 +511,7 @@ namespace UninstallTools.Uninstaller
                 return;
 
             // Check for the bin directory and add files from it to the scan
-            var binDirs = dirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames, 
+            var binDirs = dirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames,
                 StringComparison.OrdinalIgnoreCase)).ToList();
 
             if (files.Count == 0 && !binDirs.Any())
@@ -864,61 +864,66 @@ namespace UninstallTools.Uninstaller
             var uninstallString =
                 uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameUninstallString) as string;
 
-            if (uninstallString.IsNotEmpty())
+            return uninstallString.IsNotEmpty() ? GetUninstallerType(uninstallString) : UninstallerType.Unknown;
+        }
+
+        private static UninstallerType GetUninstallerType(string uninstallString)
+        {
+            // Detect MSI installer based on the uninstall string
+            //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
+            if (PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
+                new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
             {
-                // Detect MSI installer based on the uninstall string
-                //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
-                if (PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
-                    new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
-                {
-                    return UninstallerType.Msiexec;
-                }
-
-                // Detect Sdbinst
-                if (uninstallString.Contains("sdbinst", StringComparison.OrdinalIgnoreCase)
-                    && uninstallString.Contains(".sdb", StringComparison.OrdinalIgnoreCase))
-                {
-                    return UninstallerType.SdbInst;
-                }
-
-                ProcessStartCommand ps;
-                if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) && File.Exists(ps.FileName))
-                {
-                    try
-                    {
-                        var result = File.ReadAllText(ps.FileName, Encoding.ASCII);
-
-                        // Detect NSIS Nullsoft.NSIS
-                        if (result.Contains("Nullsoft"))
-                        {
-                            return UninstallerType.Nsis;
-                        }
-
-                        // Detect InstallShield InstallShield.Setup
-                        if (result.Contains("InstallShield"))
-                        {
-                            return UninstallerType.InstallShield;
-                        }
-                        /*
-                        // Detect Adobe installer
-                        if(result.Contains(@"<description>Adobe Systems Incorporated Setup</description>"))
-                        {
-                            return UninstallerType.AdobeSetup;
-                        }*/
-                    }
-                    catch (IOException)
-                    {
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                    }
-                    catch (SecurityException)
-                    {
-                    }
-                }
+                return UninstallerType.Msiexec;
             }
 
-            // Unknown type
+            // Detect Sdbinst
+            if (uninstallString.Contains("sdbinst", StringComparison.OrdinalIgnoreCase)
+                && uninstallString.Contains(".sdb", StringComparison.OrdinalIgnoreCase))
+            {
+                return UninstallerType.SdbInst;
+            }
+
+            ProcessStartCommand ps;
+            if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) &&
+                File.Exists(ps.FileName))
+            {
+                try
+                {
+                    var result = File.ReadAllText(ps.FileName, Encoding.ASCII);
+                    
+                    // Detect NSIS Nullsoft.NSIS (the most common)
+                    if (result.Contains("Nullsoft"))
+                        return UninstallerType.Nsis;
+
+                    // Detect InstallShield InstallShield.Setup
+                    if (result.Contains("InstallShield"))
+                        return UninstallerType.InstallShield;
+
+                    /*// Try to lessen the amount of data that needs to be tested for remaining items (does not work well for InstallShield)
+                    var infoStart = result.IndexOf(@"<?xml", StringComparison.OrdinalIgnoreCase);
+                    if (infoStart > 0)
+                        result = result.Substring(infoStart + 6);*/
+
+                    if (result.Contains("Inno.Setup") || result.Contains("Inno Setup"))
+                        return UninstallerType.InnoSetup;
+
+                    /* // Detect Adobe installer
+                    if(result.Contains(@"<description>Adobe Systems Incorporated Setup</description>"))
+                    {
+                        return UninstallerType.AdobeSetup;
+                    }*/
+                }
+                catch (IOException)
+                {
+                }
+                catch (UnauthorizedAccessException)
+                {
+                }
+                catch (SecurityException)
+                {
+                }
+            }
             return UninstallerType.Unknown;
         }
 
