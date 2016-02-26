@@ -21,27 +21,22 @@ namespace BulkCrapUninstaller.Functions
 
         public void LoadSettings()
         {
-            if (!Selected.Settings.MiscFirstRun)
-            {
-                if (!Selected.Settings.WindowSize.IsEmpty)
-                {
-                    _mainWindow.Size = Selected.Settings.WindowSize;
-                    _mainWindow.Location = Selected.Settings.WindowPosition;
-                    if (Selected.Settings.WindowState != FormWindowState.Minimized)
-                        _mainWindow.WindowState = Selected.Settings.WindowState;
-                }
-                else
-                {
-                    _mainWindow.StartPosition = FormStartPosition.WindowsDefaultLocation;
-                }
+            if (Selected.Settings.MiscFirstRun) return;
 
+            if (!Selected.Settings.WindowSize.IsEmpty && !Selected.Settings.WindowPosition.IsEmpty)
+            {
+                _mainWindow.Size = Selected.Settings.WindowSize;
+                _mainWindow.Location = Selected.Settings.WindowPosition;
+
+                _mainWindow.StartPosition = FormStartPosition.Manual;
+
+                if (Selected.Settings.WindowState != FormWindowState.Minimized)
+                    _mainWindow.WindowState = Selected.Settings.WindowState;
+            }
+
+            if(!string.IsNullOrEmpty(Selected.Settings.UninstallerListViewState))
                 _mainWindow.uninstallerObjectListView.RestoreState(
                     Convert.FromBase64String(Selected.Settings.UninstallerListViewState));
-            }
-            else
-            {
-                _mainWindow.StartPosition = FormStartPosition.WindowsDefaultLocation;
-            }
         }
 
         public void LoadSorting()

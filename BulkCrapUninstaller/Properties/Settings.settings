@@ -15,7 +15,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="WindowPosition" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">250, 250</Value>
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
     <Setting Name="WindowSize" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
