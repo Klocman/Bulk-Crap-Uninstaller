@@ -496,4 +496,19 @@
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
     <value>Preskoči</value>
   </data>
+  <data name="toolStripButtonRun.Text" xml:space="preserve">
+    <value>Zaženi zdaj odstranjevalca</value>
+  </data>
+  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
+    <value>Prekini</value>
+  </data>
+  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
+    <value>Odpri mesto namestitve</value>
+  </data>
+  <data name="toolStripButtonProperties.Text" xml:space="preserve">
+    <value>Lastnosti</value>
+  </data>
+  <data name="toolStripButtonSettings.Text" xml:space="preserve">
+    <value>Nastavitve</value>
+  </data>
 </root>

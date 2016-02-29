@@ -555,7 +555,7 @@ Ali želite za te vnose uporabiti "glasne" odstranjevalce, ali morajo ti biti od
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Izbira "Prekini", bo takoj zaprla zagnanega odstranjevalca in lahko povzroči nedokončano odstranjevanje. Za dokončanje odstranitve ponavadi zadostuje ponovni zagon odstranjevalca.
 
-Alternativno lahko preskočite čakanja na ta proces. Preskok bo dovolil odstranjevalcu nadaljevati z delom, medtem, ko se bo opravilo premaknilo na naslednji vnos. Imejte v mislih, da nekaterim odstranjevalcem lahko spodleti zagon, ko se konča preskočen proces.</value>
+Neobvezno, lahko preskočite čakanja na ta proces. Preskok bo dovolil odstranjevalcu nadaljevati z delom, medtem, ko se bo opravilo premaknilo na naslednji vnos. Imejte v mislih, da nekaterim odstranjevalcem lahko spodleti zagon, ko se konča preskočen proces.</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>Ali želite preskočiti čakanje trenutno zagnanega odstranjevalca?</value>
@@ -605,7 +605,39 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
-    <value>
-    </value>
+    <value>{0} aplikacij</value>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Ocene niso na voljo</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>V nastavitvah najprej morate omogočiti ocenjevanje.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Ne morete ocenjevati nepravilno nameščenih aplikacij.</value>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Povprečna ocena: {0}; Moja ocena: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Naslednji odstranjevalci se niso uspešno zagnali, verjetno zaradi spora. Prosimo, da najprej počakate, da drugi odstranjevalci končajo delo in nato poskusite znova. 
+{0}
+
+Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporočeno.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Vsili odstranjevanje</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Spodletel zagon nekaterih odstranjevalcev</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0 nni najden</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0 ni bil najden, nekatere funkcije bodo onemogočene.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Različica Framework 4.0 je neobvezna, toda priporočena. Funkcije, ki zahtevajo Framework bodo onemogočene dokler ga ne namestite.</value>
   </data>
 </root>

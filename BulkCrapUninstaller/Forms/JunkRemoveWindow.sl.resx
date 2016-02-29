@@ -124,7 +124,7 @@
     <value>Besedilne datoteke|*.txt</value>
   <comment>keep the |*.txt</comment></data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Izvoz seznam ostankov</value>
+    <value>Izvoz seznama ostankov</value>
   </data>
   <metadata name="saveFileDialogBackupRegistry.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>131, 17</value>
@@ -487,7 +487,7 @@
     <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seznam datotek in/ali, registrskih ključev, ostalih po odstranjevanju</value>
+    <value>Seznam datotek in/ali, preostalih registrskih ključev, po odstranjevanju</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>

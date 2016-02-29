@@ -558,4 +558,34 @@
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Odstrani</value>
   </data>
+  <data name="comboBoxFilterType.Items1" xml:space="preserve">
+    <value>Izključi</value>
+  </data>
+  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
+    <value>Urejevalnik pogoja</value>
+  </data>
+  <data name="comboBoxFilterType.Items" xml:space="preserve">
+    <value>Vključi</value>
+  </data>
+  <data name="groupBoxConditions.Text" xml:space="preserve">
+    <value>Pogoji filtra</value>
+  </data>
+  <data name="columnHeaderType.Text" xml:space="preserve">
+    <value>Vrsta</value>
+  </data>
+  <data name="labelFilterName.Text" xml:space="preserve">
+    <value>Ime:</value>
+  </data>
+  <data name="groupBoxFilterSettings.Text" xml:space="preserve">
+    <value>Nastavitve filtra</value>
+  </data>
+  <data name="columnHeaderConditions.Text" xml:space="preserve">
+    <value>Pogoji</value>
+  </data>
+  <data name="labelFilterType.Text" xml:space="preserve">
+    <value>Vrsta:</value>
+  </data>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Ime filtra</value>
+  </data>
 </root>

@@ -127,7 +127,7 @@
     <value>Prikazno ime</value>
   </data>
   <data name="DisplayNameTrimmed" xml:space="preserve">
-    <value>Obrezano prikazno ime</value>
+    <value>Skrajšano prikazno ime</value>
   </data>
   <data name="DisplayVersion" xml:space="preserve">
     <value>Različica</value>
@@ -417,7 +417,21 @@
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <comment>Present on the HDD but is not properly reported anywhere</comment>
-    <value>
-    </value>
+    <value>Je osirotel</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Neveljavni ali neznani zagonski ključi v registru:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Store Aplikacija</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Nov pogoj</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Odstranitev Store Aplikacije je problematično</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Preprosto izbriši</value>
   </data>
 </root>

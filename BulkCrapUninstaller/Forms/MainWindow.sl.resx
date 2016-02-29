@@ -2738,4 +2738,34 @@
   <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 56</value>
   </metadata>
+  <data name="olvColumnRating.Text" xml:space="preserve">
+    <value>Uporabnikova ocena</value>
+  </data>
+  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
+    <value>Najdi z oknom...</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Pomoč</value>
+  </data>
+  <data name="buttonAdvFiltering.Text" xml:space="preserve">
+    <value>Napredno filtriranje</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Napredno...</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ocena...</value>
+  </data>
+  <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Poglej Windows Store aplikacije</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Najdi z oknom...</value>
+  </data>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Napredno...</value>
+  </data>
+  <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Ocena...</value>
+  </data>
 </root>

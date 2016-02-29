@@ -471,4 +471,41 @@
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pl</value>
   </metadata>
+  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
+    <value>Onemogoči preprečevanje sporov, ko se  izvajajo ročna odstranjevanja.</value>
+  </data>
+  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
+    <value>Samo en
+glasen odstranjevalec na enkrat</value>
+  </data>
+  <data name="checkBoxConcurrent.Text" xml:space="preserve">
+    <value>Samodejno zaženi hkratne odstranjevalce (če je mogoče)</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Največje število delujočih odstranjevalcev:</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Trenutno odstranjevanje:</value>
+  </data>
+  <data name="checkBoxShutdown.Text" xml:space="preserve">
+    <value>Prepreči ustavitev/ponovni zagon sistema</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Splošne nastavitve</value>
+  </data>
+  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
+    <value>Samodejno uniči obtičale tihe odstranjevalce</value>
+  </data>
+  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
+    <value>Enkrat ponovi spodletele tihe odstranjevalce</value>
+  </data>
+  <data name="checkBoxGenerate.Text" xml:space="preserve">
+    <value>Če je mogoče, generiraj tihe odstranjevalce</value>
+  </data>
+  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
+    <value>Samodejno uniči, če obtičalo čakanje zahteva vnos uporabnika</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Tiho odstranjevanje</value>
+  </data>
 </root>

@@ -351,7 +351,7 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
     <value>3, 3</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Posodobitve drugih aplikacij. Ponavadi so te odstranjene skupaj z nadrjeno aplikacijo, tako da jih je mogoče prezreti.</value>
+    <value>Posodobitve drugih aplikacij. Ponavadi so te odstranjene skupaj z nadrejeno aplikacijo, tako da jih je mogoče prezreti.</value>
   </data>
   <data name="&gt;&gt;checkBoxDiisableProtection.Name" xml:space="preserve">
     <value>checkBoxDiisableProtection</value>
@@ -479,7 +479,7 @@ Vozniki so pogosto označeni s to oznako.</value>
     <value>Spremeni izbiro sloga seznama potrditvenih polj. So varnejše, ker
 en klik ne more počistiti vsega.
 
-Lahko označite več vnosov, tako da jih označite in pritisnete na preslednico.</value>
+Lahko označite več vnosov tako, da jih označite in pritisnete na preslednico.</value>
   </data>
   <data name="&gt;&gt;searchBoxPanel.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -773,4 +773,7 @@ Združevanje v skupine uporablja pametno filtriranje.</value>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>299, 17</value>
   </metadata>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Prikaži Windows Store aplikacije</value>
+  </data>
 </root>

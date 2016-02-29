@@ -1443,4 +1443,10 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstojeÄ
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>OmogoÄi uporabnikove ocene aplikacij</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Odstranjevanje</value>
+  </data>
 </root>

@@ -352,7 +352,7 @@
     <value>0, 352</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Vsi najdeni odstranjevalci v vašem sistemu uninstallers so v glavnem pogledu seznama. Tukaj je nekaj načinov za brskanje teh podatkov:</value>
+    <value>Vsi najdeni odstranjevalci v vašem sistemu so v glavnem pogledu seznama. Tukaj je nekaj načinov za brskanje teh podatkov:</value>
   </data>
   <data name="p3advProtectAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -718,7 +718,7 @@
     <value>2184, 6</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>Lahko prisilite BCUninstaller, da uporablja določen jezik, če je privzeti jezik napačen. Za začetek uporabe novega jezika bo opravljen ponoven zagon programa.</value>
+    <value>BCUninstaller lahko prisilite, da uporablja določen jezik, če je privzeti jezik napačen. Za začetek uporabe novega jezika bo opravljen ponoven zagon programa.</value>
   </data>
   <data name="&gt;&gt;buttonLanguageApply.Parent" xml:space="preserve">
     <value>panel9</value>
@@ -770,7 +770,7 @@
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>
-Označi neveljavne odstraanjevalce</value>
+Označi neveljavne odstranjevalce</value>
   </data>
   <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 27</value>
@@ -2301,7 +2301,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>1</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Ob zagonu aplikacije, samodejno preveri z aposodobitve</value>
+    <value>Ob zagonu aplikacije, samodejno preveri za posodobitve</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
     <value>Osirotele aplikacije so označene z rdečo barvo.
@@ -2711,4 +2711,13 @@ uninstaller</value>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>cs</value>
   </metadata>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Za pridobitev in nalaganje ocen aplikacije</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Omogoči uporabnikovo ocenjevanje aplikacije</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Ogled Pomoči</value>
+  </data>
 </root>

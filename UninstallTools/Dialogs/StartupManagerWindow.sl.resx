@@ -610,7 +610,7 @@
     <value>279, 17</value>
   </metadata>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Izberite prazen imenik z avarnostno kopijo.</value>
+    <value>Izberite prazen imenik za varnostno kopijo.</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
