@@ -616,4 +616,28 @@ The lists are separated by a single newline.</comment>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
     <value>{0} applications</value>
   </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Note moyenne: {0}; Ma note: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Les désinstalleurs suivants ont échoué à l'exécution, sûrement en raison d'une collision. Veuillez attendre que les autres désinstalleurs aient fini et réessayer.
+{0}
+
+Vous pouver tenter de désactiver la prévention de collision dans les réglages, mais ce n'est pas recommandé.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Forcer la désinstallation</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Echec au lancement de certains des désinstalleurs</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>Framework .NET 4.0 introuvable</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>Framework .NET 4.0 introuvable, certaines fonctions seront désactivées</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Le Framework .NET 4.0 est optionnel, mais recommandé. Les fonctions reposant sur le framework seront désactivées jusqu'à son installation.</value>
+  </data>
 </root>

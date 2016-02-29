@@ -903,21 +903,36 @@
     <value>BCUninstaller</value>
   </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
-    <value>Note de l'utilisateur</value>
+    <value>Note utilisateur</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Passez en revue...</value>
+    <value>Noter...</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Passez en revue...</value>
   </data>
   <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Trouver au moyen de la fenêtre...</value>
+    <value>Trouver par fenêtre...</value>
   </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Trouver au moyen de la fenêtre...</value>
+    <value>Trouver par fenêtre...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="buttonAdvFiltering.Text" xml:space="preserve">
+    <value>Fltrage avancé</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Avancé...</value>
+  </data>
+  <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir les apps Windows Store</value>
+  </data>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Avancé...</value>
   </data>
 </root>

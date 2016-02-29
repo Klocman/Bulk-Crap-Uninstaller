@@ -262,6 +262,9 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Automatiquement liste ouverte "Default.xml" au démarrage</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
-    <value>Activer notes des utilisateurs d'applications</value>
+    <value>Activer les notes utilisateurs des applications</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Désinstallation</value>
   </data>
 </root>

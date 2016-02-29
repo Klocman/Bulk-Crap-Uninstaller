@@ -471,4 +471,40 @@
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pl</value>
   </metadata>
+  <data name="checkBoxConcurrent.Text" xml:space="preserve">
+    <value>Lancer automatiquement les désinstalleurs de concert (si possible)</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nombre max de désinstalleurs lancés:</value>
+  </data>
+  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
+    <value>Seulement un désinstalleur causant à la fois</value>
+  </data>
+  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
+    <value>Désactiver la prévention de collision en lançant manuellement les désinstalleurs</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Réglages généraux</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Désinstallation de concert</value>
+  </data>
+  <data name="checkBoxShutdown.Text" xml:space="preserve">
+    <value>Empêcher l'arrêt/redémarrage du système</value>
+  </data>
+  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
+    <value>Tuer automatiquement les désinstalleurs silencieux bloqués</value>
+  </data>
+  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
+    <value>Retenter une fois les désinstalleurs silencieux échoués</value>
+  </data>
+  <data name="checkBoxGenerate.Text" xml:space="preserve">
+    <value>Générer si possible les désinstalleurs silencieux manquants</value>
+  </data>
+  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
+    <value>Tuer automatiquement  si bloqués attendant la saisie utilisateur</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Désinstallation silencieuse</value>
+  </data>
 </root>

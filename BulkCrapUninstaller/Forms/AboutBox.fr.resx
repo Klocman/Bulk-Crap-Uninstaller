@@ -186,4 +186,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Tchèque - Richard Kahl</value>
   </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Gestion de l'appel du Gestionnaire de Tâches</value>
+  </data>
 </root>

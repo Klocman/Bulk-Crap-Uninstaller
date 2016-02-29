@@ -420,7 +420,18 @@
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <comment>Present on the HDD but is not properly reported anywhere</comment>
-    <value>
-    </value>
+    <value>Est orpheline</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>App Windows Store</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Nouvelle condition</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Suppression problématique des données du Store</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Effacer simplement </value>
   </data>
 </root>

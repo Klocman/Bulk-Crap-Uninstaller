@@ -224,4 +224,7 @@ Le groupage de la plupart des colonnes utilise un tri intelligent.</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Réglages de la vue liste</value>
   </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Montrer les apps du Windows Store</value>
+  </data>
 </root>
