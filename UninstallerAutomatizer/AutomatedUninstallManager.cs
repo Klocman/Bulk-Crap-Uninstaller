@@ -9,6 +9,7 @@ using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.WindowsAPI;
 
 namespace UninstallerAutomatizer
 {
@@ -158,7 +159,8 @@ namespace UninstallerAutomatizer
                 }
 
                 // Finally press the button, doesn't require messing with the mouse.
-                nextButton.RaiseClickEvent();
+                //nextButton.RaiseClickEvent();
+                nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
             }
         }
 
