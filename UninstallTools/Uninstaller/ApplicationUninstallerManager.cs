@@ -33,7 +33,7 @@ namespace UninstallTools.Uninstaller
             var existingUninstallers = existingUninstallerEntries as IList<ApplicationUninstallerEntry> ??
                                        existingUninstallerEntries.ToList();
 
-            var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
+            var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
 
             // Get sub directories which should contain the programs
             var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool>>(),
@@ -43,18 +43,21 @@ namespace UninstallTools.Uninstaller
             // Get directories which are already used and should be skipped
             var directoriesToSkip = existingUninstallers.SelectMany(x =>
             {
-                if (string.IsNullOrEmpty(x.DisplayIcon)) return new[] {x.InstallLocation, x.UninstallerLocation};
-                try
+                if (!string.IsNullOrEmpty(x.DisplayIcon))
                 {
-                    var iconDir =
-                        PathTools.GetDirectory(ProcessTools.SeparateArgsFromCommand(x.DisplayIcon).FileName);
-                    return new[] {x.InstallLocation, x.UninstallerLocation, iconDir};
+                    try
+                    {
+                        return new[] {x.InstallLocation, x.UninstallerLocation,
+                            PathTools.GetDirectory(ProcessTools.SeparateArgsFromCommand(x.DisplayIcon).FileName) };
+                    }
+                    catch
+                    {
+                        // Ignore invalid DisplayIcon paths
+                    }
                 }
-                catch
-                {
-                    return new[] {x.InstallLocation, x.UninstallerLocation};
-                }
-            }).Where(x => x.IsNotEmpty()).ToList();
+                return new[] { x.InstallLocation, x.UninstallerLocation };
+            }).Where(x => x.IsNotEmpty() && !pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
+            .Distinct().ToList();
 
             var inputs = directoriesToCheck.Where(x => !directoriesToSkip.Any(y =>
                 x.Key.FullName.Contains(y, StringComparison.InvariantCultureIgnoreCase)
@@ -66,11 +69,11 @@ namespace UninstallTools.Uninstaller
             {
                 itemId++;
 
-                var progress = new GetUninstallerListProgress(inputs.Count) {CurrentCount = itemId};
+                var progress = new GetUninstallerListProgress(inputs.Count) { CurrentCount = itemId };
                 callback(progress);
 
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||
-                    directory.Key.Name.StartsWith("Windows"))
+                    directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
                 //Try to get the main executable from the filtered folders. If no executables are present check subfolders.
@@ -118,10 +121,10 @@ namespace UninstallTools.Uninstaller
             foreach (var kvp in keysToCheck.Where(kvp => kvp.Key != null))
             {
                 uninstallersToCreate.AddRange(from subkeyName in kvp.Key.GetSubKeyNames()
-                    select kvp.Key.OpenSubKey(subkeyName)
+                                              select kvp.Key.OpenSubKey(subkeyName)
                     into subkey
-                    where subkey != null
-                    select new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value));
+                                              where subkey != null
+                                              select new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value));
 
                 kvp.Key.Close();
             }
@@ -146,7 +149,7 @@ namespace UninstallTools.Uninstaller
                     uninstallerToCreate.Key.Close();
 
                     itemId++;
-                    var progress = new GetUninstallerListProgress(uninstallersToCreate.Count) {CurrentCount = itemId};
+                    var progress = new GetUninstallerListProgress(uninstallersToCreate.Count) { CurrentCount = itemId };
                     callback(progress);
                 }
             }
@@ -187,7 +190,7 @@ namespace UninstallTools.Uninstaller
                 applicationUninstallers.Add(entry);
 
                 itemId++;
-                callback(new GetUninstallerListProgress(features.Count) {CurrentCount = itemId, FinishedEntry = entry});
+                callback(new GetUninstallerListProgress(features.Count) { CurrentCount = itemId, FinishedEntry = entry });
             }
 
             return applicationUninstallers;
@@ -234,12 +237,12 @@ namespace UninstallTools.Uninstaller
             }
 
             var query = from item in targetList
-                orderby item.IsSilent ascending,
-                    item.UninstallerEntry.IsUpdate ascending,
-                    item.UninstallerEntry.SystemComponent ascending,
-                    item.UninstallerEntry.IsProtected ascending,
-                    item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
-                select item;
+                        orderby item.IsSilent ascending,
+                            item.UninstallerEntry.IsUpdate ascending,
+                            item.UninstallerEntry.SystemComponent ascending,
+                            item.UninstallerEntry.IsProtected ascending,
+                            item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
+                        select item;
 
             targetList = configuration.IntelligentSort
                 ? query.ToList()
@@ -430,7 +433,7 @@ namespace UninstallTools.Uninstaller
             }
             return keysToCheck;
         }
-        
+
         public class GetUninstallerListProgress
         {
             internal GetUninstallerListProgress(int totalCount)
