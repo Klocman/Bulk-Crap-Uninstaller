@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding;
 using Klocman.Forms.Tools;
@@ -185,7 +184,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
+            MessageBoxes.DisplayHelp(this);
         }
     }
 }

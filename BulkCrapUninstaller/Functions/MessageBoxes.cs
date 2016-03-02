@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman;
 using Klocman.Forms;
@@ -592,6 +595,19 @@ namespace BulkCrapUninstaller.Functions
                 new CmbBasicSettings(Localisable.MessageBoxes_Net4Missing_Title,
                     Localisable.MessageBoxes_Net4Missing_Message,
                     Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
+        }
+
+        /*public enum HelpPosition
+        {
+            Top = 0,
+            MainWindow, //#a_2_Main_Window
+            AdvancedCopy, //#a_5_Advanced_copy_to_clipboard
+            UninstallWindow // #a_7_3_Uninstall_progress_window
+        }*/
+        public static void DisplayHelp(IWin32Window owner)
+        {
+
+            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
         }
     }
 }

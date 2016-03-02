@@ -1235,7 +1235,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void openHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
+            MessageBoxes.DisplayHelp(this);
         }
     }
 }

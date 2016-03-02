@@ -52,6 +52,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonProperties = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -151,7 +152,8 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonFolderOpen,
             this.toolStripButtonProperties,
             this.toolStripSeparator1,
-            this.toolStripButtonSettings});
+            this.toolStripButtonSettings,
+            this.toolStripButtonHelp});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -209,6 +211,14 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.toolStripButtonSettings, "toolStripButtonSettings");
             this.toolStripButtonSettings.Name = "toolStripButtonSettings";
             this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
+            // 
+            // toolStripButtonHelp
+            // 
+            this.toolStripButtonHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonHelp.Image = global::BulkCrapUninstaller.Properties.Resources.information_circle;
+            resources.ApplyResources(this.toolStripButtonHelp, "toolStripButtonHelp");
+            this.toolStripButtonHelp.Name = "toolStripButtonHelp";
+            this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
             // 
             // label2
             // 
@@ -291,5 +301,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripButton toolStripButtonProperties;
         private OLVColumn olvColumnId;
         private ToolStripButton toolStripButtonTerminate;
+        private ToolStripButton toolStripButtonHelp;
     }
 }

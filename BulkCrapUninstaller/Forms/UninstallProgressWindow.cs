@@ -362,5 +362,10 @@ namespace BulkCrapUninstaller.Forms
         {
             SelectedTaskEntries.ForEach(x => x.SkipWaiting(false));
         }
+
+        private void toolStripButtonHelp_Click(object sender, EventArgs e)
+        {
+            MessageBoxes.DisplayHelp(this);
+        }
     }
 }
