@@ -75,8 +75,14 @@ namespace BulkCrapUninstaller.Functions
 
         private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries)
         {
-            var filters = entries.SelectMany(e => new[] {e.InstallLocation, e.UninstallerLocation})
+            var steamNeeded = false;
+
+            var filters = entries.DoForEach(x => { if (x.UninstallerKind == UninstallerType.Steam) steamNeeded = true; })
+                .SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
                 .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
+
+            if (steamNeeded)
+                filters = filters.Where(x => !x.TrimEnd('"', ' ').EndsWith("steam.exe", StringComparison.InvariantCultureIgnoreCase)).ToArray();
 
             return CheckForRunningProcesses(filters);
         }
@@ -97,13 +103,13 @@ namespace BulkCrapUninstaller.Functions
         {
             var mainFilename = targetProcess.MainModule.FileName;
             return from app in allApplications
-                where
-                    (app.IsInstallLocationValid() &&
-                     mainFilename.Contains(app.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                    ||
-                    (!string.IsNullOrEmpty(app.UninstallerLocation) &&
-                     mainFilename.Contains(app.UninstallerLocation, StringComparison.InvariantCultureIgnoreCase))
-                select app;
+                   where
+                       (app.IsInstallLocationValid() &&
+                        mainFilename.Contains(app.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                       ||
+                       (!string.IsNullOrEmpty(app.UninstallerLocation) &&
+                        mainFilename.Contains(app.UninstallerLocation, StringComparison.InvariantCultureIgnoreCase))
+                   select app;
         }
 
         private static bool CheckForRunningProcesses(string[] filters)
@@ -160,7 +166,7 @@ namespace BulkCrapUninstaller.Functions
         {
             if (!TryGetUninstallLock()) return;
             var listRefreshNeeded = false;
-            
+
             try
             {
                 var targets = new List<ApplicationUninstallerEntry>(selectedUninstallers);
@@ -209,11 +215,11 @@ namespace BulkCrapUninstaller.Functions
                     }
 
                     var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallersList
-                        where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
-                              || bulkUninstallEntry.CurrentStatus == UninstallStatus.Invalid
-                              || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped
-                                  && !bulkUninstallEntry.UninstallerEntry.RegKeyStillExists())
-                        select bulkUninstallEntry.UninstallerEntry;
+                                                 where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
+                                                       || bulkUninstallEntry.CurrentStatus == UninstallStatus.Invalid
+                                                       || (bulkUninstallEntry.CurrentStatus == UninstallStatus.Skipped
+                                                           && !bulkUninstallEntry.UninstallerEntry.RegKeyStillExists())
+                                                 select bulkUninstallEntry.UninstallerEntry;
 
                     SearchForAndRemoveJunk(junkRemoveTargetsQuery, allUninstallers);
 
@@ -390,7 +396,7 @@ namespace BulkCrapUninstaller.Functions
                     return;
                 }
 
-                if (!CheckForRunningProcessesBeforeUninstall(new[] {selected}))
+                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }))
                     return;
 
                 try
