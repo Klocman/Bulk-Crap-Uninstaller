@@ -36,9 +36,9 @@ namespace UninstallTools.Uninstaller
             var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
 
             // Get sub directories which should contain the programs
-            var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool>>(),
+            var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool?>>(),
                 (a, b) =>
-                    a.Concat(b.Key.GetDirectories().Select(x => new KeyValuePair<DirectoryInfo, bool>(x, b.Value))));
+                    a.Concat(b.Key.GetDirectories().Select(x => new KeyValuePair<DirectoryInfo, bool?>(x, b.Value))));
 
             // Get directories which are already used and should be skipped
             var directoriesToSkip = existingUninstallers.SelectMany(x =>

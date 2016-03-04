@@ -129,7 +129,7 @@ namespace UninstallTools.Uninstaller
         }
 
         public static IEnumerable<ApplicationUninstallerEntry> TryCreateFromDirectory(DirectoryInfo directory,
-            bool is64Bit)
+            bool? is64Bit)
         {
             if (directory == null)
                 throw new ArgumentNullException(nameof(directory));

@@ -15,7 +15,8 @@ namespace BulkCrapUninstaller.Functions
 
         internal static string BoolToYesNoAspectConverter(object rowObject)
         {
-            return (rowObject as bool?)?.ToYesNo();
+            var result = rowObject as bool?;
+            return result.HasValue ? result.Value.ToYesNo() : Localisable.Unknown;
         }
 
         internal static object ColumnGuidAspectGetter(object rowObj)

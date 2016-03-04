@@ -586,10 +586,13 @@ namespace BulkCrapUninstaller.Functions
 
             _reference.olvColumnSystemComponent.AspectName = ApplicationUninstallerEntry.RegistryNameSystemComponent;
             _reference.olvColumnSystemComponent.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
+            _reference.olvColumnSystemComponent.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
             _reference.olvColumnIs64.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
+            _reference.olvColumnIs64.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
             _reference.olvColumnProtected.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
+            _reference.olvColumnProtected.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
             _reference.olvColumnInstallLocation.AspectName = ApplicationUninstallerEntry.RegistryNameInstallLocation;
             _reference.olvColumnInstallLocation.GroupKeyGetter = ListViewDelegates.ColumnInstallLocationGroupKeyGetter;

@@ -63,16 +63,16 @@ namespace UninstallTools
         /// </summary>
         /// <param name="includeUserDirectories">Add user-defined directories.</param>
         /// <returns></returns>
-        public static IEnumerable<KeyValuePair<DirectoryInfo, bool>> GetProgramFilesDirectories(
+        public static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(
             bool includeUserDirectories)
         {
-            var pfDirectories = new List<KeyValuePair<DirectoryInfo, bool>>(2);
+            var pfDirectories = new List<KeyValuePair<DirectoryInfo, bool?>>(2);
 
             var pf64 = new DirectoryInfo(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES));
             var pf32 = new DirectoryInfo(WindowsTools.GetProgramFilesX86Path());
-            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(pf32, false));
+            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(pf32, false));
             if (!pf32.FullName.Equals(pf64.FullName))
-                pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(pf64, true));
+                pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(pf64, true));
 
             if (includeUserDirectories)
             {
@@ -82,7 +82,7 @@ namespace UninstallTools
                     {
                         var di = new DirectoryInfo(dir);
                         if (di.Exists)
-                            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool>(di, false));
+                            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(di, null));
                     }
                     catch
                     {
