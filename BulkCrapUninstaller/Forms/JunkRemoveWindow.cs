@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace BulkCrapUninstaller.Forms
         private static readonly string SelectionBoxText = Localisable.JunkRemove_SelectionBoxText;
         private TypedObjectListView<JunkNode> _listViewWrapper;
 
+        private readonly string defaultRegBackupFilename;
+
         public JunkRemoveWindow(IEnumerable<JunkNode> junk)
         {
             InitializeComponent();
@@ -31,6 +34,8 @@ namespace BulkCrapUninstaller.Forms
             new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
+            
+                defaultRegBackupFilename = saveFileDialogBackupRegistry.FileName;
         }
 
         public IEnumerable<JunkNode> SelectedJunk => _listViewWrapper.CheckedObjects;
@@ -42,6 +47,9 @@ namespace BulkCrapUninstaller.Forms
                 switch (MessageBoxes.BackupRegistryQuestion())
                 {
                     case MessageBoxes.PressedButton.Yes:
+                        var enus = new CultureInfo("en-US", false).DateTimeFormat;
+                        saveFileDialogBackupRegistry.FileName = defaultRegBackupFilename + "_" + 
+                            DateTime.Now.ToString(enus.SortableDateTimePattern.Replace(':','-').Replace('T', '_'));
                         if (saveFileDialogBackupRegistry.ShowDialog() != DialogResult.OK)
                             return;
                         break;
