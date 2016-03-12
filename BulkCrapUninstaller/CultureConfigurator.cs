@@ -27,6 +27,7 @@ namespace BulkCrapUninstaller
                     CultureInfo.GetCultureInfo("de-DE"),
                     CultureInfo.GetCultureInfo("fr-FR"),
                     CultureInfo.GetCultureInfo("pl-PL"),
+                    CultureInfo.GetCultureInfo("ru-RU"),
                     CultureInfo.GetCultureInfo("sl-SI")
                 }.OrderBy(x => x.DisplayName).ToList().AsEnumerable());
             }
