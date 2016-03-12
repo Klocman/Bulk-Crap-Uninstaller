@@ -274,4 +274,7 @@ Grupowanie większości kolumn używa inteligentnych filtrów.</value>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Pokaż Store Apps</value>
   </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Pokaż funkcje systemu</value>
+  </data>
 </root>

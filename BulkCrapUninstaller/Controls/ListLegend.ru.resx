@@ -122,15 +122,8 @@
     <value>Top</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelWinFeature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 100</value>
-  </data>
   <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelWinFeature.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>111, 19</value>
   </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Компонент Windows</value>
@@ -138,29 +131,11 @@
   <data name="labelWinFeature.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelWinFeature.Name" xml:space="preserve">
-    <value>labelWinFeature</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeature.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeature.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeature.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="labelOrphaned.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="labelOrphaned.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
-  </data>
   <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelOrphaned.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>136, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Потерянные приложения</value>
@@ -168,29 +143,11 @@
   <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelOrphaned.Name" xml:space="preserve">
-    <value>labelOrphaned</value>
-  </data>
-  <data name="&gt;&gt;labelOrphaned.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelOrphaned.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelOrphaned.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="labelInvalid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="labelInvalid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 60</value>
-  </data>
   <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelInvalid.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>112, 19</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Нет деинсталлятора</value>
@@ -198,29 +155,11 @@
   <data name="labelInvalid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelInvalid.Name" xml:space="preserve">
-    <value>labelInvalid</value>
-  </data>
-  <data name="&gt;&gt;labelInvalid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInvalid.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInvalid.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="labelUnverified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="labelUnverified.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
-  </data>
   <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelUnverified.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>135, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Сертификат не проверен</value>
@@ -228,92 +167,26 @@
   <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelUnverified.Name" xml:space="preserve">
-    <value>labelUnverified</value>
-  </data>
-  <data name="&gt;&gt;labelUnverified.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelUnverified.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelUnverified.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="labelVerified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="labelVerified.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
-  </data>
   <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelVerified.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>120, 19</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Сертификат проверен</value>
   </data>
-  <data name="labelVerified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;labelVerified.Name" xml:space="preserve">
-    <value>labelVerified</value>
-  </data>
-  <data name="&gt;&gt;labelVerified.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelVerified.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelVerified.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="labelLegend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="labelLegend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelLegend.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>154, 20</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Легенда подсветки</value>
   </data>
-  <data name="labelLegend.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;labelLegend.Name" xml:space="preserve">
-    <value>labelLegend</value>
-  </data>
-  <data name="&gt;&gt;labelLegend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelLegend.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelLegend.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="labelStoreApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="labelStoreApp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelStoreApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
-  </data>
   <data name="labelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="labelStoreApp.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>119, 19</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Приложение Windows</value>
@@ -321,37 +194,25 @@
   <data name="labelStoreApp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelStoreApp.Name" xml:space="preserve">
-    <value>labelStoreApp</value>
+  <data name="flowLayoutPanellabelVerified.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
-  <data name="&gt;&gt;labelStoreApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="flowLayoutPanellabelUnverified.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
-  <data name="&gt;&gt;labelStoreApp.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="flowLayoutPanellabelInvalid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
-  <data name="&gt;&gt;labelStoreApp.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="flowLayoutPanellabelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="flowLayoutPanellabelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
+  <data name="flowLayoutPanellabelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 140</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ListLegend</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>154, 146</value>
   </data>
 </root>

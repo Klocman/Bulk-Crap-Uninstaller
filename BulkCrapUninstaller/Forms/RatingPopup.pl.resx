@@ -117,20 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonGood.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 26</value>
+  </data>
   <data name="buttonGood.Text" xml:space="preserve">
     <value>Przydatny | Dobrej jakości</value>
+  </data>
+  <data name="buttonBad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 26</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
     <value>Śmieć | Potencjalnie niebezpieczny</value>
   </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 6</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Anuluj</value>
+  </data>
+  <data name="buttonNormal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 26</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
     <value>Wątpliwy | Kiepskiej jakości</value>
   </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 107</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Podziel się swoją oceną</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 29</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>357, 152</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Oceń</value>

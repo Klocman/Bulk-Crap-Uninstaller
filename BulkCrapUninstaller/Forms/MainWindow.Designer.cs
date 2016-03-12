@@ -23,8 +23,6 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
-            this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -69,7 +67,6 @@ namespace BulkCrapUninstaller.Forms
             this.twitterStatusButton1 = new Klocman.Controls.TwitterStatusButton();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdvFiltering = new System.Windows.Forms.Button();
@@ -183,6 +180,9 @@ namespace BulkCrapUninstaller.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
+            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
+            this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
+            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -213,23 +213,6 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            // 
-            // advancedFilters1
-            // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
-            // 
-            // listLegend1
-            // 
-            resources.ApplyResources(this.listLegend1, "listLegend1");
-            this.listLegend1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listLegend1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listLegend1.CertificatesEnabled = true;
-            this.listLegend1.InvalidEnabled = true;
-            this.listLegend1.Name = "listLegend1";
-            this.listLegend1.OrphanedEnabled = true;
-            this.listLegend1.StoreAppEnabled = true;
-            this.listLegend1.WinFeatureEnabled = true;
             // 
             // listViewPanel
             // 
@@ -588,18 +571,6 @@ namespace BulkCrapUninstaller.Forms
             this.settingsSidebarPanel.Controls.Add(this.label1);
             this.settingsSidebarPanel.Controls.Add(this.groupBox1);
             this.settingsSidebarPanel.Name = "settingsSidebarPanel";
-            // 
-            // propertiesSidebar
-            // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.InvalidEnabled = true;
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            this.propertiesSidebar.OrphansEnabled = true;
-            this.propertiesSidebar.ProtectedEnabled = true;
-            this.propertiesSidebar.StoreAppsEnabled = true;
-            this.propertiesSidebar.SysCompEnabled = true;
-            this.propertiesSidebar.UpdatesEnabled = true;
-            this.propertiesSidebar.WinFeaturesEnabled = true;
             // 
             // label1
             // 
@@ -1374,6 +1345,36 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1.ContainerControl = this;
             this.globalHotkeys1.StopWhenFormIsDisabled = true;
             this.globalHotkeys1.SuppressKeyPresses = true;
+            // 
+            // advancedFilters1
+            // 
+            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
+            this.advancedFilters1.Name = "advancedFilters1";
+            // 
+            // listLegend1
+            // 
+            resources.ApplyResources(this.listLegend1, "listLegend1");
+            this.listLegend1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.listLegend1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listLegend1.CertificatesEnabled = true;
+            this.listLegend1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listLegend1.InvalidEnabled = true;
+            this.listLegend1.Name = "listLegend1";
+            this.listLegend1.OrphanedEnabled = true;
+            this.listLegend1.StoreAppEnabled = true;
+            this.listLegend1.WinFeatureEnabled = true;
+            // 
+            // propertiesSidebar
+            // 
+            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
+            this.propertiesSidebar.InvalidEnabled = true;
+            this.propertiesSidebar.Name = "propertiesSidebar";
+            this.propertiesSidebar.OrphansEnabled = true;
+            this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.StoreAppsEnabled = true;
+            this.propertiesSidebar.SysCompEnabled = true;
+            this.propertiesSidebar.UpdatesEnabled = true;
+            this.propertiesSidebar.WinFeaturesEnabled = true;
             // 
             // MainWindow
             // 

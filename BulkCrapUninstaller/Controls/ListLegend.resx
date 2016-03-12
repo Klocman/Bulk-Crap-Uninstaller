@@ -117,26 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelWinFeature.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelWinFeature.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelWinFeature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 100</value>
+    <value>3, 2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelWinFeature.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>88, 19</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelWinFeature.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Windows feature</value>
-  </data>
-  <data name="labelWinFeature.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelWinFeature.Name" xml:space="preserve">
     <value>labelWinFeature</value>
@@ -145,28 +145,28 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelWinFeature.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelWinFeature</value>
   </data>
   <data name="&gt;&gt;labelWinFeature.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="labelOrphaned.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="labelOrphaned.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelOrphaned.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
+    <value>3, 2</value>
+  </data>
+  <data name="labelOrphaned.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>109, 19</value>
   </data>
   <data name="labelOrphaned.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Orphaned application</value>
-  </data>
-  <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelOrphaned.Name" xml:space="preserve">
     <value>labelOrphaned</value>
@@ -175,28 +175,28 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelOrphaned.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelOrphaned</value>
   </data>
   <data name="&gt;&gt;labelOrphaned.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
-  <data name="labelInvalid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="labelInvalid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelInvalid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 60</value>
+    <value>3, 2</value>
+  </data>
+  <data name="labelInvalid.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>93, 19</value>
   </data>
   <data name="labelInvalid.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Missing uninstaller</value>
-  </data>
-  <data name="labelInvalid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelInvalid.Name" xml:space="preserve">
     <value>labelInvalid</value>
@@ -205,28 +205,28 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelInvalid.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelInvalid</value>
   </data>
   <data name="&gt;&gt;labelInvalid.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
-  <data name="labelUnverified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="labelUnverified.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelUnverified.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
+    <value>3, 2</value>
+  </data>
+  <data name="labelUnverified.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>105, 19</value>
   </data>
   <data name="labelUnverified.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Unverified certificate</value>
-  </data>
-  <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelUnverified.Name" xml:space="preserve">
     <value>labelUnverified</value>
@@ -235,19 +235,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelUnverified.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelUnverified</value>
   </data>
   <data name="&gt;&gt;labelUnverified.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
-  <data name="labelVerified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="labelVerified.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelVerified.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
+    <value>3, 2</value>
+  </data>
+  <data name="labelVerified.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>92, 19</value>
   </data>
   <data name="labelVerified.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -265,10 +268,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelVerified.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelVerified</value>
   </data>
   <data name="&gt;&gt;labelVerified.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="labelLegend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -277,7 +280,7 @@
     <value>0, 0</value>
   </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>156, 20</value>
   </data>
   <data name="labelLegend.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -300,26 +303,26 @@
   <data name="&gt;&gt;labelLegend.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="labelStoreApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="labelStoreApp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="labelStoreApp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelStoreApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
+    <value>3, 2</value>
+  </data>
+  <data name="labelStoreApp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 1, 3</value>
   </data>
   <data name="labelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>102, 19</value>
   </data>
   <data name="labelStoreApp.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Windows Store App</value>
-  </data>
-  <data name="labelStoreApp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;labelStoreApp.Name" xml:space="preserve">
     <value>labelStoreApp</value>
@@ -328,9 +331,207 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelStoreApp.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flowLayoutPanellabelStoreApp</value>
   </data>
   <data name="&gt;&gt;labelStoreApp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelVerified.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelVerified.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelVerified</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelVerified.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelVerified.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelVerified.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 41</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelUnverified.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelUnverified.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelUnverified</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelUnverified.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelUnverified.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelUnverified.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 62</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelInvalid.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelInvalid.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelInvalid</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelInvalid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelInvalid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelInvalid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 83</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelOrphaned.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelOrphaned.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelOrphaned</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelOrphaned.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelOrphaned.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelOrphaned.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 104</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelWinFeature.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelWinFeature.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelWinFeature</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelWinFeature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelWinFeature.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelWinFeature.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 125</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="flowLayoutPanellabelStoreApp.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelStoreApp.Name" xml:space="preserve">
+    <value>flowLayoutPanellabelStoreApp</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelStoreApp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelStoreApp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanellabelStoreApp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -346,7 +547,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 140</value>
+    <value>156, 146</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ListLegend</value>

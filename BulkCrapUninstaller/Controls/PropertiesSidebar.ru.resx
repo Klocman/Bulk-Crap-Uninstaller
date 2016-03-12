@@ -702,4 +702,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Показать Компоненты
+Windows</value>
+  </data>
 </root>

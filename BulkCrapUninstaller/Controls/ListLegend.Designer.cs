@@ -36,45 +36,52 @@
             this.labelVerified = new System.Windows.Forms.Label();
             this.labelLegend = new System.Windows.Forms.Label();
             this.labelStoreApp = new System.Windows.Forms.Label();
+            this.flowLayoutPanellabelVerified = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelUnverified = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelInvalid = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelOrphaned = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelWinFeature = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelStoreApp = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanellabelVerified.SuspendLayout();
+            this.flowLayoutPanellabelUnverified.SuspendLayout();
+            this.flowLayoutPanellabelInvalid.SuspendLayout();
+            this.flowLayoutPanellabelOrphaned.SuspendLayout();
+            this.flowLayoutPanellabelWinFeature.SuspendLayout();
+            this.flowLayoutPanellabelStoreApp.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelWinFeature
             // 
-            this.labelWinFeature.BackColor = System.Drawing.Color.SlateBlue;
-            this.labelWinFeature.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelWinFeature, "labelWinFeature");
+            this.labelWinFeature.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelWinFeature.Name = "labelWinFeature";
             this.labelWinFeature.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelOrphaned
             // 
-            this.labelOrphaned.BackColor = System.Drawing.Color.LightPink;
-            this.labelOrphaned.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelOrphaned, "labelOrphaned");
+            this.labelOrphaned.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelOrphaned.Name = "labelOrphaned";
             this.labelOrphaned.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelInvalid
             // 
-            this.labelInvalid.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.labelInvalid.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelInvalid, "labelInvalid");
+            this.labelInvalid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelInvalid.Name = "labelInvalid";
             this.labelInvalid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelUnverified
             // 
-            this.labelUnverified.BackColor = System.Drawing.Color.Aquamarine;
-            this.labelUnverified.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelUnverified, "labelUnverified");
+            this.labelUnverified.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelUnverified.Name = "labelUnverified";
             this.labelUnverified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // labelVerified
             // 
-            this.labelVerified.BackColor = System.Drawing.Color.PaleGreen;
-            this.labelVerified.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelVerified, "labelVerified");
+            this.labelVerified.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVerified.Name = "labelVerified";
             this.labelVerified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
@@ -87,27 +94,89 @@
             // 
             // labelStoreApp
             // 
-            this.labelStoreApp.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.labelStoreApp.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelStoreApp, "labelStoreApp");
+            this.labelStoreApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelStoreApp.Name = "labelStoreApp";
+            // 
+            // flowLayoutPanellabelVerified
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelVerified, "flowLayoutPanellabelVerified");
+            this.flowLayoutPanellabelVerified.BackColor = System.Drawing.Color.PaleGreen;
+            this.flowLayoutPanellabelVerified.Controls.Add(this.labelVerified);
+            this.flowLayoutPanellabelVerified.Name = "flowLayoutPanellabelVerified";
+            this.flowLayoutPanellabelVerified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // flowLayoutPanellabelUnverified
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelUnverified, "flowLayoutPanellabelUnverified");
+            this.flowLayoutPanellabelUnverified.BackColor = System.Drawing.Color.Aquamarine;
+            this.flowLayoutPanellabelUnverified.Controls.Add(this.labelUnverified);
+            this.flowLayoutPanellabelUnverified.Name = "flowLayoutPanellabelUnverified";
+            this.flowLayoutPanellabelUnverified.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // flowLayoutPanellabelInvalid
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelInvalid, "flowLayoutPanellabelInvalid");
+            this.flowLayoutPanellabelInvalid.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.flowLayoutPanellabelInvalid.Controls.Add(this.labelInvalid);
+            this.flowLayoutPanellabelInvalid.Name = "flowLayoutPanellabelInvalid";
+            this.flowLayoutPanellabelInvalid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // flowLayoutPanellabelOrphaned
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelOrphaned, "flowLayoutPanellabelOrphaned");
+            this.flowLayoutPanellabelOrphaned.BackColor = System.Drawing.Color.LightPink;
+            this.flowLayoutPanellabelOrphaned.Controls.Add(this.labelOrphaned);
+            this.flowLayoutPanellabelOrphaned.Name = "flowLayoutPanellabelOrphaned";
+            this.flowLayoutPanellabelOrphaned.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // flowLayoutPanellabelWinFeature
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelWinFeature, "flowLayoutPanellabelWinFeature");
+            this.flowLayoutPanellabelWinFeature.BackColor = System.Drawing.Color.SlateBlue;
+            this.flowLayoutPanellabelWinFeature.Controls.Add(this.labelWinFeature);
+            this.flowLayoutPanellabelWinFeature.Name = "flowLayoutPanellabelWinFeature";
+            this.flowLayoutPanellabelWinFeature.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            // 
+            // flowLayoutPanellabelStoreApp
+            // 
+            resources.ApplyResources(this.flowLayoutPanellabelStoreApp, "flowLayoutPanellabelStoreApp");
+            this.flowLayoutPanellabelStoreApp.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.flowLayoutPanellabelStoreApp.Controls.Add(this.labelStoreApp);
+            this.flowLayoutPanellabelStoreApp.Name = "flowLayoutPanellabelStoreApp";
+            this.flowLayoutPanellabelStoreApp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // ListLegend
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.labelStoreApp);
-            this.Controls.Add(this.labelWinFeature);
-            this.Controls.Add(this.labelOrphaned);
-            this.Controls.Add(this.labelInvalid);
-            this.Controls.Add(this.labelUnverified);
-            this.Controls.Add(this.labelVerified);
+            this.Controls.Add(this.flowLayoutPanellabelStoreApp);
+            this.Controls.Add(this.flowLayoutPanellabelWinFeature);
+            this.Controls.Add(this.flowLayoutPanellabelOrphaned);
+            this.Controls.Add(this.flowLayoutPanellabelInvalid);
+            this.Controls.Add(this.flowLayoutPanellabelUnverified);
+            this.Controls.Add(this.flowLayoutPanellabelVerified);
             this.Controls.Add(this.labelLegend);
-            this.MinimumSize = new System.Drawing.Size(145, 2);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimumSize = new System.Drawing.Size(158, 2);
             this.Name = "ListLegend";
             this.EnabledChanged += new System.EventHandler(this.ThisEnabledChanged);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
+            this.flowLayoutPanellabelVerified.ResumeLayout(false);
+            this.flowLayoutPanellabelVerified.PerformLayout();
+            this.flowLayoutPanellabelUnverified.ResumeLayout(false);
+            this.flowLayoutPanellabelUnverified.PerformLayout();
+            this.flowLayoutPanellabelInvalid.ResumeLayout(false);
+            this.flowLayoutPanellabelInvalid.PerformLayout();
+            this.flowLayoutPanellabelOrphaned.ResumeLayout(false);
+            this.flowLayoutPanellabelOrphaned.PerformLayout();
+            this.flowLayoutPanellabelWinFeature.ResumeLayout(false);
+            this.flowLayoutPanellabelWinFeature.PerformLayout();
+            this.flowLayoutPanellabelStoreApp.ResumeLayout(false);
+            this.flowLayoutPanellabelStoreApp.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,5 +188,11 @@
         private System.Windows.Forms.Label labelVerified;
         private System.Windows.Forms.Label labelLegend;
         private System.Windows.Forms.Label labelStoreApp;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelVerified;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelUnverified;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelInvalid;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelOrphaned;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelWinFeature;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanellabelStoreApp;
     }
 }

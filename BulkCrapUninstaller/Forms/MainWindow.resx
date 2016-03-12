@@ -178,13 +178,16 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="listLegend1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 317</value>
+    <value>320, 311</value>
+  </data>
+  <data name="listLegend1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>135, 333333</value>
   </data>
   <data name="listLegend1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>130, 2</value>
+    <value>140, 2</value>
   </data>
   <data name="listLegend1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 142</value>
+    <value>140, 148</value>
   </data>
   <data name="listLegend1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

@@ -13,48 +13,48 @@ namespace BulkCrapUninstaller.Controls
         public ListLegend()
         {
             InitializeComponent();
-
-            labelInvalid.BackColor = Constants.InvalidColor;
-            labelOrphaned.BackColor = Constants.UnregisteredColor;
-            labelUnverified.BackColor = Constants.UnverifiedColor;
-            labelVerified.BackColor = Constants.VerifiedColor;
-            labelWinFeature.BackColor = Constants.WindowsFeatureColor;
-            labelStoreApp.BackColor = Constants.WindowsStoreAppColor;
+            
+            flowLayoutPanellabelInvalid.BackColor = Constants.InvalidColor;
+            flowLayoutPanellabelOrphaned.BackColor = Constants.UnregisteredColor;
+            flowLayoutPanellabelUnverified.BackColor = Constants.UnverifiedColor;
+            flowLayoutPanellabelVerified.BackColor = Constants.VerifiedColor;
+            flowLayoutPanellabelWinFeature.BackColor = Constants.WindowsFeatureColor;
+            flowLayoutPanellabelStoreApp.BackColor = Constants.WindowsStoreAppColor;
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool InvalidEnabled
         {
-            get { return labelInvalid.Visible; }
-            set { labelInvalid.Visible = value; }
+            get { return flowLayoutPanellabelInvalid.Visible; }
+            set { flowLayoutPanellabelInvalid.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool WinFeatureEnabled
         {
-            get { return labelWinFeature.Visible; }
-            set { labelWinFeature.Visible = value; }
+            get { return flowLayoutPanellabelWinFeature.Visible; }
+            set { flowLayoutPanellabelWinFeature.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool CertificatesEnabled
         {
-            get { return labelVerified.Visible; }
-            set { labelVerified.Visible = value; labelUnverified.Visible = value; }
+            get { return flowLayoutPanellabelVerified.Visible; }
+            set { flowLayoutPanellabelVerified.Visible = value; flowLayoutPanellabelUnverified.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool OrphanedEnabled
         {
-            get { return labelOrphaned.Visible; }
-            set { labelOrphaned.Visible = value; }
+            get { return flowLayoutPanellabelOrphaned.Visible; }
+            set { flowLayoutPanellabelOrphaned.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool StoreAppEnabled
         {
-            get { return labelStoreApp.Visible; }
-            set { labelStoreApp.Visible = value; }
+            get { return flowLayoutPanellabelStoreApp.Visible; }
+            set { flowLayoutPanellabelStoreApp.Visible = value; }
         }
 
         private void OnMouseDown(object sender, MouseEventArgs e)
