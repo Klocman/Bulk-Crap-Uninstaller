@@ -771,5 +771,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["MiscNet4NagShown"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FilterShowWinFeatures {
+            get {
+                return ((bool)(this["FilterShowWinFeatures"]));
+            }
+            set {
+                this["FilterShowWinFeatures"] = value;
+            }
+        }
     }
 }

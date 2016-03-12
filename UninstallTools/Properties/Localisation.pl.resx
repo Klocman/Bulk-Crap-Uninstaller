@@ -289,7 +289,7 @@
   <data name="UninstallStatus_Waiting" xml:space="preserve">
     <value>Oczekiwanie</value>
   </data>
-  <data name="WindowsFeatureTitle" xml:space="preserve">
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>Funkcja Windows</value>
     <comment>Used to mark windows features on the uninstaller list</comment>
   </data>

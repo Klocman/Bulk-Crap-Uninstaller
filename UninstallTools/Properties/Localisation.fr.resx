@@ -334,7 +334,7 @@
   <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
     <value>Commence par</value>
   </data>
-  <data name="WindowsFeatureTitle" xml:space="preserve">
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <comment>Used to mark windows features on the uninstaller list</comment>
     <value>Fonctionnalité Windows</value>
   </data>

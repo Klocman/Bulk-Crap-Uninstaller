@@ -13,7 +13,7 @@ namespace UninstallTools.Startup.Normal
 
         // 6.2 is windows 8 and 2012, they are using a new startup disable scheme
         internal static IStartupDisable DisableFunctions => _disableFunctions ?? 
-            (_disableFunctions = Environment.OSVersion.Version < new Version(6, 2, 0, 0)
+            (_disableFunctions = Environment.OSVersion.Version < WindowsTools.Windows8
                 ? new OldStartupDisable()
                 : (IStartupDisable) new NewStartupDisable());
 

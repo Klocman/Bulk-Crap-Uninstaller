@@ -853,6 +853,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windows Feature.
+        /// </summary>
+        internal static string UninstallerType_WindowsFeature {
+            get {
+                return ResourceManager.GetString("UninstallerType_WindowsFeature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid filter.
         /// </summary>
         internal static string UninstallListEditor_InvalidFilter {
@@ -984,15 +993,6 @@ namespace UninstallTools.Properties {
         internal static string UninstallString {
             get {
                 return ResourceManager.GetString("UninstallString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Windows Feature.
-        /// </summary>
-        internal static string WindowsFeatureTitle {
-            get {
-                return ResourceManager.GetString("WindowsFeatureTitle", resourceCulture);
             }
         }
     }

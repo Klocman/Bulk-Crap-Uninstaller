@@ -49,6 +49,7 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxViewCheckboxes = new System.Windows.Forms.CheckBox();
             this.checkBoxViewGroups = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxWinFeature = new System.Windows.Forms.CheckBox();
             this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -92,6 +93,7 @@ namespace BulkCrapUninstaller.Controls
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListSysComp);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListProtected);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxShowUpdates);
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxWinFeature);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxShowStoreApps);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
@@ -159,6 +161,12 @@ namespace BulkCrapUninstaller.Controls
             this.toolTip1.SetToolTip(this.checkBoxViewGroups, resources.GetString("checkBoxViewGroups.ToolTip"));
             this.checkBoxViewGroups.UseVisualStyleBackColor = true;
             // 
+            // checkBoxWinFeature
+            // 
+            resources.ApplyResources(this.checkBoxWinFeature, "checkBoxWinFeature");
+            this.checkBoxWinFeature.Name = "checkBoxWinFeature";
+            this.checkBoxWinFeature.UseVisualStyleBackColor = true;
+            // 
             // usageTracker1
             // 
             this.usageTracker1.ContainerControl = this;
@@ -201,5 +209,6 @@ namespace BulkCrapUninstaller.Controls
         private CheckBox checkBoxInvalidTest;
         private CheckBox checkBoxOrphans;
         private CheckBox checkBoxShowStoreApps;
+        private CheckBox checkBoxWinFeature;
     }
 }

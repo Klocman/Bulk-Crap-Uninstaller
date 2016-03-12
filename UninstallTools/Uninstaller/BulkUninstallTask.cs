@@ -202,14 +202,14 @@ namespace UninstallTools.Uninstaller
 
         private static bool CheckForTypeCollisions(UninstallerType target, IEnumerable<UninstallerType> running)
         {
-            if (target == UninstallerType.InstallShield || target == UninstallerType.Dism
+            if (target == UninstallerType.InstallShield || target == UninstallerType.WindowsFeature
                 || target == UninstallerType.SdbInst || target == UninstallerType.Unknown)
                 target = UninstallerType.Msiexec;
 
             foreach (var item in running)
             {
                 var x = item;
-                if (x == UninstallerType.InstallShield || x == UninstallerType.Dism
+                if (x == UninstallerType.InstallShield || x == UninstallerType.WindowsFeature
                     || x == UninstallerType.SdbInst || x == UninstallerType.Unknown)
                     x = UninstallerType.Msiexec;
 

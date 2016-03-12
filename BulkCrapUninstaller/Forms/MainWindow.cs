@@ -88,6 +88,7 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
+            _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowWinFeatures, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
 
             // Setup list view
@@ -166,6 +167,7 @@ namespace BulkCrapUninstaller.Forms
             listLegend1.InvalidEnabled = force || _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
             listLegend1.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
             listLegend1.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
+            listLegend1.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && propertiesSidebar.WinFeaturesEnabled;
         }
 
         private void RefreshTitleBar(object sender, EventArgs e)
@@ -245,16 +247,6 @@ namespace BulkCrapUninstaller.Forms
             {
                 abox.ShowDialog();
             }
-        }
-
-        private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_listView.DisplayWindowsFeatures())
-            {
-                filterEditor1.Search(nameof(UninstallerType.Dism), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
-                listLegend1.WinFeatureEnabled = true;
-            }
-            else listLegend1.WinFeatureEnabled = false;
         }
 
         private void advancedOperationsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
@@ -341,6 +333,7 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe(RefreshList, x => x.FilterShowSystemComponents, this);
             settings.Subscribe(RefreshList, x => x.FilterShowProtected, this);
             settings.Subscribe(RefreshList, x => x.FilterShowStoreApps, this);
+            settings.Subscribe(RefreshList, x => x.FilterShowWinFeatures, this);
 
             settings.Subscribe((sender, args) =>
             {
@@ -1140,6 +1133,8 @@ namespace BulkCrapUninstaller.Forms
             // If refresh has finished update the interface
             propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
                 x => x.UninstallerKind == UninstallerType.StoreApp);
+            propertiesSidebar.WinFeaturesEnabled = _listView.AllUninstallers.Any(
+                x => x.UninstallerKind == UninstallerType.WindowsFeature);
 
             propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
             propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
@@ -1148,21 +1143,9 @@ namespace BulkCrapUninstaller.Forms
             propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
 
             RefreshListLegend(sender, e);
-            
+
             if (e.FirstRefresh)
-            {
                 _splash.FadeOut();
-
-                /*
-                // Get rid of the image first to get a better effect
-                startupSplashPictureBox.Image = null;
-                Application.DoEvents();
-
-                startupSplashPictureBox.Visible = false;
-                startupSplashPictureBox.Enabled = false;
-                // Smooths the transition
-                Refresh();*/
-            }
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1214,8 +1197,12 @@ namespace BulkCrapUninstaller.Forms
 
             filterEditor1.Search(results.Any() ? string.Join("|", results.Select(Regex.Escape).ToArray()) : @"a^",
                 ComparisonMethod.Regex);
+        }
 
-            //MessageBox.Show(process.MainWindowTitle);
+        private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _setMan.Selected.Settings.FilterShowWinFeatures = true;
+            filterEditor1.Search(nameof(UninstallerType.WindowsFeature), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
         }
 
         private void viewWindowsStoreAppsToolStripMenuItem_Click(object sender, EventArgs e)

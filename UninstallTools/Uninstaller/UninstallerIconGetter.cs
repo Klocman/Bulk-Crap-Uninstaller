@@ -42,7 +42,7 @@ namespace UninstallTools.Uninstaller
                     return entry.ParentKeyName;
             }
 
-            if (entry.IsUpdate || entry.UninstallerKind == UninstallerType.Dism)
+            if (entry.IsUpdate || entry.UninstallerKind == UninstallerType.WindowsFeature)
                 return UpdateIconKey;
 
             if (entry.UninstallerKind == UninstallerType.Msiexec || entry.UninstallerKind == UninstallerType.SdbInst)

@@ -771,7 +771,7 @@
     <value>180, 180</value>
   </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 268</value>
+    <value>181, 291</value>
   </data>
   <data name="propertiesSidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1326,6 +1326,12 @@
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 6</value>
   </data>
+  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
+    <value>View Windows Features</value>
+  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1722,28 +1728,6 @@
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Open Startup Manager</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAm9JREFUaEPdmr2KE3EUxScfEMhiLdYKdpY+gTYiPoGlpZWdT2Ah+ALWPsBiLaTd
-        Uuy1s7JTLIQYz1zIcuZ/z3W4mxs2sws/Nv+zez4mk27SbTabG4EUp4gUp4gUp4gUT5HZbLZcLBZ3u657
-        jNcv2r8PDtfNcrm8vdvtHmLocwx+Dd6DT+Ar+AN2e1rv4HBsVqvVGYY+wJBn4BV4Bz6Cz+AnuBw6Rps9
-        OBzKer1e4d28tz/j5w34AC7AdyBHXQXuta5WGOM/t/8b+AsuS/rXx4I3WVcr9O/qfD6/j39+grEv8fst
-        OAf97f8FZDCzz2r1SnizdTlBmLJUZkXwZutygjBlqcyK4M3W5QRhylKZFcGbrcsJwpSlMiuCN1uXE4Qp
-        S2VWBG+2LicIU5bKrAjebF1OEKYslVkRvNm6nCBMWSqzInizdTlBmLJUZkXwZutygjBlqcyK4M3W5QRh
-        ylKZFcGbrcsJwpSlMiuCN1uXE4QpS2VWBG+2LicIU5bKrAjebF2tMFWkOEW8IG5jlsqsCN5sXU4QpiyV
-        WRG82bqcIExZKrMieLN1OUGYslRmRfBm63KCMGWpzIrgzdblBGHKUpkVwZutywnClKUyK4I3W5cThClL
-        ZVYEb7YuJwhTlsqsCN5sXU4QpiyVWRG82bqcIExZKrMieLN1OUGYslRmRfBm63KCMGWpzIrgzdblBGHK
-        UpkVwZutqxVuzGOFMSbzoOcQRh69/QBy1FXgXutqhWOy3W5v9Q9DcbFPMYYfhn4Bv4EcrWizB4frBhd5
-        Z+xju6f1Dg6nTP+x7b8wgIt8BE77CwOHIMUpIsUpIsXpsen+ATEAIx6IpYPWAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Uninstall Windows Features...</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 6</value>
@@ -2447,6 +2431,12 @@
   <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Name" xml:space="preserve">
+    <value>addWindowsFeaturesToTheListToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;viewWindowsStoreAppsToolStripMenuItem.Name" xml:space="preserve">
     <value>viewWindowsStoreAppsToolStripMenuItem</value>
   </data>
@@ -2685,12 +2675,6 @@
     <value>openStartupManagerToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;openStartupManagerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Name" xml:space="preserve">
-    <value>addWindowsFeaturesToTheListToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">

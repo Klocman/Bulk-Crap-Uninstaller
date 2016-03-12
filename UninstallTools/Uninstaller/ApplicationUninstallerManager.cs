@@ -160,40 +160,50 @@ namespace UninstallTools.Uninstaller
             return applicationUninstallers;
         }
 
-        public static IEnumerable<ApplicationUninstallerEntry> GetWindowsFeaturesList(
-            GetUninstallerListCallback callback)
+        public static IEnumerable<ApplicationUninstallerEntry> GetWindowsFeaturesList()
+            //GetUninstallerListCallback callback)
         {
-            if (!DismTools.DismIsAvailable)
-                return Enumerable.Empty<ApplicationUninstallerEntry>();
-
             var applicationUninstallers = new List<ApplicationUninstallerEntry>();
 
-            var features = DismTools.GetFeatures().Where(x => x.Value).ToList();
-            var itemId = 0;
-            foreach (var feature in features)
+            if (Environment.OSVersion.Version >= WindowsTools.Windows7)
             {
-                var info = DismTools.GetFeatureInfo(feature.Key);
-
-                //ApplicationUninstallerEntry entry = null;
-                var entry = new ApplicationUninstallerEntry
-                {
-                    RawDisplayName = info.DisplayName,
-                    Comment = info.Description,
-                    UninstallString = DismTools.GetDismUninstallString(feature.Key, false),
-                    QuietUninstallString = DismTools.GetDismUninstallString(feature.Key, true),
-                    UninstallerKind = UninstallerType.Dism,
-                    Publisher = Localisation.WindowsFeatureTitle,
-                    IsValid = true,
-                    Is64Bit = ProcessTools.Is64BitProcess
-                };
-
-                applicationUninstallers.Add(entry);
-
-                itemId++;
-                callback(new GetUninstallerListProgress(features.Count) { CurrentCount = itemId, FinishedEntry = entry });
+                applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures().Where(x => x.Enabled).Select(WindowsFeatureToUninstallerEntry));
             }
+            //TODO do something with the DISM code?
+            /*else if (DismTools.DismIsAvailable)
+            {
+                // Get only enabled
+                var features = DismTools.GetWindowsFeatures().Where(x => x.Value).ToList();
+                var itemId = 0;
+                foreach (var entry in features.Select(kvp => DismTools.GetFeatureInfo(kvp.Key)).Select(WindowsFeatureToUninstallerEntry))
+                {
+                    applicationUninstallers.Add(entry);
+
+                    itemId++;
+                    callback(new GetUninstallerListProgress(features.Count)
+                    {
+                        CurrentCount = itemId,
+                        FinishedEntry = entry
+                    });
+                }
+            }*/
 
             return applicationUninstallers;
+        }
+
+        private static ApplicationUninstallerEntry WindowsFeatureToUninstallerEntry(WindowsFeatureInfo info)
+        {
+            return new ApplicationUninstallerEntry
+            {
+                RawDisplayName = info.DisplayName,
+                Comment = info.Description,
+                UninstallString = DismTools.GetDismUninstallString(info.FeatureName, false),
+                QuietUninstallString = DismTools.GetDismUninstallString(info.FeatureName, true),
+                UninstallerKind = UninstallerType.WindowsFeature,
+                Publisher = "Microsoft Corporation",
+                IsValid = true,
+                Is64Bit = ProcessTools.Is64BitProcess
+            };
         }
 
         /// <summary>

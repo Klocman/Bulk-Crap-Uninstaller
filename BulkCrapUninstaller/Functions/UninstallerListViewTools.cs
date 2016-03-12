@@ -260,7 +260,7 @@ namespace BulkCrapUninstaller.Functions
             _listView.ListView.Focus();
         }
 
-        public bool DisplayWindowsFeatures()
+        /*public bool DisplayWindowsFeatures()
         {
             if (ListRefreshIsRunning)
                 return false;
@@ -288,7 +288,7 @@ namespace BulkCrapUninstaller.Functions
             ListRefreshIsRunning = false;
 
             return error == null;
-        }
+        }*/
 
         /// <summary>
         ///     Get total size of all visible uninstallers.
@@ -455,11 +455,11 @@ namespace BulkCrapUninstaller.Functions
                 detectedUninstallers.RemoveAll(entry => entry.RegistryKeyName.IsNotEmpty() &&
                                                         entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
                                                             StringComparison.InvariantCultureIgnoreCase));
-
-            //TODO optional, error checking and test for net4 + ask if not there /K
-
+            
             if(_settings.Settings.QuietAutomatization && Program.Net4IsAvailable)
                 QuietUninstallTools.GenerateQuietCommands(detectedUninstallers, _settings.Settings.QuietAutomatizationKillStuck);
+
+            detectedUninstallers.AddRange(ApplicationUninstallerManager.GetWindowsFeaturesList());
 
             AllUninstallers = detectedUninstallers;
 
@@ -492,6 +492,10 @@ namespace BulkCrapUninstaller.Functions
 
             if (!_settings.Settings.FilterShowStoreApps)
                 results.Add(new Filter("Store Apps", true, new FilterCondition(nameof(UninstallerType.StoreApp),
+                    ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind))));
+
+            if (!_settings.Settings.FilterShowWinFeatures)
+                results.Add(new Filter("Windows Features", true, new FilterCondition(nameof(UninstallerType.WindowsFeature),
                     ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind))));
 
             if (!_settings.Settings.AdvancedDisplayOrphans)
@@ -528,10 +532,11 @@ namespace BulkCrapUninstaller.Functions
             if (!_settings.Settings.FilterShowStoreApps && entry.UninstallerKind == UninstallerType.StoreApp)
                 return false;
 
+            if (!_settings.Settings.FilterShowWinFeatures && entry.UninstallerKind == UninstallerType.WindowsFeature)
+                return false;
+
             if (!_settings.Settings.AdvancedDisplayOrphans && entry.IsOrphaned) return false;
-
-            /*if (entry.UninstallerKind != UninstallerType.Dism){}*/
-
+            
             if (!_settings.Settings.FilterShowProtected && entry.IsProtected) return false;
 
             if (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent) return false;
@@ -737,7 +742,7 @@ namespace BulkCrapUninstaller.Functions
             var entry = e.Model as ApplicationUninstallerEntry;
             if (entry == null) return;
 
-            if (entry.UninstallerKind == UninstallerType.Dism)
+            if (entry.UninstallerKind == UninstallerType.WindowsFeature)
             {
                 e.Item.BackColor = Constants.WindowsFeatureColor;
             }

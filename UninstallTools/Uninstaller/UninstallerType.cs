@@ -19,7 +19,8 @@ namespace UninstallTools.Uninstaller
         InstallShield,
         [LocalisedName(typeof(Localisation), "UninstallerType_SdbInst")]
         SdbInst,
-        Dism, 
+        [LocalisedName(typeof(Localisation), "UninstallerType_WindowsFeature")]
+        WindowsFeature, 
         [LocalisedName(typeof(Localisation), "UninstallerType_StoreApp")]
         StoreApp,
         [LocalisedName(typeof(Localisation), "UninstallerType_SimpleDelete")]
