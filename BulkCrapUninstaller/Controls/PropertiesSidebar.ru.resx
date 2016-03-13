@@ -136,13 +136,15 @@
     <value>5</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Показывать потерянные</value>
+    <value>Показать потерянные</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>
   </metadata>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. Они не видны в большинстве менеджеров удаления, но все равно занимают место. Потерянные элементы отмечены красным цветом. 
+    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. 
+Они не видны в большинстве менеджеров удаления, но все равно занимают место. 
+Потерянные элементы отмечены красным цветом. 
 
 Внимание: Проверьте перед удалением этих приложений, они могут быть необходимы!</value>
   </data>
@@ -174,7 +176,7 @@
     <value>1</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Отсутствующие</value>
+    <value>Нет деинсталлятора</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Выделять серым цветом деинсталляторы, которые повреждены или отсутствуют.</value>

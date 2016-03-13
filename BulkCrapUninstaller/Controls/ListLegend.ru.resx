@@ -138,7 +138,7 @@
     <value>136, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Потерянные приложения</value>
+    <value>Потерянные</value>
   </data>
   <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -162,7 +162,7 @@
     <value>135, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Сертификат не проверен</value>
+    <value>Сертификат не верен</value>
   </data>
   <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -174,7 +174,7 @@
     <value>120, 19</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
-    <value>Сертификат проверен</value>
+    <value>Сертификат верен</value>
   </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>

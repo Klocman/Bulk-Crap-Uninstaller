@@ -518,7 +518,7 @@
     <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
-    <value>{0} деинсталлятора(ов) выбрано</value>
+    <value>{0} деинсталлятора(ов) отмечено</value>
     <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
