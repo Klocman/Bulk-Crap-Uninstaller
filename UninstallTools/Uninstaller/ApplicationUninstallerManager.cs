@@ -202,7 +202,7 @@ namespace UninstallTools.Uninstaller
                 UninstallerKind = UninstallerType.WindowsFeature,
                 Publisher = "Microsoft Corporation",
                 IsValid = true,
-                Is64Bit = ProcessTools.Is64BitProcess
+                Is64Bit = ProcessTools.Is64BitProcess ? MachineType.X64 : MachineType.X86
             };
         }
 

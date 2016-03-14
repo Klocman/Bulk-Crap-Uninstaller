@@ -2,6 +2,7 @@
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
+using Klocman.Resources;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
@@ -16,7 +17,7 @@ namespace BulkCrapUninstaller.Functions
         internal static string BoolToYesNoAspectConverter(object rowObject)
         {
             var result = rowObject as bool?;
-            return result.HasValue ? result.Value.ToYesNo() : Localisable.Unknown;
+            return result.ToYesNo();
         }
 
         internal static object ColumnGuidAspectGetter(object rowObj)
@@ -58,7 +59,7 @@ namespace BulkCrapUninstaller.Functions
         internal static object ColumnPublisherGroupKeyGetter(object rowObj)
         {
             var entry = rowObj as ApplicationUninstallerEntry;
-            return string.IsNullOrEmpty(entry?.PublisherTrimmed) ? Localisable.Unknown : entry.PublisherTrimmed;
+            return string.IsNullOrEmpty(entry?.PublisherTrimmed) ? CommonStrings.Unknown : entry.PublisherTrimmed;
         }
 
         internal static object ColumnQuietUninstallStringGroupKeyGetter(object rowObj)
@@ -94,7 +95,7 @@ namespace BulkCrapUninstaller.Functions
         {
             var entry = rowObject as ApplicationUninstallerEntry;
             if (string.IsNullOrEmpty(entry?.DisplayVersion))
-                return Localisable.Unknown;
+                return CommonStrings.Unknown;
 
             var dotIndex = entry.DisplayVersion.IndexOf('.');
             return dotIndex > 0 ? entry.DisplayVersion.Substring(0, dotIndex) + ".x" : entry.DisplayVersion;
@@ -104,7 +105,7 @@ namespace BulkCrapUninstaller.Functions
         {
             var entry = rowObject as ApplicationUninstallerEntry;
             return entry == null || entry.EstimatedSize == FileSize.Empty
-                ? Localisable.Unknown
+                ? CommonStrings.Unknown
                 : "x " + entry.EstimatedSize.GetUnitName();
         }
     }

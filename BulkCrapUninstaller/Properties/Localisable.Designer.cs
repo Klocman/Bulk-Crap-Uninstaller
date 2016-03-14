@@ -1450,14 +1450,5 @@ namespace BulkCrapUninstaller.Properties {
                 return ResourceManager.GetString("UninstallProgressWindow_Uninstalling", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unknown.
-        /// </summary>
-        internal static string Unknown {
-            get {
-                return ResourceManager.GetString("Unknown", resourceCulture);
-            }
-        }
     }
 }

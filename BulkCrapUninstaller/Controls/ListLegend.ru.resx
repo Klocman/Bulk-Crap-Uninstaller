@@ -162,7 +162,7 @@
     <value>135, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Сертификат не верен</value>
+    <value>Не проверен</value>
   </data>
   <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -174,7 +174,7 @@
     <value>120, 19</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
-    <value>Сертификат верен</value>
+    <value>Проверен</value>
   </data>
   <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>

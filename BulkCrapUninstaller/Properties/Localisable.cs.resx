@@ -495,10 +495,6 @@ Ponechat je v úloze a použijte "hlasité" odinstalace nebo zcela odstranit z �
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID chybí</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Neznámý</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Vyberte až na ...</value>
   </data>

@@ -8,9 +8,11 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
+using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
+using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools.Junk;
 
@@ -234,7 +236,7 @@ namespace BulkCrapUninstaller.Forms
             _listViewWrapper = new TypedObjectListView<JunkNode>(objectListViewMain);
 
             olvColumnSafety.AspectGetter = x => (x as JunkNode)?.Confidence.GetConfidence().GetLocalisedName();
-            olvColumnPath.GroupKeyGetter = x => (x as JunkNode)?.GroupName ?? Localisable.Unknown;
+            olvColumnPath.GroupKeyGetter = x => (x as JunkNode)?.GroupName ?? CommonStrings.Unknown;
 
             objectListViewMain.UseFiltering = true;
             objectListViewMain.AdditionalFilter = new ModelFilter(JunkListFilter);

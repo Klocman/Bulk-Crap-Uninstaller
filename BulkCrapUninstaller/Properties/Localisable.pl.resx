@@ -496,10 +496,6 @@ Pozostawić je w zadaniu i użyć 'głośnych' dezinstalatorów czy całkowicie 
   <data name="GuidMissing" xml:space="preserve">
     <value>Brak GUID</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Nieznany</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Zaznacz do...</value>
   </data>

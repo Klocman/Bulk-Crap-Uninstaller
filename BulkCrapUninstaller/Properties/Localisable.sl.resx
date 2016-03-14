@@ -496,10 +496,6 @@ Ali želite za te vnose uporabiti "glasne" odstranjevalce, ali morajo ti biti od
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID je manjkajoč</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Neznano</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Izberi navzdol...</value>
   </data>

@@ -497,10 +497,6 @@ Möchten Sie für diese Elemente die Standard Uninstaller verwenden oder sollen 
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID fehlt</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Unbekannt</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Wählen Sie bis zu...</value>
   </data>

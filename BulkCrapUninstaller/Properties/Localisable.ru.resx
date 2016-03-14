@@ -497,10 +497,6 @@
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID отсутствует</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Неизвестно</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Выберите вплоть до...</value>
   </data>

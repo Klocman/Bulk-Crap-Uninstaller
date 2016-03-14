@@ -44,12 +44,12 @@ namespace UninstallTools.Junk
             return returnList.Cast<JunkNode>();
         }
 
-        private static string[] GetSoftwareRegKeys(bool? get64Bit)
+        private static string[] GetSoftwareRegKeys(MachineType architecture)
         {
             var returnVal = new string[2];
             if (ProcessTools.Is64BitProcess)
             {
-                if (get64Bit.HasValue && get64Bit.Value)
+                if (architecture == MachineType.X64)
                 {
                     returnVal[0] = KeyLm;
                     returnVal[1] = KeyCu;

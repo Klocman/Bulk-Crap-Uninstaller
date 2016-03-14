@@ -140,7 +140,8 @@ namespace UninstallTools.Uninstaller
 
             foreach (var tempEntry in results)
             {
-                tempEntry.Is64Bit = is64Bit;
+                if(is64Bit.HasValue && tempEntry.Is64Bit == MachineType.Unknown)
+                    tempEntry.Is64Bit = is64Bit.Value ? MachineType.X64 : MachineType.X86;
 
                 tempEntry.IsRegistered = false;
                 tempEntry.IsOrphaned = true;
@@ -204,7 +205,7 @@ namespace UninstallTools.Uninstaller
             result.RawDisplayName = "OneDrive";
             result.Publisher = "Microsoft Corporation";
             result.EstimatedSize = FileSize.FromKilobytes(1024 * 90);
-            result.Is64Bit = false;
+            result.Is64Bit = MachineType.X86;
             result.IsRegistered = true;
 
             result.UninstallerKind = UninstallerType.Unknown;
@@ -267,7 +268,7 @@ namespace UninstallTools.Uninstaller
             tempEntry.EstimatedSize = GetEstimatedSize(uninstallerKey);
             tempEntry.AboutUrl = GetAboutUrl(uninstallerKey);
 
-            tempEntry.Is64Bit = is64Bit;
+            tempEntry.Is64Bit = is64Bit ? MachineType.X64 : MachineType.X86;
             tempEntry.IsUpdate = GetIsUpdate(uninstallerKey);
 
             // Figure out what we are dealing with
@@ -495,41 +496,41 @@ namespace UninstallTools.Uninstaller
         {
             if (level >= 2)
                 return;
-
+            
             // Get contents of this directory
             List<string> files = null;
             DirectoryInfo[] dirs = null;
+            var binDirs = new List<DirectoryInfo>();
 
             try
             {
                 files = new List<string>(Directory.GetFiles(directory.FullName, "*.exe", SearchOption.TopDirectoryOnly));
-                dirs = directory.GetDirectories();
+
+                var rawDirs = directory.GetDirectories();
+                dirs = rawDirs
+                    // Directories with very short names likely contain program files
+                    .Where(x=>x.Name.Length > 3)
+                    // This matches ISO language codes, much faster than a more specific compare
+                    .Where(x=>x.Name.Length != 5 || !x.Name[2].Equals('-'))
+                    .ToArray();
+                
+                // Check for the bin directory and add files from it to the scan
+                binDirs.AddRange(rawDirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames,
+                    StringComparison.OrdinalIgnoreCase)));
             }
             catch (IOException) { }
             catch (UnauthorizedAccessException) { }
 
             // Check if it is impossible or potentially dangerous to process this directory.
-            if (files == null || dirs == null || files.Count > 40
-                // Subdirs with names 3 and less are probably program's files.
-                || (level > 0 && directory.Name.Length < 4)
-                // This matches ISO language codes, much faster than a more specific compare
-                || (directory.Name.Length == 5 && directory.Name[2].Equals('-')))
+            if (files == null || dirs == null || files.Count > 40)
                 return;
-
-            // Check for the bin directory and add files from it to the scan
-            var binDirs = dirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames,
-                StringComparison.OrdinalIgnoreCase)).ToList();
-
+            
             if (files.Count == 0 && !binDirs.Any())
             {
-                //if ()
+                foreach (var dir in dirs)
                 {
-                    foreach (var dir in dirs)
-                    {
-                        CreateFromDirectoryHelper(results, dir, level + 1);
-                    }
+                    CreateFromDirectoryHelper(results, dir, level + 1);
                 }
-                //else return;
             }
             else
             {
@@ -567,6 +568,15 @@ namespace UninstallTools.Uninstaller
                 entry.InstallDate = compareBestMatchFile.CreationTime;
                 entry.DisplayIcon = compareBestMatchFile.FullName;
                 entry.IconBitmap = Icon.ExtractAssociatedIcon(compareBestMatchFile.FullName);
+
+                try
+                {
+                    entry.Is64Bit = FilesystemTools.CheckExecutableMachineType(compareBestMatchFile.FullName);
+                }
+                catch
+                {
+                    entry.Is64Bit = MachineType.Unknown;
+                }
 
                 if (!_getExtendedAttributesNotSupported)
                 {

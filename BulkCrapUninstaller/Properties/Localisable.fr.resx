@@ -497,10 +497,6 @@ Voulez-vous utiliser les désinstalleurs "causants" pour ces éléments, ou doiv
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID manquant</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Inconnu</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Sélectionner jusqu'à...</value>
   </data>

@@ -16,6 +16,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.IO;
 using Klocman.Localising;
+using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
@@ -593,8 +594,8 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnSystemComponent.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
             _reference.olvColumnSystemComponent.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
-            _reference.olvColumnIs64.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
-            _reference.olvColumnIs64.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
+            _reference.olvColumnIs64.AspectGetter =
+                y => (y as ApplicationUninstallerEntry)?.Is64Bit.GetLocalisedName();
 
             _reference.olvColumnProtected.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
             _reference.olvColumnProtected.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
@@ -615,7 +616,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 var entry = x as ApplicationUninstallerEntry;
                 if (string.IsNullOrEmpty(entry?.AboutUrl)) return Localisable.Empty;
-                return entry.GetUri()?.Host ?? Localisable.Unknown;
+                return entry.GetUri()?.Host ?? CommonStrings.Unknown;
             };
 
             _reference.olvColumnQuietUninstallString.AspectName =
@@ -652,7 +653,7 @@ namespace BulkCrapUninstaller.Functions
                 var rating = _ratingManager.GetRating(model.RatingId);
 
                 if (rating.IsEmpty || (!rating.AverageRating.HasValue && !rating.MyRating.HasValue))
-                    return Localisable.Unknown;
+                    return CommonStrings.Unknown;
 
                 return (rating.MyRating.HasValue ? "Your rating:" : "Average rating:") + " " +
                        RatingEntry.ToRating(rating.MyRating ?? (int)rating.AverageRating);

@@ -115,7 +115,7 @@ namespace UninstallTools.Uninstaller
         public string InstallSource { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "Is64Bit")]
-        public bool? Is64Bit { get; set; }
+        public MachineType Is64Bit { get; set; }
 
         /// <summary>
         ///     Protection from uninstalling.

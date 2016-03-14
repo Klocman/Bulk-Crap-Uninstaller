@@ -497,10 +497,6 @@ Do you want to use "loud" uninstallers for those items, or should they be remove
   <data name="GuidMissing" xml:space="preserve">
     <value>GUID missing</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Unknown</value>
-    <comment>Used when a value is not known or supported, for example unknown size</comment>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Select down to...</value>
   </data>

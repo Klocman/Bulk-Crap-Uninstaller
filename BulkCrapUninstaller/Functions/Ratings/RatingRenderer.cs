@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Properties;
+using Klocman.Resources;
 
 namespace BulkCrapUninstaller.Functions.Ratings
 {
@@ -75,7 +76,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             }
             else
             {
-                DrawText(g, r, Localisable.Unknown);
+                DrawText(g, r, CommonStrings.Unknown);
             }
         }
     }
