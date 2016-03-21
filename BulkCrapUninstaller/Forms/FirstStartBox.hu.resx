@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Vissza</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Tovább</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>További beállítások</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Súgó</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Befejezés</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>A telepítés befejeződött</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>Most már használhatja a BCUninstaller-t. Ha kérdése lenne, vagy egy újabb funkciót szeretne javasolni kattintson a lenti hivatkozásra.</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Kapcsolat űrlap megnyitása</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>A módosítások részleteit elolvashatja a honlapunkon, illetve ott további információkat kaphat.</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Honlap megnyitása</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>Hálózati hozzáférés</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>A BCUninstaller a következők miatt, adott esetekben csatlakozhat az Internethez:</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>● Programfrissítések keresése.</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>● Hibajelentések elküldése.</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>● Névtelen használati statisztika elküldése.</value>
+  </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Alkalmazás minősítések fel- és letöltése.</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>Amikor hiba történik a program megkérdi önt, hogy szeretne-e arról jelentést küldeni. Csak jelölje ki az elküldendő jelentéseket, amelyek a BCUninstaller könyvtárában levő XML fájlokban találhatók. Az elküldött adatokat nem osztjuk meg semmilyen harmadik féllel.</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Frissítések automatikus keresése a program indításakor</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>A frissítéseket kézzel is megkeresheti a menüsorban.</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Névtelen használati statisztika elküldése</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>Ezeknek a statisztikáknak az elküldésével segíthet a program jobbá tételében.</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Alkalmazások minősítésének engedélyezése</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>Sérült eltávolítók</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>Idővel előfordulhat, hogy néhány alkalmazást már nem tud eltávolítani, vagy azok eltűnnek a legtöbb eltávolításkezelő elől.</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>Sérült vagy hiányzó eltávolítók</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>Néha az eltávolítók megsérülhetnek, így ezekkel nem lehetséges az eltávolítás. A BCUninstaller az ilyen jellegű bejegyzéseket is eltávolítja a "Kézi eltávolítás" opcióval.</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Érvénytelen eltávolítók jelölése</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>Az érvénytelen eltávolítók szürkével lesznek megjelölve.</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>Elárvult alkalmazások</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>Néha teljes alkalmazások maradhatnak vissza a lemezén egy eltávolítást követően. Ez akkor is előfordulhat, ha csak az eltávolító kerül törlésre.</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Elárvultak mutatása a listában</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>Az elárvult alkalmazások pirossal vannak jelölve.
+Ha az eredeti eltávolító nem található meg, ezekhez használhatja a "Kézi eltávolítás" lehetőséget.</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>Speciális felhasználók</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>A BCUninstaller ugyan egy alap eltávolítóként használható, azonban számos funkciója szakértő felhasználóknak ajánlott. Óvatosan menjen tovább!</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>Rendszerelemek</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>A programok által "rendszerelemként" jelöltek nem láthatók az alap eltávolításkezelőkben. Ez a címke NEM jelenti azt, hogy az alkalmazás az operációs rendszer része lenne.</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>"Rendszerelemként" megjelölt eltávolítók mutatása</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>Védett eltávolítók</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>Védett elemek, amelyek "NoRemove" címkével vannak ellátva. Ebben az esetben a kiadó nem akarja, hogy eltávolítsa ezeket. Ezt általában nagy szoftvercsomagok használják, hogy megakadályozzák az egyes részeik eltávolítását.</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>"Védettként" megjelölt eltávolítók mutatása</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>"Védettként" megjelölt eltávolítók védelmének kikapcsolása</value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>Ezzel eltávolíthatja a védett elemeket.</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>Eltávolító lista-nézet</value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>A rendszerében levő összes eltávolító megnézhető a fő listanézetben. Néhány módszer az adatok áttekintéséhez:</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>● Szűrőhasználat és kulcsszavas keresés (az összes oszlopban)</value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>● Rendezés bármely oszlop szerint. Az oszlopok átrendezhetők.</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>● Hasonló eltávolítók csoportosítása</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>Elemek csoportosítása</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>Kijelölés jelölőnégyzetekkel</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>Hitelesített eltávolítók</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>Az eltávolítók aláírásra kerülhetnek a fejlesztők által kiadott tanúsítványokkal. Ha a tanúsítvány átment a hitelesítésen, a programcsomag nem lett módosítva és megbízható.</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Hitelesítettek megjelölése</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>A hitelesített eltávolítók zölddel, egyébként kékkel lesznek jelölve.
+Figyelem: Az ellenőrzés hosszabb ideig is eltarthat.</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Üdvözli Önt a BCUninstaller!</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>A varázslóban gyors segítséget kap az alkalmazás megfelelő beállításához.</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>Kiválasztott nyelv</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>Kényszerítheti a BCUninstaller-t, egy adott nyelv használatára, ha az alap nyelv nem felel meg. Az új nyelv alkalmazásához újra kell indítani a programot.</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>Ha lefordítaná a saját nyelvére a BCUninstaller-t, kattintson az alábbi hivatkozásra a kapcsolatfelvételhez. Minden segítséget szívesen fogadunk!</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>Kapcsolat űrlap megnyitása</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Bulk crap
+uninstaller</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Üdvözli a BCUninstaller</value>
+  </data>
+</root>

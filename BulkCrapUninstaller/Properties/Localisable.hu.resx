@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>Visszaállítási pont létrehozása...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>Maradványok keresése...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>Eltávolító lista feltöltése...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>Maradványok eltávolítása...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>Frissítések keresése...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>Nincs a keresési feltételnek megfelelő bejegyzés.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>BCUninstaller exportálás
+Kiadó | Verzió | Dátum | Méret | Beállításjegyzék | Eltávolító típusa | Eltávolítási karaktersorozat | Csendes eltávolító karaktersorozat | Megjegyzések</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value> Hordozható</value>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>Az API meghívása nem sikerült</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>A beállításjegyzék mentése nem sikerült, mégis folytatni szeretné?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>Hiba részletei: </value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>Maradványeltávolítás</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+
+Hiba részletei:
+</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>Szeretné elkészíteni a beállításjegyzék mentését a folytatás előtt?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>Minden módosítást visszaállíthat a dupla kattintást követően.
+
+A fájlok és mappák a Lomtárba kerülnek, ahonnan visszaállíthatja azokat.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>A művelet nem sikerült</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>Ehhez a művelethez csak egy bejegyzést kell kiválasztania</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>A szükséges eltávolítót válassza ki a listából. Ha a jelölőnégyzeteket használja ellenőrizze a kijelölését.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>Frissítések keresése</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>Online tartalom megnyitása</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>Nem lehet csatlakozni az Internethez, nincsenek elérhető hálózatok.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>Kérem ellenőrizze, hogy a hálózati kábel be van-e dugva. Ha Wi-Fi-t használ vizsgálja meg a jelerősséget.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>Visszajelzés küldése</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>Szeretne visszajelzést küldeni a BCU-val kapcsolatban?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>Ez kevesebb mint egy percet vesz csak igénybe, de nagyban segítheti a fejlesztéseinket! Minden visszajelzést nagyra értékelünk, legyen az hibajelzés, új igény, vagy egyszerűen csak köszönetnyilvánítás!
+
+Ezeket később is elküldheti a menüsávból (Súgó-&gt;Visszajelzés küldése).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>A jelenlegi verzió naprakész</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Jelenleg nem érhetők el frissítések, ön a legújabb verziót használja.
+
+Szeretné a funkciók bővítését, vagy hibával találkozott? Kérjük, hogy küldje el a visszajelzését a "Súgó-&gt;Visszajelzés küldése" menü használatával.</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Hiba történt a frissítések ellenőrzése közben</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Kérem ellenőrizze, hogy a BCUninstaller-t nem blokkolja-e a tűzfala, és működik-e az Internetkapcsolata.
+
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Új verzió {0} érhető el. Szeretne erre frissíteni most?</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>A BCUininstaller automatikusan letölti a frissítéseket, és telepíti azokat a program újraindítását követően. A folyamat során a saját beállításai elveszhetnek. 
+
+Módosítások:
+- {0}
+
+Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és az "Update.zip" fájl törlésre kerül.</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Eltávolítás az Msi használatával</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>A kiválasztott bejegyzés nem távolítható el az MsiExec telepítővel</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>A kiválasztott eltávolító nem rendelkezik érvényes GUID-al, az MsiExec használatához.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Eltávolítási feladat leállítása</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Biztos benne, hogy leállítja az aktuálisan futó feladatot?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>A feladat idő előtti leállításával nem vonhatja vissza a módosításokat. A jelenleg futó eltávolítót nem lehet leállítani, a feladat várakozni fog a befejeződéséig.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Visszaállítási pont létrehozása</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Az új visszaállítási pont létrehozása nem sikerült</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value> [x64]</value>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value> DEBUG</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Eltávolítási folyamat</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Most itt hagyhatja a számítógépet</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>A hátrahagyott eltávolítóknak képesnek kell lenniük, a felhasználói beavatkozás nélküli eltávolításra. Ennek ellenére időről-időre ellenőrizze azokat, ha az egyik eltávolító összeomlana.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Feleslegesek/visszamaradtak törlése</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Valójában módosítani szeretné az alacsony biztonságú elemeket?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>Az eltávolításra kijelölt elemek biztonságos eltávolíthatósága a Jó szintnél alacsonyabb, ezért ez veszélyes lehet! Nagyon ajánlott az egyes elemek biztonságos törlésének az ellenőrzése.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Kulcsok eltávolítása a Beállításjegyzékből</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Biztos benne, hogy törli a kijelölt eltávolítási bejegyzéseket?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>A következő elemek törlésre kerültek a Beállításjegyzékből, és eltűntek az eltávolítási listából, de nem lettek eltávolítva.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>Az exportálás nem sikerült</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Egy hiba történt az exportált adatok elmentése közben</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Ha a hiba továbbra is fennáll, próbálja meg egy másik könyvtárba, például az Asztalra elmenteni.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>A BCUninstaller eltávolított {0} alkalmazást</value>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Eltávolító átnevezése</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>A megadott név üres, vagy érvénytelen karaktereket tartalmaz</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Győződjön meg róla, hogy ne legyenek benne a következő karakterek:
+{0}</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Szeretné felkutatni az eltávolítás után visszamaradt elemeket?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Felhívjuk a figyelmét, hogy ez a lehetőség csak hozzáértő felhasználóknak ajánlott, akik tudják mit csinálnak. Ezeknek a fájloknak az eltávolítása nem szükséges, és nem lesznek hatással a rendszere teljesítményére.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Nem találhatók maradványok</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Nem találhatók maradványok. Ennek ellenére bizonyos szemét hátramaradhatott, ezért futtasson le egy olyan jellegű takarítót, mint például a CCleaner.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Semmi sem lett kimásolva a Vágólapra. Vagy nem jelölt ki semmit se, vagy az eltávolító nagyon kevés információval rendelkezik.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Másolás a Vágólapra</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Könyvtárak megnyitása</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Ezzel a művelettel, egyszerre {0} könyvtár fog megnyílni. Biztos benne, hogy folytatja?</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Keresés az Interneten</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Nincs megadva semmi keresendő</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>BCUninstaller eltávolítása</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>Biztos benne, hogy szeretné eltávolítani a BCUninstaller-t?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Sajnáljuk, hogy nem tetszett önnek a program! Ha van egy-két perce írjon pár szót a webhelyünkön (http://klocmansoftware.weebly.com/), hogy miért távolította el a BCU-t. Mindent megteszünk, hogy kijavítsuk a valós problémákat.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Szeretne létrehozni egy visszaállítási pontot a folytatás előtt?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>Ha nem biztos abban, hogy az eltávolítandó alkalmazás fontos, vagy szükséges-e a rendszere működéséhez, javasolt egy visszaállítási pont létrehozása. 
+ Amennyiben a műveletet követően hibákat észlelne, a módosításokat visszavonhatja a Rendszer-visszaállítás segítségével.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Hiba történt a keresőlap megnyitása közben</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Eltávolítási lista mentése</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Nem sikerült a lista mentése egy fájlba</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Biztos benne, hogy visszaállítja az alkalmazás összes beállítását?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Néhány alkalmazást nem lehet csendesen eltávolítani</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Néhány bejegyzés védett, és ezért nem módosítható</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>A kiválasztott bejegyzés védett és nem módosítható</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>Egy hiba történt az URL megnyitása közben</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Szeretné megtartani a jelenlegi kijelöléseit?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Egy hiba történt a könyvtár megnyitása közben</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Nem sikerült a kijelölt fájlok betöltése</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Nincsenek eltávolítók kiválasztva, semmi sem lesz eltávolítva</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Eltávolítók futtatása</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>Az alkalmazások eltávolításához, először ki kell választania azokat a listanézetben. Ha a jelölőnégyzeteket használja, ellenőrizze a kijelölését.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Ha úgy dönt, hogy szeretné megtartani a jelenlegi kijelöléseit, azok egyesítésre kerülnek a megnyitott listával</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Ezzel a művelettel, egyszerre {0} URL fog megnyílni. Biztos benne, hogy folytatja?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>URL-ek megnyitása</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Nincsenek megnyitható URL-ek</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Védett elem módosítása</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Érintett bejegyzések:
+{0}
+
+Ezeknek a bejegyzéseknek módosításához ki kell kapcsolnia a beállításoknál, az eltávolító védelmet. Vagy el is távolíthatja azokat a feladatból, és más elemekkel folytathatja, ha akarja.</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Védett bejegyzés: {0}
+
+A bejegyzés módosításához ki kell kapcsolnia a beállításoknál, az eltávolító védelmet.</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>A következő elemeknek nincs csendes eltávolítójuk:
+{0}
+
+Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítja azokat a feladatból?</value>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Csendes eltávolítás</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Alapbeállítások visszaállítása</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Az összes saját beállítása elfog veszni. A BCUninstaller-t újra kell indítani a művelet befejezéséhez.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Eltávolítási lista megnyitása</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>A visszaállítási pont NEM KERÜLT LÉTREHOZÁSRA, így a módosítások nem vonhatók vissza! Ennek ellenére továbbra is folytatni szeretné az eltávolítást?</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>"{0}" átnevezése</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Kijelölt bejegyzés átnevezése</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>A feladat befejeződött</value>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Választás megjegyzése</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Hiba</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>A fájl nem létezik.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Nincs mit megjeleníteni. Ez az alkalmazás a Windows Installer (MsiExec) használatával távolítható el.</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Érték</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Üres</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>GUID van</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>A GUID hiányzik</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Ismeretlen</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Kijelölés lefelé...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>A fájl nem található.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Eltávolítás utáni parancsok futtatása...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Eltávolítás előttii parancsok futtatása...</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Kész</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0} eltávolító kijelölve</value>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>{0} eltávolító, összesen {1}</value>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>A következő parancs végrehajtása nem sikerült:
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>A külső futtatás nem sikerült</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Alapérték</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Néhány beállítása nem lép életbe, amíg nem indítja újra a programot.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Szeretné újraindítani a BCU-t, az új beállítások érvényesítéséhez?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Programbeállítások módosítása</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>A tanúsítvány hiányzik</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Eltávolítók feldolgozása {0}/{1}</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>A "Leállítás" választásával azonnal bezárásra kerül az épp futó eltávolító, és ez azt eredményezheti, hogy az eltávolítás nem lesz teljes. Általában az eltávolító újra futtatható, az eltávolítás befejezése érdekében.
+
+Másik lehetőség, hogy kihagyja ezt a várakozó folyamatot. A kihagyással az eltávolító folytatja a működését, a következő elemre történő lépéssel. Vegye figyelembe, hogy néhány eltávolító nem fog futni, amíg a kihagyott folyamat nem fejeződik be.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Szeretné kihagyni a jelenleg várakozó eltávolítót?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Jelenlegi feladat kihagyása</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>Egy másik feladat már folyamatban van. Kérem, hogy várja meg amíg az befejeződik, majd próbálja meg újra.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Értékelés: {0}
+
+Pozitív:
+{1}
+
+Negatív:
+{2}</value>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Értékelés részletei</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Ez az alkalmazás nem rendelkezik érvényes registry bejegyzéssel</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Ez az alkalmazás nem rendelkezik szabályos eltávolítóval</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Windows-szolgáltatások betöltése...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>Indítópult információk frissítése...</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Nincsenek megnyitandó könyvtárak</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Nem érhető el</value>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Az értékelés nem érhető el</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Az értékeléshez először azt engedélyeznie kell a beállításoknál.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Azok az alkalmazások nem értékelhetők, amelyek nincsenek megfelelően telepítve.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} program</value>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Átlagos értékelés: {0}; Saját értékelés: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>A következő eltávolítók futtatása, feltehetően összeütközés miatt nem sikerült. Kérem várjon, amíg az egyéb eltávolítók végeznek, majd próbálja meg újra. 
+{0}
+
+A beállításoknál megpróbálhatja letiltani az összeütközések észlelését, de ez nem ajánlott.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Kényszerített eltávolítás</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Néhány eltávolító futtatása nem sikerült</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>A .NET Framework v4.0 nem található</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>A .NET Framework v4.0 nem található, ezért néhány lehetőség letiltásra kerül</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>A v4.0 keretrendszer megléte nem kötelező, de ajánlott. A keretrendszerhez kapcsolódó funkciók letiltásra kerülnek, amíg nem telepíti azt.</value>
+  </data>
+</root>

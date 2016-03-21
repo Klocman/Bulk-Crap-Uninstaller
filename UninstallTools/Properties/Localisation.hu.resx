@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>Weblap</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>Termékkód</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Megjelenítendő név</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>Rövidített megjelenítendő név</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>Verzió</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>Becsült méret</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>Telepítés dátuma</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>Telepítési hely</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>Telepítőforrás</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>64-bites alkalmazás</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>Védett</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>Érvényes</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>Útvonal módosítás</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Kiadó neve</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>Rövidített kiadó-név</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>A csendes eltávolítás lehetséges</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>Csendes eltávolító karakterlánc</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>Beállításkulcs név</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>Registry útvonal</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>Ez egy rendszerösszetevő</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>Eltávolítófájl-név</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>Eltávolító típusa</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>Az eltávolítás lehetséges</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>Eltávolítási karakterlánc</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Megjegyzés</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>Megjelenített ikon</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Érvénytelen útvonal</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>Biztonságosság</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>Az eltávolító működése idő előtt leállításra került</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>Kihagyta a felhasználó</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>Eltávolító helye</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>Nincs érvényes mód eltávolítani ezt a bejegyzést</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>Az eltávolító ezt a hibakódot adta vissza: </value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>Rossz</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>Jó</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>Kétséges</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>Ismeretlen</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>Nagyon jó</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>Szülő eltávolító</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>A cégnév nem egyezik</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>A cégnév egyezik</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>A könyvtárat egyéb telepített alkalmazások használják</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>Az elem nincs megemlítve az eltávolítóban</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>Eltávolító bejegyzése a Beállításjegyzékben</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>Úgy tűnik, hogy az összes kiadó egy kategóriába tartozik</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>A terméknév nem egyezik meg teljesen</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>A terméknév tökéletesen megegyezik</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>A könyvtárnév kérdéses</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>Ismeretlen</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>Windows Installer</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Setup</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft Scriptable Install System </value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>Befejezve</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>Sikertelen</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>Érvénytelen</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>Védett</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>Kihagyva</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>Várakozás</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>A program regisztrálva van</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>Érvénytelen szűrő</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>Új szűrő</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>Nincs találat</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>Tartalmazza</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>Ezzel végződik</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>Egyenlő</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>Ezzel kezdődik</value>
+  </data>
+  <data name="WindowsFeatureTitle" xml:space="preserve">
+    <value>Windows-szolgáltatás</value>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>Bármit tartalmazhat</value>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>Indítópult parancsok</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>Ezek már nem lesznek megnyithatók a rendszerindítás közben. Ellenőrizze, hogy a kiválasztott elemek nem szükségesek-e, mielőtt törli azokat.</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>Eltávolítja a kijelölt programokat az Indítópultból?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>Indítópult kezelő</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>Betöltés...</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>Üres mappa</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>Jelen levő futtathatók</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>Jelen levő fájlok</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>Túl sok fájl van jelen</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>A program neve azonosítva</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>Nincsenek alkönyvtárak</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>A kiadó azonosítva</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>A bejegyzés csak egyszer fog végrehajtódni</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>A bejegyzés illeszkedik az alkalmazáshoz</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Könyvtár</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>Elárvultak a Program Files mappában</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>Beállításjegyzék</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>Indítópult</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>Nem sikerült engedélyezni ezt a bejegyzést, a következő fájl nem található:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>Eltávolító időtúllépés</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>Feladat</value>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>Böngésző segítő objektuma</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>Az érték nem lehet nulla, vagy üres</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>Az érték nem tartalmazhat új sorokat</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Érvénytelen, vagy ismeretlen Indítópult registry kulcs:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Áruházbeli alkalmazás</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Új feltétel</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Elárvult</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Az Áruházbeli alkalmazás adatainak eltávolítása problémás</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Egyszerű törlés</value>
+  </data>
+</root>

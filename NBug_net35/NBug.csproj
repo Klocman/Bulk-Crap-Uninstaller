@@ -123,10 +123,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.de.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localization.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.fi-FI.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localization.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.hr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.hr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.hu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.ko-KR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ko-KR.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Localization.pl.Designer.cs">
       <DependentUpon>Localization.pl.resx</DependentUpon>
@@ -139,6 +169,11 @@
       <DependentUpon>Localization.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Localization.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localization.sl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,12 +279,22 @@
     <EmbeddedResource Include="Core\UI\WinForms\Panels\ExceptionDetails.resx">
       <DependentUpon>ExceptionDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.ru.resx" />
+    <EmbeddedResource Include="Properties\Localization.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.hu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.sl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.sl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.es.resx" />
+    <EmbeddedResource Include="Properties\Localization.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.cs.Designer.cs</LastGenOutput>
@@ -267,12 +312,23 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\Localization.fi-FI.resx" />
+    <None Include="Properties\Localization.fi-FI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.fi-FI.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Localization.hr.resx">
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.hr.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Properties\Localization.ko-KR.resx" />
-    <None Include="Properties\Localization.ja.resx" />
+    <None Include="Properties\Localization.ko-KR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ko-KR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Localization.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ja.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Localization.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Localization.resx">
       <Generator>ResXFileCodeGenerator</Generator>

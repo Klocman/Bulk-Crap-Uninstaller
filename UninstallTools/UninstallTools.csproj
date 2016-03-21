@@ -67,6 +67,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.cs.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisation.hu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localisation.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisation.sl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +173,9 @@
     <EmbeddedResource Include="Controls\FilterEditor.fr.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterEditor.hu.resx">
+      <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.pl.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -183,6 +196,9 @@
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.fr.resx">
+      <DependentUpon>UninstallListEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallListEditor.hu.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.pl.resx">
@@ -209,6 +225,9 @@
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StartupManagerWindow.hu.resx">
+      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.pl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -222,7 +241,14 @@
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.sl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.ru.resx" />
+    <EmbeddedResource Include="Properties\Localisation.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.hu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.sl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.sl.Designer.cs</LastGenOutput>
