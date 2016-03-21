@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxManualNoCollisionProtection.Size" type="System.Drawing.Size, System.Drawing">
@@ -172,5 +172,20 @@ dezinstalatorów ręcznie</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ustawienia ogólne</value>
+  </data>
+  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
+    <value>Automatycznie zatrzymuj zawieszone ciche dezinstalatory</value>
+  </data>
+  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
+    <value>Ponów raz próbę niepowiedzonej cichej dezinstalacji</value>
+  </data>
+  <data name="checkBoxGenerate.Text" xml:space="preserve">
+    <value>Wygeneruj brakujące ciche dezinstalatory jeśli to możliwe</value>
+  </data>
+  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
+    <value>Automatycznie zakończ jeśli czeka na interwencję użytkownika</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Cicha dezinstalacja</value>
   </data>
 </root>

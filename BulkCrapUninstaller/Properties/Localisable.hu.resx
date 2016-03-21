@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
     <value>Visszaállítási pont létrehozása...</value>
@@ -141,6 +141,7 @@ Kiadó | Verzió | Dátum | Méret | Beállításjegyzék | Eltávolító típus
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value> Hordozható</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Az API meghívása nem sikerült</value>
@@ -159,6 +160,7 @@ Kiadó | Verzió | Dátum | Méret | Beállításjegyzék | Eltávolító típus
 
 Hiba részletei:
 </value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>Szeretné elkészíteni a beállításjegyzék mentését a folytatás előtt?</value>
@@ -218,6 +220,7 @@ Szeretné a funkciók bővítését, vagy hibával találkozott? Kérjük, hogy 
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>Új verzió {0} érhető el. Szeretne erre frissíteni most?</value>
+    <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
     <value>A BCUininstaller automatikusan letölti a frissítéseket, és telepíti azokat a program újraindítását követően. A folyamat során a saját beállításai elveszhetnek. 
@@ -226,6 +229,7 @@ Módosítások:
 - {0}
 
 Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és az "Update.zip" fájl törlésre kerül.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
     <value>Eltávolítás az Msi használatával</value>
@@ -253,9 +257,11 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value> [x64]</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value> DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Eltávolítási folyamat</value>
@@ -297,6 +303,7 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>A BCUninstaller eltávolított {0} alkalmazást</value>
+    <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Eltávolító átnevezése</value>
@@ -307,6 +314,7 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
     <value>Győződjön meg róla, hogy ne legyenek benne a következő karakterek:
 {0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
     <value>Szeretné felkutatni az eltávolítás után visszamaradt elemeket?</value>
@@ -331,6 +339,8 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Ezzel a művelettel, egyszerre {0} könyvtár fog megnyílni. Biztos benne, hogy folytatja?</value>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
     <value>Keresés az Interneten</value>
@@ -416,17 +426,20 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
 {0}
 
 Ezeknek a bejegyzéseknek módosításához ki kell kapcsolnia a beállításoknál, az eltávolító védelmet. Vagy el is távolíthatja azokat a feladatból, és más elemekkel folytathatja, ha akarja.</value>
+    <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
     <value>Védett bejegyzés: {0}
 
 A bejegyzés módosításához ki kell kapcsolnia a beállításoknál, az eltávolító védelmet.</value>
+    <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>A következő elemeknek nincs csendes eltávolítójuk:
 {0}
 
 Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítja azokat a feladatból?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
     <value>Csendes eltávolítás</value>
@@ -451,9 +464,11 @@ Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítj
   </data>
   <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
     <value>A feladat befejeződött</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
     <value>Eltávolítás</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
     <value>Választás megjegyzése</value>
@@ -482,9 +497,6 @@ Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítj
   <data name="GuidMissing" xml:space="preserve">
     <value>A GUID hiányzik</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Ismeretlen</value>
-  </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Kijelölés lefelé...</value>
   </data>
@@ -499,22 +511,27 @@ Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítj
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Kész</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>{0} eltávolító kijelölve</value>
+    <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
     <value>{0} eltávolító, összesen {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>A következő parancs végrehajtása nem sikerült:
 {0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
     <value>A külső futtatás nem sikerült</value>
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Alapérték</value>
+    <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
     <value>Néhány beállítása nem lép életbe, amíg nem indítja újra a programot.</value>
@@ -530,6 +547,7 @@ Szeretne normál eltávolítást ezekhez az elemekhez, vagy inkább eltávolítj
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
     <value>Eltávolítók feldolgozása {0}/{1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>A "Leállítás" választásával azonnal bezárásra kerül az épp futó eltávolító, és ez azt eredményezheti, hogy az eltávolítás nem lesz teljes. Általában az eltávolító újra futtatható, az eltávolítás befejezése érdekében.
@@ -553,6 +571,10 @@ Pozitív:
 
 Negatív:
 {2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>Értékelés részletei</value>
@@ -568,12 +590,14 @@ Negatív:
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Indítópult információk frissítése...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>Nincsenek megnyitandó könyvtárak</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>Nem érhető el</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>Az értékelés nem érhető el</value>
@@ -586,6 +610,7 @@ Negatív:
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} program</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Átlagos értékelés: {0}; Saját értékelés: {1}</value>

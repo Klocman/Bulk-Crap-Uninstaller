@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
     <value>Tworzenie punktu przywracania...</value>
@@ -589,15 +589,15 @@ The lists are separated by a single newline.</comment>
     <value>Ładowanie funkcji systemu Windows...</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
-    <comment>Shown when refreshing autostart information of the uninstallers</comment>
     <value>Odświeżanie informacji o autostarcie...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>Brak katalogów do otwarcia</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
-    <comment>Used on application list when value is not available</comment>
     <value>Niedostępne</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>Oceny nie dostępne</value>
@@ -609,8 +609,8 @@ The lists are separated by a single newline.</comment>
     <value>Nie można ocenić aplikacji, które nie są prawidłowo zainstalowane.</value>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
-    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
     <value>{0} aplikacji</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Średnia ocena: {0}; Moja ocena: {1}</value>
@@ -626,5 +626,14 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
     <value>Nie powiodło się uruchomiene niektórych dezinstalatorów</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>Nie znaleziono .NET Framework v4.0</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>Nie znaleziono .NET Framework v4.0, niektóre funkcje będą niedostępne</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Obecność .NET Framework v4.0 jest opcjonalna, ale zalecana. Funkcje które na niej polegają będą wyłączone do czasu zainstalowania .NET Framework v4.0.</value>
   </data>
 </root>

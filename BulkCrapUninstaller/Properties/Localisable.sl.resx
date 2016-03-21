@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
     <value>Ustvarjanje obnovitvene točke...</value>
@@ -595,13 +595,13 @@ The lists are separated by a single newline.</comment>
     <value>Ni imenikov za odpiranje</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
-    <comment>Used on application list when value is not available</comment>
     <value>
     </value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
-    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
     <value>{0} aplikacij</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>Ocene niso na voljo</value>

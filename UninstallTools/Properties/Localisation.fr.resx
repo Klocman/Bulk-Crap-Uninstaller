@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Confidence_Good" xml:space="preserve">
     <value>Bon </value>
@@ -335,12 +335,12 @@
     <value>Commence par</value>
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
-    <comment>Used to mark windows features on the uninstaller list</comment>
     <value>Fonctionnalité Windows</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
-    <comment>As in "matches any word from this string"</comment>
     <value>Contient tout</value>
+    <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
     <value>Commandes de démarrage</value>
@@ -403,8 +403,8 @@
     <value>Le désinstalleur a dépassé le temps</value>
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
-    <comment>Fom Task Scheduler</comment>
     <value>Tâche</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>Extension de navigateur</value>
@@ -419,8 +419,8 @@
     <value>Clé(s) de registre de démarrage invalide(s) ou inconnue(s)</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <comment>Present on the HDD but is not properly reported anywhere</comment>
     <value>Est orpheline</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="UninstallerType_StoreApp" xml:space="preserve">
     <value>App Windows Store</value>

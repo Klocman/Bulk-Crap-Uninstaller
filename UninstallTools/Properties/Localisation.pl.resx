@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutUrl" xml:space="preserve">
     <value>Strona internetowa</value>
@@ -339,8 +339,8 @@
     <value>Zaczyna się na</value>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
-    <comment>As in "matches any word from this string"</comment>
     <value>Zawiera dowolny</value>
+    <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
     <value>Komendy autostartu</value>
@@ -403,8 +403,8 @@
     <value>Upłynął limit czasu dezinstalatora</value>
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
-    <comment>Fom Task Scheduler</comment>
     <value>Zadanie</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
     <value>Wartość nie może być zerowa lub pusta</value>
@@ -422,10 +422,16 @@
     <value>Nowy warunek</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <comment>Present on the HDD but is not properly reported anywhere</comment>
     <value>Jest osierocony</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
     <value>Usuwanie danych Store App jest problematyczne</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Aplikacja Windows Store</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Proste usunięcie</value>
   </data>
 </root>
