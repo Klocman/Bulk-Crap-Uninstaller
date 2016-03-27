@@ -47,8 +47,11 @@ namespace UninstallTools.Uninstaller
                 {
                     try
                     {
-                        return new[] {x.InstallLocation, x.UninstallerLocation,
-                            PathTools.GetDirectory(ProcessTools.SeparateArgsFromCommand(x.DisplayIcon).FileName) };
+                        var iconFilename = x.DisplayIcon.Contains('.')
+                            ? ProcessTools.SeparateArgsFromCommand(x.DisplayIcon).FileName
+                            : x.DisplayIcon;
+
+                        return new[] { x.InstallLocation, x.UninstallerLocation, PathTools.GetDirectory(iconFilename) };
                     }
                     catch
                     {
@@ -161,32 +164,19 @@ namespace UninstallTools.Uninstaller
         }
 
         public static IEnumerable<ApplicationUninstallerEntry> GetWindowsFeaturesList()
-            //GetUninstallerListCallback callback)
         {
+            if (Environment.OSVersion.Version < WindowsTools.Windows7)
+                return Enumerable.Empty<ApplicationUninstallerEntry>();
+
             var applicationUninstallers = new List<ApplicationUninstallerEntry>();
+            var t = new Thread(() => applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures()
+                .Where(x => x.Enabled)
+                .Select(WindowsFeatureToUninstallerEntry)));
+            t.Start();
 
-            if (Environment.OSVersion.Version >= WindowsTools.Windows7)
-            {
-                applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures().Where(x => x.Enabled).Select(WindowsFeatureToUninstallerEntry));
-            }
-            //TODO do something with the DISM code?
-            /*else if (DismTools.DismIsAvailable)
-            {
-                // Get only enabled
-                var features = DismTools.GetWindowsFeatures().Where(x => x.Value).ToList();
-                var itemId = 0;
-                foreach (var entry in features.Select(kvp => DismTools.GetFeatureInfo(kvp.Key)).Select(WindowsFeatureToUninstallerEntry))
-                {
-                    applicationUninstallers.Add(entry);
-
-                    itemId++;
-                    callback(new GetUninstallerListProgress(features.Count)
-                    {
-                        CurrentCount = itemId,
-                        FinishedEntry = entry
-                    });
-                }
-            }*/
+            t.Join(TimeSpan.FromSeconds(30));
+            if (t.IsAlive)
+                throw new TimeoutException("WMI query has hung, try restarting your computer");
 
             return applicationUninstallers;
         }
