@@ -346,8 +346,9 @@ namespace UninstallTools.Uninstaller
                 else
                 {
                     // If no certs were found check the uninstaller
-                    result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates()) ??
-                             new X509Certificate2(entry.UninstallerFullFilename);
+                    result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates());
+                    if (result == null && !string.IsNullOrEmpty(entry.UninstallerFullFilename))
+                        result = new X509Certificate2(entry.UninstallerFullFilename);
                 }
             }
             catch
