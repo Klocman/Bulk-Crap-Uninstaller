@@ -316,42 +316,38 @@ namespace BulkCrapUninstaller.Functions
                 return;
 
             ListRefreshIsRunning = true;
-            try
-            {
-                _reference.LockApplication(true);
-                _reference.Refresh();
 
-                StopProcessingThread(false);
+            _reference.LockApplication(true);
+            _reference.Refresh();
 
-                var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 35,
-                    _reference.Location.Y + _reference.Size.Height - 35);
+            StopProcessingThread(false);
 
-                var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
-                if (error != null)
-                    PremadeDialogs.GenericError(error);
+            var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 35,
+                _reference.Location.Y + _reference.Size.Height - 35);
 
-                _listView.ListView.SuspendLayout();
-                _listView.ListView.BeginUpdate();
+            var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
+            if (error != null)
+                throw error;
 
-                var oldList = _listView.ListView.SmallImageList;
-                _listView.ListView.SmallImageList = _iconGetter.IconList;
-                oldList?.Dispose();
+            _listView.ListView.SuspendLayout();
+            _listView.ListView.BeginUpdate();
 
-                _listView.ListView.SetObjects(AllUninstallers);
-            }
-            finally
-            {
-                _reference.LockApplication(false);
+            var oldList = _listView.ListView.SmallImageList;
+            _listView.ListView.SmallImageList = _iconGetter.IconList;
+            oldList?.Dispose();
 
-                // Run events
-                ListRefreshIsRunning = false;
+            _listView.ListView.SetObjects(AllUninstallers);
 
-                // Don't redraw the list view before all events have ran
-                _listView.ListView.EndUpdate();
-                _listView.ListView.ResumeLayout();
+            _reference.LockApplication(false);
 
-                _listView.ListView.Focus();
-            }
+            // Run events
+            ListRefreshIsRunning = false;
+
+            // Don't redraw the list view before all events have ran
+            _listView.ListView.EndUpdate();
+            _listView.ListView.ResumeLayout();
+
+            _listView.ListView.Focus();
 
             if (_firstRefresh)
             {
@@ -444,23 +440,31 @@ namespace BulkCrapUninstaller.Functions
                     dialogInterface.SetProgress(x.CurrentCount);
                 }));
 
-            detectedUninstallers.AddRange(ApplicationUninstallerManager.GetApplicationsFromDrive(detectedUninstallers,
-                x =>
-                {
-                    dialogInterface.SetProgress(x.TotalCount + x.CurrentCount);
-                    if (x.CurrentCount == 1)
-                        dialogInterface.SetMaximum(x.TotalCount * 2);
-                }));
+            detectedUninstallers.AddRange(
+                ApplicationUninstallerManager.GetApplicationsFromDrive(detectedUninstallers,
+                    x =>
+                    {
+                        dialogInterface.SetProgress(x.TotalCount + x.CurrentCount);
+                        if (x.CurrentCount == 1)
+                            dialogInterface.SetMaximum(x.TotalCount * 2);
+                    }));
 
             if (Program.IsInstalled)
                 detectedUninstallers.RemoveAll(entry => entry.RegistryKeyName.IsNotEmpty() &&
                                                         entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
                                                             StringComparison.InvariantCultureIgnoreCase));
-            
-            if(_settings.Settings.QuietAutomatization && Program.Net4IsAvailable)
+
+            if (_settings.Settings.QuietAutomatization && Program.Net4IsAvailable)
                 QuietUninstallTools.GenerateQuietCommands(detectedUninstallers, _settings.Settings.QuietAutomatizationKillStuck);
 
-            detectedUninstallers.AddRange(ApplicationUninstallerManager.GetWindowsFeaturesList());
+            try
+            {
+                detectedUninstallers.AddRange(ApplicationUninstallerManager.GetWindowsFeaturesList());
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
 
             AllUninstallers = detectedUninstallers;
 
@@ -537,7 +541,7 @@ namespace BulkCrapUninstaller.Functions
                 return false;
 
             if (!_settings.Settings.AdvancedDisplayOrphans && entry.IsOrphaned) return false;
-            
+
             if (!_settings.Settings.FilterShowProtected && entry.IsProtected) return false;
 
             if (!_settings.Settings.FilterShowSystemComponents && entry.SystemComponent) return false;
