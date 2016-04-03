@@ -57,16 +57,6 @@ namespace BulkCrapUninstaller.Forms
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
             BindControlsToSettings();
-
-            advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
-            advancedFilters1.CurrentListChanged +=
-                (sender, args) => _listView.FilteringOverride = advancedFilters1.CurrentList;
-            advancedFilters1.FiltersChanged += (sender, args) =>
-            {
-                if (_listView.FilteringOverride != null)
-                    _listView.UpdateColumnFiltering();
-            };
-            advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
             
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
@@ -114,6 +104,16 @@ namespace BulkCrapUninstaller.Forms
             };
             _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
+            
+            advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
+            advancedFilters1.CurrentListChanged +=
+                (sender, args) => _listView.FilteringOverride = advancedFilters1.CurrentList;
+            advancedFilters1.FiltersChanged += (sender, args) =>
+            {
+                if (_listView.FilteringOverride != null)
+                    _listView.UpdateColumnFiltering();
+            };
+            advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
 
             // Setup update manager, skip at first boot to let user change the setting
             UpdateGrabber.Setup();

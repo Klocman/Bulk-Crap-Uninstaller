@@ -55,6 +55,7 @@ namespace BulkCrapUninstaller.Functions
         private Thread _finalizerThread;
         private bool _firstRefresh = true;
         private bool _listRefreshIsRunning;
+        private IEnumerable<ApplicationUninstallerEntry> _allUninstallers;
 
         internal UninstallerListViewTools(MainWindow reference)
         {
@@ -120,7 +121,11 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> AllUninstallers { get; private set; }
+        public IEnumerable<ApplicationUninstallerEntry> AllUninstallers
+        {
+            get { return _allUninstallers ?? Enumerable.Empty<ApplicationUninstallerEntry>(); }
+            private set { _allUninstallers = value; }
+        }
 
         public IEnumerable<ApplicationUninstallerEntry> FilteredUninstallers
             => _listView.ListView.FilteredObjects.Cast<ApplicationUninstallerEntry>();
