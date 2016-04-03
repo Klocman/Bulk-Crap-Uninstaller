@@ -1,14 +1,14 @@
 ﻿#include "InstallDependancies.iss"
 
-#define MyAppName "Bulk Crap Uninstaller"
-#define MyAppVersion "3.3.1.0"
+#define MyAppName "Bulk Crap Uninstaller"      
+#define MyAppNameShort "BCUninstaller"   
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/"
 #define MyAppExeName "BCUninstaller.exe" 
 #define MyAppCopyright "Copyright 2015 Marcin Szeniak"
-                      
-#define MyAppNameShort "BCUninstaller"   
-#define MyAppVersionShort "3.3.1"
+                                
+#define MyAppVersion "3.3.2.0"     
+#define MyAppVersionShort "3.3.2"
 
 #include "Scripts\PortablePage.iss" 
 #include "Scripts\PortableIcons.iss"
