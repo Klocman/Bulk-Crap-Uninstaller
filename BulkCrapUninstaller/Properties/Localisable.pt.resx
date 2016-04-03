@@ -229,7 +229,7 @@ Quer ter funcionalidades adicionais ou corrigir um erro? Por favor envie-me os s
     <value>O BCUninstaller irá automaticamente baixar a actualização e aplicá-la após fazer um reinício. Por favor note que pode perder as suas configurações no processo.
 
 changelog:
-- { 0 }
+- {0}
 
 Aviso: Durante a actualização, a pasta "Actualizar" e o arquivo "Update.zip" incluídos no directório BCU serão removidos.</value>
     <comment>0 is a list of changes separated by "- "</comment>
