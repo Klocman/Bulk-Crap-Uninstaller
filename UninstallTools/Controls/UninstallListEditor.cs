@@ -39,7 +39,7 @@ namespace UninstallTools.Controls
                 OnCurrentListChanged(this, EventArgs.Empty);
             }
         }
-        
+
         private Filter CurrentlySelected
         {
             get
@@ -54,13 +54,23 @@ namespace UninstallTools.Controls
 
         private void OnCurrentListChanged(object sender, EventArgs e)
         {
-            OnFiltersChanged(sender,e);
+            OnFiltersChanged(sender, e);
             CurrentListChanged?.Invoke(sender, e);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var newItem = new Filter(Localisation.UninstallListEditor_NewFilter, null);
+            Filter newItem;
+            try
+            {
+                newItem = new Filter(Localisation.UninstallListEditor_NewFilter, Localisation.UninstallListEditor_NewFilter);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+                return;
+            }
+
             CurrentList.Add(newItem);
             PopulateList();
             OnFiltersChanged(sender, e);
@@ -156,7 +166,7 @@ namespace UninstallTools.Controls
                     Filter.ExcludeToString(x.Exclude),
                     x.ComparisonEntries.Count.ToString()
                 })
-            {Tag = x}).ToArray());
+            { Tag = x }).ToArray());
         }
 
         private void OnFiltersChanged(object sender, EventArgs e)
@@ -164,7 +174,7 @@ namespace UninstallTools.Controls
             listBoxConditions.Update();
             FiltersChanged?.Invoke(sender, e);
         }
-        
+
         /// <summary>
         /// Fires whenever the filters can potentially give a different result
         /// </summary>
