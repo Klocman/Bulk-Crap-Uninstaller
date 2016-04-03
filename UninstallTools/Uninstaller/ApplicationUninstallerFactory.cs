@@ -117,7 +117,7 @@ namespace UninstallTools.Uninstaller
                     if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
                     {
                         result.SystemComponent = true;
-                        result.IsProtected = true;
+                        //result.IsProtected = true;
                     }
 
                     yield return result;
