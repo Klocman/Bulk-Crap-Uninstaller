@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
@@ -11,7 +13,7 @@ namespace BulkCrapUninstaller.Functions
     {
         internal static string AspectToStringConverter(object x)
         {
-            return x is long ? new FileSize((long) x).ToString() : string.Empty;
+            return x is long ? new FileSize((long)x).ToString() : string.Empty;
         }
 
         internal static string BoolToYesNoAspectConverter(object rowObject)
@@ -73,7 +75,7 @@ namespace BulkCrapUninstaller.Functions
             var applicationUninstallerEntry = x as ApplicationUninstallerEntry;
             if (applicationUninstallerEntry != null)
                 return applicationUninstallerEntry.EstimatedSize.GetRawSize();
-            return (long) 0;
+            return (long)0;
         }
 
         internal static object ColumnUninstallStringGroupKeyGetter(object rowObj)
@@ -83,12 +85,15 @@ namespace BulkCrapUninstaller.Functions
         }
 
         /// <exception cref="InvalidOperationException">The source sequence is empty.</exception>
-        internal static object GetFirstCharGroupKeyGetter(object rowObj)
+        internal static object GetFirstCharGroupKeyGetter(object rowobject)
         {
-            var entry = rowObj as ApplicationUninstallerEntry;
-            return string.IsNullOrEmpty(entry?.DisplayName)
-                ? Localisable.Empty
-                : entry.DisplayName.TrimStart().Substring(0, 1).StripAccents().ToUpper();
+            var entry = rowobject as ApplicationUninstallerEntry;
+            if (entry?.DisplayName == null)
+                return Localisable.Empty;
+
+            var character = entry.DisplayName.StripAccents().FirstOrDefault(x => !char.IsWhiteSpace(x));
+
+            return character.IsDefault() ? Localisable.Empty : char.ToUpperInvariant(character).ToString();
         }
 
         internal static object DisplayVersionGroupKeyGetter(object rowObject)
