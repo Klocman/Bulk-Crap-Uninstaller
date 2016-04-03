@@ -26,7 +26,9 @@ namespace BulkCrapUninstaller
                     CultureInfo.GetCultureInfo("cs-CZ"),
                     CultureInfo.GetCultureInfo("de-DE"),
                     CultureInfo.GetCultureInfo("fr-FR"),
+                    CultureInfo.GetCultureInfo("hu-HU"),
                     CultureInfo.GetCultureInfo("pl-PL"),
+                    CultureInfo.GetCultureInfo("pt-PT"),
                     CultureInfo.GetCultureInfo("ru-RU"),
                     CultureInfo.GetCultureInfo("sl-SI")
                 }.OrderBy(x => x.DisplayName).ToList().AsEnumerable());
@@ -42,7 +44,7 @@ namespace BulkCrapUninstaller
             {
                 try
                 {
-                    currentCulture = CultureInfo.GetCultureInfo(targetLocale);
+                    currentCulture = SupportedLanguages.First(x=>x.Name.Equals(targetLocale));
                 }
                 catch
                 {
