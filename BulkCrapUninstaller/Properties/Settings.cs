@@ -1,4 +1,4 @@
-﻿using Klocman.Binding;
+﻿using Klocman.Binding.Settings;
 
 namespace BulkCrapUninstaller.Properties
 {

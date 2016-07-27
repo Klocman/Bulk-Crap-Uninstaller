@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
-using Klocman.Binding;
+using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller.Forms

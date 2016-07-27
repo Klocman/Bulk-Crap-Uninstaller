@@ -9,7 +9,7 @@ using BrightIdeasSoftware;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
-using Klocman.Binding;
+using Klocman.Binding.Settings;
 using Klocman.Events;
 using Klocman.Extensions;
 using Klocman.Forms;

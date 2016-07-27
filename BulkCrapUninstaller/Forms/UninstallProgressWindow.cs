@@ -7,7 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
-using Klocman.Binding;
+using Klocman.Binding.Settings;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;

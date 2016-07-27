@@ -98,6 +98,10 @@
       <HintPath>..\packages\MySql.Data.6.9.8\lib\net20\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NetSettingBinder, Version=1.0.6043.30270, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetSettingBinder.1.0.6043.30270\lib\net35\NetSettingBinder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.9.0.25611, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectListView.Official.2.9.0\lib\net20\ObjectListView.dll</HintPath>
       <Private>True</Private>
