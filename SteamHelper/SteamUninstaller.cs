@@ -21,10 +21,11 @@ namespace SteamHelper
         private static void LoudUninstall(AppIdInfo appInfo)
         {
             Console.WriteLine("Running " + appInfo.UninstallString);
-            Process.Start(appInfo.UninstallString);
+            var uninstallCommand = Misc.SeparateArgsFromCommand(appInfo.UninstallString);
+            Process.Start(uninstallCommand.Key, uninstallCommand.Value);
 
             Console.WriteLine();
-            Console.WriteLine("Press any key to skip waiting for Steam to uninstall the application...");
+            Console.WriteLine("Press any key to stop waiting for Steam and cancel the operation...");
 
             while (File.Exists(appInfo.ManifestPath))
             {
