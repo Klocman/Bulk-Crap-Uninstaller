@@ -54,20 +54,22 @@ namespace StoreAppHelper
             var userSecurityId = WindowsIdentity.GetCurrent()?.User?.Value;
             var packages = packageManager.FindPackagesForUserWithPackageTypes(userSecurityId, PackageTypes.Main);
             return from package in packages
-                   let file = Path.Combine(package.InstalledLocation.Path, "AppxManifest.xml")
-                   where File.Exists(file) && !package.IsFramework
-                   let contents = File.ReadAllText(file)
-                   let start = contents.IndexOf("<Properties>", StringComparison.Ordinal)
-                   let end = contents.IndexOf("</Properties>", StringComparison.Ordinal)
-                   let rootXml = XElement.Parse(contents.Substring(start, end - start + 13))
-                   let displayName = rootXml.Element("DisplayName")?.Value
-                   let logoPath = rootXml.Element("Logo")?.Value
-                   let publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value
-                   let installPath = package.InstalledLocation.Path
-                   let extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName)
-                   select new App(package.Id.FullName, string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
-                   ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
-                   ExtractDisplayIcon(installPath, logoPath), installPath);
+                let file = Path.Combine(package.InstalledLocation.Path, "AppxManifest.xml")
+                where File.Exists(file) && !package.IsFramework
+                let contents = File.ReadAllText(file)
+                let start = contents.IndexOf("<Properties>", StringComparison.Ordinal)
+                let end = contents.IndexOf("</Properties>", StringComparison.Ordinal)
+                let rootXml = XElement.Parse(contents.Substring(start, end - start + 13))
+                let displayName = rootXml.Element("DisplayName")?.Value
+                let logoPath = rootXml.Element("Logo")?.Value
+                let publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value
+                let installPath = package.InstalledLocation.Path
+                let extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName)
+                select
+                    new App(package.Id.FullName,
+                        string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
+                        ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
+                        ExtractDisplayIcon(installPath, logoPath), installPath);
         }
 
         private static string ExtractDisplayIcon(string appDir, string iconDir)
@@ -82,10 +84,7 @@ namespace StoreAppHelper
 
             var localized = Path.Combine(Path.Combine(appDir, "en-us"), iconDir);
             localized = Path.Combine(appDir, Path.ChangeExtension(localized, "scale-100.png"));
-            if (File.Exists(localized))
-                return localized;
-
-            return null;
+            return File.Exists(localized) ? localized : null;
         }
 
         /// <summary>
