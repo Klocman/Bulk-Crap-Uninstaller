@@ -15,15 +15,16 @@ namespace SteamHelper
         public static AppIdInfo FromAppId(int appId)
         {
             var output = new AppIdInfo(appId);
-            
+
             var appIdStr = appId.ToString("G");
 
-            using (var key = Registry.LocalMachine.OpenSubKey(
-                $@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App {appIdStr}"))
-            {
-                if (key == null)
-                    throw new ArgumentException("AppID is not registered properly");
+            var key = Registry.LocalMachine.OpenSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App {appIdStr}") ??
+                      Registry.LocalMachine.OpenSubKey($@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App {appIdStr}");
+            if (key == null)
+                throw new ArgumentException("AppID is not registered properly");
 
+            using (key)
+            {
                 output.UninstallString = key.GetValue(@"UninstallString") as string;
                 output.InstallDirectory = key.GetValue(@"InstallLocation") as string;
                 if (output.InstallDirectory == null || !File.Exists(output.InstallDirectory))
