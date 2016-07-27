@@ -816,10 +816,6 @@
       <Link>Licence.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\StoreAppHelper\bin\Release\StoreAppHelper.exe">
-      <Link>StoreAppHelper.exe</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\_Documentation\BCU_manual.html">
       <Link>BCU_manual.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -848,9 +844,12 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\Castle.Core.dll" "$(TargetDir)"
-copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\TestStack.White.dll" "$(TargetDir)"
-copy /Y "$(SolutionDir)UninstallerAutomatizer\bin\Release\UninstallerAutomatizer.exe" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y /R /C "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\UninstallerAutomatizer.exe" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\StoreAppHelper.exe" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\SteamHelper.exe" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
