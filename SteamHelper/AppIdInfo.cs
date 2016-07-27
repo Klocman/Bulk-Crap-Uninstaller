@@ -45,8 +45,8 @@ namespace SteamHelper
             var workshopDir = dir.GetDirectories(@"workshop").SingleOrDefault();
             if (workshopDir != null)
             {
-                output.WorkshopManifestPath = dir.GetFiles($@"appworkshop_{appIdStr}.acf").SingleOrDefault()?.FullName;
-                output.WorkshopDirectory = dir.GetDirectories(@"content").SingleOrDefault()?.GetDirectories(appIdStr).SingleOrDefault()?.FullName;
+                output.WorkshopManifestPath = workshopDir.GetFiles($@"appworkshop_{appIdStr}.acf").SingleOrDefault()?.FullName;
+                output.WorkshopDirectory = workshopDir.GetDirectories(@"content").SingleOrDefault()?.GetDirectories(appIdStr).SingleOrDefault()?.FullName;
             }
 
             return output;
