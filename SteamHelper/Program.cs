@@ -67,7 +67,7 @@ namespace SteamHelper
                         break;
 
                     case @"/s":
-                    case @"/_silent":
+                    case @"/silent":
                         if (_queryType != QueryType.Uninstall)
                             throw new ArgumentException(@"/_silent must follow the uninstall command");
                         _silent = true;
