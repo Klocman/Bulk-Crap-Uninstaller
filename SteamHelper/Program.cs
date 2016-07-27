@@ -22,8 +22,8 @@ namespace SteamHelper
                 switch (_queryType)
                 {
                     case QueryType.GetInfo:
-                        foreach (var property in typeof (AppIdInfo).GetProperties(BindingFlags.Public))
-                            Console.WriteLine("{0} - {1}", property.Name, property.GetValue(appInfo, null));
+                        foreach (var property in typeof (AppIdInfo).GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                            Console.WriteLine("{0} - {1}", property.Name, property.GetValue(appInfo, null) ?? "N/A");
                         break;
                     case QueryType.Uninstall:
                         SteamUninstaller.UninstallSteamApp(appInfo, _silent);
