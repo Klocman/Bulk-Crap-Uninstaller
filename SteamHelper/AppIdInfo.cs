@@ -27,7 +27,7 @@ namespace SteamHelper
             {
                 output.UninstallString = key.GetValue(@"UninstallString") as string;
                 output.InstallDirectory = key.GetValue(@"InstallLocation") as string;
-                if (output.InstallDirectory == null || !File.Exists(output.InstallDirectory))
+                if (output.InstallDirectory == null || !Directory.Exists(output.InstallDirectory))
                     throw new ArgumentException($"Install location is invalid or doesn't exist: {output.InstallDirectory}");
             }
 
