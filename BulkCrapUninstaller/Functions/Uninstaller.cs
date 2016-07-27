@@ -73,18 +73,12 @@ namespace BulkCrapUninstaller.Functions
             return true;
         }
 
-        private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries)
+        private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries, bool doNotKillSteam)
         {
-            var steamNeeded = false;
-
-            var filters = entries.DoForEach(x => { if (x.UninstallerKind == UninstallerType.Steam) steamNeeded = true; })
-                .SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
+            var filters = entries.SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
                 .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
 
-            if (steamNeeded)
-                filters = filters.Where(x => !x.TrimEnd('"', ' ').EndsWith("steam.exe", StringComparison.InvariantCultureIgnoreCase)).ToArray();
-
-            return CheckForRunningProcesses(filters);
+            return CheckForRunningProcesses(filters, doNotKillSteam);
         }
 
         private static bool CheckForRunningProcessesBeforeCleanup(IEnumerable<JunkNode> entries)
@@ -95,7 +89,7 @@ namespace BulkCrapUninstaller.Functions
                 .Where(s => !string.IsNullOrEmpty(s))
                 .Distinct().ToArray();
 
-            return CheckForRunningProcesses(filters);
+            return CheckForRunningProcesses(filters, false);
         }
 
         public static IEnumerable<ApplicationUninstallerEntry> GetApplicationsFromProcess(
@@ -112,7 +106,7 @@ namespace BulkCrapUninstaller.Functions
                    select app;
         }
 
-        private static bool CheckForRunningProcesses(string[] filters)
+        private static bool CheckForRunningProcesses(string[] filters, bool doNotKillSteam)
         {
             var myId = Process.GetCurrentProcess().Id;
             var idsToCheck = new List<int>();
@@ -121,6 +115,9 @@ namespace BulkCrapUninstaller.Functions
                 try
                 {
                     if (pr.Id == myId)
+                        continue;
+
+                    if (doNotKillSteam && pr.ProcessName.Equals("steam", StringComparison.InvariantCultureIgnoreCase))
                         continue;
 
                     if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
@@ -186,7 +183,8 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    if (!CheckForRunningProcessesBeforeUninstall(targets))
+                    // Steam will be required to run loud steam app uninstalls
+                    if (!CheckForRunningProcessesBeforeUninstall(targets, !quiet))
                         return;
 
                     if (!SystemRestore.BeginSysRestore(targets.Count))
@@ -396,7 +394,7 @@ namespace BulkCrapUninstaller.Functions
                     return;
                 }
 
-                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }))
+                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }, true))
                     return;
 
                 try
