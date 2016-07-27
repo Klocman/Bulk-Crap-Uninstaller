@@ -45,6 +45,7 @@ namespace UninstallTools.Uninstaller
         }
 
         private static string StoreAppHelperPath => Path.Combine(AssemblyLocation, @"StoreAppHelper.exe");
+        private static string SteamHelperPath => Path.Combine(AssemblyLocation, @"SteamHelper.exe");
 
         public static IEnumerable<ApplicationUninstallerEntry> GetStoreApps()
         {
@@ -294,9 +295,19 @@ namespace UninstallTools.Uninstaller
             if (tempEntry.InstallSource != null)
                 tempEntry.InstallSource = CleanupPath(tempEntry.InstallSource);
 
-            // Use quiet uninstall string as normal uninstall string if the normal string is missing.
-            if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
-                tempEntry.UninstallString = tempEntry.QuietUninstallString;
+            if (tempEntry.UninstallerKind == UninstallerType.Steam)
+            {
+                // Use our helper instead of the built-in Steam uninstaller
+                var appId = tempEntry.RegistryKeyName.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Last();
+                tempEntry.UninstallString = $"\"{SteamHelperPath}\" uninstall {appId}";
+                tempEntry.QuietUninstallString = $"\"{ SteamHelperPath}\" uninstall /silent {appId}";
+            }
+            else
+            {
+                // Use quiet uninstall string as normal uninstall string if the normal string is missing.
+                if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
+                    tempEntry.UninstallString = tempEntry.QuietUninstallString;
+            }
 
             tempEntry.UninstallerFullFilename = GetUninstallerFilename(tempEntry.UninstallString,
                 tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
