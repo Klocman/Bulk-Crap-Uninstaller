@@ -49,8 +49,11 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AppIdInfo.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SteamUninstaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="steam.ico" />
