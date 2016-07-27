@@ -6,8 +6,6 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
-using Klocman.Binding.Settings;
-using Klocman.Events;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems.Tracking;
 using Klocman.Subsystems.Update;
