@@ -150,8 +150,8 @@ namespace UninstallTools.Uninstaller
                 tempEntry.UninstallerKind = tempEntry.UninstallPossible ? GetUninstallerType(tempEntry.UninstallString) : UninstallerType.SimpleDelete;
 
                 // Generate uninstall commands if no uninstaller has been found
-                tempEntry.UninstallString = $"cmd.exe /C del /S \"{tempEntry.InstallLocation}\" && pause";
-                tempEntry.QuietUninstallString = $"cmd.exe /C del /F /S /Q \"{tempEntry.InstallLocation}\"";
+                tempEntry.UninstallString = $"cmd.exe /C del /S \"{tempEntry.InstallLocation}\\\" && pause";
+                tempEntry.QuietUninstallString = $"cmd.exe /C del /F /S /Q \"{tempEntry.InstallLocation}\\\"";
                 tempEntry.IsValid = true;
             }
 
