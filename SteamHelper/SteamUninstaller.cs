@@ -30,7 +30,7 @@ namespace SteamHelper
             {
                 Thread.Sleep(400);
                 if (Console.KeyAvailable)
-                    break;
+                    throw new OperationCanceledException();
             }
         }
 

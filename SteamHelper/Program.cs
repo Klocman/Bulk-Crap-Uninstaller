@@ -10,8 +10,14 @@ namespace SteamHelper
         private static bool _silent;
         private static int _appId;
 
+        /// <summary>
+        /// Return codes:
+        /// 0 - The operation completed successfully.
+        /// 59 - An unexpected network error occurred.
+        /// 1223 - The operation was canceled by the user.
+        /// </summary>
         /// <param name="args">u[ninstall]|i[nfo] [/s[ilent]] AppID</param>
-        private static void Main(string[] args)
+        private static int Main(string[] args)
         {
             try
             {
@@ -22,7 +28,7 @@ namespace SteamHelper
                 switch (_queryType)
                 {
                     case QueryType.GetInfo:
-                        foreach (var property in typeof (AppIdInfo).GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                        foreach (var property in typeof(AppIdInfo).GetProperties(BindingFlags.Public | BindingFlags.Instance))
                             Console.WriteLine("{0} - {1}", property.Name, property.GetValue(appInfo, null) ?? "N/A");
                         break;
                     case QueryType.Uninstall:
@@ -30,10 +36,16 @@ namespace SteamHelper
                         break;
                 }
             }
+            catch (OperationCanceledException)
+            {
+                return 1223; 
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);
+                return 59; 
             }
+            return 0; 
         }
 
         private static void ProcessCommandlineArguments(IEnumerable<string> args)
