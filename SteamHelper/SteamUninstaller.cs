@@ -38,7 +38,7 @@ namespace SteamHelper
         {
             //var steamPath = Misc.SeparateArgsFromCommand(appInfo.UninstallString).Key;
             //var processes = Process.GetProcesses().Where(x => x.MainModule.FileName.Equals(steamPath)).ToList();
-            var processes = Process.GetProcessesByName("Steam.exe");
+            var processes = Process.GetProcessesByName("Steam");
             if (processes.Any())
             {
                 Console.WriteLine("Killing Steam processes");
