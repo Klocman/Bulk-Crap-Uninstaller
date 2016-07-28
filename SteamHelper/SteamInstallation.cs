@@ -36,7 +36,7 @@ namespace SteamHelper
                     var pieces = str.Split('\"').Where(p => !string.IsNullOrEmpty(p?.Trim())).ToList();
                     if (pieces.Count != 2 || !int.TryParse(pieces[0], out dummy)) continue;
                     if (Directory.Exists(pieces[1]))
-                        steamApps.Add(pieces[1]);
+                        steamApps.Add(pieces[1].Replace(@"\\", @"\"));
                 }
             }
             return steamApps;
