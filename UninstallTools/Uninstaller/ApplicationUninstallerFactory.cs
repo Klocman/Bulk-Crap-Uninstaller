@@ -149,9 +149,31 @@ namespace UninstallTools.Uninstaller
 
                 tempEntry.UninstallerKind = tempEntry.UninstallPossible ? GetUninstallerType(tempEntry.UninstallString) : UninstallerType.SimpleDelete;
 
-                // Generate uninstall commands if no uninstaller has been found
-                tempEntry.UninstallString = $"cmd.exe /C del /S \"{tempEntry.InstallLocation}\\\" && pause";
-                tempEntry.QuietUninstallString = $"cmd.exe /C del /F /S /Q \"{tempEntry.InstallLocation}\\\"";
+                switch (tempEntry.UninstallerKind)
+                {
+                    case UninstallerType.InnoSetup:
+                        tempEntry.QuietUninstallString = $"\"{tempEntry.UninstallString}\" /SILENT";
+                        break;
+
+                    case UninstallerType.Msiexec:
+                        Guid resultGuid;
+                        if (GuidTools.TryExtractGuid(tempEntry.UninstallString, out resultGuid))
+                        {
+                            tempEntry.BundleProviderKey = resultGuid;
+                            ApplyMsiInfo(tempEntry, resultGuid);
+                        }
+                        break;
+
+                    default:
+                        // Generate uninstall commands if no uninstaller has been found
+                        if(string.IsNullOrEmpty(tempEntry.UninstallString))
+                        {
+                            tempEntry.UninstallString = $"cmd.exe /C del /S \"{tempEntry.InstallLocation}\\\" && pause";
+                            tempEntry.QuietUninstallString = $"cmd.exe /C del /F /S /Q \"{tempEntry.InstallLocation}\\\"";
+                        }
+                        break;
+                }
+
                 tempEntry.IsValid = true;
             }
 
