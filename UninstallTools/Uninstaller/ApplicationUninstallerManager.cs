@@ -180,11 +180,20 @@ namespace UninstallTools.Uninstaller
 
             foreach (var applicationUninstaller in applicationUninstallers)
             {
-                if (applicationUninstaller.IconBitmap != null) continue;
+                if (applicationUninstaller.IconBitmap == null)
+                {
+                    string iconPath;
+                    applicationUninstaller.IconBitmap = ApplicationUninstallerFactory.TryGetIcon(
+                        applicationUninstaller, out iconPath);
+                    applicationUninstaller.DisplayIcon = iconPath;
+                }
 
-                string iconPath;
-                applicationUninstaller.IconBitmap = ApplicationUninstallerFactory.TryGetIcon(applicationUninstaller, out iconPath);
-                applicationUninstaller.DisplayIcon = iconPath;
+                if (applicationUninstaller.InstallDate.IsDefault() &&
+                    Directory.Exists(applicationUninstaller.InstallLocation))
+                {
+                    applicationUninstaller.InstallDate =
+                        Directory.GetCreationTime(applicationUninstaller.InstallLocation);
+                }
             }
             
             return applicationUninstallers;
