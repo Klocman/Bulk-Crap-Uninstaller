@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace SteamHelper
 {
@@ -28,6 +29,8 @@ namespace SteamHelper
         {
             try
             {
+                Console.OutputEncoding = Encoding.Unicode;
+
                 ProcessCommandlineArguments(args);
 
                 switch (_queryType)
