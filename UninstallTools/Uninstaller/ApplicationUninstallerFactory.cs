@@ -54,7 +54,7 @@ namespace UninstallTools.Uninstaller
             {
                 if (!_steamHelperIsAvailable.HasValue)
                 {
-                    if (!File.Exists(SteamHelperPath))
+                    if (!File.Exists(SteamHelperPath) || !WindowsTools.CheckNetFramework4Installed(true))
                         _steamHelperIsAvailable = false;
                     else
                     {
