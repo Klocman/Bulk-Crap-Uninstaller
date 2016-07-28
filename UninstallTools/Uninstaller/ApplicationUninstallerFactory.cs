@@ -102,7 +102,7 @@ namespace UninstallTools.Uninstaller
                     return new KeyValuePair<string, string>(o[0], o[1]);
                 }).ToList();
 
-                yield return new ApplicationUninstallerEntry
+                var entry = new ApplicationUninstallerEntry
                 {
                     DisplayName = lines.Single(x => x.Key.Equals("Name", StringComparison.InvariantCultureIgnoreCase)).Value,
                     UninstallString = lines.Single(x => x.Key.Equals("UninstallString", StringComparison.InvariantCultureIgnoreCase)).Value,
@@ -112,6 +112,12 @@ namespace UninstallTools.Uninstaller
                     IsOrphaned = true,
                     RatingId = "Steam App " + appId.ToString("G")
                 };
+
+                long bytes;
+                if (long.TryParse(lines.Single(x => x.Key.Equals("SizeOnDisk", StringComparison.InvariantCultureIgnoreCase)).Value, out bytes))
+                    entry.EstimatedSize = FileSize.FromBytes(bytes);
+
+                yield return entry;
             }
         }
 

@@ -40,6 +40,7 @@ namespace SteamHelper
 
             var manifestStrings = File.ReadAllLines(output.ManifestPath);
             output.Name = GetManifestValue(manifestStrings, "name");
+            output.SizeOnDisk = GetManifestValue(manifestStrings, "SizeOnDisk");
             var installDirName = GetManifestValue(manifestStrings, "installdir");
             if (!string.IsNullOrEmpty(installDirName))
             {
@@ -73,6 +74,7 @@ namespace SteamHelper
 
         public int AppId { get; }
         public string Name { get; private set; }
+        public string SizeOnDisk { get; private set; }
         public string UninstallString { get; private set; }
         public string ManifestPath { get; private set; }
         public string InstallDirectory { get; private set; }

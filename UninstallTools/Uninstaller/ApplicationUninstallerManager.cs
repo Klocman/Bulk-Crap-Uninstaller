@@ -166,8 +166,12 @@ namespace UninstallTools.Uninstaller
 
                 foreach (var steamApp in applicationUninstallers.Where(x => x.UninstallerKind == UninstallerType.Steam))
                 {
-                    steamAppsOnDisk.RemoveAll(x => x.InstallLocation.Equals(steamApp.InstallLocation, StringComparison.InvariantCultureIgnoreCase));
+                    var toRemove = steamAppsOnDisk.FindAll(x => x.InstallLocation.Equals(steamApp.InstallLocation, StringComparison.InvariantCultureIgnoreCase));
+                    steamAppsOnDisk.RemoveAll(toRemove);
                     ApplicationUninstallerFactory.ChangeSteamAppUninstallStringToHelper(steamApp);
+
+                    if(steamApp.EstimatedSize.IsDefault() && toRemove.Any())
+                        steamApp.EstimatedSize = toRemove.First().EstimatedSize;
                 }
 
                 foreach (var steamApp in steamAppsOnDisk)
