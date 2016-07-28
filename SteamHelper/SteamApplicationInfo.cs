@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using Microsoft.Win32;
 
 namespace SteamHelper
 {
@@ -14,32 +13,44 @@ namespace SteamHelper
 
         public static SteamApplicationInfo FromAppId(int appId)
         {
-            var output = new SteamApplicationInfo(appId);
+            var steam = SteamInstallation.Instance;
 
+            DirectoryInfo dir = null;
             var appIdStr = appId.ToString("G");
 
-            var key = Registry.LocalMachine.OpenSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App {appIdStr}") ??
-                      Registry.LocalMachine.OpenSubKey($@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App {appIdStr}");
-            if (key == null)
-                throw new ArgumentException("AppID is not registered properly");
+            var output = new SteamApplicationInfo(appId);
 
-            using (key)
+            foreach (var steamAppsLocation in steam.SteamAppsLocations)
             {
-                output.UninstallString = key.GetValue(@"UninstallString") as string;
-                output.InstallDirectory = key.GetValue(@"InstallLocation") as string;
-                if (output.InstallDirectory == null || !Directory.Exists(output.InstallDirectory))
-                    throw new ArgumentException($"Install location is invalid or doesn't exist: {output.InstallDirectory}");
+                var result = Directory.GetFiles(steamAppsLocation, @"appmanifest_*.acf")
+                    .FirstOrDefault(x => appIdStr.Equals(Path.GetFileNameWithoutExtension(x)?.Substring(12), StringComparison.InvariantCulture));
+                if (!string.IsNullOrEmpty(result))
+                {
+                    output.ManifestPath = result;
+                    dir = new DirectoryInfo(steamAppsLocation);
+                    break;
+                }
             }
 
-            var dir = new DirectoryInfo(output.InstallDirectory);
-            while (!dir.Name.Equals(@"steamapps", StringComparison.InvariantCultureIgnoreCase))
+            if (dir == null)
+                throw new ArgumentException("Could not find Steam App with the ID " + appIdStr);
+
+            //"C:\Steam\steam.exe" steam://uninstall/123
+            output.UninstallString = $"\"{steam.MainExecutableFilename}\" steam://uninstall/{appIdStr}";
+
+            var manifestStrings = File.ReadAllLines(output.ManifestPath);
+            output.Name = GetManifestValue(manifestStrings, "name");
+            var installDirName = GetManifestValue(manifestStrings, "installdir");
+            if (!string.IsNullOrEmpty(installDirName))
             {
-                dir = dir.Parent;
-                if (dir == null)
-                    throw new ArgumentException("Could not find the SteamApps directory");
+                var path = Path.Combine(Path.Combine(dir.FullName, @"common"), installDirName);
+                if (Directory.Exists(path))
+                    output.InstallDirectory = path;
+
+                if (output.Name == null)
+                    output.Name = installDirName;
             }
 
-            output.ManifestPath = dir.GetFiles($@"appmanifest_{appIdStr}.acf").Single().FullName;
             output.DownloadDirectory = dir.GetDirectories(@"downloading").SingleOrDefault()?.GetDirectories(appIdStr).SingleOrDefault()?.FullName;
 
             var workshopDir = dir.GetDirectories(@"workshop").SingleOrDefault();
@@ -52,7 +63,16 @@ namespace SteamHelper
             return output;
         }
 
+        public static string GetManifestValue(string[] manifestStrings, string keyName)
+        {
+            var targetLine = manifestStrings
+                .FirstOrDefault(x => x.IndexOf($"\"{keyName.Trim().Trim('\"')}\"", StringComparison.InvariantCultureIgnoreCase) >= 0);
+
+            return string.IsNullOrEmpty(targetLine) ? null : targetLine.Split('\"').Select(x => x.Trim()).LastOrDefault(p => !string.IsNullOrEmpty(p?.Trim()));
+        }
+
         public int AppId { get; }
+        public string Name { get; private set; }
         public string UninstallString { get; private set; }
         public string ManifestPath { get; private set; }
         public string InstallDirectory { get; private set; }
