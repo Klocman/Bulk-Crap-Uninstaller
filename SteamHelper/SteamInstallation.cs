@@ -25,7 +25,7 @@ namespace SteamHelper
 
         private static IEnumerable<string> FindSteamAppsLocations(string installationDirectory)
         {
-            var steamApps = new List<string> {Path.Combine(installationDirectory, @"SteamApps")};
+            var steamApps = new List<string> { Path.Combine(installationDirectory, @"SteamApps") };
 
             var libFoldersFile = Path.Combine(steamApps[0], @"libraryfolders.vdf");
             if (File.Exists(libFoldersFile))
@@ -35,8 +35,10 @@ namespace SteamHelper
                 {
                     var pieces = str.Split('\"').Where(p => !string.IsNullOrEmpty(p?.Trim())).ToList();
                     if (pieces.Count != 2 || !int.TryParse(pieces[0], out dummy)) continue;
-                    if (Directory.Exists(pieces[1]))
-                        steamApps.Add(pieces[1].Replace(@"\\", @"\"));
+
+                    var path = Path.Combine(pieces[1].Replace(@"\\", @"\"), "steamapps");
+                    if (Directory.Exists(path))
+                        steamApps.Add(path);
                 }
             }
             return steamApps;
@@ -44,7 +46,7 @@ namespace SteamHelper
 
         private static string FindSteamInstallationLocation()
         {
-            foreach (var keyPath in new[] {@"SOFTWARE\Valve\Steam", @"SOFTWARE\WOW6432Node\Valve\Steam"})
+            foreach (var keyPath in new[] { @"SOFTWARE\Valve\Steam", @"SOFTWARE\WOW6432Node\Valve\Steam" })
             {
                 using (var key = Registry.LocalMachine.OpenSubKey(keyPath))
                 {
