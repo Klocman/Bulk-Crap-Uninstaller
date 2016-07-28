@@ -177,6 +177,15 @@ namespace UninstallTools.Uninstaller
 
                 applicationUninstallers.AddRange(steamAppsOnDisk);
             }
+
+            foreach (var applicationUninstaller in applicationUninstallers)
+            {
+                if (applicationUninstaller.IconBitmap != null) continue;
+
+                string iconPath;
+                applicationUninstaller.IconBitmap = ApplicationUninstallerFactory.TryGetIcon(applicationUninstaller, out iconPath);
+                applicationUninstaller.DisplayIcon = iconPath;
+            }
             
             return applicationUninstallers;
         }

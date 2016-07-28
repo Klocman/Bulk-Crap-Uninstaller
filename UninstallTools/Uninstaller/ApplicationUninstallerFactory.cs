@@ -410,10 +410,6 @@ namespace UninstallTools.Uninstaller
             tempEntry.IsValid = GetIsValid(tempEntry.UninstallString, tempEntry.UninstallerFullFilename,
                 tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
 
-            string iconPath;
-            tempEntry.IconBitmap = TryGetIcon(tempEntry, out iconPath);
-            tempEntry.DisplayIcon = iconPath;
-
             return tempEntry;
         }
 
