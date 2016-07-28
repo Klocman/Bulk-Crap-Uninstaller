@@ -160,6 +160,24 @@ namespace UninstallTools.Uninstaller
             applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetSpecialUninstallers());
             applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetStoreApps());
 
+            if (ApplicationUninstallerFactory.SteamHelperIsAvailable)
+            {
+                var steamAppsOnDisk = ApplicationUninstallerFactory.GetSteamApps().ToList();
+
+                foreach (var steamApp in applicationUninstallers.Where(x => x.UninstallerKind == UninstallerType.Steam))
+                {
+                    steamAppsOnDisk.RemoveAll(x => x.InstallLocation.Equals(steamApp.InstallLocation, StringComparison.InvariantCultureIgnoreCase));
+                    ApplicationUninstallerFactory.ChangeSteamAppUninstallStringToHelper(steamApp);
+                }
+
+                foreach (var steamApp in steamAppsOnDisk)
+                {
+                    ApplicationUninstallerFactory.ChangeSteamAppUninstallStringToHelper(steamApp);
+                }
+
+                applicationUninstallers.AddRange(steamAppsOnDisk);
+            }
+            
             return applicationUninstallers;
         }
 
