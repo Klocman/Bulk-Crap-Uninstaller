@@ -19,16 +19,17 @@ namespace SteamHelper
         /// 1223 - The operation was canceled by the user.
         /// 
         /// Commands
-        /// u[ninstall] [/s[ilent]] AppID
-        /// i[nfo] AppID
-        /// l[ist]
-        /// </summary>
+        /// u[ninstall] [/s[ilent]] AppID     - Uninstall an app
+        /// i[nfo] AppID                      - Show info about an app
+        /// l[ist]                            - List app ID's
+        /// steam                             - Show Steam install location
+        /// </summary>                        
         private static int Main(string[] args)
         {
             try
             {
                 ProcessCommandlineArguments(args);
-                
+
                 switch (_queryType)
                 {
                     case QueryType.GetInfo:
@@ -47,6 +48,10 @@ namespace SteamHelper
                                 .Select(p => (Path.GetFileNameWithoutExtension(p)?.Substring(12))).Where(p => p != null))
                             .Select(int.Parse).OrderBy(x => x))
                             Console.WriteLine(result);
+                        break;
+
+                    case QueryType.SteamDir:
+                        Console.WriteLine(SteamInstallation.Instance.InstallationDirectory);
                         break;
                 }
             }
@@ -93,6 +98,11 @@ namespace SteamHelper
                         _queryType = QueryType.List;
                         break;
 
+                    case @"steam":
+                        if (_queryType != QueryType.None) throw new ArgumentException(@"Multiple commands specified");
+                        _queryType = QueryType.SteamDir;
+                        break;
+
                     default:
                         if (_appId != default(int)) throw new ArgumentException(@"Multiple AppIDs specified");
                         if (!int.TryParse(arg, out _appId)) throw new ArgumentException($@"Unknown argument: {arg}");
@@ -100,8 +110,13 @@ namespace SteamHelper
                 }
             }
 
-            if (_queryType == QueryType.None) throw new ArgumentException(@"No commands specified");
-            if (_queryType != QueryType.List && _appId == default(int)) throw new ArgumentException(@"No AppID specified");
+            if (_queryType == QueryType.None)
+                throw new ArgumentException(@"No commands specified");
+
+            if (_queryType != QueryType.List
+                && _queryType != QueryType.SteamDir
+                && _appId == default(int))
+                throw new ArgumentException(@"No AppID specified");
         }
 
         private enum QueryType
@@ -109,7 +124,8 @@ namespace SteamHelper
             None,
             Uninstall,
             GetInfo,
-            List
+            List,
+            SteamDir
         }
     }
 }
