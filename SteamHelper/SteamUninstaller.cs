@@ -8,7 +8,7 @@ namespace SteamHelper
 {
     internal class SteamUninstaller
     {
-        public static void UninstallSteamApp(AppIdInfo appInfo, bool silent)
+        public static void UninstallSteamApp(SteamApplicationInfo appInfo, bool silent)
         {
             Console.WriteLine("Uninstalling SteapApp with ID {0}{1}", appInfo.AppId, silent ? " silently" : string.Empty);
 
@@ -18,7 +18,7 @@ namespace SteamHelper
                 LoudUninstall(appInfo);
         }
 
-        private static void LoudUninstall(AppIdInfo appInfo)
+        private static void LoudUninstall(SteamApplicationInfo appInfo)
         {
             Console.WriteLine("Running " + appInfo.UninstallString);
             var uninstallCommand = Misc.SeparateArgsFromCommand(appInfo.UninstallString);
@@ -35,7 +35,7 @@ namespace SteamHelper
             }
         }
 
-        private static void QuietUninstall(AppIdInfo appInfo)
+        private static void QuietUninstall(SteamApplicationInfo appInfo)
         {
             //var steamPath = Misc.SeparateArgsFromCommand(appInfo.UninstallString).Key;
             //var processes = Process.GetProcesses().Where(x => x.MainModule.FileName.Equals(steamPath)).ToList();

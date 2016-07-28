@@ -5,16 +5,16 @@ using Microsoft.Win32;
 
 namespace SteamHelper
 {
-    internal class AppIdInfo
+    internal class SteamApplicationInfo
     {
-        private AppIdInfo(int appId)
+        private SteamApplicationInfo(int appId)
         {
             AppId = appId;
         }
 
-        public static AppIdInfo FromAppId(int appId)
+        public static SteamApplicationInfo FromAppId(int appId)
         {
-            var output = new AppIdInfo(appId);
+            var output = new SteamApplicationInfo(appId);
 
             var appIdStr = appId.ToString("G");
 

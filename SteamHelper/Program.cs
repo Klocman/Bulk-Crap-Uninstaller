@@ -23,12 +23,12 @@ namespace SteamHelper
             {
                 ProcessCommandlineArguments(args);
 
-                var appInfo = AppIdInfo.FromAppId(_appId);
+                var appInfo = SteamApplicationInfo.FromAppId(_appId);
 
                 switch (_queryType)
                 {
                     case QueryType.GetInfo:
-                        foreach (var property in typeof(AppIdInfo).GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                        foreach (var property in typeof(SteamApplicationInfo).GetProperties(BindingFlags.Public | BindingFlags.Instance))
                             Console.WriteLine("{0} - {1}", property.Name, property.GetValue(appInfo, null) ?? "N/A");
                         break;
                     case QueryType.Uninstall:
