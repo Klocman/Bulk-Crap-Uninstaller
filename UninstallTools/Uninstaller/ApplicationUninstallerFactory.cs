@@ -46,24 +46,58 @@ namespace UninstallTools.Uninstaller
 
         private static string StoreAppHelperPath => Path.Combine(AssemblyLocation, @"StoreAppHelper.exe");
         private static string SteamHelperPath => Path.Combine(AssemblyLocation, @"SteamHelper.exe");
-
-        public static IEnumerable<ApplicationUninstallerEntry> GetStoreApps()
+        
+        public static IEnumerable<ApplicationUninstallerEntry> GetSteamApps()
         {
-            if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
+            if (!File.Exists(SteamHelperPath))
                 yield break;
 
-            var psi = new ProcessStartInfo(StoreAppHelperPath, "/query")
+            var output = StartProcessAndReadOutput(SteamHelperPath, "list");
+            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
+                yield break;
+
+            foreach (var idString in output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries))
+            {
+                int appId;
+                if (!int.TryParse(idString, out appId)) continue;
+
+                output = StartProcessAndReadOutput(SteamHelperPath, "info " + appId.ToString("G"));
+                if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
+                    continue;
+
+                var lines = output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries).Select(x =>
+                {
+                    var o = x.Split(new[] { " - " }, StringSplitOptions.None);
+                    return new KeyValuePair<string, string>(o[0], o[1]);
+                }).ToList();
+
+                yield return new ApplicationUninstallerEntry
+                {
+                    DisplayName = lines.Single(x => x.Key.Equals("Name", StringComparison.InvariantCultureIgnoreCase)).Value,
+                    UninstallString = lines.Single(x => x.Key.Equals("UninstallString", StringComparison.InvariantCultureIgnoreCase)).Value,
+                    InstallLocation = lines.Single(x => x.Key.Equals("InstallDirectory", StringComparison.InvariantCultureIgnoreCase)).Value
+                };
+            }
+        }
+
+        private static string StartProcessAndReadOutput(string filename, string args)
+        {
+            using (var process = Process.Start(new ProcessStartInfo(filename, args)
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = false,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Unicode
-            };
+            })) return process?.StandardOutput.ReadToEnd();
+        }
 
-            var process = Process.Start(psi);
+        public static IEnumerable<ApplicationUninstallerEntry> GetStoreApps()
+        {
+            if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
+                yield break;
 
-            var output = process?.StandardOutput.ReadToEnd();
+            var output = StartProcessAndReadOutput(StoreAppHelperPath, "/query");
             if (string.IsNullOrEmpty(output))
                 yield break;
 
@@ -141,7 +175,7 @@ namespace UninstallTools.Uninstaller
 
             foreach (var tempEntry in results)
             {
-                if(is64Bit.HasValue && tempEntry.Is64Bit == MachineType.Unknown)
+                if (is64Bit.HasValue && tempEntry.Is64Bit == MachineType.Unknown)
                     tempEntry.Is64Bit = is64Bit.Value ? MachineType.X64 : MachineType.X86;
 
                 tempEntry.IsRegistered = false;
@@ -166,7 +200,7 @@ namespace UninstallTools.Uninstaller
 
                     default:
                         // Generate uninstall commands if no uninstaller has been found
-                        if(string.IsNullOrEmpty(tempEntry.UninstallString))
+                        if (string.IsNullOrEmpty(tempEntry.UninstallString))
                         {
                             tempEntry.UninstallString = $"cmd.exe /C del /S \"{tempEntry.InstallLocation}\\\" && pause";
                             tempEntry.QuietUninstallString = $"cmd.exe /C del /F /S /Q \"{tempEntry.InstallLocation}\\\"";
@@ -530,7 +564,7 @@ namespace UninstallTools.Uninstaller
         {
             if (level >= 2)
                 return;
-            
+
             // Get contents of this directory
             List<string> files = null;
             DirectoryInfo[] dirs = null;
@@ -543,11 +577,11 @@ namespace UninstallTools.Uninstaller
                 var rawDirs = directory.GetDirectories();
                 dirs = rawDirs
                     // Directories with very short names likely contain program files
-                    .Where(x=>x.Name.Length > 3)
+                    .Where(x => x.Name.Length > 3)
                     // This matches ISO language codes, much faster than a more specific compare
-                    .Where(x=>x.Name.Length != 5 || !x.Name[2].Equals('-'))
+                    .Where(x => x.Name.Length != 5 || !x.Name[2].Equals('-'))
                     .ToArray();
-                
+
                 // Check for the bin directory and add files from it to the scan
                 binDirs.AddRange(rawDirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames,
                     StringComparison.OrdinalIgnoreCase)));
@@ -558,7 +592,7 @@ namespace UninstallTools.Uninstaller
             // Check if it is impossible or potentially dangerous to process this directory.
             if (files == null || dirs == null || files.Count > 40)
                 return;
-            
+
             if (files.Count == 0 && !binDirs.Any())
             {
                 foreach (var dir in dirs)
@@ -941,7 +975,7 @@ namespace UninstallTools.Uninstaller
                 try
                 {
                     var result = File.ReadAllText(ps.FileName, Encoding.ASCII);
-                    
+
                     // Detect NSIS Nullsoft.NSIS (the most common)
                     if (result.Contains("Nullsoft"))
                         return UninstallerType.Nsis;
