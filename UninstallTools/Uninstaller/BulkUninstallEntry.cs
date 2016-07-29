@@ -45,6 +45,12 @@ namespace UninstallTools.Uninstaller
                 if (!IsRunning && CurrentStatus == UninstallStatus.Waiting)
                     CurrentStatus = UninstallStatus.Skipped;
 
+                // Do not allow skipping of Msiexec uninstallers because they will hold up the rest of Msiexec uninstallers in the task
+                if (CurrentStatus == UninstallStatus.Uninstalling &&
+                    UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
+                    !terminate)
+                    return;
+
                 _skipLevel = terminate ? SkipCurrentLevel.Terminate : SkipCurrentLevel.Skip;
             }
         }
@@ -104,7 +110,7 @@ namespace UninstallTools.Uninstaller
                 // Can be null during simulation
                 if (uninstaller != null)
                 {
-                    if(options.PreferQuiet && UninstallerEntry.QuietUninstallPossible)
+                    if (options.PreferQuiet && UninstallerEntry.QuietUninstallPossible)
                         uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
 
                     var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
@@ -125,7 +131,7 @@ namespace UninstallTools.Uninstaller
 
                         if (checkCounters)
                         {
-                            if(TestUninstallerForStalls(childProcesses))
+                            if (TestUninstallerForStalls(childProcesses))
                                 idleCounter++;
 
                             // Kill the uninstaller (and children) if they were idle/stalled for too long
@@ -177,7 +183,7 @@ namespace UninstallTools.Uninstaller
                                     case 9009:
                                         break;
                                     default:
-                                        if(options.RetryFailedQuiet)
+                                        if (options.RetryFailedQuiet)
                                             retry = true;
                                         break;
                                 }

@@ -114,8 +114,6 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.objectListView1.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.objectListView1.HighlightForegroundColor = System.Drawing.Color.Empty;
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowItemToolTips = true;

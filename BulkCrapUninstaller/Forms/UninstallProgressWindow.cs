@@ -337,8 +337,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toolStripButtonFolderOpen.Enabled =
-                SelectedTaskEntries.Any(x => x.UninstallerEntry.InstallLocation.IsNotEmpty());
+            toolStripButtonFolderOpen.Enabled = SelectedTaskEntries.Any(x => x.UninstallerEntry.InstallLocation.IsNotEmpty());
             toolStripButtonProperties.Enabled = SelectedTaskEntries.Any();
 
             toolStripButtonRun.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Waiting
@@ -348,9 +347,11 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSkip.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus != UninstallStatus.Skipped
                                                                        && x.CurrentStatus != UninstallStatus.Completed
                                                                        && x.CurrentStatus != UninstallStatus.Invalid
-                                                                       && x.CurrentStatus != UninstallStatus.Protected);
-            toolStripButtonTerminate.Enabled =
-                SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Uninstalling);
+                                                                       && x.CurrentStatus != UninstallStatus.Protected
+                                                                       && !(x.CurrentStatus == UninstallStatus.Uninstalling
+                                                                        && x.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec));
+
+            toolStripButtonTerminate.Enabled = SelectedTaskEntries.Any(x => x.CurrentStatus == UninstallStatus.Uninstalling);
         }
 
         private void toolStripButtonTerminate_Click(object sender, EventArgs e)
