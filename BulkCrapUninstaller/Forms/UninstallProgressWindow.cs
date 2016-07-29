@@ -18,7 +18,7 @@ namespace BulkCrapUninstaller.Forms
     internal sealed partial class UninstallProgressWindow : Form
     {
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-        
+
         private BulkUninstallTask _currentTargetStatus;
         private CustomMessageBox _walkAwayBox;
 
@@ -27,7 +27,7 @@ namespace BulkCrapUninstaller.Forms
             InitializeComponent();
 
             Icon = Resources.Icon_Logo;
-            
+
             toolStrip1.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable());
 
             // Shutdown blocking not available below Windows Vista
@@ -150,10 +150,10 @@ namespace BulkCrapUninstaller.Forms
                     // There is at least one loud uninstaller
                     uninstList.Any(x => !x.IsSilent) &&
                     // There are no loud uninstallers running or waiting
-                    !uninstList.Any(x => !x.IsSilent && 
+                    !uninstList.Any(x => !x.IsSilent &&
                         (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)) &&
                     // There is at least one silent uninstaller running or waiting
-                    uninstList.Any(x => x.IsSilent && 
+                    uninstList.Any(x => x.IsSilent &&
                         (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);
@@ -244,17 +244,25 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolStripButtonRun_Click(object sender, EventArgs e)
         {
-            var failed =
-                SelectedTaskEntries.Where(
-                    x =>
-                        !_currentTargetStatus.RunSingle(x,
-                            _settings.Settings.UninstallConcurrentDisableManualCollisionProtection)).ToList();
+            var targetGroups = SelectedTaskEntries.GroupBy(x => x.IsRunning).ToList();
+            var running = targetGroups.SingleOrDefault(x => x.Key);
+            var notRunning = targetGroups.SingleOrDefault(x => !x.Key);
 
-            if (failed.Any())
+            if (running != null && running.Any())
                 MessageBoxes.ForceRunUninstallFailedError(this,
-                    failed.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
+                    running.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
 
-            currentTargetStatus_OnCurrentTaskChanged(sender, e);
+            if (notRunning == null || !notRunning.Any()) return;
+
+            foreach (var target in notRunning)
+            {
+                target.Reset();
+            }
+
+            OnTaskUpdated();
+
+            if (_currentTargetStatus.Finished)
+                _currentTargetStatus.Start();
         }
 
         private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)

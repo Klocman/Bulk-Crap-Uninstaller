@@ -105,12 +105,17 @@ namespace UninstallTools.Uninstaller
         {
             lock (_operationLock)
             {
-                if (_workerThread != null)
+                if (_workerThread != null && _workerThread.IsAlive)
                 {
-                    if (_workerThread.IsAlive)
-                        if (Finished)
-                            while (_workerThread.IsAlive) Thread.Sleep(100);
-                        else return;
+                    if (Finished)
+                    {
+                        if (!_workerThread.Join(TimeSpan.FromSeconds(10)))
+                            _workerThread.Abort();
+                        else
+                            return;
+                    }
+                    else
+                        return;
                 }
 
                 Aborted = false;
@@ -170,7 +175,7 @@ namespace UninstallTools.Uninstaller
             Finished = true;
         }
 
-        public bool RunSingle(BulkUninstallEntry entry, bool disableCollisionDetection)
+        /*public bool RunSingle(BulkUninstallEntry entry, bool disableCollisionDetection)
         {
             if (!disableCollisionDetection)
             {
@@ -187,7 +192,7 @@ namespace UninstallTools.Uninstaller
             entry.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(Configuration.AutoKillStuckQuiet,
                     Configuration.RetryFailedQuiet, Configuration.PreferQuiet, Configuration.Simulate));
             return true;
-        }
+        }*/
 
         private static bool CheckForAdvancedCollisions(ApplicationUninstallerEntry target,
             IEnumerable<ApplicationUninstallerEntry> running)
