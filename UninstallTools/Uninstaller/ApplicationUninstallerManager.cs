@@ -157,7 +157,6 @@ namespace UninstallTools.Uninstaller
                 }
             }
 
-            applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetSpecialUninstallers());
             applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetStoreApps());
 
             if (ApplicationUninstallerFactory.SteamHelperIsAvailable)
@@ -181,7 +180,10 @@ namespace UninstallTools.Uninstaller
 
                 applicationUninstallers.AddRange(steamAppsOnDisk);
             }
+            
+            applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetSpecialUninstallers(applicationUninstallers));
 
+            // Fill in missing information
             foreach (var applicationUninstaller in applicationUninstallers)
             {
                 if (applicationUninstaller.IconBitmap == null)
@@ -199,7 +201,7 @@ namespace UninstallTools.Uninstaller
                         Directory.GetCreationTime(applicationUninstaller.InstallLocation);
                 }
             }
-            
+
             return applicationUninstallers;
         }
 

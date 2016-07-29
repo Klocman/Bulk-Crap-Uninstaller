@@ -48,18 +48,24 @@ namespace UninstallTools.Uninstaller
         private static string SteamHelperPath => Path.Combine(AssemblyLocation, @"SteamHelper.exe");
 
         private static bool? _steamHelperIsAvailable;
+        private static string _steamLocation;
         public static bool SteamHelperIsAvailable
         {
             get
             {
                 if (!_steamHelperIsAvailable.HasValue)
                 {
-                    if (!File.Exists(SteamHelperPath) || !WindowsTools.CheckNetFramework4Installed(true))
-                        _steamHelperIsAvailable = false;
-                    else
+                    _steamHelperIsAvailable = false;
+                    if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
                     {
-                        var output = StartProcessAndReadOutput(SteamHelperPath, "list");
-                        _steamHelperIsAvailable = !string.IsNullOrEmpty(output) && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase);
+                        var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
+                        if (!string.IsNullOrEmpty(output) 
+                            && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase) 
+                            && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
+                        {
+                            _steamHelperIsAvailable = true;
+                            _steamLocation = output;
+                        }
                     }
                 }
                 return _steamHelperIsAvailable.Value;
@@ -325,12 +331,35 @@ namespace UninstallTools.Uninstaller
         /// <summary>
         /// Get uninstallers that were pre-defined in BCU.
         /// </summary>
-        public static IEnumerable<ApplicationUninstallerEntry> GetSpecialUninstallers()
+        public static IEnumerable<ApplicationUninstallerEntry> GetSpecialUninstallers(IEnumerable<ApplicationUninstallerEntry> entriesToSkip)
         {
+            var toSkip = entriesToSkip as IList<ApplicationUninstallerEntry> ?? entriesToSkip.ToList();
             var items = new List<ApplicationUninstallerEntry>();
-            var i = GetOneDrive();
-            if (i != null)
-                items.Add(i);
+
+            if (toSkip.All(x => !_steamLocation.Equals("OneDrive", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                var i = GetOneDrive();
+                if (i != null)
+                    items.Add(i);
+            }
+            
+            if (SteamHelperIsAvailable && toSkip.All(x=>!_steamLocation.Equals(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                items.Add(new ApplicationUninstallerEntry
+                {
+                    AboutUrl = @"http://store.steampowered.com/about/",
+                    InstallLocation = _steamLocation,
+                    DisplayIcon = Path.Combine(_steamLocation, "Steam.exe"),
+                    DisplayName = "Steam",
+                    UninstallerKind = UninstallerType.Nsis,
+                    UninstallString = Path.Combine(_steamLocation, "uninstall.exe"),
+                    IsOrphaned = true,
+                    IsValid = File.Exists(Path.Combine(_steamLocation, "uninstall.exe")),
+                    InstallDate = Directory.GetCreationTime(_steamLocation),
+                    Publisher = "Valve Software"
+                });
+            }
+
             return items;
         }
 
