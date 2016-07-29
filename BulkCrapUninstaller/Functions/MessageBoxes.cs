@@ -12,6 +12,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems.Update;
 using Klocman.Tools;
+using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -596,18 +597,19 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_Net4Missing_Message,
                     Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
         }
-
-        /*public enum HelpPosition
-        {
-            Top = 0,
-            MainWindow, //#a_2_Main_Window
-            AdvancedCopy, //#a_5_Advanced_copy_to_clipboard
-            UninstallWindow // #a_7_3_Uninstall_progress_window
-        }*/
+        
         public static void DisplayHelp(IWin32Window owner)
         {
-
             Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
+        }
+
+        public static bool AskToRetryFailedQuietAsLoud(Form owner, IEnumerable<string> failedNames)
+        {
+            return CustomMessageBox.ShowDialog(owner,
+                new CmbBasicSettings(Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Title,
+                    Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Header,
+                    $"{Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Details}\n\n{string.Join("\n", failedNames.OrderBy(x => x).ToArray())}", 
+                    SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
         }
     }
 }

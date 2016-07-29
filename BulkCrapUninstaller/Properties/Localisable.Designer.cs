@@ -274,6 +274,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Following uninstallers will be restarted loudly:.
+        /// </summary>
+        internal static string MessageBoxes_AskToRetryFailedQuietAsLoud_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToRetryFailedQuietAsLoud_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to run quiet uninstallers that failed in loud mode?.
+        /// </summary>
+        internal static string MessageBoxes_AskToRetryFailedQuietAsLoud_Header {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToRetryFailedQuietAsLoud_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some quiet uninstallers failed.
+        /// </summary>
+        internal static string MessageBoxes_AskToRetryFailedQuietAsLoud_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToRetryFailedQuietAsLoud_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This will take you less than a minute but help the development greatly! All feedback is appreciated, be it a bug report, feature request or a simple thanks!
         ///
         ///You can send it later from the top menu bar (Help-&gt;Submit feedback)..

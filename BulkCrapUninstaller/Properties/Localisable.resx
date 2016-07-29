@@ -636,4 +636,13 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
     <value>The v4.0 framework is optional, but recommended. The features that rely on the framework will be disabled until you install it.</value>
   </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Some quiet uninstallers failed</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Do you want to run quiet uninstallers that failed in loud mode?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Following uninstallers will be restarted loudly:</value>
+  </data>
 </root>

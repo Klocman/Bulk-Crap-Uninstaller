@@ -18,8 +18,7 @@ namespace BulkCrapUninstaller.Forms
     internal sealed partial class UninstallProgressWindow : Form
     {
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-
-        private Thread _boxThread;
+        
         private BulkUninstallTask _currentTargetStatus;
         private CustomMessageBox _walkAwayBox;
 
@@ -28,8 +27,7 @@ namespace BulkCrapUninstaller.Forms
             InitializeComponent();
 
             Icon = Resources.Icon_Logo;
-
-
+            
             toolStrip1.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable());
 
             // Shutdown blocking not available below Windows Vista
@@ -97,25 +95,41 @@ namespace BulkCrapUninstaller.Forms
 
         private void currentTargetStatus_OnCurrentTaskChanged(object sender, EventArgs e)
         {
-            objectListView1.SafeInvoke(() =>
+            new Thread(() =>
             {
-                objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
+                objectListView1.SafeInvoke(() =>
+                {
+                    objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
 
-                if (_currentTargetStatus.Finished)
-                    OnTaskFinished();
-                else
-                    OnTaskUpdated();
-            });
+                    if (_currentTargetStatus.Finished)
+                        OnTaskFinished();
+                    else
+                        OnTaskUpdated();
+                });
+            }).Start();
         }
 
         private void OnTaskFinished()
         {
-            if (_boxThread != null)
-            {
-                if (_boxThread.IsAlive)
-                    _boxThread.Abort();
+            if (_walkAwayBox != null && _walkAwayBox.Visible)
+                _walkAwayBox.Close();
 
-                _boxThread = null;
+            if (!_currentTargetStatus.Aborted && _currentTargetStatus.Configuration.PreferQuiet)
+            {
+                var failedSilent = _currentTargetStatus.AllUninstallersList
+                    .Where(x => x.CurrentStatus == UninstallStatus.Failed && x.IsSilent).ToList();
+                if (failedSilent.Count > 0 && MessageBoxes.AskToRetryFailedQuietAsLoud(this, failedSilent.Select(x => x.UninstallerEntry.DisplayName)))
+                {
+                    foreach (var uninstallEntry in failedSilent)
+                    {
+                        uninstallEntry.Reset();
+                        uninstallEntry.IsSilent = false;
+                    }
+                    objectListView1.UpdateObjects(failedSilent);
+                    objectListView1.BuildGroups();
+                    _currentTargetStatus.Start();
+                    return;
+                }
             }
 
             label1.Text = Localisable.UninstallProgressWindow_TaskDone;
@@ -175,7 +189,7 @@ namespace BulkCrapUninstaller.Forms
             if (_currentTargetStatus.Finished || _currentTargetStatus.Aborted ||
                 e.CloseReason != CloseReason.UserClosing)
             {
-                _currentTargetStatus.OnStatusChanged -= currentTargetStatus_OnCurrentTaskChanged;
+                _currentTargetStatus.Dispose();
                 return;
             }
 

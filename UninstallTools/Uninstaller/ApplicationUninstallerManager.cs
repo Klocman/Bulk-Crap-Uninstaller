@@ -364,6 +364,8 @@ namespace UninstallTools.Uninstaller
                 if (simulate)
                 {
                     Thread.Sleep(5000);
+                    if (Debugger.IsAttached && new Random().Next(0, 2) == 0)
+                        throw new IOException("Random failure for debugging");
                     return null;
                 }
 

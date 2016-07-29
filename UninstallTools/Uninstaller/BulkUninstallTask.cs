@@ -53,6 +53,8 @@ namespace UninstallTools.Uninstaller
             get { return _finished; }
             private set
             {
+                if (_finished == value) return;
+
                 _finished = value;
                 OnStatusChanged?.Invoke(this, EventArgs.Empty);
             }
@@ -103,7 +105,16 @@ namespace UninstallTools.Uninstaller
         {
             lock (_operationLock)
             {
-                if (_workerThread != null && _workerThread.IsAlive) return;
+                if (_workerThread != null)
+                {
+                    if (_workerThread.IsAlive)
+                        if (Finished)
+                            while (_workerThread.IsAlive) Thread.Sleep(100);
+                        else return;
+                }
+
+                Aborted = false;
+                Finished = false;
 
                 _workerThread = new Thread(UninstallWorkerThread) { Name = "RunBulkUninstall_Worker" };
                 _workerThread.Start();
@@ -133,7 +144,7 @@ namespace UninstallTools.Uninstaller
                 var runningTypes = running.Select(y => y.UninstallerEntry.UninstallerKind).ToList();
                 var loudBlocked = OneLoudLimit && running.Any(y => !y.IsSilent);
 
-                AllUninstallersList.FirstOrDefault(x =>
+                var result = AllUninstallersList.FirstOrDefault(x =>
                 {
                     if (x.CurrentStatus != UninstallStatus.Waiting || (loudBlocked && !x.IsSilent))
                         return false;
@@ -145,15 +156,18 @@ namespace UninstallTools.Uninstaller
                         return false;
 
                     return true;
-                })?.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet, 
-                    configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
+                });
 
-                // Fire the event now so the interface can be updated to show the "Uninstalling" tag
-                OnStatusChanged?.Invoke(this, EventArgs.Empty);
+                if (result != null)
+                {
+                    result.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet,
+                        configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
+                    // Fire the event now so the interface can be updated
+                    OnStatusChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
 
             Finished = true;
-            Dispose();
         }
 
         public bool RunSingle(BulkUninstallEntry entry, bool disableCollisionDetection)
@@ -193,7 +207,7 @@ namespace UninstallTools.Uninstaller
             if (target.UninstallerKind == UninstallerType.Msiexec)
             {
                 var processes = Process.GetProcessesByName("msiexec");
-                if(processes.Length > 1)
+                if (processes.Length > 1)
                     return true;
             }
 

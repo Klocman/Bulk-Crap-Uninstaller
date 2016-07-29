@@ -27,13 +27,21 @@ namespace UninstallTools.Uninstaller
 
         public int Id { get; internal set; }
 
-        public Exception CurrentError { get; set; }
-        public UninstallStatus CurrentStatus { get; set; }
-        public bool IsSilent { get; }
+        public Exception CurrentError { get; private set; }
+        public UninstallStatus CurrentStatus { get; private set; }
+        public bool IsSilent { get; set; }
         public ApplicationUninstallerEntry UninstallerEntry { get; }
 
         public bool IsRunning { get; private set; }
         public bool Finished { get; private set; }
+
+        public void Reset()
+        {
+            CurrentError = null;
+            CurrentStatus = UninstallStatus.Waiting;
+            IsRunning = false;
+            Finished = false;
+        }
 
         public void SkipWaiting(bool terminate)
         {
