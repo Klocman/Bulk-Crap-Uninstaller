@@ -280,9 +280,16 @@ namespace UninstallTools.Uninstaller
 
             var query = from item in targetList
                         orderby item.IsSilent ascending,
+                            // Updates usually get uninstalled by their parent uninstallers
                             item.UninstallerEntry.IsUpdate ascending,
+                            // SysCmps and Protected usually get uninstalled by their parent, user-visible uninstallers
                             item.UninstallerEntry.SystemComponent ascending,
                             item.UninstallerEntry.IsProtected ascending,
+                            // Calculate number of digits (Floor of Log10 + 1) and divide it by 4 to create buckets of sizes
+                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetRawSize(true)) + 1) / 4) descending,
+                            // Prioritize Msi uninstallers because they tend to take the longest
+                            item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
+                            // Final sorting to get things deterministic
                             item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
                         select item;
 
