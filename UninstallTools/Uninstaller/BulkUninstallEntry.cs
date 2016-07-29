@@ -104,6 +104,9 @@ namespace UninstallTools.Uninstaller
                 // Can be null during simulation
                 if (uninstaller != null)
                 {
+                    if(options.PreferQuiet && UninstallerEntry.QuietUninstallPossible)
+                        uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
+
                     var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
                     List<Process> childProcesses;
                     var idleCounter = 0;
