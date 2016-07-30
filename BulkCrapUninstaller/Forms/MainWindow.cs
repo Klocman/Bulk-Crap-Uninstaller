@@ -1227,24 +1227,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void uninstallFromDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dialog = new FolderBrowserDialog
-            {
-                RootFolder = Environment.SpecialFolder.Desktop,
-                Description = Localisable.UninstallFromDirectory_FolderBrowse
-            };
-
-            if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
-
-            List<ApplicationUninstallerEntry> items = null;
-            LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
-                _ => items = ApplicationUninstallerFactory.TryCreateFromDirectory(
-                    new DirectoryInfo(dialog.SelectedPath), null).ToList());
-
-            if (items == null || items.Count == 0)
-                MessageBoxes.UninstallFromDirectoryNothingFound();
-            else
-                _uninstaller.AdvancedUninstall(items, _listView.AllUninstallers.Where(x => !items.Any(
-                    y =>y.InstallLocation.Equals(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase))));
+            _uninstaller.UninstallFromDirectory(_listView.AllUninstallers);
         }
     }
 }

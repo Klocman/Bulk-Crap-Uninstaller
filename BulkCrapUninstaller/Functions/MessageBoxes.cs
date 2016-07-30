@@ -613,10 +613,19 @@ namespace BulkCrapUninstaller.Functions
         public static void UninstallFromDirectoryNothingFound()
         {
             CustomMessageBox.ShowDialog(DefaultOwner,
-                new CmbBasicSettings(Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Title,
+                new CmbBasicSettings(Localisable.MessageBoxes_UninstallFromDirectory_Title,
                     Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Message,
                     Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Details,
                     SystemIcons.Information, Buttons.ButtonOk));
+        }
+
+        public static bool UninstallFromDirectoryUninstallerFound(string displayName, string uninstallString)
+        {
+            return CustomMessageBox.ShowDialog(DefaultOwner,
+                new CmbBasicSettings(Localisable.MessageBoxes_UninstallFromDirectory_Title,
+                    string.Format(Localisable.MessageBoxes_UninstallFromDirectoryUninstallerFound_Message, displayName),
+                    Localisable.MessageBoxes_UninstallFromDirectoryUninstallerFound_Details + "\n\n" + uninstallString,
+                    SystemIcons.Information, Buttons.ButtonUninstall, Buttons.ButtonSkip)) == CustomMessageBox.PressedButton.Middle;
         }
     }
 }

@@ -651,7 +651,7 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
     <value>Select directory with the application you want to remove.</value>
   </data>
-  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Title" xml:space="preserve">
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
     <value>Uninstall from directory</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
@@ -659,5 +659,11 @@ You can try disabling collision detection in the settings, but it is not recomme
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
     <value>Make sure that you selected the correct directory and that the application's executables are still present.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Found an uninstaller for {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Do you want to run this uninstaller?</value>
   </data>
 </root>

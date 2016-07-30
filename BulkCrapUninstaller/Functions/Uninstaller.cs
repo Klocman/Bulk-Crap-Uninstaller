@@ -416,6 +416,87 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
+        public void UninstallFromDirectory(IEnumerable<ApplicationUninstallerEntry> allUninstallers)
+        {
+            if (!TryGetUninstallLock()) return;
+            var listRefreshNeeded = false;
+
+            var applicationUninstallerEntries = allUninstallers as IList<ApplicationUninstallerEntry> ?? allUninstallers.ToList();
+
+            try
+            {
+                var dialog = new FolderBrowserDialog
+                {
+                    RootFolder = Environment.SpecialFolder.Desktop,
+                    Description = Localisable.UninstallFromDirectory_FolderBrowse
+                };
+
+                if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
+                
+                var items = new List<ApplicationUninstallerEntry>();
+                LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
+                    _ =>
+                    {
+                        items.AddRange(ApplicationUninstallerFactory.TryCreateFromDirectory(
+                            new DirectoryInfo(dialog.SelectedPath), null));
+                    });
+
+                if (items.Count == 0)
+                    items.AddRange(applicationUninstallerEntries
+                        .Where(x => PathTools.PathsEqual(dialog.SelectedPath, x.InstallLocation)));
+
+                if (items.Count == 0)
+                    MessageBoxes.UninstallFromDirectoryNothingFound();
+                else
+                {
+
+                    foreach (var item in items.ToList())
+                    {
+                        if (item.UninstallPossible && item.UninstallerKind != UninstallerType.SimpleDelete &&
+                            MessageBoxes.UninstallFromDirectoryUninstallerFound(item.DisplayName, item.UninstallString))
+                        {
+                            item.RunUninstaller(false, Settings.Default.AdvancedSimulate).WaitForExit(60000);
+                            items.Remove(item);
+                            listRefreshNeeded = true;
+                        }
+                        else
+                        {
+                            var found = applicationUninstallerEntries.Where(
+                                x => PathTools.PathsEqual(item.InstallLocation, x.InstallLocation)).ToList();
+
+                            if (!found.Any()) continue;
+
+                            items.Remove(item);
+
+                            foreach (var entry in found)
+                            {
+                                if (entry.UninstallPossible && entry.UninstallerKind != UninstallerType.SimpleDelete &&
+                                    MessageBoxes.UninstallFromDirectoryUninstallerFound(entry.DisplayName, entry.UninstallString))
+                                {
+                                    try { item.RunUninstaller(false, Settings.Default.AdvancedSimulate).WaitForExit(60000); }
+                                    catch (Exception ex) { PremadeDialogs.GenericError(ex); }
+
+                                    listRefreshNeeded = true;
+                                }
+                                else
+                                    items.Add(entry);
+                            }
+                        }
+                    }
+
+                    AdvancedUninstall(items, applicationUninstallerEntries.Where(
+                        x => !items.Any(y => PathTools.PathsEqual(y.InstallLocation, x.InstallLocation))));
+                }
+            }
+            finally
+            {
+                ReleaseUninstallLock();
+                _lockApplication(false);
+                if (listRefreshNeeded)
+                    _initiateListRefresh();
+            }
+        }
+
         /// <summary>
         ///     Ask to self uninstall and do so if user agrees, else return and do nothing.
         /// </summary>

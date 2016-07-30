@@ -1217,6 +1217,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uninstall from directory.
+        /// </summary>
+        internal static string MessageBoxes_UninstallFromDirectory_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectory_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Make sure that you selected the correct directory and that the application&apos;s executables are still present..
         /// </summary>
         internal static string MessageBoxes_UninstallFromDirectoryNothingFound_Details {
@@ -1235,11 +1244,20 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uninstall from directory.
+        ///   Looks up a localized string similar to Do you want to run this uninstaller?.
         /// </summary>
-        internal static string MessageBoxes_UninstallFromDirectoryNothingFound_Title {
+        internal static string MessageBoxes_UninstallFromDirectoryUninstallerFound_Details {
             get {
-                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryNothingFound_Title", resourceCulture);
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryUninstallerFound_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found an uninstaller for {0}.
+        /// </summary>
+        internal static string MessageBoxes_UninstallFromDirectoryUninstallerFound_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryUninstallerFound_Message", resourceCulture);
             }
         }
         
