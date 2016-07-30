@@ -1217,6 +1217,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make sure that you selected the correct directory and that the application&apos;s executables are still present..
+        /// </summary>
+        internal static string MessageBoxes_UninstallFromDirectoryNothingFound_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryNothingFound_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No applications were found in the specified directory.
+        /// </summary>
+        internal static string MessageBoxes_UninstallFromDirectoryNothingFound_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryNothingFound_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstall from directory.
+        /// </summary>
+        internal static string MessageBoxes_UninstallFromDirectoryNothingFound_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallFromDirectoryNothingFound_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selected uninstaller doesn&apos;t have a valid Guid for use with MsiExec..
         /// </summary>
         internal static string MessageBoxes_UninstallMsiGuidMissing_Details {
@@ -1457,6 +1484,24 @@ namespace BulkCrapUninstaller.Properties {
         internal static string SysRestoreGenericError {
             get {
                 return ResourceManager.GetString("SysRestoreGenericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select directory with the application you want to remove..
+        /// </summary>
+        internal static string UninstallFromDirectory_FolderBrowse {
+            get {
+                return ResourceManager.GetString("UninstallFromDirectory_FolderBrowse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scanning specified directory....
+        /// </summary>
+        internal static string UninstallFromDirectory_ScanningTitle {
+            get {
+                return ResourceManager.GetString("UninstallFromDirectory_ScanningTitle", resourceCulture);
             }
         }
         

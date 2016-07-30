@@ -52,12 +52,12 @@ namespace BulkCrapUninstaller.Forms
             InitializeComponent();
 
             _splash = OverlaySplashScreen.CreateSplash(this, Resources._bcu_logo);
-            
+
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
             BindControlsToSettings();
-            
+
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable())
@@ -104,7 +104,7 @@ namespace BulkCrapUninstaller.Forms
             };
             _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-            
+
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
             advancedFilters1.CurrentListChanged +=
                 (sender, args) => _listView.FilteringOverride = advancedFilters1.CurrentList;
@@ -397,7 +397,7 @@ namespace BulkCrapUninstaller.Forms
         {
             ImportExport.CopyNamesToClipboard(_listView.SelectedUninstallers);
         }
-        
+
         private void ClipboardCopyRegistryPath(object x, EventArgs y)
         {
             ImportExport.CopyRegKeysToClipboard(_listView.SelectedUninstallers);
@@ -560,7 +560,7 @@ namespace BulkCrapUninstaller.Forms
             listLegend1.Left = listViewPanel.Width + listViewPanel.Left - listLegend1.Width - 30;
 
             _splash.Show();
-            
+
             _listView.InitiateListRefresh();
 
             if (_setMan.Selected.Settings.MiscFirstRun)
@@ -569,7 +569,7 @@ namespace BulkCrapUninstaller.Forms
                 OnFirstApplicationStart();
             }
 
-            if(!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+            if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
             {
                 _setMan.Selected.Settings.MiscNet4NagShown = true;
                 MessageBoxes.Net4MissingInfo();
@@ -1223,6 +1223,28 @@ namespace BulkCrapUninstaller.Forms
         private void openHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBoxes.DisplayHelp(this);
+        }
+
+        private void uninstallFromDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dialog = new FolderBrowserDialog
+            {
+                RootFolder = Environment.SpecialFolder.Desktop,
+                Description = Localisable.UninstallFromDirectory_FolderBrowse
+            };
+
+            if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
+
+            List<ApplicationUninstallerEntry> items = null;
+            LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
+                _ => items = ApplicationUninstallerFactory.TryCreateFromDirectory(
+                    new DirectoryInfo(dialog.SelectedPath), null).ToList());
+
+            if (items == null || items.Count == 0)
+                MessageBoxes.UninstallFromDirectoryNothingFound();
+            else
+                _uninstaller.AdvancedUninstall(items, _listView.AllUninstallers.Where(x => !items.Any(
+                    y =>y.InstallLocation.Equals(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase))));
         }
     }
 }

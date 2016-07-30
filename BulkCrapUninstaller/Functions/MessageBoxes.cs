@@ -5,14 +5,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems.Update;
 using Klocman.Tools;
-using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -72,7 +70,7 @@ namespace BulkCrapUninstaller.Functions
                 return PressedButton.No;
 
             var check = new CmbCheckboxSettings(Localisable.MessageBoxes_RememberChoiceCheckbox)
-            {DisableRightButton = true, DisableLeftButton = true};
+            { DisableRightButton = true, DisableLeftButton = true };
             switch (
                 CustomMessageBox.ShowDialog(DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Leftover_removal,
@@ -112,7 +110,7 @@ namespace BulkCrapUninstaller.Functions
                 Localisable.MessageBoxes_CanWalkAwayInfo_Message,
                 Localisable.MessageBoxes_CanWalkAwayInfo_Details,
                 SystemIcons.Information, Buttons.ButtonOk)
-            {StartPosition = FormStartPosition.CenterParent, AlwaysOnTop = true});
+            { StartPosition = FormStartPosition.CenterParent, AlwaysOnTop = true });
         }
 
         internal static bool ConfirmLowConfidenceQuestion()
@@ -597,7 +595,7 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_Net4Missing_Message,
                     Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
         }
-        
+
         public static void DisplayHelp(IWin32Window owner)
         {
             Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
@@ -608,8 +606,17 @@ namespace BulkCrapUninstaller.Functions
             return CustomMessageBox.ShowDialog(owner,
                 new CmbBasicSettings(Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Title,
                     Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Header,
-                    $"{Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Details}\n\n{string.Join("\n", failedNames.OrderBy(x => x).ToArray())}", 
+                    $"{Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Details}\n\n{string.Join("\n", failedNames.OrderBy(x => x).ToArray())}",
                     SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
+        }
+
+        public static void UninstallFromDirectoryNothingFound()
+        {
+            CustomMessageBox.ShowDialog(DefaultOwner,
+                new CmbBasicSettings(Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Title,
+                    Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Message,
+                    Localisable.MessageBoxes_UninstallFromDirectoryNothingFound_Details,
+                    SystemIcons.Information, Buttons.ButtonOk));
         }
     }
 }

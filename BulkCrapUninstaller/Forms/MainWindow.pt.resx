@@ -121,17 +121,8 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>218, 24</value>
   </data>
-  <data name="advancedFilters1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="listLegend1.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 311</value>
-  </data>
-  <data name="listLegend1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
     <value>Nome</value>
@@ -184,21 +175,11 @@
   <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
     <value>Comando da desinstalação em segundo plano</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="resource.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 454</value>
   </data>
-  <data name="uninstallerObjectListView.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>410, 456</value>
-  </data>
-  <data name="listViewPanel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -331,11 +312,8 @@
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>410, 30</value>
   </data>
-  <data name="toolStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1, 17</value>
+    <value>54, 17</value>
   </data>
   <data name="facebookStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -412,26 +390,11 @@
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>410, 22</value>
   </data>
-  <data name="statusStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>736, 508</value>
   </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 291</value>
-  </data>
-  <data name="propertiesSidebar.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="buttonAdvFiltering.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 23</value>
@@ -439,14 +402,8 @@
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Filtragem avançada</value>
   </data>
-  <data name="buttonAdvFiltering.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="filterEditor1.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 121</value>
-  </data>
-  <data name="filterEditor1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 169</value>
@@ -454,14 +411,8 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Procurar</value>
   </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 508</value>
-  </data>
-  <data name="settingsSidebarPanel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="uninstallContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -700,9 +651,6 @@
   </data>
   <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 286</value>
-  </data>
-  <data name="uninstallListContextMenuStrip.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Ficheiros XML|*.xml</value>
@@ -1362,16 +1310,10 @@
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
     <value>Abrir a &amp;janela de depuração</value>
   </data>
-  <data name="menuStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
     <value>Ficheiros do registo|*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>Criar cópia de segurança do registo</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

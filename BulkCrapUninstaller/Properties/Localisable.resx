@@ -645,4 +645,19 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
     <value>Following uninstallers will be restarted loudly:</value>
   </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Scanning specified directory...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Select directory with the application you want to remove.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Title" xml:space="preserve">
+    <value>Uninstall from directory</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>No applications were found in the specified directory</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Make sure that you selected the correct directory and that the application's executables are still present.</value>
+  </data>
 </root>
