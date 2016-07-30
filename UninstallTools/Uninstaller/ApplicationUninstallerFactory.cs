@@ -59,8 +59,8 @@ namespace UninstallTools.Uninstaller
                     if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
                     {
                         var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
-                        if (!string.IsNullOrEmpty(output) 
-                            && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase) 
+                        if (!string.IsNullOrEmpty(output)
+                            && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
                             && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
                         {
                             _steamHelperIsAvailable = true;
@@ -342,8 +342,8 @@ namespace UninstallTools.Uninstaller
                 if (i != null)
                     items.Add(i);
             }
-            
-            if (SteamHelperIsAvailable && toSkip.All(x=>!_steamLocation.Equals(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase)))
+
+            if (SteamHelperIsAvailable && toSkip.All(x => !_steamLocation.Equals(x.InstallLocation, StringComparison.InvariantCultureIgnoreCase)))
             {
                 items.Add(new ApplicationUninstallerEntry
                 {
@@ -613,8 +613,6 @@ namespace UninstallTools.Uninstaller
             return path;
         }
 
-        static bool _getExtendedAttributesNotSupported;
-
         private static void CreateFromDirectoryHelper(ICollection<ApplicationUninstallerEntry> results, DirectoryInfo directory,
             int level)
         {
@@ -702,28 +700,7 @@ namespace UninstallTools.Uninstaller
                     entry.Is64Bit = MachineType.Unknown;
                 }
 
-                if (!_getExtendedAttributesNotSupported)
-                {
-                    try
-                    {
-                        var attribs =
-                            compareBestMatchFile.GetExtendedAttributes().Where(x => !string.IsNullOrEmpty(x.Value)).ToList();
-                        entry.Publisher = GetAttribMatch(attribs, new[] { "Company", "Publisher" }) ?? entry.Publisher;
-                        entry.RawDisplayName =
-                            GetAttribMatch(attribs, new[] { "Product name", "Friendly name", "Program Name" }) ??
-                            entry.RawDisplayName;
-                        entry.DisplayVersion = GetAttribMatch(attribs, new[] { "Product version", "File version" });
-                    }
-                    catch (InvalidCastException)
-                    {
-                        // Not supported by the OS, oh well
-                        _getExtendedAttributesNotSupported = true;
-                    }
-                    catch
-                    {
-                        // TODO: Either change the method of getting attribs or indicate that it is a problem
-                    }
-                }
+                FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
 
                 // Attempt to find an uninstaller application
                 var uninstallerFilters = new[] { "unins0", "uninstall", "uninst", "uninstaller" };
@@ -751,6 +728,37 @@ namespace UninstallTools.Uninstaller
                 }
 
                 results.Add(entry);
+            }
+        }
+
+        /// <summary>
+        /// Add information from FileVersionInfo of specified file to the targetEntry
+        /// </summary>
+        /// <param name="targetEntry">Entry to update</param>
+        /// <param name="infoSourceFilename">Binary file to get the information from</param>
+        /// <param name="onlyUnpopulated">Only update unpopulated fields of the targetEntry</param>
+        private static void FillInformationFromFileAttribs(ApplicationUninstallerEntry targetEntry, string infoSourceFilename, bool onlyUnpopulated)
+        {
+            var verInfo = FileVersionInfo.GetVersionInfo(infoSourceFilename);
+
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Publisher))
+                && !string.IsNullOrEmpty(verInfo.CompanyName))
+                targetEntry.Publisher = verInfo.CompanyName;
+
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.RawDisplayName))
+                && !string.IsNullOrEmpty(verInfo.ProductName))
+                targetEntry.RawDisplayName = verInfo.ProductName;
+
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Comment))
+                && !string.IsNullOrEmpty(verInfo.Comments))
+                targetEntry.Comment = verInfo.Comments;
+
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.DisplayVersion)))
+            {
+                if (!string.IsNullOrEmpty(verInfo.ProductVersion))
+                    targetEntry.DisplayVersion = verInfo.ProductVersion;
+                else if (!string.IsNullOrEmpty(verInfo.FileVersion))
+                    targetEntry.DisplayVersion = verInfo.FileVersion;
             }
         }
 
@@ -818,17 +826,6 @@ namespace UninstallTools.Uninstaller
                 .FirstOrDefault(tempSource => !string.IsNullOrEmpty(tempSource) && tempSource.Contains('.'));
         }
 
-        private static string GetAttribMatch(IEnumerable<KeyValuePair<string, string>> attribs, string[] keywords)
-        {
-            var attribList = attribs as IList<KeyValuePair<string, string>> ?? attribs.ToList();
-
-            return (from filter in keywords
-                    select attribList.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase))
-                into match
-                    where !match.IsDefault()
-                    select match.Value).FirstOrDefault();
-        }
-
         private static ApplicationUninstallerEntry GetBasicInformation(RegistryKey uninstallerKey)
         {
             return new ApplicationUninstallerEntry
@@ -891,12 +888,8 @@ namespace UninstallTools.Uninstaller
                         int.Parse(dateString.Substring(4, 2)),
                         int.Parse(dateString.Substring(6, 2)));
                 }
-                catch (FormatException)
-                {
-                }
-                catch (ArgumentException)
-                {
-                }
+                catch (FormatException) { }
+                catch (ArgumentException) { }
             }
 
             return DateTime.MinValue;
@@ -931,12 +924,7 @@ namespace UninstallTools.Uninstaller
                     return true;
             }
 
-            if (uninstallerKind == UninstallerType.Msiexec)
-            {
-                return ApplicationUninstallerManager.WindowsInstallerValidGuids.Contains(bundleProviderKey);
-            }
-
-            return false;
+            return uninstallerKind == UninstallerType.Msiexec && ApplicationUninstallerManager.WindowsInstallerValidGuids.Contains(bundleProviderKey);
         }
 
         private static bool GetProtectedFlag(RegistryKey uninstallerKey)
@@ -964,21 +952,12 @@ namespace UninstallTools.Uninstaller
                     {
                         return ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
                     }
-                    catch (ArgumentException)
-                    {
-                    }
-                    catch (FormatException)
-                    {
-                    }
+                    catch (ArgumentException) { }
+                    catch (FormatException) { }
                 }
             }
 
-            if (type == UninstallerType.Msiexec)
-            {
-                return MsiTools.MsiGetProductInfo(bundleKey, MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE);
-            }
-
-            return string.Empty;
+            return type == UninstallerType.Msiexec ? MsiTools.MsiGetProductInfo(bundleKey, MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE) : string.Empty;
         }
 
         private static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
@@ -1054,15 +1033,9 @@ namespace UninstallTools.Uninstaller
                         return UninstallerType.AdobeSetup;
                     }*/
                 }
-                catch (IOException)
-                {
-                }
-                catch (UnauthorizedAccessException)
-                {
-                }
-                catch (SecurityException)
-                {
-                }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
+                catch (SecurityException) { }
             }
             return UninstallerType.Unknown;
         }
@@ -1076,10 +1049,9 @@ namespace UninstallTools.Uninstaller
         {
             if (string.IsNullOrEmpty(path))
                 return false;
-            if (path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase))
-                return true;
 
-            return path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
+            return path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase)
+                || path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
         }
 
         private static Icon TryGetIconHelper(ApplicationUninstallerEntry entry, out string path)
@@ -1101,12 +1073,8 @@ namespace UninstallTools.Uninstaller
                     return Icon.ExtractAssociatedIcon(iconPath);
                 }
             }
-            catch (SecurityException)
-            {
-            }
-            catch (UnauthorizedAccessException)
-            {
-            }
+            catch (SecurityException) { }
+            catch (UnauthorizedAccessException) { }
 
             try
             {
@@ -1119,12 +1087,8 @@ namespace UninstallTools.Uninstaller
                     return icon;
                 }
             }
-            catch (SecurityException)
-            {
-            }
-            catch (UnauthorizedAccessException)
-            {
-            }
+            catch (SecurityException) { }
+            catch (UnauthorizedAccessException) { }
 
             path = null;
             return null;

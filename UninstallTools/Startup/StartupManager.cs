@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
 using UninstallTools.Startup.Browser;
@@ -98,61 +96,6 @@ namespace UninstallTools.Startup
             return StartupEntryFactory.GetStartupItems().Cast<StartupEntryBase>()
                 .Concat(TaskEntryFactory.GetTaskStartupEntries().Cast<StartupEntryBase>())
                 .Concat(BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>());
-        }
-
-        static bool _getExtendedAttributesNotSupported;
-        internal static ExtractedInfo GetInfoFromFileAttributes(string sourceFile)
-        {
-            var resultInfo = new ExtractedInfo();
-            if (_getExtendedAttributesNotSupported || !File.Exists(sourceFile))
-                return resultInfo;
-
-            // Fill in properties by gathering info from the command and the executable it is pointing at.
-            try
-            {
-                var attribs =
-                    new FileInfo(sourceFile).GetExtendedAttributes()
-                        .Where(x => !string.IsNullOrEmpty(x.Value))
-                        .ToList();
-
-                foreach (var filter in new[] { "Product name", "Friendly name", "Program Name" })
-                {
-                    var result = attribs.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase));
-                    if (!result.IsDefault())
-                    {
-                        resultInfo.ProgramName = result.Value;
-                        break;
-                    }
-                }
-
-                foreach (var filter in new[] { "Company", "Publisher" })
-                {
-                    var result =
-                        attribs.FirstOrDefault(x => x.Key.Equals(filter, StringComparison.OrdinalIgnoreCase));
-                    if (!result.IsDefault())
-                    {
-                        resultInfo.Company = result.Value;
-                        break;
-                    }
-                }
-            }
-            catch (InvalidCastException)
-            {
-                // Interface is not supported, don't bother trying again
-                _getExtendedAttributesNotSupported = true;
-            }
-            catch
-            {
-                // Return whatever could be gathered on error
-            }
-
-            return resultInfo;
-        }
-
-        internal struct ExtractedInfo
-        {
-            public string Company;
-            public string ProgramName;
         }
     }
 }

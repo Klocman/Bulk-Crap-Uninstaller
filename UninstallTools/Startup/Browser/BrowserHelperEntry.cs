@@ -21,18 +21,7 @@ namespace UninstallTools.Startup.Browser
             _disabled = disabled;
             IsWow = isWow;
 
-            var info = StartupManager.GetInfoFromFileAttributes(CommandFilePath);
-            Company = info.Company;
-
-            if (string.IsNullOrEmpty(info.ProgramName))
-            {
-                ProgramNameTrimmed = StringTools.StripStringFromVersionNumber(ProgramName);
-            }
-            else
-            {
-                var result = StringTools.StripStringFromVersionNumber(info.ProgramName);
-                ProgramNameTrimmed = result.Length < 3 ? info.ProgramName : result;
-            }
+            FillInformationFromFile(commandFilename);
         }
 
         private bool IsWow { get; }

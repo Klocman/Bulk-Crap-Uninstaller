@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
 using UninstallTools.Properties;
 
@@ -18,31 +17,20 @@ namespace UninstallTools.Startup.Task
             ParentLongName = task.Path;
             EntryLongName = task.Name;
 
-            var info = StartupManager.GetInfoFromFileAttributes(CommandFilePath);
-            Company = info.Company;
-
-            if (string.IsNullOrEmpty(info.ProgramName))
-            {
-                ProgramNameTrimmed = StringTools.StripStringFromVersionNumber(ProgramName);
-            }
-            else
-            {
-                var result = StringTools.StripStringFromVersionNumber(info.ProgramName);
-                ProgramNameTrimmed = result.Length < 3 ? info.ProgramName : result;
-            }
+            FillInformationFromFile(commandFilename);
         }
 
         private Microsoft.Win32.TaskScheduler.Task SourceTask { get; }
 
         public override bool Disabled
         {
-            //HACK: For now if it's impossible to check disabled state, assume not disabled
             get
             {
                 try { return !SourceTask.Enabled; }
                 catch (FileNotFoundException) { }
                 catch (InvalidCastException) { }
                 catch (System.Runtime.InteropServices.COMException) { }
+                //HACK: If it's impossible to check disabled state, assume not disabled
                 return false;
             }
             //TODO: Give some sort of message instead of crashing if not supported, maybe disable disable buttons

@@ -22,17 +22,19 @@ namespace UninstallTools.Startup.Normal
             ParentLongName = dataPoint.Path.TrimEnd('\\');
 
             Command = targetString;
+            
+            CommandFilePath = ProcessCommandString(Command);
+
+            if (CommandFilePath == null)
+                throw new ArgumentException("Failed to extract program path from supplied information");
+
+            FillInformationFromFile(CommandFilePath);
 
             if (!string.IsNullOrEmpty(EntryLongName))
                 ProgramName = IsRegKey ? EntryLongName : Path.GetFileNameWithoutExtension(EntryLongName);
 
-            ProcessCommandString(Command);
-
-            if (ProgramName == null)
-                throw new ArgumentException("Failed to extract program name from supplied information");
-
-            var result = StringTools.StripStringFromVersionNumber(ProgramName);
-            ProgramNameTrimmed = result.Length < 3 ? ProgramName : result;
+            if (string.IsNullOrEmpty(ProgramName))
+                ProgramName = ProgramNameTrimmed;
         }
 
         /// <summary>
@@ -93,19 +95,13 @@ namespace UninstallTools.Startup.Normal
         /// </summary>
         internal string BackupPath { get; set; }
 
-        private void ProcessCommandString(string command)
+        private static string ProcessCommandString(string command)
         {
             if (string.IsNullOrEmpty(command))
-                return;
+                return null;
 
             ProcessStartCommand temp;
-            if (ProcessStartCommand.TryParse(command, out temp))
-                CommandFilePath = temp.FileName;
-
-            var info = StartupManager.GetInfoFromFileAttributes(CommandFilePath);
-            if (!string.IsNullOrEmpty(info.ProgramName))
-                ProgramName = info.ProgramName;
-            Company = info.Company;
+            return ProcessStartCommand.TryParse(command, out temp) ? temp.FileName : null;
         }
 
         /// <summary>

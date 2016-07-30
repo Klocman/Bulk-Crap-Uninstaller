@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using System.IO;
+using Klocman.Tools;
 
 namespace UninstallTools.Startup
 {
@@ -86,6 +88,18 @@ namespace UninstallTools.Startup
         public override string ToString()
         {
             return FullLongName ?? ProgramName ?? Command;
+        }
+        
+        /// <summary>
+        ///     Fill in fields with version information from specified file
+        /// </summary>
+        protected void FillInformationFromFile(string commandFilename)
+        {
+            var info = FileVersionInfo.GetVersionInfo(commandFilename);
+            Company = info.CompanyName;
+            ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
+                ? info.ProductName
+                : StringTools.StripStringFromVersionNumber(ProgramName);
         }
     }
 }

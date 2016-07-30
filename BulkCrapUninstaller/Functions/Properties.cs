@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using BulkCrapUninstaller.Properties;
@@ -62,28 +64,26 @@ namespace BulkCrapUninstaller.Functions
                 if (kvp.Value == null)
                     continue;
 
-                if (kvp.Value is Guid && ((Guid) kvp.Value).IsEmpty())
+                if (kvp.Value is Guid && ((Guid)kvp.Value).IsEmpty())
                     continue;
 
-                if (kvp.Value is DateTime && ((DateTime) kvp.Value).Equals(DateTime.MinValue))
+                if (kvp.Value is DateTime && ((DateTime)kvp.Value).IsDefault())
                     continue;
 
                 string result;
 
                 if (kvp.Value is bool)
-                    result = ((bool) kvp.Value).ToYesNo();
+                    result = ((bool)kvp.Value).ToYesNo();
                 else if (kvp.Value is Enum)
-                    result = ((Enum) kvp.Value).GetLocalisedName();
+                    result = ((Enum)kvp.Value).GetLocalisedName();
                 else if (kvp.Value is ICollection)
                     result = string.Join(" | ",
-                        ((ICollection) kvp.Value).Cast<object>().Select(x => x.ToString()).ToArray());
+                        ((ICollection)kvp.Value).Cast<object>().Select(x => x.ToString()).ToArray());
                 else
                     result = kvp.Value.ToString();
 
-                if (string.IsNullOrEmpty(result))
-                    continue;
-
-                dt.Rows.Add(kvp.Key, result);
+                if (!string.IsNullOrEmpty(result))
+                    dt.Rows.Add(kvp.Key, result);
             }
         }
 
@@ -95,8 +95,8 @@ namespace BulkCrapUninstaller.Functions
                 return GetError(Localisable.PropertiesWindow_Table_ErrorNoCertificate);
 
             // Extract required data
-            var lq = from property in typeof (X509Certificate2).GetProperties()
-                select new SingleProperty(property.Name, property.GetValue(cert, new object[] {}));
+            var lq = from property in typeof(X509Certificate2).GetProperties()
+                     select new SingleProperty(property.Name, property.GetValue(cert, new object[] { }));
             var list = lq.ToList();
 
             // Convert the obtained data to a more human readable form
@@ -156,21 +156,19 @@ namespace BulkCrapUninstaller.Functions
                 throw new IOException(Localisable.PropertiesWindow_Table_ErrorDoesntExist);
             }
 
-            IEnumerable<SingleProperty> lq;
-            try
+            // Basic filesystem information
+            var lq = fi.GetAttributes().Where(a=>!a.Key.Equals(nameof(FileInfo.Directory))).Select(x =>
             {
-                lq = fi.GetExtendedAttributes().Select(x => new SingleProperty(x.Key, x.Value));
-            }
-            catch
-            {
-                // Fall back in case the OS doesn't support GetExtendedAttributes.
-                lq = fi.GetAttributes().Select(x =>
-                {
-                    if (x.Key.Equals("Length"))
-                        return new SingleProperty(x.Key, FileSize.FromBytes((long) x.Value).ToString(true));
-                    return x;
-                });
-            }
+                if (x.Key.Equals(nameof(FileInfo.Length)))
+                    return new SingleProperty(x.Key, FileSize.FromBytes((long)x.Value).ToString(true));
+                return x;
+            });
+
+            // Extra information from resources
+            var verInfo = FileVersionInfo.GetVersionInfo(fi.FullName);
+            lq = lq.Concat(typeof(FileVersionInfo).GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(p => !p.Name.EndsWith("Part") && !p.Name.Equals(nameof(FileVersionInfo.FileName)))
+                .Select(p => new SingleProperty(p.Name, p.GetValue(verInfo, null))));
 
             // Create and return the table
             var dt = GetCleanDataTable();
@@ -180,8 +178,8 @@ namespace BulkCrapUninstaller.Functions
 
         private static DataTable ExtractOverview(ApplicationUninstallerEntry tag)
         {
-            var lq = from property in typeof (ApplicationUninstallerEntry).GetProperties()
-                select new SingleProperty(property.GetLocalisedName(), property.GetValue(tag, new object[] {}));
+            var lq = from property in typeof(ApplicationUninstallerEntry).GetProperties()
+                     select new SingleProperty(property.GetLocalisedName(), property.GetValue(tag, new object[] { }));
 
             var dt = GetCleanDataTable();
 
@@ -211,8 +209,8 @@ namespace BulkCrapUninstaller.Functions
         private static DataTable GetCleanDataTable()
         {
             var dt = new DataTable();
-            dt.Columns.Add(Localisable.PropertiesWindow_Table_Name, typeof (string));
-            dt.Columns.Add(Localisable.PropertiesWindow_Table_Value, typeof (string));
+            dt.Columns.Add(Localisable.PropertiesWindow_Table_Name, typeof(string));
+            dt.Columns.Add(Localisable.PropertiesWindow_Table_Value, typeof(string));
             return dt;
         }
 
