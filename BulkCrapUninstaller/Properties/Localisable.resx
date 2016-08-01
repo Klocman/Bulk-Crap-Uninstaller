@@ -637,10 +637,10 @@ You can try disabling collision detection in the settings, but it is not recomme
     <value>The v4.0 framework is optional, but recommended. The features that rely on the framework will be disabled until you install it.</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
-    <value>Some quiet uninstallers failed</value>
+    <value>Some uninstallers failed</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Do you want to run quiet uninstallers that failed in loud mode?</value>
+    <value>Do you want to try running quiet uninstallers that failed as loud?</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
     <value>Following uninstallers will be restarted loudly:</value>
@@ -649,7 +649,7 @@ You can try disabling collision detection in the settings, but it is not recomme
     <value>Scanning specified directory...</value>
   </data>
   <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
-    <value>Select directory with the application you want to remove.</value>
+    <value>Select directory with applications that you want to remove.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
     <value>Uninstall from directory</value>

@@ -1270,17 +1270,14 @@
   <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 22</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Wyczyść system (CCleaner)</value>
-  </data>
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 22</value>
   </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 22</value>
   </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uaktualnij aplikacje (Ninite)</value>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dezinstaluj z folderu...</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>275, 6</value>

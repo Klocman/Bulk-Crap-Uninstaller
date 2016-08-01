@@ -436,12 +436,6 @@
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>"&amp;Programok és szolgáltatások" megnyitása</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rendszer kitakarítása (CCleaner)</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alkalmazások frissítése (Ninite)</value>
-  </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Beállítás&amp;ok</value>
   </data>

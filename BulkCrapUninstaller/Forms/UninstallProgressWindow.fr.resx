@@ -173,7 +173,4 @@ Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour 
   <data name="toolStripButtonSettings.Text" xml:space="preserve">
     <value>Réglages</value>
   </data>
-  <data name="toolStripButtonHelp.Text" xml:space="preserve">
-    <value />
-  </data>
 </root>

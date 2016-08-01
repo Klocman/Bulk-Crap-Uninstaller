@@ -594,11 +594,6 @@ The lists are separated by a single newline.</comment>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>Ni imenikov za odpiranje</value>
   </data>
-  <data name="NotAvailable" xml:space="preserve">
-    <value>
-    </value>
-    <comment>Used on application list when value is not available</comment>
-  </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} aplikacij</value>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>

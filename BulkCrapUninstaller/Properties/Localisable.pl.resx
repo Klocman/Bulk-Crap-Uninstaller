@@ -636,4 +636,34 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
     <value>Obecność .NET Framework v4.0 jest opcjonalna, ale zalecana. Funkcje które na niej polegają będą wyłączone do czasu zainstalowania .NET Framework v4.0.</value>
   </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Niepowodzenie niektórych dezinstalatorów</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Czy uruchomić ciche dezinstalatory które się nie powiodły jako głośne?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Następujące dezinstalatory zostaną uruchomione ponownie jako głośne:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Skanowanie podanego folderu...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Podaj folder z aplikacjami które chcesz usunąć.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Dezinstaluj z folderu</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Nie znaleziono żadnych aplikacji w podanym folderze</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Upewnij się że wybrałeś właściwy folder i że zawiera on pliki wykonywalne aplikacji</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Znaleziono dezinstalator dla {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Czy uruchomić znaleziony dezinstalator?</value>
+  </data>
 </root>

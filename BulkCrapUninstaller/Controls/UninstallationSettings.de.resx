@@ -465,42 +465,6 @@
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>298, 118</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value />
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

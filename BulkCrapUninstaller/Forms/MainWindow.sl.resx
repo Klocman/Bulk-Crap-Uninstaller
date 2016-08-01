@@ -1679,17 +1679,11 @@
   <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Počisti sistem (CCleaner)</value>
-  </data>
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Posodobi aplikacije (Ninite)</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 6</value>

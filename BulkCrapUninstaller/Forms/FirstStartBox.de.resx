@@ -633,7 +633,4 @@ uninstaller</value>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Aktivieren nutzerbewertungen von Applikationen</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value />
-  </data>
 </root>

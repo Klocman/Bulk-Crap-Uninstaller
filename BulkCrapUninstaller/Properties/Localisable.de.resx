@@ -603,34 +603,4 @@ The lists are separated by a single newline.</comment>
     <value>{0} Anwendungen</value>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
-  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RatingEntry_ToString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
-    <value />
-  </data>
 </root>

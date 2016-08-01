@@ -1289,17 +1289,11 @@
   <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 22</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Vyčištění systému (CCleaner)</value>
-  </data>
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 22</value>
   </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 22</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Aktualizace aplikací (Ninite)</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 6</value>
@@ -1450,26 +1444,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
-  </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripButton8.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonAdvFiltering.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
-    <value />
   </data>
 </root>

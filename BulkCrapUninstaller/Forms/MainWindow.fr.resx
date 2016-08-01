@@ -779,17 +779,11 @@
   <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nettoyer le système (CCleaner)</value>
-  </data>
   <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
   </data>
   <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mettre à jour les applications (Ninite)</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 6</value>

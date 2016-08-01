@@ -175,7 +175,4 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 146</value>
   </data>
-  <data name="labelStoreApp.Text" xml:space="preserve">
-    <value />
-  </data>
 </root>

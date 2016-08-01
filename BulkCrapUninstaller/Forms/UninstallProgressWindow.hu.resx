@@ -166,7 +166,4 @@ Ha úgy tűnik, hogy egy folyamat beragadt kattintson a "Kihagyás" gombra, hogy
   <data name="$this.Text" xml:space="preserve">
     <value>Eltávolítási folyamat</value>
   </data>
-  <data name="toolStripButtonHelp.Text" xml:space="preserve">
-    <value />
-  </data>
 </root>

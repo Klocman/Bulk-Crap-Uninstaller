@@ -334,9 +334,6 @@
   <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
     <value>Ezzel kezdődik</value>
   </data>
-  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
-    <value />
-  </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Bármit tartalmazhat</value>
     <comment>As in "matches any word from this string"</comment>

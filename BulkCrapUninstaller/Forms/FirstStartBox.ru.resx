@@ -580,7 +580,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Добро пожаловать в BCUninstaller</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value />
-  </data>
 </root>
