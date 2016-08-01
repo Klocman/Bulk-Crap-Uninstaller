@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Root>
+	<AppName>BCUninstaller</AppName>
+	<Update>
+		<Version>3.3.2.0</Version>
+		<URL>https://dl.dropboxusercontent.com/u/21871088/Update/BCUninstaller/BCUninstaller_3.3.2_archive.zip</URL>
+		<Changes>
+Added Portuguese translation by Artur Álvaro Pereira
+Added Hungarian translation by Phoenix (Döbröntei Sándor)
+Added/updated/fixed some translations
+Changed 64bit field to use an enum
+Changed system StoreApps to no longer be protected
+Small speed-up of certificate extraction
+Fixed crash with empty application names
+Fixed a crash when trying to add an element to uninstall list
+Fixed possible race condition
+Fixed some icon paths being ignored
+		</Changes>
+		<Hash>b8495cb77c707c1c0dbff8bb14df1215</Hash>
+	</Update>
+</Root>

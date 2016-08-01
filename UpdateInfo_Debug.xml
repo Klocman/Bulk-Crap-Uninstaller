@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Root>
+	<AppName>BCUninstaller</AppName>
+	<Update>
+		<Version>9.9.9.9</Version>
+		<URL>https://dl.dropboxusercontent.com/u/21871088/Update/BCUninstaller/Debug.zip</URL>
+		<Changes>
+UPDATE SYSTEM DEBUG
+		</Changes>
+		<Hash>a809bf14636c1559129ad77641895ff5</Hash>
+	</Update>
+</Root>
