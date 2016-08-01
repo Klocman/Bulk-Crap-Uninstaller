@@ -168,7 +168,7 @@ namespace UninstallTools.Uninstaller
                                 }
                                 break;
                             }
-                        } while (!uninstaller.HasExited || childProcesses.Any());
+                        } while (!uninstaller.HasExited || childProcesses.Any(p => !p.HasExited));
 
                         if (_skipLevel == SkipCurrentLevel.None)
                         {
