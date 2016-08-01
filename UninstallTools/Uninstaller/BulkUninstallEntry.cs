@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
+using Klocman.IO;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
@@ -74,7 +75,9 @@ namespace UninstallTools.Uninstaller
                 if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
                     return;
 
-                if (UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists())
+                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) || 
+                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && 
+                    MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey))))
                 {
                     CurrentStatus = UninstallStatus.Completed;
                     Finished = true;
