@@ -776,6 +776,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\control.fastforward.variant.png" />
+    <None Include="Resources\control.fastforward.png" />
+    <None Include="Resources\stop.png" />
     <None Include="Resources\information.circle.png" />
     <None Include="Resources\centerline.png" />
     <None Include="Resources\rating5.png" />

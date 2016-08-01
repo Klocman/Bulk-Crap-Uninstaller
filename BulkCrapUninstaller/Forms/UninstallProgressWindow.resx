@@ -287,10 +287,10 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>106, 22</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Run uninstaller now</value>
+    <value>Run uninstaller</value>
   </data>
   <data name="toolStripButtonSkip.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -311,7 +311,7 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonTerminate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+    <value>80, 22</value>
   </data>
   <data name="toolStripButtonTerminate.Text" xml:space="preserve">
     <value>Terminate</value>
@@ -350,7 +350,7 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 22</value>
+    <value>23, 22</value>
   </data>
   <data name="toolStripButtonSettings.Text" xml:space="preserve">
     <value>Settings</value>
