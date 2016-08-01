@@ -22,7 +22,7 @@ namespace UninstallTools.Startup.Normal
             ParentLongName = dataPoint.Path.TrimEnd('\\');
 
             Command = targetString;
-            
+
             CommandFilePath = ProcessCommandString(Command);
 
             if (CommandFilePath == null)
@@ -113,11 +113,25 @@ namespace UninstallTools.Startup.Normal
         }
 
         /// <summary>
-        ///     Check if this entry still exists in the system
+        ///     Check if the startup entry still exists in registry or on disk.
+        ///     If the entry is disabled, but it exists in the backup store, this method will return true.
         /// </summary>
         public override bool StillExists()
         {
-            return StartupEntryManager.StillExists(this);
+            try
+            {
+                if (Disabled)
+                    return StartupEntryManager.DisableFunctions.StillExists(this);
+
+                if (!IsRegKey) return File.Exists(FullLongName);
+
+                using (var key = RegistryTools.OpenRegistryKey(ParentLongName))
+                    return !string.IsNullOrEmpty(key.GetValue(EntryLongName) as string);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         //TODO temporary hack

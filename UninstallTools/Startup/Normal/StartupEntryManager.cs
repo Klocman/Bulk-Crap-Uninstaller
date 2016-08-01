@@ -140,34 +140,7 @@ namespace UninstallTools.Startup.Normal
             if (wasDisabled)
                 Disable(startupEntry);
         }
-
-        /// <summary>
-        ///     Check if the startup entry still exists in registry or on disk.
-        ///     If the entry is disabled, but it exists in the backup store, this method will return true.
-        /// </summary>
-        public static bool StillExists(StartupEntry startupEntry)
-        {
-            try
-            {
-                if (startupEntry.Disabled)
-                {
-                    return DisableFunctions.StillExists(startupEntry);
-                }
-
-                if (startupEntry.IsRegKey)
-                {
-                    using (var key = RegistryTools.OpenRegistryKey(startupEntry.ParentLongName))
-                        return !string.IsNullOrEmpty(key.GetValue(startupEntry.EntryLongName) as string);
-                }
-
-                return File.Exists(startupEntry.FullLongName);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
+        
         /// <summary>
         ///     Create a registry value for the specified entry. Works for drive links as well.
         /// </summary>
