@@ -11,10 +11,9 @@ namespace BulkCrapUninstaller.Functions
     internal static class UpdateGrabber
     {
         private static readonly Uri DebugUpdateFeedUri =
-            new Uri(@"https://dl.dropboxusercontent.com/u/21871088/Update/BCUninstaller_test.xml");
-
+            new Uri(@"https://raw.githubusercontent.com/Klocman/Bulk-Crap-Uninstaller/master/UpdateInfo_Debug.xml");
         private static readonly Uri UpdateFeedUri =
-            new Uri(@"https://dl.dropboxusercontent.com/u/21871088/Update/BCUninstaller.xml");
+            new Uri(@"https://raw.githubusercontent.com/Klocman/Bulk-Crap-Uninstaller/master/UpdateInfo.xml");
 
         /// <summary>
         ///     Look for updates while displaying a progress bar. At the end display a message box with the result.
@@ -73,24 +72,22 @@ namespace BulkCrapUninstaller.Functions
             {
                 new Thread(() =>
                 {
-                    switch (UpdateSystem.CheckForUpdates())
+                    if (UpdateSystem.CheckForUpdates() != UpdateSystem.UpdateStatus.NewAvailable)
+                        return;
+
+                    while (!canDisplayMessage())
+                        Thread.Sleep(100);
+
+                    try
                     {
-                        case UpdateSystem.UpdateStatus.NewAvailable:
-                        {
-                            while (!canDisplayMessage())
-                                Thread.Sleep(100);
-                            try
-                            {
-                                updateFoundCallback();
-                            }
-                            catch
-                            {
-                                // Ignore background error, not necessary
-                            }
-                        }
-                            break;
+                        updateFoundCallback();
                     }
-                }) {Name = "UpdateCheck_Thread", IsBackground = true}.Start();
+                    catch
+                    {
+                        // Ignore background error, not necessary
+                    }
+                })
+                { Name = "UpdateCheck_Thread", IsBackground = true }.Start();
             }
         }
     }
