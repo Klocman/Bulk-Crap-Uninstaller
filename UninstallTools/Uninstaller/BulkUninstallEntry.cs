@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -113,89 +114,100 @@ namespace UninstallTools.Uninstaller
             var retry = false;
             try
             {
-                var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate);
-
-                // Can be null during simulation
-                if (uninstaller != null)
+                using (var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate))
                 {
-                    if (options.PreferQuiet && UninstallerEntry.QuietUninstallPossible)
-                        uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
-
-                    var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
-                    List<Process> childProcesses;
-                    var idleCounter = 0;
-
-                    do
+                    // Can be null during simulation
+                    if (uninstaller != null)
                     {
-                        if (_skipLevel == SkipCurrentLevel.Skip)
-                            break;
+                        if (options.PreferQuiet && UninstallerEntry.QuietUninstallPossible)
+                            uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
 
-                        childProcesses = uninstaller.GetChildProcesses().Where(
-                            p => !p.ProcessName.Contains("explorer", StringComparison.InvariantCultureIgnoreCase))
-                            .ToList();
+                        var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
+                        List<Process> childProcesses;
+                        var idleCounter = 0;
 
-                        if (!uninstaller.HasExited)
-                            childProcesses.Add(uninstaller);
-
-                        if (checkCounters)
+                        do
                         {
-                            if (TestUninstallerForStalls(childProcesses))
-                                idleCounter++;
+                            if (_skipLevel == SkipCurrentLevel.Skip)
+                                break;
 
-                            // Kill the uninstaller (and children) if they were idle/stalled for too long
-                            if (idleCounter > 40)
+                            childProcesses = uninstaller.GetChildProcesses().Where(
+                                p => !p.ProcessName.Contains("explorer", StringComparison.InvariantCultureIgnoreCase))
+                                .ToList();
+
+                            if (!uninstaller.HasExited)
+                                childProcesses.Add(uninstaller);
+
+                            if (checkCounters)
+                            {
+                                if (TestUninstallerForStalls(childProcesses))
+                                    idleCounter++;
+
+                                // Kill the uninstaller (and children) if they were idle/stalled for too long
+                                if (idleCounter > 40)
+                                {
+                                    uninstaller.Kill(true);
+                                    throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
+                                }
+                            }
+                            else Thread.Sleep(1000);
+
+                            // Kill the uninstaller (and children) if user told us to or if it was idle for too long
+                            if (_skipLevel == SkipCurrentLevel.Terminate)
                             {
                                 uninstaller.Kill(true);
-                                throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
-                            }
-                        }
-                        else Thread.Sleep(1000);
-
-                        // Kill the uninstaller (and children) if user told us to or if it was idle for too long
-                        if (_skipLevel == SkipCurrentLevel.Terminate)
-                        {
-                            uninstaller.Kill(true);
-                            break;
-                        }
-                    } while (!uninstaller.HasExited || childProcesses.Any());
-
-                    if (_skipLevel == SkipCurrentLevel.None)
-                    {
-                        var exitVar = uninstaller.ExitCode;
-                        if (exitVar != 0)
-                        {
-                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && exitVar == 1602)
-                            {
-                                // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
-                                _skipLevel = SkipCurrentLevel.Skip;
-                            }
-                            else if (exitVar == -1073741510)
-                            {
-                                /* 3221225786 / 0xC000013A / -1073741510 
-                                The application terminated as a result of a CTRL+C. 
-                                Indicates that the application has been terminated either by user's 
-                                keyboard input CTRL+C or CTRL+Break or closing command prompt window. */
-                                _skipLevel = SkipCurrentLevel.Terminate;
-                            }
-                            else
-                            {
-                                switch (exitVar)
+                                if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                                 {
-                                    // The system cannot find the file specified. Indicates that the file can not be found in specified location.
-                                    case 2:
-                                    // The system cannot find the path specified. Indicates that the specified path can not be found.
-                                    case 3:
-                                    // Access is denied. Indicates that user has no access right to specified resource.
-                                    case 5:
-                                    // Program is not recognized as an internal or external command, operable program or batch file. 
-                                    case 9009:
-                                        break;
-                                    default:
-                                        if (options.RetryFailedQuiet)
-                                            retry = true;
-                                        break;
+                                    foreach (var process in Process.GetProcessesByName("Msiexec"))
+                                    {
+                                        try { process.Kill(); }
+                                        catch (InvalidOperationException) { }
+                                        catch (Win32Exception) { }
+                                        catch (NotSupportedException) { }
+                                    }
                                 }
-                                throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+                                break;
+                            }
+                        } while (!uninstaller.HasExited || childProcesses.Any());
+
+                        if (_skipLevel == SkipCurrentLevel.None)
+                        {
+                            var exitVar = uninstaller.ExitCode;
+                            if (exitVar != 0)
+                            {
+                                if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && exitVar == 1602)
+                                {
+                                    // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
+                                    _skipLevel = SkipCurrentLevel.Skip;
+                                }
+                                else if (exitVar == -1073741510)
+                                {
+                                    /* 3221225786 / 0xC000013A / -1073741510 
+                                    The application terminated as a result of a CTRL+C. 
+                                    Indicates that the application has been terminated either by user's 
+                                    keyboard input CTRL+C or CTRL+Break or closing command prompt window. */
+                                    _skipLevel = SkipCurrentLevel.Terminate;
+                                }
+                                else
+                                {
+                                    switch (exitVar)
+                                    {
+                                        // The system cannot find the file specified. Indicates that the file can not be found in specified location.
+                                        case 2:
+                                        // The system cannot find the path specified. Indicates that the specified path can not be found.
+                                        case 3:
+                                        // Access is denied. Indicates that user has no access right to specified resource.
+                                        case 5:
+                                        // Program is not recognized as an internal or external command, operable program or batch file. 
+                                        case 9009:
+                                            break;
+                                        default:
+                                            if (options.RetryFailedQuiet)
+                                                retry = true;
+                                            break;
+                                    }
+                                    throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
+                                }
                             }
                         }
                     }
