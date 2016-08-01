@@ -104,7 +104,7 @@
     <Setting Name="AdvancedTestInvalid" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="AdvancedDisplayOrphans" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
+    <Setting Name="AdvancedDisplayOrphans" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="UninstallerListSortOrder" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Windows.Forms.SortOrder" Scope="User">
@@ -119,7 +119,7 @@
     <Setting Name="FoldersCustomProgramDirs" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MiscAutoLoadDefaultList" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
+    <Setting Name="MiscAutoLoadDefaultList" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MiscUserRatings" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
@@ -149,25 +149,25 @@
     <Setting Name="UninstallConcurrentDisableManualCollisionProtection" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FilterShowStoreApps" Type="System.Boolean" Scope="User">
+    <Setting Name="FilterShowStoreApps" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="QuietRetryFailedOnce" Type="System.Boolean" Scope="User">
+    <Setting Name="QuietRetryFailedOnce" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="QuietAutoKillStuck" Type="System.Boolean" Scope="User">
+    <Setting Name="QuietAutoKillStuck" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="QuietAutomatization" Type="System.Boolean" Scope="User">
+    <Setting Name="QuietAutomatization" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="QuietAutomatizationKillStuck" Type="System.Boolean" Scope="User">
+    <Setting Name="QuietAutomatizationKillStuck" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MiscNet4NagShown" Type="System.Boolean" Scope="User">
+    <Setting Name="MiscNet4NagShown" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FilterShowWinFeatures" Type="System.Boolean" Scope="User">
+    <Setting Name="FilterShowWinFeatures" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
