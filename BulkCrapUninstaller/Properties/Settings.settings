@@ -108,7 +108,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="UninstallerListSortOrder" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Windows.Forms.SortOrder" Scope="User">
-      <Value Profile="(Default)">Ascending</Value>
+      <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="UninstallerListSortColumn" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
