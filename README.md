@@ -29,9 +29,9 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 * Fully portable, settings are saved to a single file
 
 ## Download
-![Check the releases for new versions](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/)
+[Check the releases for new versions](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/)
 
-![For old versions go to the Sourceforge](https://sourceforge.net/projects/bulk-crap-uninstaller/files/)
+[For old versions go to the Sourceforge](https://sourceforge.net/projects/bulk-crap-uninstaller/files/)
 
 ## Compiling
-Any modern version of Visual Studio should work. You might need to download ![this library](https://sourceforge.net/p/kloctoolslibrary/) separately.
+Any modern version of Visual Studio should work. You might need to download [this library](https://sourceforge.net/p/kloctoolslibrary/) separately.
