@@ -6,6 +6,9 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 
 [Homepage](http://klocmansoftware.weebly.com/)
 
+[SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
+
+
 ## Screenshots
 ![Alt text](/Preview1.png?raw=true "First start preview")
 
@@ -27,6 +30,7 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 
 ## Download
 ![Check the releases for new versions](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/)
+
 ![For old versions go to the Sourceforge](https://sourceforge.net/projects/bulk-crap-uninstaller/files/)
 
 ## Compiling
