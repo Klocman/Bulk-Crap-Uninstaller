@@ -86,7 +86,8 @@ namespace UninstallTools.Uninstaller
 
                 results.AddRange(detectedEntries.Where(detected => !existingUninstallers.Any(existing =>
                 {
-                    if (existing.DisplayName.Contains(detected.DisplayNameTrimmed))
+                    if (!string.IsNullOrEmpty(existing.DisplayName) && !string.IsNullOrEmpty(detected.DisplayNameTrimmed) 
+                    && existing.DisplayName.Contains(detected.DisplayNameTrimmed))
                     {
                         return !existing.IsInstallLocationValid() ||
                                detected.InstallLocation.Contains(existing.InstallLocation,
