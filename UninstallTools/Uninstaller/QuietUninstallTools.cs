@@ -39,6 +39,9 @@ namespace UninstallTools.Uninstaller
         public static void GenerateQuietCommands(IEnumerable<ApplicationUninstallerEntry> entries,
             bool automatizerKillstuck)
         {
+            if(!File.Exists(UninstallerAutomatizerPath))
+                return;
+
             var nsisCommandStart = $"\"{UninstallerAutomatizerPath}\" {UninstallerType.Nsis} ";
             if (automatizerKillstuck)
                 nsisCommandStart = nsisCommandStart.Append("/K ");
