@@ -34,12 +34,7 @@ namespace UninstallTools.Uninstaller
                                        existingUninstallerEntries.ToList();
 
             var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
-
-            // Get sub directories which should contain the programs
-            var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool?>>(),
-                (a, b) =>
-                    a.Concat(b.Key.GetDirectories().Select(x => new KeyValuePair<DirectoryInfo, bool?>(x, b.Value))));
-
+            
             // Get directories which are already used and should be skipped
             var directoriesToSkip = existingUninstallers.SelectMany(x =>
             {
@@ -59,9 +54,15 @@ namespace UninstallTools.Uninstaller
                     }
                 }
                 return new[] { x.InstallLocation, x.UninstallerLocation };
-            }).Where(x => x.IsNotEmpty() && !pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
+            }).Where(x => x.IsNotEmpty()).Select(PathTools.PathToNormalCase)
+            .Where(x =>!pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
             .Distinct().ToList();
 
+            // Get sub directories which could contain user programs
+            var directoriesToCheck = pfDirectories.Aggregate(Enumerable.Empty<KeyValuePair<DirectoryInfo, bool?>>(),
+                (a, b) => a.Concat(b.Key.GetDirectories().Select(x => new KeyValuePair<DirectoryInfo, bool?>(x, b.Value))));
+
+            // Get directories that can be relatively safely checked
             var inputs = directoriesToCheck.Where(x => !directoriesToSkip.Any(y =>
                 x.Key.FullName.Contains(y, StringComparison.InvariantCultureIgnoreCase)
                 || y.Contains(x.Key.FullName, StringComparison.InvariantCultureIgnoreCase))).ToList();
