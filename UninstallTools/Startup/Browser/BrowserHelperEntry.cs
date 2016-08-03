@@ -9,19 +9,21 @@ namespace UninstallTools.Startup.Browser
     {
         private bool _disabled;
 
-        public BrowserHelperEntry(string programName, string command, string commandFilename, string parentKeyPath,
+        public BrowserHelperEntry(string programName, string command, string parentKeyPath,
             string className, bool disabled, bool isWow)
         {
             ProgramName = programName;
             Command = command;
-            CommandFilePath = commandFilename;
 
             ParentLongName = parentKeyPath;
             EntryLongName = className;
             _disabled = disabled;
             IsWow = isWow;
+            
+            CommandFilePath = ProcessCommandString(Command);
 
-            FillInformationFromFile(commandFilename);
+            if(CommandFilePath != null)
+                FillInformationFromFile(CommandFilePath);
         }
 
         private bool IsWow { get; }

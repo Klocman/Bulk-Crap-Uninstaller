@@ -89,17 +89,33 @@ namespace UninstallTools.Startup
         {
             return FullLongName ?? ProgramName ?? Command;
         }
-        
+
+        protected static string ProcessCommandString(string command)
+        {
+            if (string.IsNullOrEmpty(command))
+                return null;
+
+            ProcessStartCommand temp;
+            return ProcessStartCommand.TryParse(command, out temp) ? temp.FileName : null;
+        }
+
         /// <summary>
         ///     Fill in fields with version information from specified file
         /// </summary>
         protected void FillInformationFromFile(string commandFilename)
         {
-            var info = FileVersionInfo.GetVersionInfo(commandFilename);
-            Company = info.CompanyName;
-            ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
-                ? info.ProductName
-                : StringTools.StripStringFromVersionNumber(ProgramName);
+            try
+            {
+                var info = FileVersionInfo.GetVersionInfo(commandFilename);
+                Company = info.CompanyName;
+                ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
+                    ? info.ProductName
+                    : StringTools.StripStringFromVersionNumber(ProgramName);
+            }
+            catch
+            {
+                // Ignore file access errors errors
+            }
         }
     }
 }

@@ -700,7 +700,14 @@ namespace UninstallTools.Uninstaller
                     entry.Is64Bit = MachineType.Unknown;
                 }
 
-                FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
+                try
+                {
+                    FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
+                }
+                catch
+                {
+                    // Not critical
+                }
 
                 // Attempt to find an uninstaller application
                 var uninstallerFilters = new[] { "unins0", "uninstall", "uninst", "uninstaller" };

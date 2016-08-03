@@ -59,13 +59,7 @@ namespace UninstallTools.Startup.Browser
                         command = runKey?.GetValue(null) as string;
                     }
 
-                    ProcessStartCommand startCommand = null;
-                    if (!string.IsNullOrEmpty(command))
-                    {
-                        ProcessStartCommand.TryParse(command, out startCommand);
-                    }
-
-                    yield return new BrowserHelperEntry(name, command, startCommand?.FileName ?? string.Empty,
+                    yield return new BrowserHelperEntry(name, command,
                         registryStartupPoint, registryKey, disabled, workingKey.Name.Contains("Wow6432Node"));
                 }
             }

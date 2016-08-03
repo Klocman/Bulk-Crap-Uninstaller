@@ -95,15 +95,6 @@ namespace UninstallTools.Startup.Normal
         /// </summary>
         internal string BackupPath { get; set; }
 
-        private static string ProcessCommandString(string command)
-        {
-            if (string.IsNullOrEmpty(command))
-                return null;
-
-            ProcessStartCommand temp;
-            return ProcessStartCommand.TryParse(command, out temp) ? temp.FileName : null;
-        }
-
         /// <summary>
         ///     Delete this startup entry from the system
         /// </summary>
