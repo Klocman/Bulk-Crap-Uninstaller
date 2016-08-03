@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 
@@ -66,32 +67,35 @@ namespace UninstallTools
         public static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(
             bool includeUserDirectories)
         {
-            var pfDirectories = new List<KeyValuePair<DirectoryInfo, bool?>>(2);
+            var pfDirectories = new List<KeyValuePair<string, bool?>>(2);
 
-            var pf64 = new DirectoryInfo(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES));
-            var pf32 = new DirectoryInfo(WindowsTools.GetProgramFilesX86Path());
-            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(pf32, false));
-            if (!pf32.FullName.Equals(pf64.FullName))
-                pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(pf64, true));
+            var pf64 = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES);
+            var pf32 = WindowsTools.GetProgramFilesX86Path();
+            pfDirectories.Add(new KeyValuePair<string, bool?>(pf32, false));
+            if (!PathTools.PathsEqual(pf32, pf64))
+                pfDirectories.Add(new KeyValuePair<string, bool?>(pf64, true));
 
             if (includeUserDirectories)
+                pfDirectories.AddRange(CustomProgramFiles.Where(x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
+                    .Select(x => new KeyValuePair<string, bool?>(x, null)));
+
+            var output = new List<KeyValuePair<DirectoryInfo, bool?>>();
+            foreach (var directory in pfDirectories.ToList())
             {
-                foreach (var dir in CustomProgramFiles.Distinct())
+                try
                 {
-                    try
-                    {
-                        var di = new DirectoryInfo(dir);
-                        if (di.Exists)
-                            pfDirectories.Add(new KeyValuePair<DirectoryInfo, bool?>(di, null));
-                    }
-                    catch
-                    {
-                        // Ignore missing or inaccessible directories
-                    }
+                    var di = new DirectoryInfo(directory.Key);
+                    if (di.Exists)
+                        output.Add(new KeyValuePair<DirectoryInfo, bool?>(di, directory.Value));
+                }
+                catch
+                {
+                    // Ignore missing or inaccessible directories
+                    pfDirectories.Remove(directory);
                 }
             }
 
-            return pfDirectories;
+            return output;
         }
     }
 }
