@@ -208,7 +208,7 @@ namespace BulkCrapUninstaller.Functions
 
                     using (var uninstallWindow = new UninstallProgressWindow())
                     {
-                        uninstallWindow.SetTargetStatus(status);
+                        uninstallWindow.Shown += (sender, args) => ((UninstallProgressWindow)sender).SetTargetStatus(status);
                         uninstallWindow.ShowDialog(MessageBoxes.DefaultOwner);
                     }
 
