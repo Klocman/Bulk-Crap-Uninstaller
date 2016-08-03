@@ -446,8 +446,7 @@ namespace BulkCrapUninstaller.Functions
                 }));
 
             detectedUninstallers.AddRange(
-                ApplicationUninstallerManager.GetApplicationsFromDrive(detectedUninstallers,
-                    x =>
+                ApplicationUninstallerManager.GetApplicationsFromDrive(detectedUninstallers, x =>
                     {
                         dialogInterface.SetProgress(x.TotalCount + x.CurrentCount);
                         if (x.CurrentCount == 1)
@@ -476,8 +475,23 @@ namespace BulkCrapUninstaller.Functions
             dialogInterface.SetProgress(1);
             dialogInterface.SetMaximum(1);
 
-            _iconGetter.UpdateIconList(detectedUninstallers);
-            ReassignStartupEntries(false);
+            try
+            {
+                _iconGetter.UpdateIconList(detectedUninstallers);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
+
+            try
+            {
+                ReassignStartupEntries(false);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
         }
 
         /// <summary>

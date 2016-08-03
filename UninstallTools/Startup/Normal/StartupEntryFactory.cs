@@ -36,7 +36,7 @@ namespace UninstallTools.Startup.Normal
                 WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_STARTUP)),
             new StartupPointData(true, false, false, false, @"Common\Startup",
                 WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_STARTUP))
-        };
+        }.AsEnumerable();
 
         /// <summary>
         ///     Look for and return all of the startup entries stored in Startup folders and Run/RunOnce registry keys.
@@ -46,8 +46,7 @@ namespace UninstallTools.Startup.Normal
             var results = new List<StartupEntry>();
             foreach (var point in RunLocations)
             {
-                if (point != null)
-                    results.AddRange(point.IsRegKey ? GetRegStartupItems(point) : GetDriveStartupItems(point));
+                results.AddRange(point.IsRegKey ? GetRegStartupItems(point) : GetDriveStartupItems(point));
             }
             return StartupEntryManager.DisableFunctions.AddDisableInfo(results);
         }
