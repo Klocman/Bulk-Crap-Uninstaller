@@ -336,7 +336,7 @@ namespace UninstallTools.Uninstaller
             var toSkip = entriesToSkip as IList<ApplicationUninstallerEntry> ?? entriesToSkip.ToList();
             var items = new List<ApplicationUninstallerEntry>();
 
-            if (toSkip.All(x => !_steamLocation.Equals("OneDrive", StringComparison.InvariantCultureIgnoreCase)))
+            if (toSkip.All(x => !x.DisplayName.Equals("OneDrive", StringComparison.InvariantCultureIgnoreCase)))
             {
                 var i = GetOneDrive();
                 if (i != null)
