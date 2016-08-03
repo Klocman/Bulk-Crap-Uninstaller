@@ -70,10 +70,24 @@ namespace UninstallTools.Startup.Normal
                         var runLocation = StartupEntryFactory.RunLocations
                             .FirstOrDefault(x => PathTools.PathsEqual(location, x.Path));
 
-                        if (runLocation == null)
-                            badLocations.Add(location);
+                        if (runLocation != null)
+                        {
+                            StartupEntry startupEntry;
+                            try
+                            {
+                                startupEntry = new StartupEntry(runLocation, item, command) { DisabledStore = true };
+                            }
+                            catch
+                            {
+                                badLocations.Add(location);
+                                continue;
+                            }
+                            yield return startupEntry;
+                        }
                         else
-                            yield return new StartupEntry(runLocation, item, command) {DisabledStore = true};
+                        {
+                            badLocations.Add(location);
+                        }
                     }
                 }
 
