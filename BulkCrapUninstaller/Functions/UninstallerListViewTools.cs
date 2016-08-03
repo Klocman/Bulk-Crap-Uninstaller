@@ -332,7 +332,7 @@ namespace BulkCrapUninstaller.Functions
 
             var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
             if (error != null)
-                throw error;
+                throw new Exception("Uncaught exception in ListRefreshThread", error);
 
             _listView.ListView.SuspendLayout();
             _listView.ListView.BeginUpdate();
