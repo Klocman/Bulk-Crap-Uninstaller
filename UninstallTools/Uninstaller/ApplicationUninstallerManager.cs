@@ -212,15 +212,32 @@ namespace UninstallTools.Uninstaller
             if (Environment.OSVersion.Version < WindowsTools.Windows7)
                 return Enumerable.Empty<ApplicationUninstallerEntry>();
 
+            Exception error = null;
             var applicationUninstallers = new List<ApplicationUninstallerEntry>();
-            var t = new Thread(() => applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures()
-                .Where(x => x.Enabled)
-                .Select(WindowsFeatureToUninstallerEntry)));
+            var t = new Thread(() =>
+            {
+                try
+                {
+                    applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures()
+                        .Where(x => x.Enabled)
+                        .Select(WindowsFeatureToUninstallerEntry));
+                }
+                catch(Exception ex)
+                {
+                    error = ex;
+                }
+            });
             t.Start();
 
             t.Join(TimeSpan.FromSeconds(30));
+
+            if(error != null)
+                throw new IOException("WMI query returned an error, try restarting your computer", error);
             if (t.IsAlive)
+            {
+                t.Abort();
                 throw new TimeoutException("WMI query has hung, try restarting your computer");
+            }
 
             return applicationUninstallers;
         }
