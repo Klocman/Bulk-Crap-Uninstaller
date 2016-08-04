@@ -27,7 +27,7 @@ namespace BulkCrapUninstaller.Functions
     public static class Constants
     {
         public static Color VerifiedColor = Color.FromArgb(unchecked((int)0xffccffcc));
-        public static Color UnverifiedColor = Color.FromArgb(unchecked((int)0xeebbddff));
+        public static Color UnverifiedColor = Color.FromArgb(unchecked((int)0xffbbddff));
         public static Color InvalidColor = Color.FromArgb(unchecked((int)0xffE0E0E0));
         public static Color UnregisteredColor = Color.FromArgb(unchecked((int)0xffffcccc));
         public static Color WindowsFeatureColor = Color.FromArgb(unchecked((int)0xffddbbff));
