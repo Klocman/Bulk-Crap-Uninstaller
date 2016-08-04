@@ -3,10 +3,10 @@
 	<AppName>BCUninstaller</AppName>
 	<Update>
 		<Version>9.9.9.9</Version>
-    <URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.4.0/BCUninstaller_3.4_portable.zip</URL>
+    <URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.4.1/BCUninstaller_3.4.1_portable.zip</URL>
 		<Changes>
 UPDATE SYSTEM DEBUG
 		</Changes>
-		<Hash>665e60dbb8b87b46d19e95616a3d5703</Hash>
+		<Hash>0de10dbb776c7c801b73bf8fc840ad69</Hash>
 	</Update>
 </Root>

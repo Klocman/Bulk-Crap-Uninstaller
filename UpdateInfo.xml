@@ -2,8 +2,8 @@
 <Root>
 	<AppName>BCUninstaller</AppName>
 	<Update>
-		<Version>3.4.0.0</Version>
-		<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.4.0/BCUninstaller_3.4_portable.zip</URL>
+		<Version>3.4.1.0</Version>
+		<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.4.1/BCUninstaller_3.4.1_portable.zip</URL>
 		<Changes>
 Added detection of all Steam Apps (as long as Steam itself sees them)
 Added full Steam App uninstall automation
@@ -12,12 +12,9 @@ Added option to retry failed quiet uninstallers in loud mode
 Changed process kill screen to ignore Steam if it will be needed later
 Lowered process priority of quiet uninstallers
 Prioritized Msiexec when uninstalling concurrently
-Disabled skipping Msiexec uninstallers, can only terminate
-Fixed advanced file attributes not being detected on Win 10 - fixes and improves many things
-Fixed crashing when viewing properties of some uninstallers
-Fixed registry export sometimes getting stuck or failing
-Other fixes and changes, check the full changelog for more info
+Enabled ratings of Windows Features
+Many fixes and small changes, check the full changelog for more info
     </Changes>
-		<Hash>665e60dbb8b87b46d19e95616a3d5703</Hash>
+		<Hash>0de10dbb776c7c801b73bf8fc840ad69</Hash>
 	</Update>
 </Root>
