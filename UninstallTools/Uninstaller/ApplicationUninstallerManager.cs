@@ -229,14 +229,14 @@ namespace UninstallTools.Uninstaller
             });
             t.Start();
 
-            t.Join(TimeSpan.FromSeconds(30));
+            t.Join(TimeSpan.FromSeconds(40));
 
             if(error != null)
-                throw new IOException("WMI query returned an error, try restarting your computer", error);
+                throw new IOException("Error while collecting Windows Features, try restarting your computer. If the error persists read the KB957310 article.", error);
             if (t.IsAlive)
             {
                 t.Abort();
-                throw new TimeoutException("WMI query has hung, try restarting your computer");
+                throw new TimeoutException("WMI query has hung while collecting Windows Features, try restarting your computer. If the error persists read the KB957310 article.");
             }
 
             return applicationUninstallers;
