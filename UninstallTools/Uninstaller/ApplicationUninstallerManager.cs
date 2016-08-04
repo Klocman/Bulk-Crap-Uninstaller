@@ -34,7 +34,7 @@ namespace UninstallTools.Uninstaller
                                        existingUninstallerEntries.ToList();
 
             var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
-            
+
             // Get directories which are already used and should be skipped
             var directoriesToSkip = existingUninstallers.SelectMany(x =>
             {
@@ -55,7 +55,7 @@ namespace UninstallTools.Uninstaller
                 }
                 return new[] { x.InstallLocation, x.UninstallerLocation };
             }).Where(x => x.IsNotEmpty()).Select(PathTools.PathToNormalCase)
-            .Where(x =>!pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
+            .Where(x => !pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
             .Distinct().ToList();
 
             // Get sub directories which could contain user programs
@@ -86,7 +86,7 @@ namespace UninstallTools.Uninstaller
 
                 results.AddRange(detectedEntries.Where(detected => !existingUninstallers.Any(existing =>
                 {
-                    if (!string.IsNullOrEmpty(existing.DisplayName) && !string.IsNullOrEmpty(detected.DisplayNameTrimmed) 
+                    if (!string.IsNullOrEmpty(existing.DisplayName) && !string.IsNullOrEmpty(detected.DisplayNameTrimmed)
                     && existing.DisplayName.Contains(detected.DisplayNameTrimmed))
                     {
                         return !existing.IsInstallLocationValid() ||
@@ -171,7 +171,7 @@ namespace UninstallTools.Uninstaller
                     steamAppsOnDisk.RemoveAll(toRemove);
                     ApplicationUninstallerFactory.ChangeSteamAppUninstallStringToHelper(steamApp);
 
-                    if(steamApp.EstimatedSize.IsDefault() && toRemove.Any())
+                    if (steamApp.EstimatedSize.IsDefault() && toRemove.Any())
                         steamApp.EstimatedSize = toRemove.First().EstimatedSize;
                 }
 
@@ -182,7 +182,7 @@ namespace UninstallTools.Uninstaller
 
                 applicationUninstallers.AddRange(steamAppsOnDisk);
             }
-            
+
             applicationUninstallers.AddRange(ApplicationUninstallerFactory.GetSpecialUninstallers(applicationUninstallers));
 
             // Fill in missing information
@@ -222,7 +222,7 @@ namespace UninstallTools.Uninstaller
                         .Where(x => x.Enabled)
                         .Select(WindowsFeatureToUninstallerEntry));
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     error = ex;
                 }
@@ -231,7 +231,7 @@ namespace UninstallTools.Uninstaller
 
             t.Join(TimeSpan.FromSeconds(40));
 
-            if(error != null)
+            if (error != null)
                 throw new IOException("Error while collecting Windows Features, try restarting your computer. If the error persists read the KB957310 article.", error);
             if (t.IsAlive)
             {
@@ -253,7 +253,8 @@ namespace UninstallTools.Uninstaller
                 UninstallerKind = UninstallerType.WindowsFeature,
                 Publisher = "Microsoft Corporation",
                 IsValid = true,
-                Is64Bit = ProcessTools.Is64BitProcess ? MachineType.X64 : MachineType.X86
+                Is64Bit = ProcessTools.Is64BitProcess ? MachineType.X64 : MachineType.X86,
+                RatingId = "WindowsFeature_" + info.FeatureName
             };
         }
 
