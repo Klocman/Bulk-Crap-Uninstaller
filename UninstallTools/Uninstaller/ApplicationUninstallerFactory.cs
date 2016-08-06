@@ -536,12 +536,16 @@ namespace UninstallTools.Uninstaller
 
                 if (resultFilename != null)
                 {
-                    var icon = Icon.ExtractAssociatedIcon(resultFilename);
-                    if (icon != null)
+                    try
                     {
-                        path = resultFilename;
-                        return icon;
+                        var icon = Icon.ExtractAssociatedIcon(resultFilename);
+                        if (icon != null)
+                        {
+                            path = resultFilename;
+                            return icon;
+                        }
                     }
+                    catch (ArgumentException) { }
                 }
             }
 
@@ -568,12 +572,16 @@ namespace UninstallTools.Uninstaller
             if (entry.UninstallerFullFilename.IsNotEmpty() && !PathPointsToMsiExec(entry.UninstallerFullFilename)
                 && File.Exists(entry.UninstallerFullFilename))
             {
-                var icon = Icon.ExtractAssociatedIcon(entry.UninstallerFullFilename);
-                if (icon != null)
+                try
                 {
-                    path = entry.UninstallerFullFilename;
-                    return icon;
+                    var icon = Icon.ExtractAssociatedIcon(entry.UninstallerFullFilename);
+                    if (icon != null)
+                    {
+                        path = entry.UninstallerFullFilename;
+                        return icon;
+                    }
                 }
+                catch (ArgumentException) { }
             }
 
             // Finally try finding other executables in the uninstaller's dir. 
@@ -1073,11 +1081,14 @@ namespace UninstallTools.Uninstaller
                             where File.Exists(combinedIconPath)
                             select combinedIconPath;
 
-                var iconPath = query.FirstOrDefault();
-                if (iconPath != null)
+                foreach (var iconPath in query)
                 {
-                    path = iconPath;
-                    return Icon.ExtractAssociatedIcon(iconPath);
+                    try
+                    {
+                        path = iconPath;
+                        return Icon.ExtractAssociatedIcon(iconPath);
+                    }
+                    catch (ArgumentException) { }
                 }
             }
             catch (SecurityException) { }
@@ -1094,6 +1105,7 @@ namespace UninstallTools.Uninstaller
                     return icon;
                 }
             }
+            catch (ArgumentException) { }
             catch (SecurityException) { }
             catch (UnauthorizedAccessException) { }
 
