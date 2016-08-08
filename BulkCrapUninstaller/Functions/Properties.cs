@@ -2,10 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using BulkCrapUninstaller.Properties;
@@ -69,9 +67,12 @@ namespace BulkCrapUninstaller.Functions
 
                 if (kvp.Value is DateTime && ((DateTime)kvp.Value).IsDefault())
                     continue;
+                
+                if ((kvp.Value as Version)?.IsZeroOrNull() ?? false)
+                    continue;
 
                 string result;
-
+                
                 if (kvp.Value is bool)
                     result = ((bool)kvp.Value).ToYesNo();
                 else if (kvp.Value is Enum)
@@ -147,28 +148,17 @@ namespace BulkCrapUninstaller.Functions
             if (string.IsNullOrEmpty(tag.UninstallerFullFilename))
                 throw new InvalidOperationException(Localisable.PropertiesWindow_Table_ErrorMissingUninstaller);
 
-            var fi = new FileInfo(tag.UninstallerFullFilename);
-
-            if (!fi.Exists)
+            if (!File.Exists(tag.UninstallerFullFilename))
             {
                 if (tag.UninstallerKind == UninstallerType.Msiexec)
                     throw new NotSupportedException(Localisable.PropertiesWindow_Table_ErrorMsi);
                 throw new IOException(Localisable.PropertiesWindow_Table_ErrorDoesntExist);
             }
-
-            // Basic filesystem information
-            var lq = fi.GetAttributes().Where(a=>!a.Key.Equals(nameof(FileInfo.Directory))).Select(x =>
-            {
-                if (x.Key.Equals(nameof(FileInfo.Length)))
-                    return new SingleProperty(x.Key, FileSize.FromBytes((long)x.Value).ToString(true));
-                return x;
-            });
-
-            // Extra information from resources
-            var verInfo = FileVersionInfo.GetVersionInfo(fi.FullName);
-            lq = lq.Concat(typeof(FileVersionInfo).GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                .Where(p => !p.Name.EndsWith("Part") && !p.Name.Equals(nameof(FileVersionInfo.FileName)))
-                .Select(p => new SingleProperty(p.Name, p.GetValue(verInfo, null))));
+            
+            var fi = AdvancedFileInfo.FromPath(tag.UninstallerFullFilename);
+            
+            var lq = from property in typeof(AdvancedFileInfo).GetProperties()
+                     select new SingleProperty(property.GetLocalisedName(), property.GetValue(fi, new object[] { }));
 
             // Create and return the table
             var dt = GetCleanDataTable();
@@ -181,10 +171,9 @@ namespace BulkCrapUninstaller.Functions
             var lq = from property in typeof(ApplicationUninstallerEntry).GetProperties()
                      select new SingleProperty(property.GetLocalisedName(), property.GetValue(tag, new object[] { }));
 
+            // Create and return the table
             var dt = GetCleanDataTable();
-
             ConvertPropertiesIntoDataTable(lq, dt);
-
             return dt;
         }
 
