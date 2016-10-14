@@ -18,11 +18,12 @@ namespace StoreAppHelper
             if (args.Length == 0)
                 return InvalidArgumentCode;
 
+            Console.OutputEncoding = Encoding.Unicode;
+
             if (args.Length == 1 && string.Equals(args[0], @"/query", StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
-                    Console.OutputEncoding = Encoding.Unicode;
                     var result = AppManager.QueryApps();
                     foreach (var app in result)
                     {

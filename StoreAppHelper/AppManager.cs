@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
 using Windows.Foundation;
@@ -59,7 +60,8 @@ namespace StoreAppHelper
                 let contents = File.ReadAllText(file)
                 let start = contents.IndexOf("<Properties>", StringComparison.Ordinal)
                 let end = contents.IndexOf("</Properties>", StringComparison.Ordinal)
-                let rootXml = XElement.Parse(contents.Substring(start, end - start + 13))
+                // Get rid of prefixes (pref:name), they are unnecessary and will crash
+                let rootXml = XElement.Parse(contents.Substring(start, end - start + 13).Replace("uap:", string.Empty))
                 let displayName = rootXml.Element("DisplayName")?.Value
                 let logoPath = rootXml.Element("Logo")?.Value
                 let publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value
