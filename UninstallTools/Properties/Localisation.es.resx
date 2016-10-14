@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>Página web</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>Código del producto</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Nombre mostrado</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>Nombre corto mostrado</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>Tamaño estimado</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>Fecha de instalación</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>Ubicación de instalación</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>Origen de instalación</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>Es una aplicación de 64 bits</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>Está protegida</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>Está actualizada</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>Es válida</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>Ruta de modificación</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Nombre del editor</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>Nombre corto del editor</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>Es posible la desinstalación silenciosa</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>Cadena de desinstalación silenciosa</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>Nombre de la clave de registro</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>Ruta de registro</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>Es un componente del sistema</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>Nombre del archivo desinstalador</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>Tipo de desinstalador</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>Es posible desinstalarse</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>Cadena de desinstalación</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>Icono mostrado</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Ruta inválida</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>Confianza</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>Ubicación del desinstalador</value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>Mala</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>Buena</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>Razonable</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>Desconocida</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>Bastante buena</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>Desinstalador pariente</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>El nombre de la empresa no coincide</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>El nombre de la empresa coincide</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>El directorio está siendo usado por otras aplicaciones instaladas</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>El elemento es explicitamente mencionado en el desinstalador</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>Entrada de registro del desinstalador</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>Instalador de Windows</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Setup</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft Scriptable Install System </value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>Completado</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>Fallido</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>Inválido</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>Protegido</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>Saltado</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>Desinstalando</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>Esperando</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>La aplicación está registrada</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>Filtro inválido</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>Nuevo filtro</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>No hay coincidencias</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>Termina con</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>Equivale a</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>Expresión regular</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>Inicia con</value>
+  </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>Característica de Windows</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>Contiene cualquier</value>
+    <comment>As in "matches any word from this string"</comment>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>Comandos de inicio</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>¿Remover los programas seleccionados del inicio?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>Administrador de inicio</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>Carpeta vacía</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>No hay sub directorios</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>El editor es reconocido</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Directorio</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>Tarea</value>
+    <comment>Fom Task Scheduler</comment>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>App de Windows Store</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Nueva condición</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>Saltado por el usuario</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>No hay manera válida de desinstalar esta entrada</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>La desinstalación se detuvo prematuramente</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>El desinstalador devolvió el código de error:</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>El elemento parece ser una categoría de editor conjunta</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>El nombre del producto no coincide muy bien</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>El nombre del producto coincide perfectamente</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>El nombre del directorio es cuestionable</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>Contiene</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>Ellos ya no podrán abrirse durante el inicio. Asegúrese de que los elementos seleccionados no son necesarios antes de removerlos.</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>Ejecutables están presentes</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>Archivos están presentes</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>Muchos archivos están presentes</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>El nombre del programa es reconocido</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>La entrada se ejecutará una sola vez</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>La entrada está adaptada a la aplicación</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>Archivos de programa huérfano</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>Error al habilitar esta entrada, no se encontró el siguiente archivo:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>El desinstalador no responde</value>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>Extensiones del navegador</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>El valor no puede ser nulo o vacío</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>El valor no puede contener saltos de línea</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Clave de registro de inicio no válida o desconocida (s):</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Is huérfana</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>La eliminación de los datos de la App Store es problemático</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Eliminación simple</value>
+  </data>
+  <data name="WindowsFeatureTitle" xml:space="preserve">
+    <value />
+  </data>
+</root>

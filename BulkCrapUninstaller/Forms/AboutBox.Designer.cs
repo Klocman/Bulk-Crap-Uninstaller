@@ -65,9 +65,10 @@ namespace BulkCrapUninstaller.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -282,6 +283,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel2.Controls.Add(this.label8);
             this.flowLayoutPanel2.Controls.Add(this.label6);
             this.flowLayoutPanel2.Controls.Add(this.label5);
+            this.flowLayoutPanel2.Controls.Add(this.label9);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label1
@@ -309,6 +311,11 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
@@ -319,10 +326,10 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             // 
-            // label8
+            // label9
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
             // 
             // AboutBox
             // 
@@ -400,5 +407,6 @@ namespace BulkCrapUninstaller.Forms
         private LinkLabel linkLabel8;
         private Label label7;
         private Label label8;
+        private Label label9;
     }
 }
