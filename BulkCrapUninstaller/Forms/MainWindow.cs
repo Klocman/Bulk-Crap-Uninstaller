@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Web;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
@@ -376,11 +377,6 @@ namespace BulkCrapUninstaller.Forms
         private void cleanUpProgramFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _uninstaller.SearchForAndRemoveProgramFilesJunk(_listView.AllUninstallers);
-        }
-
-        private void cleanUpTheSystemCCleanerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenUrls(new[] { new Uri(@"https://www.piriform.com/ccleaner", UriKind.Absolute) });
         }
 
         private void ClipboardCopyFullInformation(object x, EventArgs y)
@@ -849,31 +845,7 @@ namespace BulkCrapUninstaller.Forms
                 }
             }
         }
-
-        private void SearchOnlineForSelection(object sender, EventArgs e)
-        {
-            var items = _listView.SelectedUninstallers.Where(x => x.DisplayName.IsNotEmpty())
-                .Select(y => string.Concat(@"https://www.google.com/search?q=", y.DisplayName.Replace(' ', '+')))
-                .ToList();
-
-            if (WindowsTools.IsNetworkAvailable())
-            {
-                if (MessageBoxes.SearchOnlineMessageBox(items.Count) == MessageBoxes.PressedButton.Yes)
-                {
-                    try
-                    {
-                        items.ForEach(x => Process.Start(x));
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBoxes.SearchOnlineError(ex);
-                    }
-                }
-            }
-            else
-                MessageBoxes.NoNetworkConnected();
-        }
-
+        
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!_setMan.Selected.Settings.ToolbarsShowSettings)
@@ -1004,11 +976,6 @@ namespace BulkCrapUninstaller.Forms
             var anySelected = _listView.SelectedUninstallerCount > 0;
             basicOperationsToolStripMenuItem.Enabled = anySelected;
             advancedOperationsToolStripMenuItem.Enabled = anySelected;
-        }
-
-        private void updateApplicationsNiniteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenUrls(new[] { new Uri(@"https://ninite.com/", UriKind.Absolute) });
         }
 
         private void UpdateUninstallListContextMenuStrip(object sender, CancelEventArgs e)
@@ -1228,6 +1195,46 @@ namespace BulkCrapUninstaller.Forms
         private void uninstallFromDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _uninstaller.UninstallFromDirectory(_listView.AllUninstallers);
+        }
+        
+        private void SearchOnline(string searchString, Func<ApplicationUninstallerEntry, string> searchStringGetter)
+        {
+            if (WindowsTools.IsNetworkAvailable())
+            {
+                var items = _listView.SelectedUninstallers
+                    .Select(searchStringGetter)
+                    .Where(x => !string.IsNullOrEmpty(x))
+                    .Select(y => string.Concat(searchString, HttpUtility.UrlEncodeUnicode(y)))
+                    .ToList();
+
+                if (MessageBoxes.SearchOnlineMessageBox(items.Count) == MessageBoxes.PressedButton.Yes)
+                {
+                    try
+                    {
+                        items.ForEach(x => Process.Start(x));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBoxes.SearchOnlineError(ex);
+                    }
+                }
+            }
+            else
+                MessageBoxes.NoNetworkConnected();
+        }
+
+        private void googleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchOnline(@"https://www.google.com/search?q=", entry => entry.DisplayName);
+        }
+
+        private void alternativeToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchOnline(@"https://alternativeto.net/browse/search/?q=", entry =>
+            {
+                var displayNameTrimmed = entry.DisplayNameTrimmed;
+                return displayNameTrimmed.Length > 3 ? displayNameTrimmed : entry.DisplayName;
+            });
         }
     }
 }
