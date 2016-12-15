@@ -369,6 +369,9 @@ namespace UninstallTools.Uninstaller
                     try
                     {
                         startInfo = ProcessTools.SeparateArgsFromCommand(entry.UninstallString).ToProcessStartInfo();
+
+                        if (entry.UninstallerKind == UninstallerType.Nsis)
+                            UpdateNsisStartInfo(startInfo, entry.DisplayName);
                     }
                     catch (FormatException)
                     {
@@ -413,6 +416,28 @@ namespace UninstallTools.Uninstaller
             {
                 throw new FormatException(ex.Message, ex);
             }
+        }
+
+        /// <summary>
+        ///     Check if NSIS needs to be executed directly to get the return code. If yes, update the ProcessStartInfo
+        ///     http://nsis.sourceforge.net/Docs/AppendixD.html#errorlevels
+        /// </summary>
+        private static void UpdateNsisStartInfo(ProcessStartInfo startInfo, string entryName)
+        {
+            // Only works reliably if uninstaller doesn't use any switches already
+            if (!string.IsNullOrEmpty(startInfo.Arguments)) return;
+
+            var newName = PathTools.SanitizeFileName(entryName);
+            if (newName.Length > 8) newName = newName.Substring(0, 8);
+            newName += "_" + Path.GetFileName(startInfo.FileName);
+
+            var originalDirectory = Path.GetDirectoryName(startInfo.FileName)?.TrimEnd('\\');
+            Debug.Assert(originalDirectory != null);
+            startInfo.Arguments = "_?=" + originalDirectory;
+
+            var tempPath = Path.Combine(Path.GetTempPath(), newName);
+            File.Copy(startInfo.FileName, tempPath, true);
+            startInfo.FileName = tempPath;
         }
 
         /// <summary>

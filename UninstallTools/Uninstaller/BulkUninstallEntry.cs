@@ -75,8 +75,8 @@ namespace UninstallTools.Uninstaller
                 if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
                     return;
 
-                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) || 
-                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && 
+                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) ||
+                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
                     MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey))))
                 {
                     CurrentStatus = UninstallStatus.Completed;
@@ -181,6 +181,12 @@ namespace UninstallTools.Uninstaller
                                 if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && exitVar == 1602)
                                 {
                                     // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
+                                    _skipLevel = SkipCurrentLevel.Skip;
+                                }
+                                else if (UninstallerEntry.UninstallerKind == UninstallerType.Nsis && (exitVar == 1 || exitVar == 2))
+                                {
+                                    // 1 - Installation aborted by user (cancel button)
+                                    // 2 - Installation aborted by script (often after user clicks cancel)
                                     _skipLevel = SkipCurrentLevel.Skip;
                                 }
                                 else if (exitVar == -1073741510)
