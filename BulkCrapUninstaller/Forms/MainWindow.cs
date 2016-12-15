@@ -1236,5 +1236,17 @@ namespace BulkCrapUninstaller.Forms
                 return displayNameTrimmed.Length > 3 ? displayNameTrimmed : entry.DisplayName;
             });
         }
+
+        private void openSystemRestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WindowsTools.OpenControlPanelApplet(ControlPanelCanonicalNames.Recovery);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
+        }
     }
 }

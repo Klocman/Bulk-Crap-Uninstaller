@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.4.1.30462, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -196,7 +196,7 @@
     <value>listLegend1</value>
   </data>
   <data name="&gt;&gt;listLegend1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.4.1.30462, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;listLegend1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -783,7 +783,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.4.1.30462, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -894,7 +894,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.4.1.29823, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.4.2.40765, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -1158,13 +1158,13 @@
     <value>Open &amp;Web Page</value>
   </data>
   <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
     <value>AlternativeTo</value>
@@ -1213,7 +1213,7 @@
     <value>&amp;Properties</value>
   </data>
   <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 308</value>
+    <value>207, 286</value>
   </data>
   <data name="&gt;&gt;uninstallListContextMenuStrip.Name" xml:space="preserve">
     <value>uninstallListContextMenuStrip</value>
@@ -1539,13 +1539,13 @@
     <value>Open &amp;Web Page</value>
   </data>
   <data name="googleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
   </data>
   <data name="alternativeToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
     <value>AlternativeTo</value>
@@ -1770,6 +1770,12 @@
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Open "&amp;Programs and Features"</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 22</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open "System Recovery"</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 6</value>
@@ -2174,13 +2180,13 @@
     <value>facebookStatusButton1</value>
   </data>
   <data name="&gt;&gt;facebookStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Name" xml:space="preserve">
     <value>twitterStatusButton1</value>
   </data>
   <data name="&gt;&gt;twitterStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
     <value>donateButton</value>
@@ -2336,6 +2342,18 @@
     <value>lookUpOnlineToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;lookUpOnlineToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Name" xml:space="preserve">
+    <value>toolStripMenuItem15</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem16.Name" xml:space="preserve">
+    <value>toolStripMenuItem16</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem16.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rateToolStripMenuItem.Name" xml:space="preserve">
@@ -2728,6 +2746,12 @@
   <data name="&gt;&gt;openProgramsAndFeaturesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;openSystemRestoreToolStripMenuItem.Name" xml:space="preserve">
+    <value>openSystemRestoreToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openSystemRestoreToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator19.Name" xml:space="preserve">
     <value>toolStripSeparator19</value>
   </data>
@@ -2828,25 +2852,13 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Name" xml:space="preserve">
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem15.Name" xml:space="preserve">
-    <value>toolStripMenuItem15</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem16.Name" xml:space="preserve">
-    <value>toolStripMenuItem16</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
