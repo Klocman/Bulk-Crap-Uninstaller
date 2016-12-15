@@ -7,12 +7,18 @@ using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
 using Klocman.IO;
+using Klocman.Tools;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
 {
     public class BulkUninstallEntry
     {
+        private static readonly string[] NamesOfIgnoredProcesses =
+            WindowsTools.GetInstalledWebBrowsers().Select(Path.GetFileNameWithoutExtension)
+            .Concat(new[] { "explorer" })
+            .Distinct().ToArray();
+
         private readonly object _operationLock = new object();
 
         private bool _canRetry = true;
@@ -113,6 +119,8 @@ namespace UninstallTools.Uninstaller
             var options = parameters as RunUninstallerOptions;
             Debug.Assert(options != null, "options != null");
 
+            var processSnapshot = Process.GetProcesses().Select(x => x.Id).ToArray();
+
             Exception error = null;
             var retry = false;
             try
@@ -126,24 +134,79 @@ namespace UninstallTools.Uninstaller
                             uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
 
                         var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
-                        List<Process> childProcesses;
+
+                        var watchedProcesses = new List<Process> { uninstaller };
                         var idleCounter = 0;
 
-                        do
+                        while (true)
                         {
                             if (_skipLevel == SkipCurrentLevel.Skip)
                                 break;
 
-                            childProcesses = uninstaller.GetChildProcesses().Where(
-                                p => !p.ProcessName.Contains("explorer", StringComparison.InvariantCultureIgnoreCase))
-                                .ToList();
+                            foreach (var watchedProcess in watchedProcesses.ToList())
+                                watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
 
-                            if (!uninstaller.HasExited)
-                                childProcesses.Add(uninstaller);
+                            watchedProcesses.RemoveAll(p =>
+                            {
+                                if (p.HasExited)
+                                    return true;
+
+                                try
+                                {
+                                    var pName = p.ProcessName;
+                                    if (NamesOfIgnoredProcesses.Any(n =>
+                                        pName.Equals(n, StringComparison.InvariantCultureIgnoreCase)))
+                                        return true;
+                                }
+                                catch (InvalidOperationException)
+                                {
+                                    // Process managed to exit before we called ProcessName
+                                    return true;
+                                }
+
+                                return processSnapshot.Contains(p.Id);
+                            });
+
+                            if (watchedProcesses.Count == 0)
+                            {
+                                if(string.IsNullOrEmpty(UninstallerEntry.InstallLocation))
+                                    break;
+
+                                var candidates = Process.GetProcesses().Where(x => !processSnapshot.Contains(x.Id));
+                                foreach (var process in candidates)
+                                {
+                                    try
+                                    {
+                                        if (process.MainModule.FileName.Contains(UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase)
+                                            || process.GetCommandLine().Contains(UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                                            watchedProcesses.Add(process);
+                                    }
+                                    catch
+                                    {
+                                        // Ignore permission and access errors
+                                    }
+                                }
+
+                                if (watchedProcesses.Count == 0)
+                                    break;
+                            }
 
                             if (checkCounters)
                             {
-                                if (TestUninstallerForStalls(childProcesses))
+                                var processNames = watchedProcesses.Select(x =>
+                                {
+                                    try
+                                    {
+                                        return x.ProcessName;
+                                    }
+                                    catch
+                                    {
+                                        // Ignore errors caused by processes that exited
+                                        return null;
+                                    }
+                                }).Where(x=>!string.IsNullOrEmpty(x));
+
+                                if (TestUninstallerForStalls(processNames))
                                     idleCounter++;
 
                                 // Kill the uninstaller (and children) if they were idle/stalled for too long
@@ -158,20 +221,25 @@ namespace UninstallTools.Uninstaller
                             // Kill the uninstaller (and children) if user told us to or if it was idle for too long
                             if (_skipLevel == SkipCurrentLevel.Terminate)
                             {
-                                uninstaller.Kill(true);
                                 if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
+                                    watchedProcesses.AddRange(Process.GetProcessesByName("Msiexec"));
+
+                                foreach (var process in watchedProcesses)
                                 {
-                                    foreach (var process in Process.GetProcessesByName("Msiexec"))
+                                    try
                                     {
-                                        try { process.Kill(); }
-                                        catch (InvalidOperationException) { }
-                                        catch (Win32Exception) { }
-                                        catch (NotSupportedException) { }
+                                        process.Kill();
+                                    }
+                                    catch (InvalidOperationException)
+                                    {
+                                    }
+                                    catch (Win32Exception)
+                                    {
                                     }
                                 }
                                 break;
                             }
-                        } while (!uninstaller.HasExited || childProcesses.Any(p => !p.HasExited));
+                        }
 
                         if (_skipLevel == SkipCurrentLevel.None)
                         {
@@ -262,18 +330,17 @@ namespace UninstallTools.Uninstaller
         /// <summary>
         /// Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
         /// </summary>
-        private bool TestUninstallerForStalls(List<Process> childProcesses)
+        private bool TestUninstallerForStalls(IEnumerable<string> childProcesses)
         {
             List<KeyValuePair<PerformanceCounter[], CounterSample[]>> counters = null;
             try
             {
-                counters = (from process in childProcesses
-                            let processName = process.ProcessName
+                counters = (from processName in childProcesses
                             let perfCounters = new[]
                             {
-                                        new PerformanceCounter("Process", "% Processor Time", processName, true),
-                                        new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
-                                    }
+                                new PerformanceCounter("Process", "% Processor Time", processName, true),
+                                new PerformanceCounter("Process", "IO Data Bytes/sec", processName, true)
+                            }
                             select new KeyValuePair<PerformanceCounter[], CounterSample[]>(
                                 perfCounters,
                                 new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }
@@ -282,8 +349,7 @@ namespace UninstallTools.Uninstaller
             }
             catch
             {
-                // Ignore errors caused by processes ending at bad times 
-                // BUG: Will leak objects without disposing if it crashes in middle of work
+                // Ignore errors caused by counters derping
             }
 
             Thread.Sleep(1000);
@@ -312,7 +378,7 @@ namespace UninstallTools.Uninstaller
                 }
                 catch
                 {
-                    // Ignore errors caused by processes ending at bad times
+                    // Ignore errors caused by counters derping
                 }
                 finally
                 {
