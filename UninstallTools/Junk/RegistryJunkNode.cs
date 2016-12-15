@@ -34,7 +34,7 @@ namespace UninstallTools.Junk
         [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
-            WindowsTools.OpenRegKeyInRegedit(FullName);
+            RegistryTools.OpenRegKeyInRegedit(FullName);
         }
     }
 }

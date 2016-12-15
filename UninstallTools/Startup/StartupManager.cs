@@ -69,7 +69,7 @@ namespace UninstallTools.Startup
             var browserAddon = startupEntryBases.OfType<BrowserHelperEntry>().FirstOrDefault();
             if (browserAddon != null)
             {
-                WindowsTools.OpenRegKeyInRegedit(browserAddon.FullLongName);
+                RegistryTools.OpenRegKeyInRegedit(browserAddon.FullLongName);
                 regOpened = true;
             }
 
@@ -79,7 +79,7 @@ namespace UninstallTools.Startup
                 {
                     if (!regOpened)
                     {
-                        WindowsTools.OpenRegKeyInRegedit(item.ParentLongName);
+                        RegistryTools.OpenRegKeyInRegedit(item.ParentLongName);
                         regOpened = true;
                     }
                 }

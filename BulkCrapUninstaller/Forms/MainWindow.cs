@@ -623,7 +623,7 @@ namespace BulkCrapUninstaller.Forms
                 //    "Open key in regedit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 try
                 {
-                    WindowsTools.OpenRegKeyInRegedit(_listView.SelectedUninstallers.First().RegistryPath);
+                    RegistryTools.OpenRegKeyInRegedit(_listView.SelectedUninstallers.First().RegistryPath);
                 }
                 catch (IOException ex)
                 {
