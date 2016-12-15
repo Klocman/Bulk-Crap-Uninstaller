@@ -424,8 +424,12 @@ namespace UninstallTools.Uninstaller
         /// </summary>
         private static void UpdateNsisStartInfo(ProcessStartInfo startInfo, string entryName)
         {
-            // Only works reliably if uninstaller doesn't use any switches already
-            if (!string.IsNullOrEmpty(startInfo.Arguments)) return;
+            var dirName = Path.GetFileName(Path.GetDirectoryName(startInfo.FileName));
+            if (!string.IsNullOrEmpty(startInfo.Arguments) // Only works reliably if uninstaller doesn't use any Arguments already.
+                // Filter out non-standard uninstallers that might pose problems
+                || !Path.GetFileNameWithoutExtension(startInfo.FileName).Contains("uninst", StringComparison.InvariantCultureIgnoreCase)
+                || (dirName != null && dirName.Equals("uninstall", StringComparison.InvariantCultureIgnoreCase)))
+                return;
 
             var newName = PathTools.SanitizeFileName(entryName);
             if (newName.Length > 8) newName = newName.Substring(0, 8);
