@@ -414,19 +414,22 @@ namespace UninstallTools.Uninstaller
             // Fill in missing fields with information that can now be obtained
             if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
                 ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
-
-            // Finish up setting file/folder paths
-            if (tempEntry.InstallLocation != null)
-                tempEntry.InstallLocation = CleanupPath(tempEntry.InstallLocation);
-            if (tempEntry.InstallSource != null)
-                tempEntry.InstallSource = CleanupPath(tempEntry.InstallSource);
-
+            
             // Use quiet uninstall string as normal uninstall string if the normal string is missing.
             if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
                 tempEntry.UninstallString = tempEntry.QuietUninstallString;
 
+            // Finish up setting file/folder paths
             tempEntry.UninstallerFullFilename = GetUninstallerFilename(tempEntry.UninstallString,
                 tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
+
+            if (tempEntry.InstallLocation != null)
+                tempEntry.InstallLocation = CleanupPath(tempEntry.InstallLocation);
+            else if (tempEntry.UninstallerKind == UninstallerType.Nsis || tempEntry.UninstallerKind == UninstallerType.InnoSetup)
+                tempEntry.InstallLocation = CleanupPath(tempEntry.UninstallerLocation);
+
+            if (tempEntry.InstallSource != null)
+                tempEntry.InstallSource = CleanupPath(tempEntry.InstallSource);
 
             // Fill in the install date if it's missing
             try
