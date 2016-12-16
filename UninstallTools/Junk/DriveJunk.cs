@@ -119,13 +119,7 @@ namespace UninstallTools.Junk
                     output.Add(resultNode);
             }
 
-            if (File.Exists(Uninstaller.UninstallerFullFilename))
-            {
-                var fileNode = new DriveJunkNode(Path.GetDirectoryName(Uninstaller.UninstallerFullFilename), 
-                    Path.GetFileName(Uninstaller.UninstallerFullFilename), Uninstaller.DisplayName);
-                fileNode.Confidence.Add(ConfidencePart.IsUninstallerRegistryKey);
-                output.Add(fileNode);
-            }
+            output.AddRange(GetUninstallerJunk());
 
             foreach (var folder in FoldersToCheck)
             {
@@ -141,6 +135,35 @@ namespace UninstallTools.Junk
             }
 
             return RemoveDuplicates(output).Cast<JunkNode>();
+        }
+
+        private IEnumerable<DriveJunkNode> GetUninstallerJunk()
+        {
+            if (!File.Exists(Uninstaller.UninstallerFullFilename))
+                return Enumerable.Empty<DriveJunkNode>();
+
+            string target;
+            switch (Uninstaller.UninstallerKind)
+            {
+                case UninstallerType.InstallShield:
+                    target = Path.GetDirectoryName(Uninstaller.UninstallerFullFilename);
+                    break;
+
+                case UninstallerType.InnoSetup:
+                case UninstallerType.Msiexec:
+                case UninstallerType.Nsis:
+                    target = Uninstaller.UninstallerFullFilename;
+                    break;
+
+                default:
+                    return Enumerable.Empty<DriveJunkNode>();
+            }
+
+            var fileNode = new DriveJunkNode(Path.GetDirectoryName(target),
+                Path.GetFileName(target), Uninstaller.DisplayName);
+            fileNode.Confidence.Add(ConfidencePart.ExplicitConnection);
+
+            return new[] { fileNode };
         }
 
         public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level,
