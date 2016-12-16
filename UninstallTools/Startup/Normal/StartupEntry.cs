@@ -26,7 +26,7 @@ namespace UninstallTools.Startup.Normal
             CommandFilePath = ProcessCommandString(Command);
 
             if (CommandFilePath == null)
-                throw new ArgumentException("Failed to extract program path from supplied information");
+                throw new ArgumentException("Failed to extract program path from supplied information: " + targetString);
 
             FillInformationFromFile(CommandFilePath);
 
