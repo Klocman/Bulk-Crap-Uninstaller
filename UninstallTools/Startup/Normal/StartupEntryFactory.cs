@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
 
@@ -37,7 +38,7 @@ namespace UninstallTools.Startup.Normal
             new StartupPointData(true, false, false, false, @"Common\Startup",
                 WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_STARTUP))
         }.AsEnumerable();
-
+        
         /// <summary>
         ///     Look for and return all of the startup entries stored in Startup folders and Run/RunOnce registry keys.
         /// </summary>
@@ -62,16 +63,17 @@ namespace UninstallTools.Startup.Normal
             foreach (var name in Directory.GetFiles(point.Path)
                 .Where(name => ".lnk".Equals(Path.GetExtension(name), StringComparison.CurrentCultureIgnoreCase)))
             {
-                string target;
+                StartupEntry result;
                 try
                 {
-                    target = WindowsTools.ResolveShortcut(name);
+                    result = new StartupEntry(point, Path.GetFileName(name), WindowsTools.ResolveShortcut(name));
                 }
-                catch
+                catch (Exception ex)
                 {
-                    target = string.Empty;
+                    PremadeDialogs.GenericError(ex);
+                    continue;
                 }
-                yield return new StartupEntry(point, Path.GetFileName(name), target);
+                yield return result;
             }
         }
 
@@ -87,10 +89,21 @@ namespace UninstallTools.Startup.Normal
                 {
                     if (rKey != null)
                     {
-                        results.AddRange(from name in rKey.GetValueNames()
-                            let result = rKey.GetValue(name) as string
-                            where !string.IsNullOrEmpty(result)
-                            select new StartupEntry(point, name, result));
+                        foreach (var name in rKey.GetValueNames())
+                        {
+                            var result = rKey.GetValue(name) as string;
+                            if (string.IsNullOrEmpty(result))
+                                continue;
+
+                            try
+                            {
+                                results.Add(new StartupEntry(point, name, result));
+                            }
+                            catch (Exception ex)
+                            {
+                                PremadeDialogs.GenericError(ex);
+                            }
+                        }
                     }
                 }
             }
