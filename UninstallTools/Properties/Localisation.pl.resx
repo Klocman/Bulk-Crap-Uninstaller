@@ -384,9 +384,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>Wpis jest przypisany do aplikacji</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Folder</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Pozostałość w Program Files</value>
   </data>

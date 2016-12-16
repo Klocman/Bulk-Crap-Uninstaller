@@ -119,6 +119,14 @@ namespace UninstallTools.Junk
                     output.Add(resultNode);
             }
 
+            if (File.Exists(Uninstaller.UninstallerFullFilename))
+            {
+                var fileNode = new DriveJunkNode(Path.GetDirectoryName(Uninstaller.UninstallerFullFilename), 
+                    Path.GetFileName(Uninstaller.UninstallerFullFilename), Uninstaller.DisplayName);
+                fileNode.Confidence.Add(ConfidencePart.IsUninstallerRegistryKey);
+                output.Add(fileNode);
+            }
+
             foreach (var folder in FoldersToCheck)
             {
                 FindJunkRecursively(output, folder, 0);

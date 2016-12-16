@@ -384,9 +384,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>A entrada corresponde à aplicação</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Directório</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Arquivos de Programas órfãos</value>
   </data>

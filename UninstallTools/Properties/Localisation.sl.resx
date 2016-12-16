@@ -384,9 +384,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>Vnos se ujema z aplikacijo</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Imenik</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Sirota programskih datotek</value>
   </data>

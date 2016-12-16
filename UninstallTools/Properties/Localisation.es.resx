@@ -335,9 +335,6 @@
   <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
     <value>El editor es reconocido</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Directorio</value>
-  </data>
   <data name="Junk_Registry_GroupName" xml:space="preserve">
     <value>Registro</value>
   </data>
@@ -431,8 +428,5 @@
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Eliminación simple</value>
-  </data>
-  <data name="WindowsFeatureTitle" xml:space="preserve">
-    <value />
   </data>
 </root>

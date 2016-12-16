@@ -385,7 +385,7 @@
     <value>Entry is matched to the application</value>
   </data>
   <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Directory</value>
+    <value>Files and directories</value>
   </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Program Files orphan</value>

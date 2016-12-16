@@ -384,9 +384,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>Eintrag stimmt mit der Anwendung überein</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Verzeichnis</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Verwaiste Programmdateien</value>
   </data>

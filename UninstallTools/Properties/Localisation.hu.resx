@@ -380,9 +380,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>A bejegyzés illeszkedik az alkalmazáshoz</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Könyvtár</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Elárvultak a Program Files mappában</value>
   </data>

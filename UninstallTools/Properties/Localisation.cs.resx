@@ -384,9 +384,6 @@
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>Vstup je přiřazen k aplikaci</value>
   </data>
-  <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>Adresář</value>
-  </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Pozůstatky v Program Files</value>
   </data>
