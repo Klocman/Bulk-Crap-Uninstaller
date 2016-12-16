@@ -204,6 +204,7 @@
     <Compile Include="Functions\ApplicationInfoExport.cs" />
     <Compile Include="Functions\ImportExport.cs" />
     <Compile Include="Functions\ListViewDelegates.cs" />
+    <Compile Include="Functions\LocalizedX509Certificate.cs" />
     <Compile Include="Functions\MessageBoxes.cs" />
     <Compile Include="Functions\Properties.cs" />
     <Compile Include="Functions\Ratings\RatingEntry.cs" />

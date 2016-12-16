@@ -95,51 +95,15 @@ namespace BulkCrapUninstaller.Functions
             if (cert == null)
                 return GetError(Localisable.PropertiesWindow_Table_ErrorNoCertificate);
 
+            var localizedCert = new LocalizedX509Certificate2(cert);
+
             // Extract required data
-            var lq = from property in typeof(X509Certificate2).GetProperties()
-                     select new SingleProperty(property.Name, property.GetValue(cert, new object[] { }));
-            var list = lq.ToList();
-
-            // Convert the obtained data to a more human readable form
-            for (var i = 0; i < list.Count; i++)
-            {
-                var item = list[i].Value;
-
-                var issName = item as X500DistinguishedName;
-                if (issName != null)
-                {
-                    list[i] = new SingleProperty(list[i].Key, cert.IssuerName.Format(false));
-                    continue;
-                }
-                var oid = item as Oid;
-                if (oid != null)
-                {
-                    list[i] = new SingleProperty(list[i].Key, oid.FriendlyName);
-                    continue;
-                }
-                var exts = item as X509ExtensionCollection;
-                if (exts != null)
-                {
-                    var result = string.Join(", ", exts.Cast<X509Extension>().Select(x => x.Oid.FriendlyName).ToArray());
-                    list[i] = new SingleProperty(list[i].Key, result);
-                    continue;
-                }
-                var key = item as PublicKey;
-                if (key != null)
-                {
-                    list[i] = new SingleProperty(list[i].Key, key.Key.SignatureAlgorithm);
-                    continue;
-                }
-                var arr = item as byte[];
-                if (arr != null)
-                {
-                    list[i] = new SingleProperty(list[i].Key, arr.ToHexString());
-                }
-            }
+            var lq = from property in typeof(LocalizedX509Certificate2).GetProperties()
+                     select new SingleProperty(property.GetLocalisedName(), property.GetValue(localizedCert, new object[] { }));
 
             // Create and return the table
             var dt = GetCleanDataTable();
-            ConvertPropertiesIntoDataTable(list, dt);
+            ConvertPropertiesIntoDataTable(lq.ToList(), dt);
             return dt;
         }
 

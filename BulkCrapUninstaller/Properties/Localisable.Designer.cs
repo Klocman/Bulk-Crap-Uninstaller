@@ -211,6 +211,159 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Archived.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Archived {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Archived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extensions.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Extensions {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Extensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friendly Name.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_FriendlyName {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_FriendlyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Has Private Key.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_HasPrivateKey {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_HasPrivateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issuer.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Issuer {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Issuer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issuer Name.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_IssuerName {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_IssuerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not After.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_NotAfter {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_NotAfter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Before.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_NotBefore {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_NotBefore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private Key.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_PrivateKey {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_PrivateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Public Key.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_PublicKey {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_PublicKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raw Data.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_RawData {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_RawData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_SerialNumber {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_SerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Signature Algorithm.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_SignatureAlgorithm {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_SignatureAlgorithm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Subject {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject Name.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_SubjectName {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_SubjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbprint.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Thumbprint {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Thumbprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        internal static string LocalizedX509Certificate2_Version {
+            get {
+                return ResourceManager.GetString("LocalizedX509Certificate2_Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Renaming &quot;{0}&quot;.
         /// </summary>
         internal static string MainWindow_Rename_Description {
@@ -283,7 +436,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to run quiet uninstallers that failed in loud mode?.
+        ///   Looks up a localized string similar to Do you want to try running quiet uninstallers that failed as loud?.
         /// </summary>
         internal static string MessageBoxes_AskToRetryFailedQuietAsLoud_Header {
             get {
@@ -292,7 +445,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some quiet uninstallers failed.
+        ///   Looks up a localized string similar to Some uninstallers failed.
         /// </summary>
         internal static string MessageBoxes_AskToRetryFailedQuietAsLoud_Title {
             get {
@@ -1506,7 +1659,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select directory with the application you want to remove..
+        ///   Looks up a localized string similar to Select directory with applications that you want to remove..
         /// </summary>
         internal static string UninstallFromDirectory_FolderBrowse {
             get {
