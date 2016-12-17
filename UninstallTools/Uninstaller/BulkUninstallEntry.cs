@@ -149,10 +149,8 @@ namespace UninstallTools.Uninstaller
                             // Msiexec service can start processes, but we don't want to watch the service
                             if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                             {
-                                foreach (var watchedProcess in Process.GetProcessesByName("msiexec")
-                                    .Where(x => watchedProcesses.All(a => a.Id != x.Id)))
-                                    watchedProcesses.AddRange(watchedProcess.GetChildProcesses()
-                                        .Where(x => watchedProcesses.All(a => a.Id != x.Id)));
+                                foreach (var watchedProcess in Process.GetProcessesByName("msiexec"))
+                                    watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
                             }
 
                             // Remove duplicate, dead, and blaclisted processes
