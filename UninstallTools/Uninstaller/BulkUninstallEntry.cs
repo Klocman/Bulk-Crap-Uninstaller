@@ -154,28 +154,28 @@ namespace UninstallTools.Uninstaller
                                     watchedProcesses.AddRange(watchedProcess.GetChildProcesses()
                                         .Where(x => watchedProcesses.All(a => a.Id != x.Id)));
                             }
-                            
-                            // Remove dead and blaclisted processes
-                            watchedProcesses.RemoveAll(p =>
+
+                            // Remove duplicate, dead, and blaclisted processes
+                            watchedProcesses = watchedProcesses.DistinctBy(x => x.Id).Where(p =>
                             {
                                 if (p.HasExited)
-                                    return true;
+                                    return false;
 
                                 try
                                 {
                                     var pName = p.ProcessName;
                                     if (NamesOfIgnoredProcesses.Any(n =>
                                         pName.Equals(n, StringComparison.InvariantCultureIgnoreCase)))
-                                        return true;
+                                        return false;
                                 }
                                 catch (InvalidOperationException)
                                 {
                                     // Process managed to exit before we called ProcessName
-                                    return true;
+                                    return false;
                                 }
 
-                                return processSnapshot.Contains(p.Id);
-                            });
+                                return !processSnapshot.Contains(p.Id);
+                            }).ToList();
 
                             // Check if we are done, or if there are some proceses left that we missed
                             if (watchedProcesses.Count == 0)
