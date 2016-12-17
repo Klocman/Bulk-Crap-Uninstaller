@@ -612,7 +612,7 @@ namespace UninstallTools.Uninstaller
             try
             {
                 var i = path.LastIndexOf('\\');
-                if (i > 0 && path.Substring(i).Contains('.'))
+                if (i > 0 && path.Substring(i).Contains('.') && !Directory.Exists(path))
                 {
                     path = Path.GetDirectoryName(ProcessTools.SeparateArgsFromCommand(path).FileName);
                 }
