@@ -94,6 +94,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net20\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="NetSettingBinder, Version=1.1.6062.19744, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NetSettingBinder.1.1.6062.19744\lib\net35\NetSettingBinder.dll</HintPath>
       <Private>True</Private>
