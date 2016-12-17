@@ -98,7 +98,7 @@ namespace UninstallTools.Uninstaller
             worker.Start(options);
         }
 
-        public sealed class RunUninstallerOptions
+        internal sealed class RunUninstallerOptions
         {
             public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate)
             {
@@ -134,7 +134,6 @@ namespace UninstallTools.Uninstaller
                             uninstaller.PriorityClass = ProcessPriorityClass.BelowNormal;
 
                         var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet && UninstallerEntry.QuietUninstallPossible;
-
                         var watchedProcesses = new List<Process> { uninstaller };
                         var idleCounter = 0;
 
@@ -143,9 +142,15 @@ namespace UninstallTools.Uninstaller
                             if (_skipLevel == SkipCurrentLevel.Skip)
                                 break;
 
-                            foreach (var watchedProcess in watchedProcesses.ToList())
+                            var processesToScanForChildren = watchedProcesses.ToList();
+                            // Msiexec service can start processes, but we don't want to watch the service
+                            if(UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
+                                processesToScanForChildren.AddRange(Process.GetProcessesByName("msiexec"));
+
+                            foreach (var watchedProcess in processesToScanForChildren.Distinct((p1, p2) => p1.Id.Equals(p2.Id)))
                                 watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
 
+                            // Remove dead and blaclisted processes
                             watchedProcesses.RemoveAll(p =>
                             {
                                 if (p.HasExited)
@@ -166,7 +171,8 @@ namespace UninstallTools.Uninstaller
 
                                 return processSnapshot.Contains(p.Id);
                             });
-
+                            
+                            // Check if we are done, or if there are some proceses left that we missed
                             if (watchedProcesses.Count == 0)
                             {
                                 if(string.IsNullOrEmpty(UninstallerEntry.InstallLocation))
@@ -191,6 +197,7 @@ namespace UninstallTools.Uninstaller
                                     break;
                             }
 
+                            // Check for deadlocks during silent uninstall
                             if (checkCounters)
                             {
                                 var processNames = watchedProcesses.Select(x =>
@@ -208,11 +215,13 @@ namespace UninstallTools.Uninstaller
 
                                 if (TestUninstallerForStalls(processNames))
                                     idleCounter++;
+                                else
+                                    idleCounter = 0;
 
                                 // Kill the uninstaller (and children) if they were idle/stalled for too long
-                                if (idleCounter > 40)
+                                if (idleCounter > 30)
                                 {
-                                    uninstaller.Kill(true);
+                                    KillProcesses(watchedProcesses);
                                     throw new IOException(Localisation.UninstallError_UninstallerTimedOut);
                                 }
                             }
@@ -224,19 +233,7 @@ namespace UninstallTools.Uninstaller
                                 if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                                     watchedProcesses.AddRange(Process.GetProcessesByName("Msiexec"));
 
-                                foreach (var process in watchedProcesses)
-                                {
-                                    try
-                                    {
-                                        process.Kill();
-                                    }
-                                    catch (InvalidOperationException)
-                                    {
-                                    }
-                                    catch (Win32Exception)
-                                    {
-                                    }
-                                }
+                                KillProcesses(watchedProcesses);
                                 break;
                             }
                         }
@@ -327,6 +324,23 @@ namespace UninstallTools.Uninstaller
             IsRunning = false;
         }
 
+        private static void KillProcesses(IEnumerable<Process> processes)
+        {
+            foreach (var process in processes)
+            {
+                try
+                {
+                    process.Kill();
+                }
+                catch (InvalidOperationException)
+                {
+                }
+                catch (Win32Exception)
+                {
+                }
+            }
+        }
+
         /// <summary>
         /// Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
         /// </summary>
@@ -353,9 +367,8 @@ namespace UninstallTools.Uninstaller
             }
 
             Thread.Sleep(1000);
-
-            //Has problems with Msiexec
-            if (counters != null && UninstallerEntry.UninstallerKind != UninstallerType.Msiexec)
+            
+            if (counters != null)
             {
                 try
                 {
