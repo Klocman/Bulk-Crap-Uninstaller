@@ -4,14 +4,62 @@ using System.IO;
 using System.Linq;
 using System.Security;
 using Klocman.Tools;
+using Microsoft.Win32;
 using UninstallTools.Uninstaller;
-
+using Klocman.Extensions;
 namespace UninstallTools.Junk
 {
     public class RegistryJunk : JunkBase
     {
+        /// <summary>
+        /// Keys to step over when scanning
+        /// </summary>
         private static readonly IEnumerable<string> KeyBlacklist = new[]
-        {"Microsoft", "Wow6432Node", "Windows", "Classes", "Clients"};
+        {
+            "Microsoft", "Wow6432Node", "Windows", "Classes", "Clients", KeynameRegisteredApps
+        };
+
+        /// <summary>
+        /// Always points to program's directory
+        /// </summary>
+        private static readonly IEnumerable<string> InstallDirKeyNames = new[]
+        {
+            "InstallDir",
+            "Install_Dir",
+            "Install Directory",
+            "InstDir",
+            "ApplicationPath",
+            "Install folder",
+            "Last Stable Install Path",
+            "TARGETDIR",
+            "JavaHome"
+        };
+
+        /// <summary>
+        /// Always points to program's main executable
+        /// </summary>
+        private static readonly IEnumerable<string> ExePathKeyNames = new[]
+        {
+            "exe64"       ,
+            "exe32"       ,
+            "Executable"  ,
+            "PathToExe"   ,
+            "ExePath"
+        };
+
+        /// <summary>
+        /// Can point to programs executable or directory
+        /// </summary>
+        private static readonly IEnumerable<string> ExeOrDirPathKeyNames = new[]
+        {
+            "Path"        ,
+            "Path64"      ,
+            "pth"         ,
+            "PlayerPath"  ,
+            "AppPath"
+        };
+
+        private const string KeynameRegisteredApps = "RegisteredApplications";
 
         private static readonly string KeyCu = @"HKEY_CURRENT_USER\SOFTWARE";
         private static readonly string KeyCuWow = @"HKEY_CURRENT_USER\SOFTWARE\Wow6432Node";
@@ -28,9 +76,13 @@ namespace UninstallTools.Junk
         {
             var softwareKeys = GetSoftwareRegKeys(Uninstaller.Is64Bit);
             var returnList = new List<RegistryJunkNode>();
-            foreach (var softwareKey in softwareKeys)
+
+            foreach (var softwareKeyName in softwareKeys)
             {
-                FindJunkRecursively(returnList, softwareKey, 0);
+                using (var softwareKey = RegistryTools.OpenRegistryKey(softwareKeyName))
+                {
+                    returnList.AddRange(FindJunkRecursively(softwareKey));
+                }
             }
 
             if (Uninstaller.RegKeyStillExists())
@@ -69,37 +121,72 @@ namespace UninstallTools.Junk
             return returnVal;
         }
 
-        private void FindJunkRecursively(ICollection<RegistryJunkNode> returnList, string softwareKey, int level)
+        private IEnumerable<RegistryJunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
             try
             {
-                string[] names;
-                using (var key = RegistryTools.OpenRegistryKey(softwareKey))
+                // Don't try to scan root keys
+                if(level > -1)
                 {
-                    names = key.GetSubKeyNames();
+                    var keyName = Path.GetFileName(softwareKey.Name);
+                    var keyDir = Path.GetDirectoryName(softwareKey.Name);
+                    var confidence = GenerateConfidence(keyName, keyDir, level, false).ToList();
+
+                    // Check if application's location is explicitly mentioned in any of the values
+                    // TODO Check default value too, but with lower confidence
+                    foreach (var valueName in softwareKey.GetValueNames())
+                    {
+                        var hit = false;
+
+                        if (InstallDirKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            hit = TestPathsEqual(softwareKey.GetValue(valueName) as string);
+                        }
+                        else if (ExePathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            hit = TestPathsEqualExe(softwareKey.GetValue(valueName) as string);
+                        }
+                        else if (ExeOrDirPathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var path = softwareKey.GetValue(valueName) as string;
+                            hit = File.Exists(path)
+                                ? TestPathsEqualExe(softwareKey.GetValue(valueName) as string)
+                                : TestPathsEqual(softwareKey.GetValue(valueName) as string);
+                        }
+
+                        if (hit)
+                        {
+                            confidence.Add(ConfidencePart.ExplicitConnection);
+                            break;
+                        }
+                    }
+
+                    if (confidence.Any())
+                    {
+                        var newNode = new RegistryJunkNode(keyDir, keyName, Uninstaller.DisplayName);
+                        newNode.Confidence.AddRange(confidence);
+                        return new[] { newNode };
+                    }
                 }
 
-                foreach (var name in names)
+                // Limit recursion depth
+                if (level <= 1)
                 {
-                    if (KeyBlacklist.Any(y => y.Equals(name)))
-                        continue;
-
-                    var generatedConfidence = GenerateConfidence(name, softwareKey, level, false);
-                    var confidenceParts = generatedConfidence as IList<ConfidencePart> ?? generatedConfidence.ToList();
-
-                    if (confidenceParts.Any())
+                    var returnList = new List<RegistryJunkNode>();
+                    foreach (var subKeyName in softwareKey.GetSubKeyNames())
                     {
-                        var newNode = new RegistryJunkNode(softwareKey, name, Uninstaller.DisplayName);
-                        newNode.Confidence.AddRange(confidenceParts);
-                        returnList.Add(newNode);
+                        if (KeyBlacklist.Contains(subKeyName, StringComparison.InvariantCultureIgnoreCase))
+                            continue;
+
+                        using (var subKey = softwareKey.OpenSubKey(subKeyName, false))
+                        {
+                            returnList.AddRange(FindJunkRecursively(subKey, level + 1));
+                        }
                     }
-                    else if (level <= 1)
-                    {
-                        FindJunkRecursively(returnList, Path.Combine(softwareKey, name), level + 1);
-                    }
+                    return returnList;
                 }
             }
-                // Reg key invalid
+            // Reg key invalid
             catch (ArgumentException)
             {
             }
@@ -109,6 +196,18 @@ namespace UninstallTools.Junk
             catch (ObjectDisposedException)
             {
             }
+
+            return Enumerable.Empty<RegistryJunkNode>();
+        }
+
+        private bool TestPathsEqualExe(string keyValue)
+        {
+            return TestPathsEqual(Path.GetDirectoryName(keyValue));
+        }
+
+        private bool TestPathsEqual(string keyValue)
+        {
+            return PathTools.PathsEqual(Uninstaller.InstallLocation, keyValue);
         }
     }
 }
