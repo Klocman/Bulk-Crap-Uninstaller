@@ -94,12 +94,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.8\lib\net20\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NetSettingBinder, Version=1.0.6043.30270, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetSettingBinder.1.0.6043.30270\lib\net35\NetSettingBinder.dll</HintPath>
+    <Reference Include="NetSettingBinder, Version=1.1.6062.19744, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetSettingBinder.1.1.6062.19744\lib\net35\NetSettingBinder.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
