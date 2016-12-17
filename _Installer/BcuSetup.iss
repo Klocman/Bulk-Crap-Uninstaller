@@ -5,10 +5,10 @@
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/"
 #define MyAppExeName "BCUninstaller.exe" 
-#define MyAppCopyright "Copyright 2015 Marcin Szeniak"
+#define MyAppCopyright "Copyright 2016 Marcin Szeniak"
                                 
-#define MyAppVersion "3.4.2.0"     
-#define MyAppVersionShort "3.4.2"
+#define MyAppVersion "3.5.0.0"     
+#define MyAppVersionShort "3.5"
 
 #include "Scripts\PortablePage.iss" 
 #include "Scripts\PortableIcons.iss"
@@ -57,7 +57,8 @@ VersionInfoTextVersion={#MyAppVersion}
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"              
 Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"               
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"              
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 
 [Files]                                           
 Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Flags: ignoreversion

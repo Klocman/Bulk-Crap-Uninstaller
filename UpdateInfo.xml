@@ -2,8 +2,8 @@
 <Root>
 	<AppName>BCUninstaller</AppName>
 	<Update>
-		<Version>3.4.2.0</Version>
-		<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.4.2/BCUninstaller_3.4.2_portable.zip</URL>
+		<Version>3.5.0.0</Version>
+		<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.5/BCUninstaller_3.5_portable.zip</URL>
 		<Changes>
 Added Spanish translation by Freddynic159.
 Added Hungarian translation by Phoenix to the installer
@@ -14,6 +14,6 @@ Fixed StoreApp detection broken by the anniversary update.
 Fixed improper encoding used in online searches.
 Fixed unverified certificate blue background showing a faint copy of the data behind it.
     </Changes>
-		<Hash>54aaf416a06c762048f3265b201a6c7f</Hash>
+		<Hash>1cd0965600a4c42e6a5fb014df3bfd82</Hash>
 	</Update>
 </Root>
