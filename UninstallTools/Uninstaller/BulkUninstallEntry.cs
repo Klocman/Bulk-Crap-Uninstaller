@@ -16,13 +16,15 @@ namespace UninstallTools.Uninstaller
     {
         private static readonly string[] NamesOfIgnoredProcesses =
             WindowsTools.GetInstalledWebBrowsers().Select(Path.GetFileNameWithoutExtension)
-            .Concat(new[] { "explorer" })
-            .Distinct().ToArray();
+                .Concat(new[] {"explorer"})
+                .Distinct().ToArray();
 
         private readonly object _operationLock = new object();
 
-        private bool _canRetry = true;
+        private readonly Dictionary<string, PerfCounterEntry> _perfCounterBuffer =
+            new Dictionary<string, PerfCounterEntry>();
 
+        private bool _canRetry = true;
         private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
 
         internal BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
@@ -33,15 +35,30 @@ namespace UninstallTools.Uninstaller
             UninstallerEntry = uninstallerEntry;
         }
 
-        public int Id { get; internal set; }
-
         public Exception CurrentError { get; private set; }
         public UninstallStatus CurrentStatus { get; private set; }
+        public bool Finished { get; private set; }
+        public int Id { get; internal set; }
+        public bool IsRunning { get; private set; }
         public bool IsSilent { get; set; }
         public ApplicationUninstallerEntry UninstallerEntry { get; }
 
-        public bool IsRunning { get; private set; }
-        public bool Finished { get; private set; }
+        private static void KillProcesses(IEnumerable<Process> processes)
+        {
+            foreach (var process in processes)
+            {
+                try
+                {
+                    process.Kill();
+                }
+                catch (InvalidOperationException)
+                {
+                }
+                catch (Win32Exception)
+                {
+                }
+            }
+        }
 
         public void Reset()
         {
@@ -49,6 +66,33 @@ namespace UninstallTools.Uninstaller
             CurrentStatus = UninstallStatus.Waiting;
             IsRunning = false;
             Finished = false;
+        }
+
+        /// <summary>
+        ///     Run the uninstaller on a new thread.
+        /// </summary>
+        internal void RunUninstaller(RunUninstallerOptions options)
+        {
+            lock (_operationLock)
+            {
+                if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
+                    return;
+
+                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) ||
+                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
+                     MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey))))
+                {
+                    CurrentStatus = UninstallStatus.Completed;
+                    Finished = true;
+                    return;
+                }
+
+                CurrentStatus = UninstallStatus.Uninstalling;
+                IsRunning = true;
+            }
+
+            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
+            worker.Start(options);
         }
 
         public void SkipWaiting(bool terminate)
@@ -72,46 +116,84 @@ namespace UninstallTools.Uninstaller
         }
 
         /// <summary>
-        ///     Run the uninstaller on a new thread.
+        ///     Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
         /// </summary>
-        internal void RunUninstaller(RunUninstallerOptions options)
+        private bool TestUninstallerForStalls(IEnumerable<string> childProcesses)
         {
-            lock (_operationLock)
-            {
-                if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
-                    return;
+            var childProcessNames = childProcesses as IList<string> ?? childProcesses.ToList();
 
-                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) ||
-                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
-                    MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey))))
+            foreach (var perfCounterEntry in _perfCounterBuffer.ToList())
+            {
+                if (!childProcessNames.Contains(perfCounterEntry.Key))
                 {
-                    CurrentStatus = UninstallStatus.Completed;
-                    Finished = true;
-                    return;
+                    _perfCounterBuffer.Remove(perfCounterEntry.Key);
+                    perfCounterEntry.Value.Dispose();
                 }
-
-                CurrentStatus = UninstallStatus.Uninstalling;
-                IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
-            worker.Start(options);
-        }
-
-        internal sealed class RunUninstallerOptions
-        {
-            public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate)
+            foreach (var childProcessName in childProcessNames)
             {
-                AutoKillStuckQuiet = autoKillStuckQuiet;
-                RetryFailedQuiet = retryFailedQuiet;
-                PreferQuiet = preferQuiet;
-                Simulate = simulate;
+                PerformanceCounter[] perfCounters = null;
+                try
+                {
+                    perfCounters = new[]
+                    {
+                        new PerformanceCounter("Process", "% Processor Time", childProcessName, true),
+                        new PerformanceCounter("Process", "IO Data Bytes/sec", childProcessName, true)
+                    };
+                    // Important to NextSample now, they will collect data when we sleep
+                    _perfCounterBuffer.Add(childProcessName, new PerfCounterEntry(
+                        perfCounters, new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}));
+                }
+                catch
+                {
+                    // Ignore errors caused by counters derping
+                    if (perfCounters != null && perfCounters.Length == 2)
+                    {
+                        perfCounters[0].Dispose();
+                        perfCounters[1].Dispose();
+                    }
+                }
             }
 
-            public bool AutoKillStuckQuiet { get; }
-            public bool RetryFailedQuiet { get; }
-            public bool PreferQuiet { get; }
-            public bool Simulate { get; }
+            // Let the counters gather some data
+            Thread.Sleep(1100);
+
+            bool? anyWorking = null;
+
+            foreach (var perfCounterEntry in _perfCounterBuffer.ToList())
+            {
+                try
+                {
+                    var new0 = perfCounterEntry.Value.Counter[0].NextSample();
+                    var new1 = perfCounterEntry.Value.Counter[1].NextSample();
+                    var c0 = CounterSample.Calculate(perfCounterEntry.Value.Sample[0], new0);
+                    var c1 = CounterSample.Calculate(perfCounterEntry.Value.Sample[1], new1);
+                    perfCounterEntry.Value.Sample[0] = new0;
+                    perfCounterEntry.Value.Sample[1] = new1;
+
+                    Debug.WriteLine("CPU " + c0 + "%, IO " + c1 + "B");
+
+                    // Check if process seems to be doing anything. Use 1% for CPU and 10KB for I/O
+                    if (c0 <= 1 && c1 <= 10240)
+                    {
+                        anyWorking = false;
+                    }
+                    else
+                    {
+                        anyWorking = true;
+                        break;
+                    }
+                }
+                catch
+                {
+                    perfCounterEntry.Value.Dispose();
+                    _perfCounterBuffer.Remove(perfCounterEntry.Key);
+                }
+            }
+
+            // Only return true if we had at least one process to test and it tested negatively
+            return anyWorking.HasValue && !anyWorking.Value;
         }
 
         private void UninstallThread(object parameters)
@@ -135,14 +217,14 @@ namespace UninstallTools.Uninstaller
 
                         var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet &&
                                             UninstallerEntry.QuietUninstallPossible;
-                        var watchedProcesses = new List<Process> { uninstaller };
+                        var watchedProcesses = new List<Process> {uninstaller};
                         var idleCounter = 0;
 
                         while (true)
                         {
                             if (_skipLevel == SkipCurrentLevel.Skip)
                                 break;
-                            
+
                             foreach (var watchedProcess in watchedProcesses.ToList())
                                 watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
 
@@ -302,10 +384,7 @@ namespace UninstallTools.Uninstaller
             }
             finally
             {
-                _perfCounterBuffer.ForEach(x =>
-                {
-                    x.Value.Dispose();
-                });
+                _perfCounterBuffer.ForEach(x => { x.Value.Dispose(); });
                 _perfCounterBuffer.Clear();
             }
 
@@ -341,25 +420,6 @@ namespace UninstallTools.Uninstaller
             IsRunning = false;
         }
 
-        private static void KillProcesses(IEnumerable<Process> processes)
-        {
-            foreach (var process in processes)
-            {
-                try
-                {
-                    process.Kill();
-                }
-                catch (InvalidOperationException)
-                {
-                }
-                catch (Win32Exception)
-                {
-                }
-            }
-        }
-
-        private Dictionary<string, PerfCounterEntry> _perfCounterBuffer = new Dictionary<string, PerfCounterEntry>();
-
         private sealed class PerfCounterEntry : IDisposable
         {
             public PerfCounterEntry(PerformanceCounter[] counter, CounterSample[] sample)
@@ -370,6 +430,7 @@ namespace UninstallTools.Uninstaller
 
             public PerformanceCounter[] Counter { get; }
             public CounterSample[] Sample { get; }
+
             public void Dispose()
             {
                 foreach (var performanceCounter in Counter)
@@ -379,85 +440,20 @@ namespace UninstallTools.Uninstaller
             }
         }
 
-        /// <summary>
-        /// Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
-        /// </summary>
-        private bool TestUninstallerForStalls(IEnumerable<string> childProcesses)
+        internal sealed class RunUninstallerOptions
         {
-            var childProcessNames = childProcesses as IList<string> ?? childProcesses.ToList();
-
-            foreach (var perfCounterEntry in _perfCounterBuffer.ToList())
+            public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate)
             {
-                if (!childProcessNames.Contains(perfCounterEntry.Key))
-                {
-                    _perfCounterBuffer.Remove(perfCounterEntry.Key);
-                    perfCounterEntry.Value.Dispose();
-                }
+                AutoKillStuckQuiet = autoKillStuckQuiet;
+                RetryFailedQuiet = retryFailedQuiet;
+                PreferQuiet = preferQuiet;
+                Simulate = simulate;
             }
 
-            foreach (var childProcessName in childProcessNames)
-            {
-                PerformanceCounter[] perfCounters = null;
-                try
-                {
-                    perfCounters = new[]
-                    {
-                        new PerformanceCounter("Process", "% Processor Time", childProcessName, true),
-                        new PerformanceCounter("Process", "IO Data Bytes/sec", childProcessName, true)
-                    };
-                    // Important to NextSample now, they will collect data when we sleep
-                    _perfCounterBuffer.Add(childProcessName, new PerfCounterEntry(
-                        perfCounters, new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }));
-                }
-                catch
-                {
-                    // Ignore errors caused by counters derping
-                    if (perfCounters != null && perfCounters.Length == 2)
-                    {
-                        perfCounters[0].Dispose();
-                        perfCounters[1].Dispose();
-                    }
-                }
-            }
-
-            // Let the counters gather some data
-            Thread.Sleep(1100);
-
-            bool? anyWorking = null;
-
-            foreach (var perfCounterEntry in _perfCounterBuffer.ToList())
-            {
-                try
-                {
-                    var new0 = perfCounterEntry.Value.Counter[0].NextSample();
-                    var new1 = perfCounterEntry.Value.Counter[1].NextSample();
-                    var c0 = CounterSample.Calculate(perfCounterEntry.Value.Sample[0], new0);
-                    var c1 = CounterSample.Calculate(perfCounterEntry.Value.Sample[1], new1);
-                    perfCounterEntry.Value.Sample[0] = new0;
-                    perfCounterEntry.Value.Sample[1] = new1;
-
-                    Debug.WriteLine("CPU " + c0 + "%, IO " + c1 + "B");
-
-                    // Check if process seems to be doing anything. Use 1% for CPU and 10KB for I/O
-                    if (c0 <= 1 && c1 <= 10240)
-                    {
-                        anyWorking = false;
-                    }
-                    else
-                    {
-                        anyWorking = true;
-                        break;
-                    }
-                }
-                catch
-                {
-                    perfCounterEntry.Value.Dispose();
-                    _perfCounterBuffer.Remove(perfCounterEntry.Key);
-                }
-            }
-
-            // Only return true if we had at least one process to test and it tested negatively
-            return anyWorking.HasValue && !anyWorking.Value;
+            public bool AutoKillStuckQuiet { get; }
+            public bool PreferQuiet { get; }
+            public bool RetryFailedQuiet { get; }
+            public bool Simulate { get; }
         }
 
         internal enum SkipCurrentLevel
