@@ -85,6 +85,53 @@ namespace UninstallTools.Junk
                 }
             }
 
+            // Check other root keys for junk based on what was already found
+            foreach (var registryJunkNode in returnList.ToList())
+            {
+                var nodeName = registryJunkNode.FullName;
+
+                // Check Wow first because non-wow path will match wow path
+                var softwareKey = new[] { KeyLmWow, KeyCuWow, KeyLm, KeyCu }.First(
+                    key => nodeName.StartsWith(key, StringComparison.InvariantCultureIgnoreCase));
+
+                nodeName = nodeName.Substring(softwareKey.Length + 1);
+
+                foreach (var keyToTest in softwareKeys.Except(new[] { softwareKey }))
+                {
+                    var nodePath = Path.Combine(keyToTest, nodeName);
+                    // Check if the same node exists in other root keys
+                    var node = returnList.FirstOrDefault(x => PathTools.PathsEqual(x.FullName, nodePath));
+
+                    if (node != null)
+                    {
+                        // Add any non-duplicate confidence to the existing node
+                        node.Confidence.AddRange(registryJunkNode.Confidence.ConfidenceParts
+                            .Where(x => !node.Confidence.ConfidenceParts.Any(x.Equals)));
+                    }
+                    else
+                    {
+                        try
+                        {
+                            // Check if the key acually exists
+                            using (var nodeKey = RegistryTools.OpenRegistryKey(nodePath, false))
+                            {
+                                if (nodeKey != null)
+                                {
+                                    var newNode = new RegistryJunkNode(Path.GetDirectoryName(nodePath),
+                                        Path.GetFileName(nodePath), Uninstaller.DisplayName);
+                                    newNode.Confidence.AddRange(registryJunkNode.Confidence.ConfidenceParts);
+                                    returnList.Add(newNode);
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            // Ignore keys that don't exist
+                        }
+                    }
+                }
+            }
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -126,7 +173,7 @@ namespace UninstallTools.Junk
             try
             {
                 // Don't try to scan root keys
-                if(level > -1)
+                if (level > -1)
                 {
                     var keyName = Path.GetFileName(softwareKey.Name);
                     var keyDir = Path.GetDirectoryName(softwareKey.Name);
