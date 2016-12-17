@@ -5,6 +5,7 @@ using System.Linq;
 using Klocman.Native;
 using Klocman.Tools;
 using UninstallTools.Uninstaller;
+using Klocman.Extensions;
 
 namespace UninstallTools.Junk
 {
@@ -20,6 +21,8 @@ namespace UninstallTools.Junk
 
         public static IEnumerable<JunkNode> FindAllJunk(IEnumerable<ApplicationUninstallerEntry> targets)
         {
+            var syspath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
+
             var results = new List<Shortcut>();
             foreach (var linkFilename in 
                 Directory.GetFiles(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS), "*.lnk", SearchOption.AllDirectories)
@@ -30,7 +33,12 @@ namespace UninstallTools.Junk
             {
                 try
                 {
-                    results.Add(new Shortcut(linkFilename));
+                    var target = WindowsTools.ResolveShortcut(linkFilename);
+
+                    if(string.IsNullOrEmpty(target) || target.Contains(syspath, StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    results.Add(new Shortcut(linkFilename, target));
                 }
                 catch
                 {
@@ -68,15 +76,15 @@ namespace UninstallTools.Junk
         private static bool CheckMatch(string linkTarget, string uninstallerTarget)
         {
             return !string.IsNullOrEmpty(uninstallerTarget)
-                && linkTarget.IndexOf(uninstallerTarget, StringComparison.InvariantCultureIgnoreCase) >= 0;
+                && linkTarget.Contains(uninstallerTarget, StringComparison.InvariantCultureIgnoreCase);
         }
 
         private sealed class Shortcut
         {
-            public Shortcut(string linkFilename)
+            public Shortcut(string linkFilename, string linkTarget)
             {
                 LinkFilename = linkFilename;
-                LinkTarget = WindowsTools.ResolveShortcut(linkFilename);
+                LinkTarget = linkTarget;
             }
 
             public string LinkFilename { get; }
