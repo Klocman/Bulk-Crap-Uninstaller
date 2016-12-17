@@ -74,6 +74,9 @@ namespace BulkCrapUninstaller.Functions
                 else
                 {
                     StopProcessingThread(false);
+
+                    if (_listView.ListView.IsDisposed) return;
+
                     _listView.ListView.SuspendLayout();
                     _listView.ListView.RefreshObjects(
                         AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue).ToList());
@@ -84,6 +87,8 @@ namespace BulkCrapUninstaller.Functions
             // Refresh items marked as invalid after corresponding setting change
             _settings.Subscribe((x, y) =>
             {
+                if (_listView.ListView.IsDisposed) return;
+
                 if (!_firstRefresh)
                     _listView.ListView.RefreshObjects(AllUninstallers.Where(u => !u.IsValid).ToList());
             }, x => x.AdvancedTestInvalid, this);
@@ -91,6 +96,8 @@ namespace BulkCrapUninstaller.Functions
             // Refresh items marked as orphans after corresponding setting change
             _settings.Subscribe((x, y) =>
             {
+                if (_listView.ListView.IsDisposed) return;
+
                 if (!_firstRefresh)
                     _listView.ListView.UpdateColumnFiltering();
             }, x => x.AdvancedDisplayOrphans, this);
@@ -128,7 +135,7 @@ namespace BulkCrapUninstaller.Functions
         }
 
         public IEnumerable<ApplicationUninstallerEntry> FilteredUninstallers
-            => _listView.ListView.FilteredObjects.Cast<ApplicationUninstallerEntry>();
+            => _listView.ListView.IsDisposed ? AllUninstallers : _listView.ListView.FilteredObjects.Cast<ApplicationUninstallerEntry>();
 
         public bool FirstRefreshCompleted => !_firstRefresh;
 
