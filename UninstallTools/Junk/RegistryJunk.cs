@@ -81,7 +81,8 @@ namespace UninstallTools.Junk
             {
                 using (var softwareKey = RegistryTools.OpenRegistryKey(softwareKeyName))
                 {
-                    returnList.AddRange(FindJunkRecursively(softwareKey));
+                    if(softwareKey != null)
+                        returnList.AddRange(FindJunkRecursively(softwareKey));
                 }
             }
 
@@ -227,7 +228,8 @@ namespace UninstallTools.Junk
 
                         using (var subKey = softwareKey.OpenSubKey(subKeyName, false))
                         {
-                            returnList.AddRange(FindJunkRecursively(subKey, level + 1));
+                            if(subKey != null)
+                                returnList.AddRange(FindJunkRecursively(subKey, level + 1));
                         }
                     }
                     return returnList;
