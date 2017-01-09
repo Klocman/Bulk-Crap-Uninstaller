@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions.Tracking;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -55,7 +56,7 @@ namespace BulkCrapUninstaller.Forms
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker1 = new UsageTracker();
             this.imageBox = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -387,7 +388,7 @@ namespace BulkCrapUninstaller.Forms
         private LinkLabel linkLabel6;
         private LinkLabel linkLabel5;
         private Label labelPortable;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker1;
+        private UsageTracker usageTracker1;
         private Label imageBox;
         private Panel panel1;
         private Panel panel3;

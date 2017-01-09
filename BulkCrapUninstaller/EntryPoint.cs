@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Forms.Tools;
-using Klocman.Subsystems.Update;
+using Klocman.UpdateSystem;
 using Microsoft.VisualBasic.ApplicationServices;
 
 namespace BulkCrapUninstaller

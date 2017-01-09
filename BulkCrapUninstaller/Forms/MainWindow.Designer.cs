@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Controls;
+using BulkCrapUninstaller.Functions.Tracking;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -185,7 +186,7 @@ namespace BulkCrapUninstaller.Forms
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.usageTracker = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker = new UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1546,7 +1547,7 @@ namespace BulkCrapUninstaller.Forms
         private PropertiesSidebar propertiesSidebar;
         private ToolStripMenuItem debugToolStripMenuItem;
         private ToolStripMenuItem uninstallBCUninstallToolstripMenuItem;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker;
+        private UsageTracker usageTracker;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripLabelStatus;
         private ToolStripStatusLabel toolStripLabelSize;

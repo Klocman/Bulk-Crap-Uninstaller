@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Threading;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
-using Klocman.Subsystems.Update;
+using Klocman.UpdateSystem;
 using Klocman.Tools;
 
 namespace BulkCrapUninstaller.Functions

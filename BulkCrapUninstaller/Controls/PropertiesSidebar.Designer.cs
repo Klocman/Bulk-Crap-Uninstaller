@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions.Tracking;
 using Klocman.Controls;
 
 namespace BulkCrapUninstaller.Controls
@@ -50,7 +51,7 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxViewCheckboxes = new System.Windows.Forms.CheckBox();
             this.checkBoxViewGroups = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker1 = new UsageTracker();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -211,7 +212,7 @@ namespace BulkCrapUninstaller.Controls
         private CheckBox checkBoxViewCheckboxes;
         private CheckBox checkBoxViewGroups;
         private ToolTip toolTip1;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker1;
+        private UsageTracker usageTracker1;
         private CheckBox checkBoxCertTest;
         private CheckBox checkBoxInvalidTest;
         private CheckBox checkBoxOrphans;

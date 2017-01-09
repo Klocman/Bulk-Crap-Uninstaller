@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
+using BulkCrapUninstaller.Functions.Tracking;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -54,7 +55,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker1 = new UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -285,7 +286,7 @@ namespace BulkCrapUninstaller.Forms
         private GroupBox groupBox1;
         private Label label2;
         private Label label3;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker1;
+        private UsageTracker usageTracker1;
         private Panel panel3;
         private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;

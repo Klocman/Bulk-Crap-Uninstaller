@@ -214,6 +214,15 @@
     <Compile Include="Functions\Ratings\UninstallerRatingManager.cs" />
     <Compile Include="Functions\SettingTools.cs" />
     <Compile Include="Functions\SystemRestore.cs" />
+    <Compile Include="Functions\Tracking\DatabaseStatSender.cs" />
+    <Compile Include="Functions\Tracking\EventHook.cs" />
+    <Compile Include="Functions\Tracking\EventHookSerializer.cs" />
+    <Compile Include="Functions\Tracking\MailSender.cs" />
+    <Compile Include="Functions\Tracking\SingleEventHook.cs" />
+    <Compile Include="Functions\Tracking\UsageManager.cs" />
+    <Compile Include="Functions\Tracking\UsageTracker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Functions\Uninstaller.cs" />
     <Compile Include="Functions\UninstallerListViewTools.cs" />
     <Compile Include="Functions\UpdateGrabber.cs" />
@@ -805,6 +814,10 @@
       <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
       <Name>KlocTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\UpdateSystem\UpdateSystem\UpdateSystem.csproj">
+      <Project>{e13a335c-3b81-4ae8-84da-b200f69856a9}</Project>
+      <Name>UpdateSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NBug_net35\NBug.csproj">
       <Project>{62ced1d5-f603-40de-8bf5-3e49d3a392f4}</Project>
       <Name>NBug</Name>
@@ -854,9 +867,9 @@
     <None Include="Resources\folder.open.png" />
     <None Include="Resources\donate_button.png" />
     <None Include="Resources\3.png" />
-    <Content Include="..\..\KlocTools\UpdateHelper\bin\Release\UpdateHelper.exe">
+    <Content Include="..\..\UpdateSystem\UpdateHelper\bin\Release\UpdateHelper.exe">
       <Link>UpdateHelper.exe</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Licence.txt">
       <Link>Licence.txt</Link>

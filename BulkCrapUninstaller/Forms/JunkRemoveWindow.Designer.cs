@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
+using BulkCrapUninstaller.Functions.Tracking;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -51,7 +52,7 @@ namespace BulkCrapUninstaller.Forms
             this.headerIntro = new System.Windows.Forms.Label();
             this.headerConfTitle = new System.Windows.Forms.Label();
             this.headerConfInfo = new System.Windows.Forms.Label();
-            this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker1 = new UsageTracker();
             this.listViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -276,7 +277,7 @@ namespace BulkCrapUninstaller.Forms
         private OLVColumn olvColumnPath;
         private OLVColumn olvColumnSafety;
         private OLVColumn olvColumnUninstallerName;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker1;
+        private UsageTracker usageTracker1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label headerConfInfo;
         private Label headerIntro;

@@ -2,8 +2,8 @@
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
-using Klocman.Subsystems.Tracking;
 using Klocman.Tools;
 using NBug;
 using NBug.Core.Reporting.Info;

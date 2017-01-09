@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions.Tracking;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -63,7 +64,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.usageTracker1 = new Klocman.Subsystems.Tracking.UsageTracker();
+            this.usageTracker1 = new UsageTracker();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
@@ -480,7 +481,7 @@ namespace BulkCrapUninstaller.Forms
         private Button button2;
         private GroupBox groupBoxMisc;
         private CheckBox checkBoxUpdateSearch;
-        private Klocman.Subsystems.Tracking.UsageTracker usageTracker1;
+        private UsageTracker usageTracker1;
         private GroupBox groupBoxExternal;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;

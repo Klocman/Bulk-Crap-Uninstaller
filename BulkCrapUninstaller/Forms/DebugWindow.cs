@@ -4,11 +4,11 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
-using Klocman.Subsystems.Tracking;
-using Klocman.Subsystems.Update;
+using Klocman.UpdateSystem;
 
 namespace BulkCrapUninstaller.Forms
 {
