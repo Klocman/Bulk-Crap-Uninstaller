@@ -64,7 +64,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.usageTracker1 = new UsageTracker();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
@@ -78,6 +78,7 @@ namespace BulkCrapUninstaller.Forms
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBoxShowAllBadJunk = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -223,6 +224,7 @@ namespace BulkCrapUninstaller.Forms
             // flowLayoutPanel1
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxShowAllBadJunk);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxLoud);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxBackup);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -348,6 +350,7 @@ namespace BulkCrapUninstaller.Forms
             this.propertiesSidebar1.StoreAppsEnabled = true;
             this.propertiesSidebar1.SysCompEnabled = true;
             this.propertiesSidebar1.UpdatesEnabled = true;
+            this.propertiesSidebar1.WinFeaturesEnabled = true;
             // 
             // tabPage1
             // 
@@ -412,6 +415,12 @@ namespace BulkCrapUninstaller.Forms
             this.panel4.Controls.Add(this.button2);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // checkBoxShowAllBadJunk
+            // 
+            resources.ApplyResources(this.checkBoxShowAllBadJunk, "checkBoxShowAllBadJunk");
+            this.checkBoxShowAllBadJunk.Name = "checkBoxShowAllBadJunk";
+            this.checkBoxShowAllBadJunk.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -516,5 +525,6 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxRatings;
         private TabPage tabPage1;
         private Controls.UninstallationSettings uninstallationSettings1;
+        private CheckBox checkBoxShowAllBadJunk;
     }
 }

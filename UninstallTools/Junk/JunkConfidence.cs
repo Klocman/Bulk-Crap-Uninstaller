@@ -29,6 +29,7 @@ namespace UninstallTools.Junk
             return Confidence.VeryGood;
         }
 
+        // Returns a number representing the confidence. 0 is a mid-point.
         public int GetRawConfidence()
         {
             var result = 0;

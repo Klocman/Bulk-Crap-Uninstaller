@@ -798,5 +798,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["FilterShowWinFeatures"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MessagesShowAllBadJunk {
+            get {
+                return ((bool)(this["MessagesShowAllBadJunk"]));
+            }
+            set {
+                this["MessagesShowAllBadJunk"] = value;
+            }
+        }
     }
 }

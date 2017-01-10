@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
-using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
@@ -21,9 +20,11 @@ namespace BulkCrapUninstaller.Forms
     public partial class JunkRemoveWindow : Form
     {
         private static readonly string SelectionBoxText = Localisable.JunkRemove_SelectionBoxText;
-        private TypedObjectListView<JunkNode> _listViewWrapper;
 
-        private readonly string defaultRegBackupFilename;
+        private readonly string _defaultRegBackupFilename;
+
+        private bool _confirmLowConfidenceMessageShown;
+        private TypedObjectListView<JunkNode> _listViewWrapper;
 
         public JunkRemoveWindow(IEnumerable<JunkNode> junk)
         {
@@ -31,13 +32,21 @@ namespace BulkCrapUninstaller.Forms
 
             Icon = Resources.Icon_Logo;
 
-            SetupListView(junk);
+            var junkNodes = junk as IList<JunkNode> ?? junk.ToList();
+
+            SetupListView(junkNodes);
+
+            if (junkNodes.All(x => x.Confidence.GetRawConfidence() < 0))
+            {
+                _confirmLowConfidenceMessageShown = true;
+                checkBoxHideLowConfidence.Checked = true;
+            }
 
             new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
-            
-                defaultRegBackupFilename = saveFileDialogBackupRegistry.FileName;
+
+            _defaultRegBackupFilename = saveFileDialogBackupRegistry.FileName;
         }
 
         public IEnumerable<JunkNode> SelectedJunk => _listViewWrapper.CheckedObjects;
@@ -50,8 +59,10 @@ namespace BulkCrapUninstaller.Forms
                 {
                     case MessageBoxes.PressedButton.Yes:
                         var enus = new CultureInfo("en-US", false).DateTimeFormat;
-                        saveFileDialogBackupRegistry.FileName = defaultRegBackupFilename + "_" + 
-                            DateTime.Now.ToString(enus.SortableDateTimePattern.Replace(':','-').Replace('T', '_'));
+                        saveFileDialogBackupRegistry.FileName = _defaultRegBackupFilename + "_" +
+                                                                DateTime.Now.ToString(
+                                                                    enus.SortableDateTimePattern.Replace(':', '-')
+                                                                        .Replace('T', '_'));
                         if (saveFileDialogBackupRegistry.ShowDialog() != DialogResult.OK)
                             return;
                         break;
@@ -82,10 +93,10 @@ namespace BulkCrapUninstaller.Forms
         {
             if (!checkBoxHideLowConfidence.Checked)
             {
-                if (!MessageBoxes.ConfirmLowConfidenceQuestion())
-                {
+                if (_confirmLowConfidenceMessageShown || MessageBoxes.ConfirmLowConfidenceQuestion())
+                    _confirmLowConfidenceMessageShown = true;
+                else
                     checkBoxHideLowConfidence.Checked = true;
-                }
             }
         }
 

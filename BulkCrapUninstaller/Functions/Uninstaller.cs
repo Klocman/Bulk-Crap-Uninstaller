@@ -296,7 +296,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 PremadeDialogs.GenericError(error);
             }
-            else if (junk.Any(x => x.Confidence.GetRawConfidence() >= 0))
+            else if (junk.Any(x => _settings.MessagesShowAllBadJunk || x.Confidence.GetRawConfidence() >= 0))
             {
                 using (var junkWindow = new JunkRemoveWindow(junk))
                 {
