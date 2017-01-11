@@ -37,7 +37,7 @@ namespace UninstallTools.Junk
                         try
                         {
                             var dirinfo = new DirectoryInfo(item);
-                            if (dirinfo.Exists && !result.Any(x => x.FullName.Equals(dirinfo.FullName)))
+                            if (dirinfo.Exists && !result.Any(x => PathTools.PathsEqual(x.FullName, dirinfo.FullName)))
                                 result.Add(dirinfo);
                         }
                         catch
@@ -123,7 +123,7 @@ namespace UninstallTools.Junk
 
             foreach (var folder in FoldersToCheck)
             {
-                FindJunkRecursively(output, folder, 0);
+                output.AddRange(FindJunkRecursively(folder));
             }
 
             if (Uninstaller.UninstallerKind == UninstallerType.StoreApp)
@@ -168,19 +168,15 @@ namespace UninstallTools.Junk
 
         public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
         {
-            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level);
-            var generateConfidence = baseOutput as IList<ConfidencePart> ?? baseOutput.ToList();
+            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level).ToList();
 
-            if (!generateConfidence.Any(x=>x.Change > 0))
+            if (!baseOutput.Any(x => x.Change > 0))
                 return Enumerable.Empty<ConfidencePart>();
+            
+            if (UninstallToolsGlobalConfig.QuestionableDirectoryNames.Contains(itemName, StringComparison.OrdinalIgnoreCase))
+                baseOutput.Add(ConfidencePart.QuestionableDirectoryName);
 
-            var output = new List<ConfidencePart>();
-            if (
-                UninstallToolsGlobalConfig.QuestionableDirectoryNames.Any(
-                    x => x.Equals(itemName, StringComparison.OrdinalIgnoreCase)))
-                output.Add(ConfidencePart.QuestionableDirectoryName);
-
-            return generateConfidence.Concat(output);
+            return baseOutput;
         }
 
         // Returns true if another installer is still using this location
@@ -193,13 +189,12 @@ namespace UninstallTools.Junk
             return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.OrdinalIgnoreCase));
         }
 
-        private void FindJunkRecursively(ICollection<DriveJunkNode> returnList, DirectoryInfo directory, int level)
+        private IEnumerable<DriveJunkNode> FindJunkRecursively(DirectoryInfo directory, int level = 0)
         {
+            var results = new List<DriveJunkNode>();
+
             try
             {
-                if ((directory.Attributes & FileAttributes.System) == FileAttributes.System)
-                    return;
-
                 var dirs = directory.GetDirectories();
 
                 foreach (var dir in dirs)
@@ -207,22 +202,22 @@ namespace UninstallTools.Junk
                     if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
                         continue;
 
-                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level);
-                    var confidenceParts = generatedConfidence as IList<ConfidencePart> ?? generatedConfidence.ToList();
+                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
 
-                    if (confidenceParts.Any(x=>x.Change > 0))
+                    if (generatedConfidence.Any())
                     {
                         var newNode = new DriveJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
-                        newNode.Confidence.AddRange(confidenceParts);
+                        newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckAgainstOtherInstallers(dir))
                             newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
 
-                        returnList.Add(newNode);
+                        results.Add(newNode);
                     }
-                    else if (level < 1)
+
+                    if (level < 1)
                     {
-                        FindJunkRecursively(returnList, dir, level + 1);
+                        results.AddRange(FindJunkRecursively(dir, level + 1));
                     }
                 }
             }
@@ -230,6 +225,8 @@ namespace UninstallTools.Junk
             {
                 if (Debugger.IsAttached) throw;
             }
+
+            return results;
         }
 
         private DriveJunkNode GetJunkNodeFromLocation(string directory)
