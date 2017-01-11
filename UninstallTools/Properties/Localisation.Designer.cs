@@ -214,6 +214,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Directory is, or will be empty after removing junk..
+        /// </summary>
+        internal static string ConfidencePart_AllSubdirsMatched {
+            get {
+                return ResourceManager.GetString("ConfidencePart_AllSubdirsMatched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Company name did not match.
         /// </summary>
         internal static string ConfidencePart_CompanyNameDidNotMatch {
@@ -502,7 +511,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Directory.
+        ///   Looks up a localized string similar to Files and directories.
         /// </summary>
         internal static string Junk_Drive_GroupName {
             get {

@@ -204,9 +204,10 @@ namespace UninstallTools.Junk
 
                     var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
 
+                    DriveJunkNode newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        var newNode = new DriveJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
+                        newNode = new DriveJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckAgainstOtherInstallers(dir))
@@ -215,9 +216,20 @@ namespace UninstallTools.Junk
                         results.Add(newNode);
                     }
 
-                    if (level < 1)
+                    if (level >= 1) continue;
+
+                    var junkNodes = FindJunkRecursively(dir, level + 1).ToList();
+                    results.AddRange(junkNodes);
+
+                    if (newNode != null)
                     {
-                        results.AddRange(FindJunkRecursively(dir, level + 1));
+                        // Check if the directory will have nothing left after junk removal.
+                        if(!dir.GetFiles().Any())
+                        {
+                            var subDirs = dir.GetDirectories();
+                            if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.FullName))))
+                                newNode.Confidence.Add(ConfidencePart.AllSubdirsMatched);
+                        }
                     }
                 }
             }

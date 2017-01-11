@@ -10,6 +10,9 @@ namespace UninstallTools.Junk
         public static readonly ConfidencePart CompanyNameMatch = new ConfidencePart(4,
             Localisation.ConfidencePart_CompanyNameMatch);
 
+        public static readonly ConfidencePart AllSubdirsMatched = new ConfidencePart(4,
+            Localisation.ConfidencePart_AllSubdirsMatched);
+
         public static readonly ConfidencePart DirectoryStillUsed = new ConfidencePart(-7,
             Localisation.ConfidencePart_DirectoryStillUsed);
 

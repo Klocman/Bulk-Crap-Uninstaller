@@ -434,4 +434,7 @@
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Simple Delete</value>
   </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Directory is, or will be empty after removing junk.</value>
+  </data>
 </root>
