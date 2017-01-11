@@ -74,10 +74,10 @@ namespace UninstallTools.Junk
 
         public override IEnumerable<JunkNode> FindJunk()
         {
-            var softwareKeys = GetSoftwareRegKeys(Uninstaller.Is64Bit);
             var returnList = new List<RegistryJunkNode>();
 
-            foreach (var softwareKeyName in softwareKeys)
+            // Look for junk
+            foreach (var softwareKeyName in GetSoftwareRegKeys())
             {
                 using (var softwareKey = RegistryTools.OpenRegistryKey(softwareKeyName))
                 {
@@ -97,7 +97,7 @@ namespace UninstallTools.Junk
 
                 nodeName = nodeName.Substring(softwareKey.Length + 1);
 
-                foreach (var keyToTest in softwareKeys.Except(new[] { softwareKey }))
+                foreach (var keyToTest in GetSoftwareRegKeys().Except(new[] { softwareKey }))
                 {
                     var nodePath = Path.Combine(keyToTest, nodeName);
                     // Check if the same node exists in other root keys
@@ -144,33 +144,15 @@ namespace UninstallTools.Junk
             return returnList.Cast<JunkNode>();
         }
 
-        private static string[] GetSoftwareRegKeys(MachineType architecture)
+        private static string[] GetSoftwareRegKeys()
         {
-            var returnVal = new string[2];
-            if (ProcessTools.Is64BitProcess)
-            {
-                if (architecture == MachineType.X64)
-                {
-                    returnVal[0] = KeyLm;
-                    returnVal[1] = KeyCu;
-                }
-                else
-                {
-                    returnVal[0] = KeyLmWow;
-                    returnVal[1] = KeyCuWow;
-                }
-            }
-            else
-            {
-                returnVal[0] = KeyLm;
-                returnVal[1] = KeyCu;
-            }
-
-            return returnVal;
+            return ProcessTools.Is64BitProcess ? new[] {KeyLm, KeyCu, KeyLmWow, KeyCuWow} : new[] { KeyLm, KeyCu };
         }
 
         private IEnumerable<RegistryJunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
+            var returnList = new List<RegistryJunkNode>();
+
             try
             {
                 // Don't try to scan root keys
@@ -178,7 +160,7 @@ namespace UninstallTools.Junk
                 {
                     var keyName = Path.GetFileName(softwareKey.Name);
                     var keyDir = Path.GetDirectoryName(softwareKey.Name);
-                    var confidence = GenerateConfidence(keyName, keyDir, level, false).ToList();
+                    var confidence = GenerateConfidence(keyName, keyDir, level).ToList();
 
                     // Check if application's location is explicitly mentioned in any of the values
                     // TODO Check default value too, but with lower confidence
@@ -213,14 +195,13 @@ namespace UninstallTools.Junk
                     {
                         var newNode = new RegistryJunkNode(keyDir, keyName, Uninstaller.DisplayName);
                         newNode.Confidence.AddRange(confidence);
-                        return new[] { newNode };
+                        returnList.Add(newNode);
                     }
                 }
 
                 // Limit recursion depth
                 if (level <= 1)
                 {
-                    var returnList = new List<RegistryJunkNode>();
                     foreach (var subKeyName in softwareKey.GetSubKeyNames())
                     {
                         if (KeyBlacklist.Contains(subKeyName, StringComparison.InvariantCultureIgnoreCase))
@@ -232,7 +213,6 @@ namespace UninstallTools.Junk
                                 returnList.AddRange(FindJunkRecursively(subKey, level + 1));
                         }
                     }
-                    return returnList;
                 }
             }
             // Reg key invalid
@@ -246,7 +226,7 @@ namespace UninstallTools.Junk
             {
             }
 
-            return Enumerable.Empty<RegistryJunkNode>();
+            return returnList;
         }
 
         private bool TestPathsEqualExe(string keyValue)

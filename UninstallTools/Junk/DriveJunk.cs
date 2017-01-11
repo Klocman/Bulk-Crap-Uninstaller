@@ -166,14 +166,13 @@ namespace UninstallTools.Junk
             return new[] { fileNode };
         }
 
-        public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level,
-            bool skipNameCheck)
+        public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
         {
-            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level, skipNameCheck);
+            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level);
             var generateConfidence = baseOutput as IList<ConfidencePart> ?? baseOutput.ToList();
 
-            if (!generateConfidence.Any())
-                return generateConfidence;
+            if (!generateConfidence.Any(x=>x.Change > 0))
+                return Enumerable.Empty<ConfidencePart>();
 
             var output = new List<ConfidencePart>();
             if (
@@ -208,10 +207,10 @@ namespace UninstallTools.Junk
                     if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
                         continue;
 
-                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level, false);
+                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level);
                     var confidenceParts = generatedConfidence as IList<ConfidencePart> ?? generatedConfidence.ToList();
 
-                    if (confidenceParts.Any())
+                    if (confidenceParts.Any(x=>x.Change > 0))
                     {
                         var newNode = new DriveJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
                         newNode.Confidence.AddRange(confidenceParts);
@@ -246,8 +245,9 @@ namespace UninstallTools.Junk
                     Path.GetFileName(directory), Uninstaller.DisplayName);
                 newNode.Confidence.Add(ConfidencePart.ExplicitConnection);
 
-                var generatedConfidence = GenerateConfidence(dirInfo.Name, dirInfo.Parent.FullName, 1, true);
-                newNode.Confidence.AddRange(generatedConfidence);
+                //BUG doesn't do anything
+                //var generatedConfidence = GenerateConfidence(dirInfo.Name, dirInfo.Parent.FullName, 1, true);
+                //newNode.Confidence.AddRange(generatedConfidence);
 
                 if (CheckAgainstOtherInstallers(dirInfo))
                     newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
