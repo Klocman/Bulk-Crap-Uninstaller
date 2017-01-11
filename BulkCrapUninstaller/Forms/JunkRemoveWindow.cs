@@ -40,7 +40,10 @@ namespace BulkCrapUninstaller.Forms
             {
                 _confirmLowConfidenceMessageShown = true;
                 checkBoxHideLowConfidence.Checked = true;
+                checkBoxHideLowConfidence.Enabled = false;
             }
+            else if(junkNodes.All(x=> x.Confidence.GetRawConfidence() >= 0))
+                checkBoxHideLowConfidence.Enabled = false;
 
             new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
