@@ -14,7 +14,7 @@ namespace UninstallTools.Startup.Task
             CommandFilePath = commandFilename;
             SourceTask = task;
 
-            ParentLongName = task.Path;
+            ParentLongName = Localisation.Startup_ShortName_Task + task.Path;
             EntryLongName = task.Name;
 
             FillInformationFromFile(commandFilename);

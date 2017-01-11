@@ -193,6 +193,7 @@ namespace UninstallTools.Junk
 
                     if (confidence.Any())
                     {
+                        // TODO Add extra confidence if the key is, or will be empty after junk removal
                         var newNode = new RegistryJunkNode(keyDir, keyName, Uninstaller.DisplayName);
                         newNode.Confidence.AddRange(confidence);
                         returnList.Add(newNode);
