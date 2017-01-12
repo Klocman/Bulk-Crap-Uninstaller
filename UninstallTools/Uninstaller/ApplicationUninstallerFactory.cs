@@ -759,23 +759,23 @@ namespace UninstallTools.Uninstaller
         {
             var verInfo = FileVersionInfo.GetVersionInfo(infoSourceFilename);
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Publisher))
-                && !string.IsNullOrEmpty(verInfo.CompanyName))
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Publisher?.Trim()))
+                && !string.IsNullOrEmpty(verInfo.CompanyName?.Trim()))
                 targetEntry.Publisher = verInfo.CompanyName;
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.RawDisplayName))
-                && !string.IsNullOrEmpty(verInfo.ProductName))
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.RawDisplayName?.Trim()))
+                && !string.IsNullOrEmpty(verInfo.ProductName?.Trim()))
                 targetEntry.RawDisplayName = verInfo.ProductName;
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Comment))
-                && !string.IsNullOrEmpty(verInfo.Comments))
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Comment?.Trim()))
+                && !string.IsNullOrEmpty(verInfo.Comments?.Trim()))
                 targetEntry.Comment = verInfo.Comments;
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.DisplayVersion)))
+            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.DisplayVersion?.Trim())))
             {
-                if (!string.IsNullOrEmpty(verInfo.ProductVersion))
+                if (!string.IsNullOrEmpty(verInfo.ProductVersion?.Trim()))
                     targetEntry.DisplayVersion = verInfo.ProductVersion;
-                else if (!string.IsNullOrEmpty(verInfo.FileVersion))
+                else if (!string.IsNullOrEmpty(verInfo.FileVersion?.Trim()))
                     targetEntry.DisplayVersion = verInfo.FileVersion;
             }
         }
