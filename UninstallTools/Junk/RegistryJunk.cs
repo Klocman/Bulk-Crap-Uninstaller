@@ -134,6 +134,8 @@ namespace UninstallTools.Junk
 
             returnList.AddRange(ScanFirewallRules());
 
+            returnList.AddRange(ScanTracing());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -143,6 +145,37 @@ namespace UninstallTools.Junk
             }
 
             return returnList.Cast<JunkNode>();
+        }
+
+        private IEnumerable<RegistryJunkNode> ScanTracing()
+        {
+            const string tracingKey = @"SOFTWARE\Microsoft\Tracing";
+            const string fullTracingKey = @"HKEY_LOCAL_MACHINE\" + tracingKey;
+
+            var results = new List<RegistryJunkNode>();
+            using (var key = Registry.LocalMachine.OpenSubKey(tracingKey))
+            {
+                if (key != null)
+                {
+                    foreach (var subKeyName in key.GetSubKeyNames())
+                    {
+                        var i = subKeyName.LastIndexOf('_');
+                        if (i <= 0)
+                            continue;
+
+                        var str = subKeyName.Substring(0, i);
+
+                        var conf = GenerateConfidence(str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
+                        if (conf.Any())
+                        {
+                            var node = new RegistryJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);
+                            node.Confidence.AddRange(conf);
+                            results.Add(node);
+                        }
+                    }
+                }
+            }
+            return results;
         }
 
         private IEnumerable<RegistryJunkNode> ScanFirewallRules()
