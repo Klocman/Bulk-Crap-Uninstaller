@@ -134,7 +134,50 @@ namespace UninstallTools.Junk
                 }
             }
 
+            output.AddRange(SearchWerReports());
+
             return RemoveDuplicates(output).Cast<JunkNode>();
+        }
+
+        // Look for old Windows Error Reporting reports
+        private IEnumerable<DriveJunkNode> SearchWerReports()
+        {
+            var output = new List<DriveJunkNode>();
+
+            if (!Directory.Exists(Uninstaller.InstallLocation))
+                return output;
+
+            var appExecutables = Directory.GetFiles(Uninstaller.InstallLocation, "*.exe", SearchOption.AllDirectories).Select(Path.GetFileName).ToList();
+
+            var archives = new[]
+            {
+                WindowsTools.GetEnvironmentPath(Klocman.Native.CSIDL.CSIDL_COMMON_APPDATA),
+                WindowsTools.GetEnvironmentPath(Klocman.Native.CSIDL.CSIDL_LOCAL_APPDATA)
+            }.Select(x => Path.Combine(x, @"Microsoft\Windows\WER\ReportArchive")).Where(Directory.Exists);
+
+            const string crashLabel = "AppCrash_";
+            var candidates = archives.SelectMany(Directory.GetDirectories);
+
+            foreach (var candidate in candidates)
+            {
+                var startIndex = candidate.IndexOf(crashLabel, StringComparison.InvariantCultureIgnoreCase);
+                if (startIndex <= 0) continue;
+                startIndex = startIndex + crashLabel.Length;
+
+                var count = candidate.IndexOf('_', startIndex) - startIndex;
+                if (count <= 1) continue;
+
+                var filename = candidate.Substring(startIndex, count);
+                
+                if(appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    var node = new DriveJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate), Uninstaller.DisplayName);
+                    node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                    output.Add(node);
+                }
+            }
+
+            return output;
         }
 
         private IEnumerable<DriveJunkNode> GetUninstallerJunk()
