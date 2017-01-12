@@ -164,6 +164,12 @@
     <Compile Include="Forms\DebugWindow.Designer.cs">
       <DependentUpon>DebugWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FeedbackBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FeedbackBox.Designer.cs">
+      <DependentUpon>FeedbackBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FeedbackWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugWindow.resx">
       <DependentUpon>DebugWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FeedbackBox.resx">
+      <DependentUpon>FeedbackBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FeedbackWindow.cs.resx">
       <DependentUpon>FeedbackWindow.cs</DependentUpon>

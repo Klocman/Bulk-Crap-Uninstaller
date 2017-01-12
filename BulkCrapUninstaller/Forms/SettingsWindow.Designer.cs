@@ -51,6 +51,7 @@ namespace BulkCrapUninstaller.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.groupBoxMessages = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxShowAllBadJunk = new System.Windows.Forms.CheckBox();
             this.checkBoxLoud = new System.Windows.Forms.CheckBox();
             this.checkBoxBackup = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -78,7 +79,7 @@ namespace BulkCrapUninstaller.Forms
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBoxShowAllBadJunk = new System.Windows.Forms.CheckBox();
+            this.checkBoxNeverFeedback = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -227,7 +228,14 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel1.Controls.Add(this.checkBoxShowAllBadJunk);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxLoud);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxBackup);
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxNeverFeedback);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // checkBoxShowAllBadJunk
+            // 
+            resources.ApplyResources(this.checkBoxShowAllBadJunk, "checkBoxShowAllBadJunk");
+            this.checkBoxShowAllBadJunk.Name = "checkBoxShowAllBadJunk";
+            this.checkBoxShowAllBadJunk.UseVisualStyleBackColor = true;
             // 
             // checkBoxLoud
             // 
@@ -416,11 +424,11 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
-            // checkBoxShowAllBadJunk
+            // checkBoxNeverFeedback
             // 
-            resources.ApplyResources(this.checkBoxShowAllBadJunk, "checkBoxShowAllBadJunk");
-            this.checkBoxShowAllBadJunk.Name = "checkBoxShowAllBadJunk";
-            this.checkBoxShowAllBadJunk.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxNeverFeedback, "checkBoxNeverFeedback");
+            this.checkBoxNeverFeedback.Name = "checkBoxNeverFeedback";
+            this.checkBoxNeverFeedback.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -526,5 +534,6 @@ namespace BulkCrapUninstaller.Forms
         private TabPage tabPage1;
         private Controls.UninstallationSettings uninstallationSettings1;
         private CheckBox checkBoxShowAllBadJunk;
+        private CheckBox checkBoxNeverFeedback;
     }
 }

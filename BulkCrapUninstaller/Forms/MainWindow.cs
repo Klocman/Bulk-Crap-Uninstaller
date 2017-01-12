@@ -73,7 +73,7 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) =>
                 UninstallToolsGlobalConfig.CustomProgramFiles =
                     y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries)
-                    .Select(path=> path.Trim().Trim('"').Trim()).ToArray(),
+                    .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
 
             listLegend1.WinFeatureEnabled = false;
@@ -141,11 +141,7 @@ namespace BulkCrapUninstaller.Forms
             debugToolStripMenuItem.Enabled = Program.EnableDebug;
             debugToolStripMenuItem.Visible = Program.EnableDebug;
             _setMan.Selected.Settings.AdvancedSimulate = Program.EnableDebug;
-
-            // External links
-            facebookStatusButton1.TargetSite = Resources.HomepageUrl;
-            twitterStatusButton1.TargetSite = Resources.HomepageUrl;
-
+            
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
@@ -222,7 +218,7 @@ namespace BulkCrapUninstaller.Forms
             });
         }
 
-        private static void OpenUrls(IEnumerable<Uri> urls)
+        internal static void OpenUrls(IEnumerable<Uri> urls)
         {
             if (WindowsTools.IsNetworkAvailable())
             {
@@ -473,8 +469,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void donateButton_Click(object sender, EventArgs e)
         {
-            OpenUrls(new[]
-            {new Uri(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB9DA2P8KQX52")});
+            OpenUrls(new[] { new Uri(Resources.DonateLink) });
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -523,23 +518,21 @@ namespace BulkCrapUninstaller.Forms
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason != CloseReason.UserClosing || _setMan.Selected.Settings.MiscFirstRun ||
-                _setMan.Selected.Settings.MiscFeedbackNagShown || !WindowsTools.IsNetworkAvailable())
+            if (e.CloseReason != CloseReason.UserClosing || _setMan.Selected.Settings.MiscFirstRun || 
+                !WindowsTools.IsNetworkAvailable())
                 return;
-
-            _setMan.Selected.Settings.MiscFeedbackNagShown = true;
-
-            //TODO better feedback submit window
-            switch (MessageBoxes.AskToSubmitFeedback())
+            
+            if (!_setMan.Selected.Settings.MiscFeedbackNagNeverShow)
             {
-                case CustomMessageBox.PressedButton.Left:
-                    PremadeDialogs.StartProcessSafely(
-                        @"https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new");
-                    break;
+                if (!_setMan.Selected.Settings.MiscFeedbackNagShown && 
+                    DateTime.Now - Process.GetCurrentProcess().StartTime > TimeSpan.FromMinutes(3))
+                {
+                    Enabled = false;
+                    FeedbackBox.ShowFeedbackBox(this, true);
+                }
 
-                case CustomMessageBox.PressedButton.Middle:
-                    OpenSubmitFeedbackWindow(sender, e);
-                    break;
+                // Show the nag every other time
+                _setMan.Selected.Settings.MiscFeedbackNagShown = !_setMan.Selected.Settings.MiscFeedbackNagShown;
             }
         }
 
@@ -703,15 +696,9 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenSubmitFeedbackWindow(object sender, EventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/feedback--contact.html");
-
-            /*if (WindowsTools.IsNetworkAvailable())
-            {
-                FeedbackWindow.ShowFeedbackDialog();
-                _setMan.Selected.Settings.MiscFeedbackNagShown = true;
-            }
-            else
-                MessageBoxes.NoNetworkConnected();*/
+            Enabled = false;
+            FeedbackBox.ShowFeedbackBox(this, false);
+            Enabled = true;
         }
 
         private void OpenUninstallerLocation(object sender, EventArgs eventArgs)

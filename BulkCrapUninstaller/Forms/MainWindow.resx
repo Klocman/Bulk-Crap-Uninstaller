@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.5.0.40285, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -196,7 +196,7 @@
     <value>listLegend1</value>
   </data>
   <data name="&gt;&gt;listLegend1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.ListLegend, BCUninstaller, Version=3.5.0.40285, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;listLegend1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -582,7 +582,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 17</value>
+    <value>56, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -607,87 +607,6 @@
   </data>
   <data name="toolStripLabelTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
-  </data>
-  <data name="facebookStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        5avOGQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="facebookStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 17</value>
-  </data>
-  <data name="twitterStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="twitterStatusButton1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="twitterStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
   </data>
   <data name="donateButton.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -783,7 +702,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.4.2.524, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.5.0.40285, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -894,7 +813,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.4.2.40765, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.5.0.40278, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -2176,18 +2095,6 @@
   <data name="&gt;&gt;toolStripLabelTotal.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;facebookStatusButton1.Name" xml:space="preserve">
-    <value>facebookStatusButton1</value>
-  </data>
-  <data name="&gt;&gt;facebookStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.FacebookStatusButton, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;twitterStatusButton1.Name" xml:space="preserve">
-    <value>twitterStatusButton1</value>
-  </data>
-  <data name="&gt;&gt;twitterStatusButton1.Type" xml:space="preserve">
-    <value>Klocman.Controls.TwitterStatusButton, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
     <value>donateButton</value>
   </data>
@@ -2852,13 +2759,13 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.5.0.40285, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Name" xml:space="preserve">
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.6193.40761, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.6221.33641, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

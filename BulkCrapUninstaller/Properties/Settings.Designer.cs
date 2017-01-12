@@ -810,5 +810,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["MessagesShowAllBadJunk"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MiscFeedbackNagNeverShow {
+            get {
+                return ((bool)(this["MiscFeedbackNagNeverShow"]));
+            }
+            set {
+                this["MiscFeedbackNagNeverShow"] = value;
+            }
+        }
     }
 }

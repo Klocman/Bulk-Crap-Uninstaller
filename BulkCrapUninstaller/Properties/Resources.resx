@@ -306,4 +306,22 @@
   <data name="control.fastforward.variant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control.fastforward.variant.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DonateLink" xml:space="preserve">
+    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52</value>
+  </data>
+  <data name="SubmitFeedbackLink" xml:space="preserve">
+    <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
+  </data>
+  <data name="SourceForgeReviewLink" xml:space="preserve">
+    <value>https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new</value>
+  </data>
+  <data name="GithubIssuesLink" xml:space="preserve">
+    <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/issues</value>
+  </data>
+  <data name="GithubNewIssueLink" xml:space="preserve">
+    <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new</value>
+  </data>
+  <data name="TwitterLink" xml:space="preserve">
+    <value>https://twitter.com/intent/tweet?text=Check+out+this+cool+uninstaller+that+I+found!+sourceforge.net/projects/bulk-crap-uninstaller/</value>
+  </data>
 </root>

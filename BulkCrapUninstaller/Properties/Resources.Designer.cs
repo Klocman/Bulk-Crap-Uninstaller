@@ -260,6 +260,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52.
+        /// </summary>
+        internal static string DonateLink {
+            get {
+                return ResourceManager.GetString("DonateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap folderopen {
@@ -276,6 +285,24 @@ namespace BulkCrapUninstaller.Properties {
             get {
                 object obj = ResourceManager.GetObject("fullscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/issues.
+        /// </summary>
+        internal static string GithubIssuesLink {
+            get {
+                return ResourceManager.GetString("GithubIssuesLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new.
+        /// </summary>
+        internal static string GithubNewIssueLink {
+            get {
+                return ResourceManager.GetString("GithubNewIssueLink", resourceCulture);
             }
         }
         
@@ -518,6 +545,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new.
+        /// </summary>
+        internal static string SourceForgeReviewLink {
+            get {
+                return ResourceManager.GetString("SourceForgeReviewLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap star {
@@ -538,12 +574,30 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/feedback--contact.html.
+        /// </summary>
+        internal static string SubmitFeedbackLink {
+            get {
+                return ResourceManager.GetString("SubmitFeedbackLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap timer {
             get {
                 object obj = ResourceManager.GetObject("timer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://twitter.com/intent/tweet?text=Check+out+this+cool+uninstaller+that+I+found!+sourceforge.net/projects/bulk-crap-uninstaller/.
+        /// </summary>
+        internal static string TwitterLink {
+            get {
+                return ResourceManager.GetString("TwitterLink", resourceCulture);
             }
         }
     }

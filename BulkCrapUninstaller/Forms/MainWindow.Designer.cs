@@ -66,8 +66,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
-            this.facebookStatusButton1 = new Klocman.Controls.FacebookStatusButton();
-            this.twitterStatusButton1 = new Klocman.Controls.TwitterStatusButton();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
             this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
@@ -186,7 +184,7 @@ namespace BulkCrapUninstaller.Forms
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.usageTracker = new UsageTracker();
+            this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -520,8 +518,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelStatus,
             this.toolStripLabelSize,
             this.toolStripLabelTotal,
-            this.facebookStatusButton1,
-            this.twitterStatusButton1,
             this.donateButton});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
@@ -555,25 +551,6 @@ namespace BulkCrapUninstaller.Forms
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.toolStripLabelTotal.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
             this.toolStripLabelTotal.Name = "toolStripLabelTotal";
-            // 
-            // facebookStatusButton1
-            // 
-            this.facebookStatusButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.facebookStatusButton1, "facebookStatusButton1");
-            this.facebookStatusButton1.IsLink = true;
-            this.facebookStatusButton1.Name = "facebookStatusButton1";
-            this.facebookStatusButton1.Padding = new System.Windows.Forms.Padding(2, 0, 3, 0);
-            this.facebookStatusButton1.TargetSite = null;
-            // 
-            // twitterStatusButton1
-            // 
-            this.twitterStatusButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.twitterStatusButton1, "twitterStatusButton1");
-            this.twitterStatusButton1.IsLink = true;
-            this.twitterStatusButton1.MessageText = null;
-            this.twitterStatusButton1.Name = "twitterStatusButton1";
-            this.twitterStatusButton1.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.twitterStatusButton1.TargetSite = null;
             // 
             // donateButton
             // 
@@ -1556,8 +1533,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem openProgramsAndFeaturesToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator13;
-        private Klocman.Controls.FacebookStatusButton facebookStatusButton1;
-        private Klocman.Controls.TwitterStatusButton twitterStatusButton1;
         private ToolStripMenuItem manualUninstallToolStripMenuItem1;
         private ToolStripMenuItem manualUninstallToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator14;
