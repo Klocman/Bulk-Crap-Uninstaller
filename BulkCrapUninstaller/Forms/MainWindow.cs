@@ -72,7 +72,8 @@ namespace BulkCrapUninstaller.Forms
             // Other bindings
             _setMan.Selected.Subscribe((x, y) =>
                 UninstallToolsGlobalConfig.CustomProgramFiles =
-                    y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries),
+                    y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries)
+                    .Select(path=> path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
 
             listLegend1.WinFeatureEnabled = false;
