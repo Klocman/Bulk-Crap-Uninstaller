@@ -223,7 +223,10 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                var regPaths = SelectedJunk.OfType<RegistryJunkNode>().Select(x => x.FullName);
+                var regPaths = SelectedJunk.OfType<RegistryJunkNode>()
+                    // If the thingy is a value, export the entire key
+                    .Select(x => x is RegistryValueJunkNode ? x.ParentPath : x.FullName)
+                    .Distinct();
 
                 RegistryTools.ExportRegistry(saveFileDialogBackupRegistry.FileName, regPaths);
             }

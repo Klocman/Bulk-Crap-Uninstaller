@@ -1,40 +1,36 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Security.Permissions;
 using Klocman.Tools;
-using UninstallTools.Properties;
-
 namespace UninstallTools.Junk
 {
-    public class RegistryJunkNode : JunkNode
+    public class RegistryValueJunkNode : RegistryJunkNode
     {
-        public RegistryJunkNode(string parentPath, string name, string uninstallerName)
-            : base(parentPath, name, uninstallerName)
+        public RegistryValueJunkNode(string keyPath, string valueName, string uninstallerName)
+            : base(keyPath, valueName, uninstallerName)
         {
         }
-
-        public override string GroupName => Localisation.Junk_Registry_GroupName;
-
+        
         public override void Delete()
         {
             try
             {
                 using (var key = RegistryTools.OpenRegistryKey(ParentPath, true))
                 {
-                    key.DeleteSubKeyTree(Name);
+                    key.DeleteValue(Name);
                 }
             }
             catch (Exception ex)
             {
                 // Failed to remove the key
-                Debug.WriteLine("RegistryJunkNode\\Delete -> " + ex.Message);
+                Debug.WriteLine("RegistryValueJunkNode\\Delete -> " + ex.Message);
             }
         }
 
         [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
-            RegistryTools.OpenRegKeyInRegedit(FullName);
+            RegistryTools.OpenRegKeyInRegedit(ParentPath);
         }
     }
 }

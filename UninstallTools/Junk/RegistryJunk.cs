@@ -60,7 +60,6 @@ namespace UninstallTools.Junk
         };
 
         private const string KeynameRegisteredApps = "RegisteredApplications";
-
         private static readonly string KeyCu = @"HKEY_CURRENT_USER\SOFTWARE";
         private static readonly string KeyCuWow = @"HKEY_CURRENT_USER\SOFTWARE\Wow6432Node";
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
@@ -81,7 +80,7 @@ namespace UninstallTools.Junk
             {
                 using (var softwareKey = RegistryTools.OpenRegistryKey(softwareKeyName))
                 {
-                    if(softwareKey != null)
+                    if (softwareKey != null)
                         returnList.AddRange(FindJunkRecursively(softwareKey));
                 }
             }
@@ -133,6 +132,8 @@ namespace UninstallTools.Junk
                 }
             }
 
+            returnList.AddRange(ScanFirewallRules());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -144,9 +145,43 @@ namespace UninstallTools.Junk
             return returnList.Cast<JunkNode>();
         }
 
+        private IEnumerable<RegistryJunkNode> ScanFirewallRules()
+        {
+            const string firewallRulesKey = @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
+            const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
+
+            var results = new List<RegistryJunkNode>();
+            if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
+                return results;
+
+            using (var key = Registry.LocalMachine.OpenSubKey(firewallRulesKey))
+            {
+                if (key != null)
+                {
+                    foreach (var valueName in key.GetValueNames())
+                    {
+                        var value = key.GetValue(valueName) as string;
+                        if (string.IsNullOrEmpty(value)) continue;
+
+                        var start = value.IndexOf("|App=", StringComparison.InvariantCultureIgnoreCase) + 5;
+                        var charCount = value.IndexOf('|', start) - start;
+                        var fullPath = Environment.ExpandEnvironmentVariables(value.Substring(start, charCount));
+                        if (fullPath.StartsWith(Uninstaller.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var node = new RegistryValueJunkNode(fullFirewallRulesKey, valueName, Uninstaller.DisplayName);
+                            node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            results.Add(node);
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
         private static string[] GetSoftwareRegKeys()
         {
-            return ProcessTools.Is64BitProcess ? new[] {KeyLm, KeyCu, KeyLmWow, KeyCuWow} : new[] { KeyLm, KeyCu };
+            return ProcessTools.Is64BitProcess ? new[] { KeyLm, KeyCu, KeyLmWow, KeyCuWow } : new[] { KeyLm, KeyCu };
         }
 
         private IEnumerable<RegistryJunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
@@ -210,7 +245,7 @@ namespace UninstallTools.Junk
 
                         using (var subKey = softwareKey.OpenSubKey(subKeyName, false))
                         {
-                            if(subKey != null)
+                            if (subKey != null)
                                 returnList.AddRange(FindJunkRecursively(subKey, level + 1));
                         }
                     }

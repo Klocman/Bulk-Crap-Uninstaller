@@ -54,6 +54,7 @@
     <Compile Include="Junk\IJunkCreator.cs" />
     <Compile Include="Junk\JunkNode.cs" />
     <Compile Include="Junk\RegistryJunkNode.cs" />
+    <Compile Include="Junk\RegistryValueJunkNode.cs" />
     <Compile Include="Junk\ShortcutJunk.cs" />
     <Compile Include="Junk\StartupJunk.cs" />
     <Compile Include="Junk\StartupJunkNode.cs" />
