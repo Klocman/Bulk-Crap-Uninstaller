@@ -42,10 +42,10 @@ namespace BulkCrapUninstaller.Forms
                 checkBoxHideLowConfidence.Checked = true;
                 checkBoxHideLowConfidence.Enabled = false;
             }
-            else if(junkNodes.All(x=> x.Confidence.GetRawConfidence() >= 0))
+            else if (junkNodes.All(x => x.Confidence.GetRawConfidence() >= 0))
                 checkBoxHideLowConfidence.Enabled = false;
 
-            new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
+            new[] { Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad }
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
 
@@ -56,6 +56,10 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
+            var filters = SelectedJunk.OfType<DriveJunkNode>().Select(x => x.FullName).ToArray();
+            if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
+                return;
+
             if (SelectedJunk.Any(x => x is RegistryJunkNode))
             {
                 switch (MessageBoxes.BackupRegistryQuestion())
@@ -114,7 +118,7 @@ namespace BulkCrapUninstaller.Forms
             var localisedEnumWrapper = comboBoxChecker.SelectedItem as LocalisedEnumWrapper;
             if (localisedEnumWrapper != null)
             {
-                var selectedConfidence = (Confidence) localisedEnumWrapper.TargetEnum;
+                var selectedConfidence = (Confidence)localisedEnumWrapper.TargetEnum;
 
                 if ((selectedConfidence != Confidence.Bad && selectedConfidence != Confidence.Questionable)
                     || MessageBoxes.ConfirmLowConfidenceQuestion()) //Ask if selected low confidence

@@ -106,7 +106,7 @@ namespace BulkCrapUninstaller.Functions
                    select app;
         }
 
-        private static bool CheckForRunningProcesses(string[] filters, bool doNotKillSteam)
+        internal static bool CheckForRunningProcesses(string[] filters, bool doNotKillSteam, Form parentForm = null)
         {
             var myId = Process.GetCurrentProcess().Id;
             var idsToCheck = new List<int>();
@@ -151,7 +151,7 @@ namespace BulkCrapUninstaller.Functions
 
             if (idsToCheck.Count > 0)
             {
-                if (!ProcessWaiter.ShowDialog(MessageBoxes.DefaultOwner, idsToCheck.ToArray(), false))
+                if (!ProcessWaiter.ShowDialog(parentForm ?? MessageBoxes.DefaultOwner, idsToCheck.ToArray(), false))
                     return false;
             }
 
