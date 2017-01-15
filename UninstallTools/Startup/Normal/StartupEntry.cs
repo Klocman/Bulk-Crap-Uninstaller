@@ -56,6 +56,8 @@ namespace UninstallTools.Startup.Normal
                     {
                         StartupEntryManager.Enable(this);
                     }
+
+                    DisabledStore = value;
                 }
             }
         }
