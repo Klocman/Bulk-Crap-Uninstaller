@@ -11,13 +11,13 @@ namespace UninstallTools.Startup.Task
         {
             ProgramName = name;
             Command = command;
-            CommandFilePath = commandFilename;
+            CommandFilePath = Environment.ExpandEnvironmentVariables(commandFilename);
             SourceTask = task;
 
             ParentLongName = Localisation.Startup_ShortName_Task + task.Path;
             EntryLongName = task.Name;
-
-            FillInformationFromFile(commandFilename);
+            
+            FillInformationFromFile(CommandFilePath);
         }
 
         private Microsoft.Win32.TaskScheduler.Task SourceTask { get; }
