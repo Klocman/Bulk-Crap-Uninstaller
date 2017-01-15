@@ -954,12 +954,13 @@ namespace UninstallTools.Uninstaller
         {
             if (!string.IsNullOrEmpty(uninstallString))
             {
-                if (!PathPointsToMsiExec(uninstallString))
+                var trimmedUninstallString = uninstallString.Trim('"', ' ');
+                if (!PathPointsToMsiExec(trimmedUninstallString))
                 {
                     try
                     {
-                        if (File.Exists(uninstallString))
-                            return uninstallString;
+                        if (File.Exists(trimmedUninstallString))
+                            return trimmedUninstallString;
                     }
                     catch
                     {
@@ -1069,7 +1070,7 @@ namespace UninstallTools.Uninstaller
                 return false;
 
             return path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase)
-                || path.TrimEnd('"', ' ').EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
+                || path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
         }
 
         private static Icon TryGetIconHelper(ApplicationUninstallerEntry entry, out string path)
