@@ -312,7 +312,13 @@ namespace BulkCrapUninstaller.Functions
                         var top = selectedJunk.Count;
                         controller.SetMaximum(top);
                         var itemsRemoved = 0; // current value
-                        foreach (var junkNode in selectedJunk)
+
+                        var sortedJunk = from item in selectedJunk
+                                             // Need to stop and unregister service before deleting its exe
+                                         orderby item is StartupJunkNode descending
+                                         select item;
+
+                        foreach (var junkNode in sortedJunk)
                         {
                             controller.SetProgress(itemsRemoved++);
 
@@ -432,7 +438,7 @@ namespace BulkCrapUninstaller.Functions
                 };
 
                 if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
-                
+
                 var items = new List<ApplicationUninstallerEntry>();
                 LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
                     _ =>
