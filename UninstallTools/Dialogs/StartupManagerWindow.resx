@@ -133,6 +133,9 @@
   <data name="comboBoxFilter.Items3" xml:space="preserve">
     <value>Show browser extensions</value>
   </data>
+  <data name="comboBoxFilter.Items4" xml:space="preserve">
+    <value>Show services</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="comboBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 1</value>

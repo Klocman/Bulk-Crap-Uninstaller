@@ -14,6 +14,7 @@ using UninstallTools.Properties;
 using UninstallTools.Startup;
 using UninstallTools.Startup.Browser;
 using UninstallTools.Startup.Normal;
+using UninstallTools.Startup.Service;
 using UninstallTools.Startup.Task;
 
 namespace UninstallTools.Dialogs
@@ -251,8 +252,9 @@ namespace UninstallTools.Dialogs
                 where comboBoxFilter.SelectedIndex == 0 ||
                       comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
                       comboBoxFilter.SelectedIndex == 2 && item is TaskEntry ||
-                      comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry
-                orderby item.ProgramName ascending
+                      comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
+                      comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
+                        orderby item.ProgramName ascending
                 select new ListViewItem(new[]
                 {
                     item.ProgramName,

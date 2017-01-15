@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupManagerWindow));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,14 +61,10 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -79,6 +79,12 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.comboBoxFilter);
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
+            // 
             // comboBoxFilter
             // 
             resources.ApplyResources(this.comboBoxFilter, "comboBoxFilter");
@@ -88,9 +94,20 @@
             resources.GetString("comboBoxFilter.Items"),
             resources.GetString("comboBoxFilter.Items1"),
             resources.GetString("comboBoxFilter.Items2"),
-            resources.GetString("comboBoxFilter.Items3")});
+            resources.GetString("comboBoxFilter.Items3"),
+            resources.GetString("comboBoxFilter.Items4")});
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SelectedIndexChanged);
+            // 
+            // panel4
+            // 
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
             // 
             // buttonRefresh
             // 
@@ -98,6 +115,11 @@
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
             // buttonCancel
             // 
@@ -273,27 +295,6 @@
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
             // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
-            // panel4
-            // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Name = "panel4";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.comboBoxFilter);
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Name = "panel5";
-            // 
             // StartupManagerWindow
             // 
             this.AcceptButton = this.buttonCancel;
@@ -307,9 +308,9 @@
             this.Shown += new System.EventHandler(this.StartupManagerWindow_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.contextMenuStrip.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

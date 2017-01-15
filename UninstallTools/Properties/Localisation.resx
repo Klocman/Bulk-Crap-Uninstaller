@@ -437,4 +437,7 @@
   <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
     <value>Directory is, or will be empty after removing junk.</value>
   </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
 </root>

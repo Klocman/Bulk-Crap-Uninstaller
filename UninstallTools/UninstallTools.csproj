@@ -98,6 +98,8 @@
     <Compile Include="Startup\Normal\OldStartupDisable.cs" />
     <Compile Include="Startup\Normal\StartupEntryManager.cs" />
     <Compile Include="Startup\Normal\StartupPointData.cs" />
+    <Compile Include="Startup\Service\ServiceEntry.cs" />
+    <Compile Include="Startup\Service\ServiceEntryFactory.cs" />
     <Compile Include="Startup\StartupEntryBase.cs" />
     <Compile Include="Startup\Task\TaskEntry.cs" />
     <Compile Include="Startup\Task\TaskEntryFactory.cs" />

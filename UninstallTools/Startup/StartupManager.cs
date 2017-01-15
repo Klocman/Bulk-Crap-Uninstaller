@@ -5,6 +5,7 @@ using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
 using UninstallTools.Startup.Browser;
 using UninstallTools.Startup.Normal;
+using UninstallTools.Startup.Service;
 using UninstallTools.Startup.Task;
 using UninstallTools.Uninstaller;
 
@@ -73,9 +74,10 @@ namespace UninstallTools.Startup
                 regOpened = true;
             }
 
-            foreach (var item in startupEntryBases.OfType<StartupEntry>())
+            foreach (var item in startupEntryBases)
             {
-                if (item.IsRegKey)
+                var s = item as StartupEntry;
+                if (s != null && s.IsRegKey)
                 {
                     if (!regOpened)
                     {
@@ -83,8 +85,10 @@ namespace UninstallTools.Startup
                         regOpened = true;
                     }
                 }
-                else
+                else if (!string.IsNullOrEmpty(item.FullLongName))
                     WindowsTools.OpenExplorerFocusedOnObject(item.FullLongName);
+                else if (!string.IsNullOrEmpty(item.CommandFilePath))
+                    WindowsTools.OpenExplorerFocusedOnObject(item.CommandFilePath);
             }
         }
 
@@ -95,7 +99,8 @@ namespace UninstallTools.Startup
         {
             return StartupEntryFactory.GetStartupItems().Cast<StartupEntryBase>()
                 .Concat(TaskEntryFactory.GetTaskStartupEntries().Cast<StartupEntryBase>())
-                .Concat(BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>());
+                .Concat(BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>())
+                .Concat(ServiceEntryFactory.GetServiceEntries().Cast<StartupEntryBase>());
         }
     }
 }

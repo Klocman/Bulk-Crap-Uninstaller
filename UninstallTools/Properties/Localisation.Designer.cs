@@ -655,6 +655,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service.
+        /// </summary>
+        internal static string Startup_ShortName_Service {
+            get {
+                return ResourceManager.GetString("Startup_ShortName_Service", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Task.
         /// </summary>
         internal static string Startup_ShortName_Task {
