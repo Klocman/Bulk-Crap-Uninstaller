@@ -1113,7 +1113,11 @@ namespace BulkCrapUninstaller.Forms
         {
             var results = StartupManagerWindow.ShowManagerDialog(this);
             toolStripLabelStatus.Text = Localisable.MainWindow_Statusbar_RefreshingStartup;
+
             Application.DoEvents();
+            if (uninstallerObjectListView.Disposing || uninstallerObjectListView.IsDisposed)
+                return;
+
             _listView.ReassignStartupEntries(true, results);
             toolStripLabelStatus.Text = string.Empty;
         }
