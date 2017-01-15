@@ -1069,7 +1069,7 @@ namespace UninstallTools.Uninstaller
                 return false;
 
             return path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase)
-                || path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
+                || path.TrimEnd('"', ' ').EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
         }
 
         private static Icon TryGetIconHelper(ApplicationUninstallerEntry entry, out string path)
