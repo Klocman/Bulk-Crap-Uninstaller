@@ -969,7 +969,11 @@ namespace UninstallTools.Uninstaller
 
                     try
                     {
-                        return ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
+                        var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
+
+                        Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName));
+
+                        return fileName;
                     }
                     catch (ArgumentException) { }
                     catch (FormatException) { }

@@ -355,8 +355,8 @@ namespace UninstallTools.Uninstaller
                     // Use supplied quiet uninstaller if any
                     try
                     {
-                        startInfo =
-                            ProcessTools.SeparateArgsFromCommand(entry.QuietUninstallString).ToProcessStartInfo();
+                        startInfo = ProcessTools.SeparateArgsFromCommand(entry.QuietUninstallString).ToProcessStartInfo();
+                        Debug.Assert(!startInfo.FileName.Contains(' ') || File.Exists(startInfo.FileName));
                     }
                     catch (FormatException)
                     {
@@ -369,6 +369,7 @@ namespace UninstallTools.Uninstaller
                     try
                     {
                         startInfo = ProcessTools.SeparateArgsFromCommand(entry.UninstallString).ToProcessStartInfo();
+                        Debug.Assert(!startInfo.FileName.Contains(' ') || File.Exists(startInfo.FileName));
 
                         if (entry.UninstallerKind == UninstallerType.Nsis)
                             UpdateNsisStartInfo(startInfo, entry.DisplayName);
