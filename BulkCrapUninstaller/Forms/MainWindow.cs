@@ -567,8 +567,14 @@ namespace BulkCrapUninstaller.Forms
 
             if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
             {
-                _setMan.Selected.Settings.MiscNet4NagShown = true;
-                MessageBoxes.Net4MissingInfo();
+                try
+                {
+                    _setMan.Selected.Settings.MiscNet4NagShown = true;
+                    MessageBoxes.Net4MissingInfo();
+                }
+                catch (ObjectDisposedException)
+                {
+                }
             }
         }
 
