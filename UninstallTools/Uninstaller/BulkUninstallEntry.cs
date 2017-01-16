@@ -15,9 +15,25 @@ namespace UninstallTools.Uninstaller
     public class BulkUninstallEntry
     {
         private static readonly string[] NamesOfIgnoredProcesses =
-            WindowsTools.GetInstalledWebBrowsers().Select(Path.GetFileNameWithoutExtension)
-                .Concat(new[] {"explorer"})
-                .Distinct().ToArray();
+            WindowsTools.GetInstalledWebBrowsers().Select(s =>
+            {
+                try
+                {
+                    return Path.GetFileNameWithoutExtension(s);
+                }
+                catch (ArgumentException)
+                {
+                    try
+                    {
+                        var dash = s.LastIndexOf('\\');
+                        return s.Substring(dash + 1, s.LastIndexOf('.') - dash - 1);
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+                }
+            }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] { "explorer" }).Distinct().ToArray();
 
         private readonly object _operationLock = new object();
 
@@ -91,7 +107,7 @@ namespace UninstallTools.Uninstaller
                 IsRunning = true;
             }
 
-            var worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker"};
+            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
             worker.Start(options);
         }
 
@@ -143,7 +159,7 @@ namespace UninstallTools.Uninstaller
                     };
                     // Important to NextSample now, they will collect data when we sleep
                     _perfCounterBuffer.Add(childProcessName, new PerfCounterEntry(
-                        perfCounters, new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}));
+                        perfCounters, new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }));
                 }
                 catch
                 {
@@ -217,7 +233,7 @@ namespace UninstallTools.Uninstaller
 
                         var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet &&
                                             UninstallerEntry.QuietUninstallPossible;
-                        var watchedProcesses = new List<Process> {uninstaller};
+                        var watchedProcesses = new List<Process> { uninstaller };
                         var idleCounter = 0;
 
                         while (true)
