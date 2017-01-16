@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Klocman.Extensions;
+using Klocman.Tools;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security;
-using Klocman.Tools;
-using Microsoft.Win32;
 using UninstallTools.Uninstaller;
-using Klocman.Extensions;
+
 namespace UninstallTools.Junk
 {
     public class RegistryJunk : JunkBase
@@ -15,15 +16,14 @@ namespace UninstallTools.Junk
         /// Keys to step over when scanning
         /// </summary>
         private static readonly IEnumerable<string> KeyBlacklist = new[]
-        {
+                {
             "Microsoft", "Wow6432Node", "Windows", "Classes", "Clients", KeynameRegisteredApps
         };
-
         /// <summary>
         /// Always points to program's directory
         /// </summary>
         private static readonly IEnumerable<string> InstallDirKeyNames = new[]
-        {
+                {
             "InstallDir",
             "Install_Dir",
             "Install Directory",
@@ -34,40 +34,38 @@ namespace UninstallTools.Junk
             "TARGETDIR",
             "JavaHome"
         };
-
         /// <summary>
         /// Always points to program's main executable
         /// </summary>
         private static readonly IEnumerable<string> ExePathKeyNames = new[]
-        {
+                {
             "exe64"       ,
             "exe32"       ,
             "Executable"  ,
             "PathToExe"   ,
             "ExePath"
         };
-
         /// <summary>
         /// Can point to programs executable or directory
         /// </summary>
         private static readonly IEnumerable<string> ExeOrDirPathKeyNames = new[]
-        {
+                {
             "Path"        ,
             "Path64"      ,
             "pth"         ,
             "PlayerPath"  ,
             "AppPath"
         };
-
         private const string KeynameRegisteredApps = "RegisteredApplications";
         private static readonly string KeyCu = @"HKEY_CURRENT_USER\SOFTWARE";
         private static readonly string KeyCuWow = @"HKEY_CURRENT_USER\SOFTWARE\Wow6432Node";
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
         private static readonly string KeyLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node";
+        private static readonly string[] SoftwareRegKeys = ProcessTools.Is64BitProcess ? new[] { KeyLm, KeyCu, KeyLmWow, KeyCuWow } : new[] { KeyLm, KeyCu };
 
         public RegistryJunk(ApplicationUninstallerEntry entry,
-            IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
-            : base(entry, otherUninstallers)
+                    IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+                    : base(entry, otherUninstallers)
         {
         }
 
@@ -76,7 +74,7 @@ namespace UninstallTools.Junk
             var returnList = new List<RegistryJunkNode>();
 
             // Look for junk
-            foreach (var softwareKeyName in GetSoftwareRegKeys())
+            foreach (var softwareKeyName in SoftwareRegKeys)
             {
                 using (var softwareKey = RegistryTools.OpenRegistryKey(softwareKeyName))
                 {
@@ -96,7 +94,7 @@ namespace UninstallTools.Junk
 
                 nodeName = nodeName.Substring(softwareKey.Length + 1);
 
-                foreach (var keyToTest in GetSoftwareRegKeys().Except(new[] { softwareKey }))
+                foreach (var keyToTest in SoftwareRegKeys.Except(new[] { softwareKey }))
                 {
                     var nodePath = Path.Combine(keyToTest, nodeName);
                     // Check if the same node exists in other root keys
@@ -147,76 +145,6 @@ namespace UninstallTools.Junk
             return returnList.Cast<JunkNode>();
         }
 
-        private IEnumerable<RegistryJunkNode> ScanTracing()
-        {
-            const string tracingKey = @"SOFTWARE\Microsoft\Tracing";
-            const string fullTracingKey = @"HKEY_LOCAL_MACHINE\" + tracingKey;
-
-            var results = new List<RegistryJunkNode>();
-            using (var key = Registry.LocalMachine.OpenSubKey(tracingKey))
-            {
-                if (key != null)
-                {
-                    foreach (var subKeyName in key.GetSubKeyNames())
-                    {
-                        var i = subKeyName.LastIndexOf('_');
-                        if (i <= 0)
-                            continue;
-
-                        var str = subKeyName.Substring(0, i);
-
-                        var conf = GenerateConfidence(str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
-                        if (conf.Any())
-                        {
-                            var node = new RegistryJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);
-                            node.Confidence.AddRange(conf);
-                            results.Add(node);
-                        }
-                    }
-                }
-            }
-            return results;
-        }
-
-        private IEnumerable<RegistryJunkNode> ScanFirewallRules()
-        {
-            const string firewallRulesKey = @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
-            const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
-
-            var results = new List<RegistryJunkNode>();
-            if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
-                return results;
-
-            using (var key = Registry.LocalMachine.OpenSubKey(firewallRulesKey))
-            {
-                if (key != null)
-                {
-                    foreach (var valueName in key.GetValueNames())
-                    {
-                        var value = key.GetValue(valueName) as string;
-                        if (string.IsNullOrEmpty(value)) continue;
-
-                        var start = value.IndexOf("|App=", StringComparison.InvariantCultureIgnoreCase) + 5;
-                        var charCount = value.IndexOf('|', start) - start;
-                        var fullPath = Environment.ExpandEnvironmentVariables(value.Substring(start, charCount));
-                        if (fullPath.StartsWith(Uninstaller.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            var node = new RegistryValueJunkNode(fullFirewallRulesKey, valueName, Uninstaller.DisplayName);
-                            node.Confidence.Add(ConfidencePart.ExplicitConnection);
-                            results.Add(node);
-                        }
-                    }
-                }
-            }
-
-            return results;
-        }
-
-        private static string[] GetSoftwareRegKeys()
-        {
-            return ProcessTools.Is64BitProcess ? new[] { KeyLm, KeyCu, KeyLmWow, KeyCuWow } : new[] { KeyLm, KeyCu };
-        }
-
         private IEnumerable<RegistryJunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
             var returnList = new List<RegistryJunkNode>();
@@ -232,7 +160,7 @@ namespace UninstallTools.Junk
 
                     // Check if application's location is explicitly mentioned in any of the values
                     // TODO Check default value too, but with lower confidence
-                    foreach (var valueName in softwareKey.GetValueNames())
+                    foreach (var valueName in GetValueNamesSafe(softwareKey))
                     {
                         var hit = false;
 
@@ -298,14 +226,91 @@ namespace UninstallTools.Junk
             return returnList;
         }
 
-        private bool TestPathsEqualExe(string keyValue)
+        private static IEnumerable<string> GetValueNamesSafe(RegistryKey key)
         {
-            return TestPathsEqual(Path.GetDirectoryName(keyValue));
+            try
+            {
+                return key.GetValueNames();
+            }
+            catch (IOException)
+            {
+                return Enumerable.Empty<string>();
+            }
+        }
+
+        private IEnumerable<RegistryJunkNode> ScanFirewallRules()
+        {
+            const string firewallRulesKey = @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
+            const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
+
+            var results = new List<RegistryJunkNode>();
+            if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
+                return results;
+
+            using (var key = Registry.LocalMachine.OpenSubKey(firewallRulesKey))
+            {
+                if (key != null)
+                {
+                    foreach (var valueName in GetValueNamesSafe(key))
+                    {
+                        var value = key.GetValue(valueName) as string;
+                        if (string.IsNullOrEmpty(value)) continue;
+
+                        var start = value.IndexOf("|App=", StringComparison.InvariantCultureIgnoreCase) + 5;
+                        var charCount = value.IndexOf('|', start) - start;
+                        var fullPath = Environment.ExpandEnvironmentVariables(value.Substring(start, charCount));
+                        if (fullPath.StartsWith(Uninstaller.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var node = new RegistryValueJunkNode(fullFirewallRulesKey, valueName, Uninstaller.DisplayName);
+                            node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            results.Add(node);
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
+        private IEnumerable<RegistryJunkNode> ScanTracing()
+        {
+            const string tracingKey = @"SOFTWARE\Microsoft\Tracing";
+            const string fullTracingKey = @"HKEY_LOCAL_MACHINE\" + tracingKey;
+
+            var results = new List<RegistryJunkNode>();
+            using (var key = Registry.LocalMachine.OpenSubKey(tracingKey))
+            {
+                if (key != null)
+                {
+                    foreach (var subKeyName in key.GetSubKeyNames())
+                    {
+                        var i = subKeyName.LastIndexOf('_');
+                        if (i <= 0)
+                            continue;
+
+                        var str = subKeyName.Substring(0, i);
+
+                        var conf = GenerateConfidence(str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
+                        if (conf.Any())
+                        {
+                            var node = new RegistryJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);
+                            node.Confidence.AddRange(conf);
+                            results.Add(node);
+                        }
+                    }
+                }
+            }
+            return results;
         }
 
         private bool TestPathsEqual(string keyValue)
         {
             return PathTools.PathsEqual(Uninstaller.InstallLocation, keyValue);
+        }
+
+        private bool TestPathsEqualExe(string keyValue)
+        {
+            return TestPathsEqual(Path.GetDirectoryName(keyValue));
         }
     }
 }
