@@ -88,6 +88,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to save settings.
+        /// </summary>
+        internal static string Error_SaveSettingsFailed {
+            get {
+                return ResourceManager.GetString("Error_SaveSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GUID found.
         /// </summary>
         internal static string GuidFound {

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
+using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -92,9 +93,10 @@ namespace BulkCrapUninstaller.Functions
             {
                 Selected.Settings.Save();
             }
-            catch
+            catch (Exception ex)
             {
-                /*Failed to save settings, probably read only drive TODO: info box*/
+                /*Failed to save settings, probably read only drive*/
+                PremadeDialogs.GenericError(new Exception(Localisable.Error_SaveSettingsFailed, ex));
             }
         }
     }

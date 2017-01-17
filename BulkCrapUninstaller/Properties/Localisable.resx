@@ -717,4 +717,7 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
     <value>Thumbprint</value>
   </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Failed to save settings</value>
+  </data>
 </root>
