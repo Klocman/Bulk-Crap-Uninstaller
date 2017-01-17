@@ -324,4 +324,13 @@
   <data name="TwitterLink" xml:space="preserve">
     <value>https://twitter.com/intent/tweet?text=Check+out+this+cool+uninstaller+that+I+found!+sourceforge.net/projects/bulk-crap-uninstaller/</value>
   </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Save uninstall list</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Save changes to the opened uninstall list?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>There are unsaved changes in the opened uninstall list that will be lost by closing it.</value>
+  </data>
 </root>

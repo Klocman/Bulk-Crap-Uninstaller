@@ -627,5 +627,24 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_UninstallFromDirectoryUninstallerFound_Details + "\n\n" + uninstallString,
                     SystemIcons.Information, Buttons.ButtonUninstall, Buttons.ButtonSkip)) == CustomMessageBox.PressedButton.Middle;
         }
+
+        public static PressedButton AskToSaveUninstallList()
+        {
+            switch (CustomMessageBox.ShowDialog(DefaultOwner,
+                    new CmbBasicSettings(Resources.MessageBoxes_AskToSaveUninstallList_Title,
+                        Resources.MessageBoxes_AskToSaveUninstallList_Message,
+                        Resources.MessageBoxes_AskToSaveUninstallList_Details,
+                        SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo, Buttons.ButtonCancel)))
+            {
+                case CustomMessageBox.PressedButton.Right:
+                    return PressedButton.Yes;
+
+                case CustomMessageBox.PressedButton.Middle:
+                    return PressedButton.No;
+
+                default:
+                    return PressedButton.Cancel;
+            }
+        }
     }
 }

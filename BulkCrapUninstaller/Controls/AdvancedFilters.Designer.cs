@@ -85,7 +85,7 @@
             resources.ApplyResources(this.toolStripButtonSaveUl, "toolStripButtonSaveUl");
             this.toolStripButtonSaveUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonSaveUl.Name = "toolStripButtonSaveUl";
-            this.toolStripButtonSaveUl.Click += new System.EventHandler(this.toolStripButtonSaveUl_Click);
+            this.toolStripButtonSaveUl.Click += new System.EventHandler(this.ShowSaveDialog);
             // 
             // toolStripSeparator25
             // 
