@@ -159,8 +159,7 @@ namespace UninstallTools.Startup.Normal
                 if (File.Exists(startupEntry.FullLongName))
                 {
                     File.Delete(newPath);
-                    if (!Directory.Exists(DriveDisableBackupPath))
-                        Directory.CreateDirectory(DriveDisableBackupPath);
+                    Directory.CreateDirectory(DriveDisableBackupPath);
                     File.Move(startupEntry.FullLongName, newPath);
                     startupEntry.BackupPath = newPath;
                 }
@@ -254,8 +253,8 @@ namespace UninstallTools.Startup.Normal
         /// <param name="newEntryPath">Full path to the new backup file</param>
         private static void CreateDisabledEntry(StartupEntry startupEntry, string newEntryPath)
         {
-            using (var disabledStartupEntryStore = RegistryTools.OpenRegistryKey(
-                startupEntry.IsRegKey ? RegistryDisabledKey.Path : DriveDisabledKey.Path, true))
+            using (var disabledStartupEntryStore = RegistryTools.CreateSubKeyRecursively(
+                startupEntry.IsRegKey ? RegistryDisabledKey.Path : DriveDisabledKey.Path))
             {
                 var disabledSubKeyName = startupEntry.IsRegKey
                     ? startupEntry.EntryLongName

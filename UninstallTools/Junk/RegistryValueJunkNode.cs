@@ -26,7 +26,7 @@ namespace UninstallTools.Junk
         {
             using (var key = RegistryTools.OpenRegistryKey(ParentPath, true))
             {
-                key.DeleteValue(Name);
+                key?.DeleteValue(Name);
             }
         }
 

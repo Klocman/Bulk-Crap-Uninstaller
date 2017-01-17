@@ -150,7 +150,7 @@ namespace UninstallTools.Startup.Normal
             if (string.IsNullOrEmpty(startupEntry.Command))
                 return;
 
-            using (var runKey = RegistryTools.OpenRegistryKey(startupEntry.ParentLongName, true))
+            using (var runKey = RegistryTools.CreateSubKeyRecursively(startupEntry.ParentLongName))
             {
                 runKey.SetValue(startupEntry.EntryLongName, startupEntry.Command, RegistryValueKind.String);
             }

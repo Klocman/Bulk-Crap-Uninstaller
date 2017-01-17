@@ -30,7 +30,9 @@ namespace UninstallTools.Junk
 
         public override void Backup(string backupDirectory)
         {
-            Entry.CreateBackup(Path.Combine(CreateBackupDirectory(backupDirectory), "Startup"));
+            var p = Path.Combine(CreateBackupDirectory(backupDirectory), "Startup");
+            Directory.CreateDirectory(p);
+            Entry.CreateBackup(p);
         }
 
         public override void Delete()

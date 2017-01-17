@@ -50,7 +50,7 @@ namespace UninstallTools.Junk
         ///     Confidence that this entry is safe to remove
         /// </summary>
         public JunkConfidence Confidence { get; internal set; }
-        
+
         /// <summary>
         /// Create this item's backup inside of the supplied directory
         /// </summary>
@@ -90,8 +90,7 @@ namespace UninstallTools.Junk
         protected string CreateBackupDirectory(string parent)
         {
             var p = Path.Combine(parent, PathTools.SanitizeFileName(UninstallerName));
-            if (!Directory.Exists(p))
-                Directory.CreateDirectory(p);
+            Directory.CreateDirectory(p);
             return p;
         }
     }
