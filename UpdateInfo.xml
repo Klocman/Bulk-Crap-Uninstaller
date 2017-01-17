@@ -2,7 +2,7 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.6.0.4250</Version>
+<Version>3.6.0.50000</Version>
 <URL>https://dl.dropboxusercontent.com/u/21871088/Update/BCU_Hotfix.zip</URL>
 <Changes>
 This is a hotfix for 3.6.0
@@ -15,6 +15,6 @@ Improved logic for detecting stuck quiet uninstallers.
 Fixed detection of stuck quiet Msiexec uninstallers.
 And many bugfixes.
 </Changes>
-<Hash>a4bcd9637da5c631ae58819a0c926cc8</Hash>
+<Hash>5b6ab3c5d8b810ad8645cd7da8dbf9e4</Hash>
 </Update>
 </Root>
