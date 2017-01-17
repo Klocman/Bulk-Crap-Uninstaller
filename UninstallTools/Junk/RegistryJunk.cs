@@ -159,10 +159,9 @@ namespace UninstallTools.Junk
                     var confidence = GenerateConfidence(keyName, keyDir, level).ToList();
 
                     // Check if application's location is explicitly mentioned in any of the values
-                    // TODO Check default value too, but with lower confidence
                     foreach (var valueName in GetValueNamesSafe(softwareKey))
                     {
-                        var hit = false;
+                        bool hit;
 
                         if (InstallDirKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
                         {
@@ -178,6 +177,10 @@ namespace UninstallTools.Junk
                             hit = File.Exists(path)
                                 ? TestPathsEqualExe(softwareKey.GetValue(valueName) as string)
                                 : TestPathsEqual(softwareKey.GetValue(valueName) as string);
+                        }
+                        else
+                        {
+                            hit = TestPathsEqual(softwareKey.GetValue(null) as string);
                         }
 
                         if (hit)
