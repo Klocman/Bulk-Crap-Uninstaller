@@ -116,6 +116,7 @@ namespace BulkCrapUninstaller.Forms
                     _listView.UpdateColumnFiltering();
             };
             advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
+            advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
 
             // Setup update manager, skip at first boot to let user change the setting
             UpdateGrabber.Setup();
@@ -141,7 +142,7 @@ namespace BulkCrapUninstaller.Forms
             debugToolStripMenuItem.Enabled = Program.EnableDebug;
             debugToolStripMenuItem.Visible = Program.EnableDebug;
             _setMan.Selected.Settings.AdvancedSimulate = Program.EnableDebug;
-            
+
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
@@ -170,12 +171,11 @@ namespace BulkCrapUninstaller.Forms
 
         private void RefreshTitleBar(object sender, EventArgs e)
         {
-            //TODO unsaved / no filename
-
             var result = MainTitleBarText;
-            if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFilename))
+            if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFilename) || advancedFilters1.UnsavedChanges)
             {
-                result = $"{result} [{advancedFilters1.CurrentListFilename}]";
+                var changedDot = advancedFilters1.UnsavedChanges ? "*" : string.Empty;
+                result = $"{result} [{advancedFilters1.CurrentListFilename ?? string.Empty}{changedDot}]";
             }
             Text = result;
         }
@@ -518,13 +518,13 @@ namespace BulkCrapUninstaller.Forms
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason != CloseReason.UserClosing || _setMan.Selected.Settings.MiscFirstRun || 
+            if (e.CloseReason != CloseReason.UserClosing || _setMan.Selected.Settings.MiscFirstRun ||
                 !WindowsTools.IsNetworkAvailable())
                 return;
-            
+
             if (!_setMan.Selected.Settings.MiscFeedbackNagNeverShow)
             {
-                if (!_setMan.Selected.Settings.MiscFeedbackNagShown && 
+                if (!_setMan.Selected.Settings.MiscFeedbackNagShown &&
                     DateTime.Now - Process.GetCurrentProcess().StartTime > TimeSpan.FromMinutes(3))
                 {
                     Enabled = false;

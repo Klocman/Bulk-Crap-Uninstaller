@@ -14,12 +14,27 @@ namespace BulkCrapUninstaller.Controls
         public event EventHandler CurrentListChanged;
         public event EventHandler CurrentListFilenameChanged;
         public event EventHandler FiltersChanged;
+        public event EventHandler UnsavedChangesChanged;
 
-        private bool _unsavedChanges;
         private static readonly string DefaultUninstallListPath = Path.Combine(Program.AssemblyLocation.FullName, Resources.DefaultUninstallListFilename);
         private string _currentListFilename;
+        private bool _unsavedChanges;
 
         public UninstallList CurrentList => uninstallListEditor1.CurrentList;
+
+        public bool UnsavedChanges
+        {
+            get { return _unsavedChanges; }
+            private set
+            {
+                if(_unsavedChanges != value)
+                {
+                    _unsavedChanges = value;
+                    UnsavedChangesChanged?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
         public string CurrentListFilename
         {
             get { return _currentListFilename; }
@@ -43,7 +58,7 @@ namespace BulkCrapUninstaller.Controls
 
         private bool AskToSaveUnsaved()
         {
-            if (!_unsavedChanges || uninstallListEditor1.CurrentList == null)
+            if (!UnsavedChanges || uninstallListEditor1.CurrentList == null)
                 return true;
 
             switch (MessageBoxes.AskToSaveUninstallList())
@@ -77,7 +92,7 @@ namespace BulkCrapUninstaller.Controls
 
                 CurrentListFilename = filename;
                 uninstallListEditor1.CurrentList = result;
-                _unsavedChanges = false;
+                UnsavedChanges = false;
             }
             catch (Exception ex)
             {
@@ -98,13 +113,13 @@ namespace BulkCrapUninstaller.Controls
             if (CurrentList == null)
                 CurrentListFilename = string.Empty;
 
-            _unsavedChanges = false;
+            UnsavedChanges = false;
             CurrentListChanged?.Invoke(sender, e);
         }
 
         private void OnFiltersChanged(object sender, EventArgs e)
         {
-            _unsavedChanges = true;
+            UnsavedChanges = true;
             FiltersChanged?.Invoke(sender, e);
         }
 
@@ -119,7 +134,7 @@ namespace BulkCrapUninstaller.Controls
             {
                 CurrentList.SaveToFile(saveUlDialog.FileName);
                 CurrentListFilename = saveUlDialog.FileName;
-                _unsavedChanges = false;
+                UnsavedChanges = false;
             }
             catch (Exception ex)
             {
