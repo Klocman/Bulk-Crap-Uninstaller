@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Management;
 using Klocman.Tools;
+using Microsoft.Win32;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Startup.Service
@@ -66,7 +68,16 @@ namespace UninstallTools.Startup.Service
 
         public override void CreateBackup(string backupPath)
         {
-            throw new NotImplementedException();
+            var path = @"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\" + ProgramName;
+
+            using (var key = RegistryTools.OpenRegistryKey(path))
+            {
+                if(key == null)
+                    throw new IOException();
+            }
+
+            var filename = PathTools.SanitizeFileName(FullLongName) + ".reg";
+            RegistryTools.ExportRegistry(Path.Combine(backupPath, filename), new[] {path});
         }
     }
 }

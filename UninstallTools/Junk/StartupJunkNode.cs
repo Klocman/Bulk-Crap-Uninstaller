@@ -1,29 +1,18 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.IO;
 using System.Security.Permissions;
-using Klocman.Forms.Tools;
+using Klocman.Tools;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
 using UninstallTools.Startup.Normal;
 
 namespace UninstallTools.Junk
 {
-    public sealed class StartupJunkNode : JunkNode
+    public class StartupJunkNode : JunkNode
     {
-        internal StartupJunkNode(StartupEntryBase entry, string parentName)
+        internal StartupJunkNode(StartupEntryBase entry, string uninstallerName)
+            : base(entry.ParentLongName, entry.EntryLongName, uninstallerName)
         {
             Entry = entry;
-
-            UninstallerName = parentName;
-
-            ParentPath = entry.ParentLongName;
-            Name = entry.EntryLongName;
-
-            /*if (!string.IsNullOrEmpty(entry.CommandFilePath))
-            {
-                ParentPath = Path.GetDirectoryName(entry.CommandFilePath);
-                Name = Path.GetFileName(entry.CommandFilePath);
-            }*/
 
             Confidence.Add(StartupJunk.ConfidenceStartupMatched);
 
@@ -39,30 +28,20 @@ namespace UninstallTools.Junk
         public override string GroupName => Localisation.Junk_Startup_GroupName;
         private StartupEntryBase Entry { get; }
 
+        public override void Backup(string backupDirectory)
+        {
+            Entry.CreateBackup(Path.Combine(CreateBackupDirectory(backupDirectory), "Startup"));
+        }
+
         public override void Delete()
         {
-            try
-            {
-                Entry.Delete();
-            }
-            catch (Exception ex)
-            {
-                // Failed to delete the file or value
-                Debug.WriteLine("StartupJunkNode\\Delete -> " + ex.Message);
-            }
+            Entry.Delete();
         }
 
         [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
-            try
-            {
-                StartupManager.OpenStartupEntryLocations(new[] {Entry});
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
+            StartupManager.OpenStartupEntryLocations(new[] { Entry });
         }
     }
 }

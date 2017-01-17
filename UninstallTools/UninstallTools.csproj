@@ -50,10 +50,13 @@
     </Compile>
     <Compile Include="Junk\Confidence.cs" />
     <Compile Include="Junk\ConfidencePart.cs" />
+    <Compile Include="Junk\DriveDirectoryJunkNode.cs" />
+    <Compile Include="Junk\DriveFileJunkNode.cs" />
     <Compile Include="Junk\DriveJunkNode.cs" />
     <Compile Include="Junk\IJunkCreator.cs" />
     <Compile Include="Junk\JunkNode.cs" />
     <Compile Include="Junk\RegistryJunkNode.cs" />
+    <Compile Include="Junk\RegistryKeyJunkNode.cs" />
     <Compile Include="Junk\RegistryValueJunkNode.cs" />
     <Compile Include="Junk\ShortcutJunk.cs" />
     <Compile Include="Junk\StartupJunk.cs" />

@@ -135,7 +135,7 @@ namespace BulkCrapUninstaller.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBoxes.ExportFailed(ex.Message);
+                    MessageBoxes.ExportFailed(ex.Message, this);
                 }
             }
         }

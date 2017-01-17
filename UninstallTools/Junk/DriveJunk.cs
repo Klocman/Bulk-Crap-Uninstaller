@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Klocman.Extensions;
+using Klocman.Tools;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Klocman.Extensions;
-using Klocman.Tools;
 using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Junk
@@ -12,14 +12,8 @@ namespace UninstallTools.Junk
     public class DriveJunk : JunkBase
     {
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
-
         private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;
         private IEnumerable<string> _otherInstallLocations;
-
-        public DriveJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
-            : base(entry, otherUninstallers)
-        {
-        }
 
         private static IEnumerable<DirectoryInfo> FoldersToCheck
         {
@@ -50,7 +44,6 @@ namespace UninstallTools.Junk
                 return _foldersToCheck;
             }
         }
-
         private IEnumerable<string> OtherInstallLocations
         {
             get
@@ -75,26 +68,18 @@ namespace UninstallTools.Junk
             }
         }
 
-        public static IEnumerable<DriveJunkNode> RemoveDuplicates(IEnumerable<DriveJunkNode> input)
+        public DriveJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+                    : base(entry, otherUninstallers)
         {
-            foreach (var group in input.GroupBy(x => x.FullName))
-            {
-                DriveJunkNode node = null;
-                foreach (var item in group)
-                {
-                    if (node == null)
-                    {
-                        node = item;
-                    }
-                    else
-                    {
-                        node.Confidence.AddRange(item.Confidence.ConfidenceParts);
-                    }
-                }
+        }
 
-                if (node != null)
-                    yield return node;
-            }
+        private bool CheckAgainstOtherInstallers(FileSystemInfo location)
+        {
+            if (location == null)
+                return false;
+
+            var fullname = location.FullName;
+            return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.OrdinalIgnoreCase));
         }
 
         public override IEnumerable<JunkNode> FindJunk()
@@ -139,7 +124,149 @@ namespace UninstallTools.Junk
             return RemoveDuplicates(output).Cast<JunkNode>();
         }
 
-        // Look for old Windows Error Reporting reports
+        private IEnumerable<DriveJunkNode> FindJunkRecursively(DirectoryInfo directory, int level = 0)
+        {
+            var results = new List<DriveJunkNode>();
+
+            try
+            {
+                var dirs = directory.GetDirectories();
+
+                foreach (var dir in dirs)
+                {
+                    if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
+                        continue;
+
+                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
+
+                    DriveJunkNode newNode = null;
+                    if (generatedConfidence.Any())
+                    {
+                        newNode = new DriveDirectoryJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
+                        newNode.Confidence.AddRange(generatedConfidence);
+
+                        if (CheckAgainstOtherInstallers(dir))
+                            newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+
+                        results.Add(newNode);
+                    }
+
+                    if (level >= 1) continue;
+
+                    var junkNodes = FindJunkRecursively(dir, level + 1).ToList();
+                    results.AddRange(junkNodes);
+
+                    if (newNode != null)
+                    {
+                        // Check if the directory will have nothing left after junk removal.
+                        if (!dir.GetFiles().Any())
+                        {
+                            var subDirs = dir.GetDirectories();
+                            if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.FullName))))
+                                newNode.Confidence.Add(ConfidencePart.AllSubdirsMatched);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                if (Debugger.IsAttached) throw;
+            }
+
+            return results;
+        }
+
+        public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
+        {
+            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level).ToList();
+
+            if (!baseOutput.Any(x => x.Change > 0))
+                return Enumerable.Empty<ConfidencePart>();
+
+            if (UninstallToolsGlobalConfig.QuestionableDirectoryNames.Contains(itemName, StringComparison.OrdinalIgnoreCase))
+                baseOutput.Add(ConfidencePart.QuestionableDirectoryName);
+
+            return baseOutput;
+        }
+
+        // TODO overhaul
+        private DriveJunkNode GetJunkNodeFromLocation(string directory)
+        {
+            try
+            {
+                var dirInfo = new DirectoryInfo(directory);
+
+                if (dirInfo.FullName.Contains(FullWindowsDirectoryName) || !dirInfo.Exists || dirInfo.Parent == null)
+                    return null;
+
+                var newNode = new DriveDirectoryJunkNode(Path.GetDirectoryName(directory),
+                    Path.GetFileName(directory), Uninstaller.DisplayName);
+                newNode.Confidence.Add(ConfidencePart.ExplicitConnection);
+
+                if (CheckAgainstOtherInstallers(dirInfo))
+                    newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+
+                return newNode;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private IEnumerable<DriveJunkNode> GetUninstallerJunk()
+        {
+            if (!File.Exists(Uninstaller.UninstallerFullFilename))
+                return Enumerable.Empty<DriveJunkNode>();
+
+            DriveJunkNode result;
+
+            switch (Uninstaller.UninstallerKind)
+            {
+                case UninstallerType.InstallShield:
+                    var target = Path.GetDirectoryName(Uninstaller.UninstallerFullFilename);
+                    result = new DriveDirectoryJunkNode(Path.GetDirectoryName(target), 
+                        Path.GetFileName(target), Uninstaller.DisplayName);
+                    break;
+
+                case UninstallerType.InnoSetup:
+                case UninstallerType.Msiexec:
+                case UninstallerType.Nsis:
+                    result = new DriveFileJunkNode(Path.GetDirectoryName(Uninstaller.UninstallerFullFilename), 
+                        Path.GetFileName(Uninstaller.UninstallerFullFilename), Uninstaller.DisplayName);
+                    break;
+
+                default:
+                    return Enumerable.Empty<DriveJunkNode>();
+            }
+
+            result.Confidence.Add(ConfidencePart.ExplicitConnection);
+
+            return new[] { result };
+        }
+
+        public static IEnumerable<DriveJunkNode> RemoveDuplicates(IEnumerable<DriveJunkNode> input)
+        {
+            foreach (var group in input.GroupBy(x => x.FullName))
+            {
+                DriveJunkNode node = null;
+                foreach (var item in group)
+                {
+                    if (node == null)
+                    {
+                        node = item;
+                    }
+                    else
+                    {
+                        node.Confidence.AddRange(item.Confidence.ConfidenceParts);
+                    }
+                }
+
+                if (node != null)
+                    yield return node;
+            }
+        }
+
         private IEnumerable<DriveJunkNode> SearchWerReports()
         {
             var output = new List<DriveJunkNode>();
@@ -147,7 +274,8 @@ namespace UninstallTools.Junk
             if (!Directory.Exists(Uninstaller.InstallLocation))
                 return output;
 
-            var appExecutables = Directory.GetFiles(Uninstaller.InstallLocation, "*.exe", SearchOption.AllDirectories).Select(Path.GetFileName).ToList();
+            var appExecutables = Directory.GetFiles(Uninstaller.InstallLocation, "*.exe", SearchOption.AllDirectories)
+                .Select(Path.GetFileName).ToList();
 
             var archives = new[]
             {
@@ -168,148 +296,17 @@ namespace UninstallTools.Junk
                 if (count <= 1) continue;
 
                 var filename = candidate.Substring(startIndex, count);
-                
-                if(appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
+
+                if (appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    var node = new DriveJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate), Uninstaller.DisplayName);
+                    var node = new DriveDirectoryJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate), 
+                        Uninstaller.DisplayName);
                     node.Confidence.Add(ConfidencePart.ExplicitConnection);
                     output.Add(node);
                 }
             }
 
             return output;
-        }
-
-        private IEnumerable<DriveJunkNode> GetUninstallerJunk()
-        {
-            if (!File.Exists(Uninstaller.UninstallerFullFilename))
-                return Enumerable.Empty<DriveJunkNode>();
-
-            string target;
-            switch (Uninstaller.UninstallerKind)
-            {
-                case UninstallerType.InstallShield:
-                    target = Path.GetDirectoryName(Uninstaller.UninstallerFullFilename);
-                    break;
-
-                case UninstallerType.InnoSetup:
-                case UninstallerType.Msiexec:
-                case UninstallerType.Nsis:
-                    target = Uninstaller.UninstallerFullFilename;
-                    break;
-
-                default:
-                    return Enumerable.Empty<DriveJunkNode>();
-            }
-
-            var fileNode = new DriveJunkNode(Path.GetDirectoryName(target),
-                Path.GetFileName(target), Uninstaller.DisplayName);
-            fileNode.Confidence.Add(ConfidencePart.ExplicitConnection);
-
-            return new[] { fileNode };
-        }
-
-        public override IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
-        {
-            var baseOutput = base.GenerateConfidence(itemName, itemParentPath, level).ToList();
-
-            if (!baseOutput.Any(x => x.Change > 0))
-                return Enumerable.Empty<ConfidencePart>();
-            
-            if (UninstallToolsGlobalConfig.QuestionableDirectoryNames.Contains(itemName, StringComparison.OrdinalIgnoreCase))
-                baseOutput.Add(ConfidencePart.QuestionableDirectoryName);
-
-            return baseOutput;
-        }
-
-        // Returns true if another installer is still using this location
-        private bool CheckAgainstOtherInstallers(FileSystemInfo location)
-        {
-            if (location == null)
-                return false;
-
-            var fullname = location.FullName;
-            return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.OrdinalIgnoreCase));
-        }
-
-        private IEnumerable<DriveJunkNode> FindJunkRecursively(DirectoryInfo directory, int level = 0)
-        {
-            var results = new List<DriveJunkNode>();
-
-            try
-            {
-                var dirs = directory.GetDirectories();
-
-                foreach (var dir in dirs)
-                {
-                    if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
-                        continue;
-
-                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
-
-                    DriveJunkNode newNode = null;
-                    if (generatedConfidence.Any())
-                    {
-                        newNode = new DriveJunkNode(directory.FullName, dir.Name, Uninstaller.DisplayName);
-                        newNode.Confidence.AddRange(generatedConfidence);
-
-                        if (CheckAgainstOtherInstallers(dir))
-                            newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
-
-                        results.Add(newNode);
-                    }
-
-                    if (level >= 1) continue;
-
-                    var junkNodes = FindJunkRecursively(dir, level + 1).ToList();
-                    results.AddRange(junkNodes);
-
-                    if (newNode != null)
-                    {
-                        // Check if the directory will have nothing left after junk removal.
-                        if(!dir.GetFiles().Any())
-                        {
-                            var subDirs = dir.GetDirectories();
-                            if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.FullName))))
-                                newNode.Confidence.Add(ConfidencePart.AllSubdirsMatched);
-                        }
-                    }
-                }
-            }
-            catch
-            {
-                if (Debugger.IsAttached) throw;
-            }
-
-            return results;
-        }
-
-        private DriveJunkNode GetJunkNodeFromLocation(string directory)
-        {
-            try
-            {
-                var dirInfo = new DirectoryInfo(directory);
-
-                if (dirInfo.FullName.Contains(FullWindowsDirectoryName) || !dirInfo.Exists || dirInfo.Parent == null)
-                    return null;
-
-                var newNode = new DriveJunkNode(Path.GetDirectoryName(directory),
-                    Path.GetFileName(directory), Uninstaller.DisplayName);
-                newNode.Confidence.Add(ConfidencePart.ExplicitConnection);
-
-                //BUG doesn't do anything
-                //var generatedConfidence = GenerateConfidence(dirInfo.Name, dirInfo.Parent.FullName, 1, true);
-                //newNode.Confidence.AddRange(generatedConfidence);
-
-                if (CheckAgainstOtherInstallers(dirInfo))
-                    newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
-
-                return newNode;
-            }
-            catch
-            {
-                return null;
-            }
         }
     }
 }

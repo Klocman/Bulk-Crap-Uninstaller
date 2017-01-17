@@ -36,7 +36,7 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JunkRemoveWindow));
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.saveFileDialogBackupRegistry = new System.Windows.Forms.SaveFileDialog();
+            this.backupDirDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@ namespace BulkCrapUninstaller.Forms
             this.headerIntro = new System.Windows.Forms.Label();
             this.headerConfTitle = new System.Windows.Forms.Label();
             this.headerConfInfo = new System.Windows.Forms.Label();
-            this.usageTracker1 = new UsageTracker();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.listViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -73,12 +73,9 @@ namespace BulkCrapUninstaller.Forms
             this.exportDialog.RestoreDirectory = true;
             this.exportDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportDialog_FileOk);
             // 
-            // saveFileDialogBackupRegistry
+            // backupDirDialog
             // 
-            this.saveFileDialogBackupRegistry.DefaultExt = "reg";
-            this.saveFileDialogBackupRegistry.FileName = "New registry backup";
-            resources.ApplyResources(this.saveFileDialogBackupRegistry, "saveFileDialogBackupRegistry");
-            this.saveFileDialogBackupRegistry.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogBackupRegistry_FileOk);
+            resources.ApplyResources(this.backupDirDialog, "backupDirDialog");
             // 
             // buttonCancel
             // 
@@ -145,11 +142,13 @@ namespace BulkCrapUninstaller.Forms
             this.objectListViewMain.AllColumns.Add(this.olvColumnSafety);
             this.objectListViewMain.AllColumns.Add(this.olvColumnUninstallerName);
             this.objectListViewMain.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.objectListViewMain.CellEditUseWholeCell = false;
             this.objectListViewMain.CheckBoxes = true;
             this.objectListViewMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnPath,
             this.olvColumnSafety,
             this.olvColumnUninstallerName});
+            this.objectListViewMain.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.objectListViewMain, "objectListViewMain");
             this.objectListViewMain.FullRowSelect = true;
             this.objectListViewMain.GridLines = true;
@@ -265,7 +264,7 @@ namespace BulkCrapUninstaller.Forms
         #endregion
 
         private SaveFileDialog exportDialog;
-        private SaveFileDialog saveFileDialogBackupRegistry;
+        private FolderBrowserDialog backupDirDialog;
         private Button buttonCancel;
         private Button buttonAccept;
         private Button buttonExport;

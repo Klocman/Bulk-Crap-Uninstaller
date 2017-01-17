@@ -151,7 +151,7 @@ namespace UninstallTools.Junk
             }
         }
 
-        public class ProgramFilesJunkNode : DriveJunkNode
+        public class ProgramFilesJunkNode : DriveDirectoryJunkNode
         {
             public ProgramFilesJunkNode(string parentPath, string name, string uninstallerName)
                 : base(parentPath, name, uninstallerName)

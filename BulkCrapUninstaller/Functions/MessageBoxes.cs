@@ -48,14 +48,14 @@ namespace BulkCrapUninstaller.Functions
                     SystemIcons.Question, Buttons.ButtonRate, Buttons.ButtonSubmit, Buttons.ButtonClose));
         }
 
-        internal static PressedButton BackupFailedQuestion(string exMessage)
+        internal static PressedButton BackupFailedQuestion(string exMessage, Form owner)
         {
             switch (
-                CustomMessageBox.ShowDialog(DefaultOwner,
+                CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Leftover_removal,
                         Localisable.MessageBoxes_BackupFailedQuestion_Message,
                         Localisable.MessageBoxes_BackupFailedQuestion_Details + exMessage,
-                        SystemIcons.Error, Buttons.ButtonContinue, Buttons.ButtonCancel)))
+                        SystemIcons.Warning, Buttons.ButtonContinue, Buttons.ButtonCancel)))
             {
                 case CustomMessageBox.PressedButton.Middle:
                     return PressedButton.Yes;
@@ -64,7 +64,7 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
-        internal static PressedButton BackupRegistryQuestion()
+        internal static PressedButton BackupRegistryQuestion(Form owner)
         {
             if (!Settings.Default.MessagesAskToBackup)
                 return PressedButton.No;
@@ -72,7 +72,7 @@ namespace BulkCrapUninstaller.Functions
             var check = new CmbCheckboxSettings(Localisable.MessageBoxes_RememberChoiceCheckbox)
             { DisableRightButton = true, DisableLeftButton = true };
             switch (
-                CustomMessageBox.ShowDialog(DefaultOwner,
+                CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Leftover_removal,
                         Localisable.MessageBoxes_BackupRegistryQuestion_Message,
                         Localisable.MessageBoxes_BackupRegistryQuestion_Details,
@@ -113,9 +113,9 @@ namespace BulkCrapUninstaller.Functions
             { StartPosition = FormStartPosition.CenterParent, AlwaysOnTop = true });
         }
 
-        internal static bool ConfirmLowConfidenceQuestion()
+        internal static bool ConfirmLowConfidenceQuestion(Form owner)
         {
-            return CustomMessageBox.ShowDialog(DefaultOwner,
+            return CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Junk_Leftover_removal,
                     Localisable.MessageBoxes_ConfirmLowConfidenceQuestion_Message,
                     Localisable.MessageBoxes_ConfirmLowConfidenceQuestion_Details,
@@ -134,9 +134,9 @@ namespace BulkCrapUninstaller.Functions
                    CustomMessageBox.PressedButton.Middle;
         }
 
-        internal static void ExportFailed(string exMessage)
+        internal static void ExportFailed(string exMessage, Form owner)
         {
-            CustomMessageBox.ShowDialog(DefaultOwner, new CmbBasicSettings(Localisable.MessageBoxes_ExportFailed_Title,
+            CustomMessageBox.ShowDialog(owner ?? DefaultOwner, new CmbBasicSettings(Localisable.MessageBoxes_ExportFailed_Title,
                 Localisable.MessageBoxes_ExportFailed_Message,
                 Localisable.MessageBoxes_ExportFailed_Details + Localisable.MessageBoxes_Error_details + exMessage,
                 SystemIcons.Error, Buttons.ButtonOk));

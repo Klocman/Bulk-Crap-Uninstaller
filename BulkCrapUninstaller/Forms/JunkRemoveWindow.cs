@@ -21,7 +21,8 @@ namespace BulkCrapUninstaller.Forms
     {
         private static readonly string SelectionBoxText = Localisable.JunkRemove_SelectionBoxText;
 
-        private readonly string _defaultRegBackupFilename;
+        private static readonly string BackupDateFormat =
+            new CultureInfo("en-US", false).DateTimeFormat.SortableDateTimePattern.Replace(':', '-').Replace('T', '_');
 
         private bool _confirmLowConfidenceMessageShown;
         private TypedObjectListView<JunkNode> _listViewWrapper;
@@ -45,11 +46,9 @@ namespace BulkCrapUninstaller.Forms
             else if (junkNodes.All(x => x.Confidence.GetRawConfidence() >= 0))
                 checkBoxHideLowConfidence.Enabled = false;
 
-            new[] { Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad }
+            new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
-
-            _defaultRegBackupFilename = saveFileDialogBackupRegistry.FileName;
         }
 
         public IEnumerable<JunkNode> SelectedJunk => _listViewWrapper.CheckedObjects;
@@ -60,18 +59,29 @@ namespace BulkCrapUninstaller.Forms
             if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
                 return;
 
-            if (SelectedJunk.Any(x => x is RegistryJunkNode))
+            if (SelectedJunk.Any(x => !(x is DriveJunkNode)))
             {
-                switch (MessageBoxes.BackupRegistryQuestion())
+                switch (MessageBoxes.BackupRegistryQuestion(this))
                 {
                     case MessageBoxes.PressedButton.Yes:
-                        var enus = new CultureInfo("en-US", false).DateTimeFormat;
-                        saveFileDialogBackupRegistry.FileName = _defaultRegBackupFilename + "_" +
-                                                                DateTime.Now.ToString(
-                                                                    enus.SortableDateTimePattern.Replace(':', '-')
-                                                                        .Replace('T', '_'));
-                        if (saveFileDialogBackupRegistry.ShowDialog() != DialogResult.OK)
+                        if (backupDirDialog.ShowDialog() != DialogResult.OK)
                             return;
+
+                        var dir = Path.Combine(backupDirDialog.SelectedPath, GetUniqueBackupName());
+                        Directory.CreateDirectory(dir);
+
+                        try
+                        {
+                            FilesystemTools.CompressDirectory(dir);
+                        }
+                        catch
+                        {
+                            // Ignore, not important
+                        }
+
+                        if (!RunBackup(dir))
+                            return;
+                        
                         break;
 
                     case MessageBoxes.PressedButton.No:
@@ -100,7 +110,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (!checkBoxHideLowConfidence.Checked)
             {
-                if (_confirmLowConfidenceMessageShown || MessageBoxes.ConfirmLowConfidenceQuestion())
+                if (_confirmLowConfidenceMessageShown || MessageBoxes.ConfirmLowConfidenceQuestion(this))
                     _confirmLowConfidenceMessageShown = true;
                 else
                     checkBoxHideLowConfidence.Checked = true;
@@ -118,10 +128,10 @@ namespace BulkCrapUninstaller.Forms
             var localisedEnumWrapper = comboBoxChecker.SelectedItem as LocalisedEnumWrapper;
             if (localisedEnumWrapper != null)
             {
-                var selectedConfidence = (Confidence)localisedEnumWrapper.TargetEnum;
+                var selectedConfidence = (Confidence) localisedEnumWrapper.TargetEnum;
 
                 if ((selectedConfidence != Confidence.Bad && selectedConfidence != Confidence.Questionable)
-                    || MessageBoxes.ConfirmLowConfidenceQuestion()) //Ask if selected low confidence
+                    || MessageBoxes.ConfirmLowConfidenceQuestion(this)) //Ask if selected low confidence
                 {
                     SelectUpTo(selectedConfidence);
                 }
@@ -137,54 +147,28 @@ namespace BulkCrapUninstaller.Forms
             objectListViewMain.BuildList(true);
         }
 
-        private void exportDialog_FileOk(object sender, CancelEventArgs e)
+        private void copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                File.WriteAllLines(exportDialog.FileName,
-                    objectListViewMain.FilteredObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray());
-            }
-            catch (Exception ex)
-            {
-                MessageBoxes.ExportFailed(ex.Message);
-            }
-        }
+                var items = objectListViewMain.SelectedObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray();
 
-        private bool JunkListFilter(object obj)
-        {
-            var item = obj as JunkNode;
-            if (item == null)
-                return false;
-
-            if (checkBoxHideLowConfidence.Checked && item.Confidence.GetRawConfidence() < 0)
-                return false;
-
-            return true;
-        }
-
-        private void JunkRemoveWindow_Shown(object sender, EventArgs e)
-        {
-            SelectUpTo(Confidence.Good);
-        }
-
-        private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
-        {
-            e.Cancel = true;
-            var item = e.RowObject as JunkNode;
-            if (item == null) return;
-            OpenJunkNodePreview(item);
-        }
-
-        private static void OpenJunkNodePreview(JunkNode item)
-        {
-            try
-            {
-                item.Open();
+                if (items.Any())
+                {
+                    Clipboard.SetText(string.Join(Environment.NewLine, items));
+                }
             }
             catch (Exception ex)
             {
                 PremadeDialogs.GenericError(ex);
             }
+        }
+
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = objectListViewMain.SelectedObject as JunkNode;
+            if (item == null) return;
+            DisplayDetails(item);
         }
 
         private static void DisplayDetails(JunkNode item)
@@ -218,29 +202,114 @@ namespace BulkCrapUninstaller.Forms
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void exportDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                File.WriteAllLines(exportDialog.FileName,
+                    objectListViewMain.FilteredObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBoxes.ExportFailed(ex.Message, this);
+            }
+        }
+
+        private string GetUniqueBackupName()
+        {
+            return "BCU Backup " + DateTime.Now.ToString(BackupDateFormat);
+        }
+
+        private bool JunkListFilter(object obj)
+        {
+            var item = obj as JunkNode;
+            if (item == null)
+                return false;
+
+            if (checkBoxHideLowConfidence.Checked && item.Confidence.GetRawConfidence() < 0)
+                return false;
+
+            return true;
+        }
+
+        private void JunkRemoveWindow_Shown(object sender, EventArgs e)
+        {
+            SelectUpTo(Confidence.Good);
+        }
+
+        private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
+        {
+            e.Cancel = true;
+            var item = e.RowObject as JunkNode;
+            if (item == null) return;
+            OpenJunkNodePreview(item);
+        }
+
+        private void objectListViewMain_CellRightClick(object sender, CellRightClickEventArgs e)
+        {
+            if (e.Model == null)
+                return;
+
+            if (objectListViewMain.CheckBoxes && !objectListViewMain.IsChecked(e.Model))
+            {
+                objectListViewMain.UncheckAll();
+                objectListViewMain.CheckObject(e.Model);
+            }
+
+            e.MenuStrip = listViewContextMenuStrip;
+        }
+
         private void objectListViewMain_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             buttonAccept.Enabled = SelectedJunk.Any();
         }
 
-        private void saveFileDialogBackupRegistry_FileOk(object sender, CancelEventArgs e)
+        private static void OpenJunkNodePreview(JunkNode item)
         {
             try
             {
-                var regPaths = SelectedJunk.OfType<RegistryJunkNode>()
-                    // If the thingy is a value, export the entire key
-                    .Select(x => x is RegistryValueJunkNode ? x.ParentPath : x.FullName)
-                    .Distinct();
-
-                RegistryTools.ExportRegistry(saveFileDialogBackupRegistry.FileName, regPaths);
+                item.Open();
             }
             catch (Exception ex)
             {
-                if (MessageBoxes.BackupFailedQuestion(ex.Message) == MessageBoxes.PressedButton.Cancel)
+                PremadeDialogs.GenericError(ex);
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = objectListViewMain.SelectedObject as JunkNode;
+            if (item == null) return;
+            OpenJunkNodePreview(item);
+        }
+
+        private bool RunBackup(string targetdir)
+        {
+            var failed = new List<string>();
+            foreach (var junkNode in SelectedJunk)
+            {
+                try
                 {
-                    e.Cancel = true;
+                    junkNode.Backup(targetdir);
+                }
+                catch
+                {
+                    failed.Add(junkNode.FullName);
                 }
             }
+
+            if (failed.Any())
+            {
+                failed.Sort();
+
+                if (MessageBoxes.BackupFailedQuestion(string.Join("\n", failed.ToArray()), this)
+                    != MessageBoxes.PressedButton.Yes)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void SelectUpTo(Confidence selectedConfidence)
@@ -264,51 +333,6 @@ namespace BulkCrapUninstaller.Forms
 
             objectListViewMain.SetObjects(junk);
             objectListViewMain.Sort(olvColumnUninstallerName, SortOrder.Ascending);
-        }
-
-        private void objectListViewMain_CellRightClick(object sender, CellRightClickEventArgs e)
-        {
-            if (e.Model == null)
-                return;
-
-            if (objectListViewMain.CheckBoxes && !objectListViewMain.IsChecked(e.Model))
-            {
-                objectListViewMain.UncheckAll();
-                objectListViewMain.CheckObject(e.Model);
-            }
-
-            e.MenuStrip = listViewContextMenuStrip;
-        }
-
-        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var item = objectListViewMain.SelectedObject as JunkNode;
-            if (item == null) return;
-            DisplayDetails(item);
-        }
-
-        private void copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var items = objectListViewMain.SelectedObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray();
-
-                if (items.Any())
-                {
-                    Clipboard.SetText(string.Join(Environment.NewLine, items));
-                }
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var item = objectListViewMain.SelectedObject as JunkNode;
-            if (item == null) return;
-            OpenJunkNodePreview(item);
         }
     }
 }

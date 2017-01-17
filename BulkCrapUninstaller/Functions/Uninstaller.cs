@@ -67,7 +67,7 @@ namespace BulkCrapUninstaller.Functions
             }
             catch (Exception ex)
             {
-                MessageBoxes.ExportFailed(ex.Message);
+                MessageBoxes.ExportFailed(ex.Message, null);
                 return false;
             }
             return true;
@@ -84,7 +84,6 @@ namespace BulkCrapUninstaller.Functions
         private static bool CheckForRunningProcessesBeforeCleanup(IEnumerable<JunkNode> entries)
         {
             var filters = entries
-                .Where(e => !(e is RegistryJunkNode))
                 .Select(x => x.FullName)
                 .Where(s => !string.IsNullOrEmpty(s))
                 .Distinct().ToArray();

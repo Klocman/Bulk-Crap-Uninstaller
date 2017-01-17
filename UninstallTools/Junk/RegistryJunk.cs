@@ -71,7 +71,7 @@ namespace UninstallTools.Junk
 
         public override IEnumerable<JunkNode> FindJunk()
         {
-            var returnList = new List<RegistryJunkNode>();
+            var returnList = new List<JunkNode>();
 
             // Look for junk
             foreach (var softwareKeyName in SoftwareRegKeys)
@@ -115,7 +115,7 @@ namespace UninstallTools.Junk
                             {
                                 if (nodeKey != null)
                                 {
-                                    var newNode = new RegistryJunkNode(Path.GetDirectoryName(nodePath),
+                                    var newNode = new RegistryKeyJunkNode(Path.GetDirectoryName(nodePath),
                                         Path.GetFileName(nodePath), Uninstaller.DisplayName);
                                     newNode.Confidence.AddRange(registryJunkNode.Confidence.ConfidenceParts);
                                     returnList.Add(newNode);
@@ -136,18 +136,18 @@ namespace UninstallTools.Junk
 
             if (Uninstaller.RegKeyStillExists())
             {
-                var regKeyNode = new RegistryJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
+                var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
                     Uninstaller.RegistryKeyName, Uninstaller.DisplayName);
                 regKeyNode.Confidence.Add(ConfidencePart.IsUninstallerRegistryKey);
                 returnList.Add(regKeyNode);
             }
 
-            return returnList.Cast<JunkNode>();
+            return returnList;
         }
 
-        private IEnumerable<RegistryJunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
+        private IEnumerable<JunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
-            var returnList = new List<RegistryJunkNode>();
+            var returnList = new List<JunkNode>();
 
             try
             {
@@ -193,7 +193,7 @@ namespace UninstallTools.Junk
                     if (confidence.Any())
                     {
                         // TODO Add extra confidence if the key is, or will be empty after junk removal
-                        var newNode = new RegistryJunkNode(keyDir, keyName, Uninstaller.DisplayName);
+                        var newNode = new RegistryKeyJunkNode(keyDir, keyName, Uninstaller.DisplayName);
                         newNode.Confidence.AddRange(confidence);
                         returnList.Add(newNode);
                     }
@@ -241,12 +241,12 @@ namespace UninstallTools.Junk
             }
         }
 
-        private IEnumerable<RegistryJunkNode> ScanFirewallRules()
+        private IEnumerable<JunkNode> ScanFirewallRules()
         {
             const string firewallRulesKey = @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
             const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
 
-            var results = new List<RegistryJunkNode>();
+            var results = new List<JunkNode>();
             if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
                 return results;
 
@@ -275,12 +275,12 @@ namespace UninstallTools.Junk
             return results;
         }
 
-        private IEnumerable<RegistryJunkNode> ScanTracing()
+        private IEnumerable<JunkNode> ScanTracing()
         {
             const string tracingKey = @"SOFTWARE\Microsoft\Tracing";
             const string fullTracingKey = @"HKEY_LOCAL_MACHINE\" + tracingKey;
 
-            var results = new List<RegistryJunkNode>();
+            var results = new List<JunkNode>();
             using (var key = Registry.LocalMachine.OpenSubKey(tracingKey))
             {
                 if (key != null)
@@ -296,7 +296,7 @@ namespace UninstallTools.Junk
                         var conf = GenerateConfidence(str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
                         if (conf.Any())
                         {
-                            var node = new RegistryJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);
+                            var node = new RegistryKeyJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);
                             node.Confidence.AddRange(conf);
                             results.Add(node);
                         }

@@ -55,14 +55,14 @@ namespace UninstallTools.Junk
 
         public override IEnumerable<JunkNode> FindJunk()
         {
-            var results = new List<DriveJunkNode>();
+            var results = new List<JunkNode>();
 
             foreach (var source in _links.ToList())
             {
                 if (CheckMatch(source.LinkTarget, Uninstaller.InstallLocation) ||
                     CheckMatch(source.LinkTarget, Uninstaller.UninstallerLocation))
                 {
-                    var driveJunkNode = new DriveJunkNode(Path.GetDirectoryName(source.LinkFilename),
+                    var driveJunkNode = new DriveFileJunkNode(Path.GetDirectoryName(source.LinkFilename),
                         Path.GetFileName(source.LinkFilename), Uninstaller.DisplayName);
                     driveJunkNode.Confidence.Add(ConfidencePart.ExplicitConnection);
                     results.Add(driveJunkNode);
@@ -70,7 +70,7 @@ namespace UninstallTools.Junk
                 }
             }
 
-            return results.Cast<JunkNode>();
+            return results;
         }
 
         private static bool CheckMatch(string linkTarget, string uninstallerTarget)

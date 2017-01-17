@@ -1,5 +1,6 @@
 using System.IO;
 using System.Security.Permissions;
+using Klocman.Tools;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
@@ -49,6 +50,11 @@ namespace UninstallTools.Junk
         ///     Confidence that this entry is safe to remove
         /// </summary>
         public JunkConfidence Confidence { get; internal set; }
+        
+        /// <summary>
+        /// Create this item's backup inside of the supplied directory
+        /// </summary>
+        public abstract void Backup(string backupDirectory);
 
         /// <summary>
         ///     Delete this entry permanently
@@ -76,6 +82,17 @@ namespace UninstallTools.Junk
         {
             return
                 $@"{UninstallerName} - {Localisation.JunkRemover_Confidence}: {Confidence.GetConfidence()} - {FullName}";
+        }
+
+        /// <summary>
+        /// Prepare a backup directory in the specified parent folder, and return it.
+        /// </summary>
+        protected string CreateBackupDirectory(string parent)
+        {
+            var p = Path.Combine(parent, PathTools.SanitizeFileName(UninstallerName));
+            if (!Directory.Exists(p))
+                Directory.CreateDirectory(p);
+            return p;
         }
     }
 }
