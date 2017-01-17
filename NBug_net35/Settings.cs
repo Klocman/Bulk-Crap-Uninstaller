@@ -73,7 +73,7 @@ namespace NBug
             AdditionalReportFiles = new List<string>();
 
             // Default to developer mode settings. Settings this now so that any exception below will be handled with correct settings
-            ReleaseMode = false; // ToDo: This results initial config loading always setup to ThrowExceptions = true;
+            ReleaseMode = false;
 
             // Check to see if the settings are overriden manually. If so, don't load the settings file automatically.
             if (SettingsOverride.Overridden == false)
@@ -787,7 +787,6 @@ namespace NBug
             }
 
             // Replace application setting
-            // ToDo: This can be simplified using a loop and reflection to get all the Settings.PublicProperties to do remove-add cycle
             var applicationSettings =
                 from appSetting in
                     config.Root.Element("applicationSettings").Element("NBug.Properties.Settings").Elements()
@@ -893,7 +892,6 @@ namespace NBug
                 var connectionStringBytes = Convert.FromBase64String(connectionString);
                     // Reading from config file is always in Base64
 
-                // ToDo: check here for wrong password w/ System.Security.Cryptography.HMAC (catch the exception and display a meaningful message to the developer - or swallow the error)
                 var decryptedBytes = dec.TransformFinalBlock(connectionStringBytes, 0, connectionStringBytes.Length);
 
                 return Encoding.UTF8.GetString(decryptedBytes);

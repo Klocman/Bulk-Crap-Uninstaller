@@ -24,13 +24,11 @@ namespace NBug.Core.UI.Console
             }
             if (uiMode == UIMode.Normal)
             {
-                // ToDo: Create normal console UI
                 System.Console.WriteLine(Environment.NewLine + Settings.Resources.UI_Console_Normal_Message);
                 return new UIDialogResult(ExecutionFlow.BreakExecution, SendReport.Send);
             }
             if (uiMode == UIMode.Full)
             {
-                // ToDo: Create full console UI
                 System.Console.WriteLine(Environment.NewLine + Settings.Resources.UI_Console_Full_Message);
                 return new UIDialogResult(ExecutionFlow.BreakExecution, SendReport.Send);
             }

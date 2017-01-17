@@ -145,7 +145,6 @@ namespace NBug.Core.Submission.Web
 
                 if (UseAttachment)
                 {
-                    // ToDo: Report file name should be attached to the report file object itself, file shouldn't be accessed directly!
                     file.Position = 0;
                     message.Attachments.Add(new Attachment(file, fileName));
                 }

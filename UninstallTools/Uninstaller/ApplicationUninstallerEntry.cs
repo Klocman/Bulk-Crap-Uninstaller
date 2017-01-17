@@ -195,8 +195,7 @@ namespace UninstallTools.Uninstaller
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "UninstallerFullFilename")]
         public string UninstallerFullFilename { get; set; }
-
-        // TODO Split into enum and localized string fields?
+        
         [ComparisonTarget, LocalisedName(typeof (Localisation), "UninstallerKind")]
         public UninstallerType UninstallerKind { get; set; }
 

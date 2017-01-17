@@ -12,7 +12,6 @@ namespace NBug.Core.Util.Storage
     ///     This structure holds the information about storage path. It does emit its internal data either as string or
     ///     <see cref="Enums.StoragePath" /> type according to usage so it must be handled with care.
     /// </summary>
-    // ToDo: [TypeConverter(typeof(StoragePath))]
     public struct StoragePath
     {
         private static Enums.StoragePath storagePathEnum;

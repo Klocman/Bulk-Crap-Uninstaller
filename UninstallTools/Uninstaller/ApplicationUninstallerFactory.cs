@@ -318,13 +318,7 @@ namespace UninstallTools.Uninstaller
 
             if (!string.IsNullOrEmpty(result.DisplayIcon))
                 result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
-
-            /*
-             TODO Delete these keys to remove OneDrive from explorer. Add to junk remove, or as an extra step to the uninstallation.
-             "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" 
-             "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}"
-            */
-
+            
             return result;
         }
 

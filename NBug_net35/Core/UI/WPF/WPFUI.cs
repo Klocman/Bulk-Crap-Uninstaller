@@ -22,12 +22,10 @@ namespace NBug.Core.UI.WPF
         {
             if (uiMode == UIMode.Minimal)
             {
-                // ToDo:  Create WPF dialogs
                 return new Minimal().ShowDialog(report);
             }
             if (uiMode == UIMode.Normal)
             {
-                // ToDo:  Create WPF dialogs
                 using (var ui = new Normal())
                 {
                     return ui.ShowDialog(report);
@@ -35,7 +33,6 @@ namespace NBug.Core.UI.WPF
             }
             if (uiMode == UIMode.Full)
             {
-                // ToDo:  Create WPF dialogs
                 using (var ui = new Full())
                 {
                     return ui.ShowDialog(exception, report);

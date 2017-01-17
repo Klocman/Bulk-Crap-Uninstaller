@@ -30,7 +30,6 @@ namespace NBug.Core.Submission.Tracker
 
         public override bool Send(string fileName, Stream file, Report report, SerializableException exception)
         {
-            // ToDo: Check to see if XML-RPC.NET is referenced and if not, show a developer UI as a waning -or- even better, dynamically load the assembly and use that and not the referenced one!
             return true;
         }
     }

@@ -70,10 +70,7 @@ namespace UninstallTools.Startup.Normal
                 return bytes != null && bytes.Length > 0 && !bytes[0].Equals(0x02);
             }
         }
-
-        /// <summary>
-        ///     TODO procedurally generate the result
-        /// </summary>
+        
         private static string GetStartupApprovedKey(StartupEntry startupEntry)
         {
             if (!startupEntry.IsRegKey)

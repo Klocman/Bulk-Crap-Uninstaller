@@ -62,10 +62,6 @@ namespace NBug.Core.UI.Developer
 
         private void BugReportButton_Click(object sender, EventArgs e)
         {
-            // ToDo: Activate internal bug reporting feature (and add some integrations tests for it)
-            /*new BugReport();
-			new Dispatcher(false);
-			MessageBox.Show("Successfully sent bug report to NBug developer community.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
             MessageBox.Show(
                 "Internal bug reporting feature is not implemented yet but you can still manually submit a bug report using the bug tracker.",
                 "Information",

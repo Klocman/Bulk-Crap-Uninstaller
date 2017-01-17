@@ -39,8 +39,6 @@ namespace NBug.Core.Reporting.MiniDump
 
                 using (var fileStream = new FileStream(minidumpFilePath, FileMode.Create, FileAccess.Write))
                 {
-                    // ToDo: Create the minidump at a seperate process! Use this to deal with access errors: http://social.msdn.microsoft.com/Forums/en/csharpgeneral/thread/c314e6ca-4892-41e7-ae19-b3a36ad640e9
-                    // Bug: In process minidumps causes all sorts of access problems (i.e. one of them is explained below, debugger prevents accessing private memory)
                     created = Write(fileStream.SafeFileHandle, Settings.MiniDumpType.ToString());
                 }
 
@@ -85,17 +83,6 @@ namespace NBug.Core.Reporting.MiniDump
             }
             if (dumpType.ToLower() == MiniDumpType.Normal.ToString().ToLower())
             {
-                //// If the debugger is attached, it is not possible to access private read-write memory
-                //if (Debugger.IsAttached)
-                //{
-                //    return Write(fileHandle, DumpTypeFlag.WithDataSegs | DumpTypeFlag.WithHandleData | DumpTypeFlag.WithUnloadedModules);
-                //}
-                //else
-                //{
-                //    // Bug: Combination of WithPrivateReadWriteMemory + WithDataSegs hangs Visual Studio 2010 SP1 on some cases while loading the minidump for debugging in mixed mode which was created in by a release build application
-                //    return Write(
-                //        fileHandle, DumpTypeFlag.WithPrivateReadWriteMemory | DumpTypeFlag.WithDataSegs | DumpTypeFlag.WithHandleData | DumpTypeFlag.WithUnloadedModules);
-                //}
                 return Write(fileHandle, DumpTypeFlag.Normal);
             }
             if (dumpType.ToLower() == MiniDumpType.Full.ToString().ToLower())

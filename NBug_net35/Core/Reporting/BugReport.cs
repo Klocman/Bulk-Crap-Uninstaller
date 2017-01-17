@@ -59,8 +59,7 @@ namespace NBug.Core.Reporting
                 return ExecutionFlow.BreakExecution; // Since an internal exception occured
             }
         }
-
-        // ToDo: PRIORITY TASK! This code needs more testing & condensation
+        
         private void AddAdditionalFiles(ZipStorer zipStorer)
         {
             foreach (var mask in Settings.AdditionalReportFiles)
@@ -88,8 +87,7 @@ namespace NBug.Core.Reporting
                 }
             }
         }
-
-        // ToDo: PRIORITY TASK! This code needs more testing & condensation
+        
         private void AddToZip(ZipStorer zipStorer, string basePath, string path)
         {
             path = Path.GetFullPath(path);
@@ -193,7 +191,6 @@ namespace NBug.Core.Reporting
                         // Add any user supplied files in the report (if any)
                         if (Settings.AdditionalReportFiles.Count != 0)
                         {
-                            // ToDo: This needs a lot more work!
                             AddAdditionalFiles(zipStorer);
                         }
                     }
@@ -216,8 +213,7 @@ namespace NBug.Core.Reporting
                     "As per setting 'Settings.StopReportingAfter(" + Settings.StopReportingAfter
                     +
                     ")', bug reporting feature was enabled for a certain amount of time which has now expired: Bug reporting is now disabled.");
-
-                // ToDo: Completely eliminate this with SettingsOverride.DisableReporting = true; since enumerating filesystem adds overhead);
+                
                 if (Storer.GetReportCount() > 0)
                 {
                     Logger.Trace(

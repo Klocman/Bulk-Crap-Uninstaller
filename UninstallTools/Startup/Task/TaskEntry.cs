@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Klocman.Forms.Tools;
 using Microsoft.Win32.TaskScheduler;
 using UninstallTools.Properties;
 
@@ -16,7 +17,7 @@ namespace UninstallTools.Startup.Task
 
             ParentLongName = Localisation.Startup_ShortName_Task + task.Path;
             EntryLongName = task.Name;
-            
+
             FillInformationFromFile(CommandFilePath);
         }
 
@@ -30,11 +31,20 @@ namespace UninstallTools.Startup.Task
                 catch (FileNotFoundException) { }
                 catch (InvalidCastException) { }
                 catch (System.Runtime.InteropServices.COMException) { }
-                //HACK: If it's impossible to check disabled state, assume not disabled
+                // If it's impossible to check disabled state, assume not disabled
                 return false;
             }
-            //TODO: Give some sort of message instead of crashing if not supported, maybe disable disable buttons
-            set { SourceTask.Enabled = !value; } 
+            set
+            {
+                try
+                {
+                    SourceTask.Enabled = !value;
+                }
+                catch (Exception e)
+                {
+                    PremadeDialogs.GenericError(e);
+                }
+            }
         }
 
         public override string ParentShortName

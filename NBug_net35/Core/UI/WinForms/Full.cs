@@ -28,8 +28,7 @@ namespace NBug.Core.UI.WinForms
             errorDescriptionLabel.Text = Settings.Resources.UI_Dialog_Full_How_to_Reproduce_the_Error_Notification;
             quitButton.Text = Settings.Resources.UI_Dialog_Full_Quit_Button;
             sendAndQuitButton.Text = Settings.Resources.UI_Dialog_Full_Send_and_Quit_Button;
-
-            // ToDo: Displaying report contents properly requires some more work.
+            
             mainTabs.TabPages.Remove(mainTabs.TabPages["reportContentsTabPage"]);
         }
 
@@ -50,8 +49,7 @@ namespace NBug.Core.UI.WinForms
 
             // Fill in the 'Exception' tab
             exceptionDetails.Initialize(exception);
-
-            // ToDo: Fill in the 'Report Contents' tab);
+            
             ShowDialog();
 
             // Write back the user description (as we passed 'report' as a reference since it is a refence object anyway)

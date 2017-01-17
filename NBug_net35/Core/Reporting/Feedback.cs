@@ -18,7 +18,6 @@ namespace NBug.Core.Reporting
         {
             try
             {
-                // ToDo: Wrap and submit the feedback using Submit.Dispatcher()
                 report = new Report(null);
             }
             catch (Exception exception)

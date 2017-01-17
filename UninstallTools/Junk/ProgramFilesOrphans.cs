@@ -64,8 +64,7 @@ namespace UninstallTools.Junk
 
             return DriveJunk.RemoveDuplicates(output.Cast<DriveJunkNode>()).Cast<JunkNode>();
         }
-
-        //todo no subdirs present, include level?
+        
         private void FindJunkRecursively(ICollection<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)
         {
             try
