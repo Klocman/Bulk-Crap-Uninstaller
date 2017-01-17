@@ -223,7 +223,6 @@
     <Compile Include="Functions\Tracking\DatabaseStatSender.cs" />
     <Compile Include="Functions\Tracking\EventHook.cs" />
     <Compile Include="Functions\Tracking\EventHookSerializer.cs" />
-    <Compile Include="Functions\Tracking\MailSender.cs" />
     <Compile Include="Functions\Tracking\SingleEventHook.cs" />
     <Compile Include="Functions\Tracking\UsageManager.cs" />
     <Compile Include="Functions\Tracking\UsageTracker.cs">
