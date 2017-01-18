@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
@@ -72,8 +73,15 @@ namespace BulkCrapUninstaller.Forms
 
         private void copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var content = dataGridView1.GetClipboardContent();
-            if (content != null) Clipboard.SetDataObject(content, true);
+            try
+            {
+                var content = dataGridView1.GetClipboardContent();
+                if (content != null) Clipboard.SetDataObject(content, true);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
         }
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
