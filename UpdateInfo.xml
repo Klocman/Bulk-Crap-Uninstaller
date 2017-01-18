@@ -2,19 +2,18 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.6.0.50000</Version>
-<URL>https://dl.dropboxusercontent.com/u/21871088/Update/BCU_Hotfix.zip</URL>
+<Version>3.6.1.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.6.1/BCUninstaller_3.6.1_portable.zip</URL>
 <Changes>
-This is a hotfix for 3.6.0
---------------------------
-Added detection of leftover .lnk files.
-Added handling of NSIS uninstaller return codes.
-Improved file and registry junk detection.
-Improved install directory detection for InnoSetup and NSIS.
-Improved logic for detecting stuck quiet uninstallers.
-Fixed detection of stuck quiet Msiexec uninstallers.
-And many bugfixes.
+Executables and the installer are now signed, thanks to the donations.
+Added support for Windows Services.
+Added searching CLSID keys for junk.
+Added message if saving settings fails.
+Added warning to save uninstall list before closing.
+Added titlebar notification of unsaved uninstall lists.
+Installer no longer optimizes performance for portable installs.
+Many fixes and improvements.
 </Changes>
-<Hash>5b6ab3c5d8b810ad8645cd7da8dbf9e4</Hash>
+<Hash>549b8332a3038f0ea473f66c59a602c1</Hash>
 </Update>
 </Root>
