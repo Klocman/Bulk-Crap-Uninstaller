@@ -356,11 +356,14 @@ namespace BulkCrapUninstaller.Functions
             ListRefreshIsRunning = false;
 
             // Don't redraw the list view before all events have ran
-            _listView.ListView.EndUpdate();
-            _listView.ListView.ResumeLayout();
-
-            _listView.ListView.Focus();
-
+            try { _listView.ListView.EndUpdate(); } catch (ObjectDisposedException) { }
+            try
+            {
+                _listView.ListView.ResumeLayout();
+                _listView.ListView.Focus();
+            }
+            catch (ObjectDisposedException) { }
+            
             if (_firstRefresh)
             {
                 _firstRefresh = false;
