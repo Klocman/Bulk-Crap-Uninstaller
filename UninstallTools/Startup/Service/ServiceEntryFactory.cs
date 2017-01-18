@@ -17,31 +17,32 @@ namespace UninstallTools.Startup.Service
         }
 
         /* ServiceType
-Kernel Driver 
-File System Driver 
-Adapter 
-Recognizer Driver 
-Own Process 
-Share Process 
-Interactive Process 
-*/
+        Kernel Driver 
+        File System Driver 
+        Adapter 
+        Recognizer Driver 
+        Own Process 
+        Share Process 
+        Interactive Process 
+        */
 
         public static IEnumerable<ServiceEntry> GetServiceEntries()
         {
-            var searcher =
-                new ManagementObjectSearcher("root\\CIMV2",
-                    "SELECT * FROM Win32_Service");
+            var searcher = new ManagementObjectSearcher("root\\CIMV2",
+                "SELECT * FROM Win32_Service");
 
             var results = new List<ServiceEntry>();
-            foreach (ManagementObject queryObj in searcher.Get())
+            foreach (var queryObj in searcher.Get())
             {
                 // Skip drivers and adapters
-                if (!((string)queryObj["ServiceType"]).Contains("Process"))
+                var serviceType = queryObj["ServiceType"] as string;
+                if (serviceType == null || !serviceType.Contains("Process"))
                     continue;
 
                 var filename = queryObj["PathName"] as string;
                 // Don't show system services
-                if (filename.Contains(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS),
+                if (filename == null || filename.Contains(
+                    WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS),
                     StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
@@ -50,8 +51,7 @@ Interactive Process
 
                 //queryObj["Caption"]);
                 //queryObj["Description"]);
-
-                // for killing before junk delete (not necessarily uninstall?) queryObj["ProcessId"]
+                //queryObj["ProcessId"]
 
                 results.Add(e);
             }
@@ -77,7 +77,7 @@ Interactive Process
             // Execute the method and obtain the return values.
             var outParams = classInstance.InvokeMethod("ChangeStartMode", inParams, null);
 
-            if (((UInt32)outParams["ReturnValue"]) != 0)
+            if (outParams != null && ((UInt32)outParams["ReturnValue"]) != 0)
                 throw new ManagementException("ChangeStartMode returned " + outParams["ReturnValue"]);
         }
 
@@ -98,13 +98,14 @@ Interactive Process
             // Execute the method and obtain the return values.
             var outParams = classInstance.InvokeMethod("Delete", null, null);
 
-            if (((UInt32)outParams["ReturnValue"]) != 0)
+            if (outParams != null && ((UInt32)outParams["ReturnValue"]) != 0)
                 throw new ManagementException("ChangeStartMode returned " + outParams["ReturnValue"]);
         }
 
         private static ManagementObject GetServiceObject(string serviceName)
         {
-            return new ManagementObject("root\\CIMV2", $"Win32_Service.Name='{serviceName}'", null);
+            return new ManagementObject("root\\CIMV2", 
+                $"Win32_Service.Name='{serviceName}'", null);
         }
     }
 }
