@@ -5,10 +5,10 @@
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/"
 #define MyAppExeName "BCUninstaller.exe" 
-#define MyAppCopyright "Copyright 2016 Marcin Szeniak"
+#define MyAppCopyright "Copyright 2017 Marcin Szeniak"
                                 
-#define MyAppVersion "3.6.0.0"     
-#define MyAppVersionShort "3.6"
+#define MyAppVersion "3.6.1.0"     
+#define MyAppVersionShort "3.6.1"
 
 #include "Scripts\PortablePage.iss" 
 #include "Scripts\PortableIcons.iss"
