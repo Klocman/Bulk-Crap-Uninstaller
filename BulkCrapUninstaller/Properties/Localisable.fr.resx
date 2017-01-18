@@ -124,7 +124,7 @@
     <value>Recherche de vestiges...</value>
   </data>
   <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
-    <value>Remplissage de la liste de désinstalleurs...</value>
+    <value>Création de la liste des programmes installés...</value>
   </data>
   <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
     <value>Suppression des vestiges...</value>
