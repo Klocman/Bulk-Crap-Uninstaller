@@ -1,5 +1,5 @@
 ﻿[Run]
-Filename: {code:GetV4NetDir}ngen.exe; Parameters: "install ""{app}\{#MyAppExeName}"""; StatusMsg: {cm:NgenOptimizing}; Flags: runhidden; Check: CheckV4NetExists;
+Filename: {code:GetV4NetDir}ngen.exe; Parameters: "install ""{app}\{#MyAppExeName}"""; StatusMsg: {cm:NgenOptimizing}; Flags: runhidden; Check: InstallCheckV4NetExists; 
 
 [UninstallRun]
 Filename: {code:GetV4NetDir}ngen.exe; Parameters: "uninstall ""{app}\{#MyAppExeName}"""; StatusMsg: {cm:NgenRemoving}; Flags: runhidden; Check: CheckV4NetExists; 
@@ -23,6 +23,18 @@ function CheckV4NetExists() : boolean;
 begin
   if RegKeyExists(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full') then
   Result := True
+  else
+  Result := False;
+end;
+function InstallCheckV4NetExists() : boolean;
+begin
+  if CheckV4NetExists then 
+  begin
+    if IsNotPortable then
+    Result := True
+    else
+    Result := False;   
+  end 
   else
   Result := False;
 end;
