@@ -199,7 +199,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 }
         }
 
-        public void DeleteCache(string fileName)
+        public static void DeleteCache(string fileName)
         {
             File.Delete(fileName);
             var sendCacheName = fileName + ".out";

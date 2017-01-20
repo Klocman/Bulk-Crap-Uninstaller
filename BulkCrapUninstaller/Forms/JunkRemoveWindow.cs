@@ -220,7 +220,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private string GetUniqueBackupName()
+        private static string GetUniqueBackupName()
         {
             return "BCU Backup " + DateTime.Now.ToString(BackupDateFormat, CultureInfo.InvariantCulture);
         }

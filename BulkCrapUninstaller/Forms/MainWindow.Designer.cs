@@ -183,7 +183,6 @@ namespace BulkCrapUninstaller.Forms
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1494,7 +1493,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem uninstallToolStripMenuItem;
         private ToolStripMenuItem useSystemThemeToolStripMenuItem;
         private ToolStripMenuItem submitFeedbackToolStripMenuItem;
-        private ToolTip toolTip1;
         private ToolStripMenuItem loadUninstallerListToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator10;
         private ToolStripMenuItem toolStripMenuItem8;

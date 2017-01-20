@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.IO;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
@@ -101,7 +102,7 @@ namespace BulkCrapUninstaller.Functions
             catch (Exception ex)
             {
                 /*Failed to save settings, probably read only drive*/
-                PremadeDialogs.GenericError(new Exception(Localisable.Error_SaveSettingsFailed, ex));
+                PremadeDialogs.GenericError(new IOException(Localisable.Error_SaveSettingsFailed, ex));
             }
         }
     }

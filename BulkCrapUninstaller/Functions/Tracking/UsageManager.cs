@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Xml;
 using System.Xml.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
@@ -47,7 +48,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
                         {
                             doc = XDocument.Load(StatsFilename);
                             if (doc.Root == null || (doc.Root.Name != "UsageStatistics" || doc.Root.IsEmpty))
-                                throw new Exception();
+                                throw new XmlException();
                         }
                         catch
                         {

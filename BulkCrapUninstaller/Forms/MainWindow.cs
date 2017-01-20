@@ -486,7 +486,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void exportDialog_FileOk(object sender, CancelEventArgs e)
         {
-            if (!_uninstaller.ExportUninstallers(_listView.SelectedUninstallers, exportDialog.FileName))
+            if (!Uninstaller.ExportUninstallers(_listView.SelectedUninstallers, exportDialog.FileName))
                 e.Cancel = true;
         }
 

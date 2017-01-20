@@ -30,7 +30,7 @@ using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {
-    public static class Constants
+    internal static class Constants
     {
         public static Color VerifiedColor = Color.FromArgb(unchecked((int)0xffccffcc));
         public static Color UnverifiedColor = Color.FromArgb(unchecked((int)0xffbbddff));
@@ -178,6 +178,7 @@ namespace BulkCrapUninstaller.Functions
         {
             _iconGetter?.Dispose();
             StopProcessingThread(false);
+            _ratingManager.Dispose();
         }
 
         private void ProcessRatingsFinalize()
@@ -259,7 +260,7 @@ namespace BulkCrapUninstaller.Functions
             try
             {
                 _ratingManager.ClearRatings();
-                _ratingManager.DeleteCache(RatingCacheFilename);
+                UninstallerRatingManager.DeleteCache(RatingCacheFilename);
             }
             catch
             {
@@ -615,9 +616,7 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnInstallDate.AspectGetter = x =>
             {
                 var obj = x as ApplicationUninstallerEntry;
-                if (obj != null)
-                    return obj.InstallDate.Date;
-                return DateTime.MinValue;
+                return obj?.InstallDate.Date ?? DateTime.MinValue;
             };
             //_reference.olvColumnInstallDate.AspectName = ApplicationUninstallerEntry.RegistryNameInstallDate;
             _reference.olvColumnInstallDate.AspectToStringConverter = x =>
@@ -673,9 +672,7 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnRating.AspectGetter = x =>
             {
                 var entry = x as ApplicationUninstallerEntry;
-                if (string.IsNullOrEmpty(entry?.RatingId))
-                    return RatingEntry.NotAvailable;
-                return _ratingManager.GetRating(entry.RatingId);
+                return string.IsNullOrEmpty(entry?.RatingId) ? RatingEntry.NotAvailable : _ratingManager.GetRating(entry.RatingId);
             };
 
             _reference.olvColumnRating.Renderer = new RatingRenderer();

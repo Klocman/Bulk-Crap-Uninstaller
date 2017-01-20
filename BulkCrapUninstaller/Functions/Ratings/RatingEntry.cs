@@ -42,11 +42,11 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return obj is RatingEntry && Equals((RatingEntry) obj);
         }
 
-        public static UninstallerRating ToRating(int val)
+        public static UninstallerRating ToRating(int value)
         {
-            if (val <= ((int) UninstallerRating.Bad + (int) UninstallerRating.Neutral)/2)
+            if (value <= ((int) UninstallerRating.Bad + (int) UninstallerRating.Neutral)/2)
                 return UninstallerRating.Bad;
-            if (val >= ((int) UninstallerRating.Good + (int) UninstallerRating.Neutral)/2)
+            if (value >= ((int) UninstallerRating.Good + (int) UninstallerRating.Neutral)/2)
                 return UninstallerRating.Good;
 
             return UninstallerRating.Neutral;

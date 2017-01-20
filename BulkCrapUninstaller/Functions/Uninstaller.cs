@@ -50,7 +50,7 @@ namespace BulkCrapUninstaller.Functions
         /// <param name="itemsToExport">What to export</param>
         /// <param name="filename">Full path with filename and extension to write the export result to.</param>
         /// <returns></returns>
-        public bool ExportUninstallers(IEnumerable<ApplicationUninstallerEntry> itemsToExport, string filename)
+        public static bool ExportUninstallers(IEnumerable<ApplicationUninstallerEntry> itemsToExport, string filename)
         {
             var applicationUninstallerEntries = itemsToExport as List<ApplicationUninstallerEntry> ??
                                                 itemsToExport.ToList();

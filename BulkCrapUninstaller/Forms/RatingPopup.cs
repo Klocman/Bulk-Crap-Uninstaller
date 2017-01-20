@@ -26,6 +26,9 @@ namespace BulkCrapUninstaller.Forms
 
         public static UninstallerRating ShowRateDialog(Form owner, string applicationName, Point mouseLocation)
         {
+            if (owner == null)
+                throw new ArgumentNullException(nameof(owner));
+
             using (var window = new RatingPopup())
             {
                 window.Text += " " + applicationName;

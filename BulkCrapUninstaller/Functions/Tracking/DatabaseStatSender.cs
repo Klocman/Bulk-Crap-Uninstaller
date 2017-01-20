@@ -37,7 +37,6 @@ namespace BulkCrapUninstaller.Functions.Tracking
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    connection.Close();
                     return true;
                 }
                 catch (MySqlException)
