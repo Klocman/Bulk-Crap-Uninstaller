@@ -13,6 +13,9 @@ namespace BulkCrapUninstaller.Forms
     {
         public static void ShowFeedbackBox(Form parent, bool showDisableCheckbox)
         {
+            if (parent == null)
+                throw new ArgumentNullException(nameof(parent));
+
             using (var f = new FeedbackBox())
             {
                 f.checkBoxNeverShow.Visible = showDisableCheckbox;

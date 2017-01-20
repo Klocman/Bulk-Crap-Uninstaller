@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
         /// <summary>
         ///     Always lock before locking _ratingsToSend
         /// </summary>
-        private readonly object _casheLock = new object();
+        private readonly object _cacheLock = new object();
 
         private readonly Dictionary<string, UninstallerRating> _ratingsToSend =
             new Dictionary<string, UninstallerRating>();
@@ -33,7 +34,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             UserId = userId;
 
-            _cashe = new DataTable();
+            _cashe = new DataTable {Locale = CultureInfo.InvariantCulture};
             using (var reader = new StringReader(Resources.DbRatingSchema))
                 _cashe.ReadXmlSchema(reader);
         }
@@ -56,7 +57,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public void Dispose()
         {
-            lock (_casheLock)
+            lock (_cacheLock)
                 _cashe?.Dispose();
             lock (_ratingsToSend)
                 _ratingsToSend.Clear();
@@ -72,10 +73,10 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
                 connection.Open();
 
-                var dt = new DataTable();
+                var dt = new DataTable { Locale = CultureInfo.InvariantCulture };
                 dt.Load(command.ExecuteReader());
 
-                lock (_casheLock)
+                lock (_cacheLock)
                 {
                     _cashe?.Dispose();
                     _cashe = dt;
@@ -130,7 +131,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             if (string.IsNullOrEmpty(appName))
                 throw new ArgumentNullException(nameof(appName));
 
-            lock (_casheLock)
+            lock (_cacheLock)
                 return _cashe.Rows.Cast<DataRow>().FirstOrDefault(
                     r => appName.Equals(r[0] as string, StringComparison.InvariantCultureIgnoreCase));
         }
@@ -142,7 +143,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             if (rating == UninstallerRating.Unknown)
                 throw new ArgumentException("Can't set unknown rating", nameof(rating));
 
-            lock (_casheLock)
+            lock (_cacheLock)
             {
                 var stored = GetCasheEntry(appKey);
                 var newRating = (int) rating;
@@ -166,8 +167,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return new RatingEntry
             {
                 ApplicationName = row[0] as string,
-                AverageRating = row.IsNull(1) ? (int?) null : Convert.ToInt32(row[1]),
-                MyRating = row.IsNull(2) ? (int?) null : Convert.ToInt32(row[2])
+                AverageRating = row.IsNull(1) ? (int?) null : Convert.ToInt32(row[1], CultureInfo.InvariantCulture),
+                MyRating = row.IsNull(2) ? (int?) null : Convert.ToInt32(row[2], CultureInfo.InvariantCulture)
             };
         }
 
@@ -177,9 +178,9 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return row == null ? new RatingEntry() : ToRatingEntry(row);
         }
 
-        public void SerializeCashe(string fileName)
+        public void SerializeCache(string fileName)
         {
-            lock (_casheLock)
+            lock (_cacheLock)
                 lock (_ratingsToSend)
                 {
                     File.Delete(fileName);
@@ -189,7 +190,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     File.Delete(sendCasheName);
                     if (_ratingsToSend.Any())
                     {
-                        using (var writer = new StringWriter())
+                        using (var writer = new StringWriter(CultureInfo.InvariantCulture))
                         {
                             _ratingsToSend.Serialize(writer);
                             File.WriteAllText(sendCasheName, writer.GetStringBuilder().ToString(), Encoding.Unicode);
@@ -198,22 +199,22 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 }
         }
 
-        public void DeleteCashe(string fileName)
+        public void DeleteCache(string fileName)
         {
             File.Delete(fileName);
-            var sendCasheName = fileName + ".out";
-            File.Delete(sendCasheName);
+            var sendCacheName = fileName + ".out";
+            File.Delete(sendCacheName);
         }
 
-        public void DeserializeCashe(string fileName)
+        public void DeserializeCache(string fileName)
         {
-            lock (_casheLock)
+            lock (_cacheLock)
                 lock (_ratingsToSend)
                 {
                     if (File.Exists(fileName))
                     {
                         _cashe?.Dispose();
-                        _cashe = new DataTable();
+                        _cashe = new DataTable { Locale = CultureInfo.InvariantCulture };
 
                         using (var reader = new StringReader(Resources.DbRatingSchema))
                             _cashe.ReadXmlSchema(reader);

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -175,7 +176,8 @@ namespace BulkCrapUninstaller.Forms
                         .Select(x2 => x2.UninstallerEntry.DisplayName)
                         .ToArray());
 
-                label1.Text = $"{Localisable.UninstallProgressWindow_Uninstalling} {progress}/{uninstList.Count}: {statusString}";
+                label1.Text = string.Format(CultureInfo.CurrentCulture, "{0} {1}/{2}: {3}",
+                    Localisable.UninstallProgressWindow_Uninstalling, progress, uninstList.Count, statusString);
 
                 buttonClose.Text = Buttons.ButtonCancel;
                 progressBar1.Value = Math.Max(0, progress - 1);
@@ -302,7 +304,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolStripButtonHelp_Click(object sender, EventArgs e)
         {
-            MessageBoxes.DisplayHelp(this);
+            MessageBoxes.DisplayHelp();
         }
 
         private static class NativeMethods

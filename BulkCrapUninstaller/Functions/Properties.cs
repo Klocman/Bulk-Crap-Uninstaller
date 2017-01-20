@@ -7,10 +7,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
@@ -166,7 +165,7 @@ namespace BulkCrapUninstaller.Functions
 
         private static DataTable GetCleanDataTable()
         {
-            var dt = new DataTable();
+            var dt = new DataTable {Locale = CultureInfo.InvariantCulture};
             dt.Columns.Add(Localisable.PropertiesWindow_Table_Name, typeof(string));
             dt.Columns.Add(Localisable.PropertiesWindow_Table_Value, typeof(string));
             return dt;

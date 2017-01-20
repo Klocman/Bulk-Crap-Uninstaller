@@ -66,7 +66,7 @@ namespace BulkCrapUninstaller.Controls
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            MessageBoxes.DisplayHelp(this);
+            MessageBoxes.DisplayHelp();
         }
     }
 }

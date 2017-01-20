@@ -24,29 +24,29 @@ namespace BulkCrapUninstaller.Functions.Tracking
 
         public bool SendData(byte[] value)
         {
-            var connection = new MySqlConnection(ConnectionString);
-
-            var command = connection.CreateCommand();
-            command.CommandText = "CALL " + CommandName + "(@userParam, @dataParam)";
-
-            if (Key == 0) Key = new Random().Next(-1000, -1);
-            command.Parameters.Add(new MySqlParameter("@userParam", Key));
-            command.Parameters.Add(new MySqlParameter("@dataParam", value));
-
-            try
+            using (var connection = new MySqlConnection(ConnectionString))
             {
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-                connection.Dispose();
-                return true;
+                var command = connection.CreateCommand();
+                command.CommandText = "CALL " + CommandName + "(@userParam, @dataParam)";
+
+                if (Key == 0) Key = new Random().Next(-1000, -1);
+                command.Parameters.Add(new MySqlParameter("@userParam", Key));
+                command.Parameters.Add(new MySqlParameter("@dataParam", value));
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    return true;
+                }
+                catch (MySqlException)
+                {
+                    if (!SuppressSqlExceptions)
+                        throw;
+                }
+                return false;
             }
-            catch (MySqlException)
-            {
-                if (!SuppressSqlExceptions)
-                    throw;
-            }
-            return false;
         }
     }
 }

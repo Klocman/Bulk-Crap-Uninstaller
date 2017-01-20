@@ -21,9 +21,9 @@ namespace BulkCrapUninstaller.Functions.Tracking
         private readonly List<EventHook> _hooks = new List<EventHook>();
         internal IEnumerable<EventHook> Hooks => _hooks;
 
-        public static void AddBlacklistType(Type t)
+        public static void AddBlacklistType(Type typeToBlacklist)
         {
-            TypeBlacklist.Add(t);
+            TypeBlacklist.Add(typeToBlacklist);
         }
 
         protected override void Dispose(bool disposing)

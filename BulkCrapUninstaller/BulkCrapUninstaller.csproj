@@ -71,7 +71,7 @@
     <Optimize>false</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <DefineConstants>DEBUG</DefineConstants>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
@@ -206,7 +206,6 @@
     <Compile Include="Forms\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions\ApplicationInfoExport.cs" />
     <Compile Include="Functions\ImportExport.cs" />
     <Compile Include="Functions\ListViewDelegates.cs" />
     <Compile Include="Functions\LocalizedX509Certificate.cs" />
@@ -222,7 +221,6 @@
     <Compile Include="Functions\SystemRestore.cs" />
     <Compile Include="Functions\Tracking\DatabaseStatSender.cs" />
     <Compile Include="Functions\Tracking\EventHook.cs" />
-    <Compile Include="Functions\Tracking\EventHookSerializer.cs" />
     <Compile Include="Functions\Tracking\SingleEventHook.cs" />
     <Compile Include="Functions\Tracking\UsageManager.cs" />
     <Compile Include="Functions\Tracking\UsageTracker.cs">

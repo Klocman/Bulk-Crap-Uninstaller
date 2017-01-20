@@ -51,7 +51,7 @@ namespace BulkCrapUninstaller.Functions
 
         public static void CopyGuidsToClipboard(IEnumerable<ApplicationUninstallerEntry> items)
         {
-            CopyToClipboard(items.Select(z => z.BundleProviderKey.ToString("B").ToUpper()));
+            CopyToClipboard(items.Select(z => z.BundleProviderKey.ToString("B").ToUpperInvariant()));
         }
 
         public static void CopyFullInformationToClipboard(IEnumerable<ApplicationUninstallerEntry> items)

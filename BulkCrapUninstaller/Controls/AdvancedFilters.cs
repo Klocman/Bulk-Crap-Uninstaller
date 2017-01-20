@@ -17,12 +17,12 @@ namespace BulkCrapUninstaller.Controls
     public partial class AdvancedFilters : UserControl
     {
         public event EventHandler CurrentListChanged;
-        public event EventHandler CurrentListFilenameChanged;
+        public event EventHandler CurrentListFileNameChanged;
         public event EventHandler FiltersChanged;
         public event EventHandler UnsavedChangesChanged;
 
         private static readonly string DefaultUninstallListPath = Path.Combine(Program.AssemblyLocation.FullName, Resources.DefaultUninstallListFilename);
-        private string _currentListFilename;
+        private string _currentListFileName;
         private bool _unsavedChanges;
 
         public UninstallList CurrentList => uninstallListEditor1.CurrentList;
@@ -40,15 +40,15 @@ namespace BulkCrapUninstaller.Controls
             }
         }
 
-        public string CurrentListFilename
+        public string CurrentListFileName
         {
-            get { return _currentListFilename; }
+            get { return _currentListFileName; }
             private set
             {
-                if (_currentListFilename != value)
+                if (_currentListFileName != value)
                 {
-                    _currentListFilename = value;
-                    CurrentListFilenameChanged?.Invoke(this, EventArgs.Empty);
+                    _currentListFileName = value;
+                    CurrentListFileNameChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
@@ -75,27 +75,27 @@ namespace BulkCrapUninstaller.Controls
                 case MessageBoxes.PressedButton.No:
                     return true;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new InvalidEnumArgumentException();
             }
         }
 
         public void LoadUninstallList(UninstallList list)
         {
-            CurrentListFilename = string.Empty;
+            CurrentListFileName = string.Empty;
             uninstallListEditor1.CurrentList = list;
         }
 
         /// <summary>
         /// Load a list silently from filename
         /// </summary>
-        /// <param name="filename">Filename of the list</param>
-        public void LoadUninstallList(string filename)
+        /// <param name="fileName">Filename of the list</param>
+        public void LoadUninstallList(string fileName)
         {
             try
             {
-                var result = UninstallList.ReadFromFile(filename);
+                var result = UninstallList.ReadFromFile(fileName);
 
-                CurrentListFilename = filename;
+                CurrentListFileName = fileName;
                 uninstallListEditor1.CurrentList = result;
                 UnsavedChanges = false;
             }
@@ -116,7 +116,7 @@ namespace BulkCrapUninstaller.Controls
         private void OnCurrentListChanged(object sender, EventArgs e)
         {
             if (CurrentList == null)
-                CurrentListFilename = string.Empty;
+                CurrentListFileName = string.Empty;
 
             UnsavedChanges = false;
             CurrentListChanged?.Invoke(sender, e);
@@ -138,7 +138,7 @@ namespace BulkCrapUninstaller.Controls
             try
             {
                 CurrentList.SaveToFile(saveUlDialog.FileName);
-                CurrentListFilename = saveUlDialog.FileName;
+                CurrentListFileName = saveUlDialog.FileName;
                 UnsavedChanges = false;
             }
             catch (Exception ex)
@@ -154,12 +154,12 @@ namespace BulkCrapUninstaller.Controls
 
         private bool ShowSaveDialog()
         {
-            if (!string.IsNullOrEmpty(CurrentListFilename))
+            if (!string.IsNullOrEmpty(CurrentListFileName))
             {
                 try
                 {
-                    saveUlDialog.InitialDirectory = Path.GetDirectoryName(CurrentListFilename);
-                    saveUlDialog.FileName = Path.GetFileName(CurrentListFilename);
+                    saveUlDialog.InitialDirectory = Path.GetDirectoryName(CurrentListFileName);
+                    saveUlDialog.FileName = Path.GetFileName(CurrentListFileName);
                 }
                 catch (ArgumentException)
                 {
@@ -175,12 +175,12 @@ namespace BulkCrapUninstaller.Controls
         {
             if (!AskToSaveUnsaved()) return;
 
-            if (!string.IsNullOrEmpty(CurrentListFilename))
+            if (!string.IsNullOrEmpty(CurrentListFileName))
             {
                 try
                 {
-                    openUlDialog.InitialDirectory = Path.GetDirectoryName(CurrentListFilename);
-                    openUlDialog.FileName = Path.GetFileName(CurrentListFilename);
+                    openUlDialog.InitialDirectory = Path.GetDirectoryName(CurrentListFileName);
+                    openUlDialog.FileName = Path.GetFileName(CurrentListFileName);
                 }
                 catch (ArgumentException)
                 {
@@ -195,7 +195,7 @@ namespace BulkCrapUninstaller.Controls
         private void toolStripButtonSaveUlDef_Click(object sender, EventArgs e)
         {
             CurrentList.SaveToFile(DefaultUninstallListPath);
-            CurrentListFilename = DefaultUninstallListPath;
+            CurrentListFileName = DefaultUninstallListPath;
         }
 
         private void toolStripButtonToBasicFilters_Click(object sender, EventArgs e)

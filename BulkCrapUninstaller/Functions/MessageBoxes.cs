@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -133,7 +134,7 @@ namespace BulkCrapUninstaller.Functions
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_DeleteRegKeysConfirmation_Title,
                     Localisable.MessageBoxes_DeleteRegKeysConfirmation_Message,
-                    string.Format(Localisable.MessageBoxes_DeleteRegKeysConfirmation_Details,
+                    string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_DeleteRegKeysConfirmation_Details,
                         string.Join("\n", affectedKeyNames)),
                     SystemIcons.Question, Buttons.ButtonRemove, Buttons.ButtonCancel)) ==
                    CustomMessageBox.PressedButton.Middle;
@@ -149,7 +150,7 @@ namespace BulkCrapUninstaller.Functions
 
         internal static string GetSystemRestoreDescription(int count)
         {
-            return string.Format(Localisable.MessageBoxes_GetSystemRestoreDescription, count);
+            return string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_GetSystemRestoreDescription, count);
         }
 
         internal static void InvalidNewEntryName()
@@ -157,7 +158,7 @@ namespace BulkCrapUninstaller.Functions
             CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Rename_uninstaller,
                     Localisable.MessageBoxes_InvalidNewEntryName_Message,
-                    string.Format(Localisable.MessageBoxes_InvalidNewEntryName_Details,
+                    string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_InvalidNewEntryName_Details,
                         string.Join(" ", StringTools.InvalidPathChars.Select(x => x.ToString()).ToArray())),
                     SystemIcons.Warning, Buttons.ButtonOk));
         }
@@ -241,11 +242,9 @@ namespace BulkCrapUninstaller.Functions
                 return false;
             }
 
-            return sourceDirCount == 1 || MessageBox.Show(
-                string.Format(Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple,
-                    sourceDirCount),
-                Localisable.MessageBoxes_Title_Open_directories, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) !=
-                   DialogResult.Cancel;
+            return (sourceDirCount == 1) || (MessageBox.Show(
+                string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple, sourceDirCount),
+                Localisable.MessageBoxes_Title_Open_directories, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.Cancel);
         }
 
         internal static void OpenDirectoryError(Exception e)
@@ -299,11 +298,9 @@ namespace BulkCrapUninstaller.Functions
                 return false;
             }
 
-            return sourceDirCount == 1 || MessageBox.Show(
-                string.Format(Localisable.MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message,
-                    sourceDirCount),
-                Localisable.MessageBoxes_Title_Open_urls, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) !=
-                   DialogResult.Cancel;
+            return (sourceDirCount == 1) || (MessageBox.Show(
+                string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message, sourceDirCount),
+                Localisable.MessageBoxes_Title_Open_urls, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.Cancel);
         }
 
         /// <summary>
@@ -314,7 +311,7 @@ namespace BulkCrapUninstaller.Functions
             CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Modify_protected_items,
                     Localisable.MessageBoxes_ProtectedItemError_Message,
-                    string.Format(Localisable.MessageBoxes_ProtectedItemError_Details, affectedKeyName),
+                    string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_ProtectedItemError_Details, affectedKeyName),
                     SystemIcons.Error, Buttons.ButtonOk));
         }
 
@@ -330,7 +327,7 @@ namespace BulkCrapUninstaller.Functions
                 CustomMessageBox.ShowDialog(DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Modify_protected_items,
                         Localisable.MessageBoxes_ProtectedItemsWarningQuestion_Message,
-                        string.Format(Localisable.MessageBoxes_ProtectedItemsWarningQuestion_Details,
+                        string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_ProtectedItemsWarningQuestion_Details,
                             string.Join("\n", affectedKeyNames)),
                         SystemIcons.Warning, Buttons.ButtonRemove, Buttons.ButtonCancel)))
             {
@@ -356,7 +353,7 @@ namespace BulkCrapUninstaller.Functions
                 CustomMessageBox.ShowDialog(DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Quiet_uninstall,
                         Localisable.MessageBoxes_QuietUninstallersNotAvailableQuestion_Message,
-                        string.Format(Localisable.MessageBoxes_QuietUninstallersNotAvailableQuestion_Details,
+                        string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_QuietUninstallersNotAvailableQuestion_Details,
                             string.Join("\n", nonQuiet)),
                         SystemIcons.Question, Buttons.ButtonUseLoud, Buttons.ButtonRemove, Buttons.ButtonCancel), check);
 
@@ -429,7 +426,7 @@ namespace BulkCrapUninstaller.Functions
                 return PressedButton.Yes;
 
             switch (MessageBox.Show(
-                string.Format(Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple,
+                string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple,
                     sourceDirCount),
                 Localisable.MessageBoxes_Title_Open_directories, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
             {
@@ -558,8 +555,8 @@ namespace BulkCrapUninstaller.Functions
 
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
-                    string.Format(Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
-                    string.Format(Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
+                    string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
+                    string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
                     SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) ==
                    CustomMessageBox.PressedButton.Middle;
         }
@@ -588,7 +585,7 @@ namespace BulkCrapUninstaller.Functions
             CustomMessageBox.ShowDialog(owner,
                 new CmbBasicSettings(Localisable.MessageBoxes_ForceRunUninstallFailedError_Title,
                     Localisable.MessageBoxes_ForceRunUninstallFailedError_Header,
-                    string.Format(Localisable.MessageBoxes_ForceRunUninstallFailedError_Message,
+                    string.Format(CultureInfo.InvariantCulture, Localisable.MessageBoxes_ForceRunUninstallFailedError_Message,
                         string.Join("\n", failed.ToArray())),
                     SystemIcons.Error, Buttons.ButtonClose));
         }
@@ -601,7 +598,7 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
         }
 
-        public static void DisplayHelp(IWin32Window owner)
+        public static void DisplayHelp()
         {
             Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
         }
@@ -611,7 +608,8 @@ namespace BulkCrapUninstaller.Functions
             return CustomMessageBox.ShowDialog(owner,
                 new CmbBasicSettings(Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Title,
                     Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Header,
-                    $"{Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Details}\n\n{string.Join("\n", failedNames.OrderBy(x => x).ToArray())}",
+                    string.Format(CultureInfo.InvariantCulture, "{0}\n\n{1}", Localisable.MessageBoxes_AskToRetryFailedQuietAsLoud_Details,
+                        string.Join("\n", failedNames.OrderBy(x => x).ToArray())),
                     SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
         }
 

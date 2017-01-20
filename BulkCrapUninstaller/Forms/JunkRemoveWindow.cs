@@ -202,7 +202,7 @@ namespace BulkCrapUninstaller.Forms
                     negatives = string.Join("\n", items);
             }
 
-            MessageBox.Show(string.Format(Localisable.JunkRemove_Details_Message,
+            MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Localisable.JunkRemove_Details_Message,
                 item.Confidence.GetRawConfidence(), positives, negatives), Localisable.JunkRemove_Details_Title,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -222,7 +222,7 @@ namespace BulkCrapUninstaller.Forms
 
         private string GetUniqueBackupName()
         {
-            return "BCU Backup " + DateTime.Now.ToString(BackupDateFormat);
+            return "BCU Backup " + DateTime.Now.ToString(BackupDateFormat, CultureInfo.InvariantCulture);
         }
 
         private bool JunkListFilter(object obj)

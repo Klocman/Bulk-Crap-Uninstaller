@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using Klocman.Localising;
@@ -22,7 +23,7 @@ namespace BulkCrapUninstaller.Controls
                 .OrderBy(x => x.FancyName));
 
             for (var i = 0; i < results.Count; i++)
-                results[i].Id = string.Concat("{", i.ToString(), "}");
+                results[i].Id = string.Concat("{", i.ToString(CultureInfo.CurrentCulture), "}");
 
             Items = results.AsEnumerable();
             FormatGetterFuncs = results.Select(x => x.Getter).ToArray();
@@ -45,7 +46,7 @@ namespace BulkCrapUninstaller.Controls
 
         public static string GetStringFromPattern(string pattern, ApplicationUninstallerEntry entry)
         {
-            return string.Format(Items.Aggregate(pattern,
+            return string.Format(CultureInfo.CurrentCulture, Items.Aggregate(pattern,
                 (current, clipboardCopyItem) => current.Replace(clipboardCopyItem.Name, clipboardCopyItem.Id)),
                 FormatGetterFuncs.Select(x => x(entry)).ToArray());
         }

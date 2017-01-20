@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 var result = entry.BundleProviderKey;
                 if (!result.IsEmpty())
-                    return $"{result:B}".ToUpper();
+                    return $"{result:B}".ToUpperInvariant();
             }
             return string.Empty;
         }

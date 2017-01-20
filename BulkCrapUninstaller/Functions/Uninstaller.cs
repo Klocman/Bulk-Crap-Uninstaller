@@ -56,19 +56,10 @@ namespace BulkCrapUninstaller.Functions
                                                 itemsToExport.ToList();
             if (applicationUninstallerEntries.Count <= 0)
                 return false;
-
-            /*
-            var result = new StringBuilder();
-            result.AppendLine(Localisable.StrExportHeader);
-            result.AppendLine();
-
-            foreach (var uninstaller in applicationUninstallerEntries)
-                result.AppendLine(uninstaller.ToLongString());
-                */
+            
             try
             {
-                UninstallTools.Uninstaller.ApplicationInfoExport.SerializeApplicationInfo(filename, applicationUninstallerEntries);
-                //File.WriteAllText(filename, result.ToString());
+                ApplicationInfoExport.SerializeApplicationInfo(filename, applicationUninstallerEntries);
             }
             catch (Exception ex)
             {
@@ -125,7 +116,7 @@ namespace BulkCrapUninstaller.Functions
                         continue;
 
                     if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
-                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM)))
+                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM), StringComparison.InvariantCultureIgnoreCase))
                         continue;
 
                     var filenames = pr.Modules.Cast<ProcessModule>()

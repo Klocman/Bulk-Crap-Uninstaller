@@ -92,12 +92,12 @@ namespace BulkCrapUninstallerTests.Functions
 
             var filename = Path.Combine(Program.AssemblyLocation.FullName, "RatingCasheTest.xml");
 
-            _manager.SerializeCashe(filename);
+            _manager.SerializeCache(filename);
 
             TestCleanup();
             TestInitialize();
 
-            _manager.DeserializeCashe(filename);
+            _manager.DeserializeCache(filename);
             Assert.AreEqual(count, _manager.Items.Count());
         }
     }

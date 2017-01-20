@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Resources;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -9,11 +10,11 @@
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-#if DEBUG
+[assembly: NeutralResourcesLanguage("en")]
 
+#if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
 #else
-
 [assembly: AssemblyConfiguration("Release")]
 #endif
 

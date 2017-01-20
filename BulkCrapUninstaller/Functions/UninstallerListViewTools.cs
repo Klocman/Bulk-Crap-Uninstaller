@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -195,7 +196,7 @@ namespace BulkCrapUninstaller.Functions
                     }
                     try
                     {
-                        _ratingManager.SerializeCashe(RatingCacheFilename);
+                        _ratingManager.SerializeCache(RatingCacheFilename);
                     }
                     catch
                     {
@@ -219,7 +220,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     try
                     {
-                        _ratingManager.DeserializeCashe(RatingCacheFilename);
+                        _ratingManager.DeserializeCache(RatingCacheFilename);
                     }
                     catch (Exception ex)
                     {
@@ -258,7 +259,7 @@ namespace BulkCrapUninstaller.Functions
             try
             {
                 _ratingManager.ClearRatings();
-                _ratingManager.DeleteCashe(RatingCacheFilename);
+                _ratingManager.DeleteCache(RatingCacheFilename);
             }
             catch
             {
@@ -406,7 +407,7 @@ namespace BulkCrapUninstaller.Functions
 
             if (keyName != null)
             {
-                var selectedObj = FilteredUninstallers.FirstOrDefault(x => x.DisplayName.StartsWith(keyName));
+                var selectedObj = FilteredUninstallers.FirstOrDefault(x => x.DisplayName.StartsWith(keyName, StringComparison.InvariantCultureIgnoreCase));
 
                 _listView.ListView.DeselectAll();
 
@@ -751,7 +752,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 var title = entries.Length == 1
                     ? entries[0].DisplayName
-                    : string.Format(Localisable.RateTitle_Counted, entries.Length);
+                    : string.Format(CultureInfo.CurrentCulture, Localisable.RateTitle_Counted, entries.Length);
 
                 var result = RatingPopup.ShowRateDialog(_reference, title, location);
 

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -103,7 +104,7 @@ namespace BulkCrapUninstaller.Forms
                 if (y.Value == y.Maximum)
                     result = string.Empty;
                 else if ((y.Value - 1) % 7 == 0)
-                    result = string.Format(Localisable.MainWindow_Statusbar_ProcessingUninstallers,
+                    result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers,
                         y.Value, y.Maximum);
 
                 if (result != null)
@@ -120,7 +121,7 @@ namespace BulkCrapUninstaller.Forms
                 if (_listView.FilteringOverride != null)
                     _listView.UpdateColumnFiltering();
             };
-            advancedFilters1.CurrentListFilenameChanged += RefreshTitleBar;
+            advancedFilters1.CurrentListFileNameChanged += RefreshTitleBar;
             advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
 
             // Setup update manager, skip at first boot to let user change the setting
@@ -177,10 +178,11 @@ namespace BulkCrapUninstaller.Forms
         private void RefreshTitleBar(object sender, EventArgs e)
         {
             var result = MainTitleBarText;
-            if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFilename) || advancedFilters1.UnsavedChanges)
+            if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFileName) || advancedFilters1.UnsavedChanges)
             {
                 var changedDot = advancedFilters1.UnsavedChanges ? "*" : string.Empty;
-                result = $"{result} [{advancedFilters1.CurrentListFilename ?? string.Empty}{changedDot}]";
+                result = string.Format(CultureInfo.CurrentCulture, "{0} [{1}{2}]", 
+                    result, advancedFilters1.CurrentListFileName ?? string.Empty, changedDot);
             }
             Text = result;
         }
@@ -747,7 +749,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void RefreshStatusbarTotalLabel(object sender, EventArgs e)
         {
-            toolStripLabelTotal.Text = string.Format(Localisable.MainWindow_Statusbar_Total,
+            toolStripLabelTotal.Text = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_Total,
                 _listView.FilteredUninstallers.Count(), _listView.GetFilteredSize());
         }
 
@@ -776,7 +778,7 @@ namespace BulkCrapUninstaller.Forms
                 return;
 
             string output;
-            if (StringEditBox.ShowDialog(string.Format(Localisable.MainWindow_Rename_Description, selected.DisplayName),
+            if (StringEditBox.ShowDialog(string.Format(CultureInfo.InvariantCulture, Localisable.MainWindow_Rename_Description, selected.DisplayName),
                 Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
                 out output))
             {
@@ -972,7 +974,7 @@ namespace BulkCrapUninstaller.Forms
         private void uninstallerObjectListView_SelectedChanged(object sender, EventArgs e)
         {
             toolStripLabelStatus.Text = _listView.SelectedUninstallerCount > 0
-                ? string.Format(Localisable.MainWindow_Statusbar_StatusSelection, _listView.SelectedUninstallerCount)
+                ? string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_StatusSelection, _listView.SelectedUninstallerCount)
                 : string.Empty;
 
             toolStripLabelSize.Text = _listView.GetSelectedSize().ToString();
@@ -1198,7 +1200,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void openHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBoxes.DisplayHelp(this);
+            MessageBoxes.DisplayHelp();
         }
 
         private void uninstallFromDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
