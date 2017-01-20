@@ -1,4 +1,9 @@
-﻿using BulkCrapUninstaller.Functions;
+﻿/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms.Tools;
 using System;

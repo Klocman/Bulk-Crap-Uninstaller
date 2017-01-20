@@ -23,6 +23,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF548671-BB38-48B1-9664-C737E971FC07}"
 	ProjectSection(SolutionItems) = preProject
 		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+		Licence.licenseheader = Licence.licenseheader
 		Licence.txt = Licence.txt
 		UpdateInfo.xml = UpdateInfo.xml
 		UpdateInfo_Debug.xml = UpdateInfo_Debug.xml

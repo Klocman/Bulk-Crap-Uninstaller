@@ -316,6 +316,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Licence.licenseheader">
+      <Link>Licence.licenseheader</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\folder.open.png" />
   </ItemGroup>

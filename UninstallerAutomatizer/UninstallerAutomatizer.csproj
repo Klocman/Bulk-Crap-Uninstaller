@@ -79,6 +79,9 @@
     <Compile Include="TestStackWhiteExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Licence.licenseheader">
+      <Link>Licence.licenseheader</Link>
+    </None>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

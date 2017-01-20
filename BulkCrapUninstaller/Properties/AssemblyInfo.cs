@@ -1,4 +1,9 @@
-﻿//[assembly: AssemblyFileVersion("1.0.0.0")]
+﻿/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+//[assembly: AssemblyFileVersion("1.0.0.0")]
 
 using System.Reflection;
 using System.Runtime.InteropServices;

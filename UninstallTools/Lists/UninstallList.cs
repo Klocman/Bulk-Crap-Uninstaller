@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;

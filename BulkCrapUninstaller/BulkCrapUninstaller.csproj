@@ -807,6 +807,9 @@
     <EmbeddedResource Include="Forms\UninstallProgressWindow.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\Licence.licenseheader">
+      <Link>Licence.licenseheader</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
