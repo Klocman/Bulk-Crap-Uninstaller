@@ -38,7 +38,7 @@ namespace UninstallTools.Uninstaller
                         return null;
                     }
                 }
-            }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] { "explorer" }).Distinct().ToArray();
+            }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] {"explorer"}).Distinct().ToArray();
 
         private readonly object _operationLock = new object();
 
@@ -47,6 +47,7 @@ namespace UninstallTools.Uninstaller
 
         private bool _canRetry = true;
         private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
+        private Thread _worker;
 
         internal BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
             UninstallStatus startingStatus)
@@ -57,11 +58,24 @@ namespace UninstallTools.Uninstaller
         }
 
         public Exception CurrentError { get; private set; }
+
         public UninstallStatus CurrentStatus { get; private set; }
+
         public bool Finished { get; private set; }
+
         public int Id { get; internal set; }
-        public bool IsRunning { get; private set; }
+
+        public bool IsRunning
+        {
+            get
+            {
+                lock (_operationLock)
+                    return _worker != null && _worker.IsAlive;
+            }
+        }
+
         public bool IsSilent { get; set; }
+
         public ApplicationUninstallerEntry UninstallerEntry { get; }
 
         private static void KillProcesses(IEnumerable<Process> processes)
@@ -83,9 +97,9 @@ namespace UninstallTools.Uninstaller
 
         public void Reset()
         {
+            //bug handle already running
             CurrentError = null;
             CurrentStatus = UninstallStatus.Waiting;
-            IsRunning = false;
             Finished = false;
         }
 
@@ -109,11 +123,19 @@ namespace UninstallTools.Uninstaller
                 }
 
                 CurrentStatus = UninstallStatus.Uninstalling;
-                IsRunning = true;
-            }
 
-            var worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker" };
-            worker.Start(options);
+                try
+                {
+                    _worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker", IsBackground = false};
+                    _worker.Start(options);
+                }
+                catch
+                {
+                    CurrentStatus = UninstallStatus.Failed;
+                    Finished = true;
+                    throw;
+                }
+            }
         }
 
         public void SkipWaiting(bool terminate)
@@ -164,7 +186,7 @@ namespace UninstallTools.Uninstaller
                     };
                     // Important to NextSample now, they will collect data when we sleep
                     _perfCounterBuffer.Add(childProcessName, new PerfCounterEntry(
-                        perfCounters, new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }));
+                        perfCounters, new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}));
                 }
                 catch
                 {
@@ -222,12 +244,12 @@ namespace UninstallTools.Uninstaller
             var options = parameters as RunUninstallerOptions;
             Debug.Assert(options != null, "options != null");
 
-            var processSnapshot = Process.GetProcesses().Select(x => x.Id).ToArray();
-
             Exception error = null;
             var retry = false;
             try
             {
+                var processSnapshot = Process.GetProcesses().Select(x => x.Id).ToArray();
+
                 using (var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate))
                 {
                     // Can be null during simulation
@@ -238,7 +260,7 @@ namespace UninstallTools.Uninstaller
 
                         var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet &&
                                             UninstallerEntry.QuietUninstallPossible;
-                        var watchedProcesses = new List<Process> { uninstaller };
+                        var watchedProcesses = new List<Process> {uninstaller};
                         var idleCounter = 0;
 
                         while (true)
@@ -405,40 +427,45 @@ namespace UninstallTools.Uninstaller
             }
             finally
             {
-                _perfCounterBuffer.ForEach(x => { x.Value.Dispose(); });
+                try
+                {
+                    _perfCounterBuffer.ForEach(x => x.Value.Dispose());
+                }
+                catch
+                {
+                    // Ignore any errors to make sure rest of this code runs
+                }
                 _perfCounterBuffer.Clear();
-            }
 
-            // Take care of the aftermath
-            if (_skipLevel != SkipCurrentLevel.None)
-            {
-                _skipLevel = SkipCurrentLevel.None;
+                // Take care of the aftermath
+                if (_skipLevel != SkipCurrentLevel.None)
+                {
+                    _skipLevel = SkipCurrentLevel.None;
 
-                CurrentStatus = UninstallStatus.Skipped;
-                CurrentError = new OperationCanceledException(Localisation.ManagerError_Skipped);
-            }
-            else if (error != null)
-            {
-                //Localisation.ManagerError_PrematureWorkerStop is unused
-                CurrentStatus = UninstallStatus.Failed;
-                CurrentError = error;
-            }
-            else
-            {
-                CurrentStatus = UninstallStatus.Completed;
-            }
+                    CurrentStatus = UninstallStatus.Skipped;
+                    CurrentError = new OperationCanceledException(Localisation.ManagerError_Skipped);
+                }
+                else if (error != null)
+                {
+                    //Localisation.ManagerError_PrematureWorkerStop is unused
+                    CurrentStatus = UninstallStatus.Failed;
+                    CurrentError = error;
+                }
+                else
+                {
+                    CurrentStatus = UninstallStatus.Completed;
+                }
 
-            if (retry && _canRetry)
-            {
-                CurrentStatus = UninstallStatus.Waiting;
-                _canRetry = false;
+                if (retry && _canRetry)
+                {
+                    CurrentStatus = UninstallStatus.Waiting;
+                    _canRetry = false;
+                }
+                else
+                {
+                    Finished = true;
+                }
             }
-            else
-            {
-                Finished = true;
-            }
-
-            IsRunning = false;
         }
 
         private sealed class PerfCounterEntry : IDisposable
@@ -450,6 +477,7 @@ namespace UninstallTools.Uninstaller
             }
 
             public PerformanceCounter[] Counter { get; }
+
             public CounterSample[] Sample { get; }
 
             public void Dispose()
@@ -472,8 +500,11 @@ namespace UninstallTools.Uninstaller
             }
 
             public bool AutoKillStuckQuiet { get; }
+
             public bool PreferQuiet { get; }
+
             public bool RetryFailedQuiet { get; }
+
             public bool Simulate { get; }
         }
 

@@ -138,46 +138,53 @@ namespace UninstallTools.Uninstaller
             if (targetList == null || configuration == null)
                 throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
 
-            while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting || x.IsRunning))
+            try
             {
-                do
+                while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting || x.IsRunning))
                 {
-                    if (Aborted)
+                    do
                     {
-                        AllUninstallersList.ForEach(x => x.SkipWaiting(false));
-                        break;
+                        if (Aborted)
+                        {
+                            AllUninstallersList.ForEach(x => x.SkipWaiting(false));
+                            break;
+                        }
+                        Thread.Sleep(500);
+                    } while (AllUninstallersList.Count(x => x.IsRunning) >= ConcurrentUninstallerCount);
+
+                    var running =
+                        AllUninstallersList.Where(x => x.CurrentStatus == UninstallStatus.Uninstalling).ToList();
+                    var runningTypes = running.Select(y => y.UninstallerEntry.UninstallerKind).ToList();
+                    var loudBlocked = OneLoudLimit && running.Any(y => !y.IsSilent);
+
+                    var result = AllUninstallersList.FirstOrDefault(x =>
+                    {
+                        if (x.CurrentStatus != UninstallStatus.Waiting || (loudBlocked && !x.IsSilent))
+                            return false;
+
+                        if (CheckForTypeCollisions(x.UninstallerEntry.UninstallerKind, runningTypes))
+                            return false;
+
+                        if (CheckForAdvancedCollisions(x.UninstallerEntry, running.Select(y => y.UninstallerEntry)))
+                            return false;
+
+                        return true;
+                    });
+
+                    if (result != null)
+                    {
+                        result.RunUninstaller(
+                            new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet,
+                                configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
+                        // Fire the event now so the interface can be updated
+                        OnStatusChanged?.Invoke(this, EventArgs.Empty);
                     }
-                    Thread.Sleep(500);
-                } while (AllUninstallersList.Count(x => x.IsRunning) >= ConcurrentUninstallerCount);
-
-                var running = AllUninstallersList.Where(x => x.CurrentStatus == UninstallStatus.Uninstalling).ToList();
-                var runningTypes = running.Select(y => y.UninstallerEntry.UninstallerKind).ToList();
-                var loudBlocked = OneLoudLimit && running.Any(y => !y.IsSilent);
-
-                var result = AllUninstallersList.FirstOrDefault(x =>
-                {
-                    if (x.CurrentStatus != UninstallStatus.Waiting || (loudBlocked && !x.IsSilent))
-                        return false;
-
-                    if (CheckForTypeCollisions(x.UninstallerEntry.UninstallerKind, runningTypes))
-                        return false;
-
-                    if (CheckForAdvancedCollisions(x.UninstallerEntry, running.Select(y => y.UninstallerEntry)))
-                        return false;
-
-                    return true;
-                });
-
-                if (result != null)
-                {
-                    result.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet,
-                        configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
-                    // Fire the event now so the interface can be updated
-                    OnStatusChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
-
-            Finished = true;
+            finally
+            {
+                Finished = true;
+            }
         }
 
         /*public bool RunSingle(BulkUninstallEntry entry, bool disableCollisionDetection)
