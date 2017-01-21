@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
@@ -70,8 +69,19 @@ namespace BulkCrapUninstaller.Forms
             olvColumnId.AspectName = nameof(BulkUninstallEntry.Id);
 
             olvColumnStatus.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.CurrentStatus;
+            olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.Normalize().FirstOrDefault();
+            olvColumnId.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.Id / 10;
+
             objectListView1.PrimarySortColumn = olvColumnStatus;
             objectListView1.SecondarySortColumn = olvColumnId;
+
+            forceUpdateTimer.Tick += (o, args) =>
+            {
+                if (_currentTargetStatus != null && !_currentTargetStatus.Finished)
+                    currentTargetStatus_OnCurrentTaskChanged(o, args);
+                else
+                    forceUpdateTimer.Stop();
+            };
         }
 
         private IEnumerable<BulkUninstallEntry> SelectedTaskEntries
@@ -98,21 +108,21 @@ namespace BulkCrapUninstaller.Forms
         {
             Close();
         }
-
+        
         private void currentTargetStatus_OnCurrentTaskChanged(object sender, EventArgs e)
         {
-            new Thread(() =>
+            forceUpdateTimer.Stop();
+            objectListView1.SafeInvoke(() =>
             {
-                objectListView1.SafeInvoke(() =>
-                {
-                    objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
+                objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
 
-                    if (_currentTargetStatus.Finished)
-                        OnTaskFinished();
-                    else
-                        OnTaskUpdated();
-                });
-            }).Start();
+                if (_currentTargetStatus.Finished)
+                    OnTaskFinished();
+                else
+                    OnTaskUpdated();
+            });
+            // Reset the timer
+            forceUpdateTimer.Start();
         }
 
         private void OnTaskFinished()
@@ -189,6 +199,7 @@ namespace BulkCrapUninstaller.Forms
             }
 
             ResumeLayout();
+            Refresh();
         }
 
         private void UninstallProgressWindow_FormClosing(object sender, FormClosingEventArgs e)

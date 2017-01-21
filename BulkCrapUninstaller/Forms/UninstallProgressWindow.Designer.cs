@@ -33,6 +33,7 @@ namespace BulkCrapUninstaller.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallProgressWindow));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,10 +56,11 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.usageTracker1 = new UsageTracker();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.forceUpdateTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -114,7 +116,6 @@ namespace BulkCrapUninstaller.Forms
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
-            this.objectListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowItemToolTips = true;
@@ -249,6 +250,10 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
+            // forceUpdateTimer
+            // 
+            this.forceUpdateTimer.Interval = 3500;
+            // 
             // UninstallProgressWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -301,5 +306,6 @@ namespace BulkCrapUninstaller.Forms
         private OLVColumn olvColumnId;
         private ToolStripButton toolStripButtonTerminate;
         private ToolStripButton toolStripButtonHelp;
+        private Timer forceUpdateTimer;
     }
 }
