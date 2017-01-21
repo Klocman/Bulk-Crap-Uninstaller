@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
@@ -108,11 +109,13 @@ namespace BulkCrapUninstaller.Forms
         {
             Close();
         }
-        
+
         private void currentTargetStatus_OnCurrentTaskChanged(object sender, EventArgs e)
         {
             forceUpdateTimer.Stop();
-            objectListView1.SafeInvoke(() =>
+
+            // Needed to call from another thread to avoid blocking the calling thread and deadlocking
+            new Thread(() => objectListView1.SafeInvoke(() =>
             {
                 objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
 
@@ -120,7 +123,9 @@ namespace BulkCrapUninstaller.Forms
                     OnTaskFinished();
                 else
                     OnTaskUpdated();
-            });
+            }))
+            { IsBackground = false }.Start();
+
             // Reset the timer
             forceUpdateTimer.Start();
         }
