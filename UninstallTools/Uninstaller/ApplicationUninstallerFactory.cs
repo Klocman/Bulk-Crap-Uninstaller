@@ -491,7 +491,7 @@ namespace UninstallTools.Uninstaller
         {
             if (fileNames != null)
             {
-                foreach (var candidate in fileNames.Take(3))
+                foreach (var candidate in fileNames.Take(2))
                 {
                     try
                     {
