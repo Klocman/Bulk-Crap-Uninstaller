@@ -323,7 +323,7 @@ namespace UninstallTools.Uninstaller
 
             if (!string.IsNullOrEmpty(result.DisplayIcon))
                 result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
-            
+
             return result;
         }
 
@@ -413,7 +413,7 @@ namespace UninstallTools.Uninstaller
             // Fill in missing fields with information that can now be obtained
             if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
                 ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
-            
+
             // Use quiet uninstall string as normal uninstall string if the normal string is missing.
             if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
                 tempEntry.UninstallString = tempEntry.QuietUninstallString;
@@ -758,24 +758,25 @@ namespace UninstallTools.Uninstaller
         {
             var verInfo = FileVersionInfo.GetVersionInfo(infoSourceFilename);
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Publisher?.Trim()))
-                && !string.IsNullOrEmpty(verInfo.CompanyName?.Trim()))
-                targetEntry.Publisher = verInfo.CompanyName;
+            Func<string, bool> unpopulatedCheck;
+            if (onlyUnpopulated) unpopulatedCheck = target => string.IsNullOrEmpty(target?.Trim());
+            else unpopulatedCheck = target => true;
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.RawDisplayName?.Trim()))
-                && !string.IsNullOrEmpty(verInfo.ProductName?.Trim()))
-                targetEntry.RawDisplayName = verInfo.ProductName;
+            if (unpopulatedCheck(targetEntry.Publisher) && !string.IsNullOrEmpty(verInfo.CompanyName?.Trim()))
+                targetEntry.Publisher = verInfo.CompanyName.Trim();
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.Comment?.Trim()))
-                && !string.IsNullOrEmpty(verInfo.Comments?.Trim()))
-                targetEntry.Comment = verInfo.Comments;
+            if (unpopulatedCheck(targetEntry.RawDisplayName) && !string.IsNullOrEmpty(verInfo.ProductName?.Trim()))
+                targetEntry.RawDisplayName = verInfo.ProductName.Trim();
 
-            if (!(onlyUnpopulated && !string.IsNullOrEmpty(targetEntry.DisplayVersion?.Trim())))
+            if (unpopulatedCheck(targetEntry.Comment) && !string.IsNullOrEmpty(verInfo.Comments?.Trim()))
+                targetEntry.Comment = verInfo.Comments.Trim();
+
+            if (unpopulatedCheck(targetEntry.DisplayVersion))
             {
                 if (!string.IsNullOrEmpty(verInfo.ProductVersion?.Trim()))
-                    targetEntry.DisplayVersion = verInfo.ProductVersion;
+                    targetEntry.DisplayVersion = verInfo.ProductVersion.Trim();
                 else if (!string.IsNullOrEmpty(verInfo.FileVersion?.Trim()))
-                    targetEntry.DisplayVersion = verInfo.FileVersion;
+                    targetEntry.DisplayVersion = verInfo.FileVersion.Trim();
             }
         }
 
@@ -928,7 +929,7 @@ namespace UninstallTools.Uninstaller
                 return false;
 
             //Regex WindowsUpdateRegEx = new Regex(@"KB[0-9]{6}$"); //Doesnt work for all cases
-            return defaultValue.Length > 6 && defaultValue.StartsWith("KB")
+            return defaultValue.Length > 6 && defaultValue.StartsWith("KB", StringComparison.Ordinal)
                    && char.IsNumber(defaultValue[2]) && char.IsNumber(defaultValue.Last());
         }
 
@@ -997,7 +998,7 @@ namespace UninstallTools.Uninstaller
             }
 
             // Detect Steam
-            if (uninstallerKey.GetKeyName().StartsWith("Steam App "))
+            if (uninstallerKey.GetKeyName().StartsWith("Steam App ", StringComparison.Ordinal))
             {
                 return UninstallerType.Steam;
             }
