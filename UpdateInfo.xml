@@ -2,18 +2,15 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.6.1.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.6.1/BCUninstaller_3.6.1_portable.zip</URL>
+<Version>3.6.2.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.6.2/BCUninstaller_3.6.2_portable.zip</URL>
 <Changes>
-Executables and the installer are now signed, thanks to the donations.
-Added support for Windows Services.
-Added searching CLSID keys for junk.
-Added message if saving settings fails.
-Added warning to save uninstall list before closing.
-Added titlebar notification of unsaved uninstall lists.
-Installer no longer optimizes performance for portable installs.
-Many fixes and improvements.
+Added ability to sort the uninstall progress list view by columns.
+Fixed crashes during bulk uninstall not being handled properly.
+Fixed uninstall progress sometimes failing to update properly.
+Fixed some uninstaller commands not being recognized.
+Code cleanup and refactoring, small performance improvements.
 </Changes>
-<Hash>549b8332a3038f0ea473f66c59a602c1</Hash>
+<Hash>8ad1a30d63383a7e3ee94c38dc8edafb</Hash>
 </Update>
 </Root>
