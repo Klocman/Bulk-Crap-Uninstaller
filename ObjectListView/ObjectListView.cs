@@ -9162,14 +9162,15 @@ namespace BrightIdeasSoftware
         internal void HandleMouseMove(Point pt) {
 
             //System.Diagnostics.Debug.WriteLine(String.Format("HandleMouseMove: {0}", pt));
-
+            
+            /* Prevent excessive redrawing when mouse is hovering over the listview. Doesn't seem to break anything important.
             CellOverEventArgs args = new CellOverEventArgs();
             this.BuildCellEvent(args, pt);
             this.OnCellOver(args);
             this.MouseMoveHitTest = args.HitTest;
 
             if (!args.Handled)
-                this.UpdateHotItem(args.HitTest);
+                this.UpdateHotItem(args.HitTest);*/
         }
 
         /// <summary>
