@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Security;
 using Klocman.Extensions;
+using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Uninstaller;
@@ -127,36 +128,8 @@ namespace UninstallTools.Junk
                     var confidence = GenerateConfidence(keyName, keyDir, level).ToList();
 
                     // Check if application's location is explicitly mentioned in any of the values
-                    foreach (var valueName in GetValueNamesSafe(softwareKey))
-                    {
-                        bool hit;
-
-                        if (InstallDirKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            hit = TestPathsMatch(softwareKey.GetValue(valueName) as string);
-                        }
-                        else if (ExePathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            hit = TestPathsMatchExe(softwareKey.GetValue(valueName) as string);
-                        }
-                        else if (ExeOrDirPathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            var path = softwareKey.GetValue(valueName) as string;
-                            hit = File.Exists(path)
-                                ? TestPathsMatchExe(softwareKey.GetValue(valueName) as string)
-                                : TestPathsMatch(softwareKey.GetValue(valueName) as string);
-                        }
-                        else
-                        {
-                            hit = TestPathsMatch(softwareKey.GetValue(null) as string);
-                        }
-
-                        if (hit)
-                        {
-                            confidence.Add(ConfidencePart.ExplicitConnection);
-                            break;
-                        }
-                    }
+                    if (GetValueNamesSafe(softwareKey).Any(valueName => TestValueForMatches(softwareKey, valueName)))
+                        confidence.Add(ConfidencePart.ExplicitConnection);
 
                     if (confidence.Any())
                     {
@@ -197,6 +170,32 @@ namespace UninstallTools.Junk
             return returnList;
         }
 
+        private bool TestValueForMatches(RegistryKey softwareKey, string valueName)
+        {
+            bool hit;
+            if (InstallDirKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+            {
+                hit = TestPathsMatch(Uninstaller.InstallLocation, softwareKey.GetValue(valueName) as string);
+            }
+            else if (ExePathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+            {
+                hit = TestPathsMatchExe(softwareKey.GetValue(valueName) as string);
+            }
+            else if (ExeOrDirPathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
+            {
+                var path = softwareKey.GetValue(valueName) as string;
+                hit = File.Exists(path)
+                    ? TestPathsMatchExe(softwareKey.GetValue(valueName) as string)
+                    : TestPathsMatch(Uninstaller.InstallLocation, softwareKey.GetValue(valueName) as string);
+            }
+            else
+            {
+                hit = TestPathsMatch(Uninstaller.InstallLocation, softwareKey.GetValue(null) as string);
+            }
+
+            return hit;
+        }
+
         private static IEnumerable<string> GetValueNamesSafe(RegistryKey key)
         {
             try
@@ -208,6 +207,8 @@ namespace UninstallTools.Junk
                 return Enumerable.Empty<string>();
             }
         }
+
+        private static readonly string WindowsDirectory = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
         private IEnumerable<JunkNode> ScanClsid()
         {
@@ -235,9 +236,7 @@ namespace UninstallTools.Junk
 
                             path = Environment.ExpandEnvironmentVariables(path).Trim('\"');
 
-                            if (!Path.IsPathRooted(path) || (File.Exists(path) &&
-                                                             (File.GetAttributes(path) & FileAttributes.System) ==
-                                                             FileAttributes.System))
+                            if (!Path.IsPathRooted(path) || TestPathsMatch(WindowsDirectory, path))
                                 continue;
 
                             if (TestPathsMatchExe(path))
@@ -399,20 +398,22 @@ namespace UninstallTools.Junk
             return results;
         }
 
-        private bool TestPathsMatch(string keyValue)
+        private bool TestPathsMatch(string basePath, string childPath)
         {
-            var installLocation = Uninstaller.InstallLocation?.Normalize().Trim().Trim('\\', '/');
-            keyValue = keyValue?.Normalize().Trim().Trim('\\', '/');
-
-            if (string.IsNullOrEmpty(installLocation) || string.IsNullOrEmpty(keyValue))
+            basePath = basePath?.Normalize().Trim().Trim('\\', '/');
+            if (string.IsNullOrEmpty(basePath))
                 return false;
 
-            return keyValue.StartsWith(installLocation, StringComparison.InvariantCultureIgnoreCase);
+            childPath = childPath?.Normalize().Trim().Trim('\\', '/');
+            if (string.IsNullOrEmpty(childPath))
+                return false;
+
+            return childPath.StartsWith(basePath, StringComparison.InvariantCultureIgnoreCase);
         }
 
         private bool TestPathsMatchExe(string keyValue)
         {
-            return TestPathsMatch(Path.GetDirectoryName(keyValue));
+            return TestPathsMatch(Uninstaller.InstallLocation, Path.GetDirectoryName(keyValue));
         }
     }
 }
