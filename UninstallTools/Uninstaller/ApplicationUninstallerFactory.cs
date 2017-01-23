@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Native;
@@ -1009,22 +1010,23 @@ namespace UninstallTools.Uninstaller
             return string.IsNullOrEmpty(uninstallString) ? UninstallerType.Unknown : GetUninstallerType(uninstallString);
         }
 
+        private static readonly Regex InnoSetupFilenameRegex = new Regex(@"unins\d\d\d", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
         private static UninstallerType GetUninstallerType(string uninstallString)
         {
             // Detect MSI installer based on the uninstall string
             //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
             if (PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
                 new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
-            {
                 return UninstallerType.Msiexec;
-            }
 
             // Detect Sdbinst
             if (uninstallString.Contains("sdbinst", StringComparison.OrdinalIgnoreCase)
                 && uninstallString.Contains(".sdb", StringComparison.OrdinalIgnoreCase))
-            {
                 return UninstallerType.SdbInst;
-            }
+
+            if (uninstallString.Contains(@"InstallShield Installation Information\{", StringComparison.OrdinalIgnoreCase))
+                return UninstallerType.InstallShield;
 
             ProcessStartCommand ps;
             if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) &&
@@ -1032,29 +1034,29 @@ namespace UninstallTools.Uninstaller
             {
                 try
                 {
+                    var fileName = Path.GetFileNameWithoutExtension(ps.FileName);
+                    // Detect Inno Setup
+                    if (fileName != null && InnoSetupFilenameRegex.IsMatch(fileName))
+                    {
+                        // Check if Inno Setup Uninstall Log exists
+                        if (File.Exists(ps.FileName.Substring(0, ps.FileName.Length - 3) + "dat"))
+                            return UninstallerType.InnoSetup;
+                    }
+
                     var result = File.ReadAllText(ps.FileName, Encoding.ASCII);
 
                     // Detect NSIS Nullsoft.NSIS (the most common)
                     if (result.Contains("Nullsoft"))
                         return UninstallerType.Nsis;
 
-                    // Detect InstallShield InstallShield.Setup
+                    /* Unused/unnecessary
                     if (result.Contains("InstallShield"))
                         return UninstallerType.InstallShield;
-
-                    /*// Try to lessen the amount of data that needs to be tested for remaining items (does not work well for InstallShield)
-                    var infoStart = result.IndexOf(@"<?xml", StringComparison.OrdinalIgnoreCase);
-                    if (infoStart > 0)
-                        result = result.Substring(infoStart + 6);*/
-
                     if (result.Contains("Inno.Setup") || result.Contains("Inno Setup"))
                         return UninstallerType.InnoSetup;
-
-                    /* // Detect Adobe installer
                     if(result.Contains(@"<description>Adobe Systems Incorporated Setup</description>"))
-                    {
                         return UninstallerType.AdobeSetup;
-                    }*/
+                    */
                 }
                 catch (IOException) { }
                 catch (UnauthorizedAccessException) { }
