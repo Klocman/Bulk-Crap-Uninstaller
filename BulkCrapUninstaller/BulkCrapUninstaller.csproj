@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BulkCrapUninstaller</RootNamespace>
     <AssemblyName>BCUninstaller</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -99,10 +99,6 @@
     </Reference>
     <Reference Include="NetSettingBinder, Version=1.1.6062.19744, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NetSettingBinder.1.1.6062.19744\lib\net35\NetSettingBinder.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
-      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -830,6 +826,10 @@
     <ProjectReference Include="..\NBug_net35\NBug.csproj">
       <Project>{62ced1d5-f603-40de-8bf5-3e49d3a392f4}</Project>
       <Name>NBug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
     </ProjectReference>
     <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.vbproj">
       <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>

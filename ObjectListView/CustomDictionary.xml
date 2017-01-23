@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>br</Word>
+      <Word>Canceled</Word>
+      <Word>Center</Word>
+      <Word>Color</Word>
+      <Word>Colors</Word>
+      <Word>f</Word>
+      <Word>fmt</Word>
+      <Word>g</Word>
+      <Word>gdi</Word>
+      <Word>hti</Word>
+      <Word>i</Word>
+      <Word>lightbox</Word>
+      <Word>lv</Word>
+      <Word>lvi</Word>
+      <Word>lvsi</Word>
+      <Word>m</Word>
+      <Word>multi</Word>
+      <Word>Munger</Word>
+      <Word>n</Word>
+      <Word>olv</Word>
+      <Word>olvi</Word>
+      <Word>p</Word>
+      <Word>parms</Word>
+      <Word>r</Word>
+      <Word>Renderer</Word>
+      <Word>s</Word>
+      <Word>SubItem</Word>
+      <Word>Unapply</Word>
+      <Word>Unpause</Word>
+      <Word>x</Word>
+      <Word>y</Word>
+    </Recognized>
+    <Deprecated>
+      <Term PreferredAlternate="EnterpriseServices">ComPlus</Term>
+    </Deprecated>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>OLV</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

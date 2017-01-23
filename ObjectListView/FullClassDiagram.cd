@@ -1,0 +1,1261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BrightIdeasSoftware.CellEditKeyEngine" Collapsed="true">
+    <Position X="36" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCABIAAAIAhAACgAAAAAIAMAAAECAAggAIAIIAAAEA=</HashCode>
+      <FileName>CellEditing\CellEditKeyEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ComboBoxItem" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEIAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AutoCompleteCellEditor" Collapsed="true">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.EnumCellEditor" Collapsed="true">
+    <Position X="36" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.IntUpDown" Collapsed="true">
+    <Position X="34.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.UintUpDown" Collapsed="true">
+    <Position X="25.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BooleanCellEditor" Collapsed="true">
+    <Position X="30.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BooleanCellEditor2" Collapsed="true">
+    <Position X="32.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FloatCellEditor" Collapsed="true">
+    <Position X="25.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.EditorRegistry" Collapsed="true">
+    <Position X="34.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAAABAQAAQAAgAAAAAAABAIAAAAQAAAAAAAA=</HashCode>
+      <FileName>CellEditing\EditorRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.DataListView" Collapsed="true">
+    <Position X="17.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAAAAAAAgIhAAACAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractDragSource" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>DragDrop\DragSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.SimpleDragSource" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAQAAAAAQAAAQEAAAAAAAAAAAQAA=</HashCode>
+      <FileName>DragDrop\DragSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractDropSink" Collapsed="true">
+    <Position X="0.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQQAAAAAIAEAAAAAEFAAAAgAAAAMAAAAA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.SimpleDropSink" Collapsed="true">
+    <Position X="0.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZS0gAiQEBAoQDA8YQBMAMCAFgwQHBALcAEBEiEAAAQA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.RearrangingDropSink" Collapsed="true">
+    <Position X="0.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OlvDropEventArgs" Collapsed="true">
+    <Position X="19.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACgGiAAIBoAAAAAAAAAAAAAAALAAAAKgAQECIAEgAA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ModelDropEventArgs" Collapsed="true">
+    <Position X="19.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAAAAAAAAAAAAAEQAAAAAAAAAAIAAAAAgAQAAEA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVDataObject" Collapsed="true">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAEABAAAAAAAEAAAAAAAAAIAAgACgAAAAAAAQBA=</HashCode>
+      <FileName>DragDrop\OLVDataObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FastDataListView" Collapsed="true">
+    <Position X="15" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgIAAAACAAAEQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FastDataListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FastObjectListView" Collapsed="true">
+    <Position X="15" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAA=</HashCode>
+      <FileName>FastObjectListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FastObjectListDataSource" Collapsed="true">
+    <Position X="2.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAgAQAQAABAgAAASQ4AQAAIEAAAAAAAAAEIAgAA=</HashCode>
+      <FileName>FastObjectListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Cluster" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAEAQEBAAAAAQAgAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Cluster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ClusteringStrategy" Collapsed="true">
+    <Position X="16.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAhBABAgAQAAIKAQBAQAAAAAAoIA=</HashCode>
+      <FileName>Filtering\ClusteringStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ClustersFromGroupsStrategy" Collapsed="true">
+    <Position X="15.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\ClustersFromGroupsStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.DateTimeClusteringStrategy" Collapsed="true">
+    <Position X="17.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAAAAAAAACAAAAQgAAAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\DateTimeClusteringStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FilterMenuBuilder" Collapsed="true">
+    <Position X="23.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAEAADAQgEEAAQAIAAgQIAAAAFQAAAAAAAAAoAAAAAE=</HashCode>
+      <FileName>Filtering\FilterMenuBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractModelFilter" Collapsed="true">
+    <Position X="6.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ModelFilter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.CompositeFilter" Collapsed="true">
+    <Position X="4" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAIAAAACAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.CompositeAllFilter" Collapsed="true">
+    <Position X="2.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CompositeAnyFilter" Collapsed="true">
+    <Position X="5" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractListFilter" Collapsed="true">
+    <Position X="11.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ListFilter" Collapsed="true">
+    <Position X="10" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAIAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TailFilter" Collapsed="true">
+    <Position X="12.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TextMatchFilter" Collapsed="true">
+    <Position X="6.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAAAABAAABAAgAQACABABAAAAyEIAAIgSgAA=</HashCode>
+      <FileName>Filtering\TextMatchFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVColumnAttribute" Collapsed="true">
+    <Position X="22" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAQTAAZAEgWGAASFwIIEYECGBGAQKAQEEGAQJAAEE=</HashCode>
+      <FileName>Implementation\Attributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ColumnComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAABQAAAAAAA=</HashCode>
+      <FileName>Implementation\Comparers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVGroupComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Implementation\Comparers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ModelObjectComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAABQAAAAAAA=</HashCode>
+      <FileName>Implementation\Comparers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.DataSourceAdapter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AZggAAAwAGAAAgACQAYCBCAEICACACUEhAEAQKBAgQg=</HashCode>
+      <FileName>Implementation\DataSourceAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ObjectListView" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>5/7+//3///fX/+//+///f/3//f/37N////+//7+///8=</HashCode>
+      <FileName>Implementation\Enums.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.TreeListView" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASgQyXBAABICBAAAAIAAACCEMAKBQAOAABDAgAUpAQA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellEditEventArgs" Collapsed="true">
+    <Position X="34.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAEAAFQAAAABAABABQEAQAQAAAECAAAAAgAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CancellableEventArgs" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BeforeSortingEventArgs" Collapsed="true">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAIAAAAAAAAAEAAAQAAAAABAAAAAAAABAAIAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AfterSortingEventArgs" Collapsed="true">
+    <Position X="27.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAQQAAAAAAEAAAQAAAAABAAAAAAgABQAIAE=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FilterEventArgs" Collapsed="true">
+    <Position X="22" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ItemsChangedEventArgs" Collapsed="true">
+    <Position X="22" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ItemsAddingEventArgs" Collapsed="true">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ItemsChangingEventArgs" Collapsed="true">
+    <Position X="14.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ItemsRemovingEventArgs" Collapsed="true">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AfterSearchingEventArgs" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BeforeSearchingEventArgs" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellEventArgs" Collapsed="true">
+    <Position X="5.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAMABAAAAQgAZAFAAGUARAAAAAgAgAAIAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellClickEventArgs" Collapsed="true">
+    <Position X="0.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellRightClickEventArgs" Collapsed="true">
+    <Position X="3" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellOverEventArgs" Collapsed="true">
+    <Position X="5.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FreezeEventArgs" Collapsed="true">
+    <Position X="27.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ToolTipShowingEventArgs" Collapsed="true">
+    <Position X="7.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAEGAAAAAAAAAAAgAACAIAAAACAAHAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HyperlinkEventArgs" Collapsed="true">
+    <Position X="30.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAMAAAAAAAgARABAAEUAQIAAAAiAgAAIAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.IsHyperlinkEventArgs" Collapsed="true">
+    <Position X="36" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAQAAAAAAIiAgACIAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FormatRowEventArgs" Collapsed="true">
+    <Position X="8.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAgAQAAAAEAAAAAQAAgAkEAIAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.FormatCellEventArgs" Collapsed="true">
+    <Position X="8.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAABABAAAUAQAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HyperlinkClickedEventArgs" Collapsed="true">
+    <Position X="9.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HotItemChangedEventArgs" Collapsed="true">
+    <Position X="27.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAGJACRCAAEEABEAAAAJACBAAAAAAgIAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.SubItemCheckingEventArgs" Collapsed="true">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAEAAAAAAAABAABABQEAQAQAAAEAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CreateGroupsEventArgs" Collapsed="true">
+    <Position X="30.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAAAAAAAAgAAAAIAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.GroupTaskClickedEventArgs" Collapsed="true">
+    <Position X="36" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.GroupStateChangedEventArgs" Collapsed="true">
+    <Position X="34.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgEAACggAgAAIAAAAAEAAAIAAAAAAAAAAAAAAAII=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TreeBranchExpandingEventArgs" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TreeBranchExpandedEventArgs" Collapsed="true">
+    <Position X="36" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TreeBranchCollapsingEventArgs" Collapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TreeBranchCollapsedEventArgs" Collapsed="true">
+    <Position X="34.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.GroupingParameters" Collapsed="true">
+    <Position X="32.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIMAAAACBEAEAoQAAAKAACAAUhAAgRIQAIAE=</HashCode>
+      <FileName>Implementation\GroupingParameters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVGroup" Collapsed="true">
+    <Position X="27.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>bEYChOwmAAQgiCQEQBgEAMwAEAAMAEQMgEFAFODAGhM=</HashCode>
+      <FileName>Implementation\Groups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Munger" Collapsed="true">
+    <Position X="27.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAJAAAAAQEABCAAAAAhAAAAACAAAAAAAIAAAE=</HashCode>
+      <FileName>Implementation\Munger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.SimpleMunger" Collapsed="true">
+    <Position X="29" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIACAAJAAAgAAEACAAAAAABAAAIAAAAAEAAAAAEAA=</HashCode>
+      <FileName>Implementation\Munger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.MungerException" Collapsed="true">
+    <Position X="29" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Implementation\Munger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.NativeMethods" Collapsed="true">
+    <Position X="30.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cChxFKmMjlNGI/LfZWKToPLMK45gioYxDANnzL7yfN4=</HashCode>
+      <FileName>Implementation\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.NullableDictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="32.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAEAAAACAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\NullableDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVListItem" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAABEAACAAAAAAAAQABAAEgAQAAIAASAAAgE=</HashCode>
+      <FileName>Implementation\OLVListItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVListSubItem" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAABAIAAAQCAgACSAAAAk=</HashCode>
+      <FileName>Implementation\OLVListSubItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OlvListViewHitTestInfo" Collapsed="true">
+    <Position X="34.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAEAgAAABEAAZABAAGAAQAEAAAgAAAAAAIAAA=</HashCode>
+      <FileName>Implementation\OlvListViewHitTestInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractVirtualGroups" Collapsed="true">
+    <Position X="5.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAEAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Implementation\VirtualGroups.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.FastListGroupingStrategy" Collapsed="true">
+    <Position X="5.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAACAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Implementation\VirtualGroups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OwnerDataCallbackImpl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAgAIAAAQAAAAAAAEAEACAAA=</HashCode>
+      <FileName>Implementation\VirtualGroups.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractVirtualListDataSource" Collapsed="true">
+    <Position X="1.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAAAAAgAAASQgAQAAAEAAAAAAAAAIAAgAA=</HashCode>
+      <FileName>Implementation\VirtualListDataSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.VirtualListVersion1DataSource" Collapsed="true">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAABCAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\VirtualListDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.OLVColumn" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MgARTxAAJEcEWCbkoNwJbE6WTnSOEnOKQhSWGDJgsFk=</HashCode>
+      <FileName>OLVColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.GraphicAdornment" Collapsed="true">
+    <Position X="16" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAIAABAAAAIABACCiAIAgAACAAgAAABAIAAAAgAE=</HashCode>
+      <FileName>Rendering\Adornments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ImageAdornment" Collapsed="true">
+    <Position X="13.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAIAAAAAAAEAAAAAAEAAAABAAAEABAAAAAAA=</HashCode>
+      <FileName>Rendering\Adornments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TextAdornment" Collapsed="true">
+    <Position X="18.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIggAAEIAAgBIAIAAIASEACIABAACIIAAMACCADAsA=</HashCode>
+      <FileName>Rendering\Adornments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractDecoration" Collapsed="true">
+    <Position X="5.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAABAgAAAQAABAAAAAQBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.TintedColumnDecoration" Collapsed="true">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAQAAIAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BorderDecoration" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAgAgCABAAAgA4AAAAIAgAAAAAAAAAAAAAIAACBIgAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.RowBorderDecoration" Collapsed="true">
+    <Position X="5.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABAAIA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellBorderDecoration" Collapsed="true">
+    <Position X="7.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.EditingCellBorderDecoration" Collapsed="true">
+    <Position X="9.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.LightBoxDecoration" Collapsed="true">
+    <Position X="3" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ImageDecoration" Collapsed="true">
+    <Position X="12.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAgAAAQAABAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.TextDecoration" Collapsed="true">
+    <Position X="17.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAgAAAQAABAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractOverlay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAIAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.ImageOverlay" Collapsed="true">
+    <Position X="15" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAABAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.TextOverlay" Collapsed="true">
+    <Position X="19.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAgAAAAAAABAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.BillboardOverlay" Collapsed="true">
+    <Position X="19.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.AbstractRenderer" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAABAAAAAABAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.Version1Renderer" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.BaseRenderer" Collapsed="true">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AxLAQSEQZQhhAmA5IRBAASSQUhQgkFAAgJDGAAMDE8I=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HighlightTextRenderer" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAggCAEAAEAAAIAwAAKAEAIQABAAEAAAAAAAAAAKAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.MappedImageRenderer" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEBAAAQAAAAgAABAAEAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.CheckStateRenderer" Collapsed="true">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBIAAAAAAAAAAAAAAAAAAAAAAACBAAAAIAAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ImageRenderer" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAIAAAAAgIAAAAABBABAAAAAEIAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HotItemStyle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAEAAgAAEAIAABAAAAAAAAAAIAEAACADAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.CellStyle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAEAAgAAAAIAAAAAAAAAAAAAAAEAAAADAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BrightIdeasSoftware.HyperlinkStyle" Collapsed="true">
+    <Position X="32.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAiAAAAAgAIAAAAAAAAIBAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HeaderStateStyle" Collapsed="true">
+    <Position X="25.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAEAAAAAAAAAAAACACAAAgAgAAEAAAADAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HeaderFormatStyle" Collapsed="true">
+    <Position X="23.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAgAAAAAAAAAAICAAIAIAAAABAAAAQAEAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.GlassPanelForm" Collapsed="true">
+    <Position X="30.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgCkgAAARAoAAEAyEAAAAAIAAAAIAhCAAQIERAgAASA=</HashCode>
+      <FileName>SubControls\GlassPanelForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.HeaderControl" Collapsed="true">
+    <Position X="22" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAIOQAUABAAAACQiBQCKRgAACECAAoAwAAQxJAACaE=</HashCode>
+      <FileName>SubControls\HeaderControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ToolStripCheckedListBox" Collapsed="true">
+    <Position X="30.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAACAgAACCACAAAAAAAAIAAwAAIAAQCAAAAAAAAAAA=</HashCode>
+      <FileName>SubControls\ToolStripCheckedListBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ToolTipControl" Collapsed="true">
+    <Position X="32.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CkoAByAwQQAggEvSAAIQiIWIBELAYOIpiAKQUIQDqEA=</HashCode>
+      <FileName>SubControls\ToolTipControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.ColumnSelectionForm" Collapsed="true">
+    <Position X="27.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAFDAAQTAUAACIBAoWEAAAAAAoAAAAAIEAAgA=</HashCode>
+      <FileName>Utilities\ColumnSelectionForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Generator" Collapsed="true">
+    <Position X="29" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Utilities\Generator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TypedObjectListView&lt;T&gt;" Collapsed="true">
+    <Position X="23.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwABEAAAAAACIAIAQEAABEAAAAAEEggAAAAACQAA=</HashCode>
+      <FileName>Utilities\TypedObjectListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.TypedColumn&lt;T&gt;" Collapsed="true">
+    <Position X="22" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAEAEAABAAEAQCAAAQAAEAEAAAAgAAAAAAAA=</HashCode>
+      <FileName>Utilities\TypedObjectListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.VirtualObjectListView" Collapsed="true">
+    <Position X="13.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AVkQQAAAAGIEAQAkKkHAEAgRH4gBgAGOCCEigAAgIAQ=</HashCode>
+      <FileName>VirtualObjectListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Design.ObjectListViewDesigner" Collapsed="true">
+    <Position X="34.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABACAEAQAEAAAAAAAgAQCAAAAAAAMIQAABEAA=</HashCode>
+      <FileName>ObjectListView.DesignTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Design.OLVColumnCollectionEditor" Collapsed="true">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAABAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectListView.DesignTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Design.OverlayConverter" Collapsed="true">
+    <Position X="22" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAA=</HashCode>
+      <FileName>ObjectListView.DesignTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.Properties.Resources" Collapsed="true">
+    <Position X="25.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAABEAAAgQAAAAAAAAAAQAIAAIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrightIdeasSoftware.DataTreeListView" Collapsed="true">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgIAAAACAAEGAAAAAEAAAAAAABAAQAA=</HashCode>
+      <FileName>DataTreeListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BrightIdeasSoftware.IDragSource" Collapsed="true">
+    <Position X="25.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>DragDrop\DragSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IDropSink" Collapsed="true">
+    <Position X="27.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQQAAAAAIAEAAAAAEFAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IModelFilter" Collapsed="true">
+    <Position X="5.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IListFilter" Collapsed="true">
+    <Position X="11.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\Filters.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.ICluster" Collapsed="true">
+    <Position X="22" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\ICluster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IClusteringStrategy" Collapsed="true">
+    <Position X="23.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABBAAAAAAAAAAAQBAQAAAAAAAAA=</HashCode>
+      <FileName>Filtering\IClusteringStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IVirtualGroups" Collapsed="true">
+    <Position X="23.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAEAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>Implementation\VirtualGroups.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IOwnerDataCallback" Collapsed="true">
+    <Position X="36" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAgAIAAAQAAAAAAAEAEAAAAA=</HashCode>
+      <FileName>Implementation\VirtualGroups.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IVirtualListDataSource" Collapsed="true">
+    <Position X="25.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAgAAASAgAQAAAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Implementation\VirtualListDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IFilterableDataSource" Collapsed="true">
+    <Position X="29" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\VirtualListDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IDecoration" Collapsed="true">
+    <Position X="14.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Decorations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IOverlay" Collapsed="true">
+    <Position X="13.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.ITransparentOverlay" Collapsed="true">
+    <Position X="12.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Overlays.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IRenderer" Collapsed="true">
+    <Position X="22" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAABAAAAAABAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Renderers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrightIdeasSoftware.IItemStyle" Collapsed="true">
+    <Position X="30.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAADAAA=</HashCode>
+      <FileName>Rendering\Styles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BrightIdeasSoftware.CellEditAtEdgeBehaviour" Collapsed="true">
+    <Position X="22" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>CellEditing\CellEditKeyEngine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.CellEditCharacterBehaviour" Collapsed="true">
+    <Position X="23.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAAAQCAIAAAAAAIAAAAAAAUAQIABAAEAgAAAgACA=</HashCode>
+      <FileName>CellEditing\CellEditKeyEngine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.DropTargetLocation" Collapsed="true">
+    <Position X="27.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAABAAAAAAAAAAAEAAQBBAAAAAIgAAEAAAA=</HashCode>
+      <FileName>DragDrop\DropSink.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.DateTimePortion" Collapsed="true">
+    <Position X="25.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJAAAAAAAAAAAAAIAAAAAACIEAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering\DateTimeClusteringStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.GroupState" Collapsed="true">
+    <Position X="32.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAABAAEAQAARAAIQAAAAQAAAAAAEAAAAA=</HashCode>
+      <FileName>Implementation\Groups.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.GroupMask" Collapsed="true">
+    <Position X="29" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAwABAAAAAAAUAAAIAgQAAAAAEACAgAAAFAAA=</HashCode>
+      <FileName>Implementation\Groups.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.GroupMetricsMask" Collapsed="true">
+    <Position X="30.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAQAAAAAAEAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Groups.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BrightIdeasSoftware.HitTestLocation" Collapsed="true">
+    <Position X="34.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAEEAAAAAAAAQAEAAAAAAAAAAAABAAAAAACAAAEAA=</HashCode>
+      <FileName>Implementation\OlvListViewHitTestInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="BrightIdeasSoftware.EditorCreatorDelegate" Collapsed="true">
+    <Position X="23.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellEditing\EditorRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.AspectGetterDelegate" Collapsed="true">
+    <Position X="22" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.AspectPutterDelegate" Collapsed="true">
+    <Position X="23.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.AspectToStringConverterDelegate" Collapsed="true">
+    <Position X="25.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.CellToolTipGetterDelegate" Collapsed="true">
+    <Position X="32.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.CheckStateGetterDelegate" Collapsed="true">
+    <Position X="34.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.BooleanCheckStateGetterDelegate" Collapsed="true">
+    <Position X="27.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.CheckStatePutterDelegate" Collapsed="true">
+    <Position X="36" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.BooleanCheckStatePutterDelegate" Collapsed="true">
+    <Position X="29" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.ColumnRightClickEventHandler" Collapsed="true">
+    <Position X="22" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.HeaderDrawingDelegate" Collapsed="true">
+    <Position X="30.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABgAAAAACAQAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.GroupFormatterDelegate" Collapsed="true">
+    <Position X="25.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.GroupKeyGetterDelegate" Collapsed="true">
+    <Position X="27.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.GroupKeyToTitleConverterDelegate" Collapsed="true">
+    <Position X="29" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.HeaderToolTipGetterDelegate" Collapsed="true">
+    <Position X="32.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.ImageGetterDelegate" Collapsed="true">
+    <Position X="34.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.RenderDelegate" Collapsed="true">
+    <Position X="36" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAgACAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.RowGetterDelegate" Collapsed="true">
+    <Position X="23.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.RowFormatterDelegate" Collapsed="true">
+    <Position X="22" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.SortDelegate" Collapsed="true">
+    <Position X="25.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Implementation\Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BrightIdeasSoftware.CellEditEventHandler" Collapsed="true">
+    <Position X="30.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Events.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
