@@ -580,6 +580,8 @@ namespace BulkCrapUninstaller.Forms
                 }
             }
 
+            // Needed in case main window starts maximized
+            _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             _listLegendWindow.Opacity = 1;
         }
 
