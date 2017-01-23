@@ -41,6 +41,8 @@ namespace BulkCrapUninstaller.Forms
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
         private readonly Uninstaller _uninstaller;
+
+        private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
         private DebugWindow _debugWindow;
 
         private readonly OverlaySplashScreen.SplashScreenControls _splash;
@@ -82,7 +84,7 @@ namespace BulkCrapUninstaller.Forms
                     .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
 
-            listLegend1.WinFeatureEnabled = false;
+            _listLegendWindow.ListLegend.WinFeatureEnabled = false;
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
@@ -168,11 +170,11 @@ namespace BulkCrapUninstaller.Forms
         private void RefreshListLegend(object sender, EventArgs e)
         {
             var force = advancedFilters1.CurrentList != null;
-            listLegend1.CertificatesEnabled = force || _setMan.Selected.Settings.AdvancedTestCertificates;
-            listLegend1.InvalidEnabled = force || _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
-            listLegend1.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
-            listLegend1.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
-            listLegend1.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && propertiesSidebar.WinFeaturesEnabled;
+            _listLegendWindow.ListLegend.CertificatesEnabled = force || _setMan.Selected.Settings.AdvancedTestCertificates;
+            _listLegendWindow.ListLegend.InvalidEnabled = force || _setMan.Selected.Settings.AdvancedTestInvalid && propertiesSidebar.InvalidEnabled;
+            _listLegendWindow.ListLegend.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
+            _listLegendWindow.ListLegend.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
+            _listLegendWindow.ListLegend.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && propertiesSidebar.WinFeaturesEnabled;
         }
 
         private void RefreshTitleBar(object sender, EventArgs e)
@@ -297,10 +299,10 @@ namespace BulkCrapUninstaller.Forms
 
             // Show the legend control
             settings.BindControl(showColorLegendToolStripMenuItem, x => x.UninstallerListShowLegend, this);
-            settings.Subscribe((x, y) => listLegend1.Visible = y.NewValue, x => x.UninstallerListShowLegend, this);
-            listLegend1.VisibleChanged += (x, y) =>
+            settings.Subscribe((x, y) => _listLegendWindow.Visible = y.NewValue, x => x.UninstallerListShowLegend, this);
+            _listLegendWindow.VisibleChanged += (x, y) =>
             {
-                if (!listLegend1.Visible && settings.Settings.UninstallerListShowLegend)
+                if (!_listLegendWindow.Visible && settings.Settings.UninstallerListShowLegend)
                     settings.Settings.UninstallerListShowLegend = false;
             };
 
@@ -545,6 +547,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
+            _splash.Show();
+
             _setMan.Selected.SendUpdates();
 
             try
@@ -558,12 +562,7 @@ namespace BulkCrapUninstaller.Forms
                 // BUG Still throws? Object list view is the culprit
                 ResumeLayout();
             }
-
-            listLegend1.Top = listViewPanel.Height + listViewPanel.Top - listLegend1.Height - 30;
-            listLegend1.Left = listViewPanel.Width + listViewPanel.Left - listLegend1.Width - 30;
-
-            _splash.Show();
-
+            
             _listView.InitiateListRefresh();
 
             if (_setMan.Selected.Settings.MiscFirstRun)
@@ -583,6 +582,14 @@ namespace BulkCrapUninstaller.Forms
                 {
                 }
             }
+
+            _listLegendWindow.Show(this);
+            AddOwnedForm(_listLegendWindow);
+
+            _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+            Resize += (o, args) =>  _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+            Move += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+            EnabledChanged += (o, args) => _listLegendWindow.Enabled = Enabled;
         }
 
         private void msiInstallContextMenuStripItem_Click(object sender, EventArgs e)
@@ -998,7 +1005,7 @@ namespace BulkCrapUninstaller.Forms
             uninstallUsingMsiExecContextMenuStripItem.Enabled =
                 singleItem && !_listView.SelectedUninstallers.First().BundleProviderKey.IsEmpty();
 
-            var toolStripItemsToDisable = new[]
+            foreach(var itemToDisable in new[]
             {
                 uninstallContextMenuStripItem,
                 quietUninstallContextMenuStripItem,
@@ -1008,8 +1015,8 @@ namespace BulkCrapUninstaller.Forms
                 uninstallerLocationOpenInExplorerContextMenuStripItem,
                 sourceLocationOpenInExplorerContextMenuStripItem,
                 openWebPageContextMenuStripItem
-            };
-            toolStripItemsToDisable.ForEach(x => x.Enabled = false);
+            })
+                itemToDisable.Enabled = false;
 
             foreach (var item in _listView.SelectedUninstallers)
             {

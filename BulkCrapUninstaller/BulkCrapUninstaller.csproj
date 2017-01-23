@@ -184,6 +184,12 @@
     <Compile Include="Forms\JunkRemoveWindow.Designer.cs">
       <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ListLegendWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListLegendWindow.Designer.cs">
+      <DependentUpon>ListLegendWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JunkRemoveWindow.sl.resx">
       <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListLegendWindow.resx">
+      <DependentUpon>ListLegendWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.cs.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

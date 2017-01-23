@@ -64,12 +64,14 @@ namespace BulkCrapUninstaller.Controls
 
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
-            Visible = false;
+            CloseRequested?.Invoke(sender, e);
         }
 
         private void ThisEnabledChanged(object sender, EventArgs e)
         {
             BackColor = Enabled ? SystemColors.ControlLightLight : SystemColors.Control;
         }
+
+        public event EventHandler CloseRequested;
     }
 }

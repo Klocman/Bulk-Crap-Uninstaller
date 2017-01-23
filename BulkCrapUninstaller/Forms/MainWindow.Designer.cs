@@ -25,7 +25,6 @@ namespace BulkCrapUninstaller.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
-            this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -211,7 +210,6 @@ namespace BulkCrapUninstaller.Forms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listLegend1);
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
@@ -220,19 +218,6 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
             this.advancedFilters1.Name = "advancedFilters1";
-            // 
-            // listLegend1
-            // 
-            resources.ApplyResources(this.listLegend1, "listLegend1");
-            this.listLegend1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listLegend1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listLegend1.CertificatesEnabled = true;
-            this.listLegend1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listLegend1.InvalidEnabled = true;
-            this.listLegend1.Name = "listLegend1";
-            this.listLegend1.OrphanedEnabled = true;
-            this.listLegend1.StoreAppEnabled = true;
-            this.listLegend1.WinFeatureEnabled = true;
             // 
             // listViewPanel
             // 
@@ -1548,7 +1533,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator20;
         private ToolStripMenuItem searchToolStripMenuItem;
         internal Klocman.Subsystems.GlobalHotkeys globalHotkeys1;
-        private ListLegend listLegend1;
         private ToolStripMenuItem showColorLegendToolStripMenuItem;
         private GroupBox groupBox1;
         private ToolStripSeparator toolStripSeparator21;

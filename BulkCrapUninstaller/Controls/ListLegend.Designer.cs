@@ -87,6 +87,7 @@
             // 
             // labelLegend
             // 
+            this.labelLegend.BackColor = System.Drawing.SystemColors.Control;
             this.labelLegend.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelLegend, "labelLegend");
             this.labelLegend.Name = "labelLegend";
