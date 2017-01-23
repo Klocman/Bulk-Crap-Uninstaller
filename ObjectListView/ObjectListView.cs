@@ -9922,7 +9922,9 @@ namespace BrightIdeasSoftware
         /// or use IsCellEditing property after calling this method to see if the user is still
         /// editing a cell.</remarks>
         public virtual bool PossibleFinishCellEditing() {
-            return this.PossibleFinishCellEditing(false);
+            // BCU doesn't use cell editing, so this can be skipped for performance
+            //return this.PossibleFinishCellEditing(false);
+            return true;
         }
 
         /// <summary>
