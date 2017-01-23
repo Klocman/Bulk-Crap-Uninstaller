@@ -4213,7 +4213,7 @@ namespace BrightIdeasSoftware
             if (this.Frozen)
                 return;
 
-            Stopwatch sw = Stopwatch.StartNew();
+            //Stopwatch sw = Stopwatch.StartNew();
 
             this.ApplyExtendedStyles();
             this.ClearHotItem();
