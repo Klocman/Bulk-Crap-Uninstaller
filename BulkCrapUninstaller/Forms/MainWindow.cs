@@ -296,15 +296,8 @@ namespace BulkCrapUninstaller.Forms
             settings.BindControl(displaySettingsToolStripMenuItem, x => x.ToolbarsShowSettings, this);
             settings.BindControl(useSystemThemeToolStripMenuItem, x => x.WindowUseSystemTheme, this);
             settings.BindControl(displayStatusbarToolStripMenuItem, x => x.ToolbarsShowStatusbar, this);
-
-            // Show the legend control
+            
             settings.BindControl(showColorLegendToolStripMenuItem, x => x.UninstallerListShowLegend, this);
-            settings.Subscribe((x, y) => _listLegendWindow.Visible = y.NewValue, x => x.UninstallerListShowLegend, this);
-            _listLegendWindow.VisibleChanged += (x, y) =>
-            {
-                if (!_listLegendWindow.Visible && settings.Settings.UninstallerListShowLegend)
-                    settings.Settings.UninstallerListShowLegend = false;
-            };
 
             settings.Subscribe(RefreshSidebarVisibility,
                 x => x.ToolbarsShowSettings, this);
@@ -547,6 +540,10 @@ namespace BulkCrapUninstaller.Forms
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
+            // Display the legend first so it is hidden under the splash
+            _listLegendWindow.Opacity = 0;
+            SetupAndShowLegendWindow();
+
             _splash.Show();
 
             _setMan.Selected.SendUpdates();
@@ -562,7 +559,7 @@ namespace BulkCrapUninstaller.Forms
                 // BUG Still throws? Object list view is the culprit
                 ResumeLayout();
             }
-            
+
             _listView.InitiateListRefresh();
 
             if (_setMan.Selected.Settings.MiscFirstRun)
@@ -583,13 +580,26 @@ namespace BulkCrapUninstaller.Forms
                 }
             }
 
+            _listLegendWindow.Opacity = 1;
+        }
+
+        private void SetupAndShowLegendWindow()
+        {
             _listLegendWindow.Show(this);
             AddOwnedForm(_listLegendWindow);
 
             _listLegendWindow.UpdatePosition(uninstallerObjectListView);
-            Resize += (o, args) =>  _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+            Resize += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             Move += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             EnabledChanged += (o, args) => _listLegendWindow.Enabled = Enabled;
+
+            var settings = _setMan.Selected;
+            settings.Subscribe((x, y) => _listLegendWindow.Visible = y.NewValue, x => x.UninstallerListShowLegend, this);
+            _listLegendWindow.VisibleChanged += (x, y) =>
+            {
+                if (!_listLegendWindow.Visible && settings.Settings.UninstallerListShowLegend)
+                    settings.Settings.UninstallerListShowLegend = false;
+            };
         }
 
         private void msiInstallContextMenuStripItem_Click(object sender, EventArgs e)

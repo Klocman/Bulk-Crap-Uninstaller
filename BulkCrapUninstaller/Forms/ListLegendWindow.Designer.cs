@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.opacityResetTimer = new System.Windows.Forms.Timer(this.components);
             this.listLegend1 = new BulkCrapUninstaller.Controls.ListLegend();
             this.SuspendLayout();
+            // 
+            // opacityResetTimer
+            // 
+            this.opacityResetTimer.Interval = 300;
+            this.opacityResetTimer.Tick += new System.EventHandler(this.opacityResetTimer_Tick);
             // 
             // listLegend1
             // 
@@ -68,6 +75,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ListLegendWindow";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.EnabledChanged += new System.EventHandler(this.ListLegendWindow_EnabledChanged);
+            this.VisibleChanged += new System.EventHandler(this.ListLegendWindow_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,5 +85,6 @@
         #endregion
 
         private Controls.ListLegend listLegend1;
+        private System.Windows.Forms.Timer opacityResetTimer;
     }
 }
