@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Forms.Tools;
@@ -73,6 +74,15 @@ namespace BulkCrapUninstaller
             {
                 PremadeDialogs.GenericError(ex);
             }
+        }
+
+        protected override void OnShutdown()
+        {
+            // If running as portable, delete any leftovers from the system
+            if (!Program.IsInstalled)
+                Program.StartLogCleaner();
+
+            base.OnShutdown();
         }
     }
 }
