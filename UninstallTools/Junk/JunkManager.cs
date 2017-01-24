@@ -31,7 +31,7 @@ namespace UninstallTools.Junk
                 result.AddRange(sj.FindJunk());
             }
 
-            result.AddRange(ShortcutJunk.FindAllJunk(targetEntries));
+            result.AddRange(ShortcutJunk.FindAllJunk(targetEntries, otherUninstallers));
 
             return result;
         }
