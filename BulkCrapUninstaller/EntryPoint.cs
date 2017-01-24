@@ -4,7 +4,6 @@
 */
 
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Forms.Tools;
@@ -79,7 +78,7 @@ namespace BulkCrapUninstaller
         protected override void OnShutdown()
         {
             // If running as portable, delete any leftovers from the system
-            if (!Program.IsInstalled)
+            if (!Program.IsInstalled && !Program.EnableDebug)
                 Program.StartLogCleaner();
 
             base.OnShutdown();
