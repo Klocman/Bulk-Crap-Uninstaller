@@ -31,7 +31,7 @@ namespace BulkCrapUninstaller
         {
             get
             {
-                if (string.IsNullOrEmpty(_applicationGuid))
+                if (String.IsNullOrEmpty(_applicationGuid))
                 {
                     var assembly = typeof(Program).Assembly;
                     var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
@@ -184,7 +184,7 @@ namespace BulkCrapUninstaller
                         {
                             var installLocation = subKey?.GetValue(
                                 ApplicationUninstallerEntry.RegistryNameInstallLocation) as string;
-                            if (string.IsNullOrEmpty(installLocation)) continue;
+                            if (String.IsNullOrEmpty(installLocation)) continue;
 
                             var item1 = AssemblyLocation.FullName;
                             var item2 = installLocation.TrimEnd('\\');
@@ -203,7 +203,27 @@ namespace BulkCrapUninstaller
             }
             catch
             {
-                _installedRegistryKeyName = string.Empty;
+                _installedRegistryKeyName = String.Empty;
+            }
+        }
+
+        public static void StartLogCleaner()
+        {
+            try
+            {
+                var ps = new ProcessStartInfo
+                {
+                    WorkingDirectory = Program.AssemblyLocation.FullName,
+                    FileName = "cmd.exe",
+                    Arguments = "/c start /min CleanLogs.bat",
+                    UseShellExecute = true,
+                    WindowStyle = ProcessWindowStyle.Minimized
+                };
+                Process.Start(ps);
+            }
+            catch
+            {
+                // Ignore errors, not critical
             }
         }
     }
