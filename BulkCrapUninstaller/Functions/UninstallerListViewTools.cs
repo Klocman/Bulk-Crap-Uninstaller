@@ -726,7 +726,15 @@ namespace BulkCrapUninstaller.Functions
 
                     if (y.Value == y.Maximum || y.Value % 25 == 0)
                     {
-                        _listView.ListView.RefreshObjects(_objectsToUpdate);
+                        try
+                        {
+                            _listView.ListView.RefreshObjects(_objectsToUpdate);
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            // The list view got disposed before we could update it.
+                            _abortPostprocessingThread = true;
+                        }
                         _objectsToUpdate.Clear();
                     }
                 }
