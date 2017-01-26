@@ -60,11 +60,37 @@ Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"              
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 
+[Components]
+Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixed
+Name: "lang"; Description: "Languages"; Types: full
+Name: "lang\en"; Description: "English"; Types: full compact custom; Flags: fixed
+Name: "lang\cs"; Description: "Czech"; Types: full           
+Name: "lang\de"; Description: "German"; Types: full
+Name: "lang\es"; Description: "Spanish"; Types: full
+Name: "lang\fr"; Description: "French"; Types: full
+Name: "lang\hu"; Description: "Hungarian"; Types: full
+Name: "lang\it"; Description: "Italian"; Types: full
+Name: "lang\pl"; Description: "Polish"; Types: full
+Name: "lang\pt"; Description: "Portuguese"; Types: full
+Name: "lang\ru"; Description: "Russian"; Types: full
+Name: "lang\sl"; Description: "Slovene"; Types: full
+
 [Files]                                           
-Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Flags: ignoreversion               
-Source: "Input\BCU_manual.html"; DestDir: "{app}"; Flags: ignoreversion isreadme
-Source: "Input\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs   
-                                                                     
+Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion               
+Source: "Input\BCU_manual.html"; DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme
+Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion   
+
+Source: "Input\cs\*"; DestDir: "{app}"; Components: lang\cs; Flags: ignoreversion  
+Source: "Input\de\*"; DestDir: "{app}"; Components: lang\de; Flags: ignoreversion  
+Source: "Input\es\*"; DestDir: "{app}"; Components: lang\es; Flags: ignoreversion  
+Source: "Input\fr\*"; DestDir: "{app}"; Components: lang\fr; Flags: ignoreversion  
+Source: "Input\hu\*"; DestDir: "{app}"; Components: lang\hu; Flags: ignoreversion  
+Source: "Input\it\*"; DestDir: "{app}"; Components: lang\it; Flags: ignoreversion  
+Source: "Input\pl\*"; DestDir: "{app}"; Components: lang\pl; Flags: ignoreversion  
+Source: "Input\pt\*"; DestDir: "{app}"; Components: lang\pt; Flags: ignoreversion  
+Source: "Input\ru\*"; DestDir: "{app}"; Components: lang\ru; Flags: ignoreversion  
+Source: "Input\sl\*"; DestDir: "{app}"; Components: lang\sl; Flags: ignoreversion  
+                                                                   
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
         
