@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security;
 using Klocman.Extensions;
 using Klocman.Native;
@@ -68,14 +69,24 @@ namespace UninstallTools.Junk
             "AppPath"
         };
 
+        private static readonly IEnumerable<string> UserAssistGuids = new[]
+        {
+            //GUIDs for Windows XP
+            "{75048700-EF1F-11D0-9888-006097DEACF9}",
+            "{5E6AB780-7743-11CF-A12B-00AA004AE837",
+            //GUIDs for Windows 7
+            "{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}",
+            "{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}}"
+        };
+
         private static readonly string KeyCu = @"HKEY_CURRENT_USER\SOFTWARE";
         private static readonly string KeyCuWow = @"HKEY_CURRENT_USER\SOFTWARE\Wow6432Node";
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
         private static readonly string KeyLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node";
 
         private static readonly string[] SoftwareRegKeys = ProcessTools.Is64BitProcess
-            ? new[] {KeyLm, KeyCu, KeyLmWow, KeyCuWow}
-            : new[] {KeyLm, KeyCu};
+            ? new[] { KeyLm, KeyCu, KeyLmWow, KeyCuWow }
+            : new[] { KeyLm, KeyCu };
 
         private static readonly string[] ClsidKeys =
         {
@@ -105,6 +116,8 @@ namespace UninstallTools.Junk
 
             returnList.AddRange(ScanAudioPolicyConfig());
 
+            returnList.AddRange(ScanUserAssist());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -114,6 +127,74 @@ namespace UninstallTools.Junk
             }
 
             return returnList;
+        }
+
+        private IEnumerable<JunkNode> ScanUserAssist()
+        {
+            var returnList = new List<JunkNode>();
+
+            if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
+                return returnList;
+            
+            foreach (var userAssistGuid in UserAssistGuids)
+            {
+                using (var key = RegistryTools.OpenRegistryKey(
+                    $@"{KeyCu}\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{userAssistGuid}\Count"))
+                {
+                    if (key == null)
+                        continue;
+
+                    foreach (var valueName in key.GetValueNames())
+                    {
+                        // Convert the value name to a usable form
+                        var convertedName = Rot13(valueName);
+                        var guidEnd = convertedName.IndexOf('}') + 1;
+                        Guid g;
+                        if (guidEnd > 0 && GuidTools.GuidTryParse(convertedName.Substring(0, guidEnd), out g))
+                            convertedName = NativeMethods.GetKnownFolderPath(g) + convertedName.Substring(guidEnd);
+
+                        // Check for matches
+                        if (convertedName.StartsWith(Uninstaller.InstallLocation, 
+                            StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var junk = new RegistryValueJunkNode(key.Name, valueName, Uninstaller.DisplayName);
+                            junk.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            returnList.Add(junk);
+                        }
+                    }
+                }
+            }
+
+            return returnList;
+        }
+
+        private static string Rot13(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            return new string(input.Select(x => (x >= 'a' && x <= 'z')
+                ? (char)((x - 'a' + 13) % 26 + 'a')
+                : ((x >= 'A' && x <= 'Z')
+                    ? (char)((x - 'A' + 13) % 26 + 'A')
+                    : x)).ToArray());
+        }
+
+        private static class NativeMethods
+        {
+            public static string GetKnownFolderPath(Guid rfid)
+            {
+                IntPtr pPath;
+                SHGetKnownFolderPath(rfid, 0, IntPtr.Zero, out pPath);
+
+                var path = Marshal.PtrToStringUni(pPath);
+                Marshal.FreeCoTaskMem(pPath);
+                return path;
+            }
+
+            [DllImport("shell32.dll")]
+            private static extern int SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, 
+                uint dwFlags, IntPtr hToken, out IntPtr pszPath);
         }
 
         private IEnumerable<JunkNode> ScanAudioPolicyConfig()
@@ -142,7 +223,7 @@ namespace UninstallTools.Junk
                         if (subKey == null) continue;
 
                         var defVal = subKey.GetValue(null) as string;
-                        if (defVal != null && 
+                        if (defVal != null &&
                             defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryKeyJunkNode(key.Name, subKeyName, Uninstaller.DisplayName);
@@ -198,7 +279,7 @@ namespace UninstallTools.Junk
                     }
                 }
             }
-                // Reg key invalid
+            // Reg key invalid
             catch (ArgumentException)
             {
             }
@@ -365,12 +446,12 @@ namespace UninstallTools.Junk
                 var nodeName = registryJunkNode.FullName;
 
                 // Check Wow first because non-wow path will match wow path
-                var softwareKey = new[] {KeyLmWow, KeyCuWow, KeyLm, KeyCu}.First(
+                var softwareKey = new[] { KeyLmWow, KeyCuWow, KeyLm, KeyCu }.First(
                     key => nodeName.StartsWith(key, StringComparison.InvariantCultureIgnoreCase));
 
                 nodeName = nodeName.Substring(softwareKey.Length + 1);
 
-                foreach (var keyToTest in SoftwareRegKeys.Except(new[] {softwareKey}))
+                foreach (var keyToTest in SoftwareRegKeys.Except(new[] { softwareKey }))
                 {
                     var nodePath = Path.Combine(keyToTest, nodeName);
                     // Check if the same node exists in other root keys
