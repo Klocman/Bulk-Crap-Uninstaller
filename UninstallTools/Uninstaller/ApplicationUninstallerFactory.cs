@@ -434,7 +434,7 @@ namespace UninstallTools.Uninstaller
             // Fill in the install date if it's missing
             try
             {
-                if (tempEntry.InstallDate.IsDefault() && File.Exists(tempEntry.UninstallerFullFilename))
+                if (tempEntry.InstallDate.IsDefault() && !string.IsNullOrEmpty(tempEntry.UninstallerFullFilename))
                 {
                     tempEntry.InstallDate = File.GetCreationTime(tempEntry.UninstallerFullFilename);
                 }
@@ -953,32 +953,18 @@ namespace UninstallTools.Uninstaller
 
         private static string GetUninstallerFilename(string uninstallString, UninstallerType type, Guid bundleKey)
         {
-            if (!string.IsNullOrEmpty(uninstallString))
+            if (!string.IsNullOrEmpty(uninstallString) && !PathPointsToMsiExec(uninstallString))
             {
-                var trimmedUninstallString = uninstallString.Trim('"', ' ');
-                if (!PathPointsToMsiExec(trimmedUninstallString))
+                try
                 {
-                    try
-                    {
-                        if (File.Exists(trimmedUninstallString))
-                            return trimmedUninstallString;
-                    }
-                    catch
-                    {
-                        /* Ignore io exceptions, access to the file is not necessary */
-                    }
+                    var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
 
-                    try
-                    {
-                        var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
+                    Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName));
 
-                        Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName));
-
-                        return fileName;
-                    }
-                    catch (ArgumentException) { }
-                    catch (FormatException) { }
+                    return fileName;
                 }
+                catch (ArgumentException) { }
+                catch (FormatException) { }
             }
 
             return type == UninstallerType.Msiexec ? MsiTools.MsiGetProductInfo(bundleKey, MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE) : string.Empty;
