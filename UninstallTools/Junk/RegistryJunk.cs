@@ -103,12 +103,54 @@ namespace UninstallTools.Junk
 
             returnList.AddRange(ScanClsid());
 
+            returnList.AddRange(ScanAudioPolicyConfig());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
                     Uninstaller.RegistryKeyName, Uninstaller.DisplayName);
                 regKeyNode.Confidence.Add(ConfidencePart.IsUninstallerRegistryKey);
                 returnList.Add(regKeyNode);
+            }
+
+            return returnList;
+        }
+
+        private IEnumerable<JunkNode> ScanAudioPolicyConfig()
+        {
+            var returnList = new List<JunkNode>();
+
+            if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
+                return returnList;
+
+            var unrootedLocation = Uninstaller.InstallLocation.Replace(
+                Path.GetPathRoot(Uninstaller.InstallLocation), string.Empty);
+
+            if (string.IsNullOrEmpty(unrootedLocation.Trim()))
+                return returnList;
+
+            using (var key = RegistryTools.OpenRegistryKey(Path.Combine(KeyCu,
+                @"Microsoft\Internet Explorer\LowRegistry\Audio\PolicyConfig\PropertyStore")))
+            {
+                if (key == null)
+                    return returnList;
+
+                foreach (var subKeyName in key.GetSubKeyNames())
+                {
+                    using (var subKey = key.OpenSubKey(subKeyName))
+                    {
+                        if (subKey == null) continue;
+
+                        var defVal = subKey.GetValue(null) as string;
+                        if (defVal != null && 
+                            defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var junk = new RegistryKeyJunkNode(key.Name, subKeyName, Uninstaller.DisplayName);
+                            junk.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            returnList.Add(junk);
+                        }
+                    }
+                }
             }
 
             return returnList;
