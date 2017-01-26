@@ -61,9 +61,10 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 
 [Files]                                           
-Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "Input\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-
+Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Flags: ignoreversion               
+Source: "Input\BCU_manual.html"; DestDir: "{app}"; Flags: ignoreversion isreadme
+Source: "Input\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs   
+                                                                     
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
         
