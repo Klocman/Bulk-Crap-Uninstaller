@@ -1,6 +1,6 @@
 title Removing BCU log files...
-rem @echo off
-rem cls
+@echo off
+cls
 
 if not exist %LOCALAPPDATA% (
 REM LOCALAPPDATA doesn't exist on windows older than Vista
