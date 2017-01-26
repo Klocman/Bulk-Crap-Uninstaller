@@ -175,6 +175,7 @@ namespace BulkCrapUninstaller.Forms
             _listLegendWindow.ListLegend.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && propertiesSidebar.StoreAppsEnabled;
             _listLegendWindow.ListLegend.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && propertiesSidebar.OrphansEnabled;
             _listLegendWindow.ListLegend.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && propertiesSidebar.WinFeaturesEnabled;
+            _listLegendWindow.UpdatePosition(uninstallerObjectListView);
         }
 
         private void RefreshTitleBar(object sender, EventArgs e)
