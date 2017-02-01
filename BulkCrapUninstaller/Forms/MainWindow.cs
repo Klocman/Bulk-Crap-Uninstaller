@@ -44,9 +44,7 @@ namespace BulkCrapUninstaller.Forms
 
         private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
         private DebugWindow _debugWindow;
-
-        private readonly OverlaySplashScreen.SplashScreenControls _splash;
-
+        
         /// <summary>
         ///     Set to false in the list view clicked event. Prevents firing of extra CellEditStarting events.
         ///     Used to fix buggy ObjectListView.
@@ -59,9 +57,7 @@ namespace BulkCrapUninstaller.Forms
             Application.DoEvents();
 
             InitializeComponent();
-
-            _splash = OverlaySplashScreen.CreateSplash(this, Resources._bcu_logo);
-
+            
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
@@ -544,9 +540,7 @@ namespace BulkCrapUninstaller.Forms
             // Display the legend first so it is hidden under the splash
             _listLegendWindow.Opacity = 0;
             SetupAndShowLegendWindow();
-
-            _splash.Show();
-
+            
             _setMan.Selected.SendUpdates();
 
             try
@@ -584,6 +578,8 @@ namespace BulkCrapUninstaller.Forms
             // Needed in case main window starts maximized
             _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             _listLegendWindow.Opacity = 1;
+
+            splashScreen1.CloseSplashScreen();
         }
 
         private void SetupAndShowLegendWindow()
@@ -1137,9 +1133,6 @@ namespace BulkCrapUninstaller.Forms
             propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
 
             RefreshListLegend(sender, e);
-
-            if (e.FirstRefresh)
-                _splash.FadeOut();
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)

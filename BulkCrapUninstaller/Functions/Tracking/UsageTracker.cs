@@ -54,7 +54,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
             }
         }
 
-        protected override void OnContainerInitialized(ContainerControl containerControl, EventArgs args)
+        protected override void OnContainerInitialized(object obj, EventArgs args)
         {
             HookToForm();
             UsageManager.Trackers.Add(this);
