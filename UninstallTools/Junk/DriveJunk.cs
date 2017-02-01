@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {

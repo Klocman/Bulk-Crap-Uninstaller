@@ -6,7 +6,7 @@
 using Klocman.Localising;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools
 {
     public enum UninstallerType
     {

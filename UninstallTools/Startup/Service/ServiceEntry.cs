@@ -3,11 +3,9 @@
     Apache License Version 2.0
 */
 
-using System;
 using System.IO;
 using System.Management;
 using Klocman.Tools;
-using Microsoft.Win32;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Startup.Service

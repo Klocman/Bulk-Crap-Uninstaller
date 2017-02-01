@@ -5,7 +5,6 @@
 
 using System.IO;
 using System.Security.Permissions;
-using Klocman.Tools;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
 using UninstallTools.Startup.Normal;

@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Klocman.Extensions;
-using UninstallTools.Uninstaller;
+using UninstallTools;
 
 namespace UninstallerAutomatizer
 {

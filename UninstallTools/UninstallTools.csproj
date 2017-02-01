@@ -40,6 +40,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Main.1.0.11226\lib\Net35\System.Reactive.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
@@ -47,6 +51,13 @@
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ApplicationInfoExport.cs" />
+    <Compile Include="Factory\ApplicationUninstallerEntry.cs" />
+    <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
+    <Compile Include="Factory\ApplicationUninstallerManager.cs" />
+    <Compile Include="Factory\UninstallerIconGetter.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Junk\Confidence.cs" />
     <Compile Include="Junk\ConfidencePart.cs" />
@@ -67,6 +78,7 @@
     <Compile Include="Lists\ComparisonMethod.cs" />
     <Compile Include="Lists\ITestEntry.cs" />
     <Compile Include="Lists\Filter.cs" />
+    <Compile Include="MsiUninstallModes.cs" />
     <Compile Include="Properties\Localisation.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,10 +118,7 @@
     <Compile Include="Startup\StartupEntryBase.cs" />
     <Compile Include="Startup\Task\TaskEntry.cs" />
     <Compile Include="Startup\Task\TaskEntryFactory.cs" />
-    <Compile Include="Uninstaller\ApplicationInfoExport.cs" />
-    <Compile Include="Uninstaller\ApplicationUninstallerFactory.cs" />
-    <Compile Include="Uninstaller\ApplicationUninstallerEntry.cs" />
-    <Compile Include="Uninstaller\ApplicationUninstallerManager.cs" />
+    <Compile Include="UninstallerType.cs" />
     <Compile Include="Uninstaller\BulkUninstallConfiguration.cs" />
     <Compile Include="Controls\FilterEditor.cs">
       <SubType>UserControl</SubType>
@@ -164,14 +173,9 @@
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
-    <Compile Include="Uninstaller\MsiUninstallModes.cs" />
     <Compile Include="Uninstaller\QuietUninstallTools.cs" />
-    <Compile Include="Uninstaller\UninstallerType.cs" />
     <Compile Include="Uninstaller\UninstallStatus.cs" />
     <Compile Include="UninstallToolsGlobalConfig.cs" />
-    <Compile Include="Uninstaller\UninstallerIconGetter.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Lists\UninstallList.cs" />
   </ItemGroup>
   <ItemGroup>

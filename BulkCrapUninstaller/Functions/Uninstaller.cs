@@ -17,6 +17,8 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
+using UninstallTools;
+using UninstallTools.Factory;
 using UninstallTools.Junk;
 using UninstallTools.Uninstaller;
 

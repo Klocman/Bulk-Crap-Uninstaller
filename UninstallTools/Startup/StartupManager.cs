@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
+using UninstallTools.Factory;
 using UninstallTools.Startup.Browser;
 using UninstallTools.Startup.Normal;
 using UninstallTools.Startup.Service;
 using UninstallTools.Startup.Task;
-using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Startup
 {

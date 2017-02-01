@@ -13,6 +13,7 @@ using System.Threading;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller

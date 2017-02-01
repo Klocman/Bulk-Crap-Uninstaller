@@ -20,7 +20,7 @@ using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {

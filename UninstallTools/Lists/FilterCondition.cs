@@ -7,8 +7,8 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Klocman.Extensions;
+using UninstallTools.Factory;
 using UninstallTools.Properties;
-using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Lists
 {

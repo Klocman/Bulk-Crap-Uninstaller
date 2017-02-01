@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.ComponentModel;
-using System.Diagnostics;
 
 namespace BrightIdeasSoftware
 {

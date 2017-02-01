@@ -13,7 +13,7 @@ using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {

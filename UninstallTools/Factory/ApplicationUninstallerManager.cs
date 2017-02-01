@@ -15,8 +15,9 @@ using Klocman.IO;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Properties;
+using UninstallTools.Uninstaller;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerManager
     {
@@ -32,7 +33,7 @@ namespace UninstallTools.Uninstaller
         /// </summary>
         internal static IEnumerable<Guid> WindowsInstallerValidGuids { get; private set; }
 
-        public static IEnumerable<ApplicationUninstallerEntry> GetApplicationsFromDrive(
+        private static IEnumerable<ApplicationUninstallerEntry> GetApplicationsFromDrive(
             IEnumerable<ApplicationUninstallerEntry> existingUninstallerEntries, GetUninstallerListCallback callback)
         {
             var existingUninstallers = existingUninstallerEntries as IList<ApplicationUninstallerEntry> ??

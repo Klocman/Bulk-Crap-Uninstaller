@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Lists
 {

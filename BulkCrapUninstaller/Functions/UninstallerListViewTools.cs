@@ -24,6 +24,8 @@ using Klocman.IO;
 using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
+using UninstallTools;
+using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
 using UninstallTools.Uninstaller;
@@ -343,7 +345,7 @@ namespace BulkCrapUninstaller.Functions
 
             var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 35,
                 _reference.Location.Y + _reference.Size.Height - 35);
-
+            //todo stop blocking
             var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
             if (error != null)
                 throw new Exception("Uncaught exception in ListRefreshThread", error);

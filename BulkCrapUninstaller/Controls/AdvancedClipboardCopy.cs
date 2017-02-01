@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller.Controls
 {

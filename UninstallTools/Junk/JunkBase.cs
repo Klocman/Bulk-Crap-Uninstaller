@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Klocman.Tools;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {

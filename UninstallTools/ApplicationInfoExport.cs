@@ -6,8 +6,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Factory;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools
 {
     public sealed class ApplicationInfoExport
     {

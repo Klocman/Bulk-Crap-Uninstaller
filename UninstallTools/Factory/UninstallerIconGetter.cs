@@ -11,7 +11,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools.Factory
 {
     public class UninstallerIconGetter : Component
     {

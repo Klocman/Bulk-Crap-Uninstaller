@@ -3,7 +3,7 @@
     Apache License Version 2.0
 */
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools
 {
     public enum MsiUninstallModes
     {

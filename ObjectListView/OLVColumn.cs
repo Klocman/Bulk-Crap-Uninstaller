@@ -35,7 +35,6 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections;
-using System.Diagnostics;
 using System.Drawing.Design;
 
 namespace BrightIdeasSoftware {

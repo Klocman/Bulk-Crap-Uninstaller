@@ -9,7 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using Klocman.Localising;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller.Controls
 {

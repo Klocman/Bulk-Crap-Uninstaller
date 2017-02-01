@@ -20,7 +20,7 @@ using UninstallTools.Lists;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
 
-namespace UninstallTools.Uninstaller
+namespace UninstallTools.Factory
 {
     public class ApplicationUninstallerEntry
     {

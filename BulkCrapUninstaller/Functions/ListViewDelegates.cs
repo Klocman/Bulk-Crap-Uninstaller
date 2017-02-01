@@ -9,7 +9,7 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Resources;
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller.Functions
 {

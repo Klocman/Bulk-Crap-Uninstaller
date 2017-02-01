@@ -9,6 +9,7 @@ using System.IO;
 using System.Reflection;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Uninstaller
 {

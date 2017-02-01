@@ -3,7 +3,7 @@
     Apache License Version 2.0
 */
 
-using UninstallTools.Uninstaller;
+using UninstallTools.Factory;
 
 namespace UninstallTools.Lists
 {
