@@ -53,12 +53,28 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ApplicationInfoExport.cs" />
+    <Compile Include="Controls\UninstallerIconGetter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Factory\ApplicationUninstallerEntry.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
     <Compile Include="Factory\ApplicationUninstallerManager.cs" />
-    <Compile Include="Factory\UninstallerIconGetter.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
+    <Compile Include="Factory\DirectoryFactory.cs" />
+    <Compile Include="Factory\InfoAdders\FileAttribInfoAdder.cs" />
+    <Compile Include="Factory\InfoAdders\IconGetter.cs" />
+    <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
+    <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
+    <Compile Include="Factory\InfoAdders\UninstallerTypeAdder.cs" />
+    <Compile Include="Factory\InfoAdders\IsValidAdder.cs" />
+    <Compile Include="Factory\InfoAdders\InstallDateAdder.cs" />
+    <Compile Include="Factory\IUninstallerFactory.cs" />
+    <Compile Include="Factory\PredefinedFactory.cs" />
+    <Compile Include="Factory\RegistryFactory.cs" />
+    <Compile Include="Factory\SteamFactory.cs" />
+    <Compile Include="Factory\StoreAppFactory.cs" />
+    <Compile Include="Factory\InfoAdders\UninstallStringAdder.cs" />
+    <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Junk\Confidence.cs" />
     <Compile Include="Junk\ConfidencePart.cs" />
     <Compile Include="Junk\DriveDirectoryJunkNode.cs" />

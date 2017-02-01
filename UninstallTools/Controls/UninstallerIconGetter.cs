@@ -10,8 +10,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
+using UninstallTools.Factory;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Controls
 {
     public class UninstallerIconGetter : Component
     {

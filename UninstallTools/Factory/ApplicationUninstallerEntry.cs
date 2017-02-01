@@ -314,7 +314,7 @@ namespace UninstallTools.Factory
             if (!_certificateGotten)
             {
                 _certificateGotten = true;
-                _certificate = ApplicationUninstallerFactory.TryGetCertificate(this);
+                _certificate = CertificateGetter.TryGetCertificate(this);
 
                 if (_certificate != null)
                     _certificateValid = _certificate.Verify();

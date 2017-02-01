@@ -440,7 +440,7 @@ namespace BulkCrapUninstaller.Functions
                 LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
                     _ =>
                     {
-                        items.AddRange(ApplicationUninstallerFactory.TryCreateFromDirectory(
+                        items.AddRange(DirectoryFactory.TryCreateFromDirectory(
                             new DirectoryInfo(dialog.SelectedPath), null));
                     });
 

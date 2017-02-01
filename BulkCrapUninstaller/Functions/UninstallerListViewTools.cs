@@ -482,7 +482,7 @@ namespace BulkCrapUninstaller.Functions
 
             try
             {
-                detectedUninstallers.AddRange(ApplicationUninstallerManager.GetWindowsFeaturesList());
+                detectedUninstallers.AddRange(WindowsFeatureFactory.GetWindowsFeaturesList());
             }
             catch (Exception ex)
             {
