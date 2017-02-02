@@ -78,6 +78,10 @@ namespace UninstallTools.Factory
 #endif
                     if (matchedEntry != null)
                     {
+                        // Prevent setting incorrect UninstallerType
+                        if (matchedEntry.UninstallPossible)
+                            entry.UninstallerKind = UninstallerType.Unknown;
+
                         infoAdder.CopyMissingInformation(matchedEntry, entry);
                         continue;
                     }
