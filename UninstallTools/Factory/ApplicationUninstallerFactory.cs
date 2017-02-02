@@ -17,35 +17,32 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
-        /*public delegate void GetUninstallerListCallback(GetUninstallerListProgress progressReport);
-
-
+        public delegate void GetUninstallerListCallback(GetUninstallerListProgress progressReport);
+        
         public class GetUninstallerListProgress
         {
-            internal GetUninstallerListProgress(int totalCount)
+            internal GetUninstallerListProgress(int currentCount, int totalCount)
             {
                 TotalCount = totalCount;
-                CurrentCount = 0;
+                CurrentCount = currentCount;
             }
 
-            public int CurrentCount { get; internal set; }
-            public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
-            public int TotalCount { get; internal set; }
-        }*/
+            public int CurrentCount { get; }
+            public int TotalCount { get; }
 
-        //todo global factory
-        /*
-         find and instantiate all factories
-         find reg stuff
-         fill in install location and uninstaller location
-         find drive stuff (based on directories found in install locations, 2 or more apps installed in one location = scan location for drive stuff)
-         merge/skip based on install/uninstaller location
-         
-        */
+            // TODO public GetUninstallerListProgress Inner { get; internal set; }
+            //public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
+        }
+        
 
-        public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(GetUninstallerListCallback callback)
         {
+            const int totalStepCount = 6;
+            callback(new GetUninstallerListProgress(0, totalStepCount));
+
             var msiProducts = MsiTools.MsiEnumProducts().ToList();
+
+            callback(new GetUninstallerListProgress(1, totalStepCount));
 
             var registryFactory = new RegistryFactory(msiProducts);
 
@@ -53,11 +50,18 @@ namespace UninstallTools.Factory
             //todo fill in install location and uninstaller location
             // find drive stuff (based on directories found in install locations, 2 or more apps installed in one location = scan location for drive stuff)
             //results = results.DoForEach(entry => infoAdder.TryAddFieldInformation(entry, nameof(entry.InstallLocation)));
-            // todo cleanup the paths
+            
+            callback(new GetUninstallerListProgress(2, totalStepCount));
+
             var driveFactory = new DirectoryFactory(registryResults);
 
             var driveResults = driveFactory.GetUninstallerEntries();
+
+            callback(new GetUninstallerListProgress(3, totalStepCount));
+
             var otherResults = GetMiscUninstallerEntries();
+            
+            callback(new GetUninstallerListProgress(4, totalStepCount));
 
             var infoAdder = new InfoAdderManager();
             var results = registryResults.ToList();
@@ -84,11 +88,15 @@ namespace UninstallTools.Factory
                 results.Add(entry);
             }
 
+            callback(new GetUninstallerListProgress(5, totalStepCount));
+
             foreach (var result in results)
             {
                 infoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
+
+            callback(new GetUninstallerListProgress(6, totalStepCount));
 
             return results;
         }
@@ -124,17 +132,26 @@ namespace UninstallTools.Factory
                 && baseEntry.DisplayName.Length >= 5 && baseEntry.Publisher.Length >= 5
                 && otherEntry.Publisher != null && otherEntry.DisplayName != null)
             {
-                var dispSim = StringTools.CompareSimilarity(baseEntry.DisplayName, otherEntry.DisplayName);
                 var pubSim = StringTools.CompareSimilarity(baseEntry.Publisher, otherEntry.Publisher);
+                if (pubSim >= baseEntry.Publisher.Length/6)
+                    return false;
 
-                if (dispSim < baseEntry.DisplayName.Length / 6 && pubSim < baseEntry.Publisher.Length / 6)
+                var dispSim = StringTools.CompareSimilarity(baseEntry.DisplayName, otherEntry.DisplayName);
+                if (dispSim < baseEntry.DisplayName.Length / 6)
                     return true;
+
+                if (baseEntry.DisplayNameTrimmed.Length >= 5)
+                {
+                    dispSim = StringTools.CompareSimilarity(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed);
+                    if (dispSim < baseEntry.DisplayName.Length/6)
+                        return true;
+                }
             }
 
             return false;
         }
 
-        // todo move to a second thread
+        // todo move to a second thread?
         private static IEnumerable<ApplicationUninstallerEntry> GetMiscUninstallerEntries()
         {
             var otherResults = new List<ApplicationUninstallerEntry>();

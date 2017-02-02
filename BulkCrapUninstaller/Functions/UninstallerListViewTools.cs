@@ -373,7 +373,7 @@ namespace BulkCrapUninstaller.Functions
                 _listView.ListView.Focus();
             }
             catch (ObjectDisposedException) { }
-            
+
             if (_firstRefresh)
             {
                 _firstRefresh = false;
@@ -454,48 +454,11 @@ namespace BulkCrapUninstaller.Functions
 
         private void ListRefreshThread(LoadingDialog.LoadingDialogInterface dialogInterface)
         {
-            dialogInterface.SetMaximum(1);
-            dialogInterface.SetProgress(0);
-
-            /*var detectedUninstallers =
-                new List<ApplicationUninstallerEntry>(UninstallManager.GetUninstallerList(x =>
-                {
-                    if (x.CurrentCount == 1)
-                        dialogInterface.SetMaximum(x.TotalCount * 2);
-                    dialogInterface.SetProgress(x.CurrentCount);
-                }));
-
-            detectedUninstallers.AddRange(
-                UninstallManager.GetApplicationsFromDrive(detectedUninstallers, x =>
-                    {
-                        dialogInterface.SetProgress(x.TotalCount + x.CurrentCount);
-                        if (x.CurrentCount == 1)
-                            dialogInterface.SetMaximum(x.TotalCount * 2);
-                    }));
-
-            if (Program.IsInstalled)
-                detectedUninstallers.RemoveAll(entry => entry.RegistryKeyName.IsNotEmpty() &&
-                                                        entry.RegistryKeyName.Equals(Program.InstalledRegistryKeyName,
-                                                            StringComparison.InvariantCultureIgnoreCase));
-
-            if (_settings.Settings.QuietAutomatization && Program.Net4IsAvailable)
-                QuietUninstallTools.GenerateQuietCommands(detectedUninstallers, _settings.Settings.QuietAutomatizationKillStuck);
-
-            try
+            AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
-                detectedUninstallers.AddRange(WindowsFeatureFactory.GetWindowsFeaturesList());
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
-
-            AllUninstallers = detectedUninstallers;
-            */
-            AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries();
-
-            dialogInterface.SetProgress(1);
-            dialogInterface.SetMaximum(1);
+                dialogInterface.SetMaximum(x.TotalCount);
+                dialogInterface.SetProgress(x.CurrentCount);
+            });
 
             try
             {
