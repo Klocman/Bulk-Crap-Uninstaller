@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.IO;
-using Klocman.Native;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
 
@@ -18,8 +17,7 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
-        /*
-        public delegate void GetUninstallerListCallback(GetUninstallerListProgress progressReport);
+        /*public delegate void GetUninstallerListCallback(GetUninstallerListProgress progressReport);
 
 
         public class GetUninstallerListProgress
@@ -33,16 +31,6 @@ namespace UninstallTools.Factory
             public int CurrentCount { get; internal set; }
             public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
             public int TotalCount { get; internal set; }
-        }
-
-        /// <summary>
-        ///     Gets populated automatically when running GetUninstallerList. Returns null before first update.
-        /// </summary>
-        private static IEnumerable<Guid> WindowsInstallerValidGuids { get;  set; }
-        
-        private static void PopulateWindowsInstallerValidGuids()
-        {
-            WindowsInstallerValidGuids = MsiTools.MsiEnumProducts();
         }*/
 
         //todo global factory
@@ -55,11 +43,11 @@ namespace UninstallTools.Factory
          
         */
 
-
         public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {
-            var infoAdder = new InfoAdderManager();
-            var registryFactory = new RegistryFactory();
+            var msiProducts = MsiTools.MsiEnumProducts().ToList();
+
+            var registryFactory = new RegistryFactory(msiProducts);
 
             var registryResults = registryFactory.GetUninstallerEntries().ToList();
             //todo fill in install location and uninstaller location
@@ -68,42 +56,82 @@ namespace UninstallTools.Factory
             // todo cleanup the paths
             var driveFactory = new DirectoryFactory(registryResults);
 
-            var driveResults = driveFactory.GetUninstallerEntries().ToList();
+            var driveResults = driveFactory.GetUninstallerEntries();
             var otherResults = GetMiscUninstallerEntries();
 
-            //todo combine  driveResults otherResults with existing results
+            var infoAdder = new InfoAdderManager();
+            var results = registryResults.ToList();
             foreach (var entry in driveResults.Concat(otherResults))
             {
                 try
                 {
+#if DEBUG
+                    var entries = registryResults.Where(x => CheckAreEntriesRelated(x, entry)).ToList();
+                    Debug.Assert(entries.Count < 2);
+                    var matchedEntry = entries.SingleOrDefault();
+#else
                     var matchedEntry = registryResults.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
+#endif
                     if (matchedEntry != null)
                     {
-                        // todo copy values using reflection, or manually based on what the drive factory does
+                        infoAdder.CopyMissingInformation(matchedEntry, entry);
                         continue;
                     }
                 }
-                catch(InvalidOperationException) { }
+                catch (InvalidOperationException) { }
 
-                registryResults.Add(entry);
+                // If not matched to anything, add the entry to the results
+                results.Add(entry);
             }
 
-            foreach (var result in registryResults)
+            foreach (var result in results)
             {
                 infoAdder.AddMissingInformation(result);
+                result.IsValid = CheckIsValid(result, msiProducts);
             }
 
-            return registryResults;
+            return results;
+        }
+
+        private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
+        {
+            var isPathRooted = Path.IsPathRooted(target.UninstallerFullFilename);
+
+            if (isPathRooted && File.Exists(target.UninstallerFullFilename))
+                return true;
+
+            if (target.UninstallerKind == UninstallerType.Msiexec)
+                return msiProducts.Contains(target.BundleProviderKey);
+
+            return !isPathRooted;
         }
 
         private static bool CheckAreEntriesRelated(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry otherEntry)
         {
-            if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation) 
-                && string.Equals(baseEntry.InstallLocation, otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+            if (PathTools.PathsEqual(baseEntry.InstallLocation, otherEntry.InstallLocation))
                 return true;
 
-            return !string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.UninstallerLocation) 
-                && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase);
+            if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && (!string.IsNullOrEmpty(otherEntry.InstallLocation)
+                 && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase)))
+                return true;
+
+            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
+                && baseEntry.UninstallString.Contains(otherEntry.InstallLocation))
+                return true;
+
+            // Check if publisher and display name are very similar
+            if (baseEntry.Publisher != null && baseEntry.DisplayName != null
+                && baseEntry.DisplayName.Length >= 5 && baseEntry.Publisher.Length >= 5
+                && otherEntry.Publisher != null && otherEntry.DisplayName != null)
+            {
+                var dispSim = StringTools.CompareSimilarity(baseEntry.DisplayName, otherEntry.DisplayName);
+                var pubSim = StringTools.CompareSimilarity(baseEntry.Publisher, otherEntry.Publisher);
+
+                if (dispSim < baseEntry.DisplayName.Length / 6 && pubSim < baseEntry.Publisher.Length / 6)
+                    return true;
+            }
+
+            return false;
         }
 
         // todo move to a second thread
@@ -123,25 +151,6 @@ namespace UninstallTools.Factory
             }
 
             return otherResults;
-        }
-
-        public static string GetUninstallerFilename(string uninstallString, UninstallerType type, Guid bundleKey)
-        {
-            if (!string.IsNullOrEmpty(uninstallString) && !PathPointsToMsiExec(uninstallString))
-            {
-                try
-                {
-                    var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
-
-                    Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName));
-
-                    return fileName;
-                }
-                catch (ArgumentException) { }
-                catch (FormatException) { }
-            }
-
-            return type == UninstallerType.Msiexec ? MsiTools.MsiGetProductInfo(bundleKey, MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE) : string.Empty;
         }
 
         /// <summary>

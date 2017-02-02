@@ -457,7 +457,7 @@ namespace BulkCrapUninstaller.Functions
             dialogInterface.SetMaximum(1);
             dialogInterface.SetProgress(0);
 
-            var detectedUninstallers =
+            /*var detectedUninstallers =
                 new List<ApplicationUninstallerEntry>(UninstallManager.GetUninstallerList(x =>
                 {
                     if (x.CurrentCount == 1)
@@ -491,13 +491,15 @@ namespace BulkCrapUninstaller.Functions
             }
 
             AllUninstallers = detectedUninstallers;
+            */
+            AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries();
 
             dialogInterface.SetProgress(1);
             dialogInterface.SetMaximum(1);
 
             try
             {
-                _iconGetter.UpdateIconList(detectedUninstallers);
+                _iconGetter.UpdateIconList(AllUninstallers);
             }
             catch (Exception ex)
             {

@@ -22,12 +22,28 @@ namespace UninstallTools.Factory.InfoAdders
             "application.ico", "logo.ico"
         };
 
+        public string[] RequiredValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.DisplayIcon),
+            nameof(ApplicationUninstallerEntry.UninstallerKind),
+            nameof(ApplicationUninstallerEntry.UninstallerFullFilename),
+            nameof(ApplicationUninstallerEntry.InstallLocation),
+        };
+
+        public bool RequiresAllValues { get; } = false;
+
+        public string[] CanProduceValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.DisplayIcon),
+            nameof(ApplicationUninstallerEntry.IconBitmap)
+        };
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;
+
         /// <summary>
         ///     Run after DisplayIcon, DisplayName, UninstallerKind, InstallLocation, UninstallString have been initialized.
         /// </summary>
         public void AddMissingInformation(ApplicationUninstallerEntry entry)
         {
-            Debug.Assert(entry.IconBitmap == null && entry.DisplayIcon == null);
+            if (entry.IconBitmap != null)
+                return;
 
             // Check for any specified icons
             if (!string.IsNullOrEmpty(entry.DisplayIcon) && !ApplicationUninstallerFactory.PathPointsToMsiExec(entry.DisplayIcon))

@@ -4,7 +4,6 @@
 */
 
 using System;
-using System.Diagnostics;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Native;
@@ -15,18 +14,36 @@ namespace UninstallTools.Factory.InfoAdders
     {
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
-            Debug.Assert(target.UninstallerKind != UninstallerType.Msiexec);
+            //Debug.Assert(target.UninstallerKind != UninstallerType.Msiexec);
             if (target.UninstallerKind != UninstallerType.Msiexec)
                 return;
 
             ApplyMsiInfo(target, target.BundleProviderKey);
         }
 
+        public string[] RequiredValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.UninstallerKind),
+            nameof(ApplicationUninstallerEntry.BundleProviderKey) 
+        };
+
+        public bool RequiresAllValues { get; } = true;
+        public string[] CanProduceValueNames { get; } =  {
+            nameof(ApplicationUninstallerEntry.RawDisplayName),
+            nameof(ApplicationUninstallerEntry.DisplayVersion),
+            nameof(ApplicationUninstallerEntry.Publisher),
+            nameof(ApplicationUninstallerEntry.InstallLocation),
+            nameof(ApplicationUninstallerEntry.InstallSource),
+            nameof(ApplicationUninstallerEntry.UninstallerFullFilename),
+            nameof(ApplicationUninstallerEntry.DisplayIcon),
+            nameof(ApplicationUninstallerEntry.AboutUrl),
+            nameof(ApplicationUninstallerEntry.InstallDate)
+        };
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunFirst;
+
         /// <summary>
         ///     A valid guid is REQUIRED. It doesn't have to be set on the entry, but should be.
-        ///     IMPORTANT: Run at the very end of the object creation!
         /// </summary>
-        public static void ApplyMsiInfo(ApplicationUninstallerEntry entry, Guid guid)
+        private static void ApplyMsiInfo(ApplicationUninstallerEntry entry, Guid guid)
         {
             //IMPORTANT: If MsiGetProductInfo returns null it means that the guid is invalid or app is not installed
             if (MsiTools.MsiGetProductInfo(guid, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME) == null)
@@ -34,16 +51,25 @@ namespace UninstallTools.Factory.InfoAdders
 
             FillInMissingInfoMsiHelper(() => entry.RawDisplayName, x => entry.RawDisplayName = x, guid,
                 MsiWrapper.INSTALLPROPERTY.INSTALLEDPRODUCTNAME, MsiWrapper.INSTALLPROPERTY.PRODUCTNAME);
+
             FillInMissingInfoMsiHelper(() => entry.DisplayVersion, x => entry.DisplayVersion = x, guid,
                 MsiWrapper.INSTALLPROPERTY.VERSIONSTRING, MsiWrapper.INSTALLPROPERTY.VERSION);
+
             FillInMissingInfoMsiHelper(() => entry.Publisher, x => entry.Publisher = x, guid,
                 MsiWrapper.INSTALLPROPERTY.PUBLISHER);
+
             FillInMissingInfoMsiHelper(() => entry.InstallLocation, x => entry.InstallLocation = x, guid,
                 MsiWrapper.INSTALLPROPERTY.INSTALLLOCATION);
+
             FillInMissingInfoMsiHelper(() => entry.InstallSource, x => entry.InstallSource = x, guid,
                 MsiWrapper.INSTALLPROPERTY.INSTALLSOURCE);
+
+            FillInMissingInfoMsiHelper(() => entry.UninstallerLocation, x => entry.UninstallerFullFilename = x, guid,
+                MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE);
+
             FillInMissingInfoMsiHelper(() => entry.DisplayIcon, x => entry.DisplayIcon = x, guid,
                 MsiWrapper.INSTALLPROPERTY.PRODUCTICON);
+
             FillInMissingInfoMsiHelper(() => entry.AboutUrl, x => entry.AboutUrl = x, guid,
                 MsiWrapper.INSTALLPROPERTY.HELPLINK, MsiWrapper.INSTALLPROPERTY.URLUPDATEINFO,
                 MsiWrapper.INSTALLPROPERTY.URLINFOABOUT);
@@ -53,9 +79,9 @@ namespace UninstallTools.Factory.InfoAdders
             if (!temp.IsNotEmpty()) return;
             try
             {
-                entry.InstallDate = new DateTime(Int32.Parse(temp.Substring(0, 4)),
-                    Int32.Parse(temp.Substring(4, 2)),
-                    Int32.Parse(temp.Substring(6, 2)));
+                entry.InstallDate = new DateTime(int.Parse(temp.Substring(0, 4)),
+                    int.Parse(temp.Substring(4, 2)),
+                    int.Parse(temp.Substring(6, 2)));
             }
             catch
             {
@@ -66,7 +92,7 @@ namespace UninstallTools.Factory.InfoAdders
         private static void FillInMissingInfoMsiHelper(Func<string> get, Action<string> set, Guid guid,
             params MsiWrapper.INSTALLPROPERTY[] properties)
         {
-            if (String.IsNullOrEmpty(get()))
+            if (string.IsNullOrEmpty(get()))
             {
                 foreach (var item in properties)
                 {

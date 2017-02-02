@@ -23,7 +23,7 @@ namespace UninstallTools.Factory
             if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
                 yield break;
 
-            var output = ApplicationUninstallerFactory.StartProcessAndReadOutput(StoreAppHelperPath, "/query");
+            var output = SteamFactory.StartProcessAndReadOutput(StoreAppHelperPath, "/query");
             if (string.IsNullOrEmpty(output))
                 yield break;
 

@@ -18,7 +18,8 @@ namespace UninstallTools
         {
             "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
             "Desktop", "Internet Explorer", "Windows NT", "Windows Photo Viewer", "Windows Mail",
-            "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies"
+            "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
+            "InstallShield Installation Information"
         };
 
         internal static readonly IEnumerable<string> QuestionableDirectoryNames = new[]

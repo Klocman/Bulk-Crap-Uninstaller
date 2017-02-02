@@ -5,13 +5,11 @@
 
 using System;
 using System.IO;
-using System.Linq;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using Klocman.Extensions;
 using Klocman.Tools;
-using Microsoft.Win32;
 
 namespace UninstallTools.Factory.InfoAdders
 {
@@ -28,6 +26,17 @@ namespace UninstallTools.Factory.InfoAdders
             if (!string.IsNullOrEmpty(s))
                 target.UninstallerKind = GetUninstallerType(s);
         }
+
+        public string[] RequiredValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.UninstallString),
+            nameof(ApplicationUninstallerEntry.QuietUninstallString)
+        };
+        public bool RequiresAllValues { get; } = false;
+
+        public string[] CanProduceValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.UninstallerKind)
+        };
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
 
         public static UninstallerType GetUninstallerType(string uninstallString)
         {

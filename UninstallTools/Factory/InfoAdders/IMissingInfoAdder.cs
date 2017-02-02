@@ -3,8 +3,6 @@
     Apache License Version 2.0
 */
 
-using System.Threading;
-
 namespace UninstallTools.Factory.InfoAdders
 {
     public interface IMissingInfoAdder
@@ -26,13 +24,13 @@ namespace UninstallTools.Factory.InfoAdders
         bool RequiresAllValues { get; }
 
         /// <summary>
-        /// Names of values this InfoAdder can fill in.
+        /// Names of values this InfoAdder can fill in. If null, always run.
         /// </summary>
-        string[] ProducedValueNames { get; }
+        string[] CanProduceValueNames { get; }
 
         /// <summary>
         /// Higher priority InfoAdders are executed first.
         /// </summary>
-        ThreadPriority Priority { get; }
+        InfoAdderPriority Priority { get; }
     }
 }

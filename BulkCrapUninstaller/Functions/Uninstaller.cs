@@ -441,7 +441,7 @@ namespace BulkCrapUninstaller.Functions
                     _ =>
                     {
                         items.AddRange(DirectoryFactory.TryCreateFromDirectory(
-                            new DirectoryInfo(dialog.SelectedPath), null));
+                            new DirectoryInfo(dialog.SelectedPath), null, new string[] {}));
                     });
 
                 if (items.Count == 0)

@@ -7,17 +7,49 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace UninstallTools.Factory.InfoAdders
 {
     internal class InfoAdderManager
     {
-        private readonly IMissingInfoAdder[] _infoAdders;
+        private static readonly IMissingInfoAdder[] InfoAdders;
 
-        public InfoAdderManager()
+        private static readonly Dictionary<string, PropInfo> TargetProperties;
+
+        private sealed class PropInfo
         {
-            _infoAdders = GetInfoAdders().ToArray();
+            public PropInfo(PropertyInfo propertyInfo, object defaultValue)
+            {
+                PropertyInfo = propertyInfo;
+                DefaultValue = defaultValue;
+            }
+
+            public PropertyInfo PropertyInfo { get; }
+            public object DefaultValue { get; }
+        }
+
+        static InfoAdderManager()
+        {
+            InfoAdders = GetInfoAdders().ToArray();
+
+            var defaultValues = new ApplicationUninstallerEntry();
+            TargetProperties = typeof(ApplicationUninstallerEntry)
+                .GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
+                // Skip properties without public setters
+                .Where(x => x.GetSetMethod() != null)
+                .Where(x => IsTypeValid(x.PropertyType))
+                .ToDictionary(x => x.Name, x => new PropInfo(x, x.GetValue(defaultValues, null)));
+        }
+
+        private static readonly Type BoolType = typeof(bool);
+
+        /// <summary>
+        /// Check if we can correctly detect if the type has no value.
+        /// </summary>
+        private static bool IsTypeValid(Type type)
+        {
+            // TODO is this filtering neccessary?
+            return type != BoolType || Nullable.GetUnderlyingType(type) != null;
         }
 
         private static IEnumerable<IMissingInfoAdder> GetInfoAdders()
@@ -28,24 +60,76 @@ namespace UninstallTools.Factory.InfoAdders
 
             var instances = types.Select(Activator.CreateInstance);
 
-            return instances.Cast<IMissingInfoAdder>().OrderByDescending(x=>x.Priority);
+            return instances.Cast<IMissingInfoAdder>().OrderByDescending(x => x.Priority);
         }
 
+        /// <summary>
+        /// Fill in information using all detected IMissingInfoAdder classes
+        /// </summary>
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
-            // TODO
-            /*
-             create copy list of adders
-             find adder that uses any values that are present in target
-                prioritize ones with all values existing
-                // run in priority buckets? don't run lower priority if possible
-                try making reflection prop gets fast
-                compare to default value (string isempty)
-             execute it and remove it from the list
-             continue until nothing can execute or list is empty
-             */
+            var adders = InfoAdders.ToList();
+            var valueIsDefaultCache = new Dictionary<string, bool>();
 
-            throw new NotImplementedException();
+            // Checks if the value is default, buffering the result
+            Func<string, bool> getIsValDefault = key =>
+            {
+                bool valIsDefault;
+                if (!valueIsDefaultCache.TryGetValue(key, out valIsDefault))
+                {
+                    // If we can't check if the key is updated, assume that it can to be safe
+                    if (!TargetProperties.ContainsKey(key)) return true;
+
+                    var property = TargetProperties[key];
+                    valIsDefault = Equals(property.PropertyInfo.GetValue(target, null),
+                        property.DefaultValue);
+                    valueIsDefaultCache.Add(key, valIsDefault);
+                }
+
+                return valIsDefault;
+            };
+
+            bool anyRan;
+            do
+            {
+                anyRan = false;
+                foreach (var infoAdder in adders.ToList())
+                {
+                    var requirements = infoAdder.RequiredValueNames;
+
+                    //TODO prioritize ones with all values existing from same priority tier?
+                    // Basically Any / All
+
+                    // Always run the adder if it has no requirements
+                    if (requirements.Any())
+                    {
+                        if (infoAdder.RequiresAllValues)
+                        {
+                            if(infoAdder.RequiredValueNames.Any(x => getIsValDefault(x)))
+                                continue;
+                        }
+                        else
+                        {
+                            if (infoAdder.RequiredValueNames.All(x => getIsValDefault(x)))
+                                continue;
+                        }
+                    }
+
+                    // Only run the adder if it can actually fill in any missing values
+                    if (infoAdder.CanProduceValueNames.Any() && !infoAdder.CanProduceValueNames.Any(getIsValDefault))
+                        continue;
+
+                    infoAdder.AddMissingInformation(target);
+
+                    // Remove items that might have changed from cache
+                    foreach (var valueName in infoAdder.CanProduceValueNames)
+                        valueIsDefaultCache.Remove(valueName);
+
+                    adders.Remove(infoAdder);
+
+                    anyRan = true;
+                }
+            } while (anyRan);
         }
 
         public void TryAddFieldInformation(ApplicationUninstallerEntry target, string targetValueName)
@@ -59,6 +143,26 @@ namespace UninstallTools.Factory.InfoAdders
              */
 
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Copy missing property values
+        /// </summary>
+        /// <param name="target">Copy values to this object</param>
+        /// <param name="source">Copy from this object</param>
+        public void CopyMissingInformation(ApplicationUninstallerEntry target, ApplicationUninstallerEntry source)
+        {
+            foreach (var property in TargetProperties.Values)
+            {
+                // Skip if target has non-default value assigned to this property
+                if (!Equals(property.PropertyInfo.GetValue(target, null), property.DefaultValue))
+                    continue;
+
+                // If source has a non-default value for this property, copy it to target
+                var newValue = property.PropertyInfo.GetValue(source, null);
+                if (!Equals(newValue, property.DefaultValue))
+                    property.PropertyInfo.SetValue(target, newValue, null);
+            }
         }
     }
 }

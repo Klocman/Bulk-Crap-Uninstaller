@@ -5,23 +5,28 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Factory.InfoAdders;
-using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Factory
 {
     public class RegistryFactory : IUninstallerFactory
     {
-        private static readonly string RegUninstallersKeyDirect = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-
+        private static readonly string RegUninstallersKeyDirect = 
+            @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
         private static readonly string RegUninstallersKeyWow =
             @"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall";
+
+        private readonly IEnumerable<Guid> _windowsInstallerValidGuids;
+
+        public RegistryFactory(IEnumerable<Guid> windowsInstallerValidGuids)
+        {
+            _windowsInstallerValidGuids = windowsInstallerValidGuids;
+        }
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {
@@ -33,10 +38,10 @@ namespace UninstallTools.Factory
             foreach (var kvp in keysToCheck.Where(kvp => kvp.Key != null))
             {
                 uninstallersToCreate.AddRange(from subkeyName in kvp.Key.GetSubKeyNames()
-                    select kvp.Key.OpenSubKey(subkeyName)
+                                              select kvp.Key.OpenSubKey(subkeyName)
                     into subkey
-                    where subkey != null
-                    select new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value));
+                                              where subkey != null
+                                              select new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value));
 
                 kvp.Key.Close();
             }
@@ -91,14 +96,14 @@ namespace UninstallTools.Factory
                 ModifyPath = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameModifyPath) as string,
                 InstallLocation = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameInstallLocation) as string,
                 InstallSource = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameInstallSource) as string,
-                SystemComponent = (int) uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameSystemComponent, 0) != 0,
+                SystemComponent = (int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameSystemComponent, 0) != 0,
                 DisplayIcon = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameDisplayIcon) as string
             };
         }
 
         private static FileSize GetEstimatedSize(RegistryKey uninstallerKey)
         {
-            var tempSize = (int) uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameEstimatedSize, 0);
+            var tempSize = (int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameEstimatedSize, 0);
             return FileSize.FromKilobytes(tempSize);
         }
 
@@ -151,7 +156,7 @@ namespace UninstallTools.Factory
 
             var releaseType = uninstallerKey.GetValue("ReleaseType", string.Empty) as string;
             if (releaseType.IsNotEmpty() &&
-                releaseType.ContainsAny(new[] {"Update", "Hotfix"}, StringComparison.OrdinalIgnoreCase))
+                releaseType.ContainsAny(new[] { "Update", "Hotfix" }, StringComparison.OrdinalIgnoreCase))
                 return true;
 
             var defaultValue = uninstallerKey.GetValue(null) as string;
@@ -165,7 +170,7 @@ namespace UninstallTools.Factory
 
         private static bool GetProtectedFlag(RegistryKey uninstallerKey)
         {
-            return (int) uninstallerKey.GetValue("NoRemove", 0) != 0;
+            return (int)uninstallerKey.GetValue("NoRemove", 0) != 0;
         }
 
         private static List<KeyValuePair<RegistryKey, bool>> GetRegistryKeys()
@@ -226,7 +231,7 @@ namespace UninstallTools.Factory
         /// </summary>
         /// <param name="uninstallerKey">Registry key which contains the uninstaller information.</param>
         /// <param name="is64Bit">Is the registry key pointing to a 64 bit subkey?</param>
-        public static ApplicationUninstallerEntry TryCreateFromRegistry(RegistryKey uninstallerKey, bool is64Bit)
+        public ApplicationUninstallerEntry TryCreateFromRegistry(RegistryKey uninstallerKey, bool is64Bit)
         {
             if (uninstallerKey == null)
                 throw new ArgumentNullException(nameof(uninstallerKey));
@@ -264,24 +269,24 @@ namespace UninstallTools.Factory
             if (tempEntry.UninstallerKind != UninstallerType.Msiexec && tempEntry.BundleProviderKey != Guid.Empty
                 && !tempEntry.UninstallPossible && !tempEntry.QuietUninstallPossible)
             {
-                if (UninstallManager.WindowsInstallerValidGuids.Contains(tempEntry.BundleProviderKey))
+                if (_windowsInstallerValidGuids.Contains(tempEntry.BundleProviderKey))
                     tempEntry.UninstallerKind = UninstallerType.Msiexec;
             }
 
             // Fill in missing fields with information that can now be obtained
-            //TODO move out into info adders
-            if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
-                MsiInfoAdder.ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
+
+            //if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
+            //    MsiInfoAdder.ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
 
             // Use quiet uninstall string as normal uninstall string if the normal string is missing.
-            if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
-                tempEntry.UninstallString = tempEntry.QuietUninstallString;
+            //if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
+            //    tempEntry.UninstallString = tempEntry.QuietUninstallString;
 
             // Finish up setting file/folder paths
-            tempEntry.UninstallerFullFilename =
-                ApplicationUninstallerFactory.GetUninstallerFilename(tempEntry.UninstallString,
-                    tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
-
+            //tempEntry.UninstallerFullFilename =
+            //    ApplicationUninstallerFactory.GetUninstallerFilename(tempEntry.UninstallString,
+            //        tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
+            /*
             if (tempEntry.InstallLocation != null)
                 tempEntry.InstallLocation = CleanupPath(tempEntry.InstallLocation);
             else if (tempEntry.UninstallerKind == UninstallerType.Nsis ||
@@ -290,8 +295,9 @@ namespace UninstallTools.Factory
 
             if (tempEntry.InstallSource != null)
                 tempEntry.InstallSource = CleanupPath(tempEntry.InstallSource);
-
+                */
             // Fill in the install date if it's missing
+            /*
             try
             {
                 if (tempEntry.InstallDate.IsDefault() && !string.IsNullOrEmpty(tempEntry.UninstallerFullFilename))
@@ -307,29 +313,9 @@ namespace UninstallTools.Factory
             // Misc
             tempEntry.IsValid = IsValidAdder.GetIsValid(tempEntry.UninstallString,
                 tempEntry.UninstallerFullFilename,
-                tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
+                tempEntry.UninstallerKind, tempEntry.BundleProviderKey);*/
 
             return tempEntry;
-        }
-
-        static string CleanupPath(string path)
-        {
-            if (path == null) return null;
-
-            path = path.Trim('"', ' ', '\'', '\\', '/'); // Get rid of the quotation marks
-            try
-            {
-                var i = path.LastIndexOf('\\');
-                if (i > 0 && path.Substring(i).Contains('.') && !Directory.Exists(path))
-                {
-                    path = Path.GetDirectoryName(ProcessTools.SeparateArgsFromCommand(path).FileName);
-                }
-            }
-            catch
-            {
-                // If sanitization failed just leave it be, it will be handled afterwards
-            }
-            return path;
         }
     }
 }

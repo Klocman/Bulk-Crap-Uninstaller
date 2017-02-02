@@ -58,6 +58,9 @@ namespace UninstallTools.Factory
         private string _uninstallerLocation;
         private string _uninstallString;
         internal Icon IconBitmap = null;
+        private string _installLocation;
+        private string _installSource;
+        private string _modifyPath;
 
         internal ApplicationUninstallerEntry()
         {
@@ -116,10 +119,18 @@ namespace UninstallTools.Factory
         public DateTime InstallDate { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "InstallLocation")]
-        public string InstallLocation { get; set; }
+        public string InstallLocation
+        {
+            get { return _installLocation; }
+            set { _installLocation = CleanupPath(value); }
+        }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "InstallSource")]
-        public string InstallSource { get; set; }
+        public string InstallSource
+        {
+            get { return _installSource; }
+            set { _installSource = CleanupPath(value); }
+        }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "Is64Bit")]
         public MachineType Is64Bit { get; set; }
@@ -155,7 +166,11 @@ namespace UninstallTools.Factory
         public bool IsValid { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "ModifyPath")]
-        public string ModifyPath { get; set; }
+        public string ModifyPath
+        {
+            get { return _modifyPath; }
+            set { _modifyPath = CleanupPath(value); }
+        }
 
         [LocalisedName(typeof (Localisation), "ParentKeyName")]
         public string ParentKeyName { get; set; }
@@ -217,6 +232,7 @@ namespace UninstallTools.Factory
             {
                 if (_uninstallerLocation == null)
                 {
+                    //TODO move to infoadder?
                     _uninstallerLocation = string.Empty;
                     if (!string.IsNullOrEmpty(UninstallerFullFilename))
                     {
@@ -244,6 +260,7 @@ namespace UninstallTools.Factory
             {
                 if (string.IsNullOrEmpty(_uninstallString) && UninstallerKind == UninstallerType.Msiexec)
                 {
+                    //TODO move to infoadder?
                     _uninstallString = UninstallManager.GetMsiString(BundleProviderKey,
                         MsiUninstallModes.Uninstall);
                 }
@@ -332,6 +349,7 @@ namespace UninstallTools.Factory
         /// <summary>
         ///     Get ordered collection of filenames that could be the main executable of the application.
         ///     The most likely files are first, the least likely are last.
+        /// TODO merge with DirectoryFactory version
         /// </summary>
         public string[] GetMainExecutableCandidates()
         {
@@ -468,6 +486,27 @@ namespace UninstallTools.Factory
             sb.AppendFormat(" | {0}", Comment);
 
             return sb.ToString();
+        }
+        
+        static string CleanupPath(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return null;
+
+            path = path.Trim('"', ' ', '\'', '\\', '/'); // Get rid of the quotation marks
+            try
+            {
+                var i = path.LastIndexOf('\\');
+                // TODO unnecessary?
+                if (i > 0 && path.Substring(i).Contains('.') && !Directory.Exists(path))
+                {
+                    path = Path.GetDirectoryName(ProcessTools.SeparateArgsFromCommand(path).FileName);
+                }
+            }
+            catch
+            {
+                // If sanitization failed just leave it be, it will be handled afterwards
+            }
+            return path;
         }
     }
 }

@@ -8,12 +8,17 @@ using System.Diagnostics;
 
 namespace UninstallTools.Factory.InfoAdders
 {
-    public class FileAttribInfoAdder : IMissingInfoAdder
-    {
+    public class FileAttribInfoAdder //: IMissingInfoAdder
+    {//TODO add missing attributes using the entry.getexecandidates
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
             throw new NotImplementedException();
         }
+
+        public string[] RequiredValueNames { get; }
+        public bool RequiresAllValues { get; }
+        public string[] CanProduceValueNames { get; }
+        public InfoAdderPriority Priority { get; }
 
         /// <summary>
         /// Add information from FileVersionInfo of specified file to the targetEntry

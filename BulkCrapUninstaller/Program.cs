@@ -168,10 +168,11 @@ namespace BulkCrapUninstaller
         /// </summary>
         private static void GetInstalledRegKey()
         {
+            const string regUninstallersKeyDirect = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+
             try
             {
-                using (var regKey = Registry.LocalMachine.OpenSubKey(
-                    UninstallManager.RegUninstallersKeyDirect))
+                using (var regKey = Registry.LocalMachine.OpenSubKey(regUninstallersKeyDirect))
                 {
                     if (regKey == null)
                         throw new ArgumentException("Could not open Software registry key");
