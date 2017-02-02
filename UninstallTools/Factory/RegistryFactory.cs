@@ -12,6 +12,7 @@ using Klocman.IO;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Factory
 {
@@ -190,6 +191,34 @@ namespace UninstallTools.Factory
             return keysToCheck;
         }
 
+        public static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
+        {
+            // Detect MSI installer based on registry entry (the proper way)
+            if ((int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameWindowsInstaller, 0) != 0)
+            {
+                return UninstallerType.Msiexec;
+            }
+
+            // Detect InnoSetup
+            if (uninstallerKey.GetValueNames().Any(x => x.Contains("Inno Setup:")))
+            {
+                return UninstallerType.InnoSetup;
+            }
+
+            // Detect Steam
+            if (uninstallerKey.GetKeyName().StartsWith("Steam App ", StringComparison.Ordinal))
+            {
+                return UninstallerType.Steam;
+            }
+
+            var uninstallString =
+                uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameUninstallString) as string;
+
+            return string.IsNullOrEmpty(uninstallString)
+                ? UninstallerType.Unknown
+                : UninstallerTypeAdder.GetUninstallerType(uninstallString);
+        }
+
         /// <summary>
         ///     Tries to create a new uninstaller entry. If the registry key doesn't contain valid uninstaller
         ///     information, null is returned. It will throw ArgumentNullException if passed uninstallerKey is null.
@@ -216,7 +245,7 @@ namespace UninstallTools.Factory
                 tempEntry.RawDisplayName = string.Empty;
             }
 
-            // Get rest of the information
+            // Get rest of the information from registry
             tempEntry.IsProtected = GetProtectedFlag(uninstallerKey);
             tempEntry.InstallDate = GetInstallDate(uninstallerKey);
             tempEntry.EstimatedSize = GetEstimatedSize(uninstallerKey);
@@ -225,20 +254,22 @@ namespace UninstallTools.Factory
             tempEntry.Is64Bit = is64Bit ? MachineType.X64 : MachineType.X86;
             tempEntry.IsUpdate = GetIsUpdate(uninstallerKey);
 
-            // Figure out what we are dealing with
-            tempEntry.UninstallerKind = UninstallerTypeAdder.GetUninstallerType(uninstallerKey);
             tempEntry.BundleProviderKey = GetGuid(uninstallerKey);
+
+            // Figure out what we are dealing with
+            tempEntry.UninstallerKind = GetUninstallerType(uninstallerKey);
 
             // Corner case with some microsoft application installations.
             // They will sometimes create a naked registry key (product code as reg name) with only the display name value.
             if (tempEntry.UninstallerKind != UninstallerType.Msiexec && tempEntry.BundleProviderKey != Guid.Empty
                 && !tempEntry.UninstallPossible && !tempEntry.QuietUninstallPossible)
             {
-                if (ApplicationUninstallerManager.WindowsInstallerValidGuids.Contains(tempEntry.BundleProviderKey))
+                if (UninstallManager.WindowsInstallerValidGuids.Contains(tempEntry.BundleProviderKey))
                     tempEntry.UninstallerKind = UninstallerType.Msiexec;
             }
 
             // Fill in missing fields with information that can now be obtained
+            //TODO move out into info adders
             if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
                 MsiInfoAdder.ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
 

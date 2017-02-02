@@ -58,12 +58,12 @@
     </Compile>
     <Compile Include="Factory\ApplicationUninstallerEntry.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
-    <Compile Include="Factory\ApplicationUninstallerManager.cs" />
     <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
     <Compile Include="Factory\DirectoryFactory.cs" />
     <Compile Include="Factory\InfoAdders\FileAttribInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\IconGetter.cs" />
     <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
+    <Compile Include="Factory\InfoAdders\InfoAdderManager.cs" />
     <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\UninstallerTypeAdder.cs" />
     <Compile Include="Factory\InfoAdders\IsValidAdder.cs" />
@@ -190,6 +190,7 @@
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
     <Compile Include="Uninstaller\QuietUninstallTools.cs" />
+    <Compile Include="Uninstaller\UninstallManager.cs" />
     <Compile Include="Uninstaller\UninstallStatus.cs" />
     <Compile Include="UninstallToolsGlobalConfig.cs" />
     <Compile Include="Lists\UninstallList.cs" />

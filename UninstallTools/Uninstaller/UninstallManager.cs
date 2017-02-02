@@ -11,70 +11,14 @@ using System.Linq;
 using System.Security.Permissions;
 using System.Threading;
 using Klocman.Extensions;
-using Klocman.IO;
 using Klocman.Tools;
-using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Factory;
 using UninstallTools.Properties;
-using UninstallTools.Uninstaller;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Uninstaller
 {
-    public static class ApplicationUninstallerManager
+    public static class UninstallManager
     {
-        public delegate void GetUninstallerListCallback(ApplicationUninstallerManager.GetUninstallerListProgress progressReport);
-
-        /// <summary>
-        ///     Gets populated automatically when running GetUninstallerList. Returns null before first update.
-        /// </summary>
-        internal static IEnumerable<Guid> WindowsInstallerValidGuids { get; private set; }
-        
-
-
-        /// <summary>
-        ///     Search the system for valid uninstallers, parse them into coherent objects and return the resulting list.
-        /// </summary>
-        /// <exception cref="System.Security.SecurityException">
-        ///     The user does not have the permissions required to read the
-        ///     registry key.
-        /// </exception>
-        /// <exception cref="ObjectDisposedException">
-        ///     The <see cref="T:Microsoft.Win32.RegistryKey" /> is closed (closed keys
-        ///     cannot be accessed).
-        /// </exception>
-        /// <exception cref="UnauthorizedAccessException">The user does not have the necessary registry rights.</exception>
-        /// <exception cref="IOException">A system error occurred, for example the current key has been deleted.</exception>
-        public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerList(GetUninstallerListCallback callback)
-        {
-            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
-
-            PopulateWindowsInstallerValidGuids();
-            reg(applicationUninstallers);
-
-            applicationUninstallers.AddRange(StoreAppFactory.GetStoreApps());
-            
-                var steamAppsOnDisk = SteamFactory.GetSteamApps().ToList();
-
-            applicationUninstallers.AddRange(PredefinedFactory.GetSpecialUninstallers(applicationUninstallers));
-
-            // Fill in missing information
-            // todo merge data
-            foreach (var applicationUninstaller in applicationUninstallers)
-            {
-                if (applicationUninstaller.IconBitmap == null)
-                {
-                    string iconPath;
-                    applicationUninstaller.IconBitmap = IconGetter.TryGetIcon(
-                        applicationUninstaller, out iconPath);
-                    applicationUninstaller.DisplayIcon = iconPath;
-                }
-
-                InstallDateAdder.NewMethod(applicationUninstaller);
-            }
-
-            return applicationUninstallers;
-        }
-
-
         /// <summary>
         ///     Rename the uninstaller entry by changing registry data. The entry is not refreshed in the process.
         /// </summary>
@@ -322,24 +266,6 @@ namespace UninstallTools.Factory
                 default:
                     throw new ArgumentOutOfRangeException(nameof(mode), mode, @"Unknown mode");
             }
-        }
-
-        internal static void PopulateWindowsInstallerValidGuids()
-        {
-            WindowsInstallerValidGuids = MsiTools.MsiEnumProducts();
-        }
-
-        public class GetUninstallerListProgress
-        {
-            internal GetUninstallerListProgress(int totalCount)
-            {
-                TotalCount = totalCount;
-                CurrentCount = 0;
-            }
-
-            public int CurrentCount { get; internal set; }
-            public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
-            public int TotalCount { get; internal set; }
         }
     }
 }

@@ -196,7 +196,7 @@ namespace BulkCrapUninstaller.Functions
                             controller => { RunExternalCommands(_settings.ExternalPreCommands, controller); });
                     }
 
-                    var status = ApplicationUninstallerManager.RunBulkUninstall(targets, GetConfiguration(quiet));
+                    var status = UninstallManager.RunBulkUninstall(targets, GetConfiguration(quiet));
                     status.OneLoudLimit = _settings.UninstallConcurrentOneLoud;
                     status.ConcurrentUninstallerCount = _settings.UninstallConcurrency
                         ? _settings.UninstallConcurrentMaxCount

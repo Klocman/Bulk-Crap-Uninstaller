@@ -183,6 +183,7 @@ namespace UninstallTools.Factory
         
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {
+            // todo extract install paths and detect overall install locations to scan
             var existingUninstallers = _existingUninstallerEntries.ToList();
 
             var pfDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
@@ -225,7 +226,7 @@ namespace UninstallTools.Factory
             {
                 //itemId++;
                 //todo callback
-                //var progress = new ApplicationUninstallerManager.GetUninstallerListProgress(inputs.Count) { CurrentCount = itemId };
+                //var progress = new UninstallManager.GetUninstallerListProgress(inputs.Count) { CurrentCount = itemId };
                 //callback(progress);
 
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||

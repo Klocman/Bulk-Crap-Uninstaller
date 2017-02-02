@@ -8,7 +8,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Klocman.IO;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Factory.InfoAdders
 {
     public static class CertificateGetter
     {

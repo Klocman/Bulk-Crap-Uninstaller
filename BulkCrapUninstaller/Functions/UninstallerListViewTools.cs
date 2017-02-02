@@ -25,6 +25,7 @@ using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools;
+using UninstallTools.Controls;
 using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
@@ -292,7 +293,7 @@ namespace BulkCrapUninstaller.Functions
 
             var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLoadingWindowsFeatures, x =>
             {
-                var items = ApplicationUninstallerManager.GetWindowsFeaturesList(y =>
+                var items = UninstallManager.GetWindowsFeaturesList(y =>
                 {
                     x.SetMaximum(y.TotalCount);
                     x.SetProgress(y.CurrentCount);
@@ -457,7 +458,7 @@ namespace BulkCrapUninstaller.Functions
             dialogInterface.SetProgress(0);
 
             var detectedUninstallers =
-                new List<ApplicationUninstallerEntry>(ApplicationUninstallerManager.GetUninstallerList(x =>
+                new List<ApplicationUninstallerEntry>(UninstallManager.GetUninstallerList(x =>
                 {
                     if (x.CurrentCount == 1)
                         dialogInterface.SetMaximum(x.TotalCount * 2);
@@ -465,7 +466,7 @@ namespace BulkCrapUninstaller.Functions
                 }));
 
             detectedUninstallers.AddRange(
-                ApplicationUninstallerManager.GetApplicationsFromDrive(detectedUninstallers, x =>
+                UninstallManager.GetApplicationsFromDrive(detectedUninstallers, x =>
                     {
                         dialogInterface.SetProgress(x.TotalCount + x.CurrentCount);
                         if (x.CurrentCount == 1)

@@ -6,11 +6,13 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using Klocman.Extensions;
+using UninstallTools.Uninstaller;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Factory.InfoAdders
 {
-    public static class IsValidAdder
+    public class IsValidAdder : IMissingInfoAdder
     {
         public static bool GetIsValid(string uninstallString, string uninstallerFullFilename,
             UninstallerType uninstallerKind, Guid bundleProviderKey)
@@ -21,7 +23,23 @@ namespace UninstallTools.Factory
                     return true;
             }
 
-            return uninstallerKind == UninstallerType.Msiexec && ApplicationUninstallerManager.WindowsInstallerValidGuids.Contains(bundleProviderKey);
+            return uninstallerKind == UninstallerType.Msiexec && UninstallManager.WindowsInstallerValidGuids.Contains(bundleProviderKey);
         }
+
+        public void AddMissingInformation(ApplicationUninstallerEntry target)
+        {
+            target.IsValid = GetIsValid(target.UninstallString, target.UninstallerFullFilename, target.UninstallerKind,
+                target.BundleProviderKey);
+        }
+
+        public string[] RequiredValueNames { get; } = {
+            nameof(ApplicationUninstallerEntry.UninstallString),
+            nameof(ApplicationUninstallerEntry.UninstallerFullFilename),
+            nameof(ApplicationUninstallerEntry.UninstallerKind),
+            nameof(ApplicationUninstallerEntry.BundleProviderKey)
+        };
+        public string[] ProducedValueNames { get; } = { nameof(ApplicationUninstallerEntry.IsValid) };
+        public bool RequiresAllValues { get; } = false;
+        public ThreadPriority Priority { get; } = ThreadPriority.Lowest;
     }
 }

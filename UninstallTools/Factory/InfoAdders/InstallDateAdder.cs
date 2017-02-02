@@ -6,7 +6,7 @@
 using System.IO;
 using Klocman.Extensions;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Factory.InfoAdders
 {
     public static class InstallDateAdder
     {

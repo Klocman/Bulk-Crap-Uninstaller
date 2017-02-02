@@ -16,9 +16,11 @@ using Klocman.IO;
 using Klocman.Localising;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Lists;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
+using UninstallTools.Uninstaller;
 
 namespace UninstallTools.Factory
 {
@@ -168,7 +170,7 @@ namespace UninstallTools.Factory
             {
                 if (string.IsNullOrEmpty(_quietUninstallString) && UninstallerKind == UninstallerType.Msiexec)
                 {
-                    _quietUninstallString = ApplicationUninstallerManager.GetMsiString(BundleProviderKey,
+                    _quietUninstallString = UninstallManager.GetMsiString(BundleProviderKey,
                         MsiUninstallModes.QuietUninstall);
                 }
                 return _quietUninstallString;
@@ -242,7 +244,7 @@ namespace UninstallTools.Factory
             {
                 if (string.IsNullOrEmpty(_uninstallString) && UninstallerKind == UninstallerType.Msiexec)
                 {
-                    _uninstallString = ApplicationUninstallerManager.GetMsiString(BundleProviderKey,
+                    _uninstallString = UninstallManager.GetMsiString(BundleProviderKey,
                         MsiUninstallModes.Uninstall);
                 }
                 return _uninstallString;

@@ -18,53 +18,15 @@ namespace UninstallTools.Factory.InfoAdders
     public class UninstallerTypeAdder : IMissingInfoAdder
     {
         private static readonly Regex InnoSetupFilenameRegex = new Regex(@"unins\d\d\d", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-        
+
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
             if (target.UninstallerKind != UninstallerType.Unknown)
                 return;
 
-            if (target.IsRegistered)
-            {
-                using (var key = target.OpenRegKey())
-                {
-                    target.UninstallerKind = GetUninstallerType(key);
-                }
-            }
-            else
-            {
-                var s = target.UninstallString ?? target.QuietUninstallString;
-                if(!string.IsNullOrEmpty(s))
-                    target.UninstallerKind = GetUninstallerType(s);
-            }
-        }
-        
-        public static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
-        {
-            // Detect MSI installer based on registry entry (the proper way)
-            if ((int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameWindowsInstaller, 0) != 0)
-            {
-                return UninstallerType.Msiexec;
-            }
-
-            // Detect InnoSetup
-            if (uninstallerKey.GetValueNames().Any(x => x.Contains("Inno Setup:")))
-            {
-                return UninstallerType.InnoSetup;
-            }
-
-            // Detect Steam
-            if (uninstallerKey.GetKeyName().StartsWith("Steam App ", StringComparison.Ordinal))
-            {
-                return UninstallerType.Steam;
-            }
-
-            var uninstallString =
-                uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameUninstallString) as string;
-
-            return string.IsNullOrEmpty(uninstallString)
-                ? UninstallerType.Unknown
-                : UninstallerTypeAdder.GetUninstallerType(uninstallString);
+            var s = target.UninstallString ?? target.QuietUninstallString;
+            if (!string.IsNullOrEmpty(s))
+                target.UninstallerKind = GetUninstallerType(s);
         }
 
         public static UninstallerType GetUninstallerType(string uninstallString)

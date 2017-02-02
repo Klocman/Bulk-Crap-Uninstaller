@@ -15,6 +15,7 @@ using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Factory;
+using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller
 {
@@ -170,7 +171,7 @@ namespace BulkCrapUninstaller
             try
             {
                 using (var regKey = Registry.LocalMachine.OpenSubKey(
-                    ApplicationUninstallerManager.RegUninstallersKeyDirect))
+                    UninstallManager.RegUninstallersKeyDirect))
                 {
                     if (regKey == null)
                         throw new ArgumentException("Could not open Software registry key");

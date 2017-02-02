@@ -5,9 +5,8 @@
 
 using System;
 using Klocman.Tools;
-using UninstallTools.Factory.InfoAdders;
 
-namespace UninstallTools.Factory
+namespace UninstallTools.Factory.InfoAdders
 {
     public static class UninstallStringAdder
     {
