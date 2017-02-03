@@ -5,7 +5,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
+using System.Security;
 using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
@@ -81,9 +83,7 @@ namespace UninstallTools.Startup.Service
 
             // Execute the method and obtain the return values.
             var outParams = classInstance.InvokeMethod("ChangeStartMode", inParams, null);
-
-            if (outParams != null && ((UInt32)outParams["ReturnValue"]) != 0)
-                throw new ManagementException("ChangeStartMode returned " + outParams["ReturnValue"]);
+            CheckReturnValue(outParams);
         }
 
         public static bool CheckServiceEnabled(string serviceName)
@@ -96,15 +96,27 @@ namespace UninstallTools.Startup.Service
         public static void DeleteService(string serviceName)
         {
             try { EnableService(serviceName, false); }
-            catch(ManagementException) { }
+            catch (ManagementException) { }
 
             var classInstance = GetServiceObject(serviceName);
-            
+
             // Execute the method and obtain the return values.
             var outParams = classInstance.InvokeMethod("Delete", null, null);
+            CheckReturnValue(outParams, 16); // 16 - Service Marked For Deletion
+        }
 
-            if (outParams != null && ((UInt32)outParams["ReturnValue"]) != 0)
-                throw new ManagementException("ChangeStartMode returned " + outParams["ReturnValue"]);
+        private static void CheckReturnValue(ManagementBaseObject outParams, params UInt32[] ignoredCodes)
+        {
+            if (outParams == null) return;
+
+            var exitCode = (UInt32)outParams["ReturnValue"];
+            if (exitCode == 0 || ignoredCodes.Any(x => x == exitCode)) return;
+
+            if (exitCode == 2) // 2 - Access Denied
+                throw new SecurityException("The user does not have the necessary access.");
+
+            throw new ManagementException("Action failed with return value " + outParams["ReturnValue"] + 
+                ". Check return codes of Win32_Service class methods for more information.");
         }
 
         private static ManagementObject GetServiceObject(string serviceName)
