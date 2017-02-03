@@ -9,7 +9,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
-using UninstallTools.Factory;
+using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions
 {

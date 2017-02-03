@@ -22,7 +22,7 @@ using UninstallTools.Properties;
 using UninstallTools.Startup;
 using UninstallTools.Uninstaller;
 
-namespace UninstallTools.Factory
+namespace UninstallTools
 {
     public class ApplicationUninstallerEntry
     {
@@ -487,8 +487,8 @@ namespace UninstallTools.Factory
 
             return sb.ToString();
         }
-        
-        static string CleanupPath(string path)
+
+        private static string CleanupPath(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
 

@@ -52,11 +52,11 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ApplicationInfoExport.cs" />
+    <Compile Include="ApplicationEntrySerializer.cs" />
+    <Compile Include="ApplicationUninstallerEntry.cs" />
     <Compile Include="Controls\UninstallerIconGetter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Factory\ApplicationUninstallerEntry.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
     <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
     <Compile Include="Factory\DirectoryFactory.cs" />
@@ -98,7 +98,6 @@
     <Compile Include="Lists\ComparisonMethod.cs" />
     <Compile Include="Lists\ITestEntry.cs" />
     <Compile Include="Lists\Filter.cs" />
-    <Compile Include="MsiUninstallModes.cs" />
     <Compile Include="Properties\Localisation.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,6 +192,7 @@
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
+    <Compile Include="Uninstaller\MsiUninstallModes.cs" />
     <Compile Include="Uninstaller\UninstallManager.cs" />
     <Compile Include="Uninstaller\UninstallStatus.cs" />
     <Compile Include="UninstallToolsGlobalConfig.cs" />

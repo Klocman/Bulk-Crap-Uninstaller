@@ -61,7 +61,7 @@ namespace BulkCrapUninstaller.Functions
             
             try
             {
-                ApplicationInfoExport.SerializeApplicationInfo(filename, applicationUninstallerEntries);
+                ApplicationEntrySerializer.SerializeApplicationEntries(filename, applicationUninstallerEntries);
             }
             catch (Exception ex)
             {

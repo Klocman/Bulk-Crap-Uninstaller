@@ -29,7 +29,6 @@ using Klocman.UpdateSystem;
 using Klocman.Tools;
 using UninstallTools;
 using UninstallTools.Dialogs;
-using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Uninstaller;
 

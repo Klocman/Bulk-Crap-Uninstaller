@@ -29,7 +29,6 @@ using UninstallTools.Controls;
 using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Startup;
-using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {

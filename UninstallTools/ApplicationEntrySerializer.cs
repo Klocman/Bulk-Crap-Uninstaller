@@ -6,24 +6,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
-using UninstallTools.Factory;
 
 namespace UninstallTools
 {
-    public sealed class ApplicationInfoExport
+    public sealed class ApplicationEntrySerializer
     {
-        public static void SerializeApplicationInfo(string filename, IEnumerable<ApplicationUninstallerEntry> items)
+        public static void SerializeApplicationEntries(string filename, IEnumerable<ApplicationUninstallerEntry> items)
         {
-            SerializationTools.SerializeToXml(filename, new ApplicationInfoExport(items));
+            SerializationTools.SerializeToXml(filename, new ApplicationEntrySerializer(items));
         }
 
-        public ApplicationInfoExport(IEnumerable<ApplicationUninstallerEntry> items)
+        public ApplicationEntrySerializer(IEnumerable<ApplicationUninstallerEntry> items)
         {
             Items = items.ToList();
         }
 
         // Needed for serialization
-        public ApplicationInfoExport()
+        public ApplicationEntrySerializer()
         {
         }
 
