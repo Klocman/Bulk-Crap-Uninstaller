@@ -2,21 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.6.3.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.6.3/BCUninstaller_3.6.3_portable.zip</URL>
+<Version>3.7.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.7/BCUninstaller_3.7_portable.zip</URL>
 <Changes>
-Added transparency on hover to color legend.
-Changed "Startup" column to show "Yes" even if startup entries are disabled.
-Improved scrolling and drawing performance of the application list.
-Improved speed of detecting uninstaller types (faster startup).
-Fixed excessive CPU use when mouse is hovering over the application list.
-Fixed color legend destroying list scrolling performance.
-Fixed RegistryValueJunkNode backup failing if value name has a dot in its name.
-Fixed searching for CLSID registry junk taking forever.
-Fixed shortcuts of applications installed in same directory being wrongly detected as junk.
-Fixed portable version leaving behind .log files.
-Fixed rare DisposedException when closing BCU during certificate status update.
+Rewrite of application detection: Harder, Better, Faster, Stronger.
+Automatically detect where user installs apps, and look for orphans there.
+Improved detection of missing app information.
+UI is no longer blocked during loading: Can be dragged and is more stable.
+Improved error handling in multiple locations.
+Changed closed process detection too treat access denied as closed process.
+Added checks to prevent unnecessary exceptions.
+Removed some unnecessary file accesses.
+Fixed automatization settings not being honored.
+Fixed some directories not being blacklisted properly.
+Fixed first start dialog not showing on top properly, and removed ability to maximize it.
 </Changes>
-<Hash>d03f1ffdf10bfe7e59ec2bd0aae308ab</Hash>
+<Hash>c7dd0723ac2587fc2f6a0aca0926753a</Hash>
 </Update>
 </Root>
