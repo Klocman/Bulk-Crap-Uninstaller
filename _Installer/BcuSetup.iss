@@ -1,6 +1,6 @@
 ﻿#include "InstallDependancies.iss"
 
-#define MyAppName "Bulk Crap Uninstaller"      
+#define MyAppName "BCUninstaller"      
 #define MyAppNameShort "BCUninstaller"   
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/"
