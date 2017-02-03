@@ -141,17 +141,17 @@
             // 
             // panelNavigation
             // 
-            resources.ApplyResources(this.panelNavigation, "panelNavigation");
             this.panelNavigation.BackColor = System.Drawing.SystemColors.Control;
             this.panelNavigation.Controls.Add(this.buttonExit);
             this.panelNavigation.Controls.Add(this.buttonPrev);
             this.panelNavigation.Controls.Add(this.buttonNext);
+            resources.ApplyResources(this.panelNavigation, "panelNavigation");
             this.panelNavigation.Name = "panelNavigation";
             // 
             // buttonExit
             // 
-            resources.ApplyResources(this.buttonExit, "buttonExit");
             this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonExit, "buttonExit");
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.CloseWizard);
@@ -200,24 +200,24 @@
             // 
             // page5
             // 
-            resources.ApplyResources(this.page5, "page5");
             this.page5.Controls.Add(this.panel12);
             this.page5.Controls.Add(this.flowLayoutPanel6);
             this.page5.Controls.Add(this.p5finishTitle);
+            resources.ApplyResources(this.page5, "page5");
             this.page5.Name = "page5";
             // 
             // panel12
             // 
-            resources.ApplyResources(this.panel12, "panel12");
             this.panel12.Controls.Add(this.buttonMore);
             this.panel12.Controls.Add(this.buttonHelp);
             this.panel12.Controls.Add(this.buttonFinish);
+            resources.ApplyResources(this.panel12, "panel12");
             this.panel12.Name = "panel12";
             // 
             // buttonMore
             // 
-            resources.ApplyResources(this.buttonMore, "buttonMore");
             this.buttonMore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonMore, "buttonMore");
             this.buttonMore.Name = "buttonMore";
             this.buttonMore.TabStop = false;
             this.buttonMore.UseVisualStyleBackColor = true;
@@ -225,8 +225,8 @@
             // 
             // buttonHelp
             // 
-            resources.ApplyResources(this.buttonHelp, "buttonHelp");
             this.buttonHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonHelp, "buttonHelp");
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.TabStop = false;
             this.buttonHelp.UseVisualStyleBackColor = true;
@@ -234,8 +234,8 @@
             // 
             // buttonFinish
             // 
-            resources.ApplyResources(this.buttonFinish, "buttonFinish");
             this.buttonFinish.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonFinish, "buttonFinish");
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.TabStop = false;
             this.buttonFinish.UseVisualStyleBackColor = true;
@@ -286,13 +286,12 @@
             // 
             // pageNetwork
             // 
-            resources.ApplyResources(this.pageNetwork, "pageNetwork");
             this.pageNetwork.Controls.Add(this.flowLayoutPanel2);
+            resources.ApplyResources(this.pageNetwork, "pageNetwork");
             this.pageNetwork.Name = "pageNetwork";
             // 
             // flowLayoutPanel2
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Controls.Add(this.p4netTitle);
             this.flowLayoutPanel2.Controls.Add(this.p4netDesc);
             this.flowLayoutPanel2.Controls.Add(this.p4netDesc1);
@@ -305,6 +304,7 @@
             this.flowLayoutPanel2.Controls.Add(this.checkBoxSendStats);
             this.flowLayoutPanel2.Controls.Add(this.p4netUsageAdd);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxRatings);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // p4netTitle
@@ -380,13 +380,12 @@
             // 
             // pageCorrupted
             // 
-            resources.ApplyResources(this.pageCorrupted, "pageCorrupted");
             this.pageCorrupted.Controls.Add(this.flowLayoutPanel1);
+            resources.ApplyResources(this.pageCorrupted, "pageCorrupted");
             this.pageCorrupted.Name = "pageCorrupted";
             // 
             // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.pCorTitle);
             this.flowLayoutPanel1.Controls.Add(this.pCorDesc);
             this.flowLayoutPanel1.Controls.Add(this.pCorViewInvalidTitle);
@@ -397,6 +396,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pCorOrphansMessage);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxOrphans);
             this.flowLayoutPanel1.Controls.Add(this.pCorOrphansComment);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // pCorTitle
@@ -460,13 +460,12 @@
             // 
             // page3
             // 
-            resources.ApplyResources(this.page3, "page3");
             this.page3.Controls.Add(this.flowLayoutPanel4);
+            resources.ApplyResources(this.page3, "page3");
             this.page3.Name = "page3";
             // 
             // flowLayoutPanel4
             // 
-            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
             this.flowLayoutPanel4.Controls.Add(this.p3advTitle);
             this.flowLayoutPanel4.Controls.Add(this.p3advDesc);
             this.flowLayoutPanel4.Controls.Add(this.p3advSyscompTitle);
@@ -477,6 +476,7 @@
             this.flowLayoutPanel4.Controls.Add(this.checkBoxListProtected);
             this.flowLayoutPanel4.Controls.Add(this.checkBoxDiisableProtection);
             this.flowLayoutPanel4.Controls.Add(this.p3advProtectAdd);
+            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             // 
             // p3advTitle
@@ -542,13 +542,12 @@
             // 
             // page2
             // 
-            resources.ApplyResources(this.page2, "page2");
             this.page2.Controls.Add(this.flowLayoutPanel3);
+            resources.ApplyResources(this.page2, "page2");
             this.page2.Name = "page2";
             // 
             // flowLayoutPanel3
             // 
-            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Controls.Add(this.p2viewTitle);
             this.flowLayoutPanel3.Controls.Add(this.p2viewDetail);
             this.flowLayoutPanel3.Controls.Add(this.p2viewDetail1);
@@ -560,6 +559,7 @@
             this.flowLayoutPanel3.Controls.Add(this.p2viewCerts);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxCertTest);
             this.flowLayoutPanel3.Controls.Add(this.p2viewAdd);
+            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
             // p2viewTitle
@@ -630,14 +630,13 @@
             // 
             // page1
             // 
-            resources.ApplyResources(this.page1, "page1");
             this.page1.Controls.Add(this.flowLayoutPanel5);
             this.page1.Controls.Add(this.panel1);
+            resources.ApplyResources(this.page1, "page1");
             this.page1.Name = "page1";
             // 
             // flowLayoutPanel5
             // 
-            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
             this.flowLayoutPanel5.Controls.Add(this.p1welcomeHeading);
             this.flowLayoutPanel5.Controls.Add(this.p1welcomeSubheading);
             this.flowLayoutPanel5.Controls.Add(this.p1languageHeading);
@@ -645,6 +644,7 @@
             this.flowLayoutPanel5.Controls.Add(this.panel9);
             this.flowLayoutPanel5.Controls.Add(this.p1languageExtradetails);
             this.flowLayoutPanel5.Controls.Add(this.p1linkLabelContact);
+            resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             // 
             // p1welcomeHeading
@@ -669,16 +669,16 @@
             // 
             // panel9
             // 
-            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Controls.Add(this.comboBoxLanguage);
             this.panel9.Controls.Add(this.buttonLanguageApply);
+            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Name = "panel9";
             // 
             // comboBoxLanguage
             // 
-            resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.TabStop = false;
             // 
@@ -704,9 +704,9 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label2);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // pictureBox1
@@ -738,8 +738,14 @@
             this.Controls.Add(this.panelNavigation);
             this.Controls.Add(this.scrollPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FirstStartBox";
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FirstStartBox_FormClosed);
+            this.Load += new System.EventHandler(this.FirstStartBox_Load);
             this.panelNavigation.ResumeLayout(false);
             this.scrollPanel.ResumeLayout(false);
             this.page5.ResumeLayout(false);

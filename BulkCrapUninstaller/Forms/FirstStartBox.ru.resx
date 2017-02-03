@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Отмена</value>
@@ -126,6 +126,10 @@
   <data name="buttonNext.Text" xml:space="preserve">
     <value>Далее</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 179</value>
+  </data>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>Больше опций</value>
   </data>
@@ -135,9 +139,8 @@
   <data name="buttonFinish.Text" xml:space="preserve">
     <value>Готово</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 179</value>
+  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 123</value>
   </data>
   <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 51</value>
@@ -171,9 +174,6 @@
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Домашняя страница</value>
-  </data>
-  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 123</value>
   </data>
   <data name="p5finishTitle.Text" xml:space="preserve">
     <value>Установка завершена</value>
@@ -553,14 +553,14 @@
   <data name="p1languageDesc.Text" xml:space="preserve">
     <value>BCUninstaller может использовать указанную локализацию. Чтобы применить новый язык будет выполнена перезагрузка.</value>
   </data>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 27</value>
+  </data>
   <data name="buttonLanguageApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>245, 2</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Применить</value>
-  </data>
-  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 27</value>
   </data>
   <data name="p1languageExtradetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 45</value>

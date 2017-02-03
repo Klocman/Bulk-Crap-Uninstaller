@@ -191,5 +191,10 @@ namespace BulkCrapUninstaller.Forms
         {
             MessageBoxes.DisplayHelp();
         }
+
+        private void FirstStartBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

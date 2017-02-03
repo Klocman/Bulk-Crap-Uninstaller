@@ -12,6 +12,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
@@ -88,9 +89,9 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowWinFeatures, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
 
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue, 
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,
                 x => x.QuietAutomatization, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue, 
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
                 x => x.QuietAutomatizationKillStuck, this);
 
             // Setup list view
@@ -598,10 +599,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OnFirstApplicationStart()
         {
-            using (var wizard = new FirstStartBox())
-            {
-                wizard.ShowDialog();
-            }
+            StartSetupWizard(this, EventArgs.Empty);
 
             // On first start the updates are not searched from constructor to give user a chance to disable them.
             BackgroundSearchForUpdates();
@@ -897,7 +895,8 @@ namespace BulkCrapUninstaller.Forms
         {
             using (var wizard = new FirstStartBox())
             {
-                wizard.ShowDialog();
+                wizard.StartPosition = FormStartPosition.CenterParent;
+                wizard.ShowDialog(this);
             }
         }
 
@@ -1068,7 +1067,20 @@ namespace BulkCrapUninstaller.Forms
         private void _listView_ListRefreshIsRunningChanged(object sender,
             UninstallerListViewTools.ListRefreshEventArgs e)
         {
+            // Skip notifications about starting the refresh
             if (e.NewValue) return;
+
+            // If refresh has finished update the interface
+            propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
+                x => x.UninstallerKind == UninstallerType.StoreApp);
+            propertiesSidebar.WinFeaturesEnabled = _listView.AllUninstallers.Any(
+                x => x.UninstallerKind == UninstallerType.WindowsFeature);
+
+            propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
+            propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
+            propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
+            propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
+            propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
 
             if (e.FirstRefresh)
             {
@@ -1097,24 +1109,6 @@ namespace BulkCrapUninstaller.Forms
                     { PremadeDialogs.GenericError(ex); }
                 }
 
-                if (_setMan.Selected.Settings.MiscFirstRun)
-                {
-                    // Run the welcome wizard at first start of the application
-                    OnFirstApplicationStart();
-                }
-
-                if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
-                {
-                    try
-                    {
-                        _setMan.Selected.Settings.MiscNet4NagShown = true;
-                        MessageBoxes.Net4MissingInfo();
-                    }
-                    catch (ObjectDisposedException)
-                    {
-                    }
-                }
-
                 splashScreen1.CloseSplashScreen();
 
                 // Display the legend first so it is hidden under the splash
@@ -1124,19 +1118,25 @@ namespace BulkCrapUninstaller.Forms
                 // Needed in case main window starts maximized
                 _listLegendWindow.UpdatePosition(uninstallerObjectListView);
                 _listLegendWindow.Opacity = 1;
+
+                new Thread(() =>
+                {
+                    this.SafeInvoke(() =>
+                    {
+                        if (_setMan.Selected.Settings.MiscFirstRun)
+                        {
+                            // Run the welcome wizard at first start of the application
+                            OnFirstApplicationStart();
+                        }
+
+                        if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+                        {
+                            _setMan.Selected.Settings.MiscNet4NagShown = true;
+                            MessageBoxes.Net4MissingInfo();
+                        }
+                    });
+                }).Start();
             }
-
-            // If refresh has finished update the interface
-            propertiesSidebar.StoreAppsEnabled = _listView.AllUninstallers.Any(
-                x => x.UninstallerKind == UninstallerType.StoreApp);
-            propertiesSidebar.WinFeaturesEnabled = _listView.AllUninstallers.Any(
-                x => x.UninstallerKind == UninstallerType.WindowsFeature);
-
-            propertiesSidebar.OrphansEnabled = _listView.AllUninstallers.Any(x => x.IsOrphaned);
-            propertiesSidebar.ProtectedEnabled = _listView.AllUninstallers.Any(x => x.IsProtected);
-            propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
-            propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
-            propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
