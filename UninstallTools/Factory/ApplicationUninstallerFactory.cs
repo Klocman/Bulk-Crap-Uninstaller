@@ -18,7 +18,7 @@ namespace UninstallTools.Factory
     public static class ApplicationUninstallerFactory
     {
         public delegate void GetUninstallerListCallback(GetUninstallerListProgress progressReport);
-        
+
         public class GetUninstallerListProgress
         {
             internal GetUninstallerListProgress(int currentCount, int totalCount)
@@ -33,49 +33,64 @@ namespace UninstallTools.Factory
             // TODO public GetUninstallerListProgress Inner { get; internal set; }
             //public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
         }
-        
+
 
         public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(GetUninstallerListCallback callback)
         {
             const int totalStepCount = 6;
+            // Find msi products
             callback(new GetUninstallerListProgress(0, totalStepCount));
-
             var msiProducts = MsiTools.MsiEnumProducts().ToList();
 
+            // Find stuff mentioned in registry
             callback(new GetUninstallerListProgress(1, totalStepCount));
-
             var registryFactory = new RegistryFactory(msiProducts);
-
             var registryResults = registryFactory.GetUninstallerEntries().ToList();
-            //todo fill in install location and uninstaller location
+            //todo fill in install location and uninstaller location for driveFactory
             // find drive stuff (based on directories found in install locations, 2 or more apps installed in one location = scan location for drive stuff)
             //results = results.DoForEach(entry => infoAdder.TryAddFieldInformation(entry, nameof(entry.InstallLocation)));
-            
+
+            // Look for entries on drives, based on info in registry. Need to check for duplicates with other entries later
             callback(new GetUninstallerListProgress(2, totalStepCount));
-
             var driveFactory = new DirectoryFactory(registryResults);
-
             var driveResults = driveFactory.GetUninstallerEntries();
 
+            // Get misc entries that use fancy logic
             callback(new GetUninstallerListProgress(3, totalStepCount));
-
             var otherResults = GetMiscUninstallerEntries();
-            
-            callback(new GetUninstallerListProgress(4, totalStepCount));
 
+            // Handle duplicate entries
+            callback(new GetUninstallerListProgress(4, totalStepCount));
             var infoAdder = new InfoAdderManager();
-            var results = registryResults.ToList();
-            foreach (var entry in driveResults.Concat(otherResults))
+            var mergedResults = registryResults.ToList();
+            mergedResults = MergeResults(mergedResults, otherResults, infoAdder);
+            // Make sure to merge driveResults last
+            mergedResults = MergeResults(mergedResults, driveResults, infoAdder);
+
+            // Fill in any missing information
+            callback(new GetUninstallerListProgress(5, totalStepCount));
+            foreach (var result in mergedResults)
+            {
+                infoAdder.AddMissingInformation(result);
+                result.IsValid = CheckIsValid(result, msiProducts);
+            }
+
+            callback(new GetUninstallerListProgress(6, totalStepCount));
+            return mergedResults;
+        }
+
+        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults, 
+            IEnumerable<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder)
+        {
+            // Create local copy
+            var baseEntries = baseResults.ToList();
+            // Add all of the base results straight away
+            var results = new List<ApplicationUninstallerEntry>(baseEntries);
+            foreach (var entry in newResults)
             {
                 try
                 {
-#if DEBUG
-                    var entries = registryResults.Where(x => CheckAreEntriesRelated(x, entry)).ToList();
-                    Debug.Assert(entries.Count < 2);
-                    var matchedEntry = entries.SingleOrDefault();
-#else
-                    var matchedEntry = registryResults.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
-#endif
+                    var matchedEntry = baseEntries.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
                     if (matchedEntry != null)
                     {
                         // Prevent setting incorrect UninstallerType
@@ -86,21 +101,11 @@ namespace UninstallTools.Factory
                         continue;
                     }
                 }
-                catch (InvalidOperationException) { }
+                catch (InvalidOperationException) { Debug.Fail("MergeResults matched more than one entry"); }
 
-                // If not matched to anything, add the entry to the results
+                // If the entry failed to match to anything, add it to the results
                 results.Add(entry);
             }
-
-            callback(new GetUninstallerListProgress(5, totalStepCount));
-
-            foreach (var result in results)
-            {
-                infoAdder.AddMissingInformation(result);
-                result.IsValid = CheckIsValid(result, msiProducts);
-            }
-
-            callback(new GetUninstallerListProgress(6, totalStepCount));
 
             return results;
         }
@@ -137,7 +142,7 @@ namespace UninstallTools.Factory
                 && otherEntry.Publisher != null && otherEntry.DisplayName != null)
             {
                 var pubSim = StringTools.CompareSimilarity(baseEntry.Publisher, otherEntry.Publisher);
-                if (pubSim >= baseEntry.Publisher.Length/6)
+                if (pubSim >= baseEntry.Publisher.Length / 6)
                     return false;
 
                 var dispSim = StringTools.CompareSimilarity(baseEntry.DisplayName, otherEntry.DisplayName);
@@ -147,7 +152,7 @@ namespace UninstallTools.Factory
                 if (baseEntry.DisplayNameTrimmed.Length >= 5)
                 {
                     dispSim = StringTools.CompareSimilarity(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed);
-                    if (dispSim < baseEntry.DisplayName.Length/6)
+                    if (dispSim < baseEntry.DisplayName.Length / 6)
                         return true;
                 }
             }
