@@ -192,7 +192,7 @@ namespace BulkCrapUninstaller.Functions
 
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
-                        LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePreUninstallCommands,
+                        LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitlePreUninstallCommands,
                             controller => { RunExternalCommands(_settings.ExternalPreCommands, controller); });
                     }
 
@@ -220,7 +220,7 @@ namespace BulkCrapUninstaller.Functions
 
                     if (_settings.ExternalEnable && _settings.ExternalPostCommands.IsNotEmpty())
                     {
-                        LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePostUninstallCommands,
+                        LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitlePostUninstallCommands,
                             controller => { RunExternalCommands(_settings.ExternalPostCommands, controller); });
                     }
 
@@ -286,7 +286,7 @@ namespace BulkCrapUninstaller.Functions
         private bool SearchForAndRemoveJunk(Func<IEnumerable<JunkNode>> junkGetter)
         {
             var junk = new List<JunkNode>();
-            var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleLookingForJunk,
+            var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleLookingForJunk,
                 x => { junk.AddRange(junkGetter()); });
 
             if (error != null)
@@ -304,7 +304,7 @@ namespace BulkCrapUninstaller.Functions
                     if (!CheckForRunningProcessesBeforeCleanup(selectedJunk)) return false;
 
                     //Removing the junk
-                    LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleRemovingJunk, controller =>
+                    LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleRemovingJunk, controller =>
                     {
                         var top = selectedJunk.Count;
                         controller.SetMaximum(top);
@@ -437,7 +437,7 @@ namespace BulkCrapUninstaller.Functions
                 if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
 
                 var items = new List<ApplicationUninstallerEntry>();
-                LoadingDialog.ShowDialog(Localisable.UninstallFromDirectory_ScanningTitle,
+                LoadingDialog.ShowDialog(null, Localisable.UninstallFromDirectory_ScanningTitle,
                     _ =>
                     {
                         items.AddRange(DirectoryFactory.TryCreateFromDirectory(
@@ -538,7 +538,7 @@ namespace BulkCrapUninstaller.Functions
             Monitor.Exit(_uninstallLock);
         }
 
-        private static void RunExternalCommands(string commands, LoadingDialog.LoadingDialogInterface controller)
+        private static void RunExternalCommands(string commands, LoadingDialogInterface controller)
         {
             var lines = commands.SplitNewlines(StringSplitOptions.RemoveEmptyEntries);
             controller.SetMaximum(lines.Length);

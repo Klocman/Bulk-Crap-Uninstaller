@@ -344,40 +344,45 @@ namespace BulkCrapUninstaller.Functions
 
             StopProcessingThread(false);
 
-            var screenLocation = new Point(_reference.Location.X + _reference.Size.Width - 35,
-                _reference.Location.Y + _reference.Size.Height - 35);
-            //todo stop blocking
-            var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitlePopulatingList, ListRefreshThread, screenLocation, ContentAlignment.BottomRight);
-            if (error != null)
-                throw new Exception("Uncaught exception in ListRefreshThread", error);
-
             _listView.ListView.SuspendLayout();
             _listView.ListView.BeginUpdate();
 
-            var oldList = _listView.ListView.SmallImageList;
-            _listView.ListView.SmallImageList = _iconGetter.IconList;
-            oldList?.Dispose();
+            var dialog = LoadingDialog.Show(_reference, Localisable.LoadingDialogTitlePopulatingList,
+                ListRefreshThread, new Point(-35, -35), ContentAlignment.BottomRight);
 
-            _listView.ListView.SetObjects(AllUninstallers);
-
-            _reference.LockApplication(false);
-
-            // Run events
-            ListRefreshIsRunning = false;
-
-            // Don't redraw the list view before all events have ran
-            try { _listView.ListView.EndUpdate(); } catch (ObjectDisposedException) { }
-            try
+            dialog.Closed += (sender, args) =>
             {
-                _listView.ListView.ResumeLayout();
-                _listView.ListView.Focus();
-            }
-            catch (ObjectDisposedException) { }
+                if (dialog.Error != null)
+                {
+                    if (dialog.Error is OperationCanceledException)
+                        return;
+                    throw new Exception("Uncaught exception in ListRefreshThread", dialog.Error);
+                }
 
-            if (_firstRefresh)
-            {
+                var oldList = _listView.ListView.SmallImageList;
+                _listView.ListView.SmallImageList = _iconGetter.IconList;
+                oldList?.Dispose();
+
+                _listView.ListView.SetObjects(AllUninstallers);
+
+                // Don't redraw the list view before all events have ran
+                try { _listView.ListView.EndUpdate(); } catch (ObjectDisposedException) { }
+                try
+                {
+                    _listView.ListView.ResumeLayout();
+                    _listView.ListView.Focus();
+                }
+                catch (ObjectDisposedException) { }
+
+                _reference.LockApplication(false);
+
+                // Run events
+                ListRefreshIsRunning = false;
+
                 _firstRefresh = false;
-            }
+            };
+
+            dialog.StartWork();
         }
 
         public void InvertSelectedItems(object sender, EventArgs e)
@@ -452,12 +457,15 @@ namespace BulkCrapUninstaller.Functions
             _listView.ListView.UpdateColumnFiltering();
         }
 
-        private void ListRefreshThread(LoadingDialog.LoadingDialogInterface dialogInterface)
+        private void ListRefreshThread(LoadingDialogInterface dialogInterface)
         {
             AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
                 dialogInterface.SetMaximum(x.TotalCount);
                 dialogInterface.SetProgress(x.CurrentCount);
+
+                if (dialogInterface.Abort)
+                    throw new OperationCanceledException();
             });
 
             try
@@ -688,11 +696,14 @@ namespace BulkCrapUninstaller.Functions
 
             UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
+                if (y.Tag == null)
+                    return;
+
                 lock (_objectsToUpdate)
                 {
                     _objectsToUpdate.Add(y.Tag);
 
-                    if (y.Value == y.Maximum || y.Value % 25 == 0)
+                    if (y.Value == y.Maximum || y.Value % 35 == 0)
                     {
                         try
                         {
@@ -795,16 +806,19 @@ namespace BulkCrapUninstaller.Functions
                     return;
                 }
 
+                var sendTag = true;
                 if (_settings.Settings.AdvancedTestCertificates)
                 {
                     lock (UninstallerFileLock)
                     {
-                        uninstaller.GetCertificate();
+                        sendTag = uninstaller.GetCertificate() != null;
                     }
                 }
 
-                UninstallerPostprocessingProgressUpdate?.Invoke(this,
-                    new CountingUpdateEventArgs(0, targetList.Count, currentCount) { Tag = uninstaller });
+                var countingUpdateEventArgs = new CountingUpdateEventArgs(0, targetList.Count, currentCount);
+                if(sendTag) countingUpdateEventArgs.Tag = uninstaller;
+
+                UninstallerPostprocessingProgressUpdate?.Invoke(this, countingUpdateEventArgs);
                 currentCount++;
             }
         }

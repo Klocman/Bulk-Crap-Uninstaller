@@ -26,7 +26,7 @@ namespace BulkCrapUninstaller.Functions
         public static void LookForUpdates()
         {
             var result = UpdateSystem.UpdateStatus.CheckFailed;
-            var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleSearchingForUpdates,
+            var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleSearchingForUpdates,
                 x => { result = UpdateSystem.CheckForUpdates(); });
 
             if (error == null)

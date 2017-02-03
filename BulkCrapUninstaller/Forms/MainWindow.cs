@@ -72,7 +72,7 @@ namespace BulkCrapUninstaller.Forms
             };
 
             // Disable until the first list refresh finishes
-            Enabled = false;
+            LockApplication(true);
 
             // Other bindings
             _setMan.Selected.Subscribe((x, y) =>
@@ -102,7 +102,7 @@ namespace BulkCrapUninstaller.Forms
 
                 if (y.Value == y.Maximum)
                     result = string.Empty;
-                else if ((y.Value - 1) % 7 == 0)
+                else if ((y.Value - 1) % 15 == 0)
                     result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers,
                         y.Value, y.Maximum);
 
@@ -220,7 +220,10 @@ namespace BulkCrapUninstaller.Forms
             this.SafeInvoke(() =>
             {
                 UseWaitCursor = value;
-                Enabled = !value;
+
+                foreach (Control control in Controls)
+                    control.Enabled = !value;
+
                 Refresh();
             });
         }
@@ -527,7 +530,6 @@ namespace BulkCrapUninstaller.Forms
                 if (!_setMan.Selected.Settings.MiscFeedbackNagShown &&
                     DateTime.Now - Process.GetCurrentProcess().StartTime > TimeSpan.FromMinutes(3))
                 {
-                    Enabled = false;
                     FeedbackBox.ShowFeedbackBox(this, true);
                 }
 
@@ -538,10 +540,6 @@ namespace BulkCrapUninstaller.Forms
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
-            // Display the legend first so it is hidden under the splash
-            _listLegendWindow.Opacity = 0;
-            SetupAndShowLegendWindow();
-            
             _setMan.Selected.SendUpdates();
 
             try
@@ -557,30 +555,6 @@ namespace BulkCrapUninstaller.Forms
             }
 
             _listView.InitiateListRefresh();
-
-            if (_setMan.Selected.Settings.MiscFirstRun)
-            {
-                // Run the welcome wizard at first start of the application
-                OnFirstApplicationStart();
-            }
-
-            if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
-            {
-                try
-                {
-                    _setMan.Selected.Settings.MiscNet4NagShown = true;
-                    MessageBoxes.Net4MissingInfo();
-                }
-                catch (ObjectDisposedException)
-                {
-                }
-            }
-
-            // Needed in case main window starts maximized
-            _listLegendWindow.UpdatePosition(uninstallerObjectListView);
-            _listLegendWindow.Opacity = 1;
-
-            splashScreen1.CloseSplashScreen();
         }
 
         private void SetupAndShowLegendWindow()
@@ -591,7 +565,7 @@ namespace BulkCrapUninstaller.Forms
             _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             Resize += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             Move += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
-            EnabledChanged += (o, args) => _listLegendWindow.Enabled = Enabled;
+            Controls[0].EnabledChanged += (o, args) => _listLegendWindow.Enabled = Controls[0].Enabled;
 
             var settings = _setMan.Selected;
             settings.Subscribe((x, y) => _listLegendWindow.Visible = y.NewValue, x => x.UninstallerListShowLegend, this);
@@ -726,9 +700,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenSubmitFeedbackWindow(object sender, EventArgs e)
         {
-            Enabled = false;
             FeedbackBox.ShowFeedbackBox(this, false);
-            Enabled = true;
         }
 
         private void OpenUninstallerLocation(object sender, EventArgs eventArgs)
@@ -1119,6 +1091,34 @@ namespace BulkCrapUninstaller.Forms
                     catch (Exception ex)
                     { PremadeDialogs.GenericError(ex); }
                 }
+                
+                if (_setMan.Selected.Settings.MiscFirstRun)
+                {
+                    // Run the welcome wizard at first start of the application
+                    OnFirstApplicationStart();
+                }
+
+                if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+                {
+                    try
+                    {
+                        _setMan.Selected.Settings.MiscNet4NagShown = true;
+                        MessageBoxes.Net4MissingInfo();
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                    }
+                }
+
+                splashScreen1.CloseSplashScreen();
+
+                // Display the legend first so it is hidden under the splash
+                _listLegendWindow.Opacity = 0;
+                SetupAndShowLegendWindow();
+                RefreshListLegend(sender, e);
+                // Needed in case main window starts maximized
+                _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+                _listLegendWindow.Opacity = 1;
             }
 
             // If refresh has finished update the interface
@@ -1132,8 +1132,6 @@ namespace BulkCrapUninstaller.Forms
             propertiesSidebar.SysCompEnabled = _listView.AllUninstallers.Any(x => x.SystemComponent);
             propertiesSidebar.UpdatesEnabled = _listView.AllUninstallers.Any(x => x.IsUpdate);
             propertiesSidebar.InvalidEnabled = _listView.AllUninstallers.Any(x => !x.IsValid);
-
-            RefreshListLegend(sender, e);
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)

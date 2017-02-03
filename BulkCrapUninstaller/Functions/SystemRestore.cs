@@ -28,7 +28,7 @@ namespace BulkCrapUninstaller.Functions
                 switch (MessageBoxes.SysRestoreBeginQuestion())
                 {
                     case MessageBoxes.PressedButton.Yes:
-                        var error = LoadingDialog.ShowDialog(Localisable.LoadingDialogTitleCreatingRestorePoint, x =>
+                        var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleCreatingRestorePoint, x =>
                         {
                             //if (_currentRestoreId > 0)
                             EndSysRestore();
