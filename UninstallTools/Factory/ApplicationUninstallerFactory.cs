@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 using Klocman.IO;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
@@ -173,7 +174,14 @@ namespace UninstallTools.Factory
             };
             foreach (var uninstallerFactory in miscFactories)
             {
-                otherResults.AddRange(uninstallerFactory.GetUninstallerEntries());
+                try
+                {
+                    otherResults.AddRange(uninstallerFactory.GetUninstallerEntries());
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
             }
 
             return otherResults;
