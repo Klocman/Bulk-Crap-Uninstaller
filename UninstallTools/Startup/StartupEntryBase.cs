@@ -109,6 +109,9 @@ namespace UninstallTools.Startup
         /// </summary>
         protected void FillInformationFromFile(string commandFilename)
         {
+            if (!File.Exists(commandFilename))
+                return;
+
             try
             {
                 var info = FileVersionInfo.GetVersionInfo(commandFilename);
