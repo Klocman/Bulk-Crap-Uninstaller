@@ -137,28 +137,33 @@ namespace UninstallTools.Factory
                 && baseEntry.UninstallString.Contains(otherEntry.InstallLocation))
                 return true;
 
-            // Check if publisher and display name are very similar
-            if (baseEntry.Publisher != null && baseEntry.DisplayName != null
-                && baseEntry.DisplayName.Length >= 5 && baseEntry.Publisher.Length >= 5
-                && otherEntry.Publisher != null && otherEntry.DisplayName != null)
+            if (CompareStrings(baseEntry.Publisher, otherEntry.Publisher))
             {
-                var pubSim = StringTools.CompareSimilarity(baseEntry.Publisher, otherEntry.Publisher);
-                if (pubSim >= baseEntry.Publisher.Length / 6)
-                    return false;
-
-                var dispSim = StringTools.CompareSimilarity(baseEntry.DisplayName, otherEntry.DisplayName);
-                if (dispSim < baseEntry.DisplayName.Length / 6)
+                if (CompareStrings(baseEntry.DisplayName, otherEntry.DisplayName))
                     return true;
-
-                if (baseEntry.DisplayNameTrimmed.Length >= 5)
+                if (CompareStrings(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed))
+                    return true;
+                try
                 {
-                    dispSim = StringTools.CompareSimilarity(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed);
-                    if (dispSim < baseEntry.DisplayName.Length / 6)
+                    if (CompareStrings(baseEntry.DisplayNameTrimmed, Path.GetFileName(otherEntry.InstallLocation)))
                         return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.Fail(ex.Message);
                 }
             }
 
             return false;
+        }
+
+        private static bool CompareStrings(string a, string b)
+        {
+            if (a == null || a.Length < 5 || b == null || b.Length < 5)
+                return false;
+
+            var changesRequired = StringTools.CompareSimilarity(a, b);
+            return changesRequired < a.Length / 6;
         }
 
         // todo move to a second thread?
