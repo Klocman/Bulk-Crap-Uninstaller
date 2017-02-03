@@ -209,7 +209,7 @@ namespace BulkCrapUninstaller.Forms
                     // ObjectListView sometimes throws it at exit
                 }
 
-                _listView.Dispose();
+                _listView?.Dispose();
             }
             try { base.Dispose(disposing); }
             catch (InvalidOperationException) { }
