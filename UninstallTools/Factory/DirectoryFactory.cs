@@ -70,8 +70,20 @@ namespace UninstallTools.Factory
             var directoriesToSkip = dirsToSkip.ToList();
 
             // Get sub directories which could contain user programs
-            var directoriesToCheck = pfDirectories.SelectMany(
-                    x => x.Key.GetDirectories().Select(y => new KVP(y, x.Value)));
+            var directoriesToCheck = pfDirectories.SelectMany(x =>
+            {
+                try
+                {
+                    return x.Key.GetDirectories().Select(y => new KVP(y, x.Value));
+                }
+                catch (IOException)
+                {
+                }
+                catch (UnauthorizedAccessException)
+                {
+                }
+                return Enumerable.Empty<KVP>();
+            });
 
             // Get directories that can be relatively safely checked
             return directoriesToCheck.Where(check => !directoriesToSkip.Any(skip =>
