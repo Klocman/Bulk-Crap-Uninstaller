@@ -31,23 +31,23 @@ namespace UninstallTools.Factory.InfoAdders
             var verInfo = FileVersionInfo.GetVersionInfo(infoSourceFilename);
 
             Func<string, bool> unpopulatedCheck;
-            if (onlyUnpopulated) unpopulatedCheck = target => String.IsNullOrEmpty(target?.Trim());
+            if (onlyUnpopulated) unpopulatedCheck = target => string.IsNullOrEmpty(target?.Trim());
             else unpopulatedCheck = target => true;
 
-            if (unpopulatedCheck(targetEntry.Publisher) && !String.IsNullOrEmpty(verInfo.CompanyName?.Trim()))
+            if (unpopulatedCheck(targetEntry.Publisher) && !string.IsNullOrEmpty(verInfo.CompanyName?.Trim()))
                 targetEntry.Publisher = verInfo.CompanyName.Trim();
 
-            if (unpopulatedCheck(targetEntry.RawDisplayName) && !String.IsNullOrEmpty(verInfo.ProductName?.Trim()))
+            if (unpopulatedCheck(targetEntry.RawDisplayName) && !string.IsNullOrEmpty(verInfo.ProductName?.Trim()))
                 targetEntry.RawDisplayName = verInfo.ProductName.Trim();
 
-            if (unpopulatedCheck(targetEntry.Comment) && !String.IsNullOrEmpty(verInfo.Comments?.Trim()))
+            if (unpopulatedCheck(targetEntry.Comment) && !string.IsNullOrEmpty(verInfo.Comments?.Trim()))
                 targetEntry.Comment = verInfo.Comments.Trim();
 
             if (unpopulatedCheck(targetEntry.DisplayVersion))
             {
-                if (!String.IsNullOrEmpty(verInfo.ProductVersion?.Trim()))
+                if (!string.IsNullOrEmpty(verInfo.ProductVersion?.Trim()))
                     targetEntry.DisplayVersion = verInfo.ProductVersion.Trim();
-                else if (!String.IsNullOrEmpty(verInfo.FileVersion?.Trim()))
+                else if (!string.IsNullOrEmpty(verInfo.FileVersion?.Trim()))
                     targetEntry.DisplayVersion = verInfo.FileVersion.Trim();
             }
         }

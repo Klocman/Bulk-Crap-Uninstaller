@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using Klocman.Extensions;
 using Klocman.IO;
@@ -18,7 +17,59 @@ namespace UninstallTools.Factory
 {
     public class SteamFactory : IUninstallerFactory
     {
-        public static string StartProcessAndReadOutput(string filename, string args)
+        private static bool? _steamHelperIsAvailable;
+        private static string _steamLocation;
+
+        internal static string SteamLocation
+        {
+            get
+            {
+                if(_steamLocation == null)
+                    GetSteamInfo();
+                return _steamLocation;
+            }
+            private set { _steamLocation = value; }
+        }
+
+        internal static bool SteamHelperIsAvailable
+        {
+            get
+            {
+                if (!_steamHelperIsAvailable.HasValue)
+                {
+                    _steamHelperIsAvailable = false;
+                    GetSteamInfo();
+                }
+                return _steamHelperIsAvailable.Value;
+            }
+        }
+
+        private static void GetSteamInfo()
+        {
+            _steamHelperIsAvailable = false;
+
+            if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
+            {
+                var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
+                if (!string.IsNullOrEmpty(output)
+                    && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
+                    && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
+                {
+                    _steamHelperIsAvailable = true;
+                    SteamLocation = output;
+                }
+            }
+        }
+
+        internal static string SteamHelperPath
+            => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
+
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        {
+            return GetSteamApps();
+        }
+
+        internal static string StartProcessAndReadOutput(string filename, string args)
         {
             using (var process = Process.Start(new ProcessStartInfo(filename, args)
             {
@@ -28,84 +79,6 @@ namespace UninstallTools.Factory
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Unicode
             })) return process?.StandardOutput.ReadToEnd();
-        }
-
-        private static bool? _steamHelperIsAvailable;
-        private static string _steamLocation;
-
-        private static bool SteamHelperIsAvailable
-        {
-            get
-            {
-                if (!_steamHelperIsAvailable.HasValue)
-                {
-                    _steamHelperIsAvailable = false;
-
-                    if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
-                    {
-                        var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
-                        if (!string.IsNullOrEmpty(output)
-                            && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
-                            && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
-                        {
-                            _steamHelperIsAvailable = true;
-                            _steamLocation = output;
-                        }
-                    }
-                }
-                return _steamHelperIsAvailable.Value;
-            }
-        }
-
-        private static string SteamHelperPath
-            => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
-
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
-        {
-            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
-
-            if (SteamHelperIsAvailable)
-            {
-                var steamAppsOnDisk = GetSteamApps().ToList();
-
-                foreach (var steamApp in
-                    // bug not actually there
-                    applicationUninstallers.Where(x => x.UninstallerKind == UninstallerType.Steam))
-                {
-                    var toRemove =
-                        steamAppsOnDisk.FindAll(
-                            x =>
-                                x.InstallLocation.Equals(steamApp.InstallLocation,
-                                    StringComparison.InvariantCultureIgnoreCase));
-                    // todo merge data later on
-                    steamAppsOnDisk.RemoveAll(toRemove);
-                    ChangeSteamAppUninstallStringToHelper(steamApp);
-
-                    if (steamApp.EstimatedSize.IsDefault() && toRemove.Any())
-                        steamApp.EstimatedSize = toRemove.First().EstimatedSize;
-                }
-
-                foreach (var steamApp in steamAppsOnDisk)
-                {
-                    ChangeSteamAppUninstallStringToHelper(steamApp);
-                }
-
-                applicationUninstallers.AddRange(steamAppsOnDisk);
-            }
-
-            return applicationUninstallers;
-        }
-
-        /// <summary>
-        ///     Use our helper instead of the built-in Steam uninstaller
-        /// </summary>
-        private static void ChangeSteamAppUninstallStringToHelper(ApplicationUninstallerEntry entryToModify)
-        {
-            if (entryToModify.UninstallerKind != UninstallerType.Steam || !SteamHelperIsAvailable) return;
-
-            var appId = entryToModify.RatingId.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries).Last();
-            entryToModify.UninstallString = $"\"{SteamHelperPath}\" uninstall {appId}";
-            entryToModify.QuietUninstallString = $"\"{SteamHelperPath}\" uninstall /silent {appId}";
         }
 
         private static IEnumerable<ApplicationUninstallerEntry> GetSteamApps()
@@ -159,25 +132,6 @@ namespace UninstallTools.Factory
 
                 yield return entry;
             }
-        }
-
-        public static ApplicationUninstallerEntry GetSteamUninstallerEntry()
-        {
-            if (string.IsNullOrEmpty(_steamLocation)) return null;
-
-            return new ApplicationUninstallerEntry
-            {
-                AboutUrl = @"http://store.steampowered.com/about/",
-                InstallLocation = _steamLocation,
-                DisplayIcon = Path.Combine(_steamLocation, "Steam.exe"),
-                DisplayName = "Steam",
-                UninstallerKind = UninstallerType.Nsis,
-                UninstallString = Path.Combine(_steamLocation, "uninstall.exe"),
-                IsOrphaned = true,
-                IsValid = File.Exists(Path.Combine(_steamLocation, "uninstall.exe")),
-                InstallDate = Directory.GetCreationTime(_steamLocation),
-                Publisher = "Valve Software"
-            };
         }
     }
 }

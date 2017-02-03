@@ -3,7 +3,6 @@
     Apache License Version 2.0
 */
 
-using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Klocman.IO;
@@ -34,7 +33,7 @@ namespace UninstallTools.Factory.InfoAdders
                 {
                     // If no certs were found check the uninstaller
                     result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates());
-                    if (result == null && !String.IsNullOrEmpty(entry.UninstallerFullFilename))
+                    if (result == null && !string.IsNullOrEmpty(entry.UninstallerFullFilename))
                         result = new X509Certificate2(entry.UninstallerFullFilename);
                 }
             }

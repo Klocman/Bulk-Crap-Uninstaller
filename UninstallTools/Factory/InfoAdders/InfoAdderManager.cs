@@ -77,7 +77,7 @@ namespace UninstallTools.Factory.InfoAdders
                 bool valIsDefault;
                 if (!valueIsDefaultCache.TryGetValue(key, out valIsDefault))
                 {
-                    // If we can't check if the key is updated, assume that it can to be safe
+                    // If we can't check if the value is default, assume that it is to be safe
                     if (!TargetProperties.ContainsKey(key)) return true;
 
                     var property = TargetProperties[key];

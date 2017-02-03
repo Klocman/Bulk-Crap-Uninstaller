@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -92,16 +93,16 @@ namespace UninstallTools
             var output = new List<KeyValuePair<DirectoryInfo, bool?>>();
             foreach (var directory in pfDirectories.ToList())
             {
+                // Ignore missing or inaccessible directories
                 try
                 {
                     var di = new DirectoryInfo(directory.Key);
                     if (di.Exists)
                         output.Add(new KeyValuePair<DirectoryInfo, bool?>(di, directory.Value));
                 }
-                catch
+                catch (Exception ex)
                 {
-                    // Ignore missing or inaccessible directories
-                    pfDirectories.Remove(directory);
+                    Debug.Fail("Failed to open dir", ex.Message);
                 }
             }
 

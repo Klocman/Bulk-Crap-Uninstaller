@@ -3,7 +3,6 @@
     Apache License Version 2.0
 */
 
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -26,7 +25,7 @@ namespace UninstallTools.Factory
             if (i != null)
                 items.Add(i);
 
-            var s = SteamFactory.GetSteamUninstallerEntry();
+            var s = GetSteamUninstallerEntry();
             if (s != null)
                 items.Add(s);
 
@@ -88,10 +87,29 @@ namespace UninstallTools.Factory
 
             result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
 
-            if (!String.IsNullOrEmpty(result.DisplayIcon))
+            if (!string.IsNullOrEmpty(result.DisplayIcon))
                 result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
 
             return result;
+        }
+
+        private static ApplicationUninstallerEntry GetSteamUninstallerEntry()
+        {
+            if (string.IsNullOrEmpty(SteamFactory.SteamLocation)) return null;
+
+            return new ApplicationUninstallerEntry
+            {
+                AboutUrl = @"http://store.steampowered.com/about/",
+                InstallLocation = SteamFactory.SteamLocation,
+                DisplayIcon = Path.Combine(SteamFactory.SteamLocation, "Steam.exe"),
+                DisplayName = "Steam",
+                UninstallerKind = UninstallerType.Nsis,
+                UninstallString = Path.Combine(SteamFactory.SteamLocation, "uninstall.exe"),
+                IsOrphaned = true,
+                IsValid = File.Exists(Path.Combine(SteamFactory.SteamLocation, "uninstall.exe")),
+                InstallDate = Directory.GetCreationTime(SteamFactory.SteamLocation),
+                Publisher = "Valve Software"
+            };
         }
     }
 }

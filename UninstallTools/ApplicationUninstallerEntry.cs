@@ -160,7 +160,7 @@ namespace UninstallTools
         public bool IsUpdate { get; set; }
 
         /// <summary>
-        ///     True if the application can be uninstalled. False if the uninstaller is missing or is invalid (duh).
+        ///     True if the application can be uninstalled. False if the uninstaller is missing or is otherwise invalid.
         /// </summary>
         [ComparisonTarget, LocalisedName(typeof (Localisation), "IsValid")]
         public bool IsValid { get; set; }
