@@ -279,22 +279,25 @@ namespace UninstallTools.Uninstaller
                                     watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
                             }
 
-                            // Remove duplicate, dead, and blaclisted processes
+                            // Remove duplicate, dead, and blacklisted processes
                             watchedProcesses = watchedProcesses.DistinctBy(x => x.Id).Where(p =>
                             {
-                                if (p.HasExited)
-                                    return false;
-
                                 try
                                 {
+                                    if (p.HasExited)
+                                    return false;
+
                                     var pName = p.ProcessName;
                                     if (NamesOfIgnoredProcesses.Any(n =>
                                         pName.Equals(n, StringComparison.InvariantCultureIgnoreCase)))
                                         return false;
                                 }
+                                catch (Win32Exception)
+                                {
+                                    return false;
+                                }
                                 catch (InvalidOperationException)
                                 {
-                                    // Process managed to exit before we called ProcessName
                                     return false;
                                 }
 
