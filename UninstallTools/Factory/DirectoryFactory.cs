@@ -21,7 +21,7 @@ namespace UninstallTools.Factory
         {
             "bin", "program", "client", "app", "application" //"system"
         };
-
+    
         private readonly IEnumerable<ApplicationUninstallerEntry> _existingUninstallerEntries;
 
         public DirectoryFactory(IEnumerable<ApplicationUninstallerEntry> existing)
@@ -61,6 +61,7 @@ namespace UninstallTools.Factory
             var pfDirectories = pfDirs.ToList();
 
             var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
+                .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
                 .Where(extraDir => !pfDirectories.Any(pfDir => pfDir.Key.FullName.Contains(extraDir.Key.FullName,
                 StringComparison.InvariantCultureIgnoreCase)));
 

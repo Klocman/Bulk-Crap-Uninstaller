@@ -65,7 +65,7 @@ namespace UninstallTools
         internal static bool IsSystemDirectory(DirectoryInfo dir)
         {
             return //dir.Name.StartsWith("Windows ") //Probably overkill
-                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.Ordinal))
+                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
                 || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
         }
 
