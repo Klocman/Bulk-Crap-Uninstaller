@@ -5,7 +5,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -600,7 +599,7 @@ namespace BulkCrapUninstaller.Functions
 
         public static void DisplayHelp()
         {
-            Process.Start(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
+            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
         }
 
         public static bool AskToRetryFailedQuietAsLoud(Form owner, IEnumerable<string> failedNames)
