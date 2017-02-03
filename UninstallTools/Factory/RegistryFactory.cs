@@ -5,7 +5,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
@@ -16,7 +18,7 @@ namespace UninstallTools.Factory
 {
     public class RegistryFactory : IUninstallerFactory
     {
-        private static readonly string RegUninstallersKeyDirect = 
+        private static readonly string RegUninstallersKeyDirect =
             @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
         private static readonly string RegUninstallersKeyWow =
             @"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall";
@@ -30,43 +32,37 @@ namespace UninstallTools.Factory
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {
-            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
+            var uninstallerRegistryKeys = new List<KeyValuePair<RegistryKey, bool>>();
 
-            var keysToCheck = GetRegistryKeys();
-            var uninstallersToCreate = new List<KeyValuePair<RegistryKey, bool>>();
-
-            foreach (var kvp in keysToCheck.Where(kvp => kvp.Key != null))
+            foreach (var kvp in GetParentRegistryKeys())
             {
-                uninstallersToCreate.AddRange(from subkeyName in kvp.Key.GetSubKeyNames()
-                                              select kvp.Key.OpenSubKey(subkeyName)
-                    into subkey
-                                              where subkey != null
-                                              select new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value));
+                uninstallerRegistryKeys.AddRange(
+                    kvp.Key.GetSubKeyNames()
+                        .Select(subkeyName => OpenSubKeySafe(kvp.Key, subkeyName))
+                        .Where(subkey => subkey != null)
+                        .Select(subkey => new KeyValuePair<RegistryKey, bool>(subkey, kvp.Value)));
 
                 kvp.Key.Close();
             }
 
-            //var itemId = 0;
-            foreach (var uninstallerToCreate in uninstallersToCreate)
+            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
+
+            foreach (var regKey in uninstallerRegistryKeys)
             {
                 try
                 {
-                    var entry = TryCreateFromRegistry(uninstallerToCreate.Key,
-                        uninstallerToCreate.Value);
+                    var entry = TryCreateFromRegistry(regKey.Key, regKey.Value);
                     if (entry != null)
                         applicationUninstallers.Add(entry);
                 }
-                catch
+                catch (Exception ex)
                 {
                     //Uninstaller is invalid or there is no uninstaller in the first place. Skip it to avoid problems.
+                    Debug.Fail("Failed to extract reg entry", ex.Message);
                 }
                 finally
                 {
-                    uninstallerToCreate.Key.Close();
-
-                    //itemId++;
-                    //var progress = new GetUninstallerListProgress(uninstallersToCreate.Count) { CurrentCount = itemId };
-                    //callback(progress);
+                    regKey.Key.Close();
                 }
             }
 
@@ -173,7 +169,19 @@ namespace UninstallTools.Factory
             return (int)uninstallerKey.GetValue("NoRemove", 0) != 0;
         }
 
-        private static List<KeyValuePair<RegistryKey, bool>> GetRegistryKeys()
+        private static RegistryKey OpenSubKeySafe(RegistryKey baseKey, string name, bool writable = false)
+        {
+            try
+            {
+                return baseKey.OpenSubKey(name, writable);
+            }
+            catch (SecurityException)
+            {
+                return null;
+            }
+        }
+
+        private static IEnumerable<KeyValuePair<RegistryKey, bool>> GetParentRegistryKeys()
         {
             var keysToCheck = new List<KeyValuePair<RegistryKey, bool>>();
 
@@ -182,21 +190,21 @@ namespace UninstallTools.Factory
 
             if (ProcessTools.Is64BitProcess)
             {
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hklm.OpenSubKey(RegUninstallersKeyDirect), true));
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hkcu.OpenSubKey(RegUninstallersKeyDirect), true));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hklm, RegUninstallersKeyDirect), true));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hkcu, RegUninstallersKeyDirect), true));
 
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hklm.OpenSubKey(RegUninstallersKeyWow), false));
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hkcu.OpenSubKey(RegUninstallersKeyWow), false));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hklm, RegUninstallersKeyWow), false));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hkcu, RegUninstallersKeyWow), false));
             }
             else
             {
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hklm.OpenSubKey(RegUninstallersKeyDirect), false));
-                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(hkcu.OpenSubKey(RegUninstallersKeyDirect), false));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hklm, RegUninstallersKeyDirect), false));
+                keysToCheck.Add(new KeyValuePair<RegistryKey, bool>(OpenSubKeySafe(hkcu, RegUninstallersKeyDirect), false));
             }
-            return keysToCheck;
+            return keysToCheck.Where(x => x.Key != null);
         }
 
-        public static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
+        private static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
         {
             // Detect MSI installer based on registry entry (the proper way)
             if ((int)uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameWindowsInstaller, 0) != 0)
@@ -231,7 +239,7 @@ namespace UninstallTools.Factory
         /// </summary>
         /// <param name="uninstallerKey">Registry key which contains the uninstaller information.</param>
         /// <param name="is64Bit">Is the registry key pointing to a 64 bit subkey?</param>
-        public ApplicationUninstallerEntry TryCreateFromRegistry(RegistryKey uninstallerKey, bool is64Bit)
+        private ApplicationUninstallerEntry TryCreateFromRegistry(RegistryKey uninstallerKey, bool is64Bit)
         {
             if (uninstallerKey == null)
                 throw new ArgumentNullException(nameof(uninstallerKey));
@@ -272,48 +280,6 @@ namespace UninstallTools.Factory
                 if (_windowsInstallerValidGuids.Contains(tempEntry.BundleProviderKey))
                     tempEntry.UninstallerKind = UninstallerType.Msiexec;
             }
-
-            // Fill in missing fields with information that can now be obtained
-
-            //if (tempEntry.UninstallerKind == UninstallerType.Msiexec)
-            //    MsiInfoAdder.ApplyMsiInfo(tempEntry, tempEntry.BundleProviderKey);
-
-            // Use quiet uninstall string as normal uninstall string if the normal string is missing.
-            //if (!tempEntry.UninstallPossible && tempEntry.QuietUninstallPossible)
-            //    tempEntry.UninstallString = tempEntry.QuietUninstallString;
-
-            // Finish up setting file/folder paths
-            //tempEntry.UninstallerFullFilename =
-            //    ApplicationUninstallerFactory.GetUninstallerFilename(tempEntry.UninstallString,
-            //        tempEntry.UninstallerKind, tempEntry.BundleProviderKey);
-            /*
-            if (tempEntry.InstallLocation != null)
-                tempEntry.InstallLocation = CleanupPath(tempEntry.InstallLocation);
-            else if (tempEntry.UninstallerKind == UninstallerType.Nsis ||
-                     tempEntry.UninstallerKind == UninstallerType.InnoSetup)
-                tempEntry.InstallLocation = CleanupPath(tempEntry.UninstallerLocation);
-
-            if (tempEntry.InstallSource != null)
-                tempEntry.InstallSource = CleanupPath(tempEntry.InstallSource);
-                */
-            // Fill in the install date if it's missing
-            /*
-            try
-            {
-                if (tempEntry.InstallDate.IsDefault() && !string.IsNullOrEmpty(tempEntry.UninstallerFullFilename))
-                {
-                    tempEntry.InstallDate = File.GetCreationTime(tempEntry.UninstallerFullFilename);
-                }
-            }
-            catch
-            {
-                tempEntry.InstallDate = DateTime.MinValue;
-            }
-
-            // Misc
-            tempEntry.IsValid = IsValidAdder.GetIsValid(tempEntry.UninstallString,
-                tempEntry.UninstallerFullFilename,
-                tempEntry.UninstallerKind, tempEntry.BundleProviderKey);*/
 
             return tempEntry;
         }
