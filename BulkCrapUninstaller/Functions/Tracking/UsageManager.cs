@@ -17,21 +17,10 @@ namespace BulkCrapUninstaller.Functions.Tracking
 {
     public static class UsageManager
     {
-        private static readonly string StatsFilename = AssemblyLocation + @"\UsageStatistics.xml";
+        private static readonly string StatsFilename = Program.AssemblyLocation + @"\UsageStatistics.xml";
         internal static List<UsageTracker> Trackers = new List<UsageTracker>();
         private static XDocument _currentData;
         private static readonly object OperationLock = new object();
-
-        private static DirectoryInfo AssemblyLocation
-        {
-            get
-            {
-                var location = Assembly.GetAssembly(typeof (UsageManager)).Location;
-                if (location.Substring(location.LastIndexOf('\\')).Contains("."))
-                    location = PathTools.GetDirectory(location);
-                return new DirectoryInfo(location);
-            }
-        }
 
         public static bool IsCollectingData { get; private set; }
 

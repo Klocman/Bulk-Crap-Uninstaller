@@ -45,7 +45,7 @@ namespace BulkCrapUninstaller.Forms
 
         private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
         private DebugWindow _debugWindow;
-        
+
         /// <summary>
         ///     Set to false in the list view clicked event. Prevents firing of extra CellEditStarting events.
         ///     Used to fix buggy ObjectListView.
@@ -58,7 +58,7 @@ namespace BulkCrapUninstaller.Forms
             Application.DoEvents();
 
             InitializeComponent();
-            
+
             // Setup settings
             _setMan = new SettingTools(Settings.Default.SettingBinder, this);
             _setMan.LoadSettings();
@@ -87,6 +87,11 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowWinFeatures, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue, 
+                x => x.QuietAutomatization, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue, 
+                x => x.QuietAutomatizationKillStuck, this);
 
             // Setup list view
             _listView = new UninstallerListViewTools(this);
@@ -181,7 +186,7 @@ namespace BulkCrapUninstaller.Forms
             if (!string.IsNullOrEmpty(advancedFilters1.CurrentListFileName) || advancedFilters1.UnsavedChanges)
             {
                 var changedDot = advancedFilters1.UnsavedChanges ? "*" : string.Empty;
-                result = string.Format(CultureInfo.CurrentCulture, "{0} [{1}{2}]", 
+                result = string.Format(CultureInfo.CurrentCulture, "{0} [{1}{2}]",
                     result, advancedFilters1.CurrentListFileName ?? string.Empty, changedDot);
             }
             Text = result;
@@ -297,7 +302,7 @@ namespace BulkCrapUninstaller.Forms
             settings.BindControl(displaySettingsToolStripMenuItem, x => x.ToolbarsShowSettings, this);
             settings.BindControl(useSystemThemeToolStripMenuItem, x => x.WindowUseSystemTheme, this);
             settings.BindControl(displayStatusbarToolStripMenuItem, x => x.ToolbarsShowStatusbar, this);
-            
+
             settings.BindControl(showColorLegendToolStripMenuItem, x => x.UninstallerListShowLegend, this);
 
             settings.Subscribe(RefreshSidebarVisibility,
@@ -987,7 +992,7 @@ namespace BulkCrapUninstaller.Forms
             uninstallUsingMsiExecContextMenuStripItem.Enabled =
                 singleItem && !_listView.SelectedUninstallers.First().BundleProviderKey.IsEmpty();
 
-            foreach(var itemToDisable in new[]
+            foreach (var itemToDisable in new[]
             {
                 uninstallContextMenuStripItem,
                 quietUninstallContextMenuStripItem,
@@ -1091,7 +1096,7 @@ namespace BulkCrapUninstaller.Forms
                     catch (Exception ex)
                     { PremadeDialogs.GenericError(ex); }
                 }
-                
+
                 if (_setMan.Selected.Settings.MiscFirstRun)
                 {
                     // Run the welcome wizard at first start of the application

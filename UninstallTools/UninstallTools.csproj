@@ -65,7 +65,7 @@
     <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderManager.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderPriority.cs" />
-    <Compile Include="Factory\InfoAdders\InnoQuietUninstallStringGenerator.cs" />
+    <Compile Include="Factory\InfoAdders\QuietUninstallStringGenerator.cs" />
     <Compile Include="Factory\InfoAdders\InstallLocationGenerator.cs" />
     <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\QuietUninstallStringCopier.cs" />
@@ -193,7 +193,6 @@
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
-    <Compile Include="Uninstaller\QuietUninstallTools.cs" />
     <Compile Include="Uninstaller\UninstallManager.cs" />
     <Compile Include="Uninstaller\UninstallStatus.cs" />
     <Compile Include="UninstallToolsGlobalConfig.cs" />

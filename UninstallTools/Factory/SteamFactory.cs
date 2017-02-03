@@ -44,7 +44,7 @@ namespace UninstallTools.Factory
                     if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
                     {
                         var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
-                        if (!String.IsNullOrEmpty(output)
+                        if (!string.IsNullOrEmpty(output)
                             && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
                             && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
                         {
@@ -58,7 +58,7 @@ namespace UninstallTools.Factory
         }
 
         private static string SteamHelperPath
-            => Path.Combine(AssemblyLocation, @"SteamHelper.exe");
+            => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {
@@ -114,17 +114,17 @@ namespace UninstallTools.Factory
                 yield break;
 
             var output = StartProcessAndReadOutput(SteamHelperPath, "list");
-            if (String.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
+            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
                 yield break;
 
             foreach (var idString in output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries))
             {
                 int appId;
-                if (!Int32.TryParse(idString, out appId)) continue;
+                if (!int.TryParse(idString, out appId)) continue;
 
                 output = StartProcessAndReadOutput(SteamHelperPath,
                     "info " + appId.ToString("G"));
-                if (String.IsNullOrEmpty(output) ||
+                if (string.IsNullOrEmpty(output) ||
                     output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
@@ -152,7 +152,7 @@ namespace UninstallTools.Factory
 
                 long bytes;
                 if (
-                    Int64.TryParse(
+                    long.TryParse(
                         lines.Single(x => x.Key.Equals("SizeOnDisk", StringComparison.InvariantCultureIgnoreCase)).Value,
                         out bytes))
                     entry.EstimatedSize = FileSize.FromBytes(bytes);
@@ -163,7 +163,7 @@ namespace UninstallTools.Factory
 
         public static ApplicationUninstallerEntry GetSteamUninstallerEntry()
         {
-            if (String.IsNullOrEmpty(_steamLocation)) return null;
+            if (string.IsNullOrEmpty(_steamLocation)) return null;
 
             return new ApplicationUninstallerEntry
             {
@@ -178,22 +178,6 @@ namespace UninstallTools.Factory
                 InstallDate = Directory.GetCreationTime(_steamLocation),
                 Publisher = "Valve Software"
             };
-        }
-
-        private static string _assemblyLocation;
-
-        public static string AssemblyLocation
-        {
-            get
-            {
-                if (_assemblyLocation == null)
-                {
-                    _assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                    if (_assemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
-                        _assemblyLocation = PathTools.GetDirectory(_assemblyLocation);
-                }
-                return _assemblyLocation;
-            }
         }
     }
 }

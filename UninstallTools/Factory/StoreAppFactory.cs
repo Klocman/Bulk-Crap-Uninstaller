@@ -16,7 +16,7 @@ namespace UninstallTools.Factory
 {
     public class StoreAppFactory : IUninstallerFactory
     {
-        private static string StoreAppHelperPath => Path.Combine(SteamFactory.AssemblyLocation, @"StoreAppHelper.exe");
+        private static string StoreAppHelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
         {

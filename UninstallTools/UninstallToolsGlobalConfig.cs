@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 
@@ -56,6 +58,9 @@ namespace UninstallTools
             WindowsTools.GetProgramFilesX86Path()
         }.Distinct();
 
+        public static bool QuietAutomatization { get; set; }
+        public static bool QuietAutomatizationKillStuck { get; set; }
+
         internal static bool IsSystemDirectory(DirectoryInfo dir)
         {
             return //dir.Name.StartsWith("Windows ") //Probably overkill
@@ -101,6 +106,22 @@ namespace UninstallTools
             }
 
             return output;
+        }
+
+        private static string _assemblyLocation;
+
+        public static string AssemblyLocation
+        {
+            get
+            {
+                if (_assemblyLocation == null)
+                {
+                    _assemblyLocation = Assembly.GetExecutingAssembly().Location;
+                    if (_assemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
+                        _assemblyLocation = PathTools.GetDirectory(_assemblyLocation);
+                }
+                return _assemblyLocation;
+            }
         }
     }
 }
