@@ -20,7 +20,6 @@ using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Lists;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
-using UninstallTools.Uninstaller;
 
 namespace UninstallTools
 {
@@ -223,45 +222,7 @@ namespace UninstallTools
         public bool IsInstallLocationValid()
             => !string.IsNullOrEmpty(InstallLocation?.Trim()) &&
                !UninstallToolsGlobalConfig.AllProgramFiles.Any(x => PathTools.PathsEqual(x, InstallLocation));
-
-        public static string GetFuzzyDirectory(string fullCommand)
-        {
-            if (string.IsNullOrEmpty(fullCommand)) return Localisation.Error_InvalidPath;
-
-            if (fullCommand.StartsWith("msiexec", StringComparison.OrdinalIgnoreCase)
-                || fullCommand.Contains("msiexec.exe", StringComparison.OrdinalIgnoreCase))
-                return "MsiExec";
-
-            try
-            {
-                if (fullCommand.Contains('\\'))
-                {
-                    string strOut;
-                    try
-                    {
-                        strOut = ProcessTools.SeparateArgsFromCommand(fullCommand).FileName;
-                    }
-                    catch
-                    {
-                        strOut = fullCommand;
-                    }
-
-                    strOut = Path.GetDirectoryName(strOut);
-
-                    strOut = PathTools.GetPathUpToLevel(strOut, 1, false);
-                    if (strOut.IsNotEmpty())
-                    {
-                        return PathTools.PathToNormalCase(strOut); //Path.GetFullPath(strOut);
-                    }
-                }
-            }
-            catch
-            {
-                // Assume path is invalid
-            }
-            return Localisation.Error_InvalidPath;
-        }
-
+        
         /// <summary>
         ///     Get the certificate associated to the uninstaller or application.
         /// </summary>

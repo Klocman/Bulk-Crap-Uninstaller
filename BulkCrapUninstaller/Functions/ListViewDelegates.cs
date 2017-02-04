@@ -4,11 +4,13 @@
 */
 
 using System;
+using System.IO;
 using System.Linq;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Resources;
+using Klocman.Tools;
 using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions
@@ -53,13 +55,13 @@ namespace BulkCrapUninstaller.Functions
         internal static object ColumnInstallLocationGroupKeyGetter(object rowObj)
         {
             var entry = rowObj as ApplicationUninstallerEntry;
-            return ApplicationUninstallerEntry.GetFuzzyDirectory(entry?.InstallLocation);
+            return GetFuzzyDirectory(entry?.InstallLocation);
         }
 
         internal static object ColumnInstallSourceGroupKeyGetter(object rowObj)
         {
             var entry = rowObj as ApplicationUninstallerEntry;
-            return ApplicationUninstallerEntry.GetFuzzyDirectory(entry?.InstallSource);
+            return GetFuzzyDirectory(entry?.InstallSource);
         }
 
         internal static object ColumnPublisherGroupKeyGetter(object rowObj)
@@ -71,7 +73,7 @@ namespace BulkCrapUninstaller.Functions
         internal static object ColumnQuietUninstallStringGroupKeyGetter(object rowObj)
         {
             var entry = rowObj as ApplicationUninstallerEntry;
-            return ApplicationUninstallerEntry.GetFuzzyDirectory(entry?.QuietUninstallString);
+            return GetFuzzyDirectory(entry?.QuietUninstallString);
         }
 
         internal static object ColumnSizeAspectGetter(object x)
@@ -85,7 +87,7 @@ namespace BulkCrapUninstaller.Functions
         internal static object ColumnUninstallStringGroupKeyGetter(object rowObj)
         {
             var entry = rowObj as ApplicationUninstallerEntry;
-            return ApplicationUninstallerEntry.GetFuzzyDirectory(entry?.UninstallString);
+            return GetFuzzyDirectory(entry?.UninstallString);
         }
 
         /// <exception cref="InvalidOperationException">The source sequence is empty.</exception>
@@ -116,6 +118,47 @@ namespace BulkCrapUninstaller.Functions
             return entry == null || entry.EstimatedSize == FileSize.Empty
                 ? CommonStrings.Unknown
                 : "x " + entry.EstimatedSize.GetUnitName();
+        }
+
+        /// <summary>
+        ///  Convert path to a directory string usable for grouping
+        /// </summary>
+        private static string GetFuzzyDirectory(string fullCommand)
+        {
+            if (string.IsNullOrEmpty(fullCommand)) return Localisable.Empty;
+
+            if (fullCommand.StartsWith("msiexec", StringComparison.OrdinalIgnoreCase)
+                || fullCommand.Contains("msiexec.exe", StringComparison.OrdinalIgnoreCase))
+                return "MsiExec";
+
+            try
+            {
+                if (fullCommand.Contains('\\'))
+                {
+                    string strOut;
+                    try
+                    {
+                        strOut = ProcessTools.SeparateArgsFromCommand(fullCommand).FileName;
+                    }
+                    catch
+                    {
+                        strOut = fullCommand;
+                    }
+
+                    strOut = Path.GetDirectoryName(strOut);
+
+                    strOut = PathTools.GetPathUpToLevel(strOut, 1, false);
+                    if (strOut.IsNotEmpty())
+                    {
+                        return PathTools.PathToNormalCase(strOut); //Path.GetFullPath(strOut);
+                    }
+                }
+            }
+            catch
+            {
+                // Assume path is invalid
+            }
+            return Localisable.Empty;
         }
     }
 }
