@@ -21,6 +21,6 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.UninstallString)
         };
 
-        public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunFirst;
     }
 }
