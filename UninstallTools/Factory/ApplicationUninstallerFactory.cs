@@ -113,7 +113,15 @@ namespace UninstallTools.Factory
 
         private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
         {
-            var isPathRooted = Path.IsPathRooted(target.UninstallerFullFilename);
+            bool isPathRooted;
+            try
+            {
+                isPathRooted = Path.IsPathRooted(target.UninstallerFullFilename);
+            }
+            catch (ArgumentException)
+            {
+                isPathRooted = false;
+            }
 
             if (isPathRooted && File.Exists(target.UninstallerFullFilename))
                 return true;
