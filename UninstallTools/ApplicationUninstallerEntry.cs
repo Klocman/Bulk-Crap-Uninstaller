@@ -330,7 +330,7 @@ namespace UninstallTools
         /// </summary>
         public RegistryKey OpenRegKey()
         {
-            return RegistryTools.OpenRegistryKey(RegistryPath);
+            return RegistryPath != null ? RegistryTools.OpenRegistryKey(RegistryPath) : null;
         }
 
         /// <summary>
