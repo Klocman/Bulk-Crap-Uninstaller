@@ -54,16 +54,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
+    <Compile Include="Factory\InfoAdders\BasicIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
     <Compile Include="Factory\DirectoryFactory.cs" />
     <Compile Include="Factory\InfoAdders\ExecutableAttributeExtractor.cs" />
     <Compile Include="Factory\InfoAdders\AppExecutablesSearcher.cs" />
     <Compile Include="Factory\InfoAdders\GenerateSteamHelperStrings.cs" />
-    <Compile Include="Factory\InfoAdders\IconGetter.cs" />
+    <Compile Include="Factory\InfoAdders\FileIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderManager.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderPriority.cs" />
     <Compile Include="Factory\InfoAdders\Is64BitGetter.cs" />
+    <Compile Include="Factory\InfoAdders\KnownNameIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\MsiUninstallStringGenerator.cs" />
     <Compile Include="Factory\InfoAdders\QuietUninstallStringGenerator.cs" />
     <Compile Include="Factory\InfoAdders\InstallLocationGenerator.cs" />
