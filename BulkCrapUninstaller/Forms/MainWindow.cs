@@ -1146,10 +1146,13 @@ namespace BulkCrapUninstaller.Forms
             //Application.DoEvents();
             //if (_listView.CheckIsAppDisposed())
             //    return;
+
+            Cursor = Cursors.WaitCursor;
             statusStrip1.Refresh();
 
             _listView.ReassignStartupEntries(true, results);
             toolStripLabelStatus.Text = string.Empty;
+            Cursor = DefaultCursor;
         }
 
         private void disableAutostartToolStripMenuItem_Click(object sender, EventArgs e)
