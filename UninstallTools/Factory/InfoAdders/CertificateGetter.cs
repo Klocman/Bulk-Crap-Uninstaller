@@ -17,51 +17,42 @@ namespace UninstallTools.Factory.InfoAdders
             if (!entry.IsValid)
                 return null;
 
-            X509Certificate2 result = null;
             try
             {
-                if (entry.UninstallerKind == UninstallerType.Msiexec)
-                {
-                    if (entry.IsInstallLocationValid())
-                        result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates());
+                X509Certificate2 result = null;
+                if (entry.SortedExecutables != null)
+                    result = TryExtractCertificateHelper(entry.SortedExecutables);
 
-                    // If no certs were found check the MSI store
-                    if (result == null)
-                        result = MsiTools.GetCertificate(entry.BundleProviderKey);
-                }
-                else
-                {
-                    // If no certs were found check the uninstaller
-                    result = TryExtractCertificateHelper(entry.GetMainExecutableCandidates());
-                    if (result == null && !string.IsNullOrEmpty(entry.UninstallerFullFilename))
-                        result = new X509Certificate2(entry.UninstallerFullFilename);
-                }
+                // Check executables before this because signatures in MSI store are modified and won't verify
+                if (result == null && entry.UninstallerKind == UninstallerType.Msiexec)
+                    result = MsiTools.GetCertificate(entry.BundleProviderKey);
+
+                // If no certs were found finally check the uninstaller
+                if (result == null && !string.IsNullOrEmpty(entry.UninstallerFullFilename))
+                    result = TryExtractCertificateHelper(entry.UninstallerFullFilename);
+                return result;
             }
             catch
             {
                 // Default to no certificate
                 return null;
             }
-            return result;
         }
 
         /// <summary>
         ///     Check first few files from the install directory for certificates
         /// </summary>
-        private static X509Certificate2 TryExtractCertificateHelper(string[] fileNames)
+        private static X509Certificate2 TryExtractCertificateHelper(params string[] fileNames)
         {
-            if (fileNames != null)
+            foreach (var candidate in fileNames.Take(2))
             {
-                foreach (var candidate in fileNames.Take(2))
+                try
                 {
-                    try
-                    {
-                        return new X509Certificate2(candidate);
-                    }
-                    catch
-                    {
-                        // No cert was found
-                    }
+                    return new X509Certificate2(candidate);
+                }
+                catch
+                {
+                    // No cert was found, try next
                 }
             }
 

@@ -51,7 +51,6 @@ namespace UninstallTools
         private X509Certificate2 _certificate;
         private bool _certificateGotten;
         private bool? _certificateValid;
-        private string[] _mainExecutableCandidates;
         private string _ratingId;
         internal Icon IconBitmap = null;
         private string _installLocation;
@@ -254,54 +253,18 @@ namespace UninstallTools
         }
 
         /// <summary>
-        ///     Get ordered collection of filenames that could be the main executable of the application.
+        ///     Ordered collection of filenames that could be the main executable of the application.
         ///     The most likely files are first, the least likely are last.
-        /// TODO merge with DirectoryFactory version
         /// </summary>
-        public string[] GetMainExecutableCandidates()
-        {
-            if (_mainExecutableCandidates == null)
-            {
-                _mainExecutableCandidates = new string[] {};
-
-                var trimmedDispName = DisplayNameTrimmed;
-                if (string.IsNullOrEmpty(trimmedDispName))
-                {
-                    trimmedDispName = DisplayName;
-                    if (string.IsNullOrEmpty(trimmedDispName))
-                        // Impossible to search for the executable without knowing the app name
-                        return _mainExecutableCandidates;
-                }
-
-                foreach (var targetDir in new[] {InstallLocation, UninstallerLocation}
-                    .Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)))
-                {
-                    var files = Directory.GetFiles(targetDir, "*.exe", SearchOption.TopDirectoryOnly);
-                    if (files.Length < 40) // Not likely to hit the correct file and would take too long, skip
-                    {
-                        // Use string similarity algorithm to find out which executable is likely the main application exe
-                        var query = from file in files
-                            where !file.Equals(UninstallerFullFilename, StringComparison.InvariantCultureIgnoreCase)
-                            orderby
-                                StringTools.CompareSimilarity(Path.GetFileNameWithoutExtension(file), trimmedDispName)
-                                    ascending
-                            select file;
-
-                        _mainExecutableCandidates = query.ToArray();
-                        if (_mainExecutableCandidates.Length > 0)
-                            break;
-                    }
-                }
-            }
-            return _mainExecutableCandidates;
-        }
-
+        internal string[] SortedExecutables { get; set; }
+        
         public Uri GetUri()
         {
             var temp = AboutUrl;
             if (!temp.IsNotEmpty()) return null;
 
-            temp = temp.Replace("www.", temp.StartsWith("www.") ? @"http://" : string.Empty);
+            temp = temp.ToLowerInvariant().Replace("www.", 
+                temp.StartsWith("www.", StringComparison.InvariantCulture) ? @"http://www." : string.Empty);
 
             try
             {

@@ -13,6 +13,7 @@ using Klocman.Tools;
 
 namespace UninstallTools.Factory.InfoAdders
 {
+    // TODO split into different priority components
     public class IconGetter : IMissingInfoAdder
     {
         private static readonly string[] IconNames =
@@ -26,7 +27,8 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.UninstallerKind),
             nameof(ApplicationUninstallerEntry.UninstallerFullFilename),
             nameof(ApplicationUninstallerEntry.InstallLocation),
-            nameof(ApplicationUninstallerEntry.UninstallerLocation)
+            nameof(ApplicationUninstallerEntry.UninstallerLocation),
+            nameof(ApplicationUninstallerEntry.SortedExecutables)
         };
 
         public bool RequiresAllValues { get; } = false;
@@ -169,12 +171,15 @@ namespace UninstallTools.Factory.InfoAdders
             try
             {
                 // Try getting icon from the app's executables
-                foreach (var executablePath in entry.GetMainExecutableCandidates())
+                if (entry.SortedExecutables != null)
                 {
-                    var icon = Icon.ExtractAssociatedIcon(executablePath);
-                    if (icon == null) continue;
-                    path = executablePath;
-                    return icon;
+                    foreach (var executablePath in entry.SortedExecutables)
+                    {
+                        var icon = Icon.ExtractAssociatedIcon(executablePath);
+                        if (icon == null) continue;
+                        path = executablePath;
+                        return icon;
+                    }
                 }
             }
             catch (ArgumentException) { }

@@ -17,11 +17,6 @@ namespace UninstallTools.Factory
 
     public class DirectoryFactory : IUninstallerFactory
     {
-        private static readonly string[] BinaryDirectoryNames =
-        {
-            "bin", "program", "client", "app", "application" //"system"
-        };
-    
         private readonly IEnumerable<ApplicationUninstallerEntry> _existingUninstallerEntries;
 
         public DirectoryFactory(IEnumerable<ApplicationUninstallerEntry> existing)
@@ -156,57 +151,45 @@ namespace UninstallTools.Factory
             .Select(x => new KVP(x, null));
         }
 
-        private static void CreateFromDirectoryHelper(ICollection<ApplicationUninstallerEntry> results, DirectoryInfo directory, int level,
-            ICollection<string> dirsToSkip)
+
+        private static void CreateFromDirectoryHelper(ICollection<ApplicationUninstallerEntry> results,
+            DirectoryInfo directory, int level, ICollection<string> dirsToSkip)
         {
             if (level >= 2 || dirsToSkip.Any(x => directory.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
                 return;
 
-            // Get contents of this directory
-            List<string> files = null;
-            DirectoryInfo[] dirs = null;
-            var binDirs = new List<DirectoryInfo>();
+            // Get contents of this installDir
+            AppExecutablesSearcher.ScanDirectoryResult result;
 
             try
             {
-                files = new List<string>(Directory.GetFiles(directory.FullName, "*.exe", SearchOption.TopDirectoryOnly));
-
-                var rawDirs = directory.GetDirectories();
-                dirs = rawDirs
-                    // Directories with very short names likely contain program files
-                    .Where(x => x.Name.Length > 3)
-                    // This matches ISO language codes, much faster than a more specific compare
-                    .Where(x => x.Name.Length != 5 || !x.Name[2].Equals('-'))
-                    .ToArray();
-
-                // Check for the bin directory and add files from it to the scan
-                binDirs.AddRange(rawDirs.Where(x => x.Name.StartsWithAny(BinaryDirectoryNames,
-                    StringComparison.OrdinalIgnoreCase)));
+                result = AppExecutablesSearcher.ScanDirectory(directory);
             }
             catch (IOException)
             {
+                return;
             }
             catch (UnauthorizedAccessException)
             {
+                return;
             }
 
-            // Check if it is impossible or potentially dangerous to process this directory.
-            if (files == null || dirs == null || files.Count > 40)
+            // Check if it is potentially dangerous to process this installDir.
+            if (result.ExecutableFiles.Count > 40)
                 return;
 
-            if (files.Count == 0 && !binDirs.Any())
+            var anyFiles = result.ExecutableFiles.Any();
+            if (!anyFiles && !result.BinSubdirs.Any())
             {
-                foreach (var dir in dirs)
-                {
+                foreach (var dir in result.OtherSubdirs)
                     CreateFromDirectoryHelper(results, dir, level + 1, dirsToSkip);
-                }
             }
-            else
+            else if (anyFiles)
             {
                 var entry = new ApplicationUninstallerEntry();
 
                 // Parse directories into useful information
-                if (level > 0 && directory.Name.StartsWithAny(BinaryDirectoryNames, StringComparison.OrdinalIgnoreCase))
+                if (level > 0 && directory.Name.StartsWithAny(AppExecutablesSearcher.BinaryDirectoryNames, StringComparison.OrdinalIgnoreCase))
                 {
                     entry.InstallLocation = directory.Parent?.FullName;
                     entry.RawDisplayName = directory.Parent?.Name;
@@ -220,87 +203,20 @@ namespace UninstallTools.Factory
                         entry.Publisher = directory.Parent?.Name;
                 }
 
-                // Add files from bin directories
-                foreach (var binDir in binDirs)
-                {
-                    try
-                    {
-                        files.AddRange(Directory.GetFiles(binDir.FullName, "*.exe", SearchOption.TopDirectoryOnly));
-                    }
-                    catch (IOException)
-                    {
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                    }
-                }
+                var sorted = AppExecutablesSearcher.SortListExecutables(result.ExecutableFiles, entry.DisplayNameTrimmed).ToArray();
+                entry.SortedExecutables = sorted.Select(x=>x.FullName).ToArray();
 
-                if (files.Count == 0)
-                    return;
-
-                // Use string similarity algorithm to find out which executable is likely the main application
-                // TODO merge with ApplicationUninstallerEntry.GetMainExecutableCandidates
-                var compareResults = files.OrderBy(
-                    x => StringTools.CompareSimilarity(Path.GetFileNameWithoutExtension(x), entry.DisplayNameTrimmed));
-
-                // Extract info from file metadata
-                var compareBestMatchFile = new FileInfo(compareResults.First());
-                entry.InstallDate = compareBestMatchFile.CreationTime;
-                entry.DisplayIcon = compareBestMatchFile.FullName;
+                entry.InstallDate = directory.CreationTime;
                 //entry.IconBitmap = Icon.ExtractAssociatedIcon(compareBestMatchFile.FullName);
 
-                try
-                {
-                    entry.Is64Bit = FilesystemTools.CheckExecutableMachineType(compareBestMatchFile.FullName);
-                }
-                catch
-                {
-                    entry.Is64Bit = MachineType.Unknown;
-                }
-
-                try
-                {
-                    FileAttribInfoAdder.FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
-                }
-                catch
-                {
-                    // Not critical
-                }
-
-                // Attempt to find an uninstaller application
-                var uninstallerFilters = new[] { "unins0", "uninstall", "uninst", "uninstaller" };
-                var uninstaller = files.Concat(FindExtraExecutables(directory.FullName))
-                    .FirstOrDefault(file =>
-                    {
-                        var name = Path.GetFileNameWithoutExtension(file);
-                        if (string.IsNullOrEmpty(name)) return false;
-                        return uninstallerFilters.Any(filter =>
-                            name.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase) ||
-                            name.EndsWith(filter, StringComparison.InvariantCultureIgnoreCase));
-                    });
-
-                if (uninstaller != null)
-                    entry.UninstallString = uninstaller;
-
+                // Extract info from file metadata and overwrite old values
+                var compareBestMatchFile = sorted.First();
+                ExecutableAttributeExtractor.FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
+                
                 results.Add(entry);
             }
         }
-
-        private static IEnumerable<string> FindExtraExecutables(string directoryPath)
-        {
-            try
-            {
-                return Directory.GetFiles(directoryPath, "*.bat", SearchOption.TopDirectoryOnly);
-            }
-            catch (IOException)
-            {
-            }
-            catch (UnauthorizedAccessException)
-            {
-            }
-            return Enumerable.Empty<string>();
-        }
-
+        
         /// <summary>
         /// Try to get the main executable from the filtered folders. If no executables are present check subfolders.
         /// </summary>
