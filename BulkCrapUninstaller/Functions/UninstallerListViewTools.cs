@@ -65,6 +65,12 @@ namespace BulkCrapUninstaller.Functions
         private bool _listRefreshIsRunning;
         private IEnumerable<ApplicationUninstallerEntry> _allUninstallers;
 
+        public bool CheckIsAppDisposed()
+        {
+            return _listView.ListView.IsDisposed || _listView.ListView.Disposing 
+                || _reference.IsDisposed || _reference.Disposing;
+        }
+
         internal UninstallerListViewTools(MainWindow reference)
         {
             _reference = reference;
@@ -83,7 +89,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     StopProcessingThread(false);
 
-                    if (_listView.ListView.IsDisposed) return;
+                    if (CheckIsAppDisposed()) return;
 
                     _listView.ListView.SuspendLayout();
                     _listView.ListView.RefreshObjects(
@@ -95,7 +101,7 @@ namespace BulkCrapUninstaller.Functions
             // Refresh items marked as invalid after corresponding setting change
             _settings.Subscribe((x, y) =>
             {
-                if (_listView.ListView.IsDisposed) return;
+                if (CheckIsAppDisposed()) return;
 
                 if (!_firstRefresh)
                     _listView.ListView.RefreshObjects(AllUninstallers.Where(u => !u.IsValid).ToList());
@@ -104,7 +110,7 @@ namespace BulkCrapUninstaller.Functions
             // Refresh items marked as orphans after corresponding setting change
             _settings.Subscribe((x, y) =>
             {
-                if (_listView.ListView.IsDisposed) return;
+                if (CheckIsAppDisposed()) return;
 
                 if (!_firstRefresh)
                     _listView.ListView.UpdateColumnFiltering();
@@ -143,7 +149,7 @@ namespace BulkCrapUninstaller.Functions
         }
 
         public IEnumerable<ApplicationUninstallerEntry> FilteredUninstallers
-            => _listView.ListView.IsDisposed ? AllUninstallers : _listView.ListView.FilteredObjects.Cast<ApplicationUninstallerEntry>();
+            => CheckIsAppDisposed() ? AllUninstallers : _listView.ListView.FilteredObjects.Cast<ApplicationUninstallerEntry>();
 
         public bool FirstRefreshCompleted => !_firstRefresh;
 
@@ -333,7 +339,7 @@ namespace BulkCrapUninstaller.Functions
 
         public void InitiateListRefresh()
         {
-            if (ListRefreshIsRunning || _listView.ListView.IsDisposed)
+            if (ListRefreshIsRunning || CheckIsAppDisposed())
                 return;
 
             ListRefreshIsRunning = true;
@@ -358,16 +364,17 @@ namespace BulkCrapUninstaller.Functions
                     throw new Exception("Uncaught exception in ListRefreshThread", dialog.Error);
                 }
 
+                if (CheckIsAppDisposed()) return;
+
                 var oldList = _listView.ListView.SmallImageList;
                 _listView.ListView.SmallImageList = _iconGetter.IconList;
                 oldList?.Dispose();
 
                 _listView.ListView.SetObjects(AllUninstallers);
-
-                // Don't redraw the list view before all events have ran
-                try { _listView.ListView.EndUpdate(); } catch (ObjectDisposedException) { }
+                
                 try
                 {
+                    _listView.ListView.EndUpdate();
                     _listView.ListView.ResumeLayout();
                     _listView.ListView.Focus();
                 }
@@ -378,6 +385,7 @@ namespace BulkCrapUninstaller.Functions
                 // Run events
                 ListRefreshIsRunning = false;
 
+                // Set after running events
                 _firstRefresh = false;
             };
 
@@ -394,6 +402,9 @@ namespace BulkCrapUninstaller.Functions
 
         public void RefreshList()
         {
+            if (CheckIsAppDisposed())
+                return;
+
             _listView.ListView.UpdateColumnFiltering();
             //_listView.ListView.BuildList(true); No need, UpdateColumnFiltering already does this
         }
@@ -815,7 +826,7 @@ namespace BulkCrapUninstaller.Functions
                 }
 
                 var countingUpdateEventArgs = new CountingUpdateEventArgs(0, targetList.Count, currentCount);
-                if(sendTag) countingUpdateEventArgs.Tag = uninstaller;
+                if (sendTag) countingUpdateEventArgs.Tag = uninstaller;
 
                 UninstallerPostprocessingProgressUpdate?.Invoke(this, countingUpdateEventArgs);
                 currentCount++;

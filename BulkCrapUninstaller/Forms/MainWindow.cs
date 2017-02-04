@@ -316,7 +316,7 @@ namespace BulkCrapUninstaller.Forms
 
             settings.Subscribe((x, y) =>
             {
-                if (uninstallerObjectListView.IsDisposed) return;
+                if (_listView.CheckIsAppDisposed()) return;
 
                 try
                 {
@@ -332,7 +332,7 @@ namespace BulkCrapUninstaller.Forms
 
             settings.Subscribe((x, y) =>
             {
-                if (uninstallerObjectListView.IsDisposed) return;
+                if (_listView.CheckIsAppDisposed()) return;
 
                 uninstallerObjectListView.ShowGroups = y.NewValue;
                 _listView.RefreshList();
@@ -347,7 +347,7 @@ namespace BulkCrapUninstaller.Forms
 
             settings.Subscribe((sender, args) =>
             {
-                if (uninstallerObjectListView.IsDisposed) return;
+                if (_listView.CheckIsAppDisposed()) return;
 
                 olvColumnRating.IsVisible = args.NewValue;
                 uninstallerObjectListView.RebuildColumns();
@@ -871,19 +871,19 @@ namespace BulkCrapUninstaller.Forms
             // Basic operations
             globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, uninstallToolStripMenuItem));
             globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, false, false, true, quietUninstallToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.C, false, true, false, copyFullInformationToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.Enter, true, false, false, propertiesToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
 
             // Advanced operations
             globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, false, true, true, manualUninstallToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.B, false, true, false, createBackupToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.R, false, true, false, openKeyInRegeditToolStripMenuItem,
-                () => !uninstallerObjectListView.IsDisposed && uninstallerObjectListView.ContainsFocus));
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
 
             // Tools
             globalHotkeys1.Add(new HotkeyEntry(Keys.P, false, true, false, settingsToolStripMenuItem_Click,
@@ -1143,9 +1143,10 @@ namespace BulkCrapUninstaller.Forms
             var results = StartupManagerWindow.ShowManagerDialog(this);
             toolStripLabelStatus.Text = Localisable.MainWindow_Statusbar_RefreshingStartup;
 
-            Application.DoEvents();
-            if (uninstallerObjectListView.Disposing || uninstallerObjectListView.IsDisposed)
-                return;
+            //Application.DoEvents();
+            //if (_listView.CheckIsAppDisposed())
+            //    return;
+            statusStrip1.Refresh();
 
             _listView.ReassignStartupEntries(true, results);
             toolStripLabelStatus.Text = string.Empty;
