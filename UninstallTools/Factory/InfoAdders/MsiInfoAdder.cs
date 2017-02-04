@@ -64,7 +64,7 @@ namespace UninstallTools.Factory.InfoAdders
             FillInMissingInfoMsiHelper(() => entry.InstallSource, x => entry.InstallSource = x, guid,
                 MsiWrapper.INSTALLPROPERTY.INSTALLSOURCE);
 
-            FillInMissingInfoMsiHelper(() => entry.UninstallerLocation, x => entry.UninstallerFullFilename = x, guid,
+            FillInMissingInfoMsiHelper(() => entry.UninstallerFullFilename, x => entry.UninstallerFullFilename = x, guid,
                 MsiWrapper.INSTALLPROPERTY.LOCALPACKAGE);
 
             FillInMissingInfoMsiHelper(() => entry.DisplayIcon, x => entry.DisplayIcon = x, guid,
