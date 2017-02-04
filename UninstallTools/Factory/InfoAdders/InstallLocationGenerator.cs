@@ -18,7 +18,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         public string[] RequiredValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.UninstallerKind),
-            nameof(ApplicationUninstallerEntry.UninstallerFullFilename)
+            nameof(ApplicationUninstallerEntry.UninstallerLocation)
         };
         public bool RequiresAllValues { get; } = true;
 

@@ -55,7 +55,6 @@ namespace UninstallTools
         private string[] _mainExecutableCandidates;
         private string _quietUninstallString;
         private string _ratingId;
-        private string _uninstallerLocation;
         private string _uninstallString;
         internal Icon IconBitmap = null;
         private string _installLocation;
@@ -223,35 +222,9 @@ namespace UninstallTools
 
         //[LocalisedName(typeof(Localisation), "IsInstalled")]
         //public bool IsInstalled { get; internal set; }
-
-        [XmlIgnore]
+        
         [LocalisedName(typeof (Localisation), "UninstallerLocation")]
-        public string UninstallerLocation
-        {
-            get
-            {
-                if (_uninstallerLocation == null)
-                {
-                    //TODO move to infoadder?
-                    _uninstallerLocation = string.Empty;
-                    if (!string.IsNullOrEmpty(UninstallerFullFilename))
-                    {
-                        try
-                        {
-                            _uninstallerLocation =
-                                Path.GetDirectoryName(UninstallerFullFilename);
-                        }
-                        catch (ArgumentException)
-                        {
-                        }
-                        catch (PathTooLongException)
-                        {
-                        }
-                    }
-                }
-                return _uninstallerLocation;
-            }
-        }
+        public string UninstallerLocation { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "UninstallString")]
         public string UninstallString

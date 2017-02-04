@@ -67,6 +67,7 @@
     <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\QuietUninstallStringCopier.cs" />
     <Compile Include="Factory\InfoAdders\SimpleDeleteUninstallStringGenerator.cs" />
+    <Compile Include="Factory\InfoAdders\UninstallerLocationGenerator.cs" />
     <Compile Include="Factory\InfoAdders\UninstallerTypeAdder.cs" />
     <Compile Include="Factory\InfoAdders\InstallDateAdder.cs" />
     <Compile Include="Factory\IUninstallerFactory.cs" />
