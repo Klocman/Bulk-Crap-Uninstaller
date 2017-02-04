@@ -53,9 +53,7 @@ namespace UninstallTools
         private bool _certificateGotten;
         private bool? _certificateValid;
         private string[] _mainExecutableCandidates;
-        private string _quietUninstallString;
         private string _ratingId;
-        private string _uninstallString;
         internal Icon IconBitmap = null;
         private string _installLocation;
         private string _installSource;
@@ -178,19 +176,7 @@ namespace UninstallTools
         public string Publisher { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "QuietUninstallString")]
-        public string QuietUninstallString
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_quietUninstallString) && UninstallerKind == UninstallerType.Msiexec)
-                {
-                    _quietUninstallString = UninstallManager.GetMsiString(BundleProviderKey,
-                        MsiUninstallModes.QuietUninstall);
-                }
-                return _quietUninstallString;
-            }
-            set { _quietUninstallString = value; }
-        }
+        public string QuietUninstallString { get; set; }
 
         public string RatingId
         {
@@ -227,20 +213,7 @@ namespace UninstallTools
         public string UninstallerLocation { get; set; }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "UninstallString")]
-        public string UninstallString
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_uninstallString) && UninstallerKind == UninstallerType.Msiexec)
-                {
-                    //TODO move to infoadder?
-                    _uninstallString = UninstallManager.GetMsiString(BundleProviderKey,
-                        MsiUninstallModes.Uninstall);
-                }
-                return _uninstallString;
-            }
-            set { _uninstallString = value; }
-        }
+        public string UninstallString { get; set; }
 
         internal string RawDisplayName { get; set; }
 
