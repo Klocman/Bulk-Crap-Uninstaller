@@ -36,7 +36,7 @@ namespace UninstallTools.Factory.InfoAdders
             TargetProperties = typeof(ApplicationUninstallerEntry)
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
                 // Skip properties without public setters
-                .Where(x => x.GetSetMethod() != null)
+                .Where(x => x.GetSetMethod(true) != null)
                 .Where(x => IsTypeValid(x.PropertyType))
                 .ToDictionary(x => x.Name, x => new PropInfo(x, x.GetValue(defaultValues, null)));
         }
