@@ -56,6 +56,7 @@ namespace UninstallTools
         private string _installLocation;
         private string _installSource;
         private string _modifyPath;
+        private string _displayIcon;
 
         internal ApplicationUninstallerEntry()
         {
@@ -102,7 +103,11 @@ namespace UninstallTools
         public string Comment { get; set; }
 
         [LocalisedName(typeof (Localisation), "DisplayIcon")]
-        public string DisplayIcon { get; set; }
+        public string DisplayIcon
+        {
+            get { return _displayIcon; }
+            set { _displayIcon = CleanupPath(value, true); }
+        }
 
         [ComparisonTarget, LocalisedName(typeof (Localisation), "DisplayVersion")]
         public string DisplayVersion { get; set; }
@@ -358,25 +363,31 @@ namespace UninstallTools
             return sb.ToString();
         }
 
-        private static string CleanupPath(string path)
+        private static readonly char[] InvalidPathChars = Path.GetInvalidPathChars();
+        private static string CleanupPath(string path, bool isFilename = false)
         {
             if (string.IsNullOrEmpty(path)) return null;
 
-            path = path.Trim('"', ' ', '\'', '\\', '/'); // Get rid of the quotation marks
+            if (!isFilename)
+            {
+                // Try the fast method first for directories
+                var trimmed = path.Trim('"', ' ', '\'', '\\', '/');
+                
+                if (!trimmed.ContainsAny(InvalidPathChars))
+                    return trimmed;
+            }
+
             try
             {
-                var i = path.LastIndexOf('\\');
-                // TODO unnecessary?
-                if (i > 0 && path.Substring(i).Contains('.') && !Directory.Exists(path))
-                {
-                    path = Path.GetDirectoryName(ProcessTools.SeparateArgsFromCommand(path).FileName);
-                }
+                path = ProcessTools.SeparateArgsFromCommand(path).FileName;
+                if (!isFilename && path.Contains('.') && !Directory.Exists(path))
+                    return Path.GetDirectoryName(path);
             }
             catch
             {
                 // If sanitization failed just leave it be, it will be handled afterwards
             }
-            return path;
+            return path.TrimEnd('\\');
         }
     }
 }
