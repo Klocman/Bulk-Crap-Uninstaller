@@ -23,6 +23,7 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.SortedExecutables)
         };
         public bool RequiresAllValues { get; } = true;
+        public bool AlwaysRun { get; } = false;
 
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.RawDisplayName),

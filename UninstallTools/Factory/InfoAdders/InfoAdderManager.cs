@@ -116,7 +116,7 @@ namespace UninstallTools.Factory.InfoAdders
                     }
 
                     // Only run the adder if it can actually fill in any missing values
-                    if (infoAdder.CanProduceValueNames.Any() && !infoAdder.CanProduceValueNames.Any(getIsValDefault))
+                    if (!infoAdder.AlwaysRun && !infoAdder.CanProduceValueNames.Any(getIsValDefault))
                         continue;
 
                     infoAdder.AddMissingInformation(target);

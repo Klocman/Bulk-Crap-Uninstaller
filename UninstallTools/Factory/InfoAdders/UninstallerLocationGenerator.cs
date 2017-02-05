@@ -29,6 +29,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         public string[] RequiredValueNames { get; } = { nameof(ApplicationUninstallerEntry.UninstallerFullFilename) };
         public bool RequiresAllValues { get; } = true;
+        public bool AlwaysRun { get; } = false;
         public string[] CanProduceValueNames { get; } = { nameof(ApplicationUninstallerEntry.UninstallerLocation) };
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
     }

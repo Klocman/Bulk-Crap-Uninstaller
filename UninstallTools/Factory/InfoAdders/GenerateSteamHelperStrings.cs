@@ -30,10 +30,11 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.RatingId)
         };
         public bool RequiresAllValues { get; } = true;
+        public bool AlwaysRun { get; } = true;
+
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.UninstallString),
-            nameof(ApplicationUninstallerEntry.QuietUninstallString),
-            "_Always run_"
+            nameof(ApplicationUninstallerEntry.QuietUninstallString)
         };
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;
     }

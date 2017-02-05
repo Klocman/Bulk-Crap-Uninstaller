@@ -30,6 +30,7 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.UninstallerFullFilename)
         };
         public bool RequiresAllValues { get; } = false;
+        public bool AlwaysRun { get; } = false;
 
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.InstallDate)

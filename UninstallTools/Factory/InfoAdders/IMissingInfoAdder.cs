@@ -24,7 +24,13 @@ namespace UninstallTools.Factory.InfoAdders
         bool RequiresAllValues { get; }
 
         /// <summary>
-        /// Names of values this InfoAdder can fill in. If null, always run.
+        /// Always run this adder if the requirements are met. 
+        /// If false, only run this adder if it can produce any missing values.
+        /// </summary>
+        bool AlwaysRun { get; }
+
+        /// <summary>
+        /// Names of values this InfoAdder can fill in.
         /// </summary>
         string[] CanProduceValueNames { get; }
 

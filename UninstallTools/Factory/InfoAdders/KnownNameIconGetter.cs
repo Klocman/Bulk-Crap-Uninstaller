@@ -25,6 +25,7 @@ namespace UninstallTools.Factory.InfoAdders
         };
 
         public bool RequiresAllValues { get; } = false;
+        public bool AlwaysRun { get; } = false;
 
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.DisplayIcon),

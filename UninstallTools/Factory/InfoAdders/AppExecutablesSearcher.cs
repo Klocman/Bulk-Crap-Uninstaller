@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +30,7 @@ namespace UninstallTools.Factory.InfoAdders
         };
 
         public bool RequiresAllValues { get; } = true;
+        public bool AlwaysRun { get; } = false;
 
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
