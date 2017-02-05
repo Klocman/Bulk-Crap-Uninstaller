@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -67,7 +68,7 @@ namespace BulkCrapUninstaller.Functions
 
         public bool CheckIsAppDisposed()
         {
-            return _listView.ListView.IsDisposed || _listView.ListView.Disposing 
+            return _listView.ListView.IsDisposed || _listView.ListView.Disposing
                 || _reference.IsDisposed || _reference.Disposing;
         }
 
@@ -371,7 +372,7 @@ namespace BulkCrapUninstaller.Functions
                 oldList?.Dispose();
 
                 _listView.ListView.SetObjects(AllUninstallers);
-                
+
                 try
                 {
                     _listView.ListView.EndUpdate();
@@ -706,12 +707,10 @@ namespace BulkCrapUninstaller.Functions
 
             UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
-                if (y.Tag == null)
-                    return;
-
                 lock (_objectsToUpdate)
                 {
-                    _objectsToUpdate.Add(y.Tag);
+                    if (y.Tag != null)
+                        _objectsToUpdate.Add(y.Tag);
 
                     if (y.Value == y.Maximum || y.Value % 35 == 0)
                     {
@@ -719,10 +718,11 @@ namespace BulkCrapUninstaller.Functions
                         {
                             _listView.ListView.RefreshObjects(_objectsToUpdate);
                         }
-                        catch (InvalidOperationException)
+                        catch (InvalidOperationException ex)
                         {
                             // The list view got disposed before we could update it.
                             _abortPostprocessingThread = true;
+                            Debug.Fail(ex.Message, ex.StackTrace);
                         }
                         _objectsToUpdate.Clear();
                     }
