@@ -490,7 +490,8 @@
     <value>4</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Sodobne ikone UI</value>
+    <value>Sodobne ikone uporabniškega vmesnika</value>
+    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
   </data>
   <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
     <value>linkLabel3</value>
@@ -520,7 +521,7 @@
     <value>2</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>OgledSeznamaPredmetov</value>
+    <value>ObjectListView</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
     <value>linkLabel1</value>
@@ -580,7 +581,7 @@
     <value>3</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PonurnikPrenosneNastavitve od CodeChimp</value>
+    <value>PortableSettingsProvider by CodeChimp</value>
   </data>
   <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
     <value>linkLabel2</value>
@@ -613,7 +614,8 @@
     <value>5</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
+    <value>Ovijalec upravljan z urnikom opravil </value>
+    <comment>If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="&gt;&gt;linkLabel7.Name" xml:space="preserve">
     <value>linkLabel7</value>
@@ -1073,6 +1075,21 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Madžarski - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portugalski - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Ruski - wvxwxvw</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Slovenski - Jadran Rudec</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Španski - Freddynic159</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>

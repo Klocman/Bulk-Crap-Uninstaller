@@ -280,7 +280,7 @@
     <value>152, 26</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Zaščitene vnosi so označeni z "NeOdstrani" oznako, kar pomeni, da izdajatelj ne želi, da jih odstranite. Ta oznaka se pogosto uporablja v velikih programskih paketih, da vam preprečuje odstranjevanje njihovih posameznih delov.</value>
+    <value>Zaščitene vnosi so označeni z oznako "NeOdstrani", kar pomeni, da izdajatelj ne želi, da jih odstranite. Ta oznaka se pogosto uporablja v velikih programskih paketih, da vam preprečuje odstranjevanje njihovih posameznih delov.</value>
   </data>
   <data name="&gt;&gt;panel5.Name" xml:space="preserve">
     <value>panel5</value>
@@ -298,7 +298,7 @@
     <value>5</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
-    <value>Omržni dostop</value>
+    <value>Omrežni dostop</value>
   </data>
   <data name="p4netDesc3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -628,7 +628,7 @@
     <value>Left</value>
   </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
-    <value>● Za iskanje  iskati posodobitev programa.</value>
+    <value>● Za iskanje posodobitev programa.</value>
   </data>
   <data name="&gt;&gt;buttonFinish.Parent" xml:space="preserve">
     <value>panel12</value>
@@ -1128,7 +1128,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>0, 0</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
-    <value>Sistemske sestavine</value>
+    <value>Sestavine sistema</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Nazaj</value>
@@ -1197,7 +1197,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>341, 102</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>Vsakič, ko pride do napake, boste vprašani, če želite, da pošljete sporočilo o napaki. Lahko preverite, kateri podatki bodo poslani v poročilu o napaki in v poročilu o uporabi, z upogledom v njunne XML datoteke znotraj imenika BCUninstallerja. Poslani podatki se ne delijo z drugimi osebami</value>
+    <value>Vsakič, ko pride do napake boste vprašani, če želite poslati sporočilo o napaki. Lahko preverite kateri podatki bodo poslani v poročilu o napaki in v poročilu o uporabi, z upogledom v njune XML datoteke (v imeniku BCUninstallerja). Poslani podatki ne bodo dostopni drugim osebam.</value>
   </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
     <value>Pošiljanje teh statistik nam bo pomagalo izboljšati BCUninstaller.</value>
@@ -1209,7 +1209,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>flowLayoutPanel4</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Ta čarovnik vam bo podal hiter ogled in pomagal nastaviti aplikacijo.</value>
+    <value>Ta čarovnik vam bo ponudil hiter ogled in pomagal nastaviti aplikacijo.</value>
   </data>
   <data name="p2viewTitle.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1320,7 +1320,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>19</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
-    <value>Prikai odstranjevalce v skupinah</value>
+    <value>Prikaži odstranjevalce v skupinah</value>
   </data>
   <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1500,7 +1500,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>354, 47</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>To vam bo pustilo  odstraniti zaščitene vnose.</value>
+    <value>To vam bo dovolilo odstraniti zaščitene vnose.</value>
   </data>
   <data name="buttonPrev.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1644,7 +1644,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>p5finishContact</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Alikacije, ki so označene kot "sistemske sestavine", so skrite za večino osnovnih upraviteljev odstranjevanj. Ta oznaka NE pomeni, da je aplikacija del operacijskega sistema.</value>
+    <value>Aplikacije, ki so označene kot "sistemske sestavine", so skrite za večino osnovnih upraviteljev odstranjevanj. Ta oznaka NE pomeni, da je aplikacija del operacijskega sistema.</value>
   </data>
   <data name="pCorOrphansComment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 0, 0</value>
@@ -1905,7 +1905,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>True</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
-    <value>Sčasoma boste morda ugotovili,  da bodo nekatere aplikacije zavrnile odstranjevanje, ali bodo samo izginile iz večine upraviteljev odstranjevanja.</value>
+    <value>Sčasoma boste morda ugotovili, da bodo nekatere aplikacije zavrnile odstranjevanje, ali bodo samo izginile iz večine upraviteljev odstranjevanja.</value>
   </data>
   <data name="p3advProtectTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 147</value>
@@ -2160,7 +2160,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>flowLayoutPanel3</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>While BCUninstaller je lahko uporabljen kot osnovni odstranjevalec, večina njegovih funkcij je namenjenih naprednejšim uporabnikom. Nadaljujte previdno!</value>
+    <value>Medtem ko se BCUninstaller lahko uporablja kot osnovni odstranjevalec, je  večina njegovih funkcij namenjenih naprednejšim uporabnikom. Nadaljujte previdno!</value>
   </data>
   <data name="&gt;&gt;p4netUpdateAdd.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -2220,7 +2220,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>710, 6</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
-    <value>Izberite s pomočjo potrditvenih polj</value>
+    <value>Izberi s pomočjo potrditvenih polj</value>
   </data>
   <data name="p2viewCertsTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 150</value>
@@ -2392,7 +2392,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
-    <value>Preverjeni odstranjevalci so označeni z zeleno barvo, nepreverjen pa so v modri barvi.
+    <value>Preverjeni odstranjevalci so označeni z zeleno barvo, nepreverjeni pa so v modri barvi.
 Opozorilo: Preverjanje lahko traja dlje časa.</value>
   </data>
   <data name="&gt;&gt;pCorTitle.Name" xml:space="preserve">
@@ -2405,7 +2405,7 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>7, 241</value>
   </data>
   <data name="p2viewDetail2.Text" xml:space="preserve">
-    <value>● Razvrsti odstranjevalce povsakem stolpcu. Prosto preuredi stolpce.</value>
+    <value>● Razvrstite odstranjevalce po vsakem stolpcu. Prosto preuredite stolpce.</value>
   </data>
   <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 17</value>
@@ -2450,7 +2450,7 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>10</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
-    <value>● Grupiraj podobne odstranjevalce</value>
+    <value>● Grupirajte podobne odstranjevalce</value>
   </data>
   <data name="&gt;&gt;p2viewDetail.Name" xml:space="preserve">
     <value>p2viewDetail</value>
@@ -2468,8 +2468,7 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Bulk crap
-uninstaller</value>
+    <value>Bulk crap uninstaller</value>
   </data>
   <data name="checkBoxCheckboxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2634,7 +2633,7 @@ uninstaller</value>
     <value>0, 0, 0, 3</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
-    <value>● Za nalaganje poročil o napaki.</value>
+    <value>● Za pošiljanje poročil o napakah.</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -2703,7 +2702,7 @@ uninstaller</value>
     <value>8</value>
   </data>
   <data name="p4netDesc4.Text" xml:space="preserve">
-    <value>● Za pridobitev in nalaganje ocen aplikacije</value>
+    <value>● Za pridobivanje in nalaganje ocen aplikacije</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Omogoči uporabnikovo ocenjevanje aplikacije</value>

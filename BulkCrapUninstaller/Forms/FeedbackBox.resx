@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
@@ -546,18 +546,6 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Send feedback</value>
   </data>
-  <data name="&gt;&gt;buttonSendFeedback2.Name" xml:space="preserve">
-    <value>buttonSendFeedback2</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonSourceForgeRate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -575,18 +563,6 @@
   </data>
   <data name="buttonSourceForgeRate.Text" xml:space="preserve">
     <value>Rate on SourceForge</value>
-  </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Name" xml:space="preserve">
-    <value>buttonSourceForgeRate</value>
-  </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="buttonTwitter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -606,18 +582,6 @@
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Share on Twitter</value>
   </data>
-  <data name="&gt;&gt;buttonTwitter.Name" xml:space="preserve">
-    <value>buttonTwitter</value>
-  </data>
-  <data name="&gt;&gt;buttonTwitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonTwitter.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;buttonTwitter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="buttonSubmitGithub.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -635,18 +599,6 @@
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
     <value>Submit on GitHub (Need an account)</value>
-  </data>
-  <data name="&gt;&gt;buttonSubmitGithub.Name" xml:space="preserve">
-    <value>buttonSubmitGithub</value>
-  </data>
-  <data name="&gt;&gt;buttonSubmitGithub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSubmitGithub.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;buttonSubmitGithub.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="buttonSendFeedback.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -666,18 +618,6 @@
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>Send feedback</value>
   </data>
-  <data name="&gt;&gt;buttonSendFeedback.Name" xml:space="preserve">
-    <value>buttonSendFeedback</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;buttonSendFeedback.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
@@ -692,18 +632,6 @@
   </data>
   <data name="buttonDonate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonDonate.Name" xml:space="preserve">
-    <value>buttonDonate</value>
-  </data>
-  <data name="&gt;&gt;buttonDonate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonDonate.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonDonate.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="buttonTranslate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -723,18 +651,6 @@
   <data name="buttonTranslate.Text" xml:space="preserve">
     <value>Translate BCU</value>
   </data>
-  <data name="&gt;&gt;buttonTranslate.Name" xml:space="preserve">
-    <value>buttonTranslate</value>
-  </data>
-  <data name="&gt;&gt;buttonTranslate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonTranslate.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonTranslate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonIssues.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -752,18 +668,6 @@
   </data>
   <data name="buttonIssues.Text" xml:space="preserve">
     <value>Issues on GitHub</value>
-  </data>
-  <data name="&gt;&gt;buttonIssues.Name" xml:space="preserve">
-    <value>buttonIssues</value>
-  </data>
-  <data name="&gt;&gt;buttonIssues.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonIssues.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonIssues.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="panel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -843,18 +747,6 @@
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Don't ever show this window again, ever</value>
   </data>
-  <data name="&gt;&gt;checkBoxNeverShow.Name" xml:space="preserve">
-    <value>checkBoxNeverShow</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverShow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverShow.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverShow.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonClose.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -876,21 +768,6 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
-    <value>buttonClose</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -918,4 +795,7 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

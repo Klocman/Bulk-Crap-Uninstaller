@@ -431,4 +431,16 @@
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Proste usunięcie</value>
   </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Folder jest lub będzie pusty po usunięciu śmieci</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Usługa</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Wszystkie właściwości</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Pliki i katalogi</value>
+  </data>
 </root>

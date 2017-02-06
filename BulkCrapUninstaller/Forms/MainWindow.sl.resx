@@ -337,7 +337,7 @@
     <value>Različica</value>
   </data>
   <data name="olvColumnInstallDate.Text" xml:space="preserve">
-    <value>Datum nameščanja</value>
+    <value>Datum namestitve</value>
   </data>
   <data name="olvColumnInstallDate.Width" type="System.Int32, mscorlib">
     <value>70</value>
@@ -1530,7 +1530,7 @@
     <value>197, 22</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>Ods&amp;trani z MsiExec</value>
+    <value>Ods&amp;trani z uporabo MsiExec</value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 6</value>
@@ -2731,6 +2731,24 @@
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Ocena...</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>NadomestnoV</value>
+  </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>NadomestnoV</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Odstrani iz imenika...</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Odpri "Obnovitev sistema"</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>

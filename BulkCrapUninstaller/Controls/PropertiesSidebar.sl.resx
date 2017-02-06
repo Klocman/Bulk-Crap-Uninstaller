@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
@@ -447,9 +447,8 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
     <value>flowLayoutPanel1</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>
-Nekatere odstranjevalci so lahko označeni kot "sestavine sistema", za njihovo skrivanje s seznama Dodaj/odstrani program. Gonilniki so pogosto označeni s to oznako.
-Vozniki so pogosto označeni s to oznako.</value>
+    <value>Nekateri odstranjevalci so lahko označeni kot "sestavine sistema", za njihovo skrivanje s seznama Dodaj/odstrani program. 
+Gonilnikii so pogosto označeni s to oznako.</value>
   </data>
   <data name="&gt;&gt;checkBoxViewGroups.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -476,8 +475,7 @@ Vozniki so pogosto označeni s to oznako.</value>
     <value>5, 16</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Spremeni izbiro sloga seznama potrditvenih polj. So varnejše, ker
-en klik ne more počistiti vsega.
+    <value>Spremeni izbiro sloga seznama potrditvenih polj. So varnejše, ker en klik ne more počistiti vsega.
 
 Lahko označite več vnosov tako, da jih označite in pritisnete na preslednico.</value>
   </data>
@@ -569,7 +567,7 @@ Lahko označite več vnosov tako, da jih označite in pritisnete na preslednico.
     <value>208, 138</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Uporabo sivo barvo za identifikacijo odstranjevalcev, ki so poškodovani ali manjkajo.</value>
+    <value>Uporabi sivo barvo za identifikacijo odstranjevalcev, ki so poškodovani ali manjkajo.</value>
   </data>
   <data name="&gt;&gt;checkBoxViewCheckboxes.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -747,7 +745,7 @@ Združevanje v skupine uporablja pametno filtriranje.</value>
     <value>208, 92</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Zaščiteni vnosi so označeni z oznako "NeOdstrani", kar pomeni, da izdajatelj ne želim, da jih odstranite.</value>
+    <value>Zaščiteni vnosi so označeni z oznako "NeOdstrani", kar pomeni, da izdajatelj ne želi, da jih odstranite.</value>
   </data>
   <data name="&gt;&gt;checkBoxShowUpdates.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -761,19 +759,22 @@ Združevanje v skupine uporablja pametno filtriranje.</value>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>299, 17</value>
-  </metadata>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Prikaži Windows Store aplikacije</value>
   </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Prikaži Windows funkcije</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>202, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 17</value>
+  </metadata>
 </root>

@@ -195,4 +195,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Administrador de inicio</value>
   </data>
+  <data name="comboBoxFilter.Items4" xml:space="preserve">
+    <value>Mostrar servicios</value>
+  </data>
 </root>

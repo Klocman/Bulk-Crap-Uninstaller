@@ -136,7 +136,7 @@
     <value>Tukaj ni ujemajočih vnosov z vašim iskanim nizom.</value>
   </data>
   <data name="StrExportHeader" xml:space="preserve">
-    <value>BCUninstaller export
+    <value>BCUninstaller izvoz
 Založnik | Različica | Datum | Velikost | Register | Vrsta odstranjevalca | Odstranjevalni niz | Tiho odstrani | Komentarji</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
@@ -221,7 +221,7 @@ Kasneje jih lahko pošljete iz glavne menijske vrstice (Pomoč-&gt;Pošlji povra
     <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
-    <value>BCUninstaller bo samodejno prenesel posodobitve in jih uporabil po ponovnem zago. Prosimo, upoštevajte, da boste med postopkom, morda izgubili vaše nastavitve.
+    <value>BCUninstaller bo samodejno prenesel posodobitve in jih uporabil po ponovnem zagonu. Upoštevajte, da boste med postopkom morda izgubili vaše nastavitve.
 
 Dnevnik sprememb:
 - {0}
@@ -585,7 +585,7 @@ The lists are separated by a single newline.</comment>
     <value>Ta aplikacija nima veljavnega odstranjevalca</value>
   </data>
   <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
-    <value>Nalaganje funkcij operacijskega sistema Windows...</value>
+    <value>Nalaganje Windows funkcij...</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Osveževanje zagonskih informacij...</value>
@@ -630,5 +630,92 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
     <value>Različica Framework 4.0 je neobvezna, toda priporočena. Funkcije, ki zahtevajo Framework bodo onemogočene dokler ga ne namestite.</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Ni na voljo</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Nekatere odstranjevalci niso bili uspešni</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Ali želite poskusiti uporabiti tihe odstranjevalce, ko glasen ni bil uspešen?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Naslednji odstranjevalci bodo znova glasno zagnani:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Skeniranje določenega imenika....</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Izberite imenik z aplikacijami, ki jih želite odstraniti.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Odstrani iz imenika</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>V določenem imeniku niso bile najdene nobene aplikacije.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Prepričajte se, da ste izbrali pravilen imenik in da so izvršljive datoteke aplikacij še vedno prisotne.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Najden je odstranjevalec za {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Ali želite zagnati tega odstranjevalca?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Izdajatelj</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Predmet</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Arhiviran</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Razširitve</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Prijazno ime</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Ime izdajatelja</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Ne po</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Ne pred</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Zaseben ključ</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Ima zaseben ključ</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Javni ključ</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Surovi podatki</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Serijska številka</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Ime predmeta</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritem podpisa</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Različica</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Prstni odtis</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Ni uspelo shranjevanje nastavitev</value>
   </data>
 </root>

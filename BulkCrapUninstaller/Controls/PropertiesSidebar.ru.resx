@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxOrphans.AutoSize" type="System.Boolean, mscorlib">
@@ -138,9 +138,6 @@
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Показать потерянные</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
-  </metadata>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. 
 Они не видны в большинстве менеджеров удаления, но все равно занимают место. 
@@ -376,18 +373,6 @@
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Отфильтруйте все, что подписано Майкрософт.</value>
   </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Name" xml:space="preserve">
-    <value>checkBoxListHideMicrosoft</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxListSysComp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -407,18 +392,6 @@
     <value>Некоторые деинсталляторы могут быть помечены как "системные", можете скрыть эти программы из списка.
 Драйвера часто помечены этим тегом.</value>
   </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
-    <value>checkBoxListSysComp</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="checkBoxListProtected.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -436,18 +409,6 @@
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Защищенные элементы имеют пометку "NoRemove", это означает, что разработчик не хочет, чтобы их удаляли.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Name" xml:space="preserve">
-    <value>checkBoxListProtected</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="checkBoxShowUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -467,18 +428,6 @@
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Обновления для других приложений. Обычно они удаляются вместе с родительским приложением, поэтому их можно скрыть.</value>
   </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Name" xml:space="preserve">
-    <value>checkBoxShowUpdates</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="checkBoxShowStoreApps.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -496,18 +445,6 @@
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Показать Windows Apps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Name" xml:space="preserve">
-    <value>checkBoxShowStoreApps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -625,18 +562,6 @@
 
 Вы можете проверить несколько элементов, выделив их и нажав пробел.</value>
   </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Name" xml:space="preserve">
-    <value>checkBoxViewCheckboxes</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewCheckboxes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxViewGroups.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -656,24 +581,6 @@
     <value>Группировка элементов "абзацами" согласно колонке по которой сортируется список.
 Смарт-фильтрация.</value>
   </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Name" xml:space="preserve">
-    <value>checkBoxViewGroups</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxViewGroups.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>299, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -708,4 +615,13 @@
     <value>Показать Компоненты
 Windows</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>202, 17</value>
+  </metadata>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

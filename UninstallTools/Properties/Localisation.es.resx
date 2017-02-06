@@ -429,4 +429,7 @@
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Eliminación simple</value>
   </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Todas las propiedades</value>
+  </data>
 </root>

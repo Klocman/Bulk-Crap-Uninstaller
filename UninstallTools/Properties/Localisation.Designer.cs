@@ -88,6 +88,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All properties.
+        /// </summary>
+        internal static string ComparisonTargetInfo_AllProperties {
+            get {
+                return ResourceManager.GetString("ComparisonTargetInfo_AllProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bad.
         /// </summary>
         internal static string Confidence_Bad {

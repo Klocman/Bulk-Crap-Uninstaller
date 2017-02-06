@@ -429,12 +429,6 @@
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Abrir "&amp;Programas y características</value>
   </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Limpiar el sistema (CCleaner)</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Actualizar aplicaciones (Ninite)</value>
-  </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Configuración</value>
   </data>

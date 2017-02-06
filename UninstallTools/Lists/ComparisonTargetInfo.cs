@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Klocman.Localising;
-using UninstallTools.Factory;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Lists
 {
@@ -40,7 +40,7 @@ namespace UninstallTools.Lists
 
             ComparisonTargets = results;
 
-            AllTargetComparison = new ComparisonTargetInfo(null, "All properties", null);
+            AllTargetComparison = new ComparisonTargetInfo(null, Localisation.ComparisonTargetInfo_AllProperties, null);
         }
 
         private ComparisonTargetInfo(string id, string displayName, Func<ApplicationUninstallerEntry, string> getter,

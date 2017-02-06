@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1091,12 +1091,6 @@ BCU bo počakal, da se trenutno delujoč ukaz zaključi preden izvrši naslednje
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -1242,7 +1236,7 @@ BCU bo počakal, da se trenutno delujoč ukaz zaključi preden izvrši naslednje
     <value>0</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Lahko določite mape po meri, kamor boste namestilivaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil zaiskanje ostankov odstranjevanja, ostankov aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
+    <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, ostankov aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
 
 Privzete Windows mape se vedno pregledujejo. Ni jih potrebno vključiti na seznam.
 
@@ -1449,4 +1443,16 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Odstranjevanje</value>
   </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Vedno pokaži smeti z nizko oceno</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Nikoli ne prosi za pomoč</value>
+  </data>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

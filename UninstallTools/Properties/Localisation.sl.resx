@@ -175,7 +175,7 @@
     <value>Ime registrskega ključa</value>
   </data>
   <data name="RegistryPath" xml:space="preserve">
-    <value>Pot registra</value>
+    <value>Pot v registru</value>
   </data>
   <data name="SystemComponent" xml:space="preserve">
     <value>Je sistemska sestavina</value>
@@ -235,7 +235,7 @@
     <value>Zelo dobro</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
-    <value>Nadrejen odstranjevalec</value>
+    <value>Starševski odstranjevalec</value>
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
@@ -394,7 +394,7 @@
     <value>Zagon</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
-    <value>Spodletelo je omogočanje tega vnosa. Naslednja datoteka ni bil anajdena:</value>
+    <value>Spodletelo je omogočanje tega vnosa. Naslednja datoteka ni bila najdena:</value>
   </data>
   <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
     <value>Odstranjevalec je potekel</value>
@@ -430,5 +430,17 @@
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Preprosto izbriši</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Datoteke in imeniki</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Imenik je ali bo prazen po odstranjevanju odpadkov.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Storitev</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Vse lastnosti</value>
   </data>
 </root>

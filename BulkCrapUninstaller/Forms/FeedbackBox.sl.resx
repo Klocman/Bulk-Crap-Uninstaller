@@ -117,55 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Szövegfájlok|*.txt</value>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Hvala, ker uporabljate BCUninstaller!</value>
   </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Maradványlista exportálása</value>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Če ste našli to brezplačno odprtokodno orodje ko uporabno za vas, razmislite kakšno minutko o majhni pomoči! Povejte svojim prijateljem o tem, delite svoje mnenje na družbenih omrežjih, pošljite jim vaše povratne informacije - vse, kar je malo, šteje!</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Mégse</value>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Kakršne koli težave ali manjkajoče funkcije?</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Kijelölt törlése</value>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Če ste imeli kakršne koli težave z BCU ali pa, če bi radi predlagali novo funkcijo, si oglejte te povezave:</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportálás...</value>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Ali želite pomagati?</value>
   </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Nem biztonságos elemek elrejtése</value>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo za pospešitev posodobitev ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
   </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Útvonal</value>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Pošlji povratno informacijo</value>
   </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Biztonságosság</value>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Oceni na SourceForge</value>
   </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Eltávolító neve</value>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Deli na Twitterju</value>
   </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Úgy tűnik, hogy a következő elemeket hátrahagyták az eltávolítóik. Néhány eltávolító nem távolítja el az összes programelemet, és ezek feleslegesen foglalják a területet. A legtöbb itt látható elem általában programbeállításokat tartalmaz, amelyek kis helyen is elférnek és veszélytelenek.</value>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Pošlji na GitHub (Potreben je račun)</value>
   </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Biztonsági besorolás</value>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Pošlji povratne informacije</value>
   </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>A maradványoknak a beazonosítása egy összetett folyamat, amely néha hibás lehet. Emiatt az összes elem biztonságosságának besorolásában a végső döntést a felhasználónak kell meghoznia. A jó és a nagyon jó besorolású elemek általában biztonsággal eltávolíthatók, de mindig ellenőrizze azokat.</value>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Prevedite BCU</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Eltávolítás után visszamaradt fájlok és beállításkulcsok listája</value>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Zadeve na GitHub</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Tega okna ne prikazuj nikoli več</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Zapri</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Maradvány eltávolítás</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Megnyi&amp;tás</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Más&amp;olás a Vágólapra</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Részletek</value>
+    <value>Pošlji povratne informacije</value>
   </data>
 </root>

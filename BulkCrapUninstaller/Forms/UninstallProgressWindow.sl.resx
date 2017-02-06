@@ -256,8 +256,8 @@
     <value>6</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Izbrani odstranjevalci bodo sedaj naenkrat izvedeni.
-Če se vam zdi, da se je postopek zataknil, lahko kliknete na gumb "Preskoči" da bi se izognili čakanju na njegovo dokončanje. To se lahko zgodi, če se odstranjevalec sesuje ali se začenja nov proces, in se ga ne da zapreti.</value>
+    <value>Izbrani odstranjevalci bodo zdaj naenkrat izvedeni.
+Če se vam zdi, da se je postopek zataknil, lahko kliknite na gumb "Preskoči", da se boste izognili čakanju na njegovo dokončanje. To se lahko zgodi, če se odstranjevalec sesuje ali se začenja nov proces, in se ga ne da zapreti.</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -491,7 +491,7 @@
     <value>Preskoči</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Zaženi zdaj odstranjevalca</value>
+    <value>Zaženi odstranjevalca</value>
   </data>
   <data name="toolStripButtonTerminate.Text" xml:space="preserve">
     <value>Prekini</value>
@@ -507,6 +507,9 @@
   </data>
   <data name="olvColumnId.Text" xml:space="preserve">
     <value>Id</value>
+  </data>
+  <data name="toolStripButtonHelp.Text" xml:space="preserve">
+    <value>Pomoč</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

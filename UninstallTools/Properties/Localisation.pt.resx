@@ -431,4 +431,7 @@
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Excluir simplesmente</value>
   </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Todas as propriedades</value>
+  </data>
 </root>

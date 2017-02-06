@@ -440,4 +440,8 @@
   <data name="Startup_ShortName_Service" xml:space="preserve">
     <value>Service</value>
   </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>All properties</value>
+    <comment>Used in the search box to specify what's being compared</comment>
+  </data>
 </root>

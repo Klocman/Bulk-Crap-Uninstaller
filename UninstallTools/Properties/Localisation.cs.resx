@@ -412,4 +412,7 @@
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>Hodnota nemůže obsahovat znaky nového řádku</value>
   </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Všechny vlastnosti</value>
+  </data>
 </root>

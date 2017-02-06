@@ -412,4 +412,7 @@
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>Wert darf keine Zeilenumbrüche enthalten</value>
   </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Alle Eigenschaften</value>
+  </data>
 </root>

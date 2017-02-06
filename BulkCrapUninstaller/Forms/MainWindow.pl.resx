@@ -1453,4 +1453,19 @@
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Zaawansowane...</value>
   </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Otwórz "Przywracanie systemu"</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
 </root>
