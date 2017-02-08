@@ -3,11 +3,7 @@
     Apache License Version 2.0
 */
 
-using System;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Security;
 
 namespace UninstallTools.Factory.InfoAdders
 {
@@ -39,40 +35,26 @@ namespace UninstallTools.Factory.InfoAdders
             if (entry.UninstallerKind == UninstallerType.SdbInst)
                 return;
 
-            try
+            // Try getting an icon from the app's executables
+            if (entry.SortedExecutables != null)
             {
-                // Try getting an icon from the app's executables
-                if (entry.SortedExecutables != null)
+                foreach (var executablePath in entry.SortedExecutables.Take(2))
                 {
-                    foreach (var executablePath in entry.SortedExecutables.Take(2))
+                    var exeIcon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(executablePath);
+                    if (exeIcon != null)
                     {
-                        var icon = Icon.ExtractAssociatedIcon(executablePath);
-                        if (icon != null)
-                        {
-                            entry.DisplayIcon = executablePath;
-                            entry.IconBitmap = icon;
-                            return;
-                        }
+                        entry.DisplayIcon = executablePath;
+                        entry.IconBitmap = exeIcon;
+                        return;
                     }
                 }
             }
-            catch (ArgumentException) { }
-            catch (SecurityException) { }
-            catch (UnauthorizedAccessException) { }
-            
-            // Extract icon from the uninstaller
-            if (File.Exists(entry.UninstallerFullFilename))
+
+            var uninsIcon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(entry.UninstallerFullFilename);
+            if (uninsIcon != null)
             {
-                try
-                {
-                    var icon = Icon.ExtractAssociatedIcon(entry.UninstallerFullFilename);
-                    if (icon != null)
-                    {
-                        entry.DisplayIcon = entry.UninstallerFullFilename;
-                        entry.IconBitmap = icon;
-                    }
-                }
-                catch (ArgumentException) { }
+                entry.DisplayIcon = entry.UninstallerFullFilename;
+                entry.IconBitmap = uninsIcon;
             }
         }
     }

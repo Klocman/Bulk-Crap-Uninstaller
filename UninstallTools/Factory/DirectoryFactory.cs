@@ -207,7 +207,7 @@ namespace UninstallTools.Factory
                 entry.SortedExecutables = sorted.Select(x=>x.FullName).ToArray();
 
                 entry.InstallDate = directory.CreationTime;
-                //entry.IconBitmap = Icon.ExtractAssociatedIcon(compareBestMatchFile.FullName);
+                //entry.IconBitmap = TryExtractAssociatedIcon(compareBestMatchFile.FullName);
 
                 // Extract info from file metadata and overwrite old values
                 var compareBestMatchFile = sorted.First();

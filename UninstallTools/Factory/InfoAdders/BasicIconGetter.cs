@@ -3,8 +3,6 @@
     Apache License Version 2.0
 */
 
-using System;
-using System.Drawing;
 using System.IO;
 using Klocman.Tools;
 
@@ -42,20 +40,11 @@ namespace UninstallTools.Factory.InfoAdders
                     }
                 }
 
-                if (resultFilename != null)
+                var icon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(resultFilename);
+                if (icon != null)
                 {
-                    try
-                    {
-                        var icon = Icon.ExtractAssociatedIcon(resultFilename);
-                        if (icon != null)
-                        {
-                            entry.DisplayIcon = resultFilename;
-                            entry.IconBitmap = icon;
-                        }
-                    }
-                    catch (ArgumentException)
-                    {
-                    }
+                    entry.DisplayIcon = resultFilename;
+                    entry.IconBitmap = icon;
                 }
             }
         }

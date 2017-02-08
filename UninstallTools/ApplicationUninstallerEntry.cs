@@ -52,7 +52,6 @@ namespace UninstallTools
         private bool _certificateGotten;
         private bool? _certificateValid;
         private string _ratingId;
-        internal Icon IconBitmap = null;
         private string _installLocation;
         private string _installSource;
         private string _modifyPath;
@@ -219,6 +218,8 @@ namespace UninstallTools
         public string UninstallString { get; set; }
 
         internal string RawDisplayName { get; set; }
+
+        internal Icon IconBitmap { get; set; }
 
         /// <summary>
         ///     Check if the install location is not empty and is not a system directory

@@ -10,7 +10,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
-using UninstallTools.Factory;
 
 namespace UninstallTools.Controls
 {
@@ -69,7 +68,7 @@ namespace UninstallTools.Controls
             IconList.Images.Add(InvalidIconKey, SystemIcons.Exclamation);
             IconList.Images.Add(WindowsIconKey, SystemIcons.Shield); //SystemIcons.WinLogo); winlogo not working on xp?
             IconList.Images.Add(UpdateIconKey, SystemIcons.Shield);
-            var msiIcon = Icon.ExtractAssociatedIcon(windowsPath + @"\msiexec.exe");
+            var msiIcon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(windowsPath + @"\msiexec.exe");
             IconList.Images.Add(MsiexecIconKey, msiIcon ?? SystemIcons.Application);
 
             foreach (var obj in objList)

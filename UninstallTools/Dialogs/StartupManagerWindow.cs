@@ -223,19 +223,11 @@ namespace UninstallTools.Dialogs
             listView1.SmallImageList.Images.Add(SystemIcons.Warning);
             foreach (var entry in AllItems)
             {
-                try
+                if (entry.CommandFilePath != null && !listView1.SmallImageList.Images.ContainsKey(entry.ProgramName))
                 {
-                    if (entry.CommandFilePath != null && !listView1.SmallImageList.Images.ContainsKey(entry.ProgramName)
-                        && File.Exists(entry.CommandFilePath))
-                    {
-                        var icon = Icon.ExtractAssociatedIcon(entry.CommandFilePath);
-                        if (icon != null)
-                            listView1.SmallImageList.Images.Add(entry.ProgramName, icon);
-                    }
-                }
-                catch
-                {
-                    // Ignore failed icon gets
+                    var icon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(entry.CommandFilePath);
+                    if (icon != null)
+                        listView1.SmallImageList.Images.Add(entry.ProgramName, icon);
                 }
             }
 

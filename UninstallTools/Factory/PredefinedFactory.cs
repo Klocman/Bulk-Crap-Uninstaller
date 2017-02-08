@@ -88,7 +88,7 @@ namespace UninstallTools.Factory
             result.InstallDate = Directory.GetCreationTime(result.InstallLocation);
 
             if (!string.IsNullOrEmpty(result.DisplayIcon))
-                result.IconBitmap = Icon.ExtractAssociatedIcon(result.DisplayIcon);
+                result.IconBitmap = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(result.DisplayIcon);
 
             return result;
         }

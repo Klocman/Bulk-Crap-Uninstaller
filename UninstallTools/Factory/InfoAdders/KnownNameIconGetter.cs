@@ -4,7 +4,6 @@
 */
 
 using System;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -21,7 +20,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         public string[] RequiredValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.UninstallerLocation),
-            nameof(ApplicationUninstallerEntry.InstallLocation),
+            nameof(ApplicationUninstallerEntry.InstallLocation)
         };
 
         public bool RequiresAllValues { get; } = false;
@@ -31,8 +30,9 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.DisplayIcon),
             nameof(ApplicationUninstallerEntry.IconBitmap)
         };
+
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
-        
+
         public void AddMissingInformation(ApplicationUninstallerEntry entry)
         {
             if (entry.IconBitmap != null)
@@ -45,7 +45,7 @@ namespace UninstallTools.Factory.InfoAdders
             try
             {
                 // Look for icons with known names in InstallLocation and UninstallerLocation
-                var query = from targetDir in new[] { entry.InstallLocation, entry.UninstallerLocation }
+                var query = from targetDir in new[] {entry.InstallLocation, entry.UninstallerLocation}
                     where !string.IsNullOrEmpty(targetDir) && Directory.Exists(targetDir)
                     from iconName in IconNames
                     let combinedIconPath = Path.Combine(targetDir, iconName)
@@ -54,21 +54,21 @@ namespace UninstallTools.Factory.InfoAdders
 
                 foreach (var iconPath in query)
                 {
-                    try
+                    var icon = UninstallToolsGlobalConfig.TryExtractAssociatedIcon(iconPath);
+                    if (icon != null)
                     {
-                        var icon = Icon.ExtractAssociatedIcon(iconPath);
-                        if (icon != null)
-                        {
-                            entry.IconBitmap = icon;
-                            entry.DisplayIcon = iconPath;
-                            return;
-                        }
+                        entry.IconBitmap = icon;
+                        entry.DisplayIcon = iconPath;
+                        return;
                     }
-                    catch (ArgumentException) { }
                 }
             }
-            catch (SecurityException) { }
-            catch (UnauthorizedAccessException) { }
+            catch (SecurityException)
+            {
+            }
+            catch (UnauthorizedAccessException)
+            {
+            }
         }
     }
 }
