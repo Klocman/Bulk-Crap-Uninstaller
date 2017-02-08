@@ -564,6 +564,9 @@ namespace BulkCrapUninstaller.Forms
 
         private void SetupAndShowLegendWindow()
         {
+            if (IsDisposed || Disposing)
+                return;
+
             _listLegendWindow.Show(this);
             AddOwnedForm(_listLegendWindow);
 
