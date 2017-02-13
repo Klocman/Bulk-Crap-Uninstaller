@@ -1002,9 +1002,12 @@ namespace BulkCrapUninstaller.Forms
                 installLocationOpenInExplorerContextMenuStripItem,
                 uninstallerLocationOpenInExplorerContextMenuStripItem,
                 sourceLocationOpenInExplorerContextMenuStripItem,
-                openWebPageContextMenuStripItem
+                openWebPageContextMenuStripItem,
+                runToolStripMenuItem
             })
                 itemToDisable.Enabled = false;
+
+            runToolStripMenuItem.DropDownItems.Clear();
 
             foreach (var item in _listView.SelectedUninstallers)
             {
@@ -1014,23 +1017,25 @@ namespace BulkCrapUninstaller.Forms
                     if (item.QuietUninstallPossible) quietUninstallContextMenuStripItem.Enabled = true;
                 }
 
-                //if (item.UninstallPossible) copyToClipboardContextMenuStripItem.Enabled = true;
-                //if (item.UninstallPossible) fullInformationCopyContextMenuStripItem.Enabled = true;
-                //if (item.UninstallPossible) programNameCopyContextMenuStripItem.Enabled = true;
+                if (singleItem)
+                {
+                    foreach (var executable in item.GetSortedExecutables())
+                    {
+                        if (!runToolStripMenuItem.Enabled) runToolStripMenuItem.Enabled = true;
+
+                        runToolStripMenuItem.DropDownItems.Add(executable);
+                    }
+                }
+
                 if (!item.BundleProviderKey.IsEmpty()) gUIDProductCodeCopyContextMenuStripItem.Enabled = true;
-                //if (item.UninstallPossible) fullRegistryPathCopyContextMenuStripItem.Enabled = true;
                 if (item.UninstallPossible) uninstallStringCopyContextMenuStripItem.Enabled = true;
-
-                //if () deleteRegistryEntryContextMenuStripItem.Enabled = true;
-                //if (item.UninstallPossible) renameContextMenuStripItem.Enabled = true;
-
+                
                 if (item.InstallLocation.IsNotEmpty()) installLocationOpenInExplorerContextMenuStripItem.Enabled = true;
                 if (item.UninstallerLocation.IsNotEmpty())
                     uninstallerLocationOpenInExplorerContextMenuStripItem.Enabled = true;
                 if (item.InstallSource.IsNotEmpty()) sourceLocationOpenInExplorerContextMenuStripItem.Enabled = true;
 
                 if (item.AboutUrl.IsNotEmpty()) openWebPageContextMenuStripItem.Enabled = true;
-                //if (item.UninstallPossible) propertiesContextMenuStripItem.Enabled = true;
             }
 
             openInExplorerContextMenuStripItem.Enabled = installLocationOpenInExplorerContextMenuStripItem.Enabled ||
@@ -1281,6 +1286,11 @@ namespace BulkCrapUninstaller.Forms
             {
                 PremadeDialogs.GenericError(ex);
             }
+        }
+
+        private void runToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely(e.ClickedItem.Text);
         }
     }
 }

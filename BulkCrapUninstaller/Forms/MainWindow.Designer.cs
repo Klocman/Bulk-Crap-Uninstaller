@@ -24,6 +24,7 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -66,6 +67,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
+            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdvFiltering = new System.Windows.Forms.Button();
@@ -78,6 +80,8 @@ namespace BulkCrapUninstaller.Forms
             this.msiInstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msiUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msiQuietUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.copyToClipboardContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,8 +186,6 @@ namespace BulkCrapUninstaller.Forms
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -214,6 +216,11 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            // 
+            // advancedFilters1
+            // 
+            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
+            this.advancedFilters1.Name = "advancedFilters1";
             // 
             // listViewPanel
             // 
@@ -550,6 +557,18 @@ namespace BulkCrapUninstaller.Forms
             this.settingsSidebarPanel.Controls.Add(this.groupBox1);
             this.settingsSidebarPanel.Name = "settingsSidebarPanel";
             // 
+            // propertiesSidebar
+            // 
+            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
+            this.propertiesSidebar.InvalidEnabled = true;
+            this.propertiesSidebar.Name = "propertiesSidebar";
+            this.propertiesSidebar.OrphansEnabled = true;
+            this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.StoreAppsEnabled = true;
+            this.propertiesSidebar.SysCompEnabled = true;
+            this.propertiesSidebar.UpdatesEnabled = true;
+            this.propertiesSidebar.WinFeaturesEnabled = true;
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -583,6 +602,8 @@ namespace BulkCrapUninstaller.Forms
             this.quietUninstallContextMenuStripItem,
             this.manualUninstallToolStripMenuItem1,
             this.uninstallUsingMsiExecContextMenuStripItem,
+            this.toolStripSeparator3,
+            this.runToolStripMenuItem,
             this.toolStripSeparator8,
             this.copyToClipboardContextMenuStripItem,
             this.deleteRegistryEntryContextMenuStripItem,
@@ -642,6 +663,17 @@ namespace BulkCrapUninstaller.Forms
             this.msiQuietUninstallContextMenuStripItem.Name = "msiQuietUninstallContextMenuStripItem";
             resources.ApplyResources(this.msiQuietUninstallContextMenuStripItem, "msiQuietUninstallContextMenuStripItem");
             this.msiQuietUninstallContextMenuStripItem.Click += new System.EventHandler(this.msiQuietUninstallContextMenuStripItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // runToolStripMenuItem
+            // 
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            resources.ApplyResources(this.runToolStripMenuItem, "runToolStripMenuItem");
+            this.runToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.runToolStripMenuItem_DropDownItemClicked);
             // 
             // toolStripSeparator8
             // 
@@ -1355,23 +1387,6 @@ namespace BulkCrapUninstaller.Forms
             this.splashScreen1.ContainerControl = this;
             this.splashScreen1.SplashScreenImage = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
             // 
-            // advancedFilters1
-            // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
-            // 
-            // propertiesSidebar
-            // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.InvalidEnabled = true;
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            this.propertiesSidebar.OrphansEnabled = true;
-            this.propertiesSidebar.ProtectedEnabled = true;
-            this.propertiesSidebar.StoreAppsEnabled = true;
-            this.propertiesSidebar.SysCompEnabled = true;
-            this.propertiesSidebar.UpdatesEnabled = true;
-            this.propertiesSidebar.WinFeaturesEnabled = true;
-            // 
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
@@ -1574,6 +1589,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem toolStripMenuItem16;
         private ToolStripMenuItem openSystemRestoreToolStripMenuItem;
         private Klocman.Forms.SplashScreen splashScreen1;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem runToolStripMenuItem;
     }
 }
 

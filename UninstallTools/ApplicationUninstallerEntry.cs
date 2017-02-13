@@ -263,7 +263,10 @@ namespace UninstallTools
         ///     The most likely files are first, the least likely are last.
         /// </summary>
         internal string[] SortedExecutables { get; set; }
-        
+
+        public IEnumerable<string> GetSortedExecutables() =>
+            SortedExecutables == null ? Enumerable.Empty<string>() : SortedExecutables.AsEnumerable();
+
         public Uri GetUri()
         {
             var temp = AboutUrl;
