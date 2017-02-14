@@ -82,8 +82,7 @@ namespace UninstallTools.Factory
 
             // Get directories that can be relatively safely checked
             return directoriesToCheck.Where(check => !directoriesToSkip.Any(skip =>
-                check.Key.FullName.Contains(skip, StringComparison.InvariantCultureIgnoreCase)))
-                .Distinct((pair, otherPair) => PathTools.PathsEqual(pair.Key.FullName, otherPair.Key.FullName));
+                check.Key.FullName.Contains(skip, StringComparison.InvariantCultureIgnoreCase)));
         }
 
         /// <summary>
@@ -142,8 +141,7 @@ namespace UninstallTools.Factory
             {
                 try
                 {
-                    var directoryInfo = new DirectoryInfo(PathTools.PathToNormalCase(x).TrimEnd('\\'));
-                    return directoryInfo.Exists ? directoryInfo : null;
+                    return new DirectoryInfo(x);
                 }
                 catch
                 {
