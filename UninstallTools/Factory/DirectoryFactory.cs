@@ -82,7 +82,8 @@ namespace UninstallTools.Factory
 
             // Get directories that can be relatively safely checked
             return directoriesToCheck.Where(check => !directoriesToSkip.Any(skip =>
-                check.Key.FullName.Contains(skip, StringComparison.InvariantCultureIgnoreCase)));
+                check.Key.FullName.Contains(skip, StringComparison.InvariantCultureIgnoreCase)))
+                .Distinct((pair, otherPair) => PathTools.PathsEqual(pair.Key.FullName, otherPair.Key.FullName));
         }
 
         /// <summary>
@@ -141,7 +142,8 @@ namespace UninstallTools.Factory
             {
                 try
                 {
-                    return new DirectoryInfo(x);
+                    var directoryInfo = new DirectoryInfo(PathTools.PathToNormalCase(x).TrimEnd('\\'));
+                    return directoryInfo.Exists ? directoryInfo : null;
                 }
                 catch
                 {
@@ -204,7 +206,7 @@ namespace UninstallTools.Factory
                 }
 
                 var sorted = AppExecutablesSearcher.SortListExecutables(result.ExecutableFiles, entry.DisplayNameTrimmed).ToArray();
-                entry.SortedExecutables = sorted.Select(x=>x.FullName).ToArray();
+                entry.SortedExecutables = sorted.Select(x => x.FullName).ToArray();
 
                 entry.InstallDate = directory.CreationTime;
                 //entry.IconBitmap = TryExtractAssociatedIcon(compareBestMatchFile.FullName);
@@ -212,11 +214,11 @@ namespace UninstallTools.Factory
                 // Extract info from file metadata and overwrite old values
                 var compareBestMatchFile = sorted.First();
                 ExecutableAttributeExtractor.FillInformationFromFileAttribs(entry, compareBestMatchFile.FullName, false);
-                
+
                 results.Add(entry);
             }
         }
-        
+
         /// <summary>
         /// Try to get the main executable from the filtered folders. If no executables are present check subfolders.
         /// </summary>
