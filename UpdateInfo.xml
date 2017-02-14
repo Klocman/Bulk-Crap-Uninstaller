@@ -2,31 +2,23 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.7.1.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.7.1/BCUninstaller_3.7.1_portable.zip</URL>
+<Version>3.7.2.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.7.2/BCUninstaller_3.7.2_portable.zip</URL>
 <Changes>
-Extracted, generalized and improved code from directory factory - better detection overall.
-| Added info getter for is64bit.
-| Added info getter for finding uninstallers in install location.
-| Added info getter for finding application executables, speeds up certificate detection.
-| Added info getter for extracting info from executables.
-Added path cleanup to DisplayIcon.
-Added wait cursor after exiting startup manager.
-Improved and optimized logic for getting icons.
-Improved application searching speed slightly.
-Changed QuietUninstallStringCopier Priority to RunFirst because it's the fastest and has best results.
-Moved creation of UninstallerLocation to a separate info adder and fixed it sometimes failing.
-Code refactoring around info getters and factories.
-Fixed IO crashes in GetDirectoriesToScan with invalid directories.
-Fixed Path.IsPathRooted crash with some UninstallerFullFilenames.
-Fixed crash during junk search when junk names have invalid path characters.
-Fixed some disposed exceptions.
-Fixed bugs in path cleanup of InstallLocation, InstallSource and ModifyPath. Some valid paths were removed or modified.
-Fixed certificate highlighting sometimes not updating.
-Fixed info adders not updating some properties.
-Fixed some info URLs not being cleaned up properly.
-Fixed Msi INSTALLPROPERTY_LOCALPACKAGE not being assigned to UninstallerFullFilename.
+Added "Run..." context menu.
+Added "win32" and "win64" to binary directory names.
+Added update to Slovenian translation by Jadran Rudec.
+Updated Polish translation.
+Improved detection of program files directories during drive search.
+Fixed disposed exception when starting _listLegendWindow.Show and main window is gone.
+Fixed color legend ignoring the show legend setting.
+Fixed rare crashes when trying to get icons.
+Fixed icons not being populated in rare cases.
+Fixed crash when trying to rename entries under insufficient permissions.
+Fixed list refresh being closed twice when user times closing of main window, causing object disposed exceptions.
+Fixed some install locations and other paths being fully in lowercase.
+Fixed re-searching directories for applications in rare cases.
 </Changes>
-<Hash>d6b53577a7653c7c5ee0485b198dc2d8</Hash>
+<Hash>d9668c95dbb99a8d7ca06a025bc2efee</Hash>
 </Update>
 </Root>
