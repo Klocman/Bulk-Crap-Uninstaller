@@ -82,7 +82,7 @@ namespace UninstallTools.Factory
             return mergedResults;
         }
 
-        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults, 
+        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults,
             IEnumerable<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder)
         {
             // Create local copy
@@ -91,20 +91,18 @@ namespace UninstallTools.Factory
             var results = new List<ApplicationUninstallerEntry>(baseEntries);
             foreach (var entry in newResults)
             {
-                try
-                {
-                    var matchedEntry = baseEntries.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
-                    if (matchedEntry != null)
-                    {
-                        // Prevent setting incorrect UninstallerType
-                        if (matchedEntry.UninstallPossible)
-                            entry.UninstallerKind = UninstallerType.Unknown;
+                var matchedEntry = baseEntries.Where(x => CheckAreEntriesRelated(x, entry)).Take(2).ToList();
+                Debug.Assert(matchedEntry.Count < 2);
 
-                        infoAdder.CopyMissingInformation(matchedEntry, entry);
-                        continue;
-                    }
+                if (matchedEntry.Count == 1)
+                {
+                    // Prevent setting incorrect UninstallerType
+                    if (matchedEntry[0].UninstallPossible)
+                        entry.UninstallerKind = UninstallerType.Unknown;
+
+                    infoAdder.CopyMissingInformation(matchedEntry[0], entry);
+                    continue;
                 }
-                catch (InvalidOperationException) { Debug.Fail("MergeResults matched more than one entry"); }
 
                 // If the entry failed to match to anything, add it to the results
                 results.Add(entry);
