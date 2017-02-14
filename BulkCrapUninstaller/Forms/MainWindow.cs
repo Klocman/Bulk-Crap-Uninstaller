@@ -776,13 +776,16 @@ namespace BulkCrapUninstaller.Forms
                 Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
                 out output))
             {
-                if (selected.Rename(output))
+                try
                 {
-                    _listView.InitiateListRefresh();
+                    if (selected.Rename(output))
+                        _listView.InitiateListRefresh();
+                    else
+                        MessageBoxes.InvalidNewEntryName();
                 }
-                else
+                catch (Exception exception)
                 {
-                    MessageBoxes.InvalidNewEntryName();
+                    PremadeDialogs.GenericError(exception);
                 }
             }
         }
@@ -1029,7 +1032,7 @@ namespace BulkCrapUninstaller.Forms
 
                 if (!item.BundleProviderKey.IsEmpty()) gUIDProductCodeCopyContextMenuStripItem.Enabled = true;
                 if (item.UninstallPossible) uninstallStringCopyContextMenuStripItem.Enabled = true;
-                
+
                 if (item.InstallLocation.IsNotEmpty()) installLocationOpenInExplorerContextMenuStripItem.Enabled = true;
                 if (item.UninstallerLocation.IsNotEmpty())
                     uninstallerLocationOpenInExplorerContextMenuStripItem.Enabled = true;
