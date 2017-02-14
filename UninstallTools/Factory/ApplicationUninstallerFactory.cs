@@ -38,7 +38,7 @@ namespace UninstallTools.Factory
 
         public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(GetUninstallerListCallback callback)
         {
-            const int totalStepCount = 6;
+            const int totalStepCount = 7;
             // Find msi products
             callback(new GetUninstallerListProgress(0, totalStepCount));
             var msiProducts = MsiTools.MsiEnumProducts().ToList();
@@ -47,36 +47,38 @@ namespace UninstallTools.Factory
             callback(new GetUninstallerListProgress(1, totalStepCount));
             var registryFactory = new RegistryFactory(msiProducts);
             var registryResults = registryFactory.GetUninstallerEntries().ToList();
-            //todo fill in install location and uninstaller location for driveFactory
-            // find drive stuff (based on directories found in install locations, 2 or more apps installed in one location = scan location for drive stuff)
-            //results = results.DoForEach(entry => infoAdder.TryAddFieldInformation(entry, nameof(entry.InstallLocation)));
+
+            // Fill in instal llocations for the drive search
+            callback(new GetUninstallerListProgress(2, totalStepCount));
+            var infoAdder = new InfoAdderManager();
+            foreach (var result in registryResults)
+                infoAdder.AddMissingInformation(result, true);
 
             // Look for entries on drives, based on info in registry. Need to check for duplicates with other entries later
-            callback(new GetUninstallerListProgress(2, totalStepCount));
+            callback(new GetUninstallerListProgress(3, totalStepCount));
             var driveFactory = new DirectoryFactory(registryResults);
             var driveResults = driveFactory.GetUninstallerEntries();
 
             // Get misc entries that use fancy logic
-            callback(new GetUninstallerListProgress(3, totalStepCount));
+            callback(new GetUninstallerListProgress(4, totalStepCount));
             var otherResults = GetMiscUninstallerEntries();
 
             // Handle duplicate entries
-            callback(new GetUninstallerListProgress(4, totalStepCount));
-            var infoAdder = new InfoAdderManager();
+            callback(new GetUninstallerListProgress(5, totalStepCount));
             var mergedResults = registryResults.ToList();
             mergedResults = MergeResults(mergedResults, otherResults, infoAdder);
             // Make sure to merge driveResults last
             mergedResults = MergeResults(mergedResults, driveResults, infoAdder);
 
             // Fill in any missing information
-            callback(new GetUninstallerListProgress(5, totalStepCount));
+            callback(new GetUninstallerListProgress(6, totalStepCount));
             foreach (var result in mergedResults)
             {
                 infoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
 
-            callback(new GetUninstallerListProgress(6, totalStepCount));
+            callback(new GetUninstallerListProgress(7, totalStepCount));
             return mergedResults;
         }
 

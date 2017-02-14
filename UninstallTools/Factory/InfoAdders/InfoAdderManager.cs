@@ -66,9 +66,9 @@ namespace UninstallTools.Factory.InfoAdders
         /// <summary>
         /// Fill in information using all detected IMissingInfoAdder classes
         /// </summary>
-        public void AddMissingInformation(ApplicationUninstallerEntry target)
+        public void AddMissingInformation(ApplicationUninstallerEntry target, bool skipRunLast = false)
         {
-            var adders = InfoAdders.ToList();
+            var adders = InfoAdders.Where(x=> !skipRunLast || x.Priority > InfoAdderPriority.RunLast).ToList();
             var valueIsDefaultCache = new Dictionary<string, bool>();
 
             // Checks if the value is default, buffering the result
