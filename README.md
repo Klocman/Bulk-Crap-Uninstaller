@@ -1,3 +1,7 @@
+[![Download Bulk Crap Uninstaller](https://img.shields.io/sourceforge/dm/bulk-crap-uninstaller.svg)](https://sourceforge.net/projects/bulk-crap-uninstaller/files/latest/download)
+[![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)]()
+![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)
+
 # Bulk-Crap-Uninstaller
 Bulk Crap Uninstaller (or BCUninstaller) is a free (as in speech) program uninstaller. It excels at removing large amounts of applications with minimal user input. It can clean up leftovers, detect orphaned applications, run uninstallers according to premade lists, and much more! 
 Even though BCU was made with IT pros in mind, by default it is so straight-forward that anyone can use it.
