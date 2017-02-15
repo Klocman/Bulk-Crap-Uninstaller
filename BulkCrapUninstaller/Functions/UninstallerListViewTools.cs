@@ -346,9 +346,10 @@ namespace BulkCrapUninstaller.Functions
             ListRefreshIsRunning = true;
 
             _reference.LockApplication(true);
-            _reference.Refresh();
 
             StopProcessingThread(false);
+            if (CheckIsAppDisposed())
+                return;
 
             _listView.ListView.SuspendLayout();
             _listView.ListView.BeginUpdate();
