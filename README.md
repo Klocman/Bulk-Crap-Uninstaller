@@ -14,7 +14,7 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 
 
 ## Screenshots
-![Alt text](/Preview1.png?raw=true "First start preview")
+![Alt text](/doc/Preview.png?raw=true "First start preview")
 
 ## Features
 * Translated to French, Polish, Slovene, Czech, English, German, Russian. More coming!
