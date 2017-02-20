@@ -15,6 +15,7 @@ using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White.WindowsAPI;
+using Debug = System.Diagnostics.Debug;
 
 namespace UninstallerAutomatizer
 {
@@ -22,8 +23,10 @@ namespace UninstallerAutomatizer
     {
         private const string NsisForwardAutomationId = "1";
         private const string NsisCancelAutomationId = "2";
-        private static readonly string[] GoodButtonNames = {"Uninstall", "OK", "Accept", "Apply", "Close"};
-        private static readonly string[] ControlBoxButtonNames = {"Minimize", "Maximize", "Close"};
+        private const string NsisYesAutomationId = "6";
+        private const string NsisNoAutomationId = "7";
+        private static readonly string[] GoodButtonNames = { "Uninstall", "OK", "Accept", "Apply", "Close", "Yes" };
+        private static readonly string[] ControlBoxButtonNames = { "Minimize", "Maximize", "Close" };
 
         /// <summary>
         ///     Automate uninstallation of an NSIS uninstaller.
@@ -69,7 +72,7 @@ namespace UninstallerAutomatizer
                 {
                     // NSIS uninstallers always have only one window open (by default)
                     var windows = app.GetWindows();
-                    var target = windows.Single();
+                    var target = windows.First();
 
                     WaitForWindow(target);
 
@@ -136,8 +139,11 @@ namespace UninstallerAutomatizer
         /// </summary>
         private static void TryClickNextNsisButton(IUIItemContainer target)
         {
+            var badButtons = new[] { NsisCancelAutomationId, NsisNoAutomationId };
+            var goodButtons = new[] { NsisForwardAutomationId, NsisYesAutomationId };
+
             var allButtons =
-                target.GetMultiple(SearchCriteria.ByControlType(typeof (Button), WindowsFramework.Win32))
+                target.GetMultiple(SearchCriteria.ByControlType(typeof(Button), WindowsFramework.Win32))
                     .Cast<Button>();
 
             // Filter out buttons that should not be pressed like "Cancel".
@@ -145,22 +151,25 @@ namespace UninstallerAutomatizer
 
             var buttons = filteredButtons.Count > 1
                 ? filteredButtons
-                    .Where(x => !x.Id.Equals(NsisCancelAutomationId, StringComparison.InvariantCulture))
+                    .Where(x => badButtons.Any(y => !x.Id.Equals(y, StringComparison.InvariantCulture)))
                     .ToList()
                 : filteredButtons;
 
             if (buttons.Any())
             {
-                var nextButton =
-                    buttons.FirstOrDefault(
-                        x => x.Id.Equals(NsisForwardAutomationId, StringComparison.InvariantCulture));
+                var nextButton = buttons.FirstOrDefault(x =>
+                             goodButtons.Any(
+                                 y => !x.Id.Equals(y, StringComparison.InvariantCulture)));
 
                 if (nextButton == null)
                 {
                     nextButton = TryGetByName(buttons);
 
                     if (nextButton == null)
+                    {
+                        Debug.Fail("Nothing to press!");
                         return;
+                    }
                 }
 
                 // Finally press the button, doesn't require messing with the mouse.
