@@ -174,6 +174,7 @@ namespace UninstallerAutomatizer
 
                 // Finally press the button, doesn't require messing with the mouse.
                 //nextButton.RaiseClickEvent();
+                nextButton.Focus();
                 nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
             }
         }
