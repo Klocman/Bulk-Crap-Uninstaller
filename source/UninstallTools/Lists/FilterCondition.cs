@@ -7,7 +7,6 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Klocman.Extensions;
-using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Lists
@@ -37,7 +36,7 @@ namespace UninstallTools.Lists
         {
             return new FilterCondition (FilterText, ComparisonMethod, null)
             {
-                TargetProperty = TargetProperty,
+                TargetProperty = TargetProperty
             };
         }
 

@@ -33,7 +33,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
 
-        static string GetUninstallerFilename(string uninstallString)
+        private static string GetUninstallerFilename(string uninstallString)
         {
             if (!string.IsNullOrEmpty(uninstallString))
             {

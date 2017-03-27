@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using Klocman.Tools;
-using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {
@@ -61,7 +60,7 @@ namespace UninstallTools.Junk
             if (lowestLength <= 4)
                 return -1;
 
-            int result = StringTools.CompareSimilarity(productName, str);
+            var result = StringTools.CompareSimilarity(productName, str);
 
             // Strings match perfectly
             if (result <= 1)

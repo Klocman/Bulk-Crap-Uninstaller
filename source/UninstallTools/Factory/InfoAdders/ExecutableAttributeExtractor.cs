@@ -28,7 +28,7 @@ namespace UninstallTools.Factory.InfoAdders
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.RawDisplayName),
             nameof(ApplicationUninstallerEntry.DisplayVersion),
-            nameof(ApplicationUninstallerEntry.Publisher),
+            nameof(ApplicationUninstallerEntry.Publisher)
             //nameof(ApplicationUninstallerEntry.Comment)
         };
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;

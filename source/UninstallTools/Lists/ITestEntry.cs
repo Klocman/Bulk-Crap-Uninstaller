@@ -3,8 +3,6 @@
     Apache License Version 2.0
 */
 
-using UninstallTools.Factory;
-
 namespace UninstallTools.Lists
 {
     public interface ITestEntry

@@ -5,7 +5,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk

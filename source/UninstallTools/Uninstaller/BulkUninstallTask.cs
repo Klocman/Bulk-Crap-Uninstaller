@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
 using Klocman.Localising;
-using UninstallTools.Factory;
 
 namespace UninstallTools.Uninstaller
 {

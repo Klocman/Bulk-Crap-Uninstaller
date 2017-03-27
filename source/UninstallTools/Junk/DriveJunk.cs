@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {
@@ -84,7 +83,7 @@ namespace UninstallTools.Junk
                 return false;
 
             var fullname = location.FullName;
-            return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.OrdinalIgnoreCase));
+            return OtherInstallLocations.Any(x => x.Equals(fullname, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public override IEnumerable<JunkNode> FindJunk()
@@ -95,7 +94,7 @@ namespace UninstallTools.Junk
             if (uninLoc.IsNotEmpty()
                 && UninstallToolsGlobalConfig.AllProgramFiles.Any(
                     x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase))
-                && !OtherInstallLocations.Any(x => uninLoc.StartsWith(x) || x.StartsWith(uninLoc)))
+                && !OtherInstallLocations.Any(x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase) || x.StartsWith(uninLoc, StringComparison.InvariantCultureIgnoreCase)))
             {
                 var resultNode = GetJunkNodeFromLocation(uninLoc);
                 if (resultNode != null)

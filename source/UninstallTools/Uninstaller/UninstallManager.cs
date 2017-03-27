@@ -12,7 +12,6 @@ using System.Security.Permissions;
 using System.Threading;
 using Klocman.Extensions;
 using Klocman.Tools;
-using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller

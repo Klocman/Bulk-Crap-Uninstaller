@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
-using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk

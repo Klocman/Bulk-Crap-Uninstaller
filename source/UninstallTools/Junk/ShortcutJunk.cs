@@ -5,12 +5,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Native;
 using Klocman.Tools;
 using Klocman.Extensions;
-using UninstallTools.Factory;
 
 namespace UninstallTools.Junk
 {
@@ -47,6 +47,7 @@ namespace UninstallTools.Junk
                 }
                 catch
                 {
+                    Debug.Fail("Failed to resolve shortcut " + linkFilename);
                 }
             }
 
