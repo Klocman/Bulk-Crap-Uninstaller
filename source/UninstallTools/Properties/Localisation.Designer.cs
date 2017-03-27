@@ -601,6 +601,159 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scanning application stores....
+        /// </summary>
+        internal static string Progress_AppStores {
+            get {
+                return ResourceManager.GetString("Progress_AppStores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searching for Steam Apps.
+        /// </summary>
+        internal static string Progress_AppStores_Steam {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_Steam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searching for application templates.
+        /// </summary>
+        internal static string Progress_AppStores_Templates {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_Templates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searching for Windows Features.
+        /// </summary>
+        internal static string Progress_AppStores_WinFeatures {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_WinFeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searching for Windows Store Apps.
+        /// </summary>
+        internal static string Progress_AppStores_WinStore {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_WinStore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scanning drives for applications....
+        /// </summary>
+        internal static string Progress_DriveScan {
+            get {
+                return ResourceManager.GetString("Progress_DriveScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gathering directories.
+        /// </summary>
+        internal static string Progress_DriveScan_Gathering {
+            get {
+                return ResourceManager.GetString("Progress_DriveScan_Gathering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generating missing uninstaller information....
+        /// </summary>
+        internal static string Progress_GatherUninstallerInfo {
+            get {
+                return ResourceManager.GetString("Progress_GatherUninstallerInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generating missing information....
+        /// </summary>
+        internal static string Progress_GeneratingInfo {
+            get {
+                return ResourceManager.GetString("Progress_GeneratingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merging discovered applications....
+        /// </summary>
+        internal static string Progress_Merging {
+            get {
+                return ResourceManager.GetString("Progress_Merging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merging applications from drives.
+        /// </summary>
+        internal static string Progress_Merging_Drives {
+            get {
+                return ResourceManager.GetString("Progress_Merging_Drives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merging applications from stores.
+        /// </summary>
+        internal static string Progress_Merging_Stores {
+            get {
+                return ResourceManager.GetString("Progress_Merging_Stores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scanning installed MSI products....
+        /// </summary>
+        internal static string Progress_MSI {
+            get {
+                return ResourceManager.GetString("Progress_MSI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found {0} application GUIDs.
+        /// </summary>
+        internal static string Progress_MSI_sub {
+            get {
+                return ResourceManager.GetString("Progress_MSI_sub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scanning registry for uninstallers....
+        /// </summary>
+        internal static string Progress_Registry {
+            get {
+                return ResourceManager.GetString("Progress_Registry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gathering registry keys.
+        /// </summary>
+        internal static string Progress_Registry_Gathering {
+            get {
+                return ResourceManager.GetString("Progress_Registry_Gathering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing {0}.
+        /// </summary>
+        internal static string Progress_Registry_Processing {
+            get {
+                return ResourceManager.GetString("Progress_Registry_Processing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Publisher name.
         /// </summary>
         internal static string Publisher {

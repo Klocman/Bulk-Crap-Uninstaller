@@ -13,6 +13,7 @@ using Klocman.Forms.Tools;
 using Klocman.IO;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
@@ -22,67 +23,111 @@ namespace UninstallTools.Factory
 
         public class GetUninstallerListProgress
         {
-            internal GetUninstallerListProgress(int currentCount, int totalCount)
+            internal GetUninstallerListProgress(int currentCount, int totalCount, string message)
             {
                 TotalCount = totalCount;
+                Message = message;
                 CurrentCount = currentCount;
             }
 
             public int CurrentCount { get; }
+            /// <summary>
+            /// -1 if unknown
+            /// </summary>
             public int TotalCount { get; }
+            public string Message { get; }
 
-            // TODO public GetUninstallerListProgress Inner { get; internal set; }
-            //public ApplicationUninstallerEntry FinishedEntry { get; internal set; }
+            //public GetUninstallerListProgress Clone() => (GetUninstallerListProgress)MemberwiseClone();
+
+            public GetUninstallerListProgress Inner { get; internal set; }
         }
-
-
+        
         public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(GetUninstallerListCallback callback)
         {
-            const int totalStepCount = 7;
+            const int totalStepCount = 8;
+            var currentStep = 1;
+
             // Find msi products
-            callback(new GetUninstallerListProgress(0, totalStepCount));
-            var msiProducts = MsiTools.MsiEnumProducts().ToList();
+            var msiProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_MSI);
+            callback(msiProgress);
+            var msiGuidCount = 0;
+            var msiProducts = MsiTools.MsiEnumProducts().DoForEach(x =>
+            {
+                msiProgress.Inner = new GetUninstallerListProgress(0, -1, string.Format(Localisation.Progress_MSI_sub, ++msiGuidCount));
+                callback(msiProgress);
+            }).ToList();
 
             // Find stuff mentioned in registry
-            callback(new GetUninstallerListProgress(1, totalStepCount));
+            var regProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_Registry);
+            callback(regProgress);
             var registryFactory = new RegistryFactory(msiProducts);
-            var registryResults = registryFactory.GetUninstallerEntries().ToList();
+            var registryResults = registryFactory.GetUninstallerEntries(report =>
+            {
+                regProgress.Inner = report;
+                callback(regProgress);
+            }).ToList();
 
             // Fill in instal llocations for the drive search
-            callback(new GetUninstallerListProgress(2, totalStepCount));
+            var installLocAddProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
+            callback(installLocAddProgress);
             var infoAdder = new InfoAdderManager();
+            var installLocAddCount = 0;
             foreach (var result in registryResults)
+            {
+                installLocAddProgress.Inner = new GetUninstallerListProgress(installLocAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
+                callback(installLocAddProgress);
+
                 infoAdder.AddMissingInformation(result, true);
+            }
 
             // Look for entries on drives, based on info in registry. Need to check for duplicates with other entries later
-            callback(new GetUninstallerListProgress(3, totalStepCount));
+            var driveProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
+            callback(driveProgress);
             var driveFactory = new DirectoryFactory(registryResults);
-            var driveResults = driveFactory.GetUninstallerEntries();
+            var driveResults = driveFactory.GetUninstallerEntries(report => 
+            {
+                driveProgress.Inner = report;
+                callback(driveProgress);
+            }).ToList();
 
             // Get misc entries that use fancy logic
-            callback(new GetUninstallerListProgress(4, totalStepCount));
-            var otherResults = GetMiscUninstallerEntries();
+            var miscProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_AppStores);
+            callback(miscProgress);
+            var otherResults = GetMiscUninstallerEntries(report =>
+            {
+                miscProgress.Inner = report;
+                callback(miscProgress);
+            });
 
             // Handle duplicate entries
-            callback(new GetUninstallerListProgress(5, totalStepCount));
+            var mergeProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
+            mergeProgress.Inner = new GetUninstallerListProgress(1, 4, Localisation.Progress_Merging_Stores);
+            callback(mergeProgress);
             var mergedResults = registryResults.ToList();
             mergedResults = MergeResults(mergedResults, otherResults, infoAdder);
             // Make sure to merge driveResults last
+            mergeProgress.Inner = new GetUninstallerListProgress(3, 4, Localisation.Progress_Merging_Drives);
+            callback(mergeProgress);
             mergedResults = MergeResults(mergedResults, driveResults, infoAdder);
 
             // Fill in any missing information
-            callback(new GetUninstallerListProgress(6, totalStepCount));
+            var infoAddProgress = new GetUninstallerListProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
+            callback(infoAddProgress);
+            var infoAddCount = 0;
             foreach (var result in mergedResults)
             {
+                infoAddProgress.Inner = new GetUninstallerListProgress(infoAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
+                callback(infoAddProgress);
+
                 infoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
 
-            callback(new GetUninstallerListProgress(7, totalStepCount));
+            //callback(new GetUninstallerListProgress(currentStep, totalStepCount, "Finished"));
             return mergedResults;
         }
 
-        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults, 
+        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults,
             IEnumerable<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder)
         {
             // Create local copy
@@ -175,23 +220,24 @@ namespace UninstallTools.Factory
             var changesRequired = StringTools.CompareSimilarity(a, b);
             return changesRequired < a.Length / 6;
         }
-
-        // todo move to a second thread?
-        private static IEnumerable<ApplicationUninstallerEntry> GetMiscUninstallerEntries()
+        
+        private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(GetUninstallerListCallback progressCallback)
         {
             var otherResults = new List<ApplicationUninstallerEntry>();
-            var miscFactories = new IUninstallerFactory[]
+            var miscFactories = new[]
             {
-                new PredefinedFactory(),
-                new SteamFactory(),
-                new StoreAppFactory(),
-                new WindowsFeatureFactory()
+                new KeyValuePair<IUninstallerFactory,string>(new PredefinedFactory(), Localisation.Progress_AppStores_Templates),
+                new KeyValuePair<IUninstallerFactory,string>(new SteamFactory(), Localisation.Progress_AppStores_Steam),
+                new KeyValuePair<IUninstallerFactory,string>(new StoreAppFactory(), Localisation.Progress_AppStores_WinStore),
+                new KeyValuePair<IUninstallerFactory,string>(new WindowsFeatureFactory(), Localisation.Progress_AppStores_WinFeatures)
             };
-            foreach (var uninstallerFactory in miscFactories)
+            var progress = 0;
+            foreach (var kvp in miscFactories)
             {
+                progressCallback(new GetUninstallerListProgress(progress++, miscFactories.Length, kvp.Value));
                 try
                 {
-                    otherResults.AddRange(uninstallerFactory.GetUninstallerEntries());
+                    otherResults.AddRange(kvp.Key.GetUninstallerEntries(null));
                 }
                 catch (Exception ex)
                 {

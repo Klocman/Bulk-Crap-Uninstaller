@@ -64,7 +64,8 @@ namespace UninstallTools.Factory
         internal static string SteamHelperPath
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+            ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
         {
             return GetSteamApps();
         }

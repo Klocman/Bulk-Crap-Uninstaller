@@ -444,4 +444,55 @@
     <value>All properties</value>
     <comment>Used in the search box to specify what's being compared</comment>
   </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Scanning installed MSI products...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Found {0} application GUIDs</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Scanning registry for uninstallers...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Gathering registry keys</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Processing {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Generating missing uninstaller information...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Scanning drives for applications...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Gathering directories</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Scanning application stores...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Searching for application templates</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Searching for Steam Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Searching for Windows Store Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Searching for Windows Features</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Merging discovered applications...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Merging applications from stores</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Merging applications from drives</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Generating missing information...</value>
+  </data>
 </root>

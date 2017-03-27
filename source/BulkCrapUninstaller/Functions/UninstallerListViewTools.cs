@@ -476,15 +476,33 @@ namespace BulkCrapUninstaller.Functions
 
         private void ListRefreshThread(LoadingDialogInterface dialogInterface)
         {
+            dialogInterface.SetSubProgressVisible(true);
             AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
                 dialogInterface.SetMaximum(x.TotalCount);
-                dialogInterface.SetProgress(x.CurrentCount);
+                dialogInterface.SetProgress(x.CurrentCount, x.Message);
+
+                var inner = x.Inner;
+                if (inner != null)
+                {
+                    dialogInterface.SetSubMaximum(inner.TotalCount);
+                    dialogInterface.SetSubProgress(inner.CurrentCount, inner.Message);
+                }
+                else
+                {
+                    dialogInterface.SetSubMaximum(-1);
+                    dialogInterface.SetSubProgress(0, string.Empty);
+                }
 
                 if (dialogInterface.Abort)
                     throw new OperationCanceledException();
             });
 
+            dialogInterface.SetMaximum(9);
+            dialogInterface.SetProgress(9, Localisable.Progress_Finishing);
+            dialogInterface.SetSubMaximum(5);
+
+            dialogInterface.SetSubProgress(2, Localisable.Progress_Finishing_Icons);
             try
             {
                 _iconGetter.UpdateIconList(AllUninstallers);
@@ -494,6 +512,7 @@ namespace BulkCrapUninstaller.Functions
                 PremadeDialogs.GenericError(ex);
             }
 
+            dialogInterface.SetSubProgress(4, Localisable.Progress_Finishing_Startup);
             try
             {
                 ReassignStartupEntries(false);
@@ -502,6 +521,8 @@ namespace BulkCrapUninstaller.Functions
             {
                 PremadeDialogs.GenericError(ex);
             }
+
+            //dialogInterface.SetSubProgress(3, string.Empty);
         }
 
         /// <summary>

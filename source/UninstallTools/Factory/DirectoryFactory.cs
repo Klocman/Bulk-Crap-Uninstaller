@@ -10,6 +10,7 @@ using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
@@ -24,8 +25,10 @@ namespace UninstallTools.Factory
             _existingUninstallerEntries = existing;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
         {
+            progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(0, -1, Localisation.Progress_DriveScan_Gathering));
+
             var existingUninstallers = _existingUninstallerEntries.ToList();
 
             var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
@@ -33,9 +36,12 @@ namespace UninstallTools.Factory
 
             var results = new List<ApplicationUninstallerEntry>();
 
-            var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip);
+            var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
+            var progress = 0;
             foreach (var directory in itemsToScan)
             {
+                progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(progress++, itemsToScan.Count, directory.Key.FullName));
+
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||
                     directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     continue;

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security;
 using Klocman.Extensions;
@@ -13,6 +14,7 @@ using Klocman.IO;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
@@ -30,9 +32,11 @@ namespace UninstallTools.Factory
             _windowsInstallerValidGuids = windowsInstallerValidGuids;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
         {
             var uninstallerRegistryKeys = new List<KeyValuePair<RegistryKey, bool>>();
+
+            progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(0, -1, Localisation.Progress_Registry_Gathering));
 
             foreach (var kvp in GetParentRegistryKeys())
             {
@@ -47,8 +51,14 @@ namespace UninstallTools.Factory
 
             var applicationUninstallers = new List<ApplicationUninstallerEntry>();
 
+            var progress = 0;
             foreach (var regKey in uninstallerRegistryKeys)
             {
+                string name;
+                try { name = Path.GetFileName(regKey.Key.Name); }
+                catch { name = string.Empty; }
+                progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(progress++, uninstallerRegistryKeys.Count, string.Format(Localisation.Progress_Registry_Processing, name)));
+
                 try
                 {
                     var entry = TryCreateFromRegistry(regKey.Key, regKey.Value);

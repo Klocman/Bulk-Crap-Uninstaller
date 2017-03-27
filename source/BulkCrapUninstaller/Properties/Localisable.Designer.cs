@@ -1523,6 +1523,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finishing up....
+        /// </summary>
+        internal static string Progress_Finishing {
+            get {
+                return ResourceManager.GetString("Progress_Finishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading icons.
+        /// </summary>
+        internal static string Progress_Finishing_Icons {
+            get {
+                return ResourceManager.GetString("Progress_Finishing_Icons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searching for start-up entries.
+        /// </summary>
+        internal static string Progress_Finishing_Startup {
+            get {
+                return ResourceManager.GetString("Progress_Finishing_Startup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string PropertiesWindow_Table_Error {

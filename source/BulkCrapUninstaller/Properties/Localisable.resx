@@ -720,4 +720,13 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="Error_SaveSettingsFailed" xml:space="preserve">
     <value>Failed to save settings</value>
   </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Finishing up...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Loading icons</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Searching for start-up entries</value>
+  </data>
 </root>

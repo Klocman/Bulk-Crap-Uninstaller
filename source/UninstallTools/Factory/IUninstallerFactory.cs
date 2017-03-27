@@ -9,6 +9,6 @@ namespace UninstallTools.Factory
 {
     public interface IUninstallerFactory
     {
-        IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries();
+        IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback);
     }
 }

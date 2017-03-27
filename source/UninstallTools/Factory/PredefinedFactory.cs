@@ -4,7 +4,6 @@
 */
 
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.IO;
@@ -18,7 +17,8 @@ namespace UninstallTools.Factory
     /// </summary>
     public class PredefinedFactory : IUninstallerFactory
     {
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries()
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+            ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
         {
             var items = new List<ApplicationUninstallerEntry>();
             var i = GetOneDrive();
