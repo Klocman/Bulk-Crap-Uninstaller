@@ -165,7 +165,8 @@ namespace BulkCrapUninstaller.Forms
             MessageBoxes.DefaultOwner = this;
             LoadingDialog.DefaultOwner = this;
             PremadeDialogs.DefaultOwner = this;
-
+            PremadeDialogs.SendErrorAction = exception => NBug.Exceptions.Report(exception);
+            
             SetupHotkeys();
         }
 
