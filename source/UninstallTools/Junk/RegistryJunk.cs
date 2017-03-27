@@ -134,7 +134,7 @@ namespace UninstallTools.Junk
 
             if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
                 return returnList;
-            
+
             foreach (var userAssistGuid in UserAssistGuids)
             {
                 using (var key = RegistryTools.OpenRegistryKey(
@@ -153,7 +153,7 @@ namespace UninstallTools.Junk
                             convertedName = NativeMethods.GetKnownFolderPath(g) + convertedName.Substring(guidEnd);
 
                         // Check for matches
-                        if (convertedName.StartsWith(Uninstaller.InstallLocation, 
+                        if (convertedName.StartsWith(Uninstaller.InstallLocation,
                             StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryValueJunkNode(key.Name, valueName, Uninstaller.DisplayName);
@@ -192,7 +192,7 @@ namespace UninstallTools.Junk
             }
 
             [DllImport("shell32.dll")]
-            private static extern int SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, 
+            private static extern int SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid,
                 uint dwFlags, IntPtr hToken, out IntPtr pszPath);
         }
 
@@ -203,8 +203,10 @@ namespace UninstallTools.Junk
             if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
                 return returnList;
 
-            var unrootedLocation = Uninstaller.InstallLocation.Replace(
-                Path.GetPathRoot(Uninstaller.InstallLocation), string.Empty);
+            var pathRoot = Path.GetPathRoot(Uninstaller.InstallLocation);
+            var unrootedLocation = pathRoot.Length >= 1
+                ? Uninstaller.InstallLocation.Replace(pathRoot, string.Empty)
+                : Uninstaller.InstallLocation;
 
             if (string.IsNullOrEmpty(unrootedLocation.Trim()))
                 return returnList;
