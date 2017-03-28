@@ -117,6 +117,8 @@ namespace UninstallTools.Junk
 
             returnList.AddRange(ScanUserAssist());
 
+            returnList.AddRange(ScanEventLogs());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -128,12 +130,42 @@ namespace UninstallTools.Junk
             return returnList;
         }
 
+        private IEnumerable<JunkNode> ScanEventLogs()
+        {
+            using (var key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application"))
+            {
+                if (key == null) yield break;
+
+                var query = from name in key.GetSubKeyNames()
+                    let m = MatchStringToProductName(name)
+                    where m >= 0 && m < 3
+                    //orderby m ascending
+                    select name;
+                
+                foreach (var result in query)
+                {
+                    using (var subkey = key.OpenSubKey(result))
+                    {
+                        var exePath = subkey?.GetValue("EventMessageFile") as string;
+                        if (string.IsNullOrEmpty(exePath) || !TestPathsMatchExe(exePath)) continue;
+
+                        var node = new RegistryKeyJunkNode(key.Name, result, Uninstaller.DisplayName);
+                        // Already matched names above
+                        node.Confidence.Add(ConfidencePart.ProductNamePerfectMatch);
+
+                        if(OtherUninstallers.Any(x=>TestPathsMatch(x.InstallLocation, Path.GetDirectoryName(exePath))))
+                            node.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+
+                        yield return node;
+                    }
+                }
+            }
+        }
+
         private IEnumerable<JunkNode> ScanUserAssist()
         {
-            var returnList = new List<JunkNode>();
-
             if (string.IsNullOrEmpty(Uninstaller.InstallLocation))
-                return returnList;
+                yield break;
 
             foreach (var userAssistGuid in UserAssistGuids)
             {
@@ -158,13 +190,11 @@ namespace UninstallTools.Junk
                         {
                             var junk = new RegistryValueJunkNode(key.Name, valueName, Uninstaller.DisplayName);
                             junk.Confidence.Add(ConfidencePart.ExplicitConnection);
-                            returnList.Add(junk);
+                            yield return junk;
                         }
                     }
                 }
             }
-
-            return returnList;
         }
 
         private static string Rot13(string input)
@@ -522,17 +552,17 @@ namespace UninstallTools.Junk
             return results;
         }
 
-        private bool TestPathsMatch(string basePath, string childPath)
+        private bool TestPathsMatch(string basePath, string testPath)
         {
             basePath = basePath?.Normalize().Trim().Trim('\\', '/');
             if (string.IsNullOrEmpty(basePath))
                 return false;
 
-            childPath = childPath?.Normalize().Trim().Trim('\\', '/');
-            if (string.IsNullOrEmpty(childPath))
+            testPath = testPath?.Normalize().Trim().Trim('\\', '/');
+            if (string.IsNullOrEmpty(testPath))
                 return false;
 
-            return childPath.StartsWith(basePath, StringComparison.InvariantCultureIgnoreCase);
+            return testPath.StartsWith(basePath, StringComparison.InvariantCultureIgnoreCase);
         }
 
         private bool TestPathsMatchExe(string keyValue)

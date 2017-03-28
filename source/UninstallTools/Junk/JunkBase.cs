@@ -50,6 +50,9 @@ namespace UninstallTools.Junk
             return returnValue;
         }
 
+        /// <summary>
+        /// -1 if match failed, 0 if string matched perfectly, higher if match was worse
+        /// </summary>
         protected int MatchStringToProductName(string str)
         {
             var productName = Uninstaller.DisplayNameTrimmed.ToLowerInvariant();
