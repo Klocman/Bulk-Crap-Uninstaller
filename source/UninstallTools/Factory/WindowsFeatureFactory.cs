@@ -16,7 +16,7 @@ namespace UninstallTools.Factory
     public class WindowsFeatureFactory : IUninstallerFactory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
-            ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
+            ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             if (Environment.OSVersion.Version < WindowsTools.Windows7)
                 return Enumerable.Empty<ApplicationUninstallerEntry>();

@@ -32,11 +32,11 @@ namespace UninstallTools.Factory
             _windowsInstallerValidGuids = windowsInstallerValidGuids;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var uninstallerRegistryKeys = new List<KeyValuePair<RegistryKey, bool>>();
 
-            progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(0, -1, Localisation.Progress_Registry_Gathering));
+            progressCallback(new ListGenerationProgress(0, -1, Localisation.Progress_Registry_Gathering));
 
             foreach (var kvp in GetParentRegistryKeys())
             {
@@ -57,7 +57,7 @@ namespace UninstallTools.Factory
                 string name;
                 try { name = Path.GetFileName(regKey.Key.Name); }
                 catch { name = string.Empty; }
-                progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(progress++, uninstallerRegistryKeys.Count, string.Format(Localisation.Progress_Registry_Processing, name)));
+                progressCallback(new ListGenerationProgress(progress++, uninstallerRegistryKeys.Count, string.Format(Localisation.Progress_Registry_Processing, name)));
 
                 try
                 {

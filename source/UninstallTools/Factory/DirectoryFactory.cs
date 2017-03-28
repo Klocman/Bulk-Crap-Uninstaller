@@ -25,9 +25,9 @@ namespace UninstallTools.Factory
             _existingUninstallerEntries = existing;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
+        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(0, -1, Localisation.Progress_DriveScan_Gathering));
+            progressCallback(new ListGenerationProgress(0, -1, Localisation.Progress_DriveScan_Gathering));
 
             var existingUninstallers = _existingUninstallerEntries.ToList();
 
@@ -40,7 +40,7 @@ namespace UninstallTools.Factory
             var progress = 0;
             foreach (var directory in itemsToScan)
             {
-                progressCallback(new ApplicationUninstallerFactory.GetUninstallerListProgress(progress++, itemsToScan.Count, directory.Key.FullName));
+                progressCallback(new ListGenerationProgress(progress++, itemsToScan.Count, directory.Key.FullName));
 
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||
                     directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))

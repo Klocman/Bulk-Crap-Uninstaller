@@ -96,6 +96,7 @@
     <Compile Include="Junk\ShortcutJunk.cs" />
     <Compile Include="Junk\StartupJunk.cs" />
     <Compile Include="Junk\StartupJunkNode.cs" />
+    <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
     <Compile Include="Lists\ComparisonTargetAttribute.cs" />
     <Compile Include="Lists\ComparisonTargetInfo.cs" />

@@ -18,7 +18,7 @@ namespace UninstallTools.Factory
     public class PredefinedFactory : IUninstallerFactory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
-            ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
+            ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var items = new List<ApplicationUninstallerEntry>();
             var i = GetOneDrive();

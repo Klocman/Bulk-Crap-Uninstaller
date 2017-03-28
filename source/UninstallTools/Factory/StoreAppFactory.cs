@@ -19,7 +19,7 @@ namespace UninstallTools.Factory
         private static string StoreAppHelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
-            ApplicationUninstallerFactory.GetUninstallerListCallback progressCallback)
+            ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
                 yield break;
