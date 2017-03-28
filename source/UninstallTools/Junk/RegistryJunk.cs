@@ -119,6 +119,8 @@ namespace UninstallTools.Junk
 
             returnList.AddRange(ScanEventLogs());
 
+            returnList.AddRange(ScanInstallerFolders());
+
             if (Uninstaller.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(Uninstaller.RegistryPath),
@@ -130,18 +132,46 @@ namespace UninstallTools.Junk
             return returnList;
         }
 
+        private IEnumerable<JunkNode> ScanInstallerFolders()
+        {
+            var installLocation = Uninstaller.InstallLocation;
+            if (string.IsNullOrEmpty(installLocation)) yield break;
+
+            using (var key = Registry.LocalMachine.OpenSubKey(
+                @"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\Folders"))
+            {
+                if (key == null) yield break;
+
+                foreach (var path in key.GetValueNames())
+                {
+                    if (!TestPathsMatch(installLocation, path)) continue;
+
+                    var node = new RegistryValueJunkNode(key.Name, path, Uninstaller.DisplayName);
+                    node.Confidence.Add(ConfidencePart.ExplicitConnection);
+
+                    if (OtherUninstallers.Any(x => TestPathsMatch(x.InstallLocation, path)))
+                        node.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+
+                    yield return node;
+                }
+            }
+        }
+
         private IEnumerable<JunkNode> ScanEventLogs()
         {
-            using (var key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\EventLog\Application"))
+            if (string.IsNullOrEmpty(Uninstaller.InstallLocation)) yield break;
+
+            using (var key = Registry.LocalMachine.OpenSubKey(
+                @"SYSTEM\CurrentControlSet\Services\EventLog\Application"))
             {
                 if (key == null) yield break;
 
                 var query = from name in key.GetSubKeyNames()
-                    let m = MatchStringToProductName(name)
-                    where m >= 0 && m < 3
-                    //orderby m ascending
-                    select name;
-                
+                            let m = MatchStringToProductName(name)
+                            where m >= 0 && m < 3
+                            //orderby m ascending
+                            select name;
+
                 foreach (var result in query)
                 {
                     using (var subkey = key.OpenSubKey(result))
@@ -153,7 +183,7 @@ namespace UninstallTools.Junk
                         // Already matched names above
                         node.Confidence.Add(ConfidencePart.ProductNamePerfectMatch);
 
-                        if(OtherUninstallers.Any(x=>TestPathsMatch(x.InstallLocation, Path.GetDirectoryName(exePath))))
+                        if (OtherUninstallers.Any(x => TestPathsMatch(x.InstallLocation, Path.GetDirectoryName(exePath))))
                             node.Confidence.Add(ConfidencePart.DirectoryStillUsed);
 
                         yield return node;
