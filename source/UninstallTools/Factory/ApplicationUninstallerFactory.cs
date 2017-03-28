@@ -91,8 +91,8 @@ namespace UninstallTools.Factory
             mergedResults = MergeResults(mergedResults, driveResults, infoAdder, report =>
             {
                 mergeProgress.Inner = report;
-                report.TotalCount *= 2;
                 report.CurrentCount += report.TotalCount;
+                report.TotalCount *= 2;
                 report.Message = Localisation.Progress_Merging_Drives;
                 callback(mergeProgress);
             });
