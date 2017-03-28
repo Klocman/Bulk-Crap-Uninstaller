@@ -11,23 +11,32 @@ namespace UninstallTools.Junk
     public static class JunkManager
     {
         public static IEnumerable<JunkNode> FindJunk(IEnumerable<ApplicationUninstallerEntry> uninstallers,
-            IEnumerable<ApplicationUninstallerEntry> allUninstallers)
+            IEnumerable<ApplicationUninstallerEntry> allUninstallers, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var targetEntries = uninstallers as IList<ApplicationUninstallerEntry> ?? uninstallers.ToList();
 
             var otherUninstallers = allUninstallers.Except(targetEntries).ToList();
 
             var result = new List<JunkNode>(targetEntries.Count);
+            var progress = 0;
             foreach (var uninstaller in targetEntries)
             {
+                var progressInfo = new ListGenerationProgress(progress, targetEntries.Count, progress++ > 0 ? uninstaller.DisplayName : null);
+                
+                progressInfo.Inner = new ListGenerationProgress(0, 3, "Scanning start-ups...");
+                progressCallback(progressInfo);
+                var sj = new StartupJunk(uninstaller);
+                result.AddRange(sj.FindJunk());
+
+                progressInfo.Inner = new ListGenerationProgress(1, 3, "Scanning drives...");
+                progressCallback(progressInfo);
                 var dj = new DriveJunk(uninstaller, otherUninstallers);
                 result.AddRange(dj.FindJunk());
 
+                progressInfo.Inner = new ListGenerationProgress(2, 3, "Scanning registry...");
+                progressCallback(progressInfo);
                 var rj = new RegistryJunk(uninstaller, otherUninstallers);
                 result.AddRange(rj.FindJunk());
-
-                var sj = new StartupJunk(uninstaller);
-                result.AddRange(sj.FindJunk());
             }
 
             result.AddRange(ShortcutJunk.FindAllJunk(targetEntries, otherUninstallers));
