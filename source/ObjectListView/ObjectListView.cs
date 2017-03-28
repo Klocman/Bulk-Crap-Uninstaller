@@ -578,6 +578,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -10424,7 +10425,7 @@ namespace BrightIdeasSoftware
                         d.Draw(this, g, contentRectangle);
                     }
                 }
-                foreach (OLVListSubItem subItem in olvi.SubItems) {
+                foreach (OLVListSubItem subItem in olvi.SubItems.OfType<OLVListSubItem>()) {
                     if (subItem.HasDecoration) {
                         foreach (IDecoration d in subItem.Decorations) {
                             d.ListItem = olvi;
