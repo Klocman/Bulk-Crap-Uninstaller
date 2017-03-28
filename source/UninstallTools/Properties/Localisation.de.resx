@@ -415,4 +415,7 @@
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Alle Eigenschaften</value>
   </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Ist unregistriert</value>
+  </data>
 </root>

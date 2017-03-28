@@ -1383,7 +1383,7 @@ BCU will wait until the currently running command completes before executing the
     <value>0</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>You can specify custom folders you install your applications into (e.g. D:\Applications). Those folders will be used by BCU to search for uninstallation leftovers, orphaned applications and a few other things. While it is not necessary, a list of these folders will let BCU work better.
+    <value>You can specify custom folders you install your applications into (e.g. D:\Applications). Those folders will be used by BCU to search for uninstallation leftovers, unregistered applications and a few other things. While it is not necessary, a list of these folders will let BCU work better.
 
 The default Windows folders are always scanned, you do not need to include them in this list.
 

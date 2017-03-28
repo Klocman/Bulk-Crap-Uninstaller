@@ -394,7 +394,7 @@
     <value>groupBox2</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Zobrazení osamocených aplikací</value>
+    <value>Zobrazení neregistrovaných aplikací</value>
   </data>
   <data name="searchBoxPanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -675,7 +675,7 @@ Ovladače jsou často označeny touto značkou.</value>
     <value>0</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Zobrazené aplikace, které nemají žádné registrované odinstalátory. Tyto nejsou viditelné v mnoha odinstalačních manažerech, ale stále zabírají místo. Osamocené položky jsou označeny červenou barvou.
+    <value>Zobrazené aplikace, které nemají žádné registrované odinstalátory. Tyto nejsou viditelné v mnoha odinstalačních manažerech, ale stále zabírají místo. Neregistrované položky jsou označeny červenou barvou.
 
 Upozornění: Dvojtá kontrola před vyjmutím těchto aplikací, mohli by být stále nezbytné!</value>
   </data>

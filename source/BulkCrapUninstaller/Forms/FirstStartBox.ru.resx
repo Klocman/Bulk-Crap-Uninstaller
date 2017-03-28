@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Отмена</value>
@@ -320,7 +320,7 @@
     <value>176, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Потерянные приложения</value>
+    <value>Незарегистрированная приложения</value>
   </data>
   <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 245</value>
@@ -338,7 +338,7 @@
     <value>205, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Показывать потерянные в списке</value>
+    <value>Показывать незарегистрированная в списке</value>
   </data>
   <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 296</value>
@@ -347,7 +347,7 @@
     <value>314, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Потерянные приложения отмечены красным цветом.
+    <value>Незарегистрированные приложения отмечены красным цветом.
 Их деинсталлятор не обнаружен и вам надо использовать параметр "Удалить вручную" для их удаления.</value>
   </data>
   <data name="p3advTitle.Size" type="System.Drawing.Size, System.Drawing">
@@ -579,5 +579,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Добро пожаловать в BCUninstaller</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ulk crap
+uninstaller</value>
   </data>
 </root>

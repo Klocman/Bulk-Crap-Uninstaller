@@ -333,7 +333,7 @@ de l'application</value>
     <value>157, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Applications orphelines</value>
+    <value>Application non enregistré</value>
   </data>
   <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 216</value>
@@ -351,7 +351,7 @@ de l'application</value>
     <value>250, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Montrer les applications orphelines dans la liste</value>
+    <value>Montrer les applications non enregistré dans la liste</value>
   </data>
   <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 280</value>
@@ -360,7 +360,7 @@ de l'application</value>
     <value>307, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Les applications orphelines sont marquées en rouge.
+    <value>Les applications non enregistré sont marquées en rouge.
 Si le désinstalleur d'origine est introuvable, vous devrez utiliser l'option "Désinstaller manuellement" pour les supprimer.</value>
   </data>
   <data name="spacer3.Size" type="System.Drawing.Size, System.Drawing">

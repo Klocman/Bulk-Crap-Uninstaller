@@ -1236,7 +1236,7 @@ BCU bo počakal, da se trenutno delujoč ukaz zaključi preden izvrši naslednje
     <value>0</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, ostankov aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
+    <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, neregistrirani aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
 
 Privzete Windows mape se vedno pregledujejo. Ni jih potrebno vključiti na seznam.
 

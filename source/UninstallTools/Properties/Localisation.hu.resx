@@ -418,7 +418,7 @@
     <value>Új feltétel</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <value>Elárvult</value>
+    <value>Nem regisztrált</value>
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">

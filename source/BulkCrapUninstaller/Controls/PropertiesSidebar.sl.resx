@@ -156,7 +156,7 @@
     <value>groupBox4</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Prikaz aplikacij, ki nimajo nobene registrirane odstranjevalce. Ti niso vidni v večini upraviteljev odstranjevanja a še vedno zasedajo prostor. Osiroteli vnosi so označeni z rdečo barvo.
+    <value>Prikaz aplikacij, ki nimajo nobene registrirane odstranjevalce. Ti niso vidni v večini upraviteljev odstranjevanja a še vedno zasedajo prostor. Neregistrirani vnosi so označeni z rdečo barvo.
 
 Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še vedno potrebne!</value>
   </data>
@@ -399,7 +399,7 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
     <value>groupBox2</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Prikaži osirotele aplikacije</value>
+    <value>Prikaži neregistrirani aplikacije</value>
   </data>
   <data name="searchBoxPanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

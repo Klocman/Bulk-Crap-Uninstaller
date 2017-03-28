@@ -192,7 +192,7 @@
 BCU esperará hasta que el comando ejecutandose actualmente se complete antes de ejecutar el siguiente.</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Puede especificar carpetas personalizadas donde instala las aplicaciones (por ejemplo, D: \Aplicaciones). Esas carpetas serán utilizadas por BCU para buscar los restos de desinstalación, aplicaciones huérfanas y algunas otras cosas. Si bien no es necesario, una lista de estas carpetas permitirá a BCU funcionar mejor.
+    <value>Puede especificar carpetas personalizadas donde instala las aplicaciones (por ejemplo, D: \Aplicaciones). Esas carpetas serán utilizadas por BCU para buscar los restos de desinstalación, aplicaciones no registrado y algunas otras cosas. Si bien no es necesario, una lista de estas carpetas permitirá a BCU funcionar mejor.
 
 Las carpetas predeterminadas de Windows siempre se examinan, no es necesario incluirlas en esta lista.
 

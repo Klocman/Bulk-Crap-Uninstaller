@@ -457,7 +457,7 @@
     <value>34, 0</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Prikaži osirotele aplikacije na seznamu</value>
+    <value>Prikaži neregistrirani aplikacije na seznamu</value>
   </data>
   <data name="&gt;&gt;p2viewAdd.Parent" xml:space="preserve">
     <value>flowLayoutPanel3</value>
@@ -1113,7 +1113,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>0</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Osirotele aplikacije</value>
+    <value>Neregistrirani aplikacije</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2304,7 +2304,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Ob zagonu aplikacije, samodejno preveri za posodobitve</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Osirotele aplikacije so označene z rdečo barvo.
+    <value>Neregistrirani aplikacije so označene z rdečo barvo.
 Če ni mogoče najti izvirnega odstranjevalca, boste morali uporabiti možnost "Odstrani ročno", da jih odstranite.</value>
   </data>
   <data name="&gt;&gt;spacer2.Type" xml:space="preserve">

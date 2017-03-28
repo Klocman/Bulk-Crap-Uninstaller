@@ -889,7 +889,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>As aplicações orfãs estão assinaladas a vermelho.
+    <value>As aplicações não registada estão assinaladas a vermelho.
 Se o desinstalador original não for encontrado terá de usar a opção "Desinstalar manualmente" para os remover.</value>
   </data>
   <data name="&gt;&gt;p4netDesc1.ZOrder" xml:space="preserve">
@@ -1175,7 +1175,7 @@ Se o desinstalador original não for encontrado terá de usar a opção "Desinst
     <value>0</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Aplicações órfãs</value>
+    <value>Aplicação não registada</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2022,7 +2022,7 @@ Desactiva a protecção dos desinstaladores designados como "Protegidos".</value
     <value>flowLayoutPanel3</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar na lista as aplicações órfãs</value>
+    <value>Mostrar na lista as aplicações não registada</value>
   </data>
   <data name="&gt;&gt;scrollPanel.ZOrder" xml:space="preserve">
     <value>1</value>

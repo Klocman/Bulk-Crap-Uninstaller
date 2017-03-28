@@ -308,7 +308,7 @@
     <value>138, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Porzucone aplikacje</value>
+    <value>Niezarejestrowana aplikacje</value>
   </data>
   <data name="pCorOrphansMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 42</value>
@@ -320,13 +320,13 @@
     <value>199, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Pokaż porzucone aplikacje na liście</value>
+    <value>Pokaż niezarejestrowane aplikacje na liście</value>
   </data>
   <data name="pCorOrphansComment.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Porzucone aplikacje są zaznaczone na czerwono.
+    <value>Niezarejestrowane aplikacje są zaznaczone na czerwono.
 Jeśli oryginalny dezinstalator nie zostanie znaleziony będziesz musiał skorzystać z opcji "Odinstaluj ręcznie", aby je usunąć.</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">

@@ -287,7 +287,7 @@
     <value>141, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Osamocené aplikace</value>
+    <value>Neregistrované aplikace</value>
   </data>
   <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 203</value>
@@ -305,7 +305,7 @@
     <value>223, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Zobrazit osamocené aplikace v seznamu</value>
+    <value>Zobrazit neregistrované aplikace v seznamu</value>
   </data>
   <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 267</value>
@@ -314,7 +314,7 @@
     <value>315, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Osamocené aplikace jsou označeny červeně.
+    <value>Neregistrované aplikace jsou označeny červeně.
 Pokud původní odinstalátor není nalezen, budete muset použít volbu "Odinstalovat ručně", k jejich odstranění.</value>
   </data>
   <data name="p3advTitle.Size" type="System.Drawing.Size, System.Drawing">

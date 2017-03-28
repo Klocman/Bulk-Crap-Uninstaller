@@ -138,7 +138,7 @@
     <value>91, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Ostanki aplikacije</value>
+    <value>Neregistrirani aplikacije</value>
   </data>
   <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

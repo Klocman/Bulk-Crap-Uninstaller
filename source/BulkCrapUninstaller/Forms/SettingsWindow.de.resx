@@ -250,7 +250,7 @@ BCU wartet mit der nächsten Ausführung, bis der aktuell ausgeführte Befehl ab
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
     <value>Sie können benutzerdefinierte Ordner angeben, in  denen Sie Ihre Anwendungen installiert haben (z.B. D:\Anwendungen).
-Diese Ordner werden von BCU durchsucht, um Deinstallations-Reste und  verwaiste Anwendungen zu finden.
+Diese Ordner werden von BCU durchsucht, um Deinstallations-Reste und nicht registrierte Anwendungen zu finden.
 Zwar ist es nicht notwendig, aber mit einer Liste dieser Ordner wird BCU besser funktionieren.
 Die Standard-Ordner werden immer gescannt. Sie müssen diese nicht in die Liste aufnehmen.
 Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfade und nicht vorhandene Verzeichnisse werden ignoriert.</value>

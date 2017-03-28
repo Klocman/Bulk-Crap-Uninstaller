@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicaciones huérfanas</value>
+    <value>Mostrar aplicaciones no registrado</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Mostrar las aplicaciones que no tienen ningún desinstalador registrado. No son visibles en la mayoría de gestores de desinstalación, pero todavía ocupan espacio. Los elementos huérfanos están marcados con color rojo. 
+    <value>Mostrar las aplicaciones que no tienen ningún desinstalador registrado. No son visibles en la mayoría de gestores de desinstalación, pero todavía ocupan espacio. Los elementos no registrado están marcados con color rojo. 
 
 ADVERTENCIA: Compruebe antes de eliminar estas aplicaciones, puede que aún sean necesarias!</value>
   </data>

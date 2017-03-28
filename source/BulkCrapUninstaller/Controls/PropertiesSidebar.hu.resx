@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Elárvultak mutatása</value>
+    <value>Nem regisztrált alkalmazás mutatása</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Azoknak az alkalmazásoknak a megjelenítése, amelyek nem rendelkeznek szabályos eltávolítóval. Ezek nem láthatók az eltávolítás kezelők számára, azonban sok helyet foglalhatnak. Az elárvult elemek piros színnel kerülnek megjelölésre. 
+    <value>Azoknak az alkalmazásoknak a megjelenítése, amelyek nem rendelkeznek szabályos eltávolítóval. Ezek nem láthatók az eltávolítás kezelők számára, azonban sok helyet foglalhatnak. Az nem regisztrált elemek piros színnel kerülnek megjelölésre. 
 
 Figyelem: Az eltávolításuk előtt ellenőrizze ezeket az alkalmazásokat mert lehet, hogy még mindig szükség van rájuk!</value>
   </data>

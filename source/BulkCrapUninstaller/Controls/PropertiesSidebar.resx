@@ -361,7 +361,7 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
     <value>groupBox2</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Show orphaned applications</value>
+    <value>Show unregistered applications</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -584,7 +584,7 @@ Drivers are often marked with this tag.</value>
     <value>Hide published by Microsoft</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Display applications that do not have any registered uninstallers. They are not visible in most uninstall managers but still take up space. Orphaned items are marked with a red color. 
+    <value>Display applications that do not have any registered uninstallers. They are not visible in most uninstall managers but still take up space. Unregistered items are marked with a red color. 
 
 Warning: Double check before removing these applications, they might still be necessary!</value>
   </data>

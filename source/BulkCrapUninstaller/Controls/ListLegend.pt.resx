@@ -166,7 +166,7 @@
     <value>3</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Aplicação órfã</value>
+    <value>Aplicação não registada</value>
   </data>
   <data name="&gt;&gt;labelOrphaned.Name" xml:space="preserve">
     <value>labelOrphaned</value>

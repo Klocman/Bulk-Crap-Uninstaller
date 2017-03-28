@@ -121,7 +121,7 @@
     <value>Característica de Windows</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Aplicación huérfana</value>
+    <value>Aplicación no registrado</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Desinstalador faltante</value>

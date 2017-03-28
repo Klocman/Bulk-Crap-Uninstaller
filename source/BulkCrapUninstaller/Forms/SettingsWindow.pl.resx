@@ -220,7 +220,7 @@ BCU będzie czekać aż uruchomiona komenda zakończy pracę przed uruchomieniem
     <value>Ustawienia BCUninstaller</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Możesz określić niestandardowe foldery instalacji aplikacji (np D: \ Aplikacje). Lista ta będzie wykorzystywana przez BCU do wyszukiwania resztek po dezinstalacji, opuszczonych aplikacji i kilku innych rzeczy. O ile nie jest ona konieczna, lista tych folderach usprawni działanie BCU.
+    <value>Możesz określić niestandardowe foldery instalacji aplikacji (np D: \ Aplikacje). Lista ta będzie wykorzystywana przez BCU do wyszukiwania resztek po dezinstalacji, niezarejestrowanych aplikacji, i kilku innych rzeczy. O ile nie jest ona konieczna, lista tych folderach usprawni działanie BCU.
 
 Domyślne foldery systemu Windows są zawsze zawarte przeszukiwane, nie musisz ich dodawać.
 

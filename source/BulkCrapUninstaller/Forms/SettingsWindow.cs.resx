@@ -1206,7 +1206,7 @@ BCU bude čekat na dokončení příkazu před zahájením dalšího.</value>
     <value>5</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Můžete určit vlastní instalaci aplikace do složky (např D: \ Applications). Tento seznam bude používán BCU k hledání zbytků po odinstalaci, opuštěných aplikací a pár dalších věcí. I když to není nutné, seznam složek pro zlepšení operací BCU.
+    <value>Můžete určit vlastní instalaci aplikace do složky (např D: \ Applications). Tento seznam bude používán BCU k hledání zbytků po odinstalaci, neregistrované aplikací a pár dalších věcí. I když to není nutné, seznam složek pro zlepšení operací BCU.
 
 Výchozí složky systému Windows jsou vždy zahrnuty do vyhledávání, nemusíte je přidávat.
 

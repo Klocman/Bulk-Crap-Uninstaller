@@ -249,7 +249,7 @@ BCU attendra la fin de la commande courante avant d'exécuter la suivante.</valu
     <value>Dossiers</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Vous pouvez spécifier des dossiers personnalisés dans lesquels vous installez vos applications (par ex. D:\Applications). Ces dossiers seront utilisés par BCU pour chercher des vestiges de désinstallation, des applications orphelines et quelques autres choses. Bien que ce ne soit pas nécessaire, une liste de ces dossiers fera mieux fonctionner BCU.
+    <value>Vous pouvez spécifier des dossiers personnalisés dans lesquels vous installez vos applications (par ex. D:\Applications). Ces dossiers seront utilisés par BCU pour chercher des vestiges de désinstallation, des applications non enregistré et quelques autres choses. Bien que ce ne soit pas nécessaire, une liste de ces dossiers fera mieux fonctionner BCU.
 
 Les dossiers Windows par défaut sont toujours scannés, vous n'avez pas besoin de les inclure dans la liste.
 

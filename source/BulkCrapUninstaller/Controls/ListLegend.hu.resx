@@ -121,7 +121,7 @@
     <value>Windows szolgáltatás</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Elárvult alkalmazás</value>
+    <value>Nem regisztrált alkalmazás</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Hiányzó eltávolító</value>

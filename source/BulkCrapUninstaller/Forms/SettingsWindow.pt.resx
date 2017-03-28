@@ -1323,7 +1323,7 @@ O BCU vai esperar até que o comando actualmente em execução esteja concluído
     <value>0</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Pode especificar pastas personalizadas onde instalará as suas aplicações (por exemplo, D: \ Applicações). Essas pastas serão utilizadas pela BCU para procurar restos da desinstalação, aplicações órfãs e algumas coisas mais. Embora não seja necessário, uma lista dessas pastas vai permitir que o BCU tenha um melhor desempenho.
+    <value>Pode especificar pastas personalizadas onde instalará as suas aplicações (por exemplo, D: \ Applicações). Essas pastas serão utilizadas pela BCU para procurar restos da desinstalação, aplicações não registada e algumas coisas mais. Embora não seja necessário, uma lista dessas pastas vai permitir que o BCU tenha um melhor desempenho.
 
 As pastas padrão Windows são sempre verificadas, não precisa de as incluir na lista.
 

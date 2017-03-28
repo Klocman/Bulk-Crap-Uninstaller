@@ -413,7 +413,7 @@
     <value>Vrednost ne sme vsebovati novih vrstic</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <value>Je osirotel</value>
+    <value>Je neregistriran</value>
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="Error_InvalidRegKeys" xml:space="preserve">

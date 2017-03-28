@@ -122,11 +122,11 @@
     <value>180, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicações orfãs na lista.</value>
+    <value>Mostrar aplicações não registada na lista.</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Exibe aplicações sem desinstaladores registados.
-São invisíveis na maioria dos gestores de desinstalação, mas ainda ocupam espaço. Itens órfãos são marcados a cor vermelha.
+São invisíveis na maioria dos gestores de desinstalação, mas ainda ocupam espaço. Itens não registrada são marcados a cor vermelha.
 
 Aviso: Pense duas vezes antes de remover esses aplicativos pois poderão ainda ser necessários!</value>
   </data>

@@ -125,11 +125,11 @@
     <value>188, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Afficher les applications orphelines</value>
+    <value>Afficher les applications non enregistré </value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Afficher les applications n'ayant pas de désinstalleur enregistré.
-Elles sont invisibles dans la plupart des gestionnaires de désinstallation, mais prennent quand même de la place. Les éléments orphelins sont marqués avec une couleur rouge.
+Elles sont invisibles dans la plupart des gestionnaires de désinstallation, mais prennent quand même de la place. Les éléments non enregistré sont marqués avec une couleur rouge.
 
 Attention : vérifiez à deux fois avant de supprimer ces applications, elles pourraient être encore nécessaires !</value>
   </data>

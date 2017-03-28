@@ -205,16 +205,16 @@
     <value>Az érvénytelen eltávolítók szürkével lesznek megjelölve.</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Elárvult alkalmazások</value>
+    <value>Nem regisztrált alkalmazás</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Néha teljes alkalmazások maradhatnak vissza a lemezén egy eltávolítást követően. Ez akkor is előfordulhat, ha csak az eltávolító kerül törlésre.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Elárvultak mutatása a listában</value>
+    <value>Nem regisztrált mutatása a listában</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Az elárvult alkalmazások pirossal vannak jelölve.
+    <value>Az nem regisztrált alkalmazások pirossal vannak jelölve.
 Ha az eredeti eltávolító nem található meg, ezekhez használhatja a "Kézi eltávolítás" lehetőséget.</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">

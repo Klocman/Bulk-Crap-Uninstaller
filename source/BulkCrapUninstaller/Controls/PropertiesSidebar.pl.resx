@@ -133,10 +133,10 @@
     <value>129, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Wyświetlaj porzucone</value>
+    <value>Wyświetlaj niezarejestrowane</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Pokaż aplikacje które nie mają żadnych zarejestrowanych dezinstalatorów. Nie są one widoczne w większości menedżerów aplikacji, ale wciąż zajmują miejsce. Porzucone elementy są oznaczone kolorem czerwonym. 
+    <value>Pokaż aplikacje które nie mają żadnych zarejestrowanych dezinstalatorów. Nie są one widoczne w większości menedżerów aplikacji, ale wciąż zajmują miejsce. Niezarejestrowane elementy są oznaczone kolorem czerwonym. 
 
 Uwaga: Przed usunięciem tych aplikacji sprawdź dwukrotnie czy nie są jeszcze potrzebne!</value>
   </data>

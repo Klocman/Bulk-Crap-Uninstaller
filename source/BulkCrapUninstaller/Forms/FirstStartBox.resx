@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="&gt;&gt;buttonExit.Name" xml:space="preserve">
     <value>buttonExit</value>
@@ -192,18 +192,6 @@
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Exit wizard</value>
   </data>
-  <data name="&gt;&gt;buttonExit.Name" xml:space="preserve">
-    <value>buttonExit</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.Parent" xml:space="preserve">
-    <value>panelNavigation</value>
-  </data>
-  <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonPrev.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -222,18 +210,6 @@
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="&gt;&gt;buttonPrev.Name" xml:space="preserve">
-    <value>buttonPrev</value>
-  </data>
-  <data name="&gt;&gt;buttonPrev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonPrev.Parent" xml:space="preserve">
-    <value>panelNavigation</value>
-  </data>
-  <data name="&gt;&gt;buttonPrev.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -248,18 +224,6 @@
   </data>
   <data name="buttonNext.Text" xml:space="preserve">
     <value>Continue</value>
-  </data>
-  <data name="&gt;&gt;buttonNext.Name" xml:space="preserve">
-    <value>buttonNext</value>
-  </data>
-  <data name="&gt;&gt;buttonNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonNext.Parent" xml:space="preserve">
-    <value>panelNavigation</value>
-  </data>
-  <data name="&gt;&gt;buttonNext.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="scrollPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -459,18 +423,6 @@
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -482,18 +434,6 @@
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;panel12.Name" xml:space="preserve">
     <value>panel12</value>
@@ -546,18 +486,6 @@
   <data name="page5.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;page5.Name" xml:space="preserve">
-    <value>page5</value>
-  </data>
-  <data name="&gt;&gt;page5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;page5.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;page5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;buttonMore.Name" xml:space="preserve">
     <value>buttonMore</value>
   </data>
@@ -606,18 +534,6 @@
   <data name="panel12.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;panel12.Name" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;panel12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
-    <value>page5</value>
-  </data>
-  <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -632,18 +548,6 @@
   </data>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>More settings</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.Name" xml:space="preserve">
-    <value>buttonMore</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="buttonHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -660,18 +564,6 @@
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>View help</value>
   </data>
-  <data name="&gt;&gt;buttonHelp.Name" xml:space="preserve">
-    <value>buttonHelp</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonFinish.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 107</value>
   </data>
@@ -683,18 +575,6 @@
   </data>
   <data name="buttonFinish.Text" xml:space="preserve">
     <value>Finish setup</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.Name" xml:space="preserve">
-    <value>buttonFinish</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="flowLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -762,18 +642,6 @@
   <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
-    <value>page5</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="p5finishContact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -792,18 +660,6 @@
   <data name="p5finishContact.Text" xml:space="preserve">
     <value>You can now start using BCUninstaller. If you have any questions or would like to suggest a new feature visit the link below.</value>
   </data>
-  <data name="&gt;&gt;p5finishContact.Name" xml:space="preserve">
-    <value>p5finishContact</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p5LinkContact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -818,18 +674,6 @@
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>Open the contact form</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Name" xml:space="preserve">
-    <value>p5LinkContact</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p5finishHomepage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -849,18 +693,6 @@
   <data name="p5finishHomepage.Text" xml:space="preserve">
     <value>You can read detailed change logs and check out more of my software on the homepage.</value>
   </data>
-  <data name="&gt;&gt;p5finishHomepage.Name" xml:space="preserve">
-    <value>p5finishHomepage</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p5LinkHomepage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -875,18 +707,6 @@
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Open the homepage</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.Name" xml:space="preserve">
-    <value>p5LinkHomepage</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="p5finishTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -912,18 +732,6 @@
   <data name="p5finishTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;p5finishTitle.Name" xml:space="preserve">
-    <value>p5finishTitle</value>
-  </data>
-  <data name="&gt;&gt;p5finishTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5finishTitle.Parent" xml:space="preserve">
-    <value>page5</value>
-  </data>
-  <data name="&gt;&gt;p5finishTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="spacer4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -935,18 +743,6 @@
   </data>
   <data name="spacer4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="&gt;&gt;spacer4.Name" xml:space="preserve">
-    <value>spacer4</value>
-  </data>
-  <data name="&gt;&gt;spacer4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacer4.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;spacer4.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -971,18 +767,6 @@
   </data>
   <data name="pageNetwork.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;pageNetwork.Name" xml:space="preserve">
-    <value>pageNetwork</value>
-  </data>
-  <data name="&gt;&gt;pageNetwork.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageNetwork.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;pageNetwork.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;p4netTitle.Name" xml:space="preserve">
     <value>p4netTitle</value>
@@ -1146,18 +930,6 @@
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>pageNetwork</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p4netTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1179,18 +951,6 @@
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Network access</value>
   </data>
-  <data name="&gt;&gt;p4netTitle.Name" xml:space="preserve">
-    <value>p4netTitle</value>
-  </data>
-  <data name="&gt;&gt;p4netTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p4netDesc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1208,18 +968,6 @@
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
     <value>BCUninstaller can attempt to connect to the internet for the following reasons:</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc.Name" xml:space="preserve">
-    <value>p4netDesc</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p4netDesc1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1239,18 +987,6 @@
   <data name="p4netDesc1.Text" xml:space="preserve">
     <value>● To search for program updates.</value>
   </data>
-  <data name="&gt;&gt;p4netDesc1.Name" xml:space="preserve">
-    <value>p4netDesc1</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p4netDesc2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1269,18 +1005,6 @@
   <data name="p4netDesc2.Text" xml:space="preserve">
     <value>● To upload error reports.</value>
   </data>
-  <data name="&gt;&gt;p4netDesc2.Name" xml:space="preserve">
-    <value>p4netDesc2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="p4netDesc3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1298,18 +1022,6 @@
   </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
     <value>● To send anonymous usage statistics.</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc3.Name" xml:space="preserve">
-    <value>p4netDesc3</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc3.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc3.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="p4netDesc4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1332,18 +1044,6 @@
   <data name="p4netDesc4.Text" xml:space="preserve">
     <value>● To fetch and upload application ratings</value>
   </data>
-  <data name="&gt;&gt;p4netDesc4.Name" xml:space="preserve">
-    <value>p4netDesc4</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc4.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netDesc4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="p4netErrors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1361,18 +1061,6 @@
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
     <value>Every time an error occurs you will be asked if you want to send it. You can check what data is being sent in error and usage reports by inspecting their respective XML files in BCUninstaller's directory. The sent data is not shared with any third parties.</value>
-  </data>
-  <data name="&gt;&gt;p4netErrors.Name" xml:space="preserve">
-    <value>p4netErrors</value>
-  </data>
-  <data name="&gt;&gt;p4netErrors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netErrors.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netErrors.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="checkBoxUpdateSearch.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1398,18 +1086,6 @@
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Automatically look for updates on application start</value>
   </data>
-  <data name="&gt;&gt;checkBoxUpdateSearch.Name" xml:space="preserve">
-    <value>checkBoxUpdateSearch</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUpdateSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUpdateSearch.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxUpdateSearch.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="p4netUpdateAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1430,18 +1106,6 @@
   </data>
   <data name="p4netUpdateAdd.Text" xml:space="preserve">
     <value>You can search for updates manually from the menu bar.</value>
-  </data>
-  <data name="&gt;&gt;p4netUpdateAdd.Name" xml:space="preserve">
-    <value>p4netUpdateAdd</value>
-  </data>
-  <data name="&gt;&gt;p4netUpdateAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netUpdateAdd.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netUpdateAdd.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="checkBoxSendStats.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1467,18 +1131,6 @@
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Automatically send anonymous usage statistics</value>
   </data>
-  <data name="&gt;&gt;checkBoxSendStats.Name" xml:space="preserve">
-    <value>checkBoxSendStats</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendStats.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSendStats.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="p4netUsageAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1499,18 +1151,6 @@
   </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
     <value>Sending these statistics will help improve BCUninstaller.</value>
-  </data>
-  <data name="&gt;&gt;p4netUsageAdd.Name" xml:space="preserve">
-    <value>p4netUsageAdd</value>
-  </data>
-  <data name="&gt;&gt;p4netUsageAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p4netUsageAdd.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;p4netUsageAdd.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="checkBoxRatings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1536,18 +1176,6 @@
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Enable user ratings of applications</value>
   </data>
-  <data name="&gt;&gt;checkBoxRatings.Name" xml:space="preserve">
-    <value>checkBoxRatings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRatings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRatings.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRatings.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -1559,18 +1187,6 @@
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -1595,18 +1211,6 @@
   </data>
   <data name="pageCorrupted.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
-  </data>
-  <data name="&gt;&gt;pageCorrupted.Name" xml:space="preserve">
-    <value>pageCorrupted</value>
-  </data>
-  <data name="&gt;&gt;pageCorrupted.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageCorrupted.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;pageCorrupted.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;pCorTitle.Name" xml:space="preserve">
     <value>pCorTitle</value>
@@ -1746,18 +1350,6 @@
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>pageCorrupted</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pCorTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1782,18 +1374,6 @@
   <data name="pCorTitle.Text" xml:space="preserve">
     <value>Corrupted uninstallers</value>
   </data>
-  <data name="&gt;&gt;pCorTitle.Name" xml:space="preserve">
-    <value>pCorTitle</value>
-  </data>
-  <data name="&gt;&gt;pCorTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pCorDesc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1814,18 +1394,6 @@
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
     <value>Over time you may find that some applications will refuse to uninstall, or will just disappear from most of the uninstall managers.</value>
-  </data>
-  <data name="&gt;&gt;pCorDesc.Name" xml:space="preserve">
-    <value>pCorDesc</value>
-  </data>
-  <data name="&gt;&gt;pCorDesc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorDesc.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorDesc.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="pCorViewInvalidTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1851,18 +1419,6 @@
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
     <value>Corrupted or missing uninstallers</value>
   </data>
-  <data name="&gt;&gt;pCorViewInvalidTitle.Name" xml:space="preserve">
-    <value>pCorViewInvalidTitle</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalidTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalidTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalidTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pCorViewInvalid.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1883,18 +1439,6 @@
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>In some cases uninstallers can get corrupted, making them impossible to uninstall. BCUninstaller can remove these entries easily using the "Uninstall manually" option.</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalid.Name" xml:space="preserve">
-    <value>pCorViewInvalid</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalid.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorViewInvalid.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="checkBoxInvalidTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1920,18 +1464,6 @@
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Highlight invalid uninstallers</value>
   </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Name" xml:space="preserve">
-    <value>checkBoxInvalidTest</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="pCorViewinvalidComment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1956,18 +1488,6 @@
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
     <value>Invalid uninstallers are marked in grey.</value>
   </data>
-  <data name="&gt;&gt;pCorViewinvalidComment.Name" xml:space="preserve">
-    <value>pCorViewinvalidComment</value>
-  </data>
-  <data name="&gt;&gt;pCorViewinvalidComment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorViewinvalidComment.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorViewinvalidComment.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="pCorOrphansTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1990,19 +1510,7 @@
     <value>30</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Orphaned applications</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansTitle.Name" xml:space="preserve">
-    <value>pCorOrphansTitle</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>Unregistered applications</value>
   </data>
   <data name="pCorOrphansMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2024,18 +1532,6 @@
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Sometimes whole applications can be left on your drive even after being uninstalled. This can also happen if only the uninstaller is removed.</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansMessage.Name" xml:space="preserve">
-    <value>pCorOrphansMessage</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansMessage.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansMessage.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="checkBoxOrphans.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2059,19 +1555,7 @@
     <value>28</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Show orphaned applications in the list</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
-    <value>checkBoxOrphans</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOrphans.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>Show unregistered applications in the list</value>
   </data>
   <data name="pCorOrphansComment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2095,20 +1579,8 @@
     <value>35</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Orphaned applications are marked in red.
+    <value>Unregistered applications are marked in red.
 If the original uninstaller isn't found you will have to use the "Uninstall manually" option to remove them.</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansComment.Name" xml:space="preserve">
-    <value>pCorOrphansComment</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansComment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansComment.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;pCorOrphansComment.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="spacer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -2121,18 +1593,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="spacer3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="&gt;&gt;spacer3.Name" xml:space="preserve">
-    <value>spacer3</value>
-  </data>
-  <data name="&gt;&gt;spacer3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacer3.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;spacer3.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
     <value>flowLayoutPanel4</value>
@@ -2157,18 +1617,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="page3.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
-  </data>
-  <data name="&gt;&gt;page3.Name" xml:space="preserve">
-    <value>page3</value>
-  </data>
-  <data name="&gt;&gt;page3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;page3.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;page3.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="&gt;&gt;p3advTitle.Name" xml:space="preserve">
     <value>p3advTitle</value>
@@ -2308,18 +1756,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>page3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p3advTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2341,18 +1777,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Advanced users</value>
   </data>
-  <data name="&gt;&gt;p3advTitle.Name" xml:space="preserve">
-    <value>p3advTitle</value>
-  </data>
-  <data name="&gt;&gt;p3advTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p3advDesc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2367,18 +1791,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
     <value>While BCUninstaller can be used as a basic uninstaller, most of its functions are aimed at power users. Proceed with caution!</value>
-  </data>
-  <data name="&gt;&gt;p3advDesc.Name" xml:space="preserve">
-    <value>p3advDesc</value>
-  </data>
-  <data name="&gt;&gt;p3advDesc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advDesc.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advDesc.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p3advSyscompTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2401,18 +1813,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>System components</value>
   </data>
-  <data name="&gt;&gt;p3advSyscompTitle.Name" xml:space="preserve">
-    <value>p3advSyscompTitle</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscompTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscompTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscompTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p3advSyscomp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2430,18 +1830,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
     <value>Applications marked as "system components" are hidden from most of the basic uninstall managers. This tag does NOT mean that the application is a part of the operating system.</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscomp.Name" xml:space="preserve">
-    <value>p3advSyscomp</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscomp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscomp.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advSyscomp.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="checkBoxListSysComp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2467,18 +1855,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Show uninstallers marked as "system components"</value>
   </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
-    <value>checkBoxListSysComp</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="p3advProtectTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2500,18 +1876,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p3advProtectTitle.Text" xml:space="preserve">
     <value>Protected uninstallers</value>
   </data>
-  <data name="&gt;&gt;p3advProtectTitle.Name" xml:space="preserve">
-    <value>p3advProtectTitle</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectTitle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="p3advProtect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2529,18 +1893,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
     <value>Protected items are marked with the "NoRemove" tag, which means that the publisher doesn't want you to remove them. This tag is often used by large software packages to prevent you from uninstalling their individual parts.</value>
-  </data>
-  <data name="&gt;&gt;p3advProtect.Name" xml:space="preserve">
-    <value>p3advProtect</value>
-  </data>
-  <data name="&gt;&gt;p3advProtect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advProtect.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advProtect.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="checkBoxListProtected.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2566,18 +1918,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Show uninstallers marked as "protected"</value>
   </data>
-  <data name="&gt;&gt;checkBoxListProtected.Name" xml:space="preserve">
-    <value>checkBoxListProtected</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="checkBoxDiisableProtection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2602,18 +1942,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Disable protection of uninstallers marked as "protected"</value>
   </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Name" xml:space="preserve">
-    <value>checkBoxDiisableProtection</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxDiisableProtection.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="p3advProtectAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2635,18 +1963,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p3advProtectAdd.Text" xml:space="preserve">
     <value>This will let you uninstall protected items.</value>
   </data>
-  <data name="&gt;&gt;p3advProtectAdd.Name" xml:space="preserve">
-    <value>p3advProtectAdd</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectAdd.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;p3advProtectAdd.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="spacer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -2658,18 +1974,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="spacer2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="&gt;&gt;spacer2.Name" xml:space="preserve">
-    <value>spacer2</value>
-  </data>
-  <data name="&gt;&gt;spacer2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacer2.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;spacer2.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
     <value>flowLayoutPanel3</value>
@@ -2693,18 +1997,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>341, 370</value>
   </data>
   <data name="page2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;page2.Name" xml:space="preserve">
-    <value>page2</value>
-  </data>
-  <data name="&gt;&gt;page2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;page2.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;page2.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="&gt;&gt;p2viewTitle.Name" xml:space="preserve">
@@ -2857,18 +2149,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>page2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p2viewTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2890,18 +2170,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>Uninstaller list view</value>
   </data>
-  <data name="&gt;&gt;p2viewTitle.Name" xml:space="preserve">
-    <value>p2viewTitle</value>
-  </data>
-  <data name="&gt;&gt;p2viewTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p2viewDetail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2919,18 +2187,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
     <value>All of the uninstallers found in your system are in the main list view. Here are some ways to browse this data:</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail.Name" xml:space="preserve">
-    <value>p2viewDetail</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p2viewDetail1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2950,18 +2206,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Use filters and search for keywords (in all columns)</value>
   </data>
-  <data name="&gt;&gt;p2viewDetail1.Name" xml:space="preserve">
-    <value>p2viewDetail1</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p2viewDetail2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2980,18 +2224,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p2viewDetail2.Text" xml:space="preserve">
     <value>● Sort uninstallers by any column. Freely rearrange columns.</value>
   </data>
-  <data name="&gt;&gt;p2viewDetail2.Name" xml:space="preserve">
-    <value>p2viewDetail2</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="p2viewDetail3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3009,18 +2241,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
     <value>● Group similar uninstallers</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail3.Name" xml:space="preserve">
-    <value>p2viewDetail3</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail3.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewDetail3.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="checkBoxGroups.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3046,18 +2266,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxGroups.Text" xml:space="preserve">
     <value>Show uninstallers in groups</value>
   </data>
-  <data name="&gt;&gt;checkBoxGroups.Name" xml:space="preserve">
-    <value>checkBoxGroups</value>
-  </data>
-  <data name="&gt;&gt;checkBoxGroups.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxGroups.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxGroups.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="checkBoxCheckboxes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3082,18 +2290,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Select using checkboxes</value>
   </data>
-  <data name="&gt;&gt;checkBoxCheckboxes.Name" xml:space="preserve">
-    <value>checkBoxCheckboxes</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCheckboxes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCheckboxes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCheckboxes.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="p2viewCertsTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3115,18 +2311,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
     <value>Certified uninstallers</value>
   </data>
-  <data name="&gt;&gt;p2viewCertsTitle.Name" xml:space="preserve">
-    <value>p2viewCertsTitle</value>
-  </data>
-  <data name="&gt;&gt;p2viewCertsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewCertsTitle.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewCertsTitle.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="p2viewCerts.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3144,18 +2328,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
     <value>Uninstallers can be signed with certificates issued by relevant authorities. If the certificate passes validation the software package has not been altered and is reputable.</value>
-  </data>
-  <data name="&gt;&gt;p2viewCerts.Name" xml:space="preserve">
-    <value>p2viewCerts</value>
-  </data>
-  <data name="&gt;&gt;p2viewCerts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewCerts.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewCerts.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="checkBoxCertTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3181,18 +2353,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Highlight certified uninstallers</value>
   </data>
-  <data name="&gt;&gt;checkBoxCertTest.Name" xml:space="preserve">
-    <value>checkBoxCertTest</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxCertTest.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="p2viewAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3215,18 +2375,6 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>Verified uninstallers are marked in green, unverified are in blue.
 Warning: Verification can take a long time.</value>
   </data>
-  <data name="&gt;&gt;p2viewAdd.Name" xml:space="preserve">
-    <value>p2viewAdd</value>
-  </data>
-  <data name="&gt;&gt;p2viewAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p2viewAdd.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;p2viewAdd.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="spacer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -3238,18 +2386,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="spacer1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="&gt;&gt;spacer1.Name" xml:space="preserve">
-    <value>spacer1</value>
-  </data>
-  <data name="&gt;&gt;spacer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacer1.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;spacer1.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
     <value>flowLayoutPanel5</value>
@@ -3286,18 +2422,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="page1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <data name="&gt;&gt;page1.Name" xml:space="preserve">
-    <value>page1</value>
-  </data>
-  <data name="&gt;&gt;page1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;page1.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;page1.ZOrder" xml:space="preserve">
-    <value>12</value>
   </data>
   <data name="&gt;&gt;p1welcomeHeading.Name" xml:space="preserve">
     <value>p1welcomeHeading</value>
@@ -3401,18 +2525,6 @@ Warning: Verification can take a long time.</value>
   <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
-    <value>page1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p1welcomeHeading.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3434,18 +2546,6 @@ Warning: Verification can take a long time.</value>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Welcome to BCUninstaller!</value>
   </data>
-  <data name="&gt;&gt;p1welcomeHeading.Name" xml:space="preserve">
-    <value>p1welcomeHeading</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeHeading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeHeading.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeHeading.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p1welcomeSubheading.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3460,18 +2560,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>This wizard will give you a quick tour and help configure the application.</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeSubheading.Name" xml:space="preserve">
-    <value>p1welcomeSubheading</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeSubheading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeSubheading.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1welcomeSubheading.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p1languageHeading.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3494,18 +2582,6 @@ Warning: Verification can take a long time.</value>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>Selected language</value>
   </data>
-  <data name="&gt;&gt;p1languageHeading.Name" xml:space="preserve">
-    <value>p1languageHeading</value>
-  </data>
-  <data name="&gt;&gt;p1languageHeading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1languageHeading.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1languageHeading.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p1languageDesc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3523,18 +2599,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
     <value>You can force BCUninstaller to use a specific localization if the default language is incorrect. A restart will be performed to apply the new language.</value>
-  </data>
-  <data name="&gt;&gt;p1languageDesc.Name" xml:space="preserve">
-    <value>p1languageDesc</value>
-  </data>
-  <data name="&gt;&gt;p1languageDesc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1languageDesc.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1languageDesc.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
     <value>comboBoxLanguage</value>
@@ -3572,18 +2636,6 @@ Warning: Verification can take a long time.</value>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 3</value>
   </data>
@@ -3595,18 +2647,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
-    <value>comboBoxLanguage</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="buttonLanguageApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3622,18 +2662,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Apply</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.Name" xml:space="preserve">
-    <value>buttonLanguageApply</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p1languageExtradetails.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3653,18 +2681,6 @@ Warning: Verification can take a long time.</value>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
     <value>If you are willing to help translate BCUninstaller to your language, click on the link below to contact me. All help is greatly appreciated!</value>
   </data>
-  <data name="&gt;&gt;p1languageExtradetails.Name" xml:space="preserve">
-    <value>p1languageExtradetails</value>
-  </data>
-  <data name="&gt;&gt;p1languageExtradetails.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1languageExtradetails.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1languageExtradetails.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="p1linkLabelContact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3679,18 +2695,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
     <value>Open the contact form</value>
-  </data>
-  <data name="&gt;&gt;p1linkLabelContact.Name" xml:space="preserve">
-    <value>p1linkLabelContact</value>
-  </data>
-  <data name="&gt;&gt;p1linkLabelContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p1linkLabelContact.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;p1linkLabelContact.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -3728,18 +2732,6 @@ Warning: Verification can take a long time.</value>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>page1</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -3754,18 +2746,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -3792,24 +2772,6 @@ uninstaller</value>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -3834,4 +2796,10 @@ uninstaller</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

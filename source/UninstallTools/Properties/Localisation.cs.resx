@@ -415,4 +415,7 @@
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Všechny vlastnosti</value>
   </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Neregistrovaný</value>
+  </data>
 </root>

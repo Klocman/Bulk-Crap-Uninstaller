@@ -166,7 +166,7 @@
     <value>Puede buscar actualizaciones de forma manual desde la barra de menú.</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Las aplicaciones huérfanas están marcadas en rojo.
+    <value>Las aplicaciones no registrado están marcadas en rojo.
 Si no se encuentra el desinstalador original usted tendrá que utilizar la opción "Desinstalar manualmente" para eliminarlas.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
@@ -185,7 +185,7 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>Aplicar</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Aplicaciones huérfanas</value>
+    <value>Aplicación no registrado</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>Componentes del sistema</value>

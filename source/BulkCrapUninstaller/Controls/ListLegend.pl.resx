@@ -128,7 +128,7 @@
     <value>104, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Porzucona aplikacja</value>
+    <value>Niezarejestrowana aplikacja</value>
   </data>
   <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 19</value>

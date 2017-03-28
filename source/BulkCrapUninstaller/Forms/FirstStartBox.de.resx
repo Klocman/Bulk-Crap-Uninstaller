@@ -334,7 +334,7 @@ Gesendeten Daten werden nicht an Dritte weitergegeben.</value>
     <value>166, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Verwaiste Anwendungen</value>
+    <value>Nicht registrierte Anwendung</value>
   </data>
   <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 203</value>
@@ -353,7 +353,7 @@ Das kann auch passieren, wenn der Uninstaller selbst entfernt wurde.</value>
     <value>248, 17</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Verwaiste Anwendungen in der Liste anzeigen</value>
+    <value>Nicht registrierte Anwendungen in der Liste anzeigen</value>
   </data>
   <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 280</value>
@@ -362,7 +362,7 @@ Das kann auch passieren, wenn der Uninstaller selbst entfernt wurde.</value>
     <value>308, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Verwaiste Anwendungen werden rot dargestellt.
+    <value>Nicht registrierte Anwendungen werden rot dargestellt.
 Fehlt der originäre Uninstaller, können Sie die Option "Manuell deinstallieren" verwenden, um die Anwendung zu entfernen.</value>
   </data>
   <data name="spacer3.Size" type="System.Drawing.Size, System.Drawing">

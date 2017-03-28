@@ -183,7 +183,7 @@ A BCU, a következő elindítása előtt megvárja amíg az adott parancs befeje
     <value>Külső eszközök</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Az alkalmazások telepítéséhez megadhat egyéni mappákat is (pl. D:\Applications). A BCU ezeket a mappákat is használni fogja az eltávolítás utáni maradványok, elárvult alkalmazások, és egyéb nyomok felkutatásához. Bár nem szükségesek, de ezeknek a mappáknak a megadásával a BCU hatékonyabban használható.
+    <value>Az alkalmazások telepítéséhez megadhat egyéni mappákat is (pl. D:\Applications). A BCU ezeket a mappákat is használni fogja az eltávolítás utáni maradványok, nem regisztrált alkalmazások, és egyéb nyomok felkutatásához. Bár nem szükségesek, de ezeknek a mappáknak a megadásával a BCU hatékonyabban használható.
 
 Az alapértelmezett Windows mappák mindig ellenőrzésre kerülnek, így azokat nem kell megadnia ebben a listában.
 
