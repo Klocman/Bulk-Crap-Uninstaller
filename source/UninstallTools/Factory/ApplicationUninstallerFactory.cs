@@ -30,12 +30,14 @@ namespace UninstallTools.Factory
                 CurrentCount = currentCount;
             }
 
-            public int CurrentCount { get; }
+            public int CurrentCount { get; internal set; }
+
             /// <summary>
             /// -1 if unknown
             /// </summary>
-            public int TotalCount { get; }
-            public string Message { get; }
+            public int TotalCount { get; internal set; }
+
+            public string Message { get; internal set; }
 
             //public GetUninstallerListProgress Clone() => (GetUninstallerListProgress)MemberwiseClone();
 
@@ -101,14 +103,24 @@ namespace UninstallTools.Factory
 
             // Handle duplicate entries
             var mergeProgress = new GetUninstallerListProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
-            mergeProgress.Inner = new GetUninstallerListProgress(1, 4, Localisation.Progress_Merging_Stores);
             callback(mergeProgress);
             var mergedResults = registryResults.ToList();
-            mergedResults = MergeResults(mergedResults, otherResults, infoAdder);
+            mergedResults = MergeResults(mergedResults, otherResults, infoAdder, report =>
+            {
+                mergeProgress.Inner = report;
+                report.TotalCount *= 2;
+                report.Message = Localisation.Progress_Merging_Stores;
+                callback(mergeProgress);
+            });
             // Make sure to merge driveResults last
-            mergeProgress.Inner = new GetUninstallerListProgress(3, 4, Localisation.Progress_Merging_Drives);
-            callback(mergeProgress);
-            mergedResults = MergeResults(mergedResults, driveResults, infoAdder);
+            mergedResults = MergeResults(mergedResults, driveResults, infoAdder, report =>
+            {
+                mergeProgress.Inner = report;
+                report.TotalCount *= 2;
+                report.CurrentCount += report.TotalCount;
+                report.Message = Localisation.Progress_Merging_Drives;
+                callback(mergeProgress);
+            });
 
             // Fill in any missing information
             var infoAddProgress = new GetUninstallerListProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
@@ -127,15 +139,17 @@ namespace UninstallTools.Factory
             return mergedResults;
         }
 
-        private static List<ApplicationUninstallerEntry> MergeResults(IEnumerable<ApplicationUninstallerEntry> baseResults,
-            IEnumerable<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder)
+        private static List<ApplicationUninstallerEntry> MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
+            ICollection<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder, GetUninstallerListCallback progressCallback)
         {
             // Create local copy
-            var baseEntries = baseResults.ToList();
+            //var baseEntries = baseResults.ToList();
             // Add all of the base results straight away
             var results = new List<ApplicationUninstallerEntry>(baseEntries);
+            var progress = 0;
             foreach (var entry in newResults)
             {
+                progressCallback(new GetUninstallerListProgress(progress++, newResults.Count, null));
                 try
                 {
                     var matchedEntry = baseEntries.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
