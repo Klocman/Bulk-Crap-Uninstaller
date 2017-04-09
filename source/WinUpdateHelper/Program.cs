@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using WUApiLib;
@@ -46,6 +47,11 @@ namespace WinUpdateHelper
             {
                 return 1223;
             }
+            catch (COMException ex)
+            {
+                Console.WriteLine("Error: {0}", Hresult.ConvertHresultToDetails(ex.ErrorCode));
+                return 59;
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);
@@ -60,14 +66,14 @@ namespace WinUpdateHelper
             var wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch = wuaSearcher.Search($"Type='Software' and IsInstalled=1 and UpdateID='{updateId}' and IsPresent=1");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
-            if(!updates.Any())
+            if (!updates.Any())
                 throw new ArgumentException("Selected update was not found");
             var uninstallable = updates.Where(x => x.IsUninstallable).ToList();
             if (!uninstallable.Any())
                 throw new ArgumentException("Selected update is not uninstallable");
 
             var wuaInstaller = wuaSession.CreateUpdateInstaller();
-            wuaInstaller.Updates.Clear();
+            wuaInstaller.Updates = new UpdateCollectionClass();
             foreach (var update in uninstallable)
                 wuaInstaller.Updates.Add(update);
 
@@ -86,7 +92,7 @@ namespace WinUpdateHelper
                 case OperationResultCode.orcSucceededWithErrors:
                     break;
                 case OperationResultCode.orcFailed:
-                    throw new ArgumentException("Selected update is not uninstallable");
+                    throw new COMException("Selected update is not uninstallable", result.HResult);
                 case OperationResultCode.orcAborted:
                     throw new OperationCanceledException("Selected update is not uninstallable");
             }
@@ -97,7 +103,7 @@ namespace WinUpdateHelper
             int count = 0;
             // Wait for some seconds
             while (wuaInstaller.IsBusy && count++ < 30) Thread.Sleep(250);
-            if(count >= 20)
+            if (count >= 20)
                 throw new TimeoutException("Update installer is busy");
         }
 
@@ -107,7 +113,7 @@ namespace WinUpdateHelper
             var wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch = wuaSearcher.Search("IsInstalled=1 and IsPresent=1 and Type='Software'");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
-            
+
             foreach (var update in updates)
             {
                 var id = update.Identity;
