@@ -1007,7 +1007,8 @@ namespace BulkCrapUninstaller.Forms
                 uninstallerLocationOpenInExplorerContextMenuStripItem,
                 sourceLocationOpenInExplorerContextMenuStripItem,
                 openWebPageContextMenuStripItem,
-                runToolStripMenuItem
+                runToolStripMenuItem,
+                manualUninstallToolStripMenuItem1
             })
                 itemToDisable.Enabled = false;
 
@@ -1019,6 +1020,7 @@ namespace BulkCrapUninstaller.Forms
                 {
                     if (item.UninstallPossible) uninstallContextMenuStripItem.Enabled = true;
                     if (item.QuietUninstallPossible) quietUninstallContextMenuStripItem.Enabled = true;
+                    manualUninstallToolStripMenuItem1.Enabled = true;
                 }
 
                 if (singleItem)
@@ -1031,12 +1033,26 @@ namespace BulkCrapUninstaller.Forms
                     }
                 }
 
-                if (!item.BundleProviderKey.IsEmpty()) gUIDProductCodeCopyContextMenuStripItem.Enabled = true;
-                if (item.UninstallPossible) uninstallStringCopyContextMenuStripItem.Enabled = true;
+                if(item.IsRegistered)
+                    manualUninstallToolStripMenuItem1.Enabled = true;
 
-                if (item.InstallLocation.IsNotEmpty()) installLocationOpenInExplorerContextMenuStripItem.Enabled = true;
+                if (!item.BundleProviderKey.IsEmpty()) gUIDProductCodeCopyContextMenuStripItem.Enabled = true;
+                if (item.UninstallPossible)
+                {
+                    uninstallStringCopyContextMenuStripItem.Enabled = true;
+                    manualUninstallToolStripMenuItem1.Enabled = true;
+                }
+
+                if (item.InstallLocation.IsNotEmpty())
+                {
+                    installLocationOpenInExplorerContextMenuStripItem.Enabled = true;
+                    manualUninstallToolStripMenuItem1.Enabled = true;
+                }
                 if (item.UninstallerLocation.IsNotEmpty())
+                {
                     uninstallerLocationOpenInExplorerContextMenuStripItem.Enabled = true;
+                    manualUninstallToolStripMenuItem1.Enabled = true;
+                }
                 if (item.InstallSource.IsNotEmpty()) sourceLocationOpenInExplorerContextMenuStripItem.Enabled = true;
 
                 if (item.AboutUrl.IsNotEmpty()) openWebPageContextMenuStripItem.Enabled = true;

@@ -122,6 +122,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.useSystemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addWindowsFeaturesToTheListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findByWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,7 +188,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -953,6 +953,12 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator20.Name = "toolStripSeparator20";
             resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
             // 
+            // viewUpdatesToolStripMenuItem
+            // 
+            this.viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
+            resources.ApplyResources(this.viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
+            this.viewUpdatesToolStripMenuItem.Click += new System.EventHandler(this.viewUpdatesToolStripMenuItem_Click);
+            // 
             // addWindowsFeaturesToTheListToolStripMenuItem
             // 
             this.addWindowsFeaturesToTheListToolStripMenuItem.Name = "addWindowsFeaturesToTheListToolStripMenuItem";
@@ -1392,12 +1398,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
-            // 
-            // viewUpdatesToolStripMenuItem
-            // 
-            this.viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
-            resources.ApplyResources(this.viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
-            this.viewUpdatesToolStripMenuItem.Click += new System.EventHandler(this.viewUpdatesToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
