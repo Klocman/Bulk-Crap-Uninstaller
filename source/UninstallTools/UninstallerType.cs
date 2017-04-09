@@ -25,7 +25,9 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "UninstallerType_SdbInst")]
         SdbInst,
         [LocalisedName(typeof(Localisation), "UninstallerType_WindowsFeature")]
-        WindowsFeature, 
+        WindowsFeature,
+        [LocalisedName(typeof(Localisation), "UninstallerType_WindowsUpdate")]
+        WindowsUpdate,
         [LocalisedName(typeof(Localisation), "UninstallerType_StoreApp")]
         StoreApp,
         [LocalisedName(typeof(Localisation), "UninstallerType_SimpleDelete")]

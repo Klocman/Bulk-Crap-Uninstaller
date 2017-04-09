@@ -475,7 +475,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is orphaned.
+        ///   Looks up a localized string similar to Is unregistered.
         /// </summary>
         internal static string IsOrphaned {
             get {
@@ -1038,6 +1038,15 @@ namespace UninstallTools.Properties {
         internal static string UninstallerType_WindowsFeature {
             get {
                 return ResourceManager.GetString("UninstallerType_WindowsFeature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Update.
+        /// </summary>
+        internal static string UninstallerType_WindowsUpdate {
+            get {
+                return ResourceManager.GetString("UninstallerType_WindowsUpdate", resourceCulture);
             }
         }
         

@@ -149,6 +149,9 @@ namespace UninstallTools.Factory
 
         private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
         {
+            if (string.IsNullOrEmpty(target.UninstallerFullFilename))
+                return false;
+
             bool isPathRooted;
             try
             {
@@ -218,7 +221,8 @@ namespace UninstallTools.Factory
                 new KeyValuePair<IUninstallerFactory,string>(new PredefinedFactory(), Localisation.Progress_AppStores_Templates),
                 new KeyValuePair<IUninstallerFactory,string>(new SteamFactory(), Localisation.Progress_AppStores_Steam),
                 new KeyValuePair<IUninstallerFactory,string>(new StoreAppFactory(), Localisation.Progress_AppStores_WinStore),
-                new KeyValuePair<IUninstallerFactory,string>(new WindowsFeatureFactory(), Localisation.Progress_AppStores_WinFeatures)
+                new KeyValuePair<IUninstallerFactory,string>(new WindowsFeatureFactory(), Localisation.Progress_AppStores_WinFeatures),
+                new KeyValuePair<IUninstallerFactory,string>(new WindowsUpdateFactory(), "Searching for Windows Updates"),
             };
             var progress = 0;
             foreach (var kvp in miscFactories)

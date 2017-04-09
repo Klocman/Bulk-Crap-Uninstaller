@@ -233,15 +233,34 @@ namespace UninstallTools.Uninstaller
 
         private static bool CheckForTypeCollisions(UninstallerType target, IEnumerable<UninstallerType> running)
         {
-            if (target == UninstallerType.InstallShield || target == UninstallerType.WindowsFeature
-                || target == UninstallerType.SdbInst || target == UninstallerType.Unknown)
-                target = UninstallerType.Msiexec;
+            switch (target)
+            {
+                // Might cause collisions, don't run concurrently
+                case UninstallerType.InstallShield:
+                case UninstallerType.SdbInst:
+                case UninstallerType.WindowsFeature:
+                case UninstallerType.WindowsUpdate:
+                case UninstallerType.Unknown:
+                    target = UninstallerType.Msiexec;
+                    break;
+
+                // Can be ran concurrently
+                case UninstallerType.Msiexec:
+                case UninstallerType.InnoSetup:
+                case UninstallerType.Steam:
+                case UninstallerType.Nsis:
+                case UninstallerType.StoreApp:
+                case UninstallerType.SimpleDelete:
+                    break;
+                default:
+                    Debug.Fail("Unhandled UninstallerType - " + target);
+                    break;
+            }
 
             foreach (var item in running)
             {
                 var x = item;
-                if (x == UninstallerType.InstallShield || x == UninstallerType.WindowsFeature
-                    || x == UninstallerType.SdbInst || x == UninstallerType.Unknown)
+                if (x == UninstallerType.InstallShield || x == UninstallerType.WindowsFeature || x == UninstallerType.SdbInst || x == UninstallerType.Unknown)
                     x = UninstallerType.Msiexec;
 
                 if (x == target)
