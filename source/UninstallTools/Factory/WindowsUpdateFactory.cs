@@ -5,11 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
@@ -20,7 +18,7 @@ namespace UninstallTools.Factory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            return GetSteamApps();
+            return GetUpdates();
         }
         private static bool? _helperIsAvailable;
 
@@ -37,13 +35,13 @@ namespace UninstallTools.Factory
         private static string HelperPath
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"WinUpdateHelper.exe");
 
-        private static IEnumerable<ApplicationUninstallerEntry> GetSteamApps()
+        private static IEnumerable<ApplicationUninstallerEntry> GetUpdates()
         {
             if (!HelperIsAvailable)
                 yield break;
 
             var output = SteamFactory.StartProcessAndReadOutput(HelperPath, "list");
-            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
+            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.OrdinalIgnoreCase))
                 yield break;
 
             foreach (var group in ProcessInput(output))
@@ -94,7 +92,7 @@ namespace UninstallTools.Factory
 
                 if (entry.IsValid)
                 {
-                    entry.UninstallString = $"\"{HelperPath}\" u {entry.RatingId}";
+                    entry.UninstallString = $"\"{HelperPath}\" uninstall {entry.RatingId}";
                     entry.QuietUninstallString = entry.UninstallString;
                 }
 
