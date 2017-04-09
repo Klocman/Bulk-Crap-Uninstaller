@@ -18,6 +18,8 @@ namespace SteamHelper
         private static bool _silent;
         private static int _appId;
 
+        private const int InvalidArgumentCode = 10022;
+
         /// <summary>
         /// Return codes:
         /// 0 - The operation completed successfully.
@@ -67,6 +69,11 @@ namespace SteamHelper
             {
                 return 1223;
             }
+            catch(FormatException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.Message);
+                return InvalidArgumentCode;
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);
@@ -83,48 +90,48 @@ namespace SteamHelper
                 {
                     case @"u":
                     case @"uninstall":
-                        if (_queryType != QueryType.None) throw new ArgumentException(@"Multiple commands specified");
+                        if (_queryType != QueryType.None) throw new FormatException(@"Multiple commands specified");
                         _queryType = QueryType.Uninstall;
                         break;
 
                     case @"i":
                     case @"info":
-                        if (_queryType != QueryType.None) throw new ArgumentException(@"Multiple commands specified");
+                        if (_queryType != QueryType.None) throw new FormatException(@"Multiple commands specified");
                         _queryType = QueryType.GetInfo;
                         break;
 
                     case @"/s":
                     case @"/silent":
                         if (_queryType != QueryType.Uninstall)
-                            throw new ArgumentException(@"/silent must follow the uninstall command");
+                            throw new FormatException(@"/silent must follow the uninstall command");
                         _silent = true;
                         break;
 
                     case @"l":
                     case @"list":
-                        if (_queryType != QueryType.None) throw new ArgumentException(@"Multiple commands specified");
+                        if (_queryType != QueryType.None) throw new FormatException(@"Multiple commands specified");
                         _queryType = QueryType.List;
                         break;
 
                     case @"steam":
-                        if (_queryType != QueryType.None) throw new ArgumentException(@"Multiple commands specified");
+                        if (_queryType != QueryType.None) throw new FormatException(@"Multiple commands specified");
                         _queryType = QueryType.SteamDir;
                         break;
 
                     default:
-                        if (_appId != default(int)) throw new ArgumentException(@"Multiple AppIDs specified");
-                        if (!int.TryParse(arg, out _appId)) throw new ArgumentException($@"Unknown argument: {arg}");
+                        if (_appId != default(int)) throw new FormatException(@"Multiple AppIDs specified");
+                        if (!int.TryParse(arg, out _appId)) throw new FormatException($@"Unknown argument: {arg}");
                         break;
                 }
             }
 
             if (_queryType == QueryType.None)
-                throw new ArgumentException(@"No commands specified");
+                throw new FormatException(@"No commands specified");
 
             if (_queryType != QueryType.List
                 && _queryType != QueryType.SteamDir
                 && _appId == default(int))
-                throw new ArgumentException(@"No AppID specified");
+                throw new FormatException(@"No AppID specified");
         }
 
         private enum QueryType
