@@ -51,7 +51,7 @@
     <StartupObject>UninstallerAutomatizer.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>app.minus.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -86,9 +86,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app.minus.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
       <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
       <Name>KlocTools</Name>
@@ -114,6 +111,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
