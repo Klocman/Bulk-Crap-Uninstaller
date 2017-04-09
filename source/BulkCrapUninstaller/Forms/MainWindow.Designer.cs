@@ -187,6 +187,7 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -901,6 +902,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12,
             this.useSystemThemeToolStripMenuItem,
             this.toolStripSeparator20,
+            this.viewUpdatesToolStripMenuItem,
             this.addWindowsFeaturesToTheListToolStripMenuItem,
             this.viewWindowsStoreAppsToolStripMenuItem,
             this.findByWindowToolStripMenuItem,
@@ -1391,6 +1393,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker.ContainerControl = this;
             // 
+            // viewUpdatesToolStripMenuItem
+            // 
+            this.viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
+            resources.ApplyResources(this.viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
+            this.viewUpdatesToolStripMenuItem.Click += new System.EventHandler(this.viewUpdatesToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -1591,6 +1599,7 @@ namespace BulkCrapUninstaller.Forms
         private Klocman.Forms.SplashScreen splashScreen1;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem runToolStripMenuItem;
+        private ToolStripMenuItem viewUpdatesToolStripMenuItem;
     }
 }
 

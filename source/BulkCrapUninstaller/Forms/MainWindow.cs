@@ -1297,5 +1297,11 @@ namespace BulkCrapUninstaller.Forms
         {
             PremadeDialogs.StartProcessSafely(e.ClickedItem.Text);
         }
+
+        private void viewUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _setMan.Selected.Settings.FilterShowUpdates = true;
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate));
+        }
     }
 }
