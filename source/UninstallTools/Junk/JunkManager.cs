@@ -21,7 +21,7 @@ namespace UninstallTools.Junk
             var progress = 0;
             foreach (var uninstaller in targetEntries)
             {
-                var progressInfo = new ListGenerationProgress(progress, targetEntries.Count, progress++ > 0 ? uninstaller.DisplayName : null);
+                var progressInfo = new ListGenerationProgress(progress++, targetEntries.Count, uninstaller.DisplayName);
                 
                 progressInfo.Inner = new ListGenerationProgress(0, 3, "Scanning start-ups...");
                 progressCallback(progressInfo);

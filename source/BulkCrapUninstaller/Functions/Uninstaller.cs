@@ -277,8 +277,16 @@ namespace BulkCrapUninstaller.Functions
                     dialogInterface.SetSubProgressVisible(true);
                     junk.AddRange(JunkManager.FindJunk(selectedUninstallers, allUninstallers, x =>
                     {
-                        dialogInterface.SetMaximum(x.TotalCount);
-                        dialogInterface.SetProgress(x.CurrentCount, x.Message);
+                        if (x.TotalCount <= 1)
+                        {
+                            // Don't update the title label to uninstaller name when there's only one uninstaller
+                            dialogInterface.SetMaximum(-1);
+                        }
+                        else
+                        {
+                            dialogInterface.SetMaximum(x.TotalCount);
+                            dialogInterface.SetProgress(x.CurrentCount, x.Message);
+                        }
 
                         var inner = x.Inner;
                         if (inner != null)
