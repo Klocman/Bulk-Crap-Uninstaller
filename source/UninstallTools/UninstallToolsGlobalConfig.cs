@@ -43,16 +43,33 @@ namespace UninstallTools
         internal static IEnumerable<string> AllProgramFiles
             => StockProgramFiles.Concat(CustomProgramFiles ?? Enumerable.Empty<string>());
 
-        internal static IEnumerable<string> JunkSearchDirs => new[]
+        private static IEnumerable<string> _junkSearchDirs;
+        internal static IEnumerable<string> JunkSearchDirs
         {
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS),
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_PROGRAMS),
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_APPDATA),
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA),
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA)
+            get
+            {
+                if(_junkSearchDirs == null)
+                {
+                    var localData = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA);
+                    var paths = new List<string>
+                    {
+                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS),
+                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_PROGRAMS),
+                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_APPDATA),
+                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA),
+                        localData
+                        //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) danger?
+                    };
 
-            //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) danger?
-        }.Distinct();
+                    var vsPath = Path.Combine(localData, "VirtualStore");
+                    if(Directory.Exists(vsPath))
+                        paths.AddRange(Directory.GetDirectories(vsPath));
+
+                    _junkSearchDirs = paths.Distinct().ToList();
+                }
+                return _junkSearchDirs;
+            }
+        }
 
         internal static IEnumerable<string> StockProgramFiles => new[]
         {
