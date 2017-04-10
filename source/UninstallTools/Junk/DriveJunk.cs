@@ -29,7 +29,7 @@ namespace UninstallTools.Junk
 
                     foreach (
                         var item in
-                            UninstallToolsGlobalConfig.JunkSearchDirs.Concat(UninstallToolsGlobalConfig.AllProgramFiles)
+                            UninstallToolsGlobalConfig.JunkSearchDirs.Concat(UninstallToolsGlobalConfig.GetAllProgramFiles())
                         )
                     {
                         try
@@ -92,7 +92,7 @@ namespace UninstallTools.Junk
 
             var uninLoc = Uninstaller.UninstallerLocation;
             if (uninLoc.IsNotEmpty()
-                && UninstallToolsGlobalConfig.AllProgramFiles.Any(
+                && UninstallToolsGlobalConfig.GetAllProgramFiles().Any(
                     x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase))
                 && !OtherInstallLocations.Any(x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase) || x.StartsWith(uninLoc, StringComparison.InvariantCultureIgnoreCase)))
             {

@@ -244,8 +244,11 @@ namespace UninstallTools
         ///     Check if the install location is not empty and is not a system directory
         /// </summary>
         public bool IsInstallLocationValid()
-            => !string.IsNullOrEmpty(InstallLocation?.Trim()) &&
-               !UninstallToolsGlobalConfig.AllProgramFiles.Any(x => PathTools.PathsEqual(x, InstallLocation));
+        {
+            if (string.IsNullOrEmpty(InstallLocation?.Trim()))
+                return false;
+            return !UninstallToolsGlobalConfig.GetAllProgramFiles().Any(x => PathTools.PathsEqual(x, InstallLocation));
+        }
 
         /// <summary>
         ///     Get the certificate associated to the uninstaller or application.

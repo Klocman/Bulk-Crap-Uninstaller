@@ -18,19 +18,55 @@ namespace UninstallTools
 {
     public static class UninstallToolsGlobalConfig
     {
-        internal static readonly IEnumerable<string> DirectoryBlacklist = new[]
+        static UninstallToolsGlobalConfig()
         {
-            "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
-            "Desktop", "Internet Explorer", "Windows NT", "Windows Photo Viewer", "Windows Mail",
-            "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
-            "InstallShield Installation Information"
-        };
+            AssemblyLocation = Assembly.GetExecutingAssembly().Location;
+            if (AssemblyLocation.ContainsAny(new[] {".dll", ".exe"}, StringComparison.OrdinalIgnoreCase))
+                AssemblyLocation = PathTools.GetDirectory(AssemblyLocation);
 
-        internal static readonly IEnumerable<string> QuestionableDirectoryNames = new[]
-        {
-            "install", "settings", "config", "configuration",
-            "users", "data"
-        };
+            QuestionableDirectoryNames = new[]
+            {
+                "install", "settings", "config", "configuration",
+                "users", "data"
+            }.AsEnumerable();
+
+            DirectoryBlacklist = new[]
+            {
+                "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
+                "Desktop", "Internet Explorer", "Windows NT", "Windows Photo Viewer", "Windows Mail",
+                "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
+                "InstallShield Installation Information"
+            }.AsEnumerable();
+
+            StockProgramFiles = new[]
+            {
+                WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES),
+                WindowsTools.GetProgramFilesX86Path()
+            }.Distinct().ToList().AsEnumerable();
+
+            // JunkSearchDirs --------------
+            var localData = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA);
+            var paths = new List<string>
+            {
+                WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS),
+                WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_PROGRAMS),
+                WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_APPDATA),
+                WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA),
+                localData
+                //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) danger?
+            };
+
+            var vsPath = Path.Combine(localData, "VirtualStore");
+            if (Directory.Exists(vsPath))
+                paths.AddRange(Directory.GetDirectories(vsPath));
+
+            JunkSearchDirs = paths.Distinct().ToList().AsEnumerable();
+        }
+
+        /// <summary>
+        ///     Path to directory this assembly sits in.
+        /// </summary>
+        internal static string AssemblyLocation { get; }
 
         /// <summary>
         ///     Custom "Program Files" directories. Use with dirs that get used to install applications to.
@@ -38,53 +74,45 @@ namespace UninstallTools
         public static string[] CustomProgramFiles { get; set; }
 
         /// <summary>
-        ///     Directiories containing programs, both built in "Program Files" and user-defined ones.
+        ///     Directory names that should be ignored for safety.
         /// </summary>
-        internal static IEnumerable<string> AllProgramFiles
-            => StockProgramFiles.Concat(CustomProgramFiles ?? Enumerable.Empty<string>());
+        internal static IEnumerable<string> DirectoryBlacklist { get; }
 
-        private static IEnumerable<string> _junkSearchDirs;
-        internal static IEnumerable<string> JunkSearchDirs
-        {
-            get
-            {
-                if(_junkSearchDirs == null)
-                {
-                    var localData = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA);
-                    var paths = new List<string>
-                    {
-                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS),
-                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_PROGRAMS),
-                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_APPDATA),
-                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA),
-                        localData
-                        //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) danger?
-                    };
+        /// <summary>
+        ///     Directories that can contain program junk.
+        /// </summary>
+        internal static IEnumerable<string> JunkSearchDirs { get; }
 
-                    var vsPath = Path.Combine(localData, "VirtualStore");
-                    if(Directory.Exists(vsPath))
-                        paths.AddRange(Directory.GetDirectories(vsPath));
+        /// <summary>
+        ///     Directory names that probably aren't top-level or contain applications.
+        /// </summary>
+        internal static IEnumerable<string> QuestionableDirectoryNames { get; }
 
-                    _junkSearchDirs = paths.Distinct().ToList();
-                }
-                return _junkSearchDirs;
-            }
-        }
-
-        internal static IEnumerable<string> StockProgramFiles => new[]
-        {
-            WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES),
-            WindowsTools.GetProgramFilesX86Path()
-        }.Distinct();
-
+        /// <summary>
+        ///     Automatize non-quiet uninstallers.
+        /// </summary>
         public static bool QuietAutomatization { get; set; }
+
+        /// <summary>
+        ///     Kill stuck automatized uninstallers.
+        /// </summary>
         public static bool QuietAutomatizationKillStuck { get; set; }
 
-        internal static bool IsSystemDirectory(DirectoryInfo dir)
+        /// <summary>
+        ///     Built-in program files paths.
+        /// </summary>
+        internal static IEnumerable<string> StockProgramFiles { get; }
+
+        /// <summary>
+        ///     Directiories containing programs, both built in "Program Files" and user-defined ones. Fast.
+        /// </summary>
+        internal static IEnumerable<string> GetAllProgramFiles()
         {
-            return //dir.Name.StartsWith("Windows ") //Probably overkill
-                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
-                || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
+            if (CustomProgramFiles == null || CustomProgramFiles.Length == 0)
+                return StockProgramFiles;
+
+            // Create copy of custom dirs in case they change
+            return StockProgramFiles.Concat(CustomProgramFiles).ToList();
         }
 
         /// <summary>
@@ -92,8 +120,7 @@ namespace UninstallTools
         ///     The boolean value is true if the directory is confirmed to contain 64bit applications.
         /// </summary>
         /// <param name="includeUserDirectories">Add user-defined directories.</param>
-        /// <returns></returns>
-        public static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(
+        internal static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(
             bool includeUserDirectories)
         {
             var pfDirectories = new List<KeyValuePair<string, bool?>>(2);
@@ -105,7 +132,8 @@ namespace UninstallTools
                 pfDirectories.Add(new KeyValuePair<string, bool?>(pf64, true));
 
             if (includeUserDirectories)
-                pfDirectories.AddRange(CustomProgramFiles.Where(x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
+                pfDirectories.AddRange(CustomProgramFiles.Where(
+                    x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
                     .Select(x => new KeyValuePair<string, bool?>(x, null)));
 
             var output = new List<KeyValuePair<DirectoryInfo, bool?>>();
@@ -127,25 +155,22 @@ namespace UninstallTools
             return output;
         }
 
-        private static string _assemblyLocation;
-
-        public static string AssemblyLocation
+        /// <summary>
+        ///     Check if dir is a system directory and should be left alone.
+        /// </summary>
+        internal static bool IsSystemDirectory(DirectoryInfo dir)
         {
-            get
-            {
-                if (_assemblyLocation == null)
-                {
-                    _assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                    if (_assemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
-                        _assemblyLocation = PathTools.GetDirectory(_assemblyLocation);
-                }
-                return _assemblyLocation;
-            }
+            return //dir.Name.StartsWith("Windows ") //Probably overkill
+                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
+                || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
         }
 
-        public static Icon TryExtractAssociatedIcon(string path)
+        /// <summary>
+        ///     Safely try to extract icon from specified file. Return null if failed.
+        /// </summary>
+        internal static Icon TryExtractAssociatedIcon(string path)
         {
-            if(path != null && File.Exists(path))
+            if (path != null && File.Exists(path))
             {
                 try
                 {
@@ -153,7 +178,7 @@ namespace UninstallTools
                 }
                 catch (Exception ex)
                 {
-                    Debug.Assert(ex == null, ex.Message);
+                    Debug.Fail(ex.Message);
                 }
             }
             return null;
