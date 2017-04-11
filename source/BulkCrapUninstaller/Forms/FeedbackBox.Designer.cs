@@ -75,6 +75,7 @@
             // p1welcomeHeading
             // 
             resources.ApplyResources(this.p1welcomeHeading, "p1welcomeHeading");
+            this.flowLayoutPanel5.SetFlowBreak(this.p1welcomeHeading, true);
             this.p1welcomeHeading.Name = "p1welcomeHeading";
             // 
             // p1welcomeSubheading
@@ -114,6 +115,7 @@
             // p1FeedbackHeading
             // 
             resources.ApplyResources(this.p1FeedbackHeading, "p1FeedbackHeading");
+            this.flowLayoutPanel5.SetFlowBreak(this.p1FeedbackHeading, true);
             this.p1FeedbackHeading.Name = "p1FeedbackHeading";
             // 
             // p1FeedbackDesc
@@ -145,6 +147,7 @@
             // p1HelpHeading
             // 
             resources.ApplyResources(this.p1HelpHeading, "p1HelpHeading");
+            this.flowLayoutPanel5.SetFlowBreak(this.p1HelpHeading, true);
             this.p1HelpHeading.Name = "p1HelpHeading";
             // 
             // p1HelpDesc

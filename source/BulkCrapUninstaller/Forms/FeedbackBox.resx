@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
@@ -198,6 +198,24 @@
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="buttonSendFeedback2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonSendFeedback2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonSendFeedback2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="buttonSendFeedback2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="buttonSendFeedback2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Send feedback</value>
+  </data>
   <data name="&gt;&gt;buttonSendFeedback2.Name" xml:space="preserve">
     <value>buttonSendFeedback2</value>
   </data>
@@ -210,6 +228,24 @@
   <data name="&gt;&gt;buttonSendFeedback2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="buttonSourceForgeRate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonSourceForgeRate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonSourceForgeRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 3</value>
+  </data>
+  <data name="buttonSourceForgeRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 23</value>
+  </data>
+  <data name="buttonSourceForgeRate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Rate on SourceForge</value>
+  </data>
   <data name="&gt;&gt;buttonSourceForgeRate.Name" xml:space="preserve">
     <value>buttonSourceForgeRate</value>
   </data>
@@ -221,6 +257,24 @@
   </data>
   <data name="&gt;&gt;buttonSourceForgeRate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonTwitter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonTwitter.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 3</value>
+  </data>
+  <data name="buttonTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 23</value>
+  </data>
+  <data name="buttonTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Share on Twitter</value>
   </data>
   <data name="&gt;&gt;buttonTwitter.Name" xml:space="preserve">
     <value>buttonTwitter</value>
@@ -327,6 +381,24 @@
   <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="buttonSubmitGithub.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonSubmitGithub.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonSubmitGithub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="buttonSubmitGithub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 23</value>
+  </data>
+  <data name="buttonSubmitGithub.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Submit on GitHub (Need an account)</value>
+  </data>
   <data name="&gt;&gt;buttonSubmitGithub.Name" xml:space="preserve">
     <value>buttonSubmitGithub</value>
   </data>
@@ -338,6 +410,24 @@
   </data>
   <data name="&gt;&gt;buttonSubmitGithub.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="buttonSendFeedback.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonSendFeedback.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonSendFeedback.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 3</value>
+  </data>
+  <data name="buttonSendFeedback.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="buttonSendFeedback.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Send feedback</value>
   </data>
   <data name="&gt;&gt;buttonSendFeedback.Name" xml:space="preserve">
     <value>buttonSendFeedback</value>
@@ -444,6 +534,21 @@
   <data name="flowLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="buttonDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="buttonDonate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="buttonDonate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="buttonDonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 29</value>
+  </data>
+  <data name="buttonDonate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;buttonDonate.Name" xml:space="preserve">
     <value>buttonDonate</value>
   </data>
@@ -456,6 +561,24 @@
   <data name="&gt;&gt;buttonDonate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="buttonTranslate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonTranslate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonTranslate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 3</value>
+  </data>
+  <data name="buttonTranslate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 23</value>
+  </data>
+  <data name="buttonTranslate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Translate BCU</value>
+  </data>
   <data name="&gt;&gt;buttonTranslate.Name" xml:space="preserve">
     <value>buttonTranslate</value>
   </data>
@@ -467,6 +590,24 @@
   </data>
   <data name="&gt;&gt;buttonTranslate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonIssues.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonIssues.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonIssues.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 3</value>
+  </data>
+  <data name="buttonIssues.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 23</value>
+  </data>
+  <data name="buttonIssues.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Issues on GitHub</value>
   </data>
   <data name="&gt;&gt;buttonIssues.Name" xml:space="preserve">
     <value>buttonIssues</value>
@@ -528,149 +669,32 @@
   <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="buttonSendFeedback2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonSendFeedback2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonSendFeedback2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="buttonSendFeedback2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="buttonSendFeedback2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonSendFeedback2.Text" xml:space="preserve">
-    <value>Send feedback</value>
-  </data>
-  <data name="buttonSourceForgeRate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonSourceForgeRate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonSourceForgeRate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 3</value>
-  </data>
-  <data name="buttonSourceForgeRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 23</value>
-  </data>
-  <data name="buttonSourceForgeRate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Rate on SourceForge</value>
-  </data>
-  <data name="buttonTwitter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonTwitter.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 3</value>
-  </data>
-  <data name="buttonTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 23</value>
-  </data>
-  <data name="buttonTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="buttonTwitter.Text" xml:space="preserve">
-    <value>Share on Twitter</value>
-  </data>
-  <data name="buttonSubmitGithub.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonSubmitGithub.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonSubmitGithub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="buttonSubmitGithub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 23</value>
-  </data>
-  <data name="buttonSubmitGithub.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Submit on GitHub (Need an account)</value>
-  </data>
-  <data name="buttonSendFeedback.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonSendFeedback.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonSendFeedback.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 3</value>
-  </data>
-  <data name="buttonSendFeedback.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="buttonSendFeedback.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonSendFeedback.Text" xml:space="preserve">
-    <value>Send feedback</value>
-  </data>
-  <data name="buttonDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="buttonDonate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="buttonDonate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 2, 0, 0</value>
-  </data>
-  <data name="buttonDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 29</value>
-  </data>
-  <data name="buttonDonate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="buttonTranslate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonTranslate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonTranslate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 3</value>
-  </data>
-  <data name="buttonTranslate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 23</value>
-  </data>
-  <data name="buttonTranslate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonTranslate.Text" xml:space="preserve">
-    <value>Translate BCU</value>
-  </data>
-  <data name="buttonIssues.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonIssues.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="buttonIssues.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 3</value>
-  </data>
-  <data name="buttonIssues.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 23</value>
-  </data>
-  <data name="buttonIssues.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonIssues.Text" xml:space="preserve">
-    <value>Issues on GitHub</value>
-  </data>
   <data name="panel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="checkBoxNeverShow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxNeverShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxNeverShow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="checkBoxNeverShow.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>9999, 23</value>
+  </data>
+  <data name="checkBoxNeverShow.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 23</value>
+  </data>
+  <data name="checkBoxNeverShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="checkBoxNeverShow.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Don't ever show this window again, ever</value>
   </data>
   <data name="&gt;&gt;checkBoxNeverShow.Name" xml:space="preserve">
     <value>checkBoxNeverShow</value>
@@ -683,6 +707,27 @@
   </data>
   <data name="&gt;&gt;checkBoxNeverShow.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="buttonClose.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 8</value>
+  </data>
+  <data name="buttonClose.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>9999, 23</value>
+  </data>
+  <data name="buttonClose.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 23</value>
+  </data>
+  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
     <value>buttonClose</value>
@@ -723,51 +768,9 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBoxNeverShow.AutoSize" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="checkBoxNeverShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="checkBoxNeverShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="checkBoxNeverShow.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>9999, 23</value>
-  </data>
-  <data name="checkBoxNeverShow.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 23</value>
-  </data>
-  <data name="checkBoxNeverShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 23</value>
-  </data>
-  <data name="checkBoxNeverShow.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>Don't ever show this window again, ever</value>
-  </data>
-  <data name="buttonClose.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 8</value>
-  </data>
-  <data name="buttonClose.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>9999, 23</value>
-  </data>
-  <data name="buttonClose.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 23</value>
-  </data>
-  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -795,7 +798,4 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

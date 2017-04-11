@@ -187,5 +187,10 @@ namespace BulkCrapUninstaller.Forms
             catch (Exception ex)
             { PremadeDialogs.GenericError(ex); }
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            FeedbackBox.ShowFeedbackBox(this, true);
+        }
     }
 }
