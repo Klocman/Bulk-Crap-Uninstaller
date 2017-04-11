@@ -1313,4 +1313,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
   </data>
+  <data name="olvColumnIs64.Text" xml:space="preserve">
+    <value>64bit</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>BCUninstaller</value>
+  </data>
 </root>
