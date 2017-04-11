@@ -19,11 +19,12 @@ namespace BulkCrapUninstaller.Forms
             InitializeComponent();
         }
 
-        public static void ShowDialog(IWin32Window parent, IEnumerable<ApplicationUninstallerEntry> targets)
+        public static void ShowDialog(Form parent, IEnumerable<ApplicationUninstallerEntry> targets)
         {
             using (var window = new AdvancedClipboardCopyWindow())
             {
                 window.advancedClipboardCopy1.Targets = targets;
+                window.Icon = parent.Icon;
                 window.ShowDialog(parent);
             }
         }
