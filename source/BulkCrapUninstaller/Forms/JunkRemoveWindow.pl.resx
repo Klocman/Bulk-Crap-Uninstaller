@@ -126,15 +126,8 @@
   <data name="buttonExport.Text" xml:space="preserve">
     <value>Eksportuj...</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxHideLowConfidence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
   <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
     <value>Ukryj pozycje ze słabą pewnością</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>757, 45</value>
   </data>
   <data name="olvColumnPath.Text" xml:space="preserve">
     <value>Ścieżka przedmiotu</value>

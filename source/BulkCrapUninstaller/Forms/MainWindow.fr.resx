@@ -117,65 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonInvertSelect.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonInvertSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 23</value>
-  </data>
-  <data name="buttonSelectNone.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 23</value>
-  </data>
-  <data name="buttonSelectAll.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 23</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 69</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 442</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 94</value>
-  </data>
-  <data name="buttonListSave.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonListSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 35</value>
-  </data>
-  <data name="buttonListLoad.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonListLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 23</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 58</value>
-  </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 83</value>
-  </data>
-  <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 357</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 563</value>
-  </data>
-  <data name="listLegend1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>610, 387</value>
-  </data>
-  <data name="listLegend1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 126</value>
-  </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
@@ -221,23 +162,11 @@
   <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
     <value>Commande de désinstallation silencieuse</value>
   </data>
-  <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>775, 516</value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 21</value>
-  </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Recharger les désinstalleurs</value>
   </data>
-  <data name="toolStripButtonUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
-  </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Désinstaller</value>
-  </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Désinstaller en silence</value>
@@ -245,254 +174,71 @@
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Propriétés</value>
   </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>775, 25</value>
-  </data>
-  <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 17</value>
-  </data>
-  <data name="toolStripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
-  </data>
-  <data name="toolStripLabelTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
-  </data>
-  <data name="facebookStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAABaZJREFUeF7tnXtM
-        W1Ucx/evRv+aDt0Wkdc2aQU2EiOaQaQtvaVMQoz+odlIZvbn1LEXr228hbKp6CZuRg24LjMuG8mIDmXJ
-        BFymjDlw2STOMUaYZMT5GoyH8POcZmQ8Dr3l9J723NvfN/kk9Kace37nQ+/l3FcXAQAiEcyFSPBgLkSC
-        B3Ph8yn7YG3yXlidXAkJiObEp1bASlsxGeq5Yz9nQVKyCyKc28FsLYWnreWIAMzWMliWvhMW27eTIZ85
-        /jNePPjiWxCVnstsBNEWE5ESbi+ER5SdZOjnERKjFHjssRpAtMdEtkIPZW6GOEsFGX6GENYvIeKgf/zL
-        03dAWMb9TwkKCTJPOvIgQtlNhh+FSAEV8oSjkAw/CpGCCEc+PJ6eR4YfhUhBlFIIS5y5ZPhRiBRE23eh
-        EJmIIULCUIg8xNh3w2O4D5GHFfY9uFP3htlCJ2zlEGergLi0CogneH72MO099943+/cXCgqZBR3YRGc1
-        vPZGHVTVNkPDqU5ov3gduq/dgt7+29B380/o6fsDrl4fhMu/DsBPl/rgXMc1aG69Al82XoBD7u+hsvZb
-        2FJ8HFbb32auwxso5B4mIuL1bW5oOnMZ/r0zQsr3L3dHxuC5rH3MdXkDhRA2EhFdv9yEyclJUrY2QSEc
-        PLuuGo6evAATGoqYCreQtD2wNBSFpLxcAz93/07KFBNeISs9QvJpE6EjJCnrHfitd5CUKC7+CFkWSkIS
-        lEpo7+wl5YkNr5CnbMUQSSaHJKEh5P3PviOliQ+/kBKIthfRJowvJD27FkZGx0lp4oNCVKATvmNfXSRl
-        BSYoRIUXXqmB0bHAfDpo/NmHRJG5CImxhZTvbyIlBS68QlYRIYY/px6bWgZnO3pISYELt5C0EBCSoFTB
-        nSEtjk+NQ9v5Hvjki3NQffA0+dR9A6UfNDEprjkFiY4qZn+8ERJCsjZ9DP4cHZmYmAR3w3lY+9K7nn8O
-        WOvQilVpRRCu7KKrNa6QrSXHSTn8OVDXqsm5Dl/wzNQdBXS1xhVS/VEzKYcvA7f+gTUcmx5e6MFFwx86
-        OehuI+XwhW6qWG2Kgh5+N7QQuqmpP/YDKYcvBa5GZruiCAkh7oZ2Ug5fNuUeZbYrChSikuytbma7okAh
-        KsnOOcxsVxQoRCUoRGP0KMTQp3D1JsTwl5KiEMnQmxB6OwIK8ZJAC4lUCmCJ08A3fepTiI7uD0l0VELN
-        p2fgQH2Lb9S1QNeVflIOX040dbLbVWHjNj6RkUqhvm7YScrcC8N3x0j35E7xe18z+68GChEUegE3q/9q
-        oBABoWcY7es/ZPZfDRQiIEPDo7DG6WL2Xw0UIiADg39DTArf46xQiIB0dN0Ak4XvKUooREAamy955j+s
-        /quBQgSktr6V2XdfQCECUug6yey7L6AQAVn/Zj2z776AQjTO+H8TYH11P7PvvkCPZaEQDTM0PAJm28If
-        GDBFpAOFaJob/be55yCUCCJEV/epP5PhgtNt3dD641WfaCH0D/xFyuELPVLManc+Dh05C2bOOQhFl0+U
-        M6WW+Qy9N+TwCf7zIRu2fM5sd178kEEx/CP+9HaCCoWoBIVoDAqRDBQiGShEMlCIZKAQyUAhkoFCJAOF
-        SIYeheDF1l4SaCH0fAgK8ZJAC6FfV4FCvASFaAwKkQwUIhkoRDJQiGSgEMnQoxBdXQa0UPQmJFox+JeC
-        6U6I0b+lDYVIBgqRDBQiGShEMlCIZKAQyUAhkqE3IXSm/qhzB101CmElkELM1jIIV/Lh4XU5dNVzhcTa
-        +O8EkgU9CYm1lsLijByIs5TTVc8VssJW5HlaPzXHakAP6EkIHe8w+/39B2WGEMoDmZsh3JGnWyl6EELH
-        lu7Ml86SQZnxYop4SwXE2kqYjckO/QIWf4RsCMQnxFIGy6c9q3c6cxYgwYW5EAkezIVIsIBF/wMadSXC
-        5avOGQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="facebookStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 17</value>
-  </data>
-  <data name="twitterStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="twitterStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
-  </data>
-  <data name="donateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 17</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 541</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>775, 22</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>215</value>
-  </data>
-  <data name="uninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="uninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Désinstaller</value>
-  </data>
-  <data name="quietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>Désinstaller en &amp;silence</value>
   </data>
-  <data name="manualUninstallToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="manualUninstallToolStripMenuItem1.Text" xml:space="preserve">
     <value>Désinstaller &amp;manuellement</value>
-  </data>
-  <data name="msiInstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Installer ou configurer (/I)</value>
   </data>
-  <data name="msiUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Désinstaller (/X)</value>
-  </data>
-  <data name="msiQuietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="msiQuietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>Désinstaller en &amp;silence (/X /qb)</value>
   </data>
-  <data name="uninstallUsingMsiExecContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="uninstallUsingMsiExecContextMenuStripItem.Text" xml:space="preserve">
     <value>Désinstaller en utilisant &amp;MsiExec...</value>
-  </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 6</value>
-  </data>
-  <data name="fullInformationCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
   </data>
   <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Information &amp;complète</value>
   </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 6</value>
-  </data>
-  <data name="programNameCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Nom de programme</value>
-  </data>
-  <data name="gUIDProductCodeCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
   </data>
   <data name="gUIDProductCodeCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Code produit / GUID</value>
   </data>
-  <data name="fullRegistryPathCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Chemin complet de registre</value>
-  </data>
-  <data name="uninstallStringCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Chaîne de désinstallation</value>
   </data>
-  <data name="copyToClipboardContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Copier dans le presse-papiers...</value>
-  </data>
-  <data name="deleteRegistryEntryContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Supprimer l'entrée du registre</value>
   </data>
-  <data name="renameContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Renommer...</value>
-  </data>
-  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 6</value>
-  </data>
-  <data name="installLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
   </data>
   <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Emplacement d'&amp;installation</value>
   </data>
-  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
-  </data>
   <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Emplacement du &amp;désinstalleur</value>
-  </data>
-  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
   </data>
   <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Emplacement de la &amp;source</value>
   </data>
-  <data name="openInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="openInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Ouvrir dans l'&amp;explorateur...</value>
-  </data>
-  <data name="openWebPageContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
     <value>Ouvrir la page &amp;web</value>
   </data>
-  <data name="lookUpOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Rechercher en ligne</value>
   </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 6</value>
-  </data>
-  <data name="propertiesContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
-  </data>
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Propriétés</value>
-  </data>
-  <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 264</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Fichiers texte|*.txt</value>
@@ -500,254 +246,113 @@
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Exporter les propriétés du désinstalleur sélectionné</value>
   </data>
-  <data name="reloadUninstallersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
-  </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Recharger les désinstalleurs</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
-  </data>
-  <data name="loadUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>Charger la/les &amp;listes de désinstallation...</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
-  </data>
-  <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Exporter la sélection...</value>
-  </data>
-  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Quitter</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Fichier</value>
-  </data>
-  <data name="showColorLegendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
   </data>
   <data name="showColorLegendToolStripMenuItem.Text" xml:space="preserve">
     <value>Montrer la légende des couleurs</value>
   </data>
-  <data name="displayToolbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
-  </data>
   <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Montrer la barre d'ou&amp;tils</value>
-  </data>
-  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
   </data>
   <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Montrer la &amp;barre d'état</value>
   </data>
-  <data name="displaySettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
-  </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Montrer la barre latérale des réglage&amp;s</value>
-  </data>
-  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 6</value>
-  </data>
-  <data name="useSystemThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Utiliser le thème système</value>
   </data>
-  <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 6</value>
-  </data>
-  <data name="searchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 22</value>
-  </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Chercher...</value>
-  </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Affichage</value>
   </data>
-  <data name="uninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Désinstaller</value>
-  </data>
-  <data name="quietUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Désinstaller en &amp;silence</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 6</value>
-  </data>
-  <data name="copyFullInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
     <value>In&amp;formation complète</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 6</value>
-  </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>Nom de programme</value>
   </data>
-  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
     <value>Code produit / GUID</value>
-  </data>
-  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
     <value>Chemin complet de registre</value>
   </data>
-  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <data name="toolStripMenuItem13.Text" xml:space="preserve">
     <value>Chaîne de désinstallation</value>
-  </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>&amp;Copier dans le presse-papiers...</value>
   </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
-  </data>
   <data name="toolStripMenuItem5.Text" xml:space="preserve">
     <value>Emplacement d'&amp;installation</value>
-  </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Emplacement du &amp;désinstalleur</value>
   </data>
-  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 22</value>
-  </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>Emplacement de la &amp;source</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Ouvrir dans l'&amp;explorateur...</value>
   </data>
-  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>Ouvrir la page &amp;web</value>
-  </data>
-  <data name="onlineSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Rechercher en ligne</value>
   </data>
-  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 6</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>Montrer les &amp;propriétés</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 20</value>
   </data>
   <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>Opérations &amp;basiques</value>
   </data>
-  <data name="manualUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
-  </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Désinstaller &amp;manuellement</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>&amp;Installer ou configurer (/I)</value>
   </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
     <value>&amp;Désinstaller (/X)</value>
-  </data>
-  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Désinstaller en &amp;silence (/X /qb)</value>
   </data>
-  <data name="msiUninstalltoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
-  </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
     <value>Désinstaller en &amp;utilisant MsiExec</value>
-  </data>
-  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Supprimer la clé de registre</value>
   </data>
-  <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
-  </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Renommer</value>
   </data>
-  <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
-  </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer une sau&amp;vegarde...</value>
-  </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="openKeyInRegeditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 22</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ouvrir la clé dans Regedit</value>
@@ -755,107 +360,44 @@
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>Opérations a&amp;vancées</value>
   </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
-  </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Nettoyer Program Files</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
   </data>
   <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Désinstaller des fonctionnalités Windows...</value>
   </data>
-  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 6</value>
-  </data>
-  <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir "&amp;Programmes et Fonctionnalités"</value>
-  </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
-  </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
-  </data>
-  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 6</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Réglages</value>
   </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ou&amp;tils</value>
-  </data>
-  <data name="openHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
   </data>
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir l'&amp;aide</value>
   </data>
-  <data name="startSetupWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
-  </data>
   <data name="startSetupWizardToolStripMenuItem.Text" xml:space="preserve">
     <value>Démarrer l'assistant d'installation</value>
-  </data>
-  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 6</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Vérifier les mises à jour</value>
   </data>
-  <data name="submitFeedbackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
-  </data>
   <data name="submitFeedbackToolStripMenuItem.Text" xml:space="preserve">
     <value>Soumettre une réaction...</value>
-  </data>
-  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 6</value>
-  </data>
-  <data name="resetSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
   </data>
   <data name="resetSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Réinitialiser les réglages</value>
   </data>
-  <data name="uninstallBCUninstallToolstripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
-  </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
     <value>Désinstaller BCUninstaller</value>
-  </data>
-  <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 6</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>A &amp;propos</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Ai&amp;de</value>
-  </data>
-  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
   </data>
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir la fenêtre de débo&amp;guage</value>

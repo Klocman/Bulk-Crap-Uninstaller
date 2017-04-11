@@ -112,211 +112,48 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;uninstallListEditor1.Name" xml:space="preserve">
-    <value>uninstallListEditor1</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSaveUlDef.Name" xml:space="preserve">
-    <value>toolStripButtonSaveUlDef</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openUlDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButtonOpenUl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="&gt;&gt;openUlDialog.Name" xml:space="preserve">
-    <value>openUlDialog</value>
-  </data>
-  <data name="&gt;&gt;toolStripUninstallerList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSaveUlDef.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uninstallListEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.UninstallListEditor, UninstallTools, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripUninstallerList.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripUninstallerList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 29</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AdvancedFilters</value>
-  </data>
-  <data name="toolStripButtonSaveUl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAANBJREFUaEPtmb0NwjAUBtMyAGPQMABiBBo2oEKswzyIdRiBIvA9KTT2U5TYesSK
-        7qSTG/9dkxTuAACgRXby1oh2l2Ku8tOIdpdiVh/yls8gbW/vzJCQl4zC9vbOJMQgpAJCxiCkAkLGWH3I
-        av7sS0iIQUiAhBiEBEiIQUiAfwm5yHOhttbbMzU+pO/7rcYihrXuvomEGIRMhZCZlIQcZfZ10py9xoyW
-        Qx7Sm3eXGYTMhBDHRUMmPb3pMhuNP07Sm3eQGcNab35q1dMbAAAE0HVfCsKbUXa0/0AAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="uninstallListEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 483</value>
-  </data>
   <data name="saveUlDialog.Title" xml:space="preserve">
     <value>Сохранить список деинсталляции...</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 26</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonToBasicFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButtonToBasicFilters.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
   </data>
   <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
     <value>Сохранить как...</value>
   </data>
-  <data name="toolStripButtonSaveUl.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonOpenUl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAV1JREFUaEPt16FLxVAUgPGBgsFiMxgsgtVksFvMVg2CzWoxCgYx2hX/AKPFLoLF
-        YBNBs8ViEpl+R3bhMg7b3Z3u7OH54IePjXvce8zdZ+F5nud5nvf/WsAzvjo4x6iawg20i20zqragXWSK
-        UXUL7SJT/GraL7DSK22glV5pA630ShtopVfawOAaE5P2BsQnVjAxaW9ChJ13Hdp5C413iLbgHfK1Yxr3
-        1TFrrXeItugQ0g608xbO0Fh9wStmK/K6ft6C3CHzaKy+aBfSEernrBygtXjBA+TvYhHyKcTnrLxA7o7W
-        4kUbcoAuEB+3tI2kwoKfR1tZlqvRMWt3SE4WxI+23H+S/sIakpMFYfPbRH2YlUt0Kmx+M3iCNnRoH1hC
-        p46rn/vQhlo4Qefk0SabzRu0oUOTTXgOWZ1CG2phD1ktQ55a2tChPUI25KyuoA21EDZkz/M8z/M8z8ut
-        KL4ByiUtVw7ySBkAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonToBasicFilters.Name" xml:space="preserve">
-    <value>toolStripButtonToBasicFilters</value>
-  </data>
-  <data name="uninstallListEditor1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>310, 0</value>
-  </data>
-  <data name="toolStripButtonToBasicFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 26</value>
-  </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
     <value>Список деинсталляции|*.bcul</value>
-  </data>
-  <data name="toolStripButtonOpenUl.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
   </data>
   <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
     <value>Открыть...</value>
   </data>
-  <data name="uninstallListEditor1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 29</value>
-  </data>
-  <data name="&gt;&gt;uninstallListEditor1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="uninstallListEditor1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="uninstallListEditor1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator25.Name" xml:space="preserve">
-    <value>toolStripSeparator25</value>
-  </data>
-  <data name="&gt;&gt;uninstallListEditor1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="openUlDialog.Title" xml:space="preserve">
     <value>Открыть список деинсталляции...</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonOpenUl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButtonSaveUl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonOpenUl.Name" xml:space="preserve">
-    <value>toolStripButtonOpenUl</value>
-  </data>
-  <data name="toolStripUninstallerList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;toolStripUninstallerList.Name" xml:space="preserve">
-    <value>toolStripUninstallerList</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSaveUl.Name" xml:space="preserve">
-    <value>toolStripButtonSaveUl</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
     <value>Список деинсталяции|*.bcul</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>Сохранить как по умолчанию</value>
-  </data>
-  <data name="toolStripUninstallerList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSaveUl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripUninstallerList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveUlDialog.Name" xml:space="preserve">
-    <value>saveUlDialog</value>
   </data>
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Основная фильтрация</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 512</value>
-  </data>
-  <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="&gt;&gt;saveUlDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pl</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="saveUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="saveUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>192, 17</value>
   </metadata>
-  <metadata name="openUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>314, 17</value>
   </metadata>
-  <metadata name="toolStripUninstallerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolStripUninstallerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
 </root>

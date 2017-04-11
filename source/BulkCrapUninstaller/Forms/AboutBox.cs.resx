@@ -117,18 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Verze: </value>
-  </data>
-  <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 0</value>
-  </data>
-  <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 16</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
     <value>Autorská práva</value>
@@ -136,26 +126,11 @@
   <data name="labelCompanyName.Text" xml:space="preserve">
     <value>Tvůrce</value>
   </data>
-  <data name="labelis64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 16</value>
-  </data>
   <data name="labelis64.Text" xml:space="preserve">
     <value>Je 64bit: </value>
   </data>
-  <data name="labelPortable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 0</value>
-  </data>
-  <data name="labelPortable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 16</value>
-  </data>
   <data name="labelPortable.Text" xml:space="preserve">
     <value>Je nainstalován:</value>
-  </data>
-  <data name="labelArchitecture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 0</value>
-  </data>
-  <data name="labelArchitecture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 16</value>
   </data>
   <data name="labelArchitecture.Text" xml:space="preserve">
     <value>Architektura:</value>
@@ -163,35 +138,17 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Verze programu</value>
   </data>
-  <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 16</value>
-  </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Windows Ikony</value>
   </data>
-  <data name="linkLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 0</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 16</value>
-  </data>
-  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 16</value>
-  </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsPoskytovatel CodeChimp</value>
-  </data>
-  <data name="linkLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 32</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Použité položky</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Zavřit</value>
-  </data>
-  <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 16</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>Oficiální webové stránky</value>

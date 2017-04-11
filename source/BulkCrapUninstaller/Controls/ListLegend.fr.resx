@@ -117,68 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 19</value>
-  </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Fonctionnalité Windows</value>
-  </data>
-  <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Application non enregistré</value>
   </data>
-  <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 19</value>
-  </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Désinstalleur invalide</value>
-  </data>
-  <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Certificat non vérifié</value>
   </data>
-  <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 19</value>
-  </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Certificat vérifié</value>
-  </data>
-  <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 20</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Légende des couleurs</value>
   </data>
-  <data name="labelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
-  </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>App du Windows Store</value>
-  </data>
-  <data name="flowLayoutPanellabelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 146</value>
   </data>
 </root>

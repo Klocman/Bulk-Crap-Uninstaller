@@ -129,16 +129,6 @@
   <data name="comboBoxFilter.Items3" xml:space="preserve">
     <value>Browser-Erweiterungen anzeigen</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="comboBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 4</value>
-  </data>
-  <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 21</value>
-  </data>
-  <data name="buttonRefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 22</value>
-  </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
@@ -160,71 +150,32 @@
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>Befehl</value>
   </data>
-  <data name="openFileLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>EXE-Speicherort ö&amp;ffnen</value>
-  </data>
-  <data name="openLinkLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Link-Speicherort öffnen</value>
   </data>
-  <data name="runCommandToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Befehl ausführen</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>In Zwischenablage &amp;kopieren</value>
   </data>
-  <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Backup erstellen...</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="moveToRegistryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
     <value>In die Registry verschieben</value>
   </data>
-  <data name="runForAllUsersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Für alle Benutzer ausführen</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="enableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Aktiviert</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
-  </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 220</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Befehle, die während des Systemstarts oder der Anmeldung ausgeführt werden</value>

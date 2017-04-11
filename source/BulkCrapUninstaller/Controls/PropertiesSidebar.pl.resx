@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checkBoxBatchSortQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Wyświetlaj niezarejestrowane</value>
   </data>
@@ -140,17 +125,11 @@
 
 Uwaga: Przed usunięciem tych aplikacji sprawdź dwukrotnie czy nie są jeszcze potrzebne!</value>
   </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 17</value>
-  </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Zaznacz uszkodzone</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Użyj szarego tła do identyfikacji uszkodzonych lub brakujących dezinstalatorów.</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Zaznacz certyfikowane</value>
@@ -161,41 +140,11 @@ Jeśli certyfikat został pomyślnie zweryfikowany użyj zielonego tła, w innym
 
 Uwaga: Weryfikacja może zająć dużo czasu.</value>
   </data>
-  <data name="checkBoxDiisableProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 17</value>
-  </data>
-  <data name="checkBoxSimulate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 176</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Ukryj pozycje Microsoftu</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Odfiltruj wszystko co zostało opublikowane przez firmę Microsoft.</value>
-  </data>
-  <data name="checkBoxListSysComp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
-  </data>
-  <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Pokaż elementy systemowe</value>
@@ -204,29 +153,11 @@ Uwaga: Weryfikacja może zająć dużo czasu.</value>
     <value>Niektóre dezinstalatory mogą być oznaczone jako "składniki systemu", aby ukryć je z listy Dodaj / Usuń programy.
 Sterowniki są często oznaczone tym tagiem.</value>
   </data>
-  <data name="checkBoxListProtected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
-  </data>
-  <data name="checkBoxListProtected.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Pokaż zabezpieczone</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Chronione elementy są oznaczone tagiem "NoRemove", co oznacza, że wydawca nie chce abyś je usunął.</value>
-  </data>
-  <data name="checkBoxShowUpdates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 17</value>
-  </data>
-  <data name="checkBoxShowUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Pokaż uaktualnienia</value>
@@ -234,17 +165,8 @@ Sterowniki są często oznaczone tym tagiem.</value>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Aktualizacje innych zainstalowanych aplikacji. Zazwyczaj są usuwane razem z ich nadrzędną aplikacją, więc nie wymagają uwagi.</value>
   </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 111</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrowanie</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
     <value>Zaznaczaj polami wyboru</value>
@@ -254,12 +176,6 @@ Sterowniki są często oznaczone tym tagiem.</value>
 pojedyncze kliknięcie nie może odznaczyć wszystkiego.
 
 Możesz zaznaczyć kilka pozycji podświetlając je i naciskając spację.</value>
-  </data>
-  <data name="checkBoxViewGroups.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Grupuj podobne pozycje</value>

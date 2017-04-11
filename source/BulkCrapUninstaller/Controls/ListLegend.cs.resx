@@ -117,93 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelWinFeature.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
-  </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Funkce systém Windows</value>
-  </data>
-  <data name="labelWinFeature.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="labelOrphaned.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Neregistrované aplikace</value>
   </data>
-  <data name="labelOrphaned.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="labelInvalid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
-  </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value> Neplatný odinstalátor</value>
-  </data>
-  <data name="labelInvalid.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="labelUnverified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Neověřené certifikáty</value>
   </data>
-  <data name="labelUnverified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="labelVerified.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 19</value>
-  </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Ověření certifikátu</value>
   </data>
-  <data name="labelVerified.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 20</value>
-  </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Barevná legenda</value>
-  </data>
-  <data name="flowLayoutPanellabelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 146</value>
   </data>
 </root>

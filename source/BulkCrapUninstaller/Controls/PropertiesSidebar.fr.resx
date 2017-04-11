@@ -117,13 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
-  </data>
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
-  </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Afficher les applications non enregistré </value>
   </data>
@@ -133,17 +126,11 @@ Elles sont invisibles dans la plupart des gestionnaires de désinstallation, mai
 
 Attention : vérifiez à deux fois avant de supprimer ces applications, elles pourraient être encore nécessaires !</value>
   </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 17</value>
-  </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Surligner les désinstalleurs invalides</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Utiliser la couleur grise pour identifier les désinstalleurs corrompus ou manquants.</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Surligner les désinstalleurs certifiés</value>
@@ -153,23 +140,11 @@ Attention : vérifiez à deux fois avant de supprimer ces applications, elles po
 
 Attention : la vérification peut mettre longtemps à se terminer.</value>
   </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 17</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Cacher si publié par Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filtrer tout ce qui a été publié par Microsoft. C'est aussi simple que cela.</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Montrer les composants système</value>
@@ -178,17 +153,11 @@ Attention : la vérification peut mettre longtemps à se terminer.</value>
     <value>Quelques désinstalleurs peuvent être marqués comme "composants système" pour les masquer dans la
 liste Ajout/Suppression de programmes. Les pilotes sont souvent marqués avec cette balise.</value>
   </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 17</value>
-  </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Montrer les éléments protégés</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Les éléments protégés sont marqués avec la balise "NoRemove", signifiant que l'éditeur ne veut pas que vous les enleviez.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Montrer les mises à jour</value>
@@ -199,9 +168,6 @@ liste Ajout/Suppression de programmes. Les pilotes sont souvent marqués avec ce
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrage</value>
   </data>
-  <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
-  </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
     <value>Sélectionnner par cases à cocher</value>
   </data>
@@ -209,9 +175,6 @@ liste Ajout/Suppression de programmes. Les pilotes sont souvent marqués avec ce
     <value>Changer le style de sélection de la liste en cases à cocher. Elles sont plus fiables car un simple clic ne peut désélectionner tout.
 
 Vous pouvez cocher de multiples éléments en les surlignant et en pressant la barre d'espace.</value>
-  </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Montrer les éléments en groupes</value>

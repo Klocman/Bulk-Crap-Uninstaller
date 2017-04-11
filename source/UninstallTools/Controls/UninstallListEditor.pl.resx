@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="columnHeaderName.Text" xml:space="preserve">
     <value>Nazwa filtra</value>
@@ -126,39 +126,17 @@
   <data name="columnHeaderConditions.Text" xml:space="preserve">
     <value>Kondycje</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripButtonAddFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
-  </data>
   <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="toolStripButtonRemoveFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
     <value>Usuń</value>
-  </data>
-  <data name="toolStripButtonAddFiltersFromList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 22</value>
   </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Dodaj z listy...</value>
   </data>
   <data name="groupBoxFilterList.Text" xml:space="preserve">
     <value>Lista filtrów</value>
-  </data>
-  <data name="textBoxFilterName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 17</value>
-  </data>
-  <data name="textBoxFilterName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
-  </data>
-  <data name="labelFilterType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 17</value>
-  </data>
-  <data name="labelFilterType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 19</value>
   </data>
   <data name="labelFilterType.Text" xml:space="preserve">
     <value>Typ:</value>
@@ -169,23 +147,14 @@
   <data name="comboBoxFilterType.Items1" xml:space="preserve">
     <value>Wyklucz</value>
   </data>
-  <data name="labelFilterName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 19</value>
-  </data>
   <data name="labelFilterName.Text" xml:space="preserve">
     <value>Nazwa:</value>
   </data>
   <data name="groupBoxFilterSettings.Text" xml:space="preserve">
     <value>Ustawienia filtra</value>
   </data>
-  <data name="toolStripButtonAddCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
-  </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>Dodaj</value>
-  </data>
-  <data name="toolStripButtonRemoveCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Usuń</value>

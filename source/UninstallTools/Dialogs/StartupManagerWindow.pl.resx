@@ -129,27 +129,11 @@
   <data name="comboBoxFilter.Items3" xml:space="preserve">
     <value>Pokaż rozszerzenia przeglądarek</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="comboBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 4</value>
-  </data>
-  <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>458, 21</value>
-  </data>
-  <data name="buttonRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 3</value>
-  </data>
-  <data name="buttonRefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 22</value>
-  </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Odśwież</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Zamknij</value>
-  </data>
-  <data name="buttonExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
   </data>
   <data name="buttonExport.Text" xml:space="preserve">
     <value>Eksportuj...</value>
@@ -169,71 +153,32 @@
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>Komenda</value>
   </data>
-  <data name="openFileLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Otwórz lokalizację aplikacji</value>
-  </data>
-  <data name="openLinkLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz lokalizację łącza</value>
   </data>
-  <data name="runCommandToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Uruchom komendę</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Kopiuj do schowka</value>
   </data>
-  <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Utwórz kopię zapasową...</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="moveToRegistryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
     <value>Przenieś do rejestru</value>
   </data>
-  <data name="runForAllUsersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Wszyscy użytkownicy</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="enableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Włączony</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Usuń</value>
-  </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 220</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aplikacje uruchamiane podczas startu systemu lub logowania</value>

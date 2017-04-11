@@ -132,19 +132,12 @@
   <data name="olvColumnName.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 52</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Les désinstalleurs sélectionnés vont  maintenant être exécutés un à la fois.
 Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour éviter d'attendre qu'il se termine. Cela peut arriver si le désinstalleur plante ou démarre un nouveau processus et ne le ferme pas. </value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Liste de désinstalleurs</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 19</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Le contenu de cette liste sera désinstallé en allant du début à la fin.</value>

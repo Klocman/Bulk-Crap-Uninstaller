@@ -133,21 +133,11 @@
   <data name="buttonExport.Text" xml:space="preserve">
     <value>Exporter...</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxHideLowConfidence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 17</value>
-  </data>
   <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
     <value>Cacher les éléments avec une confiance peu élevée</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Liste des fichiers et/ou clés de registre laissés après désinstallation</value>
-  </data>
-  <data name="objectListViewMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 134</value>
-  </data>
-  <data name="objectListViewMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 332</value>
   </data>
   <data name="olvColumnPath.Text" xml:space="preserve">
     <value>Chemin de l'élément</value>
@@ -158,26 +148,11 @@
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
     <value>Nom du désinstalleur</value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 117</value>
-  </data>
-  <data name="headerIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 45</value>
-  </data>
   <data name="headerIntro.Text" xml:space="preserve">
     <value>Les éléments suivants semblent avoir été laissés en arrière par leurs désinstalleurs. Quelques désinstalleurs peuvent échouer à supprimer des parties de l'application, avec pour résultat un coût en capacité du lecteur. Ceci étant dit, la plupart de ces éléments sont susceptibles d'être des réglages de l'application, qui prennent peu d'espace et sont sans danger.</value>
   </data>
-  <data name="headerConfTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 45</value>
-  </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Niveau de confiance</value>
-  </data>
-  <data name="headerConfInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 59</value>
-  </data>
-  <data name="headerConfInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 58</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
     <value>La détection de ces vestiges est un processus complexe qui peut commettre des erreurs. Pour cette raison, il est donné un taux de confiance à tous les éléments et la décision finale revient à l'utilisateur. Les éléments avec une bonne ou très bonne confiance sont habituellement bons à supprimer, mais vous devriez tout de même les vérifier deux fois.</value>
@@ -185,26 +160,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Suppression des vestiges</value>
   </data>
-  <data name="listViewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 76</value>
-  </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 22</value>
-  </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ouvrir</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 6</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 22</value>
-  </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Copier dans le presse-papiers</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 22</value>
   </data>
   <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Détails</value>

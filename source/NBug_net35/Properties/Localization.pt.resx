@@ -119,54 +119,71 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Ocorreu uma excepção não processada. O aplicativo vai ser encerrado.</value>
-  <comment>Unhandled exception occurred. Closing application.</comment></data>
+    <comment>Unhandled exception occurred. Closing application.</comment>
+  </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Ocorreu uma excepção não processada. O aplicativo vai ser encerrado.</value>
-  <comment>Unhandled exception occurred. Closing application.</comment></data>
+    <comment>Unhandled exception occurred. Closing application.</comment>
+  </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Ocorreu uma excepção não processada. O aplicativo vai ser encerrado.</value>
-  <comment>Unhandled exception occurred. Closing application.</comment></data>
+    <comment>Unhandled exception occurred. Closing application.</comment>
+  </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Excepção </value>
-  <comment>Exception</comment></data>
+    <comment>Exception</comment>
+  </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Geral</value>
-  <comment>General</comment></data>
+    <comment>General</comment>
+  </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Por favor adicione uma descrição breve de como popderemos reproduzir o erro:</value>
-  <comment>Please add a brief description of how we can reproduce the error:</comment></data>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
+  </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>A aplicação deixou de funcionar e vai ser agora encerrada. Se clicar em sair, o aplicativo será fechado de imediato. Se clicar em Enviar e Sair, o aplicativo será fechado e será enviado um relatório de erro.</value>
-  <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment></data>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
+  </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Sair</value>
-  <comment>&amp;Quit</comment></data>
+    <comment>&amp;Quit</comment>
+  </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Conteudo do relatorio</value>
-  <comment>Report Contents</comment></data>
+    <comment>Report Contents</comment>
+  </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Enviar e Sair</value>
-  <comment>&amp;Send and Quit</comment></data>
+    <comment>&amp;Send and Quit</comment>
+  </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Erro</value>
-  <comment>Error</comment></data>
+    <comment>Error</comment>
+  </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>A aplicação deixou de funcionar e vai ser agora encerrada. Vai ser enviado um relatório de erro. Pedimos desculpa pelo inconveniente.</value>
-  <comment>The application has crashed and it will now be dismissed.
-A bug report has been sent to the developers. We apologize for the inconvenience.</comment></data>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
+  </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Erro</value>
-  <comment>Error</comment></data>
+    <comment>Error</comment>
+  </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Continuar</value>
-  <comment>&amp;Continue</comment></data>
+    <comment>&amp;Continue</comment>
+  </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Ocorreu uma excepção não processada. Se clicar em Continuar, o aplicativo ignorará esse erro e tentará continuar o processo. Se clicar em Sair, o aplicativo será fechado de imediato.</value>
-  <comment>.</comment></data>
+    <comment>.</comment>
+  </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Sair</value>
-  <comment>&amp;Quit</comment></data>
+    <comment>&amp;Quit</comment>
+  </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Erro</value>
-  <comment>Error</comment></data>
+    <comment>Error</comment>
+  </data>
 </root>

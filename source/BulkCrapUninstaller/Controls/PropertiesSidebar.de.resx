@@ -117,21 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
-  </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Ungültige Uninstaller hervorheben</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Graue Farbe kennzeichnet beschädigte oder fehlende Uninstaller</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Zertifizierte Uninstaller hervorheben</value>
@@ -141,23 +131,11 @@
 Erfolgreich geprüfte Zertifikate erscheinen in grüner, andernfalls in  blauer Farbe.
 Achtung: Die Überprüfung kann einige Zeit in Anspruch nehmen.</value>
   </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 17</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Microsoft Komponenten ausblenden</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Alles ausblenden, was von Microsoft veröffentlicht wurde.</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Systemkomponenten anzeigen</value>
@@ -167,18 +145,12 @@ Achtung: Die Überprüfung kann einige Zeit in Anspruch nehmen.</value>
 um sie in der Systemsteuerung-Software-Liste zu verstecken. 
 Treiber sind oft so gekennzeichnet</value>
   </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 17</value>
-  </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Geschützte Elemente anzeigen</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Geschützte Elemente werden mit "NoRemove" gekennzeichnet, 
 was bedeutet, dass der Hersteller nicht will, dass sie entfernt werden.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Updates anzeigen</value>
@@ -198,9 +170,6 @@ was bedeutet, dass der Hersteller nicht will, dass sie entfernt werden.</value>
 Das ist sicherer, damit ein einzelner Klick nicht alles deaktivieren kann.
 Sie können mehrere Elemente aktivieren, indem Sie sie markieren 
 und die Leertaste drücken.</value>
-  </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Elemente gruppieren</value>

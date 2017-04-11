@@ -112,110 +112,33 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 96</value>
-  </data>
-  <data name="toolStripButtonAddFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
-  </data>
   <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Hinzufügen</value>
-  </data>
-  <data name="toolStripButtonRemoveFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 22</value>
   </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
-  <data name="toolStripButtonAddFiltersFromList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Hinzufügen von Liste...</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 25</value>
-  </data>
-  <data name="groupBoxFilterList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 146</value>
   </data>
   <data name="groupBoxFilterList.Text" xml:space="preserve">
     <value>Filterliste</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 150</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 4</value>
-  </data>
-  <data name="textBoxFilterName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 20</value>
-  </data>
-  <data name="labelFilterType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 17</value>
-  </data>
-  <data name="comboBoxFilterType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 17</value>
-  </data>
-  <data name="groupBoxFilterSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 154</value>
-  </data>
-  <data name="groupBoxFilterSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 43</value>
-  </data>
-  <data name="listBoxConditions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 132</value>
-  </data>
-  <data name="toolStripButtonAddCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
-  </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="toolStripButtonRemoveCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 22</value>
-  </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Entfernen</value>
-  </data>
-  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 25</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 157</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="groupBoxConditions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 178</value>
-  </data>
-  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 178</value>
-  </data>
-  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>185</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 383</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>201</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Uninstall-Listen (*.xml)|*.xml|All files|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Uninstall-Liste laden...</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 383</value>
   </data>
 </root>

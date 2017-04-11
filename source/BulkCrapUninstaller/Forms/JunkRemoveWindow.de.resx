@@ -133,10 +133,6 @@
   <data name="buttonExport.Text" xml:space="preserve">
     <value>Exportieren...</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxHideLowConfidence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 17</value>
-  </data>
   <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
     <value>Ausblenden von Elementen mit niedrigem Vertrauensgrad</value>
   </data>
@@ -149,42 +145,14 @@
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
     <value>Name des Uninstallers</value>
   </data>
-  <data name="objectListViewMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 134</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="resource.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="objectListViewMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 332</value>
-  </data>
-  <data name="headerIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 45</value>
-  </data>
   <data name="headerIntro.Text" xml:space="preserve">
     <value>Folgende Elemente scheinen von ihren Uninstallern zurückgelassen worden zu sein. Mitunter werden nicht alle Programmteile vollständigen entfernt - was auf Kosten der Laufwerkskapazität geht. Jedoch sind die meisten dieser Elemente wahrscheinlich Anwendungseinstellungen, belegen wenig Platz und sind harmlos.</value>
-  </data>
-  <data name="headerConfTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 45</value>
-  </data>
-  <data name="headerConfTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 14</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Vertrauensbewertung</value>
   </data>
-  <data name="headerConfInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 59</value>
-  </data>
-  <data name="headerConfInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>696, 58</value>
-  </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
     <value>Die Erkennung dieser Rückstände  ist ein komplexer Prozess, bei dem Fehler auftreten können. Aus diesem Grund gibt es für jedes Element eine Vertrauensbewertung. Die endgültige Entscheidung hat am Ende der Benutzer. Elemente mit hohem oder sehr hohem Vertrauensgrad können gefahrlos entfernt werden, dennoch sollten Sie alles vor dem Löschen sorgfältig überprüfen. Bewertungsdetails können Sie sich nach Doppelklick auf das Element anzeigen lassen.</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 117</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Liste der Dateien, die nach der Deinstallation übrig blieben</value>

@@ -117,28 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxManualNoCollisionProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 30</value>
-  </data>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
     <value>Wyłącz zapobiegania kolizji podczas uruchamiania
 dezinstalatorów ręcznie</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 17</value>
-  </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
     <value>Tylko jeden głośny dezinstalator na raz</value>
   </data>
-  <data name="checkBoxConcurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 17</value>
-  </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Automatycznie uruchom dezinstalatory równolegle</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Maks. liczba działających dezinstalatorów:</value>
@@ -146,26 +133,14 @@ dezinstalatorów ręcznie</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Równoległa deinstalacja</value>
   </data>
-  <data name="checkBoxShutdown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
     <value>Zapobiegaj restartowaniu systemu</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Inteligentne sortowanie</value>
   </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 17</value>
-  </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Wyłącz zabezpieczenie</value>
-  </data>
-  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
     <value>Symuluj dezinstalację</value>

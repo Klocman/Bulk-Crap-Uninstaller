@@ -117,27 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 333</value>
-  </data>
-  <data name="filterEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 60</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 85</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Wyszukiwarka</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 508</value>
-  </data>
-  <data name="listLegend1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 305</value>
-  </data>
-  <data name="listLegend1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 126</value>
   </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
     <value>Nazwa</value>
@@ -190,532 +171,95 @@
   <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
     <value>Komenda cichej dezinstalacji</value>
   </data>
-  <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 452</value>
-  </data>
-  <data name="listViewPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
-  </data>
-  <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 454</value>
-  </data>
-  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVGhD7ZlPhFZRGMa/T5EkzSKSpChGEmkRLUpajhYt
-        iqLFGIZK2yiSlAzTLlpFi5hNtGiRFEWLDLNNtJo2ERkzUZLkq99T93Kd7517zz3n3Jm53IefM6753nOf
-        e8/7nj+316lTp1ZqFDb9/7PdOgNvoPVmZOQPrLqZDbAPTsI4TMBZOAFboUq5kZU3MxgMttNchzn4CfmN
-        WLyHaZBZS0UjYkXMKDFn4DcUO/flGRyFolwj4iKkF29gI81dqHr6vjyCfNhZRi5Bcu2Ad+B2Fss8HIDm
-        jfAmDtF8BrejVCzClHNNJDWifFgAt5Miv+AVKPHHMH6Y9hichsvwBL6B9dsy0hjhhjbTfACrE/EDlDPb
-        oFRZfl2Br2DFskj2Ru6D1YFQOdXYriuZfg1WTJd4I9nwsIKL2Bqv3yqGFbtIkjeiWm8Ffws+JjSMvpSg
-        BLfiF4k2sh+swN9hD/hKM7kVx5doI7fBCqzErqsYM9FGlMhuUC1HdkOIQs1EGdEq1gqq5IzRHdADqsM5
-        CNYRGDLS7/dv0rZKe0GzsUudJO/UaY1Iw9YazjuhPcoKyVCBybYPwVLJs0phGVpcroNQaQvgGtEuVFNB
-        sDQJuUF9eAi1zfDUdYBh7f31gKIUakSEmLkFViytBqIUY0TUMbMLtBAdihObH5KPkSWwluY52n9XSeP/
-        JVjxn0O0fIzEbqxk4ilYsfU2tKmLlu/QmoWQZYvmBm3OrJjiASRRnRxRiVRSVh4+oBG4AWU7w4+g/0si
-        y8jAuFZE5VPD7SqcyhJVu8wxmITHUHV6ouOig5BMlhGdV31yrqVkMUWVcmUZ0XGm8qGpI1MdAibXckYk
-        Vap7UDXUfFAMJfYWaEQa026nuZFcOpiL+azwIlWJLZNV410j/8TNaJ10DZToVZ8aVJF0CrPch55G5Jox
-        jThaD6pU+tx2AfSR5jwcB5/y3JiKZnyMrGnlZlpvRJKZ0IO5Tp06rZp6vb/qRp+fJ/k5hwAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 26</value>
-  </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Odśwież dezinstalatory</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="toolStripButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFdSURBVGhD7dehS8VQFIDxgYLBYjMYLILVZLBbzFYNgs1q
-        MQoGMdoV/wCjxS6CxWATQbPFYhKZfkd24TIO292d7uzh+eCHj4173HvM3WfheZ7neZ73/1rAM746OMeo
-        msINtIttM6q2oF1kilF1C+0iU/xq2i+w0ittoJVeaQOt9EobaKVX2sDgGhOT9gbEJ1YwMWlvQoSddx3a
-        eQuNd4i24B3ytWMa99Uxa613iLboENIOtPMWztBYfcErZivyun7egtwh82isvmgX0hHq56wcoLV4wQPk
-        72IR8inE56y8QO6O1uJFG3KALhAft7SNpMKCn0dbWZar0TFrd0hOFsSPttx/kv7CGpKTBWHz20R9mJVL
-        dCpsfjN4gjZ0aB9YQqeOq5/70IZaOEHn5NEmm80btKFDk014DlmdQhtqYQ9ZLUOeWtrQoT1CNuSsrqAN
-        tRA2ZM/zPM/zPM/LrSi+AcolLVcO8kgZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
   </data>
   <data name="toolStripButton7.Text" xml:space="preserve">
     <value>Otwórz listy dezinstalatorów...</value>
   </data>
-  <data name="toolStripButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVGhD7Zm9DcIwFAbTMgBj0DAAYgQaNqBCrMM8iHUY
-        gSLwPSk09lOU2HrEiu6kkxv/XZMU7gAAoEV28taIdpdirvLTiHaXYlYf8pbPIG1v78yQkJeMwvb2ziTE
-        IKQCQsYgpAJCxlh9yGr+7EtIiEFIgIQYhARIiEFIgH8JuchzobbW2zM1PqTv+63GIoa17r6JhBiETIWQ
-        mZSEHGX2ddKcvcaMlkMe0pt3lxmEzIQQx0VDJj296TIbjT9O0pt3kBnDWm9+atXTGwAABNB1XwrCm1F2
-        tP9AAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="toolStripButtonSelAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVGhD7ZahSgVREIYXDCZBEBHxAcRiMBiMNpvFF7DZ
-        RDD4ACJYfACjQTAIRoNBm0Uf4QaDzaIYDKv/r3vkMMzu3fXMmOaDj13O3Ts/s3vvnK2CIAiCIAiCoSzA
-        xZ9TGz7/0RNY1XU9hcMjfMb5Ctcs0AI9vIATcBLeNmv0Ba7DYvIwL28gG2Aj581a7iucg0XIotY+wGlI
-        jqB2zR4sRits5Qj/gXkcyS7UrjmFJmjFrdmCNZQ5d5A/ORNkcWrJGnyHMmMEZ6AZMoBawX2CU0nW5597
-        CZoiQ6iEj593dgjc8J6grM2f2AY0RwbRHDZxBT/gJhfGkW14Wm2TCaWhhSVSE2mdd3MbdsHvXMO8XtJs
-        QmlogYlLKD9jMztQo23Do98TCk9rFkcXtNAE7742Nuk+lLRteGlC8WndQxe04JyuZg5hgk9JuyafUGeQ
-        ay7IYC2oq5lj2LbhcS1NqAOY1l3Ig7uCupppM00oTrv8uy7kweOChjTzPaHw517G4a1ZS7qQB/QJ6tNM
-        /g6lbYouyJA+QV3NyHco7RoX/hqkNaO9Q+WfJ10oCcqb4VF7h5K1qQulQamZtneo0vq9KQ7CZFptTjWK
-        6/fFO8i7/i9akLcuaEHeuqAFeeuCFuStC1qQt0EQBEEQDKOqvgAXhV7oKQ97YAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripButtonSelAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Zaznacz wszystko</value>
-  </data>
-  <data name="toolStripButtonSelNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7c2xDcAwAMOw/P90+oBHgx1iAZp51lprrfVo
-        96frJURcLyHiegkR10uIuJ5AhEEQYRBEGAQRBkGEQRBhEEQYBBEGQYRBEGEQRBgEEQZBhEEQYRBEGAQR
-        BkGEQRBhEEQYBBFGRMT1EiKulxBxvYSI6yVEvNZaa63HOucDln3yHBqFG0wAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButtonSelNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
   </data>
   <data name="toolStripButtonSelNone.Text" xml:space="preserve">
     <value>Odznacz wszystko</value>
   </data>
-  <data name="toolStripButtonSelInv.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKSSURBVGhD7Zk/aBRBGMUPFEREEMRKAnZWNqLWYiFomTpV
-        CFYpbAQVEWwVFG0trWwEEYsUKULqkCIgEuwUBIukiIWInL53uS+8GWd2Zu9mLqvsD37sZWfv++axf26W
-        DHp6/j/mxtsq/K7oEM5Dcg3+gLdHf1UgNIFS3oLkAtyFtv85PAKLoo1L+gCSs/Az9McfwaJo8aIMh8OT
-        2GxC7UG/QQYsijYoyTG4ArU+/YmAV7AtjjYpyUuotc0FWAVtUoqHUOuaT2E1tJEDLoGL2KzC06MdeSxC
-        rWmyzlFYDW12wDjEDuT+LZhzc96Ev6DWpNvwFKyKNhzhhTA5maYwl+B3qN+he/A8rI42Nd5A3W9+gaFJ
-        nYNfoX88f9lvwJmgjY0TcA3qmMkw/KU2eP98gKFj78GZoY2VpjA748uPvxWxY15BwktuJmhzn8YwkE+i
-        0NgGgh6HZ/CZZ3BaluA6/ASfsDZ3+ugEQjSFCcmJ86GgZ2tSWOM19HuwLufloAfEyA2jy49n0PZPAkO8
-        hVpf5XwcdLCJnDC6/ND9bUmFMB2iAwGawvjLDx1ry3XIR7fWCOkQHYgQCvMe+ssPHc+FZ8LgUicVxiE6
-        0ICGiS0/2ta1mo9Hf+2TCuMQHUjAxu9gbPnRpq5/lnPDOEQHpiS3buhSpTlhHKIDU5JTNxbCTIVx0IFa
-        hkiFMGNheG86+F+soU9uCNMP8xH+9UoR+mJplbYhTA2jj+lDYdIQ5n146EwbIvZSN1P6ELAPUYo+BOxD
-        lKIPAfsQpeAr7j8fwrgDQ5NM2akQRtswnQxh5IbpXAjeH3f3Px6QCtPJM3EVcnL60kNiYTp7Ob2ANslU
-        mE7fE/5/qWJhOh3iMtQQph9mGVYIMRj8AeHfJWi9bK+YAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButtonSelInv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Odwróć zaznaczenie</value>
-  </data>
-  <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="toolStripButtonUninstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFKSURBVGhD7dfBrcIwEEXRdMCSBqiBIqiFLtjBmjVV0AT1
-        sESBiUQi84iNx56MbTRXekJC+uDzI4joLMuyrLG+77f0cKXdaLvhuaZyAE9YG6AAAFcniAHA1QHKAODK
-        gAQBOB3QggDcMiBFAE4GVBCAywLtaXMvWnJnGr9/uSJTzX9GsOa/tbAFQToATBBUBLB6P05lgHyAr/cQ
-        yznsg3ahbWgfMUA+wJp2ot1pslcpcLgUUAwg9m/iYvx3Y0ApAFwaiAEZ5wXNxAGMU7sy40IgfQCWCSoP
-        wBJB9QCwBNCv6QIwAZA+4H3oI41z7/DNBxg+TweaPG7mkDH3DvfQ7kIA/EKQuVoRh+KAOABcFojzU/cX
-        KBWAU/up6wU5lbunCIHKAbAMUB0ALAEUOx0AJggqA8AyQHUAMAaoTgAWALUBwBxQmwDLsqyF6roXJMB3
-        ommlYIwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButtonUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 26</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Odinstaluj</value>
   </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVGhD7ZcxLwRBGIYvUSgUCoVChIRERCMKiUKi9lv8
-        BJ1SrRatTkThLyj8AIVKKSiUsrzv2e/y+W5mbnZvdmdP9kmeDG72Zh97u7c76Onp6ekRiqLYx3AHH+Ax
-        /zZTqIBv42wEBQKs3QyqEGDtRtAUAdY8QQkDrO0ENRhgbSaoxQBrmqCMAdapgk6g601zegGr81+OyIiZ
-        P0csM3/VsjQY1E6AJWFQloDFchwxRZAvYGyNZKid/YKXcBP+oUKQL2AZnsNPmPYoBXauTlBMQOw2caid
-        eYauBcSYoDoB1npB5U5cwRV4BCct9gFXYQxVAsRkH7UD+Apdi3CHGKuZL0dN1gAuPtwpHKU9DG9QL6Qj
-        OI/zyRo8hTxKWQMIP1ZP8AbKf3gb3kIuZiM4j/O5HdmC/D1bAJEIWUDHEAYc/v44ipC5Osa+j8/kAcS3
-        uI0hNkKMjWkkQFiHL9C1sI7xRVAdsgQfoX7dF8Dz6Qwmi+PnOxSzUI6u10MRoQB7QUh2tEIx746/UR3B
-        IyYRVQKsSYJCMVYdMaT8Yq0bYK33qKuIiRmL8JD9O2UHFtC1EO+3NqBwDe39V/YAEro6iaOrmboDkBvK
-        7AEkJkJ0xbjm+WwkgFSJEOvENBZAQhE8sXl7wtH1emxMowFkUoRcnTjWiWk8QNiFrpPTdYn1xXB7vg9h
-        0D1sLUBjnwpdEYKN4XZyez8H+VzSeoBGYkIRgsToiE7Bk3pShMB58ozS09PTGQaDHxF+Z1FP1tq4AAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 26</value>
-  </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Odinstaluj cicho</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="toolStripButtonProperties.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJVSURBVGhD7ZixahRRFIYXIoSQwm2CRR7AImiRQjBvYGFn
-        CjtbX8I+CnapUgS0sxBSpbbIEwQRREJAIWKjhQSRsOb/YSOHn7uzd845M05kP/gY2Ox+d88ms3MnowUL
-        FoT406Hv4CrshdIbyLS3YUqLZ9vLMKWFu7DzYXTBCNpSOx1GF4ugrYPCY50NowtF0NYy7G0YXSRCqdXb
-        MLpAhFmtXobReISmVufDaDjCvFanw2g0Qk2rs2E0GKG21TSMG41F0JZHN2khoC2PbtJCQFse3aSFgLY8
-        ukkLOUlbPy3kJG39tJCTtPXTQk6OYMr6NhIKFeCF7xF8DT/C7/AcnsJD+BSOp8cfcJCDPIQnUPvqV/gE
-        3oJvoBsNR1mCO3ACtd3kHrwB3WgwykuozVp3oRuNRXgMtXcBX8H7cDyZTFZwvANfwJ9Qn8+GCw154Rb8
-        C7StM7gFZ8GBeOLb1/CccW3nbYR64QlrOxf49O/h2AiecxcH/c2w1RoboF74jWM7+7AWPa9c3142QL18
-        hn8700+6iulz7Xt4D1tjA9TLL+jqYJA1HOxrv8HW2AD1EunchPa1vMq3xgaol8w/rU+wNTZAvejJzit1
-        LXqyv4WtsQHqZRvaTtXXL+C1ZFBfv9wn8U/Cts4wzCaOsxjkBXEd6iDUblH4Brm134CD3KJwCN5vaKut
-        qZvGNj6HWUOkb+NrnTcEN5DH8ljJqxurMKX4PGuGuA15k/UA8lb3A+Q58Rvy51e3urwYplB6I03WDjF4
-        /oshCP/1f+2HILrLvZZDkGfwHwwxGl0CXqDpvLlkNawAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButtonProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 26</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Właściwości</value>
   </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 30</value>
-  </data>
-  <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 19</value>
-  </data>
-  <data name="toolStripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
-  </data>
-  <data name="toolStripLabelTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 19</value>
-  </data>
-  <data name="facebookStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        5avOGQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="facebookStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 19</value>
-  </data>
-  <data name="twitterStatusButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="twitterStatusButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 19</value>
-  </data>
-  <data name="donateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 19</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 484</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>180</value>
-  </data>
-  <data name="uninstallContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAG2SURBVGhD3dc9TgMxEIbhjZStKbkAZ+AQnIVb0EFNzSno
-        t+Y8lEiLV8pI1uj1z4ztgFM8zccCfhNlV1m2bbsJOM4IxxnhOCMcZ4TjjHDsZd/3x2VZPoOv4Imu6QXH
-        VlHArgwLwtErE6B1D8LRyhCgdQvCsVZDgNYchGNJxwDNHYRjysAAzRyEo3bFAK06CEfxhwFaMQjHw+l0
-        elZ/7D94p7MecBQ38Y7Epv+MaNPftbSBQeYAgWOtjkHuAIFjzrqud3prCMIA+h8lOJLosD/BR7g9P2Su
-        oUPHMOB8Pt+H/S34Tl2TgmMsczhPUE1A1e9oOB4Mr25NkCdAywbheDCEiGSQZgwQvhDRM2hEgMCRtASN
-        DBA45jiDhgUIHGs4gkpcAQJHiw5BTQECx5TLoV+Nz44UDLh8nl7oZzk4anDImmdHfOhYLkDfEKrfLRxF
-        xaEsQZYArRiE4yEczvJVtxTkDdCu9lU3GSRGPVNw1HoEjQoQOKZ4g4JhAQLHEkdQLXOAwLFWxyB3gMDR
-        qiGoOUDg6GUI6hYgcGyVCeoeIHDsJQoaFiBwnBGOM8JxRjjOCMcZ4TifbfkFFAmtzTRQvjsAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="uninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="uninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Odinstaluj</value>
-  </data>
-  <data name="quietUninstallContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAALXSURBVGhD3Zc/i9RAGMaz/1hYCwthLeRQUBCxOSwEiwVr
-        P4sfwc7S2lps7Q6xsNvawg9whZWlqMWVh+vzHnnDu+8+mZlMktW5wI8kT2Zn5reTTCbVdru9FtCwRGhY
-        IjQsERqWCA1LhIZDsdvtnlZV9Ql8AS9YmaGgYV+MwM4xmhANcwkIeAYXomFXOgh4BhOiYSo9BDy9hWgY
-        Y0ABT7YQDdsYUcDTWYiGniMKeJKFaKj8QwFPVIiGwmQyeekq+x94y/oq0FC5FiNiKf4Z8RQ/a3lGFOos
-        oNAwlQGFsgUUGoZYLBY3fdZDiAqwNmLQkGE6ewneYXp+ECjDOm2hAvP5/DbyN+CirUwbNLQEOpcjlCKQ
-        9BsPDQXTmW+ANaCkCOUIeIJCNBTqTryfzWZ30MnnOI419hucsLo8HQWUPBEPtmfgB2CNXIisLb9arZb2
-        XBhDQKGhRRrXTmGUnqDSn6YRoZGQclJejjGSd5G/wvWTMQUUGipyW6Gyc3CmMtgegY9AGtuTwPkZOJff
-        STadTh/KuZQDvqNtdBJQaCgYCW2gkRHq52Yjx0ZCyzYypJ42sgQUGgYa35MRiISSKtNLQKEh/u17qPy7
-        aczSyAQkhEYEz8gtnH9116lA/Ty9ZtdC0FCo7+9WmeVyeUP2LldCEiEBPyEkjxYNlYjML5IJjUQ9YirR
-        RcATFaKhJSLjaSSU+sWaK+DJ+9RVEmUOJBiZAv1HRIHMY1T2x1RuuYTEfS2L7QPYW3+NJaDQ0BOZnZRm
-        NjMrgKsFJRhNQKGhJVFCYTKsXBudBRQaKh0llByZbAGFhkJEQt7Sm3rPrqfK9BZQaBiT0NlJ9nLurish
-        mcEEFBpitjlFQ+zhPJhiAzKyMj6VMvUf8xkMLqDQUKhXt1am9T1BZJrl/Xq9nuFYvktGEVBoqBiZ6MvO
-        yBx8LR4DGlqwbWISSi1z9Y1ybGhYIjQsERqWCA3LY1v9BeT55JmAiHKcAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="quietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>Odinstaluj &amp;cicho</value>
   </data>
-  <data name="manualUninstallToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="manualUninstallToolStripMenuItem1.Text" xml:space="preserve">
     <value>Odinstaluj &amp;ręcznie</value>
-  </data>
-  <data name="msiInstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Instaluj lub skonfiguruj (/I)</value>
   </data>
-  <data name="msiUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Odinstaluj (/X)</value>
-  </data>
-  <data name="msiQuietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
   </data>
   <data name="msiQuietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>Odinstaluj &amp;cicho (/X /qb)</value>
   </data>
-  <data name="uninstallUsingMsiExecContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="uninstallUsingMsiExecContextMenuStripItem.Text" xml:space="preserve">
     <value>Odinstaluj przez &amp;MsiExec</value>
-  </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 6</value>
-  </data>
-  <data name="fullInformationCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Pełne informacje</value>
   </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
-  </data>
-  <data name="programNameCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Nazwa programu</value>
-  </data>
-  <data name="gUIDProductCodeCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="gUIDProductCodeCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Kod produktu / GUID</value>
   </data>
-  <data name="fullRegistryPathCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Ścieżka klucza w rejestrze</value>
-  </data>
-  <data name="uninstallStringCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Komenda dezinstalacji</value>
   </data>
-  <data name="copyToClipboardContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHOSURBVGhD3ZRBjsMwDAN7C9D9/0P2B9mXtfVBQDQWqMax
-        DGQLzEFUKZqXPPZ9/xeE4h0JRePze03kb9u2nyhnBqFo4CEzKCsTigYeMYuSMqFo4AEzmV4mFA2Ev6L/
-        ZDyfz+3j/eWtD1PLhKKBYFeEu4tcLhWKBsIqizQulQlFA0HVRRrDZULRQMiKIo2hMqFoIEAWOe4y6A04
-        XSYUDRyvLHL5qxaKBg6XFZnxiQ5FA0fLijTtaplQNHCwtEjjSplQNHCsvEhjtEwoGji0pEhjpEwnHMGR
-        ZUUaZ8u4geDA0iINVYb/dQOBuazICN1NCkeUWe0y6B2hu0nhiDKrXQa9I3Q3KRxRZrXLoHeE7iaFI8qs
-        dhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5
-        biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gNCsi/0yyPDcQmhWRfyZZnhsI
-        zYrIP5Mszw2EZkXkn0mW54YzZIdnk+W54Qw8vJruPRS+hYdX072Hwrfw8Gq691D4Fh5eTfceCnclFO9I
-        KN6RULwf++MN2IzFA86GGqwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="copyToClipboardContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Kopiuj do schowka...</value>
-  </data>
-  <data name="deleteRegistryEntryContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Usuń klucze rejestru</value>
   </data>
-  <data name="renameContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Zmień nazwę...</value>
-  </data>
-  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 6</value>
-  </data>
-  <data name="installLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
   </data>
   <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Miejsce &amp;zainstalowania</value>
   </data>
-  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
   <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Miejsce &amp;dezinstalatora</value>
-  </data>
-  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
   </data>
   <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Źródło &amp;instalacji</value>
   </data>
-  <data name="openInExplorerContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAIrSURBVGhD3dUxktpQEIRhARdw7gM49wm2fDzfxznn2Njx
-        Rhs5YdUUQw39fvEkPRD1TNUXuNXMaGpt73A8Hv8LGPYIwx5h2CMMe4RhjzDcwuFw+D4Mw/votBTNK4It
-        tBwhNLMInq31CKG5RfBMjzhCaHYRPMujjhCaXwSvNPdY+m4RvMqSnxh9vwheYelfO5pRBJkPeJC/+/3+
-        R+xY828nv2MogswHPMDSI35D9vJDFh8x9Q4xIyuCzAc0WHXE1DvEs6wIMh+w0uojpt4hP7/2KAw+QKg3
-        19IjxJ7LP++cexQGG3BGvTnWHCHW+dztdm/YozDYkDPq1aw9QlLnY/SLOoJhSEOuqHfP0iPUz3++dD5O
-        p9PPnDsMw2XIDepNWXPEmL3nbPzc/GcxBcMwforl1CNrj9CznM85QjAMl4U3qOdajpD8bC4MQwzOqOfG
-        z5/8HXP3CMnP58Iw5OGBeu7OT+TmCBk/Rc87c2AYfIFQj8AxxRGSnl9RrwbD4AuEelPSMXiExNyMejUY
-        Bl8g1Ltn/E38jfLg84V6NRgGXyDUa+HzhXo1GAZfINRr4fOFejUYBl8g1Gvh84V6NRgGXyDUa+HzhXo1
-        GAZfINRr4fOFejUYBl8g1Gvh84V6NRgGXyDUa+HzhXo1GAZfINRr4fOFejUYBl+wFXqXGgyDL9gKvUsN
-        hsEXbIXepQbD4Au2Qu9Sg2HwBVuhd6nBsEcY9gjDHmHYIwx7hGF/jsMXT3FET220iZcAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="openInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="openInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Otwórz w &amp;explorerze...</value>
-  </data>
-  <data name="openWebPageContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
     <value>Otwórz stronę &amp;Web</value>
   </data>
-  <data name="lookUpOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAALvSURBVGhD3Zg/iBNBFMY3JCEYEa0iIge2FtdYWIuFRXrB
-        QkQEW7vr7SwOtLpCLcTCRrA4OytziM0Vgoi2FhYRkeOKK4QQ1++TGZlMvs2+3dvTHR/8yOXbN+/Nd7Oz
-        f5JNJpP/AimmiBRTRIopIsUUkWKKSDFFpJgiUkwRKR6WTqfTy7LsMtgCu+AL+AG+go/gKXKuMU+Nr4MU
-        6zIajbqY5A3AiecGmHeH41S9KkixDnmen8Gk3gSTrMLbbrd7VtW1IsWqwMQFTGYaTa4qU9S5qOpbkGIV
-        cJ6f4ySiSZED8BiMwdpwOBz0er3TnCy+3wP7IB7zDaypPmVI0cpgMDiOxp+CiXhecNJqjIfHkfckGkd2
-        61wEpGgFsRFMwLOpcotAcHXiGrf9cf6zwvwipGjBrQZPhXACz1RuGRwX1CBTvyqIHYsZKVpAXAVh84Oy
-        06kId5pxT4X1xjzm/i41I0ULCN7swsZbKo8gNureK1ztUjNStIB4FzTJcSpcUnnE5XxAzvWqq+bGegrN
-        LAlWEAv7o9/vn1R5JMxrAGlm4UsVouK5yvHEuQ2wZGahYRWiwn9zRTwLZpaaWkEsPBga9shR8OeetdTU
-        CuJ5UJCsumqFeU3RzIpgBW5GhQvvI4hN8NPlNUFze4SFUNB8Z0es8ziIx1Sl2asWQRz6WauMqLY08TtP
-        iRbciryKGnlKn36tBDULTRApluFM7ARNFHx2egjGNMX3Eewrvrv4d/nvIB6zB86HvZy+0gSR4iqMJuqw
-        p94QEaUmiBSLOEIT/GVlvain0mOkqDCaeAl4AbBemfZxut2dzWbHVM8qSDHGaGKb+4D5/MT3K+ABeA/8
-        uwY/P4NtcGs+n5+Ie9VFiiFVTfwrpOhJxQSRIknJBJEiQTwKJqxojQkiRbdZ+aOzMkBaZYJI0f2qoQyQ
-        1pkgUiQItT9aaYJIkbjnotfOAN8l7rfVBJFiCAydWvU+3hakmCJSTBEppogUU0SKKSLFFJFiekyyX7ir
-        znO24q9IAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="lookUpOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Szukaj online</value>
   </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 6</value>
-  </data>
-  <data name="propertiesContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Właściwości</value>
-  </data>
-  <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 264</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Pliki tekstowe|*.txt</value>
@@ -723,687 +267,167 @@
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Eksportuj właściwości wybranych elementów</value>
   </data>
-  <data name="reloadUninstallersToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAOcSURBVGhD3ZlBSBVBGMfV90Qyog5hSEhBQUgI0UHoUERH
-        6dAhQaFDBEFK16AgQooQ9BZ4EjoEXYIOHSIKjOdBgq4hdMpLEERYoISkZr/PdmIa/76d3X322D74sc+/
-        8307//dmZndnW2q12n+BFMuIFMuIFMuIFJtNW1vbsY6Ojt3qf9shxWZDDMJsFjNSbDaJkY0sZqRYlM7O
-        zg460dva2noeLvP5Cschjuc47lc5PoQzEm1GinnY2NjoppO3OfFbWPE6opiHCehVtQjfiJFqRopZsInJ
-        iR7DmnfiLDyH035NIjRijPhtQqQYw+rq6i6KT0Latx/LIzfsCGVkNOyDjxTTqFQqByn8LjhRI/gAfbDz
-        RpgLJyn6KThJI1mE8UAzGmckmQ9fghOE/ICZZOIPYLyf4xn+vgjX+fwUlkDl1qMxRtbX1/dQ7H1Q3Oc7
-        TFar1QMq3yeZXzfgW5IbQ2OMEFNe0RBbTvtUXj3MNHmvvTr1KG4kGR6quJHpViLEcq1GUFNR3Ahha70q
-        Phd11f09jD7XwSa4qu9TzAgT/LgoaiyzDB9ROQrCruSqTizFjBD3vGI+k6p9PYgiZgobsYkcFl1jKT2s
-        2qdB5DWT30hyF6uKzqr2sRD3wb6gLAyrWg4pOohTsMUIv8aYat9MpOigw0ftahySZZL/K6RYRqRYRqTY
-        TGzYquHM3OxR7R1SbCZ0eixcXAx7fFDtHVJ0EMOglsJ6THV1dVVUvRiIGQiNrNilQLV3SNFBjHrFsvAw
-        jxm+9W5y1bP/vGrvI0UHkdeIkdkMcdfL95lQ7X2k6CCKGDGizTDJD9F+OcjfJG1+GFJ0EDFGvoK6NXeM
-        q9o+ya3QK1D1X6icECk6iBgjhR6sEhPPgpp/IPpVXogUHUTs0HqT57aF6IG5pIZiWuUppOggsswR26ib
-        iNl84Fqxj7Z3oN6T4YK1U/kKKToIZeSn0Hxs+ZylEzfhgk3U5ClzAK7CE0jbPVki94Tq03ZI0UFsMcIJ
-        bL/qY6g3kMWYVSpEig5C/SKDNh847siWqW0Cqr6kIUUHIY3Y/5JtnAeQNtRisBrT7e3te8M+xCJFB2Fj
-        OjzpphGvjW06F3mt8DJ2ia2HFB3brPF/GXHQGbtPugW22Zb2qmEB7JWEfNGTByn6CDPSiA8LQtVWKo5D
-        cI2cEY6X4GzM8pwHKYYEZlKNNAMpKjwz5TZimBmGR66NuZ1GimVEimVEimVEiuWj1vILj1vUoFTwnUMA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="reloadUninstallersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Odśwież dezinstalatory</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 6</value>
-  </data>
-  <data name="loadUninstallerListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAH+SURBVGhD3devSwRREAfwvduFhbOYzmCwCFaTwW4xWzUI
-        NqvFKBjkol3xDzBaLm0RwWKwiaD5iuWSHKwzj/eOce6L68nKOD744N537w3f9X6sZlVV/Qsw9AiGHsHQ
-        Ixh6BEOPYOgRDD2CoUcw9AiGHsGwLXmeL2dZ9kLqOVyiWU1g2IZ+v59TqVtV8lvQvCYwbAOtXVluHmhe
-        Exi2gdadLDcPNK8JDJkebgn102DI9DBLqJ8GQ6aHWUL9NBgyPcwS6qfBkOlhyhDtsQRDpopLk06ns472
-        WIIhU+WlcOeltSUya0N4EUw9MRnznx30ihR0/KDOWQnvEHgRTD05OYnn9kVm7SJ0kuUl9WQ2KstygfGx
-        OmdlXBTFUuirLyBRG9hBzE9FZu142jcdaGrDI38u6POxQsdjdc7KK787pn1leUlt2o7Zlcis7X3qKx9I
-        YkO4+dV1vSEya/czfXWQxA3Tmx+tH/2T9Es2Z/rqIIkbws2PLmYnPv4LrnVXNhMktMLNr9frlXT8HIdY
-        e6df6irsi0JG6yz+PCJoqIWB7pnAkPFXG99saPObGmZlRK/GIurKYJjQOheDTNFFHKKOCQxZt9tdowET
-        PdDIE11IgXomMGS0bsQga+GG/BUYegRDj2DoEQw9gqFHMPQIhh7B0CMYegRDj2DoEQw9gqE/VfYBSHCy
-        ADEQWuQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="loadUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>Załaduj zaznaczenie z &amp;list...</value>
   </data>
-  <data name="saveUninstallerListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEqSURBVGhD7ZnBCcJAEEXdowVYhhcLEEvwYgeegu1Yj7Ed
-        SzAH/QMODOsPhOCYTJiFh/izf3bfJR5ctW27CGgYERpGhIYRoWFEaBgRGkaEhgrWtpRymQNyF3ZHhYYK
-        VgNeM6Fhd1RoqEjZDJoaF5EnuDshs9mZLiIPtv8XyGxzjiVF0E2R0chsc44lRdBNkdHIbHOOJUXQXb7I
-        Yn7ZpyBF0E0RD1IE3RTxIEXQTREP/EVKKWd8nsbw6dK5Ff4iWBvWH4J02UxCiqCbIoNJkQoaKlI2g3qx
-        IngLHZB9vZ2wZ2dnK7MVwbrZZ4arna2kSAUNFSmbQb2kCPiXyKC/3rquW2sH34/1cwGz9na2Il22v0bu
-        wvoKDSNCw4jQMCI0jAgNI0LDiNAwHu3qDaIA63gZPiDlAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="saveUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Eksportuj zaznaczone pozycje...</value>
-  </data>
-  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Za&amp;mknij</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 20</value>
-  </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Plik</value>
-  </data>
-  <data name="showColorLegendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="showColorLegendToolStripMenuItem.Text" xml:space="preserve">
     <value>Pokaż legendę kolorów</value>
   </data>
-  <data name="displayToolbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Pokaż pasek &amp;narzędzi</value>
-  </data>
-  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Pokaż pasek &amp;stanu</value>
   </data>
-  <data name="displaySettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Pokaż panel &amp;ustawień</value>
-  </data>
-  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 6</value>
-  </data>
-  <data name="useSystemThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Użyj motywu systemowego</value>
   </data>
-  <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 6</value>
-  </data>
-  <data name="searchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAKZSURBVGhD3dg9axRRGAXgWXaXhbUwhayIpPIfWAimshCL
-        YCEBe0v9Af4CCSkCWgSLmEIsLC0sbKxWLAQLIQS7LYQEDCIhRQorJ+fI3fB6OePeO9mPeb3wEPbkfr07
-        OzO7UwyHw/+CDD2SoUcy9EiGHsnQIxl6JEOPZOiRDKdpMBi0i6K4CZvwGfbhV/jL1y9brdbdfr/fU+NT
-        yXAaQgH3YQRlgkMU9BA6ar5JZHheZVlewcY+RhtNtddut6+pef9FhueBIq5jM9+jzeU6wjw31PxVZFgX
-        3smr2MRBtCk6gR1YhWWeD/wLK7ABPyEe8wOW1TqKDOvgZxsL8+SNN/Sm0+lcVmPGMHYJ/V5E42g39ZyR
-        YR1Y8IHYyKbqWwVt3Yz9g/OqvjEZ5gpHI746vVZ9J0F7ZeagUcqlWYa5UMjtaPGTSR+nKhzH8XY+zq/6
-        WjLMhfbcLszXql8qtC0zV9J8MsyF9sUsynfwluqXiuPtfPBJ9bNkmAuNl8qzhbvd7kXVLxUaL822kJHq
-        Z8kwV7Roqfrk4BsRzXms+lkyzBUtOosjsq/6WTLMhfbVLOr6HJn1VWtb9bNkmAttzSxKPu8j4UvgX1cu
-        mNad/dvc7uyE9tgsPubru1Y4Im/jTQQ+vv1OKGKMn/ltWGVR3Fw4F/h75Aks9vdIYhF1HKHYrEu4DFPM
-        sIj5/WZPLOIDPAL1sVHm+xQltYher3fB9L8Dz2AXeL78hkPgt2Y+17o37l+XDKvkFjFPMlSaXATJMNb0
-        IkiGMbSnZsPKQosgGVrhaPChsyqAFl4EydAKd2BVADWiCJJhDO292XzjiiAZxsLT9XfA6z+L2GlSESTD
-        KvwtjpvXJfW/RZOhRzL0SIYeydAjGXokQ49k6M+wOAVAyG9wtjV5JgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="searchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Szukaj...</value>
-  </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Widok</value>
   </data>
-  <data name="uninstallToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAG2SURBVGhD3dc9TgMxEIbhjZStKbkAZ+AQnIVb0EFNzSno
-        t+Y8lEiLV8pI1uj1z4ztgFM8zccCfhNlV1m2bbsJOM4IxxnhOCMcZ4TjjHDsZd/3x2VZPoOv4Imu6QXH
-        VlHArgwLwtErE6B1D8LRyhCgdQvCsVZDgNYchGNJxwDNHYRjysAAzRyEo3bFAK06CEfxhwFaMQjHw+l0
-        elZ/7D94p7MecBQ38Y7Epv+MaNPftbSBQeYAgWOtjkHuAIFjzrqud3prCMIA+h8lOJLosD/BR7g9P2Su
-        oUPHMOB8Pt+H/S34Tl2TgmMsczhPUE1A1e9oOB4Mr25NkCdAywbheDCEiGSQZgwQvhDRM2hEgMCRtASN
-        DBA45jiDhgUIHGs4gkpcAQJHiw5BTQECx5TLoV+Nz44UDLh8nl7oZzk4anDImmdHfOhYLkDfEKrfLRxF
-        xaEsQZYArRiE4yEczvJVtxTkDdCu9lU3GSRGPVNw1HoEjQoQOKZ4g4JhAQLHEkdQLXOAwLFWxyB3gMDR
-        qiGoOUDg6GUI6hYgcGyVCeoeIHDsJQoaFiBwnBGOM8JxRjjOCMcZ4TifbfkFFAmtzTRQvjsAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="uninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Odinstaluj zaznaczone</value>
-  </data>
-  <data name="quietUninstallToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAALXSURBVGhD3Zc/i9RAGMaz/1hYCwthLeRQUBCxOSwEiwVr
-        P4sfwc7S2lps7Q6xsNvawg9whZWlqMWVh+vzHnnDu+8+mZlMktW5wI8kT2Zn5reTTCbVdru9FtCwRGhY
-        IjQsERqWCA1LhIZDsdvtnlZV9Ql8AS9YmaGgYV+MwM4xmhANcwkIeAYXomFXOgh4BhOiYSo9BDy9hWgY
-        Y0ABT7YQDdsYUcDTWYiGniMKeJKFaKj8QwFPVIiGwmQyeekq+x94y/oq0FC5FiNiKf4Z8RQ/a3lGFOos
-        oNAwlQGFsgUUGoZYLBY3fdZDiAqwNmLQkGE6ewneYXp+ECjDOm2hAvP5/DbyN+CirUwbNLQEOpcjlCKQ
-        9BsPDQXTmW+ANaCkCOUIeIJCNBTqTryfzWZ30MnnOI419hucsLo8HQWUPBEPtmfgB2CNXIisLb9arZb2
-        XBhDQKGhRRrXTmGUnqDSn6YRoZGQclJejjGSd5G/wvWTMQUUGipyW6Gyc3CmMtgegY9AGtuTwPkZOJff
-        STadTh/KuZQDvqNtdBJQaCgYCW2gkRHq52Yjx0ZCyzYypJ42sgQUGgYa35MRiISSKtNLQKEh/u17qPy7
-        aczSyAQkhEYEz8gtnH9116lA/Ty9ZtdC0FCo7+9WmeVyeUP2LldCEiEBPyEkjxYNlYjML5IJjUQ9YirR
-        RcATFaKhJSLjaSSU+sWaK+DJ+9RVEmUOJBiZAv1HRIHMY1T2x1RuuYTEfS2L7QPYW3+NJaDQ0BOZnZRm
-        NjMrgKsFJRhNQKGhJVFCYTKsXBudBRQaKh0llByZbAGFhkJEQt7Sm3rPrqfK9BZQaBiT0NlJ9nLurish
-        mcEEFBpitjlFQ+zhPJhiAzKyMj6VMvUf8xkMLqDQUKhXt1am9T1BZJrl/Xq9nuFYvktGEVBoqBiZ6MvO
-        yBx8LR4DGlqwbWISSi1z9Y1ybGhYIjQsERqWCA3LY1v9BeT55JmAiHKcAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="quietUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Cicho odinstaluj zaznaczone</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
-  </data>
-  <data name="copyFullInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Pełne informacje</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
-  </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>Nazwa programu</value>
   </data>
-  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
     <value>Kod produktu / GUID</value>
-  </data>
-  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
     <value>Ścieżka klucza w rejestrze</value>
   </data>
-  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="toolStripMenuItem13.Text" xml:space="preserve">
     <value>Komenda dezinstalacji</value>
-  </data>
-  <data name="toolStripMenuItem8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHOSURBVGhD3ZRBjsMwDAN7C9D9/0P2B9mXtfVBQDQWqMax
-        DGQLzEFUKZqXPPZ9/xeE4h0JRePze03kb9u2nyhnBqFo4CEzKCsTigYeMYuSMqFo4AEzmV4mFA2Ev6L/
-        ZDyfz+3j/eWtD1PLhKKBYFeEu4tcLhWKBsIqizQulQlFA0HVRRrDZULRQMiKIo2hMqFoIEAWOe4y6A04
-        XSYUDRyvLHL5qxaKBg6XFZnxiQ5FA0fLijTtaplQNHCwtEjjSplQNHCsvEhjtEwoGji0pEhjpEwnHMGR
-        ZUUaZ8u4geDA0iINVYb/dQOBuazICN1NCkeUWe0y6B2hu0nhiDKrXQa9I3Q3KRxRZrXLoHeE7iaFI8qs
-        dhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5
-        biDKrHYVZHluIMqsdhVkeW4gyqx2FWR5biDKrHYVZHluIMqsdhVkeW4gNCsi/0yyPDcQmhWRfyZZnhsI
-        zYrIP5Mszw2EZkXkn0mW54YzZIdnk+W54Qw8vJruPRS+hYdX072Hwrfw8Gq691D4Fh5eTfceCnclFO9I
-        KN6RULwf++MN2IzFA86GGqwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>&amp;Kopiuj do schowka...</value>
   </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
   <data name="toolStripMenuItem5.Text" xml:space="preserve">
     <value>Miejsce &amp;zainstalowania</value>
-  </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Miejsce &amp;dezinstalatora</value>
   </data>
-  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>Źródło &amp;instalacji</value>
-  </data>
-  <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAIrSURBVGhD3dUxktpQEIRhARdw7gM49wm2fDzfxznn2Njx
-        Rhs5YdUUQw39fvEkPRD1TNUXuNXMaGpt73A8Hv8LGPYIwx5h2CMMe4RhjzDcwuFw+D4Mw/votBTNK4It
-        tBwhNLMInq31CKG5RfBMjzhCaHYRPMujjhCaXwSvNPdY+m4RvMqSnxh9vwheYelfO5pRBJkPeJC/+/3+
-        R+xY828nv2MogswHPMDSI35D9vJDFh8x9Q4xIyuCzAc0WHXE1DvEs6wIMh+w0uojpt4hP7/2KAw+QKg3
-        19IjxJ7LP++cexQGG3BGvTnWHCHW+dztdm/YozDYkDPq1aw9QlLnY/SLOoJhSEOuqHfP0iPUz3++dD5O
-        p9PPnDsMw2XIDepNWXPEmL3nbPzc/GcxBcMwforl1CNrj9CznM85QjAMl4U3qOdajpD8bC4MQwzOqOfG
-        z5/8HXP3CMnP58Iw5OGBeu7OT+TmCBk/Rc87c2AYfIFQj8AxxRGSnl9RrwbD4AuEelPSMXiExNyMejUY
-        Bl8g1Ltn/E38jfLg84V6NRgGXyDUa+HzhXo1GAZfINRr4fOFejUYBl8g1Gvh84V6NRgGXyDUa+HzhXo1
-        GAZfINRr4fOFejUYBl8g1Gvh84V6NRgGXyDUa+HzhXo1GAZfINRr4fOFejUYBl+wFXqXGgyDL9gKvUsN
-        hsEXbIXepQbD4Au2Qu9Sg2HwBVuhd6nBsEcY9gjDHmHYIwx7hGF/jsMXT3FET220iZcAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Otwórz w &amp;explorerze...</value>
   </data>
-  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>Otwórz stronę &amp;Web</value>
-  </data>
-  <data name="onlineSearchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAALvSURBVGhD3Zg/iBNBFMY3JCEYEa0iIge2FtdYWIuFRXrB
-        QkQEW7vr7SwOtLpCLcTCRrA4OytziM0Vgoi2FhYRkeOKK4QQ1++TGZlMvs2+3dvTHR/8yOXbN+/Nd7Oz
-        f5JNJpP/AimmiBRTRIopIsUUkWKKSDFFpJgiUkwRKR6WTqfTy7LsMtgCu+AL+AG+go/gKXKuMU+Nr4MU
-        6zIajbqY5A3AiecGmHeH41S9KkixDnmen8Gk3gSTrMLbbrd7VtW1IsWqwMQFTGYaTa4qU9S5qOpbkGIV
-        cJ6f4ySiSZED8BiMwdpwOBz0er3TnCy+3wP7IB7zDaypPmVI0cpgMDiOxp+CiXhecNJqjIfHkfckGkd2
-        61wEpGgFsRFMwLOpcotAcHXiGrf9cf6zwvwipGjBrQZPhXACz1RuGRwX1CBTvyqIHYsZKVpAXAVh84Oy
-        06kId5pxT4X1xjzm/i41I0ULCN7swsZbKo8gNureK1ztUjNStIB4FzTJcSpcUnnE5XxAzvWqq+bGegrN
-        LAlWEAv7o9/vn1R5JMxrAGlm4UsVouK5yvHEuQ2wZGahYRWiwn9zRTwLZpaaWkEsPBga9shR8OeetdTU
-        CuJ5UJCsumqFeU3RzIpgBW5GhQvvI4hN8NPlNUFze4SFUNB8Z0es8ziIx1Sl2asWQRz6WauMqLY08TtP
-        iRbciryKGnlKn36tBDULTRApluFM7ARNFHx2egjGNMX3Eewrvrv4d/nvIB6zB86HvZy+0gSR4iqMJuqw
-        p94QEaUmiBSLOEIT/GVlvain0mOkqDCaeAl4AbBemfZxut2dzWbHVM8qSDHGaGKb+4D5/MT3K+ABeA/8
-        uwY/P4NtcGs+n5+Ie9VFiiFVTfwrpOhJxQSRIknJBJEiQTwKJqxojQkiRbdZ+aOzMkBaZYJI0f2qoQyQ
-        1pkgUiQItT9aaYJIkbjnotfOAN8l7rfVBJFiCAydWvU+3hakmCJSTBEppogUU0SKKSLFFJFiekyyX7ir
-        znO24q9IAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="onlineSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Szukaj online</value>
   </data>
-  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAMBSURBVGhD3Zc/axRRFMWz/1hcC21cCz+AhWhhIeg3sLDT
-        Ip2tX8JeBTurFIJ2KQQr20nhJxARJIigkGBjChFxg+O5y165e+e4M+9f3PXCj92c3Dn3nWzezputqqr+
-        C6i4iVBxE6HiJkJFBVUXZG88Hp9mc2OgouIGlyBbGCoqbmgpsoShouIGliQ5DBUVN6xmPV3xXoSkMFRU
-        3KDcQV4SLToMFRU3JGuQyWQyxmu2MFRU3ICsQUTLGYaKijPPHkTIFYaKijMuEkTIEYaKijMtFkRIDUNF
-        xRkWDSKkhKGi4syKBxFWhWH9ChUVZ5Q1SAzMV6GiEmLUhveKgfkqVFRCjNrwXjEwX4WKSohRG94rBuar
-        UFEJMSpByHwqKiFGJQiZT0UlxKgEIfOpqIQYlQD1uut8KirWpM0oFLnx9Xq92/B9Dt6Dr+A7+AhegXv4
-        /Vl5BUdg/YKgboEP6ruCQ4S5OxwOz+P9LvNSqKgYwzmsJ4TpdDqAzwPwy/p2YAeBhsxToaLizJKDoB5b
-        v0CeME+FioozSgqC2rZeC47BM3Bd9sNsNjuF95fBI/AN+P5t5i1QUXEm0UHkCI7rPzu/A3CD9QsoCSQb
-        315z+LfjfEOwOJPoILJhnddxXdfXWK8FPVfQu/TJiBfrbQgWayCwni6gdq0PeMr6GCi/r+i3V0OwOIOU
-        IJ+sj/ylWR9j8anYdbxlfQ3B4gxSgvyI9UGQc/Za8IX1NQSLM0gJEu0zGo3OuOuPWF9DsDiDdfnX2md9
-        DcHiDFKC+M2+w/oYKL/ZX9A+JirOICXIHesDOn39ouResj5fv3JOwvX7zu8AYa6yfgG1fjfEwWBwAdf7
-        IMKfI4osUI72/X7/En5evyPKIoQ8byx5RZDv0BjIw4wh8h7jA2gLIQfIN05jzB+s2No8VFScaVdaQ2Af
-        XFw8ZN0E8qj7Dsie+Akk5PxRV26GbF0MKiootpBVdArBZqVCxVj+VQiBirGg9szCTyyEQMVYUEun3AXF
-        QwhUjAV13wQ4sRBVVW39Bng0yMW/D77PAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Właściwości</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 20</value>
   </data>
   <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>Po&amp;dstawowe operacje</value>
   </data>
-  <data name="manualUninstallToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAI1SURBVGhD3ZixSgNBFEU3MRCMpZAvsBNBRKytLKwstLCT
-        FH6H/2BhaWEvpLBPSgX/wG9IFSyMuN4nO2F9XDYzO2/Njg8OhrPZyTuygiSbTCb/AipThMoUoTJFqEwR
-        KlOEyhSh0pJOp7OT5/kRu2YJlRZIQJZl9+AT5OCpySAqYyABmkaCqKyDR4DGNIjKEGoEaEyCqPTBIEAT
-        FURlFQ0EaGoFUcn4gwBNUBCVZdYQoPEKolJoQYCmMohKAXMCXopD2sAbfrlXbFeByjKYU7DOoJ8A0GP7
-        OahkYP46yCvAQWUVmKaDggIcVPqAsQ6qFeCgMgRMbFBUgIPKOmBCg0wCHFTGgFkVZBrgoNICjA5qJMBB
-        pSWY0yYDHFSmCJUpQmUs/X5/C4/SMUOusXtioTKWbre7W/oj/4VcY/fEQmUsyYXgUTnv9Xrb2oeGyBk4
-        60z7EKj0BR9+g+Ve9XMfEiL3wj/LWWUfCpW+FCGy4HSxWGw67xsyGAz6cFPxbQkRxrKYeJ+QImLsfJtC
-        hIfhcLixKkTeg9fyfcDSty1EuFsVgp+32q81BLMHZm6ZEstHhvBI3Awh++wzfKEyhDzPD2QRtVgIMzmD
-        nR0ClaHgt3mIheZqQR/mId8mVkFlHRBzLIupRauYyz3srDpQWZci5l0tzPiwjBCojAELnsmiavEyEhH1
-        7wiDylgqYhqJEKi0AHMBvooAQV5fsvdaQKUVmFERIIzYe6yg0pIi5ppds4TKFKEyPSbZN7XEmiMrflwG
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="manualUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Odinstaluj &amp;ręcznie</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>&amp;Instaluj lub skonfiguruj (/I)</value>
   </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
     <value>&amp;Odinstaluj (/X)</value>
-  </data>
-  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Odinstaluj &amp;cicho (/X /qb)</value>
   </data>
-  <data name="msiUninstalltoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
     <value>Odinstaluj przez &amp;MsiExec</value>
-  </data>
-  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
-  </data>
-  <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zmień nazwę...</value>
   </data>
-  <data name="disableAutostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="disableAutostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Wyłącz autostart</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEeSURBVGhD3Y6xiUVBDMRe/1VtZ/fBoa1AkfFcoESgYb73
-        3r8AZSIoE0GZCMpEUCaCMhGUiaBMBGUiLL/v7zL4GSXEl8DPKCG+BH5GCfEl8DNKiC+Bn1FCfAn8jBLi
-        S+BnlBBfAj+jFOEm5s8QJUW4ifkzREkRbmL+DFFShJuYP0OUFOEm5s8QJUW4ifkzREkRbmL+DFFShJ3e
-        WGirY5ohSoqw0xsLbXVMM0RJEXZ6Y6GtjmmGKCnCTm8stNUxzRAlRbiJ+TNESRFuYv4MUVKEm5g/Q5QU
-        4SbmzxAlRbiJ+TNESRFuYv4MUVKEm5g/Q5Rs4TXwM0qIL4GfUUJ8CfyMEuJL4GeSiaBMBGUiKBNBmQjK
-        RFAmgjIRlImgzON9P2PRpWdnS6MdAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Usuń klucze rejestru</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
-  </data>
-  <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
-  </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Utwórz &amp;kopię zapasową...</value>
-  </data>
-  <data name="openKeyInRegeditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Otwórz klucz w Regedit</value>
   </data>
-  <data name="advancedOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
-  </data>
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zaawansowane operacje</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAALESURBVGhD7dg/iBNBGAXwTbIhGBEtBLnisPDAQrRSwU4s
-        LETExsJWsDClcGAtWFmIgpWghZ3FNXIINkbEwusOEcFCCwvBRsErxFyM7y27Mg5vk5n9l4zcwI9L3s7O
-        znezm90kGg6H/wUZhkiGIZJhiGTYpMlkcjKKonX+VdtdybBJLAImqfVWqxWrfrPIsCnpamRF0CPVz4UM
-        m4JmrsY2VmNF9XMhwyZUuRokwyagPTOKKLUaJMO6oZ0ziii9GiTDuqFtGEWUXg2SYZ3QKl8NkmGd0Cpf
-        DZJhXdBqWQ2SYVXa7fYRTPY2PAWuxBeofDVIhmX1+/0eJvoYfhsTt22yn9q/CBmWhcYi1ORthZ+tbDIs
-        A+2sMVEXq2ocXzIsq9PpHMIEb4J5TeT5pMbwJcMicIqcxqQ+w108Rx1LsxjvL8AabIMqZNLtdvfa4/mS
-        oa+0iC1rgptwHdv2sw+KW8LrG8jeG30yy/aYvmToI6cI0y9YQ7/zkFzY6T4Pgftt2WMWIUNXDkXYvgLv
-        K0e5P08pvD5jj1uEDF0UKMLGU2+AcZJTrywZzlJBEaYX6hi+ZDgN2gmoqgiaTyG4RxzEwcMvhNAuGRMp
-        a36FENoVmPZQ6Gq+hVD6S8hHa2K+5l8IjUajXZjMLfhpTM5HvYXEcXzARdYfbRnuwTdQE86TFMJ/iBpf
-        GY/He7Lj/j2+HWSsg03zCpI7NfV6vd14z+vnOfDxRO1jSgpBGxjZLPez42X+eWOydpyFF/0TXjPmGLhx
-        7oOL2HYHXsMPsPddqEJMb2EV39cPq3FR2Aq280eIq3AZTjFHyyvkAfDjnvg1gVkjhZg+ACdyDQUc52mn
-        jkVoeYUMjD7v0qzxQhQ+AfOB8Q28BF5jLPg7qP4LW4ivnUIS6Q6LgJ90PB0p+94fZCHKTiGLxr2Q0Mgw
-        RDIMkQxDJMMQyTA8w+gPmqPm6Pr8TXIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Wyczyść foldery "Program Files"...</value>
   </data>
-  <data name="openStartupManagerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAASeSURBVGhD3ZlNaB1VGIbzc0MgIgrWSBeCYKULqUhRQaEi
-        ooGKiyItKJQi0oK6EqGgLkSQUKrgIiJCC924ELoLIuLGBkQKBYUuRBdFCwqBIO2iRUswvT5vmHP58vHO
-        3Ds32YwfPNy57/l+zrlz5syZuRMrKyv/C6zYRazYRazYRazYRazYRazYRazYxNTU1MMTExMvwRF4fG5u
-        btb5tYW8e5VzcnLyODzTNq8VHVXHr0I/8QeFD7mYUVCnyfFLyimu0/b6/Pz8tIvLWDGDfRoKOP7p9/v7
-        XWwTdHQPsTdSrswXLjZjxQjFjprkhVvwGdyf4/RLqqMM8AmBz76ZmZm7sl+v17uPto/hJrgaffIcz3EZ
-        K0aw1Zg0cBkeir4UfBRtES6BBunifocz+D4Xpw2D3Y3+ffCLrMY6DisWqgvbJf48XoyYLv4fq7Y2XIE3
-        yoD0yfdToX2A+lLqOaxY0Ck1SU+W9unp6Qf5/l1qH4efYF/Ji52s9AH05Whpd1ixgL0Zk8FgECTWavNX
-        ao/8Db+BppnQce11ADfJOVj9sDyYI6XNYcVC1dmS6GzSXaduwzLthzc2Nu6Muaq4Hu3Pwjlw19B6GowW
-        ks021Yy5MlYsVIU1j69yfLc07Clwg/gKBtNjGOTT0vtliC+sw/Py0Y/Bsc7kFfUl54hYMYI9DQs6Jtku
-        jv+EWPg2+jvuxjU7O3sHy+s9WY8Qq+tQnY8517QsV+06+5v1m7BiHdiZqlBBU+kV50sHdP8pHbzctOXA
-        91CVK+Y+53zrsKKDYpoK/6Zii85XYBeCn+b4HudXwN6L/mJYTMSKDuxsLAKN8xbbMpBh9wHlwk/XY6wx
-        WGCGYcWMpgVJr8UiFH7V+RawVgMRyhlj4Nqou2ArZigQl2Gx2nQ2BNZ6IALbsiVSbeeXsWKGZB/E5LDk
-        /CLYuANZinGq7fwyVsxgyzE5DF8Oxx+InntirZ3ZxgtMe6FWncK2DAR089OdOnO63DOquAWIcRdi3jqs
-        mMF+DonZcffvdX4RLA+kicFUxZ4MurgY89ZhxQy2ZSDM26HrO6ZfO3aoifMlThd3atvRM/JtSDzSSsJZ
-        249v3s7U8X6Jw/I1shzz1mHFDPZJSCw+dH4ZBtyDx+AwMeqgYyHu0/DNK+SpmLMOK2YwFYzJf3V+O4Fy
-        hzqi8TmkYMWMXhqQMD8/vOB8twN2MOQXt4btngtWdGDnQwFxyfltB+UM+cVgERiGFR3VK51YRJxwvuOA
-        vRbybqKaztdhxTqwr2MhWG9TrA5yPEIuPePH3N843zqsWAcrygMUuJ4Kald80PmPAqYbYF6mb7B72Ov8
-        67BiE5hWsPw0p++nGejmc/0o6DGYmHchP+aKYy6mCSsOA9N8zoMROluLTXsxptFuBvwWfmshLjJ45dQG
-        K44CVjeYgl6paqP4UYWOL0JTzFiDEFYcFewAuL8a2rLGWXrR1RgVK7ZBc73aVuRFYBT0fmyJ+F0udxus
-        OA7VxXsM9BC25fk+oYv7B3g7PodsFytuF37hnpZPPvW+6oTg+GU+D7hXqTuBFbuIFbuIFbuIFbuIFbuI
-        FbuIFbvHysR/PwgwLQh7BOgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="openStartupManagerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
-  </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz Menedżer Autostartu</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJvSURBVGhD3Zq9ihNxFMUnHxDIYi3WCnaWPoE2Ij6BpaWV
-        nU9gIfgC1j7AYi2k3VLstbOyUyyEGM9cyHLmf891uJsbNrMLPzb/s3s+JpNu0m02mxuBFKeIFKeIFKeI
-        FE+R2Wy2XCwWd7uue4zXL9q/Dw7XzXK5vL3b7R5i6HMMfg3eg0/gK/gDdnta7+BwbFar1RmGPsCQZ+AV
-        eAc+gs/gJ7gcOkabPTgcynq9XuHdvLc/4+cN+AAuwHcgR10F7rWuVhjjP7f/G/gLLkv618eCN1lXK/Tv
-        6nw+v49/foKxL/H7LTgH/e3/BWQws89q9Up4s3U5QZiyVGZF8GbrcoIwZanMiuDN1uUEYcpSmRXBm63L
-        CcKUpTIrgjdblxOEKUtlVgRvti4nCFOWyqwI3mxdThCmLJVZEbzZupwgTFkqsyJ4s3U5QZiyVGZF8Gbr
-        coIwZanMiuDN1uUEYcpSmRXBm63LCcKUpTIrgjdblxOEKUtlVgRvti4nCFOWyqwI3mxdrTBVpDhFvCBu
-        Y5bKrAjebF1OEKYslVkRvNm6nCBMWSqzInizdTlBmLJUZkXwZutygjBlqcyK4M3W5QRhylKZFcGbrcsJ
-        wpSlMiuCN1uXE4QpS2VWBG+2LicIU5bKrAjebF1OEKYslVkRvNm6nCBMWSqzInizdTlBmLJUZkXwZuty
-        gjBlqcyK4M3W5QRhylKZFcGbrasVbsxjhTEm86DnEEYevf0ActRV4F7raoVjst1ub/UPQ3GxTzGGH4Z+
-        Ab+BHK1osweH6wYXeWfsY7un9Q4Op0z/se2/MICLfARO+wsDhyDFKSLFKSLF6bHp/gExACMeiKWD1gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
   </data>
   <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Odinstaluj funkcje systemu Windows...</value>
   </data>
-  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 6</value>
-  </data>
-  <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz &amp;Programy i funkcje</value>
-  </data>
-  <data name="cleanUpTheSystemCCleanerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
-  </data>
-  <data name="removeMalwareSpyBotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
-  </data>
-  <data name="updateApplicationsNiniteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Dezinstaluj z folderu...</value>
   </data>
-  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 6</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAPDSURBVGhD3ZlPSFRRGMXVmWHIiITKiIiEghZtIqJd0ErI
-        RYQgFLSIaBURIQkJEZELF61aSEQLaRGBYBAhLR2IFgYVEdJGcNFCkJAgF4GO0znyrtyu5818980YvPng
-        xxvO3Hvud9+8++9NR6VSaQukmEekmEekmEekmEekmJVSqbRX6SG1Wu10Z2fnKfVdVqQYC+IceA1+F4vF
-        faqMD2IW1MAcuN7d3V1W5WKQogXc0SKSuAI+JUk5RlR5R1dX18mgPFkBj8vl8m5Vx4IULSCeJEmELNe7
-        w4gJr6zPoipvRYoWUu7sJvi1rqk6vOP4nndf1RtVdaxI0QpixkvEZwGdOcMO4fMIweeruI4l34esYwI4
-        pNqwIkUriH4vmWaYUv4xSDEGxLyXUFYGlHcMUrSSPPMfgqSyMNXMjEWk6KA5p1n1HZ9pJPA5SKgZ5tFW
-        n2qLNFprpOhAjIMlMOY3Uq1W90D7AlRCf8A0BzdmthO49qytre0qFApHoV8AT8EvoOp+9X8ZLq6ofxf6
-        dzDudIUUCQy44LETrpEN8A4MgpeJFvIWCR9Tfj5I8CDKTgZ1HW/Q9nlc2QZvitOXmJPyI1IkiCHPpBEb
-        aOReb29vQXmlgTo3UHc98KrHkPIhUiQItx+yMKw8LKAzt4RfGrPKg0ix3qoteKU8YqCH51cX5iY9lJh0
-        hKs2x4U0TFjFmDisPGJIxsxq4K2Yw2x5VnlsE3zws/ehMmeun56Zz6SqlwV6eb4+7OBz5FL3/CLFEM7h
-        MHoYNEBSB18s9PJ8HeNot0eVD5GiAobc9IUNHVFls5AyLi+qsgopKhCjXgObtOJk58CzfyD0BzdVWYUU
-        FYhtHVHlssLzfugPzNO6FBV4tLh4/dMQ76IqmwX4Hw/9gXkMSjHkPw12bn1C/9YMdpjke/ptmwWxbbYo
-        BJH/TSNBtMc2njMVKi57JpaD1fQOHqzqv/hTogMhj7rJS4ePwE/AsXXUZad4LGYCnBSgNzrqfkO9rem2
-        JUddYnj50Io3KA52YmdePjQiefxeBAllYQ6d2K/asCLFGBCteNs4r7xjkGIMiCkvoWboV/5WpGglGSdp
-        0+cjPC6XcR0GD/D5Dq4DYAGo8jOqDStStILYtrVPWEl7BYoO8Q29qpO6aluQohXEop+Ix4QqT8T65PNM
-        1bEgRQtMCHf3Phr/ESTT8M4i+J+JX4eP222uOaq8BSnGgM4UwSUk4nbLqfshBxc6lONu9z0YjN3aKKSY
-        FXSoz/qcc6JQelakmEekmEekmEekmEekmD8qHX8B+PLgxgMoITEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 22</value>
-  </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ustawienia</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
   </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Narzędzia</value>
   </data>
-  <data name="openHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
-  </data>
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz &amp;pomoc</value>
-  </data>
-  <data name="startSetupWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
   </data>
   <data name="startSetupWizardToolStripMenuItem.Text" xml:space="preserve">
     <value>Uruchom kreator konfiguracji</value>
   </data>
-  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 6</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
-  </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Sprawdź uaktualnienia</value>
-  </data>
-  <data name="submitFeedbackToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHASURBVGhD3dU/SgNRHMTx/INALC1EPICFja0X8AyWtjZ2
-        ll7Ee4htbG0tPIKNpZWI+hthm+GrxsQH81z4gMzuDvOKrKPlcvkvYNgjDHuEYY8w7BGGPcKwRxj2CMMe
-        YSh1vSeirYKheEEK2ioYihekoK2CoXhBCtoqGIoXpKCtgqF4QQraKhiKF6SgrYKheEEK2ioYihekoK2C
-        oXhBCtoqGIoXpKCtgqF4QQraKhiKF6SgrYKheEEK2ioYihekoK2CoXhBCtoqGIoXpKCtgqF4QQraKhiK
-        F6SgrYKheEEK2ioYihekoK2CoXhBCtoqGIoXpKCtgqF4QQraKhiKF6SgrYKheEEK2ioYihekoK2CoXhB
-        CtoqGIoXpKCtguFX6jorb0MpmUwmB/Ruaxh+p67j8jwMB5f0XmsY/mQ8Hh/W4Ec7wOCO3mkNw1VMp9O9
-        Gn1vh/hU1y690xKGq5rP51s1/MYPUs7p+ZYw/I3FYjGv4Vd2kFt6tiUM11HXRRm+aK+z2WyHnmsFw3XV
-        R+CkDvGiw9Tfp/RMKxhuoq6j8lSu6X4rGG6q/inu10Ee9DGg+y1g+BfqN7KtA9G9FjDsz3L0ATZ6NVzx
-        q5pOAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="submitFeedbackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
   </data>
   <data name="submitFeedbackToolStripMenuItem.Text" xml:space="preserve">
     <value>Wyślij feedback...</value>
   </data>
-  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 6</value>
-  </data>
-  <data name="resetSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
-  </data>
   <data name="resetSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Resetuj ustawienia</value>
-  </data>
-  <data name="uninstallBCUninstallToolstripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
     <value>Odinstaluj BCUninstaller</value>
   </data>
-  <data name="uninstallBCUninstallToolstripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 6</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFnSURBVGhD7dg9SgNRFIbhTAgMYukWBAtrCzsrwcbOTbgV
-        d2BnayPiAhwLG1sRG0urNDZWptDvgoFheCPJ/a7oCffA07xkhnsgTH5GXdetBYwRYYwIY0QYI8IYEcZS
-        NHtyI+8ylYvJZLJFr3VhLEFzJB/yOfDYtu0mXePAWILmqXf4oVO6xoHR1TTNNhy+75Kuc2B0LbHINV3n
-        wFiC5qF38KEYb61Esy/paTVc4n42m23QNQ6MpYzH4x0d/Fxe5VnOfuOJlWCMCGNEGCPCmENzLOlryDKu
-        6B4OjDk0JzJ8Qi1yS/dwYMyhqYuUgDGH5lDSF8XkRWiBuf+7SJ8+CHfh8H11kUUwuuoiBoyuuogBo6su
-        YsDoqosYMLrqIgaMrrqIAaOrLmLA6Aq9SNM0Bzrg3bef/vdN3mT+2iJ/aGPMoVnlN3vflO63Kow5NHUR
-        ut+qMObQrMcifw1jRBgjwhgRxogwxtONvgBsQRwqdEfydgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
-  </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;O programie</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Po&amp;moc</value>
-  </data>
-  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
   </data>
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz okno &amp;debugowania</value>
@@ -1413,9 +437,6 @@
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>Utwórz kopię rejestru</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 150</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>BCUninstaller</value>

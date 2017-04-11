@@ -150,72 +150,32 @@
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>Příkaz</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="openFileLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Otevřete umístění aplikace</value>
-  </data>
-  <data name="openLinkLocationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Otevřená umístění odkazu</value>
   </data>
-  <data name="runCommandToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Spustit příkaz</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zkopírovat do schránky</value>
   </data>
-  <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Vytvořit &amp; zálohu ...</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="moveToRegistryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
     <value>Přesnuout do registrů</value>
   </data>
-  <data name="runForAllUsersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Pro všechny uživatele</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
-  </data>
-  <data name="enableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Vybrán</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
-  </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Odstranit</value>
-  </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 220</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Příkazy spuštěné při startu systému nebo přihlášení</value>

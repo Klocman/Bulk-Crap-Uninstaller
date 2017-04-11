@@ -117,110 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 19</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Ligne de commande avant le début de désinstallation</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 19</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Ligne de commande après la fin de désinstallation</value>
   </data>
-  <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 17</value>
-  </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Chercher des mises à jour au démarrage</value>
-  </data>
-  <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 17</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Envoyer des statistiques anonymes d'utilisation</value>
   </data>
-  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 0</value>
-  </data>
-  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 21</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 16</value>
-  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Langage de l'application :</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 32</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>L'application devra être relancée pour prendre en compte le changement de langage.</value>
   </data>
-  <data name="groupBoxMisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 142</value>
-  </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>Divers</value>
-  </data>
-  <data name="checkBoxLoud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 30</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Demander pour supprimer les désinstalleurs causants
 d'une tâche silencieuse</value>
   </data>
-  <data name="checkBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 39</value>
-  </data>
-  <data name="checkBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 30</value>
-  </data>
   <data name="checkBoxBackup.Text" xml:space="preserve">
     <value>Demander pour créer une sauvegarde de registre 
 avant la suppression des vestiges</value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 74</value>
-  </data>
-  <data name="comboBoxJunk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 0</value>
-  </data>
-  <data name="comboBoxJunk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 21</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 16</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Rechercher des résidus après désinstallation</value>
   </data>
-  <data name="comboBoxRestore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 0</value>
-  </data>
-  <data name="comboBoxRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 21</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 16</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Créer un point de restauration avant de désinstaller</value>
-  </data>
-  <data name="groupBoxMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 139</value>
   </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
     <value>Boîtes de message</value>
   </data>
   <data name="checkBoxEnableExternal.Text" xml:space="preserve">
     <value>Activer l'exécution d'applications externes</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 86</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Vous pouvez spécifier des commandes qui se lanceront avant et après la désinstallation. Une ligne égale une commande et sera exécutée comme en utilisant le dialogue "Exécuter...".

@@ -117,62 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 19</value>
-  </data>
   <data name="labelWinFeature.Text" xml:space="preserve">
     <value>Windowsfunktion</value>
-  </data>
-  <data name="labelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
     <value>Nicht registrierte Anwendung</value>
   </data>
-  <data name="labelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 19</value>
-  </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Ungültiger Uninstaller</value>
-  </data>
-  <data name="labelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Ungeprüftes Zertifikat</value>
   </data>
-  <data name="labelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 19</value>
-  </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Geprüftes Zertifikat</value>
   </data>
-  <data name="labelLegend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 20</value>
-  </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Farblegende</value>
-  </data>
-  <data name="flowLayoutPanellabelVerified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelUnverified.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelOrphaned.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="flowLayoutPanellabelStoreApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 146</value>
   </data>
 </root>

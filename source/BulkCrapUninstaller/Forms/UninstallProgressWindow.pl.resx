@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="progressBar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Anuluj</value>
   </data>
@@ -136,24 +126,8 @@
   <data name="olvColumnName.Text" xml:space="preserve">
     <value>Nazwa</value>
   </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 52</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Wybrane aplikacje zostaną odinstalowane jedna po drugiej. Jeśli proces wydaje się być zawieszony można kliknąć na przycisk "Pomiń" aby uniknąć oczekiwania na jego zakończenie. Może się to zdarzyć jeśli dezinstalator rozpocznie nowy proces ale nie zamknie go.</value>
-  </data>
-  <data name="buttonSkip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 19</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Elementy z listy będą odinstalowane od góry w dół</value>

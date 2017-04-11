@@ -126,60 +126,17 @@
   <data name="buttonNext.Text" xml:space="preserve">
     <value>Continuer</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panelNavigation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 367</value>
-  </data>
-  <data name="scrollPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 414</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="page5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 179</value>
-  </data>
   <data name="buttonFinish.Text" xml:space="preserve">
     <value>Quitter l'assistant</value>
-  </data>
-  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 123</value>
-  </data>
-  <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 51</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
     <value>Vous pouvez maintenant utiliser BCUninstaller. Si vous avez toute question ou souhaiteriez suggérer une nouvelle fonction, visitez le lien ci-dessous.</value>
   </data>
-  <data name="p5LinkContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 55</value>
-  </data>
-  <data name="p5LinkContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 13</value>
-  </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>Ouvrir le formulaire de contact</value>
   </data>
-  <data name="p5finishHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 68</value>
-  </data>
-  <data name="p5finishHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 38</value>
-  </data>
   <data name="p5finishHomepage.Text" xml:space="preserve">
     <value>Vous pouvez lire le journal détaillé des changements et voir davantage de mes logiciels sur la page d'accueil.</value>
-  </data>
-  <data name="p5LinkHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 106</value>
-  </data>
-  <data name="p5LinkHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Ouvrir la page d'accueil</value>
@@ -187,406 +144,142 @@
   <data name="p5finishTitle.Text" xml:space="preserve">
     <value>L'installation est terminée</value>
   </data>
-  <data name="spacer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="pageNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="p4netTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 26</value>
-  </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Accès réseau</value>
-  </data>
-  <data name="p4netDesc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 29</value>
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
     <value>BCUninstaller peut tenter de se connecter à internet pour les raisons suivantes :</value>
   </data>
-  <data name="p4netDesc1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 15</value>
-  </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
     <value>● Pour chercher des mises à jour du programme.</value>
-  </data>
-  <data name="p4netDesc2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 15</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
     <value>● Pour télécharger des rapports d'erreurs.</value>
   </data>
-  <data name="p4netDesc3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 15</value>
-  </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
     <value>● Pour envoyer des statistiques anonymes d'utilisation.</value>
   </data>
-  <data name="p4netErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 81</value>
-  </data>
   <data name="p4netErrors.Text" xml:space="preserve">
     <value>Chaque fois qu'une erreur survient, il vous sera demandé si vous voulez l'envoyer. Vous pouvez vérifier quelle donnée est envoyée dans les rapports d'erreur et d'utilisation en inspectant leurs fichiers XML respectifs dans le dossier de BCUninstaller. Les données envoyées ne sont partagées avec aucune tierce partie. </value>
-  </data>
-  <data name="checkBoxUpdateSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 188</value>
-  </data>
-  <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 30</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Chercher automatiquement les mises à jour au démarrage 
 de l'application</value>
   </data>
-  <data name="p4netUpdateAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 220</value>
-  </data>
-  <data name="p4netUpdateAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 32</value>
-  </data>
   <data name="p4netUpdateAdd.Text" xml:space="preserve">
     <value>Vous pouvez chercher manuellement les mises à jour depuis la barre de menus.</value>
-  </data>
-  <data name="checkBoxSendStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 255</value>
-  </data>
-  <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 17</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Envoyer automatiquement les statistiques d'utilisation</value>
   </data>
-  <data name="p4netUsageAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 274</value>
-  </data>
-  <data name="p4netUsageAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 19</value>
-  </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
     <value>L'envoi de ces statistiques aidera à améliorer BCUninstaller.</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="pageCorrupted.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="pCorTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
   </data>
   <data name="pCorTitle.Text" xml:space="preserve">
     <value>Désinstalleurs corrompus</value>
   </data>
-  <data name="pCorDesc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 42</value>
-  </data>
   <data name="pCorDesc.Text" xml:space="preserve">
     <value>Au fil du temps, vous pouvez découvrir que certaines applications refuseront de se désinstaller, ou disparaitront juste de la plupart des gestionnaires de désinstallation.</value>
-  </data>
-  <data name="pCorViewInvalidTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 72</value>
-  </data>
-  <data name="pCorViewInvalidTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 27</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
     <value>Désinstalleurs corrompus ou manquants</value>
   </data>
-  <data name="pCorViewInvalid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 99</value>
-  </data>
-  <data name="pCorViewInvalid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 55</value>
-  </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>Dans quelques cas, les désinstalleurs peuvent être corrompus, rendant impossible la désinstallation. BCUninstaller peut supprimer facilement ces entrées en utilisant l'option "Désinstaller manuellement".</value>
-  </data>
-  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 157</value>
-  </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Surligner les désinstalleurs invalides</value>
   </data>
-  <data name="pCorViewinvalidComment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 176</value>
-  </data>
-  <data name="pCorViewinvalidComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 13</value>
-  </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
     <value>Les désinstalleurs invalides sont marqués en gris.</value>
-  </data>
-  <data name="pCorOrphansTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 189</value>
-  </data>
-  <data name="pCorOrphansTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 27</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
     <value>Application non enregistré</value>
   </data>
-  <data name="pCorOrphansMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 216</value>
-  </data>
-  <data name="pCorOrphansMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 42</value>
-  </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Parfois, des applications entières peuvent être laissées sur votre lecteur après avoir été désinstallées. Cela peut aussi arriver si seul le désinstalleur est supprimé.</value>
   </data>
-  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 261</value>
-  </data>
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 17</value>
-  </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Montrer les applications non enregistré dans la liste</value>
-  </data>
-  <data name="pCorOrphansComment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 280</value>
-  </data>
-  <data name="pCorOrphansComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 39</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
     <value>Les applications non enregistré sont marquées en rouge.
 Si le désinstalleur d'origine est introuvable, vous devrez utiliser l'option "Désinstaller manuellement" pour les supprimer.</value>
   </data>
-  <data name="spacer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="page3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="p3advTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 26</value>
-  </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Utilisateurs avancés</value>
-  </data>
-  <data name="p3advDesc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 39</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
     <value>Quoique BCUninstaller puisse être utilisé comme un désinstalleur basique, la plupart de ses fonctions sont destinées aux utilisateurs avancés. Procédez avec précaution !</value>
   </data>
-  <data name="p3advSyscompTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 69</value>
-  </data>
-  <data name="p3advSyscompTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 27</value>
-  </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>Composants système</value>
   </data>
-  <data name="p3advSyscomp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 96</value>
-  </data>
-  <data name="p3advSyscomp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 55</value>
-  </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
     <value>Les applications marquées comme "composants système" sont cachées de la plupart des gestionnaires basiques de désinstallation. Cette balise ne signifie PAS que l'application fait partie du système d'exploitation.</value>
-  </data>
-  <data name="checkBoxListSysComp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 154</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 30</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Montrer les désinstalleurs marqués comme 
 "composants système"</value>
   </data>
-  <data name="p3advProtectTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 186</value>
-  </data>
-  <data name="p3advProtectTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 23</value>
-  </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
     <value>Désinstalleurs protégés</value>
-  </data>
-  <data name="p3advProtect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 209</value>
-  </data>
-  <data name="p3advProtect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 55</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
     <value>Les éléments protégés sont marqués avec la balise "NoRemove", qui signifie que l'éditeur ne veut pas que vous les supprimiez. Cette balise est souvent utilisée par des grands ensembles de logiciels pour vous empêcher de désinstaller leurs parties individuelles.</value>
   </data>
-  <data name="checkBoxListProtected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 267</value>
-  </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 17</value>
-  </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Montrer les désinstalleurs marqués comme "protégés"</value>
-  </data>
-  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 289</value>
-  </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 30</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Désactiver la protection des désinstalleurs marqués 
 comme "protégés"</value>
   </data>
-  <data name="p3advProtectAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 321</value>
-  </data>
-  <data name="p3advProtectAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 13</value>
-  </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
     <value>Cela vous laissera désinstaller les éléments protégés.</value>
-  </data>
-  <data name="spacer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="page2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="p2viewTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 26</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>Vue liste du désinstalleur</value>
   </data>
-  <data name="p2viewDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 29</value>
-  </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
     <value>Tous les désinstalleurs trouvés dans votre système sont dans la vue liste principale. Voici quelques façons de parcourir ces données :</value>
-  </data>
-  <data name="p2viewDetail1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 28</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Utiliser des filtres et chercher des mots-clés (dans toutes les colonnes).</value>
   </data>
-  <data name="p2viewDetail2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 87</value>
-  </data>
-  <data name="p2viewDetail2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 28</value>
-  </data>
   <data name="p2viewDetail2.Text" xml:space="preserve">
     <value>● Trier les désinstalleurs par toute colonne. Réarranger librement les colonnes.</value>
-  </data>
-  <data name="p2viewDetail3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 115</value>
-  </data>
-  <data name="p2viewDetail3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
     <value>● Grouper les désinstalleurs similaires.</value>
   </data>
-  <data name="checkBoxGroups.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 135</value>
-  </data>
-  <data name="checkBoxGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 17</value>
-  </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
     <value>Montrer les désinstalleurs en groupes</value>
-  </data>
-  <data name="checkBoxCheckboxes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 157</value>
-  </data>
-  <data name="checkBoxCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 17</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Sélectionnner par cases à cocher</value>
   </data>
-  <data name="p2viewCertsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 176</value>
-  </data>
-  <data name="p2viewCertsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 27</value>
-  </data>
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
     <value>Désinstalleurs certifiés</value>
-  </data>
-  <data name="p2viewCerts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 203</value>
-  </data>
-  <data name="p2viewCerts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 42</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
     <value>Les désinstalleurs peuvent être signés avec des certificats publiés par les autorités compétentes. Si le certificat passe la validation, le progiciel n'a pas été altéré et est réputé.</value>
   </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 248</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
-  </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Surligner les désinstalleurs certifiés</value>
-  </data>
-  <data name="p2viewAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 267</value>
-  </data>
-  <data name="p2viewAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 39</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
     <value>Les désinstalleurs vérifiés sont marqués en vert, non vérifiés en bleu.
 Attention : la vérification peut mettre longtemps.</value>
   </data>
-  <data name="spacer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 386</value>
-  </data>
-  <data name="page1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 386</value>
-  </data>
-  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 284</value>
-  </data>
-  <data name="p1welcomeHeading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
-  </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Bienvenue à BCUninstaller !</value>
-  </data>
-  <data name="p1welcomeSubheading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 26</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>Cet assistant vous fera faire un tour rapide et aidera à configurer l'application.</value>
   </data>
-  <data name="p1languageHeading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
-  </data>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>Langage sélectionné</value>
-  </data>
-  <data name="p1languageDesc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 43</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
     <value>Vous pouvez forcer BCUninstaller à utiliser une localisation spécifique si le langage par défaut est incorrect. Un redémarrage sera réalisé pour appliquer le nouveau langage. </value>
@@ -594,23 +287,11 @@ Attention : la vérification peut mettre longtemps.</value>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Appliquer</value>
   </data>
-  <data name="p1languageExtradetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 45</value>
-  </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
     <value>Si vous souhaitez aider à traduire BCUninstaller dans votre langage, cliquez sur le lien ci-dessous pour me contacter. Toute aide est grandement appréciée !</value>
   </data>
-  <data name="p1linkLabelContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 219</value>
-  </data>
-  <data name="p1linkLabelContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 13</value>
-  </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
     <value>Ouvrir le formulaire de contact</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>354, 414</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bienvenue dans BCUninstaller </value>
