@@ -117,88 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="comboBoxFilter.Items" xml:space="preserve">
-    <value>Minden tartalom mutatása</value>
-  </data>
-  <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>Indítópult bejegyzések mutatása</value>
-  </data>
-  <data name="comboBoxFilter.Items2" xml:space="preserve">
-    <value>Feladatok mutatása</value>
-  </data>
-  <data name="comboBoxFilter.Items3" xml:space="preserve">
-    <value>Böngésző kiterjesztések mutatása</value>
-  </data>
-  <data name="comboBoxFilter.Items4" xml:space="preserve">
-    <value>Show szolgáltatások</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Frissítés</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Köszönjük, hogy a BCUninstaller-t használja!</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Ha ezt az ingyenes nyílt forráskódú eszközt hasznosnak találta, szánjon egy percet az elterjesztésére! Ajánlja a barátainak a közösségi médiákban. A legkisebb segítség is sokat jelent nekünk!</value>
+  </data>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Hibát talált, vagy hiányzik valamilyen funkció?</value>
+  </data>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Hibát talált, vagy javaslata van? Kérem, használja ezeket a lehetőségeket:</value>
+  </data>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Szeretne segíteni nekünk?</value>
+  </data>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Nem kell programozónak lennie, hogy segítsen! Hozzájárulhat a frissítések felgyorsításához, vagy lefordíthatja a BCU-t a saját nyelvére. Bármilyen kicsi segítséget is szívesen veszünk!</value>
+  </data>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Visszajelzés</value>
+  </data>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>SourceForge minősítés</value>
+  </data>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Twitter megosztás</value>
+  </data>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>GitHub visszajelzés (fiók szükséges)</value>
+  </data>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Visszajelzés</value>
+  </data>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>BCU lefordítása</value>
+  </data>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>GitHub kérdés</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Ne jelenjen meg ez az oldal többé</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
     <value>Bezárás</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportálás...</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Program neve</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Engedélyezve</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Kiadó</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Hely</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Parancs</value>
-  </data>
-  <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>F&amp;uttatható helyének megnyitása</value>
-  </data>
-  <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hivatkozás helyének megnyitása</value>
-  </data>
-  <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Parancs futtatása</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Másolás a &amp;Vágólapra</value>
-  </data>
-  <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Me&amp;ntés létrehozása...</value>
-  </data>
-  <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áthelyezés a registry-be</value>
-  </data>
-  <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Futtatás az összes felhasználó részére</value>
-  </data>
-  <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Engedélyezve</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Törlés</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Felhasználói beavatkozás nélkül automatikusan végrehajtható parancsok listája</value>
-  </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Szövegfájlok|*.txt</value>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Indítópult bejegyzések exportálása...</value>
-  </data>
-  <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Válasszon ki egy üres könyvtárat a mentéshez.</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Indítópult kezelő</value>
+    <value>Visszajelzés</value>
   </data>
 </root>

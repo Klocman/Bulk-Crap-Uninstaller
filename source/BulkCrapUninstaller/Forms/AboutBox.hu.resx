@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <data name="labelName.Text" xml:space="preserve">
     <value>BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
@@ -129,9 +132,6 @@
   <data name="labelCompanyName.Text" xml:space="preserve">
     <value>Készítő</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Programverzió</value>
-  </data>
   <data name="labelis64.Text" xml:space="preserve">
     <value>64-bites: </value>
   </data>
@@ -141,8 +141,8 @@
   <data name="labelArchitecture.Text" xml:space="preserve">
     <value>Architektúra: </value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Használt eszközök</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Programverzió</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
@@ -162,6 +162,12 @@
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Task Scheduler Managed Wrapper</value>
   </data>
+  <data name="linkLabel8.Text" xml:space="preserve">
+    <value>TestStack.White</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Használt eszközök</value>
+  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Bezárás</value>
   </data>
@@ -174,25 +180,34 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Angol, Lengyel - Marcin Szeniak</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Német - Dieter Hummel</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Cseh - Richard Kahl </value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Francia - Thierry Delaunay</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Cseh - Richard Kahl </value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Német - Dieter Hummel</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Magyar - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portugál - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Orosz - wvxwxvw</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Szlovén - Jadran Rudec</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Spanyol - Freddynic159</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Fordítók</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>A BCUninstaller (Bulk Crap Uninstaller) névjegye</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
   </data>
 </root>

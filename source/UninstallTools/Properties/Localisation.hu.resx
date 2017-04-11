@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -334,6 +334,9 @@
   <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
     <value>Ezzel kezdődik</value>
   </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>Windows szolgáltatás</value>
+  </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Bármit tartalmazhat</value>
     <comment>As in "matches any word from this string"</comment>
@@ -379,6 +382,9 @@
   </data>
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>A bejegyzés illeszkedik az alkalmazáshoz</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Fájlok és könyvtárak</value>
   </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
     <value>Elárvultak a Program Files mappában</value>
@@ -426,5 +432,65 @@
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Egyszerű törlés</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>A könyvtár a felesleg eltávolítása után üres lesz.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Szolgáltatás</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Minden tulajdonság</value>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Telepített MSI termékek ellenőrzése...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Beazonosítva{0} program GUID</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Eltávolítók ellenőrzése a beállításjegyzékben...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Beállításkulcsok összegyűjtése</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Feldolgozás {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Hiányzó eltávolítási információk összeállítása...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Meghajtókon levő programok ellenőrzése...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Könyvtárak összegyűjtése</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Programtárolók ellenőrzése...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Alkalmazássablonok keresése</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Steam alkalmazások keresése</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Windows áruházbeli alkalmazások keresése</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Windows szolgáltatások keresése</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Azonosított programok egyesítése...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Tárolókban levő programok egyesítése</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Meghajtókon levő programok egyesítése</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Hiányzó információk létrehozása...</value>
   </data>
 </root>

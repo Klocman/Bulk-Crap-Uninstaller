@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,22 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Nem regisztrált alkalmazás mutatása</value>
-  </data>
-  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Azoknak az alkalmazásoknak a megjelenítése, amelyek nem rendelkeznek szabályos eltávolítóval. Ezek nem láthatók az eltávolítás kezelők számára, azonban sok helyet foglalhatnak. Az nem regisztrált elemek piros színnel kerülnek megjelölésre. 
-
-Figyelem: Az eltávolításuk előtt ellenőrizze ezeket az alkalmazásokat mert lehet, hogy még mindig szükség van rájuk!</value>
-  </data>
-  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Hiányzók megjelölése</value>
-  </data>
-  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Szürke szín alkalmazása a sérült, vagy hiányzó eltávolítók azonosításához.</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Hitelesítettek megjelölése</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Rendszerelemek mutatása</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
+    <value>Kijelölés jelölőnégyzetekkel</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Színek alkalmazása a hitelesített eltávolítókhoz.
@@ -140,42 +135,14 @@ Ha a tanúsítvány sikeresen ellenőrzésre került akkor zöld szín, egyébk�
 
 Figyelmeztetés: Az ellenőrzés hosszabb ideig is eltarthat.</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Szűrés</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Microsoft kiadások elrejtése</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Ezzel egyszerűen kiszűrheti a Microsoft által közzétett alkalmazásokat.</value>
-  </data>
-  <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Rendszerelemek mutatása</value>
-  </data>
-  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Néhány eltávolító "rendszerelemként" kerülhet megjelölésre, ezeket elrejtheti a programok listájában.
-Általában az illesztőprogramok vannak ezzel a címkével jelölve.</value>
+  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
+    <value>Frissítések mutatása</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Védett elemek mutatása</value>
   </data>
-  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Védett elemek, amelyek "NoRemove" címkével vannak ellátva. Ebben az esetben a kiadó nem akarja, hogy eltávolítsa ezeket.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Frissítések mutatása</value>
-  </data>
-  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Egyéb alkalmazások frissítései. Általában ezek eltávolításra kerülnek a kapcsolódó alkalmazással együtt, így kihagyhatók a listából.</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Áruházbeli alk. mutatása</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Listanézet beállításai</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Kijelölés jelölőnégyzetekkel</value>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Hiányzók megjelölése</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
     <value>Lista kijelölési stílusának módosítása a jelölőnégyzetekkel. Ez biztonságos 
@@ -183,11 +150,50 @@ mivel egy kattintással nem vonhatja vissza mindet.
 
 Több elemet is kijelölhet a kiemelés és a szóköz billentyű lenyomásával.</value>
   </data>
+  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
+    <value>Egyéb alkalmazások frissítései. Általában ezek eltávolításra kerülnek a kapcsolódó alkalmazással együtt, így kihagyhatók a listából.</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Nem regisztrált alkalmazás mutatása</value>
+  </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Áruházbeli alk. mutatása</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
+    <value>Ezzel egyszerűen kiszűrheti a Microsoft által közzétett alkalmazásokat.</value>
+  </data>
+  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
+    <value>Szürke szín alkalmazása a sérült, vagy hiányzó eltávolítók azonosításához.</value>
+  </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Elemek csoportosítása</value>
+  </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Windows-szolg. mutatása</value>
+  </data>
+  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
+    <value>Néhány eltávolító "rendszerelemként" kerülhet megjelölésre, ezeket elrejtheti a programok listájában.
+Általában az illesztőprogramok vannak ezzel a címkével jelölve.</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Listanézet beállításai</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
+    <value>Microsoft kiadások elrejtése</value>
+  </data>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>Azoknak az alkalmazásoknak a megjelenítése, amelyek nem rendelkeznek szabályos eltávolítóval. Ezek nem láthatók az eltávolítás kezelők számára, azonban sok helyet foglalhatnak. Az nem regisztrált elemek piros színnel kerülnek megjelölésre. 
+
+Figyelem: Az eltávolításuk előtt ellenőrizze ezeket az alkalmazásokat mert lehet, hogy még mindig szükség van rájuk!</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
     <value>Elemek csoportosítása a lista oszlopainak elrendezése alapján.
 A leggyakrabban használt oszlopok csoportosítása intelligens szűréssel.</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Szűrés</value>
+  </data>
+  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
+    <value>Védett elemek, amelyek "NoRemove" címkével vannak ellátva. Ebben az esetben a kiadó nem akarja, hogy eltávolítsa ezeket.</value>
   </data>
 </root>
