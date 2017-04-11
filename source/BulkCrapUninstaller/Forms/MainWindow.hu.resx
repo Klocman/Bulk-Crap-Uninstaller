@@ -499,4 +499,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
   </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Frissítések megtekintése</value>
+  </data>
 </root>
