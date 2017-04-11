@@ -68,10 +68,11 @@
     <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderManager.cs" />
     <Compile Include="Factory\InfoAdders\InfoAdderPriority.cs" />
+    <Compile Include="Factory\InfoAdders\InnoSetupQuietUninstallStringGenerator.cs" />
     <Compile Include="Factory\InfoAdders\Is64BitGetter.cs" />
     <Compile Include="Factory\InfoAdders\KnownNameIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\MsiUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\QuietUninstallStringGenerator.cs" />
+    <Compile Include="Factory\InfoAdders\NsisQuietUninstallStringGenerator.cs" />
     <Compile Include="Factory\InfoAdders\InstallLocationGenerator.cs" />
     <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\QuietUninstallStringCopier.cs" />
