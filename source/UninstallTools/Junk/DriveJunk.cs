@@ -229,14 +229,14 @@ namespace UninstallTools.Junk
             {
                 case UninstallerType.InstallShield:
                     var target = Path.GetDirectoryName(Uninstaller.UninstallerFullFilename);
-                    result = new DriveDirectoryJunkNode(Path.GetDirectoryName(target), 
+                    result = new DriveDirectoryJunkNode(Path.GetDirectoryName(target),
                         Path.GetFileName(target), Uninstaller.DisplayName);
                     break;
 
                 case UninstallerType.InnoSetup:
                 case UninstallerType.Msiexec:
                 case UninstallerType.Nsis:
-                    result = new DriveFileJunkNode(Path.GetDirectoryName(Uninstaller.UninstallerFullFilename), 
+                    result = new DriveFileJunkNode(Path.GetDirectoryName(Uninstaller.UninstallerFullFilename),
                         Path.GetFileName(Uninstaller.UninstallerFullFilename), Uninstaller.DisplayName);
                     break;
 
@@ -288,7 +288,22 @@ namespace UninstallTools.Junk
             }.Select(x => Path.Combine(x, @"Microsoft\Windows\WER\ReportArchive")).Where(Directory.Exists);
 
             const string crashLabel = "AppCrash_";
-            var candidates = archives.SelectMany(Directory.GetDirectories);
+            var candidates = archives.SelectMany(s =>
+            {
+                try
+                {
+                    return Directory.GetDirectories(s);
+                }
+                catch (IOException e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+                catch (UnauthorizedAccessException e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+                return Enumerable.Empty<string>();
+            });
 
             foreach (var candidate in candidates)
             {
@@ -303,7 +318,7 @@ namespace UninstallTools.Junk
 
                 if (appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    var node = new DriveDirectoryJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate), 
+                    var node = new DriveDirectoryJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate),
                         Uninstaller.DisplayName);
                     node.Confidence.Add(ConfidencePart.ExplicitConnection);
                     output.Add(node);
