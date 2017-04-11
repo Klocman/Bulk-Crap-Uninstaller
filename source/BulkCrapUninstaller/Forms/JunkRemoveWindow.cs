@@ -73,7 +73,15 @@ namespace BulkCrapUninstaller.Forms
                             return;
 
                         var dir = Path.Combine(backupDirDialog.SelectedPath, GetUniqueBackupName());
-                        Directory.CreateDirectory(dir);
+                        try
+                        {
+                            Directory.CreateDirectory(dir);
+                        }
+                        catch (Exception ex)
+                        {
+                            PremadeDialogs.GenericError(ex);
+                            goto case MessageBoxes.PressedButton.Yes;
+                        }
 
                         try
                         {
