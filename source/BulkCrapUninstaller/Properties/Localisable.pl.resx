@@ -720,4 +720,13 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   <data name="Error_SaveSettingsFailed" xml:space="preserve">
     <value>Nie udało się zapisać ustawień</value>
   </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Kończenie...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Ładowanie ikon</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Wyszukiwanie wpisów startowych</value>
+  </data>
 </root>

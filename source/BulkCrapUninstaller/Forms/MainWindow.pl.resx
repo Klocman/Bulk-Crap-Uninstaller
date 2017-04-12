@@ -489,4 +489,10 @@
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
     <value>AlternativeTo</value>
   </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Uruchom...</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pokaż aktualizacje</value>
+  </data>
 </root>

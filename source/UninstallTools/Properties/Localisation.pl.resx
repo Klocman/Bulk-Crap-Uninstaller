@@ -443,4 +443,58 @@
   <data name="Junk_Drive_GroupName" xml:space="preserve">
     <value>Pliki i katalogi</value>
   </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Skanowanie zainstalowanych produktów MSI ...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Znaleziono {0} GUIDów aplikacji</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Skanowanie dezinstalatorów w rejestrze...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Gromadzenie kluczy rejestru</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Przetwarzanie {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Generowanie brakujacych informacji o deinstalatorach...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Skanowanie aplikacji na dyskach...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Zbieranie folderów</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Skanowanie magazynów aplikacji...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Wyszukiwanie szablonów aplikacji</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Szukanie Steam Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Szukanie programów Windows Store</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Szukanie funkcji systemu Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Łączenie odkrytych aplikacji...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Łączenie aplikacji z magazynów</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Łączenie aplikacji z dysków</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Generowanie brakujących informacji...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Aktualizacja systemu Windows</value>
+  </data>
 </root>
