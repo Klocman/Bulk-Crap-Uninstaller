@@ -284,7 +284,8 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>● Grupirajte podobne odstranjevalce</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Bulk crap uninstaller</value>
+    <value>ulk crap uninstaller</value>
+    <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Uporabite filtre in poiščite ključne besede (v vseh stolpcih)</value>
