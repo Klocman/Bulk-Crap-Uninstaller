@@ -157,7 +157,7 @@
     <value>Действителен</value>
   </data>
   <data name="ModifyPath" xml:space="preserve">
-    <value>Modify path</value>
+    <value>Изменить путь</value>
   </data>
   <data name="Publisher" xml:space="preserve">
     <value>Имя издателя</value>
@@ -187,7 +187,7 @@
     <value>Тип деинсталлятора</value>
   </data>
   <data name="UninstallPossible" xml:space="preserve">
-    <value>Удалить можно</value>
+    <value>Удаление возможно</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
     <value>Команда удаления</value>
@@ -217,7 +217,7 @@
     <value>Недействительный метод удаления</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
-    <value>Деинсталлятор возвратил код ошибки: </value>
+    <value>Деинсталлятор возвратил ошибку: </value>
   </data>
   <data name="Confidence_Bad" xml:space="preserve">
     <value>Плохо</value>
@@ -433,5 +433,68 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Все свойства</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Файлы и папки</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Папка будет пустой после удаления мусора.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Служба</value>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Сканирование установленных MSI...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Найдено {0} GUID приложений</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Сканирование реестра на деинсталляторы...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Сбор ключей реестра</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Обработка {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Создание инфо об отсутствующем деинсталляторе...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Сканирование дисков на приложения...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Сбор каталогов</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Сканирование приложений...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Поиск шаблонов приложений</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Поиск Steam приложений</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Поиск приложений Windows Store</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Поиск компонентов Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Слияние обнаруженных приложений...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Слияние приложений магазина</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Слияние приложений с дисков</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Создание недостающей информации...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Обновления Windows</value>
   </data>
 </root>

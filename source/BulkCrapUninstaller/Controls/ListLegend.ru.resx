@@ -121,13 +121,13 @@
     <value>Компонент Windows</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Незарегистрированная</value>
+    <value>Незарегистрирован</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Нет деинсталлятора</value>
+    <value>Без деинсталлятора</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Не проверен</value>
+    <value>Непроверен</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
     <value>Проверен</value>

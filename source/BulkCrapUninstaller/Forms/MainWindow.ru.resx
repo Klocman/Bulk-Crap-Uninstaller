@@ -139,7 +139,7 @@
     <value>Автозагрузка</value>
   </data>
   <data name="olvColumnIs64.Text" xml:space="preserve">
-    <value>64bit</value>
+    <value>x64</value>
   </data>
   <data name="olvColumnUninstallString.Text" xml:space="preserve">
     <value>Команда удаления</value>
@@ -232,10 +232,10 @@
     <value>Испол&amp;ьзовать MsiExec...</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Больше опций...</value>
+    <value>Больше настроек...</value>
   </data>
   <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Вся информация</value>
+    <value>&amp;Всю информацию</value>
   </data>
   <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>Название программы</value>
@@ -292,10 +292,10 @@
     <value>Обновить &amp;список</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Открыть список выбранного...</value>
+    <value>&amp;Открыть список деинсталляции...</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Экспорт списка выбранного...</value>
+    <value>&amp;Экспорт выбранного...</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Вы&amp;ход</value>
@@ -424,7 +424,7 @@
     <value>Открыть автозагрузку</value>
   </data>
   <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Удалить &amp;компоненты Windows...</value>
+    <value>Показать компоненты Windows</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Открыть "&amp;Программы и компоненты"</value>
@@ -466,7 +466,7 @@
     <value>Reg файл|*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
-    <value>Create registry backup</value>
+    <value>Создать бэкап реестра</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
@@ -475,13 +475,25 @@
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>AlternativeTo</value>
+    <value>Альтернативный</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
   </data>
   <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
-    <value>AlternativeTo</value>
+    <value>Альтернативный</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Просмотр обновлений</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Удалить из каталога...</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть "Восстановление системы"</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Запустить...</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>462, 17</value>

@@ -61,7 +61,7 @@ namespace UninstallTools.Factory
             var driveProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
             callback(driveProgress);
             var driveFactory = new DirectoryFactory(registryResults);
-            var driveResults = driveFactory.GetUninstallerEntries(report => 
+            var driveResults = driveFactory.GetUninstallerEntries(report =>
             {
                 driveProgress.Inner = report;
                 callback(driveProgress);
@@ -125,20 +125,17 @@ namespace UninstallTools.Factory
             foreach (var entry in newResults)
             {
                 progressCallback(new ListGenerationProgress(progress++, newResults.Count, null));
-                try
-                {
-                    var matchedEntry = baseEntries.SingleOrDefault(x => CheckAreEntriesRelated(x, entry));
-                    if (matchedEntry != null)
-                    {
-                        // Prevent setting incorrect UninstallerType
-                        if (matchedEntry.UninstallPossible)
-                            entry.UninstallerKind = UninstallerType.Unknown;
 
-                        infoAdder.CopyMissingInformation(matchedEntry, entry);
-                        continue;
-                    }
+                var matchedEntries = baseEntries.Where(x => CheckAreEntriesRelated(x, entry)).Take(2).ToList();
+                if (matchedEntries.Count == 1)
+                {
+                    // Prevent setting incorrect UninstallerType
+                    if (matchedEntries[0].UninstallPossible)
+                        entry.UninstallerKind = UninstallerType.Unknown;
+
+                    infoAdder.CopyMissingInformation(matchedEntries[0], entry);
+                    continue;
                 }
-                catch (InvalidOperationException) { Debug.Fail("MergeResults matched more than one entry"); }
 
                 // If the entry failed to match to anything, add it to the results
                 results.Add(entry);
@@ -212,7 +209,7 @@ namespace UninstallTools.Factory
             var changesRequired = StringTools.CompareSimilarity(a, b);
             return changesRequired < a.Length / 6;
         }
-        
+
         private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var otherResults = new List<ApplicationUninstallerEntry>();

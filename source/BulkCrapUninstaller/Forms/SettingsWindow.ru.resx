@@ -201,6 +201,12 @@ BCU будет ждать завершения одной команды для 
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки Bulk Crap Uninstaller</value>
   </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Всегда показывать нежелательные, с низким доверием</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Никогда не просить отзыв или помощь</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

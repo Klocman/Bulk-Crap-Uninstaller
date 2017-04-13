@@ -117,73 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>Произошла ошибка. Приложение будет закрыто.</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Благодарим вас за использование BCUninstaller!</value>
   </data>
-  <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>Произошла ошибка. Приложение будет закрыто.</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Если вы нашли это бесплатное ПО полезным, подумайте о том, чтобы потратить минуту, чтобы помочь в его развитии! Расскажите о нем друзьям, поделитесь им в социальных сетях, отправьте отзыв - любая малость значительна!</value>
   </data>
-  <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>Произошла ошибка. Приложение будет закрыто.</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Отправить отзыв</value>
   </data>
-  <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
-    <value>Исключение</value>
-    <comment>Exception</comment>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Оценить на SourceForge</value>
   </data>
-  <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
-    <value>Общее</value>
-    <comment>General</comment>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Поделиться в Twitter</value>
   </data>
-  <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>Пожалуйста, кратко опишите как воспроизвести проблему:</value>
-    <comment>Please add a brief description of how we can reproduce the error:</comment>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Нашли ошибку или нужна функция?</value>
   </data>
-  <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>Произошла ошибка. Если вы нажмете "Закрыть" приложение закроется. Если вы нажмете "Отправить", будет отправлен отчёт об ошибке и приложение будет закрыто.</value>
-    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Если у вас возникли проблемы с BCU или вы хотите предложить новую функцию, посетите эти ссылки:</value>
   </data>
-  <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
-    <value>&amp;Закрыть</value>
-    <comment>&amp;Quit</comment>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Отзыв на GitHub (нужна учетная запись)</value>
   </data>
-  <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>Содержимое отчёта</value>
-    <comment>Report Contents</comment>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Отправить отзыв</value>
   </data>
-  <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
-    <value>&amp;Отправить</value>
-    <comment>&amp;Send and Quit</comment>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Хотите помочь?</value>
   </data>
-  <data name="UI_Dialog_Full_Title" xml:space="preserve">
-    <value>Ошибка</value>
-    <comment>Error</comment>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Вам не обязательно быть программистом, чтобы помочь! Вы можете пожертвовать для ускорения обновлений или перевести BCU на ваш родной язык. Любая помощь приветствуется, независимо от ее размера!</value>
   </data>
-  <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>Произошла ошибка и приложение будет закрыто. Отчёт об ошибке будет отправлен разработчикам. Извиняемся за доставленные неудобства.</value>
-    <comment>The application has crashed and it will now be dismissed.
-A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Перевести BCU</value>
   </data>
-  <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
-    <value>Ошибка</value>
-    <comment>Error</comment>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Проблемы на GitHub</value>
   </data>
-  <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;Продолжить</value>
-    <comment>&amp;Continue</comment>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Никогда не показывать это окно снова</value>
   </data>
-  <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Произошла ошибка. Если нажмете "Продолжить", приложение проигнорирует ошибку и попытается продолжить. Если нажмете "Закрыть", приложение будет закрыто.</value>
-    <comment>.</comment>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
   </data>
-  <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
-    <value>&amp;Закрыть</value>
-    <comment>&amp;Quit</comment>
-  </data>
-  <data name="UI_Dialog_Normal_Title" xml:space="preserve">
-    <value>Ошибка</value>
-    <comment>Error</comment>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Отправить отзыв</value>
   </data>
 </root>

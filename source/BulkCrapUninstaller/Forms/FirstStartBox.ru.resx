@@ -127,7 +127,7 @@
     <value>Далее</value>
   </data>
   <data name="buttonMore.Text" xml:space="preserve">
-    <value>Больше опций</value>
+    <value>Больше настроек</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>Просмотр справки</value>
@@ -202,19 +202,19 @@
     <value>Подсветка недопустимых деинсталляторов</value>
   </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
-    <value>Недействительные деинсталляторы помечаются серым цветом.</value>
+    <value>Недействительные деинсталляторы помечаются серым.</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Незарегистрированная приложения</value>
+    <value>Незарегистрированные приложения</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Иногда целые приложения остаются на диске после удаления. Это может произойти по разным причинам.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Показывать незарегистрированная в списке</value>
+    <value>Показывать незарегистрированные в списке</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Незарегистрированные приложения отмечены красным цветом.
+    <value>Незарегистрированные приложения помечены красным.
 Их деинсталлятор не обнаружен и вам надо использовать параметр "Удалить вручную" для их удаления.</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
@@ -242,7 +242,7 @@
     <value>Показывать деинсталляторы с тегом "NoRemove"</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Отключение защиты деинсталляторов с тегом 
+    <value>Отключить защиту деинсталляторов с тегом 
 "NoRemove"</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">

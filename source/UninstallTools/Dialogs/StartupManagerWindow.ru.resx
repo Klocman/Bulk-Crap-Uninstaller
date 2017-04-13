@@ -157,7 +157,7 @@
     <value>&amp;Открыть расположение</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть папку расположения</value>
+    <value>Открыть папку ссылки</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Выполнить команду</value>

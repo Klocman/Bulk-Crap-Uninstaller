@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Показать незарегистрированная</value>
+    <value>Незарегистрированные</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. Они не видны в большинстве менеджеров удаления, но все равно занимают место. Незарегистрированная элементы отмечены красным цветом. 
+    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. Они не видны в большинстве менеджеров удаления, но все равно занимают место. Незарегистрированные элементы отмечены красным цветом. 
 
-Внимание: Проверьте перед удалением этих приложений, они могут быть необходимы!</value>
+Внимание: Проверьте приложения перед их удалением, они могут быть необходимы!</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Нет деинсталлятора</value>
@@ -147,7 +147,7 @@
     <value>Скрыть Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Отфильтруйте все, что подписано Майкрософт.</value>
+    <value>Скройте все, что подписано Майкрософт.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Показать системные</value>
@@ -180,7 +180,7 @@
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
     <value>Изменяет способ выбора элементов используя флажки. Это более безопасно, так как одним щелчком нельзя отменить все.
 
-Вы можете проверить несколько элементов, выделив их и нажав пробел.</value>
+Вы можете отметить несколько элементов, выделив их и нажав пробел.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Группировать элементы</value>
@@ -190,8 +190,7 @@
 Смарт-фильтрация.</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Показать Компоненты
-Windows</value>
+    <value>Компоненты Windows</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>
