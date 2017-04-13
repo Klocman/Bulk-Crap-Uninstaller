@@ -184,7 +184,7 @@
     <value>Invertir selección</value>
   </data>
   <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Encuentrar por la ventana ...</value>
+    <value>Encontrar por ventana...</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Desinstalar</value>
@@ -322,7 +322,7 @@
     <value>Mostrar características de Windows</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostar apps de Windows Store</value>
+    <value>Mostrar apps de Windows Store</value>
   </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>Encontrar por ventana...</value>
@@ -470,5 +470,29 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mostrar actualizaciones</value>
+  </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Desinstalar desde directorio...</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir "Restauración de sistema"</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ejecutar...</value>
   </data>
 </root>

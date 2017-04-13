@@ -198,4 +198,13 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Activos utilizados</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Húngaro - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portugués - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Español - Freddy Morán Jr. (Freddynic159)</value>
+  </data>
 </root>

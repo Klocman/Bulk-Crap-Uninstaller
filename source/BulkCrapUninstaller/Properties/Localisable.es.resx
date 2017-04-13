@@ -618,4 +618,97 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
   <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
     <value>Nada que mostrar. Esta aplicación se desinstala utilizando el desinstalador de Windows (MsiExec).</value>
   </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Algunos desinstaladores han fallado</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>¿Desea intentar ejecutar desinstaladores silenciosos que fallaron como fuertes?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Los desinstaladores siguientes se reiniciarán altamente:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Analizando directorio especificado...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Seleccione el directorio con las aplicaciones que desea eliminar.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Desinstalar del directorio</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>No se encontraron aplicaciones en el directorio especificado</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Asegúrese de que ha seleccionado el directorio correcto y que los ejecutables de la aplicación siguen estando presentes.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Encontrado un desinstalador para {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>¿Quieres ejecutar este desinstalador?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Asunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Archivado</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Extensiones</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Nombre amistoso</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Nombre del editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Clave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Como clave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Clave pública</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>No después</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>No antes</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Datos enteros</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Nombre del asunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritmo de firma</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Huella digital</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Error al guardar la configuración</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Terminando...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Cargando iconos</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Buscando entradas de inicio</value>
+  </data>
 </root>

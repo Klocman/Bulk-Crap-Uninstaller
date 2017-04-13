@@ -201,4 +201,10 @@ Utilice rutas de directorios completos, una ruta por línea. Las rutas inválida
   <data name="tabPageMisc.Text" xml:space="preserve">
     <value>Variados</value>
   </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Siempre mostrar basura con baja confianza</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Nunca pedir comentarios o ayuda</value>
+  </data>
 </root>

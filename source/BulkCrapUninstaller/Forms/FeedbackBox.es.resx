@@ -117,58 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Archivos de texto|*.text</value>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>¡Gracias por utilizar BCUninstaller!</value>
   </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Exportar lista de restos</value>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Si has encontrado útil esta herramienta gratuita de código abierto, por favor considera dedicar un minuto a ayudar! Dile a tus amigos, compartela en las redes sociales, envia comentarios - cualquier cosa pequeña cuenta!</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Enviar comentario</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Eliminar seleccionado</value>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Puntuar en SourceForge</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportar...</value>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Compartir en Twitter</value>
   </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Ocultar elementos con mala confianza</value>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>¿Algún problema o característica faltante?</value>
   </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Ruta del elemento</value>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Si tuviste algún problema con BCU, o si quieres sugerir una nueva característica, consulte estos enlaces:</value>
   </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Confianza</value>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Enviar a GitHub (Necesita una cuenta)</value>
   </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Nombre del desinstalador</value>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Enviar comentario</value>
   </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Los siguientes elementos parecen haber sido ignorados por sus programas de desinstalación. Algunos programas de desinstalación pueden fallar al eliminar partes de la aplicación, lo que resulta en costos de capacidad de la unidad. Dicho esto, la mayoría de estos elementos es probable que sean configuración de la aplicación, los cuales ocupan poco espacio y son inofensivos.</value>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>¿Quieres ayudar?</value>
   </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Grado de confianza</value>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>¡No tienes que ser un programador para ayudar! Puedes donar para acelerar las actualizaciones o traducir BCU en tu lengua materna. Toda ayuda es muy apreciada, no importa lo pequeño!</value>
   </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>La detección de estos restos es un proceso complejo que puede cometer errores. Debido a esto, a todos los artículos se les dan un grado de confianza y la decisión final se deja al usuario. Los artículos con buena y muy buena confianza son generalmente seguros de eliminar, pero todavía se deben verificar dos veces.</value>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Traducir BCU</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista de archivos o claves de registro restantes después de la desinstalación</value>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Insidentes en GitHub</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>No volver a mostrar esta ventana, nunca</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Cerrar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Eliminar restos</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Abrir</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copiar al portapapeles</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Detalles</value>
-  </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Seleccione dónde guardar la copia de seguridad. Se creará un nuevo directorio.</value>
+    <value>Enviar comentario</value>
   </data>
 </root>

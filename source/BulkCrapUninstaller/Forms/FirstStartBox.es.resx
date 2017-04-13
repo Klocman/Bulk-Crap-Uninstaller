@@ -121,7 +121,7 @@
     <value>¡Bienvenido a BCUninstaller!</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Ver ayudar</value>
+    <value>Ver ayuda</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
     <value>Si usted está dispuesto a ayudar a traducir BCUninstaller a su idioma, haga clic en el enlace de abajo para ponerse en contacto conmigo. ¡Toda ayuda es muy apreciada!</value>
@@ -203,7 +203,7 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>El envío de estas estadísticas ayudará a mejorar BCUninstaller.</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
-    <value>Ahora puede comenzar a usar BCUninstaller. Si tiene alguna pregunta o desea sugerir una nueva característica visite el siguiente enlace.</value>
+    <value>Ahora puede comenzar a utilizar BCUninstaller. Si tiene alguna pregunta o desea sugerir una nueva característica visite el siguiente enlace.</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
     <value>Mostrar desinstaladores en grupos</value>
