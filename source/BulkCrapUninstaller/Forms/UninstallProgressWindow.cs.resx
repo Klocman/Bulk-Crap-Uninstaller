@@ -152,6 +152,24 @@ Pokud se zdá, že se proces zasekl, můžete kliknout na tlačítko "Přeskoči
   <data name="olvColumnId.Text" xml:space="preserve">
     <value>Id</value>
   </data>
+  <data name="toolStripButtonRun.Text" xml:space="preserve">
+    <value>Spustit odinstalaci</value>
+  </data>
+  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
+    <value>Ukončit</value>
+  </data>
+  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
+    <value>Otevřít umístění instalace</value>
+  </data>
+  <data name="toolStripButtonProperties.Text" xml:space="preserve">
+    <value>Vlastnosti</value>
+  </data>
+  <data name="toolStripButtonSettings.Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="toolStripButtonHelp.Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

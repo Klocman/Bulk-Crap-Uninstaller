@@ -117,56 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simulace odinstalace</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Vzorec</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Zakázat ochranu</value>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Pomoc</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentní třídění odinstalace </value>
-  </data>
-  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Zakázat prevenci kolizí, při spuštění
-Odinstalovat ručně</value>
-  </data>
-  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Pouze jedno spuštění odinstalace </value>
-  </data>
-  <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Automaticky spustit souběžné odinstalace (pokud je to možné)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Maximální počet spuštění odinstalačních programů:</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Souběžná odinstalace</value>
-  </data>
-  <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Zabránit vypnutí/restartu systému</value>
+  <data name="checkBoxUnescape.Text" xml:space="preserve">
+    <value>Ukončit</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Obecná nastavení</value>
+    <value>Výsledek</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Automaticky ukončit zablokované tiché odinstalace</value>
+  <data name="comboBoxInsert.Items" xml:space="preserve">
+    <value>Vybrat</value>
   </data>
-  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Opakovat ještě jednou selhané tiché odinstalace</value>
-  </data>
-  <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Pokud je to možné vytvořit tiché odinstalace</value>
-  </data>
-  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Automaticky ukončit pokud zablokované čekání vyžaduje příkaz uživatele</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Tichá odinstalace</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>

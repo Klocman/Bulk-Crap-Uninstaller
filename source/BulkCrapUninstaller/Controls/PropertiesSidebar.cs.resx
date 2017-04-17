@@ -182,6 +182,12 @@ Seskupení většiny sloupců používá inteligentní filtrování.</value>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Chráněné položek jsou označeny "NoRemove" značkou, což znamená, že vydavatel nechce jejich odstranění.</value>
   </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Zobrazit Windows Store aplikace</value>
+  </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Zobrazit funkce systému Windows </value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

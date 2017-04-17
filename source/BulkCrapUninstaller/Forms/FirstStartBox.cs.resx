@@ -306,4 +306,7 @@ Upozornění: Ověření může trvat delší dobu.</value>
     <value>ulk crap
 uninstaller</value>
   </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Zobrazit nápovědu</value>
+  </data>
 </root>

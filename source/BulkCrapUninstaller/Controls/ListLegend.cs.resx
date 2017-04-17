@@ -135,4 +135,7 @@
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Barevná legenda</value>
   </data>
+  <data name="labelStoreApp.Text" xml:space="preserve">
+    <value>Aplikace Windows Store</value>
+  </data>
 </root>

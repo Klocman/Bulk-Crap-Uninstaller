@@ -141,6 +141,36 @@
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Odstranit</value>
   </data>
+  <data name="comboBoxFilterType.Items1" xml:space="preserve">
+    <value>Vyloučit</value>
+  </data>
+  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
+    <value>Editor podmínek</value>
+  </data>
+  <data name="comboBoxFilterType.Items" xml:space="preserve">
+    <value>Zahrnout</value>
+  </data>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Název filtru</value>
+  </data>
+  <data name="groupBoxConditions.Text" xml:space="preserve">
+    <value>Podmínky filtru</value>
+  </data>
+  <data name="columnHeaderType.Text" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="labelFilterName.Text" xml:space="preserve">
+    <value>Název:</value>
+  </data>
+  <data name="groupBoxFilterSettings.Text" xml:space="preserve">
+    <value>Nastavení filtru</value>
+  </data>
+  <data name="columnHeaderConditions.Text" xml:space="preserve">
+    <value>Podmínky</value>
+  </data>
+  <data name="labelFilterType.Text" xml:space="preserve">
+    <value>Typ:</value>
+  </data>
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

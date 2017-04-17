@@ -308,6 +308,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.cs.resx">
+      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.es.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.sl.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdvancedFilters.cs.resx">
+      <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdvancedFilters.es.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
@@ -447,6 +453,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.cs.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -475,6 +482,9 @@
     <EmbeddedResource Include="Forms\AboutBox.sl.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvancedClipboardCopyWindow.cs.resx">
+      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdvancedClipboardCopyWindow.es.resx">
       <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugWindow.resx">
       <DependentUpon>DebugWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FeedbackBox.cs.resx">
+      <DependentUpon>FeedbackBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FeedbackBox.es.resx">
       <DependentUpon>FeedbackBox.cs</DependentUpon>

@@ -450,4 +450,49 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
   </data>
+  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
+    <value>Najít okno ...</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="buttonAdvFiltering.Text" xml:space="preserve">
+    <value>Pokročilé filtrování</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spustit...</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Upřesnit...</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>AlternativaTo</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazit aktualizace</value>
+  </data>
+  <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazit Windows Store aplikace</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Najít okno....</value>
+  </data>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Upřesnit...</value>
+  </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>AlternativaTo</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Odebrat z adresáře ...</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Otevřete "Obnovení systému"</value>
+  </data>
 </root>

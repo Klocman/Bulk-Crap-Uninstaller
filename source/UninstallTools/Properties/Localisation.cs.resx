@@ -418,4 +418,82 @@
   <data name="IsOrphaned" xml:space="preserve">
     <value>Neregistrovaný</value>
   </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Soubory a adresáře</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Neplatný nebo neznámý spouštěcí klíč(e) registru:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Store Aplikace</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Nová podmínka</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Odstranění aplikací Store je problematické</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Jednoduché Odstranení</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Adresář bude po odstranění nepotřebných prázdný.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Skenování nainstalovaných produktů MSI...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Nalezeno {0} aplikací GUIDs</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Prohledávání registru pro odinstalaci...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Sbírání klíčů registru</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Zpracováno {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Generování chybějící odinstalačních informace...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Hledání aplikací na jednotce...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Získávání adresáře</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Uložení skenování aplikací ...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Hledání šablon aplikací</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Hledání aplikací Steam</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Vyhledávání aplikací Windows Store</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Hledání funkcí systému Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Slučování nalezených aplikací...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Slučování aplikací z úložiště</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Slučování aplikací z jednotek</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Generování chybějících informací...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
 </root>

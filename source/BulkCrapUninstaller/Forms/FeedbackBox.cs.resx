@@ -117,56 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simulace odinstalace</value>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Děkujeme vám za použití BCUninstaller!</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Zakázat ochranu</value>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Pokud je tento bezplatný open-source nástroj pro Vás užitečný, prosím zvažte svoji pomoc! Řekněte svým přátelům, sdílet na sociálních sítích, poskytněte zpětnou vazbu - vše se počítá!</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Inteligentní třídění odinstalace </value>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Poslat zpětnou vazbu</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Zakázat prevenci kolizí, při spuštění
-Odinstalovat ručně</value>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Rychlost na SourceForge</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Pouze jedno spuštění odinstalace </value>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Podělte se na Twitteru</value>
   </data>
-  <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Automaticky spustit souběžné odinstalace (pokud je to možné)</value>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Jakékoli problémy nebo chybějící funkce?</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Maximální počet spuštění odinstalačních programů:</value>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Pokud byste měli nějaké problémy s BCU, nebo chcete-li navrhnout novou funkci, viz tento odkaz:</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Souběžná odinstalace</value>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Předložení návrhu na GitHub (Potřebujete účet)</value>
   </data>
-  <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Zabránit vypnutí/restartu systému</value>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Poslat zpětnou vazbu</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Obecná nastavení</value>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Chcete pomoci?</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Automaticky ukončit zablokované tiché odinstalace</value>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Nemusíte být programátor, aby jste pomohly! Můžete darovat k urychlení aktualizace nebo překládat BCU do Vašeho jazyka. Jakákoli pomoc je velmi ceněna, bez ohledu na to, jak malá je!</value>
   </data>
-  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Opakovat ještě jednou selhané tiché odinstalace</value>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Přeložit BCU</value>
   </data>
-  <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Pokud je to možné vytvořit tiché odinstalace</value>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Problémy na GitHub</value>
   </data>
-  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Automaticky ukončit pokud zablokované čekání vyžaduje příkaz uživatele</value>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Nikdy nezobrazovat toto okno znovu</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Tichá odinstalace</value>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Zavřít</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Poslat zpětnou vazbu</value>
+  </data>
 </root>

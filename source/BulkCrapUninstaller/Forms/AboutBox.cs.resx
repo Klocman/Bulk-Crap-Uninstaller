@@ -181,7 +181,7 @@
     <value>Francouzština - Thierry Delaunay</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Česká - Richard Kahl</value>
+    <value>Češtin - Richard Kahl</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Anglicky, polsky - Marcin Szeniak</value>
@@ -191,5 +191,20 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Maďarština - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portugalština  - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Ruština - wvxwxvw</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Slovinština - Jadran Rudec</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Španělština - Freddynic159</value>
   </data>
 </root>

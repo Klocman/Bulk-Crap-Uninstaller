@@ -601,4 +601,130 @@ The lists are separated by a single newline.</comment>
     <value>{0} aplikací</value>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Hodnocení není k dispozici.</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Musíte hodnocení povolit při prvním nastavení.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Nelze hodnotit aplikace, které nejsou správně nainstalovány.</value>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Průměrné hodnocení: {0}; Mé hodnocení: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Odinstalace programů se nezdařila, pravděpodobně kvůli kolizim. Počkejte na ostatní dokončení odinstalací a akci opakujte.  
+{0}
+
+Můžete zkusit zakázat detekci kolizí v nastavení, není doporučeno.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Vynutit odinstalaci</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Nepodařilo se spustit některé odinstalace programů</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET framework v4.0 nebyla nalezena.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET framework v4.0 nebylo nalezeno, budou zakázány některé funkce</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Framework v4.0 je nepovinný, ale doporučený. Funkce které spoléhají na framework budou zakázány, dokud nebude nainstalován.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Některé odinstalace selhaly</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Chcete si vyzkoušet tichý chod odinstalace, pokud selhala hlasitá?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Následující odinstalace bude hlasitá:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Vyhledávání zadaného adresáře...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Vyberte adresář s aplikacemi, které chcete odstranit.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Odinstalovat z adresáře</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>V zadaném adresáři nebyly nalezeny žádné aplikace</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Ujistěte se, že jste vybrali správného adresáře a že spustitelné soubory aplikace jsou stále přítomny.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Našel pro odinstalaci {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Chcete spustit odinstalační program?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Vydavatel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Předmět</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Archivováno</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Rozšíření</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Název popisu </value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Název vystavitele</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Ne po</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Ne před</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Soukromý klíč</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Has Soukromý klíč</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Veřejný klíč</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Nezpracovaná Data</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Sériové číslo</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Název předmětu</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritmus podpisu</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Verze</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Miniatura</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Nepodařilo se uložit nastavení</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Dokončuje se ...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Načtení ikon</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Hledání položek po spouštění</value>
+  </data>
 </root>
