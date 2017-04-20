@@ -8,10 +8,12 @@ Even though BCU was made with IT pros in mind, by default it is so straight-forw
 
 BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has special support for many uninstalling systems (NSIS, InnoSetup, Msiexec, and many other).
 
-[Homepage](http://klocmansoftware.weebly.com/)
+## Download / Website links
+[Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
-[SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
+[Visit official homepage](http://klocmansoftware.weebly.com/)
 
+[View on SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
 
 ## Screenshots
 ![Alt text](/doc/Preview.png?raw=true "First start preview")
@@ -31,11 +33,6 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 * Startup manager
 * Verification of uninstaller certificates
 * Fully portable, settings are saved to a single file
-
-## Download
-[Check the releases for new versions](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/)
-
-[For old versions go to the Sourceforge](https://sourceforge.net/projects/bulk-crap-uninstaller/files/)
 
 ## Compiling
 Any modern version of Visual Studio should work. You might need to download [this library](https://sourceforge.net/p/kloctoolslibrary/) separately.
