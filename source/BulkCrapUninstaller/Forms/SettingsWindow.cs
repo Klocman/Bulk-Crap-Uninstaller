@@ -160,5 +160,13 @@ namespace BulkCrapUninstaller.Forms
         {
             _settings.RemoveHandlers(this);
         }
+        
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Built in autosize doesn't work properly for the flowLayoutPanel
+            groupBoxAppStores.AutoSize = false;
+            groupBoxAppStores.Height = flowLayoutPanel6.Height +
+                                       (groupBoxAppStores.Height - groupBoxAppStores.DisplayRectangle.Height);
+        }
     }
 }
