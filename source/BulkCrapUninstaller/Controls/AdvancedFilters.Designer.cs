@@ -37,6 +37,7 @@
             this.toolStripButtonSaveUl = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSaveUlDef = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAddSelectedAsFilters = new System.Windows.Forms.ToolStripButton();
             this.saveUlDialog = new System.Windows.Forms.SaveFileDialog();
             this.openUlDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolStripUninstallerList.SuspendLayout();
@@ -49,7 +50,6 @@
             // 
             // toolStripUninstallerList
             // 
-            resources.ApplyResources(this.toolStripUninstallerList, "toolStripUninstallerList");
             this.toolStripUninstallerList.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripUninstallerList.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.toolStripUninstallerList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -58,46 +58,55 @@
             this.toolStripButtonOpenUl,
             this.toolStripButtonSaveUl,
             this.toolStripSeparator25,
-            this.toolStripButtonSaveUlDef});
+            this.toolStripButtonSaveUlDef,
+            this.toolStripButtonAddSelectedAsFilters});
+            resources.ApplyResources(this.toolStripUninstallerList, "toolStripUninstallerList");
             this.toolStripUninstallerList.Name = "toolStripUninstallerList";
             // 
             // toolStripButtonToBasicFilters
             // 
-            resources.ApplyResources(this.toolStripButtonToBasicFilters, "toolStripButtonToBasicFilters");
             this.toolStripButtonToBasicFilters.Image = global::BulkCrapUninstaller.Properties.Resources.magnifyforward;
+            resources.ApplyResources(this.toolStripButtonToBasicFilters, "toolStripButtonToBasicFilters");
             this.toolStripButtonToBasicFilters.Name = "toolStripButtonToBasicFilters";
             this.toolStripButtonToBasicFilters.Click += new System.EventHandler(this.toolStripButtonToBasicFilters_Click);
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // toolStripButtonOpenUl
             // 
-            resources.ApplyResources(this.toolStripButtonOpenUl, "toolStripButtonOpenUl");
             this.toolStripButtonOpenUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonOpenUl, "toolStripButtonOpenUl");
             this.toolStripButtonOpenUl.Name = "toolStripButtonOpenUl";
             this.toolStripButtonOpenUl.Click += new System.EventHandler(this.toolStripButtonOpenUl_Click);
             // 
             // toolStripButtonSaveUl
             // 
-            resources.ApplyResources(this.toolStripButtonSaveUl, "toolStripButtonSaveUl");
             this.toolStripButtonSaveUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonSaveUl, "toolStripButtonSaveUl");
             this.toolStripButtonSaveUl.Name = "toolStripButtonSaveUl";
             this.toolStripButtonSaveUl.Click += new System.EventHandler(this.ShowSaveDialog);
             // 
             // toolStripSeparator25
             // 
-            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             this.toolStripSeparator25.Name = "toolStripSeparator25";
+            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             // 
             // toolStripButtonSaveUlDef
             // 
-            resources.ApplyResources(this.toolStripButtonSaveUlDef, "toolStripButtonSaveUlDef");
             this.toolStripButtonSaveUlDef.Image = global::BulkCrapUninstaller.Properties.Resources.save;
+            resources.ApplyResources(this.toolStripButtonSaveUlDef, "toolStripButtonSaveUlDef");
             this.toolStripButtonSaveUlDef.Name = "toolStripButtonSaveUlDef";
             this.toolStripButtonSaveUlDef.Click += new System.EventHandler(this.toolStripButtonSaveUlDef_Click);
+            // 
+            // toolStripButtonAddSelectedAsFilters
+            // 
+            this.toolStripButtonAddSelectedAsFilters.Image = global::BulkCrapUninstaller.Properties.Resources.add_multiple;
+            resources.ApplyResources(this.toolStripButtonAddSelectedAsFilters, "toolStripButtonAddSelectedAsFilters");
+            this.toolStripButtonAddSelectedAsFilters.Name = "toolStripButtonAddSelectedAsFilters";
+            this.toolStripButtonAddSelectedAsFilters.Click += new System.EventHandler(this.toolStripButtonAddSelectedAsFilters_Click);
             // 
             // saveUlDialog
             // 
@@ -137,5 +146,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSaveUlDef;
         private System.Windows.Forms.SaveFileDialog saveUlDialog;
         private System.Windows.Forms.OpenFileDialog openUlDialog;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddSelectedAsFilters;
     }
 }

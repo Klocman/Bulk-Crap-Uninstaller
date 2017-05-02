@@ -308,6 +308,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <None Include="Resources\add.multiple.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\table.add.png" />
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.cs.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </EmbeddedResource>

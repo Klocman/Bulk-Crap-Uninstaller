@@ -131,7 +131,8 @@ namespace BulkCrapUninstaller.Forms
             };
             advancedFilters1.CurrentListFileNameChanged += RefreshTitleBar;
             advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
-
+            advancedFilters1.SelectedEntryGetter = () => _listView.SelectedUninstallers;
+            
             // Setup update manager, skip at first boot to let user change the setting
             UpdateGrabber.Setup();
             if (!_setMan.Selected.Settings.MiscFirstRun)

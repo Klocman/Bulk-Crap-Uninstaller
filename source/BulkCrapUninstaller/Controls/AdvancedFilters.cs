@@ -7,9 +7,12 @@ using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms.Tools;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using UninstallTools;
 using UninstallTools.Lists;
 
 namespace BulkCrapUninstaller.Controls
@@ -32,7 +35,7 @@ namespace BulkCrapUninstaller.Controls
             get { return _unsavedChanges; }
             private set
             {
-                if(_unsavedChanges != value)
+                if (_unsavedChanges != value)
                 {
                     _unsavedChanges = value;
                     UnsavedChangesChanged?.Invoke(this, EventArgs.Empty);
@@ -203,6 +206,23 @@ namespace BulkCrapUninstaller.Controls
             if (!AskToSaveUnsaved()) return;
 
             uninstallListEditor1.CurrentList = null;
+        }
+
+        public Func<IEnumerable<ApplicationUninstallerEntry>> SelectedEntryGetter { get; set; }
+
+        private void toolStripButtonAddSelectedAsFilters_Click(object sender, EventArgs e)
+        {
+            if (SelectedEntryGetter == null) throw new ArgumentNullException(nameof(SelectedEntryGetter));
+
+            var entries = SelectedEntryGetter();
+            var filters = entries.Select(x => new Filter($"Include \"{x.DisplayName}\"", false,
+                new FilterCondition(x.DisplayName, ComparisonMethod.Equals,
+                    nameof(ApplicationUninstallerEntry.DisplayName))));
+
+            CurrentList.AddItems(filters);
+
+            uninstallListEditor1.PopulateList();
+            OnCurrentListChanged(sender, e);
         }
     }
 }

@@ -153,7 +153,7 @@ namespace UninstallTools.Controls
             }
         }
 
-        private void PopulateList()
+        public void PopulateList()
         {
             groupBoxConditions.Enabled = false;
             listView1.Items.Clear();
