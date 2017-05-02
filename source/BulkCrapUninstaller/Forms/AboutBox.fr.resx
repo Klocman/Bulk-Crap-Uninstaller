@@ -139,7 +139,8 @@
     <value>NBug par Teoman Soygul</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Modern UI Icons</value>
+    <value>Icônes Modern UI</value>
+    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider par CodeChimp</value>
@@ -191,5 +192,20 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Hongrois - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portugais - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Russe - wvxwxvw</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Slovène - Jadran Rudec</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Espagnol - Freddynic159</value>
   </data>
 </root>

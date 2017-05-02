@@ -203,4 +203,10 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Désinstallation</value>
   </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Toujours monter les résidus avec faible confiance</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Ne jamais demander  mes impressions ou  de l'aide</value>
+  </data>
 </root>

@@ -117,56 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Statut... </value>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Merci d'utiliser BCUninstaller!</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Si vous trouvez profitable cet outil open-source gratuit, veuillez envisager de passer une minute pour aider! Parlez-en à vos amis, partagez-le sur les réseaux sociaux, donnez vos impressions - tout compte!</value>
+  </data>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Envoyer vos impressions</value>
+  </data>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Noter sur SourceForge</value>
+  </data>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Partager sur Twitter</value>
+  </data>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Des problèmes ou des fonctions manquantes ?</value>
+  </data>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Si vous avez des problèmes avec BCU, ou si vous souhaitez suggérer une nouvelle fonction, voyez ces liens:</value>
+  </data>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Soumettre sur GitHub (Nécessite un compte)</value>
+  </data>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Envoyer vos impressions</value>
+  </data>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Souhaitez-vous aider ?</value>
+  </data>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Vous n'avez pas à être un programmeur pour aider! Vous pouvez faire un don pour accélérer les mises à jour, ou traduire BCU dans votre langue maternelle. Toute aide est grandement appréciée, même petite!</value>
+  </data>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Traduire BCU</value>
+  </data>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Problèmes sur GitHub</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Ne plus jamais montrer cette fenêtre, jamais</value>
   </data>
   <data name="buttonClose.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="olvColumnStatus.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
-  <data name="olvColumnIsSilent.Text" xml:space="preserve">
-    <value>Silencieux</value>
-  </data>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Les désinstalleurs sélectionnés vont  maintenant être exécutés un à la fois.
-Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour éviter d'attendre qu'il se termine. Cela peut arriver si le désinstalleur plante ou démarre un nouveau processus et ne le ferme pas. </value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Liste de désinstalleurs</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Le contenu de cette liste sera désinstallé en allant du début à la fin.</value>
+    <value>Fermer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Progression de la désinstallation</value>
-  </data>
-  <data name="toolStripButtonSkip.Text" xml:space="preserve">
-    <value>Passer</value>
-  </data>
-  <data name="olvColumnId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Lancer le désinstallateur maintenant</value>
-  </data>
-  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
-    <value>Interrompre</value>
-  </data>
-  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>Ouvrir le chemin d'installation</value>
-  </data>
-  <data name="toolStripButtonProperties.Text" xml:space="preserve">
-    <value>Propriétés</value>
-  </data>
-  <data name="toolStripButtonSettings.Text" xml:space="preserve">
-    <value>Réglages</value>
-  </data>
-  <data name="toolStripButtonHelp.Text" xml:space="preserve">
-    <value>Aide</value>
+    <value>Envoyer vos impressions</value>
   </data>
 </root>

@@ -434,4 +434,67 @@
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Tous les biens</value>
   </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Fichiers et dossiers</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Le dossier est ou sera vide après suppression des résidus.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Balayage des produits MSI installés...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Trouvé {0} GUIDs d'applications</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Balayage du registre pour les désinstalleurs</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Regroupement des clés de registre</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Traitement de {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Génération de l'information de désinstalleur manquant</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Balayage des lecteurs pour les applications...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Regroupement des dossiers</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Balayage des magasins d'applications</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Recherche des modèles d'applications</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Recherche des Apps Steam</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Recherche des Apps du Windows Store</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Recherche des Fonctionnalités Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Fusion des applications découvertes...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Fusion des applications depuis les magasins</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Fusion des applications depuis les lecteurs</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Génération de l'information manquante</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
 </root>

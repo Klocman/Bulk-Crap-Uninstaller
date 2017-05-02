@@ -471,4 +471,28 @@
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Avancé...</value>
   </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lancer...</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir les Mises à jour</value>
+  </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Désinstaller depuis le dossier...</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir "Récupération"</value>
+  </data>
 </root>

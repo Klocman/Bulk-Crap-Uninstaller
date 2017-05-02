@@ -169,4 +169,7 @@
   <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Détails</value>
   </data>
+  <data name="backupDirDialog.Description" xml:space="preserve">
+    <value>Sélectionner où enregister la sauvegarde. Un nouveau dossier sera créé.</value>
+  </data>
 </root>
