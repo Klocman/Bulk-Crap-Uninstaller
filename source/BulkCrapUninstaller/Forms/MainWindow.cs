@@ -80,8 +80,7 @@ namespace BulkCrapUninstaller.Forms
                     y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries)
                     .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
-
-            _listLegendWindow.ListLegend.WinFeatureEnabled = false;
+            
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
@@ -1146,7 +1145,6 @@ namespace BulkCrapUninstaller.Forms
                 // Display the legend first so it is hidden under the splash
                 _listLegendWindow.Opacity = 0;
                 SetupAndShowLegendWindow();
-                RefreshListLegend(sender, e);
                 // Needed in case main window starts maximized
                 _listLegendWindow.UpdatePosition(uninstallerObjectListView);
                 _listLegendWindow.Opacity = 1;
@@ -1170,6 +1168,8 @@ namespace BulkCrapUninstaller.Forms
                     });
                 }).Start();
             }
+
+            RefreshListLegend(sender, e);
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
