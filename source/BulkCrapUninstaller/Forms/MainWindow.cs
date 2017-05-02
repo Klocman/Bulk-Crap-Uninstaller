@@ -88,6 +88,11 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowWinFeatures, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
 
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanSteam = y.NewValue, x => x.ScanSteam, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanStoreApps = y.NewValue, x => x.ScanStoreApps, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinFeatures = y.NewValue, x => x.ScanWinFeatures, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinUpdates = y.NewValue, x => x.ScanWinUpdates, this);
+
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,
                 x => x.QuietAutomatization, this);
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
@@ -166,7 +171,7 @@ namespace BulkCrapUninstaller.Forms
             LoadingDialog.DefaultOwner = this;
             PremadeDialogs.DefaultOwner = this;
             PremadeDialogs.SendErrorAction = exception => NBug.Exceptions.Report(exception);
-            
+
             SetupHotkeys();
         }
 
@@ -1033,7 +1038,7 @@ namespace BulkCrapUninstaller.Forms
                     }
                 }
 
-                if(item.IsRegistered)
+                if (item.IsRegistered)
                     manualUninstallToolStripMenuItem1.Enabled = true;
 
                 if (!item.BundleProviderKey.IsEmpty()) gUIDProductCodeCopyContextMenuStripItem.Enabled = true;

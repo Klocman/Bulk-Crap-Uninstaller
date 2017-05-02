@@ -646,6 +646,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Searching for Windows Updates.
+        /// </summary>
+        internal static string Progress_AppStores_WinUpdates {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_WinUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scanning drives for applications....
         /// </summary>
         internal static string Progress_DriveScan {

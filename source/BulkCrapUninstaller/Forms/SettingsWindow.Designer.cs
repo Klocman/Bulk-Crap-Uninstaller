@@ -54,6 +54,7 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxShowAllBadJunk = new System.Windows.Forms.CheckBox();
             this.checkBoxLoud = new System.Windows.Forms.CheckBox();
             this.checkBoxBackup = new System.Windows.Forms.CheckBox();
+            this.checkBoxNeverFeedback = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxJunk = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,8 +79,14 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.tabPageDetection = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBoxNeverFeedback = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxScanWinUpdates = new System.Windows.Forms.CheckBox();
+            this.checkBoxScanWinFeatures = new System.Windows.Forms.CheckBox();
+            this.checkBoxScanSteam = new System.Windows.Forms.CheckBox();
+            this.checkBoxScanStoreApps = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -101,7 +108,10 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxProgramFolders.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
+            this.tabPageDetection.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -249,6 +259,12 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxBackup.Name = "checkBoxBackup";
             this.checkBoxBackup.UseVisualStyleBackColor = true;
             // 
+            // checkBoxNeverFeedback
+            // 
+            resources.ApplyResources(this.checkBoxNeverFeedback, "checkBoxNeverFeedback");
+            this.checkBoxNeverFeedback.Name = "checkBoxNeverFeedback";
+            this.checkBoxNeverFeedback.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
@@ -334,12 +350,15 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.tabControl.Controls.Add(this.tabPageGeneral);
             this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPageDetection);
             this.tabControl.Controls.Add(this.tabPageExternal);
             this.tabControl.Controls.Add(this.tabPageFolders);
             this.tabControl.Controls.Add(this.tabPageMisc);
             resources.ApplyResources(this.tabControl, "tabControl");
+            this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             // 
             // tabPageGeneral
             // 
@@ -418,17 +437,58 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
             // 
+            // tabPageDetection
+            // 
+            this.tabPageDetection.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPageDetection, "tabPageDetection");
+            this.tabPageDetection.Name = "tabPageDetection";
+            this.tabPageDetection.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button2);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
-            // checkBoxNeverFeedback
+            // groupBox1
             // 
-            resources.ApplyResources(this.checkBoxNeverFeedback, "checkBoxNeverFeedback");
-            this.checkBoxNeverFeedback.Name = "checkBoxNeverFeedback";
-            this.checkBoxNeverFeedback.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.flowLayoutPanel6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // flowLayoutPanel6
+            // 
+            resources.ApplyResources(this.flowLayoutPanel6, "flowLayoutPanel6");
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxScanSteam);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxScanStoreApps);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxScanWinFeatures);
+            this.flowLayoutPanel6.Controls.Add(this.checkBoxScanWinUpdates);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            // 
+            // checkBoxScanWinUpdates
+            // 
+            resources.ApplyResources(this.checkBoxScanWinUpdates, "checkBoxScanWinUpdates");
+            this.checkBoxScanWinUpdates.Name = "checkBoxScanWinUpdates";
+            this.checkBoxScanWinUpdates.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxScanWinFeatures
+            // 
+            resources.ApplyResources(this.checkBoxScanWinFeatures, "checkBoxScanWinFeatures");
+            this.checkBoxScanWinFeatures.Name = "checkBoxScanWinFeatures";
+            this.checkBoxScanWinFeatures.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxScanSteam
+            // 
+            resources.ApplyResources(this.checkBoxScanSteam, "checkBoxScanSteam");
+            this.checkBoxScanSteam.Name = "checkBoxScanSteam";
+            this.checkBoxScanSteam.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxScanStoreApps
+            // 
+            resources.ApplyResources(this.checkBoxScanStoreApps, "checkBoxScanStoreApps");
+            this.checkBoxScanStoreApps.Name = "checkBoxScanStoreApps";
+            this.checkBoxScanStoreApps.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -471,6 +531,7 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPageExternal.ResumeLayout(false);
             this.tabPageExternal.PerformLayout();
             this.tabPageFolders.ResumeLayout(false);
@@ -481,7 +542,13 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel5.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
+            this.tabPageDetection.ResumeLayout(false);
+            this.tabPageDetection.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -535,5 +602,12 @@ namespace BulkCrapUninstaller.Forms
         private Controls.UninstallationSettings uninstallationSettings1;
         private CheckBox checkBoxShowAllBadJunk;
         private CheckBox checkBoxNeverFeedback;
+        private TabPage tabPageDetection;
+        private GroupBox groupBox1;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private CheckBox checkBoxScanSteam;
+        private CheckBox checkBoxScanStoreApps;
+        private CheckBox checkBoxScanWinFeatures;
+        private CheckBox checkBoxScanWinUpdates;
     }
 }

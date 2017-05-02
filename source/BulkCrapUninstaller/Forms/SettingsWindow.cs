@@ -31,7 +31,7 @@ namespace BulkCrapUninstaller.Forms
 
             _settings.BindControl(checkBoxBackup, x => x.MessagesAskToBackup, this);
             _settings.BindControl(checkBoxLoud, x => x.MessagesAskRemoveLoudItems, this);
-            _settings.BindControl(checkBoxShowAllBadJunk, x=> x.MessagesShowAllBadJunk, this);
+            _settings.BindControl(checkBoxShowAllBadJunk, x => x.MessagesShowAllBadJunk, this);
             _settings.BindControl(checkBoxNeverFeedback, x => x.MiscFeedbackNagNeverShow, this);
             _settings.BindControl(checkBoxUpdateSearch, x => x.MiscCheckForUpdates, this);
             _settings.BindControl(checkBoxSendStats, x => x.MiscSendStatistics, this);
@@ -44,7 +44,12 @@ namespace BulkCrapUninstaller.Forms
 
             _settings.BindControl(textBoxProgramFolders, x => x.FoldersCustomProgramDirs, this);
 
-            foreach (YesNoAsk value in Enum.GetValues(typeof (YesNoAsk)))
+            _settings.BindControl(checkBoxScanSteam, x => x.ScanSteam, this);
+            _settings.BindControl(checkBoxScanStoreApps, x => x.ScanStoreApps, this);
+            _settings.BindControl(checkBoxScanWinFeatures, x => x.ScanWinFeatures, this);
+            _settings.BindControl(checkBoxScanWinUpdates, x => x.ScanWinUpdates, this);
+
+            foreach (YesNoAsk value in Enum.GetValues(typeof(YesNoAsk)))
             {
                 var wrapper = new LocalisedEnumWrapper(value);
                 comboBoxJunk.Items.Add(wrapper);
@@ -87,7 +92,7 @@ namespace BulkCrapUninstaller.Forms
             var wrapper = comboBoxJunk.SelectedItem as LocalisedEnumWrapper;
             if (wrapper != null)
             {
-                _settings.Settings.MessagesRemoveJunk = (YesNoAsk) wrapper.TargetEnum;
+                _settings.Settings.MessagesRemoveJunk = (YesNoAsk)wrapper.TargetEnum;
             }
         }
 
@@ -111,7 +116,7 @@ namespace BulkCrapUninstaller.Forms
             var wrapper = comboBoxRestore.SelectedItem as LocalisedEnumWrapper;
             if (wrapper != null)
             {
-                _settings.Settings.MessagesRestorePoints = (YesNoAsk) wrapper.TargetEnum;
+                _settings.Settings.MessagesRestorePoints = (YesNoAsk)wrapper.TargetEnum;
             }
         }
 
