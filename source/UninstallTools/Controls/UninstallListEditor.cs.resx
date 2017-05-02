@@ -112,52 +112,65 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxFilterList.Text" xml:space="preserve">
-    <value>Filtr seznamu</value>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Název filtru</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Seznam odinstalace (*.xml)|*.xml|All files|*.*</value>
+  <data name="columnHeaderType.Text" xml:space="preserve">
+    <value>Typ</value>
   </data>
-  <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Načíst seznam odinstalace...</value>
+  <data name="columnHeaderConditions.Text" xml:space="preserve">
+    <value>Podmínky</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripButtonAddFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 22</value>
   </data>
   <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Přidat</value>
   </data>
+  <data name="toolStripButtonRemoveFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 22</value>
+  </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
     <value>Odstranit</value>
+  </data>
+  <data name="toolStripButtonAddFiltersFromList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
   </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Přidat ze seznamu ...</value>
   </data>
-  <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
-    <value>Přidat</value>
+  <data name="groupBoxFilterList.Text" xml:space="preserve">
+    <value>Filtr seznamu</value>
   </data>
-  <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
-    <value>Odstranit</value>
+  <data name="textBoxFilterName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 17</value>
   </data>
-  <data name="comboBoxFilterType.Items1" xml:space="preserve">
-    <value>Vyloučit</value>
+  <data name="textBoxFilterName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 20</value>
   </data>
-  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
-    <value>Editor podmínek</value>
+  <data name="labelFilterType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 17</value>
+  </data>
+  <data name="labelFilterType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 19</value>
+  </data>
+  <data name="labelFilterType.Text" xml:space="preserve">
+    <value>Typ:</value>
   </data>
   <data name="comboBoxFilterType.Items" xml:space="preserve">
     <value>Zahrnout</value>
   </data>
-  <data name="columnHeaderName.Text" xml:space="preserve">
-    <value>Název filtru</value>
+  <data name="comboBoxFilterType.Items1" xml:space="preserve">
+    <value>Vyloučit</value>
   </data>
-  <data name="groupBoxConditions.Text" xml:space="preserve">
-    <value>Podmínky filtru</value>
-  </data>
-  <data name="columnHeaderType.Text" xml:space="preserve">
-    <value>Typ</value>
+  <data name="labelFilterName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 19</value>
   </data>
   <data name="labelFilterName.Text" xml:space="preserve">
     <value>Název:</value>
@@ -165,16 +178,28 @@
   <data name="groupBoxFilterSettings.Text" xml:space="preserve">
     <value>Nastavení filtru</value>
   </data>
-  <data name="columnHeaderConditions.Text" xml:space="preserve">
-    <value>Podmínky</value>
+  <data name="toolStripButtonAddCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 22</value>
   </data>
-  <data name="labelFilterType.Text" xml:space="preserve">
-    <value>Typ:</value>
+  <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
+    <value>Přidat</value>
   </data>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="toolStripButtonRemoveCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 22</value>
+  </data>
+  <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
+    <value>Odstranit</value>
+  </data>
+  <data name="groupBoxConditions.Text" xml:space="preserve">
+    <value>Podmínky filtru</value>
+  </data>
+  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
+    <value>Editor podmínek</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Seznam odinstalace (*.xml)|*.xml|All files|*.*</value>
+  </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value>Načíst seznam odinstalace...</value>
+  </data>
 </root>
