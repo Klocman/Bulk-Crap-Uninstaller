@@ -1150,7 +1150,6 @@ namespace BulkCrapUninstaller.Forms
                 SetupAndShowLegendWindow();
                 // Needed in case main window starts maximized
                 _listLegendWindow.UpdatePosition(uninstallerObjectListView);
-                _listLegendWindow.Opacity = 1;
                 _listLegendWindow.Visible = _setMan.Selected.Settings.UninstallerListShowLegend;
 
                 new Thread(() =>

@@ -13,6 +13,8 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class ListLegendWindow : Form
     {
+        private const double OpacityChangeAmount = .12;
+
         public ListLegendWindow()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace BulkCrapUninstaller.Forms
                 Visible = false;
                 Owner.Focus();
             };
-            
+
             foreach (var control in this.GetAllChildren())
             {
                 control.MouseLeave += ControlOnMouseEvent;
@@ -41,37 +43,44 @@ namespace BulkCrapUninstaller.Forms
 
         private void ListLegendWindow_VisibleChanged(object sender, System.EventArgs e)
         {
-            if(Opacity < .9)
-                opacityResetTimer.Enabled = true;
+            if (Opacity < .9)
+                opacityResetTimer.Start();
         }
 
         private void ListLegendWindow_EnabledChanged(object sender, System.EventArgs e)
         {
             if (Opacity < .9)
-                opacityResetTimer.Enabled = true;
+                opacityResetTimer.Start();
         }
 
         private void opacityResetTimer_Tick(object sender, EventArgs e)
         {
-            if (!CheckMouseHover())
+            if (CheckMouseHover())
             {
-                opacityResetTimer.Stop();
-                Opacity = 1;
+                if (Math.Abs(Opacity - .3) < .03)
+                    opacityResetTimer.Stop();
+                else
+                    Opacity = OpacityLerp(.3);
             }
+            else
+            {
+                if (Math.Abs(Opacity - 1) < .03)
+                    opacityResetTimer.Stop();
+                else
+                    Opacity = OpacityLerp(1);
+            }
+        }
+
+        private double OpacityLerp(double target)
+        {
+            return Opacity > target
+                ? Math.Max(target, Opacity - OpacityChangeAmount)
+                : Math.Min(target, Opacity + OpacityChangeAmount);
         }
 
         private void ControlOnMouseEvent(object sender, EventArgs eventArgs)
         {
-            if (CheckMouseHover())
-            {
-                Opacity = .3;
-                opacityResetTimer.Enabled = true;
-            }
-            else
-            {
-                Opacity = 1;
-                opacityResetTimer.Enabled = false;
-            }
+            opacityResetTimer.Start();
         }
 
         private bool CheckMouseHover()

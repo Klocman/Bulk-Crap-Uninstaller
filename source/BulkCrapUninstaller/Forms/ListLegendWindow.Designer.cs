@@ -35,7 +35,7 @@
             // 
             // opacityResetTimer
             // 
-            this.opacityResetTimer.Interval = 300;
+            this.opacityResetTimer.Interval = 25;
             this.opacityResetTimer.Tick += new System.EventHandler(this.opacityResetTimer_Tick);
             // 
             // listLegend1
