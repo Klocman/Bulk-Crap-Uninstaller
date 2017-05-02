@@ -2,23 +2,20 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.8.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8/BCUninstaller_3.8_portable.zip</URL>
+<Version>3.8.2.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8.2/BCUninstaller_3.8.2_portable.zip</URL>
 <Changes>
-Added detailed progress to list load and junk search.
-Added option to submit errors via NBug in soft crash box.
-Added registry junk scan in \EventLog\Application.
-Added registry junk scan in \Installer\Folders.
-Changed naming from "orphaned" to "unregistered".
-Fixed NSIS automatizer hanging on some uninstallers with non-standard button IDs.
-Fixed NSIS automatizer pressing wrong buttons if they are focused by default.
-Fixed crash in ScanAudioPolicyConfig if Uninstaller.InstallLocation isn't rooted.
-Fixed possible object disposed exception in InitiateListRefresh.
-Fixed rare crash when redrawing the application list.
-Fixed some grammar problems in readme.
-Misc code refactoring and cleanup.
-Updated TaskScheduler and Castle.Core packages.
+Added settings to disable Steam, StoreApp, WinFeature and WinUpdate scanning.
+Added ability to add selected applications as advanced filters.
+Added fade effect to the color legend.
+Added update to Czech translation by Richard Kahl.
+Added update to French translation by Thierry.
+Added update to Spanish translation by Freddy Morán Jr. (Freddynic159).
+Added update to Russian translation by xwxvwvxwx.
+Small speedup of merging results and adding information.
+Fixed 'Add from list' in advanced filters using wrong file extension.
+Fixed list legend not updating on list refresh.
 </Changes>
-<Hash>f9e55b5fb856fd4ece76618682c8502f</Hash>
+<Hash>1910f0d86346874b0db995ed75228847</Hash>
 </Update>
 </Root>
