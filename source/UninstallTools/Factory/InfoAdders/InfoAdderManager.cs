@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Klocman.Tools;
 
 namespace UninstallTools.Factory.InfoAdders
 {
@@ -14,19 +15,7 @@ namespace UninstallTools.Factory.InfoAdders
     {
         private static readonly IMissingInfoAdder[] InfoAdders;
 
-        private static readonly Dictionary<string, PropInfo> TargetProperties;
-
-        private sealed class PropInfo
-        {
-            public PropInfo(PropertyInfo propertyInfo, object defaultValue)
-            {
-                PropertyInfo = propertyInfo;
-                DefaultValue = defaultValue;
-            }
-
-            public PropertyInfo PropertyInfo { get; }
-            public object DefaultValue { get; }
-        }
+        private static readonly Dictionary<string, CompiledPropertyInfo<ApplicationUninstallerEntry>> TargetProperties;
 
         static InfoAdderManager()
         {
@@ -35,10 +24,14 @@ namespace UninstallTools.Factory.InfoAdders
             var defaultValues = new ApplicationUninstallerEntry();
             TargetProperties = typeof(ApplicationUninstallerEntry)
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                // Skip properties without public setters
-                .Where(x => x.GetSetMethod(true) != null)
+                .Where(x => x.CanRead && x.CanWrite)
                 .Where(x => IsTypeValid(x.PropertyType))
-                .ToDictionary(x => x.Name, x => new PropInfo(x, x.GetValue(defaultValues, null)));
+                 .ToDictionary(x => x.Name, x =>
+                 {
+                     var compiled = x.CompileAccessors<ApplicationUninstallerEntry>();
+                     compiled.Tag = compiled.CompiledGet(defaultValues);
+                     return compiled;
+                 });
         }
 
         private static readonly Type BoolType = typeof(bool);
@@ -68,7 +61,7 @@ namespace UninstallTools.Factory.InfoAdders
         /// </summary>
         public void AddMissingInformation(ApplicationUninstallerEntry target, bool skipRunLast = false)
         {
-            var adders = InfoAdders.Where(x=> !skipRunLast || x.Priority > InfoAdderPriority.RunLast).ToList();
+            var adders = InfoAdders.Where(x => !skipRunLast || x.Priority > InfoAdderPriority.RunLast).ToList();
             var valueIsDefaultCache = new Dictionary<string, bool>();
 
             // Checks if the value is default, buffering the result
@@ -77,12 +70,12 @@ namespace UninstallTools.Factory.InfoAdders
                 bool valIsDefault;
                 if (!valueIsDefaultCache.TryGetValue(key, out valIsDefault))
                 {
+                    CompiledPropertyInfo<ApplicationUninstallerEntry> property;
                     // If we can't check if the value is default, assume that it is to be safe
-                    if (!TargetProperties.ContainsKey(key)) return true;
-
-                    var property = TargetProperties[key];
-                    valIsDefault = Equals(property.PropertyInfo.GetValue(target, null),
-                        property.DefaultValue);
+                    if (!TargetProperties.TryGetValue(key, out property)) return true;
+                    
+                    valIsDefault = Equals(property.CompiledGet(target),
+                        property.Tag);
                     valueIsDefaultCache.Add(key, valIsDefault);
                 }
 
@@ -105,7 +98,7 @@ namespace UninstallTools.Factory.InfoAdders
                     {
                         if (infoAdder.RequiresAllValues)
                         {
-                            if(infoAdder.RequiredValueNames.Any(x => getIsValDefault(x)))
+                            if (infoAdder.RequiredValueNames.Any(x => getIsValDefault(x)))
                                 continue;
                         }
                         else
@@ -155,13 +148,13 @@ namespace UninstallTools.Factory.InfoAdders
             foreach (var property in TargetProperties.Values)
             {
                 // Skip if target has non-default value assigned to this property
-                if (!Equals(property.PropertyInfo.GetValue(target, null), property.DefaultValue))
+                if (!Equals(property.CompiledGet(target), property.Tag))
                     continue;
 
                 // If source has a non-default value for this property, copy it to target
-                var newValue = property.PropertyInfo.GetValue(source, null);
-                if (!Equals(newValue, property.DefaultValue))
-                    property.PropertyInfo.SetValue(target, newValue, null);
+                var newValue = property.CompiledGet(source);
+                if (!Equals(newValue, property.Tag))
+                    property.CompiledSet(target, newValue);
             }
         }
     }
