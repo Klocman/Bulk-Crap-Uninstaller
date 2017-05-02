@@ -1,6 +1,8 @@
 [![Download Bulk Crap Uninstaller](https://img.shields.io/sourceforge/dm/bulk-crap-uninstaller.svg)](https://sourceforge.net/projects/bulk-crap-uninstaller/files/latest/download)
 [![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases)
 [![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
+[![Issues](https://img.shields.io/github/issues/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues)
+[![Closed issues](https://img.shields.io/github/issues-closed/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues?q=is%3Aissue+is%3Aclosed)
 
 # Bulk-Crap-Uninstaller
 Bulk Crap Uninstaller (or BCUninstaller) is a free (as in speech) program uninstaller. It excels at removing large amounts of applications with minimal user input. It can clean up leftovers, detect orphaned applications, run uninstallers according to premade lists, and much more! 
@@ -8,10 +10,12 @@ Even though BCU was made with IT pros in mind, by default it is so straight-forw
 
 BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has special support for many uninstalling systems (NSIS, InnoSetup, Msiexec, and many other).
 
-[Homepage](http://klocmansoftware.weebly.com/)
+[Visit official homepage](http://klocmansoftware.weebly.com/)
 
-[SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
+## Download
+[![Download at FossHub](https://cloud.githubusercontent.com/assets/14913904/25586209/a84a224e-2e9e-11e7-9332-5f913a9d7cd8.png)](hthttps://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
+[Download at SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
 
 ## Screenshots
 ![Alt text](/doc/Preview.png?raw=true "First start preview")
@@ -31,11 +35,6 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 * Startup manager
 * Verification of uninstaller certificates
 * Fully portable, settings are saved to a single file
-
-## Download
-[Check the releases for new versions](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/)
-
-[For old versions go to the Sourceforge](https://sourceforge.net/projects/bulk-crap-uninstaller/files/)
 
 ## Compiling
 Any modern version of Visual Studio should work. You might need to download [this library](https://sourceforge.net/p/kloctoolslibrary/) separately.
