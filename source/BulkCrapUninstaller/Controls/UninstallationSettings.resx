@@ -112,14 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="checkBoxManualNoCollisionProtection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBoxManualNoCollisionProtection.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxManualNoCollisionProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -133,7 +139,7 @@
     <value>224, 30</value>
   </data>
   <data name="checkBoxManualNoCollisionProtection.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
     <value>Disable collision prevention when running 
@@ -167,7 +173,7 @@ uninstallers manually</value>
     <value>184, 17</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
     <value>Only one loud uninstaller at a time</value>
@@ -224,7 +230,7 @@ uninstallers manually</value>
     <value>69, 20</value>
   </data>
   <data name="numericUpDownMaxConcurrent.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;numericUpDownMaxConcurrent.Name" xml:space="preserve">
     <value>numericUpDownMaxConcurrent</value>
@@ -251,7 +257,7 @@ uninstallers manually</value>
     <value>173, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Max number of running uninstallers:</value>
@@ -278,10 +284,10 @@ uninstallers manually</value>
     <value>5, 3, 5, 3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 118</value>
+    <value>298, 131</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Concurrent uninstallation</value>
@@ -347,7 +353,7 @@ uninstallers manually</value>
     <value>155, 17</value>
   </data>
   <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Intelligent uninstaller sorting</value>
@@ -377,7 +383,7 @@ uninstallers manually</value>
     <value>111, 17</value>
   </data>
   <data name="checkBoxDiisableProtection.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Disable protection</value>
@@ -407,7 +413,7 @@ uninstallers manually</value>
     <value>130, 17</value>
   </data>
   <data name="checkBoxSimulate.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
     <value>Simulate uninstallation</value>
@@ -437,7 +443,7 @@ uninstallers manually</value>
     <value>288, 92</value>
   </data>
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="flowLayoutPanel4.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -467,7 +473,7 @@ uninstallers manually</value>
     <value>298, 111</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>General settings</value>
@@ -533,7 +539,7 @@ uninstallers manually</value>
     <value>187, 17</value>
   </data>
   <data name="checkBoxRetryQuiet.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
     <value>Retry failed quiet uninstallers once</value>
@@ -563,7 +569,7 @@ uninstallers manually</value>
     <value>237, 17</value>
   </data>
   <data name="checkBoxGenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
     <value>Generate missing quiet uninstallers if possible</value>
@@ -596,7 +602,7 @@ uninstallers manually</value>
     <value>253, 17</value>
   </data>
   <data name="checkBoxGenerateStuck.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
     <value>Automatically kill if stuck waiting for user input</value>
@@ -626,7 +632,7 @@ uninstallers manually</value>
     <value>288, 92</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -656,7 +662,7 @@ uninstallers manually</value>
     <value>298, 111</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Quiet uninstallation</value>
@@ -673,6 +679,9 @@ uninstallers manually</value>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -685,7 +694,4 @@ uninstallers manually</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

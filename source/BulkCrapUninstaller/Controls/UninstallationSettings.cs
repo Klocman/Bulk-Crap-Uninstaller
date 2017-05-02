@@ -29,7 +29,6 @@ namespace BulkCrapUninstaller.Controls
 
             _settings.BindControl(checkBoxConcurrentOneLoud, settings => settings.UninstallConcurrentOneLoud, this);
             _settings.BindControl(checkBoxManualNoCollisionProtection, settings => settings.UninstallConcurrentDisableManualCollisionProtection, this);
-            //_settings.BindControl(checkBoxConcurrentLessCollisionProtection, settings => settings.UninstallConcurrentLessCollisionProtection, this);
 
             _settings.Subscribe(OnMaxCountChanged, settings => settings.UninstallConcurrentMaxCount, this);
             numericUpDownMaxConcurrent.ValueChanged += NumericUpDownMaxConcurrentOnValueChanged;

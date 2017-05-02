@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallationSettings));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrentOneLoud = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrent = new System.Windows.Forms.CheckBox();
             this.numericUpDownMaxConcurrent = new System.Windows.Forms.NumericUpDown();
@@ -47,6 +46,7 @@
             this.checkBoxRetryQuiet = new System.Windows.Forms.CheckBox();
             this.checkBoxGenerate = new System.Windows.Forms.CheckBox();
             this.checkBoxGenerateStuck = new System.Windows.Forms.CheckBox();
+            this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxConcurrent)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,20 +57,14 @@
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.checkBoxManualNoCollisionProtection);
             this.groupBox3.Controls.Add(this.checkBoxConcurrentOneLoud);
             this.groupBox3.Controls.Add(this.checkBoxConcurrent);
             this.groupBox3.Controls.Add(this.numericUpDownMaxConcurrent);
             this.groupBox3.Controls.Add(this.label2);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            // 
-            // checkBoxManualNoCollisionProtection
-            // 
-            resources.ApplyResources(this.checkBoxManualNoCollisionProtection, "checkBoxManualNoCollisionProtection");
-            this.checkBoxManualNoCollisionProtection.Name = "checkBoxManualNoCollisionProtection";
-            this.checkBoxManualNoCollisionProtection.UseVisualStyleBackColor = true;
             // 
             // checkBoxConcurrentOneLoud
             // 
@@ -189,6 +183,12 @@
             this.checkBoxGenerateStuck.Name = "checkBoxGenerateStuck";
             this.checkBoxGenerateStuck.UseVisualStyleBackColor = true;
             // 
+            // checkBoxManualNoCollisionProtection
+            // 
+            resources.ApplyResources(this.checkBoxManualNoCollisionProtection, "checkBoxManualNoCollisionProtection");
+            this.checkBoxManualNoCollisionProtection.Name = "checkBoxManualNoCollisionProtection";
+            this.checkBoxManualNoCollisionProtection.UseVisualStyleBackColor = true;
+            // 
             // UninstallationSettings
             // 
             resources.ApplyResources(this, "$this");
@@ -222,7 +222,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBoxShutdown;
-        private System.Windows.Forms.CheckBox checkBoxManualNoCollisionProtection;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.CheckBox checkBoxBatchSortQuiet;
         private System.Windows.Forms.CheckBox checkBoxDiisableProtection;
@@ -233,5 +232,6 @@
         private System.Windows.Forms.CheckBox checkBoxRetryQuiet;
         private System.Windows.Forms.CheckBox checkBoxGenerate;
         private System.Windows.Forms.CheckBox checkBoxGenerateStuck;
+        private System.Windows.Forms.CheckBox checkBoxManualNoCollisionProtection;
     }
 }
