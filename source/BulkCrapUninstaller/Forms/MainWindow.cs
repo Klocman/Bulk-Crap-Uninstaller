@@ -566,6 +566,8 @@ namespace BulkCrapUninstaller.Forms
             }
 
             _listView.InitiateListRefresh();
+
+            settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() + settingsSidebarPanel.Padding.Left + settingsSidebarPanel.Padding.Right;
         }
 
         private void SetupAndShowLegendWindow()

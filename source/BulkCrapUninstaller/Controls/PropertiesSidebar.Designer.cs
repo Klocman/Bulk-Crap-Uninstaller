@@ -51,7 +51,7 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxViewCheckboxes = new System.Windows.Forms.CheckBox();
             this.checkBoxViewGroups = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.usageTracker1 = new UsageTracker();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -184,7 +184,7 @@ namespace BulkCrapUninstaller.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.MinimumSize = new System.Drawing.Size(170, 170);
+            this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "PropertiesSidebar";
             this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.groupBox2.ResumeLayout(false);

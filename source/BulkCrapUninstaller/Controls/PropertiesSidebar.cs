@@ -4,6 +4,8 @@
 */
 
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
@@ -34,6 +36,19 @@ namespace BulkCrapUninstaller.Controls
 
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);
+        }
+        
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        public int GetSuggestedWidth()
+        {
+            var maxWidth = typeof(PropertiesSidebar)
+                .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
+                .Where(x => x.FieldType == typeof(CheckBox))
+                .Select(x => x.GetValue(this))
+                .Cast<CheckBox>()
+                .Max(c => c.Width);
+
+            return maxWidth + (groupBox1.Width - groupBox1.DisplayRectangle.Width) + Padding.Left + Padding.Right;
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]

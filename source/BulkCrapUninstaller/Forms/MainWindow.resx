@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 24</value>
+    <value>196, 24</value>
   </data>
   <data name="advancedFilters1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.8.1.37055, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.8.2.40582, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -277,7 +277,7 @@
     <value>0, 0</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 454</value>
+    <value>430, 454</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -301,7 +301,7 @@
     <value>0, 30</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 456</value>
+    <value>432, 456</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -522,7 +522,7 @@
     <value>0, 0, 0, 1</value>
   </data>
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 30</value>
+    <value>432, 30</value>
   </data>
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -546,7 +546,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
+    <value>54, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -585,7 +585,7 @@
     <value>0, 486</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 22</value>
+    <value>432, 22</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -615,7 +615,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 508</value>
+    <value>758, 508</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>320</value>
@@ -653,11 +653,8 @@
   <data name="propertiesSidebar.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 171</value>
   </data>
-  <data name="propertiesSidebar.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>180, 180</value>
-  </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 291</value>
+    <value>183, 291</value>
   </data>
   <data name="propertiesSidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -666,7 +663,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.8.1.37055, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.8.2.40582, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -729,7 +726,7 @@
     <value>8, 138</value>
   </data>
   <data name="buttonAdvFiltering.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 23</value>
+    <value>167, 23</value>
   </data>
   <data name="buttonAdvFiltering.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -768,7 +765,7 @@
     <value>100, 0</value>
   </data>
   <data name="filterEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 121</value>
+    <value>167, 121</value>
   </data>
   <data name="filterEditor1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -777,7 +774,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.8.1.29501, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.8.2.39728, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -795,7 +792,7 @@
     <value>8, 4, 8, 8</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 169</value>
+    <value>183, 169</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -825,7 +822,7 @@
     <value>6, 2, 5, 6</value>
   </data>
   <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 508</value>
+    <value>194, 508</value>
   </data>
   <data name="settingsSidebarPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2759,7 +2756,7 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.8.1.37055, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.8.2.40582, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

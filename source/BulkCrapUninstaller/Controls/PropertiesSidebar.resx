@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -150,8 +150,13 @@
   <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
   </data>
-  <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;checkBoxCertTest.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>Display applications that do not have any registered uninstallers. They are not visible in most uninstall managers but still take up space. Unregistered items are marked with a red color. 
+
+Warning: Double check before removing these applications, they might still be necessary!</value>
   </data>
   <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -210,11 +215,17 @@
   <data name="&gt;&gt;checkBoxOrphans.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 17</value>
+  </data>
   <data name="&gt;&gt;usageTracker1.Name" xml:space="preserve">
     <value>usageTracker1</value>
   </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="checkBoxShowStoreApps.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -227,6 +238,9 @@
   </data>
   <data name="&gt;&gt;checkBoxCertTest.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
     <value>checkBoxListSysComp</value>
@@ -243,9 +257,6 @@ Warning: Verification can take a long time to complete.</value>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 180</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -258,6 +269,9 @@ Warning: Verification can take a long time to complete.</value>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Show protected items</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBoxListSysComp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -266,12 +280,6 @@ Warning: Verification can take a long time to complete.</value>
   </data>
   <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
-  </data>
-  <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
-  </data>
-  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Highlight missing uninstallers</value>
   </data>
   <data name="checkBoxInvalidTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -288,8 +296,8 @@ Warning: Verification can take a long time to complete.</value>
   <data name="&gt;&gt;checkBoxListProtected.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="checkBoxShowStoreApps.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 17</value>
@@ -309,8 +317,8 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;checkBoxShowUpdates.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Updates of other applications. Usually they are uninstalled together with their parent application, so they can be ignored.</value>
@@ -321,8 +329,11 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxShowUpdates.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 16</value>
+  </data>
+  <data name="checkBoxWinFeature.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -345,8 +356,8 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="checkBoxViewGroups.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
+  <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
   </data>
   <data name="&gt;&gt;checkBoxInvalidTest.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -363,8 +374,8 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Show unregistered applications</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
   </data>
   <data name="checkBoxListProtected.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 72</value>
@@ -387,6 +398,9 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxListHideMicrosoft.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
+  <data name="checkBoxShowStoreApps.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="checkBoxViewCheckboxes.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -405,14 +419,20 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxViewGroups.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;checkBoxViewGroups.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="checkBoxListProtected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;checkBoxInvalidTest.Name" xml:space="preserve">
+    <value>checkBoxInvalidTest</value>
+  </data>
+  <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 291</value>
@@ -420,11 +440,14 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxOrphans.Name" xml:space="preserve">
     <value>checkBoxOrphans</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
+  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
+  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;checkBoxOrphans.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -456,17 +479,20 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxViewCheckboxes.Name" xml:space="preserve">
     <value>checkBoxViewCheckboxes</value>
   </data>
-  <data name="checkBoxWinFeature.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
   </data>
   <data name="&gt;&gt;checkBoxListProtected.Name" xml:space="preserve">
     <value>checkBoxListProtected</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filter out everything that was published by Microsoft. It's that simple.</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;checkBoxShowStoreApps.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -477,23 +503,17 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Name" xml:space="preserve">
-    <value>checkBoxListHideMicrosoft</value>
-  </data>
-  <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;checkBoxViewCheckboxes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 72</value>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.Tracking.UsageTracker, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.8.2.40135, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="checkBoxOrphans.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -513,6 +533,9 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>
   </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;checkBoxInvalidTest.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
@@ -522,17 +545,14 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxWinFeature.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 111</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
+  <data name="checkBoxViewCheckboxes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -543,8 +563,8 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Show Windows features</value>
   </data>
-  <data name="&gt;&gt;checkBoxInvalidTest.Name" xml:space="preserve">
-    <value>checkBoxInvalidTest</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 17</value>
@@ -552,8 +572,8 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="&gt;&gt;checkBoxWinFeature.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="checkBoxWinFeature.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -561,9 +581,6 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
     <value>Some uninstallers can be marked as "system components" to hide them from the Add/Remove software list.
 Drivers are often marked with this tag.</value>
-  </data>
-  <data name="checkBoxOrphans.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
   </data>
   <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -583,25 +600,26 @@ Drivers are often marked with this tag.</value>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Hide published by Microsoft</value>
   </data>
-  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Display applications that do not have any registered uninstallers. They are not visible in most uninstall managers but still take up space. Unregistered items are marked with a red color. 
-
-Warning: Double check before removing these applications, they might still be necessary!</value>
+  <data name="&gt;&gt;checkBoxInvalidTest.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
   </data>
-  <data name="&gt;&gt;checkBoxViewGroups.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Highlight missing uninstallers</value>
   </data>
   <data name="checkBoxShowStoreApps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 111</value>
+  </data>
   <data name="&gt;&gt;checkBoxShowStoreApps.Name" xml:space="preserve">
     <value>checkBoxShowStoreApps</value>
   </data>
-  <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="groupBox2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
@@ -625,11 +643,11 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="checkBoxCertTest.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;checkBoxCertTest.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;checkBoxListHideMicrosoft.Name" xml:space="preserve">
+    <value>checkBoxListHideMicrosoft</value>
   </data>
-  <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="checkBoxListHideMicrosoft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;checkBoxListHideMicrosoft.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -637,8 +655,8 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="checkBoxShowStoreApps.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 17</value>
   </data>
-  <data name="groupBox2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 180</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 180</value>
@@ -661,16 +679,16 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="flowLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pt</value>
   </metadata>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>299, 17</value>
   </metadata>
 </root>
