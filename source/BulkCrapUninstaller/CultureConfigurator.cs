@@ -30,12 +30,13 @@ namespace BulkCrapUninstaller
                     CultureInfo.GetCultureInfo("en-GB"),
                     CultureInfo.GetCultureInfo("cs-CZ"),
                     CultureInfo.GetCultureInfo("de-DE"),
+                    CultureInfo.GetCultureInfo("es-ES"),
                     CultureInfo.GetCultureInfo("fr-FR"),
                     CultureInfo.GetCultureInfo("hu-HU"),
+                    CultureInfo.GetCultureInfo("it-IT"),
                     CultureInfo.GetCultureInfo("pl-PL"),
                     CultureInfo.GetCultureInfo("pt-PT"),
                     CultureInfo.GetCultureInfo("ru-RU"),
-                    CultureInfo.GetCultureInfo("es-ES"),
                     CultureInfo.GetCultureInfo("sl-SI")
                 }.OrderBy(x => x.DisplayName).ToList().AsEnumerable());
             }

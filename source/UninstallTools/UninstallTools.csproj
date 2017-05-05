@@ -226,6 +226,9 @@
     <EmbeddedResource Include="Controls\FilterEditor.hu.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterEditor.it.resx">
+      <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.pl.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -255,6 +258,9 @@
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.hu.resx">
+      <DependentUpon>UninstallListEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallListEditor.it.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.pl.resx">
@@ -290,6 +296,9 @@
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.hu.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StartupManagerWindow.it.resx">
+      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.pl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -307,6 +316,7 @@
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.es.resx" />
+    <EmbeddedResource Include="Properties\Localisation.it.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>

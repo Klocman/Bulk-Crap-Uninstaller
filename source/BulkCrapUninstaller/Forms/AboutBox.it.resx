@@ -117,147 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
-  <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicações não registada na lista.</value>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Versione:</value>
   </data>
-  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Exibe aplicações sem desinstaladores registados.
-São invisíveis na maioria dos gestores de desinstalação, mas ainda ocupam espaço. Itens não registrada são marcados a cor vermelha.
-
-Aviso: Pense duas vezes antes de remover esses aplicativos pois poderão ainda ser necessários!</value>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
   </data>
-  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 62</value>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>Creatore</value>
   </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
+  <data name="labelis64.Text" xml:space="preserve">
+    <value>64 bit:</value>
   </data>
-  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Destacar os desinstaladores 
-inválidos</value>
+  <data name="labelPortable.Text" xml:space="preserve">
+    <value>Installato:</value>
   </data>
-  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Use a cor cinzenta para identificar desinstaladores corrompidos ou ausentes.</value>
-  </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 98</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
-  </data>
-  <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Destacar os desinstaladores 
-certificados</value>
-  </data>
-  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Use cores para identificar os desinstaladores certificados. Se o certificado foi verificado com êxito, utilize a cor cinzenta, caso contrário use a cor azul.
-
-Atenção: O processo de verificação pode demorar muito tempo.
-</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Ocultar se publicado pela Microsoft</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Filtra tudo o que foi publicado pela Microsoft. Tão simples como isso.</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
-  </data>
-  <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Mostrar os componentes do sistema</value>
-  </data>
-  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Alguns desinstaladores podem ser designados como "componentes do sistema" para os esconder na lista
-Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa designação.
-</value>
-  </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Mostrar itens protegidos</value>
-  </data>
-  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Itens protegidos assinalados com a denominação "NoRemove (NãoRemover)" significa que o editor não quer que você os remova.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Mostrar actualizações</value>
-  </data>
-  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Actualizações de outras aplicações. Normalmente, elas são desinstaladas em conjunto com aplicações semelhantes, para que possam ser ignoradas.</value>
-  </data>
-  <data name="checkBoxWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Mostrar recursos do Windows</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Mostrar as app do Windows Store</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 161</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 180</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Filtrando</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 30</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Seleccione usando as caixas 
-de selecção.</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Mudar o tipo de selecção da lista de caixas de opção.  São mais seguros porque um
-único clique não consegue desmarcar tudo.
-
-Você pode verificar vários itens, destacando-os e carregando na barra de espaço.
-</value>
-  </data>
-  <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
-  </data>
-  <data name="checkBoxViewGroups.Text" xml:space="preserve">
-    <value>Mostrar os itens em grupos</value>
-  </data>
-  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Agrupar itens com base na coluna
-usada para as ordenar.
-O agrupamento da maior parte das colunas utiliza uma triagem inteligente.
-
-</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 131</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 150</value>
+  <data name="labelArchitecture.Text" xml:space="preserve">
+    <value>Architettura:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Configurações da lista de exibição</value>
+    <value>Versione programma</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 330</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>DotNetZip</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Icone di Modern UI</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>ObjectList View</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Nbug</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>PortableSettingsProvider</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Task Scheduler Managed Wrapper</value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
+  </data>
+  <data name="linkLabel8.Text" xml:space="preserve">
+    <value>TestStack.White</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Risorse utilizzate</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Chiuso</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Sito web ufficiale</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Info sviluppatore</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Inglese, polacco - Marcin Szeniak</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Ceco - Richard Kahl</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Francese - Thierry Delaunay</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tedesco - Dieter Hummel</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ungherese - Phoenix (Döbröntei Sándor)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Portoghese - Artur Álvaro Pereira</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Russo - wvxwxvw</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Sloveno - Jadran Rudec</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Spagnolo - Freddynic159</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Traduttori</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Su BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
 </root>

@@ -117,147 +117,77 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
-  </data>
-  <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicações não registada na lista.</value>
-  </data>
-  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Exibe aplicações sem desinstaladores registados.
-São invisíveis na maioria dos gestores de desinstalação, mas ainda ocupam espaço. Itens não registrada são marcados a cor vermelha.
-
-Aviso: Pense duas vezes antes de remover esses aplicativos pois poderão ainda ser necessários!</value>
-  </data>
-  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 62</value>
-  </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
-  </data>
-  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Destacar os desinstaladores 
-inválidos</value>
-  </data>
-  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Use a cor cinzenta para identificar desinstaladores corrompidos ou ausentes.</value>
-  </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 98</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
-  </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Destacar os desinstaladores 
-certificados</value>
-  </data>
-  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Use cores para identificar os desinstaladores certificados. Se o certificado foi verificado com êxito, utilize a cor cinzenta, caso contrário use a cor azul.
-
-Atenção: O processo de verificação pode demorar muito tempo.
-</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Ocultar se publicado pela Microsoft</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Filtra tudo o que foi publicado pela Microsoft. Tão simples como isso.</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
+    <value>Evidenza i disinstallatori certificati</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Mostrar os componentes do sistema</value>
-  </data>
-  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Alguns desinstaladores podem ser designados como "componentes do sistema" para os esconder na lista
-Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa designação.
-</value>
-  </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Mostrar itens protegidos</value>
-  </data>
-  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Itens protegidos assinalados com a denominação "NoRemove (NãoRemover)" significa que o editor não quer que você os remova.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Mostrar actualizações</value>
-  </data>
-  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Actualizações de outras aplicações. Normalmente, elas são desinstaladas em conjunto com aplicações semelhantes, para que possam ser ignoradas.</value>
-  </data>
-  <data name="checkBoxWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Mostrar recursos do Windows</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Mostrar as app do Windows Store</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 161</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 180</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Filtrando</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 30</value>
+    <value>Mostra componenti di sistema</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Seleccione usando as caixas 
-de selecção.</value>
+    <value>Seleziona con checkbox</value>
+  </data>
+  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
+    <value>Usa i colori per identificare i disinstallatori certificati. Se il certificato è stato verificato correttamente usa il colore verde, altrimenti usa il colore blu.
+
+Attenzione: la verifica potrebbe durare a lungo.</value>
+  </data>
+  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
+    <value>Mostra gli aggiornamenti</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Mostra elementi protetti</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Evidenzia i disinstallatori mancanti</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Mudar o tipo de selecção da lista de caixas de opção.  São mais seguros porque um
-único clique não consegue desmarcar tudo.
+    <value>Cambia stile di selezione della lista da marcare con checkbox. E' più sicuro perché un click singolo non deseleziona nulla.
 
-Você pode verificar vários itens, destacando-os e carregando na barra de espaço.
-</value>
+Puoi selezionare più elementi selezionandoli e premendo la barra spazio.</value>
   </data>
-  <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
+  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
+    <value>Aggiornamento di altre applicazioni. Normalmente sono disinstallate con le applicazioni da cui dipendono, possono quindi essere ignorate.</value>
   </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Mostra applicazioni non registrate</value>
+  </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Mostra le app di Windows Store</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
+    <value>Filtra tutto quanto prodotto da Microsoft.</value>
+  </data>
+  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
+    <value>Usa il colore grigio per identificare i disinstallatori corrotti o mancanti.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
-    <value>Mostrar os itens em grupos</value>
+    <value>Mostra elementi in gruppo</value>
   </data>
-  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Agrupar itens com base na coluna
-usada para as ordenar.
-O agrupamento da maior parte das colunas utiliza uma triagem inteligente.
-
-</value>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Mostra funzionalità di Windows</value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 131</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 150</value>
+  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
+    <value>Alcuni disinstallatori possono essere marcati come "componenti di sistema" per nasconderli nella lista Aggiungi/Rimuovi programmi. I driver sono spesso marcati con questo attributo.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Configurações da lista de exibição</value>
+    <value>Configurazione della visualizzazione della lista</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 330</value>
+  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
+    <value>Nascondi quelli prodotti da Microsoft</value>
+  </data>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>Mostra le applicazioni che non hanno nessun disinstallatore registrato. Non sono visibili alla maggior parte dei gestori di disinstallazione ma possono ancora occupare spazio. Gli elementi non registrati sono marcati con colore rosso.
+
+Attenzione: verifica attentamente prima di rimuovere queste applicazioni, potrebbero essere necessarie!</value>
+  </data>
+  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
+    <value>Raggruppa gli elementi secondo la colonna per cui la lista è stata ordinata. 
+Il raggruppamento della maggior parte delle colonne usa un filtraggio intelligente.</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Filtraggio</value>
+  </data>
+  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
+    <value>Gli elementi protetti sono marcati con l'attributo "NoRemove"; indica che il produttore non vuole che vengano rimossi.</value>
   </data>
 </root>

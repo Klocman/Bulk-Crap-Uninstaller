@@ -56,7 +56,7 @@ namespace BulkCrapUninstaller.Forms
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.usageTracker1 = new UsageTracker();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.imageBox = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -66,6 +66,7 @@ namespace BulkCrapUninstaller.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -281,6 +282,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.Controls.Add(this.label3);
             this.flowLayoutPanel2.Controls.Add(this.label7);
+            this.flowLayoutPanel2.Controls.Add(this.label10);
             this.flowLayoutPanel2.Controls.Add(this.label8);
             this.flowLayoutPanel2.Controls.Add(this.label6);
             this.flowLayoutPanel2.Controls.Add(this.label5);
@@ -311,6 +313,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // label8
             // 
@@ -409,5 +416,6 @@ namespace BulkCrapUninstaller.Forms
         private Label label7;
         private Label label8;
         private Label label9;
+        private Label label10;
     }
 }
