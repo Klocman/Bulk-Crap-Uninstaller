@@ -28,6 +28,9 @@ namespace BulkCrapUninstaller.Functions
 
         public void LoadSettings()
         {
+#if DEBUG
+            Selected.Settings.Debug = true;
+#endif
             if (Selected.Settings.MiscFirstRun) return;
 
             if (!Selected.Settings.WindowSize.IsEmpty && !Selected.Settings.WindowPosition.IsEmpty)
