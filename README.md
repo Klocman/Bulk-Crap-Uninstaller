@@ -13,7 +13,7 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 [Visit official homepage](http://klocmansoftware.weebly.com/)
 
 ## Download
-[![Download at FossHub](https://cloud.githubusercontent.com/assets/14913904/25586209/a84a224e-2e9e-11e7-9332-5f913a9d7cd8.png)](hthttps://www.fosshub.com/Bulk-Crap-Uninstaller.html)
+[![Download at FossHub](https://cloud.githubusercontent.com/assets/14913904/25586209/a84a224e-2e9e-11e7-9332-5f913a9d7cd8.png)](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
 [Download at SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
 
