@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
+using System.Runtime.InteropServices;
 using System.Security;
 using Klocman.Extensions;
 using Klocman.Native;
@@ -39,28 +40,36 @@ namespace UninstallTools.Startup.Service
                 "SELECT * FROM Win32_Service");
 
             var results = new List<ServiceEntry>();
-            foreach (var queryObj in searcher.Get())
+            try
             {
-                // Skip drivers and adapters
-                var serviceType = queryObj["ServiceType"] as string;
-                if (serviceType == null || !serviceType.Contains("Process"))
-                    continue;
+                foreach (var queryObj in searcher.Get())
+                {
+                    // Skip drivers and adapters
+                    var serviceType = queryObj["ServiceType"] as string;
+                    if (serviceType == null || !serviceType.Contains("Process"))
+                        continue;
 
-                var filename = queryObj["PathName"] as string;
-                // Don't show system services
-                if (filename == null || filename.Contains(
-                    WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS),
-                    StringComparison.InvariantCultureIgnoreCase))
-                    continue;
+                    var filename = queryObj["PathName"] as string;
+                    // Don't show system services
+                    if (filename == null || filename.Contains(
+                        WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS),
+                        StringComparison.InvariantCultureIgnoreCase))
+                        continue;
 
-                var e = new ServiceEntry((string)queryObj["Name"],
-                    queryObj["DisplayName"] as string, filename);
+                    var e = new ServiceEntry((string)queryObj["Name"],
+                        queryObj["DisplayName"] as string, filename);
 
-                //queryObj["Caption"]);
-                //queryObj["Description"]);
-                //queryObj["ProcessId"]
+                    //queryObj["Caption"]);
+                    //queryObj["Description"]);
+                    //queryObj["ProcessId"]
 
-                results.Add(e);
+                    results.Add(e);
+                }
+            }
+            catch (COMException ex)
+            {
+                Console.WriteLine(@"Error while gathering services");
+                Console.WriteLine(ex);
             }
 
             return results.ToArray();
