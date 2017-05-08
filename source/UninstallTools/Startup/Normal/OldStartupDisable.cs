@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Native;
@@ -104,12 +105,16 @@ namespace UninstallTools.Startup.Normal
                     }
                 }
 
-#if DEBUG
                 if (badLocations.Any())
-                    throw new InvalidDataException(Localisation.Error_InvalidRegKeys + "\n"
-                                                   +
-                                                   string.Join("\n", badLocations.Distinct().OrderBy(x => x).ToArray()));
+                {
+                    var errorString = Localisation.Error_InvalidRegKeys + "\n" +
+                        string.Join("\n", badLocations.Distinct().OrderBy(x => x).ToArray());
+#if DEBUG
+                    Debug.Fail(errorString);
+#else
+                    Console.WriteLine(errorString);
 #endif
+                }
             }
 
             using (var hddDisKey = RegistryTools.CreateSubKeyRecursively(DriveDisabledKey.Path))
