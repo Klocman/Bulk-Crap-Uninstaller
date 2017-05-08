@@ -25,9 +25,12 @@ namespace BulkCrapUninstaller
         [STAThread]
         public static void Main(string[] args)
         {
-            Application.SetCompatibleTextRenderingDefault(false);
-            _instance = new EntryPoint();
-            _instance.Run(args);
+            using (LogWriter.StartLogging())
+            {
+                Application.SetCompatibleTextRenderingDefault(false);
+                _instance = new EntryPoint();
+                _instance.Run(args);
+            }
         }
 
         public static void Restart()
