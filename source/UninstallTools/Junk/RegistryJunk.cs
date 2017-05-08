@@ -405,7 +405,18 @@ namespace UninstallTools.Junk
                     if (key == null)
                         continue;
 
-                    foreach (var x in key.GetSubKeyNames())
+                    string[] subKeyNames;
+                    try
+                    {
+                        subKeyNames = key.GetSubKeyNames();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                        continue;
+                    }
+
+                    foreach (var x in subKeyNames)
                     {
                         var subKeyName = x.TrimEnd('\"'); // For some reason GetSubKeyNames puts quotes at end sometimes
                         RegistryKey subKey = null;
