@@ -127,8 +127,9 @@ namespace UninstallTools.Startup.Normal
                         if (backup == null || location == null || path == null || command == null)
                             continue;
 
-                        var runLocation =
-                            StartupEntryFactory.RunLocations.FirstOrDefault(x => PathTools.PathsEqual(x.Path, location));
+                        var runLocation = StartupEntryFactory.RunLocations
+                            .FirstOrDefault(x => PathTools.PathsEqual(x.Path, location));
+                        if (runLocation == null) continue;
 
                         yield return new StartupEntry(runLocation, Path.GetFileName(path), command)
                         {

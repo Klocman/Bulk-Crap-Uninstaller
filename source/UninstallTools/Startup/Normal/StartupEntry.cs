@@ -24,7 +24,7 @@ namespace UninstallTools.Startup.Normal
             IsRunOnce = dataPoint.IsRunOnce;
             EntryLongName = fileName;
             ParentShortName = dataPoint.Name;
-            ParentLongName = dataPoint.Path.TrimEnd('\\');
+            ParentLongName = dataPoint.Path?.TrimEnd('\\');
 
             Command = targetString ?? string.Empty;
             
