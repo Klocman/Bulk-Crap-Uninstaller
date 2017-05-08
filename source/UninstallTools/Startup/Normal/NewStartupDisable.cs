@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Klocman.Extensions;
@@ -69,10 +70,18 @@ namespace UninstallTools.Startup.Normal
 
         private static bool GetDisabled(StartupEntry startupEntry)
         {
-            using (var key = RegistryTools.CreateSubKeyRecursively(GetStartupApprovedKey(startupEntry)))
+            try
             {
-                var bytes = key.GetValue(startupEntry.EntryLongName) as byte[];
-                return bytes != null && bytes.Length > 0 && !bytes[0].Equals(0x02);
+                using (var key = RegistryTools.CreateSubKeyRecursively(GetStartupApprovedKey(startupEntry)))
+                {
+                    var bytes = key.GetValue(startupEntry.EntryLongName) as byte[];
+                    return bytes != null && bytes.Length > 0 && !bytes[0].Equals(0x02);
+                }
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
+                return false;
             }
         }
         
