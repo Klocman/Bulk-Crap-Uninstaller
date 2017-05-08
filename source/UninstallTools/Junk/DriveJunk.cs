@@ -278,8 +278,17 @@ namespace UninstallTools.Junk
             if (!Directory.Exists(Uninstaller.InstallLocation))
                 return output;
 
-            var appExecutables = Directory.GetFiles(Uninstaller.InstallLocation, "*.exe", SearchOption.AllDirectories)
-                .Select(Path.GetFileName).ToList();
+            List<string> appExecutables;
+            try
+            {
+                appExecutables = Directory.GetFiles(Uninstaller.InstallLocation, "*.exe", SearchOption.AllDirectories)
+                    .Select(Path.GetFileName).ToList();
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine(ex);
+                return Enumerable.Empty<DriveJunkNode>();
+            }
 
             var archives = new[]
             {
