@@ -65,7 +65,7 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "DisplayName")]
         public string DisplayName
         {
-            get { return string.IsNullOrEmpty(RawDisplayName) ? RegistryKeyName : RawDisplayName; }
+            get { return (string.IsNullOrEmpty(RawDisplayName) ? RegistryKeyName : RawDisplayName) ?? string.Empty; }
             set { RawDisplayName = value; }
         }
 
