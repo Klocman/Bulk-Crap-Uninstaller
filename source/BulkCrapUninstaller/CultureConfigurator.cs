@@ -29,7 +29,6 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("en-AU"),
                 CultureInfo.GetCultureInfo("en-BZ"),
                 CultureInfo.GetCultureInfo("en-CA"),
-                CultureInfo.GetCultureInfo("en-CB"),
                 CultureInfo.GetCultureInfo("en-IE"),
                 CultureInfo.GetCultureInfo("en-JM"),
                 CultureInfo.GetCultureInfo("en-NZ"),
