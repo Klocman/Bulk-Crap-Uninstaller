@@ -16,6 +16,7 @@ namespace BulkCrapUninstaller
     internal class EntryPoint : WindowsFormsApplicationBase
     {
         private static EntryPoint _instance;
+        private static bool _isRestarting;
 
         public EntryPoint()
         {
@@ -38,11 +39,13 @@ namespace BulkCrapUninstaller
         {
             try
             {
+                _isRestarting = true;
                 UpdateSystem.RestartApplication();
             }
             catch (Exception ex)
             {
                 PremadeDialogs.GenericError(ex);
+                _isRestarting = false;
             }
         }
 
@@ -82,7 +85,7 @@ namespace BulkCrapUninstaller
         protected override void OnShutdown()
         {
             // If running as portable, delete any leftovers from the system
-            if (!Program.IsInstalled && !Program.EnableDebug)
+            if (!_isRestarting && !Program.IsInstalled && !Program.EnableDebug)
                 Program.StartLogCleaner();
 
             base.OnShutdown();
