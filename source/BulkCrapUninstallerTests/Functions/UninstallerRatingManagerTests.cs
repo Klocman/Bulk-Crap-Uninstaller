@@ -12,13 +12,7 @@ namespace BulkCrapUninstallerTests.Functions
     {
         private static readonly string[] TestEntryNames = {"Test_1", "Test_2", "Test_3", "Test_4"};
         private UninstallerRatingManager _manager;
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            Program.DbConnectionString = @"server=192.168.100.200;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;";
-        }
-
+        
         [TestInitialize]
         public void TestInitialize()
         {
