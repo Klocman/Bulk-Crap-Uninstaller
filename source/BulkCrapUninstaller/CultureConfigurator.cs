@@ -83,8 +83,8 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("pt-BR"),
 
                 // nl - Dutch
-                //CultureInfo.GetCultureInfo("nl-NL"),
-                //CultureInfo.GetCultureInfo("nl-BE"),
+                CultureInfo.GetCultureInfo("nl-NL"),
+                CultureInfo.GetCultureInfo("nl-BE"),
 
                 // Misc languages
                 CultureInfo.GetCultureInfo("cs-CZ"),

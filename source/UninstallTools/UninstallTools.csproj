@@ -31,13 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.5.22\lib\net35\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\TaskScheduler.2.5.24\lib\net35\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.5.22.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.5.22\lib\net35\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.5.24.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\TaskScheduler.2.5.24\lib\net35\Microsoft.Win32.TaskScheduler.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -229,6 +229,9 @@
     <EmbeddedResource Include="Controls\FilterEditor.it.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterEditor.nl.resx">
+      <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.pl.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -261,6 +264,9 @@
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.it.resx">
+      <DependentUpon>UninstallListEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallListEditor.nl.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.pl.resx">
@@ -299,6 +305,9 @@
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.it.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StartupManagerWindow.nl.resx">
+      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.pl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -317,6 +326,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.es.resx" />
     <EmbeddedResource Include="Properties\Localisation.it.resx" />
+    <EmbeddedResource Include="Properties\Localisation.nl.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>

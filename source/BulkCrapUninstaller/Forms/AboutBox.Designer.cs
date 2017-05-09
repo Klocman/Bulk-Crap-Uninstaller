@@ -56,7 +56,6 @@ namespace BulkCrapUninstaller.Forms
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.imageBox = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -71,6 +70,8 @@ namespace BulkCrapUninstaller.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -246,10 +247,6 @@ namespace BulkCrapUninstaller.Forms
             this.panel3.Controls.Add(this.labelCompanyName);
             this.panel3.Name = "panel3";
             // 
-            // usageTracker1
-            // 
-            this.usageTracker1.ContainerControl = this;
-            // 
             // imageBox
             // 
             this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -279,6 +276,7 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.label4);
+            this.flowLayoutPanel2.Controls.Add(this.label11);
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.Controls.Add(this.label3);
             this.flowLayoutPanel2.Controls.Add(this.label7);
@@ -338,6 +336,15 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            // 
+            // usageTracker1
+            // 
+            this.usageTracker1.ContainerControl = this;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // AboutBox
             // 
@@ -417,5 +424,6 @@ namespace BulkCrapUninstaller.Forms
         private Label label8;
         private Label label9;
         private Label label10;
+        private Label label11;
     }
 }

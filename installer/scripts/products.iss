@@ -8,49 +8,56 @@ pl.depdownload_msg=Do kontynuowania instalacji wymagane są następujące aplika
 fr.depdownload_msg=The following applications are required before setup can continue:%n%n%1%nDownload and install now?
 de.depdownload_msg=The following applications are required before setup can continue:%n%n%1%nDownload and install now? 
 hu.depdownload_msg=Ezekre az alkalmazásokra szükség van a telepítés folytatása elõtt:%n%n%1%nLetölti és telepíti õket?  
-sl.depdownload_msg=Naslednje aplikacije so potrebne, preden se lahko nadaljuje namestitev:%n%n%1%nNaj jih zdaj prenesem in namestim?  
+sl.depdownload_msg=Naslednje aplikacije so potrebne, preden se lahko nadaljuje namestitev:%n%n%1%nNaj jih zdaj prenesem in namestim?             
+nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?  
 
 depdownload_memo_title=Download dependencies   
 pl.depdownload_memo_title=Pobierz zależności
 fr.depdownload_memo_title=Télécharger dépendances
 de.depdownload_memo_title=Download Abhängigkeiten                      
 hu.depdownload_memo_title=Függõségek letöltése            
-sl.depdownload_memo_title=Prenesi odvisnosti  
+sl.depdownload_memo_title=Prenesi odvisnosti       
+nl.depdownload_memo_title=Downloaden afhankelijkheden  
 
 depinstall_memo_title=Install dependencies 
 pl.depinstall_memo_title=Zainstaluj zależności
 fr.depinstall_memo_title=Installer les dépendances
 de.depinstall_memo_title=Installieren Sie Abhängigkeiten       
 hu.depinstall_memo_title=Függõségek telepítése         
-sl.depinstall_memo_title=Namesti odvisnosti 
+sl.depinstall_memo_title=Namesti odvisnosti                
+nl.depinstall_memo_title=Installeren afhankelijkheden
 
 depinstall_title=Installing dependencies  
 pl.depinstall_title=Instalacja zależności
 fr.depinstall_title=Installation des dépendances
 de.depinstall_title=Installation von Abhängigkeiten   
 hu.depinstall_title=Függõségek telepítése          
-sl.depinstall_title=Namestitev odvisnosti  
+sl.depinstall_title=Namestitev odvisnosti       
+nl.depinstall_title=Installeren afhankelijkheden  
 
 depinstall_description=Please wait while Setup installs dependencies on your computer.   
 pl.depinstall_description=Poczekaj aż instalator instaluje zależności na twoim komputerze.
 fr.depinstall_description=Please wait while Setup installs dependencies on your computer.
 de.depinstall_description=Please wait while Setup installs dependencies on your computer.         
 hu.depinstall_description=Kérem várjon, amíg a függõségek telepítésre kerülnek a gépére.      
-sl.depinstall_description=Poèakajte, da Setup namesti odvisnosti v vaš raèunalnik.   
+sl.depinstall_description=Poèakajte, da Setup namesti odvisnosti v vaš raèunalnik.          
+nl.depinstall_description=Even wachten a.u.b. Setup installeerd de afhankelijkheden op uw computer.   
 
 depinstall_status=Installing %1...   
 pl.depinstall_status=Instalacja %1...
 fr.depinstall_status=Installation %1...
 de.depinstall_status=Installieren %1...             
 hu.depinstall_status=%1 telepítése...    
-sl.depinstall_status=Namestitev %1...   
+sl.depinstall_status=Namestitev %1...    
+nl.depinstall_status=Installeren %1...
 
 depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.  
 pl.depinstall_missing=%1 musi być zainstalowany zanim instalacja może być kontynuowana. Zainstaluj %1 i ponownie uruchom program instalacyjny.
 fr.depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.
 de.depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.          
 hu.depinstall_missing=A(z) %1 -t telepíteni kell a folytatás elõtt. Telepítse a(z) %1 -t, majd a telepítõt.    
-sl.depinstall_missing=%1 mora biti namešèen, preden se lahko namestitev nadaljuje. Prosimo namestite %1 in znova zaženite Setup.  
+sl.depinstall_missing=%1 mora biti namešèen, preden se lahko namestitev nadaljuje. Prosimo namestite %1 in znova zaženite Setup.    
+nl.depinstall_missing=%1 moet worden geïnstalleerd voor dat setup verder kan gaan. Installeer %1 en voer setup opnieuw uit.
 
 depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n     
 pl.depinstall_error=Wystąpił błąd podczas instalowania zależności. Uruchom ponownie komputer i ponownie uruchom instalację lub ręcznie zainstaluj następujące zależności:%n
@@ -58,6 +65,7 @@ fr.depinstall_error=An error occured while installing the dependencies. Please r
 de.depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n  
 hu.depinstall_error=Egy hiba történt a függõségek telepítése közben. Kérem, hogy indítsa újra a gépét, majd kézzel telepítse újra a következõ függõségeket:%n         
 sl.depinstall_error=Pri namestitvi odvisnosti je prišlo do napake. Znova zaženite raèunalnik in znova zaženite Setup ali roèno namestite naslednje odvisnosti:%n    
+nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankelijkheden. Herstart de computer en voer de setup opnieuw uit of installeer de volgende afhankelijkheden handmatig:%n  
 
 isxdl_langfile=
 

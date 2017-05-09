@@ -290,6 +290,7 @@
       <DependentUpon>ExceptionDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.it.resx" />
+    <EmbeddedResource Include="Properties\Localization.nl.resx" />
     <EmbeddedResource Include="Properties\Localization.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.pt.Designer.cs</LastGenOutput>
