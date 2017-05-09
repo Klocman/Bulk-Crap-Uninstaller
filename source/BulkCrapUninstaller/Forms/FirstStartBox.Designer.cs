@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstStartBox));
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.labelProgress = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonPrev = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.buttonNext = new System.Windows.Forms.Button();
             this.scrollPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -142,16 +144,24 @@
             // panelNavigation
             // 
             this.panelNavigation.BackColor = System.Drawing.SystemColors.Control;
+            this.panelNavigation.Controls.Add(this.labelProgress);
             this.panelNavigation.Controls.Add(this.buttonExit);
             this.panelNavigation.Controls.Add(this.buttonPrev);
+            this.panelNavigation.Controls.Add(this.panel4);
             this.panelNavigation.Controls.Add(this.buttonNext);
             resources.ApplyResources(this.panelNavigation, "panelNavigation");
             this.panelNavigation.Name = "panelNavigation";
             // 
+            // labelProgress
+            // 
+            resources.ApplyResources(this.labelProgress, "labelProgress");
+            this.labelProgress.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.labelProgress.Name = "labelProgress";
+            // 
             // buttonExit
             // 
-            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.buttonExit, "buttonExit");
+            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.CloseWizard);
@@ -162,6 +172,11 @@
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.UseVisualStyleBackColor = true;
             this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
+            // 
+            // panel4
+            // 
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
             // 
             // buttonNext
             // 
@@ -216,8 +231,8 @@
             // 
             // buttonMore
             // 
-            this.buttonMore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.buttonMore, "buttonMore");
+            this.buttonMore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonMore.Name = "buttonMore";
             this.buttonMore.TabStop = false;
             this.buttonMore.UseVisualStyleBackColor = true;
@@ -225,8 +240,8 @@
             // 
             // buttonHelp
             // 
-            this.buttonHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.buttonHelp, "buttonHelp");
+            this.buttonHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.TabStop = false;
             this.buttonHelp.UseVisualStyleBackColor = true;
@@ -234,8 +249,8 @@
             // 
             // buttonFinish
             // 
-            this.buttonFinish.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.buttonFinish, "buttonFinish");
+            this.buttonFinish.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.TabStop = false;
             this.buttonFinish.UseVisualStyleBackColor = true;
@@ -747,6 +762,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FirstStartBox_FormClosed);
             this.Load += new System.EventHandler(this.FirstStartBox_Load);
             this.panelNavigation.ResumeLayout(false);
+            this.panelNavigation.PerformLayout();
             this.scrollPanel.ResumeLayout(false);
             this.page5.ResumeLayout(false);
             this.page5.PerformLayout();
@@ -865,5 +881,7 @@
         private System.Windows.Forms.Label p4netDesc4;
         private System.Windows.Forms.CheckBox checkBoxRatings;
         private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Label labelProgress;
+        private System.Windows.Forms.Panel panel4;
     }
 }

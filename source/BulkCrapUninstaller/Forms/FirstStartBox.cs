@@ -4,6 +4,8 @@
 */
 
 using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class FirstStartBox : Form
     {
-        private const int PageCount = 5;
+        private const int LastPageIndex = 5;
         private readonly int _pageWidth;
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private int _pageNumber;
@@ -75,8 +77,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonLanguageApply_Click(object sender, EventArgs e)
         {
-            _settings.Settings.Language = comboBoxLanguage.SelectedIndex == 0 ? string.Empty : 
-                ((ComboBoxWrapper<CultureInfo>) comboBoxLanguage.SelectedItem).WrappedObject.Name;
+            _settings.Settings.Language = comboBoxLanguage.SelectedIndex == 0 ? string.Empty :
+                ((ComboBoxWrapper<CultureInfo>)comboBoxLanguage.SelectedItem).WrappedObject.Name;
 
             _settings.Settings.Save();
 
@@ -86,8 +88,8 @@ namespace BulkCrapUninstaller.Forms
         private void buttonNext_Click(object sender, EventArgs e)
         {
             _pageNumber++;
-            if (_pageNumber > PageCount)
-                _pageNumber = PageCount;
+            if (_pageNumber > LastPageIndex)
+                _pageNumber = LastPageIndex;
 
             UpdateScrollPosition();
         }
@@ -129,7 +131,7 @@ namespace BulkCrapUninstaller.Forms
             var currentXPos = scrollPanel.HorizontalScroll.Value;
 
             var difference = Math.Abs(_targetXPos - currentXPos);
-            var change = Math.Max(1, (int) Math.Round(Math.Pow(difference/5f, 1.03f), MidpointRounding.ToEven));
+            var change = Math.Max(1, (int)Math.Round(Math.Pow(difference / 5f, 1.03f), MidpointRounding.ToEven));
 
             if (currentXPos > _targetXPos)
             {
@@ -156,20 +158,22 @@ namespace BulkCrapUninstaller.Forms
             {
                 timer1.Enabled = false;
 
-                if (_pageNumber == PageCount)
+                if (_pageNumber == LastPageIndex)
                     buttonFinish.Focus();
             }
         }
 
         private void UpdateScrollPosition()
         {
-            _targetXPos = _pageNumber*_pageWidth;
+            labelProgress.Text = $"{_pageNumber + 1} / {LastPageIndex + 1}";
+
+            _targetXPos = _pageNumber * _pageWidth;
 
             timer1.Enabled = false; // Not actually needed
             var currentValue = scrollPanel.HorizontalScroll.Value;
 
             // Bug in the control: Scroll bar resets when the Enabled property is set to false
-            buttonNext.Enabled = _pageNumber < PageCount;
+            buttonNext.Enabled = _pageNumber < LastPageIndex;
             buttonPrev.Enabled = _pageNumber > 0;
 
             // Double assign is needed because of a bug in the control
