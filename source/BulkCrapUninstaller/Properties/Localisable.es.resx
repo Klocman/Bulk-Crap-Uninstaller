@@ -124,7 +124,7 @@
     <value>Buscando actualizaciones...</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portable</value>
+    <value>Portable</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>Detalles del error:</value>
@@ -416,10 +416,10 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
     <value>Error al crear un nuevo punto de restauración</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEBUG</value>
+    <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Progreso de la desinstalación</value>

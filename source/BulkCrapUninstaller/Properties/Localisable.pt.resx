@@ -139,8 +139,7 @@
     <value>Exportação do editor do BCUninstaller | Versão | Data | Tamanho | Registo | Tipo de desinstalador | Correnten de desinstalação | Corrente de desinstalação em segundo plano | Comentários</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portátil</value>
-    <comment>keep space in front</comment>
+    <value>Portátil</value>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Falha na chamada do API</value>
@@ -259,12 +258,10 @@ Aviso: Durante a actualização, a pasta "Actualizar" e o arquivo "Update.zip" i
     <value>Failed to create a new restore point</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
-    <comment>keep space in front</comment>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEPURAÇÃO</value>
-    <comment>keep space in front</comment>
+    <value>DEPURAÇÃO</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Progresso da desinstalação</value>

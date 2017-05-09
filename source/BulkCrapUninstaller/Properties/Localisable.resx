@@ -140,8 +140,7 @@
 Publisher | Version | Date | Size | Registry | Uninstaller type | Uninstall string | Quiet uninstall string | Comments</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portable</value>
-    <comment>keep space in front</comment>
+    <value>Portable</value>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Failed to call the API</value>
@@ -256,12 +255,10 @@ Warning: During update the folder "Update" and the file "Update.zip" inside of t
     <value>Failed to create a new restore point</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
-    <comment>keep space in front</comment>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEBUG</value>
-    <comment>keep space in front</comment>
+    <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Uninstall progress</value>

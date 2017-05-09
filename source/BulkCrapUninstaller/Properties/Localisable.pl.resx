@@ -139,8 +139,7 @@
     <value>Eksport programu BCUninstaller | Wersja | Data | Rozmiar | Rejestr| Typ dezinstalatora | Komenda dezinstalacji | Komenda cichej dezinstalacji | Komentarze</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portable</value>
-    <comment>keep space in front</comment>
+    <value>Portable</value>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Błąd dostępu do API</value>
@@ -255,12 +254,10 @@ Uwaga: Podczas aktualizacji folder "Update" i plik "Update.zip" w folderze BCU z
     <value>Tworzenie punktu przywracania nie powiodło się</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
-    <comment>keep space in front</comment>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEBUG</value>
-    <comment>keep space in front</comment>
+    <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Postęp dezinstalacji</value>

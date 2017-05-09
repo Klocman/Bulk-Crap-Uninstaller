@@ -140,8 +140,7 @@
 Herausgeber | Version | Datum | Größe | Registry | Uninstallertyp | Uninstallanweisung | Uninstallanweisung (still) | Kommentar</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portabel</value>
-    <comment>keep space in front</comment>
+    <value>Portabel</value>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Fehler beim Aufruf der API</value>
@@ -255,12 +254,10 @@ Laufender Uninstaller wird nicht gestoppt, der Task wartet auf seinen Abschluss.
     <value>Konnte keinen neuen Wiederherstellungspunkt erstellen</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
-    <comment>keep space in front</comment>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEBUG</value>
-    <comment>keep space in front</comment>
+    <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Deinstallations-Fortschritt</value>

@@ -140,8 +140,7 @@
 Editeur | Version | Date | Taille | Registre | Type de désinstalleur | Chaîne de désinstallation | Chaîne de désinstallation silencieuse | Commentaires</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value> Portable</value>
-    <comment>keep space in front</comment>
+    <value>Portable</value>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Echec en appelant l'API</value>
@@ -256,12 +255,10 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Echec en créant un nouveau point de restauration</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value> [x64]</value>
-    <comment>keep space in front</comment>
+    <value>[x64]</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value> DEBUG</value>
-    <comment>keep space in front</comment>
+    <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Progression de la désinstallation</value>

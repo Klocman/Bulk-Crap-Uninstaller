@@ -143,9 +143,9 @@ namespace BulkCrapUninstaller.Forms
             // Setup the main window
             Icon = Resources.Icon_Logo;
             MainTitleBarText = Text.Append(" v", Program.AssemblyVersion.ToString(Program.AssemblyVersion.Build != 0 ? 3 : 2))
-                .AppendIf(!Program.IsInstalled, Localisable.StrIsPortable)
-                .AppendIf(ProcessTools.Is64BitProcess, Localisable.Str64Bit)
-                .AppendIf(Program.EnableDebug, Localisable.StrDebug);
+                .AppendIf(!Program.IsInstalled, " ", Localisable.StrIsPortable)
+                .AppendIf(ProcessTools.Is64BitProcess, " ", Localisable.Str64Bit)
+                .AppendIf(Program.EnableDebug, " ", Localisable.StrDebug);
             Text = MainTitleBarText;
 
             _styleController = new WindowStyleController(this);
