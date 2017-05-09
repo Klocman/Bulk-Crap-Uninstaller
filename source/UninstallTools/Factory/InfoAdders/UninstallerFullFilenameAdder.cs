@@ -41,7 +41,8 @@ namespace UninstallTools.Factory.InfoAdders
                 {
                     var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
 
-                    Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName));
+                    Debug.Assert(!fileName.Contains(' ') || File.Exists(fileName), 
+                        $@"SeparateArgsFromCommand failed for {fileName}, or it doesn't exist");
 
                     return fileName;
                 }
