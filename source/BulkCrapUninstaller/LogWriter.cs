@@ -16,12 +16,10 @@ namespace BulkCrapUninstaller
         {
         }
 
-        public static LogWriter StartLogging()
+        public static LogWriter StartLogging(string logPath)
         {
             try
             {
-                var logPath = Path.Combine(Program.AssemblyLocation.FullName, "BCUninstaller.log");
-
                 // Limit log size to 100 kb
                 var fileInfo = new FileInfo(logPath);
                 if (fileInfo.Length > 1024 * 100)
@@ -31,8 +29,8 @@ namespace BulkCrapUninstaller
                 var logWriter = new LogWriter(logPath);
 
                 // Make sure we can write to the file
-                logWriter.WriteLine("--------------------------------------------------");
-                logWriter.WriteLine(DateTime.Now + " - BCU started");
+                logWriter.WriteSeparator();
+                logWriter.WriteLine("Application startup");
                 logWriter.Flush();
 
                 Console.SetOut(logWriter);
@@ -48,6 +46,17 @@ namespace BulkCrapUninstaller
                 Console.WriteLine(ex);
                 return null;
             }
+        }
+
+        public void WriteSeparator()
+        {
+            base.WriteLine("--------------------------------------------------");
+        }
+
+        public override void WriteLine(string value)
+        {
+            value = DateTime.Now.ToLongTimeString() + " - " + value;
+            base.WriteLine(value);
         }
     }
 }

@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.IO;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Forms.Tools;
@@ -25,7 +26,7 @@ namespace BulkCrapUninstaller
         [STAThread]
         public static void Main(string[] args)
         {
-            using (LogWriter.StartLogging())
+            using (LogWriter.StartLogging(Path.Combine(Program.AssemblyLocation.FullName, "BCUninstaller.log")))
             {
                 Application.SetCompatibleTextRenderingDefault(false);
                 _instance = new EntryPoint();
