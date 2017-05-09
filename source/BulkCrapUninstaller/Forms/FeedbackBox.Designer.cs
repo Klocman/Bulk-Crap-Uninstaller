@@ -89,6 +89,7 @@
             this.flowLayoutPanel1.Controls.Add(this.buttonSendFeedback2);
             this.flowLayoutPanel1.Controls.Add(this.buttonSourceForgeRate);
             this.flowLayoutPanel1.Controls.Add(this.buttonTwitter);
+            this.flowLayoutPanel5.SetFlowBreak(this.flowLayoutPanel1, true);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // buttonSendFeedback2
@@ -128,6 +129,7 @@
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Controls.Add(this.buttonSubmitGithub);
             this.flowLayoutPanel2.Controls.Add(this.buttonSendFeedback);
+            this.flowLayoutPanel5.SetFlowBreak(this.flowLayoutPanel2, true);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // buttonSubmitGithub
@@ -161,6 +163,7 @@
             this.flowLayoutPanel3.Controls.Add(this.buttonDonate);
             this.flowLayoutPanel3.Controls.Add(this.buttonTranslate);
             this.flowLayoutPanel3.Controls.Add(this.buttonIssues);
+            this.flowLayoutPanel5.SetFlowBreak(this.flowLayoutPanel3, true);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
             // buttonDonate
