@@ -171,7 +171,7 @@ BCU będzie czekać aż uruchomiona komenda zakończy pracę przed uruchomieniem
     <value>Ogólne</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
-    <value>Suggest an editView original translation</value>
+    <value>Narzedzia zewnetrzne</value>
   </data>
   <data name="tabPageMisc.Text" xml:space="preserve">
     <value>Różne</value>
