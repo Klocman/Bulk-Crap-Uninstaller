@@ -207,4 +207,7 @@ Soronként egy teljes elérési útvonalat adjon meg. Az érvénytelen útvonala
   <data name="$this.Text" xml:space="preserve">
     <value>A Bulk Crap Uninstaller beállításai</value>
   </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
 </root>

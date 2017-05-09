@@ -497,4 +497,7 @@
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Aktualizacja systemu Windows</value>
   </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Wyszukiwanie aktualizacji systemu Windows</value>
+  </data>
 </root>

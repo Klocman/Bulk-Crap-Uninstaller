@@ -209,4 +209,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Ne jamais demander  mes impressions ou  de l'aide</value>
   </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
 </root>

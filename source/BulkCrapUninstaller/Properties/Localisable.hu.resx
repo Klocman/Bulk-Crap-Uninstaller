@@ -255,7 +255,7 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
     <value>Az új visszaállítási pont létrehozása nem sikerült</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

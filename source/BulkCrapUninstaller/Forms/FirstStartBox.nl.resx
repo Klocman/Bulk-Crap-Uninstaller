@@ -315,4 +315,7 @@ uninstaller</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Welkom bij BCUninstaller</value>
   </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
 </root>

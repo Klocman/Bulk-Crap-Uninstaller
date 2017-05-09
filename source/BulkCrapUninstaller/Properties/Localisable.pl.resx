@@ -254,7 +254,7 @@ Uwaga: Podczas aktualizacji folder "Update" i plik "Update.zip" w folderze BCU z
     <value>Tworzenie punktu przywracania nie powiodło się</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

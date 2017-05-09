@@ -250,7 +250,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
     <value>Creazione del nuovo punto di ripristino fallita</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

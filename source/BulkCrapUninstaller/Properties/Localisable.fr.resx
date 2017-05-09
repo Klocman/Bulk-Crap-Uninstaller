@@ -255,7 +255,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Echec en créant un nouveau point de restauration</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

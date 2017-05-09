@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2687,18 +2687,6 @@ Warning: Verification can take a long time.</value>
   <data name="buttonMore.Text" xml:space="preserve">
     <value>More settings</value>
   </data>
-  <data name="&gt;&gt;buttonMore.Name" xml:space="preserve">
-    <value>buttonMore</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonMore.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -2716,18 +2704,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>View help</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.Name" xml:space="preserve">
-    <value>buttonHelp</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonHelp.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="buttonFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -2747,18 +2723,6 @@ Warning: Verification can take a long time.</value>
   <data name="buttonFinish.Text" xml:space="preserve">
     <value>Finish setup</value>
   </data>
-  <data name="&gt;&gt;buttonFinish.Name" xml:space="preserve">
-    <value>buttonFinish</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;buttonFinish.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p5finishContact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2777,18 +2741,6 @@ Warning: Verification can take a long time.</value>
   <data name="p5finishContact.Text" xml:space="preserve">
     <value>You can now start using BCUninstaller. If you have any questions or would like to suggest a new feature visit the link below.</value>
   </data>
-  <data name="&gt;&gt;p5finishContact.Name" xml:space="preserve">
-    <value>p5finishContact</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5finishContact.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="p5LinkContact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2803,18 +2755,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>Open the contact form</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Name" xml:space="preserve">
-    <value>p5LinkContact</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5LinkContact.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="p5finishHomepage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2834,18 +2774,6 @@ Warning: Verification can take a long time.</value>
   <data name="p5finishHomepage.Text" xml:space="preserve">
     <value>You can read detailed change logs and check out more of my software on the homepage.</value>
   </data>
-  <data name="&gt;&gt;p5finishHomepage.Name" xml:space="preserve">
-    <value>p5finishHomepage</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5finishHomepage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="p5LinkHomepage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2861,18 +2789,6 @@ Warning: Verification can take a long time.</value>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Open the homepage</value>
   </data>
-  <data name="&gt;&gt;p5LinkHomepage.Name" xml:space="preserve">
-    <value>p5LinkHomepage</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;p5LinkHomepage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 3</value>
   </data>
@@ -2884,18 +2800,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
-    <value>comboBoxLanguage</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="buttonLanguageApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2912,18 +2816,6 @@ Warning: Verification can take a long time.</value>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Apply</value>
   </data>
-  <data name="&gt;&gt;buttonLanguageApply.Name" xml:space="preserve">
-    <value>buttonLanguageApply</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;buttonLanguageApply.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -2938,18 +2830,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -2976,24 +2856,6 @@ uninstaller</value>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -3018,4 +2880,10 @@ uninstaller</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

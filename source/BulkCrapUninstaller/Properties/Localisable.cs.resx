@@ -253,7 +253,7 @@ Upozornění: Během aktualizace bude odstraněna složka "Update" a soubor "Upd
     <value>Nepodařilo se vytvořit nový bod obnovení</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

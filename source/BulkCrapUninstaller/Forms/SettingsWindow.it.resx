@@ -207,4 +207,7 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
   <data name="$this.Text" xml:space="preserve">
     <value>Configurazione di Bulk Crap Uninstaller</value>
   </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
 </root>

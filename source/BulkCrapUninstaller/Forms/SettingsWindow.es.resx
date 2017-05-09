@@ -207,4 +207,7 @@ Utilice rutas de directorios completos, una ruta por línea. Las rutas inválida
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Nunca pedir comentarios o ayuda</value>
   </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
 </root>

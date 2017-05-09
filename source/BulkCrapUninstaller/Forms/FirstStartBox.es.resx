@@ -309,4 +309,7 @@ Advertencia: La verificación puede tardar mucho tiempo.</value>
   <data name="p5finishHomepage.Text" xml:space="preserve">
     <value>Usted puede leer los registros de cambios detallados y echar un mejor vistazo de mi software en la página de inicio.</value>
   </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
 </root>

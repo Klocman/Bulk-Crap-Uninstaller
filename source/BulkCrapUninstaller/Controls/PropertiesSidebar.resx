@@ -224,9 +224,6 @@ Warning: Double check before removing these applications, they might still be ne
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="checkBoxShowStoreApps.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -238,9 +235,6 @@ Warning: Double check before removing these applications, they might still be ne
   </data>
   <data name="&gt;&gt;checkBoxCertTest.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
     <value>checkBoxListSysComp</value>
@@ -331,9 +325,6 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 16</value>
-  </data>
-  <data name="checkBoxWinFeature.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -443,9 +434,6 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -509,9 +497,6 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
     <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.8.2.40135, Culture=neutral, PublicKeyToken=null</value>
   </data>
@@ -532,9 +517,6 @@ You can check multiple items by highlighting them and pressing spacebar.</value>
   </data>
   <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;checkBoxInvalidTest.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>

@@ -312,4 +312,7 @@ uninstaller</value>
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>Voir l'aide</value>
   </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
 </root>

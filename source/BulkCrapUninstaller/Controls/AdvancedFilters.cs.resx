@@ -141,4 +141,7 @@
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Základní filtrování</value>
   </data>
+  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
+    <value>Pridat vybrané aplikace jako filtry</value>
+  </data>
 </root>

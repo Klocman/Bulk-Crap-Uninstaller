@@ -141,4 +141,7 @@
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Filtro base</value>
   </data>
+  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
+    <value>Aggiungi selezionati come filtri</value>
+  </data>
 </root>

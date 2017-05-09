@@ -253,7 +253,7 @@ Opozorilo: Med posodabljanjem bo odstranjena mapa "Update" in datoteka "Update.z
     <value>Ni uspelo ustvarjanje nove obnovitvene točke</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>

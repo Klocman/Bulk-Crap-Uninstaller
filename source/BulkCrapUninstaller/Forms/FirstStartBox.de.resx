@@ -311,4 +311,7 @@ uninstaller</value>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Aktivieren nutzerbewertungen von Applikationen</value>
   </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
 </root>

@@ -312,6 +312,9 @@ uninstaller</value>
   <data name="p5finishHomepage.Text" xml:space="preserve">
     <value>Pode ler o rol detalhado das alterações e inteirar-se mais acerca do meu software na página inicial.</value>
   </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -258,7 +258,7 @@ Aviso: Durante a actualização, a pasta "Actualizar" e o arquivo "Update.zip" i
     <value>Failed to create a new restore point</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>[x64]</value>
+    <value>x64</value>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEPURAÇÃO</value>

@@ -171,7 +171,7 @@ BCU będzie czekać aż uruchomiona komenda zakończy pracę przed uruchomieniem
     <value>Ogólne</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
-    <value>Zewnętrzne narzędzia</value>
+    <value>Suggest an editView original translation</value>
   </data>
   <data name="tabPageMisc.Text" xml:space="preserve">
     <value>Różne</value>
@@ -206,5 +206,29 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Nigdy nie pytaj o opinię lub pomoc</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Aplikacje Windows Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Funkcje systemu Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Wykrywanie funkcji systemu Windows wykorzystuje WMI i może działać wolno, lub nawet wcale na niektórych systemach (zwykle oznacza to uszkodzenie systemu).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Aktualizacje systemu Windows</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Wykrywanie aktualizacji systemu Windows używa technologii WUA, która działa wolno. Skanowanie może potrwać kilka minut.</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Typy aplikacji do skanowania</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Wykrywanie</value>
   </data>
 </root>
