@@ -22,7 +22,7 @@ namespace BulkCrapUninstaller
             {
                 // Limit log size to 100 kb
                 var fileInfo = new FileInfo(logPath);
-                if (fileInfo.Length > 1024 * 100)
+                if (fileInfo.Exists && fileInfo.Length > 1024 * 100)
                     fileInfo.Delete();
                 
                 // Create new log writer
