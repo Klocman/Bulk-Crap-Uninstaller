@@ -251,9 +251,9 @@ namespace BulkCrapUninstaller.Functions
                         _ratingManager.FetchRatings();
                         _settings.Settings.MiscRatingCacheDate = DateTime.Now;
                     }
-                    catch //(Exception ex)
+                    catch (Exception ex)
                     {
-                        //PremadeDialogs.GenericError(ex);
+                        Console.WriteLine(ex);
                     }
                 })
                 { IsBackground = false, Name = "ProcessRatingInit_Thread" }.Start();

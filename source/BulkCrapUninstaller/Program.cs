@@ -25,7 +25,6 @@ namespace BulkCrapUninstaller
         private static DirectoryInfo _assemblyLocation;
         private static string _installedRegistryKeyName;
         private static bool? _isInstalled;
-        private static string _dbConnectionString;
 
         public static string ApplicationGuid
         {
@@ -63,16 +62,8 @@ namespace BulkCrapUninstaller
         /// </summary>
         public static bool EnableDebug => Debugger.IsAttached || Settings.Default.Debug;
 
-        public static string DbConnectionString
-        {
-            get
-            {
-                return _dbConnectionString ??
-                       (_dbConnectionString =
-                           EnableDebug ? Resources.DbDebugConnectionString : Resources.DbConnectionString);
-            }
-            set { _dbConnectionString = value; }
-        }
+        public static string DbConnectionString => 
+            Debugger.IsAttached ? Resources.DbDebugConnectionString : Resources.DbConnectionString;
 
         public static string InstalledRegistryKeyName
         {
