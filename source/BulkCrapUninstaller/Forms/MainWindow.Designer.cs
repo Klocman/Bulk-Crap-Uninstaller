@@ -24,6 +24,7 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -66,6 +67,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
+            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdvFiltering = new System.Windows.Forms.Button();
@@ -185,8 +187,6 @@ namespace BulkCrapUninstaller.Forms
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -217,6 +217,12 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            // 
+            // advancedFilters1
+            // 
+            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
+            this.advancedFilters1.Name = "advancedFilters1";
+            this.advancedFilters1.SelectedEntryGetter = null;
             // 
             // listViewPanel
             // 
@@ -305,7 +311,7 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnRating
             // 
             this.olvColumnRating.IsEditable = false;
-            this.olvColumnRating.MaximumWidth = 80;
+            this.olvColumnRating.MaximumWidth = 160;
             this.olvColumnRating.MinimumWidth = 80;
             this.olvColumnRating.Searchable = false;
             resources.ApplyResources(this.olvColumnRating, "olvColumnRating");
@@ -552,6 +558,18 @@ namespace BulkCrapUninstaller.Forms
             this.settingsSidebarPanel.Controls.Add(this.label1);
             this.settingsSidebarPanel.Controls.Add(this.groupBox1);
             this.settingsSidebarPanel.Name = "settingsSidebarPanel";
+            // 
+            // propertiesSidebar
+            // 
+            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
+            this.propertiesSidebar.InvalidEnabled = true;
+            this.propertiesSidebar.Name = "propertiesSidebar";
+            this.propertiesSidebar.OrphansEnabled = true;
+            this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.StoreAppsEnabled = true;
+            this.propertiesSidebar.SysCompEnabled = true;
+            this.propertiesSidebar.UpdatesEnabled = true;
+            this.propertiesSidebar.WinFeaturesEnabled = true;
             // 
             // label1
             // 
@@ -1377,24 +1395,6 @@ namespace BulkCrapUninstaller.Forms
             this.splashScreen1.AutomaticallyClose = false;
             this.splashScreen1.ContainerControl = this;
             this.splashScreen1.SplashScreenImage = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
-            // 
-            // advancedFilters1
-            // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
-            this.advancedFilters1.SelectedEntryGetter = null;
-            // 
-            // propertiesSidebar
-            // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.InvalidEnabled = true;
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            this.propertiesSidebar.OrphansEnabled = true;
-            this.propertiesSidebar.ProtectedEnabled = true;
-            this.propertiesSidebar.StoreAppsEnabled = true;
-            this.propertiesSidebar.SysCompEnabled = true;
-            this.propertiesSidebar.UpdatesEnabled = true;
-            this.propertiesSidebar.WinFeaturesEnabled = true;
             // 
             // usageTracker
             // 
