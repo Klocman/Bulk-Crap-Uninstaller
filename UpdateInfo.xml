@@ -2,20 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.8.2.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8.2/BCUninstaller_3.8.2_portable.zip</URL>
+<Version>3.8.3.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8.3/BCUninstaller_3.8.3_portable.zip</URL>
 <Changes>
-Added settings to disable Steam, StoreApp, WinFeature and WinUpdate scanning.
-Added ability to add selected applications as advanced filters.
-Added fade effect to the color legend.
-Added update to Czech translation by Richard Kahl.
-Added update to French translation by Thierry.
-Added update to Spanish translation by Freddy Morán Jr. (Freddynic159).
-Added update to Russian translation by xwxvwvxwx.
-Small speedup of merging results and adding information.
-Fixed 'Add from list' in advanced filters using wrong file extension.
-Fixed list legend not updating on list refresh.
+Added progress indicator to the first start wizard
+Added more debug info and logging (to BCUninstaller.log)
+Added Dutch translation by Jaap Kramer
+Added Italian translation by Luca Carrabba
+Added more granual language selection (by country)
+Changed rating column width to be adjustable to accommodate translations
+Changed debug mode to be forced ON if compiled as Debug
+Changed database string for debug build
+Updated Task Scheduler library
+Updated Polish translation
+...plus many bugfixes and updates to other translations
 </Changes>
-<Hash>1910f0d86346874b0db995ed75228847</Hash>
+<Hash>7f16414c2a682591725bc07e48032880</Hash>
 </Update>
 </Root>
