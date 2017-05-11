@@ -55,7 +55,7 @@ namespace BulkCrapUninstaller
 
         public override void WriteLine(string value)
         {
-            value = DateTime.Now.ToLongTimeString() + " - " + value;
+            value = DateTime.UtcNow.ToLongTimeString() + " - " + value;
             base.WriteLine(value);
         }
     }
