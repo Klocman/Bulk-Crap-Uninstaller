@@ -206,8 +206,12 @@ namespace UninstallTools.Factory
             if (a == null || a.Length < 5 || b == null || b.Length < 5)
                 return false;
 
+            /* Old algorithm, much slower
             var changesRequired = StringTools.CompareSimilarity(a, b);
-            return changesRequired < a.Length / 6;
+            return changesRequired < a.Length / 6;*/
+
+            var changesRequired = Sift4.SimplestDistance(a, b, 3);
+            return changesRequired < a.Length / 6; 
         }
 
         private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
