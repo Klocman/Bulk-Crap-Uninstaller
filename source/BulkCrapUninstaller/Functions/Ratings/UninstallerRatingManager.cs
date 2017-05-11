@@ -34,7 +34,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             UserId = userId;
 
-            _cashe = new DataTable {Locale = CultureInfo.InvariantCulture};
+            _cashe = new DataTable { Locale = CultureInfo.InvariantCulture };
             using (var reader = new StringReader(Resources.DbRatingSchema))
                 _cashe.ReadXmlSchema(reader);
         }
@@ -51,7 +51,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     return Enumerable.Empty<RatingEntry>();
 
                 return from DataRow row in _cashe.Rows
-                    select ToRatingEntry(row);
+                       select ToRatingEntry(row);
             }
         }
 
@@ -87,7 +87,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                         foreach (var rating in _ratingsToSend)
                         {
                             var stored = GetCasheEntry(rating.Key);
-                            var newRating = (int) rating.Value;
+                            var newRating = (int)rating.Value;
                             if (stored != null)
                                 stored[2] = newRating;
                             else
@@ -116,7 +116,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     foreach (var uninstallerRating in _ratingsToSend)
                     {
                         command.Parameters["@appParam"].Value = uninstallerRating.Key;
-                        command.Parameters["@rating"].Value = (int) uninstallerRating.Value;
+                        command.Parameters["@rating"].Value = (int)uninstallerRating.Value;
 
                         command.ExecuteNonQuery();
                     }
@@ -132,8 +132,10 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 throw new ArgumentNullException(nameof(appName));
 
             lock (_cacheLock)
-                return _cashe.Rows.Cast<DataRow>().FirstOrDefault(
-                    r => appName.Equals(r[0] as string, StringComparison.InvariantCultureIgnoreCase));
+            {
+                return _cashe.Select($"applicationName = '{appName.Replace("'", "''")}'")
+                    .FirstOrDefault();
+            }
         }
 
         public void SetMyRating(string appKey, UninstallerRating rating)
@@ -146,7 +148,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             lock (_cacheLock)
             {
                 var stored = GetCasheEntry(appKey);
-                var newRating = (int) rating;
+                var newRating = (int)rating;
                 if (stored != null)
                     stored[2] = newRating;
                 else
@@ -167,8 +169,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return new RatingEntry
             {
                 ApplicationName = row[0] as string,
-                AverageRating = row.IsNull(1) ? (int?) null : Convert.ToInt32(row[1], CultureInfo.InvariantCulture),
-                MyRating = row.IsNull(2) ? (int?) null : Convert.ToInt32(row[2], CultureInfo.InvariantCulture)
+                AverageRating = row.IsNull(1) ? (int?)null : Convert.ToInt32(row[1], CultureInfo.InvariantCulture),
+                MyRating = row.IsNull(2) ? (int?)null : Convert.ToInt32(row[2], CultureInfo.InvariantCulture)
             };
         }
 

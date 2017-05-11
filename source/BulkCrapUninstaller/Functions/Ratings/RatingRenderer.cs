@@ -18,17 +18,16 @@ namespace BulkCrapUninstaller.Functions.Ratings
             Resources.rating1, Resources.rating3, Resources.rating4,
             Resources.rating5
         };
+        private readonly Image _baseImage = Resources.star;
 
         private readonly int _maximumValue = 8;
         private readonly int _maxNumberImages = 4;
         private readonly int _minimumValue = -8;
-
+        
         public override void Render(Graphics g, Rectangle r)
         {
             DrawBackground(g, r);
             r = ApplyCellPadding(r);
-
-            Image baseImage = Resources.star;
 
             // Convert our aspect to a numeric value
             var aspect = (RatingEntry) Aspect;
@@ -49,11 +48,11 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 else numberOfImages = _maxNumberImages;
 
                 // If we need to shrink the image, what will its on-screen dimensions be?
-                var imageScaledWidth = baseImage.Width;
-                var imageScaledHeight = baseImage.Height;
-                if (r.Height < baseImage.Height)
+                var imageScaledWidth = _baseImage.Width;
+                var imageScaledHeight = _baseImage.Height;
+                if (r.Height < _baseImage.Height)
                 {
-                    imageScaledWidth = (int) (baseImage.Width*(float) r.Height/baseImage.Height);
+                    imageScaledWidth = (int) (_baseImage.Width*(float) r.Height/_baseImage.Height);
                     imageScaledHeight = r.Height;
                 }
                 // Calculate where the images should be drawn
@@ -69,12 +68,12 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 {
                     if (ListItem.Enabled)
                     {
-                        var displayedImage = aspect.MyRating.HasValue ? baseImage : _coloredImages[numberOfImages - 1];
+                        var displayedImage = aspect.MyRating.HasValue ? _baseImage : _coloredImages[numberOfImages - 1];
                         g.DrawImage(displayedImage, singleImageRect);
                         //DrawImage(g, singleImageRect, image);
                     }
                     else
-                        ControlPaint.DrawImageDisabled(g, baseImage, singleImageRect.X, singleImageRect.Y,
+                        ControlPaint.DrawImageDisabled(g, _baseImage, singleImageRect.X, singleImageRect.Y,
                             backgroundColor);
                     singleImageRect.X += (imageScaledWidth + Spacing);
                 }
