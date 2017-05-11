@@ -16,6 +16,15 @@ namespace BulkCrapUninstaller
         {
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (disposing)
+                Disposed = true;
+        }
+
+        private bool Disposed { get; set; }
+
         public static LogWriter StartLogging(string logPath)
         {
             try
@@ -50,11 +59,13 @@ namespace BulkCrapUninstaller
 
         public void WriteSeparator()
         {
+            if(Disposed) return;
             base.WriteLine("--------------------------------------------------");
         }
 
         public override void WriteLine(string value)
         {
+            if (Disposed) return;
             value = DateTime.UtcNow.ToLongTimeString() + " - " + value;
             base.WriteLine(value);
         }
