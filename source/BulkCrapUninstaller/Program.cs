@@ -203,11 +203,18 @@ namespace BulkCrapUninstaller
         {
             try
             {
+                const string cleanerName = "CleanLogs.bat";
+                if (!File.Exists(Path.Combine(AssemblyLocation.FullName, cleanerName)))
+                {
+                    Console.WriteLine(@"WARNING: CleanLogs.bat doesn't exist, can't clean logs.");
+                    return;
+                }
+
                 var ps = new ProcessStartInfo
                 {
-                    WorkingDirectory = Program.AssemblyLocation.FullName,
+                    WorkingDirectory = AssemblyLocation.FullName,
                     FileName = "cmd.exe",
-                    Arguments = "/c start /min CleanLogs.bat",
+                    Arguments = "/c start /min " + cleanerName,
                     UseShellExecute = true,
                     WindowStyle = ProcessWindowStyle.Minimized
                 };
