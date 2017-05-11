@@ -97,7 +97,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         internal static IEnumerable<FileInfo> SortListExecutables(IEnumerable<FileInfo> targets, string targetString)
         {
-            return targets.OrderBy(x => StringTools.CompareSimilarity(x.Name, targetString));
+            return targets.OrderBy(x => Sift4.SimplestDistance(x.Name, targetString, 3));
         }
 
         internal sealed class ScanDirectoryResult
