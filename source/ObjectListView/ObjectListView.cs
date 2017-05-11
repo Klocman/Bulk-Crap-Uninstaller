@@ -5617,8 +5617,10 @@ namespace BrightIdeasSoftware
             this.BeginUpdate();
             try {
                 this.Sort(e.Column);
-            } finally {
-                this.EndUpdate();
+            }
+            finally {
+                if (!this.IsDisposed && !this.Disposing)
+                    this.EndUpdate();
             }
         }
 
