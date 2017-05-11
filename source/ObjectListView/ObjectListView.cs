@@ -8626,21 +8626,12 @@ namespace BrightIdeasSoftware
         public virtual OLVListItem ModelToItem(object modelObject) {
             if (modelObject == null)
                 return null;
-
-            foreach (OLVListItem item in Items)
-            {
-                var rowObject = item.RowObject;
-                if (rowObject != null && rowObject == modelObject)
-                    break;
-            }
-            Items.Cast<OLVListItem>()
-                .Select(item => item.RowObject)
-                .Where(rowObject => rowObject != null && rowObject == modelObject)
-                .FirstOrDefault();
-
+            
             for (int i = 0; i < this.Items.Count; i++)
             {
                 var olvi = this.Items[i] as OLVListItem;
+                Debug.Assert(olvi != null, "olvi != null");
+
                 var rowObject = olvi.RowObject;
                 if (rowObject != null && rowObject == modelObject)
                     return olvi;
