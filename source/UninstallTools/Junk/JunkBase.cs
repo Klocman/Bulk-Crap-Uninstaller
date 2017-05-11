@@ -63,7 +63,7 @@ namespace UninstallTools.Junk
             if (lowestLength <= 4)
                 return -1;
 
-            var result = StringTools.CompareSimilarity(productName, str);
+            var result = Sift4.SimplestDistance(productName, str, 1);
 
             // Strings match perfectly
             if (result <= 1)
@@ -77,7 +77,7 @@ namespace UninstallTools.Junk
                 if (trimmedProductName.Length <= 4)
                     return -1;
 
-                var trimmedResult = StringTools.CompareSimilarity(trimmedProductName, str);
+                var trimmedResult = Sift4.SimplestDistance(trimmedProductName, str, 1);
 
                 if (trimmedResult <= 1)
                     return trimmedResult;
