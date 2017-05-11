@@ -1437,8 +1437,9 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <param name="g">Graphics context to use for drawing</param>
         /// <param name="r">Pre-padded bounds of the cell</param>
-        protected virtual void DrawAlignedImageAndText(Graphics g, Rectangle r) {
-            this.DrawImageAndText(g, this.CalculateAlignedRectangle(g, r));
+        protected virtual void DrawAlignedImageAndText(Graphics g, Rectangle r)
+        {
+            this.DrawImageAndText(g, r); //this.CalculateAlignedRectangle(g, r));
         }
 
         /// <summary>
