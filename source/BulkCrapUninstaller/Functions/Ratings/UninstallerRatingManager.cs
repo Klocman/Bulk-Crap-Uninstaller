@@ -100,6 +100,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public void UploadRatings()
         {
+            if (_ratingsToSend.Count < 1) return;
+
             using (var connection = new MySqlConnection(Program.DbConnectionString))
             {
                 var command = connection.CreateCommand();
