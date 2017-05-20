@@ -177,12 +177,12 @@ namespace UninstallTools.Controls
             OnComparisonMethodChanged(sender, e);
         }
 
-        private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
+        private void searchBox1_SearchTextChanged(object sender, SearchBox.SearchEventArgs searchEventArgs)
         {
-            if (_targetFilterCondition == null || _targetFilterCondition.FilterText == arg1.SearchString) return;
+            if (_targetFilterCondition == null || _targetFilterCondition.FilterText == searchEventArgs.SearchText) return;
 
-            _targetFilterCondition.FilterText = arg1.SearchString;
-            OnComparisonMethodChanged(arg1, arg2);
+            _targetFilterCondition.FilterText = searchEventArgs.SearchText;
+            OnComparisonMethodChanged(sender, searchEventArgs);
         }
 
         private void textBoxFilterText_TextChanged(object sender, EventArgs e)

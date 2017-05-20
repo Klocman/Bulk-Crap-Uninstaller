@@ -72,7 +72,7 @@ namespace UninstallTools.Controls
             this.searchBox1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.searchBox1, "searchBox1");
             this.searchBox1.Name = "searchBox1";
-            this.searchBox1.SearchTextChanged += new System.Action<Klocman.Controls.SearchBox, System.EventArgs>(this.searchBox1_SearchTextChanged);
+            this.searchBox1.SearchTextChanged += this.searchBox1_SearchTextChanged;
             // 
             // comboBox1
             // 
