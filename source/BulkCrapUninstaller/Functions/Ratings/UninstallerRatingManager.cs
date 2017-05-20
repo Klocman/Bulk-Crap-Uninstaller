@@ -67,19 +67,36 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             using (var connection = new MySqlConnection(Program.DbConnectionString))
             {
-                var command = connection.CreateCommand();
-                command.CommandText = "CALL " + Resources.DbCommandGetRating + "(@uid)";
-                command.Parameters.AddWithValue("@uid", UserId);
+                var ratingTable = new DataTable { Locale = CultureInfo.InvariantCulture };
+                var userRatingTable = new DataTable { Locale = CultureInfo.InvariantCulture };
 
+                var avgRatingCommand = connection.CreateCommand();
+                avgRatingCommand.CommandText = "CALL getAvgRatings()";
+
+                var userRatingCommand = connection.CreateCommand();
+                userRatingCommand.CommandText = "CALL getUserRatings(@uid)";
+                userRatingCommand.Parameters.AddWithValue("@uid", UserId);
+                
                 connection.Open();
 
-                var dt = new DataTable { Locale = CultureInfo.InvariantCulture };
-                dt.Load(command.ExecuteReader());
+                ratingTable.Load(avgRatingCommand.ExecuteReader());
+                ratingTable.Columns.Add("userRating");
+
+                userRatingTable.Load(userRatingCommand.ExecuteReader());
+
+                // Merge tables
+                foreach (DataRow row in userRatingTable.Rows)
+                {
+                    var dataRow = ratingTable.Select($"applicationName = '{((string)row[0]).Replace("'", "''")}'")
+                        .FirstOrDefault();
+
+                    if (dataRow != null) dataRow[2] = row[1];
+                }
 
                 lock (_cacheLock)
                 {
                     _cashe?.Dispose();
-                    _cashe = dt;
+                    _cashe = ratingTable;
 
                     // Reapply any pending user ratings to the new datatable
                     lock (_ratingsToSend)
