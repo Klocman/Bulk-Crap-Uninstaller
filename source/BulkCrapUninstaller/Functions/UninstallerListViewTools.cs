@@ -477,7 +477,7 @@ namespace BulkCrapUninstaller.Functions
         private void ListRefreshThread(LoadingDialogInterface dialogInterface)
         {
             dialogInterface.SetSubProgressVisible(true);
-            AllUninstallers = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
+            var uninstallerEntries = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
                 dialogInterface.SetMaximum(x.TotalCount);
                 dialogInterface.SetProgress(x.CurrentCount, x.Message);
@@ -497,6 +497,12 @@ namespace BulkCrapUninstaller.Functions
                 if (dialogInterface.Abort)
                     throw new OperationCanceledException();
             });
+
+            if (!string.IsNullOrEmpty(Program.InstalledRegistryKeyName))
+                uninstallerEntries = uninstallerEntries
+                    .Where(x => x.RegistryKeyName != Program.InstalledRegistryKeyName);
+
+            AllUninstallers = uninstallerEntries.ToList();
 
             dialogInterface.SetMaximum(9);
             dialogInterface.SetProgress(9, Localisable.Progress_Finishing);
