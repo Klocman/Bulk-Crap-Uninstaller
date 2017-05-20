@@ -16,6 +16,12 @@ namespace UninstallTools.Controls
 {
     public partial class FilterEditor : UserControl
     {
+        public event EventHandler FocusSearchTarget
+        {
+            add { searchBox1.FocusSearchTarget += value; }
+            remove { searchBox1.FocusSearchTarget -= value; }
+        }
+
         private static readonly LocalisedEnumWrapper[] FilteringOptions;
         private static readonly Dictionary<string, ComparisonTargetInfo> PropertyTargets;
         private FilterCondition _targetFilterCondition;

@@ -24,7 +24,6 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -67,11 +66,9 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
             this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAdvFiltering = new System.Windows.Forms.Button();
-            this.filterEditor1 = new UninstallTools.Controls.FilterEditor();
             this.uninstallListContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.uninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quietUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,6 +182,9 @@ namespace BulkCrapUninstaller.Forms
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
+            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
+            this.filterEditor1 = new UninstallTools.Controls.FilterEditor();
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
@@ -217,12 +217,6 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            // 
-            // advancedFilters1
-            // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
-            this.advancedFilters1.SelectedEntryGetter = null;
             // 
             // listViewPanel
             // 
@@ -559,18 +553,6 @@ namespace BulkCrapUninstaller.Forms
             this.settingsSidebarPanel.Controls.Add(this.groupBox1);
             this.settingsSidebarPanel.Name = "settingsSidebarPanel";
             // 
-            // propertiesSidebar
-            // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.InvalidEnabled = true;
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            this.propertiesSidebar.OrphansEnabled = true;
-            this.propertiesSidebar.ProtectedEnabled = true;
-            this.propertiesSidebar.StoreAppsEnabled = true;
-            this.propertiesSidebar.SysCompEnabled = true;
-            this.propertiesSidebar.UpdatesEnabled = true;
-            this.propertiesSidebar.WinFeaturesEnabled = true;
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -590,12 +572,6 @@ namespace BulkCrapUninstaller.Forms
             this.buttonAdvFiltering.Name = "buttonAdvFiltering";
             this.buttonAdvFiltering.UseVisualStyleBackColor = true;
             this.buttonAdvFiltering.Click += new System.EventHandler(this.buttonAdvFiltering_Click);
-            // 
-            // filterEditor1
-            // 
-            resources.ApplyResources(this.filterEditor1, "filterEditor1");
-            this.filterEditor1.Name = "filterEditor1";
-            this.filterEditor1.ShowAsSearch = true;
             // 
             // uninstallListContextMenuStrip
             // 
@@ -1383,6 +1359,31 @@ namespace BulkCrapUninstaller.Forms
             this.createBackupFileDialog.FileName = "New Uninstaller Backup";
             resources.ApplyResources(this.createBackupFileDialog, "createBackupFileDialog");
             this.createBackupFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.createBackupFileDialog_FileOk);
+            // 
+            // advancedFilters1
+            // 
+            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
+            this.advancedFilters1.Name = "advancedFilters1";
+            this.advancedFilters1.SelectedEntryGetter = null;
+            // 
+            // propertiesSidebar
+            // 
+            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
+            this.propertiesSidebar.InvalidEnabled = true;
+            this.propertiesSidebar.Name = "propertiesSidebar";
+            this.propertiesSidebar.OrphansEnabled = true;
+            this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.StoreAppsEnabled = true;
+            this.propertiesSidebar.SysCompEnabled = true;
+            this.propertiesSidebar.UpdatesEnabled = true;
+            this.propertiesSidebar.WinFeaturesEnabled = true;
+            // 
+            // filterEditor1
+            // 
+            resources.ApplyResources(this.filterEditor1, "filterEditor1");
+            this.filterEditor1.Name = "filterEditor1";
+            this.filterEditor1.ShowAsSearch = true;
+            this.filterEditor1.FocusSearchTarget += new System.EventHandler(this.filterEditor1_FocusSearchTarget);
             // 
             // globalHotkeys1
             // 

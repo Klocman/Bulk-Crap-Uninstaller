@@ -1326,5 +1326,10 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Settings.FilterShowUpdates = true;
             filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate));
         }
+
+        private void filterEditor1_FocusSearchTarget(object sender, EventArgs e)
+        {
+            uninstallerObjectListView.Focus();
+        }
     }
 }
