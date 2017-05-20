@@ -24,16 +24,30 @@ namespace UninstallTools.Junk
             _links = links;
         }
 
+        private static IEnumerable<string> GetLnkFilesSafe(CSIDL directory, SearchOption option)
+        {
+            try
+            {
+                return Directory.GetFiles(WindowsTools.GetEnvironmentPath(directory), "*.lnk", option);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Debug.Fail(ex.ToString());
+            }
+            return Enumerable.Empty<string>();
+        }
+
         public static IEnumerable<JunkNode> FindAllJunk(IEnumerable<ApplicationUninstallerEntry> targets, IEnumerable<ApplicationUninstallerEntry> other)
         {
             var syspath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
             var results = new List<Shortcut>();
             foreach (var linkFilename in
-                Directory.GetFiles(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAMS), "*.lnk", SearchOption.AllDirectories)
-                .Concat(Directory.GetFiles(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_PROGRAMS), "*.lnk", SearchOption.AllDirectories))
-                .Concat(Directory.GetFiles(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_DESKTOPDIRECTORY), "*.lnk", SearchOption.TopDirectoryOnly))
-                .Concat(Directory.GetFiles(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_DESKTOPDIRECTORY), "*.lnk", SearchOption.TopDirectoryOnly))
+                GetLnkFilesSafe(CSIDL.CSIDL_PROGRAMS, SearchOption.AllDirectories)
+                .Concat(GetLnkFilesSafe(CSIDL.CSIDL_COMMON_PROGRAMS, SearchOption.AllDirectories))
+                .Concat(GetLnkFilesSafe(CSIDL.CSIDL_DESKTOPDIRECTORY, SearchOption.TopDirectoryOnly))
+                .Concat(GetLnkFilesSafe(CSIDL.CSIDL_COMMON_DESKTOPDIRECTORY, SearchOption.TopDirectoryOnly))
                 .Distinct())
             {
                 try
@@ -45,8 +59,9 @@ namespace UninstallTools.Junk
 
                     results.Add(new Shortcut(linkFilename, target));
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     Debug.Fail("Failed to resolve shortcut " + linkFilename);
                 }
             }
