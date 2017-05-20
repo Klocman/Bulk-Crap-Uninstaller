@@ -2,21 +2,23 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.8.3.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8.3/BCUninstaller_3.8.3_portable.zip</URL>
+<Version>3.8.4.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.8.4/BCUninstaller_3.8.4_portable.zip</URL>
 <Changes>
-Added progress indicator to the first start wizard
-Added more debug info and logging (to BCUninstaller.log)
-Added Dutch translation by Jaap Kramer
-Added Italian translation by Luca Carrabba
-Added more granual language selection (by country)
-Changed rating column width to be adjustable to accommodate translations
-Changed debug mode to be forced ON if compiled as Debug
-Changed database string for debug build
-Updated Task Scheduler library
-Updated Polish translation
+Big speedup of merging results during loading
+Speedup of junk detection
+Speedup of list rendering; Faster rendering of rating column
+Small speedup of list item sorting
+Small speedup of app executable detection
+Improved rating download speed, less load on the server
+Pressing escape in search field focuses the application list
+Moved bug reoporting initialization earlier to catch more potential errors
+Lowered rating cache update rate
+Added missing pieces of translation updates
+Added extra info to errors in SeparateNonDottedCommand
+Changed log timestamps to utc for better performance
 ...plus many bugfixes and updates to other translations
 </Changes>
-<Hash>ac68d34d3ca6ae2031f937a94b098fa8</Hash>
+<Hash>6865010b2cba239c1fad9a72f30346ba</Hash>
 </Update>
 </Root>
