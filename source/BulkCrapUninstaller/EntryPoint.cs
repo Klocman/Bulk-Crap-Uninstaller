@@ -27,9 +27,11 @@ namespace BulkCrapUninstaller
         [STAThread]
         public static void Main(string[] args)
         {
+            Application.SetCompatibleTextRenderingDefault(false);
+            NBugConfigurator.SetupNBug();
+
             using (LogWriter.StartLogging(Path.Combine(Program.AssemblyLocation.FullName, "BCUninstaller.log")))
             {
-                Application.SetCompatibleTextRenderingDefault(false);
                 _instance = new EntryPoint();
                 _instance.Run(args);
             }
@@ -53,7 +55,6 @@ namespace BulkCrapUninstaller
         {
             // Order is semi-important, prepare settings should go first.
             Program.PrepareSettings();
-            NBugConfigurator.SetupNBug();
             CultureConfigurator.SetupCulture();
             try
             {

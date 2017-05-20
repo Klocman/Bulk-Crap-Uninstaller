@@ -62,6 +62,9 @@ namespace BulkCrapUninstaller
         /// </summary>
         public static bool EnableDebug => Debugger.IsAttached || Settings.Default.Debug;
 
+        /// <summary>
+        /// Don't use settings
+        /// </summary>
         public static string DbConnectionString => 
             Debugger.IsAttached ? Resources.DbDebugConnectionString : Resources.DbConnectionString;
 
