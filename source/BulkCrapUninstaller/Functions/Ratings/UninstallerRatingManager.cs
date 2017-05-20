@@ -215,24 +215,31 @@ namespace BulkCrapUninstaller.Functions.Ratings
             lock (_cacheLock)
                 lock (_ratingsToSend)
                 {
-                    if (File.Exists(fileName))
+                    try
                     {
-                        _cashe?.Dispose();
-                        _cashe = new DataTable { Locale = CultureInfo.InvariantCulture };
-
-                        using (var reader = new StringReader(Resources.DbRatingSchema))
-                            _cashe.ReadXmlSchema(reader);
-
-                        _cashe.ReadXml(fileName);
-                    }
-
-                    var sendCasheName = fileName + ".out";
-                    if (File.Exists(sendCasheName))
-                    {
-                        using (var reader = new StringReader(File.ReadAllText(sendCasheName, Encoding.Unicode)))
+                        if (File.Exists(fileName))
                         {
-                            _ratingsToSend.Deserialize(reader);
+                            _cashe?.Dispose();
+                            _cashe = new DataTable { Locale = CultureInfo.InvariantCulture };
+
+                            using (var reader = new StringReader(Resources.DbRatingSchema))
+                                _cashe.ReadXmlSchema(reader);
+
+                            _cashe.ReadXml(fileName);
                         }
+
+                        var sendCasheName = fileName + ".out";
+                        if (File.Exists(sendCasheName))
+                        {
+                            using (var reader = new StringReader(File.ReadAllText(sendCasheName, Encoding.Unicode)))
+                            {
+                                _ratingsToSend.Deserialize(reader);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
                     }
                 }
         }
