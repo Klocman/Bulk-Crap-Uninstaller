@@ -69,12 +69,17 @@ namespace UninstallTools.Factory.InfoAdders
                         if (File.Exists(ps.FileName.Substring(0, ps.FileName.Length - 3) + "dat"))
                             return UninstallerType.InnoSetup;
                     }
-
-                    var result = File.ReadAllText(ps.FileName, Encoding.ASCII);
-
-                    // Detect NSIS Nullsoft.NSIS (the most common)
-                    if (result.Contains("Nullsoft"))
-                        return UninstallerType.Nsis;
+                    
+                    // Detect NSIS Nullsoft.NSIS
+                    using (var reader = new StreamReader(ps.FileName, Encoding.ASCII))
+                    {
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            if(line.Contains("Nullsoft", StringComparison.Ordinal))
+                                return UninstallerType.Nsis;
+                        }
+                    }
 
                     /* Unused/unnecessary
                     if (result.Contains("InstallShield"))
