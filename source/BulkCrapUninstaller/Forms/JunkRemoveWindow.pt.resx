@@ -170,6 +170,9 @@
   <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Pormenores</value>
   </data>
+  <data name="backupDirDialog.Description" xml:space="preserve">
+    <value>Seleccionar o local onde guardar a cópia de segurança. Será criado um novo directório.</value>
+  </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

@@ -148,7 +148,7 @@
     <value>Configurações gerais</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Elimina automaticamente os desinstaladores de segunto plano bloqueados</value>
+    <value>Eliminar automaticamente os desinstaladores de segunto plano bloqueados</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
     <value>Tentar de novo os desinstaladores de segundo plano fracassados</value>

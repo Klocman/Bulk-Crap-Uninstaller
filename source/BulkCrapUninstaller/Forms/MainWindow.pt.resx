@@ -483,4 +483,16 @@
   <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
     <value>AlternativeTo</value>
   </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Desinstalar do directório.</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir o "Sistema de Recuperação".</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Executar</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mostrar actualizações</value>
+  </data>
 </root>

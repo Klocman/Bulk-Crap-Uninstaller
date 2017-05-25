@@ -202,8 +202,35 @@ Utilize caminhos de diretório completos, um caminho por linha. Caminhos inváli
   <data name="$this.Text" xml:space="preserve">
     <value>Configurações do Bulk Crap Uninstaller </value>
   </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Mostra sempre que um determinado programa não é de confiança.</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Nunca pedir comentários ou ajuda.</value>
+  </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Apps da Window Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Componentes do Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>A detecção de recursos do Windows é feita pelo WMI e pode ser lenta ou mesmo falhar em alguns sistemas (geralmente indicando corrupção do sistema).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Actualização do Windows</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>A detecção das actualizações do Windows é feita pelo WUA, que é lento. Pode levar alguns minutos até estar concluído.</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Armazenamento de aplicativos para digitalizar</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Detecção</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

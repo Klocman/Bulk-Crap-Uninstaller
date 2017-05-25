@@ -117,107 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Obrigado por usar o BCUninstaller! </value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Versão: </value>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Se achou útil esta ferramenta gratuita de código aberto, por favor pondere arranjar um minuto para ajudar! Diga aos seus amigos, compartilhe-o nas redes sociais, envie comentários – tudo conta!</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Direitos de Autor</value>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>Enviar comentário.</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Criador</value>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Classifique em SourceForge</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Versão do programa</value>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>Partilhe no Twitter</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>É 64bit: </value>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Problemas ou características em falta?</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Está instalado: </value>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>
+105/5000
+Se teve um problema com o BCU, ou se quiser sugerir um novo recurso, consulte estes links:</value>
   </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Arquitectura: </value>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>Envie para GitHub (Necessita de uma conta)</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>Enviar comentário.</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Ícones de interface moderna</value>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Quer ajudar?</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Não tem de ser um programador para ajudar! Pode doar para acelerar as actualizações ou traduzir o BCU para o seu idioma pátrio. Toda a ajuda é bem-vinda, por mais pequena que seja! </value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>Traduzir o BCU</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider</value>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>Problemas com o GitHub</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Pacote de Gestão do Programador de Tarefas </value>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Nunca mais mostrar esta janela.</value>
   </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Elementos activos usados</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="buttonClose.Text" xml:space="preserve">
     <value>Fechar</value>
   </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Página web oficial </value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Informação do Programador</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Inglês, Polaco - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Checo - Richard Kahl </value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Francês - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Alemão - Dieter Hummel</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Esloveno - Jadran Rudec</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russo - wvxwxvw</value>
-    <comment>Português (PT) - Artur Álvaro Pereira</comment>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Translators</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Acerca do BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>Enviar comentário.</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Holandês - Jaap Kramer</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Húngaro - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italiano - Luca Carrabba</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Português (PT) - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espanhol - Freddynic159</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

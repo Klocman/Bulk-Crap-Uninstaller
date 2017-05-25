@@ -139,7 +139,8 @@
     <value>Exportação do editor do BCUninstaller | Versão | Data | Tamanho | Registo | Tipo de desinstalador | Correnten de desinstalação | Corrente de desinstalação em segundo plano | Comentários</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value>Portátil</value>
+    <value> Portátil</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Falha na chamada do API</value>
@@ -258,10 +259,12 @@ Aviso: Durante a actualização, a pasta "Actualizar" e o arquivo "Update.zip" i
     <value>Failed to create a new restore point</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>x64</value>
+    <value> [x64]</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value>DEPURAÇÃO</value>
+    <value> DEPURAÇÃO</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Progresso da desinstalação</value>
@@ -637,5 +640,98 @@ Pode sentir-se tentado a desactivar o detector de conflitos nas configurações.
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
     <value>O Framework v4.0 é opcional, masrecomendado. Os recursos que dependem do framework serão desativados até que sejam instalados por si.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Alguns dos desinstaladores falharam</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Quer tentar executar os desinstaladores de segundo plano em caso de tentativa falhada em modo normal?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Os seguintes desinstaladores são reiniciados no modo de assistente:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Digitalizando o directório especificado...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Seleccione o directório com os aplicativos que deseja excluir.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Desinstalar do directório</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Não foram encontradas aplicações no directório especificado</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Certifique-se de que seleccionou o directório correcto e que os executáveis do aplicativo ainda estão presentes.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Encontrado um dsinstalador para  {0}  </value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Quer executar este desinstalador?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Arquivado</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Extensões</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Nome familiar</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Nome do Editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Não depois de</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Não antes de</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Chave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Tem chave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Chave pública</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Dados não processados</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Número de Série</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Nome do Assunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritmo de assinatura</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Impressão digital</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Erro ao guardar as configurações </value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>A terminar...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>A carregar os ícones</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Pesquisa de itens de inicialização</value>
   </data>
 </root>

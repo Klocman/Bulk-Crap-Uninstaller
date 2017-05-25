@@ -146,7 +146,7 @@ Se o processo lhe parecer ter bloqueado, pode clicar no botão "Ignorar" para ev
     <value>Lista dos desinstaladores</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Correr agora o desinstalador</value>
+    <value>Executar agora o desinstalador</value>
   </data>
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
     <value>Passar à frente</value>
