@@ -158,12 +158,25 @@ win_sp_title=Windows %1 Service Pack %2
 
 
 [Code]
-function InitializeSetup(): boolean;
+function InitializeSetup(): boolean;     
+var
+  Version: TWindowsVersion;
 begin
 	//init windows version
 	initwinversion();
-
-#ifdef use_iis
+  
+  GetWindowsVersionEx(Version);
+  // Installing Net 3.5 doesn't work on Systems newer than Windows Vista
+  if Version.NTPlatform and
+     (Version.Major > 6) or
+     ((Version.Major = 6) and
+     (Version.Minor > 0)) then
+  begin
+    Result := True;
+    Exit;
+  end;
+  
+  #ifdef use_iis
 	if (not iis()) then exit;
 #endif
 
