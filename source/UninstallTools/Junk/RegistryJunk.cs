@@ -89,9 +89,15 @@ namespace UninstallTools.Junk
         private static readonly string KeyLm = @"HKEY_LOCAL_MACHINE\SOFTWARE";
         private static readonly string KeyLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node";
 
+        private const string KeyVirtualStoreCu = @"HKEY_CURRENT_USER\SOFTWARE\Classes\VirtualStore\MACHINE\SOFTWARE";
+        private const string KeyVirtualStoreCuWow = @"HKEY_CURRENT_USER\SOFTWARE\Classes\VirtualStore\MACHINE\SOFTWARE\Wow6432Node";
+        private const string KeyVirtualStoreLm = @"HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VirtualStore\MACHINE\SOFTWARE";
+        private const string KeyVirtualStoreLmWow = @"HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VirtualStore\MACHINE\SOFTWARE\Wow6432Node";
+        
         private static readonly string[] SoftwareRegKeys = ProcessTools.Is64BitProcess
-            ? new[] { KeyLm, KeyCu, KeyLmWow, KeyCuWow }
-            : new[] { KeyLm, KeyCu };
+            ? new[] { KeyLm, KeyCu, KeyVirtualStoreCu, KeyVirtualStoreLm,
+                KeyLmWow, KeyCuWow, KeyVirtualStoreCuWow, KeyVirtualStoreLmWow }
+            : new[] { KeyLm, KeyCu, KeyVirtualStoreCu, KeyVirtualStoreLm };
 
         private static readonly string[] ClsidKeys =
         {
