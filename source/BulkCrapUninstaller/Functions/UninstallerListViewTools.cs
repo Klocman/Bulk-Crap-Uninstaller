@@ -283,12 +283,6 @@ namespace BulkCrapUninstaller.Functions
         public event EventHandler<ListRefreshEventArgs> ListRefreshIsRunningChanged;
         public event EventHandler<CountingUpdateEventArgs> UninstallerPostprocessingProgressUpdate;
 
-        public void DeselectAllItems(object sender, EventArgs e)
-        {
-            _listView.ListView.DeselectAll();
-            _listView.ListView.Focus();
-        }
-
         /*public bool DisplayWindowsFeatures()
         {
             if (ListRefreshIsRunning)
@@ -399,12 +393,40 @@ namespace BulkCrapUninstaller.Functions
             dialog.StartWork();
         }
 
+
+        public void DeselectAllItems(object sender, EventArgs e)
+        {
+            var selected = _listView.ListView.CheckBoxes ? _listView.CheckedObjects : _listView.SelectedObjects;
+            var subtracted = selected.Except(FilteredUninstallers);
+            ChangeSelection(subtracted);
+        }
+
+        private void ChangeSelection(IEnumerable<ApplicationUninstallerEntry> newSelection)
+        {
+            _listView.ListView.BeginUpdate();
+
+            var items = newSelection.ToList();
+            if (_listView.ListView.CheckBoxes)
+                _listView.ListView.CheckedObjects = items;
+            _listView.ListView.SelectedObjects = items;
+
+            _listView.ListView.EndUpdate();
+            _listView.ListView.Refresh();
+            _listView.ListView.Focus();
+        }
+
         public void InvertSelectedItems(object sender, EventArgs e)
         {
-            var selectedObjects = _listView.SelectedObjects;
-            _listView.ListView.DeselectAll();
-            _listView.ListView.SelectObjects(FilteredUninstallers.Where(x => !selectedObjects.Contains(x)).ToList());
-            _listView.ListView.Focus();
+            var selected = _listView.ListView.CheckBoxes ? _listView.CheckedObjects : _listView.SelectedObjects;
+            var inverted = FilteredUninstallers.Except(selected);
+            ChangeSelection(inverted);
+        }
+
+        public void SelectAllItems(object sender, EventArgs e)
+        {
+            var selected = _listView.ListView.CheckBoxes ? _listView.CheckedObjects : _listView.SelectedObjects;
+            var added = selected.Union(FilteredUninstallers);
+            ChangeSelection(added);
         }
 
         public void RefreshList()
@@ -414,12 +436,6 @@ namespace BulkCrapUninstaller.Functions
 
             _listView.ListView.UpdateColumnFiltering();
             //_listView.ListView.BuildList(true); No need, UpdateColumnFiltering already does this
-        }
-
-        public void SelectAllItems(object sender, EventArgs e)
-        {
-            _listView.ListView.SelectAll();
-            _listView.ListView.Focus();
         }
 
         /// <summary>
