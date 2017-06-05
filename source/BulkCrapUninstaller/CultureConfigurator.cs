@@ -4,6 +4,7 @@ using Klocman.Tools;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -14,14 +15,20 @@ namespace BulkCrapUninstaller
         private static IEnumerable<CultureInfo> _supportedLanguages;
         private static CultureInfo _enUsCulture;
 
-        private static CultureInfo EnUsCulture => 
+        private static CultureInfo EnUsCulture =>
             _enUsCulture ?? (_enUsCulture = CultureInfo.GetCultureInfo("en-US"));
 
-        public static IEnumerable<CultureInfo> SupportedLanguages => 
+        public static IEnumerable<CultureInfo> SupportedLanguages =>
             _supportedLanguages ?? (_supportedLanguages = GetSupportedLanguages());
 
         private static IEnumerable<CultureInfo> GetSupportedLanguages()
         {
+            // Check what translations are available in program dir
+            var translationDirectories = Program.AssemblyLocation.GetDirectories()
+                .Where(x => x.Name.Length >= 2 && x.GetFiles("BCUninstaller.resources.dll", SearchOption.TopDirectoryOnly).Any())
+                .Select(x => x.Name.Substring(0, 2).ToLower())
+                .ToList();
+
             return new[]
             {
                 // en - English
@@ -92,7 +99,11 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("pl-PL"),
                 CultureInfo.GetCultureInfo("ru-RU"),
                 CultureInfo.GetCultureInfo("sl-SI")
-            }.OrderBy(x => x.DisplayName).ToList().AsEnumerable();
+            }.Where(x =>
+            {
+                var code = x.Name.Substring(0, 2).ToLower();
+                return code.Equals("en", StringComparison.Ordinal) || translationDirectories.Contains(code, StringComparison.Ordinal);
+            }).OrderBy(x => x.DisplayName).ToList().AsEnumerable();
         }
 
         public static void SetupCulture()
