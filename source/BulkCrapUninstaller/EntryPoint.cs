@@ -4,7 +4,11 @@
 */
 
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Forms.Tools;
@@ -13,16 +17,9 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace BulkCrapUninstaller
 {
-    internal class EntryPoint : WindowsFormsApplicationBase
+    internal class EntryPoint
     {
-        private static EntryPoint _instance;
-        private static bool _isRestarting;
-
-        public EntryPoint()
-        {
-            EnableVisualStyles = true;
-            IsSingleInstance = true;
-        }
+        public static bool IsRestarting { get; private set; }
 
         [STAThread]
         public static void Main(string[] args)
@@ -32,26 +29,84 @@ namespace BulkCrapUninstaller
 
             using (LogWriter.StartLogging(Path.Combine(Program.AssemblyLocation.FullName, "BCUninstaller.log")))
             {
-                _instance = new EntryPoint();
-                _instance.Run(args);
+                try
+                {
+                    var instance = new SingleInstanceWrapper();
+                    instance.Run(args);
+                }
+                catch (CantStartSingleInstanceException ex)
+                {
+                    Console.WriteLine(ex);
+
+                    SafeRun();
+                }
             }
+        }
+
+        private static void ProcessShutdown()
+        {
+            // If running as portable, delete any leftovers from the system
+            if (!IsRestarting && !Program.IsInstalled && !Program.EnableDebug)
+                Program.StartLogCleaner();
         }
 
         public static void Restart()
         {
             try
             {
-                _isRestarting = true;
+                IsRestarting = true;
                 UpdateSystem.RestartApplication();
             }
             catch (Exception ex)
             {
                 PremadeDialogs.GenericError(ex);
-                _isRestarting = false;
+                IsRestarting = false;
             }
         }
 
-        protected override bool OnStartup(StartupEventArgs eventArgs)
+        /// <summary>
+        /// Alternative startup routine in case WindowsFormsApplicationBase fails.
+        /// Uses Process.GetProcesses to check for other instances.
+        /// </summary>
+        private static void SafeRun()
+        {
+            var location = Assembly.GetAssembly(typeof (EntryPoint)).Location;
+            var otherBcu = Process.GetProcesses().FirstOrDefault(x =>
+            {
+                try
+                {
+                    return string.Equals(x.MainModule.FileName, location, StringComparison.OrdinalIgnoreCase);
+                }
+                catch
+                {
+                    return false;
+                }
+            });
+
+            if (otherBcu != null)
+            {
+                try
+                {
+                    SetForegroundWindow(otherBcu.MainWindowHandle.ToInt32());
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
+            else
+            {
+                SetupDependancies();
+                Application.ApplicationExit += (sender, eventArgs) => ProcessShutdown();
+                Application.EnableVisualStyles();
+                Application.Run(new MainWindow());
+            }
+        }
+
+        [DllImport("user32.dll")]
+        private static extern int SetForegroundWindow(int hwnd);
+
+        private static void SetupDependancies()
         {
             // Order is semi-important, prepare settings should go first.
             Program.PrepareSettings();
@@ -64,32 +119,44 @@ namespace BulkCrapUninstaller
             {
                 PremadeDialogs.GenericError(ex);
             }
-
-            // Necessary to put form constructor here for objectlistbox. It flips out if
-            // the main form is created inside of the EntryPoint constructor.
-            MainForm = new MainWindow();
-            return true;
         }
 
-        protected override void OnStartupNextInstance(StartupNextInstanceEventArgs eventArgs)
+        private class SingleInstanceWrapper : WindowsFormsApplicationBase
         {
-            try
+            public SingleInstanceWrapper()
             {
-                _instance.MainForm?.Activate();
+                EnableVisualStyles = true;
+                IsSingleInstance = true;
             }
-            catch (Exception ex)
+
+            protected override void OnShutdown()
             {
-                PremadeDialogs.GenericError(ex);
+                ProcessShutdown();
+
+                base.OnShutdown();
             }
-        }
 
-        protected override void OnShutdown()
-        {
-            // If running as portable, delete any leftovers from the system
-            if (!_isRestarting && !Program.IsInstalled && !Program.EnableDebug)
-                Program.StartLogCleaner();
+            protected override bool OnStartup(StartupEventArgs eventArgs)
+            {
+                SetupDependancies();
 
-            base.OnShutdown();
+                // Necessary to put form constructor here for objectlistbox. It flips out if
+                // the main form is created inside of the EntryPoint constructor.
+                MainForm = new MainWindow();
+                return true;
+            }
+
+            protected override void OnStartupNextInstance(StartupNextInstanceEventArgs eventArgs)
+            {
+                try
+                {
+                    MainForm?.Activate();
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
         }
     }
 }
