@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -34,10 +35,14 @@ namespace BulkCrapUninstaller
                     var instance = new SingleInstanceWrapper();
                     instance.Run(args);
                 }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine(ex);
+                    SafeRun();
+                }
                 catch (CantStartSingleInstanceException ex)
                 {
                     Console.WriteLine(ex);
-
                     SafeRun();
                 }
             }
