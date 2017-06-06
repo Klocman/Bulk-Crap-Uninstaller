@@ -356,7 +356,7 @@ namespace BulkCrapUninstaller.Functions
                             }
                             catch (Exception ex)
                             {
-                                Debug.WriteLine("Exception while removing junk: " + ex.ToString());
+                                Console.WriteLine("Exception while removing junk: " + ex.ToString());
                             }
                         }
                     }
