@@ -356,10 +356,8 @@ namespace UninstallTools
                 return false;
             try
             {
-                using (OpenRegKey())
-                {
-                    return true;
-                }
+                using (var key = OpenRegKey())
+                    return key != null;
             }
             catch
             {
