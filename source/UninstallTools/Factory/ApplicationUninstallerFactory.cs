@@ -19,9 +19,9 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
-        public static IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
+        public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {
-            const int totalStepCount = 8;
+            const int totalStepCount = 7;
             var currentStep = 1;
 
             // Find msi products

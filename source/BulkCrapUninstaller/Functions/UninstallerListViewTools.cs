@@ -40,7 +40,7 @@ namespace BulkCrapUninstaller.Functions
         public static Color InvalidColor = Color.FromArgb(unchecked((int)0xffE0E0E0));
         public static Color UnregisteredColor = Color.FromArgb(unchecked((int)0xffffcccc));
         public static Color WindowsFeatureColor = Color.FromArgb(unchecked((int)0xffddbbff));
-        public static Color WindowsStoreAppColor = Color.FromArgb(unchecked((int) 0xffa3ffff));
+        public static Color WindowsStoreAppColor = Color.FromArgb(unchecked((int)0xffa3ffff));
     }
 
     internal class UninstallerListViewTools : IDisposable
@@ -493,9 +493,11 @@ namespace BulkCrapUninstaller.Functions
         private void ListRefreshThread(LoadingDialogInterface dialogInterface)
         {
             dialogInterface.SetSubProgressVisible(true);
+            var progressMax = 0;
             var uninstallerEntries = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
-                dialogInterface.SetMaximum(x.TotalCount);
+                progressMax = x.TotalCount + 2;
+                dialogInterface.SetMaximum(progressMax);
                 dialogInterface.SetProgress(x.CurrentCount, x.Message);
 
                 var inner = x.Inner;
@@ -514,15 +516,41 @@ namespace BulkCrapUninstaller.Functions
                     throw new OperationCanceledException();
             });
 
+            dialogInterface.SetProgress(progressMax - 1, Localisable.Progress_Finishing_Startup);
+            dialogInterface.SetSubMaximum(StartupManager.Factories.Count);
+            var i = 0;
+            var startupEntries = new List<StartupEntryBase>();
+            foreach (var factory in StartupManager.Factories)
+            {
+                dialogInterface.SetSubProgress(i++, factory.Key);
+                try
+                {
+                    startupEntries.AddRange(factory.Value());
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
+            
+            dialogInterface.SetProgress(progressMax, Localisable.Progress_Finishing, true);
+            dialogInterface.SetSubMaximum(3);
+            dialogInterface.SetSubProgress(0, string.Empty);
+
             if (!string.IsNullOrEmpty(Program.InstalledRegistryKeyName))
-                uninstallerEntries = uninstallerEntries
-                    .Where(x => x.RegistryKeyName != Program.InstalledRegistryKeyName);
+                uninstallerEntries.RemoveAll(x => PathTools.PathsEqual(x.RegistryKeyName, Program.InstalledRegistryKeyName));
 
-            AllUninstallers = uninstallerEntries.ToList();
+            AllUninstallers = uninstallerEntries;
 
-            dialogInterface.SetMaximum(9);
-            dialogInterface.SetProgress(9, Localisable.Progress_Finishing);
-            dialogInterface.SetSubMaximum(5);
+            dialogInterface.SetSubProgress(1, Localisable.MainWindow_Statusbar_RefreshingStartup);
+            try
+            {
+                ReassignStartupEntries(false, startupEntries);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
 
             dialogInterface.SetSubProgress(2, Localisable.Progress_Finishing_Icons);
             try
@@ -533,18 +561,8 @@ namespace BulkCrapUninstaller.Functions
             {
                 PremadeDialogs.GenericError(ex);
             }
-
-            dialogInterface.SetSubProgress(4, Localisable.Progress_Finishing_Startup);
-            try
-            {
-                ReassignStartupEntries(false);
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
-
-            //dialogInterface.SetSubProgress(3, string.Empty);
+            
+            dialogInterface.SetSubProgressVisible(false);
         }
 
         /// <summary>
@@ -880,11 +898,6 @@ namespace BulkCrapUninstaller.Functions
                 UninstallerPostprocessingProgressUpdate?.Invoke(this, countingUpdateEventArgs);
                 currentCount++;
             }
-        }
-
-        internal void ReassignStartupEntries(bool refreshListView)
-        {
-            ReassignStartupEntries(refreshListView, StartupManager.GetAllStartupItems());
         }
 
         internal void ReassignStartupEntries(bool refreshListView, IEnumerable<StartupEntryBase> items)

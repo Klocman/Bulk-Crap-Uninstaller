@@ -1,13 +1,9 @@
-﻿/*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
-*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
 using Microsoft.Win32.TaskScheduler;
+using UninstallTools.Properties;
 using UninstallTools.Startup.Browser;
 using UninstallTools.Startup.Normal;
 using UninstallTools.Startup.Service;
@@ -17,9 +13,34 @@ namespace UninstallTools.Startup
 {
     public static class StartupManager
     {
+        static StartupManager()
+        {
+            Factories = new Dictionary<string, Func<IEnumerable<StartupEntryBase>>>
+            {
+                {
+                    Localisation.StartupEntries,
+                    () => StartupEntryFactory.GetStartupItems().Cast<StartupEntryBase>()
+                },
+                {
+                    Localisation.Startup_ShortName_Task,
+                    () => TaskEntryFactory.GetTaskStartupEntries().Cast<StartupEntryBase>()
+                },
+                {
+                    Localisation.Startup_Shortname_BrowserHelper,
+                    () => BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>()
+                },
+                {
+                    Localisation.Startup_ShortName_Service,
+                    () => ServiceEntryFactory.GetServiceEntries().Cast<StartupEntryBase>()
+                }
+            };
+        }
+
+        public static Dictionary<string, Func<IEnumerable<StartupEntryBase>>> Factories { get; }
+
         /// <summary>
-        ///     Fill in the ApplicationUninstallerEntry.StartupEntries property with a list of related StartupEntry objects.
-        ///     Old data is not cleared, only overwritten if necessary.
+        /// Fill in the ApplicationUninstallerEntry.StartupEntries property with a list of related StartupEntry objects.
+        /// Old data is not cleared, only overwritten if necessary.
         /// </summary>
         /// <param name="uninstallers">Uninstaller entries to assign to</param>
         /// <param name="startupEntries">Startup entries to assign</param>
@@ -38,7 +59,9 @@ namespace UninstallTools.Startup
             {
                 var positives = startups.Where(x =>
                 {
-                    if (x.ProgramNameTrimmed?.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase) == true)
+                    if (
+                        x.ProgramNameTrimmed?.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase) ==
+                        true)
                         return true;
 
                     if (x.CommandFilePath == null)
@@ -61,7 +84,16 @@ namespace UninstallTools.Startup
         }
 
         /// <summary>
-        ///     Open locations of the startup entries in respective applications. (regedit, win explorer, task scheduler)
+        /// Look for and return all of the startup items present on this computer.
+        /// </summary>
+        public static IEnumerable<StartupEntryBase> GetAllStartupItems()
+        {
+            return Factories.Values.Aggregate(Enumerable.Empty<StartupEntryBase>(),
+                (result, factory) => result.Concat(factory()));
+        }
+
+        /// <summary>
+        /// Open locations of the startup entries in respective applications. (regedit, win explorer, task scheduler)
         /// </summary>
         public static void OpenStartupEntryLocations(IEnumerable<StartupEntryBase> selection)
         {
@@ -94,17 +126,6 @@ namespace UninstallTools.Startup
                 else if (!string.IsNullOrEmpty(item.CommandFilePath))
                     WindowsTools.OpenExplorerFocusedOnObject(item.CommandFilePath);
             }
-        }
-
-        /// <summary>
-        ///     Look for and return all of the startup items present on this computer.
-        /// </summary>
-        public static IEnumerable<StartupEntryBase> GetAllStartupItems()
-        {
-            return StartupEntryFactory.GetStartupItems().Cast<StartupEntryBase>()
-                .Concat(TaskEntryFactory.GetTaskStartupEntries().Cast<StartupEntryBase>())
-                .Concat(BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>())
-                .Concat(ServiceEntryFactory.GetServiceEntries().Cast<StartupEntryBase>());
         }
     }
 }
