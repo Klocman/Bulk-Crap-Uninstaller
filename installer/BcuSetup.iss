@@ -7,8 +7,8 @@
 #define MyAppExeName "BCUninstaller.exe" 
 #define MyAppCopyright "Copyright 2017 Marcin Szeniak"
                                 
-#define MyAppVersion "3.9.0.0"     
-#define MyAppVersionShort "3.9"
+#define MyAppVersion "3.10.0.0"     
+#define MyAppVersionShort "3.10"
 
 #include "Scripts\PortablePage.iss" 
 #include "Scripts\PortableIcons.iss"
