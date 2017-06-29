@@ -136,36 +136,40 @@ Public Class PortableSettingsProvider
             SettingNode = Nothing
         End Try
 
-        'Check to see if the node exists, if so then set its new value
-        If Not SettingNode Is Nothing Then
-            SettingNode.InnerText = propVal.SerializedValue.ToString
-        Else
-            If IsRoaming(propVal.Property) Then
-                'Store the value as an element of the Settings Root Node
-                SettingNode = SettingsXML.CreateElement(propVal.Name)
+        Try
+            'Check to see if the node exists, if so then set its new value
+            If Not SettingNode Is Nothing Then
                 SettingNode.InnerText = propVal.SerializedValue.ToString
-                SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(SettingNode)
             Else
-                'Its machine specific, store as an element of the machine name node,
-                'creating a new machine name node if one doesnt exist.
-                Try
-                    MachineNode = DirectCast(SettingsXML.SelectSingleNode(SETTINGSROOT & "/" & My.Computer.Name),
-                                             XmlElement)
-                Catch ex As Exception
-                    MachineNode = SettingsXML.CreateElement(My.Computer.Name)
-                    SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode)
-                End Try
+                If IsRoaming(propVal.Property) Then
+                    'Store the value as an element of the Settings Root Node
+                    SettingNode = SettingsXML.CreateElement(propVal.Name)
+                    SettingNode.InnerText = propVal.SerializedValue.ToString
+                    SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(SettingNode)
+                Else
+                    'Its machine specific, store as an element of the machine name node,
+                    'creating a new machine name node if one doesnt exist.
+                    Try
+                        MachineNode = DirectCast(SettingsXML.SelectSingleNode(SETTINGSROOT & "/" & My.Computer.Name),
+                                                 XmlElement)
+                    Catch ex As Exception
+                        MachineNode = SettingsXML.CreateElement(My.Computer.Name)
+                        SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode)
+                    End Try
 
-                If MachineNode Is Nothing Then
-                    MachineNode = SettingsXML.CreateElement(My.Computer.Name)
-                    SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode)
+                    If MachineNode Is Nothing Then
+                        MachineNode = SettingsXML.CreateElement(My.Computer.Name)
+                        SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode)
+                    End If
+
+                    SettingNode = SettingsXML.CreateElement(propVal.Name)
+                    SettingNode.InnerText = propVal.SerializedValue.ToString
+                    MachineNode.AppendChild(SettingNode)
                 End If
-
-                SettingNode = SettingsXML.CreateElement(propVal.Name)
-                SettingNode.InnerText = propVal.SerializedValue.ToString
-                MachineNode.AppendChild(SettingNode)
             End If
-        End If
+        Catch ex As Exception
+            Console.WriteLine(ex)
+        End Try
     End Sub
 
     Private Function IsRoaming(prop As SettingsProperty) As Boolean
