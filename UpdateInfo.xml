@@ -2,22 +2,16 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.9.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.9/BCUninstaller_3.9_portable.zip</URL>
+<Version>3.10.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.10/BCUninstaller_3.10_portable.zip</URL>
 <Changes>
-Added detection of VirtualStore registry keys for junk
-Added detection of application compatibility registry junk
-Added Portuguese translation update by Nauta
-Rewrite of message box layout - fixed and improved scaling of elements 
-Try to avoid reading entire file when checking if it's an NSIS uninstaller
-Changed Select All/None/Invert to affect CheckBoxes if they are enabled
-Changed Select All/None/Invert behavior when some selections are filtered out
-Changed Kill All in process kill window to wait until all processes close before continuing
-Changed UI language selection to show only currently available languages
-Fixed process kill window not returning success if applications close by themselves; Added extra logging to the process kill window
-Fixed installer crashing when trying to install Net 3.5 on systems newer than Vista
-Fixed SocketException and CantStartSingleInstanceException crashes on start on some systems; Added a fall back to a safer method of running as single-instance
+Added Nuke application (replaces find by window on toolbar) - can uninstall by file, location or window, even if app is not detected
+Added more information to progress of scanning start-ups
+Lowered saturation of StoreApp background color
+Updated dependencies (TaskScheduler, Castle.Core)
+Fixed rare crash when saving invalid settings
+Fixed RegKeyStillExists returning true even if the key doesn't exist anymore. Fixes uninstaller registry key always showing up in junk search.
 </Changes>
-<Hash>3711435fedabd6c513d1b48d4ebfc432</Hash>
+<Hash>7d4d27fd359127abcebd87daa13d22e7</Hash>
 </Update>
 </Root>
