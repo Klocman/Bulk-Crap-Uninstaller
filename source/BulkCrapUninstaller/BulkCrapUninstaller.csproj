@@ -128,6 +128,12 @@
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClipboardCopyItem.cs" />
+    <Compile Include="Controls\FileTargeter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileTargeter.Designer.cs">
+      <DependentUpon>FileTargeter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ListLegend.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     </Compile>
     <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NukeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NukeWindow.Designer.cs">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RatingPopup.cs">
       <SubType>Form</SubType>
@@ -309,6 +321,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <None Include="Resources\radioactive.png" />
     <None Include="Resources\add.multiple.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\table.add.png" />
@@ -377,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdvancedFilters.sl.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileTargeter.resx">
+      <DependentUpon>FileTargeter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListLegend.cs.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
@@ -746,6 +762,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.sl.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NukeWindow.resx">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PropertiesWindow.cs.resx">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>

@@ -80,7 +80,7 @@ namespace BulkCrapUninstaller.Forms
                     y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries)
                     .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
-            
+
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
             _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
@@ -132,7 +132,7 @@ namespace BulkCrapUninstaller.Forms
             advancedFilters1.CurrentListFileNameChanged += RefreshTitleBar;
             advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
             advancedFilters1.SelectedEntryGetter = () => _listView.SelectedUninstallers;
-            
+
             // Setup update manager, skip at first boot to let user change the setting
             UpdateGrabber.Setup();
             if (!_setMan.Selected.Settings.MiscFirstRun)
@@ -1221,18 +1221,30 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenWindowSearcher(object sender, EventArgs e)
         {
-            var result = WindowTargeterDialog.ShowDialog(this, true);
-            var process = result?.GetRunningProcess();
+            var results = NukeWindow.ShowDialog(this);
 
-            if (process == null) return;
+            if (results == null) return;
 
-            var results = Uninstaller.GetApplicationsFromProcess(_listView.AllUninstallers, process)
-                .Select(x => x.DisplayName).Distinct().OrderBy(x => x).ToList();
+            var apps = Uninstaller.GetApplicationsFromDirectories(_listView.AllUninstallers, results);
 
-            filterEditor1.Search(results.Any() ? string.Join("|", results.Select(Regex.Escape).ToArray()) : @"a^",
-                ComparisonMethod.Regex);
+            if (apps.Count == 0)
+            {
+                return;
+            }
+
+            switch (MessageBoxes.UninstallNukedEntriesQuestion(apps))
+            {
+                case CustomMessageBox.PressedButton.Left:
+                    _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
+                    break;
+                case CustomMessageBox.PressedButton.Middle:
+                    _uninstaller.RunUninstall(apps, _listView.AllUninstallers, false);
+                    break;
+                default:
+                    return;
+            }
         }
-
+        
         private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _setMan.Selected.Settings.FilterShowWinFeatures = true;
@@ -1244,6 +1256,7 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Settings.FilterShowStoreApps = true;
             filterEditor1.Search(nameof(UninstallerType.StoreApp), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
         }
+
         private void buttonAdvFiltering_Click(object sender, EventArgs e)
         {
             advancedFilters1.LoadUninstallList(new UninstallList(_listView.GenerateEquivalentFilter()));

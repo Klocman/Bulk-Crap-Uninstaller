@@ -183,9 +183,6 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Обратить выбор</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Найти по окну...</value>
-  </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Удаление</value>
   </data>

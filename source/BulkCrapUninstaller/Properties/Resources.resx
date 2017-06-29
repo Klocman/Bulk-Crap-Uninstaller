@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="magnifyforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnify.forward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rating4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,17 +183,14 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DbCommandStats" xml:space="preserve">
     <value>sendStats</value>
   </data>
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DonateLink" xml:space="preserve">
-    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52</value>
+  <data name="oswindows8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\os.windows.8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HomepageUrl" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/</value>
@@ -204,9 +201,6 @@
   <data name="ContactUrl" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
   </data>
-  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
-    <value>Save uninstall list</value>
-  </data>
   <data name="checkmarkpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,14 +210,11 @@
   <data name="DbConnectionString" xml:space="preserve">
     <value>server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
   </data>
-  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
-    <value>There are unsaved changes in the opened uninstall list that will be lost by closing it.</value>
+  <data name="HelpFilename" xml:space="preserve">
+    <value>BCU_manual.html</value>
   </data>
   <data name="layer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.delete1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="control.fastforward.variant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\control.fastforward.variant.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -237,17 +228,17 @@
   <data name="magnifybrowse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.browse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rating3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rating3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DefaultUninstallListFilename" xml:space="preserve">
+    <value>Default.bcul</value>
   </data>
-  <data name="Icon_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="magnifyforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnify.forward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clean.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DbCommandCrash" xml:space="preserve">
-    <value>sendCrash</value>
+  <data name="checkmarkuncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark.uncrossed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -269,11 +260,20 @@
         bf0GeDTIxb8Pvs8AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="DbCommandCrash" xml:space="preserve">
+    <value>sendCrash</value>
+  </data>
+  <data name="DonateLink" xml:space="preserve">
+    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52</value>
+  </data>
   <data name="timer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="oswindows8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\os.windows.8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SubmitFeedbackLink" xml:space="preserve">
+    <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
+  </data>
+  <data name="control.fastforward.variant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control.fastforward.variant.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fullscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -293,8 +293,14 @@
   <data name="GithubNewIssueLink" xml:space="preserve">
     <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new</value>
   </data>
-  <data name="HelpFilename" xml:space="preserve">
-    <value>BCU_manual.html</value>
+  <data name="pagecopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page.copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rating3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rating3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add.multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SourceForgeReviewLink" xml:space="preserve">
     <value>https://sourceforge.net/projects/bulk-crap-uninstaller/reviews/new</value>
@@ -305,17 +311,14 @@
   <data name="folderopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder.open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SubmitFeedbackLink" xml:space="preserve">
-    <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Save uninstall list</value>
   </data>
   <data name="centerline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\centerline.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rating1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rating1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DefaultUninstallListFilename" xml:space="preserve">
-    <value>Default.bcul</value>
+  <data name="Icon_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="donate_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\donate_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -326,20 +329,20 @@
   <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
     <value>Save changes to the opened uninstall list?</value>
   </data>
-  <data name="checkmarkuncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkmark.uncrossed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rating1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rating1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bigImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bigImage.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pagecopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page.copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>There are unsaved changes in the opened uninstall list that will be lost by closing it.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add.multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="radioactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\radioactive.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

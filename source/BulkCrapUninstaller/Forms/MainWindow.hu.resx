@@ -183,9 +183,6 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Kijelölés megfordítása</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Keresés az ablakban...</value>
-  </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Eltávolítás</value>
   </data>

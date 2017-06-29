@@ -726,4 +726,27 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="Progress_Finishing_Startup" xml:space="preserve">
     <value>Searching for start-up entries</value>
   </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Look for application</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>No valid files or directories were selected. Make sure you have access to them, and they aren't marked as system files.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Look for applications</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Failed to find any applications inside {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Title" xml:space="preserve">
+    <value>Uninstall applications</value>
+  </data>
+  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Message" xml:space="preserve">
+    <value>Are you sure you want to uninstall following applications?</value>
+  </data>
+  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Details" xml:space="preserve">
+    <value>Warning: Make sure that all of the applications are correct before uninstalling, since some might be detected incorrectly.
+
+{0}</value>
+  </data>
 </root>

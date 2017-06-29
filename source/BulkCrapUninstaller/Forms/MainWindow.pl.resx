@@ -450,9 +450,6 @@
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Oceń...</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Znajdź przez okno...</value>
-  </data>
   <data name="toolStripButton8.Text" xml:space="preserve">
     <value>Pomoc</value>
   </data>

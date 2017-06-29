@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.8.3.23962, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.9.0.36140, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -318,9 +318,6 @@
   <data name="&gt;&gt;listViewPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>462, 17</value>
-  </metadata>
   <data name="toolStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -424,14 +421,14 @@
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="toolStripButtonNuke.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripButtonNuke.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Find by window...</value>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Uninstall by window, directory, or file...</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
@@ -539,9 +536,6 @@
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>861, 17</value>
-  </metadata>
   <data name="toolStripLabelStatus.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
@@ -666,7 +660,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.8.3.23962, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.9.0.36140, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -777,7 +771,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.8.3.23959, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.9.0.38094, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -842,9 +836,6 @@
   <data name="&gt;&gt;settingsSidebarPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="uninstallListContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>139, 17</value>
-  </metadata>
   <data name="uninstallContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1113,18 +1104,12 @@
   <data name="&gt;&gt;uninstallListContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>XML files|*.xml</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Export selected uninstaller properties</value>
   </data>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>354, 17</value>
-  </metadata>
   <data name="reloadUninstallersToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1598,30 +1583,6 @@
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Advanced operations</value>
   </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAsRJREFUaEPt2D+IE0EYBfBNsiEYES0EueKw8MBCtFLBTiwsRMTGwlawMKVwYC1Y
-        WYiClaCFncU1cgg2RsTC6w4RwUILC8FGwSvEXIzvLbsyDm+Tmf2XjNzAj0vezs7Od7Ob3SQaDof/BRmG
-        SIYhkmGIZNikyWRyMoqidf5V213JsEksAiap9VarFat+s8iwKelqZEXQI9XPhQybgmauxjZWY0X1cyHD
-        JlS5GiTDJqA9M4ootRokw7qhnTOKKL0aJMO6oW0YRZReDZJhndAqXw2SYZ3QKl8NkmFd0GpZDZJhVdrt
-        9hFM9jY8Ba7EF6h8NUiGZfX7/R4m+hh+GxO3bbKf2r8IGZaFxiLU5G2Fn61sMiwD7awxURerahxfMiyr
-        0+kcwgRvgnlN5PmkxvAlwyJwipzGpD7DXTxHHUuzGO8vwBpsgypk0u1299rj+ZKhr7SILWuCm3Ad2/az
-        D4pbwusbyN4bfTLL9pi+ZOgjpwjTL1hDv/OQXNjpPg+B+23ZYxYhQ1cORdi+Au8rR7k/Tym8PmOPW4QM
-        XRQowsZTb4BxklOvLBnOUkERphfqGL5kOA3aCaiqCJpPIbhHHMTBwy+E0C4ZEylrfoUQ2hWY9lDoar6F
-        UPpLyEdrYr7mXwiNRqNdmMwt+GlMzke9hcRxfMBF1h9tGe7BN1ATzpMUwn+IGl8Zj8d7suP+Pb4dZKyD
-        TfMKkjs19Xq93XjP6+c58PFE7WNKCkEbGNks97PjZf55Y7J2nIUX/RNeM+YYuHHug4vYdgdeww+w912o
-        QkxvYRXf1w+rcVHYCrbzR4ircBlOMUfLK+QB8OOe+DWBWSOFmD4AJ3INBRznaaeORWh5hQyMPu/SrPFC
-        FD4B84HxDbwEXmMs+Duo/gtbiK+dQhLpDouAn3Q8HSn73h9kIcpOIYvGvZDQyDBEMgyRDEMkwxDJMDzD
-        6A+ao+bo+vxNcgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Clean up "Program Files" folders...</value>
-  </data>
   <data name="openStartupManagerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1649,34 +1610,70 @@
 </value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
+    <value>279, 22</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Open Startup Manager</value>
   </data>
+  <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAsRJREFUaEPt2D+IE0EYBfBNsiEYES0EueKw8MBCtFLBTiwsRMTGwlawMKVwYC1Y
+        WYiClaCFncU1cgg2RsTC6w4RwUILC8FGwSvEXIzvLbsyDm+Tmf2XjNzAj0vezs7Od7Ob3SQaDof/BRmG
+        SIYhkmGIZNikyWRyMoqidf5V213JsEksAiap9VarFat+s8iwKelqZEXQI9XPhQybgmauxjZWY0X1cyHD
+        JlS5GiTDJqA9M4ootRokw7qhnTOKKL0aJMO6oW0YRZReDZJhndAqXw2SYZ3QKl8NkmFd0GpZDZJhVdrt
+        9hFM9jY8Ba7EF6h8NUiGZfX7/R4m+hh+GxO3bbKf2r8IGZaFxiLU5G2Fn61sMiwD7awxURerahxfMiyr
+        0+kcwgRvgnlN5PmkxvAlwyJwipzGpD7DXTxHHUuzGO8vwBpsgypk0u1299rj+ZKhr7SILWuCm3Ad2/az
+        D4pbwusbyN4bfTLL9pi+ZOgjpwjTL1hDv/OQXNjpPg+B+23ZYxYhQ1cORdi+Au8rR7k/Tym8PmOPW4QM
+        XRQowsZTb4BxklOvLBnOUkERphfqGL5kOA3aCaiqCJpPIbhHHMTBwy+E0C4ZEylrfoUQ2hWY9lDoar6F
+        UPpLyEdrYr7mXwiNRqNdmMwt+GlMzke9hcRxfMBF1h9tGe7BN1ATzpMUwn+IGl8Zj8d7suP+Pb4dZKyD
+        TfMKkjs19Xq93XjP6+c58PFE7WNKCkEbGNks97PjZf55Y7J2nIUX/RNeM+YYuHHug4vYdgdeww+w912o
+        QkxvYRXf1w+rcVHYCrbzR4ircBlOMUfLK+QB8OOe+DWBWSOFmD4AJ3INBRznaaeORWh5hQyMPu/SrPFC
+        FD4B84HxDbwEXmMs+Duo/gtbiK+dQhLpDouAn3Q8HSn73h9kIcpOIYvGvZDQyDBEMgyRDEMkwxDJMDzD
+        6A+ao+bo+vxNcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clean up "Program Files" folders...</value>
+  </data>
+  <data name="nukeMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="nukeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 22</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Uninstall by window, directory, or file...</value>
+  </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
+    <value>279, 22</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Uninstall from directory...</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 6</value>
+    <value>276, 6</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
+    <value>279, 22</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Open "&amp;Programs and Features"</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
+    <value>279, 22</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Open "System Recovery"</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 6</value>
+    <value>276, 6</value>
   </data>
   <data name="settingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1701,7 +1698,7 @@
 </value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 22</value>
+    <value>279, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Settings</value>
@@ -1825,29 +1822,17 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="createBackupFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>560, 17</value>
-  </metadata>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
     <value>Registry files|*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>Create registry backup</value>
   </data>
-  <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>977, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>954, 532</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 300</value>
@@ -2002,10 +1987,10 @@
   <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonWindowSearcher.Name" xml:space="preserve">
-    <value>toolStripButtonWindowSearcher</value>
+  <data name="&gt;&gt;toolStripButtonNuke.Name" xml:space="preserve">
+    <value>toolStripButtonNuke</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonWindowSearcher.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripButtonNuke.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
@@ -2656,6 +2641,12 @@
   <data name="&gt;&gt;openSystemRestoreToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;nukeMenuItem.Name" xml:space="preserve">
+    <value>nukeMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nukeMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator19.Name" xml:space="preserve">
     <value>toolStripSeparator19</value>
   </data>
@@ -2750,19 +2741,25 @@
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.6349.23957, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.6380.29604, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;splashScreen1.Name" xml:space="preserve">
     <value>splashScreen1</value>
   </data>
   <data name="&gt;&gt;splashScreen1.Type" xml:space="preserve">
-    <value>Klocman.Forms.SplashScreen, KlocTools, Version=3.3.6349.23957, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.SplashScreen, KlocTools, Version=3.3.6380.29604, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;usageTracker.Name" xml:space="preserve">
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.8.3.23962, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.9.0.36140, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Name" xml:space="preserve">
+    <value>toolStripSeparator25</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
@@ -2770,10 +2767,34 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="splashScreen1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>462, 17</value>
+  </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>861, 17</value>
+  </metadata>
+  <metadata name="uninstallListContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>139, 17</value>
+  </metadata>
+  <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>354, 17</value>
+  </metadata>
+  <metadata name="createBackupFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>560, 17</value>
+  </metadata>
+  <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>977, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="splashScreen1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1113, 17</value>
   </metadata>
-  <metadata name="usageTracker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="usageTracker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>738, 17</value>
   </metadata>
 </root>

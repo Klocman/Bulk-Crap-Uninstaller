@@ -180,9 +180,6 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Inverter selecção</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Procurar usnado a janela...</value>
-  </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Desinstalar</value>
   </data>

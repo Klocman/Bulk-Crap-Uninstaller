@@ -11,7 +11,7 @@ using Klocman.Tools;
 
 namespace UninstallTools.Factory.InfoAdders
 {
-    internal class InfoAdderManager
+    public class InfoAdderManager
     {
         private static readonly IMissingInfoAdder[] InfoAdders;
 

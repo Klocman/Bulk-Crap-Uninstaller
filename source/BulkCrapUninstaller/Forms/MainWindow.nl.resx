@@ -183,9 +183,6 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Omkeren selectie</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Zoeken met venster</value>
-  </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Deïnstalleer</value>
   </data>

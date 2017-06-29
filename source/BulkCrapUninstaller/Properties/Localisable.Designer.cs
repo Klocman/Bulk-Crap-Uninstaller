@@ -1451,6 +1451,35 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning: Make sure that all of the applications are correct before uninstalling, since some might be detected incorrectly.
+        ///
+        ///{0}.
+        /// </summary>
+        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to uninstall following applications?.
+        /// </summary>
+        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstall applications.
+        /// </summary>
+        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BCUninstaller will automatically download the update and apply it after a restart. Please note that you might lose your settings in the process. 
         ///
         ///Changelog:
@@ -1519,6 +1548,24 @@ namespace BulkCrapUninstaller.Properties {
         internal static string NotAvailable {
             get {
                 return ResourceManager.GetString("NotAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No valid files or directories were selected. Make sure you have access to them, and they aren&apos;t marked as system files..
+        /// </summary>
+        internal static string NukeWindow_NoFilesSelected_Message {
+            get {
+                return ResourceManager.GetString("NukeWindow_NoFilesSelected_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Look for application.
+        /// </summary>
+        internal static string NukeWindow_NoFilesSelected_Title {
+            get {
+                return ResourceManager.GetString("NukeWindow_NoFilesSelected_Title", resourceCulture);
             }
         }
         
@@ -1649,7 +1696,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  [x64].
+        ///   Looks up a localized string similar to x64.
         /// </summary>
         internal static string Str64Bit {
             get {
@@ -1658,7 +1705,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  DEBUG.
+        ///   Looks up a localized string similar to DEBUG.
         /// </summary>
         internal static string StrDebug {
             get {
@@ -1677,7 +1724,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Portable.
+        ///   Looks up a localized string similar to Portable.
         /// </summary>
         internal static string StrIsPortable {
             get {
@@ -1691,6 +1738,24 @@ namespace BulkCrapUninstaller.Properties {
         internal static string SysRestoreGenericError {
             get {
                 return ResourceManager.GetString("SysRestoreGenericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to find any applications inside {0}.
+        /// </summary>
+        internal static string Uninstaller_GetApplicationsFromDirectories_NothingFound_Message {
+            get {
+                return ResourceManager.GetString("Uninstaller_GetApplicationsFromDirectories_NothingFound_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Look for applications.
+        /// </summary>
+        internal static string Uninstaller_GetApplicationsFromDirectories_NothingFound_Title {
+            get {
+                return ResourceManager.GetString("Uninstaller_GetApplicationsFromDirectories_NothingFound_Title", resourceCulture);
             }
         }
         

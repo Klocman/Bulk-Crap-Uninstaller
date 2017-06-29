@@ -16,6 +16,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.UpdateSystem;
 using Klocman.Tools;
+using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -26,6 +27,14 @@ namespace BulkCrapUninstaller.Functions
             Cancel,
             Yes,
             No
+        }
+
+        public static CustomMessageBox.PressedButton UninstallNukedEntriesQuestion(ICollection<ApplicationUninstallerEntry> apps)
+        {
+            return CustomMessageBox.ShowDialog(DefaultOwner,
+                            new CmbBasicSettings(Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Title, Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Message,
+                                string.Format(Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Details, string.Join("\n", apps.Select(x => x.DisplayName).OrderBy(x => x).ToArray())), SystemIcons.Question,
+                                Buttons.ButtonUninstall, Buttons.ButtonUseLoud, Buttons.ButtonCancel));
         }
 
         public static Form DefaultOwner { get; set; }

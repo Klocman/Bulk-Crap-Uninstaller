@@ -447,9 +447,6 @@
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Passez en revue...</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Trouver par fenêtre...</value>
-  </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>Trouver par fenêtre...</value>
   </data>

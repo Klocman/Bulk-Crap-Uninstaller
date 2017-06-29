@@ -19,6 +19,7 @@ using Klocman.Native;
 using Klocman.Tools;
 using UninstallTools;
 using UninstallTools.Factory;
+using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Junk;
 using UninstallTools.Uninstaller;
 
@@ -609,6 +610,54 @@ namespace BulkCrapUninstaller.Functions
 
             MessageBoxes.UninstallAlreadyRunning();
             return false;
+        }
+
+        public static ICollection<ApplicationUninstallerEntry> GetApplicationsFromDirectories(
+            IEnumerable<ApplicationUninstallerEntry> allUninstallers, ICollection<DirectoryInfo> results)
+        {
+            var output = new List<ApplicationUninstallerEntry>();
+            var processed = new List<DirectoryInfo>();
+            foreach (var dir in results.Distinct(PathTools.PathsEqual).OrderBy(x => x.FullName))
+            {
+                if (processed.Any(x => x.FullName.Contains(dir.FullName, StringComparison.InvariantCultureIgnoreCase)))
+                    continue;
+
+                processed.Add(dir);
+            }
+
+            var exceptions = allUninstallers.Where(x => x.InstallLocation != null).ToList();
+
+            var infoAdder = new InfoAdderManager();
+            foreach (var dir in processed)
+            {
+                var items = exceptions.Where(
+                    x => x.InstallLocation.Contains(dir.FullName, StringComparison.InvariantCultureIgnoreCase))
+                    .ToList();
+
+                if (items.Count > 0)
+                {
+                    output.AddRange(items);
+                    continue;
+                }
+
+                var res = DirectoryFactory.TryCreateFromDirectory(dir, exceptions).ToList();
+                if (res.Count == 0)
+                {
+                    MessageBox.Show(
+                        string.Format(Localisable.Uninstaller_GetApplicationsFromDirectories_NothingFound_Message,
+                            dir.FullName), Localisable.Uninstaller_GetApplicationsFromDirectories_NothingFound_Title,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                foreach (var result in res)
+                {
+                    infoAdder.AddMissingInformation(result);
+                    output.Add(result);
+                }
+            }
+
+            return output;
         }
     }
 }

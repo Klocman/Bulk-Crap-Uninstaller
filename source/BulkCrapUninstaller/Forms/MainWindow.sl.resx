@@ -444,9 +444,6 @@
   <data name="olvColumnRating.Text" xml:space="preserve">
     <value>Uporabnikova ocena</value>
   </data>
-  <data name="toolStripButtonWindowSearcher.Text" xml:space="preserve">
-    <value>Najdi z oknom...</value>
-  </data>
   <data name="toolStripButton8.Text" xml:space="preserve">
     <value>Pomoč</value>
   </data>

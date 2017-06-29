@@ -160,7 +160,7 @@ namespace UninstallTools
         /// <summary>
         ///     Check if dir is a system directory and should be left alone.
         /// </summary>
-        internal static bool IsSystemDirectory(DirectoryInfo dir)
+        public static bool IsSystemDirectory(DirectoryInfo dir)
         {
             return //dir.Name.StartsWith("Windows ") //Probably overkill
                 DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
