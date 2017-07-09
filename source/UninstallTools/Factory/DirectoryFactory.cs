@@ -77,15 +77,19 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Get directories to scan for applications
         /// </summary>
-        private static IEnumerable<KVP> GetDirectoriesToScan(List<ApplicationUninstallerEntry> existingUninstallers, IEnumerable<KVP> pfDirs, IEnumerable<string> dirsToSkip)
+        private static IEnumerable<KVP> GetDirectoriesToScan(List<ApplicationUninstallerEntry> existingUninstallers, 
+            IEnumerable<KVP> pfDirs, IEnumerable<string> dirsToSkip)
         {
             var pfDirectories = pfDirs.ToList();
 
-            var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
-                .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
-                .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.Key.FullName, extraDir.Key.FullName)));
+            if(UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles)
+            {
+                var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
+                  .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
+                  .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.Key.FullName, extraDir.Key.FullName)));
 
-            pfDirectories.AddRange(extraPfDirectories);
+                pfDirectories.AddRange(extraPfDirectories);
+            }
 
             var directoriesToSkip = dirsToSkip.ToList();
 

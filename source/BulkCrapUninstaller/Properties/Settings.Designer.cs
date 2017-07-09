@@ -868,5 +868,19 @@ namespace BulkCrapUninstaller.Properties {
                 this["ScanStoreApps"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool FoldersAutoDetect {
+            get {
+                return ((bool)(this["FoldersAutoDetect"]));
+            }
+            set {
+                this["FoldersAutoDetect"] = value;
+            }
+        }
     }
 }

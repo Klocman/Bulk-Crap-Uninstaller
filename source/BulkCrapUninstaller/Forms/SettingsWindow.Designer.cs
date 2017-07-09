@@ -68,9 +68,7 @@ namespace BulkCrapUninstaller.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
-            this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.uninstallationSettings1 = new BulkCrapUninstaller.Controls.UninstallationSettings();
             this.tabPageDetection = new System.Windows.Forms.TabPage();
             this.groupBoxAppStores = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -88,6 +86,9 @@ namespace BulkCrapUninstaller.Forms
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBoxAutoInstallFolderDetect = new System.Windows.Forms.CheckBox();
+            this.propertiesSidebar1 = new BulkCrapUninstaller.Controls.PropertiesSidebar();
+            this.uninstallationSettings1 = new BulkCrapUninstaller.Controls.UninstallationSettings();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -366,29 +367,12 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
-            // propertiesSidebar1
-            // 
-            resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
-            this.propertiesSidebar1.InvalidEnabled = true;
-            this.propertiesSidebar1.Name = "propertiesSidebar1";
-            this.propertiesSidebar1.OrphansEnabled = true;
-            this.propertiesSidebar1.ProtectedEnabled = true;
-            this.propertiesSidebar1.StoreAppsEnabled = true;
-            this.propertiesSidebar1.SysCompEnabled = true;
-            this.propertiesSidebar1.UpdatesEnabled = true;
-            this.propertiesSidebar1.WinFeaturesEnabled = true;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.uninstallationSettings1);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // uninstallationSettings1
-            // 
-            resources.ApplyResources(this.uninstallationSettings1, "uninstallationSettings1");
-            this.uninstallationSettings1.Name = "uninstallationSettings1";
             // 
             // tabPageDetection
             // 
@@ -480,6 +464,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.flowLayoutPanel5, "flowLayoutPanel5");
             this.flowLayoutPanel5.Controls.Add(this.labelProgramFolders);
+            this.flowLayoutPanel5.Controls.Add(this.checkBoxAutoInstallFolderDetect);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             // 
             // labelProgramFolders
@@ -500,6 +485,30 @@ namespace BulkCrapUninstaller.Forms
             this.panel4.Controls.Add(this.button2);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // checkBoxAutoInstallFolderDetect
+            // 
+            resources.ApplyResources(this.checkBoxAutoInstallFolderDetect, "checkBoxAutoInstallFolderDetect");
+            this.flowLayoutPanel5.SetFlowBreak(this.checkBoxAutoInstallFolderDetect, true);
+            this.checkBoxAutoInstallFolderDetect.Name = "checkBoxAutoInstallFolderDetect";
+            this.checkBoxAutoInstallFolderDetect.UseVisualStyleBackColor = true;
+            // 
+            // propertiesSidebar1
+            // 
+            resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
+            this.propertiesSidebar1.InvalidEnabled = true;
+            this.propertiesSidebar1.Name = "propertiesSidebar1";
+            this.propertiesSidebar1.OrphansEnabled = true;
+            this.propertiesSidebar1.ProtectedEnabled = true;
+            this.propertiesSidebar1.StoreAppsEnabled = true;
+            this.propertiesSidebar1.SysCompEnabled = true;
+            this.propertiesSidebar1.UpdatesEnabled = true;
+            this.propertiesSidebar1.WinFeaturesEnabled = true;
+            // 
+            // uninstallationSettings1
+            // 
+            resources.ApplyResources(this.uninstallationSettings1, "uninstallationSettings1");
+            this.uninstallationSettings1.Name = "uninstallationSettings1";
             // 
             // usageTracker1
             // 
@@ -625,5 +634,6 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxScanWinUpdates;
         private Label labelWinFeatureInfo;
         private Label labelWinUpdateInfo;
+        private CheckBox checkBoxAutoInstallFolderDetect;
     }
 }

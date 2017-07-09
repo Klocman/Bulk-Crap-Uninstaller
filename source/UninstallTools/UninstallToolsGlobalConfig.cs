@@ -61,6 +61,8 @@ namespace UninstallTools
         ///     Path to directory this assembly sits in.
         /// </summary>
         internal static string AssemblyLocation { get; }
+        
+        public static bool AutoDetectCustomProgramFiles { get; set; }
 
         /// <summary>
         ///     Custom "Program Files" directories. Use with dirs that get used to install applications to.
