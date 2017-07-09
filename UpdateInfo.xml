@@ -2,16 +2,19 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.10.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.10/BCUninstaller_3.10_portable.zip</URL>
+<Version>3.11.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.11/BCUninstaller_3.11_portable.zip</URL>
 <Changes>
-Added Nuke application (replaces find by window on toolbar) - can uninstall by file, location or window, even if app is not detected
-Added more information to progress of scanning start-ups
-Lowered saturation of StoreApp background color
-Updated dependencies (TaskScheduler, Castle.Core)
-Fixed rare crash when saving invalid settings
-Fixed RegKeyStillExists returning true even if the key doesn't exist anymore. Fixes uninstaller registry key always showing up in junk search.
+Added option to disable scanning of registry and/or drives for applications
+Added option to disable scanning for pre-defined appliactions
+Added option to disable automatic detection of custom application install folders
+Improved detection of shortcut junk
+Improved speed of loading junk window with lots of junk items
+Fixed BCU's shortcuts detected as other application junk
+Fixed Nuke window not connected to its menu item
+Fixed unknown ratings being displayed as not available on the application list
+Fixed some custom application install folders not being detected automatically
 </Changes>
-<Hash>7d4d27fd359127abcebd87daa13d22e7</Hash>
+<Hash>cc4cb45ae76d16b8cc4e8241e3e85523</Hash>
 </Update>
 </Root>
