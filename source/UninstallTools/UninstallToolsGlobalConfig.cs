@@ -109,6 +109,7 @@ namespace UninstallTools
 
         public static bool ScanRegistry { get; set; }
         public static bool ScanDrives { get; set; }
+        public static bool ScanPreDefined { get; set; }
 
         /// <summary>
         ///     Directiories containing programs, both built in "Program Files" and user-defined ones. Fast.

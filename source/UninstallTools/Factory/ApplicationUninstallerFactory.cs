@@ -229,7 +229,7 @@ namespace UninstallTools.Factory
             return changesRequired < a.Length / 6;*/
 
             var changesRequired = Sift4.SimplestDistance(a, b, 3);
-            return changesRequired < a.Length / 6; 
+            return changesRequired < a.Length / 6;
         }
 
         private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
@@ -237,7 +237,8 @@ namespace UninstallTools.Factory
             var otherResults = new List<ApplicationUninstallerEntry>();
 
             var miscFactories = new Dictionary<IUninstallerFactory, string>();
-            miscFactories.Add(new PredefinedFactory(), Localisation.Progress_AppStores_Templates);
+            if (UninstallToolsGlobalConfig.ScanPreDefined)
+                miscFactories.Add(new PredefinedFactory(), Localisation.Progress_AppStores_Templates);
             if (UninstallToolsGlobalConfig.ScanSteam)
                 miscFactories.Add(new SteamFactory(), Localisation.Progress_AppStores_Steam);
             if (UninstallToolsGlobalConfig.ScanStoreApps)

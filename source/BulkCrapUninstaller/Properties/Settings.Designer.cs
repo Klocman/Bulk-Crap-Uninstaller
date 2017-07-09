@@ -910,5 +910,18 @@ namespace BulkCrapUninstaller.Properties {
                 this["ScanRegistry"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ScanPreDefined {
+            get {
+                return ((bool)(this["ScanPreDefined"]));
+            }
+            set {
+                this["ScanPreDefined"] = value;
+            }
+        }
     }
 }

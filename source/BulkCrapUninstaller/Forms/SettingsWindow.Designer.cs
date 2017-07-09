@@ -72,6 +72,10 @@ namespace BulkCrapUninstaller.Forms
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.uninstallationSettings1 = new BulkCrapUninstaller.Controls.UninstallationSettings();
             this.tabPageDetection = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxScanRegistry = new System.Windows.Forms.CheckBox();
+            this.checkBoxScanDrives = new System.Windows.Forms.CheckBox();
             this.groupBoxAppStores = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxScanSteam = new System.Windows.Forms.CheckBox();
@@ -90,10 +94,7 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBoxScanRegistry = new System.Windows.Forms.CheckBox();
-            this.checkBoxScanDrives = new System.Windows.Forms.CheckBox();
+            this.checkBoxPreDefined = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -111,6 +112,8 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageGeneral.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPageDetection.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.groupBoxAppStores.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.tabPageExternal.SuspendLayout();
@@ -119,8 +122,6 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel5.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -405,6 +406,35 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageDetection.Name = "tabPageDetection";
             this.tabPageDetection.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.flowLayoutPanel7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // flowLayoutPanel7
+            // 
+            resources.ApplyResources(this.flowLayoutPanel7, "flowLayoutPanel7");
+            this.flowLayoutPanel7.Controls.Add(this.checkBoxScanRegistry);
+            this.flowLayoutPanel7.Controls.Add(this.checkBoxScanDrives);
+            this.flowLayoutPanel7.Controls.Add(this.checkBoxPreDefined);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            // 
+            // checkBoxScanRegistry
+            // 
+            resources.ApplyResources(this.checkBoxScanRegistry, "checkBoxScanRegistry");
+            this.flowLayoutPanel7.SetFlowBreak(this.checkBoxScanRegistry, true);
+            this.checkBoxScanRegistry.Name = "checkBoxScanRegistry";
+            this.checkBoxScanRegistry.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxScanDrives
+            // 
+            resources.ApplyResources(this.checkBoxScanDrives, "checkBoxScanDrives");
+            this.flowLayoutPanel7.SetFlowBreak(this.checkBoxScanDrives, true);
+            this.checkBoxScanDrives.Name = "checkBoxScanDrives";
+            this.checkBoxScanDrives.UseVisualStyleBackColor = true;
+            // 
             // groupBoxAppStores
             // 
             this.groupBoxAppStores.Controls.Add(this.flowLayoutPanel6);
@@ -521,33 +551,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
-            // groupBox1
+            // checkBoxPreDefined
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.flowLayoutPanel7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // flowLayoutPanel7
-            // 
-            resources.ApplyResources(this.flowLayoutPanel7, "flowLayoutPanel7");
-            this.flowLayoutPanel7.Controls.Add(this.checkBoxScanRegistry);
-            this.flowLayoutPanel7.Controls.Add(this.checkBoxScanDrives);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            // 
-            // checkBoxScanRegistry
-            // 
-            resources.ApplyResources(this.checkBoxScanRegistry, "checkBoxScanRegistry");
-            this.flowLayoutPanel7.SetFlowBreak(this.checkBoxScanRegistry, true);
-            this.checkBoxScanRegistry.Name = "checkBoxScanRegistry";
-            this.checkBoxScanRegistry.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxScanDrives
-            // 
-            resources.ApplyResources(this.checkBoxScanDrives, "checkBoxScanDrives");
-            this.flowLayoutPanel7.SetFlowBreak(this.checkBoxScanDrives, true);
-            this.checkBoxScanDrives.Name = "checkBoxScanDrives";
-            this.checkBoxScanDrives.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxPreDefined, "checkBoxPreDefined");
+            this.flowLayoutPanel7.SetFlowBreak(this.checkBoxPreDefined, true);
+            this.checkBoxPreDefined.Name = "checkBoxPreDefined";
+            this.checkBoxPreDefined.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -593,6 +602,10 @@ namespace BulkCrapUninstaller.Forms
             this.tabPage1.PerformLayout();
             this.tabPageDetection.ResumeLayout(false);
             this.tabPageDetection.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.groupBoxAppStores.ResumeLayout(false);
             this.groupBoxAppStores.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
@@ -608,10 +621,6 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -679,5 +688,6 @@ namespace BulkCrapUninstaller.Forms
         private FlowLayoutPanel flowLayoutPanel7;
         private CheckBox checkBoxScanRegistry;
         private CheckBox checkBoxScanDrives;
+        private CheckBox checkBoxPreDefined;
     }
 }
