@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public bool Equals(RatingEntry other)
         {
-            return AverageRating == other.AverageRating && MyRating == other.MyRating;
+            return AverageRating == other.AverageRating && MyRating == other.MyRating && ApplicationName == other.ApplicationName;
         }
 
         public override bool Equals(object obj)
