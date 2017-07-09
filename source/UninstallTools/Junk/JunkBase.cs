@@ -21,6 +21,11 @@ namespace UninstallTools.Junk
         internal IEnumerable<ApplicationUninstallerEntry> OtherUninstallers { get; set; }
         public abstract IEnumerable<JunkNode> FindJunk();
 
+        public virtual IEnumerable<ConfidencePart> GenerateConfidence(string itemName)
+        {
+            return GenerateConfidence(itemName, null, 0);
+        }
+
         public virtual IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
         {
             var returnValue = new List<ConfidencePart>();
@@ -89,6 +94,7 @@ namespace UninstallTools.Junk
             if (dirToName || nameToDir)
                 return 2;
 
+            // Hard cut-off if the difference is more than a third of the checked name
             if (result < lowestLength / 3)
                 return result;
 

@@ -40,6 +40,18 @@ namespace UninstallTools.Junk
 
         public static IEnumerable<JunkNode> FindAllJunk(IEnumerable<ApplicationUninstallerEntry> targets, IEnumerable<ApplicationUninstallerEntry> other)
         {
+            var shortcuts = GetShortcuts();
+            var otherEntries = other.ToList();
+            var output = new List<JunkNode>();
+
+            foreach (var applicationUninstallerEntry in targets)
+                output.AddRange(new ShortcutJunk(applicationUninstallerEntry, otherEntries, shortcuts).FindJunk());
+
+            return output;
+        }
+
+        private static List<Shortcut> GetShortcuts()
+        {
             var syspath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
             var results = new List<Shortcut>();
@@ -66,53 +78,68 @@ namespace UninstallTools.Junk
                 }
             }
 
-            var output = new List<JunkNode>();
-            var otherEntries = other.ToList();
-
-            foreach (var applicationUninstallerEntry in targets.ToList())
-                output.AddRange(new ShortcutJunk(applicationUninstallerEntry, otherEntries, results).FindJunk());
-
-            return output;
+            return results;
         }
 
         public override IEnumerable<JunkNode> FindJunk()
         {
             var results = new List<JunkNode>();
 
-            var installLocationIsSafe = !OtherUninstallers.Any(
-                x => PathTools.PathsEqual(x.InstallLocation, Uninstaller.InstallLocation));
-            var uninstallerLocationIsSafe = !OtherUninstallers.Any(
-                x => PathTools.PathsEqual(x.UninstallerLocation, Uninstaller.UninstallerLocation));
-
-            var addAction = new Action<bool, Shortcut>((isSafe, source) =>
+            if (!string.IsNullOrEmpty(Uninstaller.InstallLocation))
             {
-                var driveJunkNode = new DriveFileJunkNode(Path.GetDirectoryName(source.LinkFilename),
-                    Path.GetFileName(source.LinkFilename), Uninstaller.DisplayName);
+                results.AddRange(CheckLocation(entry => entry.InstallLocation)
+                    .DoForEach(x=>x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+            }
 
-                driveJunkNode.Confidence.Add(ConfidencePart.ExplicitConnection);
-                if (!isSafe)
-                    driveJunkNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
-
-                results.Add(driveJunkNode);
-                // Remove from the shortcut list so other uninstallers won't show up with it
-                //_links.Remove(source);
-            });
-
-            foreach (var source in _links.ToList())
+            if (!string.IsNullOrEmpty(Uninstaller.UninstallerFullFilename))
             {
-                if (CheckMatch(source.LinkTarget, Uninstaller.InstallLocation))
-                    addAction(installLocationIsSafe, source);
-                else if (CheckMatch(source.LinkTarget, Uninstaller.UninstallerLocation))
-                    addAction(uninstallerLocationIsSafe, source);
+                results.AddRange(CheckLocation(entry => entry.UninstallerFullFilename)
+                    .DoForEach(x => x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+            }
+
+            if (!string.IsNullOrEmpty(Uninstaller.UninstallerLocation))
+            {
+                var exceptUninstallerShortcut = CheckLocation(entry => entry.UninstallerLocation)
+                    .Where(x => results.All(y => !PathTools.PathsEqual(y.FullName, x.FullName)))
+                    .ToList();
+
+                results.AddRange(exceptUninstallerShortcut);
+            }
+
+            foreach (var junkNode in results.ToList())
+            {
+                var name = Path.GetFileNameWithoutExtension(junkNode.FullName);
+                if (name == null) continue;
+                junkNode.Confidence.AddRange(GenerateConfidence(name));
+
+                if (junkNode.Confidence.IsEmpty)
+                    results.Remove(junkNode);
             }
 
             return results;
         }
 
-        private static bool CheckMatch(string linkTarget, string uninstallerTarget)
+        private DriveFileJunkNode CreateJunkNode(Shortcut source)
         {
-            return !string.IsNullOrEmpty(uninstallerTarget)
-                && linkTarget.Contains(uninstallerTarget, StringComparison.InvariantCultureIgnoreCase);
+            return new DriveFileJunkNode(Path.GetDirectoryName(source.LinkFilename),
+                                Path.GetFileName(source.LinkFilename), Uninstaller.DisplayName);
+        }
+
+        private IEnumerable<JunkNode> CheckLocation(Func<ApplicationUninstallerEntry, string> targetSelector)
+        {
+            var target = targetSelector(Uninstaller);
+            var targetIsSafe = !OtherUninstallers.Any(x => PathTools.PathsEqual(targetSelector(x), target));
+
+            foreach (var source in _links)
+            {
+                if (source.LinkTarget.Contains(target, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var result = CreateJunkNode(source);
+                    if(!targetIsSafe)
+                        result.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                    yield return result;
+                }
+            }
         }
 
         private sealed class Shortcut

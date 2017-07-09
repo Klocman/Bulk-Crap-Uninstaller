@@ -16,6 +16,8 @@ namespace UninstallTools.Junk
         {
         }
 
+        public bool IsEmpty => _items.Count == 0;
+
         public IEnumerable<ConfidencePart> ConfidenceParts => _items;
 
         public Confidence GetConfidence()
