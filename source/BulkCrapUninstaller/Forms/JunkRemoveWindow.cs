@@ -327,11 +327,17 @@ namespace BulkCrapUninstaller.Forms
 
         private void SelectUpTo(Confidence selectedConfidence)
         {
+            objectListViewMain.BeginControlUpdate();
+            objectListViewMain.BeginUpdate();
+
             objectListViewMain.DeselectAll();
             objectListViewMain.UncheckAll();
 
             objectListViewMain.CheckObjects(objectListViewMain.FilteredObjects.Cast<JunkNode>()
                 .Where(x => x.Confidence.GetConfidence() >= selectedConfidence).ToList());
+
+            objectListViewMain.EndUpdate();
+            objectListViewMain.EndControlUpdate();
         }
 
         private void SetupListView(IEnumerable<JunkNode> junk)
