@@ -83,8 +83,7 @@ namespace UninstallTools.Factory
 
             var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
                 .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
-                .Where(extraDir => !pfDirectories.Any(pfDir => pfDir.Key.FullName.Contains(extraDir.Key.FullName,
-                StringComparison.InvariantCultureIgnoreCase)));
+                .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.Key.FullName, extraDir.Key.FullName)));
 
             pfDirectories.AddRange(extraPfDirectories);
 
