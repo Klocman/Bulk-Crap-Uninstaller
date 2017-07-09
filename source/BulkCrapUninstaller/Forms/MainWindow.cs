@@ -11,7 +11,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Windows.Forms;
@@ -170,7 +169,7 @@ namespace BulkCrapUninstaller.Forms
             MessageBoxes.DefaultOwner = this;
             LoadingDialog.DefaultOwner = this;
             PremadeDialogs.DefaultOwner = this;
-            PremadeDialogs.SendErrorAction = exception => NBug.Exceptions.Report(exception);
+            PremadeDialogs.SendErrorAction = NBug.Exceptions.Report;
 
             SetupHotkeys();
         }
@@ -553,21 +552,22 @@ namespace BulkCrapUninstaller.Forms
         {
             _setMan.Selected.SendUpdates();
 
+            // Work around a bug in Object list view
             try
             {
                 ResumeLayout();
             }
-            // BUG Can throw on some systems, not sure what is causing it
             catch (ObjectDisposedException)
             {
                 Application.DoEvents();
-                // BUG Still throws? Object list view is the culprit
                 ResumeLayout();
             }
 
             _listView.InitiateListRefresh();
 
-            settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() + settingsSidebarPanel.Padding.Left + settingsSidebarPanel.Padding.Right;
+            settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() + 
+                settingsSidebarPanel.Padding.Left + 
+                settingsSidebarPanel.Padding.Right;
         }
 
         private void SetupAndShowLegendWindow()
@@ -1219,7 +1219,7 @@ namespace BulkCrapUninstaller.Forms
             _listView.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
 
-        private void OpenWindowSearcher(object sender, EventArgs e)
+        private void OpenNukeWindow(object sender, EventArgs e)
         {
             var results = NukeWindow.ShowDialog(this);
 
@@ -1228,9 +1228,7 @@ namespace BulkCrapUninstaller.Forms
             var apps = Uninstaller.GetApplicationsFromDirectories(_listView.AllUninstallers, results);
 
             if (apps.Count == 0)
-            {
                 return;
-            }
 
             switch (MessageBoxes.UninstallNukedEntriesQuestion(apps))
             {
