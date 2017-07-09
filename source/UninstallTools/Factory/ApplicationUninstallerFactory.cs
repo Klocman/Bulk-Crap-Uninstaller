@@ -24,6 +24,8 @@ namespace UninstallTools.Factory
             const int totalStepCount = 7;
             var currentStep = 1;
 
+            var infoAdder = new InfoAdderManager();
+
             // Find msi products
             var msiProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_MSI);
             callback(msiProgress);
@@ -35,37 +37,53 @@ namespace UninstallTools.Factory
             }).ToList();
 
             // Find stuff mentioned in registry
-            var regProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_Registry);
-            callback(regProgress);
-            var registryFactory = new RegistryFactory(msiProducts);
-            var registryResults = registryFactory.GetUninstallerEntries(report =>
+            List<ApplicationUninstallerEntry> registryResults;
+            if (UninstallToolsGlobalConfig.ScanRegistry)
             {
-                regProgress.Inner = report;
+                var regProgress = new ListGenerationProgress(currentStep++, totalStepCount,
+                    Localisation.Progress_Registry);
                 callback(regProgress);
-            }).ToList();
+                var registryFactory = new RegistryFactory(msiProducts);
+                registryResults = registryFactory.GetUninstallerEntries(report =>
+                {
+                    regProgress.Inner = report;
+                    callback(regProgress);
+                }).ToList();
 
-            // Fill in instal llocations for the drive search
-            var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
-            callback(installLocAddProgress);
-            var infoAdder = new InfoAdderManager();
-            var installLocAddCount = 0;
-            foreach (var result in registryResults)
-            {
-                installLocAddProgress.Inner = new ListGenerationProgress(installLocAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
+                // Fill in instal llocations for the drive search
+                var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                 callback(installLocAddProgress);
+                var installLocAddCount = 0;
+                foreach (var result in registryResults)
+                {
+                    installLocAddProgress.Inner = new ListGenerationProgress(installLocAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
+                    callback(installLocAddProgress);
 
-                infoAdder.AddMissingInformation(result, true);
+                    infoAdder.AddMissingInformation(result, true);
+                }
+            }
+            else
+            {
+                registryResults = new List<ApplicationUninstallerEntry>();
             }
 
             // Look for entries on drives, based on info in registry. Need to check for duplicates with other entries later
-            var driveProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
-            callback(driveProgress);
-            var driveFactory = new DirectoryFactory(registryResults);
-            var driveResults = driveFactory.GetUninstallerEntries(report =>
+            List<ApplicationUninstallerEntry> driveResults;
+            if (UninstallToolsGlobalConfig.ScanDrives)
             {
-                driveProgress.Inner = report;
+                var driveProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
                 callback(driveProgress);
-            }).ToList();
+                var driveFactory = new DirectoryFactory(registryResults);
+                driveResults = driveFactory.GetUninstallerEntries(report =>
+                {
+                    driveProgress.Inner = report;
+                    callback(driveProgress);
+                }).ToList();
+            }
+            else
+            {
+                driveResults = new List<ApplicationUninstallerEntry>();
+            }
 
             // Get misc entries that use fancy logic
             var miscProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_AppStores);

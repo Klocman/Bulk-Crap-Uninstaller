@@ -91,6 +91,9 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinFeatures = y.NewValue, x => x.ScanWinFeatures, this);
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinUpdates = y.NewValue, x => x.ScanWinUpdates, this);
 
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanDrives = y.NewValue, x => x.ScanDrives, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanRegistry = y.NewValue, x => x.ScanRegistry, this);
+
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles = y.NewValue, x => x.FoldersAutoDetect, this);
 
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,

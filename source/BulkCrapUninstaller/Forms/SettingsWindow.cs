@@ -50,6 +50,9 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxScanWinFeatures, x => x.ScanWinFeatures, this);
             _settings.BindControl(checkBoxScanWinUpdates, x => x.ScanWinUpdates, this);
 
+            _settings.BindControl(checkBoxScanDrives, x => x.ScanDrives, this);
+            _settings.BindControl(checkBoxScanRegistry, x => x.ScanRegistry, this);
+
             foreach (YesNoAsk value in Enum.GetValues(typeof(YesNoAsk)))
             {
                 var wrapper = new LocalisedEnumWrapper(value);
