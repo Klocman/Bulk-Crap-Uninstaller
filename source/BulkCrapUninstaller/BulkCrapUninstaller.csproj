@@ -220,6 +220,12 @@
     <Compile Include="Forms\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UninstallConfirmationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UninstallConfirmationWindow.Designer.cs">
+      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions\ImportExport.cs" />
     <Compile Include="Functions\ListViewDelegates.cs" />
     <Compile Include="Functions\LocalizedX509Certificate.cs" />
@@ -879,6 +885,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsWindow.sl.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UninstallConfirmationWindow.resx">
+      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UninstallProgressWindow.cs.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>

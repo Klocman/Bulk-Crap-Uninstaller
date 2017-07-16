@@ -181,11 +181,21 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    // Steam will be required to run loud steam app uninstalls
-                    if (!CheckForRunningProcessesBeforeUninstall(targets, !quiet))
+                    if (!SystemRestore.BeginSysRestore(targets.Count))
                         return;
 
-                    if (!SystemRestore.BeginSysRestore(targets.Count))
+                    var taskEntries = ConvertToTaskEntries(quiet, targets);
+
+                    taskEntries = _settings.AdvancedIntelligentUninstallerSorting
+                        ? SortIntelligently(taskEntries).ToList()
+                        : taskEntries.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
+
+                    taskEntries = UninstallConfirmationWindow.ShowConfirmationDialog(MessageBoxes.DefaultOwner, taskEntries);
+
+                    if (taskEntries == null || taskEntries.Count == 0)
+                        return;
+
+                    if (!CheckForRunningProcessesBeforeUninstall(taskEntries.Select(x => x.UninstallerEntry), !quiet))
                         return;
 
                     // No turning back at this point (kind of)
@@ -197,7 +207,7 @@ namespace BulkCrapUninstaller.Functions
                             controller => { RunExternalCommands(_settings.ExternalPreCommands, controller); });
                     }
 
-                    var status = UninstallManager.RunBulkUninstall(targets, GetConfiguration(quiet));
+                    var status = UninstallManager.CreateBulkUninstallTask(taskEntries, GetConfiguration(quiet));
                     status.OneLoudLimit = _settings.UninstallConcurrentOneLoud;
                     status.ConcurrentUninstallerCount = _settings.UninstallConcurrency
                         ? _settings.UninstallConcurrentMaxCount
@@ -240,6 +250,45 @@ namespace BulkCrapUninstaller.Functions
                 if (listRefreshNeeded)
                     _initiateListRefresh();
             }
+        }
+
+        private static IOrderedEnumerable<BulkUninstallEntry> SortIntelligently(List<BulkUninstallEntry> taskEntries)
+        {
+            var query = from item in taskEntries
+                        orderby item.IsSilent ascending,
+                            // Updates usually get uninstalled by their parent uninstallers
+                            item.UninstallerEntry.IsUpdate ascending,
+                            // SysCmps and Protected usually get uninstalled by their parent, user-visible uninstallers
+                            item.UninstallerEntry.SystemComponent ascending,
+                            item.UninstallerEntry.IsProtected ascending,
+                            // Calculate number of digits (Floor of Log10 + 1) and divide it by 4 to create buckets of sizes
+                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetRawSize(true)) + 1) / 4) descending,
+                            // Prioritize Msi uninstallers because they tend to take the longest
+                            item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
+                            // Final sorting to get things deterministic
+                            item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
+                        select item;
+            return query;
+        }
+
+        private List<BulkUninstallEntry> ConvertToTaskEntries(bool quiet, List<ApplicationUninstallerEntry> targets)
+        {
+            var targetList = new List<BulkUninstallEntry>();
+
+            foreach (var target in targets)
+            {
+                var tempStatus = UninstallStatus.Waiting;
+                if (!target.IsValid)
+                    tempStatus = UninstallStatus.Invalid;
+                else if (!_settings.AdvancedDisableProtection && target.IsProtected)
+                    tempStatus = UninstallStatus.Protected;
+
+                var silentPossible = quiet && target.QuietUninstallPossible;
+
+                targetList.Add(new BulkUninstallEntry(target, silentPossible, tempStatus));
+            }
+
+            return targetList;
         }
 
         public void AdvancedUninstall(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
@@ -557,8 +606,7 @@ namespace BulkCrapUninstaller.Functions
 
         private BulkUninstallConfiguration GetConfiguration(bool quiet)
         {
-            return new BulkUninstallConfiguration(_settings.AdvancedDisableProtection, quiet,
-                _settings.AdvancedIntelligentUninstallerSorting, _settings.AdvancedSimulate,
+            return new BulkUninstallConfiguration(_settings.AdvancedDisableProtection, quiet, _settings.AdvancedSimulate,
                 _settings.QuietAutoKillStuck, _settings.QuietRetryFailedOnce);
         }
 

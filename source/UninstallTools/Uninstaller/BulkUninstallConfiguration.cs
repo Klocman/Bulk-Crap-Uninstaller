@@ -16,12 +16,11 @@ namespace UninstallTools.Uninstaller
             Simulate = false;
         }*/
 
-        public BulkUninstallConfiguration(bool ignoreProtection, bool preferQuiet, bool intelligentSort,
+        public BulkUninstallConfiguration(bool ignoreProtection, bool preferQuiet,
             bool simulate, bool autoKillStuckQuiet, bool retryFailedQuiet)
         {
             IgnoreProtection = ignoreProtection;
             PreferQuiet = preferQuiet;
-            IntelligentSort = intelligentSort;
             Simulate = simulate;
             AutoKillStuckQuiet = autoKillStuckQuiet;
             RetryFailedQuiet = retryFailedQuiet;
@@ -30,9 +29,7 @@ namespace UninstallTools.Uninstaller
         public bool AutoKillStuckQuiet { get; set; }
         public bool RetryFailedQuiet { get; set; }
         public bool IgnoreProtection { get; set; }
-        public bool IntelligentSort { get; set; }
         public bool PreferQuiet { get; set; }
-        public bool QuietAreSorted => PreferQuiet && IntelligentSort;
         public bool Simulate { get; set; }
     }
 }

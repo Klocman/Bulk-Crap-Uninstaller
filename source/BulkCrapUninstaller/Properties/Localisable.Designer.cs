@@ -1451,35 +1451,6 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: Make sure that all of the applications are correct before uninstalling, since some might be detected incorrectly.
-        ///
-        ///{0}.
-        /// </summary>
-        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Details {
-            get {
-                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Details", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to uninstall following applications?.
-        /// </summary>
-        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Message {
-            get {
-                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Message", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uninstall applications.
-        /// </summary>
-        internal static string MessageBoxes_UninstallNukedEntriesQuestion_Title {
-            get {
-                return ResourceManager.GetString("MessageBoxes_UninstallNukedEntriesQuestion_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to BCUninstaller will automatically download the update and apply it after a restart. Please note that you might lose your settings in the process. 
         ///
         ///Changelog:

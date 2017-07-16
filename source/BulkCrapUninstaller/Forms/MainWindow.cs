@@ -839,7 +839,9 @@ namespace BulkCrapUninstaller.Forms
 
         private void RunQuietUninstall(object x, EventArgs y)
         {
-            var nonQuiet =
+            _uninstaller.RunUninstall(_listView.SelectedUninstallers, _listView.AllUninstallers, true);
+
+            /*var nonQuiet =
                 _listView.SelectedUninstallers.Where(o => !o.QuietUninstallPossible)
                     .Select(p => p.DisplayName)
                     .ToArray();
@@ -861,7 +863,7 @@ namespace BulkCrapUninstaller.Forms
                     default:
                         return;
                 }
-            }
+            }*/
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1234,19 +1236,12 @@ namespace BulkCrapUninstaller.Forms
             var apps = Uninstaller.GetApplicationsFromDirectories(_listView.AllUninstallers, results);
 
             if (apps.Count == 0)
-                return;
-
-            switch (MessageBoxes.UninstallNukedEntriesQuestion(apps))
             {
-                case CustomMessageBox.PressedButton.Left:
-                    _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
-                    break;
-                case CustomMessageBox.PressedButton.Middle:
-                    _uninstaller.RunUninstall(apps, _listView.AllUninstallers, false);
-                    break;
-                default:
-                    return;
+                MessageBoxes.UninstallFromDirectoryNothingFound();
+                return;
             }
+
+            _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
         }
         
         private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)

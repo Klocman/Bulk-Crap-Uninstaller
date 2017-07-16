@@ -40,44 +40,10 @@ namespace UninstallTools.Uninstaller
         /// </summary>
         /// <param name="targets">Uninstallers to run.</param>
         /// <param name="configuration">How the uninstallers should be ran.</param>
-        public static BulkUninstallTask RunBulkUninstall(IEnumerable<ApplicationUninstallerEntry> targets,
+        public static BulkUninstallTask CreateBulkUninstallTask(IList<BulkUninstallEntry> targets,
             BulkUninstallConfiguration configuration)
         {
-            var targetList = new List<BulkUninstallEntry>();
-
-            foreach (var target in targets)
-            {
-                var tempStatus = UninstallStatus.Waiting;
-                if (!target.IsValid)
-                    tempStatus = UninstallStatus.Invalid;
-                else if (!configuration.IgnoreProtection && target.IsProtected)
-                    tempStatus = UninstallStatus.Protected;
-
-                var silentPossible = configuration.PreferQuiet && target.QuietUninstallPossible;
-
-                targetList.Add(new BulkUninstallEntry(target, silentPossible, tempStatus));
-            }
-
-            var query = from item in targetList
-                        orderby item.IsSilent ascending,
-                            // Updates usually get uninstalled by their parent uninstallers
-                            item.UninstallerEntry.IsUpdate ascending,
-                            // SysCmps and Protected usually get uninstalled by their parent, user-visible uninstallers
-                            item.UninstallerEntry.SystemComponent ascending,
-                            item.UninstallerEntry.IsProtected ascending,
-                            // Calculate number of digits (Floor of Log10 + 1) and divide it by 4 to create buckets of sizes
-                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetRawSize(true)) + 1) / 4) descending,
-                            // Prioritize Msi uninstallers because they tend to take the longest
-                            item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
-                            // Final sorting to get things deterministic
-                            item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
-                        select item;
-
-            targetList = configuration.IntelligentSort
-                ? query.ToList()
-                : targetList.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
-
-            return new BulkUninstallTask(targetList, configuration);
+            return new BulkUninstallTask(targets, configuration);
         }
 
         /// <summary>

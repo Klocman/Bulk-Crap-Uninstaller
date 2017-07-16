@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
     <value>Creating a restore point...</value>
@@ -737,16 +737,5 @@ You can try disabling collision detection in the settings, but it is not recomme
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Failed to find any applications inside {0}</value>
-  </data>
-  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Title" xml:space="preserve">
-    <value>Uninstall applications</value>
-  </data>
-  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Message" xml:space="preserve">
-    <value>Are you sure you want to uninstall following applications?</value>
-  </data>
-  <data name="MessageBoxes_UninstallNukedEntriesQuestion_Details" xml:space="preserve">
-    <value>Warning: Make sure that all of the applications are correct before uninstalling, since some might be detected incorrectly.
-
-{0}</value>
   </data>
 </root>

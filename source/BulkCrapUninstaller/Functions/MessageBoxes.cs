@@ -29,14 +29,6 @@ namespace BulkCrapUninstaller.Functions
             No
         }
 
-        public static CustomMessageBox.PressedButton UninstallNukedEntriesQuestion(ICollection<ApplicationUninstallerEntry> apps)
-        {
-            return CustomMessageBox.ShowDialog(DefaultOwner,
-                            new CmbBasicSettings(Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Title, Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Message,
-                                string.Format(Localisable.MessageBoxes_UninstallNukedEntriesQuestion_Details, string.Join("\n", apps.Select(x => x.DisplayName).OrderBy(x => x).ToArray())), SystemIcons.Question,
-                                Buttons.ButtonUninstall, Buttons.ButtonUseLoud, Buttons.ButtonCancel));
-        }
-
         public static Form DefaultOwner { get; set; }
 
         public static void RatingsDisabled()

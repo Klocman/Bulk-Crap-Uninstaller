@@ -49,7 +49,7 @@ namespace UninstallTools.Uninstaller
         private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
         private Thread _worker;
 
-        internal BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
+        public BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
             UninstallStatus startingStatus)
         {
             CurrentStatus = startingStatus;
