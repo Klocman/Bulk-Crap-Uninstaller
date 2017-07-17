@@ -252,9 +252,10 @@ namespace BulkCrapUninstaller.Functions
             }
         }
 
-        private static IOrderedEnumerable<BulkUninstallEntry> SortIntelligently(List<BulkUninstallEntry> taskEntries)
+        public static IEnumerable<T> SortIntelligently<T>(IEnumerable<T> entries, Func<T,BulkUninstallEntry> entryGetter)
         {
-            var query = from item in taskEntries
+            var query = from x in entries
+                        let item = entryGetter(x)
                         orderby item.IsSilent ascending,
                             // Updates usually get uninstalled by their parent uninstallers
                             item.UninstallerEntry.IsUpdate ascending,
@@ -267,8 +268,13 @@ namespace BulkCrapUninstaller.Functions
                             item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
                             // Final sorting to get things deterministic
                             item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
-                        select item;
+                        select x;
             return query;
+        }
+
+        public static IEnumerable<BulkUninstallEntry> SortIntelligently(List<BulkUninstallEntry> taskEntries)
+        {
+            return SortIntelligently(taskEntries, entry => entry);
         }
 
         private List<BulkUninstallEntry> ConvertToTaskEntries(bool quiet, List<ApplicationUninstallerEntry> targets)
