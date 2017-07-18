@@ -13,6 +13,7 @@ using System.Threading;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
@@ -113,13 +114,27 @@ namespace UninstallTools.Uninstaller
                 if (Finished || IsRunning || CurrentStatus != UninstallStatus.Waiting)
                     return;
 
-                if ((UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists()) ||
-                    (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
-                     MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey))))
+                if (UninstallerEntry.IsRegistered && !UninstallerEntry.RegKeyStillExists())
                 {
                     CurrentStatus = UninstallStatus.Completed;
                     Finished = true;
                     return;
+                }
+
+                if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
+                {
+                    var uninstallString = IsSilent && UninstallerEntry.QuietUninstallPossible
+                        ? UninstallerEntry.QuietUninstallString
+                        : UninstallerEntry.UninstallString;
+
+                    // Always reenumerate products in case any were uninstalled
+                    if (ApplicationUninstallerFactory.PathPointsToMsiExec(uninstallString) && 
+                        MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey)))
+                    {
+                        CurrentStatus = UninstallStatus.Completed;
+                        Finished = true;
+                        return;
+                    }
                 }
 
                 CurrentStatus = UninstallStatus.Uninstalling;
