@@ -302,30 +302,7 @@ namespace UninstallTools.Uninstaller
                                 watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
                         }
 
-                        // Remove duplicate, dead, and blacklisted processes
-                        watchedProcesses = watchedProcesses.DistinctBy(x => x.Id).Where(p =>
-                        {
-                            try
-                            {
-                                if (p.HasExited)
-                                    return false;
-
-                                var pName = p.ProcessName;
-                                if (NamesOfIgnoredProcesses.Any(n =>
-                                    pName.Equals(n, StringComparison.InvariantCultureIgnoreCase)))
-                                    return false;
-                            }
-                            catch (Win32Exception)
-                            {
-                                return false;
-                            }
-                            catch (InvalidOperationException)
-                            {
-                                return false;
-                            }
-
-                            return !processSnapshot.Contains(p.Id);
-                        }).ToList();
+                        watchedProcesses = CleanupDeadProcesses(watchedProcesses, processSnapshot).ToList();
 
                         // Check if we are done, or if there are some proceses left that we missed
                         if (watchedProcesses.Count == 0)
@@ -333,24 +310,7 @@ namespace UninstallTools.Uninstaller
                             if (string.IsNullOrEmpty(UninstallerEntry.InstallLocation))
                                 break;
 
-                            var candidates = Process.GetProcesses().Where(x => !processSnapshot.Contains(x.Id));
-                            foreach (var process in candidates)
-                            {
-                                try
-                                {
-                                    if (process.MainModule.FileName.Contains(UninstallerEntry.InstallLocation,
-                                        StringComparison.InvariantCultureIgnoreCase)
-                                        ||
-                                        process.GetCommandLine()
-                                            .Contains(UninstallerEntry.InstallLocation,
-                                                StringComparison.InvariantCultureIgnoreCase))
-                                        watchedProcesses.Add(process);
-                                }
-                                catch
-                                {
-                                    // Ignore permission and access errors
-                                }
-                            }
+                            FindAndAddProcessesToWatch(watchedProcesses, processSnapshot);
 
                             if (watchedProcesses.Count == 0)
                                 break;
@@ -492,6 +452,58 @@ namespace UninstallTools.Uninstaller
                     Finished = true;
                 }
             }
+        }
+
+        private void FindAndAddProcessesToWatch(ICollection<Process> watchedProcesses, int[] runningProcessIds)
+        {
+            var candidates = Process.GetProcesses().Where(x => !runningProcessIds.Contains(x.Id));
+            foreach (var process in candidates)
+            {
+                try
+                {
+                    if (process.MainModule.FileName.Contains(
+                            UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase) ||
+                        process.GetCommandLine().Contains(
+                            UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        watchedProcesses.Add(process);
+                    }
+                }
+                catch
+                {
+                    // Ignore permission and access errors
+                }
+            }
+        }
+
+        /// <summary>
+        /// Remove duplicate, dead, and blacklisted processes
+        /// </summary>
+        private static IEnumerable<Process> CleanupDeadProcesses(IEnumerable<Process> watchedProcesses, int[] runningProcessIds)
+        {
+            return watchedProcesses.DistinctBy(x => x.Id).Where(p =>
+            {
+                try
+                {
+                    if (p.HasExited)
+                        return false;
+
+                    var pName = p.ProcessName;
+                    if (NamesOfIgnoredProcesses.Any(n =>
+                        pName.Equals(n, StringComparison.InvariantCultureIgnoreCase)))
+                        return false;
+                }
+                catch (Win32Exception)
+                {
+                    return false;
+                }
+                catch (InvalidOperationException)
+                {
+                    return false;
+                }
+
+                return !runningProcessIds.Contains(p.Id);
+            });
         }
 
         private sealed class PerfCounterEntry : IDisposable
