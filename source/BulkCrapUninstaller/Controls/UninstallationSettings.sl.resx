@@ -130,10 +130,10 @@
     <value>Onemogoči preprečevanje sporov, ko se  izvajajo ročna odstranjevanja.</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Samo en glasen odstranjevalec na enkrat</value>
+    <value>Samo eden glasen odstranjevalec na enkrat</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Samodejno zaženi hkratne odstranjevalce (če je mogoče)</value>
+    <value>Samodejno zaženi sočasne odstranjevalce (če je mogoče)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Največje število delujočih odstranjevalcev:</value>

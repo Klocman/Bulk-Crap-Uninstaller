@@ -443,4 +443,61 @@
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Vse lastnosti</value>
   </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Pregledovanje nameščenih izdelkov MSI ...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Najdeno {0} GUIDov aplikacije</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Pregled registra za iskanje odstranjevalcev...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Zbiranjev ključev registra</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Obdelava {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Ustvarjanje manjkajočih informacij o odstranjevalcu...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Pregled pogonov za iskanje aplikacij...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Zbiranje imenikov</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Iskanje shranjenih aplikacij ...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Iskanje predlog za aplikacijo</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Iskanje Steam Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Iskanje Windows Store Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Iskanje funkcij sistema Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Združevanje odkritih aplikacij ...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Združevanje aplikacij iz trgovin</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Združevanje aplikacij iz pogonov</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Ustvarjanje manjkajočih podatkov...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Posodobitev Windows</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Iskanje posodobitev Windows</value>
+  </data>
 </root>

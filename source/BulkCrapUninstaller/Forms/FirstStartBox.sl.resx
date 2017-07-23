@@ -249,7 +249,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Odstranjevalci so lahko podpisani s potrdili, ki so jih izdali pomembni organi. Če potrdila opravijo potrditev, programski paket ni bil spreminjan in je pristen.</value>
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
-    <value>BCUninstaller se lahko poskusi povezati z internetom iz naslednjih razlogov:</value>
+    <value>BCUninstaller se lahko poskuša povezati z internetom iz naslednjih razlogov:</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
     <value>Medtem ko se BCUninstaller lahko uporablja kot osnovni odstranjevalec, je  večina njegovih funkcij namenjenih naprednejšim uporabnikom. Nadaljujte previdno!</value>

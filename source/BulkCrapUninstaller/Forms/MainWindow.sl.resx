@@ -486,6 +486,18 @@
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Odpri "Obnovitev sistema"</value>
   </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Odstranitev po oknu, imeniku ali datoteki...</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zaženi...</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ogled posodobitev</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Odstranitev po oknu, imeniku ali datoteki ...</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>
   </metadata>

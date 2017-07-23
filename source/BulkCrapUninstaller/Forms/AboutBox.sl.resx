@@ -209,6 +209,9 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Španski - Freddynic159</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Nizozemski - Jaap Kramer</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>

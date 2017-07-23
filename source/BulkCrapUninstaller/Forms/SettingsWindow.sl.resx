@@ -210,6 +210,42 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
   </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Register (priporočeno, da pustite omogočeno)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Pogoni (zaznava neregistrirane aplikacije)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Zasnovano na pred določnih pravilih</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Poišči aplikacije v...</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Aplikacije za pregledovanje</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Odkrivanje</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Windows Store Apps</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Značilnosti sistema Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Odkrivanje funkcij Windows uporablja WMI in je lahko v nekaterih sistemih počasno ali celo neuspešno (ponavadi kaže na okvaro sistema).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Posodobitev Windows</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Odkrivanje posodobitev Windows uporablja WUA, kar je počasno. Za dokončanje lahko vzame nekaj minut časa,</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Poskusi samodejno odkriti namestitvene mape po meri</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

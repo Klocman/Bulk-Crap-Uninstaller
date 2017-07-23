@@ -117,52 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>Hvala, ker uporabljate BCUninstaller!</value>
-  </data>
-  <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Če ste našli to brezplačno, odprtokodno orodje kot uporabno za vas, razmislite kakšno minutko o majhni pomoči! Povejte svojim prijateljem o tem, delite svoje mnenje na družbenih omrežjih, pošljite jim vaše povratne informacije - vse, kar je potrebno, malo, šteje!</value>
-  </data>
-  <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Kakršne koli težave ali manjkajoče funkcije?</value>
-  </data>
-  <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>Če ste imeli kakršne koli težave z BCU ali pa, če bi radi predlagali novo funkcijo, si oglejte te povezave:</value>
-  </data>
-  <data name="p1HelpHeading.Text" xml:space="preserve">
-    <value>Ali želite pomagati?</value>
-  </data>
-  <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo za pospešitev posodobitev ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
-  </data>
-  <data name="buttonSendFeedback2.Text" xml:space="preserve">
-    <value>Pošlji povratno informacijo</value>
-  </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Oceni na SourceForge</value>
-  </data>
-  <data name="buttonTwitter.Text" xml:space="preserve">
-    <value>Deli na Twitterju</value>
-  </data>
-  <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Pošlji na GitHub (Potreben je račun)</value>
-  </data>
-  <data name="buttonSendFeedback.Text" xml:space="preserve">
-    <value>Pošlji povratne informacije</value>
-  </data>
-  <data name="buttonTranslate.Text" xml:space="preserve">
-    <value>Prevedite BCU</value>
-  </data>
-  <data name="buttonIssues.Text" xml:space="preserve">
-    <value>Zadeve na GitHub</value>
-  </data>
-  <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>Tega okna ne prikazuj nikoli več</value>
-  </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Zapri</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Poiščite in odstranite aplikacijo na podlagi ene od njegovih oken, bližnjic ali mesta namestitve ali datotek .exe.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Pošlji povratne informacije</value>
+    <value>Uniči aplikacijo</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Izberi z oknom</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Izberi z namestitveno mapo ali programskimi datotekami</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Opomba: Prepričajte se, da so vse izbrane  datoteke znotraj namestitvene mape aplikacije.
+
+Izberete lahko mapo, ki vsebuje več aplikacij, da jih vse odstranite.</value>
   </data>
 </root>

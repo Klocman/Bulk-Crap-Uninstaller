@@ -406,6 +406,9 @@
     <EmbeddedResource Include="Controls\FileTargeter.resx">
       <DependentUpon>FileTargeter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileTargeter.sl.resx">
+      <DependentUpon>FileTargeter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListLegend.cs.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
@@ -784,6 +787,9 @@
     <EmbeddedResource Include="Forms\NukeWindow.resx">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NukeWindow.sl.resx">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PropertiesWindow.cs.resx">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -905,6 +911,9 @@
       <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UninstallConfirmationWindow.resx">
+      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UninstallConfirmationWindow.sl.resx">
       <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UninstallProgressWindow.cs.resx">

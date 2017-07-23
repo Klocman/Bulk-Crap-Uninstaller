@@ -176,7 +176,7 @@ Datoteke in imeniki bodo premaknjeni v Koš. Od tam jih lahko obnovite.</value>
     <value>Za ta postopek morate izbrati le eden vnos</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>S seznama izberite natančno enega odstranjevalca. Če uporabljate potrditveno polje, se prepričajte, da ste ga označili.</value>
+    <value>S seznama izberite natančno enega odstranjevalca. Če uporabljate potrditveno polje, prepričajte se, da ste ga označili.</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>Poišči posodobitve</value>
@@ -714,5 +714,26 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="Error_SaveSettingsFailed" xml:space="preserve">
     <value>Ni uspelo shranjevanje nastavitev</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Dokončevanje...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Nalaganje ikon</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Iskanje zagonskih vnosov</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Poglej za aplikacijo</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Ni izbranih veljavnih datotek ali map. Prepričajte se, da imate dostop do njih in, da te niso označene kot sistemske datoteke.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Poglej za aplikacije</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Ni bilo mogoče najti nobenih aplikacij znotraj {0}</value>
   </data>
 </root>

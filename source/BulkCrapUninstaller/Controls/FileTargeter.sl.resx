@@ -117,52 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>Hvala, ker uporabljate BCUninstaller!</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Mapa za nameščanje...</value>
   </data>
-  <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Če ste našli to brezplačno, odprtokodno orodje kot uporabno za vas, razmislite kakšno minutko o majhni pomoči! Povejte svojim prijateljem o tem, delite svoje mnenje na družbenih omrežjih, pošljite jim vaše povratne informacije - vse, kar je potrebno, malo, šteje!</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Vse datoteke|*.*</value>
   </data>
-  <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Kakršne koli težave ali manjkajoče funkcije?</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Povezava ali datoteka aplikacije...</value>
   </data>
-  <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>Če ste imeli kakršne koli težave z BCU ali pa, če bi radi predlagali novo funkcijo, si oglejte te povezave:</value>
+  <data name="folderBrowserDialog1.Description" xml:space="preserve">
+    <value>Izberite imenik, v katerem je nameščena aplikacija.</value>
   </data>
-  <data name="p1HelpHeading.Text" xml:space="preserve">
-    <value>Ali želite pomagati?</value>
-  </data>
-  <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo za pospešitev posodobitev ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
-  </data>
-  <data name="buttonSendFeedback2.Text" xml:space="preserve">
-    <value>Pošlji povratno informacijo</value>
-  </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Oceni na SourceForge</value>
-  </data>
-  <data name="buttonTwitter.Text" xml:space="preserve">
-    <value>Deli na Twitterju</value>
-  </data>
-  <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Pošlji na GitHub (Potreben je račun)</value>
-  </data>
-  <data name="buttonSendFeedback.Text" xml:space="preserve">
-    <value>Pošlji povratne informacije</value>
-  </data>
-  <data name="buttonTranslate.Text" xml:space="preserve">
-    <value>Prevedite BCU</value>
-  </data>
-  <data name="buttonIssues.Text" xml:space="preserve">
-    <value>Zadeve na GitHub</value>
-  </data>
-  <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>Tega okna ne prikazuj nikoli več</value>
-  </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Zapri</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Pošlji povratne informacije</value>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Izberite vse datoteke, ki pripadajo aplikaciji</value>
   </data>
 </root>
