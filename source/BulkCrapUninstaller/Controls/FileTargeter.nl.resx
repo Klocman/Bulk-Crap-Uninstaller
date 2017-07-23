@@ -117,31 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Basis filtering</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Installatie map...</value>
   </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Openen...</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Alle bestanden|*.*</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Opslaan als...</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Link of programma bestand...</value>
   </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Als standaard opslaan</value>
+  <data name="folderBrowserDialog1.Description" xml:space="preserve">
+    <value>Selecteer de map waarin het programma is geinstalleerd.</value>
   </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Voeg geselecteerde programma's toe als filters</value>
-  </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
-  </data>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst opslaan...</value>
-  </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
-  </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst openen</value>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Selecteer de bestanden die behoren tot het programma</value>
   </data>
 </root>

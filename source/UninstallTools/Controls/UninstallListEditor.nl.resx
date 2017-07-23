@@ -166,9 +166,9 @@
     <value>Conditie editor</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Uninstall-lijsten (*.xml)|*.xml|Alle bestanden|*.*</value>
+    <value>Deïnstallatie lijsten (*.xml)|*.xml|Alle bestanden|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Uninstall lijst laden...</value>
+    <value>Deïnstallatie lijst laden...</value>
   </data>
 </root>

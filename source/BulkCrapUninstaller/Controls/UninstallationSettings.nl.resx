@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Intelligente uninstalller sortering</value>
+    <value>Intelligente deïnstaller sortering</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Beveiliging deactiveren</value>
@@ -127,16 +127,16 @@
     <value>Deïnstallatie simuleren</value>
   </data>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Schakel conflict preventie uit als uninstallers handmatig worden uitgevoerd</value>
+    <value>Schakel conflict preventie uit als deïnstallers handmatig worden uitgevoerd</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Slechts één uninstaller per keer</value>
+    <value>Slechts één deïnstaller per keer</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Automatisch gelijktijdig uitvoeren van uninstallers (indien mogelijk)</value>
+    <value>Automatisch gelijktijdig uitvoeren van deïnstallers (indien mogelijk)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Max. aantal lopende uninstallers</value>
+    <value>Max. aantal lopende deïnstallers</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Gelijktijdige deïnstallatie</value>
@@ -148,16 +148,16 @@
     <value>Algemene instellingen</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Automatisch beëndigen van vast gelopen stille uninstallers</value>
+    <value>Automatisch beëndigen van vast gelopen stille deïnstallers</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Probeer falende stille installers eenmaal</value>
+    <value>Herprobeer falende stille deïnstallers eenmaal</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Genereer ontbrekende stillee installers, indien mogelijk</value>
+    <value>Genereer ontbrekende stille deïnstallers, indien mogelijk</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Automatisch beëindigen, als een vast gelopen uninstaller wacht op gebruikers invoer</value>
+    <value>Automatisch beëindigen, als een vast gelopen deïnstaller wacht op gebruikers invoer</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Onzichtbare installatie</value>

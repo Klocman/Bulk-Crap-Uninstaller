@@ -124,7 +124,7 @@
     <value>Niet geregistreerd programma</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Uninstaller ontbreekt</value>
+    <value>Deïnstaller ontbreekt</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Ongeverifieërd certificaat</value>

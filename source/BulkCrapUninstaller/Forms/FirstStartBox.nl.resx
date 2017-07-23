@@ -190,13 +190,13 @@ Controleer daarvoor de betreffende XML-bestanden in de BCUinstaller map.</value>
     <value>Inschakelen gebruikers waarderingen voor programma's.</value>
   </data>
   <data name="pCorTitle.Text" xml:space="preserve">
-    <value>Beschadigde uninstaller</value>
+    <value>Beschadigde deïnstaller</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
-    <value>Van tijd tot tijd kan het voorkomen, dat een programma weigert te deïnstalleren of eenvoudig weg uit de meeste  uninstall-programma's verdwijnt.</value>
+    <value>Van tijd tot tijd kan het voorkomen, dat een programma weigert te deïnstalleren of eenvoudig weg uit de meeste  deïnstaller-programma's verdwijnt.</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
-    <value>Beschadigde of ontbrekende uninstaller(s)</value>
+    <value>Beschadigde of ontbrekende deïnstaller(s)</value>
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>In sommige gevallen kunnen uninstallers beschadigd zijn, zodat men niet kan deïnstalleren.
@@ -212,7 +212,7 @@ BCUninstaller kan deze registraties met de optie "Handmatig deïnstalleren" verw
     <value>Niet geregistreerde toepassing</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>Soms kunnen volledige programma's na deïnstallatie op de harde schijf achterblijven. Dit kan ook gebeuren, als de uninstaller zelf werd verwijderd.</value>
+    <value>Soms kunnen volledige programma's na deïnstallatie op de harde schijf achterblijven. Dit kan ook gebeuren, als de deïnstaller zelf werd verwijderd.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Niet geregistreerde toepassingen in de lijst tonen</value>
@@ -225,43 +225,43 @@ Ontbreekt de originele uninstaller, dan kunt u de optie "Handmatig deïnstaleren
     <value>Ervaren gebruikers</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>Hoewel BCUninstaller als standaard-uninstaller kan worden gebruikt, zijn de meeste functies bedoeld voor ervaren gebruikers. Handel met voorzichtigheid!</value>
+    <value>Hoewel BCUninstaller als standaard-deïnstaller kan worden gebruikt, zijn de meeste functies bedoeld voor ervaren gebruikers. Handel met voorzichtigheid!</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>Systeem componenten</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Programma's die als 'systeem-component(en)' zijn aangeduid, worden door de meeste uninstallers verborgen. Deze aanduiding betekent NIET, dat het programma tot het besturingssysteem behoort. </value>
+    <value>Programma's die als 'systeem-component(en)' zijn aangeduid, worden door de meeste deïnstallers verborgen. Deze aanduiding betekent NIET, dat het programma tot het besturingssysteem behoort. </value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Als 'systeem componenten' aangeduide uninstallers tonen</value>
+    <value>Als 'systeem componenten' aangeduide deïnstallers tonen</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
-    <value>Beveiligde uninstallers</value>
+    <value>Beveiligde deïnstallers</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Beveiligde onderdelen worden als "NoRemove" aangeduid hetgeen betekent, dat de uitgever niet wil dat u deze verwijderd. Deze aanduiding wordt vaak bij softwarepakketten gebruikt, om te voorkomen dat u daarvan onderdelen deïnstalleert.</value>
+    <value>Beveiligde onderdelen worden met het "NietVerwijderen" label aangeduid hetgeen betekent, dat de uitgever niet wil dat u deze verwijderd. Deze aanduiding wordt vaak bij softwarepakketten gebruikt, om te voorkomen dat u daarvan onderdelen deïnstalleert.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>"Beveiligde" uninstallers tonen</value>
+    <value>"Beveiligde" deïnstallers tonen</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>De beveiliging van "beveiligde" uninstaller verwijderen</value>
+    <value>De beveiliging van "beveiligde" deïnstallers uitschakelen</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
     <value>Hier door kunt u beveiligde onderdelen deïnstalleren</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
-    <value>Uninstaller lijst</value>
+    <value>Deïnstaller lijst</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Alle op uw systeem gevonden uninstallers bevinden zich in de hoofdlijst. Enkele mogelijkheden, om deze gegevens te doorzoeken:</value>
+    <value>Alle op uw systeem gevonden deïnstallers bevinden zich in de hoofdlijst. Enkele mogelijkheden, om deze gegevens te doorzoeken:</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Filters gebruiken en naar sleutelwoorden zoeken (in alle kolommen)</value>
   </data>
   <data name="p2viewDetail2.Text" xml:space="preserve">
-    <value>● Sorteer uninstallers volgens willekeurige kolommen.
+    <value>● Sorteer deïnstallers volgens willekeurige kolommen.
 U kunt alle kolommen opnieuw ordenen.</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
@@ -274,16 +274,16 @@ U kunt alle kolommen opnieuw ordenen.</value>
     <value>Keuze met checkboxen</value>
   </data>
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
-    <value>Gecertificeerde uninstallers</value>
+    <value>Gecertificeerde deïnstallers</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
-    <value>Uninstallers kunnen gesigneerd zijn met certificaten van erkende autoriteiten. Werd het certificsaat succesvol gevalideerd, dan is het softwarepakket onveranderd en deugdelijk.</value>
+    <value>deïnstallers kunnen ondertekend zijn met certificaten van erkende autoriteiten. Werd het certificsaat succesvol gevalideerd, dan is het softwarepakket onveranderd en deugdelijk.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Geverifieërde uninstallers accentueren</value>
+    <value>Geverifieërde deïnstallers accentueren</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
-    <value>Geverifieëerde uninstallers worden groen, niet geverifieëerde worden blauw aangeduid.
+    <value>Geverifieëerde deïnstallers worden groen, niet geverifiëerde worden blauw aangeduid.
 Let op: de verificatie kan lang duren.</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">

@@ -172,7 +172,7 @@
     <value>'Stille' deïnstallatie opdracht</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Uninstallers opnieuw laden</value>
+    <value>Deïnstallers opnieuw laden</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Selecteer alles</value>
@@ -277,7 +277,7 @@
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>AlternativeTo</value>
+    <value>Alternatief voor</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>Online &amp;zoeken</value>
@@ -295,7 +295,7 @@
     <value>Exporteer geselecteerde uninstaller eigenschappen</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uninstallers o&amp;pnieuw laden</value>
+    <value>Deïnstallers o&amp;pnieuw laden</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>Deïnstallatie lijst(en) &amp;openen</value>
@@ -379,7 +379,7 @@
     <value>&amp;Bron locatie</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Openen in &amp;verkenner</value>
+    <value>Openen in &amp;verkenner...</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>&amp;Website oproepen</value>
@@ -388,7 +388,7 @@
     <value>Google</value>
   </data>
   <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alternatief op...</value>
+    <value>Alternatief voor...</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
     <value>Online &amp;zoeken</value>
@@ -491,5 +491,11 @@
   </data>
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Help openen</value>
+  </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Deïnstalleer mbv. venster, map of bestand...</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Deïnstalleer mbv. venster, map of bestand...</value>
   </data>
 </root>

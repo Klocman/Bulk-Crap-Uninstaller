@@ -124,7 +124,7 @@
     <value>Keuze met checkboxen</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Kleuren gebruiken om gecertificeerde uninstaller te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in blauw gekleurd.
+    <value>Kleuren gebruiken om gecertificeerde deïnstaller te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in blauw gekleurd.
 Let op: De verificatie kan enige tijd duren.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
@@ -154,7 +154,8 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Toon onderdelen in groepen</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Enkele uninstallers kunnen als 'systeem componenten zijn aangeduid, om deze te verbergen in de Toevoegen/Verwijderen software lijst.</value>
+    <value>Enkele deïnstallers kunnen als 'systeem componenten zijn aangeduid, om deze te verbergen in de Toevoegen/Verwijderen software lijst.
+Stuurprogramma's zijn vaak gemarkeerd met dit label.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Weergave instellingen</value>
@@ -163,7 +164,7 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Microsoft componenten verbergen</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Ongeldige uninstallers accentueren</value>
+    <value>Ongeldige deïnstallers accentueren</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
     <value>Groepering van onderdelen overeenkomstig de kolom volgens welke de lijst is gesorteerd. Slim filteren is op de meeste kolommen van toepassing</value>
@@ -172,13 +173,13 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Filteren</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Beveiligde onderdelen worden met "NoRemove" aangeduid hetgeen betekent, dat de uitgever niet wil, dat zij worden verwijderd.</value>
+    <value>Beveiligde onderdelen worden met het "NietVerwijderen" label aangeduid hetgeen betekent, dat de uitgever niet wil, dat deze worden verwijderd.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Gecertificeerde uninstallers accentueren</value>
+    <value>Gecertificeerde deïnstallers accentueren</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Weergave van programma's, die geen enkele gecertificeerde uninstaller hebben. Deze blijven in de meeste uninstall programma's verborgen, maar nemen evenwel schijfruimte in. Niet geregistreerde onderdelen worden rood weergegeven.
+    <value>Weergave van programma's, die geen enkele gecertificeerde deïnstaller hebben. Deze blijven in de meeste deïnstaller programma's verborgen, maar nemen evenwel schijfruimte in. Niet geregistreerde onderdelen worden rood weergegeven.
 
 Waarschuwing: Controleer alvorens deze programma's te verwijderen of deze niet nodig zijn!</value>
   </data>

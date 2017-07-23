@@ -211,13 +211,13 @@
     <value>Overgeslagen door gebruiker</value>
   </data>
   <data name="UninstallerLocation" xml:space="preserve">
-    <value>Uninstaller pad</value>
+    <value>Deïnstallerpad</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
     <value>Er is geen geldige methode om deze registratie te deïnstalleren</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
-    <value>Uninstaller retourneert een foutcode:</value>
+    <value>Deïnstaller retourneert een foutcode:</value>
   </data>
   <data name="Confidence_Bad" xml:space="preserve">
     <value>Slecht</value>
@@ -235,10 +235,11 @@
     <value>Zeer goed</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
-    <value>Bovenliggende uninstaller</value>
+    <value>Bovenliggende deïnstaller</value>
+    <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
-    <value>Bedrijfsnamen kwamen niet overeen</value>
+    <value>Bedrijfsnamen komen niet overeen</value>
   </data>
   <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
     <value>Bedrijfsnamen komen overeen</value>
@@ -247,10 +248,10 @@
     <value>De map wordt door andere geïnstalleerde toepassingen gebruikt.</value>
   </data>
   <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
-    <value>Het onderdeel wordt expliciet genoemd in de uninstaller.</value>
+    <value>Het onderdeel wordt expliciet genoemd in de deïnstaller.</value>
   </data>
   <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
-    <value>Register registratie van de uninstaller</value>
+    <value>Register registratie van de deïnstaller</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
     <value>Het onderdeel schijnt aan een totale uitgevers categorie toe te behoren</value>
@@ -344,7 +345,7 @@
     <value>Opstart opdrachten</value>
   </data>
   <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
-    <value>Deze worden bij het 'booten' niet meer geopend. Stel vast, dat de gekozen onderdelen niet langer vereist zijn, voordat deze zijn verwijderd.</value>
+    <value>Deze worden bij het 'opstarten' niet meer geopend. Overtuig u ervan, dat de gekozen onderdelen niet langer vereist zijn, voordat deze zijn verwijderd.</value>
   </data>
   <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
     <value>Gekozen programma's verwijderen uit opstarten?</value>
@@ -447,7 +448,7 @@
     <value>Gevonden {0} programma GUID's</value>
   </data>
   <data name="Progress_Registry" xml:space="preserve">
-    <value>Register scannen op uninstallers...</value>
+    <value>Register scannen op deïnstallers...</value>
   </data>
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Windows Update</value>
@@ -465,7 +466,7 @@
     <value>Verwerking {0}</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
-    <value>Genereren ontbrekende uninstaller informatie</value>
+    <value>Genereren ontbrekende deïnstaller informatie</value>
   </data>
   <data name="Progress_DriveScan" xml:space="preserve">
     <value>Schijven scannen op programma's</value>
@@ -486,7 +487,7 @@
     <value>Zoeken naar Windows Store Apps</value>
   </data>
   <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
-    <value>Zoeken naar Windows features</value>
+    <value>Zoeken naar Windows onderdelen</value>
   </data>
   <data name="Progress_Merging" xml:space="preserve">
     <value>Samenvoegen ontdekte programma's...</value>

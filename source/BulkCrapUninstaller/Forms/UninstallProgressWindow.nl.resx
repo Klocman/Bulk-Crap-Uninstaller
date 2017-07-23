@@ -136,9 +136,9 @@
     <value>Id</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Geselecteerde uninstallers worden achtereen volgens uitgevoerd.
-ALs het proces onverhoopt vastloopt, klikt u op de knop "Overslaan", om te voorkomen dat u bij het afsluiten van de uitvoering moet wachten.
-Dit kan gebeuren als de uninstaller 'crasht'of een nieuw proces start en deze niet afsluit.</value>
+    <value>Geselecteerde deïnstallers worden achtereen volgens uitgevoerd.
+Als het proces onverhoopt vastloopt, klikt u op de knop "Overslaan", om te voorkomen dat u bij het afsluiten van de uitvoering moet wachten.
+Dit kan gebeuren als de deïnstaller 'crasht'of een nieuw proces start en deze niet afsluit.</value>
   </data>
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
     <value>Overslaan</value>
@@ -147,7 +147,7 @@ Dit kan gebeuren als de uninstaller 'crasht'of een nieuw proces start en deze ni
     <value>Afbreken</value>
   </data>
   <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>Open installatie locatie</value>
+    <value>Openen installatie locatie</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Eigenschappen</value>
@@ -162,12 +162,12 @@ Dit kan gebeuren als de uninstaller 'crasht'of een nieuw proces start en deze ni
     <value>De inhoud van deze lijst wordt van boven naar beneden gedeïnstalleerd.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Uninstaller lijst</value>
+    <value>Deïnstaller lijst</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Deïnstallatie voortgang</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Uninstaller uitvoeren</value>
+    <value>Deïnstaller uitvoeren</value>
   </data>
 </root>

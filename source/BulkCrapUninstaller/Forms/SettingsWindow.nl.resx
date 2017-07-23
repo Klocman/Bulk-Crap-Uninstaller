@@ -142,10 +142,10 @@
     <value>Bericht vensters</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Altijd rommel welke u niet vertrouwt weergeven</value>
+    <value>Altijd rommel die u niet vertrouwt weergeven</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Vragen, of normale uninstallers uit de lijst met stille installlers moet worden verwijderd</value>
+    <value>Vragen, of normale deïnstallers uit de lijst met stille deïnstallers moet worden verwijderd</value>
   </data>
   <data name="checkBoxBackup.Text" xml:space="preserve">
     <value>Vragen om een backup van het register te maken, voordat restanten worden verwijderd</value>
@@ -220,7 +220,9 @@
     <value>Opdrachtregel nadat de deïnstallatie is voltooid</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>U kunt opdrachten opgeven die voor en/of na de deïnstallatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.</value>
+    <value>U kunt opdrachten opgeven die voor en/of na de deïnstallatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.
+
+BCU wacht tot de momenteel uitgevoerde opdracht is voltooïd, voordat de volgende wordt uitgevoerd.</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
     <value>U kunt aangepaste mappen opgeven, waarin u uw programma's heeft geïnstalleerd (bijv. D:\Programmas). Deze mappen worden door BCU gebruikt om te zoeken naar deïnstallatie van restanten, ongeregistreerde programma's en andere zaken.
@@ -229,5 +231,20 @@ Ofschoon niet noodzakelijk, laat een lijst met dergelijke mappen BCU beter funct
 De standaard Windows mappen worden altijd gescand, deze hoeven niet opgenomen te worden in genoemde lijst.
 
 Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaande mappen zullen worden genegeerd.</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Register (aanbevolen om ingeschakeld te laten)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Schijven (detecteert niet geregistreerde apps)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Gebasseerd op vooraf gedefinieerde regels</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Zoeken naar programma's in...</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Proberen aangepaste installatie mappen te detecteren</value>
   </data>
 </root>

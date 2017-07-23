@@ -133,7 +133,7 @@
     <value>Overzicht</value>
   </data>
   <data name="tabPageFileInfo.Text" xml:space="preserve">
-    <value>Uninstaller informatie</value>
+    <value>Deïnstaller informatie</value>
   </data>
   <data name="tabPageRegistry.Text" xml:space="preserve">
     <value>Register</value>

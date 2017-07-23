@@ -117,31 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Basis filtering</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Deïnstaller naam</value>
   </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Openen...</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Deïnstalleer</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Opslaan als...</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Stil</value>
   </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Als standaard opslaan</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Installatie locatie</value>
   </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Voeg geselecteerde programma's toe als filters</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Intelligent sorteren</value>
   </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>&amp;Deïnstalleren</value>
   </data>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst opslaan...</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>&amp;Annuleren</value>
   </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bevestig de deïnstallatie taak</value>
   </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst openen</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Dit is een lijst met programma's die zullen worden gedeïnstalleerd, volgordelijk van boven naar beneden. Wanneer u het "Deïnstalleer" veld deselecteerd, wordt het programma niet gedeïnstalleerd. Als stille deïnstallatie niet beschikbaar is voor een onderdeel, kan dit niet worden aangevinkt.</value>
+  </data>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>De initiële volgorde hangt af van uw deïnstallatie instellingen, maar dit kan worden gewijzigd door de onderdelen te verslepen. Opm: BCU kan de volgorde wijzigen als gelijktijdige deïnstallatie is ingeschakeld.</value>
   </data>
 </root>

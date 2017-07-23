@@ -146,10 +146,10 @@
     <value>Vertrouwen</value>
   </data>
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Uninstaller naam</value>
+    <value>Deïnstaller naam</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
-    <value>De volgende onderdelen zijn waarschijnlijk door uw uninstaller achter gebleven. Sommige uninstallers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
+    <value>De volgende onderdelen zijn waarschijnlijk door uw deïnstaller achter gebleven. Sommige deïnstallers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Vertrouwens waardering</value>

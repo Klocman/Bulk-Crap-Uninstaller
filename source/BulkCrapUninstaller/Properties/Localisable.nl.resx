@@ -163,21 +163,21 @@ Fout details:
 </value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
-    <value>Wilt u een backup v/h register maken, voordat u verder gaat?</value>
+    <value>Wilt u een backup van het register maken, voordat u verder gaat?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
-    <value>U kunt alle wijzingingen terug zetten, als u daar later op dubbel klikt.
+    <value>U kunt alle wijzigingen terug zetten, als u daar later op dubbel klikt.
 
 Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze kunt herstellen.</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
-    <value>Bewerking is mislukt</value>
+    <value>De bewerking is mislukt</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
     <value>U moet één registratie voor deze bewerking selecteren</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>Selecteer exact één uninstaller uit de lijst. Maakt u gebruikt van checkboxen, controleer deze dan voor de uitvoering!</value>
+    <value>Selecteer exact één deïnstaller uit de lijst. Maakt u gebruikt van checkboxen, controleer deze dan voor de uitvoering!</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>Zoeken naar updates</value>
@@ -201,7 +201,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>BCUninstaller deïnstalleert {0} programma('s)</value>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
-    <value>Uninstaller hernoemen</value>
+    <value>Deïnstaller hernoemen</value>
   </data>
   <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
     <value>De opgegeven naam is leeg of bevat ongeldige tekens</value>
@@ -261,10 +261,12 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Voltooid</value>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
-    <value>{0} Uninstaller geselecteerd</value>
+    <value>{0} Deïnstaller(s) geselecteerd</value>
+    <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
-    <value>{0} Uninstallers in totaal, {1}</value>
+    <value>{0} Deïnstaller(s) in totaal, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>De volgende opdracht kon niet worden uitgevoerd:
@@ -289,7 +291,8 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Certificaat ontbreekt</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Verwerking van de uninstallers {0} / {1}</value>
+    <value>Verwerking van de deïnstallers {0} / {1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>Wilt u het wachten op de nu lopende deïnstallatie overslaan?</value>
@@ -314,10 +317,10 @@ Negatief:
 The lists are separated by a single newline.</comment>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
-    <value>Positive:</value>
+    <value>Dit programma heeft geen geldige register ingang</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
-    <value>Dit programma heeft geen geldige uninstaller</value>
+    <value>Dit programma heeft geen geldige deïnstaller</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Verversen opstart informatie...</value>
@@ -345,7 +348,7 @@ The lists are separated by a single newline.</comment>
     <value>Forceer deïnstallatie</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
-    <value>Het uitvoeren van enkele uninstallers is mislukt</value>
+    <value>Het uitvoeren van enkele deïnstallers is mislukt</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
     <value>.NET Framework v4.0 niet gevonden</value>
@@ -357,13 +360,13 @@ The lists are separated by a single newline.</comment>
     <value>Het v4.0 Framework is optioneel, maar wordt aanbevolen. De functies die zijn gebaseerd op dit Framework, zullen worden uitgeschakeld tot dat u dit installeert.</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
-    <value>Enkele uninstallers mislukken</value>
+    <value>Enkele deïnstallers mislukten</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Wilt u proberen om lopende stille uninstallers die mislukten zichtbaar te maken?</value>
+    <value>Wilt u proberen om lopende stille deïnstallers die mislukten zichtbaar te maken?</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
-    <value>De volgende uninstallers worden zichtbaar herstart:</value>
+    <value>De volgende deïnstallers worden zichtbaar herstart:</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
     <value>De opgegeven map scannen...</value>
@@ -453,7 +456,7 @@ The lists are separated by a single newline.</comment>
     <value>Gemiddelde waardering: {0}; Mijn waardering: {1}</value>
   </data>
   <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
-    <value>Controleer dat de netwerkkabel is aangesloten. Gebruikt u Wi-Fi verzeker u dan van een goede signaalsterkte.</value>
+    <value>Controleer dat de netwerkkabel is aangesloten. Gebruikt u Wi-Fi overtuig u dan van een goede signaalsterkte.</value>
   </data>
   <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
     <value>Feedback sturen</value>
@@ -462,12 +465,12 @@ The lists are separated by a single newline.</comment>
     <value>Wilt u mij feedback over BCU sturen?</value>
   </data>
   <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
-    <value>Dit kost u monder dan een minuut en helpt de ontwikkelinmg van het programma enorm! Elke vorm van feedback is welkom, zoals een foutbericht, verzoeken voor nieuwe functionaliteit(en) of een bedankje!
+    <value>Dit kost u minder dan een minuut en helpt de ontwikkelinmg van het programma enorm! Elke vorm van feedback is welkom, zoals een foutbericht, verzoeken voor nieuwe functionaliteit(en) of een bedankje!
 
 U kunt dit ook later sturen via de hoofd menubalk (Help -&gt; Feedback sturen).</value>
   </data>
   <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
-    <value>Uw huidige versie is actueel!</value>
+    <value>De huidige versie is actueel!</value>
   </data>
   <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
     <value>Er werden geen updates gevonden, u heeft de laatste versie.
@@ -493,19 +496,19 @@ Mist u functionaliteiten of wilt u een oplossing voor een fout? Stuur mij dan uw
     <value>De actuele deïnstallatie taak beëindigen?</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende uninstaller en kan er in resulteren dat de deïnstallatie niet wordt afgesloten. In de regel kunt u de uninstaller opnieuw uitvoeren om de deïnstallatie af te sluiten.
+    <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende deïnstaller en kan er in resulteren dat de deïnstallatie niet wordt afgesloten. In de regel kunt u de deïnstaller opnieuw uitvoeren om de deïnstallatie af te sluiten.
 
-Als alternatief kunt u de wachttijd voor dit proces overslaan. Hierdoor werkt de uninstaller door, terwijl de taak naar het volgende onderdeel springt.
-Denk er aan, dat enkele uninstallers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
+Als alternatief kunt u de wachttijd voor dit proces overslaan. Hierdoor werkt de deïnstaller door, terwijl de taak naar het volgende onderdeel springt.
+Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
-    <value>Waarderings details</value>
+    <value>Waardering details</value>
   </data>
   <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
     <value>Windows onderdelen laden...</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
-    <value>De volgende uninstallers werden uitgevoerd, mogelijk vanwege een conflict. Wacht tot de andere uninstallers zijn voltooid en probeer het opnieuw.
+    <value>De volgende deïnstallers werden uitgevoerd, mogelijk vanwege een conflict. Wacht tot de andere deïnstallers zijn voltooid en probeer het opnieuw.
 {0}
 
 U kunt proberen de detectie van conflicten in de instellingen uit te schakelen, maar dit wordt niet aanbevolen.</value>
@@ -550,10 +553,10 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Sleutels uit het register verwijderen</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
-    <value>Weet u zekere dat u de geselecteerde uninstaller registraties wilt verwijderen?</value>
+    <value>Weet u zekere dat u de geselecteerde deïnstaller registraties wilt verwijderen?</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
-    <value>De volgende onderdelen werden uit het register verwijderd en verdwijnen uit de uninstaller lijst, maar worden niet gedeïnstalleerd.
+    <value>De volgende onderdelen werden uit het register verwijderd en verdwijnen uit de deïnstaller lijst, maar worden niet gedeïnstalleerd.
 
 {0)</value>
   </data>
@@ -571,7 +574,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Wilt na uitvoering van deïnstallatie(s) zoeken naar restanten?</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
-    <value>Er was niets om te kopieëren naar het klembord. Of u heeft niets geselecteerd of de informatie is afkomstig van de uninstaller</value>
+    <value>Er was niets om te kopieëren naar het klembord. Of u heeft niets geselecteerd of de informatie is afkomstig van de deïnstaller.</value>
   </data>
   <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
     <value>Kopiëren naar het klembord</value>
@@ -694,22 +697,38 @@ Mocht er onverhoopt iets mis gaan, dan kunt u met systeemherstel de wijziging(en
     <value>Deze bewerking opent {0} URL's. Weet u zeker dat u wilt doorgaan?</value>
   </data>
   <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
-    <value>Getroffen registraties:
+    <value>
+Getroffen registraties:
 {0}
 
 Om deze registraties te wijzigen, moet u uit de instellingen in de zijbalk lijst de beveiliging van de uninstaller uitschakelen. U kunt deze uit de taak verwijderen en met de andere onderdelen doorgaan.</value>
+    <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
     <value>
 Beveilgde registratie: {0}
 
-Om deze registratie te wijzigen, moet u de beveiliging van de uninstaller in het instellingen venster uitschakelen.</value>
+Om deze registratie te wijzigen, moet u de beveiliging van de deïnstaller in het instellingen venster uitschakelen.</value>
+    <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>
-De volgende onderdelen hebben geen onzichtbare uninstaller(s):
+De volgende onderdelen hebben geen onzichtbare deïnstaller(s):
 {0}
 
 Wilt u voor deze onderdelen de standaard uninstaller gebruiken of moeten de registraties uit de taak worden verwijderd?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Zoeken naar programma</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Er werden geen geldige mappen of bestanden. Controleer of u daar toegang toe hebt en dat deze niet zijn aangeduid als systeem bestanden.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Zoeken naar programma's</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Zoeken naar programma's in {0} is mislukt</value>
   </data>
 </root>
