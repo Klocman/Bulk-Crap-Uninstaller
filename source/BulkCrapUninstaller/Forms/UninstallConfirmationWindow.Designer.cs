@@ -40,9 +40,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelInfo = new System.Windows.Forms.Label();
             this.labelInfo2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -62,41 +62,34 @@
             this.olvColumnQuiet,
             this.olvColumnInstallLocation});
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
-            this.objectListView1.Location = new System.Drawing.Point(6, 68);
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowItemToolTips = true;
-            this.objectListView1.Size = new System.Drawing.Size(619, 189);
-            this.objectListView1.TabIndex = 1;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
             // 
             // olvColumnName
             // 
-            this.olvColumnName.Text = "Uninstaller name";
-            this.olvColumnName.Width = 238;
+            resources.ApplyResources(this.olvColumnName, "olvColumnName");
             // 
             // olvColumnEnabled
             // 
             this.olvColumnEnabled.CheckBoxes = true;
             this.olvColumnEnabled.Hideable = false;
-            this.olvColumnEnabled.Text = "Uninstall";
-            this.olvColumnEnabled.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            resources.ApplyResources(this.olvColumnEnabled, "olvColumnEnabled");
             // 
             // olvColumnQuiet
             // 
             this.olvColumnQuiet.CheckBoxes = true;
-            this.olvColumnQuiet.Text = "Quiet";
-            this.olvColumnQuiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            resources.ApplyResources(this.olvColumnQuiet, "olvColumnQuiet");
             // 
             // olvColumnInstallLocation
             // 
-            this.olvColumnInstallLocation.Text = "Install location";
-            this.olvColumnInstallLocation.Width = 246;
+            resources.ApplyResources(this.olvColumnInstallLocation, "olvColumnInstallLocation");
             // 
             // panel1
             // 
@@ -104,117 +97,71 @@
             this.panel1.Controls.Add(this.buttonAccept);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.buttonCancel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(6, 257);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(619, 32);
-            this.panel1.TabIndex = 2;
             // 
             // buttonSmartSort
             // 
-            this.buttonSmartSort.AutoSize = true;
-            this.buttonSmartSort.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonSmartSort.Location = new System.Drawing.Point(0, 6);
+            resources.ApplyResources(this.buttonSmartSort, "buttonSmartSort");
             this.buttonSmartSort.Name = "buttonSmartSort";
-            this.buttonSmartSort.Size = new System.Drawing.Size(82, 26);
-            this.buttonSmartSort.TabIndex = 0;
-            this.buttonSmartSort.Text = "Intelligent sort";
             this.buttonSmartSort.UseVisualStyleBackColor = true;
             this.buttonSmartSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // buttonAccept
             // 
-            this.buttonAccept.AutoSize = true;
+            resources.ApplyResources(this.buttonAccept, "buttonAccept");
             this.buttonAccept.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonAccept.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonAccept.Location = new System.Drawing.Point(457, 6);
             this.buttonAccept.Name = "buttonAccept";
-            this.buttonAccept.Size = new System.Drawing.Size(75, 26);
-            this.buttonAccept.TabIndex = 1;
-            this.buttonAccept.Text = "&Accept";
             this.buttonAccept.UseVisualStyleBackColor = true;
             this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(532, 6);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 26);
-            this.panel2.TabIndex = 2;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.AutoSize = true;
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCancel.Location = new System.Drawing.Point(544, 6);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 26);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.labelInfo);
             this.flowLayoutPanel1.Controls.Add(this.labelInfo2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(619, 62);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.layer;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
             // 
             // labelInfo
             // 
-            this.labelInfo.AutoSize = true;
-            this.labelInfo.Location = new System.Drawing.Point(59, 0);
+            resources.ApplyResources(this.labelInfo, "labelInfo");
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.labelInfo.Size = new System.Drawing.Size(556, 30);
-            this.labelInfo.TabIndex = 0;
-            this.labelInfo.Text = resources.GetString("labelInfo.Text");
             // 
             // labelInfo2
             // 
-            this.labelInfo2.AutoSize = true;
-            this.labelInfo2.Location = new System.Drawing.Point(59, 30);
+            resources.ApplyResources(this.labelInfo2, "labelInfo2");
             this.labelInfo2.Name = "labelInfo2";
-            this.labelInfo2.Size = new System.Drawing.Size(535, 26);
-            this.labelInfo2.TabIndex = 0;
-            this.labelInfo2.Text = "The initial order depends on your uninstall settings, but it can be changed by dr" +
-    "agging the items. Note: BCU can change the order if concurrent uninstallation is" +
-    " enabled.";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.layer;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // UninstallConfirmationWindow
             // 
             this.AcceptButton = this.buttonAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(631, 295);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.objectListView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "UninstallConfirmationWindow";
-            this.Padding = new System.Windows.Forms.Padding(6);
-            this.Text = "Confirm uninstallation task";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

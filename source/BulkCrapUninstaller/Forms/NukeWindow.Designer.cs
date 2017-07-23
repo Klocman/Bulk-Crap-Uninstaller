@@ -32,13 +32,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.windowTargeter1 = new Klocman.Controls.WindowTargeter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.fileTargeter1 = new BulkCrapUninstaller.Controls.FileTargeter();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fileTargeter1 = new BulkCrapUninstaller.Controls.FileTargeter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -59,10 +59,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.fileTargeter1);
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.fileTargeter1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // fileTargeter1
+            // 
+            resources.ApplyResources(this.fileTargeter1, "fileTargeter1");
+            this.fileTargeter1.AllowDrop = true;
+            this.fileTargeter1.Name = "fileTargeter1";
             // 
             // flowLayoutPanel1
             // 
@@ -96,16 +102,10 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // fileTargeter1
-            // 
-            this.fileTargeter1.AllowDrop = true;
-            resources.ApplyResources(this.fileTargeter1, "fileTargeter1");
-            this.fileTargeter1.Name = "fileTargeter1";
-            // 
             // NukeWindow
             // 
-            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel2);
