@@ -181,9 +181,6 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    if (!SystemRestore.BeginSysRestore(targets.Count))
-                        return;
-
                     var taskEntries = ConvertToTaskEntries(quiet, targets);
 
                     taskEntries = _settings.AdvancedIntelligentUninstallerSorting
@@ -195,6 +192,9 @@ namespace BulkCrapUninstaller.Functions
                     if (taskEntries == null || taskEntries.Count == 0)
                         return;
 
+                    if (!SystemRestore.BeginSysRestore(targets.Count))
+                        return;
+                    
                     if (!CheckForRunningProcessesBeforeUninstall(taskEntries.Select(x => x.UninstallerEntry), !quiet))
                         return;
 
