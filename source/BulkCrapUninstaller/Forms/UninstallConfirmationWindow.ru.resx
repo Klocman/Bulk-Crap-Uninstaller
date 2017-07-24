@@ -117,52 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Отключить предупреждения о конфликтах при ручном удалении</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Имя деинсталлятора</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Только одно шумное удаление за раз</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Деинсталляция</value>
   </data>
-  <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Авто запуск деинсталляторов одновременно (если возможно)</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Тихо</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Максимум запущенных деинсталляторов:</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Место установки</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Одновременное удаление</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Интеллектуальная сортировка</value>
   </data>
-  <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Запрет перезагрузки системы</value>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Деинсталляция</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Умная сортировка деинсталляторов</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Отключить защиту</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Это список приложений, которые будут удалены, сверху вниз. Если вы отмените выбор в поле "Деинсталляция", приложение не будет удалено. Если тихая деинсталляция недоступна для элемента, его нельзя выбрать.</value>
   </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Имитировать деинсталляцию</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Первоначальный порядок зависит от настроек удаления, но его можно изменить, перетаскивая элементы. Примечание. BCU может изменить порядок, если включена одновременная деинсталляция.</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Общие настройки</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Подтвердить задачу деинсталляции</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Автоматически убивать зависшие тихие деинсталляторы</value>
-  </data>
-  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Повторить один раз попытку тихой деинсталляции</value>
-  </data>
-  <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Генерировать тихую деинсталляцию если возможно</value>
-  </data>
-  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Авто-убитие застрявших в ожидании ручного ввода</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Тихое удаление</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

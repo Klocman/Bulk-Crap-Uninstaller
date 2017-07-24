@@ -136,11 +136,11 @@
     <value>Id</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Выбранные деинсталляторы будет выполняться по очереди.
+    <value>Выбранные деинсталляторы будут выполняться по очереди.
 Если покажется, что процесс завис, вы можете нажать на "Пропустить", чтобы не ждать его завершения. Такое происходит, если деинсталлятор дал сбой или запустил новый процесс и не закрыл его.</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Запустить деинсталлятор сейчас</value>
+    <value>Запустить деинсталлятор</value>
   </data>
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
     <value>Пропустить</value>

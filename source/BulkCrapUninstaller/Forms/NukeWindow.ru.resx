@@ -117,52 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Отключить предупреждения о конфликтах при ручном удалении</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Найти и удалить приложение по одногму из его окон, ярлыку, местоположения установки или файлу .exe.</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Только одно шумное удаление за раз</value>
-  </data>
-  <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Авто запуск деинсталляторов одновременно (если возможно)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Максимум запущенных деинсталляторов:</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Одновременное удаление</value>
-  </data>
-  <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Запрет перезагрузки системы</value>
-  </data>
-  <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Умная сортировка деинсталляторов</value>
-  </data>
-  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Отключить защиту</value>
-  </data>
-  <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Имитировать деинсталляцию</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Общие настройки</value>
-  </data>
-  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Автоматически убивать зависшие тихие деинсталляторы</value>
-  </data>
-  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Повторить один раз попытку тихой деинсталляции</value>
-  </data>
-  <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Генерировать тихую деинсталляцию если возможно</value>
-  </data>
-  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Авто-убитие застрявших в ожидании ручного ввода</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Уничтожить приложение</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Тихое удаление</value>
+    <value>Найти по окну</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Найти по папке или файлам программы</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Примечание. Убедитесь, что выбранные файлы находятся внутри каталога установки приложения.
+
+Вы можете выбрать каталог, содержащий несколько приложений, для их удаления.</value>
+  </data>
 </root>

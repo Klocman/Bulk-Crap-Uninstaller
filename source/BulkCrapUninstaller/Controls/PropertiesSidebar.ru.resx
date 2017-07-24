@@ -132,7 +132,7 @@
     <value>Выделять серым цветом деинсталляторы, которые повреждены или отсутствуют.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Сертифицированные</value>
+    <value>Подписанные</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Использовать цвета для идентификации сертифицированных деинсталляторов.
@@ -190,7 +190,7 @@
 Смарт-фильтрация.</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Компоненты Windows</value>
+    <value>Функции Windows</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>

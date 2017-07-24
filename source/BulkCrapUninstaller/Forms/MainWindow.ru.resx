@@ -492,6 +492,12 @@
   <data name="runToolStripMenuItem.Text" xml:space="preserve">
     <value>Запустить...</value>
   </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Удаление по окну, каталогу или файлу...</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Удаление по окну, каталогу или файлу...</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>462, 17</value>
   </metadata>

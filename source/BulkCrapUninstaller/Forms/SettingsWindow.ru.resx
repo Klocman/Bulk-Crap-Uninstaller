@@ -202,13 +202,49 @@ BCU будет ждать завершения одной команды для 
     <value>Настройки Bulk Crap Uninstaller</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Всегда показывать нежелательные, с низким доверием</value>
+    <value>Всегда показывать мусорные, с низким доверием</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Никогда не просить отзыв или помощь</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Реестр (рекомендуется оставить включенным)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Диски (обнаружение незарегистрированных приложений)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Основываясь на предопределенных правилах</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Поиск приложений в...</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Места с приложениями для сканирования</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Обнаружение</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Приложения Windows Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Функции Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Обнаружение функций Windows использует WMI и может быть медленным или даже неработоспособным в некоторых системах (обычно это указывает на повреждение системы).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Обновления Windows</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Обнаружение обновлений Windows использует WUA, что происходит медленно. Это может занять пару минут.</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Попытатся автоопределить пользовательские папки с приложениями</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

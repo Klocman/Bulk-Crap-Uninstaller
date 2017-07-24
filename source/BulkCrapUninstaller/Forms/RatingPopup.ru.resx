@@ -121,7 +121,7 @@
     <value>Полезное | Хорошее качество</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>Нежелательное | Потенциально опасное</value>
+    <value>Мусорное | Потенциально опасное</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
@@ -130,7 +130,7 @@
     <value>Сомнительное |  Плохое качество</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поделитесь вашей оценкой с другими пользователями</value>
+    <value>Поделитесь своей оценкой с другими</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Рейтинг</value>
