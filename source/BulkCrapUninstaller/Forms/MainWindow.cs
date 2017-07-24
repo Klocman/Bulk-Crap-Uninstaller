@@ -166,8 +166,7 @@ namespace BulkCrapUninstaller.Forms
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
-            FormClosed += (x, y) => UsageTrackerSendData();
-            //new Thread(UsageTrackerSendData) { IsBackground = false, Name = "UsageManager" }.Start();
+            FormClosed += (x, y) => new Thread(UsageTrackerSendData).Start();
 
             // Misc
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
