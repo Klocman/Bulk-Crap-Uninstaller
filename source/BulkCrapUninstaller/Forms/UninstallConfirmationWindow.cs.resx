@@ -117,31 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Uložení seznamu odinstalaci ...</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Název odinstalátoru</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Uložit cíl jako ...</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Odinstalovat</value>
   </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Potichu</value>
   </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Otevřené...</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Místo instalace</value>
   </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Otevřít seznam Odinstalace ...</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Inteligentní třídění</value>
   </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>&amp;Odinstalovat</value>
   </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Uložit jako výchozí</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>&amp;Zrušit</value>
   </data>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Základní filtrování</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Seznam aplikací, které budou odinstalovány, a to shora dolů. Pokud zrušíte výběr "Odinstalovat", aplikace nebude odinstalována. Není-li k dispozici tichá odinstalace pro položku, nelze ji zkontrolovat</value>
   </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Přidat vybrané aplikace jako filtry</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Pořadí závisí na Vašem nastavení odinstalace, ale lze jej změnit přetažením položky. Poznámka: BCU můžete změnit pořadí, pokud je povolena souběžná odinstalace.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Potvrdit úlohu odinstalace</value>
   </data>
 </root>

@@ -117,31 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Uložení seznamu odinstalaci ...</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Najít a odstranit aplikace prostřednictvím údaj o jejich umístění, zástupci nebo jejím umístění nebo .exe soubory instalace.</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Uložit cíl jako ...</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Nuke aplikace</value>
   </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Vybrat okno</value>
   </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Otevřené...</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Vyberte pomocí instalační složky nebo program files</value>
   </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Otevřít seznam Odinstalace ...</value>
-  </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Uložit jako výchozí</value>
-  </data>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Základní filtrování</value>
-  </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Přidat vybrané aplikace jako filtry</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Poznámka: Ujistěte se, že vybrané soubory jsou uvnitř instalačního adresáře aplikace.</value>
   </data>
 </root>

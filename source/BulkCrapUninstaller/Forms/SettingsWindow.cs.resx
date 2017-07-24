@@ -210,6 +210,42 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
   </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registry (doporučeno ponechat povolené)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Jednotky (detekuje neregistrované aplikace)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Na základě předem definovaných pravidel</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Hledání aplikací v ...</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Úložiště aplikací pro skenování</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Detekce</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Aplikace Windows Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Funkce systému Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Detekce funkcí systému Windows používá službu WMI a v některých systémech může být pomalá nebo dokonce selhávat (obvykle indikuje poškození systému).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows aktualizace</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Zjišťování aktualizací systému Windows agentem WUA, což je pomalé. A může trvat několik minut do dokončení.</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Pokusit se automaticky rozpoznat vlastní instalační složky</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

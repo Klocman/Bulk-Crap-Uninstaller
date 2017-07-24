@@ -121,7 +121,7 @@
     <value>Vyhledávání</value>
   </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
-    <value>Jmeno</value>
+    <value>Jméno</value>
   </data>
   <data name="olvColumnPublisher.Text" xml:space="preserve">
     <value>Vydavatel</value>
@@ -491,5 +491,11 @@
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Otevřete "Obnovení systému"</value>
+  </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Odinstalovat z windows adresáře nebo souboru...</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Odinstalovat z windows adresáře nebo souboru...</value>
   </data>
 </root>
