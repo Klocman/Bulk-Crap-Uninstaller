@@ -7,10 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
 using Klocman.Extensions;
+using Klocman.IO;
 using Klocman.Tools;
 
 namespace BulkCrapUninstaller.Functions.Tracking
@@ -155,6 +157,9 @@ namespace BulkCrapUninstaller.Functions.Tracking
             metadata.Add(new XElement("Is64Bit", ProcessTools.Is64BitProcess));
             metadata.Add(new XElement("Locale", CultureInfo.InstalledUICulture.ToString()));
             //metadata.Add(new XElement("UserId", WindowsTools.GetUserSid()));
+
+            var net = new XElement("Net", string.Join("; ", NetFrameworkTools.GetInstalledFrameworkVersions()));
+            metadata.Add(net);
 
             return tempDoc;
         }
