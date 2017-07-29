@@ -255,6 +255,8 @@ namespace BulkCrapUninstaller.Forms
             e.Cancel = true;
             var item = e.RowObject as JunkNode;
             if (item == null) return;
+
+            EnsureSingleSelection(e.ListViewItem);
             OpenJunkNodePreview(item);
         }
 
@@ -263,13 +265,24 @@ namespace BulkCrapUninstaller.Forms
             if (e.Model == null)
                 return;
 
-            if (objectListViewMain.CheckBoxes && !objectListViewMain.IsChecked(e.Model))
+            /*if (objectListViewMain.CheckBoxes && !objectListViewMain.IsChecked(e.Model))
             {
                 objectListViewMain.UncheckAll();
                 objectListViewMain.CheckObject(e.Model);
-            }
+            }*/
+
+            EnsureSingleSelection(e.Item);
 
             e.MenuStrip = listViewContextMenuStrip;
+        }
+
+        private void EnsureSingleSelection(ListViewItem clickedItem)
+        {
+            if (objectListViewMain.SelectedItems.Count != 1)
+            {
+                objectListViewMain.DeselectAll();
+                clickedItem.Selected = true;
+            }
         }
 
         private void objectListViewMain_ItemChecked(object sender, ItemCheckedEventArgs e)
