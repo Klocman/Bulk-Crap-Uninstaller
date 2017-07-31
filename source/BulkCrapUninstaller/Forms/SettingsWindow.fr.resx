@@ -185,7 +185,7 @@ BCU attendra la fin de la commande courante avant d'exécuter la suivante.</valu
     <value>Dossiers</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Vous pouvez spécifier des dossiers personnalisés dans lesquels vous installez vos applications (par ex. D:\Applications). Ces dossiers seront utilisés par BCU pour chercher des vestiges de désinstallation, des applications non enregistré et quelques autres choses. Bien que ce ne soit pas nécessaire, une liste de ces dossiers fera mieux fonctionner BCU.
+    <value>Vous pouvez spécifier des dossiers personnalisés dans lesquels vous installez vos applications (par ex. D:\Applications). Ces dossiers seront utilisés par BCU pour chercher des vestiges de désinstallation, des applications non enregistrées et quelques autres choses. Bien que ce ne soit pas nécessaire, une liste de ces dossiers fera mieux fonctionner BCU.
 
 Les dossiers Windows par défaut sont toujours scannés, vous n'avez pas besoin de les inclure dans la liste.
 
@@ -195,7 +195,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Dossiers d'installation des programmes</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automatiquement liste ouverte "Default.xml" au démarrage</value>
+    <value>Charger automatiquement la liste de désinstalleurs "Default.xml" au démarrage</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Activer les notes utilisateurs des applications</value>
@@ -204,12 +204,45 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Désinstallation</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Toujours monter les résidus avec faible confiance</value>
+    <value>Toujours montrer les résidus avec faible confiance</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Ne jamais demander  mes impressions ou  de l'aide</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registre (il est recommandé de laisser activé) </value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Lecteurs (détecte les apps non enregistrées)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Basé sur des règles pré-définies</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Chercher des applications dans...</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Magasins d'application à scanner</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Détection</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Apps du Windows Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Fonctionnalités Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>La détection des Fonctionnalités Windows utilise WMI et peut être lente et même échouer sur certains systèmes (indiquant d'habitude une corruption du système).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>La détection de Windows Update utilise WUA, qui est lent. Cela peut prendre quelques minutes.</value>
   </data>
 </root>

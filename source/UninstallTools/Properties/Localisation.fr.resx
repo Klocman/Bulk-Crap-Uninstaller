@@ -432,7 +432,8 @@
     <value>Effacer simplement </value>
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
-    <value>Tous les biens</value>
+    <value>Toutes propriétés</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Junk_Drive_GroupName" xml:space="preserve">
     <value>Fichiers et dossiers</value>

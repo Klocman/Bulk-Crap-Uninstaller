@@ -142,7 +142,7 @@
     <value>Filtrage basique</value>
   </data>
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Ajouter sélectionné comme filtres</value>
+    <value>Ajouter apps sélectionnées comme filtres</value>
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pl</value>

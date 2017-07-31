@@ -117,25 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelWinFeature.Text" xml:space="preserve">
-    <value>Fonctionnalité Windows</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Trouver et désinstaller une application sur la base d'une de ses fenêtres, raccourcis, son emplacement d'installation ou ses fichiers .exe.</value>
   </data>
-  <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Application non enregistrée</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Sélectionner en utilisant une fenêtre</value>
   </data>
-  <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Désinstalleur invalide</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Sélectionner en utilisant le dossier d'installation ou les fichiers programmes</value>
   </data>
-  <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Certificat non vérifié</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Note: assurez-vous que tous les fichiers sélectionnés sont dans le dossier d'installation de l'application.
+
+Vous pouvez sélectionner un dossier qui contient de multiples applications pour les désinstaller toutes.</value>
   </data>
-  <data name="labelVerified.Text" xml:space="preserve">
-    <value>Certificat vérifié</value>
-  </data>
-  <data name="labelLegend.Text" xml:space="preserve">
-    <value>Légende des couleurs</value>
-  </data>
-  <data name="labelStoreApp.Text" xml:space="preserve">
-    <value>App du Windows Store</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Détruire une application</value>
   </data>
 </root>

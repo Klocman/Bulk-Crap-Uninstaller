@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Afficher les applications non enregistré </value>
+    <value>Afficher les applications non enregistrées </value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Afficher les applications n'ayant pas de désinstalleur enregistré.

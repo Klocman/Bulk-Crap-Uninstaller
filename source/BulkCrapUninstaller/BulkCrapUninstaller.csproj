@@ -787,6 +787,9 @@
     <EmbeddedResource Include="Forms\NukeWindow.cs.resx">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NukeWindow.fr.resx">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NukeWindow.nl.resx">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -917,6 +920,9 @@
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UninstallConfirmationWindow.cs.resx">
+      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UninstallConfirmationWindow.fr.resx">
       <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UninstallConfirmationWindow.nl.resx">

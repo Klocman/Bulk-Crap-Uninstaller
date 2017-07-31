@@ -194,16 +194,16 @@ de l'application</value>
     <value>Les désinstalleurs invalides sont marqués en gris.</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Application non enregistré</value>
+    <value>Applications non enregistrées</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Parfois, des applications entières peuvent être laissées sur votre lecteur après avoir été désinstallées. Cela peut aussi arriver si seul le désinstalleur est supprimé.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Montrer les applications non enregistré dans la liste</value>
+    <value>Montrer les applications non enregistrées dans la liste</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Les applications non enregistré sont marquées en rouge.
+    <value>Les applications non enregistrées sont marquées en rouge.
 Si le désinstalleur d'origine est introuvable, vous devrez utiliser l'option "Désinstaller manuellement" pour les supprimer.</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
@@ -304,7 +304,7 @@ uninstaller</value>
     <value>Plus de réglages</value>
   </data>
   <data name="p4netDesc4.Text" xml:space="preserve">
-    <value>● Pour récupérer et envoyer les notes d'application</value>
+    <value>● Pour récupérer et envoyer les notes d'application.</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Activer les notes utilisateur des applications</value>
