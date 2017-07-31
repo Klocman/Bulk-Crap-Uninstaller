@@ -457,7 +457,7 @@
     <value>Aide</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
-    <value>Fltrage avancé</value>
+    <value>Filtrage avancé</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Avancé...</value>
@@ -491,5 +491,11 @@
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir "Récupération"</value>
+  </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Désinstaller par fenêtre, dossier ou fichier...</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Désinstaller par fenêtre, dossier ou fichier...</value>
   </data>
 </root>

@@ -117,132 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Ligne de commande avant le début de désinstallation</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Ligne de commande après la fin de désinstallation</value>
-  </data>
-  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Chercher des mises à jour au démarrage</value>
-  </data>
-  <data name="checkBoxSendStats.Text" xml:space="preserve">
-    <value>Envoyer des statistiques anonymes d'utilisation</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Langage de l'application :</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>L'application devra être relancée pour prendre en compte le changement de langage.</value>
-  </data>
-  <data name="groupBoxMisc.Text" xml:space="preserve">
-    <value>Divers</value>
-  </data>
-  <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Demander pour supprimer les désinstalleurs causants
-d'une tâche silencieuse</value>
-  </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Demander pour créer une sauvegarde de registre 
-avant la suppression des vestiges</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Rechercher des résidus après désinstallation</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Créer un point de restauration avant de désinstaller</value>
-  </data>
-  <data name="groupBoxMessages.Text" xml:space="preserve">
-    <value>Boîtes de message</value>
-  </data>
-  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
-    <value>Activer l'exécution d'applications externes</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Vous pouvez spécifier des commandes qui se lanceront avant et après la désinstallation. Une ligne égale une commande et sera exécutée comme en utilisant le dialogue "Exécuter...".
-
-BCU attendra la fin de la commande courante avant d'exécuter la suivante.</value>
-  </data>
-  <data name="groupBoxExternal.Text" xml:space="preserve">
-    <value>Applications externes</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>&amp;Fermer</value>
-  </data>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>Général</value>
-  </data>
-  <data name="tabPageExternal.Text" xml:space="preserve">
-    <value>Outils externes</value>
-  </data>
-  <data name="tabPageMisc.Text" xml:space="preserve">
-    <value>Divers</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Réglages de BCUninstaller</value>
-  </data>
-  <data name="tabPageFolders.Text" xml:space="preserve">
-    <value>Dossiers</value>
-  </data>
-  <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Vous pouvez spécifier des dossiers personnalisés dans lesquels vous installez vos applications (par ex. D:\Applications). Ces dossiers seront utilisés par BCU pour chercher des vestiges de désinstallation, des applications non enregistré et quelques autres choses. Bien que ce ne soit pas nécessaire, une liste de ces dossiers fera mieux fonctionner BCU.
-
-Les dossiers Windows par défaut sont toujours scannés, vous n'avez pas besoin de les inclure dans la liste.
-
-Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins invalides et les dossiers non-existants seront ignorés.</value>
-  </data>
-  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
-    <value>Dossiers d'installation des programmes</value>
-  </data>
-  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automatiquement liste ouverte "Default.xml" au démarrage</value>
-  </data>
-  <data name="checkBoxRatings.Text" xml:space="preserve">
-    <value>Activer les notes utilisateurs des applications</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Désinstallation</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Toujours montrer les résidus avec faible confiance</value>
-  </data>
-  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
-    <value>Ne jamais demander  mes impressions ou  de l'aide</value>
-  </data>
-  <data name="checkBoxScanSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
-    <value>Registre (il est recommandé de laisser activté) </value>
-  </data>
-  <data name="checkBoxScanDrives.Text" xml:space="preserve">
-    <value>Lecteurs (détecte les apps non enregistrées)</value>
-  </data>
-  <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>Basé sur des règles pré-définies)</value>
+    <value>Trouver et désinstaller une application sur la base d'une de ses fenêtres, raccourcis, son emplacement d'installation ou ses fichiers .exe.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Chercher des applications dans...</value>
+    <value>Sélectionner en utilisant une fenêtre</value>
   </data>
-  <data name="groupBoxAppStores.Text" xml:space="preserve">
-    <value>Magasins d'application à scanner</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Sélectionner en utilisant le dossier d'installation ou les fichiers programmes</value>
   </data>
-  <data name="tabPageDetection.Text" xml:space="preserve">
-    <value>Détection</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Note: assurez-vous que tous les fichiers sélectionnés sont dans le dossier d'installation de l'application.
+
+Vous pouvez sélectionner un dossier qui contient de multiples applications pour les désinstaller toutes.</value>
   </data>
-  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Apps du Windows Store</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
-    <value>Fonctionnalités Windows</value>
-  </data>
-  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
-    <value>La détection des Fonctionnalités Windows utilise WMI et peut être lent et même échouer sur certains systèmes (indiquant d'habitude une corruption du système).</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
-    <value>Windows Update</value>
-  </data>
-  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>La détection de Windows Update utilise WUA, qui est lent. Cela peut prendre quelques minutes.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Détruire une application</value>
   </data>
 </root>
