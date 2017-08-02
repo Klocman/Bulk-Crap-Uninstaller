@@ -208,6 +208,7 @@
     <Compile Include="Forms\NukeWindow.Designer.cs">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\OnlineSearchTools.cs" />
     <Compile Include="Forms\RatingPopup.cs">
       <SubType>Form</SubType>
     </Compile>

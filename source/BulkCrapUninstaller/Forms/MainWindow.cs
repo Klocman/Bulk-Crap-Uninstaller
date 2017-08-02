@@ -12,7 +12,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using System.Web;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
@@ -570,8 +569,8 @@ namespace BulkCrapUninstaller.Forms
 
             _listView.InitiateListRefresh();
 
-            settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() + 
-                settingsSidebarPanel.Padding.Left + 
+            settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() +
+                settingsSidebarPanel.Padding.Left +
                 settingsSidebarPanel.Padding.Right;
         }
 
@@ -1242,7 +1241,7 @@ namespace BulkCrapUninstaller.Forms
 
             _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
         }
-        
+
         private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _setMan.Selected.Settings.FilterShowWinFeatures = true;
@@ -1275,46 +1274,6 @@ namespace BulkCrapUninstaller.Forms
             _uninstaller.UninstallFromDirectory(_listView.AllUninstallers);
         }
 
-        private void SearchOnline(string searchString, Func<ApplicationUninstallerEntry, string> searchStringGetter)
-        {
-            if (WindowsTools.IsNetworkAvailable())
-            {
-                var items = _listView.SelectedUninstallers
-                    .Select(searchStringGetter)
-                    .Where(x => !string.IsNullOrEmpty(x))
-                    .Select(y => string.Concat(searchString, HttpUtility.UrlEncodeUnicode(y)))
-                    .ToList();
-
-                if (MessageBoxes.SearchOnlineMessageBox(items.Count) == MessageBoxes.PressedButton.Yes)
-                {
-                    try
-                    {
-                        items.ForEach(x => Process.Start(x));
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBoxes.SearchOnlineError(ex);
-                    }
-                }
-            }
-            else
-                MessageBoxes.NoNetworkConnected();
-        }
-
-        private void googleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SearchOnline(@"https://www.google.com/search?q=", entry => entry.DisplayName);
-        }
-
-        private void alternativeToToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SearchOnline(@"https://alternativeto.net/browse/search/?q=", entry =>
-            {
-                var displayNameTrimmed = entry.DisplayNameTrimmed;
-                return displayNameTrimmed.Length > 3 ? displayNameTrimmed : entry.DisplayName;
-            });
-        }
-
         private void openSystemRestoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -1341,6 +1300,36 @@ namespace BulkCrapUninstaller.Forms
         private void filterEditor1_FocusSearchTarget(object sender, EventArgs e)
         {
             uninstallerObjectListView.Focus();
+        }
+
+        private void googleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchGoogle(_listView.SelectedUninstallers);
+        }
+
+        private void alternativeToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchAlternativeTo(_listView.SelectedUninstallers);
+        }
+
+        private void fossHubcomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchFosshub(_listView.SelectedUninstallers);
+        }
+
+        private void sourceForgecomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchSourceforge(_listView.SelectedUninstallers);
+        }
+
+        private void fileHippocomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchFilehippo(_listView.SelectedUninstallers);
+        }
+
+        private void gitHubcomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchGithub(_listView.SelectedUninstallers);
         }
     }
 }
