@@ -155,7 +155,7 @@ namespace UninstallTools.Junk
                         results.Add(newNode);
                     }
 
-                    if (level >= 1) continue;
+                    if (level > 1) continue;
 
                     var junkNodes = FindJunkRecursively(dir, level + 1).ToList();
                     results.AddRange(junkNodes);
