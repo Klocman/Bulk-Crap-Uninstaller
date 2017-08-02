@@ -16,7 +16,7 @@ namespace UninstallTools
         static UninstallToolsGlobalConfig()
         {
             AssemblyLocation = Assembly.GetExecutingAssembly().Location;
-            if (AssemblyLocation.ContainsAny(new[] {".dll", ".exe"}, StringComparison.OrdinalIgnoreCase))
+            if (AssemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 AssemblyLocation = PathTools.GetDirectory(AssemblyLocation);
 
             QuestionableDirectoryNames = new[]
@@ -50,6 +50,14 @@ namespace UninstallTools
                 //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) danger?
             };
 
+            var appDataParentDir = Path.GetDirectoryName(localData.TrimEnd('\\', '/', ' '));
+            if (!string.IsNullOrEmpty(appDataParentDir))
+            {
+                var lowDir = Path.Combine(appDataParentDir, "LocalLow");
+                if(Directory.Exists(lowDir))
+                    paths.Add(lowDir);
+            }
+
             var vsPath = Path.Combine(localData, "VirtualStore");
             if (Directory.Exists(vsPath))
                 paths.AddRange(Directory.GetDirectories(vsPath));
@@ -61,7 +69,7 @@ namespace UninstallTools
         ///     Path to directory this assembly sits in.
         /// </summary>
         internal static string AssemblyLocation { get; }
-        
+
         public static bool AutoDetectCustomProgramFiles { get; set; }
 
         /// <summary>
