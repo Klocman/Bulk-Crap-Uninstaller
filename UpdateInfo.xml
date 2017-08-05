@@ -2,18 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.12.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.12/BCUninstaller_3.12_portable.zip</URL>
+<Version>3.13.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.13/BCUninstaller_3.13_archive.zip</URL>
 <Changes>
-Added "Confirm uninstall task" window, replaces and upgrades the "Use loud?" question.
-- Can change what will be uninstalled and what will be quiet.
-- Can reorder the uninstallers.
-Moved process kill window after the system restore question and the new confirm window.
-Made nuke application window to use intelligent sorting and the new confirm window.
-Fixed some non-standard msiexec uninstallers failing to run properly.
-Fixed possible crash on slow PCs when starting quiet uninstalls.
-Some refactoring of uninstall logic
+Added online search for Fosshub, Sourceforge, Github, and Filehippo
+Added scanning LocalLow appdata for junk
+Added stat collection of installed net framework versions
+Increased directory junk scan depth by 1
+Moved processing of stats to separate thread for faster shutdown
+Moved system restore question after the uninstall confirmation window
+Updates to Czech, Dutch, French, Russian, Slovenian, and Polish translations
+Fixed fancy dialog boxes not centering properly over parent form
+Fixed new windows not being localizable
+Fixed right-clicking on unchecked item in junk remove window unchecking everything else
+Fixed selecting more than one item in junk remove window breaking context menu options
 </Changes>
-<Hash>b980c003eb17dbfa673ed2cb3901c323</Hash>
+<Hash>354732fdfa9bf2d4dd113883fb72ee43</Hash>
 </Update>
 </Root>
