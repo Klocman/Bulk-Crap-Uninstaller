@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.IO;
 using System.Text;
 
 namespace StoreAppHelper
@@ -23,7 +24,8 @@ namespace StoreAppHelper
             if (args.Length == 0)
                 return InvalidArgumentCode;
 
-            Console.OutputEncoding = Encoding.Unicode;
+            try { Console.OutputEncoding = Encoding.Unicode; }
+            catch(IOException) { /*Old .NET v4 without support for unicode output*/ }
 
             if (args.Length == 1 && string.Equals(args[0], @"/query", StringComparison.OrdinalIgnoreCase))
             {

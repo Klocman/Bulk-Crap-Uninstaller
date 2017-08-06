@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -30,7 +31,8 @@ namespace WinUpdateHelper
         {
             try
             {
-                Console.OutputEncoding = Encoding.Unicode;
+                try { Console.OutputEncoding = Encoding.Unicode; }
+                catch (IOException) { /*Old .NET v4 without support for unicode output*/ }
 
                 ProcessCommandlineArguments(args);
 

@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Klocman.Extensions;
@@ -24,7 +25,8 @@ namespace UninstallerAutomatizer
 
         private static int Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.Unicode;
+            try { Console.OutputEncoding = Encoding.Unicode; }
+            catch (IOException) { /*Old .NET v4 without support for unicode output*/ }
 
             if (args.Length < 2)
                 return InvalidArgumentCode;
