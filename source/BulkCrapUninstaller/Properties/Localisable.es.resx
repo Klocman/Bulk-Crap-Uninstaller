@@ -162,7 +162,7 @@ Detalles del error:
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Por defecto</value>
-    <comment>Utilice en el cuadro de selección de idioma, cuando quiera utilizar el idioma del sistema</comment>
+    <comment>Utilice el cuadro de selección de idioma, cuando quiera utilizar el idioma del sistema</comment>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
     <value>Buscando restos...</value>
