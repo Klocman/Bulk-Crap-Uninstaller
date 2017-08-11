@@ -9,7 +9,8 @@ fr.depdownload_msg=The following applications are required before setup can cont
 de.depdownload_msg=The following applications are required before setup can continue:%n%n%1%nDownload and install now? 
 hu.depdownload_msg=Ezekre az alkalmazásokra szükség van a telepítés folytatása elõtt:%n%n%1%nLetölti és telepíti õket?  
 sl.depdownload_msg=Naslednje aplikacije so potrebne, preden se lahko nadaljuje namestitev:%n%n%1%nNaj jih zdaj prenesem in namestim?             
-nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?  
+nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?
+es.depdownload_msg=Las siguientes aplicaciones son necesarias antes que la instalación pueda continuar:%n%n%1%n¿Deseas Descargar e instalar ahora?
 
 depdownload_memo_title=Download dependencies   
 pl.depdownload_memo_title=Pobierz zależności
@@ -17,7 +18,8 @@ fr.depdownload_memo_title=Télécharger dépendances
 de.depdownload_memo_title=Download Abhängigkeiten                      
 hu.depdownload_memo_title=Függõségek letöltése            
 sl.depdownload_memo_title=Prenesi odvisnosti       
-nl.depdownload_memo_title=Downloaden afhankelijkheden  
+nl.depdownload_memo_title=Downloaden afhankelijkheden
+es.depdownload_memo_title=Descargar dependencias
 
 depinstall_memo_title=Install dependencies 
 pl.depinstall_memo_title=Zainstaluj zależności
@@ -26,6 +28,7 @@ de.depinstall_memo_title=Installieren Sie Abhängigkeiten
 hu.depinstall_memo_title=Függõségek telepítése         
 sl.depinstall_memo_title=Namesti odvisnosti                
 nl.depinstall_memo_title=Installeren afhankelijkheden
+es.depinstall_memo_title=Instalar dependencias
 
 depinstall_title=Installing dependencies  
 pl.depinstall_title=Instalacja zależności
@@ -33,7 +36,8 @@ fr.depinstall_title=Installation des dépendances
 de.depinstall_title=Installation von Abhängigkeiten   
 hu.depinstall_title=Függõségek telepítése          
 sl.depinstall_title=Namestitev odvisnosti       
-nl.depinstall_title=Installeren afhankelijkheden  
+nl.depinstall_title=Installeren afhankelijkheden
+es.depinstall_title=Instalando dependencias
 
 depinstall_description=Please wait while Setup installs dependencies on your computer.   
 pl.depinstall_description=Poczekaj aż instalator instaluje zależności na twoim komputerze.
@@ -41,7 +45,8 @@ fr.depinstall_description=Please wait while Setup installs dependencies on your 
 de.depinstall_description=Please wait while Setup installs dependencies on your computer.         
 hu.depinstall_description=Kérem várjon, amíg a függõségek telepítésre kerülnek a gépére.      
 sl.depinstall_description=Poèakajte, da Setup namesti odvisnosti v vaš raèunalnik.          
-nl.depinstall_description=Even wachten a.u.b. Setup installeerd de afhankelijkheden op uw computer.   
+nl.depinstall_description=Even wachten a.u.b. Setup installeerd de afhankelijkheden op uw computer.
+es.depinstall_description=Espere mientras el programa de instalación instala las dependencias en su equipo.
 
 depinstall_status=Installing %1...   
 pl.depinstall_status=Instalacja %1...
@@ -50,6 +55,7 @@ de.depinstall_status=Installieren %1...
 hu.depinstall_status=%1 telepítése...    
 sl.depinstall_status=Namestitev %1...    
 nl.depinstall_status=Installeren %1...
+es.depinstall_status=Instalando %1...
 
 depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.  
 pl.depinstall_missing=%1 musi być zainstalowany zanim instalacja może być kontynuowana. Zainstaluj %1 i ponownie uruchom program instalacyjny.
@@ -58,6 +64,7 @@ de.depinstall_missing=%1 must be installed before setup can continue. Please ins
 hu.depinstall_missing=A(z) %1 -t telepíteni kell a folytatás elõtt. Telepítse a(z) %1 -t, majd a telepítõt.    
 sl.depinstall_missing=%1 mora biti namešèen, preden se lahko namestitev nadaljuje. Prosimo namestite %1 in znova zaženite Setup.    
 nl.depinstall_missing=%1 moet worden geïnstalleerd voor dat setup verder kan gaan. Installeer %1 en voer setup opnieuw uit.
+es.depinstall_missing=%1 debe ser instalado antes de que la instalación pueda continuar. Instalar %1 y vuelva a ejecutar el programa de instalación.
 
 depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n     
 pl.depinstall_error=Wystąpił błąd podczas instalowania zależności. Uruchom ponownie komputer i ponownie uruchom instalację lub ręcznie zainstaluj następujące zależności:%n
@@ -65,7 +72,8 @@ fr.depinstall_error=An error occured while installing the dependencies. Please r
 de.depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n  
 hu.depinstall_error=Egy hiba történt a függõségek telepítése közben. Kérem, hogy indítsa újra a gépét, majd kézzel telepítse újra a következõ függõségeket:%n         
 sl.depinstall_error=Pri namestitvi odvisnosti je prišlo do napake. Znova zaženite raèunalnik in znova zaženite Setup ali roèno namestite naslednje odvisnosti:%n    
-nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankelijkheden. Herstart de computer en voer de setup opnieuw uit of installeer de volgende afhankelijkheden handmatig:%n  
+nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankelijkheden. Herstart de computer en voer de setup opnieuw uit of installeer de volgende afhankelijkheden handmatig:%n
+es.depinstall_error=Se produjo un error al instalar las dependencias. Reinicie el equipo y vuelva a ejecutar la instalación o instale las siguientes dependencias manualmente:%n
 
 isxdl_langfile=
 
@@ -75,6 +83,7 @@ Source: "scripts\isxdl\english.ini"; Flags: dontcopy; Languages: en
 Source: "scripts\isxdl\polish.ini"; Flags: dontcopy; Languages: pl
 Source: "scripts\isxdl\german2.ini"; Flags: dontcopy; Languages: de
 Source: "scripts\isxdl\french2.ini"; Flags: dontcopy; Languages: fr
+Source: "scripts\isxdl\spanish.ini"; Flags: dontcopy; Languages: es
 
 [Code]
 type
