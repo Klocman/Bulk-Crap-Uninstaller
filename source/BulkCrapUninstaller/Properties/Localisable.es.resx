@@ -134,7 +134,7 @@
 
 Detalles del error:
 </value>
-    <comment>Add space or newline afterwards and two newlines before</comment>
+    <comment>Añada espacio o nueva línea y después dos líneas nuevas antes</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>¿Le gustaría crear una copia de seguridad del registro antes de continuar?</value>
@@ -162,7 +162,7 @@ Detalles del error:
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Por defecto</value>
-    <comment>Used in language select box when you want to use the system language</comment>
+    <comment>Utilice el cuadro de selección de idioma, cuando quiera utilizar el idioma del sistema</comment>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
     <value>Buscando restos...</value>
@@ -194,7 +194,7 @@ Editor | Versión | Fecha | Tamaño | Registro | Tipo de desinstalación | Caden
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Listo</value>
-    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+    <comment>Se muestrará cuando no aparezca nada más en la barra de estado.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>{0} desinstaladores seleccionados</value>
@@ -207,7 +207,7 @@ Editor | Versión | Fecha | Tamaño | Registro | Tipo de desinstalación | Caden
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>No disponible</value>
-    <comment>Used on application list when value is not available</comment>
+    <comment>Utilice la lista de aplicaciones cuando el valor no está disponible</comment>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} aplicaciones</value>
@@ -381,7 +381,7 @@ Puede enviarlo más tarde desde la barra de menú superior (Ayuda-&gt; Enviar co
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>Nueva versión {0} disponible, ¿desea actualizar ahora?</value>
-    <comment>0 is version number</comment>
+    <comment>0 es el número de versión</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
     <value>BCUninstaller descargará automáticamente la actualización y la aplicará después de un reinicio. Tenga en cuenta que es posible que pierda su configuración en el proceso.
@@ -467,7 +467,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>BCUninstaller está desinstalando {0} aplicaciones</value>
-    <comment>0 is the uninstaller count</comment>
+    <comment>0 es el recuento de desinstalaciones</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Renombrar desinstalador</value>
