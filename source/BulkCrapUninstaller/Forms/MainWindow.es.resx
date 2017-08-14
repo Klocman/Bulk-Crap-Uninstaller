@@ -145,13 +145,13 @@
     <value>Comando de desinstalación</value>
   </data>
   <data name="olvColumnAbout.Text" xml:space="preserve">
-    <value>URL al respecto</value>
+    <value>Acerca de URL</value>
   </data>
   <data name="olvColumnInstallSource.Text" xml:space="preserve">
-    <value>Origen de instalación</value>
+    <value>Fuente de la instalación</value>
   </data>
   <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Ubicación de instalación</value>
+    <value>Ubicación de la instalación</value>
   </data>
   <data name="olvColumnUninstallerKind.Text" xml:space="preserve">
     <value>Tipo de desinstalador</value>
@@ -241,10 +241,10 @@
     <value>Código del producto / GUID</value>
   </data>
   <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Ruta del registro completa</value>
+    <value>Ruta completa del registro</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Cadena de desinstalación</value>
+    <value>Desinstalar cadena</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Copiar al portapapeles</value>
@@ -310,7 +310,7 @@
     <value>Mostrar barra de &amp;estado</value>
   </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar barra laterar de &amp;configuración</value>
+    <value>Mostrar barra lateral de &amp;configuración</value>
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Usar tema del sistema</value>
@@ -491,5 +491,35 @@
   </data>
   <data name="runToolStripMenuItem.Text" xml:space="preserve">
     <value>Ejecutar...</value>
+  </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Desinstalar por ventana, directorio o archivo...</value>
+  </data>
+  <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="sourceForgecomToolStripMenuItem.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="gitHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="fileHippocomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripMenuItem17.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="toolStripMenuItem19.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Desinstalar por ventana, directorio o archivo...</value>
   </data>
 </root>

@@ -130,7 +130,7 @@
     <value>Editor de condición</value>
   </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
-    <value>Remover</value>
+    <value>Eliminar</value>
   </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>Añadir</value>
@@ -148,7 +148,7 @@
     <value>Nombre del filtro</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
-    <value>Remover</value>
+    <value>Eliminar</value>
   </data>
   <data name="columnHeaderType.Text" xml:space="preserve">
     <value>Tipo</value>

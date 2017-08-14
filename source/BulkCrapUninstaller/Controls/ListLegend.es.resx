@@ -121,10 +121,10 @@
     <value>Característica de Windows</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Aplicación no registrado</value>
+    <value>Aplicación no registrada</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Desinstalador faltante</value>
+    <value>No hay desinstalador</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Certificado sin verificar</value>
@@ -133,7 +133,7 @@
     <value>Certificado verificado</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
-    <value>Leyenda de colores</value>
+    <value>Leyendo colores</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Apps de Windows Store</value>
