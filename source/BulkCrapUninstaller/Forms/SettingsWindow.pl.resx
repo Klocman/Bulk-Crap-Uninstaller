@@ -231,4 +231,19 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   <data name="tabPageDetection.Text" xml:space="preserve">
     <value>Wykrywanie</value>
   </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Rejestr (zalecane włączenie)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Dyski (wykrywa niezarejestrowane programy)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Ręcznie sprecyzowane sygnatury</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Szukwaj aplikacji w...</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Spróbuj wykryć niestandardowe foldery z programami automatycznie</value>
+  </data>
 </root>

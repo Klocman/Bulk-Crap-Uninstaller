@@ -498,6 +498,30 @@
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Удаление по окну, каталогу или файлу...</value>
   </data>
+  <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="sourceForgecomToolStripMenuItem.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="gitHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="fileHippocomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripMenuItem17.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="toolStripMenuItem19.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>462, 17</value>
   </metadata>

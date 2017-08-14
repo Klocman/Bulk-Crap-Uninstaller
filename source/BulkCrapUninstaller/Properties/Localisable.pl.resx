@@ -726,4 +726,16 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   <data name="Progress_Finishing_Startup" xml:space="preserve">
     <value>Wyszukiwanie wpisów startowych</value>
   </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Szukaj aplikację</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Nie wybrano żadnych poprawnych plików i/lub folderów. Upewnij się że masz do nich dostęp, i że nie są oznaczone jako pliki systemowe.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Szukaj aplikacji</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Nie znaleziono żadnych aplikacji w {0}</value>
+  </data>
 </root>
