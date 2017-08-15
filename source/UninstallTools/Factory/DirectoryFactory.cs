@@ -186,7 +186,8 @@ namespace UninstallTools.Factory
         private static void CreateFromDirectoryHelper(ICollection<ApplicationUninstallerEntry> results,
             DirectoryInfo directory, int level, ICollection<string> dirsToSkip)
         {
-            if (level >= 2 || dirsToSkip.Any(x => directory.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
+            // Level 0 is for the pf folder itself. First subfolder is level 1.
+            if (level > 2 || dirsToSkip.Any(x => directory.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)))
                 return;
 
             // Get contents of this installDir
