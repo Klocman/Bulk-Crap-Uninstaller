@@ -2,21 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.13.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.13/BCUninstaller_3.13_archive.zip</URL>
+<Version>3.14.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.14/BCUninstaller_3.14_portable.zip</URL>
 <Changes>
-Added online search for Fosshub, Sourceforge, Github, and Filehippo
-Added scanning LocalLow appdata for junk
-Added stat collection of installed net framework versions
-Increased directory junk scan depth by 1
-Moved processing of stats to separate thread for faster shutdown
-Moved system restore question after the uninstall confirmation window
-Updates to Czech, Dutch, French, Russian, Slovenian, and Polish translations
-Fixed fancy dialog boxes not centering properly over parent form
-Fixed new windows not being localizable
-Fixed right-clicking on unchecked item in junk remove window unchecking everything else
-Fixed selecting more than one item in junk remove window breaking context menu options
+Added scanning for missing application sizes
+Updated packages
+Increased depth of unregistered application search by 1
+For safety always run simple deletes last so that actual uninstallers have a chance to run
+Fixed copy order during build causing old libraries to be used
+Fixed helpers crashing on old .net v4 versions
+Merged update to Spanish translation by Emilio J. Grao
+Merged Spanish installer translation by Jhovany200
+Update to Polish translation
+Misc updates to translations
+Fixed Dutch installer translation
 </Changes>
-<Hash>354732fdfa9bf2d4dd113883fb72ee43</Hash>
+<Hash>6e54a934453d1c86d7c472601cdc9b1b</Hash>
 </Update>
 </Root>
