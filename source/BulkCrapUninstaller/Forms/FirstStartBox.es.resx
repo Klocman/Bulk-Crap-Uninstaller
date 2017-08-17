@@ -136,7 +136,7 @@
     <value>Desinstaladores corruptos</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Los elementos protegidos están marcados con la etiqueta "No Remover", lo que significa que el editor no quiere que los elimine. Esta etiqueta es utilizada a menudo en los grandes paquetes de software para evitar la desinstalación de sus partes individuales.</value>
+    <value>Los elementos protegidos están marcados con la etiqueta "No Eliminar", lo que significa que el editor no quiere que los elimine. Esta etiqueta es utilizada a menudo en los grandes paquetes de software para evitar la desinstalación de sus partes individuales.</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Acceso a Internet</value>
@@ -145,7 +145,7 @@
     <value>● Para enviar estadísticas de uso anónimas.</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Todos los desinstaladores que se encuentran en el sistema están en la lista principal. Aquí están algunas maneras de examinar estos datos:</value>
+    <value>Todos los desinstaladores que se encuentran en el sistema están en la lista principal. Estas son algunas formas de navegar por estos datos:</value>
   </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
     <value>Los desinstaladores inválidos están marcados en gris.</value>
@@ -166,8 +166,8 @@
     <value>Puede buscar actualizaciones de forma manual desde la barra de menú.</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Las aplicaciones no registrado están marcadas en rojo.
-Si no se encuentra el desinstalador original usted tendrá que utilizar la opción "Desinstalar manualmente" para eliminarlas.</value>
+    <value>Las aplicaciones no registradas están marcadas en rojo.
+Si no está el desinstalador original tendrá que utilizar la opción "Desinstalar manualmente" para eliminarlas.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bienvenido a BCUninstaller</value>
@@ -176,7 +176,7 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>Finalizar configuración</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Mostrar desinstaladores marcados como "protegido"</value>
+    <value>Mostrar desinstaladores marcados como "protegidos"</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Habilitar puntuación de las aplicaciones</value>
@@ -185,7 +185,7 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>Aplicar</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Aplicación no registrado</value>
+    <value>Aplicación no registrada</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>Componentes del sistema</value>
@@ -221,16 +221,16 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>Este asistente le dará un recorrido rápido y ayudará a configurar la aplicación.</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Las aplicaciones marcadas como "componentes del sistema" se ocultan de la mayor parte de los gestores básicos de desinstalación. Esta etiqueta no significa que la aplicación es una parte del sistema operativo.</value>
+    <value>Las aplicaciones marcadas como "componentes del sistema" se ocultan de la mayor parte de los gestores básicos de desinstalación. Esta etiqueta NO significa que la aplicación es una parte del sistema operativo.</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Desactivar la protección de los desinstaladores marcados como "protegido"</value>
+    <value>Desactivar la protección de los desinstaladores marcados como "protegidos"</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Usuarios avanzados</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
-    <value>Desinstaladores corruptos o faltantes</value>
+    <value>Desinstaladores corrompidos o que faltan</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Resaltar desinstaladores certificados</value>
@@ -260,13 +260,14 @@ Si no se encuentra el desinstalador original usted tendrá que utilizar la opci�
     <value>Mientras BCUninstaller puede ser utilizado como un desinstalador básico, la mayoría de sus funciones se dirigen a los usuarios más avanzados. ¡Proceda con precaución!</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
-    <value>Seleccionar usando checkboxs</value>
+    <value>Seleccionar usando checkboxes</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Enviar automáticamente estadísticas de uso anónimas</value>
   </data>
   <data name="p5finishTitle.Text" xml:space="preserve">
-    <value>La instalación ha sido finalizada</value>
+    <value>La instalación ha terminado
+</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Buscar actualizaciones automáticamente al iniciar la aplicación</value>
@@ -285,7 +286,7 @@ Advertencia: La verificación puede tardar mucho tiempo.</value>
     <value>● Agrupar desinstaladores similares</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ulk crap uninstaller</value>
+    <value>Desinstalador ulk crap</value>
     <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">

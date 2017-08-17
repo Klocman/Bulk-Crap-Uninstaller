@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicaciones no registrado</value>
+    <value>Mostrar aplicaciones no registradas</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Mostrar las aplicaciones que no tienen ningún desinstalador registrado. No son visibles en la mayoría de gestores de desinstalación, pero todavía ocupan espacio. Los elementos no registrado están marcados con color rojo. 
 
-ADVERTENCIA: Compruebe antes de eliminar estas aplicaciones, puede que aún sean necesarias!</value>
+ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sean necesarias!</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Resaltar desinstaladores faltantes</value>
+    <value>Resaltar los desinstaladores que faltan</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Utilizar el color gris para identificar desinstaladores que están dañados o faltantes.</value>
+    <value>Utilizar el color gris para identificar desinstaladores que están ausentes o dañados.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Resaltar desinstaladores certificados</value>
@@ -141,7 +141,7 @@ Si el certificado se ha verificado correctamente utilizar el color verde, si no 
 Advertencia: La verificación puede tardar mucho tiempo en completarse.</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Ocultar publicado por Microsoft</value>
+    <value>Ocultar lo publicado por Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filtrar todo lo que fue publicado por Microsoft. Es así de simple.</value>
@@ -157,13 +157,13 @@ Los drivers son a menudo marcados con esta etiqueta.</value>
     <value>Mostrar elementos protegidos</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Los elementos protegidos están marcados con la etiqueta "No Remover", lo que significa que el editor no quiere que los elimine.</value>
+    <value>Los elementos protegidos están marcados con la etiqueta "No Eliminar", lo que significa que el editor no quiere que los elimine.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Mostrar actualizaciones</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Actualizaciones de otras aplicaciones. Por lo general, se desinstalan junto con su aplicación pariente, así que pueden ser ignorados.</value>
+    <value>Actualizaciones de otras aplicaciones. Por lo general, se desinstalan junto con su aplicación principal, por lo que se pueden ignorar.</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Mostrar características de Windows</value>
@@ -175,12 +175,12 @@ Los drivers son a menudo marcados con esta etiqueta.</value>
     <value>Filtrado</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Seleccionar usando checkboxs</value>
+    <value>Seleccionar usando checkboxes</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Los cambios de estilo de selección de la lista de checkboxs. Son seguras porque un solo clic no puede deseleccionar todo. 
+    <value>Cambia el estilo de selección de la lista a casillas de verificación. Son más seguros porque un solo click no puede anular la selección de todo.
 
-Puede comprobar varios elementos seleccionándolos y presionando la barra espaciadora.</value>
+Puede comprobar varios elementos resaltándolos y presionando la barra espaciadora.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Mostrar elementos en grupos</value>

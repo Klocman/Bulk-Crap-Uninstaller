@@ -124,7 +124,7 @@
     <value>Útil | Buena calidad</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Razonable | Mala calidad</value>
+    <value>Cuestionable | Mala calidad</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Calificar</value>

@@ -121,7 +121,7 @@
     <value>¡Gracias por utilizar BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Si has encontrado útil esta herramienta gratuita de código abierto, por favor considera dedicar un minuto a ayudar! Dile a tus amigos, compartela en las redes sociales, envia comentarios - cualquier cosa pequeña cuenta!</value>
+    <value>Si has encontrado útil esta herramienta gratuita de código abierto, ¡por favor considera dedicar un minuto a ayudar! Díselo a tus amigos, compártela en las redes sociales, envía comentarios - ¡cualquier cosa pequeña cuenta!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Enviar comentario</value>
@@ -133,7 +133,7 @@
     <value>Compartir en Twitter</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>¿Algún problema o característica faltante?</value>
+    <value>¿Problemas o características que faltan?</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
     <value>Si tuviste algún problema con BCU, o si quieres sugerir una nueva característica, consulte estos enlaces:</value>
@@ -148,13 +148,13 @@
     <value>¿Quieres ayudar?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>¡No tienes que ser un programador para ayudar! Puedes donar para acelerar las actualizaciones o traducir BCU en tu lengua materna. Toda ayuda es muy apreciada, no importa lo pequeño!</value>
+    <value>¡No tienes que ser un programador para ayudar! Puedes donar para acelerar las actualizaciones o traducir BCU en tu lengua materna. Toda ayuda es muy apreciada ¡no importa si es pequeña!</value>
   </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
     <value>Traducir BCU</value>
   </data>
   <data name="buttonIssues.Text" xml:space="preserve">
-    <value>Insidentes en GitHub</value>
+    <value>Problemas en GitHub</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>No volver a mostrar esta ventana, nunca</value>

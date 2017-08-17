@@ -136,13 +136,15 @@
     <value>Añada una breve descripción de como reproducir el error.</value>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>El programa ha dejado de funcionar. Si presiona 'Salir', el programa se cerrará inmediatamente. Si presiona 'Enviar y Salir', el programa se cerrará y se mandará un reporte de error.</value>
+    <value>El programa ha dejado de funcionar. Si presiona 'Salir', el programa se cerrará inmediatamente. Si presiona 'Enviar y Salir', el programa se cerrará y se enviará un informe de error.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Salir</value>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>Contenido del reporte</value>
+    <value>Contenido del informe</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Enviar y salir</value>
@@ -151,7 +153,9 @@
     <value>Error</value>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>La aplicación ha dejado de funcionar.Se ha enviado un reporte del error a los programadores. Nos disculpamos por los inconvenientes que esto pueda causar.</value>
+    <value>La aplicación ha dejado de funcionar.Se ha enviado un informe de error a los programadores. Pedimos disculpas por los inconvenientes que esto pueda causar.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Error</value>
@@ -160,7 +164,8 @@
     <value>&amp;Continuar</value>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Ha ocurrido un error no controlado. Si presiona continuar, el programa ignorará este error y tratará de continuar. Si presiona salir, el programa se cerrará inmediatamente,</value>
+    <value>Ha ocurrido un error no controlado. Si pulsa continuar, el programa ignorará este error y tratará de continuar. Si pulsa salir, el programa se cerrará inmediatamente,</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Salir</value>

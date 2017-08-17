@@ -117,85 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="comboBoxFilter.Items" xml:space="preserve">
-    <value>Mostrar todo</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nombre del desinstalador</value>
   </data>
-  <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>Mostrar entradas de inicio</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Desinstalar</value>
   </data>
-  <data name="comboBoxFilter.Items2" xml:space="preserve">
-    <value>Mostrar tareas</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Silencioso</value>
   </data>
-  <data name="comboBoxFilter.Items3" xml:space="preserve">
-    <value>Mostrar extensiones del navegador</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Instalar ubicación</value>
   </data>
-  <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Refrescar</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Clasificación inteligente</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>&amp;Desinstalar</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cerrar</value>
+    <value>&amp;Cancelar</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportar...</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Esta es una lista de aplicaciones que se desinstalarán, en orden de arriba a abajo. Si anula la selección del campo "Desinstalar", la aplicación no se desinstalará. Si la desinstalación silenciosa no está disponible para un elemento, no se puede comprobar</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Nombre del programa</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Habilitado</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Editor</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Ubicación</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Comando</value>
-  </data>
-  <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Abrir ubicación del ejecutable</value>
-  </data>
-  <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir ubicación del enlace</value>
-  </data>
-  <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ejecutar comando</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copiar al portapapeles</value>
-  </data>
-  <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Crear &amp;copia de seguridad...</value>
-  </data>
-  <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mover al registro...</value>
-  </data>
-  <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ejecutar para todos los usuarios</value>
-  </data>
-  <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Habilitado</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Eliminar</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista de comandos que se pueden ejecutar automáticamente sin intervención del usuario</value>
-  </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Archivos de texto|*.txt</value>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Exportar entradas de inicio...</value>
-  </data>
-  <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Seleccione un directorio vacío para la copia de seguridad.</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>El orden inicial depende de la configuración de desinstalación, pero se puede cambiar arrastrando los elementos. Nota: BCU puede cambiar el orden si la desinstalación simultánea está habilitada.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Administrador de inicio</value>
-  </data>
-  <data name="comboBoxFilter.Items4" xml:space="preserve">
-    <value>Mostrar servicios</value>
+    <value>Confirmar tarea de desinstalación</value>
   </data>
 </root>

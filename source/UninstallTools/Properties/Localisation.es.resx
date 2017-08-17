@@ -124,10 +124,10 @@
     <value>Código del producto</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Nombre mostrado</value>
+    <value>Nombre para mostrar</value>
   </data>
   <data name="DisplayNameTrimmed" xml:space="preserve">
-    <value>Nombre corto mostrado</value>
+    <value>Nombre corto para mostrar</value>
   </data>
   <data name="DisplayVersion" xml:space="preserve">
     <value>Versión</value>
@@ -136,13 +136,13 @@
     <value>Tamaño estimado</value>
   </data>
   <data name="InstallDate" xml:space="preserve">
-    <value>Fecha de instalación</value>
+    <value>Fecha de la instalación</value>
   </data>
   <data name="InstallLocation" xml:space="preserve">
-    <value>Ubicación de instalación</value>
+    <value>Ubicación de la instalación</value>
   </data>
   <data name="InstallSource" xml:space="preserve">
-    <value>Origen de instalación</value>
+    <value>Origen de la instalación</value>
   </data>
   <data name="Is64Bit" xml:space="preserve">
     <value>Es una aplicación de 64 bits</value>
@@ -187,10 +187,10 @@
     <value>Tipo de desinstalador</value>
   </data>
   <data name="UninstallPossible" xml:space="preserve">
-    <value>Es posible desinstalarse</value>
+    <value>La desinstalación es posible</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
-    <value>Cadena de desinstalación</value>
+    <value>Cuerda de desinstalación</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Comentario</value>
@@ -214,16 +214,17 @@
     <value>Buena</value>
   </data>
   <data name="Confidence_Questionable" xml:space="preserve">
-    <value>Razonable</value>
+    <value>Cuestionable</value>
   </data>
   <data name="Confidence_Unknown" xml:space="preserve">
     <value>Desconocida</value>
   </data>
   <data name="Confidence_VeryGood" xml:space="preserve">
-    <value>Bastante buena</value>
+    <value>Muy buena</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
-    <value>Desinstalador pariente</value>
+    <value>Desinstalador padre</value>
+    <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
     <value>El nombre de la empresa no coincide</value>
@@ -235,7 +236,7 @@
     <value>El directorio está siendo usado por otras aplicaciones instaladas</value>
   </data>
   <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
-    <value>El elemento es explicitamente mencionado en el desinstalador</value>
+    <value>El elemento se menciona explícitamente en el desinstalador</value>
   </data>
   <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
     <value>Entrada de registro del desinstalador</value>
@@ -247,13 +248,13 @@
     <value>Desconocido</value>
   </data>
   <data name="UninstallerType_InnoSetup" xml:space="preserve">
-    <value>Inno Setup</value>
+    <value>Configuración de Inno</value>
   </data>
   <data name="UninstallerType_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="UninstallerType_NSIS" xml:space="preserve">
-    <value>Nullsoft Scriptable Install System </value>
+    <value>Sistema de instalación Nullsoft Scriptable</value>
   </data>
   <data name="UninstallerType_InstallShield" xml:space="preserve">
     <value>InstallShield</value>
@@ -274,7 +275,7 @@
     <value>Protegido</value>
   </data>
   <data name="UninstallStatus_Skipped" xml:space="preserve">
-    <value>Saltado</value>
+    <value>Omitido</value>
   </data>
   <data name="UninstallStatus_Uninstalling" xml:space="preserve">
     <value>Desinstalando</value>
@@ -298,13 +299,13 @@
     <value>Termina con</value>
   </data>
   <data name="FilterComparisonMethod_Equals" xml:space="preserve">
-    <value>Equivale a</value>
+    <value>Iguales</value>
   </data>
   <data name="FilterComparisonMethod_Regex" xml:space="preserve">
-    <value>Expresión regular</value>
+    <value>Regex</value>
   </data>
   <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
-    <value>Inicia con</value>
+    <value>Comienza con</value>
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>Característica de Windows</value>
@@ -318,10 +319,10 @@
     <value>Comandos de inicio</value>
   </data>
   <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
-    <value>¿Remover los programas seleccionados del inicio?</value>
+    <value>¿Eliminar los programas seleccionados del inicio?</value>
   </data>
   <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
-    <value>Administrador de inicio</value>
+    <value>Administrador del Inicio</value>
   </data>
   <data name="StartupManager_Loading" xml:space="preserve">
     <value>Cargando...</value>
@@ -330,7 +331,7 @@
     <value>Carpeta vacía</value>
   </data>
   <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
-    <value>No hay sub directorios</value>
+    <value>No hay subdirectorios</value>
   </data>
   <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
     <value>El editor es reconocido</value>
@@ -352,19 +353,19 @@
     <value>Nueva condición</value>
   </data>
   <data name="ManagerError_Skipped" xml:space="preserve">
-    <value>Saltado por el usuario</value>
+    <value>Omitido por el usuario</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
-    <value>No hay manera válida de desinstalar esta entrada</value>
+    <value>No hay un modo válido de desinstalar esta entrada</value>
   </data>
   <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
-    <value>La desinstalación se detuvo prematuramente</value>
+    <value>Desinstalación detenida prematuramente</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
     <value>El desinstalador devolvió el código de error:</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
-    <value>El elemento parece ser una categoría de editor conjunta</value>
+    <value>El elemento parece ser una categoría completa de editores</value>
   </data>
   <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
     <value>El nombre del producto no coincide muy bien</value>
@@ -379,13 +380,13 @@
     <value>Contiene</value>
   </data>
   <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
-    <value>Ellos ya no podrán abrirse durante el inicio. Asegúrese de que los elementos seleccionados no son necesarios antes de removerlos.</value>
+    <value>Ya no se abrirán durante el arranque. Asegúrese de que los elementos seleccionados no sean necesarios antes de quitarlos.</value>
   </data>
   <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
-    <value>Ejecutables están presentes</value>
+    <value>Los ejecutables están presentes</value>
   </data>
   <data name="Confidence_PF_FilesPresent" xml:space="preserve">
-    <value>Archivos están presentes</value>
+    <value>Los archivos están presentes</value>
   </data>
   <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
     <value>Muchos archivos están presentes</value>
@@ -397,10 +398,10 @@
     <value>La entrada se ejecutará una sola vez</value>
   </data>
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
-    <value>La entrada está adaptada a la aplicación</value>
+    <value>La entrada se corresponde con la solicitud</value>
   </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
-    <value>Archivos de programa huérfano</value>
+    <value>Archivos de programa huérfanos</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
     <value>Error al habilitar esta entrada, no se encontró el siguiente archivo:</value>
@@ -409,16 +410,16 @@
     <value>El desinstalador no responde</value>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
-    <value>Extensiones del navegador</value>
+    <value>Objeto del Ayudante del Navegador</value>
   </data>
   <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
     <value>El valor no puede ser nulo o vacío</value>
   </data>
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
-    <value>El valor no puede contener saltos de línea</value>
+    <value>El valor no puede contener líneas nuevas</value>
   </data>
   <data name="Error_InvalidRegKeys" xml:space="preserve">
-    <value>Clave de registro de inicio no válida o desconocida (s):</value>
+    <value>Clave de registro de inicio no válida o desconocida(s):</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>Is no registrado</value>
@@ -428,7 +429,7 @@
     <value>La eliminación de los datos de la App Store es problemático</value>
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
-    <value>Eliminación simple</value>
+    <value>Borrado simple</value>
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Todas las propiedades</value>
@@ -437,25 +438,25 @@
     <value>Archivos y directorios</value>
   </data>
   <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
-    <value>El directorio está, o estará vacío después de eliminar la basura.</value>
+    <value>El directorio está, o estará, vacío después de eliminar la basura.</value>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>Analizando productos MSI instalados...</value>
   </data>
   <data name="Progress_MSI_sub" xml:space="preserve">
-    <value>Se encontraron {0} aplicaciones GUID</value>
+    <value>Halladas {0} aplicaciones GUID</value>
   </data>
   <data name="Progress_Registry" xml:space="preserve">
-    <value>Analizando registro por desinstaladores...</value>
+    <value>Registro de escaneo para desinstaladores...</value>
   </data>
   <data name="Progress_Registry_Gathering" xml:space="preserve">
-    <value>Recopilando claves del registro</value>
+    <value>Recopilación de claves del registro</value>
   </data>
   <data name="Progress_Registry_Processing" xml:space="preserve">
     <value>Procesando {0}</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
-    <value>Generando información faltante del desinstalador...</value>
+    <value>Generación de información de desinstalación que falta...</value>
   </data>
   <data name="Progress_DriveScan" xml:space="preserve">
     <value>Analizando unidades por aplicaciones...</value>
@@ -479,21 +480,24 @@
     <value>Buscando características de Windows</value>
   </data>
   <data name="Progress_Merging" xml:space="preserve">
-    <value>Juntando aplicaciones descubiertas...</value>
+    <value>Fusionando aplicaciones descubiertas...</value>
   </data>
   <data name="Progress_Merging_Stores" xml:space="preserve">
-    <value>Juntando aplicaciones de tiendas</value>
+    <value>Fusionando aplicaciones de tiendas</value>
   </data>
   <data name="Progress_Merging_Drives" xml:space="preserve">
-    <value>Juntando aplicaciones de unidades</value>
+    <value>Fusionando aplicaciones de unidades</value>
   </data>
   <data name="Progress_GeneratingInfo" xml:space="preserve">
-    <value>Generando información faltante...</value>
+    <value>Generando información que falta...</value>
   </data>
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Windows Update</value>
   </data>
   <data name="Startup_ShortName_Service" xml:space="preserve">
     <value>Servicio</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Buscando Actualizaciones de Windows</value>
   </data>
 </root>
