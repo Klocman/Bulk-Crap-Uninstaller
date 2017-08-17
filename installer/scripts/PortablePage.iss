@@ -37,7 +37,7 @@ fr.InstallPortableInfo =L'installation Portable ne s'enregistrera pas elle-même
 hu.InstallPortableInfo =A hordozható telepítés esetén a program nem jegyzi ba magát a rendszerbe, a fájljai csak kicsomagolásra kerülnek a megadott könyvtárba. Ez a könyvtár bárhol lehet, akár egy USB meghajtón is. Ezzel a könyvtárat bárhova magával viheti, mivel az az egész alkalmazást tartalmazza.
 sl.InstallPortableInfo =Prenosna namestitev se ne bo registrirala v sistem, bo le kopirala datoteke v doloèen imenik. Lahko nastavite imenik na karkoli vam je všeè, na primer na USB pogon. T aimenik boste lahko premaknili, saj je celotna aplikacija znotraj le-tega.         
 nl.InstallPortableInfo =Portabele installatie registreert zich zelf niet in het systeem, het pakt alleen bestanden uit in de opgegeven map. U kunt naar eigen voorkeur een map opgeven, bijvoorbeeld op een USB schijf. Het is mogelijk om deze map later te verplaatsen, omdat daarin het hele programma zit.
-es.InstallPortableInfo =La instalación portable no se registrará en el sistema, sino que sólo extraerá archivos al directorio especificado. Puede configurar el directorio para cualquier cosa que desee, por ejemplo, a una unidad USB. Usted será capaz de mover este directorio libremente ya que la aplicación completa está dentro de ella.
+es.InstallPortableInfo =La instalación portable no se registrará en el sistema, sólo extrae los archivos al directorio especificado. Puede colocarlo en cualquier sitio, por ejemplo en una unidad USB. Podrá moverlo libremente ya que la aplicación está dentro del directorio.
 
 InstallStandardInfo =This option will install BCUninstaller on your computer as a normal application. Standard uninstaller will be created and it will be visible under "Programs and Features" as well as in other third-party uninstallers.
 pl.InstallStandardInfo =Ta aplikacja zostanie zainstalowana i zarejestrowana w tym systemie. Zostanie stworzony deinstalator i będzie on widoczny w panelu sterowania i innych deinstalatorach.
@@ -46,7 +46,7 @@ fr.InstallStandardInfo =Cette option installera BCUninstaller sur votre ordinate
 hu.InstallStandardInfo =Ezzel a lehetõséggel úgy kerül telepítésre a BCUninstaller, mint egy normál alkalmazás. A szabványos eltávolítója megtalálható lesz a "Programok és szolgáltatások" ablakban, valamint az egyéb eltávolítókban.
 sl.InstallStandardInfo =Ta možnost bo namestila BCUninstaller v vaš raèunalnik kot obièajno aplikacijo. Ustvarjen bo standarden odstranjevalce, ki bo viden znotraj skupine "Programi in funkcije" kot tudi v drugih odstranjevalcih tretjih oseb.
 nl.InstallStandardInfo =Deze optie installeert BCUnistaller op uw computer als een normaal programma. Er wordt een standaard uninstaller gecreëerd en deze wordt zichtbaar onder "Programma's en Features" net zoals in andere derde-partij uninstallers.
-es.InstallStandardInfo =Esta opción instalará BCUninstaller en su equipo como una aplicación normal. Se creará un programa de desinstalación estándar y será visible en "Programas y características", así como en otros desinstaladores de terceros.
+es.InstallStandardInfo =Esta opción instalará BCUninstaller en su equipo como una aplicación normal. Se creará un desinstalador estándar y estará visible en "Programas y características", así como otros desinstaladores de terceros.
 
 [Code]
 var
