@@ -4,8 +4,6 @@
 */
 
 using System;
-using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -105,8 +103,16 @@ namespace BulkCrapUninstaller.Forms
 
         private void CloseWizard(object sender, EventArgs e)
         {
-            _settings.Settings.MiscFirstRun = false;
-            _settings.Settings.Save();
+            try
+            {
+                _settings.Settings.MiscFirstRun = false;
+                _settings.Settings.Save();
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
+
             Close();
         }
 
