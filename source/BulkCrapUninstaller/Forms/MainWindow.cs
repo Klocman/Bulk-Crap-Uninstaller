@@ -103,7 +103,7 @@ namespace BulkCrapUninstaller.Forms
 
             // Setup list view
             _listView = new UninstallerListViewTools(this);
-            _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication);
+            _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
 
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
@@ -239,6 +239,28 @@ namespace BulkCrapUninstaller.Forms
                     control.Enabled = !value;
 
                 Refresh();
+            });
+        }
+
+        private bool previousListLegendState = true;
+        private void SetVisible(bool val)
+        {
+            this.SafeInvoke(() =>
+            {
+                Visible = val;
+                if (_listLegendWindow != null)
+                {
+                    if (val)
+                    {
+                        _setMan.Selected.Settings.UninstallerListShowLegend = previousListLegendState;
+                        //_listLegendWindow.Visible = previousListLegendState;
+                    }
+                    else
+                    {
+                        previousListLegendState = _setMan.Selected.Settings.UninstallerListShowLegend;
+                        _listLegendWindow.Visible = false;
+                    }
+                }
             });
         }
 

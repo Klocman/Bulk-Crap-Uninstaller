@@ -229,7 +229,8 @@ ocultan de la mayor parte de los gestores básicos de desinstalación. Esta
 etiqueta no significa que la aplicación es una parte del sistema operativo.</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Desactivar la protección de los desinstaladores marcados como "protegidos"</value>
+    <value>Desactivar la protección de los desinstaladores marcados 
+como "protegidos"</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Usuarios avanzados</value>
@@ -307,7 +308,8 @@ Uninstaller</value>
     <value>Salir del asistente</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Mostrar desinstaladores marcados como "componentes del sistema"</value>
+    <value>Mostrar desinstaladores marcados como "componentes 
+del sistema"</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
     <value>● Para cargar los informes de errores.</value>
