@@ -133,7 +133,7 @@
     <value>Versión del programa</value>
   </data>
   <data name="labelis64.Text" xml:space="preserve">
-    <value>Es 64 bits:</value>
+    <value>Es de 64 bits:</value>
   </data>
   <data name="labelPortable.Text" xml:space="preserve">
     <value>Está instalado:</value>
@@ -145,7 +145,7 @@
     <value>DotNetZip</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Iconos modernos de la interfaz de usuario</value>
+    <value>Modern UI Icons</value>
     <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
@@ -191,7 +191,7 @@
     <value>Acerca de BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Contenedor administrado del programador de tareas</value>
+    <value>Task Scheduler Managed Wrapper</value>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>

@@ -157,7 +157,7 @@
     <value>● Para buscar actualizaciones del programa.</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>Puede forzar BCUninstaller para que utilice una localización específica si el idioma por defecto es incorrecto. Se realizará un reinicio para aplicar el nuevo idioma.</value>
+    <value>BCUninstaller puede forzar el uso de una localización específica si el idioma por defecto es incorrecto. Se realizará un reinicio para aplicar el nuevo idioma.</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Resaltar desinstaladores inválidos</value>
@@ -245,7 +245,7 @@ Si no está el desinstalador original tendrá que utilizar la opción "Desinstal
     <value>Con el tiempo encontrará que algunas aplicaciones se niegan a desinstalarse, o simplemente desaparecerán de la mayoría de los gestores de desinstalación.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostrar aplicaciones huérfanas en la lista</value>
+    <value>Mostrar aplicaciones no registradas en la lista</value>
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>En algunos casos los desinstaladores pueden corromperse, haciendo imposible su desinstalación. BCUninstaller puede quitar estas entradas fácilmente utilizando la opción "Desinstalar manualmente".</value>
@@ -254,10 +254,10 @@ Si no está el desinstalador original tendrá que utilizar la opción "Desinstal
     <value>A veces las aplicaciones enteras pueden dejar restos en su unidad, incluso después de haber sido desinstaladas. Esto también puede ocurrir si solamente se quita el desinstalador.</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
-    <value>Los desinstaladores pueden ser firmados con certificados emitidos por las autoridades pertinentes. Si el certificado pasa la validación del paquete de software no ha sido alterado y es de buena reputación.</value>
+    <value>Los desinstaladores pueden ser firmados con certificados emitidos por las autoridades pertinentes. Si el certificado pasa la validación, y el paquete de software no ha sido alterado y tiene buena reputación.</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>Mientras BCUninstaller puede ser utilizado como un desinstalador básico, la mayoría de sus funciones se dirigen a los usuarios más avanzados. ¡Proceda con precaución!</value>
+    <value>BCUninstaller puede ser utilizado como un desinstalador básico, la mayoría de sus funciones se dirigen a los usuarios más avanzados. ¡Proceda con precaución!</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Seleccionar usando checkboxes</value>
@@ -286,7 +286,8 @@ Advertencia: La verificación puede tardar mucho tiempo.</value>
     <value>● Agrupar desinstaladores similares</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Desinstalador ulk crap</value>
+    <value>ulk Crap
+Uninstaller</value>
     <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
