@@ -136,7 +136,10 @@
     <value>Desinstaladores corruptos</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Los elementos protegidos están marcados con la etiqueta "No Eliminar", lo que significa que el editor no quiere que los elimine. Esta etiqueta es utilizada a menudo en los grandes paquetes de software para evitar la desinstalación de sus partes individuales.</value>
+    <value>Los elementos protegidos están marcados con etiqueta "No Eliminar",
+lo que significa que el editor no quiere que los elimine. Esta etiqueta es
+utilizada a menudo en los grandes paquetes de software para evitar la
+desinstalación de sus partes individuales.</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Acceso a Internet</value>
@@ -221,7 +224,9 @@ Si no está el desinstalador original tendrá que utilizar la opción "Desinstal
     <value>Este asistente le dará un recorrido rápido y ayudará a configurar la aplicación.</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Las aplicaciones marcadas como "componentes del sistema" se ocultan de la mayor parte de los gestores básicos de desinstalación. Esta etiqueta NO significa que la aplicación es una parte del sistema operativo.</value>
+    <value>Las aplicaciones marcadas como "componentes del sistema" se
+ocultan de la mayor parte de los gestores básicos de desinstalación. Esta
+etiqueta no significa que la aplicación es una parte del sistema operativo.</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Desactivar la protección de los desinstaladores marcados como "protegidos"</value>
@@ -257,7 +262,9 @@ Si no está el desinstalador original tendrá que utilizar la opción "Desinstal
     <value>Los desinstaladores pueden ser firmados con certificados emitidos por las autoridades pertinentes. Si el certificado pasa la validación, y el paquete de software no ha sido alterado y tiene buena reputación.</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>BCUninstaller puede ser utilizado como un desinstalador básico, la mayoría de sus funciones se dirigen a los usuarios más avanzados. ¡Proceda con precaución!</value>
+    <value>BCUninstaller puede ser utilizado como un desinstalador básico, 
+la mayoría de sus funciones se dirigen a los usuarios más avanzados. 
+¡Proceda con precaución!</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Seleccionar usando checkboxes</value>
