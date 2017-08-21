@@ -124,7 +124,7 @@
     <value>Sólo un desinstalador fuerte a la vez</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Automáticamente ejecutar desinstaladores simultáneamente (si es posible)</value>
+    <value>Ejecutar desinstaladores simultáneamente (si es posible)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Número máximo de desinstaladores en ejecución:</value>
@@ -157,7 +157,7 @@
     <value>Generar posibles desinstaladores silenciosos si es posible</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Matar automáticamente si está atascado esperando la entrada del usuario</value>
+    <value>Matar si está atascado esperando la entrada del usuario</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desinstalación silenciosa</value>

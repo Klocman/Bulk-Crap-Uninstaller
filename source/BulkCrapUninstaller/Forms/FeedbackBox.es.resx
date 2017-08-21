@@ -157,7 +157,7 @@
     <value>Problemas en GitHub</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>No volver a mostrar esta ventana, nunca</value>
+    <value>No volver a mostrar esta ventana</value>
   </data>
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Cerrar</value>
