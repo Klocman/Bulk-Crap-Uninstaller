@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectListView2012", "Objec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUpdateHelper", "WinUpdateHelper\WinUpdateHelper.csproj", "{5247BD39-5DEB-4F14-AF4B-9598A8544D06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalUninstaller", "UniversalUninstaller\UniversalUninstaller.csproj", "{129CBF33-9E19-4D26-A601-5E8394907AE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,18 @@ Global
 		{5247BD39-5DEB-4F14-AF4B-9598A8544D06}.Release|x64.Build.0 = Release|Any CPU
 		{5247BD39-5DEB-4F14-AF4B-9598A8544D06}.Release|x86.ActiveCfg = Release|Any CPU
 		{5247BD39-5DEB-4F14-AF4B-9598A8544D06}.Release|x86.Build.0 = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|x64.Build.0 = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Debug|x86.Build.0 = Debug|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|x64.ActiveCfg = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|x64.Build.0 = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{129CBF33-9E19-4D26-A601-5E8394907AE1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
