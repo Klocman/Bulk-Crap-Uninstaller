@@ -44,7 +44,7 @@
             this.targetList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.targetList1.Location = new System.Drawing.Point(8, 29);
             this.targetList1.Name = "targetList1";
-            this.targetList1.Size = new System.Drawing.Size(425, 257);
+            this.targetList1.Size = new System.Drawing.Size(442, 342);
             this.targetList1.TabIndex = 0;
             // 
             // panel1
@@ -53,17 +53,17 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(8, 286);
+            this.panel1.Location = new System.Drawing.Point(8, 371);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(425, 36);
+            this.panel1.Size = new System.Drawing.Size(442, 36);
             this.panel1.TabIndex = 1;
             // 
             // buttonDelete
             // 
             this.buttonDelete.AutoSize = true;
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonDelete.Location = new System.Drawing.Point(267, 8);
+            this.buttonDelete.Location = new System.Drawing.Point(284, 8);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 28);
             this.buttonDelete.TabIndex = 1;
@@ -74,7 +74,7 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(342, 8);
+            this.panel2.Location = new System.Drawing.Point(359, 8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(8, 28);
             this.panel2.TabIndex = 2;
@@ -84,12 +84,13 @@
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCancel.Location = new System.Drawing.Point(350, 8);
+            this.buttonCancel.Location = new System.Drawing.Point(367, 8);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 28);
             this.buttonCancel.TabIndex = 0;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -99,7 +100,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 21);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(442, 21);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // label1
@@ -117,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(441, 330);
+            this.ClientSize = new System.Drawing.Size(458, 415);
             this.Controls.Add(this.targetList1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);

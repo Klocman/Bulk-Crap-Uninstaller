@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using Klocman.IO;
+using Klocman.Tools;
+using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
 {
@@ -17,19 +17,51 @@ namespace UniversalUninstaller
         {
             InitializeComponent();
 
-            treeListView1.CanExpandGetter = model => ((TreeEntry)model).IsDirectory;
+            treeListView1.CanExpandGetter = model => ((TreeEntry) model).IsDirectory;
             treeListView1.ChildrenGetter = ChildrenGetter;
 
             treeListView1.HierarchicalCheckboxes = false;
             treeListView1.UseWaitCursorWhenExpanding = true;
             treeListView1.PersistentCheckBoxes = false;
 
-            treeListView1.CellToolTipGetter = (column, modelObject) => (modelObject as TreeEntry)?.FileSystemInfo.FullName;
+            treeListView1.CellToolTipGetter =
+                (column, modelObject) => (modelObject as TreeEntry)?.FileSystemInfo.FullName;
 
             treeListView1.BooleanCheckStateGetter = BooleanCheckStateGetter;
             treeListView1.BooleanCheckStatePutter = BooleanCheckStatePutter;
 
             olvColumn1.AspectGetter = rowObject => (rowObject as TreeEntry)?.FileSystemInfo.Name;
+            olvColumn1.ImageGetter = ImageGetter;
+
+            olvColumnSize.AspectGetter = rowObject =>
+            {
+                var treeEntry = rowObject as TreeEntry;
+                return treeEntry?.IsDirectory == false
+                    ? FileSize.FromBytes(((FileInfo) treeEntry.FileSystemInfo).Length)
+                    : FileSize.Empty;
+            };
+
+            var il = new ImageList {ColorDepth = ColorDepth.Depth24Bit, ImageSize = new Size(20, 20)};
+            il.Images.Add(Resources.folder);
+            il.Images.Add(Resources.page_text);
+            il.Images.Add(Resources.app);
+            treeListView1.SmallImageList = il;
+        }
+
+        private object ImageGetter(object rowObject)
+        {
+            var treeEntry = rowObject as TreeEntry;
+
+            if (treeEntry != null)
+            {
+                if (treeEntry.IsDirectory)
+                    return 0;
+
+                if (WindowsTools.IsExectuable(treeEntry.FileSystemInfo.FullName, false))
+                    return 2;
+            }
+
+            return 1;
         }
 
         private IEnumerable ChildrenGetter(object model)
@@ -95,28 +127,27 @@ namespace UniversalUninstaller
             if (treeEntry.Checked)
                 return Enumerable.Repeat(treeEntry.FileSystemInfo, 1);
 
-            return GetSelectedItems(treeEntry);
+            return treeListView1.GetChildren(modelItem).Cast<object>().SelectMany(GetSelectedItems);
         }
 
         private void toolStripButtonSelAll_Click(object sender, EventArgs e)
         {
             treeListView1.CheckAll();
         }
-    }
 
-    public class TreeEntry
-    {
-        public TreeEntry(FileSystemInfo fileSystemInfo)
+        private void expand_Click(object sender, EventArgs e)
         {
-            if (fileSystemInfo == null) throw new ArgumentNullException(nameof(fileSystemInfo));
-            FileSystemInfo = fileSystemInfo;
-            IsDirectory = fileSystemInfo is DirectoryInfo;
-            Checked = true;
+            treeListView1.ExpandAll();
         }
 
-        public bool IsDirectory { get; }
-        public FileSystemInfo FileSystemInfo { get; }
-        public bool Checked { get; set; }
-    }
+        private void collapse_Click(object sender, EventArgs e)
+        {
+            treeListView1.CollapseAll();
+        }
 
+        private void treeListView1_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            treeListView1.Refresh();
+        }
+    }
 }

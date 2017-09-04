@@ -31,57 +31,96 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TargetList));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonSelAll = new System.Windows.Forms.ToolStripButton();
             this.treeListView1 = new BrightIdeasSoftware.TreeListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnSize = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.toolStripButtonSelAll = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExpand = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCollapse = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSelAll});
+            this.toolStripButtonSelAll,
+            this.toolStripSeparator1,
+            this.toolStripButtonExpand,
+            this.toolStripButtonCollapse});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(431, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(431, 32);
             this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // treeListView1
+            // 
+            this.treeListView1.AllColumns.Add(this.olvColumn1);
+            this.treeListView1.AllColumns.Add(this.olvColumnSize);
+            this.treeListView1.CellEditUseWholeCell = false;
+            this.treeListView1.CheckBoxes = true;
+            this.treeListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn1,
+            this.olvColumnSize});
+            this.treeListView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.treeListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListView1.FullRowSelect = true;
+            this.treeListView1.GridLines = true;
+            this.treeListView1.Location = new System.Drawing.Point(0, 32);
+            this.treeListView1.Name = "treeListView1";
+            this.treeListView1.ShowGroups = false;
+            this.treeListView1.ShowImagesOnSubItems = true;
+            this.treeListView1.Size = new System.Drawing.Size(431, 284);
+            this.treeListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.treeListView1.TabIndex = 1;
+            this.treeListView1.UseCompatibleStateImageBehavior = false;
+            this.treeListView1.View = System.Windows.Forms.View.Details;
+            this.treeListView1.VirtualMode = true;
+            this.treeListView1.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.treeListView1_ItemChecked);
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "";
+            this.olvColumn1.FillsFreeSpace = true;
+            // 
+            // olvColumnSize
+            // 
+            this.olvColumnSize.Text = "Size";
+            this.olvColumnSize.Width = 72;
             // 
             // toolStripButtonSelAll
             // 
             this.toolStripButtonSelAll.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSelAll.Image")));
             this.toolStripButtonSelAll.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSelAll.Name = "toolStripButtonSelAll";
-            this.toolStripButtonSelAll.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButtonSelAll.Size = new System.Drawing.Size(82, 29);
             this.toolStripButtonSelAll.Text = "Select all";
             this.toolStripButtonSelAll.Click += new System.EventHandler(this.toolStripButtonSelAll_Click);
             // 
-            // treeListView1
+            // toolStripButtonExpand
             // 
-            this.treeListView1.AllColumns.Add(this.olvColumn1);
-            this.treeListView1.CellEditUseWholeCell = false;
-            this.treeListView1.CheckBoxes = true;
-            this.treeListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1});
-            this.treeListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListView1.FullRowSelect = true;
-            this.treeListView1.GridLines = true;
-            this.treeListView1.Location = new System.Drawing.Point(0, 25);
-            this.treeListView1.Name = "treeListView1";
-            this.treeListView1.ShowGroups = false;
-            this.treeListView1.ShowImagesOnSubItems = true;
-            this.treeListView1.Size = new System.Drawing.Size(431, 291);
-            this.treeListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.treeListView1.TabIndex = 1;
-            this.treeListView1.UseCompatibleStateImageBehavior = false;
-            this.treeListView1.View = System.Windows.Forms.View.Details;
-            this.treeListView1.VirtualMode = true;
+            this.toolStripButtonExpand.Image = global::UniversalUninstaller.Properties.Resources.section_expand_all;
+            this.toolStripButtonExpand.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExpand.Name = "toolStripButtonExpand";
+            this.toolStripButtonExpand.Size = new System.Drawing.Size(89, 29);
+            this.toolStripButtonExpand.Text = "Expand all";
+            this.toolStripButtonExpand.Click += new System.EventHandler(this.expand_Click);
             // 
-            // olvColumn1
+            // toolStripButtonCollapse
             // 
-            this.olvColumn1.AspectName = "";
-            this.olvColumn1.FillsFreeSpace = true;
+            this.toolStripButtonCollapse.Image = global::UniversalUninstaller.Properties.Resources.section_collapse_all;
+            this.toolStripButtonCollapse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCollapse.Name = "toolStripButtonCollapse";
+            this.toolStripButtonCollapse.Size = new System.Drawing.Size(96, 29);
+            this.toolStripButtonCollapse.Text = "Collapse all";
+            this.toolStripButtonCollapse.Click += new System.EventHandler(this.collapse_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
             // 
             // TargetList
             // 
@@ -105,5 +144,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSelAll;
         private BrightIdeasSoftware.TreeListView treeListView1;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExpand;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCollapse;
+        private BrightIdeasSoftware.OLVColumn olvColumnSize;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

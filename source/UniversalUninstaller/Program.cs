@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Klocman.Forms;
+using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
 {
-    static class Program
+    internal static class Program
     {
-        static bool quietMode;
+        private static bool _quietMode;
+
         /// <summary>
         /// The main entry point for the application.
-        /// 
         /// args:
         /// Exe.exe [/q] DirPath
         /// /q - quiet
+        /// return codes:
+        /// 0 - ok
+        /// 1 - Installation aborted by user (cancel button)
+        /// 11 - invalid arguments
+        /// 161 - failed to delete
         /// </summary>
         [STAThread]
-        static int Main()
+        private static int Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -26,7 +31,7 @@ namespace UniversalUninstaller
             var args = Environment.GetCommandLineArgs().Skip(1).ToList();
 
             if (args.Any(x => x.Equals("/q", StringComparison.OrdinalIgnoreCase)))
-                quietMode = true;
+                _quietMode = true;
 
             if (args.Count > 2 || args.Count < 1)
             {
@@ -53,13 +58,20 @@ namespace UniversalUninstaller
                 return 11;
             }
 
-            if (!quietMode)
-                Application.Run(new UninstallSelection(dir));
+            if (!_quietMode)
+            {
+                var uninstallWindow = new UninstallSelection(dir);
+                Application.Run(uninstallWindow);
+                if (uninstallWindow.WasCancelled)
+                    return 1;
+                if (uninstallWindow.DeleteFailed)
+                    return 161;
+            }
             else
             {
                 try
                 {
-                    DeleteItems(new[] { dir });
+                    DeleteItems(new[] {dir});
                 }
                 catch (Exception exception)
                 {
@@ -85,11 +97,10 @@ namespace UniversalUninstaller
 
         private static void ShowInvalidArgsBox()
         {
-            if (quietMode) return;
+            if (_quietMode) return;
 
-            MessageBox.Show(
-                "Invalid number of arguments. Pass full path of the directory to remove as an argument, and optionally /q for quiet mode.",
-                "Universal Uninstaller", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Localisation.Program_ShowInvalidArgsBox_Message,
+                Localisation.Program_ShowInvalidArgsBox_Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

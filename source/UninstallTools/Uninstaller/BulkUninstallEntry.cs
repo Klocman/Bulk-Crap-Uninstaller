@@ -374,6 +374,12 @@ namespace UninstallTools.Uninstaller
                                 // 2 - Installation aborted by script (often after user clicks cancel)
                                 _skipLevel = SkipCurrentLevel.Skip;
                             }
+                            else if (UninstallerEntry.UninstallerKind == UninstallerType.SimpleDelete &&
+                                     (exitVar == 1))
+                            {
+                                // 1 - Installation aborted by user (cancel button)
+                                _skipLevel = SkipCurrentLevel.Skip;
+                            }
                             else if (exitVar == -1073741510)
                             {
                                 /* 3221225786 / 0xC000013A / -1073741510 

@@ -22,14 +22,14 @@ namespace UniversalUninstaller.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Localisation {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Localisation() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace UniversalUninstaller.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UniversalUninstaller.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UniversalUninstaller.Properties.Localisation", typeof(Localisation).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,52 +61,38 @@ namespace UniversalUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Invalid number of arguments. Pass full path of the directory to remove as an argument, and optionally /q for quiet mode..
         /// </summary>
-        internal static System.Drawing.Bitmap app {
+        internal static string Program_ShowInvalidArgsBox_Message {
             get {
-                object obj = ResourceManager.GetObject("app", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Program_ShowInvalidArgsBox_Message", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Universal Uninstaller.
         /// </summary>
-        internal static System.Drawing.Bitmap folder {
+        internal static string Program_ShowInvalidArgsBox_Title {
             get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Program_ShowInvalidArgsBox_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Failed to delete some items.
         /// </summary>
-        internal static System.Drawing.Bitmap page_text {
+        internal static string UninstallSelection_DeleteProgress_FailedTitle {
             get {
-                object obj = ResourceManager.GetObject("page_text", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("UninstallSelection_DeleteProgress_FailedTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Deleting items.
         /// </summary>
-        internal static System.Drawing.Bitmap section_collapse_all {
+        internal static string UninstallSelection_DeleteProgress_Title {
             get {
-                object obj = ResourceManager.GetObject("section.collapse.all", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap section_expand_all {
-            get {
-                object obj = ResourceManager.GetObject("section.expand.all", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("UninstallSelection_DeleteProgress_Title", resourceCulture);
             }
         }
     }
