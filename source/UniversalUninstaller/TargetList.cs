@@ -1,23 +1,40 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 using Klocman.IO;
 using Klocman.Tools;
+using Scripting;
 using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
 {
     public partial class TargetList : UserControl
     {
+        static readonly FileSystemObjectClass FileSystemObject;
+
+        static TargetList()
+        {
+            try
+            {
+                FileSystemObject = new FileSystemObjectClass();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(@"WARNING: Scripting.FileSystemObjectClass is not available - " + ex.Message);
+            }
+        }
+
         public TargetList()
         {
             InitializeComponent();
 
-            treeListView1.CanExpandGetter = model => ((TreeEntry) model).IsDirectory;
+            treeListView1.CanExpandGetter = model => ((TreeEntry)model).IsDirectory;
             treeListView1.ChildrenGetter = ChildrenGetter;
 
             treeListView1.HierarchicalCheckboxes = false;
@@ -30,22 +47,42 @@ namespace UniversalUninstaller
             treeListView1.BooleanCheckStateGetter = BooleanCheckStateGetter;
             treeListView1.BooleanCheckStatePutter = BooleanCheckStatePutter;
 
-            olvColumn1.AspectGetter = rowObject => (rowObject as TreeEntry)?.FileSystemInfo.Name;
-            olvColumn1.ImageGetter = ImageGetter;
+            olvColumnName.AspectGetter = rowObject => (rowObject as TreeEntry)?.FileSystemInfo.Name;
+            olvColumnName.ImageGetter = ImageGetter;
 
-            olvColumnSize.AspectGetter = rowObject =>
-            {
-                var treeEntry = rowObject as TreeEntry;
-                return treeEntry?.IsDirectory == false
-                    ? FileSize.FromBytes(((FileInfo) treeEntry.FileSystemInfo).Length)
-                    : FileSize.Empty;
-            };
+            olvColumnSize.AspectGetter = SizeGetter;
 
-            var il = new ImageList {ColorDepth = ColorDepth.Depth24Bit, ImageSize = new Size(20, 20)};
-            il.Images.Add(Resources.folder);
-            il.Images.Add(Resources.page_text);
-            il.Images.Add(Resources.app);
+            var il = new ImageList { ColorDepth = ColorDepth.Depth24Bit, ImageSize = new Size(16, 16) };
+            il.Images.Add(Resources.Folder_48x48);
+            il.Images.Add(Resources.Generic_Document);
+            il.Images.Add(Resources.Generic_Application);
             treeListView1.SmallImageList = il;
+        }
+
+        private object SizeGetter(object rowObject)
+        {
+            var treeEntry = rowObject as TreeEntry;
+            if (treeEntry == null)
+                return FileSize.Empty;
+
+            if (treeEntry.IsDirectory == false)
+                return FileSize.FromBytes(((FileInfo)treeEntry.FileSystemInfo).Length);
+
+            var dirInfo = treeEntry.FileSystemInfo as DirectoryInfo;
+            if (FileSystemObject == null || dirInfo == null || !dirInfo.Exists)
+                return FileSize.Empty;
+
+            try
+            {
+                var folder = FileSystemObject.GetFolder(dirInfo.FullName);
+                var size = new FileSize(Convert.ToInt64(folder.Size) / 1024);
+                return size;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return FileSize.Empty;
+            }
         }
 
         private object ImageGetter(object rowObject)
@@ -66,7 +103,7 @@ namespace UniversalUninstaller
 
         private IEnumerable ChildrenGetter(object model)
         {
-            return (((TreeEntry) model).FileSystemInfo as DirectoryInfo)?.GetFileSystemInfos()
+            return (((TreeEntry)model).FileSystemInfo as DirectoryInfo)?.GetFileSystemInfos()
                 .Select(x => new TreeEntry(x));
         }
 
@@ -85,12 +122,12 @@ namespace UniversalUninstaller
                 }
             }
 
-            return ((TreeEntry) rowObject).Checked = value;
+            return ((TreeEntry)rowObject).Checked = value;
         }
 
         private bool BooleanCheckStateGetter(object rowObject)
         {
-            return ((TreeEntry) rowObject).Checked;
+            return ((TreeEntry)rowObject).Checked;
         }
 
         public void Populate(DirectoryInfo rootDirectory)
@@ -148,6 +185,28 @@ namespace UniversalUninstaller
         private void treeListView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             treeListView1.Refresh();
+        }
+        
+        private void treeListView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var x = treeListView1.GetItemAt(e.X, e.Y) as OLVListItem;
+            var en = x?.RowObject as TreeEntry;
+            if (en == null) return;
+            try
+            {
+                if (en.IsDirectory)
+                {
+                    Process.Start('"' + en.FileSystemInfo.FullName + '"');
+                }
+                else
+                {
+                    WindowsTools.OpenExplorerFocusedOnObject(en.FileSystemInfo.FullName);
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 }

@@ -1161,7 +1161,11 @@ xcopy /Y /R /C "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\SteamHelper.e
 xcopy /Y /R /C "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
 xcopy /Y /R /C "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\WinUpdateHelper.exe" "$(TargetDir)"
 xcopy /Y /R /C "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\UninstallerAutomatizer.exe" "$(TargetDir)"
-xcopy /Y /R /C "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"</PostBuildEvent>
+xcopy /Y /R /C "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\*.dll" 
+xcopy /Y /R /C "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\UniversalUninstaller.exe" "$(TargetDir)"
+xcopy /Y /R /C "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
+
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

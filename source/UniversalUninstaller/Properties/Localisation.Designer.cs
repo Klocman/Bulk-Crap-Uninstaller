@@ -95,5 +95,14 @@ namespace UniversalUninstaller.Properties {
                 return ResourceManager.GetString("UninstallSelection_DeleteProgress_Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete &quot;{0}&quot;.
+        /// </summary>
+        internal static string UninstallSelection_Title {
+            get {
+                return ResourceManager.GetString("UninstallSelection_Title", resourceCulture);
+            }
+        }
     }
 }

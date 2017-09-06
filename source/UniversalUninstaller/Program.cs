@@ -49,7 +49,7 @@ namespace UniversalUninstaller
             DirectoryInfo dir;
             try
             {
-                dir = new DirectoryInfo(strings.Single());
+                dir = new DirectoryInfo(strings.Single().Trim(' ', '"'));
             }
             catch (Exception ex)
             {

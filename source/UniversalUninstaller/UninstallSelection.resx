@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Please select which files should be removed. You can double-click on any item to see it in explorer. To see the full path, hover over any of the items. Warning: Delete only files that you know are not needed.</value>
+  </data>
 </root>
