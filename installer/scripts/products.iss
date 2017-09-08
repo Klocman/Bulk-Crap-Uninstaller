@@ -10,7 +10,7 @@ de.depdownload_msg=The following applications are required before setup can cont
 hu.depdownload_msg=Ezekre az alkalmazásokra szükség van a telepítés folytatása elõtt:%n%n%1%nLetölti és telepíti õket?  
 sl.depdownload_msg=Naslednje aplikacije so potrebne, preden se lahko nadaljuje namestitev:%n%n%1%nNaj jih zdaj prenesem in namestim?             
 nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?
-es.depdownload_msg=Las siguientes aplicaciones son necesarias antes que la instalación pueda continuar:%n%n%1%n¿Deseas Descargar e instalar ahora?
+es.depdownload_msg=Las siguientes aplicaciones son necesarias antes de continuar con la instalación:%n%n%1%n¿Deseas descargar e instalar?
 
 depdownload_memo_title=Download dependencies   
 pl.depdownload_memo_title=Pobierz zależności
