@@ -4,11 +4,7 @@
 */
 
 using System;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Klocman.Extensions;
-using UninstallTools;
+using System.Windows.Forms;
 
 namespace UninstallerAutomatizer
 {
@@ -17,64 +13,24 @@ namespace UninstallerAutomatizer
     /// </summary>
     internal class Program
     {
-        private const int InvalidArgumentCode = 10022;
-        private const int FunctionFailedCode = 1627;
-        private const int OkCode = 0;
+        public static ReturnValue ReturnValue { get; set; } = ReturnValue.Ok;
 
-        private static bool _killOnFail;
-
-        private static int Main(string[] args)
+        [STAThread]
+        private static int Main()
         {
-            try { Console.OutputEncoding = Encoding.Unicode; }
-            catch (IOException) { /*Old .NET v4 without support for unicode output*/ }
 
-            if (args.Length < 2)
-                return InvalidArgumentCode;
+            // todo make a window ui, has a list with log, pause and cancel buttons
+            // AutomatedUninstallManager.UninstallNsisQuietly runs in a separate thread
+            // change it into instance class, add events for steps, errors and finishes. Could be a single event with switches for iserror, isended
+            // hover around the original window? top left corner?
+            // when hitting an error, show question with a time progress bar. Uninstall manually or kill and abort, aborts if time runs out
 
-            UninstallerType uType;
-            if (!Enum.TryParse(args[0], out uType))
-                return InvalidArgumentCode;
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            args = args.Skip(1).ToArray();
+            Application.Run(new MainWindow());
 
-            if (args[0].Equals("/k", StringComparison.InvariantCultureIgnoreCase))
-            {
-                args = args.Skip(1).ToArray();
-                _killOnFail = true;
-            }
-
-            try
-            {
-                if (uType == UninstallerType.Nsis)
-                {
-                    var cline = string.Join(" ", args);
-                    Console.WriteLine(@"Automatically uninstalling " + cline);
-                    AutomatedUninstallManager.UninstallNsisQuietly(cline);
-                    return OkCode;
-                }
-            }
-            catch (AutomatedUninstallManager.AutomatedUninstallException ex)
-            {
-                Console.WriteLine(@"Automatic uninstallation failed");
-                Console.WriteLine(@"Reason: " + ex.InnerException.Message);
-                
-                if(ex.UninstallerProcess != null && _killOnFail)
-                {
-                    try
-                    {
-                        ex.UninstallerProcess.Kill(true);
-                    }
-                    catch
-                    {
-                        // Ignore process errors, can't do anything about it
-                    }
-                }
-
-                return FunctionFailedCode;
-            }
-
-            Console.WriteLine(uType + @" is not supported");
-            return InvalidArgumentCode;
+            return (int)ReturnValue;
         }
     }
 }
