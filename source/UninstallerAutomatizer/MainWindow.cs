@@ -20,7 +20,14 @@ namespace UninstallerAutomatizer
             _handler = new UninstallHandler();
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+            try
+            {
+                Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             _timeSinceStart = Process.GetCurrentProcess().StartTime.ToUniversalTime();
         }
@@ -47,7 +54,7 @@ namespace UninstallerAutomatizer
             {
                 var timeSinceStart = DateTime.UtcNow - _timeSinceStart;
                 var timeStr = "[" + Math.Round(timeSinceStart.TotalSeconds) + "s] ";
-                var fullMessage = timeStr + message.TrimEnd(' ', '.').Append(".");
+                var fullMessage = timeStr + message;
 
                 if (textBoxStatus.TextLength > 0)
                     textBoxStatus.AppendText("\r\n");
