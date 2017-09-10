@@ -15,16 +15,23 @@ using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White.WindowsAPI;
-using Debug = System.Diagnostics.Debug;
 
 namespace UninstallerAutomatizer
 {
     public static class AutomatedUninstallManager
     {
+        private const string NsisRebootNowRadioAutomationId = "1203";
+        private const string NsisRebootLaterRadioAutomationId = "1204";
+        private static readonly string[] GoodRadioIds = { NsisRebootLaterRadioAutomationId };
+        private static readonly string[] BadRadioIds = { NsisRebootNowRadioAutomationId };
+
         private const string NsisForwardAutomationId = "1";
         private const string NsisCancelAutomationId = "2";
         private const string NsisYesAutomationId = "6";
         private const string NsisNoAutomationId = "7";
+        private static readonly string[] BadButtonIds = { NsisCancelAutomationId, NsisNoAutomationId };
+        private static readonly string[] GoodButtonIds = { NsisForwardAutomationId, NsisYesAutomationId };
+
         private static readonly string[] GoodButtonNames = { "Uninstall", "OK", "Accept", "Apply", "Close", "Yes" };
         private static readonly string[] ControlBoxButtonNames = { "Minimize", "Maximize", "Close" };
 
@@ -41,7 +48,7 @@ namespace UninstallerAutomatizer
             {
                 pr = Process.Start(uninstallerCommand);
                 if (pr == null)
-                    throw new IOException("Process failed to start");
+                    throw new IOException("Process failed to start.");
 
                 // NSIS uninstallers are first extracted by the executable to a temporary directory, and then ran from there.
                 // Wait for the extracting exe to close and grab the child process that it started.
@@ -78,7 +85,7 @@ namespace UninstallerAutomatizer
                     var windows = app.GetWindows();
                     var target = windows.First();
 
-                    statusCallback($"Found window \"{target.Title}\"");
+                    statusCallback($"Found window \"{target.Title}\".");
                     WaitForWindow(target);
 
                     // BUG target.IsClosed changes to true if window gets minimized?
@@ -89,14 +96,14 @@ namespace UninstallerAutomatizer
 
                         ProcessNsisPopups(app, target, seenWindows, statusCallback);
                     }
-                    statusCallback("Window closed");
+                    statusCallback("Window closed.");
 
                     WaitForApplication(app);
                 }
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException("Automatic uninstallation failed", e,
+                throw new AutomatedUninstallException("Automatic uninstallation failed.", e,
                     uninstallerCommand, app?.Process ?? pr);
             }
         }
@@ -128,9 +135,9 @@ namespace UninstallerAutomatizer
             if (popupWindow == null) return;
 
             if (seenWindows.Contains(popupWindow.Items.Count))
-                throw new InvalidOperationException("Reoccuring popup window detected");
+                throw new InvalidOperationException("Reoccuring popup window detected!");
             seenWindows.Add(popupWindow.Items.Count);
-            statusCallback($"Found a pop-up window - \"{popupWindow.Title}\"");
+            statusCallback($"Found a pop-up window - \"{popupWindow.Title}\".");
 
             while (!popupWindow.IsClosed)
             {
@@ -139,14 +146,12 @@ namespace UninstallerAutomatizer
                 popupWindow.WaitWhileBusy();
                 Thread.Sleep(100);
             }
-            statusCallback("Pop-up window closed");
+            statusCallback("Pop-up window closed.");
         }
-        
+
         private static void TryClickNextNsisButton(IUIItemContainer target, Action<string> statusCallback)
         {
             statusCallback("Looking for buttons to press...");
-            var badButtons = new[] { NsisCancelAutomationId, NsisNoAutomationId };
-            var goodButtons = new[] { NsisForwardAutomationId, NsisYesAutomationId };
 
             var allButtons =
                 target.GetMultiple(SearchCriteria.ByControlType(typeof(Button), WindowsFramework.Win32))
@@ -157,14 +162,14 @@ namespace UninstallerAutomatizer
 
             var buttons = filteredButtons.Count > 1
                 ? filteredButtons
-                    .Where(x => !badButtons.Any(y => x.Id.Equals(y, StringComparison.InvariantCulture)))
+                    .Where(x => !BadButtonIds.Any(y => x.Id.Equals(y, StringComparison.InvariantCulture)))
                     .ToList()
                 : filteredButtons;
 
             if (buttons.Any())
             {
                 var nextButton = buttons.FirstOrDefault(x =>
-                             goodButtons.Any(
+                             GoodButtonIds.Any(
                                  y => x.Id.Equals(y, StringComparison.InvariantCulture)));
 
                 if (nextButton == null)
@@ -173,7 +178,7 @@ namespace UninstallerAutomatizer
 
                     if (nextButton == null)
                     {
-                        Debug.Fail("Nothing to press!");
+                        //Debug.Fail("Nothing to press!");
                         return;
                     }
                 }
@@ -181,9 +186,50 @@ namespace UninstallerAutomatizer
                 // Finally press the button, doesn't require messing with the mouse.
                 //nextButton.RaiseClickEvent();
 
+                ProcessRadioButtons(target, statusCallback);
+
                 statusCallback("Clicking on the \"" + nextButton.Text + "\" button.");
                 nextButton.Focus();
                 nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
+            }
+        }
+
+        private static void ProcessRadioButtons(IUIItemContainer target, Action<string> statusCallback)
+        {
+            var allRadios = target.GetMultiple(SearchCriteria.ByControlType(typeof(RadioButton), WindowsFramework.Win32))
+                                .Cast<RadioButton>().ToList();
+            if (allRadios.Any())
+            {
+                statusCallback($"Found {allRadios.Count} radio buttons.");
+
+                // Select all known good radio buttons first
+                var goodRadios = allRadios.Where(x => GoodRadioIds.Any(
+                    y => y.Equals(x.Id, StringComparison.OrdinalIgnoreCase)));
+
+                foreach (var radioButton in goodRadios)
+                {
+                    if (radioButton.Enabled)
+                    {
+                        statusCallback($"Selecting known-good radio button: {radioButton.Name}");
+                        radioButton.IsSelected = true;
+                    }
+                }
+
+                // Check if any known bad radio buttons are still enabled. If yes, select other, non-bad buttons.
+                var badRadios = allRadios.Where(x => BadRadioIds.Any(
+                    y => y.Equals(x.Id, StringComparison.OrdinalIgnoreCase))).ToList();
+
+                if (badRadios.Any(x => x.Enabled && x.IsSelected))
+                {
+                    foreach (var notBadRadio in allRadios.Except(badRadios))
+                    {
+                        if (notBadRadio.Enabled)
+                        {
+                            statusCallback($"Selecting non-bad radio button: {notBadRadio.Name}");
+                            notBadRadio.IsSelected = true;
+                        }
+                    }
+                }
             }
         }
 
