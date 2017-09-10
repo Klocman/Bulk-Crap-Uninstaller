@@ -2,21 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.14.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.14/BCUninstaller_3.14_portable.zip</URL>
+<Version>3.15.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.15/BCUninstaller_3.15_portable.zip</URL>
 <Changes>
-Added scanning for missing application sizes
-Updated packages
-Increased depth of unregistered application search by 1
-For safety always run simple deletes last so that actual uninstallers have a chance to run
-Fixed copy order during build causing old libraries to be used
-Fixed helpers crashing on old .net v4 versions
-Merged update to Spanish translation by Emilio J. Grao
-Merged Spanish installer translation by Jhovany200
-Update to Polish translation
-Misc updates to translations
-Fixed Dutch installer translation
+Added universal uninstaller with a proper GUI to handle simple deletes instead of using cmd del.
+Added GUI to the uninstaller automatizer (was a cmd window before).
+Added detection and handling of radio buttons during Nsis automation - prevents automatic reboots. 
+Added detailed logging to the uninstaller automatizer. Added time since start to messages.
+Uninstaller automatizer waits a few seconds before exiting to let user read the log now.
+Uninstaller automatizer requires admin privliedges to run now (fixes UAC prompts getting it stuck).
+Hide main window when uninstalling applications to remove screen clutter.
+Fixed simple delete leaving behind empty folders.
+Fixed first start wizard not closing if saving settings fails.
+Updated Task scheduler library.
+Updates to Spanish translation by Emilio J. Grao and Jhovany200
 </Changes>
-<Hash>6e54a934453d1c86d7c472601cdc9b1b</Hash>
+<Hash>67625b94c1994ff782addd5464ba50ff</Hash>
 </Update>
 </Root>
