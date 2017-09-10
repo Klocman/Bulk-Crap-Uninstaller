@@ -38,7 +38,7 @@ namespace UninstallerAutomatizer
             if (args.Length < 2)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Invalid number of arguments"));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, @"Invalid number of arguments"));
                 return;
             }
 
@@ -70,7 +70,7 @@ namespace UninstallerAutomatizer
             if (uType != UninstallerType.Nsis)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Automation of " + uType + " uninstallers is not supported."));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Automation of " + uType + " uninstallers is not supported"));
                 return;
             }
 
@@ -93,7 +93,7 @@ namespace UninstallerAutomatizer
                     OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, s));
                 });
 
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, "Automation was successful."));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, "Automation was successful"));
             }
             catch (AutomatedUninstallManager.AutomatedUninstallException ex)
             {
@@ -118,8 +118,14 @@ namespace UninstallerAutomatizer
             }
         }
 
+        private UninstallHandlerUpdateArgs _previousArgs;
+
         protected virtual void OnStatusUpdate(UninstallHandlerUpdateArgs e)
         {
+            // Filter out repeated updates
+            if (Equals(_previousArgs, e)) return;
+            _previousArgs = e;
+
             StatusUpdate?.Invoke(this, e);
             Console.WriteLine(e.Message);
         }

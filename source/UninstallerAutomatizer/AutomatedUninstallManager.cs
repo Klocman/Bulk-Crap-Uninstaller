@@ -89,6 +89,7 @@ namespace UninstallerAutomatizer
 
                         ProcessNsisPopups(app, target, seenWindows, statusCallback);
                     }
+                    statusCallback("Window closed");
 
                     WaitForApplication(app);
                 }
@@ -138,6 +139,7 @@ namespace UninstallerAutomatizer
                 popupWindow.WaitWhileBusy();
                 Thread.Sleep(100);
             }
+            statusCallback("Pop-up window closed");
         }
         
         private static void TryClickNextNsisButton(IUIItemContainer target, Action<string> statusCallback)

@@ -73,10 +73,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 39);
+            this.label1.Size = new System.Drawing.Size(255, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "This tool automatically uninstall applications that do not have a quiet uninstall" +
-    "er by clicking on the uninstaller\'s buttons instead of the user.";
+            this.label1.Text = "This tool automatically uninstalls applications that do not have a quiet uninstal" +
+    "ler by clicking on the uninstaller\'s buttons instead of the user.";
             // 
             // groupBox1
             // 
