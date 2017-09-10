@@ -38,7 +38,7 @@ namespace UninstallerAutomatizer
             if (args.Length < 2)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, @"Invalid number of arguments"));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, @"Invalid number of arguments."));
                 return;
             }
 
@@ -63,18 +63,18 @@ namespace UninstallerAutomatizer
             if (!File.Exists(UninstallTarget))
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Invalid path or file doesn't exist: " + UninstallTarget));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Invalid path, or file doesn't exist: {0}", UninstallTarget)));
                 return;
             }
 
             if (uType != UninstallerType.Nsis)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Automation of " + uType + " uninstallers is not supported"));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Automation of {0} uninstallers is not supported.", uType)));
                 return;
             }
 
-            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, "Automatically uninstalling " + UninstallTarget));
+            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, string.Format("Automatically uninstalling \"{0}\"", UninstallTarget)));
 
             _automationThread = new Thread(AutomationThread) { Name = "AutomationThread", IsBackground = false, Priority = ThreadPriority.AboveNormal };
             _automationThread.Start();
@@ -93,13 +93,13 @@ namespace UninstallerAutomatizer
                     OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, s));
                 });
 
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, "Automation was successful"));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, "Automation was successful!"));
             }
             catch (AutomatedUninstallManager.AutomatedUninstallException ex)
             {
                 Debug.Assert(ex.InnerException != null, "ex.InnerException != null");
 
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Automatic uninstallation failed. Reason:" + ex.InnerException.Message));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Automatic uninstallation failed. Reason: {0}", ex.InnerException.Message)));
 
                 // todo grace period / move to window?
                 if (ex.UninstallerProcess != null && KillOnFail)
