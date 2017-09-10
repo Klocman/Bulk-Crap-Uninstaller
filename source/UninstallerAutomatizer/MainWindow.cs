@@ -5,6 +5,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
@@ -20,9 +21,12 @@ namespace UninstallerAutomatizer
             InitializeComponent();
 
             Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+
+            _timeSinceStart = Process.GetCurrentProcess().StartTime.ToUniversalTime();
         }
 
         private readonly UninstallHandler _handler;
+        private readonly DateTime _timeSinceStart;
 
         protected override void OnShown(EventArgs e)
         {
@@ -41,9 +45,15 @@ namespace UninstallerAutomatizer
         {
             if (!string.IsNullOrEmpty(message))
             {
-                if(textBoxStatus.TextLength > 0)
+                var timeSinceStart = DateTime.UtcNow - _timeSinceStart;
+                var timeStr = "[" + Math.Round(timeSinceStart.TotalSeconds) + "s] ";
+                var fullMessage = timeStr + message.TrimEnd(' ', '.').Append(".");
+
+                if (textBoxStatus.TextLength > 0)
                     textBoxStatus.AppendText("\r\n");
-                textBoxStatus.AppendText(message.TrimEnd(' ', '.').Append("."));
+                textBoxStatus.AppendText(fullMessage);
+
+                Console.WriteLine(fullMessage);
             }
 
             switch (updateKind)

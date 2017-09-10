@@ -11,8 +11,7 @@ namespace UninstallerAutomatizer
     {
         public UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind updateKind, string message)
         {
-            Message = //DateTime.UtcNow.ToShortTimeString() + " - " + 
-                message;
+            Message = message;
             UpdateKind = updateKind;
         }
 
