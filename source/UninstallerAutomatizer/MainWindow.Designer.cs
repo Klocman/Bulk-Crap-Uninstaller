@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.buttonPause = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonAbort = new System.Windows.Forms.Button();
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,6 +148,10 @@
             this.buttonAbort.UseVisualStyleBackColor = true;
             this.buttonAbort.Click += new System.EventHandler(this.buttonAbort_Click);
             // 
+            // timerClose
+            // 
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +185,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonAbort;
         private System.Windows.Forms.Button buttonResume;
+        private System.Windows.Forms.Timer timerClose;
     }
 }

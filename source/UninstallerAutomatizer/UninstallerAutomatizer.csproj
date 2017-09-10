@@ -89,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnValue.cs" />
     <Compile Include="TestStackWhiteExtensions.cs" />
+    <Compile Include="UninstallHandler.cs" />
     <Compile Include="UninstallHandlerUpdateArgs.cs" />
     <Compile Include="UninstallHandlerUpdateKind.cs" />
   </ItemGroup>
