@@ -4,8 +4,11 @@
 de.dotnetfx20sp1lp_title=.NET Framework 2.0 SP1 Sprachpaket: Deutsch
 es.dotnetfx20sp1lp_title=.NET Framework 2.0 SP1 paquete de idioma: Español
 
-de.dotnetfx20sp1lp_size=3,4 MB - 4,9 MB
-es.dotnetfx20sp1lp_size=3,3 MB - 4,8 MB
+de.dotnetfx20sp1lp_size=3,4 MB
+es.dotnetfx20sp1lp_size=3,3 MB
+
+de.dotnetfx20sp1lp_size_x64=4,9 MB
+es.dotnetfx20sp1lp_size_x64=4,8 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
 de.dotnetfx20sp1lp_lcid=1031
@@ -25,7 +28,7 @@ begin
 			AddProduct('dotnetfx20sp1' + GetArchitectureString() + '_' + ActiveLanguage() + '.exe',
 				'/passive /norestart /lang:ENU',
 				CustomMessage('dotnetfx20sp1lp_title'),
-				CustomMessage('dotnetfx20sp1lp_size'),
+				CustomMessage('dotnetfx20sp1lp_size' + GetArchitectureString()),
 				CustomMessage('dotnetfx20sp1lp_url' + GetArchitectureString()),
 				false, false);
 	end;
