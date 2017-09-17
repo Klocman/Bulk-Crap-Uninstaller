@@ -8,6 +8,7 @@
 dotnetfx40client_title=.NET Framework 4.0 Client
 
 dotnetfx40client_size=3 MB - 197 MB
+es.dotnetfx40client_size=3 MB - 197 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
 en.dotnetfx40client_lcid=1033
