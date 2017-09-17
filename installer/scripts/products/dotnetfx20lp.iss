@@ -16,6 +16,7 @@ es.dotnetfx35lp_lcid=3082
 
 de.dotnetfx20lp_url=http://download.microsoft.com/download/2/9/7/29768238-56c3-4ea6-abba-4c5246f2bc81/langpack.exe
 de.dotnetfx20lp_url_x64=http://download.microsoft.com/download/2/e/f/2ef250ba-a868-4074-a4c9-249004866f87/langpack.exe
+de.dotnetfx20lp_url_ia64=http://download.microsoft.com/download/8/9/8/898c5670-5e74-41c4-82fc-68dd837af627/langpack.exe
 es.dotnetfx20lp_url=http://download.microsoft.com/download/e/a/a/eaaf696f-3bd4-4e05-a471-d488b29ee52b/langpack.exe
 es.dotnetfx20lp_url_x64=http://download.microsoft.com/download/9/9/3/993fcd8e-2b70-4270-9bee-c5138bd9a384/langpack.exe
 
