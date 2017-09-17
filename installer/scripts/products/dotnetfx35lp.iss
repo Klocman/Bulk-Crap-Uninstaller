@@ -2,15 +2,10 @@
 de.dotnetfx35lp_title=.NET Framework 3.5 Sprachpaket: Deutsch
 es.dotnetfx35lp_title=.NET Framework 3.5 paquete de idioma: Español
 
-dotnetfx35lp_size=13 MB - 51 MB    
-fr.dotnetfx35lp_size=13 Mo - 51 Mo
 es.dotnetfx35lp_size=32,1 MB - 43,3 MB
 de.dotnetfx35lp_size=32,5 MB - 44 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
-en.dotnetfx35lp_lcid=1033                       
-pl.dotnetfx35lp_lcid=1045
-fr.dotnetfx35lp_lcid=1036
 de.dotnetfx35lp_lcid=1031
 es.dotnetfx35lp_lcid=3082
 
