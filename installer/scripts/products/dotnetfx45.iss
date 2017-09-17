@@ -8,8 +8,9 @@ dotnetfx45_title=.NET Framework 4.5.2
 dotnetfx45_size=1 MB - 68 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
-en.dotnetfx45_lcid=
-de.dotnetfx45_lcid=/lcid 1031
+en.dotnetfx45_lcid=1033
+de.dotnetfx45_lcid=1031
+es.dotnetfx45_lcid=3082
 
 
 [Code]
