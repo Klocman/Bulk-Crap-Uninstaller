@@ -133,7 +133,7 @@
     <value>Versión del programa</value>
   </data>
   <data name="labelis64.Text" xml:space="preserve">
-    <value>Es de 64 bits:</value>
+    <value>Es 64 bits:</value>
   </data>
   <data name="labelPortable.Text" xml:space="preserve">
     <value>Está instalado:</value>
