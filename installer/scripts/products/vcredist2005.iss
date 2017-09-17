@@ -9,12 +9,15 @@ vcredist2005_title_ia64=Visual C++ 2005 Itanium Redistributable
 
 en.vcredist2005_size=2.6 MB
 de.vcredist2005_size=2,6 MB
+es.vcredist2005_size=2,6 MB
 
 en.vcredist2005_size_x64=4.1 MB
 de.vcredist2005_size_x64=4,1 MB
+es.vcredist2005_size_x64=4,1 MB
 
 en.vcredist2005_size_ia64=8.8 MB
 de.vcredist2005_size_ia64=8,8 MB
+es.vcredist2005_size_ia64=8,8 MB
 
 
 [Code]
