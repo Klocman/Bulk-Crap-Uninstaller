@@ -16,6 +16,7 @@ es.dotnetfx20sp1lp_lcid=3082
 
 de.dotnetfx20sp1lp_url=http://download.microsoft.com/download/8/a/a/8aab7e6a-5e58-4e83-be99-f5fb49fe811e/NetFx20SP1_x86de.exe
 de.dotnetfx20sp1lp_url_x64=http://download.microsoft.com/download/1/4/2/1425872f-c564-4ab2-8c9e-344afdaecd44/NetFx20SP1_x64de.exe
+de.dotnetfx20sp1lp_url_ia64=http://download.microsoft.com/download/a/0/b/a0bef431-19d8-433c-9f42-6e2824a8cb90/NetFx20SP1_ia64de.exe
 es.dotnetfx20sp1lp_url=http://download.microsoft.com/download/f/6/1/f61563a2-5545-4cba-8e6f-afcf2fb77737/NetFx20SP1_x86es.exe
 es.dotnetfx20sp1lp_url_x64=http://download.microsoft.com/download/3/a/5/3a5c5b7f-fcbe-49ee-bc72-77e9eeaf5896/NetFx20SP1_x64es.exe
 
