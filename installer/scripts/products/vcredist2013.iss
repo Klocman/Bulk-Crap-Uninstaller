@@ -7,9 +7,11 @@ vcredist2013_title_x64=Visual C++ 2013 64-Bit Redistributable
 
 en.vcredist2013_size=6.2 MB
 de.vcredist2013_size=6,2 MB
+es.vcredist2013_size=6,2 MB
 
 en.vcredist2013_size_x64=6.9 MB
 de.vcredist2013_size_x64=6,9 MB
+es.vcredist2013_size_x64=6,9 MB
 
 
 [Code]
