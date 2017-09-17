@@ -7,7 +7,6 @@
 dotnetfx35sp1_title=.NET Framework 3.5 Service Pack 1
 
 dotnetfx35sp1_size=3 MB - 232 MB
-de.dotnetfx35sp1_size=3 MB - 232 MB
 fr.dotnetfx35sp1_size=3 Mo - 232 Mo
 es.dotnetfx35sp1_size=3 MB - 232 MB  
 
