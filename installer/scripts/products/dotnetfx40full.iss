@@ -8,6 +8,7 @@
 dotnetfx40full_title=.NET Framework 4.0 Full
 
 dotnetfx40full_size=3 MB - 197 MB
+es.dotnetfx40full_size=3 MB - 197 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
 en.dotnetfx40full_lcid=1033
