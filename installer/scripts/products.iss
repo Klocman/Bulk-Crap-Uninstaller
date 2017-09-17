@@ -1,4 +1,4 @@
-﻿#include "isxdl\isxdl.iss"
+#include "isxdl\isxdl.iss"
 
 [CustomMessages]
 DependenciesDir=MyProgramDependencies
@@ -10,7 +10,7 @@ de.depdownload_msg=The following applications are required before setup can cont
 hu.depdownload_msg=Ezekre az alkalmazásokra szükség van a telepítés folytatása elõtt:%n%n%1%nLetölti és telepíti õket?  
 sl.depdownload_msg=Naslednje aplikacije so potrebne, preden se lahko nadaljuje namestitev:%n%n%1%nNaj jih zdaj prenesem in namestim?             
 nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?
-es.depdownload_msg=Las siguientes aplicaciones son necesarias antes que la instalación pueda continuar:%n%n%1%n¿Deseas Descargar e instalar ahora?
+es.depdownload_msg=Las siguientes aplicaciones son necesarias antes de continuar con la instalación:%n%n%1%n¿Deseas descargar e instalar ahora?
 
 depdownload_memo_title=Download dependencies   
 pl.depdownload_memo_title=Pobierz zależności
@@ -73,7 +73,7 @@ de.depinstall_error=An error occured while installing the dependencies. Please r
 hu.depinstall_error=Egy hiba történt a függõségek telepítése közben. Kérem, hogy indítsa újra a gépét, majd kézzel telepítse újra a következõ függõségeket:%n         
 sl.depinstall_error=Pri namestitvi odvisnosti je prišlo do napake. Znova zaženite raèunalnik in znova zaženite Setup ali roèno namestite naslednje odvisnosti:%n    
 nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankelijkheden. Herstart de computer en voer de setup opnieuw uit of installeer de volgende afhankelijkheden handmatig:%n
-es.depinstall_error=Se produjo un error al instalar las dependencias. Reinicie el equipo y vuelva a ejecutar la instalación o instale las siguientes dependencias manualmente:%n
+es.depinstall_error=Error al instalar las dependencias. Reinicie el equipo y vuelva a ejecutar el programa de instalación o instale las siguientes dependencias manualmente:%n
 
 isxdl_langfile=
 
