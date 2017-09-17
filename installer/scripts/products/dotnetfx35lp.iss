@@ -13,9 +13,9 @@ de.dotnetfx35lp_lcid=1031
 es.dotnetfx35lp_lcid=3082
 
 de.dotnetfx35lp_url=http://download.microsoft.com/download/d/7/2/d728b7b9-454b-4b57-8270-45dac441b0ec/dotnetfx35langpack_x86de.exe 
-de.dotnetfx20sp1lp_url_x64=http://download.microsoft.com/download/d/7/2/d728b7b9-454b-4b57-8270-45dac441b0ec/dotnetfx35langpack_x64de.exe
+de.dotnetfx35lp_url_x64=http://download.microsoft.com/download/d/7/2/d728b7b9-454b-4b57-8270-45dac441b0ec/dotnetfx35langpack_x64de.exe
 es.dotnetfx35lp_url=http://download.microsoft.com/download/4/a/2/4a2b42fc-f271-4cc8-9c15-bc10cdde1eb9/dotnetfx35langpack_x86es.exe
-es.dotnetfx20sp1lp_url_x64=http://download.microsoft.com/download/4/a/2/4a2b42fc-f271-4cc8-9c15-bc10cdde1eb9/dotnetfx35langpack_x64es.exe
+es.dotnetfx35lp_url_x64=http://download.microsoft.com/download/4/a/2/4a2b42fc-f271-4cc8-9c15-bc10cdde1eb9/dotnetfx35langpack_x64es.exe
                     
 
 [Code]
