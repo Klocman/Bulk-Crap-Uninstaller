@@ -121,7 +121,7 @@
     <value>Mostrar aplicaciones no registradas</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Mostrar las aplicaciones que no tienen ningún desinstalador registrado. No son visibles en la mayoría de gestores de desinstalación, pero todavía ocupan espacio. Los elementos no registrado están marcados con color rojo. 
+    <value>Mostrar aplicaciones sin ningún desinstalador registrado. No son visibles en la mayoría de desinstaladores, pero aún ocupan espacio. Los no registrados aparecen de color rojo. 
 
 ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sean necesarias!</value>
   </data>
@@ -129,7 +129,7 @@ ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sea
     <value>Resaltar los desinstaladores que faltan</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Utilizar el color gris para identificar desinstaladores que están ausentes o dañados.</value>
+    <value>Usar el color gris para identificar desinstaladores ausentes o dañados.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Resaltar desinstaladores certificados</value>
@@ -138,7 +138,7 @@ ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sea
     <value>Utilizar colores para identificar desinstaladores certificados.
 Si el certificado se ha verificado correctamente utilizar el color verde, si no utilizar el color azul.
 
-Advertencia: La verificación puede tardar mucho tiempo en completarse.</value>
+Advertencia: La verificación puede tardar mucho tiempo.</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Ocultar lo publicado por Microsoft</value>
@@ -150,7 +150,7 @@ Advertencia: La verificación puede tardar mucho tiempo en completarse.</value>
     <value>Mostrar componentes del sistema</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Algunos desinstaladores pueden marcarse como "componentes del sistema" para ocultarlos de la opción Agregar / Quitar lista de software.
+    <value>Algunos desinstaladores pueden marcarse como "componentes del sistema" para ocultarlos de la opción Agregar/Quitar lista de software.
 Los drivers son a menudo marcados con esta etiqueta.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
@@ -186,8 +186,8 @@ Puede comprobar varios elementos resaltándolos y presionando la barra espaciado
     <value>Mostrar elementos en grupos</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Agrupar los elementos según la columna de la lista por la que está ordenada. 
-La agrupación de la mayoría de las columnas utiliza filtrado inteligente.</value>
+    <value>Agrupar elementos por la columna de la lista por la que está ordenada. 
+Agrupar la mayoría de las columnas usa filtrado inteligente.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Configuración de la vista de lista</value>

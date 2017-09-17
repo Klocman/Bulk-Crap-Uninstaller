@@ -29,6 +29,7 @@ namespace BulkCrapUninstaller.Functions
     {
         private readonly Action _initiateListRefresh;
         private readonly Action<bool> _lockApplication;
+        private readonly Action<bool> _visibleCallback;
         private readonly Settings _settings = Settings.Default;
         private readonly object _uninstallLock = new object();
 
@@ -38,13 +39,14 @@ namespace BulkCrapUninstaller.Functions
         public readonly object PublicUninstallLock = new object();
 
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
-        internal Uninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback)
+        internal Uninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
         {
             if (listRefreshCallback == null) throw new ArgumentNullException(nameof(listRefreshCallback));
             if (applicationLockCallback == null) throw new ArgumentNullException(nameof(applicationLockCallback));
 
             _initiateListRefresh = listRefreshCallback;
             _lockApplication = applicationLockCallback;
+            _visibleCallback = visibleCallback;
         }
 
         /// <summary>
@@ -201,6 +203,8 @@ namespace BulkCrapUninstaller.Functions
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;
 
+                    _visibleCallback(false);
+
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
                         LoadingDialog.ShowDialog(MessageBoxes.DefaultOwner, Localisable.LoadingDialogTitlePreUninstallCommands,
@@ -247,6 +251,7 @@ namespace BulkCrapUninstaller.Functions
             {
                 ReleaseUninstallLock();
                 _lockApplication(false);
+                _visibleCallback(true);
                 if (listRefreshNeeded)
                     _initiateListRefresh();
             }

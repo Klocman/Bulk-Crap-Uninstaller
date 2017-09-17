@@ -164,7 +164,7 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Los desinstaladores seleccionados se ejecutan uno a la vez.
-Si el proceso parece estar atascado puede hacer clic en el botón "Saltar" para evitar tener que esperar a que se complete. Esto puede suceder si el desinstalador se bloquea o se inicia un nuevo proceso y no se cierra.</value>
+Si el proceso parece atascarse pulse "Saltar" para evitar tener que esperar a que se complete. Puede ocurrir si el desinstalador se bloquea o se inicia un nuevo proceso y no se cierra.</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>El contenido de esta lista se puede desinstalar desde arriba hacia abajo.</value>

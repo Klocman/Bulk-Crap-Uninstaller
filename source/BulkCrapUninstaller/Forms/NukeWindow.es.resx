@@ -130,6 +130,8 @@
     <value>Seleccionar mediante carpeta de instalación o archivos de programa</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Nota: Asegúrese de que los archivos que seleccione están dentro del directorio de instalación de la aplicación.</value>
+    <value>Nota: Asegúrese de que los archivos que seleccione están dentro del directorio de instalación de la aplicación.
+
+Puede seleccionar un directorio que contenga varias aplicaciones para desinstalarlas todas.</value>
   </data>
 </root>

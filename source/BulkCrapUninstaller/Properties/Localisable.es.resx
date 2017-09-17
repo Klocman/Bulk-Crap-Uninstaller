@@ -228,7 +228,7 @@ Editor | Versión | Fecha | Tamaño | Registro | Tipo de desinstalación | Caden
     <value>Primero tiene que activar las calificaciones desde la configuración.</value>
   </data>
   <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
-    <value>No puede calificar aplicaciones que no están instaladas adecuadamente.</value>
+    <value>No puede calificar aplicaciones no instaladas adecuadamente.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
     <value>Calificación: {0}
@@ -371,7 +371,7 @@ Puede enviarlo más tarde desde la barra de menú superior (Ayuda-&gt;Enviar com
   <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
     <value>No hay actualizaciones, usted cuenta con la última versión.
 
-¿Desea un poco más de funcionalidad o corregir un error? Por favor, envíe sus comentarios usando "Ayuda-&gt; Enviar comentario" del menú.</value>
+¿Desea un poco más de funcionalidad o corregir un error? Por favor, envíe sus comentarios usando "Ayuda-&gt;Enviar comentario" del menú.</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
     <value>Encontrado un error al buscar actualizaciones</value>
@@ -511,7 +511,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
     <value>No hay que buscar</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
-    <value>¡Siento verle salir! Si tiene un minuto o dos, por favor, deje una palabra sobre por qué desinstaló BCU en mi sitio web (http://klocmansoftware.weebly.com/). Haré mi mejor esfuerzo para solucionar cualquier problema legítimo.</value>
+    <value>¡Siento que nos deje! Si tiene un minuto, por favor, indique en mi sitio Web (http://klocmansoftware.weebly.com/) por qué desinstaló BCU. Haré mi mejor esfuerzo para solucionar cualquier problema legítimo.</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
     <value>Si no está seguro de que las aplicaciones que está desinstalando son importantes o necesarias para la estabilidad del sistema, se recomienda crear un punto de restauración.
@@ -562,9 +562,9 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
     <value>Error de ejecución externa</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>Al seleccionar "Terminar", se cerrará inmediatamente el programa de desinstalación en ejecución y podría no completarse la desinstalación. Normalmente, es posible ejecutar el desinstalador de nuevo para terminar la desinstalación.
+    <value>Al seleccionar "Terminar", se cerrará inmediatamente la desinstalación en ejecución y podría no ompletarse. Normalmente, es posible ejecutar el desinstalador de nuevo para terminar la desinstalación.
 
-Alternativamente, puede omitir la espera de este proceso. Omitir permitirá que el desinstalador continúe trabajando mientras la tarea pasa al siguiente elemento. Tenga en cuenta que algunos desinstaladores pueden fallar para ejecutarse hasta que el proceso omitido termine.</value>
+Puede omitir la espera de este proceso. Esto permitirá que el desinstalador continúe trabajando mientras la tarea pasa al siguiente elemento. Tenga en cuenta que algunos desinstaladores pueden fallar para ejecutarse hasta que el proceso omitido termine.</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>¿Desea omitir la espera del desinstalador en ejecución?</value>
@@ -596,6 +596,7 @@ Puede intentar deshabilitar la detección de colisiones en la configuración, pe
   <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
     <value>Entradas afectadas:
 {0}
+
 Para modificar estas entradas desactive la protección de desinstalación de la barra lateral de configuración. Puede eliminarlas de la tarea y continuar con otros elementos si lo desea.</value>
     <comment>0 names of protected uninstallers</comment>
   </data>
