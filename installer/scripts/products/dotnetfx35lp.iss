@@ -9,6 +9,9 @@ es.dotnetfx35lp_size_x64=43,3 MB
 de.dotnetfx35lp_size_x64=44 MB
 
 ;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+en.dotnetfx35lp_lcid=1033
+pl.dotnetfx35lp_lcid=1045
+fr.dotnetfx35lp_lcid=1036
 de.dotnetfx35lp_lcid=1031
 es.dotnetfx35lp_lcid=3082
 
