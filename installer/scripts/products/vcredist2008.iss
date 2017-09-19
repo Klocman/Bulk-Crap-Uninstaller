@@ -9,12 +9,15 @@ vcredist2008_title_ia64=Visual C++ 2008 Itanium Redistributable
 
 en.vcredist2008_size=1.7 MB
 de.vcredist2008_size=1,7 MB
+es.vcredist2008_size=1,7 MB
 
 en.vcredist2008_size_x64=2.3 MB
 de.vcredist2008_size_x64=2,3 MB
+es.vcredist2008_size_x64=2,3 MB
 
 en.vcredist2008_size_ia64=4.0 MB
 de.vcredist2008_size_ia64=4,0 MB
+es.vcredist2008_size_ia64=4,0 MB
 
 
 [Code]

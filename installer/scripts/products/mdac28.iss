@@ -3,6 +3,7 @@ mdac28_title=Microsoft Data Access Components 2.8
 
 en.mdac28_size=5.4 MB
 de.mdac28_size=5,4 MB
+es.mdac28_size=5,4 MB
 
 
 [Code]

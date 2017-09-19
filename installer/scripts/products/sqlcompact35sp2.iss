@@ -3,6 +3,7 @@ sqlcompact35sp2_title=SQL Server Compact 3.5 Service Pack 2
 
 en.sqlcompact35sp2_size=5.3 MB
 de.sqlcompact35sp2_size=5,3 MB
+es.sqlcompact35sp2_size=5,3 MB
 
 
 [Code]

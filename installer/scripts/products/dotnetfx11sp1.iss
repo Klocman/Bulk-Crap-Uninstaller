@@ -7,6 +7,7 @@ dotnetfx11sp1_title=.NET Framework 1.1 Service Pack 1
 
 en.dotnetfx11sp1_size=10.5 MB
 de.dotnetfx11sp1_size=10,5 MB
+es.dotnetfx11sp1_size=10,5 MB
 
 
 [Code]

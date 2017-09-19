@@ -3,12 +3,15 @@ msi45_title=Windows Installer 4.5
 
 en.msi45win60_size=1.7 MB
 de.msi45win60_size=1,7 MB
+es.msi45win60_size=1,7 MB
 
 en.msi45win52_size=3.0 MB
 de.msi45win52_size=3,0 MB
+es.msi45win52_size=3,0 MB
 
 en.msi45win51_size=3.2 MB
 de.msi45win51_size=3,2 MB
+es.msi45win51_size=3,2 MB
 
 
 [Code]
