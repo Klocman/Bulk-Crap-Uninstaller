@@ -522,7 +522,7 @@
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Desinstalar por ventana, directorio o archivo...</value>
   </data>
-    <data name="toolStripButtonModify.Text" xml:space="preserve">
-     <value>Modificar</value>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Modificar</value>
   </data>
 </root>
