@@ -8,6 +8,7 @@
 dotnetfx20_title=.NET Framework 2.0
 
 dotnetfx20_size=23 MB
+es.dotnetfx20_size=23 MB
 
 
 [Code]

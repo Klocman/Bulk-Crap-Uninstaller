@@ -1,4 +1,4 @@
-﻿#include "isxdl\isxdl.iss"
+#include "isxdl\isxdl.iss"
 
 [CustomMessages]
 DependenciesDir=MyProgramDependencies

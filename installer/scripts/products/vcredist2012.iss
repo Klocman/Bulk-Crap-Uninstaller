@@ -7,9 +7,11 @@ vcredist2012_title_x64=Visual C++ 2012 64-Bit Redistributable
 
 en.vcredist2012_size=6.3 MB
 de.vcredist2012_size=6,3 MB
+es.vcredist2012_size=6,3 MB
 
 en.vcredist2012_size_x64=6.4 MB
 de.vcredist2012_size_x64=6,4 MB
+es.vcredist2012_size_x64=6,4 MB
 
 
 [Code]

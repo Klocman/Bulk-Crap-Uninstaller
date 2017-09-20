@@ -8,12 +8,15 @@ vcredist2010_title_ia64=Visual C++ 2010 Itanium Redistributable
 
 en.vcredist2010_size=4.8 MB
 de.vcredist2010_size=4,8 MB
+es.vcredist2010_size=4,8 MB
 
 en.vcredist2010_size_x64=5.5 MB
 de.vcredist2010_size_x64=5,5 MB
+es.vcredist2010_size_x64=5,5 MB
 
 en.vcredist2010_size_ia64=2.2 MB
 de.vcredist2010_size_ia64=2,2 MB
+es.vcredist2010_size_ia64=2,2 MB
 
 
 [Code]

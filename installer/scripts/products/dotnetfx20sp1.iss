@@ -7,6 +7,7 @@ dotnetfx20sp1_title=.NET Framework 2.0 Service Pack 1
 
 en.dotnetfx20sp1_size=23.6 MB
 de.dotnetfx20sp1_size=23,6 MB
+es.dotnetfx20sp1_size=23,6 MB
 
 
 [Code]
