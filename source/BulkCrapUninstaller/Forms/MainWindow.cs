@@ -311,8 +311,7 @@ namespace BulkCrapUninstaller.Forms
             UpdateGrabber.AutoUpdate(() => _listView.FirstRefreshCompleted,
                 () => this.SafeInvoke(() =>
                 {
-                    if (MessageBoxes.UpdateAskToDownload())
-                        UpdateSystem.BeginUpdate();
+                    UpdateGrabber.AskAndBeginUpdate();
                 }));
         }
 

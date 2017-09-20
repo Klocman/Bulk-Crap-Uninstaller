@@ -20,7 +20,7 @@ namespace BulkCrapUninstaller
 {
     internal class EntryPoint
     {
-        public static bool IsRestarting { get; private set; }
+        public static bool IsRestarting { get; internal set; }
 
         [STAThread]
         public static void Main(string[] args)

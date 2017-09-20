@@ -40,8 +40,7 @@ namespace BulkCrapUninstaller.Functions
                         break;
 
                     case UpdateSystem.UpdateStatus.NewAvailable:
-                        if (MessageBoxes.UpdateAskToDownload())
-                            UpdateSystem.BeginUpdate();
+                        AskAndBeginUpdate();
                         break;
 
                     case UpdateSystem.UpdateStatus.UpToDate:
@@ -52,6 +51,27 @@ namespace BulkCrapUninstaller.Functions
             else
             {
                 MessageBoxes.UpdateFailed(error.Message);
+            }
+        }
+
+        public static void AskAndBeginUpdate()
+        {
+            if (MessageBoxes.UpdateAskToDownload())
+            {
+                try
+                {
+                    // Prevent log cleaner from running in portable builds
+                    EntryPoint.IsRestarting = true;
+
+                    UpdateSystem.BeginUpdate();
+                }
+                catch (Exception ex)
+                {
+                    EntryPoint.IsRestarting = false;
+
+                    Console.WriteLine(ex);
+                    MessageBoxes.UpdateFailed(ex.Message);
+                }
             }
         }
 
