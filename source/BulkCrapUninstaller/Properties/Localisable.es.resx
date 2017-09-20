@@ -725,5 +725,14 @@ Para modificar esta entrada tiene que desactivar la protecci처n de desinstalaci�
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>No se pudo encontrar ninguna aplicaci처n dentro de {0}</value>
+    </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modificar aplicaci처n</value>
+    </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+  <value>La aplicaci처n seleccionada no se puede modificar</value>
+    </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>La aplicaci처n seleccionada no tiene comando de modificaci처n especificado. Puede ser necesario desinstalar e instalarlo de nuevo para cambiar la configuraci처n de instalaci처n.</value>
   </data>
 </root>
