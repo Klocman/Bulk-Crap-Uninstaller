@@ -759,7 +759,7 @@ namespace BulkCrapUninstaller.Functions
 
                 try
                 {
-                    selected.UninstallUsingMsi(mode, _settings.AdvancedSimulate);
+                    selected.Modify(_settings.AdvancedSimulate);
                     listRefreshNeeded = true;
                 }
                 catch (Exception ex)

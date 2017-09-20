@@ -132,7 +132,7 @@
     <value>0, 0</value>
   </data>
   <data name="advancedFilters1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 506</value>
+    <value>320, 505</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="advancedFilters1.TabIndex" type="System.Int32, mscorlib">
@@ -277,7 +277,7 @@
     <value>0, 0</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>687, 454</value>
+    <value>360, 453</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -301,7 +301,7 @@
     <value>0, 30</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 456</value>
+    <value>362, 455</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -531,7 +531,7 @@
     <value>0, 0, 0, 1</value>
   </data>
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 30</value>
+    <value>362, 30</value>
   </data>
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -555,7 +555,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 17</value>
+    <value>1, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -591,10 +591,10 @@
     <value>60, 17</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 486</value>
+    <value>0, 485</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 22</value>
+    <value>362, 22</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -624,7 +624,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1015, 508</value>
+    <value>688, 507</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>320</value>
@@ -699,7 +699,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 477</value>
+    <value>6, 476</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 25</value>
@@ -834,7 +834,7 @@
     <value>6, 2, 5, 6</value>
   </data>
   <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 508</value>
+    <value>194, 507</value>
   </data>
   <data name="settingsSidebarPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1889,7 +1889,7 @@
     <value>0, 2, 0, 2</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1209, 24</value>
+    <value>882, 24</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1925,7 +1925,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1211, 532</value>
+    <value>884, 531</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 300</value>
@@ -2104,6 +2104,12 @@
   <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripButtonModify.Name" xml:space="preserve">
+    <value>toolStripButtonModify</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonModify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
     <value>toolStripSeparator4</value>
   </data>
@@ -2132,12 +2138,6 @@
     <value>toolStripButton8</value>
   </data>
   <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonModify.Name" xml:space="preserve">
-    <value>toolStripButtonModify</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonModify.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripLabelStatus.Name" xml:space="preserve">
@@ -2530,6 +2530,12 @@
   <data name="&gt;&gt;quietUninstallToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;modifyToolStripMenuItem.Name" xml:space="preserve">
+    <value>modifyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;modifyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
@@ -2919,12 +2925,6 @@
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
     <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.15.0.36926, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;modifyToolStripMenuItem.Name" xml:space="preserve">
-    <value>modifyToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;modifyToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

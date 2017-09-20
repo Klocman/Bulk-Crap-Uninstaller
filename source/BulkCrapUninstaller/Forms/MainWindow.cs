@@ -322,6 +322,8 @@ namespace BulkCrapUninstaller.Forms
             uninstallToolStripMenuItem.Enabled = selectionCount > 0;
             quietUninstallToolStripMenuItem.Enabled = selectionCount > 0;
             propertiesToolStripMenuItem.Enabled = selectionCount > 0;
+            modifyToolStripMenuItem.Enabled = selectionCount == 1 && 
+                !string.IsNullOrEmpty(_listView.SelectedUninstallers.FirstOrDefault()?.ModifyPath);
         }
 
         private void BindControlsToSettings()
