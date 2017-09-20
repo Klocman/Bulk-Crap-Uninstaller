@@ -18,6 +18,8 @@ namespace UninstallTools.Uninstaller
 {
     public static class UninstallManager
     {
+        private const int SimulationDelay = 2500;
+
         /// <summary>
         ///     Rename the uninstaller entry by changing registry data. The entry is not refreshed in the process.
         /// </summary>
@@ -113,7 +115,7 @@ namespace UninstallTools.Uninstaller
 
                 if (simulate)
                 {
-                    Thread.Sleep(5000);
+                    Thread.Sleep(SimulationDelay);
                     if (Debugger.IsAttached && new Random().Next(0, 2) == 0)
                         throw new IOException("Random failure for debugging");
                     return null;
@@ -194,7 +196,7 @@ namespace UninstallTools.Uninstaller
                 startInfo.UseShellExecute = false;
                 if (simulate)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(SimulationDelay);
                     return 0;
                 }
                 return startInfo.StartAndWait();
@@ -230,6 +232,35 @@ namespace UninstallTools.Uninstaller
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(mode), mode, @"Unknown mode");
+            }
+        }
+
+        public static int Modify(this ApplicationUninstallerEntry entry, bool simulate)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(entry.ModifyPath)) return -1;
+
+                var startInfo = ProcessTools.SeparateArgsFromCommand(entry.ModifyPath).ToProcessStartInfo();
+                startInfo.UseShellExecute = false;
+                if (simulate)
+                {
+                    Thread.Sleep(SimulationDelay);
+                    return 0;
+                }
+                return startInfo.StartAndWait();
+            }
+            catch (IOException)
+            {
+                throw;
+            }
+            catch (InvalidOperationException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new FormatException(ex.Message, ex);
             }
         }
     }
