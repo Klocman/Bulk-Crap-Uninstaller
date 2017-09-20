@@ -738,4 +738,13 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Failed to find any applications inside {0}</value>
   </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modify application</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Selected application can't be modified</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>The selected application has no modify command specified. It might be necessary to uninstall, and then install it again to change install settings.</value>
+  </data>
 </root>

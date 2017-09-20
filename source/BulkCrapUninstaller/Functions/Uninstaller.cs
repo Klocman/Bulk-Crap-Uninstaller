@@ -722,5 +722,58 @@ namespace BulkCrapUninstaller.Functions
 
             return output;
         }
+
+        public void Modify(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers)
+        {
+            if (!TryGetUninstallLock()) return;
+            var listRefreshNeeded = false;
+
+            try
+            {
+                _lockApplication(true);
+
+                var results = selectedUninstallers.Take(2).ToList();
+
+                if (results.Count != 1)
+                {
+                    MessageBoxes.CanSelectOnlyOneItemInfo();
+                    return;
+                }
+
+                var selected = results.First();
+
+                if (!_settings.AdvancedDisableProtection && selected.IsProtected)
+                {
+                    MessageBoxes.ProtectedItemError(selected.DisplayName);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(selected.ModifyPath))
+                {
+                    MessageBoxes.ModifyCommandMissing();
+                    return;
+                }
+
+                if (!CheckForRunningProcessesBeforeUninstall(new[] { selected }, true))
+                    return;
+
+                try
+                {
+                    selected.UninstallUsingMsi(mode, _settings.AdvancedSimulate);
+                    listRefreshNeeded = true;
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
+            finally
+            {
+                ReleaseUninstallLock();
+                _lockApplication(false);
+                if (listRefreshNeeded)
+                    _initiateListRefresh();
+            }
+        }
     }
 }

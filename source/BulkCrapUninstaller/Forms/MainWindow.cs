@@ -1353,5 +1353,10 @@ namespace BulkCrapUninstaller.Forms
         {
             OnlineSearchTools.SearchGithub(_listView.SelectedUninstallers);
         }
+
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _uninstaller.Modify(_listView.SelectedUninstallers);
+        }
     }
 }

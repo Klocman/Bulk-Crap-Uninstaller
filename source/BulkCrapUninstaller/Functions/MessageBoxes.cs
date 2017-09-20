@@ -548,6 +548,14 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_UninstallMsiGuidMissing_Details, SystemIcons.Warning, Buttons.ButtonOk));
         }
 
+        internal static void ModifyCommandMissing()
+        {
+            CustomMessageBox.ShowDialog(DefaultOwner,
+                new CmbBasicSettings(Localisable.MessageBoxes_ModifyCommandMissing_Title,
+                    Localisable.MessageBoxes_ModifyCommandMissing_Message,
+                    Localisable.MessageBoxes_ModifyCommandMissing_Details, SystemIcons.Warning, Buttons.ButtonOk));
+        }
+
         internal static bool UpdateAskToDownload()
         {
             var changes = UpdateSystem.LatestReply.GetChanges().ToArray();

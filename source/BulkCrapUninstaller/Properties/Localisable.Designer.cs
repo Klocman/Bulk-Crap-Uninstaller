@@ -756,6 +756,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The selected application has no modify command specified. It might be necessary to uninstall, and then install it again to change install settings..
+        /// </summary>
+        internal static string MessageBoxes_ModifyCommandMissing_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ModifyCommandMissing_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected application can&apos;t be modified.
+        /// </summary>
+        internal static string MessageBoxes_ModifyCommandMissing_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ModifyCommandMissing_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modify application.
+        /// </summary>
+        internal static string MessageBoxes_ModifyCommandMissing_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_ModifyCommandMissing_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The v4.0 framework is optional, but recommended. The features that rely on the framework will be disabled until you install it..
         /// </summary>
         internal static string MessageBoxes_Net4Missing_Details {
