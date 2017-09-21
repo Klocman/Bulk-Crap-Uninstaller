@@ -311,8 +311,7 @@ namespace BulkCrapUninstaller.Forms
             UpdateGrabber.AutoUpdate(() => _listView.FirstRefreshCompleted,
                 () => this.SafeInvoke(() =>
                 {
-                    if (MessageBoxes.UpdateAskToDownload())
-                        UpdateSystem.BeginUpdate();
+                    UpdateGrabber.AskAndBeginUpdate();
                 }));
         }
 
@@ -322,6 +321,8 @@ namespace BulkCrapUninstaller.Forms
             uninstallToolStripMenuItem.Enabled = selectionCount > 0;
             quietUninstallToolStripMenuItem.Enabled = selectionCount > 0;
             propertiesToolStripMenuItem.Enabled = selectionCount > 0;
+            modifyToolStripMenuItem.Enabled = selectionCount == 1 && 
+                !string.IsNullOrEmpty(_listView.SelectedUninstallers.FirstOrDefault()?.ModifyPath);
         }
 
         private void BindControlsToSettings()
@@ -1352,6 +1353,11 @@ namespace BulkCrapUninstaller.Forms
         private void gitHubcomToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OnlineSearchTools.SearchGithub(_listView.SelectedUninstallers);
+        }
+
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _uninstaller.Modify(_listView.SelectedUninstallers);
         }
     }
 }
