@@ -524,5 +524,7 @@
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>Modificar</value>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modificar</value>
   </data>
 </root>
