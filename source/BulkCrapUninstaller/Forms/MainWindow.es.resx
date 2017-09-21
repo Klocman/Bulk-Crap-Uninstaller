@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -521,5 +521,10 @@
   </data>
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Desinstalar por ventana, directorio o archivo...</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Modificar</value>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modificar</value>
   </data>
 </root>
