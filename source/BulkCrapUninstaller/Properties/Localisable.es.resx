@@ -733,6 +733,6 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
     <value>La aplicación seleccionada no se puede modificar</value>
   </data>
   <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
-    <value>La aplicación seleccionada no tiene comando de modificación especificado. Puede ser necesario desinstalar e instalarlo de nuevo para cambiar la configuración de instalación.</value>
+    <value>La aplicación seleccionada no tiene comando de modificación especificado. Puede ser necesario desinstalar e instalar de nuevo para cambiar la configuración de instalación.</value>
   </data>
 </root>
