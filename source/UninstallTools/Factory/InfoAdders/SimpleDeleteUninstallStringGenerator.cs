@@ -64,7 +64,7 @@ namespace UninstallTools.Factory.InfoAdders
             nameof(ApplicationUninstallerEntry.QuietUninstallString)
         };
 
-        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunDeadLast;
 
         private string GetNewUninstallString(string installLocation, bool quiet)
         {
