@@ -181,7 +181,7 @@ namespace UninstallTools.Junk
                 if (key == null) yield break;
 
                 var query = from name in key.GetSubKeyNames()
-                            let m = MatchStringToProductName(name)
+                            let m = MatchStringToProductName(Uninstaller, name)
                             where m >= 0 && m < 3
                             //orderby m ascending
                             select name;
@@ -354,7 +354,7 @@ namespace UninstallTools.Junk
                 {
                     var keyName = Path.GetFileName(softwareKey.Name);
                     var keyDir = Path.GetDirectoryName(softwareKey.Name);
-                    var confidence = GenerateConfidence(keyName, keyDir, level).ToList();
+                    var confidence = GenerateConfidence(Uninstaller, keyName, keyDir, level).ToList();
 
                     // Check if application's location is explicitly mentioned in any of the values
                     if (GetValueNamesSafe(softwareKey).Any(valueName => TestValueForMatches(softwareKey, valueName)))
@@ -625,7 +625,7 @@ namespace UninstallTools.Junk
 
                         var str = subKeyName.Substring(0, i);
 
-                        var conf = GenerateConfidence(str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
+                        var conf = GenerateConfidence(Uninstaller, str, Path.Combine(fullTracingKey, subKeyName), 0).ToList();
                         if (conf.Any())
                         {
                             var node = new RegistryKeyJunkNode(fullTracingKey, subKeyName, Uninstaller.DisplayName);

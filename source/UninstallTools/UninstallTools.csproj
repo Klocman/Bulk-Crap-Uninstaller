@@ -95,16 +95,19 @@
     <Compile Include="Junk\Containers\DriveDirectoryJunkNode.cs" />
     <Compile Include="Junk\Containers\DriveFileJunkNode.cs" />
     <Compile Include="Junk\Containers\DriveJunkNode.cs" />
+    <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />
     <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
-    <Compile Include="Junk\Finders\WerScanner.cs" />
-    <Compile Include="Junk\IJunkCreator.cs" />
+    <Compile Include="Junk\Finders\Drive\SpecificUninstallerKindScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\UninstallerLocationScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\WerScanner.cs" />
     <Compile Include="Junk\Containers\JunkNode.cs" />
     <Compile Include="Junk\Containers\RegistryJunkNode.cs" />
     <Compile Include="Junk\Containers\RegistryKeyJunkNode.cs" />
     <Compile Include="Junk\Containers\RegistryValueJunkNode.cs" />
-    <Compile Include="Junk\Finders\ShortcutJunk.cs" />
-    <Compile Include="Junk\Finders\StartupJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\ShortcutJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\StartupJunk.cs" />
     <Compile Include="Junk\Containers\StartupJunkNode.cs" />
+    <Compile Include="Junk\IJunkCreator.cs" />
     <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
     <Compile Include="Lists\ComparisonTargetAttribute.cs" />
@@ -171,8 +174,8 @@
     <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Junk\Finders\DriveJunk.cs" />
-    <Compile Include="Junk\JunkBase.cs" />
+    <Compile Include="Junk\Finders\Drive\GemerocDriveJunkScanner.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
     <Compile Include="Junk\Confidence\JunkConfidence.cs" />
     <Compile Include="Junk\JunkManager.cs" />
     <Compile Include="Junk\ProgramFilesOrphans.cs" />
@@ -202,7 +205,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Junk\Finders\RegistryJunk.cs" />
+    <Compile Include="Junk\Finders\Registry\RegistryJunk.cs" />
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />

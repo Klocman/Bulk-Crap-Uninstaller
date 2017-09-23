@@ -14,7 +14,7 @@ using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
-    public class ProgramFilesOrphans : IJunkCreator
+    public class ProgramFilesOrphans
     {
         public static readonly ConfidencePart ConfidenceEmptyFolder = new ConfidencePart(4,
             Localisation.Confidence_PF_EmptyFolder);
@@ -66,7 +66,7 @@ namespace UninstallTools.Junk
                 FindJunkRecursively(output, kvp.Key, 0);
             }
 
-            return DriveJunk.RemoveDuplicates(output.Cast<DriveJunkNode>()).Cast<JunkNode>();
+            return JunkManager.RemoveDuplicates(output.Cast<DriveJunkNode>()).Cast<JunkNode>();
         }
         
         private void FindJunkRecursively(ICollection<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)

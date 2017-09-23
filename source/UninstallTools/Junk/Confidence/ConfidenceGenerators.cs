@@ -9,28 +9,18 @@ using Klocman.Tools;
 
 namespace UninstallTools.Junk
 {
-    public abstract class JunkBase : IJunkCreator
+    public static class ConfidenceGenerators
     {
-        protected JunkBase(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> otherUninstallers)
+        public static IEnumerable<ConfidencePart> GenerateConfidence(string itemName, ApplicationUninstallerEntry applicationUninstallerEntry)
         {
-            Uninstaller = entry;
-            OtherUninstallers = otherUninstallers;
+            return GenerateConfidence(itemName, null, 0, applicationUninstallerEntry);
         }
 
-        public ApplicationUninstallerEntry Uninstaller { get; }
-        internal IEnumerable<ApplicationUninstallerEntry> OtherUninstallers { get; set; }
-        public abstract IEnumerable<JunkNode> FindJunk();
-
-        public virtual IEnumerable<ConfidencePart> GenerateConfidence(string itemName)
-        {
-            return GenerateConfidence(itemName, null, 0);
-        }
-
-        public virtual IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
+        public static IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level, ApplicationUninstallerEntry applicationUninstallerEntry)
         {
             var returnValue = new List<ConfidencePart>();
 
-            var matchResult = MatchStringToProductName(itemName);
+            var matchResult = MatchStringToProductName(applicationUninstallerEntry, itemName);
 
             if (matchResult < 0)
                 return returnValue;
@@ -42,12 +32,12 @@ namespace UninstallTools.Junk
             // Base rating according to path depth. 0 is best
             returnValue.Add(new ConfidencePart(2 - Math.Abs(level) * 2));
 
-            if (ItemNameEqualsCompanyName(itemName))
+            if (ItemNameEqualsCompanyName(applicationUninstallerEntry, itemName))
                 returnValue.Add(ConfidencePart.ItemNameEqualsCompanyName);
 
             if (level > 0)
             {
-                if (Uninstaller.PublisherTrimmed.ToLowerInvariant()
+                if (applicationUninstallerEntry.PublisherTrimmed.ToLowerInvariant()
                     .Contains(PathTools.GetName(itemParentPath).Replace('_', ' ').ToLowerInvariant()))
                     returnValue.Add(ConfidencePart.CompanyNameMatch);
             }
@@ -58,9 +48,9 @@ namespace UninstallTools.Junk
         /// <summary>
         /// -1 if match failed, 0 if string matched perfectly, higher if match was worse
         /// </summary>
-        protected int MatchStringToProductName(string str)
+        internal static int MatchStringToProductName(ApplicationUninstallerEntry applicationUninstallerEntry, string str)
         {
-            var productName = Uninstaller.DisplayNameTrimmed.ToLowerInvariant();
+            var productName = applicationUninstallerEntry.DisplayNameTrimmed.ToLowerInvariant();
             str = str.Replace('_', ' ').ToLowerInvariant().Trim();
             var lowestLength = Math.Min(productName.Length, str.Length);
 
@@ -75,7 +65,7 @@ namespace UninstallTools.Junk
                 return result;
 
             // If the product name contains company name, try trimming it and testing again
-            var publisher = Uninstaller.PublisherTrimmed.ToLower();
+            var publisher = applicationUninstallerEntry.PublisherTrimmed.ToLower();
             if (publisher.Length > 4 && productName.Contains(publisher))
             {
                 var trimmedProductName = productName.Replace(publisher, "").Trim();
@@ -102,11 +92,11 @@ namespace UninstallTools.Junk
         }
 
         // Check if name is the same as publisher, could be "Adobe AIR" getting matched to a folder "Adobe"
-        internal bool ItemNameEqualsCompanyName(string itemName)
+        internal static bool ItemNameEqualsCompanyName(ApplicationUninstallerEntry applicationUninstallerEntry, string itemName)
         {
-            var publisher = Uninstaller.PublisherTrimmed.ToLowerInvariant();
+            var publisher = applicationUninstallerEntry.PublisherTrimmed.ToLowerInvariant();
             itemName = itemName.ToLowerInvariant();
-            return !publisher.Equals(Uninstaller.DisplayNameTrimmed.ToLowerInvariant()) && publisher.Contains(itemName);
+            return !publisher.Equals(applicationUninstallerEntry.DisplayNameTrimmed.ToLowerInvariant()) && publisher.Contains(itemName);
         }
     }
 }

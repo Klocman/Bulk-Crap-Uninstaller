@@ -8,14 +8,32 @@ using System.Linq;
 
 namespace UninstallTools.Junk
 {
-    public interface IJunkCreator2
-    {
-        void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers);
-        IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
-    }
-
     public static class JunkManager
     {
+
+        // todo merge all for single uninstaller at end
+        public static IEnumerable<DriveJunkNode> RemoveDuplicates(IEnumerable<DriveJunkNode> input)
+        {
+            foreach (var group in input.GroupBy(x => x.FullName))
+            {
+                DriveJunkNode node = null;
+                foreach (var item in group)
+                {
+                    if (node == null)
+                    {
+                        node = item;
+                    }
+                    else
+                    {
+                        node.Confidence.AddRange(item.Confidence.ConfidenceParts);
+                    }
+                }
+
+                if (node != null)
+                    yield return node;
+            }
+        }
+
         public static IEnumerable<JunkNode> FindJunk(IEnumerable<ApplicationUninstallerEntry> uninstallers,
             IEnumerable<ApplicationUninstallerEntry> allUninstallers, ListGenerationProgress.ListGenerationCallback progressCallback)
         {

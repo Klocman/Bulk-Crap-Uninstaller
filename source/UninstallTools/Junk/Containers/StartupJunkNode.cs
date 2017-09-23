@@ -13,19 +13,25 @@ namespace UninstallTools.Junk
 {
     public class StartupJunkNode : JunkNode
     {
+        public static readonly ConfidencePart ConfidenceIsRunOnce =
+            new ConfidencePart(-5, Localisation.Confidence_Startup_IsRunOnce);
+
+        public static readonly ConfidencePart ConfidenceStartupMatched =
+            new ConfidencePart(6, Localisation.Confidence_Startup_StartupMatched);
+
         internal StartupJunkNode(StartupEntryBase entry, string uninstallerName)
             : base(entry.ParentLongName, entry.EntryLongName, uninstallerName)
         {
             Entry = entry;
 
-            Confidence.Add(StartupJunk.ConfidenceStartupMatched);
+            Confidence.Add(ConfidenceStartupMatched);
 
             var normalStartupEntry = entry as StartupEntry;
             if (normalStartupEntry != null && normalStartupEntry.IsRunOnce)
             {
                 // If the entry is RunOnce, give it some negative points to keep it out of automatic removal.
                 // It might be used to clean up after uninstall on next boot.
-                Confidence.Add(StartupJunk.ConfidenceIsRunOnce);
+                Confidence.Add(ConfidenceIsRunOnce);
             }
         }
 
