@@ -13,6 +13,8 @@ using System.Linq;
 
 namespace UninstallTools.Junk
 {
+    public class 
+
     public class DriveJunk : JunkBase
     {
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
@@ -105,7 +107,11 @@ namespace UninstallTools.Junk
             {
                 var resultNode = GetJunkNodeFromLocation(Uninstaller.InstallLocation);
                 if (resultNode != null)
+                {
+                    if (Uninstaller.UninstallerKind == UninstallerType.StoreApp)
+                        resultNode.Confidence.Add(ConfidencePart.IsStoreApp);
                     output.Add(resultNode);
+                }
             }
 
             output.AddRange(GetUninstallerJunk());
@@ -114,17 +120,7 @@ namespace UninstallTools.Junk
             {
                 output.AddRange(FindJunkRecursively(folder));
             }
-
-            if (Uninstaller.UninstallerKind == UninstallerType.StoreApp)
-            {
-                foreach (var driveJunkNode in output)
-                {
-                    driveJunkNode.Confidence.Add(ConfidencePart.IsStoreApp);
-                }
-            }
-
-            output.AddRange(SearchWerReports());
-
+            
             return RemoveDuplicates(output).Cast<JunkNode>();
         }
 
