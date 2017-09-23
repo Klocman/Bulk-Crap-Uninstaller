@@ -8,6 +8,12 @@ using System.Linq;
 
 namespace UninstallTools.Junk
 {
+    public interface IJunkCreator2
+    {
+        void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers);
+        IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
+    }
+
     public static class JunkManager
     {
         public static IEnumerable<JunkNode> FindJunk(IEnumerable<ApplicationUninstallerEntry> uninstallers,

@@ -90,19 +90,21 @@
     <Compile Include="Factory\InfoAdders\UninstallerFullFilenameAdder.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
-    <Compile Include="Junk\Confidence.cs" />
-    <Compile Include="Junk\ConfidencePart.cs" />
-    <Compile Include="Junk\DriveDirectoryJunkNode.cs" />
-    <Compile Include="Junk\DriveFileJunkNode.cs" />
-    <Compile Include="Junk\DriveJunkNode.cs" />
+    <Compile Include="Junk\Confidence\Confidence.cs" />
+    <Compile Include="Junk\Confidence\ConfidencePart.cs" />
+    <Compile Include="Junk\Containers\DriveDirectoryJunkNode.cs" />
+    <Compile Include="Junk\Containers\DriveFileJunkNode.cs" />
+    <Compile Include="Junk\Containers\DriveJunkNode.cs" />
+    <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
+    <Compile Include="Junk\Finders\WerScanner.cs" />
     <Compile Include="Junk\IJunkCreator.cs" />
-    <Compile Include="Junk\JunkNode.cs" />
-    <Compile Include="Junk\RegistryJunkNode.cs" />
-    <Compile Include="Junk\RegistryKeyJunkNode.cs" />
-    <Compile Include="Junk\RegistryValueJunkNode.cs" />
-    <Compile Include="Junk\ShortcutJunk.cs" />
-    <Compile Include="Junk\StartupJunk.cs" />
-    <Compile Include="Junk\StartupJunkNode.cs" />
+    <Compile Include="Junk\Containers\JunkNode.cs" />
+    <Compile Include="Junk\Containers\RegistryJunkNode.cs" />
+    <Compile Include="Junk\Containers\RegistryKeyJunkNode.cs" />
+    <Compile Include="Junk\Containers\RegistryValueJunkNode.cs" />
+    <Compile Include="Junk\Finders\ShortcutJunk.cs" />
+    <Compile Include="Junk\Finders\StartupJunk.cs" />
+    <Compile Include="Junk\Containers\StartupJunkNode.cs" />
     <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
     <Compile Include="Lists\ComparisonTargetAttribute.cs" />
@@ -169,9 +171,9 @@
     <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Junk\DriveJunk.cs" />
+    <Compile Include="Junk\Finders\DriveJunk.cs" />
     <Compile Include="Junk\JunkBase.cs" />
-    <Compile Include="Junk\JunkConfidence.cs" />
+    <Compile Include="Junk\Confidence\JunkConfidence.cs" />
     <Compile Include="Junk\JunkManager.cs" />
     <Compile Include="Junk\ProgramFilesOrphans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,7 +202,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Junk\RegistryJunk.cs" />
+    <Compile Include="Junk\Finders\RegistryJunk.cs" />
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
@@ -419,6 +421,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
