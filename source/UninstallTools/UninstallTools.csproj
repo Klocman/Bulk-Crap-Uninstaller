@@ -107,6 +107,15 @@
     <Compile Include="Junk\Finders\Misc\ShortcutJunk.cs" />
     <Compile Include="Junk\Finders\Misc\StartupJunk.cs" />
     <Compile Include="Junk\Containers\StartupJunkNode.cs" />
+    <Compile Include="Junk\Finders\Registry\AppCompatFlagScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\AudioPolicyConfigScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\ClsidScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\TracingScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\UninstallerKeySearcher.cs" />
+    <Compile Include="Junk\Finders\Registry\UserAssistScanner.cs" />
     <Compile Include="Junk\IJunkCreator.cs" />
     <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
@@ -205,7 +214,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Junk\Finders\Registry\RegistryJunk.cs" />
+    <Compile Include="Junk\Finders\Registry\SoftwareRegKeyScanner.cs" />
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />

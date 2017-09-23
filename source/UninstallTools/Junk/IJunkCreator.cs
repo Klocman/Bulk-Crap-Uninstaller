@@ -11,5 +11,6 @@ namespace UninstallTools.Junk
     {
         void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers);
         IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
+        string CategoryName { get; }
     }
 }

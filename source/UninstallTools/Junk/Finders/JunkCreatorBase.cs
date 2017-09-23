@@ -64,5 +64,18 @@ namespace UninstallTools.Junk
                 return null;
             }
         }
+
+        protected static bool SubPathIsInsideBasePath(string basePath, string subPath)
+        {
+            basePath = basePath?.Normalize().Trim().Trim('\\', '/');
+            if (string.IsNullOrEmpty(basePath))
+                return false;
+
+            subPath = subPath?.Normalize().Trim().Trim('\\', '/');
+            if (string.IsNullOrEmpty(subPath))
+                return false;
+
+            return subPath.StartsWith(basePath, StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }
