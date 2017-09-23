@@ -117,108 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Directório de Instalação</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Versão: </value>
-  </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Direitos de Autor</value>
-  </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Criador</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Versão do programa</value>
-  </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>É 64bit: </value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Está instalado: </value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Arquitectura: </value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Ícones de Modern UI</value>
-    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Pacote de Gestão do Programador de Tarefas </value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Elementos activos usados</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Todos os arquivos|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Fechar</value>
+    <value>Link ou arquivo da aplicação...</value>
   </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Página web oficial </value>
+  <data name="folderBrowserDialog1.Description" xml:space="preserve">
+    <value>Seleccione o directório no qual está instalada a aplicação</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Informação do Programador</value>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Seleccione qualquer dos arquivos que pertencem à aplicação</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Inglês, Polaco - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Checo - Richard Kahl </value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Francês - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Alemão - Dieter Hummel</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Esloveno - Jadran Rudec</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russo - wvxwxvw</value>
-    <comment>Português (PT) - Artur Álvaro Pereira</comment>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Translators</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Acerca do BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Holandês - Jaap Kramer</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Húngaro - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italiano - Luca Carrabba</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Português (PT) - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espanhol - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

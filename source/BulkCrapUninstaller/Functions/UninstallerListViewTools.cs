@@ -532,7 +532,7 @@ namespace BulkCrapUninstaller.Functions
                     PremadeDialogs.GenericError(ex);
                 }
             }
-            
+
             dialogInterface.SetProgress(progressMax, Localisable.Progress_Finishing, true);
             dialogInterface.SetSubMaximum(3);
             dialogInterface.SetSubProgress(0, string.Empty);
@@ -561,8 +561,15 @@ namespace BulkCrapUninstaller.Functions
             {
                 PremadeDialogs.GenericError(ex);
             }
-            
+
             dialogInterface.SetSubProgressVisible(false);
+
+            // Fixes loading gettings stuck on finalizing if main window is minimized
+            _reference.SafeInvoke(() =>
+            {
+                if (_reference.WindowState == FormWindowState.Minimized)
+                    _reference.WindowState = FormWindowState.Normal;
+            });
         }
 
         /// <summary>
