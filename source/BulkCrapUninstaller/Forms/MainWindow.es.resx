@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -524,6 +523,7 @@
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>Modificar</value>
+  </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Modificar</value>
   </data>
