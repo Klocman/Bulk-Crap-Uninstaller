@@ -134,7 +134,7 @@ namespace UninstallTools.Junk
 
                     // Check if application's location is explicitly mentioned in any of the values
                     if (softwareKey.TryGetValueNames().Any(valueName => TestValueForMatches(softwareKey, valueName)))
-                        confidence.Add(ConfidencePart.ExplicitConnection);
+                        confidence.Add(ConfidenceRecord.ExplicitConnection);
 
                     if (confidence.Any())
                     {

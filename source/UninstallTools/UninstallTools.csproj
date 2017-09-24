@@ -90,8 +90,8 @@
     <Compile Include="Factory\InfoAdders\UninstallerFullFilenameAdder.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
-    <Compile Include="Junk\Confidence\Confidence.cs" />
-    <Compile Include="Junk\Confidence\ConfidencePart.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceRecord.cs" />
     <Compile Include="Junk\Containers\DriveDirectoryJunkNode.cs" />
     <Compile Include="Junk\Containers\DriveFileJunkNode.cs" />
     <Compile Include="Junk\Containers\DriveJunkNode.cs" />
@@ -185,7 +185,7 @@
     </Compile>
     <Compile Include="Junk\Finders\Drive\GemerocDriveJunkScanner.cs" />
     <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
-    <Compile Include="Junk\Confidence\JunkConfidence.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceCollection.cs" />
     <Compile Include="Junk\JunkManager.cs" />
     <Compile Include="Junk\ProgramFilesOrphans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

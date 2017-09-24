@@ -67,7 +67,7 @@ namespace UninstallTools.Junk
                             if (SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(path)))
                             {
                                 var node = new RegistryKeyJunkNode(keyName, subKeyName, target.DisplayName);
-                                node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                                node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                                 results.Add(node);
                             }
                         }

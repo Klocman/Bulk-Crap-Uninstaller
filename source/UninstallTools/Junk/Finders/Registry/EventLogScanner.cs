@@ -38,10 +38,10 @@ namespace UninstallTools.Junk
 
                         var node = new RegistryKeyJunkNode(key.Name, result, target.DisplayName);
                         // Already matched names above
-                        node.Confidence.Add(ConfidencePart.ProductNamePerfectMatch);
+                        node.Confidence.Add(ConfidenceRecord.ProductNamePerfectMatch);
 
                         if (otherUninstallers.Any(x => SubPathIsInsideBasePath(x.InstallLocation, Path.GetDirectoryName(exePath))))
-                            node.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                            node.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
 
                         yield return node;
                     }

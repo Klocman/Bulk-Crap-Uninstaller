@@ -54,7 +54,7 @@ namespace UninstallTools.Junk
                             StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryValueJunkNode(key.Name, valueName, target.DisplayName);
-                            junk.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             yield return junk;
                         }
                     }

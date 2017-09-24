@@ -11,14 +11,14 @@ namespace UninstallTools.Junk
 {
     public static class ConfidenceGenerators
     {
-        public static IEnumerable<ConfidencePart> GenerateConfidence(string itemName, ApplicationUninstallerEntry applicationUninstallerEntry)
+        public static IEnumerable<ConfidenceRecord> GenerateConfidence(string itemName, ApplicationUninstallerEntry applicationUninstallerEntry)
         {
             return GenerateConfidence(itemName, null, 0, applicationUninstallerEntry);
         }
 
-        public static IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level, ApplicationUninstallerEntry applicationUninstallerEntry)
+        public static IEnumerable<ConfidenceRecord> GenerateConfidence(string itemName, string itemParentPath, int level, ApplicationUninstallerEntry applicationUninstallerEntry)
         {
-            var returnValue = new List<ConfidencePart>();
+            var returnValue = new List<ConfidenceRecord>();
 
             var matchResult = MatchStringToProductName(applicationUninstallerEntry, itemName);
 
@@ -26,20 +26,20 @@ namespace UninstallTools.Junk
                 return returnValue;
 
             returnValue.Add(matchResult < 2
-                ? ConfidencePart.ProductNamePerfectMatch
-                : ConfidencePart.ProductNameDodgyMatch);
+                ? ConfidenceRecord.ProductNamePerfectMatch
+                : ConfidenceRecord.ProductNameDodgyMatch);
 
             // Base rating according to path depth. 0 is best
-            returnValue.Add(new ConfidencePart(2 - Math.Abs(level) * 2));
+            returnValue.Add(new ConfidenceRecord(2 - Math.Abs(level) * 2));
 
             if (ItemNameEqualsCompanyName(applicationUninstallerEntry, itemName))
-                returnValue.Add(ConfidencePart.ItemNameEqualsCompanyName);
+                returnValue.Add(ConfidenceRecord.ItemNameEqualsCompanyName);
 
             if (level > 0)
             {
                 if (applicationUninstallerEntry.PublisherTrimmed.ToLowerInvariant()
                     .Contains(PathTools.GetName(itemParentPath).Replace('_', ' ').ToLowerInvariant()))
-                    returnValue.Add(ConfidencePart.CompanyNameMatch);
+                    returnValue.Add(ConfidenceRecord.CompanyNameMatch);
             }
 
             return returnValue;

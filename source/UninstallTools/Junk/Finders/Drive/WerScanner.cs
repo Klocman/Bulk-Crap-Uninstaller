@@ -43,7 +43,7 @@ namespace UninstallTools.Junk
                 {
                     var node = new DriveDirectoryJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate),
                         target.DisplayName);
-                    node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                     yield return node;
                 }
             }

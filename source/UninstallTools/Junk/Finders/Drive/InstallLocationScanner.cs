@@ -17,7 +17,7 @@ namespace UninstallTools.Junk
             if (resultNode != null)
             {
                 if (target.UninstallerKind == UninstallerType.StoreApp)
-                    resultNode.Confidence.Add(ConfidencePart.IsStoreApp);
+                    resultNode.Confidence.Add(ConfidenceRecord.IsStoreApp);
                 yield return (resultNode);
             }
         }

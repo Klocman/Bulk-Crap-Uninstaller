@@ -49,7 +49,7 @@ namespace UninstallTools.Junk
                             defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryKeyJunkNode(key.Name, subKeyName, target.DisplayName);
-                            junk.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             returnList.Add(junk);
                         }
                     }

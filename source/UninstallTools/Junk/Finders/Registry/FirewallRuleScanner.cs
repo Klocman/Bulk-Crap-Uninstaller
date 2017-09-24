@@ -38,7 +38,7 @@ namespace UninstallTools.Junk
                         {
                             var node = new RegistryValueJunkNode(fullFirewallRulesKey, valueName,
                                 target.DisplayName);
-                            node.Confidence.Add(ConfidencePart.ExplicitConnection);
+                            node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             results.Add(node);
                         }
                     }

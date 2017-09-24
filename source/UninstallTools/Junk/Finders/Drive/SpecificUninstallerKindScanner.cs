@@ -36,7 +36,7 @@ namespace UninstallTools.Junk
                     yield break;
             }
 
-            result.Confidence.Add(ConfidencePart.ExplicitConnection);
+            result.Confidence.Add(ConfidenceRecord.ExplicitConnection);
 
             yield return result;
         }

@@ -52,10 +52,10 @@ namespace UninstallTools.Junk
 
                 var newNode = new DriveDirectoryJunkNode(Path.GetDirectoryName(directory),
                     Path.GetFileName(directory), displayName);
-                newNode.Confidence.Add(ConfidencePart.ExplicitConnection);
+                newNode.Confidence.Add(ConfidenceRecord.ExplicitConnection);
 
                 if (CheckIfDirIsStillUsed(dirInfo.FullName, otherInstallLocations))
-                    newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                    newNode.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
 
                 return newNode;
             }

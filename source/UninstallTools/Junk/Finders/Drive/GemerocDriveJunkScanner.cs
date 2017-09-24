@@ -62,7 +62,7 @@ namespace UninstallTools.Junk
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))
-                            newNode.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                            newNode.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
 
                         results.Add(newNode);
                     }
@@ -79,7 +79,7 @@ namespace UninstallTools.Junk
                         {
                             var subDirs = dir.GetDirectories();
                             if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.FullName))))
-                                newNode.Confidence.Add(ConfidencePart.AllSubdirsMatched);
+                                newNode.Confidence.Add(ConfidenceRecord.AllSubdirsMatched);
                         }
                     }
                 }
@@ -93,15 +93,15 @@ namespace UninstallTools.Junk
             return results;
         }
 
-        protected IEnumerable<ConfidencePart> GenerateConfidence(string itemName, string itemParentPath, int level)
+        protected IEnumerable<ConfidenceRecord> GenerateConfidence(string itemName, string itemParentPath, int level)
         {
             var baseOutput = ConfidenceGenerators.GenerateConfidence(itemName, itemParentPath, level, _uninstaller).ToList();
 
             if (!baseOutput.Any(x => x.Change > 0))
-                return Enumerable.Empty<ConfidencePart>();
+                return Enumerable.Empty<ConfidenceRecord>();
 
             if (UninstallToolsGlobalConfig.QuestionableDirectoryNames.Contains(itemName, StringComparison.OrdinalIgnoreCase))
-                baseOutput.Add(ConfidencePart.QuestionableDirectoryName);
+                baseOutput.Add(ConfidenceRecord.QuestionableDirectoryName);
 
             return baseOutput;
         }

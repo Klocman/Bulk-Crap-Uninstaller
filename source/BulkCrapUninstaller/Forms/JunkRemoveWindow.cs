@@ -51,7 +51,7 @@ namespace BulkCrapUninstaller.Forms
             else if (junkNodes.All(x => x.Confidence.GetRawConfidence() >= 0))
                 checkBoxHideLowConfidence.Enabled = false;
 
-            new[] {Confidence.VeryGood, Confidence.Good, Confidence.Questionable, Confidence.Bad}
+            new[] {ConfidenceLevel.VeryGood, ConfidenceLevel.Good, ConfidenceLevel.Questionable, ConfidenceLevel.Bad}
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
         }
@@ -141,9 +141,9 @@ namespace BulkCrapUninstaller.Forms
             var localisedEnumWrapper = comboBoxChecker.SelectedItem as LocalisedEnumWrapper;
             if (localisedEnumWrapper != null)
             {
-                var selectedConfidence = (Confidence) localisedEnumWrapper.TargetEnum;
+                var selectedConfidence = (ConfidenceLevel) localisedEnumWrapper.TargetEnum;
 
-                if ((selectedConfidence != Confidence.Bad && selectedConfidence != Confidence.Questionable)
+                if ((selectedConfidence != ConfidenceLevel.Bad && selectedConfidence != ConfidenceLevel.Questionable)
                     || MessageBoxes.ConfirmLowConfidenceQuestion(this)) //Ask if selected low confidence
                 {
                     SelectUpTo(selectedConfidence);
@@ -247,7 +247,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void JunkRemoveWindow_Shown(object sender, EventArgs e)
         {
-            SelectUpTo(Confidence.Good);
+            SelectUpTo(ConfidenceLevel.Good);
         }
 
         private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
@@ -338,7 +338,7 @@ namespace BulkCrapUninstaller.Forms
             return true;
         }
 
-        private void SelectUpTo(Confidence selectedConfidence)
+        private void SelectUpTo(ConfidenceLevel selectedConfidenceLevel)
         {
             objectListViewMain.BeginControlUpdate();
             objectListViewMain.BeginUpdate();
@@ -347,7 +347,7 @@ namespace BulkCrapUninstaller.Forms
             objectListViewMain.UncheckAll();
 
             objectListViewMain.CheckObjects(objectListViewMain.FilteredObjects.Cast<JunkNode>()
-                .Where(x => x.Confidence.GetConfidence() >= selectedConfidence).ToList());
+                .Where(x => x.Confidence.GetConfidence() >= selectedConfidenceLevel).ToList());
 
             objectListViewMain.EndUpdate();
             objectListViewMain.EndControlUpdate();

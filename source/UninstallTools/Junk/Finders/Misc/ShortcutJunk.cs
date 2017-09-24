@@ -77,13 +77,13 @@ namespace UninstallTools.Junk
             if (!string.IsNullOrEmpty(target.InstallLocation))
             {
                 results.AddRange(CheckLocation(entry => entry.InstallLocation, target)
-                    .DoForEach(x=>x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+                    .DoForEach(x=>x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
             if (!string.IsNullOrEmpty(target.UninstallerFullFilename))
             {
                 results.AddRange(CheckLocation(entry => entry.UninstallerFullFilename, target)
-                    .DoForEach(x => x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+                    .DoForEach(x => x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
             if (!string.IsNullOrEmpty(target.UninstallerLocation))
@@ -125,7 +125,7 @@ namespace UninstallTools.Junk
                 {
                     var result = CreateJunkNode(source, entry);
                     if(!targetIsSafe)
-                        result.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                        result.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
                     yield return result;
                 }
             }

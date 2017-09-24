@@ -20,7 +20,7 @@ namespace UninstallTools.Junk
 
             var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(target.RegistryPath),
                 target.RegistryKeyName, target.DisplayName);
-            regKeyNode.Confidence.Add(ConfidencePart.IsUninstallerRegistryKey);
+            regKeyNode.Confidence.Add(ConfidenceRecord.IsUninstallerRegistryKey);
             yield return regKeyNode;
         }
     }

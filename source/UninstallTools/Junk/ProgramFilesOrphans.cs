@@ -16,25 +16,25 @@ namespace UninstallTools.Junk
 {
     public class ProgramFilesOrphans
     {
-        public static readonly ConfidencePart ConfidenceEmptyFolder = new ConfidencePart(4,
+        public static readonly ConfidenceRecord ConfidenceEmptyFolder = new ConfidenceRecord(4,
             Localisation.Confidence_PF_EmptyFolder);
 
-        public static readonly ConfidencePart ConfidenceExecsPresent = new ConfidencePart(-4,
+        public static readonly ConfidenceRecord ConfidenceExecsPresent = new ConfidenceRecord(-4,
             Localisation.Confidence_PF_ExecsPresent);
 
-        public static readonly ConfidencePart ConfidenceFilesPresent = new ConfidencePart(0,
+        public static readonly ConfidenceRecord ConfidenceFilesPresent = new ConfidenceRecord(0,
             Localisation.Confidence_PF_FilesPresent);
 
-        public static readonly ConfidencePart ConfidenceManyFilesPresent = new ConfidencePart(-2,
+        public static readonly ConfidenceRecord ConfidenceManyFilesPresent = new ConfidenceRecord(-2,
             Localisation.Confidence_PF_ManyFilesPresent);
 
-        public static readonly ConfidencePart ConfidenceNameIsUsed = new ConfidencePart(-4,
+        public static readonly ConfidenceRecord ConfidenceNameIsUsed = new ConfidenceRecord(-4,
             Localisation.Confidence_PF_NameIsUsed);
 
-        public static readonly ConfidencePart ConfidenceNoSubdirs = new ConfidencePart(2,
+        public static readonly ConfidenceRecord ConfidenceNoSubdirs = new ConfidenceRecord(2,
             Localisation.Confidence_PF_NoSubdirs);
 
-        public static readonly ConfidencePart ConfidencePublisherIsUsed = new ConfidencePart(-4,
+        public static readonly ConfidenceRecord ConfidencePublisherIsUsed = new ConfidenceRecord(-4,
             Localisation.Confidence_PF_PublisherIsUsed);
 
         private readonly string[] _otherInstallLocations;
@@ -98,23 +98,23 @@ namespace UninstallTools.Junk
                     var allFilesContainExe = allFiles.Any(x => WindowsTools.IsExectuable(x.Extension, false, true));
                     var immediateFiles = dir.GetFiles("*", SearchOption.TopDirectoryOnly);
 
-                    ConfidencePart resultPart;
+                    ConfidenceRecord resultRecord;
 
                     if (immediateFiles.Any())
                     {
                         // No executables, MAYBE safe to remove
                         // Executables present, bad idea to remove
-                        resultPart = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
+                        resultRecord = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
                     }
                     else if (!allFiles.Any())
                     {
                         // Empty folder, safe to remove
-                        resultPart = ConfidenceEmptyFolder;
+                        resultRecord = ConfidenceEmptyFolder;
                     }
                     else
                     {
                         // This folder is empty, but insides contain stuff
-                        resultPart = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
+                        resultRecord = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
 
                         if (level < 1 && !questionableDirName && !nameIsUsed)
                         {
@@ -122,11 +122,11 @@ namespace UninstallTools.Junk
                         }
                     }
 
-                    if (resultPart == null) continue;
+                    if (resultRecord == null) continue;
 
                     var newNode = new ProgramFilesJunkNode(directory.FullName, dir.Name,
                         Localisation.Junk_ProgramFilesOrphans_GroupName);
-                    newNode.Confidence.Add(resultPart);
+                    newNode.Confidence.Add(resultRecord);
 
                     if (dir.Name.ContainsAny(_otherPublishers, StringComparison.CurrentCultureIgnoreCase))
                         newNode.Confidence.Add(ConfidencePublisherIsUsed);
@@ -135,7 +135,7 @@ namespace UninstallTools.Junk
                         newNode.Confidence.Add(ConfidenceNameIsUsed);
 
                     if (questionableDirName)
-                        newNode.Confidence.Add(ConfidencePart.QuestionableDirectoryName);
+                        newNode.Confidence.Add(ConfidenceRecord.QuestionableDirectoryName);
 
                     if (allFiles.Length > 100)
                         newNode.Confidence.Add(ConfidenceManyFilesPresent);
