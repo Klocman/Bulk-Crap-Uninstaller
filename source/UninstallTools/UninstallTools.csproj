@@ -344,6 +344,7 @@
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>

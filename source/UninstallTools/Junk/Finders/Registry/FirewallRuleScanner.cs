@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Klocman.Extensions;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 

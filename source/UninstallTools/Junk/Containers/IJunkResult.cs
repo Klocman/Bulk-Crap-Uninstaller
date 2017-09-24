@@ -4,6 +4,7 @@
 */
 
 using System.Security.Permissions;
+using UninstallTools.Junk.Confidence;
 
 namespace UninstallTools.Junk.Containers
 {

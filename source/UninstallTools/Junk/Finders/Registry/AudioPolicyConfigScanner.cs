@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using Klocman.Tools;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
     public static class ConfidenceGenerators
     {

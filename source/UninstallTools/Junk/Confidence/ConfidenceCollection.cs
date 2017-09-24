@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
     public sealed class ConfidenceCollection : IEnumerable<ConfidenceRecord>
     {

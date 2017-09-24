@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
@@ -22,7 +23,11 @@ namespace UninstallTools.Junk.Finders.Drive
             switch (target.UninstallerKind)
             {
                 case UninstallerType.InstallShield:
-                    var targetDir = new DirectoryInfo(Path.GetDirectoryName(target.UninstallerFullFilename));
+                    var dirPath = Path.GetDirectoryName(target.UninstallerFullFilename);
+
+                    if (dirPath == null) yield break;
+
+                    var targetDir = new DirectoryInfo(dirPath);
                     result = new FileSystemJunk(targetDir, target, this);
                     break;
 

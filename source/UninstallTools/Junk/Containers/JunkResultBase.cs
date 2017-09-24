@@ -6,6 +6,7 @@
 using System.IO;
 using System.Security.Permissions;
 using Klocman.Tools;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk.Containers

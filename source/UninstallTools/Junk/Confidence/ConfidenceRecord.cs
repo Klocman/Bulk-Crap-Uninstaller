@@ -5,7 +5,7 @@
 
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
     public sealed class ConfidenceRecord
     {

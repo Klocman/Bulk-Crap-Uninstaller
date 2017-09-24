@@ -9,6 +9,7 @@ using System.IO;
 using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 

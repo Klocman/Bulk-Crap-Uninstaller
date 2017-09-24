@@ -11,6 +11,7 @@ using System.Linq;
 using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 

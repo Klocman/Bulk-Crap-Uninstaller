@@ -32,7 +32,7 @@ namespace UninstallTools.Junk.Containers
         public RegistryKeyJunk(string fullRegKeyPath, ApplicationUninstallerEntry application, IJunkCreator source) : base(application, source)
         {
             if (string.IsNullOrEmpty(fullRegKeyPath))
-                throw new ArgumentException("Argument is null or empty", nameof(fullRegKeyPath));
+                throw new ArgumentException(@"Argument is null or empty", nameof(fullRegKeyPath));
 
             FullRegKeyPath = fullRegKeyPath.TrimEnd('\\', '/', ' ');
         }

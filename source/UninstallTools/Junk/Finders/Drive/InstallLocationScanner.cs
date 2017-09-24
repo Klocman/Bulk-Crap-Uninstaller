@@ -4,6 +4,7 @@
 */
 
 using System.Collections.Generic;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
@@ -20,7 +21,7 @@ namespace UninstallTools.Junk.Finders.Drive
             {
                 if (target.UninstallerKind == UninstallerType.StoreApp)
                     resultNode.Confidence.Add(ConfidenceRecord.IsStoreApp);
-                yield return (resultNode);
+                yield return resultNode;
             }
         }
 

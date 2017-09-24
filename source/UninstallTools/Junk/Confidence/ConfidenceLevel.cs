@@ -6,7 +6,7 @@
 using Klocman.Localising;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
     public enum ConfidenceLevel
     {

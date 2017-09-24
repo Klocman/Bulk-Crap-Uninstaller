@@ -4,6 +4,7 @@
 */
 
 using System.Collections.Generic;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 

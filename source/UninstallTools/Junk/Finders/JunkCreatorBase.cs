@@ -1,11 +1,17 @@
+/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders
 {
     public abstract class JunkCreatorBase : IJunkCreator
     {
@@ -35,10 +41,7 @@ namespace UninstallTools.Junk
         /// </summary>
         public static bool CheckIfDirIsStillUsed(string location, IEnumerable<string> otherInstallLocations)
         {
-            if (string.IsNullOrEmpty(location))
-                return false;
-
-            return otherInstallLocations.Any(x => x.TrimEnd('\\').StartsWith(location, StringComparison.InvariantCultureIgnoreCase));
+            return !string.IsNullOrEmpty(location) && otherInstallLocations.Any(x => x.TrimEnd('\\').StartsWith(location, StringComparison.InvariantCultureIgnoreCase));
         }
 
         private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;

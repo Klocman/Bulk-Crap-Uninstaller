@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using System.Security.Permissions;
 using JetBrains.Annotations;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
 using UninstallTools.Startup.Normal;

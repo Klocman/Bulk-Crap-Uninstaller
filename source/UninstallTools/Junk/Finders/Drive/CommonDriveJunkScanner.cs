@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
@@ -28,9 +29,7 @@ namespace UninstallTools.Junk.Finders.Drive
             var validDirs = allDirs.Attempt(dir =>
                             {
                                 var dirinfo = new DirectoryInfo(dir);
-                                if (dirinfo.Exists)
-                                    return dirinfo;
-                                return null;
+                                return dirinfo.Exists ? dirinfo : null;
                             }).Where(x => x != null);
             _foldersToCheck = validDirs.DistinctBy(x => x.FullName.ToLowerInvariant()).ToList();
         }

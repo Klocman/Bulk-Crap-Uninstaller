@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
