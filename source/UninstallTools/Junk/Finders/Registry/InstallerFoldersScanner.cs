@@ -6,12 +6,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Win32;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public class InstallerFoldersScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             var installLocation = target.InstallLocation;
             if (string.IsNullOrEmpty(installLocation)) yield break;
@@ -21,19 +22,21 @@ namespace UninstallTools.Junk
             {
                 if (key == null) yield break;
 
-                foreach (var path in key.GetValueNames())
+                foreach (var valueName in key.GetValueNames())
                 {
-                    if (!SubPathIsInsideBasePath(installLocation, path)) continue;
+                    if (!SubPathIsInsideBasePath(installLocation, valueName)) continue;
 
-                    var node = new RegistryValueJunkNode(key.Name, path, target.DisplayName);
+                    var node = new RegistryValueJunk(key.Name, valueName, target, this);
                     node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
 
-                    if (GetOtherInstallLocations(target).Any(x => SubPathIsInsideBasePath(x, path)))
+                    if (GetOtherInstallLocations(target).Any(x => SubPathIsInsideBasePath(x, valueName)))
                         node.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
 
                     yield return node;
                 }
             }
         }
+
+        public override string CategoryName => Localisation.Junk_Drive_GroupName;
     }
 }

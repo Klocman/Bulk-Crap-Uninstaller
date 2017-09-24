@@ -529,6 +529,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Firewall rule.
+        /// </summary>
+        internal static string Junk_FirewallRule_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_FirewallRule_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Program Files orphan.
         /// </summary>
         internal static string Junk_ProgramFilesOrphans_GroupName {
@@ -552,6 +561,15 @@ namespace UninstallTools.Properties {
         internal static string Junk_Startup_GroupName {
             get {
                 return ResourceManager.GetString("Junk_Startup_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User assist.
+        /// </summary>
+        internal static string Junk_UserAssist_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_UserAssist_GroupName", resourceCulture);
             }
         }
         

@@ -11,11 +11,14 @@ using System.Security;
 using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public class SoftwareRegKeyScanner : JunkCreatorBase
     {
+        public override string CategoryName => Localisation.Junk_Registry_GroupName;
+
         private const string KeynameRegisteredApps = "RegisteredApplications";
 
         private const string KeyVirtualStoreCu = @"HKEY_CURRENT_USER\SOFTWARE\Classes\VirtualStore\MACHINE\SOFTWARE";
@@ -101,10 +104,10 @@ namespace UninstallTools.Junk
             }
         }
 
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             _uninstaller = target;
-            var output = new List<JunkNode>();
+            var output = new List<RegistryKeyJunk>();
 
             foreach (var softwareKeyName in SoftwareRegKeys)
             {
@@ -118,9 +121,9 @@ namespace UninstallTools.Junk
             return output.Concat(ScanRelatedKeys(output));
         }
 
-        private IEnumerable<JunkNode> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
+        private IEnumerable<RegistryKeyJunk> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
-            var returnList = new List<JunkNode>();
+            var returnList = new List<RegistryKeyJunk>();
 
             try
             {
@@ -139,7 +142,7 @@ namespace UninstallTools.Junk
                     if (confidence.Any())
                     {
                         // TODO Add extra confidence if the key is, or will be empty after junk removal
-                        var newNode = new RegistryKeyJunkNode(keyDir, keyName, _uninstaller.DisplayName);
+                        var newNode = new RegistryKeyJunk(softwareKey.Name, _uninstaller, this);
                         newNode.Confidence.AddRange(confidence);
                         returnList.Add(newNode);
                     }
@@ -201,14 +204,14 @@ namespace UninstallTools.Junk
             return hit;
         }
 
-        private IEnumerable<JunkNode> ScanRelatedKeys(IEnumerable<JunkNode> itemsToCompare)
+        private IEnumerable<RegistryKeyJunk> ScanRelatedKeys(IEnumerable<RegistryKeyJunk> itemsToCompare)
         {
             var input = itemsToCompare.ToList();
-            var output = new List<JunkNode>();
+            var output = new List<RegistryKeyJunk>();
 
             foreach (var registryJunkNode in input)
             {
-                var nodeName = registryJunkNode.FullName;
+                var nodeName = registryJunkNode.FullRegKeyPath;
 
                 // Check Wow first because non-wow path will match wow path
                 var softwareKey = new[] { KeyLmWow, KeyCuWow, KeyLm, KeyCu }.First(
@@ -220,7 +223,7 @@ namespace UninstallTools.Junk
                 {
                     var nodePath = Path.Combine(keyToTest, nodeName);
                     // Check if the same node exists in other root keys
-                    var node = input.FirstOrDefault(x => PathTools.PathsEqual(x.FullName, nodePath));
+                    var node = input.FirstOrDefault(x => PathTools.PathsEqual(x.FullRegKeyPath, nodePath));
 
                     if (node != null)
                     {
@@ -237,8 +240,7 @@ namespace UninstallTools.Junk
                             {
                                 if (nodeKey != null)
                                 {
-                                    var newNode = new RegistryKeyJunkNode(Path.GetDirectoryName(nodePath),
-                                        Path.GetFileName(nodePath), _uninstaller.DisplayName);
+                                    var newNode = new RegistryKeyJunk(nodePath, _uninstaller, this);
                                     newNode.Confidence.AddRange(registryJunkNode.Confidence.ConfidenceParts);
                                     output.Add(newNode);
                                 }

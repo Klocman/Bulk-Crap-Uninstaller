@@ -23,7 +23,7 @@ namespace UninstallTools.Junk
 
             foreach (var group in input.GroupBy(x => x.FullName))
             {
-                DriveJunkNode node = null;
+                FileSystemJunk node = null;
                 foreach (var item in group)
                 {
                     if (node == null)

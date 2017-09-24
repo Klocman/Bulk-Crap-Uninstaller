@@ -501,4 +501,10 @@
   <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
     <value>Searching for Windows Updates</value>
   </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Firewall rule</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>User assist</value>
+  </data>
 </root>

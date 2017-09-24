@@ -10,7 +10,7 @@ namespace UninstallTools.Junk
     public interface IJunkCreator
     {
         void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers);
-        IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
+        IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target);
         string CategoryName { get; }
     }
 }

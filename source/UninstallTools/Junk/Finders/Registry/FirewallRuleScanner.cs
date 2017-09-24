@@ -7,18 +7,19 @@ using System;
 using System.Collections.Generic;
 using Klocman.Extensions;
 using Microsoft.Win32;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
-    public class FirewallRuleScanner :JunkCreatorBase
+    public class FirewallRuleScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             const string firewallRulesKey =
                 @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
             const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
 
-            var results = new List<JunkNode>();
+            var results = new List<IJunkResult>();
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return results;
 
@@ -36,8 +37,8 @@ namespace UninstallTools.Junk
                         var fullPath = Environment.ExpandEnvironmentVariables(value.Substring(start, charCount));
                         if (fullPath.StartsWith(target.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            var node = new RegistryValueJunkNode(fullFirewallRulesKey, valueName,
-                                target.DisplayName);
+                            var node = new RegistryValueJunk(fullFirewallRulesKey, valueName,
+                                target, this);
                             node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             results.Add(node);
                         }
@@ -47,5 +48,7 @@ namespace UninstallTools.Junk
 
             return results;
         }
+
+        public override string CategoryName => Localisation.Junk_FirewallRule_GroupName;
     }
 }

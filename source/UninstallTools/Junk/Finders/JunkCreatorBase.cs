@@ -19,13 +19,13 @@ namespace UninstallTools.Junk
         {
             return AllUninstallers.Where(x => x != exceptThis);
         }
-        
+
         protected IEnumerable<string> GetOtherInstallLocations(ApplicationUninstallerEntry target)
         {
             return GetOtherUninstallers(target).Select(x => x.InstallLocation).Where(x => !string.IsNullOrEmpty(x));
         }
 
-        public abstract IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
+        public abstract IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target);
 
         public abstract string CategoryName { get; }
 
@@ -43,7 +43,7 @@ namespace UninstallTools.Junk
         private static readonly string FullWindowsDirectoryName = PathTools.GetWindowsDirectory().FullName;
 
         // TODO overhaul
-        internal static DriveJunkNode GetJunkNodeFromLocation(IEnumerable<string> otherInstallLocations, string directory, string displayName)
+        protected FileSystemJunk GetJunkNodeFromLocation(IEnumerable<string> otherInstallLocations, string directory, ApplicationUninstallerEntry app)
         {
             try
             {
@@ -52,8 +52,7 @@ namespace UninstallTools.Junk
                 if (dirInfo.FullName.Contains(FullWindowsDirectoryName) || !dirInfo.Exists || dirInfo.Parent == null)
                     return null;
 
-                var newNode = new DriveDirectoryJunkNode(Path.GetDirectoryName(directory),
-                    Path.GetFileName(directory), displayName);
+                var newNode = new FileSystemJunk(dirInfo, app, this);
                 newNode.Confidence.Add(ConfidenceRecord.ExplicitConnection);
 
                 if (CheckIfDirIsStillUsed(dirInfo.FullName, otherInstallLocations))

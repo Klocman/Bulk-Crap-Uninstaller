@@ -66,7 +66,7 @@ namespace UninstallTools.Junk
                 FindJunkRecursively(output, kvp.Key, 0);
             }
 
-            return JunkManager.RemoveDuplicates(output.Cast<DriveJunkNode>()).Cast<JunkNode>();
+            return JunkManager.RemoveDuplicates(output.Cast<FileSystemJunk>()).Cast<JunkNode>();
         }
         
         private void FindJunkRecursively(ICollection<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)
@@ -155,7 +155,7 @@ namespace UninstallTools.Junk
             }
         }
 
-        public class ProgramFilesJunkNode : DriveDirectoryJunkNode
+        public class ProgramFilesJunkNode : DirectoryJunk
         {
             public ProgramFilesJunkNode(string parentPath, string name, string uninstallerName)
                 : base(parentPath, name, uninstallerName)

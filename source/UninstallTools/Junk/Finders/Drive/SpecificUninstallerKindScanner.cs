@@ -5,31 +5,30 @@
 
 using System.Collections.Generic;
 using System.IO;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public class SpecificUninstallerKindScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (!File.Exists(target.UninstallerFullFilename))
                 yield break;
 
-            DriveJunkNode result;
+            FileSystemJunk result;
 
             switch (target.UninstallerKind)
             {
                 case UninstallerType.InstallShield:
-                    var targetDir = Path.GetDirectoryName(target.UninstallerFullFilename);
-                    result = new DriveDirectoryJunkNode(Path.GetDirectoryName(targetDir),
-                        Path.GetFileName(targetDir), target.DisplayName);
+                    var targetDir = new DirectoryInfo(Path.GetDirectoryName(target.UninstallerFullFilename));
+                    result = new FileSystemJunk(targetDir, target, this);
                     break;
 
                 case UninstallerType.InnoSetup:
                 case UninstallerType.Msiexec:
                 case UninstallerType.Nsis:
-                    result = new DriveFileJunkNode(Path.GetDirectoryName(target.UninstallerFullFilename),
-                        Path.GetFileName(target.UninstallerFullFilename), target.DisplayName);
+                    result = new FileSystemJunk(new FileInfo(target.UninstallerFullFilename), target, this);
                     break;
 
                 default:
@@ -40,5 +39,7 @@ namespace UninstallTools.Junk
 
             yield return result;
         }
+
+        public override string CategoryName => Localisation.Junk_Drive_GroupName;
     }
 }

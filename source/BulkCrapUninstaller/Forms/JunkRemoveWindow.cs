@@ -60,11 +60,11 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            var filters = SelectedJunk.OfType<DriveJunkNode>().Select(x => x.FullName).ToArray();
+            var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.FullName).ToArray();
             if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
                 return;
 
-            if (SelectedJunk.Any(x => !(x is DriveJunkNode)))
+            if (SelectedJunk.Any(x => !(x is FileSystemJunk)))
             {
                 switch (MessageBoxes.BackupRegistryQuestion(this))
                 {

@@ -43,9 +43,9 @@ namespace UninstallTools.Junk
 
         public override string CategoryName => Localisation.Junk_Drive_GroupName;
 
-        private IEnumerable<DriveJunkNode> FindJunkRecursively(DirectoryInfo directory, int level = 0)
+        private IEnumerable<FileSystemJunk> FindJunkRecursively(DirectoryInfo directory, int level = 0)
         {
-            var results = new List<DriveJunkNode>();
+            var results = new List<FileSystemJunk>();
 
             try
             {
@@ -58,10 +58,10 @@ namespace UninstallTools.Junk
 
                     var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
 
-                    DriveJunkNode newNode = null;
+                    FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        newNode = new DriveDirectoryJunkNode(directory.FullName, dir.Name, _uninstaller.DisplayName);
+                        newNode = new DirectoryJunk(directory.FullName, dir.Name, _uninstaller.DisplayName);
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))

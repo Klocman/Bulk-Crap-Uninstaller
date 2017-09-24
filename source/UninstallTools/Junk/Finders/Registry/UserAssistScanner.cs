@@ -8,11 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public class UserAssistScanner : IJunkCreator
     {
+        public string CategoryName => Localisation.Junk_UserAssist_GroupName;
+
         private static readonly IEnumerable<string> UserAssistGuids = new[]
         {
             //GUIDs for Windows XP
@@ -27,7 +30,7 @@ namespace UninstallTools.Junk
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (string.IsNullOrEmpty(target.InstallLocation))
                 yield break;
@@ -53,7 +56,7 @@ namespace UninstallTools.Junk
                         if (convertedName.StartsWith(target.InstallLocation,
                             StringComparison.InvariantCultureIgnoreCase))
                         {
-                            var junk = new RegistryValueJunkNode(key.Name, valueName, target.DisplayName);
+                            var junk = new RegistryValueJunk(key.Name, valueName, target, this);
                             junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             yield return junk;
                         }
@@ -68,9 +71,9 @@ namespace UninstallTools.Junk
                 return input;
 
             return new string(input.Select(x => x >= 'a' && x <= 'z'
-                ? (char) ((x - 'a' + 13)%26 + 'a')
+                ? (char)((x - 'a' + 13) % 26 + 'a')
                 : (x >= 'A' && x <= 'Z'
-                    ? (char) ((x - 'A' + 13)%26 + 'A')
+                    ? (char)((x - 'A' + 13) % 26 + 'A')
                     : x)).ToArray());
         }
 

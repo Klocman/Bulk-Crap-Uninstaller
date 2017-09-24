@@ -10,7 +10,8 @@ namespace UninstallTools.Junk
     public class WerScanner : JunkCreatorBase
     {
         private const string CrashLabel = "AppCrash_";
-        private static readonly IEnumerable<string> Archives;
+        private static readonly ICollection<string> Archives;
+        private ICollection<string> _werReportPaths;
 
         static WerScanner()
         {
@@ -18,31 +19,42 @@ namespace UninstallTools.Junk
             {
                 WindowsTools.GetEnvironmentPath(Klocman.Native.CSIDL.CSIDL_COMMON_APPDATA),
                 WindowsTools.GetEnvironmentPath(Klocman.Native.CSIDL.CSIDL_LOCAL_APPDATA)
-            }.Select(x => Path.Combine(x, @"Microsoft\Windows\WER\ReportArchive")).Where(Directory.Exists);
+            }.SelectMany(x =>new[]
+            {
+                Path.Combine(x, @"Microsoft\Windows\WER\ReportArchive"),
+                Path.Combine(x, @"Microsoft\Windows\WER\ReportQueue")
+            }).Where(Directory.Exists)
+            .ToArray();
         }
 
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
+        {
+            base.Setup(allUninstallers);
+
+            _werReportPaths = Archives.Attempt(Directory.GetDirectories).SelectMany(x => x).ToArray();
+        }
+
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (target.SortedExecutables == null || target.SortedExecutables.Length == 0)
                 yield break;
 
             var appExecutables = target.SortedExecutables.Attempt(Path.GetFileName).ToList();
 
-            foreach (var candidate in Archives.Attempt(Directory.GetDirectories).SelectMany(x => x))
+            foreach (var reportPath in _werReportPaths)
             {
-                var startIndex = candidate.LastIndexOf(CrashLabel, StringComparison.InvariantCultureIgnoreCase);
+                var startIndex = reportPath.LastIndexOf(CrashLabel, StringComparison.InvariantCultureIgnoreCase);
                 if (startIndex <= 0) continue;
                 startIndex = startIndex + CrashLabel.Length;
 
-                var count = candidate.IndexOf('_', startIndex) - startIndex;
+                var count = reportPath.IndexOf('_', startIndex) - startIndex;
                 if (count <= 1) continue;
 
-                var filename = candidate.Substring(startIndex, count);
+                var filename = reportPath.Substring(startIndex, count);
 
                 if (appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    var node = new DriveDirectoryJunkNode(Path.GetDirectoryName(candidate), Path.GetFileName(candidate),
-                        target.DisplayName);
+                    var node = new FileSystemJunk(new DirectoryInfo(reportPath),target, this);
                     node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                     yield return node;
                 }
