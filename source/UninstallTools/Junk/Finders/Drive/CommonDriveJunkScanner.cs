@@ -10,10 +10,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
-    public class GemerocDriveJunkScanner : JunkCreatorBase
+    public class CommonDriveJunkScanner : JunkCreatorBase
     {
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
         private ApplicationUninstallerEntry _uninstaller;
@@ -39,6 +40,8 @@ namespace UninstallTools.Junk
 
             return _foldersToCheck.SelectMany(FindJunkRecursively).Cast<JunkNode>();
         }
+
+        public override string CategoryName => Localisation.Junk_Drive_GroupName;
 
         private IEnumerable<DriveJunkNode> FindJunkRecursively(DirectoryInfo directory, int level = 0)
         {

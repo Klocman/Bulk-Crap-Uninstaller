@@ -26,7 +26,9 @@ namespace UninstallTools.Junk
         }
 
         public abstract IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target);
-        
+
+        public abstract string CategoryName { get; }
+
         /// <summary>
         /// Returns true if the dir is still used by other apps and can't be safely deleted.
         /// </summary>

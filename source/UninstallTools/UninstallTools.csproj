@@ -183,7 +183,7 @@
     <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Junk\Finders\Drive\GemerocDriveJunkScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\CommonDriveJunkScanner.cs" />
     <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
     <Compile Include="Junk\Confidence\ConfidenceCollection.cs" />
     <Compile Include="Junk\JunkManager.cs" />
@@ -332,6 +332,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.ru.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>

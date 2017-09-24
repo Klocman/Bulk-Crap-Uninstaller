@@ -3,23 +3,34 @@
     Apache License Version 2.0
 */
 
+using System.Diagnostics;
+using System.IO;
+using System.Security.Permissions;
+using Klocman.Tools;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
-    public abstract class DriveJunkNode : JunkNode
+    public abstract class DriveJunkNode : JunkResultBase
     {
-        protected DriveJunkNode(string parentPath, string name, string uninstallerName)
-            : base(parentPath, name, uninstallerName)
-        {
-            
-        }
-
-        public override string GroupName => Localisation.Junk_Drive_GroupName;
-
         public override void Backup(string backupDirectory)
         {
             // Items are deleted to the recycle bin
+        }
+
+        public DriveJunkNode(ApplicationUninstallerEntry application, IJunkCreator source) : base(application, source)
+        {
+        }
+
+        public abstract FileSystemInfo Path { get; }
+        
+        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
+        public override void Open()
+        {
+            if (Path.Exists)
+                WindowsTools.OpenExplorerFocusedOnObject(Path.FullName);
+            else
+                throw new FileNotFoundException(null, Path.FullName);
         }
     }
 }

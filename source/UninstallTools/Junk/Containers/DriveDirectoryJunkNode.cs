@@ -12,10 +12,13 @@ namespace UninstallTools.Junk
 {
     public class DriveDirectoryJunkNode : DriveJunkNode
     {
-        public DriveDirectoryJunkNode(string parentPath, string name, string uninstallerName)
-            : base(parentPath, name, uninstallerName)
+        public DirectoryInfo DirectoryPath { get; }
+
+        public DriveDirectoryJunkNode(DirectoryInfo directory, ApplicationUninstallerEntry app, IJunkCreator source)
+            : base(app, source)
         {
-            Debug.Assert(!File.Exists(FullName));
+            DirectoryPath = directory;
+            Debug.Assert(directory.Exists);
         }
 
         public override void Delete()
@@ -24,17 +27,11 @@ namespace UninstallTools.Junk
                 RecycleOption.SendToRecycleBin, UICancelOption.DoNothing);
         }
 
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
-        public override void Open()
+        public override string GetDisplayName()
         {
-            if (Directory.Exists(FullName))
-            {
-                Process.Start(FullName);
-            }
-            else
-            {
-                throw new FileNotFoundException(null, FullName);
-            }
+            throw new System.NotImplementedException();
         }
+
+        public override FileSystemInfo Path => DirectoryPath;
     }
 }
