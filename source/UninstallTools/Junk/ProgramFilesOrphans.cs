@@ -45,7 +45,8 @@ namespace UninstallTools.Junk
 
         public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            throw new NotImplementedException();
+            // Do nothing when called by the manager
+            yield break;
         }
 
         public IEnumerable<IJunkResult> FindAllJunk()

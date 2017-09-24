@@ -31,15 +31,15 @@ namespace BulkCrapUninstaller.Forms
             new CultureInfo("en-US", false).DateTimeFormat.SortableDateTimePattern.Replace(':', '-').Replace('T', '_');
 
         private bool _confirmLowConfidenceMessageShown;
-        private TypedObjectListView<JunkNode> _listViewWrapper;
+        private TypedObjectListView<IJunkResult> _listViewWrapper;
 
-        public JunkRemoveWindow(IEnumerable<JunkNode> junk)
+        public JunkRemoveWindow(IEnumerable<IJunkResult> junk)
         {
             InitializeComponent();
 
             Icon = Resources.Icon_Logo;
 
-            var junkNodes = junk as IList<JunkNode> ?? junk.ToList();
+            var junkNodes = junk as IList<IJunkResult> ?? junk.ToList();
 
             SetupListView(junkNodes);
 
@@ -57,11 +57,11 @@ namespace BulkCrapUninstaller.Forms
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
         }
 
-        public IEnumerable<JunkNode> SelectedJunk => _listViewWrapper.CheckedObjects;
+        public IEnumerable<IJunkResult> SelectedJunk => _listViewWrapper.CheckedObjects;
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.FullName).ToArray();
+            var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.Path.FullName).Distinct().ToArray();
             if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
                 return;
 
@@ -165,7 +165,7 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                var items = objectListViewMain.SelectedObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray();
+                var items = objectListViewMain.SelectedObjects.Cast<IJunkResult>().Select(x => x.ToLongString()).ToArray();
 
                 if (items.Any())
                 {
@@ -180,12 +180,12 @@ namespace BulkCrapUninstaller.Forms
 
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var item = objectListViewMain.SelectedObject as JunkNode;
+            var item = objectListViewMain.SelectedObject as IJunkResult;
             if (item == null) return;
             DisplayDetails(item);
         }
 
-        private static void DisplayDetails(JunkNode item)
+        private static void DisplayDetails(IJunkResult item)
         {
             var groups = item.Confidence.ConfidenceParts.GroupBy(part => part.Change > 0).ToList();
 
@@ -221,7 +221,7 @@ namespace BulkCrapUninstaller.Forms
             try
             {
                 File.WriteAllLines(exportDialog.FileName,
-                    objectListViewMain.FilteredObjects.Cast<JunkNode>().Select(x => x.ToLongString()).ToArray());
+                    objectListViewMain.FilteredObjects.Cast<IJunkResult>().Select(x => x.ToLongString()).ToArray());
             }
             catch (Exception ex)
             {
@@ -236,7 +236,7 @@ namespace BulkCrapUninstaller.Forms
 
         private bool JunkListFilter(object obj)
         {
-            var item = obj as JunkNode;
+            var item = obj as IJunkResult;
             if (item == null)
                 return false;
 
@@ -254,7 +254,7 @@ namespace BulkCrapUninstaller.Forms
         private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
         {
             e.Cancel = true;
-            var item = e.RowObject as JunkNode;
+            var item = e.RowObject as IJunkResult;
             if (item == null) return;
 
             EnsureSingleSelection(e.ListViewItem);
@@ -291,7 +291,7 @@ namespace BulkCrapUninstaller.Forms
             buttonAccept.Enabled = SelectedJunk.Any();
         }
 
-        private static void OpenJunkNodePreview(JunkNode item)
+        private static void OpenJunkNodePreview(IJunkResult item)
         {
             try
             {
@@ -305,7 +305,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var item = objectListViewMain.SelectedObject as JunkNode;
+            var item = objectListViewMain.SelectedObject as IJunkResult;
             if (item == null) return;
             OpenJunkNodePreview(item);
         }
@@ -321,7 +321,7 @@ namespace BulkCrapUninstaller.Forms
                 }
                 catch
                 {
-                    failed.Add(junkNode.FullName);
+                    failed.Add(junkNode.GetDisplayName());
                 }
             }
 
@@ -347,19 +347,21 @@ namespace BulkCrapUninstaller.Forms
             objectListViewMain.DeselectAll();
             objectListViewMain.UncheckAll();
 
-            objectListViewMain.CheckObjects(objectListViewMain.FilteredObjects.Cast<JunkNode>()
+            objectListViewMain.CheckObjects(objectListViewMain.FilteredObjects.Cast<IJunkResult>()
                 .Where(x => x.Confidence.GetConfidence() >= selectedConfidenceLevel).ToList());
 
             objectListViewMain.EndUpdate();
             objectListViewMain.EndControlUpdate();
         }
 
-        private void SetupListView(IEnumerable<JunkNode> junk)
+        private void SetupListView(IEnumerable<IJunkResult> junk)
         {
-            _listViewWrapper = new TypedObjectListView<JunkNode>(objectListViewMain);
+            _listViewWrapper = new TypedObjectListView<IJunkResult>(objectListViewMain);
 
-            olvColumnSafety.AspectGetter = x => (x as JunkNode)?.Confidence.GetConfidence().GetLocalisedName();
-            olvColumnPath.GroupKeyGetter = x => (x as JunkNode)?.GroupName ?? CommonStrings.Unknown;
+            olvColumnSafety.AspectGetter = x => (x as IJunkResult)?.Confidence.GetConfidence().GetLocalisedName();
+            olvColumnPath.GroupKeyGetter = x => (x as IJunkResult)?.Source.CategoryName ?? CommonStrings.Unknown;
+            olvColumnPath.AspectGetter = rowObject => (rowObject as IJunkResult)?.GetDisplayName();
+            olvColumnUninstallerName.AspectGetter = rowObject => (rowObject as IJunkResult)?.Application.DisplayName;
 
             objectListViewMain.UseFiltering = true;
             objectListViewMain.AdditionalFilter = new ModelFilter(JunkListFilter);
