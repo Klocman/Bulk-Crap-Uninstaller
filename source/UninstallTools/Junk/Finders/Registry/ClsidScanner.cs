@@ -26,9 +26,17 @@ namespace UninstallTools.Junk.Finders.Registry
             @"HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID"
         };
 
-        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
+        private ICollection<KeyValuePair<string, string>> _clsudEntries;
+
+        public override void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
-            var results = new List<IJunkResult>();
+            base.Setup(allUninstallers);
+            _clsudEntries = CollectClsidEnries();
+        }
+
+        private static List<KeyValuePair<string, string>> CollectClsidEnries()
+        {
+            var results = new List<KeyValuePair<string, string>>();
 
             foreach (var keyName in ClsidKeys)
             {
@@ -56,32 +64,46 @@ namespace UninstallTools.Junk.Finders.Registry
                         try
                         {
                             subKey = key.OpenSubKey(Path.Combine(subKeyName, "InprocServer32"));
-                            var path = subKey?.GetValue(null) as string;
 
-                            if (string.IsNullOrEmpty(path))
-                                continue;
+                            var path = subKey?.GetValue(null) as string;
+                            if (string.IsNullOrEmpty(path)) continue;
 
                             path = Environment.ExpandEnvironmentVariables(path).Trim('\"');
-
                             if (!Path.IsPathRooted(path) || SubPathIsInsideBasePath(WindowsDirectory, path))
                                 continue;
 
-                            if (SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(path)))
-                            {
-                                var node = new RegistryKeyJunk(subKey.Name, target, this);
-                                node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
-                                results.Add(node);
-                            }
+                            path = Path.GetDirectoryName(path);
+                            if (string.IsNullOrEmpty(path)) continue;
+
+                            results.Add(new KeyValuePair<string, string>(subKey.Name, path));
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             // TODO better handling?
+                            Console.WriteLine(ex);
                         }
                         finally
                         {
                             subKey?.Close();
                         }
                     }
+                }
+            }
+
+            return results;
+        }
+
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
+        {
+            var results = new List<IJunkResult>();
+
+            foreach (var entry in _clsudEntries)
+            {
+                if (SubPathIsInsideBasePath(target.InstallLocation, entry.Value))
+                {
+                    var node = new RegistryKeyJunk(entry.Key, target, this);
+                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    results.Add(node);
                 }
             }
 
