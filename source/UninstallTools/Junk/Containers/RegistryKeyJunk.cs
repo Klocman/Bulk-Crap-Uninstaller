@@ -8,9 +8,8 @@ using System.IO;
 using System.Security.Permissions;
 using Klocman.Tools;
 using Microsoft.Win32;
-using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
     public class RegistryKeyJunk : JunkResultBase
     {

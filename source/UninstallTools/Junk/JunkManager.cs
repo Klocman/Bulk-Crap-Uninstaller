@@ -7,44 +7,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public static class JunkManager
     {
-        public static IEnumerable<JunkNode> RemoveDuplicates(List<JunkNode> input)
+        private static IEnumerable<IJunkResult> RemoveDuplicates(IEnumerable<IJunkResult> input)
         {
-            // todo add stuff to compare against to nodes
-            // todo hide fullpath, parent path etc from nodes, implement displaystr, group, open instead
-            foreach (var VARIABLE in input.GroupBy(x=>x.GetType()))
+            foreach (var appGroup in input.GroupBy(x=>x.Application))
             {
-                
-            }
-
-            foreach (var group in input.GroupBy(x => x.FullName))
-            {
-                FileSystemJunk node = null;
-                foreach (var item in group)
+                foreach (var group in appGroup.GroupBy(x => x.GetDisplayName()))
                 {
-                    if (node == null)
+                    IJunkResult firstJunkResult = null;
+                    foreach (var junkResult in group)
                     {
-                        node = item;
+                        if (firstJunkResult == null)
+                            firstJunkResult = junkResult;
+                        else
+                            firstJunkResult.Confidence.AddRange(junkResult.Confidence.ConfidenceParts);
                     }
-                    else
-                    {
-                        node.Confidence.AddRange(item.Confidence.ConfidenceParts);
-                    }
-                }
 
-                if (node != null)
-                    yield return node;
+                    if (firstJunkResult != null)
+                        yield return firstJunkResult;
+                }
             }
         }
 
-        public static IEnumerable<JunkNode> FindJunk(IEnumerable<ApplicationUninstallerEntry> targets,
+        public static IEnumerable<IJunkResult> FindJunk(IEnumerable<ApplicationUninstallerEntry> targets,
             ICollection<ApplicationUninstallerEntry> allUninstallers, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            progressCallback(new ListGenerationProgress(-1, 0, "Setting up junk scanners..."));
+            progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Startup));
 
             var scanners = ReflectionTools.GetTypesImplementingBase<IJunkCreator>()
                 .Select(Activator.CreateInstance)
@@ -56,7 +50,7 @@ namespace UninstallTools.Junk
                 junkCreator.Setup(allUninstallers);
             }
 
-            var results = new List<JunkNode>();
+            var results = new List<IJunkResult>();
             var targetEntries = targets as IList<ApplicationUninstallerEntry> ?? targets.ToList();
             var progress = 0;
             foreach (var junkCreator in scanners)
@@ -73,46 +67,17 @@ namespace UninstallTools.Junk
                 }
             }
 
-            progressCallback(new ListGenerationProgress(-1, 0, "Finishing up..."));
+            progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Finishing));
 
             return RemoveDuplicates(results);
-
-            /*
-            var targetEntries = targets as IList<ApplicationUninstallerEntry> ?? applicationUninstallerEntries.ToList();
-
-            var otherUninstallers = allUninstallers.Except(targetEntries).ToList();
-
-            var result = new List<JunkNode>(targetEntries.Count);
-            var progress = 0;
-            foreach (var uninstaller in targetEntries)
-            {
-                var progressInfo = new ListGenerationProgress(progress++, targetEntries.Count, uninstaller.DisplayName);
-
-                progressInfo.Inner = new ListGenerationProgress(0, 3, "Scanning start-ups...");
-                progressCallback(progressInfo);
-                var sj = new StartupJunk(uninstaller);
-                result.AddRange(sj.FindJunk());
-
-                progressInfo.Inner = new ListGenerationProgress(1, 3, "Scanning drives...");
-                progressCallback(progressInfo);
-                var dj = new DriveJunk(uninstaller, otherUninstallers);
-                result.AddRange(dj.FindJunk());
-
-                progressInfo.Inner = new ListGenerationProgress(2, 3, "Scanning registry...");
-                progressCallback(progressInfo);
-                var rj = new RegistryJunk(uninstaller, otherUninstallers);
-                result.AddRange(rj.FindJunk());
-            }
-
-            result.AddRange(ShortcutJunk.FindAllJunk(targetEntries, otherUninstallers));
-
-            return result;*/
         }
 
-        public static IEnumerable<JunkNode> FindProgramFilesJunk(
-            IEnumerable<ApplicationUninstallerEntry> allUninstallers)
+        public static IEnumerable<IJunkResult> FindProgramFilesJunk(
+            ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
-            return new ProgramFilesOrphans(allUninstallers).FindJunk();
+            var pfScanner = new ProgramFilesOrphans();
+            pfScanner.Setup(allUninstallers);
+            return RemoveDuplicates(pfScanner.FindAllJunk().ToList());
         }
     }
 }

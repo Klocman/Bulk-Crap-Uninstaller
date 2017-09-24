@@ -7,23 +7,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Extensions;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Drive
 {
-    public class UninstallerLocationScanner :JunkCreatorBase
+    public class UninstallerLocationScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             var uninLoc = target.UninstallerLocation;
             if (!uninLoc.IsNotEmpty()) yield break;
 
-            if (UninstallToolsGlobalConfig.GetAllProgramFiles().Any(x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase)) 
+            if (UninstallToolsGlobalConfig.GetAllProgramFiles().Any(x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase))
                 && !CheckIfDirIsStillUsed(uninLoc, GetOtherInstallLocations(target)))
             {
-                var resultNode = GetJunkNodeFromLocation(Enumerable.Empty<string>(), uninLoc, target.DisplayName);
+                var resultNode = GetJunkNodeFromLocation(Enumerable.Empty<string>(), uninLoc, target);
                 if (resultNode != null)
                     yield return resultNode;
             }
         }
+
+        public override string CategoryName => Localisation.Junk_UninstallerLocation_GroupName;
     }
 }

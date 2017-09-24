@@ -21,6 +21,7 @@ using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Junk;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions

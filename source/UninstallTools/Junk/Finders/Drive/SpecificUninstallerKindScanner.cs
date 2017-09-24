@@ -5,9 +5,10 @@
 
 using System.Collections.Generic;
 using System.IO;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Drive
 {
     public class SpecificUninstallerKindScanner : JunkCreatorBase
     {

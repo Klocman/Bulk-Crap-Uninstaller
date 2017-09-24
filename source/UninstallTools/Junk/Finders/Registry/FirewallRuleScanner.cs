@@ -6,10 +6,10 @@
 using System;
 using System.Collections.Generic;
 using Klocman.Extensions;
-using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class FirewallRuleScanner : JunkCreatorBase
     {
@@ -23,7 +23,7 @@ namespace UninstallTools.Junk
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return results;
 
-            using (var key = Registry.LocalMachine.OpenSubKey(firewallRulesKey))
+            using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(firewallRulesKey))
             {
                 if (key != null)
                 {

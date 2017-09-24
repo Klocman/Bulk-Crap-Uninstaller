@@ -4,6 +4,7 @@
 */
 
 using System.Collections.Generic;
+using UninstallTools.Junk.Containers;
 
 namespace UninstallTools.Junk
 {

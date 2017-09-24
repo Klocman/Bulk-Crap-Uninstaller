@@ -4,16 +4,18 @@
 */
 
 using System.Collections.Generic;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Drive
 {
     public class InstallLocationScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (!target.IsInstallLocationValid()) yield break;
 
-            var resultNode = DriveJunk.GetJunkNodeFromLocation(GetOtherInstallLocations(target), target.InstallLocation, target.DisplayName);
+            var resultNode = GetJunkNodeFromLocation(GetOtherInstallLocations(target), target.InstallLocation, target);
             if (resultNode != null)
             {
                 if (target.UninstallerKind == UninstallerType.StoreApp)
@@ -21,5 +23,7 @@ namespace UninstallTools.Junk
                 yield return (resultNode);
             }
         }
+
+        public override string CategoryName => Localisation.Junk_Drive_GroupName;
     }
 }

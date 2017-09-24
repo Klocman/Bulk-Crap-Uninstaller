@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class InstallerFoldersScanner : JunkCreatorBase
     {
@@ -17,7 +17,7 @@ namespace UninstallTools.Junk
             var installLocation = target.InstallLocation;
             if (string.IsNullOrEmpty(installLocation)) yield break;
 
-            using (var key = Registry.LocalMachine.OpenSubKey(
+            using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
                 @"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\Folders"))
             {
                 if (key == null) yield break;

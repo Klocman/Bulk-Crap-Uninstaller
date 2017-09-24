@@ -11,9 +11,10 @@ using System.Security;
 using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class SoftwareRegKeyScanner : JunkCreatorBase
     {
@@ -118,7 +119,7 @@ namespace UninstallTools.Junk
                 }
             }
 
-            return output.Concat(ScanRelatedKeys(output));
+            return output.Concat(ScanRelatedKeys(output)).Cast<IJunkResult>();
         }
 
         private IEnumerable<RegistryKeyJunk> FindJunkRecursively(RegistryKey softwareKey, int level = -1)

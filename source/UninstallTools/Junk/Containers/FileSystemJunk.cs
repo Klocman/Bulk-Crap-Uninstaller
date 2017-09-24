@@ -9,7 +9,7 @@ using System.Security.Permissions;
 using Klocman.Tools;
 using Microsoft.VisualBasic.FileIO;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
     public class FileSystemJunk : JunkResultBase
     {

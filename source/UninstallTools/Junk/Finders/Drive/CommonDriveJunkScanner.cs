@@ -3,16 +3,17 @@
     Apache License Version 2.0
 */
 
-using Klocman.Extensions;
-using Klocman.Tools;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
+using Klocman.Tools;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Drive
 {
     public class CommonDriveJunkScanner : JunkCreatorBase
     {
@@ -34,11 +35,11 @@ namespace UninstallTools.Junk
             _foldersToCheck = validDirs.DistinctBy(x => x.FullName.ToLowerInvariant()).ToList();
         }
 
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             _uninstaller = target;
 
-            return _foldersToCheck.SelectMany(FindJunkRecursively).Cast<JunkNode>();
+            return _foldersToCheck.SelectMany(FindJunkRecursively).Cast<IJunkResult>();
         }
 
         public override string CategoryName => Localisation.Junk_Drive_GroupName;
@@ -61,7 +62,7 @@ namespace UninstallTools.Junk
                     FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        newNode = new DirectoryJunk(directory.FullName, dir.Name, _uninstaller.DisplayName);
+                        newNode = new FileSystemJunk(directory, _uninstaller, this);
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))
@@ -81,7 +82,7 @@ namespace UninstallTools.Junk
                         if (!dir.GetFiles().Any())
                         {
                             var subDirs = dir.GetDirectories();
-                            if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.FullName))))
+                            if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.Path.FullName))))
                                 newNode.Confidence.Add(ConfidenceRecord.AllSubdirsMatched);
                         }
                     }

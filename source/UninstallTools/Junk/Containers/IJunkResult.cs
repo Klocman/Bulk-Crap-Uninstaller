@@ -5,7 +5,7 @@
 
 using System.Security.Permissions;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
     public interface IJunkResult
     {

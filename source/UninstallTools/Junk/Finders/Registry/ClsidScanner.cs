@@ -9,8 +9,10 @@ using System.IO;
 using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class ClsidScanner : JunkCreatorBase
     {
@@ -24,9 +26,9 @@ namespace UninstallTools.Junk
             @"HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID"
         };
 
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var results = new List<JunkNode>();
+            var results = new List<IJunkResult>();
 
             foreach (var keyName in ClsidKeys)
             {
@@ -66,7 +68,7 @@ namespace UninstallTools.Junk
 
                             if (SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(path)))
                             {
-                                var node = new RegistryKeyJunkNode(keyName, subKeyName, target.DisplayName);
+                                var node = new RegistryKeyJunk(subKey.Name, target, this);
                                 node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                                 results.Add(node);
                             }
@@ -85,5 +87,7 @@ namespace UninstallTools.Junk
 
             return results;
         }
+
+        public override string CategoryName => Localisation.Junk_Clsid_GroupName;
     }
 }

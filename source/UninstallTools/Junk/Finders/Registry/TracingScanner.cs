@@ -6,9 +6,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class TracingScanner : IJunkCreator
     {
@@ -19,10 +20,10 @@ namespace UninstallTools.Junk
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var results = new List<JunkNode>();
-            using (var key = Registry.LocalMachine.OpenSubKey(TracingKey))
+            var results = new List<IJunkResult>();
+            using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(TracingKey))
             {
                 if (key != null)
                 {
@@ -37,7 +38,7 @@ namespace UninstallTools.Junk
                         var conf = ConfidenceGenerators.GenerateConfidence(str, Path.Combine(FullTracingKey, subKeyName), 0, target).ToList();
                         if (conf.Any())
                         {
-                            var node = new RegistryKeyJunkNode(FullTracingKey, subKeyName, target.DisplayName);
+                            var node = new RegistryKeyJunk(Path.Combine(FullTracingKey, subKeyName), target, this);
                             node.Confidence.AddRange(conf);
                             results.Add(node);
                         }
@@ -46,5 +47,7 @@ namespace UninstallTools.Junk
             }
             return results;
         }
+
+        public string CategoryName => Localisation.Junk_Tracing_GroupName;
     }
 }

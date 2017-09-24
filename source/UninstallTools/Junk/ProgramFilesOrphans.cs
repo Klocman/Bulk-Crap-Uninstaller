@@ -10,11 +10,12 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
-    public class ProgramFilesOrphans
+    public class ProgramFilesOrphans : IJunkCreator
     {
         public static readonly ConfidenceRecord ConfidenceEmptyFolder = new ConfidenceRecord(4,
             Localisation.Confidence_PF_EmptyFolder);
@@ -37,66 +38,54 @@ namespace UninstallTools.Junk
         public static readonly ConfidenceRecord ConfidencePublisherIsUsed = new ConfidenceRecord(-4,
             Localisation.Confidence_PF_PublisherIsUsed);
 
-        private readonly string[] _otherInstallLocations;
-        private readonly string[] _otherNames;
-        private readonly string[] _otherPublishers;
+        private string[] _otherInstallLocations;
+        private string[] _otherNames;
+        private string[] _otherPublishers;
+        private IEnumerable<KeyValuePair<DirectoryInfo, bool?>> _programFilesDirectories;
 
-        public ProgramFilesOrphans(IEnumerable<ApplicationUninstallerEntry> allEntries)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var applicationUninstallerEntries = allEntries as IList<ApplicationUninstallerEntry> ?? allEntries.ToList();
-
-            _otherInstallLocations =
-                applicationUninstallerEntries.SelectMany(x => new[] {x.InstallLocation, x.UninstallerLocation})
-                    .Where(x => x.IsNotEmpty()).Distinct().ToArray();
-
-            _otherPublishers =
-                applicationUninstallerEntries.Select(x => x.PublisherTrimmed).Where(x => x != null && x.Length > 3)
-                    .Distinct().ToArray();
-            _otherNames =
-                applicationUninstallerEntries.Select(x => x.DisplayNameTrimmed).Where(x => x != null && x.Length > 3)
-                    .Distinct().ToArray();
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<JunkNode> FindJunk()
+        public IEnumerable<IJunkResult> FindAllJunk()
         {
-            var output = new List<ProgramFilesJunkNode>();
+            var output = new List<FileSystemJunk>();
 
-            foreach (var kvp in UninstallToolsGlobalConfig.GetProgramFilesDirectories(true))
-            {
+            foreach (var kvp in _programFilesDirectories)
                 FindJunkRecursively(output, kvp.Key, 0);
-            }
 
-            return JunkManager.RemoveDuplicates(output.Cast<FileSystemJunk>()).Cast<JunkNode>();
+            return output.Cast<IJunkResult>();
         }
-        
-        private void FindJunkRecursively(ICollection<ProgramFilesJunkNode> returnList, DirectoryInfo directory, int level)
+
+        private void FindJunkRecursively(ICollection<FileSystemJunk> returnList, DirectoryInfo parentDirectory, int level)
         {
             try
             {
-                if ((directory.Attributes & FileAttributes.System) == FileAttributes.System)
+                if ((parentDirectory.Attributes & FileAttributes.System) == FileAttributes.System)
                     return;
 
-                var dirs = directory.GetDirectories();
+                var subDirectories = parentDirectory.GetDirectories();
 
-                foreach (var dir in dirs)
+                foreach (var subDirectory in subDirectories)
                 {
-                    if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
+                    if (UninstallToolsGlobalConfig.IsSystemDirectory(subDirectory))
                         continue;
 
-                    if (dir.FullName.ContainsAny(_otherInstallLocations, StringComparison.CurrentCultureIgnoreCase))
+                    if (subDirectory.FullName.ContainsAny(_otherInstallLocations, StringComparison.CurrentCultureIgnoreCase))
                         continue;
 
-                    var questionableDirName = dir.Name.ContainsAny(
+                    var questionableDirName = subDirectory.Name.ContainsAny(
                         UninstallToolsGlobalConfig.QuestionableDirectoryNames, StringComparison.CurrentCultureIgnoreCase)
                                               ||
                                               UninstallToolsGlobalConfig.QuestionableDirectoryNames.Any(
-                                                  x => x.Contains(dir.Name, StringComparison.CurrentCultureIgnoreCase));
+                                                  x => x.Contains(subDirectory.Name, StringComparison.CurrentCultureIgnoreCase));
 
-                    var nameIsUsed = dir.Name.ContainsAny(_otherNames, StringComparison.CurrentCultureIgnoreCase);
+                    var nameIsUsed = subDirectory.Name.ContainsAny(_otherNames, StringComparison.CurrentCultureIgnoreCase);
 
-                    var allFiles = dir.GetFiles("*", SearchOption.AllDirectories);
+                    var allFiles = subDirectory.GetFiles("*", SearchOption.AllDirectories);
                     var allFilesContainExe = allFiles.Any(x => WindowsTools.IsExectuable(x.Extension, false, true));
-                    var immediateFiles = dir.GetFiles("*", SearchOption.TopDirectoryOnly);
+                    var immediateFiles = subDirectory.GetFiles("*", SearchOption.TopDirectoryOnly);
 
                     ConfidenceRecord resultRecord;
 
@@ -118,17 +107,16 @@ namespace UninstallTools.Junk
 
                         if (level < 1 && !questionableDirName && !nameIsUsed)
                         {
-                            FindJunkRecursively(returnList, dir, level + 1);
+                            FindJunkRecursively(returnList, subDirectory, level + 1);
                         }
                     }
 
                     if (resultRecord == null) continue;
 
-                    var newNode = new ProgramFilesJunkNode(directory.FullName, dir.Name,
-                        Localisation.Junk_ProgramFilesOrphans_GroupName);
+                    var newNode = new FileSystemJunk(subDirectory, null, this);
                     newNode.Confidence.Add(resultRecord);
 
-                    if (dir.Name.ContainsAny(_otherPublishers, StringComparison.CurrentCultureIgnoreCase))
+                    if (subDirectory.Name.ContainsAny(_otherPublishers, StringComparison.CurrentCultureIgnoreCase))
                         newNode.Confidence.Add(ConfidencePublisherIsUsed);
 
                     if (nameIsUsed)
@@ -141,28 +129,39 @@ namespace UninstallTools.Junk
                         newNode.Confidence.Add(ConfidenceManyFilesPresent);
 
                     // Remove 2 points for every sublevel
-                    newNode.Confidence.Add(level*-2);
+                    newNode.Confidence.Add(level * -2);
 
-                    if (!dir.GetDirectories().Any())
+                    if (!subDirectory.GetDirectories().Any())
                         newNode.Confidence.Add(ConfidenceNoSubdirs);
 
                     returnList.Add(newNode);
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 if (Debugger.IsAttached) throw;
+                Console.WriteLine(ex);
             }
         }
 
-        public class ProgramFilesJunkNode : DirectoryJunk
+        public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
-            public ProgramFilesJunkNode(string parentPath, string name, string uninstallerName)
-                : base(parentPath, name, uninstallerName)
-            {
-            }
+            _programFilesDirectories = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
 
-            public override string GroupName => Localisation.Junk_ProgramFilesOrphans_GroupName;
+            var applicationUninstallerEntries = allUninstallers as IList<ApplicationUninstallerEntry> ?? allUninstallers.ToList();
+
+            _otherInstallLocations =
+                applicationUninstallerEntries.SelectMany(x => new[] { x.InstallLocation, x.UninstallerLocation })
+                    .Where(x => x.IsNotEmpty()).Distinct().ToArray();
+
+            _otherPublishers =
+                applicationUninstallerEntries.Select(x => x.PublisherTrimmed).Where(x => x != null && x.Length > 3)
+                    .Distinct().ToArray();
+            _otherNames =
+                applicationUninstallerEntries.Select(x => x.DisplayNameTrimmed).Where(x => x != null && x.Length > 3)
+                    .Distinct().ToArray();
         }
+
+        public string CategoryName => Localisation.Junk_ProgramFilesOrphans_GroupName;
     }
 }

@@ -8,18 +8,22 @@ using System.Collections.Generic;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
-    public class AudioPolicyConfigScanner:IJunkCreator
+    public class AudioPolicyConfigScanner : IJunkCreator
     {
+        private static readonly string AudioPolicyConfigSubkey = @"Microsoft\Internet Explorer\LowRegistry\Audio\PolicyConfig\PropertyStore";
+
         public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var returnList = new List<JunkNode>();
+            var returnList = new List<IJunkResult>();
 
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return returnList;
@@ -32,8 +36,7 @@ namespace UninstallTools.Junk
             if (string.IsNullOrEmpty(unrootedLocation.Trim()))
                 return returnList;
 
-            using (var key = RegistryTools.OpenRegistryKey(Path.Combine(SoftwareRegKeyScanner.KeyCu,
-                @"Microsoft\Internet Explorer\LowRegistry\Audio\PolicyConfig\PropertyStore")))
+            using (var key = RegistryTools.OpenRegistryKey(Path.Combine(SoftwareRegKeyScanner.KeyCu, AudioPolicyConfigSubkey)))
             {
                 if (key == null)
                     return returnList;
@@ -48,7 +51,7 @@ namespace UninstallTools.Junk
                         if (defVal != null &&
                             defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            var junk = new RegistryKeyJunkNode(key.Name, subKeyName, target.DisplayName);
+                            var junk = new RegistryKeyJunk(subKey.Name, target, this);
                             junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             returnList.Add(junk);
                         }
@@ -58,5 +61,7 @@ namespace UninstallTools.Junk
 
             return returnList;
         }
+
+        public string CategoryName => Localisation.Junk_AudioPolicy_GroupName;
     }
 }

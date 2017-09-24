@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
 
 namespace UninstallTools.Junk
 {

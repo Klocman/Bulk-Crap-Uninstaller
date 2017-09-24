@@ -19,6 +19,7 @@ using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools.Junk;
+using UninstallTools.Junk.Containers;
 
 namespace BulkCrapUninstaller.Forms
 {

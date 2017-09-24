@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using Klocman.Tools;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
     public class RegistryValueJunk : RegistryKeyJunk
     {

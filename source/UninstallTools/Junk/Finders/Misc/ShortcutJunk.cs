@@ -8,11 +8,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
-using Klocman.Extensions;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Misc
 {
     public class ShortcutJunk : JunkCreatorBase
     {
@@ -62,59 +64,63 @@ namespace UninstallTools.Junk
                 }
                 catch (Exception ex)
                 {
+                    var failMessage = "Failed to resolve shortcut: " + linkFilename;
+                    Console.WriteLine(failMessage);
                     Console.WriteLine(ex);
-                    Debug.Fail("Failed to resolve shortcut " + linkFilename);
+                    Debug.Fail(failMessage);
                 }
             }
 
             return results;
         }
-        
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var results = new List<JunkNode>();
+            var results = new List<FileSystemJunk>();
 
             if (!string.IsNullOrEmpty(target.InstallLocation))
             {
-                results.AddRange(CheckLocation(entry => entry.InstallLocation, target)
-                    .DoForEach(x=>x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
+                results.AddRange(GetLinksPointingToLocation(entry => entry.InstallLocation, target)
+                    .DoForEach(x => x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
             if (!string.IsNullOrEmpty(target.UninstallerFullFilename))
             {
-                results.AddRange(CheckLocation(entry => entry.UninstallerFullFilename, target)
+                results.AddRange(GetLinksPointingToLocation(entry => entry.UninstallerFullFilename, target)
                     .DoForEach(x => x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
             if (!string.IsNullOrEmpty(target.UninstallerLocation))
             {
-                var exceptUninstallerShortcut = CheckLocation(entry => entry.UninstallerLocation, target)
-                    .Where(x => results.All(y => !PathTools.PathsEqual(y.FullName, x.FullName)))
+                var exceptUninstallerShortcut = GetLinksPointingToLocation(entry => entry.UninstallerLocation, target)
+                    .Where(possibleResult => results.All(result => !PathTools.PathsEqual(result.Path, possibleResult.Path)))
                     .ToList();
 
                 results.AddRange(exceptUninstallerShortcut);
             }
 
+            // Remove shortcuts that we aren't sure about
             foreach (var junkNode in results.ToList())
             {
-                var name = Path.GetFileNameWithoutExtension(junkNode.FullName);
-                if (name == null) continue;
+                var name = Path.GetFileNameWithoutExtension(junkNode.Path.Name);
                 junkNode.Confidence.AddRange(ConfidenceGenerators.GenerateConfidence(name, target));
 
                 if (junkNode.Confidence.IsEmpty)
                     results.Remove(junkNode);
             }
 
-            return results;
+            return results.Cast<IJunkResult>();
         }
 
-        private static DriveFileJunkNode CreateJunkNode(Shortcut source, ApplicationUninstallerEntry entry)
+        public override string CategoryName => Localisation.Junk_Shortcut_GroupName;
+
+        private FileSystemJunk CreateJunkNode(Shortcut source, ApplicationUninstallerEntry entry)
         {
-            return new DriveFileJunkNode(Path.GetDirectoryName(source.LinkFilename),
-                                Path.GetFileName(source.LinkFilename), entry.DisplayName);
+            return new FileSystemJunk(new FileInfo(source.LinkFilename), entry, this);
         }
 
-        private IEnumerable<JunkNode> CheckLocation(Func<ApplicationUninstallerEntry, string> targetSelector, ApplicationUninstallerEntry entry)
+        private IEnumerable<FileSystemJunk> GetLinksPointingToLocation(
+            Func<ApplicationUninstallerEntry, string> targetSelector, ApplicationUninstallerEntry entry)
         {
             var target = targetSelector(entry);
             var targetIsSafe = !GetOtherUninstallers(entry).Any(x => PathTools.PathsEqual(targetSelector(x), target));
@@ -124,7 +130,7 @@ namespace UninstallTools.Junk
                 if (source.LinkTarget.Contains(target, StringComparison.InvariantCultureIgnoreCase))
                 {
                     var result = CreateJunkNode(source, entry);
-                    if(!targetIsSafe)
+                    if (!targetIsSafe)
                         result.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
                     yield return result;
                 }

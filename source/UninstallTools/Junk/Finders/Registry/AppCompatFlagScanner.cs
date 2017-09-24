@@ -7,8 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class AppCompatFlagScanner : IJunkCreator
     {
@@ -22,7 +24,7 @@ namespace UninstallTools.Junk
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (string.IsNullOrEmpty(target.InstallLocation))
                 yield break;
@@ -44,7 +46,7 @@ namespace UninstallTools.Junk
                         if (valueName.StartsWith(target.InstallLocation,
                             StringComparison.InvariantCultureIgnoreCase))
                         {
-                            var junk = new RegistryValueJunk(key.Name, valueName, target.DisplayName);
+                            var junk = new RegistryValueJunk(key.Name, valueName, target, this);
                             junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
                             yield return junk;
                         }
@@ -52,5 +54,7 @@ namespace UninstallTools.Junk
                 }
             }
         }
+
+        public string CategoryName => Localisation.Junk_AppCompat_GroupName;
     }
 }

@@ -5,8 +5,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Misc
 {
     public sealed class StartupJunk : IJunkCreator
     {
@@ -14,13 +16,15 @@ namespace UninstallTools.Junk
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public string CategoryName => Localisation.Junk_Startup_GroupName;
+
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (target.StartupEntries == null)
-                return Enumerable.Empty<JunkNode>();
+                return Enumerable.Empty<IJunkResult>();
 
             return target.StartupEntries.Where(x => x.StillExists())
-                .Select(x => new StartupJunkNode(x, target.DisplayName) as JunkNode);
+                .Select(x => (IJunkResult)new StartupJunkNode(x, target, this));
         }
     }
 }

@@ -4,9 +4,10 @@
 */
 
 using System.Collections.Generic;
-using Klocman.Tools;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class UninstallerKeySearcher : IJunkCreator
     {
@@ -14,14 +15,15 @@ namespace UninstallTools.Junk
         {
         }
 
-        public IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (!target.RegKeyStillExists()) yield break;
 
-            var regKeyNode = new RegistryKeyJunkNode(PathTools.GetDirectory(target.RegistryPath),
-                target.RegistryKeyName, target.DisplayName);
+            var regKeyNode = new RegistryKeyJunk(target.RegistryPath, target, this);
             regKeyNode.Confidence.Add(ConfidenceRecord.IsUninstallerRegistryKey);
             yield return regKeyNode;
         }
+
+        public string CategoryName => Localisation.Junk_UninstallerKey_GroupName;
     }
 }

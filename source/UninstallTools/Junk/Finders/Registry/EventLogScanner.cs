@@ -6,19 +6,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.Win32;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Registry
 {
     public class EventLogScanner : JunkCreatorBase
     {
-        public override IEnumerable<JunkNode> FindJunk(ApplicationUninstallerEntry target)
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
             if (string.IsNullOrEmpty(target.InstallLocation)) yield break;
 
             var otherUninstallers = GetOtherUninstallers(target).ToList();
 
-            using (var key = Registry.LocalMachine.OpenSubKey(
+            using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
                 @"SYSTEM\CurrentControlSet\Services\EventLog\Application"))
             {
                 if (key == null) yield break;
@@ -36,7 +37,7 @@ namespace UninstallTools.Junk
                         var exePath = subkey?.GetValue("EventMessageFile") as string;
                         if (string.IsNullOrEmpty(exePath) || !SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(exePath))) continue;
 
-                        var node = new RegistryKeyJunkNode(key.Name, result, target.DisplayName);
+                        var node = new RegistryKeyJunk(subkey.Name, target, this);
                         // Already matched names above
                         node.Confidence.Add(ConfidenceRecord.ProductNamePerfectMatch);
 
@@ -48,5 +49,7 @@ namespace UninstallTools.Junk
                 }
             }
         }
+
+        public override string CategoryName => Localisation.Junk_EventLog_GroupName;
     }
 }

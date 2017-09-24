@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Drive
 {
     public class WerScanner : JunkCreatorBase
     {
@@ -60,5 +62,7 @@ namespace UninstallTools.Junk
                 }
             }
         }
+
+        public override string CategoryName => Localisation.Junk_WerReports_GroupName;
     }
 }

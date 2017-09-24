@@ -8,7 +8,7 @@ using System.Security.Permissions;
 using Klocman.Tools;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
     public abstract class JunkResultBase : IJunkResult
     {
