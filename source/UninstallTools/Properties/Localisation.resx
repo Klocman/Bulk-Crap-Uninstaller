@@ -540,4 +540,7 @@
   <data name="Junk_Tracing_GroupName" xml:space="preserve">
     <value>Tracing information</value>
   </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Installed folder list</value>
+  </data>
 </root>

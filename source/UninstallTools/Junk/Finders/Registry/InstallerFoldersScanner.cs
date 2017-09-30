@@ -38,6 +38,6 @@ namespace UninstallTools.Junk.Finders.Registry
             }
         }
 
-        public override string CategoryName => Localisation.Junk_Drive_GroupName;
+        public override string CategoryName => Localisation.Junk_InstalledFolders_GroupName;
     }
 }

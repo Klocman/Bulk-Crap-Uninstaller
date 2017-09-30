@@ -574,6 +574,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Installed folder list.
+        /// </summary>
+        internal static string Junk_InstalledFolders_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_InstalledFolders_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Program Files orphan.
         /// </summary>
         internal static string Junk_ProgramFilesOrphans_GroupName {
