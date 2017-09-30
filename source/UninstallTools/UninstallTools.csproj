@@ -90,19 +90,32 @@
     <Compile Include="Factory\InfoAdders\UninstallerFullFilenameAdder.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
-    <Compile Include="Junk\Confidence.cs" />
-    <Compile Include="Junk\ConfidencePart.cs" />
-    <Compile Include="Junk\DriveDirectoryJunkNode.cs" />
-    <Compile Include="Junk\DriveFileJunkNode.cs" />
-    <Compile Include="Junk\DriveJunkNode.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceRecord.cs" />
+    <Compile Include="Junk\Containers\FileSystemJunk.cs" />
+    <Compile Include="Junk\Containers\JunkResultBase.cs" />
+    <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />
+    <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
+    <Compile Include="Junk\Finders\Drive\SpecificUninstallerKindScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\UninstallerLocationScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\WerScanner.cs" />
+    <Compile Include="Junk\Containers\IJunkResult.cs" />
+    <Compile Include="Junk\Containers\RegistryKeyJunk.cs" />
+    <Compile Include="Junk\Containers\RegistryValueJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\ShortcutJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\StartupJunk.cs" />
+    <Compile Include="Junk\Containers\StartupJunkNode.cs" />
+    <Compile Include="Junk\Finders\Registry\AppCompatFlagScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\AudioPolicyConfigScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\ClsidScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\RegisteredApplicationsFinder.cs" />
+    <Compile Include="Junk\Finders\Registry\TracingScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\UninstallerKeySearcher.cs" />
+    <Compile Include="Junk\Finders\Registry\UserAssistScanner.cs" />
     <Compile Include="Junk\IJunkCreator.cs" />
-    <Compile Include="Junk\JunkNode.cs" />
-    <Compile Include="Junk\RegistryJunkNode.cs" />
-    <Compile Include="Junk\RegistryKeyJunkNode.cs" />
-    <Compile Include="Junk\RegistryValueJunkNode.cs" />
-    <Compile Include="Junk\ShortcutJunk.cs" />
-    <Compile Include="Junk\StartupJunk.cs" />
-    <Compile Include="Junk\StartupJunkNode.cs" />
     <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
     <Compile Include="Lists\ComparisonTargetAttribute.cs" />
@@ -184,9 +197,9 @@
     <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Junk\DriveJunk.cs" />
-    <Compile Include="Junk\JunkBase.cs" />
-    <Compile Include="Junk\JunkConfidence.cs" />
+    <Compile Include="Junk\Finders\Drive\CommonDriveJunkScanner.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceCollection.cs" />
     <Compile Include="Junk\JunkManager.cs" />
     <Compile Include="Junk\ProgramFilesOrphans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,7 +228,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Junk\RegistryJunk.cs" />
+    <Compile Include="Junk\Finders\Registry\SoftwareRegKeyScanner.cs" />
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
@@ -333,6 +346,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.ru.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
@@ -355,6 +369,7 @@
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -443,6 +458,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

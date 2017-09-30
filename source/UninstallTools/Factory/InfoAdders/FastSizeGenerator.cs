@@ -12,7 +12,7 @@ namespace UninstallTools.Factory.InfoAdders
 {
     public class FastSizeGenerator : IMissingInfoAdder
     {
-        static readonly FileSystemObjectClass FileSystemObject;
+        private static readonly FileSystemObjectClass FileSystemObject;
 
         static FastSizeGenerator()
         {

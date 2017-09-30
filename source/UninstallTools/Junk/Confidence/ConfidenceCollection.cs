@@ -3,37 +3,38 @@
     Apache License Version 2.0
 */
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
-    public sealed class JunkConfidence
+    public sealed class ConfidenceCollection : IEnumerable<ConfidenceRecord>
     {
-        private readonly List<ConfidencePart> _items = new List<ConfidencePart>();
+        private readonly List<ConfidenceRecord> _items = new List<ConfidenceRecord>();
 
-        internal JunkConfidence()
+        internal ConfidenceCollection()
         {
         }
 
         public bool IsEmpty => _items.Count == 0;
 
-        public IEnumerable<ConfidencePart> ConfidenceParts => _items;
+        public IEnumerable<ConfidenceRecord> ConfidenceParts => _items;
 
-        public Confidence GetConfidence()
+        public ConfidenceLevel GetConfidence()
         {
             if (_items.Count < 1)
-                return Confidence.Unknown;
+                return ConfidenceLevel.Unknown;
 
             var result = GetRawConfidence();
 
             if (result < 0)
-                return Confidence.Bad;
+                return ConfidenceLevel.Bad;
             if (result < 2)
-                return Confidence.Questionable;
+                return ConfidenceLevel.Questionable;
             if (result < 5)
-                return Confidence.Good;
-            return Confidence.VeryGood;
+                return ConfidenceLevel.Good;
+            return ConfidenceLevel.VeryGood;
         }
 
         // Returns a number representing the confidence. 0 is a mid-point.
@@ -55,17 +56,27 @@ namespace UninstallTools.Junk
 
         internal void Add(int value)
         {
-            _items.Add(new ConfidencePart(value));
+            _items.Add(new ConfidenceRecord(value));
         }
 
-        internal void Add(ConfidencePart value)
+        internal void Add(ConfidenceRecord value)
         {
             _items.Add(value);
         }
 
-        internal void AddRange(IEnumerable<ConfidencePart> values)
+        internal void AddRange(IEnumerable<ConfidenceRecord> values)
         {
             _items.AddRange(values.Where(x => !_items.Contains(x)));
+        }
+
+        public IEnumerator<ConfidenceRecord> GetEnumerator()
+        {
+            return _items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable) _items).GetEnumerator();
         }
     }
 }

@@ -6,9 +6,9 @@
 using Klocman.Localising;
 using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Confidence
 {
-    public enum Confidence
+    public enum ConfidenceLevel
     {
         [LocalisedName(typeof (Localisation), "Confidence_Unknown")] Unknown = 0,
         [LocalisedName(typeof (Localisation), "Confidence_Bad")] Bad = 5,

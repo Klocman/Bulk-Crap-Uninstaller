@@ -8,20 +8,24 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
-using Klocman.Extensions;
+using UninstallTools.Junk.Confidence;
+using UninstallTools.Junk.Containers;
+using UninstallTools.Properties;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Finders.Misc
 {
-    public class ShortcutJunk : JunkBase
+    public class ShortcutJunk : JunkCreatorBase
     {
-        private readonly IList<Shortcut> _links;
+        private ICollection<Shortcut> _links;
 
-        private ShortcutJunk(ApplicationUninstallerEntry entry, IEnumerable<ApplicationUninstallerEntry> other, IList<Shortcut> links)
-            : base(entry, other)
+        public override void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
-            _links = links;
+            base.Setup(allUninstallers);
+
+            _links = GetShortcuts();
         }
 
         private static IEnumerable<string> GetLnkFilesSafe(CSIDL directory, SearchOption option)
@@ -36,18 +40,6 @@ namespace UninstallTools.Junk
                 Debug.Fail(ex.ToString());
             }
             return Enumerable.Empty<string>();
-        }
-
-        public static IEnumerable<JunkNode> FindAllJunk(IEnumerable<ApplicationUninstallerEntry> targets, IEnumerable<ApplicationUninstallerEntry> other)
-        {
-            var shortcuts = GetShortcuts();
-            var otherEntries = other.ToList();
-            var output = new List<JunkNode>();
-
-            foreach (var applicationUninstallerEntry in targets)
-                output.AddRange(new ShortcutJunk(applicationUninstallerEntry, otherEntries, shortcuts).FindJunk());
-
-            return output;
         }
 
         private static List<Shortcut> GetShortcuts()
@@ -73,70 +65,74 @@ namespace UninstallTools.Junk
                 }
                 catch (Exception ex)
                 {
+                    var failMessage = "Failed to resolve shortcut: " + linkFilename;
+                    Console.WriteLine(failMessage);
                     Console.WriteLine(ex);
-                    Debug.Fail("Failed to resolve shortcut " + linkFilename);
+                    Debug.Fail(failMessage);
                 }
             }
 
             return results;
         }
 
-        public override IEnumerable<JunkNode> FindJunk()
+        public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var results = new List<JunkNode>();
+            var results = new List<FileSystemJunk>();
 
-            if (!string.IsNullOrEmpty(Uninstaller.InstallLocation))
+            if (!string.IsNullOrEmpty(target.InstallLocation))
             {
-                results.AddRange(CheckLocation(entry => entry.InstallLocation)
-                    .DoForEach(x=>x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+                results.AddRange(GetLinksPointingToLocation(entry => entry.InstallLocation, target)
+                    .DoForEach(x => x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
-            if (!string.IsNullOrEmpty(Uninstaller.UninstallerFullFilename))
+            if (!string.IsNullOrEmpty(target.UninstallerFullFilename))
             {
-                results.AddRange(CheckLocation(entry => entry.UninstallerFullFilename)
-                    .DoForEach(x => x.Confidence.Add(ConfidencePart.ExplicitConnection)));
+                results.AddRange(GetLinksPointingToLocation(entry => entry.UninstallerFullFilename, target)
+                    .DoForEach(x => x.Confidence.Add(ConfidenceRecord.ExplicitConnection)));
             }
 
-            if (!string.IsNullOrEmpty(Uninstaller.UninstallerLocation))
+            if (!string.IsNullOrEmpty(target.UninstallerLocation))
             {
-                var exceptUninstallerShortcut = CheckLocation(entry => entry.UninstallerLocation)
-                    .Where(x => results.All(y => !PathTools.PathsEqual(y.FullName, x.FullName)))
+                var exceptUninstallerShortcut = GetLinksPointingToLocation(entry => entry.UninstallerLocation, target)
+                    .Where(possibleResult => results.All(result => !PathTools.PathsEqual(result.Path, possibleResult.Path)))
                     .ToList();
 
                 results.AddRange(exceptUninstallerShortcut);
             }
 
+            // Remove shortcuts that we aren't sure about
             foreach (var junkNode in results.ToList())
             {
-                var name = Path.GetFileNameWithoutExtension(junkNode.FullName);
-                if (name == null) continue;
-                junkNode.Confidence.AddRange(GenerateConfidence(name));
+                var name = Path.GetFileNameWithoutExtension(junkNode.Path.Name);
+                junkNode.Confidence.AddRange(ConfidenceGenerators.GenerateConfidence(name, target));
 
                 if (junkNode.Confidence.IsEmpty)
                     results.Remove(junkNode);
             }
 
-            return results;
+            return results.Cast<IJunkResult>();
         }
 
-        private DriveFileJunkNode CreateJunkNode(Shortcut source)
+        public override string CategoryName => Localisation.Junk_Shortcut_GroupName;
+
+        private FileSystemJunk CreateJunkNode(Shortcut source, ApplicationUninstallerEntry entry)
         {
-            return new DriveFileJunkNode(Path.GetDirectoryName(source.LinkFilename),
-                                Path.GetFileName(source.LinkFilename), Uninstaller.DisplayName);
+            return new FileSystemJunk(new FileInfo(source.LinkFilename), entry, this);
         }
 
-        private IEnumerable<JunkNode> CheckLocation(Func<ApplicationUninstallerEntry, string> targetSelector)
+        private IEnumerable<FileSystemJunk> GetLinksPointingToLocation(
+            Func<ApplicationUninstallerEntry, string> targetSelector, ApplicationUninstallerEntry entry)
         {
-            var target = targetSelector(Uninstaller);
-            var targetIsSafe = !OtherUninstallers.Any(x => PathTools.PathsEqual(targetSelector(x), target));
+            var target = targetSelector(entry);
+            var targetIsSafe = !GetOtherUninstallers(entry).Any(x => PathTools.PathsEqual(targetSelector(x), target));
 
             foreach (var source in _links)
             {
                 if (source.LinkTarget.Contains(target, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    var result = CreateJunkNode(source);
-                    if(!targetIsSafe)
-                        result.Confidence.Add(ConfidencePart.DirectoryStillUsed);
+                    var result = CreateJunkNode(source, entry);
+                    if (!targetIsSafe)
+                        result.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
                     yield return result;
                 }
             }

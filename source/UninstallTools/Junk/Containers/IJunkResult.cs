@@ -3,18 +3,58 @@
     Apache License Version 2.0
 */
 
-using System.IO;
 using System.Security.Permissions;
-using Klocman.Tools;
-using UninstallTools.Properties;
+using UninstallTools.Junk.Confidence;
 
-namespace UninstallTools.Junk
+namespace UninstallTools.Junk.Containers
 {
+    public interface IJunkResult
+    {
+        /// <summary>
+        ///     Confidence that this entry is safe to remove
+        /// </summary>
+        ConfidenceCollection Confidence { get; }
+
+        /// <summary>
+        /// Create this item's backup inside of the supplied directory
+        /// </summary>
+        void Backup(string backupDirectory);
+
+        /// <summary>
+        ///     Delete this entry permanently
+        /// </summary>
+        void Delete();
+
+        /// <summary>
+        ///     Origin of this junk
+        /// </summary>
+        IJunkCreator Source { get; }
+
+        /// <summary>
+        ///     Uninstaller this entry belongs to
+        /// </summary>
+        ApplicationUninstallerEntry Application { get; }
+
+        string GetDisplayName();
+
+        /// <summary>
+        ///     Preview item in an external application
+        /// </summary>
+        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
+        void Open();
+
+        /// <summary>
+        ///     Get extended information with overall confidence information.
+        /// </summary>
+        string ToLongString();
+    }
+
+    /*
     public abstract class JunkNode
     {
         protected JunkNode()
         {
-            Confidence = new JunkConfidence();
+            Confidence = new ConfidenceCollection();
         }
 
         protected JunkNode(string parentPath, string name, string uninstallerName)
@@ -23,7 +63,7 @@ namespace UninstallTools.Junk
             ParentPath = parentPath;
             UninstallerName = uninstallerName;
 
-            Confidence = new JunkConfidence();
+            Confidence = new ConfidenceCollection();
         }
 
         /// <summary>
@@ -54,7 +94,7 @@ namespace UninstallTools.Junk
         /// <summary>
         ///     Confidence that this entry is safe to remove
         /// </summary>
-        public JunkConfidence Confidence { get; internal set; }
+        public ConfidenceCollection Confidence { get; internal set; }
 
         /// <summary>
         /// Create this item's backup inside of the supplied directory
@@ -98,5 +138,5 @@ namespace UninstallTools.Junk
             Directory.CreateDirectory(p);
             return p;
         }
-    }
+    }*/
 }
