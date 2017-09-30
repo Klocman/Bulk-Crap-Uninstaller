@@ -2,21 +2,25 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.16.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.16/BCUninstaller_3.16_portable.zip</URL>
+<Version>3.17.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.17/BCUninstaller_3.17_portable.zip</URL>
 <Changes>
-Added ability to modify single uninstallers
-Merged update to Portugeese translation by Nauta
-Update Spanish installer translation
-Fixed searching for uninstallers in install directories not working
-Fixed startup loading hanging when main window is minimized
-Fixed portable log cleaner running during updates
-Fixed possible crash when updates fail
-Decreased uninstall simulation time
-Installer .Net downloading improvements
-Added info about downloading UpdateSystem library to readme
-Increased priority for Msiexec uninstall string generator
+Major refactoring/rewrite of junk scanning, much easier to add new rules
+Added RegisteredApplications registry junk scanner
+Added scanning of WER\ReportQueue when searching for WER junk
+Search in bin32 and bin64 subfolders for executables
+Look for app executables even if the trimmed app name is short
+Big speedup of CLSID junk scanning
+Speedup of WER search
+Fixed WER search sometimes failing to find raports
+Fixed some store app junk getting flagged as unsafe to remove when it wasn't
+Split junk results into specific groups
+Changed directory junk open action to open parent folder and focus on the directory, instead of directly opening it
+Improved how registry key values are displayed in junk list
+Merged update to Portugese translation by Artur A. Pereira
+Fixed some translation configuration issues
+Fixed missing string placeholder in Portugese Progress_Registry_Processing
 </Changes>
-<Hash>44af3a6b908f52ebaa2654f300d14bb9</Hash>
+<Hash>f0a351aeafd6d86567c5fa399f713724</Hash>
 </Update>
 </Root>
