@@ -111,6 +111,7 @@
     <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
     <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
     <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\RegisteredApplicationsFinder.cs" />
     <Compile Include="Junk\Finders\Registry\TracingScanner.cs" />
     <Compile Include="Junk\Finders\Registry\UninstallerKeySearcher.cs" />
     <Compile Include="Junk\Finders\Registry\UserAssistScanner.cs" />
