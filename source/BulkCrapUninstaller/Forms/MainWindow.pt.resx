@@ -516,4 +516,10 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Desinstalar através de janela, directório ou arquivo...</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Desinstalar através de janela, directório ou arquivo...</value>
+  </data>
 </root>

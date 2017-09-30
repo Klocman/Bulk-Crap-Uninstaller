@@ -148,6 +148,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.hu.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localization.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.it.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localization.ja.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +162,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.ko-KR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.nl.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Localization.pl.Designer.cs">
       <DependentUpon>Localization.pl.resx</DependentUpon>
@@ -289,8 +299,14 @@
     <EmbeddedResource Include="Core\UI\WinForms\Panels\ExceptionDetails.resx">
       <DependentUpon>ExceptionDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.it.resx" />
-    <EmbeddedResource Include="Properties\Localization.nl.resx" />
+    <EmbeddedResource Include="Properties\Localization.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.pt.Designer.cs</LastGenOutput>

@@ -117,46 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Salvar Lista de Desinstalação...</value>
+  <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
+    <value>Número inválido de raciocínios. Faça o caminho completo do directório para remover como raciocínio e, opcionalmente, / q para o modo de execução em segundo plano.</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Salvar como...</value>
+  <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
+    <value>Desinstalador universal</value>
   </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalação|*.bcul</value>
+  <data name="UninstallSelection_DeleteProgress_Title" xml:space="preserve">
+    <value>A apagar items</value>
   </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
+    <value>Falha a apagar alguns items</value>
   </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Abrir uma Lista de Desinstalação...</value>
+  <data name="UninstallSelection_Title" xml:space="preserve">
+    <value>Apagar "{0}"</value>
   </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalação|*.bcul</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Salvar como padrão</value>
-  </data>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Filtragem básica</value>
-  </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Adicionar os aplicativos selecionados como filtros</value>
-  </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="saveUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>192, 17</value>
-  </metadata>
-  <metadata name="openUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>314, 17</value>
-  </metadata>
-  <metadata name="toolStripUninstallerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

@@ -117,46 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Salvar Lista de Desinstalação...</value>
+  <data name="labelMessage.Text" xml:space="preserve">
+    <value>Seleccione os arquivos que quer remover. Faça duplo clique em qualquer item para o ver no explorador. Para ver o caminho completo, passe o rato sobre qualquer um dos itens. Aviso: exclua apenas os arquivos que tem a certeza de que não são necessários.</value>
   </data>
-  <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>Salvar como...</value>
-  </data>
-  <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalação|*.bcul</value>
-  </data>
-  <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>Abrir...</value>
-  </data>
-  <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Abrir uma Lista de Desinstalação...</value>
-  </data>
-  <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalação|*.bcul</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Salvar como padrão</value>
-  </data>
-  <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>Filtragem básica</value>
-  </data>
-  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Adicionar os aplicativos selecionados como filtros</value>
-  </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="saveUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>192, 17</value>
-  </metadata>
-  <metadata name="openUlDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>314, 17</value>
-  </metadata>
-  <metadata name="toolStripUninstallerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

@@ -115,10 +115,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.cs.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisation.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisation.hu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localisation.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localisation.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.nl.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Localisation.pt.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -325,9 +340,18 @@
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.sl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.es.resx" />
-    <EmbeddedResource Include="Properties\Localisation.it.resx" />
-    <EmbeddedResource Include="Properties\Localisation.nl.resx" />
+    <EmbeddedResource Include="Properties\Localisation.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>

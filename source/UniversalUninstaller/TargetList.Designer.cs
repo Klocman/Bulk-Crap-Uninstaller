@@ -50,41 +50,32 @@
             this.toolStripSeparator1,
             this.toolStripButtonExpand,
             this.toolStripButtonCollapse});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(431, 29);
-            this.toolStrip1.TabIndex = 0;
             // 
             // toolStripButtonSelAll
             // 
-            this.toolStripButtonSelAll.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSelAll.Image")));
-            this.toolStripButtonSelAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonSelAll, "toolStripButtonSelAll");
             this.toolStripButtonSelAll.Name = "toolStripButtonSelAll";
-            this.toolStripButtonSelAll.Size = new System.Drawing.Size(79, 26);
-            this.toolStripButtonSelAll.Text = "Select all";
             this.toolStripButtonSelAll.Click += new System.EventHandler(this.toolStripButtonSelAll_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 29);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // toolStripButtonExpand
             // 
             this.toolStripButtonExpand.Image = global::UniversalUninstaller.Properties.Resources.section_expand_all;
-            this.toolStripButtonExpand.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonExpand, "toolStripButtonExpand");
             this.toolStripButtonExpand.Name = "toolStripButtonExpand";
-            this.toolStripButtonExpand.Size = new System.Drawing.Size(86, 26);
-            this.toolStripButtonExpand.Text = "Expand all";
             this.toolStripButtonExpand.Click += new System.EventHandler(this.expand_Click);
             // 
             // toolStripButtonCollapse
             // 
             this.toolStripButtonCollapse.Image = global::UniversalUninstaller.Properties.Resources.section_collapse_all;
-            this.toolStripButtonCollapse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonCollapse, "toolStripButtonCollapse");
             this.toolStripButtonCollapse.Name = "toolStripButtonCollapse";
-            this.toolStripButtonCollapse.Size = new System.Drawing.Size(93, 26);
-            this.toolStripButtonCollapse.Text = "Collapse all";
             this.toolStripButtonCollapse.Click += new System.EventHandler(this.collapse_Click);
             // 
             // treeListView1
@@ -97,16 +88,13 @@
             this.olvColumnName,
             this.olvColumnSize});
             this.treeListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.treeListView1, "treeListView1");
             this.treeListView1.FullRowSelect = true;
             this.treeListView1.GridLines = true;
-            this.treeListView1.Location = new System.Drawing.Point(0, 29);
             this.treeListView1.Name = "treeListView1";
             this.treeListView1.ShowGroups = false;
             this.treeListView1.ShowImagesOnSubItems = true;
-            this.treeListView1.Size = new System.Drawing.Size(431, 287);
             this.treeListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.treeListView1.TabIndex = 1;
             this.treeListView1.UseCompatibleStateImageBehavior = false;
             this.treeListView1.View = System.Windows.Forms.View.Details;
             this.treeListView1.VirtualMode = true;
@@ -117,21 +105,19 @@
             // 
             this.olvColumnName.AspectName = "";
             this.olvColumnName.FillsFreeSpace = true;
-            this.olvColumnName.Text = "Name";
+            resources.ApplyResources(this.olvColumnName, "olvColumnName");
             // 
             // olvColumnSize
             // 
-            this.olvColumnSize.Text = "Size";
-            this.olvColumnSize.Width = 72;
+            resources.ApplyResources(this.olvColumnSize, "olvColumnSize");
             // 
             // TargetList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.treeListView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "TargetList";
-            this.Size = new System.Drawing.Size(431, 316);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).EndInit();
