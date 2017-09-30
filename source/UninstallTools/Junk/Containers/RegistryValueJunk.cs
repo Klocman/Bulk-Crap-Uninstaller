@@ -42,6 +42,11 @@ namespace UninstallTools.Junk.Containers
             }
         }
 
+        public override string GetDisplayName()
+        {
+            return base.GetDisplayName() + " => " + ValueName;
+        }
+
         public override void Delete()
         {
             using (var key = RegistryTools.OpenRegistryKey(FullRegKeyPath, true))
