@@ -37,5 +37,8 @@ If you need any help please either read the help file included with all releases
 * Verification of uninstaller certificates
 * Fully portable, settings are saved to a single file
 
+## How can I help?
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) note.
+
 ## Compiling
 Any modern version of Visual Studio should work. You might need to download [this](https://github.com/Klocman/UpdateSystem) and [this library](https://sourceforge.net/p/kloctoolslibrary/) separately.
