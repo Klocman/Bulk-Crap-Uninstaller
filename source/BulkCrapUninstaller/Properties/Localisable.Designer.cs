@@ -463,6 +463,33 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are unsaved changes in the opened uninstall list that will be lost by closing it..
+        /// </summary>
+        internal static string MessageBoxes_AskToSaveUninstallList_Details {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToSaveUninstallList_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save changes to the opened uninstall list?.
+        /// </summary>
+        internal static string MessageBoxes_AskToSaveUninstallList_Message {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToSaveUninstallList_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save uninstall list.
+        /// </summary>
+        internal static string MessageBoxes_AskToSaveUninstallList_Title {
+            get {
+                return ResourceManager.GetString("MessageBoxes_AskToSaveUninstallList_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This will take you less than a minute but help the development greatly! All feedback is appreciated, be it a bug report, feature request or a simple thanks!
         ///
         ///You can send it later from the top menu bar (Help-&gt;Submit feedback)..

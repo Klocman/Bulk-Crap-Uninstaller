@@ -210,9 +210,6 @@
   <data name="ContactUrl" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
   </data>
-  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
-    <value>Save uninstall list</value>
-  </data>
   <data name="checkmarkpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -221,9 +218,6 @@
   </data>
   <data name="DbConnectionString" xml:space="preserve">
     <value>server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
-  </data>
-  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
-    <value>There are unsaved changes in the opened uninstall list that will be lost by closing it.</value>
   </data>
   <data name="layer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.delete1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,9 +322,6 @@
   </data>
   <data name="layerdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
-    <value>Save changes to the opened uninstall list?</value>
   </data>
   <data name="checkmarkuncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.uncrossed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
