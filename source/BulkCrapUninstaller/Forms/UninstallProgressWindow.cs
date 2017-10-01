@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -28,10 +29,37 @@ namespace BulkCrapUninstaller.Forms
 
         private BulkUninstallTask _currentTargetStatus;
         private CustomMessageBox _walkAwayBox;
+        private BulkUninstallTask _status;
 
-        public UninstallProgressWindow()
+        public static void ShowUninstallDialog(BulkUninstallTask status)
+        {
+            using (var uninstallWindow = new UninstallProgressWindow())
+            {
+                uninstallWindow._status = status;
+
+                uninstallWindow.ShowDialog(MessageBoxes.DefaultOwner);
+            }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            SetTargetStatus(_status);
+
+            Location = new Point(Screen.FromControl(this).WorkingArea.Right - Size.Width - 5, 10);
+
+            Refresh();
+            Opacity = 1;
+        }
+
+        private UninstallProgressWindow()
         {
             InitializeComponent();
+
+            Text += " - BCUninstaller";
+
+            Opacity = 0;
 
             Icon = Resources.Icon_Logo;
 
@@ -92,7 +120,7 @@ namespace BulkCrapUninstaller.Forms
         private IEnumerable<ApplicationUninstallerEntry> SelectedUninstallerEntries
             => SelectedTaskEntries.Select(x => x.UninstallerEntry);
 
-        public void SetTargetStatus(BulkUninstallTask targetStatus)
+        private void SetTargetStatus(BulkUninstallTask targetStatus)
         {
             if (targetStatus == null)
                 throw new ArgumentNullException(nameof(targetStatus));
