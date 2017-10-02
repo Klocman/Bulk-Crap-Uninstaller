@@ -123,6 +123,11 @@
     <Compile Include="Lists\ComparisonMethod.cs" />
     <Compile Include="Lists\ITestEntry.cs" />
     <Compile Include="Lists\Filter.cs" />
+    <Compile Include="Properties\Localisation.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.ar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisation.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,6 +244,9 @@
     <Compile Include="Lists\UninstallList.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\FilterEditor.ar.resx">
+      <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.cs.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.sl.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallListEditor.ar.resx">
+      <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.cs.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
@@ -315,6 +326,9 @@
     <EmbeddedResource Include="Controls\UninstallListEditor.sl.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StartupManagerWindow.ar.resx">
+      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.cs.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +367,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.sl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>

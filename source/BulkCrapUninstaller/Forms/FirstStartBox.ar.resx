@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>معالج الخروج</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>للخلف</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>مواصله</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>تم الانتهاء من الاعداد</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>الوصول الى الشبكة</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>يمكن ل "المثبت" محاولة الاتصال بإنترنت للاسباب التالية:</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>? للبحث عن تحديثات البرنامج.</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>? لتحميل تقارير الخطا.</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>? لارسال احصاءات الاستخدام المجهول.</value>
+  </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>? لجلب وتحميل تصنيفات التطبيق</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>"اظهار المثبتات التي تم وضع علامة عليها على انها "مكونات النظام</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>المثبتات المحمية</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>"اظهار المثبتات التي تم وضع علامة عليها على انها "محمية</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>"تعطيل حماية غير المثبتات التي تم وضع علامة عليها بانها "محمية </value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>سيسمح لك هذا بإلغاء تثبيت العناصر المحمية.</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>عرض قائمه الغاء التثبيت </value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>جميع المثبتات التي وجدت في نظامك هي في عرض القائمة الرئيسية. فيما يلي بعض الطرق لاستعراض هذه البيانات:</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>? (استخدام الفلاتر والبحث عن الكلمات الرئيسية (في جميع الاعمده </value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>? فرز غير التركيب من قبل اي عمود. اعاده ترتيب الاعمده بحريه.</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>? مجموعه المثبتات المماثله</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>اظهار الغاء التثبيت في مجموعات</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>تحديد استخدام مربعات الاختيار</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>المثبتات المعتمدة</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>فتح نموذج جهة الاتصال</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>اعدادات اضافيه</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>عرض التعليمات</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>انهاء الاعداد</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>يمكنك الان البدء باستخدام المثبت. اذا كان لديك اي اسئله او ترغب في اقتراح ميزه جديده زيارة الرابط أدناه.</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>فتح نموذج جهة الاتصال</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>يمكنك قراءه سجلات التغيير التفصيلي والتحقق من المزيد من برمجياتي علي الصفحة الرئيسية.</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>افتح الصفحة الرئيسية</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ulk crap
+uninstaller</value>
+    <comment>The missing B is in an image next to the text</comment>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>BCUninstaller فتحي الداودية يرحبا بكم في</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>البحث تلقائيا عن التحديثات عند بدء تشغيل التطبيق</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>يمكنك البحث عن التحديثات يدويا من شريط القوائم.</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>ارسال احصائيات الاستخدام المجهول تلقائيا</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>سيساعد ارسال هذه الاحصاءات على تحسين المثبت.</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>تمكين تصنيفات المستخدم للتطبيقات</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>الغاء التثبيت معطوب</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>تمييز التثبيت غير صالح</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>يتم وضع علامة التثبيت غير صالح باللون الرمادي.</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>التطبيقات غير مسجلة</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>BCUninstaller فتحي الداودية يرحبا بكم في !</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>سيوفر لك هذا المعالج جولة سريعة ويساعد في تكوين التطبيق.</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>اللغة المحددة</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>الخاصة بهم في دليل المثبت. لا يتم مشاركه البيانات المرسلة مع اي أطراف ثالثه.XML في كل مره يحدث فيها خطا سيتم سؤالك عما اذا كنت تريد ارساله. يمكنك التحقق من البيانات التي يتم ارسالها في تقارير الخطا والاستخدام عن طريق فحص ملفات</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>مع مرور الوقت قد تجد ان بعض التطبيقات سوف ترفض الغاء التثبيت ، او سوف تختفي فقط من معظم مديري الغاء التثبيت.</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>المثبتات التالفة او المفقودة</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>"في بعض الحالات يمكن الحصول علي المثبتات معطوبة ، مما يجعلها من المستحيل الغاء تثبيتها. يمكن ان تزيل هذه المداخل بسهوله باستخدام الخيار "الغاء التثبيت يدويا.</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>في بعض الاحيان يمكن ان تترك التطبيقات باكملها على محركاتك حتى بعد الغاء تثبيت. ويمكن ان يحدث هذا ايضا اذا تمت ازاله إلغاء التثبيت فقط.</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>اظهار التطبيقات الغير مسجلة في القائمة</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>يتم وضع علامة التطبيقات غير امسجل باللون اللحمر.
+لذا لم يتم العثور على إلغاء التثبيت الأصلي سيكون لديك لاستخدام "للغاء يدويا" الخيار للزالها.</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>المستخدمون المتقدمون</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>في حين يمكن استخدام المثبت بمثابه الغاء التثبيت الاساسيه ، ومعظم وظائفها تهدف الى مستخدمي السلطة. المضي قدما بحذر!</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>مكونات النظام</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>التطبيقات التي تحمل علامة "مكونات النظام" مخفيه عن معظم مديري الغاء التثبيت الاساسيه. لا تعني هذه العلامة ان التطبيق هو جزء من نظام التشغيل.</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>يتم وضع علامة على العناصر المحمية بعلامة "عدم الازاله" ، مما يعني ان الناشر لا يريد منك ازالتها. غالبا ما يتم استخدام هذه العلامة من قبل حزم البرامج الكبيرة لمنعك من الغاء تثبيت الاجزاء الفردية الخاصة بهم.</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>ويمكن التوقيع على المثبتات بالشهادات الصادرة عن السلطات المختصة. اذا اجتازت الشهادة التحقق من صحة حزمه البرامج لم يتم تغييرها والسمعة.</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>تمييز المثبتات المعتمدة</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>يتم وضع علامة التثبيت المثبتة باللون الاخضر ، غير المتحقق منها باللون الازرق.
+تحذير: يمكن ان يستغرق التحقق وقتا طويلا.</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>يمكنك اجبار المثبت على استخدام تعريب معين اذا كانت اللغة الافتراضية غير صحيحه. سيتم تنفيذ اعاده التشغيل لتطبيق اللغة الجديدة.</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>اذا كنت على استعداد للمساعدة في ترجمه المثبت الى لغتك ، انقر على الرابط ادناه للاتصال بي. كل مساعده هو موضع تقدير كبير!</value>
+  </data>
+</root>
