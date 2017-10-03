@@ -32,12 +32,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.6.0\lib\net35\JetBrains.Annotations.dll</HintPath>
+      <HintPath>..\packages\JetBrains.Annotations.11.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.6.0.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.6.0\lib\net35\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\TaskScheduler.2.6.1\lib\net35\Microsoft.Win32.TaskScheduler.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -90,19 +90,32 @@
     <Compile Include="Factory\InfoAdders\UninstallerFullFilenameAdder.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
-    <Compile Include="Junk\Confidence.cs" />
-    <Compile Include="Junk\ConfidencePart.cs" />
-    <Compile Include="Junk\DriveDirectoryJunkNode.cs" />
-    <Compile Include="Junk\DriveFileJunkNode.cs" />
-    <Compile Include="Junk\DriveJunkNode.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceRecord.cs" />
+    <Compile Include="Junk\Containers\FileSystemJunk.cs" />
+    <Compile Include="Junk\Containers\JunkResultBase.cs" />
+    <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />
+    <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
+    <Compile Include="Junk\Finders\Drive\SpecificUninstallerKindScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\UninstallerLocationScanner.cs" />
+    <Compile Include="Junk\Finders\Drive\WerScanner.cs" />
+    <Compile Include="Junk\Containers\IJunkResult.cs" />
+    <Compile Include="Junk\Containers\RegistryKeyJunk.cs" />
+    <Compile Include="Junk\Containers\RegistryValueJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\ShortcutJunk.cs" />
+    <Compile Include="Junk\Finders\Misc\StartupJunk.cs" />
+    <Compile Include="Junk\Containers\StartupJunkNode.cs" />
+    <Compile Include="Junk\Finders\Registry\AppCompatFlagScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\AudioPolicyConfigScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\ClsidScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\RegisteredApplicationsFinder.cs" />
+    <Compile Include="Junk\Finders\Registry\TracingScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\UninstallerKeySearcher.cs" />
+    <Compile Include="Junk\Finders\Registry\UserAssistScanner.cs" />
     <Compile Include="Junk\IJunkCreator.cs" />
-    <Compile Include="Junk\JunkNode.cs" />
-    <Compile Include="Junk\RegistryJunkNode.cs" />
-    <Compile Include="Junk\RegistryKeyJunkNode.cs" />
-    <Compile Include="Junk\RegistryValueJunkNode.cs" />
-    <Compile Include="Junk\ShortcutJunk.cs" />
-    <Compile Include="Junk\StartupJunk.cs" />
-    <Compile Include="Junk\StartupJunkNode.cs" />
     <Compile Include="ListGenerationProgress.cs" />
     <Compile Include="Lists\FilterCondition.cs" />
     <Compile Include="Lists\ComparisonTargetAttribute.cs" />
@@ -110,15 +123,35 @@
     <Compile Include="Lists\ComparisonMethod.cs" />
     <Compile Include="Lists\ITestEntry.cs" />
     <Compile Include="Lists\Filter.cs" />
+    <Compile Include="Properties\Localisation.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.ar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisation.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.cs.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisation.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisation.hu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisation.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localisation.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localisation.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisation.nl.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Localisation.pt.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,9 +202,9 @@
     <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Junk\DriveJunk.cs" />
-    <Compile Include="Junk\JunkBase.cs" />
-    <Compile Include="Junk\JunkConfidence.cs" />
+    <Compile Include="Junk\Finders\Drive\CommonDriveJunkScanner.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceCollection.cs" />
     <Compile Include="Junk\JunkManager.cs" />
     <Compile Include="Junk\ProgramFilesOrphans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,7 +233,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Junk\RegistryJunk.cs" />
+    <Compile Include="Junk\Finders\Registry\SoftwareRegKeyScanner.cs" />
     <Compile Include="Startup\StartupManager.cs" />
     <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
     <Compile Include="Uninstaller\BulkUninstallTask.cs" />
@@ -211,6 +244,9 @@
     <Compile Include="Lists\UninstallList.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\FilterEditor.ar.resx">
+      <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.cs.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterEditor.sl.resx">
       <DependentUpon>FilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallListEditor.ar.resx">
+      <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallListEditor.cs.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
@@ -287,6 +326,9 @@
     <EmbeddedResource Include="Controls\UninstallListEditor.sl.resx">
       <DependentUpon>UninstallListEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StartupManagerWindow.ar.resx">
+      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.cs.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +360,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.ru.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
@@ -325,12 +368,27 @@
     <EmbeddedResource Include="Dialogs\StartupManagerWindow.sl.resx">
       <DependentUpon>StartupManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.es.resx" />
-    <EmbeddedResource Include="Properties\Localisation.it.resx" />
-    <EmbeddedResource Include="Properties\Localisation.nl.resx" />
+    <EmbeddedResource Include="Properties\Localisation.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisation.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -419,6 +477,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

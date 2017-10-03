@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>سطر الاوامر قبل بدء تشغيل الغاء التثبيت</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>سطر الاوامر بعد انتهاء التثبيت</value>
+  </data>
+  <data name="groupBoxMisc.Text" xml:space="preserve">
+    <value>misc.5</value>
+  </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>في البداية "Default.xml"تحميل تلقائيا قائمه الغاء التثبيت المسمى  </value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>البحث عن التحديثات عند بدء التشغيل</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>ارسال احصائيات الاستخدام المجهول</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>تمكين تصنيفات المستخدم للتطبيقات</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>لغة التطبيق:</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>سيتعين اعاده تشغيل التطبيق لتصبح تغييرات اللغة نافذه المفعول.</value>
+  </data>
+  <data name="groupBoxMessages.Text" xml:space="preserve">
+    <value>مربعات الرسائل</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>تظهر دائما الغير مرغوب فيه مع انخفاض الثقة</value>
+  </data>
+  <data name="checkBoxLoud.Text" xml:space="preserve">
+    <value>اطلب ازاله المثبتات بصوت عال من مهمة هادئه</value>
+  </data>
+  <data name="checkBoxBackup.Text" xml:space="preserve">
+    <value>اطلب انشاء نسخه احتياطيه لمكتب التسجل قبل حذف البقايا </value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>لا تطلب ابدا للحصول على ملاحظات او مساعده</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>البحث عن الخردة بعد الغاء التثبيت</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>انشاء نقطه استعاده قبل الغاء التثبيت</value>
+  </data>
+  <data name="groupBoxExternal.Text" xml:space="preserve">
+    <value>التطبيقات الخارجية</value>
+  </data>
+  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
+    <value>تمكين تنفيذ التطبيقات الخارجية</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>يمكنك تحديد الاوامر التي سيتم تشغيلها قبل الغاء التثبيت وبعده. سطر واحد يساوي امر واحد سيتم تنفيذها كما لو كنت تستخدم "تشغيل..." مربع الحوار.
+
+ سينتظر حتى اكتمال الأمر قيد التشغيل الحالي قبل تنفيذ التالية BCU </value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>&amp;اغلاق</value>
+  </data>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>الغاء التثبيت</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>(مكتب التسجيل (مستحسن لترك تمكين</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>(المحركات  (يكتشف تطبيقات غير مسجله</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>استنادا الى قواعد محدده مسبقا</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>بحث عن التطبيقات في...</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>مخازن التطبيقات للمسح</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>كشف</value>
+  </data>
+  <data name="tabPageExternal.Text" xml:space="preserve">
+    <value>ادوات خارجيه</value>
+  </data>
+  <data name="tabPageFolders.Text" xml:space="preserve">
+    <value>مجلد</value>
+  </data>
+  <data name="tabPageMisc.Text" xml:space="preserve">
+    <value>متنوع</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>يتبخر</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>تطبيقات ويندوز مخزن</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>ميزات ويندوز</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>ويمكن ان يكون بطيئا او حتى يفشل على بعض الانظمه (عاده ما تشير الى تلف النظام). WMI، يستخدم الكشف عن ميزات وندوز </value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>تحديث ويندوز</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>وهو بطيء. ويمكن ان يستغرق بضع دقائق لاكمال. WUA,يستخدم الكشف عن تحديثات وندوز </value>
+  </data>
+  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
+    <value>مجلدات تثبيت البرنامج</value>
+  </data>
+  <data name="labelProgramFolders.Text" xml:space="preserve">
+    <value>العمل بشكل أفضل. BCU  للبحث عن البقايا، والتطبيقات غير المسجلة وعدد قليل من الاشياء الاخرى. في حين انه ليس من الضروري ، فان قائمه من هذه المجلدات السماح BCU  وسوف تستخدم هذه المجلدات من قبل  (e.g. D:\Applications).يمكنك تحديد المجلدات المخصصة التي تقوم بتثبيت تطبيقاتك فيها
+
+يتم دائما تفحص مجلدات وندوز الافتراضية ، ولا تحتاج الى تضمينها في هذه القائمة.
+
+استخدام مسارات الدليل الكامل ، مسار واحد لكل سطر. سيتم تجاهل المسارات غير الصالحة والدلائل غير الموجودة.</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>محاولة الكشف عن مجلدات التثبيت المخصصة تلقائيا</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>محاولة الكشف عن مجلدات التثبيت المخصصة تلقائيا</value>
+  </data>
+</root>

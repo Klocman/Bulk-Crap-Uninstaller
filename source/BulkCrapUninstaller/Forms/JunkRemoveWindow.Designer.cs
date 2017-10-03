@@ -163,7 +163,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // olvColumnPath
             // 
-            this.olvColumnPath.AspectName = "FullName";
+            this.olvColumnPath.AspectName = "";
             resources.ApplyResources(this.olvColumnPath, "olvColumnPath");
             // 
             // olvColumnSafety
@@ -173,7 +173,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // olvColumnUninstallerName
             // 
-            this.olvColumnUninstallerName.AspectName = "UninstallerName";
+            this.olvColumnUninstallerName.AspectName = "";
             resources.ApplyResources(this.olvColumnUninstallerName, "olvColumnUninstallerName");
             // 
             // flowLayoutPanel1

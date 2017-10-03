@@ -77,7 +77,7 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Get directories to scan for applications
         /// </summary>
-        private static IEnumerable<KVP> GetDirectoriesToScan(List<ApplicationUninstallerEntry> existingUninstallers, 
+        private static IEnumerable<KVP> GetDirectoriesToScan(IEnumerable<ApplicationUninstallerEntry> existingUninstallers, 
             IEnumerable<KVP> pfDirs, IEnumerable<string> dirsToSkip)
         {
             var pfDirectories = pfDirs.ToList();

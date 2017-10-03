@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>القيمه</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>فارغ</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>موجود GUID</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>مفقود GUID</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>حدد لاسفل الى...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>لم يتم العثور على الملف.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>تشغيل الاوامر بعد الغاء التثبيت...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>تشغيل الاوامر السابقة لالغاء التثبيت...</value>
+  </data>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>انشاء نقطه استعاده...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>بحث عن البقايا ...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>ملء قائمه الغاء التثبيت...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>ازاله البقايا...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>بحث عن التحديثات...</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value>  محمول</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>API فشل استدعاء </value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>فشل النسخ الاحتياطي لمكتب السجل ، هل تريد المتابعة على ايه حال ؟</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>تفاصيل الخطا:</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>ازاله البقايا</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>فشل الاجراء</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>تحتاج الى تحديد ادخال واحد فقط لهذا الاجراء</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>حدد الغاء التثبيت واحد بالبالضبط من القائمة. إذا انت تستخدم خانات الاختيار للتاكد من التحقق منها.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>البحث عن التحديثات</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>فتح المحتوي على الخط</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>لا يمكن الاتصال بالانترنت ، لا توجد شبكات متوفرة.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>تاكد من توصيل كبل الشبكة. اذا كنت تستخدم واي فاي ضمان ان لديك قوه اشاره جيده.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>ارسال الملاحظات</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value>DEBUG</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>لا توجد إدخالات مطابقه لمعايير البحث.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>Bcuninstaller تصدير
+الناشر | الاصدار | التاريخ | الحجم | التسجيل | الغاء التثبيت نوع | الغاء تثبيت السلسلة | سلسله الغاء التثبيت الهادئ|</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>هل تريد انشاء نسخه احتياطيه لمكتب السجل قبل المتابعة ؟</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>سوف تكون قادره على دحر جميع التغييرات عن طريق النقر المزدوج بعد ذلك.
+
+سيتم نقل الملفات والدلائل ىلى سله المحذوفات ، يمكنك استعادتها من هناك.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>فتح الروابط</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>لا توجد روابط لفتحها</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>تعديل المادة المحمية</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>الادخالات المتاثره:
+{0}
+
+لتعديل هذه الادخالات تعطيل الحماية من الغاء التثبيت من الشريط الجانبي الاعدادات. يمكنك ازالتها من المهمة ومتابعه المواد الاخرى اذا اردت.</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>{الادخال المحمي: {0
+
+لتعديل هذا الادخال ، تحتاج الى تعطيل حماية الغاء التثبيت من لوحه الاعدادات.</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>المواد التالية مفقوده غير مثبتات هادئه:
+{0}
+
+هل تريد استخدام "بصوت عال" للالغاء تثبيت هذه المواد ، او يجب ازالتها من المهمة ؟</value>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>الغاء تثبيت هادئ</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>استعاده الاعدادات الافتراضية</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>سيتم فقدان كافة اعداداتك بشكل دائم. سيكون لديك المثبت لاعاده تشغيل لإكمال هذا الاجراء.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>فتح قائمه الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>لم يتم انشاء نقطه الاستعادة ، لن تكون قادرا على استعاده التغييرات! هل تريد متابعه الغاء التثبيت على ايه حال ؟</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>"{0}" اعاده تسميه</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>اعاده تسميه الادخال المحدد</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>انتهت المهمة</value>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>تثبيت</value>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>تذكر الاختيار</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>الملف غير موجود.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>(MsiExec) لا شيء للعرض. يتم الغاء تثبيت هذا التطبيق باستخدام مثبت الوندوز  </value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>جاهز</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>تم تحديد {0} الغاء التثبيت</value>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>{0} الغاء التثبيت في المجموع ، {1}</value>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>فشل تنفيذ الامر التالي:
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>فشل التنفيذ الخارجي</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>افتراضي</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>لن تصبح بعض الاعدادات نافذه المفعول حتى يتم اعاده تشغيل التطبيق.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>لتطبيق الاعدادات الجديدة BCU هل تريد اعاده تشغيل ؟</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>تغيير إعدادات التطبيق</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>الشهادة مفقوده</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>{0}/{1} معالجه الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>هل تريد تخطي انتظار الغاء التثبيت قيد التشغيل حاليا ؟</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>تخطي المهمة قيد التشغيل حاليا</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>هناك مهمة اخرى لالغاء التثبيت قيد التشغيل بالفعل. الرجاء الانتظار حتى تنتهي ثم حاول مره اخرى.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>{0} التقييم:
+
+ايجابي:
+{1}
+
+:
+2002-2003}</value>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>تفاصيل التصنيف</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>لا يوجد ادخال مكتب تسجيل صالح لهذا التطبيق</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>ليس لهذا التطبيق الغاء تثبيت صالح</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>يتم الان تحميل ميزات الوندوز...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>تحديث معلومات بدء التشغيل...</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>لا توجد دلائل للفتح</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>غير متاحه</value>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>التصنيفات غير متوفرة</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>يجب عليك تمكين التصنيفات من الاعدادات اولا.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>لا يمكنك تقييم التطبيقات التي لم يتم تثبيتها بشكل صحيح.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} التطبيقات</value>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>متوسط التقييم: {0}; تقييمي: {1} </value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>فشلت عمليه التثبيت التالية في التنفيذ ، ومن المحتمل بسبب حدوث اصطدام. الرجاء الانتظار لانهاء التثبيت الاخرى والمحاولة مره اخرى.
+{0}
+
+يمكنك محاولة تعطيل الكشف عن الاصطدام في الاعدادات ، ولكن لا ينصح به.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>اجبار الغاء التثبيت </value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>فشل تشغيل بعض المثبتات</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>NET Framework v4.0 لم يتم العثور على</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>سيتم تعطيل بعض الميزات NET Framework v4.0 لم يتم العثور على</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>المؤرشف</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>اسم مالوف</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>اسم المصدر</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>ليس بعد</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>ليس قبل</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>مفتاح خاص</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>لديه مفتاح خاص</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>مفتاح عمومي</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>البيانات الخام</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>الرقم التسلسلي</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>اسم الموضوع</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>خوارزميه التوقيع</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>الاصدار</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>الاصدار</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>بصمه الابهام</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>فشل حفظ الاعدادات</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>الانتهاء...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>تحميل الايقونات</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>البحث عن ادخالات بدء التشغيل</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>بحث عن التطبيق</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>لم يتم تحديد ايه ملفات او دلائل صالحه. تاكد من ان لديك حق الوصول اليها ، ولا يتم وضع علامة عليها كملفات نظام.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>بحث عن التطبيقات</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>{فشل العثور على ايه تطبيقات داخل {0</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>تعديل التطبيق</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>لا يمكن تعديل التطبيق المحدد</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>التطبيق المحدد ليس له امر تعديل محدد. قد يكون من الضروري الغاء تثبيته ، ثم تثبيته مره اخرى لتغيير اعدادات التثبيت.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>سيؤدي تحديد "الانهاء" الى اغلاق الغاء التثبيت الذي تم تشغيله فورا وقد ينتج عنه عدم اكتمال عمليه الغاء التثبيت. وعاده ما يكون من الممكن لتشغيل الغاء التثبيت مره اخرى لانهاء الغاء التثبيت
+
+بدلا من ذلك يمكنك تتخطى انتظار هذه العملية. التخطي سيسمح الغاء التثبيت الاستمرار في العمل اثناء انتقال المهمة الى المادة التالية. تذكر ان بعض المثبتات قد تفشل في التشغيل حتى تنتهي عمليه التخطي.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>اختياري ، ولكن ينصح به. سيتم تعطيل الميزات التي تعتمد علي الاطار حتى تقوم بتثبيته. v4.0 الإطار </value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>فشل بعض غير المثبتين</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>هل تريد محاولة تشغيل المثبتات الهادئة التي فشلت بصوت عال ؟</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>سيتم اعاده تشغيل المثبتات التالية بصوت عال:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>يتم الان مسح الدليل المحدد...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>حدد الدليل مع التطبيقات التي تريد ازالتها.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>الغاء التثبيت من الدليل</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>لم يتم العثور علىإيه تطبيقات في الدليل المحدد</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>تاكد من تحديد الدليل الصحيح ومن ان الملفات التنفيذية للتطبيق لا تزال موجودة.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>{تم العثور على الغاء التثبيت ل {0</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>هل تريد تشغيل هذا الغاء التثبيت ؟</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>؟ BCU هل ترغب في ارسال الملاحظات بشان</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>سوف ياخذك اقل من دقيقه ولكن مساعده التنمية بشكل كبير! ويقدر جميع ردود الفعل ، ان يكون تقرير الشوائب ، وطلب ميزه او بفضل بسيط!
+
+(يمكنك ارسالها لاحقا من شريط القوائم العلوي (مساعده-&lt; ارسال ملاحظات.</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>الاصدار الحالي محدث</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>لم يتم العثور على ايه تحديثات في هذا الوقت ، لديك الاصدار الاحدث.
+
+تريد بعض الوظائف المضافة او الشوائب الثابتة ؟ الرجاء ارسال ملاحظاتك "باستخدام القائمة "مساعده-&lt; ارسال ملاحظات.
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>صادف خطا اثناء التحقق من وجود تحديثات</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>تاكد من عدم حظر المثبت في جدار حمايتك ومن ان لديك اتصال بالانترنت يعمل.</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>الاصدار الجديد {0} متوفر ، هل تريد الترقية الان ؟</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>سيقوم المثبت بتحميل التحديث تلقائيا وتطبيقه بعد اعاده التشغيل. يرجى ملاحظه انه قد تفقد اعداداتك في العملية.
+
+التغييرات:
+-{0}
+
+ستتم ازاله.BCU تحذير: اثناء تحديث المجلد "تحديث" و الملف "التحديث .ضغط" داخل الدليل</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Msi الغاء التثبيت باستخدام </value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>msiexec لا يمكن الغاء تثبيت الادخال المحدد باستخدام المثبت   </value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>MsiExec صالح للاستخدام مع Guid الغاء التثبيت المحدد ليس له</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>ايقاف مهمة الغاء التثبيت الحالية</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>هل تريد بالتاكيد إيقاف تشغيل المهمة حاليا ؟</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>لن يؤدي ايقاف المهمة قبل الاوان الى ارجاع ايه تغييرات. لن يتم ايقاف تشغيل الغاء التثبيت حاليا ، ستنتظر المهمة حتى تنتهي.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>انشاء نقطه استعاده</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>فشل انشاء نقطه استعاده جديده</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>تقدم الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>يمكنك الان ترك الحاسوب</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>يجب ان يكون التثبيت المتبقي قادرا على اكمال دون اي تدخل من قبل المستخدم. يجب عليك الاختيار ما زالت في من وقت لاخر في حاله واحده من تعطل التركيب.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>ازاله الخردة/البقايا</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>هل تريد حقا تعديل المواد ذات الثقة المنخفضة ؟</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>ازاله المواد التي تحمل الثقة اقل من جيده يمكن ان تكون خطيره جدا! من المستحسن التحقق من ان كل مادة واحدة امنة لحذف.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>ازاله مفاتيح من مكتب التسجيل</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>هل تريد بالتاكيد ازاله ادخالات الغاء التثبيت المحددة ؟</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>سيتم ازاله المواد التالية من مكتب التسجيل وسوف تختفي من قائمه الغاء التثبيت ، ولكن لن يتم الغاء تثبيت.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>فشل التصدير</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>تمت مصادفه خطا اثناء حفظ البيانات المصدرة</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>اذا استمر الخطا في محاولة الحفظ الى دليل مختلف ، على سبيل المثال الى سطح المكتب.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>{يتم ازاله تثبيت التطبيق (التطبيقات) {0 </value>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>اعاده تسميه الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>الاسم الذي تم توفيره فارغ او يحتوي على احرف غير صالحه</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>تاكد من انك لم تقم بتضمين اي من الاحرف التالية:
+{0}</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>هل تريد البحث عن البقايا التي تم اجراؤها من غير المنشات ؟</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>يرجى ملاحظه ان هذه الميزة مخصصه فقط لمستخدمي الطاقة الذين يفهمون كيفيه عملها. ليس من الضروري ازاله هذه الملفات وانها لن تؤثر على اداء النظام بأي طريقه مجديه.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>لم يتم العثور على البقايا </value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>CCleaner لم يتم العثور علي البقايا. لا يزال هناك قد يكون بعض البقايا متبقية حتى تتمكن من تشغيل ملف مؤقت المنظف مثل</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>ليس هناك شيء للنسخ الى الحافظة. اما اي الغاء التثبيت المحدد لديه هذا القليل من المعلومات او انك لم تحدد اي شيء.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>نسخ الى الحافظة</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>فتح الدلائل</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>سيقوم هذا الاجراء بفتح {0} دليل في نفس الوقت ، هل تريد بالتاكيد المتابعة ؟</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>بحث عن الخط</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>لا شيء للبحث عنة</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>الغاء تثبيت المثبت</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>هل تريد بالتاكيد الغاء تثبيت المثبت ؟</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+تفاصيل الخطأ:</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>سافعل ما بوسعي لاصلاح اي مشاكل مشروعه (http://klocmansoftware.weebly.com/).على موقعي  BCU  انا اسف لرؤيتك ترحل اذا كان لديك دقيقه او اثنتين يرجى اسقاط  كلمه واحده لماذا قمت بالغاء تثبيت</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>هل تريد انشاء نقطه استعاده قبل المتابعة ؟</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>اذا كنت غير متاكد اذا كانت التطبيقات التي تقوم بإلغاء تثبيتها هامه او مطلوبه لاستقرار النظام فمن المستحسن انشاء نقطه استعاده.
+اذا كان اي شيء فواصل بعد الاجراء يمكنك استخدام استعاده النظام لاسترجاع التغييرات.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>تمت مصادفه خطا اثناء فتح صفحه البحث</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>حفظ قائمه الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>فشل حفظ القائمة في ملف</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>هل تريد بالتاكيد اعاده تعيين كافة اعدادات التطبيق ؟</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>لا يمكن الغاء تثبيت بعض التطبيقات بهدوء</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>بعض الادخالات محمية ولا يمكن تعديلها</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>الادخال المحدد محمي ولا يمكن تعديله</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>حدث خطأ اثناء فتح الرابط</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>هل تريد الاحتفاظ بالتحديد الحالي ؟</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>تمت مصادفه خطا اثناء فتح الدليل</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>فشل تحميل الملفات المحددة</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>لم يتم تحديد اي المثبتات ، لا شيء للغاء</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>تشغيل الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>لالغاء تثبيت التطبيقات يجب اولا تحديدها من عرض القائمة. اذا كنت تستخدم خانات الاختيار ، تاكد من ان يتم التحقق منها.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>اذا اخترت الاحتفاظ بالتحديد الحالي سيتم دمجه مع القائمة (القوائم)المفتوحة</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>سيقوم هذا الاجراء بفتح رابط {0} في نفس الوقت ، هل تريد بالتاكيد المتابعة ؟</value>
+  </data>
+</root>

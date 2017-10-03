@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMessage = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.targetList1 = new UniversalUninstaller.TargetList();
             this.panel1.SuspendLayout();
@@ -90,7 +90,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.labelMessage);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 8);
             this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(0, 37);
@@ -99,14 +99,14 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(442, 47);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // label1
+            // labelMessage
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(43, 0);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(393, 39);
+            this.labelMessage.TabIndex = 0;
+            this.labelMessage.Text = resources.GetString("labelMessage.Text");
             // 
             // pictureBox1
             // 
@@ -157,7 +157,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

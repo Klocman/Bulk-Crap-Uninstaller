@@ -66,7 +66,7 @@ namespace UninstallTools.Factory.InfoAdders
 
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunDeadLast;
 
-        private string GetNewUninstallString(string installLocation, bool quiet)
+        private static string GetNewUninstallString(string installLocation, bool quiet)
         {
             return quiet
                 ? $"\"{UniversalUninstallerFilename.FullName}\" /Q \"{installLocation}\\\""

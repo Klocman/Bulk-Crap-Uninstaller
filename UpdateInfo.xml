@@ -2,21 +2,25 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.15.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.15/BCUninstaller_3.15_portable.zip</URL>
+<Version>3.17.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.17/BCUninstaller_3.17_portable.zip</URL>
 <Changes>
-Added universal uninstaller with a proper GUI to handle simple deletes instead of using cmd del.
-Added GUI to the uninstaller automatizer (was a cmd window before).
-Added detection and handling of radio buttons during Nsis automation - prevents automatic reboots. 
-Added detailed logging to the uninstaller automatizer. Added time since start to messages.
-Uninstaller automatizer waits a few seconds before exiting to let user read the log now.
-Uninstaller automatizer requires admin privliedges to run now (fixes UAC prompts getting it stuck).
-Hide main window when uninstalling applications to remove screen clutter.
-Fixed simple delete leaving behind empty folders.
-Fixed first start wizard not closing if saving settings fails.
-Updated Task scheduler library.
-Updates to Spanish translation by Emilio J. Grao and Jhovany200
+Major refactoring/rewrite of junk scanning, much easier to add new rules
+Added RegisteredApplications registry junk scanner
+Added scanning of WER\ReportQueue when searching for WER junk
+Search in bin32 and bin64 subfolders for executables
+Look for app executables even if the trimmed app name is short
+Big speedup of CLSID junk scanning
+Speedup of WER search
+Fixed WER search sometimes failing to find raports
+Fixed some store app junk getting flagged as unsafe to remove when it wasn't
+Split junk results into specific groups
+Changed directory junk open action to open parent folder and focus on the directory, instead of directly opening it
+Improved how registry key values are displayed in junk list
+Merged update to Portugese translation by Artur A. Pereira
+Fixed some translation configuration issues
+Fixed missing string placeholder in Portugese Progress_Registry_Processing
 </Changes>
-<Hash>67625b94c1994ff782addd5464ba50ff</Hash>
+<Hash>f0a351aeafd6d86567c5fa399f713724</Hash>
 </Update>
 </Root>

@@ -642,9 +642,9 @@ namespace BulkCrapUninstaller.Functions
         public static PressedButton AskToSaveUninstallList()
         {
             switch (CustomMessageBox.ShowDialog(DefaultOwner,
-                    new CmbBasicSettings(Resources.MessageBoxes_AskToSaveUninstallList_Title,
-                        Resources.MessageBoxes_AskToSaveUninstallList_Message,
-                        Resources.MessageBoxes_AskToSaveUninstallList_Details,
+                    new CmbBasicSettings(Localisable.MessageBoxes_AskToSaveUninstallList_Title,
+                        Localisable.MessageBoxes_AskToSaveUninstallList_Message,
+                        Localisable.MessageBoxes_AskToSaveUninstallList_Details,
                         SystemIcons.Question, Buttons.ButtonYes, Buttons.ButtonNo, Buttons.ButtonCancel)))
             {
                 case CustomMessageBox.PressedButton.Right:

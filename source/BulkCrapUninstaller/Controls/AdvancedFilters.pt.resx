@@ -130,7 +130,7 @@
     <value>Abrir...</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Abrir uma Lista de Desinstalaçãp...</value>
+    <value>Abrir uma Lista de Desinstalação...</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
     <value>Listas de Desinstalação|*.bcul</value>

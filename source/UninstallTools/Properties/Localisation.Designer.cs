@@ -520,11 +520,65 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application compatibility.
+        /// </summary>
+        internal static string Junk_AppCompat_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_AppCompat_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Audio policy config.
+        /// </summary>
+        internal static string Junk_AudioPolicy_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_AudioPolicy_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CLSID classes.
+        /// </summary>
+        internal static string Junk_Clsid_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_Clsid_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Files and directories.
         /// </summary>
         internal static string Junk_Drive_GroupName {
             get {
                 return ResourceManager.GetString("Junk_Drive_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event Log logs.
+        /// </summary>
+        internal static string Junk_EventLog_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_EventLog_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firewall rule.
+        /// </summary>
+        internal static string Junk_FirewallRule_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_FirewallRule_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installed folder list.
+        /// </summary>
+        internal static string Junk_InstalledFolders_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_InstalledFolders_GroupName", resourceCulture);
             }
         }
         
@@ -538,6 +592,24 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finishing up....
+        /// </summary>
+        internal static string Junk_Progress_Finishing {
+            get {
+                return ResourceManager.GetString("Junk_Progress_Finishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting up junk scanners....
+        /// </summary>
+        internal static string Junk_Progress_Startup {
+            get {
+                return ResourceManager.GetString("Junk_Progress_Startup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registry.
         /// </summary>
         internal static string Junk_Registry_GroupName {
@@ -547,11 +619,65 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shortcut.
+        /// </summary>
+        internal static string Junk_Shortcut_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_Shortcut_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Startup.
         /// </summary>
         internal static string Junk_Startup_GroupName {
             get {
                 return ResourceManager.GetString("Junk_Startup_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracing information.
+        /// </summary>
+        internal static string Junk_Tracing_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_Tracing_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstaller reference.
+        /// </summary>
+        internal static string Junk_UninstallerKey_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_UninstallerKey_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstaller location.
+        /// </summary>
+        internal static string Junk_UninstallerLocation_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_UninstallerLocation_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User assist.
+        /// </summary>
+        internal static string Junk_UserAssist_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_UserAssist_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Error Reporting reports.
+        /// </summary>
+        internal static string Junk_WerReports_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_WerReports_GroupName", resourceCulture);
             }
         }
         

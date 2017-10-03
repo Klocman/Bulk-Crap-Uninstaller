@@ -45,6 +45,27 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("en-GB"),
                 CultureInfo.GetCultureInfo("en-ZW"),
 
+                // ar - Arabic
+                CultureInfo.GetCultureInfo("ar-DZ"),
+                CultureInfo.GetCultureInfo("ar-BH"),
+                CultureInfo.GetCultureInfo("ar-EG"),
+                CultureInfo.GetCultureInfo("ar-IQ"),
+                CultureInfo.GetCultureInfo("ar-JO"),
+                CultureInfo.GetCultureInfo("ar-KW"),
+                CultureInfo.GetCultureInfo("ar-LB"),
+                CultureInfo.GetCultureInfo("ar-LY"),
+                CultureInfo.GetCultureInfo("ar-MA"),
+                CultureInfo.GetCultureInfo("ar-OM"),
+                CultureInfo.GetCultureInfo("ar-QA"),
+                CultureInfo.GetCultureInfo("ar-SA"),
+                CultureInfo.GetCultureInfo("ar-SY"),
+                CultureInfo.GetCultureInfo("ar-TN"),
+                CultureInfo.GetCultureInfo("ar-AE"),
+                CultureInfo.GetCultureInfo("ar-YE"),
+
+                // Czech
+                CultureInfo.GetCultureInfo("cs-CZ"),
+
                 // de - German
                 CultureInfo.GetCultureInfo("de-AT"),
                 CultureInfo.GetCultureInfo("de-DE"),
@@ -81,23 +102,28 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("fr-MC"),
                 CultureInfo.GetCultureInfo("fr-CH"),
 
+                // Hungarian
+                CultureInfo.GetCultureInfo("hu-HU"),
+
                 // it - Italian
                 CultureInfo.GetCultureInfo("it-IT"),
                 CultureInfo.GetCultureInfo("it-CH"),
-
-                // pt - Portuguese
-                CultureInfo.GetCultureInfo("pt-PT"),
-                CultureInfo.GetCultureInfo("pt-BR"),
 
                 // nl - Dutch
                 CultureInfo.GetCultureInfo("nl-NL"),
                 CultureInfo.GetCultureInfo("nl-BE"),
 
-                // Misc languages
-                CultureInfo.GetCultureInfo("cs-CZ"),
-                CultureInfo.GetCultureInfo("hu-HU"),
+                // Polish
                 CultureInfo.GetCultureInfo("pl-PL"),
+
+                // pt - Portuguese
+                CultureInfo.GetCultureInfo("pt-PT"),
+                CultureInfo.GetCultureInfo("pt-BR"),
+
+                // Russian
                 CultureInfo.GetCultureInfo("ru-RU"),
+
+                // Slovenian
                 CultureInfo.GetCultureInfo("sl-SI")
             }.Where(x =>
             {

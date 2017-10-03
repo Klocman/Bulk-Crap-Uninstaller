@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using UniversalUninstaller.Properties;
 
@@ -89,10 +90,50 @@ namespace UniversalUninstaller
             {
                 var di = fileSystemInfo as DirectoryInfo;
                 if (di != null)
-                    di.Delete(true);
+                    RecursiveDelete(di);
                 else
+                {
+                    ClearReadOnlyFlag(fileSystemInfo);
                     fileSystemInfo.Delete();
+                }
             }
+        }
+
+        public static void RecursiveDelete(DirectoryInfo baseDir)
+        {
+            if (!baseDir.Exists)
+                return;
+
+            foreach (var info in baseDir.GetFileSystemInfos())
+            {
+                ClearReadOnlyFlag(info);
+
+                if (info is DirectoryInfo)
+                    RecursiveDelete(info as DirectoryInfo);
+                else
+                    info.Delete();
+            }
+
+            ClearReadOnlyFlag(baseDir);
+            WaitForDirEmpty(baseDir);
+            baseDir.Delete();
+        }
+
+        /// <summary>
+        /// FileSystemInfo.Delete is non-blocking, so we have to wait until it finished 
+        /// before deleting the owning directory to prevent dir not empty exceptions.
+        /// </summary>
+        private static void WaitForDirEmpty(DirectoryInfo baseDir)
+        {
+            do Thread.Sleep(100); while (baseDir.GetFileSystemInfos().Any());
+        }
+
+        /// <summary>
+        /// FileSystemInfo.Delete throws access denied if file or dir is read only.
+        /// </summary>
+        private static void ClearReadOnlyFlag(FileSystemInfo info)
+        {
+            info.Attributes = info.Attributes & ~FileAttributes.ReadOnly;
         }
 
         private static void ShowInvalidArgsBox()

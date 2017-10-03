@@ -16,7 +16,7 @@ namespace UninstallTools.Factory.InfoAdders
     {
         internal static readonly string[] BinaryDirectoryNames =
         {
-            "bin", "program", "client", "app", "application", "win32", "win64" //"system"
+            "bin", "bin32", "bin64", "program", "client", "app", "application", "win32", "win64" //"system"
         };
 
         public string[] CanProduceValueNames { get; } = {
@@ -34,21 +34,24 @@ namespace UninstallTools.Factory.InfoAdders
 
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
-            var trimmedDispName = target.DisplayNameTrimmed;
+            /*var trimmedDispName = target.DisplayNameTrimmed;
             if (string.IsNullOrEmpty(trimmedDispName) || trimmedDispName.Length < 5)
             {
                 trimmedDispName = target.DisplayName;
                 if (string.IsNullOrEmpty(trimmedDispName))
                     // Impossible to search for the executable without knowing the app name
                     return;
-            }
+            }*/
 
             if (!Directory.Exists(target.InstallLocation))
                 return;
 
+            var trimmedDispName = target.DisplayNameTrimmed;
+
             try
             {
                 var results = ScanDirectory(new DirectoryInfo(target.InstallLocation));
+
                 target.SortedExecutables = SortListExecutables(results.ExecutableFiles, trimmedDispName)
                     .Select(x => x.FullName).ToArray();
             }
