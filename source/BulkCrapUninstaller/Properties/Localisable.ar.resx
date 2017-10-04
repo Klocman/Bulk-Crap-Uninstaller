@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="PropertiesWindow_Table_Name" xml:space="preserve">
     <value>الاسم</value>
@@ -182,7 +182,7 @@
     <value>تحتاج الى تحديد ادخال واحد فقط لهذا الاجراء</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>حدد الغاء التثبيت واحد بالبالضبط من القائمة. إذا انت تستخدم خانات الاختيار للتاكد من التحقق منها.</value>
+    <value>حدد الغاء تثبيت واحد بالضبط من القائمة. اذا انت تستخدم خانات الاختيار للتاكد من التحقق منها.</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>البحث عن التحديثات</value>
@@ -206,11 +206,11 @@
     <value>DEBUG</value>
   </data>
   <data name="SearchNothingFoundMessage" xml:space="preserve">
-    <value>لا توجد إدخالات مطابقه لمعايير البحث.</value>
+    <value>لا توجد ادخالات مطابقه لمعايير البحث.</value>
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>Bcuninstaller تصدير
-الناشر | الاصدار | التاريخ | الحجم | التسجيل | الغاء التثبيت نوع | الغاء تثبيت السلسلة | سلسله الغاء التثبيت الهادئ|</value>
+الناشر | الاصدار | التاريخ | الحجم | التسجيل | الغاء التثبيت نوع | الغاء تثبيت السلسلة | سلسله الغاء التثبيت بهدوء|</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>هل تريد انشاء نسخه احتياطيه لمكتب السجل قبل المتابعة ؟</value>
@@ -241,19 +241,20 @@
 لتعديل هذا الادخال ، تحتاج الى تعطيل حماية الغاء التثبيت من لوحه الاعدادات.</value>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
-    <value>المواد التالية مفقوده غير مثبتات هادئه:
+    <value>المواد التالية مفقوده غير مثبتات بهدوء:
 {0}
 
 هل تريد استخدام "بصوت عال" للالغاء تثبيت هذه المواد ، او يجب ازالتها من المهمة ؟</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
-    <value>الغاء تثبيت هادئ</value>
+    <value>الغاء التثبيت بهدوء</value>
   </data>
   <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
     <value>استعاده الاعدادات الافتراضية</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
-    <value>سيتم فقدان كافة اعداداتك بشكل دائم. سيكون لديك المثبت لاعاده تشغيل لإكمال هذا الاجراء.</value>
+    <value>سيتم فقدان كافة اعداداتك بشكل دائم. سيكون لديك المثبت لاعاده تشغيل لاكمال هذا الاجراء.</value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
     <value>فتح قائمه الغاء التثبيت</value>
@@ -262,7 +263,7 @@
     <value>لم يتم انشاء نقطه الاستعادة ، لن تكون قادرا على استعاده التغييرات! هل تريد متابعه الغاء التثبيت على ايه حال ؟</value>
   </data>
   <data name="MainWindow_Rename_Description" xml:space="preserve">
-    <value>"{0}" اعاده تسميه</value>
+    <value>"{اعاده تسميه "{0 </value>
   </data>
   <data name="MainWindow_Rename_Title" xml:space="preserve">
     <value>اعاده تسميه الادخال المحدد</value>
@@ -311,13 +312,13 @@
     <value>لتطبيق الاعدادات الجديدة BCU هل تريد اعاده تشغيل ؟</value>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
-    <value>تغيير إعدادات التطبيق</value>
+    <value>تغيير اعدادات التطبيق</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
     <value>الشهادة مفقوده</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>{0}/{1} معالجه الغاء التثبيت</value>
+    <value>{معالجه الغاء التثبيت {0}/{1 </value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>هل تريد تخطي انتظار الغاء التثبيت قيد التشغيل حاليا ؟</value>
@@ -329,7 +330,7 @@
     <value>هناك مهمة اخرى لالغاء التثبيت قيد التشغيل بالفعل. الرجاء الانتظار حتى تنتهي ثم حاول مره اخرى.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
-    <value>{0} التقييم:
+    <value>{التقييم: {0 
 
 ايجابي:
 {1}
@@ -371,7 +372,7 @@
     <value>{0} التطبيقات</value>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
-    <value>متوسط التقييم: {0}; تقييمي: {1} </value>
+    <value>{متوسط التقييم: {0}; تقييمي: {1 </value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
     <value>فشلت عمليه التثبيت التالية في التنفيذ ، ومن المحتمل بسبب حدوث اصطدام. الرجاء الانتظار لانهاء التثبيت الاخرى والمحاولة مره اخرى.
@@ -401,40 +402,40 @@
     <value>المؤرشف</value>
   </data>
   <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
-    <value>اسم مالوف</value>
+    <value>امتدادات</value>
   </data>
   <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
-    <value>اسم المصدر</value>
+    <value>اسم مالوف</value>
   </data>
   <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
-    <value>ليس بعد</value>
+    <value>اسم المصدر</value>
   </data>
   <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
-    <value>ليس قبل</value>
+    <value>ليس بعد</value>
   </data>
   <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
-    <value>مفتاح خاص</value>
+    <value>ليس قبل</value>
   </data>
   <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
-    <value>لديه مفتاح خاص</value>
+    <value>مفتاح خاص</value>
   </data>
   <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
-    <value>مفتاح عمومي</value>
+    <value>لديه مفتاح خاص</value>
   </data>
   <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
-    <value>البيانات الخام</value>
+    <value>مفتاح عمومي</value>
   </data>
   <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
-    <value>الرقم التسلسلي</value>
+    <value>البيانات الخام</value>
   </data>
   <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
-    <value>اسم الموضوع</value>
+    <value>الرقم التسلسلي</value>
   </data>
   <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
-    <value>خوارزميه التوقيع</value>
+    <value>اسم الموضوع</value>
   </data>
   <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
-    <value>الاصدار</value>
+    <value>خوارزميه التوقيع</value>
   </data>
   <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
     <value>الاصدار</value>
@@ -481,13 +482,13 @@
 بدلا من ذلك يمكنك تتخطى انتظار هذه العملية. التخطي سيسمح الغاء التثبيت الاستمرار في العمل اثناء انتقال المهمة الى المادة التالية. تذكر ان بعض المثبتات قد تفشل في التشغيل حتى تنتهي عمليه التخطي.</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
-    <value>اختياري ، ولكن ينصح به. سيتم تعطيل الميزات التي تعتمد علي الاطار حتى تقوم بتثبيته. v4.0 الإطار </value>
+    <value>اختياري ، ولكن ينصح به. سيتم تعطيل الميزات التي تعتمد على الاطار حتى تقوم بتثبيته. v4.0 الاطار </value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
     <value>فشل بعض غير المثبتين</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>هل تريد محاولة تشغيل المثبتات الهادئة التي فشلت بصوت عال ؟</value>
+    <value>هل تريد محاولة تشغيل المثبتات بهدوء التي فشلت بصوت عال ؟</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
     <value>سيتم اعاده تشغيل المثبتات التالية بصوت عال:</value>
@@ -502,7 +503,7 @@
     <value>الغاء التثبيت من الدليل</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
-    <value>لم يتم العثور علىإيه تطبيقات في الدليل المحدد</value>
+    <value>لم يتم العثور على اي تطبيقات في الدليل المحدد</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
     <value>تاكد من تحديد الدليل الصحيح ومن ان الملفات التنفيذية للتطبيق لا تزال موجودة.</value>
@@ -561,7 +562,7 @@
     <value>ايقاف مهمة الغاء التثبيت الحالية</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
-    <value>هل تريد بالتاكيد إيقاف تشغيل المهمة حاليا ؟</value>
+    <value>هل تريد بالتاكيد ايقاف تشغيل المهمة حاليا ؟</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
     <value>لن يؤدي ايقاف المهمة قبل الاوان الى ارجاع ايه تغييرات. لن يتم ايقاف تشغيل الغاء التثبيت حاليا ، ستنتظر المهمة حتى تنتهي.</value>
@@ -627,7 +628,7 @@
     <value>هل تريد البحث عن البقايا التي تم اجراؤها من غير المنشات ؟</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
-    <value>يرجى ملاحظه ان هذه الميزة مخصصه فقط لمستخدمي الطاقة الذين يفهمون كيفيه عملها. ليس من الضروري ازاله هذه الملفات وانها لن تؤثر على اداء النظام بأي طريقه مجديه.</value>
+    <value>يرجى ملاحظه ان هذه الميزة مخصصه فقط لمستخدمي الطاقة الذين يفهمون كيفيه عملها. ليس من الضروري ازاله هذه الملفات وانها لن تؤثر على اداء النظام باي طريقه مجديه.</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
     <value>لم يتم العثور على البقايا </value>
@@ -661,7 +662,8 @@
   </data>
   <data name="MessageBoxes_Error_details" xml:space="preserve">
     <value>
-تفاصيل الخطأ:</value>
+تفاصيل الخطا:</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
     <value>سافعل ما بوسعي لاصلاح اي مشاكل مشروعه (http://klocmansoftware.weebly.com/).على موقعي  BCU  انا اسف لرؤيتك ترحل اذا كان لديك دقيقه او اثنتين يرجى اسقاط  كلمه واحده لماذا قمت بالغاء تثبيت</value>
@@ -670,7 +672,7 @@
     <value>هل تريد انشاء نقطه استعاده قبل المتابعة ؟</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
-    <value>اذا كنت غير متاكد اذا كانت التطبيقات التي تقوم بإلغاء تثبيتها هامه او مطلوبه لاستقرار النظام فمن المستحسن انشاء نقطه استعاده.
+    <value>اذا كنت غير متاكد اذا كانت التطبيقات التي تقوم بالغاء تثبيتها هامه او مطلوبه لاستقرار النظام فمن المستحسن انشاء نقطه استعاده.
 اذا كان اي شيء فواصل بعد الاجراء يمكنك استخدام استعاده النظام لاسترجاع التغييرات.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
@@ -695,7 +697,7 @@
     <value>الادخال المحدد محمي ولا يمكن تعديله</value>
   </data>
   <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
-    <value>حدث خطأ اثناء فتح الرابط</value>
+    <value>حدث خطا اثناء فتح الرابط</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
     <value>هل تريد الاحتفاظ بالتحديد الحالي ؟</value>

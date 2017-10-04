@@ -154,7 +154,7 @@
     <value>NBug</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
-    <value>موفر المدخل</value>
+    <value>مزود الاعدادات المحمولة</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
@@ -208,7 +208,7 @@
     <value>Spanish - Freddynic159, Emilio J. Grao</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>المترجم</value>
+    <value>المترجمون</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>

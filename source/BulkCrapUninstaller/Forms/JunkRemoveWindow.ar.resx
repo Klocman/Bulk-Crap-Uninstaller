@@ -139,7 +139,7 @@
     <value>اخفاء المواد بثقة سيئه</value>
   </data>
   <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>مسار العنصر</value>
+    <value>مسار المادة</value>
   </data>
   <data name="olvColumnSafety.Text" xml:space="preserve">
     <value>ثقة</value>

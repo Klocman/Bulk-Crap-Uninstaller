@@ -142,7 +142,7 @@
     <value>نوع:</value>
   </data>
   <data name="comboBoxFilterType.Items" xml:space="preserve">
-    <value>تشمل</value>
+    <value>تضمين</value>
   </data>
   <data name="comboBoxFilterType.Items1" xml:space="preserve">
     <value>استبعاد</value>
@@ -166,7 +166,7 @@
     <value>محرر الشرط</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>(*.bcul)|*.bcul|All files|*.* الغاء تثبيت القوائم </value>
+    <value>(*.bcul)|*.bcul|All files|*.*قوائم الغاء تثبيت</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>تحميل قائمه الغاء التثبيت...</value>

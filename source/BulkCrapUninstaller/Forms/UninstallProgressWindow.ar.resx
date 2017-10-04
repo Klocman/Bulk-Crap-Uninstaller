@@ -164,7 +164,7 @@
     <value>سيتم الغاء تثبيت محتويات هذه القائمة من الاعلى الى الاسفل.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>الغاء التثبيت قائمه</value>
+    <value>قائمة الغاء التثبيت</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>تقدم الغاء التثبيت</value>

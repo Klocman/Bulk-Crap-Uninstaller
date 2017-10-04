@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
-    <value>للوضع الهادئ /q عدد غير صالح من الوسائط. تمرير المسار الكامل للدليل لازاله كوسيطه ، واختياريا</value>
+    <value>للوضع بهدوء /q عدد غير صالح من الوسائط. تمرير المسار الكامل للدليل لازاله كوسيطه ، واختياريا</value>
   </data>
   <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
     <value>الغاء التثبيت العالمي</value>

@@ -133,7 +133,7 @@
     <value>شهادة تم التحقق منها</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
-    <value>اسطوره اللون</value>
+    <value>توضيحات اللون</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>نوافذ متجر التطبيق</value>

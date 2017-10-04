@@ -163,13 +163,13 @@
     <value>فتح موقع الارتباط</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;تشغيل القيادة</value>
+    <value>&amp;تشغيل الامر</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;نسخ إلى الحافظة</value>
+    <value>&amp;نسخ الى الحافظة</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>إنشاء &amp;نسخ احتياطي...</value>
+    <value>انشاء &amp;نسخ احتياطي...</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
     <value>الانتقال الى التسجيل</value>
@@ -178,7 +178,7 @@
     <value>تشغيل لكافة المستخدمين</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;تمكين</value>
+    <value>&amp;ممكن</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;حذف</value>

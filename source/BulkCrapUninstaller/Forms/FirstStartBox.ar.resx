@@ -121,7 +121,7 @@
     <value>1 / 6</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
-    <value>معالج الخروج</value>
+    <value>خروج من المعالج</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>للخلف</value>
@@ -136,7 +136,7 @@
     <value>الوصول الى الشبكة</value>
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
-    <value>يمكن ل "المثبت" محاولة الاتصال بإنترنت للاسباب التالية:</value>
+    <value>يمكن ل "المثبت" محاولة الاتصال بالانترنت للاسباب التالية:</value>
   </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
     <value>? للبحث عن تحديثات البرنامج.</value>
@@ -163,13 +163,13 @@
     <value>"تعطيل حماية غير المثبتات التي تم وضع علامة عليها بانها "محمية </value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>سيسمح لك هذا بإلغاء تثبيت العناصر المحمية.</value>
+    <value>سيسمح لك هذا بالغاء تثبيت العناصر المحمية.</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>عرض قائمه الغاء التثبيت </value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>جميع المثبتات التي وجدت في نظامك هي في عرض القائمة الرئيسية. فيما يلي بعض الطرق لاستعراض هذه البيانات:</value>
+    <value>جميع المثبتات التي وجدت في نظامك هي في قائمة العرض الرئيسية. فيما يلي بعض الطرق لاستعراض هذه البيانات:</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>? (استخدام الفلاتر والبحث عن الكلمات الرئيسية (في جميع الاعمده </value>
@@ -202,7 +202,7 @@
     <value>انهاء الاعداد</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
-    <value>يمكنك الان البدء باستخدام المثبت. اذا كان لديك اي اسئله او ترغب في اقتراح ميزه جديده زيارة الرابط أدناه.</value>
+    <value>يمكنك الان البدء باستخدام المثبت. اذا كان لديك اي اسئله او ترغب في اقتراح ميزه جديده زيارة الرابط ادناه.</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>فتح نموذج جهة الاتصال</value>
@@ -261,7 +261,7 @@ uninstaller</value>
     <value>اللغة المحددة</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>الخاصة بهم في دليل المثبت. لا يتم مشاركه البيانات المرسلة مع اي أطراف ثالثه.XML في كل مره يحدث فيها خطا سيتم سؤالك عما اذا كنت تريد ارساله. يمكنك التحقق من البيانات التي يتم ارسالها في تقارير الخطا والاستخدام عن طريق فحص ملفات</value>
+    <value>الخاصة بهم في دليل المثبت. لا يتم مشاركه البيانات المرسلة مع اي اطراف ثالثه.XML في كل مره يحدث فيها خطا سيتم سؤالك عما اذا كنت تريد ارساله. يمكنك التحقق من البيانات التي يتم ارسالها في تقارير الخطا والاستخدام عن طريق فحص ملفات</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
     <value>مع مرور الوقت قد تجد ان بعض التطبيقات سوف ترفض الغاء التثبيت ، او سوف تختفي فقط من معظم مديري الغاء التثبيت.</value>
@@ -273,14 +273,14 @@ uninstaller</value>
     <value>"في بعض الحالات يمكن الحصول علي المثبتات معطوبة ، مما يجعلها من المستحيل الغاء تثبيتها. يمكن ان تزيل هذه المداخل بسهوله باستخدام الخيار "الغاء التثبيت يدويا.</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>في بعض الاحيان يمكن ان تترك التطبيقات باكملها على محركاتك حتى بعد الغاء تثبيت. ويمكن ان يحدث هذا ايضا اذا تمت ازاله إلغاء التثبيت فقط.</value>
+    <value>في بعض الاحيان يمكن ان تترك التطبيقات باكملها على محركاتك حتى بعد الغاء تثبيت. ويمكن ان يحدث هذا ايضا اذا تمت ازاله الغاء التثبيت فقط.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>اظهار التطبيقات الغير مسجلة في القائمة</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>يتم وضع علامة التطبيقات غير امسجل باللون اللحمر.
-لذا لم يتم العثور على إلغاء التثبيت الأصلي سيكون لديك لاستخدام "للغاء يدويا" الخيار للزالها.</value>
+    <value>يتم وضع علامة على التطبيقات الغير مسجلة باللون اللحمر.
+لذا لم يتم العثور على الغاء التثبيت الاصلي سيكون لديك لاستخدام "للالغاء يدويا" الخيار للازاله.</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>المستخدمون المتقدمون</value>

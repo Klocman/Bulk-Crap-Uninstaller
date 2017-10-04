@@ -149,7 +149,7 @@
     <value>الاعدادات العامة</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>قتل تلقائيا المثبتات العالقة بهدوء</value>
+    <value>قتل المثبتات العالقة تلقائيا بهدوء</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
     <value>فشل اعاده محاولة التثبيت بهدوء مره</value>
