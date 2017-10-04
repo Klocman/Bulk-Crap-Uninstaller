@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
+using UninstallerAutomatizer.Properties;
 using UninstallTools;
 
 namespace UninstallerAutomatizer
@@ -38,7 +39,7 @@ namespace UninstallerAutomatizer
             if (args.Length < 2)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, @"Invalid number of arguments."));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, Localization.Error_Invalid_number_of_arguments));
                 return;
             }
 
@@ -46,7 +47,7 @@ namespace UninstallerAutomatizer
             if (!Enum.TryParse(args[0], out uType))
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, "Unknown uninstaller type: " + args[0]));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_UnknownUninstallerType, args[0])));
                 return;
             }
 
@@ -63,18 +64,18 @@ namespace UninstallerAutomatizer
             if (!File.Exists(UninstallTarget))
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Invalid path, or file doesn't exist: {0}", UninstallTarget)));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_InvalidPath, UninstallTarget)));
                 return;
             }
 
             if (uType != UninstallerType.Nsis)
             {
                 Program.ReturnValue = ReturnValue.InvalidArgument;
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Automation of {0} uninstallers is not supported.", uType)));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_NotSupported, uType)));
                 return;
             }
 
-            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, string.Format("Automatically uninstalling \"{0}\"", UninstallTarget)));
+            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, string.Format(Localization.Message_Starting, UninstallTarget)));
 
             _automationThread = new Thread(AutomationThread) { Name = "AutomationThread", IsBackground = false, Priority = ThreadPriority.AboveNormal };
             _automationThread.Start();
@@ -89,17 +90,17 @@ namespace UninstallerAutomatizer
             {
                 AutomatedUninstallManager.UninstallNsisQuietly(UninstallTarget, s =>
                 {
-                    if (_abort) throw new OperationCanceledException("User cancelled the operation");
+                    if (_abort) throw new OperationCanceledException(Localization.Message_UserCancelled);
                     OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, s));
                 });
 
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, "Automation was successful!"));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, Localization.Message_Success));
             }
             catch (AutomatedUninstallManager.AutomatedUninstallException ex)
             {
                 Debug.Assert(ex.InnerException != null, "ex.InnerException != null");
 
-                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format("Automatic uninstallation failed. Reason: {0}", ex.InnerException.Message)));
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Message_UninstallFailed, ex.InnerException.Message)));
 
                 // todo grace period / move to window?
                 if (ex.UninstallerProcess != null && KillOnFail)
