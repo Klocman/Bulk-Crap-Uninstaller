@@ -42,8 +42,9 @@ namespace StoreAppHelper
                     }
                     return OkCode;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    LogWriter.WriteExceptionToLog(ex);
                     return FunctionFailedCode;
                 }
             }
@@ -55,8 +56,9 @@ namespace StoreAppHelper
                     AppManager.UninstallApp(args[1]);
                     return OkCode;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    LogWriter.WriteExceptionToLog(ex);
                     return FunctionFailedCode;
                 }
             }

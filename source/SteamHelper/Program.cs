@@ -72,11 +72,13 @@ namespace SteamHelper
             }
             catch(FormatException ex)
             {
+                LogWriter.WriteExceptionToLog(ex);
                 Console.WriteLine("Error: {0}", ex.Message);
                 return InvalidArgumentCode;
             }
             catch (Exception ex)
             {
+                LogWriter.WriteExceptionToLog(ex);
                 Console.WriteLine("Error: {0}", ex.Message);
                 return 59;
             }
