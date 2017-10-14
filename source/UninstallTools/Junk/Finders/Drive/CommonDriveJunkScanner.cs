@@ -61,7 +61,7 @@ namespace UninstallTools.Junk.Finders.Drive
                     FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        newNode = new FileSystemJunk(directory, _uninstaller, this);
+                        newNode = new FileSystemJunk(dir, _uninstaller, this);
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))
