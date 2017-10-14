@@ -2,25 +2,23 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.17.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.17/BCUninstaller_3.17_portable.zip</URL>
+<Version>3.18.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.18/BCUninstaller_3.18_portable.zip</URL>
 <Changes>
-Major refactoring/rewrite of junk scanning, much easier to add new rules
-Added RegisteredApplications registry junk scanner
-Added scanning of WER\ReportQueue when searching for WER junk
-Search in bin32 and bin64 subfolders for executables
-Look for app executables even if the trimmed app name is short
-Big speedup of CLSID junk scanning
-Speedup of WER search
-Fixed WER search sometimes failing to find raports
-Fixed some store app junk getting flagged as unsafe to remove when it wasn't
-Split junk results into specific groups
-Changed directory junk open action to open parent folder and focus on the directory, instead of directly opening it
-Improved how registry key values are displayed in junk list
-Merged update to Portugese translation by Artur A. Pereira
-Fixed some translation configuration issues
-Fixed missing string placeholder in Portugese Progress_Registry_Processing
+Added supported runtime for .Net 4.0 to projects targeting 3.5; No longer necessary to install .Net 3.5
+Added error handling to Store app helper, fixes store apps not showing on some systems
+Added error logging to helper apps
+Merged new Arabic translation by MFM Dawdeh
+Merge Spanish translation update from Jhovany200/master
+Show uninstall progress window in the corner of the current screen to avoid hiding uninstallers
+Don't show uninstall progress window before it's fully initialized
+Fixed drive junk scan marking parent directory as junk instead of the subdirectory; fixes bad junk scan results
+Fixed CLSID junk detection selecting InprocServer32 instead of the main key
+Fixed automatizer failing to load Castle.Core; updated packages
+Fixed universal uninstaller failing to delete directories and files in some cases
+Extracted translatable strings in Uninstall Automatizer
+Fixed some message box text not being translatable
 </Changes>
-<Hash>f0a351aeafd6d86567c5fa399f713724</Hash>
+<Hash>3ba8980027aa9a3e38050fdb6d979408</Hash>
 </Update>
 </Root>
