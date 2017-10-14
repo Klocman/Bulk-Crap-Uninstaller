@@ -76,7 +76,7 @@ namespace UninstallTools.Junk.Finders.Registry
                             path = Path.GetDirectoryName(path);
                             if (string.IsNullOrEmpty(path)) continue;
 
-                            results.Add(new KeyValuePair<string, string>(subKey.Name, path));
+                            results.Add(new KeyValuePair<string, string>(Path.Combine(key.Name, subKeyName), path));
                         }
                         catch (Exception ex)
                         {
