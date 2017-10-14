@@ -236,7 +236,7 @@
 لتعديل هذه الادخالات تعطيل الحماية من الغاء التثبيت من الشريط الجانبي الاعدادات. يمكنك ازالتها من المهمة ومتابعه المواد الاخرى اذا اردت.</value>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
-    <value>{الادخال المحمي: {0
+    <value>لادخال المحمي: {0}
 
 لتعديل هذا الادخال ، تحتاج الى تعطيل حماية الغاء التثبيت من لوحه الاعدادات.</value>
   </data>
@@ -263,7 +263,7 @@
     <value>لم يتم انشاء نقطه الاستعادة ، لن تكون قادرا على استعاده التغييرات! هل تريد متابعه الغاء التثبيت على ايه حال ؟</value>
   </data>
   <data name="MainWindow_Rename_Description" xml:space="preserve">
-    <value>"{اعاده تسميه "{0 </value>
+    <value>اعاده تسميه "{0}" </value>
   </data>
   <data name="MainWindow_Rename_Title" xml:space="preserve">
     <value>اعاده تسميه الادخال المحدد</value>
@@ -318,7 +318,7 @@
     <value>الشهادة مفقوده</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>{معالجه الغاء التثبيت {0}/{1 </value>
+    <value>معالجه الغاء التثبيت {0}/{1} </value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>هل تريد تخطي انتظار الغاء التثبيت قيد التشغيل حاليا ؟</value>
@@ -330,13 +330,13 @@
     <value>هناك مهمة اخرى لالغاء التثبيت قيد التشغيل بالفعل. الرجاء الانتظار حتى تنتهي ثم حاول مره اخرى.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
-    <value>{التقييم: {0 
+    <value>التقييم: {0} 
 
 ايجابي:
 {1}
 
-:
-2002-2003}</value>
+نفي:
+{2}</value>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>تفاصيل التصنيف</value>
@@ -372,7 +372,7 @@
     <value>{0} التطبيقات</value>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
-    <value>{متوسط التقييم: {0}; تقييمي: {1 </value>
+    <value>متوسط التقييم: {0}; تقييمي: {1} </value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
     <value>فشلت عمليه التثبيت التالية في التنفيذ ، ومن المحتمل بسبب حدوث اصطدام. الرجاء الانتظار لانهاء التثبيت الاخرى والمحاولة مره اخرى.
@@ -465,7 +465,7 @@
     <value>بحث عن التطبيقات</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
-    <value>{فشل العثور على ايه تطبيقات داخل {0</value>
+    <value>فشل العثور على ايه تطبيقات داخل {0}</value>
   </data>
   <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
     <value>تعديل التطبيق</value>
@@ -509,7 +509,7 @@
     <value>تاكد من تحديد الدليل الصحيح ومن ان الملفات التنفيذية للتطبيق لا تزال موجودة.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
-    <value>{تم العثور على الغاء التثبيت ل {0</value>
+    <value>تم العثور على الغاء التثبيت ل {0}</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
     <value>هل تريد تشغيل هذا الغاء التثبيت ؟</value>
@@ -612,7 +612,7 @@
     <value>اذا استمر الخطا في محاولة الحفظ الى دليل مختلف ، على سبيل المثال الى سطح المكتب.</value>
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
-    <value>{يتم ازاله تثبيت التطبيق (التطبيقات) {0 </value>
+    <value>يتم ازاله تثبيت التطبيق (التطبيقات) {0} </value>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>اعاده تسميه الغاء التثبيت</value>

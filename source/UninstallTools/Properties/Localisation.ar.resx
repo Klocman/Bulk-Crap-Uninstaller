@@ -534,7 +534,7 @@
     <value>جمع مفاتيح مكتب التسجيل</value>
   </data>
   <data name="Progress_Registry_Processing" xml:space="preserve">
-    <value>{معالجه {0</value>
+    <value>معالجه {0}</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
     <value>يتم الان انشاء معلومات الغاء التثبيت مفقود...</value>

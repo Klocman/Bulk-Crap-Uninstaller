@@ -130,6 +130,6 @@
     <value>فشل حذف بعض المواد</value>
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
-    <value>"{حذف "{0 </value>
+    <value>حذف "{0}" </value>
   </data>
 </root>
