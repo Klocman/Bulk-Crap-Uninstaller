@@ -159,7 +159,6 @@ namespace BulkCrapUninstaller.Forms
             this.objectListViewMain.View = System.Windows.Forms.View.Details;
             this.objectListViewMain.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.objectListViewMain_CellEditStarting);
             this.objectListViewMain.CellRightClick += new System.EventHandler<BrightIdeasSoftware.CellRightClickEventArgs>(this.objectListViewMain_CellRightClick);
-            this.objectListViewMain.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.objectListViewMain_ItemChecked);
             // 
             // olvColumnPath
             // 
@@ -248,7 +247,6 @@ namespace BulkCrapUninstaller.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "JunkRemoveWindow";
-            this.Shown += new System.EventHandler(this.JunkRemoveWindow_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

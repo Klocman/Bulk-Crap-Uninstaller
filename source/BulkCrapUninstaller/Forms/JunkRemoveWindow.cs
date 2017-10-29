@@ -18,7 +18,6 @@ using Klocman.Forms.Tools;
 using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
-using UninstallTools.Junk;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 
@@ -246,12 +245,7 @@ namespace BulkCrapUninstaller.Forms
 
             return true;
         }
-
-        private void JunkRemoveWindow_Shown(object sender, EventArgs e)
-        {
-            SelectUpTo(ConfidenceLevel.Good);
-        }
-
+        
         private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
         {
             e.Cancel = true;
@@ -286,12 +280,7 @@ namespace BulkCrapUninstaller.Forms
                 clickedItem.Selected = true;
             }
         }
-
-        private void objectListViewMain_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            buttonAccept.Enabled = SelectedJunk.Any();
-        }
-
+        
         private static void OpenJunkNodePreview(IJunkResult item)
         {
             try
@@ -364,11 +353,19 @@ namespace BulkCrapUninstaller.Forms
             olvColumnPath.AspectGetter = rowObject => (rowObject as IJunkResult)?.GetDisplayName();
             olvColumnUninstallerName.AspectGetter = rowObject => (rowObject as IJunkResult)?.Application.DisplayName;
 
+            objectListViewMain.BeginUpdate();
+
             objectListViewMain.UseFiltering = true;
             objectListViewMain.AdditionalFilter = new ModelFilter(JunkListFilter);
 
+            objectListViewMain.PrimarySortColumn = olvColumnUninstallerName;
+            objectListViewMain.PrimarySortOrder = SortOrder.Ascending;
+
             objectListViewMain.SetObjects(junk);
-            objectListViewMain.Sort(olvColumnUninstallerName, SortOrder.Ascending);
+
+            SelectUpTo(ConfidenceLevel.Good);
+
+            objectListViewMain.EndUpdate();
         }
     }
 }
