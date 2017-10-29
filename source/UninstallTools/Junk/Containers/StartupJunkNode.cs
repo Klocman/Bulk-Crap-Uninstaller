@@ -6,7 +6,6 @@
 using System;
 using System.IO;
 using System.Security.Permissions;
-using JetBrains.Annotations;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
@@ -47,7 +46,7 @@ namespace UninstallTools.Junk.Containers
             return Entry.ToString();
         }
 
-        public StartupJunkNode([NotNull] StartupEntryBase entry, ApplicationUninstallerEntry application, IJunkCreator source) 
+        public StartupJunkNode(StartupEntryBase entry, ApplicationUninstallerEntry application, IJunkCreator source) 
             : base(application, source)
         {
             if (entry == null) throw new ArgumentNullException(nameof(entry));
