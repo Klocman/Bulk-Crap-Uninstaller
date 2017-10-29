@@ -21,8 +21,8 @@ namespace UninstallTools.Junk.Containers
 
         public static readonly ConfidenceRecord ConfidenceStartupMatched =
             new ConfidenceRecord(6, Localisation.Confidence_Startup_StartupMatched);
-        
-        private StartupEntryBase Entry { get; }
+
+        internal StartupEntryBase Entry { get; }
 
         public override void Backup(string backupDirectory)
         {
