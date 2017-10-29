@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using Klocman.Extensions;
 using Klocman.IO;
+using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -17,16 +18,43 @@ namespace UninstallTools.Junk.Finders.Registry
 {
     public class UninstallerKeySearcher : IJunkCreator
     {
-        private static readonly string[] InstallerSubkeyPaths = {
+        private static readonly IEnumerable<string> InstallerSubkeyPaths;
+
+        /// <summary>
+        /// parent key path, upgrade code(key name)
+        /// </summary>
+        private IEnumerable<KeyValuePair<string, string>> _targetKeys;
+
+        static UninstallerKeySearcher()
+        {
+            InstallerSubkeyPaths = new[]
+            {
                 @"SOFTWARE\Classes\Installer\Products",
                 @"SOFTWARE\Classes\Installer\Features",
                 @"SOFTWARE\Classes\Installer\Patches"
             };
 
-        /// <summary>
-        /// parent key path, upgrade code(key name)
-        /// </summary>
-        private List<KeyValuePair<string, string>> _targetKeys;
+            try
+            {
+                var currentUserId = WindowsTools.GetUserSid().Value;
+                if (string.IsNullOrEmpty(currentUserId) || currentUserId.Length <= 9)
+                    return;
+
+                var currentUserInstallerDataPath = Path.Combine(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData",
+                    currentUserId);
+
+                InstallerSubkeyPaths = InstallerSubkeyPaths.Concat(new []
+                {
+                    Path.Combine(currentUserInstallerDataPath, "Products"),
+                    Path.Combine(currentUserInstallerDataPath, "Patches"),
+                    Path.Combine(currentUserInstallerDataPath, "Components")
+                });
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
 
         public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
@@ -36,7 +64,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 .SelectMany(k =>
                 {
                     var parentPath = k.Name;
-                    return k.GetSubKeyNames().Select(n => new KeyValuePair<string,string>(parentPath, n));
+                    return k.GetSubKeyNames().Select(n => new KeyValuePair<string, string>(parentPath, n));
                 }).ToList();
         }
 
