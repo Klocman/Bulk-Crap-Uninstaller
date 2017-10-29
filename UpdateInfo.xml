@@ -2,23 +2,20 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.18.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.18/BCUninstaller_3.18_portable.zip</URL>
+<Version>3.19.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.19/BCUninstaller_3.19_portable.zip</URL>
 <Changes>
-Added supported runtime for .Net 4.0 to projects targeting 3.5; No longer necessary to install .Net 3.5
-Added error handling to Store app helper, fixes store apps not showing on some systems
-Added error logging to helper apps
-Merged new Arabic translation by MFM Dawdeh
-Merge Spanish translation update from Jhovany200/master
-Show uninstall progress window in the corner of the current screen to avoid hiding uninstallers
-Don't show uninstall progress window before it's fully initialized
-Fixed drive junk scan marking parent directory as junk instead of the subdirectory; fixes bad junk scan results
-Fixed CLSID junk detection selecting InprocServer32 instead of the main key
-Fixed automatizer failing to load Castle.Core; updated packages
-Fixed universal uninstaller failing to delete directories and files in some cases
-Extracted translatable strings in Uninstall Automatizer
-Fixed some message box text not being translatable
+Added scanning of HKLM\SOFTWARE\Classes\Installer\* for MSI junk
+Added scanning of HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\* for MSI junk
+Added app.manifests to helper apps (will now ask for admin rights instead of failing)
+Added credit to MFM Dawdeh for Arabic translation
+Switched preferred .Net version to v4.0 from v3.5
+Huge speed improvement of displaying junk remove window
+Speed improvement of checking/unchecking items on lists
+Updated TaskScheduler library to 2.6.3, cleaned up library references
+Fixed junk remove window getting stuck loading when a lot of junk was found
+Fixed junk scan detecting BCU itself as junk in some circumstances
 </Changes>
-<Hash>3ba8980027aa9a3e38050fdb6d979408</Hash>
+<Hash>dfb6e015b0535824e357a829df0e8693</Hash>
 </Update>
 </Root>
