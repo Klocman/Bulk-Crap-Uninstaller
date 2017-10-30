@@ -650,5 +650,15 @@ namespace BulkCrapUninstaller.Properties {
                 return ResourceManager.GetString("TwitterLink", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap weather_sun_set {
+            get {
+                object obj = ResourceManager.GetObject("weather.sun.set", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

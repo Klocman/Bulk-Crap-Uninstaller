@@ -343,6 +343,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <None Include="Resources\weather.sun.set.png" />
     <None Include="Resources\edit.box.png" />
     <None Include="Resources\radioactive.png" />
     <None Include="Resources\add.multiple.png" />

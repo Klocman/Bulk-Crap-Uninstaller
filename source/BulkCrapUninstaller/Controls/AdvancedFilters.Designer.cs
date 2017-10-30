@@ -35,11 +35,11 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonOpenUl = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSaveUl = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSaveUlDef = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddSelectedAsFilters = new System.Windows.Forms.ToolStripButton();
             this.saveUlDialog = new System.Windows.Forms.SaveFileDialog();
             this.openUlDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripUninstallerList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,11 +55,11 @@
             this.toolStripUninstallerList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonToBasicFilters,
             this.toolStripSeparator3,
+            this.toolStripButtonAddSelectedAsFilters,
+            this.toolStripSeparator1,
             this.toolStripButtonOpenUl,
             this.toolStripButtonSaveUl,
-            this.toolStripSeparator25,
-            this.toolStripButtonSaveUlDef,
-            this.toolStripButtonAddSelectedAsFilters});
+            this.toolStripButtonSaveUlDef});
             resources.ApplyResources(this.toolStripUninstallerList, "toolStripUninstallerList");
             this.toolStripUninstallerList.Name = "toolStripUninstallerList";
             // 
@@ -89,20 +89,16 @@
             this.toolStripButtonSaveUl.Name = "toolStripButtonSaveUl";
             this.toolStripButtonSaveUl.Click += new System.EventHandler(this.ShowSaveDialog);
             // 
-            // toolStripSeparator25
-            // 
-            this.toolStripSeparator25.Name = "toolStripSeparator25";
-            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
-            // 
             // toolStripButtonSaveUlDef
             // 
-            this.toolStripButtonSaveUlDef.Image = global::BulkCrapUninstaller.Properties.Resources.save;
+            this.toolStripButtonSaveUlDef.Image = global::BulkCrapUninstaller.Properties.Resources.weather_sun_set;
             resources.ApplyResources(this.toolStripButtonSaveUlDef, "toolStripButtonSaveUlDef");
             this.toolStripButtonSaveUlDef.Name = "toolStripButtonSaveUlDef";
             this.toolStripButtonSaveUlDef.Click += new System.EventHandler(this.toolStripButtonSaveUlDef_Click);
             // 
             // toolStripButtonAddSelectedAsFilters
             // 
+            this.toolStripButtonAddSelectedAsFilters.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonAddSelectedAsFilters.Image = global::BulkCrapUninstaller.Properties.Resources.add_multiple;
             resources.ApplyResources(this.toolStripButtonAddSelectedAsFilters, "toolStripButtonAddSelectedAsFilters");
             this.toolStripButtonAddSelectedAsFilters.Name = "toolStripButtonAddSelectedAsFilters";
@@ -119,6 +115,11 @@
             this.openUlDialog.DefaultExt = "bcul";
             resources.ApplyResources(this.openUlDialog, "openUlDialog");
             this.openUlDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openUlDialog_FileOk);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // AdvancedFilters
             // 
@@ -142,10 +143,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButtonOpenUl;
         private System.Windows.Forms.ToolStripButton toolStripButtonSaveUl;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
         private System.Windows.Forms.ToolStripButton toolStripButtonSaveUlDef;
         private System.Windows.Forms.SaveFileDialog saveUlDialog;
         private System.Windows.Forms.OpenFileDialog openUlDialog;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddSelectedAsFilters;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
