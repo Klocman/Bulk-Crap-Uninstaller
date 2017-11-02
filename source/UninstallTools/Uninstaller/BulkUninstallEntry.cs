@@ -265,7 +265,7 @@ namespace UninstallTools.Uninstaller
             {
                 var processSnapshot = Process.GetProcesses().Select(x => x.Id).ToArray();
 
-                using (var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate))
+                using (var uninstaller = UninstallerEntry.RunUninstaller(options.PreferQuiet, options.Simulate, _canRetry))
                 {
                     // Can be null during simulation
                     if (uninstaller == null) return;
@@ -402,7 +402,7 @@ namespace UninstallTools.Uninstaller
                                     case 9009:
                                         break;
                                     default:
-                                        if (options.RetryFailedQuiet)
+                                        if (options.RetryFailedQuiet || (UninstallerEntry.UninstallerKind == UninstallerType.Nsis && !options.PreferQuiet))
                                             retry = true;
                                         break;
                                 }

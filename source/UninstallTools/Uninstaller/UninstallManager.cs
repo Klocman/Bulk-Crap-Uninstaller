@@ -66,12 +66,12 @@ namespace UninstallTools.Uninstaller
         /// <param name="entry">Application to uninstall</param>
         /// <param name="silentIfAvailable">Choose quiet uninstaller if it's available.</param>
         /// <param name="simulate">If true, nothing will actually be uninstalled</param>
+        /// <param name="safeMode">Don't modify the uninstall command to try avoid problems. Use when normal run fails.</param>
         /// <exception cref="IOException">Uninstaller returned error code.</exception>
         /// <exception cref="InvalidOperationException">There are no usable ways of uninstalling this entry </exception>
         /// <exception cref="FormatException">Exception while decoding or attempting to run the uninstaller command. </exception>
         [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
-        public static Process RunUninstaller(this ApplicationUninstallerEntry entry, bool silentIfAvailable,
-            bool simulate)
+        public static Process RunUninstaller(this ApplicationUninstallerEntry entry, bool silentIfAvailable, bool simulate, bool safeMode = false)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace UninstallTools.Uninstaller
                         startInfo = ProcessTools.SeparateArgsFromCommand(entry.UninstallString).ToProcessStartInfo();
                         Debug.Assert(!startInfo.FileName.Contains(' ') || File.Exists(startInfo.FileName));
 
-                        if (entry.UninstallerKind == UninstallerType.Nsis)
+                        if (entry.UninstallerKind == UninstallerType.Nsis && !safeMode)
                             UpdateNsisStartInfo(startInfo, entry.DisplayName);
                     }
                     catch (FormatException)
