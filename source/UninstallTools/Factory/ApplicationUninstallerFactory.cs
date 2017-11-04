@@ -340,5 +340,10 @@ namespace UninstallTools.Factory
             return path.ContainsAny(new[] { "msiexec ", "msiexec.exe" }, StringComparison.OrdinalIgnoreCase)
                 || path.EndsWith(".msi", StringComparison.OrdinalIgnoreCase);
         }
+
+        public static string CleanupDisplayVersion(string version)
+        {
+            return version?.Replace(", ", ".").Replace(". ", ".").Replace(",", ".").Replace(". ", ".").Trim();
+        }
     }
 }
