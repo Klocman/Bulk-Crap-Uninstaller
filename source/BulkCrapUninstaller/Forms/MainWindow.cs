@@ -1018,6 +1018,9 @@ namespace BulkCrapUninstaller.Forms
             var anySelected = _listView.SelectedUninstallerCount > 0;
             basicOperationsToolStripMenuItem.Enabled = anySelected;
             advancedOperationsToolStripMenuItem.Enabled = anySelected;
+            
+            toolStripButtonModify.Enabled = _listView.SelectedUninstallerCount == 1 && 
+                _listView.SelectedUninstallers.Count(x => !string.IsNullOrEmpty(x.ModifyPath)) == 1;
         }
 
         private void UpdateUninstallListContextMenuStrip(object sender, CancelEventArgs e)
