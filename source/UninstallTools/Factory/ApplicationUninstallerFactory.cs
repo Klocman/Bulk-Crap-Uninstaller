@@ -135,8 +135,6 @@ namespace UninstallTools.Factory
         private static List<ApplicationUninstallerEntry> MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
             ICollection<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            // Create local copy
-            //var baseEntries = baseResults.ToList();
             // Add all of the base results straight away
             var results = new List<ApplicationUninstallerEntry>(baseEntries);
             var progress = 0;
@@ -186,49 +184,114 @@ namespace UninstallTools.Factory
             return !isPathRooted;
         }
 
+        /// <summary>
+        /// Try to figure out if base uninstaller entry and other entry are pointing to the same application.
+        /// </summary>
         private static bool CheckAreEntriesRelated(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry otherEntry)
         {
+            //Debug.Assert(!(otherEntry.DisplayName.Contains("vnc", StringComparison.OrdinalIgnoreCase) && 
+            //    baseEntry.DisplayName.Contains("vnc", StringComparison.OrdinalIgnoreCase)));
+
             if (PathTools.PathsEqual(baseEntry.InstallLocation, otherEntry.InstallLocation))
                 return true;
+
+            var score = -1;
+            if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation))
+                AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation, 
+                    StringComparison.InvariantCultureIgnoreCase));
 
             if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation) && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                 return true;
 
-            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
-                && baseEntry.UninstallString.Contains(otherEntry.InstallLocation))
+            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation) && 
+                baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                 return true;
 
-            if (CompareStrings(baseEntry.Publisher, otherEntry.Publisher))
+            AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ? 
+                baseEntry.Is64Bit == otherEntry.Is64Bit : (bool?)null);
+            AddScore(ref score, -3, -1, 5, CompareDates(baseEntry.InstallDate, otherEntry.InstallDate));
+
+            AddScore(ref score, -2, 0, 5, CompareStrings(baseEntry.DisplayVersion, otherEntry.DisplayVersion, true));
+            AddScore(ref score, -5, 0, 5, CompareStrings(baseEntry.Publisher, otherEntry.Publisher));
+
+            // Check if base entry was installed from inside other entry's install directory
+            if (string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(baseEntry.InstallSource) &&
+                !string.IsNullOrEmpty(otherEntry.InstallLocation) && otherEntry.InstallLocation.Length >= 5)
             {
-                if (CompareStrings(baseEntry.DisplayName, otherEntry.DisplayName))
-                    return true;
-                if (CompareStrings(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed))
-                    return true;
-                try
-                {
-                    if (CompareStrings(baseEntry.DisplayNameTrimmed, Path.GetFileName(otherEntry.InstallLocation)))
-                        return true;
-                }
-                catch (Exception ex)
-                {
-                    Debug.Fail(ex.Message);
-                }
+                AddScore(ref score, 0, 0, 5, baseEntry.InstallSource.Contains(
+                    otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase));
             }
 
-            return false;
+            if (score <= -14) return false;
+
+            var nameSimilarity = CompareStrings(baseEntry.DisplayName, otherEntry.DisplayName);
+            AddScore(ref score, -5, -2, 8, nameSimilarity);
+            if (!nameSimilarity.HasValue || nameSimilarity == false)
+            {
+                var trimmedSimilarity = CompareStrings(baseEntry.DisplayNameTrimmed, otherEntry.DisplayNameTrimmed);
+                // Don't risk it if names can't be compared at all
+                //if (!trimmedSimilarity.HasValue && !nameSimilarity.HasValue) return false;
+                AddScore(ref score, -5, -2, 8, trimmedSimilarity);
+            }
+
+            if (score <= -4) return false;
+
+            try
+            {
+                AddScore(ref score, -2, -2, 5,
+                    CompareStrings(baseEntry.DisplayNameTrimmed.Length < 5 ? baseEntry.DisplayName : baseEntry.DisplayNameTrimmed, Path.GetFileName(otherEntry.InstallLocation)));
+            }
+            catch (Exception ex)
+            {
+                Debug.Fail(ex.Message);
+            }
+            //Debug.Assert(score <= 0);
+            return score > 0;
         }
 
-        private static bool CompareStrings(string a, string b)
+        /// <summary>
+        /// Check if dates are very close together, or if they differ by a few hours.
+        /// Result is null if the length of the difference can't be compared confidently.
+        /// </summary>
+        private static bool? CompareDates(DateTime a, DateTime b)
         {
-            if (a == null || a.Length < 5 || b == null || b.Length < 5)
-                return false;
+            if (a.IsDefault() || b.IsDefault())
+                return null;
 
-            /* Old algorithm, much slower
-            var changesRequired = StringTools.CompareSimilarity(a, b);
-            return changesRequired < a.Length / 6;*/
+            var totalHours = Math.Abs((a - b).TotalHours);
+
+            if (totalHours > 40) return null;
+
+            if (totalHours <= 1)
+                return true;
+
+            // One of the dates is lacking time part, so can't be compared
+            if (a.TimeOfDay.TotalSeconds < 1 || b.TimeOfDay.TotalSeconds < 1)
+                return null;
+
+            return totalHours <= 1;
+        }
+
+        private static bool? CompareStrings(string a, string b, bool relaxMatchRequirement = false)
+        {
+            var lengthRequirement = !relaxMatchRequirement ? 5 : 4;
+            if (a == null || (a.Length < lengthRequirement) || b == null || b.Length < lengthRequirement)
+                return null;
+
+            if (relaxMatchRequirement)
+            {
+                if (a.StartsWith(b, StringComparison.Ordinal) || b.StartsWith(a, StringComparison.Ordinal))
+                    return true;
+            }
 
             var changesRequired = Sift4.SimplestDistance(a, b, 3);
-            return changesRequired < a.Length / 6;
+            return changesRequired == 0 || changesRequired < a.Length / 6;
+        }
+
+        private static void AddScore(ref int score, int failScore, int unsureScore, int successScore, bool? testResult)
+        {
+            if (!testResult.HasValue) score = score + unsureScore;
+            else score = testResult.Value ? score + successScore : score + failScore;
         }
 
         private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
