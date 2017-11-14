@@ -2,20 +2,14 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.19.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.19/BCUninstaller_3.19_portable.zip</URL>
+<Version>3.20.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.20/BCUninstaller_3.20_portable.zip</URL>
 <Changes>
-Added scanning of HKLM\SOFTWARE\Classes\Installer\* for MSI junk
-Added scanning of HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\* for MSI junk
-Added app.manifests to helper apps (will now ask for admin rights instead of failing)
-Added credit to MFM Dawdeh for Arabic translation
-Switched preferred .Net version to v4.0 from v3.5
-Huge speed improvement of displaying junk remove window
-Speed improvement of checking/unchecking items on lists
-Updated TaskScheduler library to 2.6.3, cleaned up library references
-Fixed junk remove window getting stuck loading when a lot of junk was found
-Fixed junk scan detecting BCU itself as junk in some circumstances
+Added a much more intelligent detection of duplicate application entries. Improves scan result quality
+Modified advanced filters toolbar to better show extra functions
+Disable the modify button on tool bar if the selected application can't be modified
+Fixed some loud NSIS uninstallers failing to start - on fail retry without anything fancy
 </Changes>
-<Hash>dfb6e015b0535824e357a829df0e8693</Hash>
+<Hash>4fd7c812bd2446b5ff325c58155a4d03</Hash>
 </Update>
 </Root>
