@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
+using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
@@ -52,7 +53,7 @@ namespace BulkCrapUninstaller.Forms
             else if (junkNodes.All(x => x.Confidence.GetRawConfidence() >= 0))
                 checkBoxHideLowConfidence.Enabled = false;
 
-            new[] {ConfidenceLevel.VeryGood, ConfidenceLevel.Good, ConfidenceLevel.Questionable, ConfidenceLevel.Bad}
+            new[] { ConfidenceLevel.VeryGood, ConfidenceLevel.Good, ConfidenceLevel.Questionable, ConfidenceLevel.Bad }
                 .ForEach(x => comboBoxChecker.Items.Add(new LocalisedEnumWrapper(x)));
             comboBoxChecker_DropDownClosed(this, EventArgs.Empty);
         }
@@ -67,47 +68,92 @@ namespace BulkCrapUninstaller.Forms
 
             if (SelectedJunk.Any(x => !(x is FileSystemJunk)))
             {
-                switch (MessageBoxes.BackupRegistryQuestion(this))
+                if (Settings.Default.BackupLeftovers == YesNoAsk.Ask)
                 {
-                    case MessageBoxes.PressedButton.Yes:
-                        if (backupDirDialog.ShowDialog() != DialogResult.OK)
+                    switch (MessageBoxes.BackupRegistryQuestion(this))
+                    {
+                        case MessageBoxes.PressedButton.Yes:
+                            if (backupDirDialog.ShowDialog() != DialogResult.OK)
+                                return;
+
+                            try
+                            {
+                                CreateBackup(backupDirDialog.SelectedPath);
+                                Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
+                            }
+                            catch (OperationCanceledException)
+                            {
+                                goto case MessageBoxes.PressedButton.Yes;
+                            }
+
+                            break;
+
+                        case MessageBoxes.PressedButton.No:
+                            break;
+
+                        default:
                             return;
+                    }
+                }
+                else if (Settings.Default.BackupLeftovers == YesNoAsk.Yes)
+                {
+                    while (true)
+                    {
+                        var path = Settings.Default.BackupLeftoversDirectory;
 
-                        var dir = Path.Combine(backupDirDialog.SelectedPath, GetUniqueBackupName());
-                        try
+                        if (Directory.Exists(path))
                         {
-                            Directory.CreateDirectory(dir);
-                        }
-                        catch (Exception ex)
-                        {
-                            PremadeDialogs.GenericError(ex);
-                            goto case MessageBoxes.PressedButton.Yes;
-                        }
-
-                        try
-                        {
-                            FilesystemTools.CompressDirectory(dir);
-                        }
-                        catch
-                        {
-                            // Ignore, not important
+                            try
+                            {
+                                CreateBackup(backupDirDialog.SelectedPath);
+                                Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
+                                break;
+                            }
+                            catch (OperationCanceledException)
+                            {
+                            }
                         }
 
-                        if (!RunBackup(dir))
+                        if (backupDirDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
+                        }
+                        else
+                        {
+                            Settings.Default.BackupLeftovers = YesNoAsk.Ask;
                             return;
-                        
-                        break;
-
-                    case MessageBoxes.PressedButton.No:
-                        break;
-
-                    default:
-                        return;
+                        }
+                    }
                 }
             }
 
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void CreateBackup(string backupPath)
+        {
+            var dir = Path.Combine(backupPath, GetUniqueBackupName());
+            try
+            {
+                Directory.CreateDirectory(dir);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
+                throw new OperationCanceledException();
+            }
+
+            try
+            {
+                FilesystemTools.CompressDirectory(dir);
+            }
+            catch
+            {
+                // Ignore, not important
+            }
+
+            RunBackup(dir);
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -142,7 +188,7 @@ namespace BulkCrapUninstaller.Forms
             var localisedEnumWrapper = comboBoxChecker.SelectedItem as LocalisedEnumWrapper;
             if (localisedEnumWrapper != null)
             {
-                var selectedConfidence = (ConfidenceLevel) localisedEnumWrapper.TargetEnum;
+                var selectedConfidence = (ConfidenceLevel)localisedEnumWrapper.TargetEnum;
 
                 if ((selectedConfidence != ConfidenceLevel.Bad && selectedConfidence != ConfidenceLevel.Questionable)
                     || MessageBoxes.ConfirmLowConfidenceQuestion(this)) //Ask if selected low confidence
@@ -245,7 +291,7 @@ namespace BulkCrapUninstaller.Forms
 
             return true;
         }
-        
+
         private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
         {
             e.Cancel = true;
@@ -280,7 +326,7 @@ namespace BulkCrapUninstaller.Forms
                 clickedItem.Selected = true;
             }
         }
-        
+
         private static void OpenJunkNodePreview(IJunkResult item)
         {
             try
@@ -300,7 +346,7 @@ namespace BulkCrapUninstaller.Forms
             OpenJunkNodePreview(item);
         }
 
-        private bool RunBackup(string targetdir)
+        private void RunBackup(string targetdir)
         {
             var failed = new List<string>();
             foreach (var junkNode in SelectedJunk)
@@ -322,11 +368,9 @@ namespace BulkCrapUninstaller.Forms
                 if (MessageBoxes.BackupFailedQuestion(string.Join("\n", failed.ToArray()), this)
                     != MessageBoxes.PressedButton.Yes)
                 {
-                    return false;
+                    throw new OperationCanceledException();
                 }
             }
-
-            return true;
         }
 
         private void SelectUpTo(ConfidenceLevel selectedConfidenceLevel)

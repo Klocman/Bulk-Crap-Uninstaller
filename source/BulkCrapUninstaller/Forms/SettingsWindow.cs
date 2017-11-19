@@ -29,7 +29,6 @@ namespace BulkCrapUninstaller.Forms
 
             Icon = Resources.Icon_Logo;
 
-            _settings.BindControl(checkBoxBackup, x => x.MessagesAskToBackup, this);
             _settings.BindControl(checkBoxLoud, x => x.MessagesAskRemoveLoudItems, this);
             _settings.BindControl(checkBoxShowAllBadJunk, x => x.MessagesShowAllBadJunk, this);
             _settings.BindControl(checkBoxNeverFeedback, x => x.MiscFeedbackNagNeverShow, this);
@@ -70,6 +69,12 @@ namespace BulkCrapUninstaller.Forms
             _settings.Subscribe(JunkSettingChanged, x => x.MessagesRemoveJunk, this);
             _settings.Subscribe(RestoreSettingChanged, x => x.MessagesRestorePoints, this);
             _settings.Subscribe(LanguageSettingChanged, x => x.Language, this);
+
+            _settings.Subscribe(BackupSettingChanged, x => x.BackupLeftovers, this);
+            _settings.BindProperty(directorySelectBoxBackup,
+                box => box.DirectoryPath, nameof(directorySelectBoxBackup.DirectoryPathChanged),
+                settings => settings.BackupLeftoversDirectory, this);
+
             _settings.SendUpdates(this);
 
             _restartNeeded = false;
@@ -165,13 +170,48 @@ namespace BulkCrapUninstaller.Forms
         {
             _settings.RemoveHandlers(this);
         }
-        
+
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Built in autosize doesn't work properly for the flowLayoutPanel
             groupBoxAppStores.AutoSize = false;
             groupBoxAppStores.Height = flowLayoutPanel6.Height +
                                        (groupBoxAppStores.Height - groupBoxAppStores.DisplayRectangle.Height);
+        }
+
+        private void radioButtonBackup_CheckedChanged(object sender, EventArgs e)
+        {
+            directorySelectBoxBackup.Enabled = false;
+
+            if (radioButtonBackupAsk.Checked)
+                _settings.Settings.BackupLeftovers = YesNoAsk.Ask;
+            else if (radioButtonBackupAuto.Checked)
+            {
+                _settings.Settings.BackupLeftovers = YesNoAsk.Yes;
+                directorySelectBoxBackup.Enabled = true;
+            }
+            else if (radioButtonBackupNever.Checked)
+                _settings.Settings.BackupLeftovers = YesNoAsk.No;
+            else
+                throw new InvalidOperationException();
+        }
+
+        private void BackupSettingChanged(object sender, SettingChangedEventArgs<YesNoAsk> args)
+        {
+            switch (args.NewValue)
+            {
+                case YesNoAsk.Ask:
+                    radioButtonBackupAsk.Checked = true;
+                    break;
+                case YesNoAsk.Yes:
+                    radioButtonBackupAuto.Checked = true;
+                    break;
+                case YesNoAsk.No:
+                    radioButtonBackupNever.Checked = true;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

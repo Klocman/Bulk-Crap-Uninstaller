@@ -16,7 +16,6 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.UpdateSystem;
 using Klocman.Tools;
-using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -72,11 +71,8 @@ namespace BulkCrapUninstaller.Functions
 
         internal static PressedButton BackupRegistryQuestion(Form owner)
         {
-            if (!Settings.Default.MessagesAskToBackup)
-                return PressedButton.No;
-
             var check = new CmbCheckboxSettings(Localisable.MessageBoxes_RememberChoiceCheckbox)
-            { DisableRightButton = true, DisableLeftButton = true };
+            { DisableRightButton = true };
             switch (
                 CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
                     new CmbBasicSettings(Localisable.MessageBoxes_Title_Leftover_removal,
@@ -86,11 +82,13 @@ namespace BulkCrapUninstaller.Functions
                     check))
             {
                 case CustomMessageBox.PressedButton.Left:
+                    if (check.Result == true)
+                        Settings.Default.BackupLeftovers = YesNoAsk.Yes;
                     return PressedButton.Yes;
 
                 case CustomMessageBox.PressedButton.Middle:
-                    if (check.Result.HasValue && check.Result.Value)
-                        Settings.Default.MessagesAskToBackup = false;
+                    if (check.Result == true)
+                        Settings.Default.BackupLeftovers = YesNoAsk.No;
                     return PressedButton.No;
 
                 default:
