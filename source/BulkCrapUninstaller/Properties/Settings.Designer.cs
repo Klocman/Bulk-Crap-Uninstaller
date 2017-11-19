@@ -332,7 +332,6 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ask")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
         public global::Klocman.YesNoAsk BackupLeftovers {
             get {
                 return ((global::Klocman.YesNoAsk)(this["BackupLeftovers"]));
@@ -915,6 +914,7 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
         public bool ScanPreDefined {
             get {
                 return ((bool)(this["ScanPreDefined"]));
@@ -925,6 +925,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string BackupLeftoversDirectory {

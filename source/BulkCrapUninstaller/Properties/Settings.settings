@@ -68,7 +68,7 @@
     <Setting Name="MiscCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="BackupLeftovers" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="Klocman.YesNoAsk" Scope="User">
+    <Setting Name="BackupLeftovers" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="Klocman.YesNoAsk" Scope="User">
       <Value Profile="(Default)">Ask</Value>
     </Setting>
     <Setting Name="MessagesAskRemoveLoudItems" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
@@ -194,10 +194,10 @@
     <Setting Name="ScanRegistry" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ScanPreDefined" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
+    <Setting Name="ScanPreDefined" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="BackupLeftoversDirectory" Type="System.String" Scope="User">
+    <Setting Name="BackupLeftoversDirectory" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
