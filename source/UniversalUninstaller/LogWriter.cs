@@ -13,13 +13,20 @@ namespace UniversalUninstaller
     {
         public static void WriteMessageToLog(string message)
         {
-            var location = Assembly.GetCallingAssembly().Location;
-            location = location.Substring(0, location.Length - 3) + "log";
-
-            using (var writer = new StreamWriter(location, true))
+            try
             {
-                writer.WriteLine("--- " + DateTime.UtcNow);
-                writer.WriteLine(message);
+                var location = Assembly.GetCallingAssembly().Location;
+                location = location.Substring(0, location.Length - 3) + "log";
+
+                using (var writer = new StreamWriter(location, true))
+                {
+                    writer.WriteLine("--- " + DateTime.UtcNow);
+                    writer.WriteLine(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(@"Failed to write to log file:\n" + ex);
             }
         }
     }
