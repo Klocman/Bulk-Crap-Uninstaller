@@ -1286,8 +1286,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // manualUninstallToolStripMenuItem
             // 
-            resources.ApplyResources(this.manualUninstallToolStripMenuItem, "manualUninstallToolStripMenuItem");
+            this.manualUninstallToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.list;
             this.manualUninstallToolStripMenuItem.Name = "manualUninstallToolStripMenuItem";
+            resources.ApplyResources(this.manualUninstallToolStripMenuItem, "manualUninstallToolStripMenuItem");
             this.manualUninstallToolStripMenuItem.Click += new System.EventHandler(this.RunAdvancedUninstall);
             // 
             // msiUninstalltoolStripMenuItem

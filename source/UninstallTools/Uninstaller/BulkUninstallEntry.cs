@@ -174,6 +174,33 @@ namespace UninstallTools.Uninstaller
         }
 
         /// <summary>
+        /// Try to mark this entry as finished. If it is running and can't be safely skipped, mark it for termination instead.
+        /// Do not use unless the entry was uninstalled externally.
+        /// </summary>
+        public void ForceFinished()
+        {
+            lock (_operationLock)
+            {
+                if (Finished)
+                    return;
+
+                if (IsRunning)
+                {
+                    // Do not allow skipping of Msiexec uninstallers because they will hold up the rest of Msiexec uninstallers in the task
+                    if (CurrentStatus == UninstallStatus.Uninstalling && 
+                        UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
+                    {
+                        SkipWaiting(true);
+                        return;
+                    }
+                }
+
+                CurrentStatus = UninstallStatus.Completed;
+                Finished = true;
+            }
+        }
+
+        /// <summary>
         ///     Returns true if uninstaller appears to be stalled. Blocks for 1000ms to gather data.
         /// </summary>
         private bool TestUninstallerForStalls(IEnumerable<string> childProcesses)
@@ -557,6 +584,24 @@ namespace UninstallTools.Uninstaller
             None = 0,
             Terminate,
             Skip
+        }
+
+        public void Pause()
+        {
+            lock (_operationLock)
+            {
+                if(CurrentStatus == UninstallStatus.Waiting)
+                    CurrentStatus = UninstallStatus.Paused;
+            }
+        }
+
+        public void Resume()
+        {
+            lock (_operationLock)
+            {
+                if (CurrentStatus == UninstallStatus.Paused)
+                    CurrentStatus = UninstallStatus.Waiting;
+            }
         }
     }
 }

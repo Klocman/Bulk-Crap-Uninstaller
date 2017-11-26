@@ -218,7 +218,7 @@ namespace BulkCrapUninstaller.Functions
                         : 1;
                     status.Start();
 
-                    UninstallProgressWindow.ShowUninstallDialog(status);
+                    UninstallProgressWindow.ShowUninstallDialog(status, entries => SearchForAndRemoveJunk(entries, allUninstallers));
 
                     var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallersList
                                                  where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed

@@ -238,7 +238,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.24996, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -315,6 +315,15 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
   </data>
   <data name="toolStripButtonTerminate.Text" xml:space="preserve">
     <value>Terminate</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Uninstall manually</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -557,25 +566,25 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>olvColumnStatus</value>
   </data>
   <data name="&gt;&gt;olvColumnStatus.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.24996, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnIsSilent.Name" xml:space="preserve">
     <value>olvColumnIsSilent</value>
   </data>
   <data name="&gt;&gt;olvColumnIsSilent.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.24996, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Name" xml:space="preserve">
     <value>olvColumnName</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.24996, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnId.Name" xml:space="preserve">
     <value>olvColumnId</value>
   </data>
   <data name="&gt;&gt;olvColumnId.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.24996, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripButtonRun.Name" xml:space="preserve">
     <value>toolStripButtonRun</value>
@@ -593,6 +602,12 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>toolStripButtonTerminate</value>
   </data>
   <data name="&gt;&gt;toolStripButtonTerminate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonManualUninstall.Name" xml:space="preserve">
+    <value>toolStripButtonManualUninstall</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonManualUninstall.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
@@ -635,7 +650,7 @@ If the process appears to be stuck you can click on the "Skip" button to avoid w
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.6.1.23409, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.20.0.23762, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;forceUpdateTimer.Name" xml:space="preserve">
     <value>forceUpdateTimer</value>

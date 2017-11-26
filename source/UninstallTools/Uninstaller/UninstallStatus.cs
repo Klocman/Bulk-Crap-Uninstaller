@@ -23,6 +23,8 @@ namespace UninstallTools.Uninstaller
         [LocalisedName(typeof(Localisation), "UninstallStatus_Protected")]
         Protected,
         [LocalisedName(typeof(Localisation), "UninstallStatus_Invalid")]
-        Invalid
+        Invalid,
+        [LocalisedName(typeof(Localisation), "UninstallStatus_Paused")]
+        Paused
     }
 }
