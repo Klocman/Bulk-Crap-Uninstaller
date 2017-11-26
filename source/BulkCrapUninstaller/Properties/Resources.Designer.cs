@@ -280,7 +280,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52.
+        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/donate.html.
         /// </summary>
         internal static string DonateLink {
             get {

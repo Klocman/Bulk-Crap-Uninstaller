@@ -276,7 +276,7 @@
     <value>sendCrash</value>
   </data>
   <data name="DonateLink" xml:space="preserve">
-    <value>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52</value>
+    <value>http://klocmansoftware.weebly.com/donate.html</value>
   </data>
   <data name="timer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
