@@ -321,7 +321,7 @@ namespace BulkCrapUninstaller.Forms
             uninstallToolStripMenuItem.Enabled = selectionCount > 0;
             quietUninstallToolStripMenuItem.Enabled = selectionCount > 0;
             propertiesToolStripMenuItem.Enabled = selectionCount > 0;
-            modifyToolStripMenuItem.Enabled = selectionCount == 1 && 
+            modifyToolStripMenuItem.Enabled = selectionCount == 1 &&
                 !string.IsNullOrEmpty(_listView.SelectedUninstallers.FirstOrDefault()?.ModifyPath);
         }
 
@@ -1018,8 +1018,8 @@ namespace BulkCrapUninstaller.Forms
             var anySelected = _listView.SelectedUninstallerCount > 0;
             basicOperationsToolStripMenuItem.Enabled = anySelected;
             advancedOperationsToolStripMenuItem.Enabled = anySelected;
-            
-            toolStripButtonModify.Enabled = _listView.SelectedUninstallerCount == 1 && 
+
+            toolStripButtonModify.Enabled = _listView.SelectedUninstallerCount == 1 &&
                 _listView.SelectedUninstallers.Count(x => !string.IsNullOrEmpty(x.ModifyPath)) == 1;
         }
 
@@ -1030,6 +1030,11 @@ namespace BulkCrapUninstaller.Forms
                 e.Cancel = true;
                 return;
             }
+
+            var advancedFiltering = advancedFilters1.CurrentList != null;
+            toolStripSeparatorFiltering.Visible = advancedFiltering;
+            excludeToolStripMenuItem.Visible = advancedFiltering;
+            includeToolStripMenuItem.Visible = advancedFiltering;
 
             var singleItem = _listView.SelectedUninstallerCount == 1;
 
@@ -1361,6 +1366,29 @@ namespace BulkCrapUninstaller.Forms
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _uninstaller.Modify(_listView.SelectedUninstallers);
+        }
+
+        private void excludeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddSelectedAsAdvancedFilters(true);
+        }
+
+        private void includeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddSelectedAsAdvancedFilters(false);
+        }
+
+        private void AddSelectedAsAdvancedFilters(bool exclude)
+        {
+            var selectedUninstallers = _listView.SelectedUninstallers;
+            var filters = advancedFilters1.CurrentList.Filters;
+
+            var existingFilters = filters.Where(x => selectedUninstallers.Any(y => x.Name == y.DisplayName));
+            filters.RemoveAll(existingFilters.ToList());
+
+            filters.AddRange(selectedUninstallers.Select(x => new Filter(x.DisplayName, exclude, new FilterCondition(x.DisplayName, ComparisonMethod.Equals,
+                    nameof(ApplicationUninstallerEntry.DisplayName)))));
+            advancedFilters1.RepopulateList();
         }
     }
 }
