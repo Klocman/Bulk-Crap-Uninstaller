@@ -2,14 +2,17 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.20.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.20/BCUninstaller_3.20_portable.zip</URL>
+<Version>3.21.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.21/BCUninstaller_3.21_portable.zip</URL>
 <Changes>
-Added a much more intelligent detection of duplicate application entries. Improves scan result quality
-Modified advanced filters toolbar to better show extra functions
-Disable the modify button on tool bar if the selected application can't be modified
-Fixed some loud NSIS uninstallers failing to start - on fail retry without anything fancy
+Added ability to automatically create backups in a specified directory
+Added ability to use manual uninstall from the bulk uninstall progress window
+Added context menu items to Exclude and Include uninstallers from advanced filters
+Fixed color legend not showing all colors if the setting sidebar is hidden
+Fixed ScanPreDefined setting not set as roaming
+Changed icon of manual uninstall
+Updated TaskScheduler library to 2.7.2
 </Changes>
-<Hash>4fd7c812bd2446b5ff325c58155a4d03</Hash>
+<Hash>b8ae3faf7767aafd90df8653454fe98b</Hash>
 </Update>
 </Root>
