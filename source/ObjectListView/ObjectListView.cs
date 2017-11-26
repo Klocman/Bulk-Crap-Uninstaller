@@ -1250,17 +1250,23 @@ namespace BrightIdeasSoftware
                 ArrayList list = new ArrayList();
                 if (this.CheckBoxes)
                 {
-                    foreach (OLVListItem olvi in this.Items)
+                    if(!VirtualMode)
                     {
-                        if (olvi.CheckState == CheckState.Checked)
-                            list.Add(olvi.RowObject);
+                        // Faster than index access, but doesn't work on virtual lists
+                        foreach (OLVListItem olvi in this.Items)
+                        {
+                            if (olvi.CheckState == CheckState.Checked)
+                                list.Add(olvi.RowObject);
+                        }
                     }
-                    /*
-                    for (int i = 0; i < this.GetItemCount(); i++) {
-                        OLVListItem olvi = this.GetItem(i);
-                        if (olvi.CheckState == CheckState.Checked)
-                            list.Add(olvi.RowObject);
-                    }*/
+                    else
+                    {
+                        for (int i = 0; i < this.GetItemCount(); i++) {
+                            OLVListItem olvi = this.GetItem(i);
+                            if (olvi.CheckState == CheckState.Checked)
+                                list.Add(olvi.RowObject);
+                        }
+                    }
                 }
                 return list;
             }
