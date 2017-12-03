@@ -72,6 +72,21 @@ namespace UninstallerAutomatizer
                         .OrderByDescending(x => x.StartTime).First();
                     app = Application.Attach(uninstallProcess);
                 }
+            }
+            catch (Exception e)
+            {
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e,
+                    uninstallerCommand, app?.Process ?? pr);
+            }
+
+            if (app != null)
+                AutomatizeApplication(app, statusCallback);
+        }
+
+        public static void AutomatizeApplication(Application app, Action<string> statusCallback)
+        {
+            try
+            {
                 statusCallback(string.Format(Localization.Message_Automation_AppAttached, app.Name));
 
                 WaitForApplication(app);
@@ -104,8 +119,7 @@ namespace UninstallerAutomatizer
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e,
-                    uninstallerCommand, app?.Process ?? pr);
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty, app?.Process);
             }
         }
 
