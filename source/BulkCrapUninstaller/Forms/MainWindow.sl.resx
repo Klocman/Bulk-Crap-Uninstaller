@@ -319,13 +319,13 @@
     <value>Ime programa</value>
   </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
-    <value>Koda izdelka / GUID</value>
+    <value>Koda izdelka/GUID</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
     <value>Polna registrska pot</value>
   </data>
   <data name="toolStripMenuItem13.Text" xml:space="preserve">
-    <value>Uninstall string</value>
+    <value>Niz za odstranjevanje</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>&amp;Kopiraj v odložišče...</value>
@@ -355,7 +355,7 @@
     <value>Osnov&amp;ne operacije</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>Odstrani &amp;ročno</value>
+    <value>&amp;Ročno odstrani &amp;ročno</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Namest&amp;i ali konfiguriraj (/I)</value>
@@ -367,7 +367,7 @@
     <value>&amp;Tiho odstrani (/X /qb)</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>Ods&amp;trani z uporabo MsiExec</value>
+    <value>Ods&amp;trani z MsiExec</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>P&amp;reimenuj...</value>
@@ -379,10 +379,10 @@
     <value>Iz&amp;briši registrski ključ</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Naredi &amp;varnostno kopijo...</value>
+    <value>Ustvari &amp;varnostno kopijo...</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Odpri  ključ z Regeditom</value>
+    <value>&amp;Odpri ključ z Regeditom</value>
   </data>
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Napredne operacije</value>
@@ -391,7 +391,7 @@
     <value>&amp;Čiščenje map "Programske datoteke"...</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Odpri Upravitelja zagona</value>
+    <value>Odpri upravitelja zagona</value>
   </data>
   <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
     <value>Odstrani &amp;Windows funkcije...</value>
@@ -466,19 +466,19 @@
     <value>Napredno...</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Ocena...</value>
+    <value>Oceni...</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>NadomestnoV</value>
+    <value>Neobvezno</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
   </data>
   <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
-    <value>NadomestnoV</value>
+    <value>Neobvezno za</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Odstrani iz imenika...</value>
@@ -496,7 +496,7 @@
     <value>Ogled posodobitev</value>
   </data>
   <data name="nukeMenuItem.Text" xml:space="preserve">
-    <value>Odstranitev po oknu, imeniku ali datoteki ...</value>
+    <value>Odstranitev  z oknom, imenikom ali datoteko...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
     <value>FossHub.com</value>
@@ -521,6 +521,19 @@
   </data>
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Spremeni</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Izključi</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vključi</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spremeni
+</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>

@@ -133,7 +133,7 @@
     <value>Ali želite pomagati?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo za pospešitev posodobitev ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
+    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo, da pospešite posodabljanje ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Pošlji povratno informacijo</value>

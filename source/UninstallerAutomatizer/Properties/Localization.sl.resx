@@ -117,65 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Stanje...</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Neveljavno število argumentov.</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Neznana vrsta odstranjevalca: {0}</value>
   </data>
-  <data name="olvColumnStatus.Text" xml:space="preserve">
-    <value>Stanje</value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Ne obstaja neveljavna pot ali aplikacija: {0}</value>
   </data>
-  <data name="olvColumnIsSilent.Text" xml:space="preserve">
-    <value>Tiho</value>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>Avtomatizacija {0} odstranjevalcev ni podprta.</value>
   </data>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Ime</value>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Samodejno odstranjevanje "{0}"</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Izbrani odstranjevalci bodo zdaj naenkrat izvedeni.
-Če se vam zdi, da se je postopek zataknil, lahko kliknite na gumb "Preskoči", da se boste izognili čakanju na njegovo dokončanje. To se lahko zgodi, če se odstranjevalec sesuje ali se začenja nov proces, in se ga ne da zapreti.</value>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>Uporabnik je preklical to operacijo.</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Vsebina tega seznama bo odstranjena od zgoraj navzdol.</value>
+  <data name="Message_Success" xml:space="preserve">
+    <value>Avtomatizacija je bila uspešna.</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seznam odstranjevalcev</value>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>Avtomatizacija odstranjevanja ni bila uspešna. Razlog: {0}</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Napredek odstranjevanja</value>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Izbira radijskega gumba, ki ni na črnem seznamu: {0}</value>
   </data>
-  <data name="toolStripButtonSkip.Text" xml:space="preserve">
-    <value>Preskoči</value>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Izbira znanega dobrega radijskega gumba: {0}</value>
   </data>
-  <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Zaženi odstranjevalca</value>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Najdeno je {0}  radijskih gumbov.</value>
   </data>
-  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
-    <value>Prekini</value>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>S klikom na gumb "{0}".</value>
+    <comment>{0} is button name</comment>
   </data>
-  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>Odpri mesto namestitve</value>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Pojavno okno je zaprto.</value>
   </data>
-  <data name="toolStripButtonProperties.Text" xml:space="preserve">
-    <value>Lastnosti</value>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Najdeno je pojavno okno - "{0}".</value>
   </data>
-  <data name="toolStripButtonSettings.Text" xml:space="preserve">
-    <value>Nastavitve</value>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Zaznano je bilo ponavljajoče se pojavno okno!</value>
   </data>
-  <data name="olvColumnId.Text" xml:space="preserve">
-    <value>Id</value>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Samodejna odstranitev ni uspela.</value>
   </data>
-  <data name="toolStripButtonHelp.Text" xml:space="preserve">
-    <value>Pomoč</value>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Okno je zaprto.</value>
   </data>
-  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
-    <value>Ročno odstrani</value>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Najdeno je okno "{0}".</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Iskanje oken...</value>
+  </data>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Pripeto v "{0}"</value>
+  </data>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>Čakanje, da NSIS odstranjevalec razširi...</value>
+  </data>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Postopek ni uspešno začet.</value>
+  </data>
 </root>

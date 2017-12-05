@@ -148,7 +148,7 @@
     <value>● Za iskanje posodobitev programa.</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>BCUninstaller lahko prisilite, da uporablja določen jezik, če je privzeti jezik napačen. Za začetek uporabe novega jezika bo opravljen ponoven zagon programa.</value>
+    <value>BCUninstaller lahko prisilite, da uporablja določen jezik, če je privzeti jezik napačen. Za začetek uporabe novega jezika bo opravljen ponovni zagon programa.</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
     <value>Zdaj lahko začnete uporabljati BCUninstaller. Če imate kakršna koli vprašanja ali, če želite predlagati nove funkcije, obiščite spodnjo povezavo.</value>
@@ -177,7 +177,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Uporabi</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>Neregistrirani aplikacije</value>
+    <value>Neregistrirane aplikacije</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>Sestavine sistema</value>
@@ -198,7 +198,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Pošiljanje teh statistik nam bo pomagalo izboljšati BCUninstaller.</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Ta čarovnik vam bo ponudil hiter ogled in pomagal nastaviti aplikacijo.</value>
+    <value>Ta čarovnik vam bo nudil hiter ogled in pomagal nastaviti aplikacijo.</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
     <value>Prikaži odstranjevalce v skupinah</value>
@@ -252,7 +252,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>BCUninstaller se lahko poskuša povezati z internetom iz naslednjih razlogov:</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>Medtem ko se BCUninstaller lahko uporablja kot osnovni odstranjevalec, je  večina njegovih funkcij namenjenih naprednejšim uporabnikom. Nadaljujte previdno!</value>
+    <value>Medtem, ko se BCUninstaller lahko uporablja kot osnovni odstranjevalec, je  večina njegovih funkcij namenjenih naprednejšim uporabnikom. Nadaljujte previdno!</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Izberi s pomočjo potrditvenih polj</value>
@@ -267,7 +267,7 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Ob zagonu aplikacije, samodejno preveri za posodobitve</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Neregistrirani aplikacije so označene z rdečo barvo.
+    <value>Neregistrirane aplikacije so označene z rdečo barvo.
 Če ni mogoče najti izvirnega odstranjevalca, boste morali uporabiti možnost "Odstrani ročno", da jih odstranite.</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
@@ -281,10 +281,11 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>● Razvrstite odstranjevalce po vsakem stolpcu. Prosto preuredite stolpce.</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
-    <value>● Grupirajte podobne odstranjevalce</value>
+    <value>● Grupiraj podobne odstranjevalce</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ulk crap uninstaller</value>
+    <value>ulk crap
+uninstaller</value>
     <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
@@ -309,10 +310,10 @@ Opozorilo: Preverjanje lahko traja dlje časa.</value>
     <value>Omogoči uporabnikovo ocenjevanje aplikacije</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Ogled Pomoči</value>
+    <value>Prikaz pomoči</value>
   </data>
   <data name="labelProgress.Text" xml:space="preserve">
-    <value>1 / 6</value>
+    <value>1/6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

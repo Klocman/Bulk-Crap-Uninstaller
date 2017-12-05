@@ -121,9 +121,9 @@
     <value>Prikaži sistemske sestavine</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Prikaz aplikacij, ki nimajo nobene registrirane odstranjevalce. Ti niso vidni v večini upraviteljev odstranjevanja a še vedno zasedajo prostor. Neregistrirani vnosi so označeni z rdečo barvo.
+    <value>Prikaz aplikacij, ki nimajo nobene registrirane odstranjevalce. Ti niso vidni v večini upraviteljev odstranjevanja toda še vedno zasedejo prostor. Neregistrirani vnosi so označeni z rdečo barvo.
 
-Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še vedno potrebne!</value>
+Opozorilo: Dvakrat preverite pred odstranjevanjem teh aplikacij, ki so morda še vedno potrebne!</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtriranje</value>
@@ -141,14 +141,14 @@ Opozorilo: Dvakrat preverite pred odstranitvijo teh aplikacij, ki so morda še v
     <value>Posodobitve drugih aplikacij. Ponavadi so te odstranjene skupaj z nadrejeno aplikacijo, tako da jih je mogoče prezreti.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Prikaži neregistrirani aplikacije</value>
+    <value>Prikaži neregistrirane aplikacije</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Nekateri odstranjevalci so lahko označeni kot "sestavine sistema", za njihovo skrivanje s seznama Dodaj/odstrani program. 
+    <value>Nekateri odstranjevalci so lahko označeni kot "sestavine sistema". Za njihovo skrivanje s seznama Dodaj/odstrani program. 
 Gonilnikii so pogosto označeni s to oznako.</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Spremeni izbiro sloga seznama potrditvenih polj. So varnejše, ker en klik ne more počistiti vsega.
+    <value>Spremeni izbor sloga seznama potrditvenih polj. Varnejše je, ker en klik ne more počistiti vsega.
 
 Lahko označite več vnosov tako, da jih označite in pritisnete na preslednico.</value>
   </data>
@@ -163,7 +163,7 @@ Lahko označite več vnosov tako, da jih označite in pritisnete na preslednico.
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Uporabi barve za označevanje potrjenih odstranjevalcev.
-Če je bilo digitalno potrdilo uspešno preverjeno, uporabi zeleno barvo, sicer uporabio modro barvo.
+Če je bilo digitalno potrdilo uspešno preverjeno, uporabi zeleno barvo, sicer uporabi modro barvo.
 
 Opozorilo: Konec preverjanja lahko traja dolgo časa.</value>
   </data>

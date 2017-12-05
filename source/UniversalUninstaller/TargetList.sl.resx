@@ -117,65 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Stanje...</value>
+  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
+    <value>Izberi vse</value>
   </data>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="toolStripButtonExpand.Text" xml:space="preserve">
+    <value>Razširi vse</value>
   </data>
-  <data name="olvColumnStatus.Text" xml:space="preserve">
-    <value>Stanje</value>
-  </data>
-  <data name="olvColumnIsSilent.Text" xml:space="preserve">
-    <value>Tiho</value>
+  <data name="toolStripButtonCollapse.Text" xml:space="preserve">
+    <value>Strni vse</value>
   </data>
   <data name="olvColumnName.Text" xml:space="preserve">
     <value>Ime</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Izbrani odstranjevalci bodo zdaj naenkrat izvedeni.
-Če se vam zdi, da se je postopek zataknil, lahko kliknite na gumb "Preskoči", da se boste izognili čakanju na njegovo dokončanje. To se lahko zgodi, če se odstranjevalec sesuje ali se začenja nov proces, in se ga ne da zapreti.</value>
+  <data name="olvColumnSize.Text" xml:space="preserve">
+    <value>Velikost</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Vsebina tega seznama bo odstranjena od zgoraj navzdol.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seznam odstranjevalcev</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Napredek odstranjevanja</value>
-  </data>
-  <data name="toolStripButtonSkip.Text" xml:space="preserve">
-    <value>Preskoči</value>
-  </data>
-  <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>Zaženi odstranjevalca</value>
-  </data>
-  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
-    <value>Prekini</value>
-  </data>
-  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>Odpri mesto namestitve</value>
-  </data>
-  <data name="toolStripButtonProperties.Text" xml:space="preserve">
-    <value>Lastnosti</value>
-  </data>
-  <data name="toolStripButtonSettings.Text" xml:space="preserve">
-    <value>Nastavitve</value>
-  </data>
-  <data name="olvColumnId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="toolStripButtonHelp.Text" xml:space="preserve">
-    <value>Pomoč</value>
-  </data>
-  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
-    <value>Ročno odstrani</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
