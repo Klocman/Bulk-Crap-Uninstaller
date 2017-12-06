@@ -1170,7 +1170,7 @@
       <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
       <Name>ObjectListView2012</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.vbproj">
+    <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.csproj">
       <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>
       <Name>PortableSettingsProvider</Name>
     </ProjectReference>

@@ -148,12 +148,18 @@ namespace UninstallerAutomatizer
                                     catch (Exception ex)
                                     {
                                         OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal,
-                                            string.Format(Localization.Message_UninstallFailed, ex.InnerException?.Message ?? ex.Message)));
+                                            string.Format(Localization.Message_UninstallFailed,
+                                                ex.InnerException?.Message ?? ex.Message)));
+                                    }
+                                    finally
+                                    {
+                                        lock (_runningHooks)
+                                        {
+                                            _runningHooks.Remove(pid);
+                                        }
                                     }
                                 });
-
-                                t.Start();
-
+                                
                                 _runningHooks.Add(pid, t);
                             }
                         }
