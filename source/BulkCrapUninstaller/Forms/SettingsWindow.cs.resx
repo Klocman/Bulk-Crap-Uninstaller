@@ -193,7 +193,7 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
     <value>BCUninstaller Nastavení</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automaticky otevřený seznam "Default.xml" na startu</value>
+    <value>Automaticky otevřený seznam "Default.bcul" na startu</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Aktivovat uživatelských ratingy aplikací</value>

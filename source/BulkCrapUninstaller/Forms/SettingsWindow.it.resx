@@ -124,7 +124,7 @@
     <value>Riga di comando quando la disinstallazione termina</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Carica automaticamente la lista di disinstallazione "Default.xml" all'avvio</value>
+    <value>Carica automaticamente la lista di disinstallazione "Default.bcul" all'avvio</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Cerca aggiornamenti all'avvio</value>

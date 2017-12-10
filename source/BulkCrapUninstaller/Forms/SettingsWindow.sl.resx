@@ -124,7 +124,7 @@
     <value>Ukazna vrstica po koncu odstranjevanja</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Ob zagonu, samodejno naloži seznam odstranjevanja "Default.xml"</value>
+    <value>Ob zagonu, samodejno naloži seznam odstranjevanja "Default.bcul"</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Ob zagonu, pošči posodobitve</value>

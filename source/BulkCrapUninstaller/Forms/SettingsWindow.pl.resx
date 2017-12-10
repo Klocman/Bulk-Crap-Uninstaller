@@ -193,7 +193,7 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
     <value>Foldery</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automatycznie otwórz listę "Default.xml" na starcie</value>
+    <value>Automatycznie otwórz listę "Default.bcul" na starcie</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Włącz oceny użytkowników dla aplikacji</value>
