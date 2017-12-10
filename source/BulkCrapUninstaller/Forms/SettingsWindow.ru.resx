@@ -124,7 +124,7 @@
     <value>Командная строка после деинсталляции</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Автозагрузка списка деинсталляции "Default.xml" при запуске</value>
+    <value>Автозагрузка списка деинсталляции "Default.bcul" при запуске</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Поиск обновлений при запуске</value>

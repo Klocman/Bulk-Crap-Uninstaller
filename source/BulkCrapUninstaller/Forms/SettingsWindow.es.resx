@@ -130,7 +130,7 @@
     <value>Línea de comando después de que la desinstalación finalice</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Cargar automáticamente la lista de desinstalación llamada "Default.xml" al iniciar</value>
+    <value>Cargar automáticamente la lista de desinstalación llamada "Default.bcul" al iniciar</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Activar calificaciones de las aplicaciones</value>

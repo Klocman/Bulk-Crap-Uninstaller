@@ -124,7 +124,7 @@
     <value>Linha de comando após o fim da desinstalação</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Carregamento automático no início da lista de desinstalação "default.xml".</value>
+    <value>Carregamento automático no início da lista de desinstalação "Default.bcul".</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Verificar actualizações no arranque.</value>
