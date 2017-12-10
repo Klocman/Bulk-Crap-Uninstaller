@@ -19,6 +19,9 @@ namespace UninstallTools
             if (AssemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 AssemblyLocation = PathTools.GetDirectory(AssemblyLocation);
 
+            UninstallerAutomatizerPath = Path.Combine(AssemblyLocation, @"UninstallerAutomatizer.exe");
+            UninstallerAutomatizerExists = File.Exists(UninstallerAutomatizerPath);
+
             QuestionableDirectoryNames = new[]
             {
                 "install", "settings", "config", "configuration", "users", "data"
@@ -54,7 +57,7 @@ namespace UninstallTools
             if (!string.IsNullOrEmpty(appDataParentDir))
             {
                 var lowDir = Path.Combine(appDataParentDir, "LocalLow");
-                if(Directory.Exists(lowDir))
+                if (Directory.Exists(lowDir))
                     paths.Add(lowDir);
             }
 
@@ -118,6 +121,11 @@ namespace UninstallTools
         public static bool ScanRegistry { get; set; }
         public static bool ScanDrives { get; set; }
         public static bool ScanPreDefined { get; set; }
+
+        /// <summary>
+        /// TODO hook up
+        /// </summary>
+        public static bool UseQuietUninstallDaemon { get; set; } = true;
 
         /// <summary>
         ///     Directiories containing programs, both built in "Program Files" and user-defined ones. Fast.
@@ -199,5 +207,8 @@ namespace UninstallTools
             }
             return null;
         }
+
+        public static string UninstallerAutomatizerPath { get; }
+        public static bool UninstallerAutomatizerExists { get; }
     }
 }

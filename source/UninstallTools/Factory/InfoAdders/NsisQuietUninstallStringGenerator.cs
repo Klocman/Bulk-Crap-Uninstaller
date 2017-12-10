@@ -10,19 +10,16 @@ namespace UninstallTools.Factory.InfoAdders
 {
     public class NsisQuietUninstallStringGenerator : IMissingInfoAdder
     {
-        private static readonly string UninstallerAutomatizerPath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"UninstallerAutomatizer.exe");
-        private static readonly bool UninstallerAutomatizerExists = File.Exists(UninstallerAutomatizerPath);
-
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
             if (target.QuietUninstallPossible || target.UninstallerKind != UninstallerType.Nsis ||
                 string.IsNullOrEmpty(target.UninstallString))
                 return;
 
-            if (!UninstallToolsGlobalConfig.QuietAutomatization || !UninstallerAutomatizerExists)
+            if (!UninstallToolsGlobalConfig.QuietAutomatization || !UninstallToolsGlobalConfig.UninstallerAutomatizerExists)
                 return;
 
-            var nsisCommandStart = $"\"{UninstallerAutomatizerPath}\" {nameof(UninstallerType.Nsis)} ";
+            var nsisCommandStart = $"\"{UninstallToolsGlobalConfig.UninstallerAutomatizerPath}\" {nameof(UninstallerType.Nsis)} ";
 
             nsisCommandStart = nsisCommandStart.AppendIf(UninstallToolsGlobalConfig.QuietAutomatizationKillStuck, "/K ");
 
