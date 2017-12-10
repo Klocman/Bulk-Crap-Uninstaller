@@ -4,6 +4,8 @@
 */
 
 using System;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace UninstallerAutomatizer
@@ -21,7 +23,11 @@ namespace UninstallerAutomatizer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new MainWindow());
+            var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            using (LogWriter.StartLogging(Path.Combine(dir ?? string.Empty, "UninstallerAutomatizer.log")))
+            {
+                Application.Run(new MainWindow());
+            }
 
             return (int)ReturnValue;
         }
