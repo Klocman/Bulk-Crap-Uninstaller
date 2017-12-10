@@ -27,7 +27,6 @@ namespace UninstallerAutomatizer
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                LogWriter.WriteMessageToLog(e.ToString());
             }
 
             _timeSinceStart = Process.GetCurrentProcess().StartTime.ToUniversalTime();
@@ -62,9 +61,6 @@ namespace UninstallerAutomatizer
                 textBoxStatus.AppendText(fullMessage);
 
                 Console.WriteLine(fullMessage);
-
-                if(updateKind == UninstallHandlerUpdateKind.Failed)
-                    LogWriter.WriteMessageToLog(message);
             }
 
             switch (updateKind)
