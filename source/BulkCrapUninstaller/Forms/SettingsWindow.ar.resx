@@ -127,7 +127,7 @@
     <value>misc.5</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>في البداية "Default.xml"تحميل تلقائيا قائمه الغاء التثبيت المسمى  </value>
+    <value>في البداية "Default.bcul"تحميل تلقائيا قائمه الغاء التثبيت المسمى  </value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>البحث عن التحديثات عند بدء التشغيل</value>

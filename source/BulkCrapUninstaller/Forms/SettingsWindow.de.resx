@@ -195,7 +195,7 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
     <value>Programm Installationsordner</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automatisch offene Liste "Default.xml" beim Start</value>
+    <value>Automatisch offene Liste "Default.bcul" beim Start</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Aktivieren nutzerbewertungen von Applikationen</value>

@@ -121,7 +121,7 @@
     <value>Div.</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Automatisch openen lijst "Default.xml" tijdens het starten</value>
+    <value>Automatisch openen lijst "Default.bcul" tijdens het starten</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Zoeken naar updates tijdens het starten</value>
