@@ -259,9 +259,10 @@ namespace UninstallTools.Uninstaller
                 case UninstallerType.StoreApp:
                 case UninstallerType.SimpleDelete:
                     break;
+
                 default:
                     Debug.Fail("Unhandled UninstallerType - " + target);
-                    break;
+                    goto case UninstallerType.Unknown;
             }
 
             foreach (var item in running)
