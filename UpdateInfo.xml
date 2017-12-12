@@ -2,17 +2,18 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.21.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.21/BCUninstaller_3.21_portable.zip</URL>
+<Version>3.22.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.22/BCUninstaller_3.22_portable.zip</URL>
 <Changes>
-Added ability to automatically create backups in a specified directory
-Added ability to use manual uninstall from the bulk uninstall progress window
-Added context menu items to Exclude and Include uninstallers from advanced filters
-Fixed color legend not showing all colors if the setting sidebar is hidden
-Fixed ScanPreDefined setting not set as roaming
-Changed icon of manual uninstall
-Updated TaskScheduler library to 2.7.2
+Added proper logging to uninstaller automatizer
+Added daemon mode to uninstall automatizer, not used for now
+Fixed crash when using a virtual list with checkboxes caused by a performance optimization
+Fixed some possible crashes in UniversalUninstaller
+Merged update to Slovenian translation by Jadran
+Changed default list extension from .xml to .bcul in settings
+Updated ProtableSettingsProvider to latest version
+In case of unknown uninstaller type CheckForTypeCollisions assumes worst case
 </Changes>
-<Hash>b8ae3faf7767aafd90df8653454fe98b</Hash>
+<Hash>a66bf874219bc45a9a3008cea693c5e2</Hash>
 </Update>
 </Root>
