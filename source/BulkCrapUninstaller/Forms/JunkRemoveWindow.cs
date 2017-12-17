@@ -19,6 +19,7 @@ using Klocman.Forms.Tools;
 using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
+using UninstallTools.Junk;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 
@@ -393,9 +394,24 @@ namespace BulkCrapUninstaller.Forms
             _listViewWrapper = new TypedObjectListView<IJunkResult>(objectListViewMain);
 
             olvColumnSafety.AspectGetter = x => (x as IJunkResult)?.Confidence.GetConfidence().GetLocalisedName();
-            olvColumnPath.GroupKeyGetter = x => (x as IJunkResult)?.Source.CategoryName ?? CommonStrings.Unknown;
+            olvColumnPath.GroupKeyGetter = x => (x as IJunkResult)?.Source?.CategoryName ?? CommonStrings.Unknown;
             olvColumnPath.AspectGetter = rowObject => (rowObject as IJunkResult)?.GetDisplayName();
-            olvColumnUninstallerName.AspectGetter = rowObject => (rowObject as IJunkResult)?.Application.DisplayName;
+            olvColumnUninstallerName.AspectGetter = rowObject =>
+            {
+                var junkResult = rowObject as IJunkResult;
+                if (junkResult == null)
+                    return null;
+
+                var displayName = junkResult.Application?.DisplayName;
+                if (!string.IsNullOrEmpty(displayName))
+                    return displayName;
+
+                var categoryName = junkResult.Source?.CategoryName;
+                if (!string.IsNullOrEmpty(categoryName))
+                    return categoryName;
+
+                return Localisable.NotAvailable;
+            };
 
             objectListViewMain.BeginUpdate();
 
