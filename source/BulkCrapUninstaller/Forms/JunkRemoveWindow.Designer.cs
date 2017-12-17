@@ -36,7 +36,6 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JunkRemoveWindow));
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.backupDirDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
@@ -72,10 +71,6 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.exportDialog, "exportDialog");
             this.exportDialog.RestoreDirectory = true;
             this.exportDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportDialog_FileOk);
-            // 
-            // backupDirDialog
-            // 
-            resources.ApplyResources(this.backupDirDialog, "backupDirDialog");
             // 
             // buttonCancel
             // 
@@ -262,7 +257,6 @@ namespace BulkCrapUninstaller.Forms
         #endregion
 
         private SaveFileDialog exportDialog;
-        private FolderBrowserDialog backupDirDialog;
         private Button buttonCancel;
         private Button buttonAccept;
         private Button buttonExport;

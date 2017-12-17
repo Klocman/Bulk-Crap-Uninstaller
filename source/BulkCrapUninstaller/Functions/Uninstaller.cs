@@ -17,6 +17,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Factory.InfoAdders;
@@ -514,25 +515,21 @@ namespace BulkCrapUninstaller.Functions
 
             try
             {
-                var dialog = new FolderBrowserDialog
-                {
-                    RootFolder = Environment.SpecialFolder.Desktop,
-                    Description = Localisable.UninstallFromDirectory_FolderBrowse
-                };
+                var result = MessageBoxes.SelectFolder(Localisable.UninstallFromDirectory_FolderBrowse);
 
-                if (dialog.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK) return;
+                if (result == null) return;
 
                 var items = new List<ApplicationUninstallerEntry>();
                 LoadingDialog.ShowDialog(MessageBoxes.DefaultOwner, Localisable.UninstallFromDirectory_ScanningTitle,
                     _ =>
                     {
                         items.AddRange(DirectoryFactory.TryCreateFromDirectory(
-                            new DirectoryInfo(dialog.SelectedPath), null, new string[] { }));
+                            new DirectoryInfo(result), null, new string[] { }));
                     });
 
                 if (items.Count == 0)
                     items.AddRange(applicationUninstallerEntries
-                        .Where(x => PathTools.PathsEqual(dialog.SelectedPath, x.InstallLocation)));
+                        .Where(x => PathTools.PathsEqual(result, x.InstallLocation)));
 
                 if (items.Count == 0)
                     MessageBoxes.UninstallFromDirectoryNothingFound();

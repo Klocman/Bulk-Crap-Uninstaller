@@ -62,73 +62,81 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.Path.FullName).Distinct().ToArray();
-            if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
-                return;
-
-            if (SelectedJunk.Any(x => !(x is FileSystemJunk)))
+            Enabled = false;
+            try
             {
-                if (Settings.Default.BackupLeftovers == YesNoAsk.Ask)
+                var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.Path.FullName).Distinct().ToArray();
+                if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
+                    return;
+
+                if (SelectedJunk.Any(x => !(x is FileSystemJunk)))
                 {
-                    switch (MessageBoxes.BackupRegistryQuestion(this))
+                    if (Settings.Default.BackupLeftovers == YesNoAsk.Ask)
                     {
-                        case MessageBoxes.PressedButton.Yes:
-                            if (backupDirDialog.ShowDialog() != DialogResult.OK)
-                                return;
-
-                            try
-                            {
-                                CreateBackup(backupDirDialog.SelectedPath);
-                                Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
-                            }
-                            catch (OperationCanceledException)
-                            {
-                                goto case MessageBoxes.PressedButton.Yes;
-                            }
-
-                            break;
-
-                        case MessageBoxes.PressedButton.No:
-                            break;
-
-                        default:
-                            return;
-                    }
-                }
-                else if (Settings.Default.BackupLeftovers == YesNoAsk.Yes)
-                {
-                    while (true)
-                    {
-                        var path = Settings.Default.BackupLeftoversDirectory;
-
-                        if (Directory.Exists(path))
+                        switch (MessageBoxes.BackupRegistryQuestion(this))
                         {
-                            try
-                            {
-                                CreateBackup(backupDirDialog.SelectedPath);
-                                Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
+                            case MessageBoxes.PressedButton.Yes:
+                                var path = MessageBoxes.SelectFolder(
+                                    Localisable.JunkRemoveWindow_SelectBackupDirectoryTitle);
+
+                                if (string.IsNullOrEmpty(path))
+                                    return;
+
+                                try
+                                {
+                                    CreateBackup(path);
+                                    Settings.Default.BackupLeftoversDirectory = path;
+                                }
+                                catch (OperationCanceledException)
+                                {
+                                    goto case MessageBoxes.PressedButton.Yes;
+                                }
+
                                 break;
-                            }
-                            catch (OperationCanceledException)
-                            {
-                            }
-                        }
 
-                        if (backupDirDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            Settings.Default.BackupLeftoversDirectory = backupDirDialog.SelectedPath;
+                            case MessageBoxes.PressedButton.No:
+                                break;
+
+                            default:
+                                return;
                         }
-                        else
+                    }
+                    else if (Settings.Default.BackupLeftovers == YesNoAsk.Yes)
+                    {
+                        while (true)
                         {
-                            Settings.Default.BackupLeftovers = YesNoAsk.Ask;
-                            return;
+                            if (Directory.Exists(Settings.Default.BackupLeftoversDirectory))
+                            {
+                                try
+                                {
+                                    CreateBackup(Settings.Default.BackupLeftoversDirectory);
+                                    break;
+                                }
+                                catch (OperationCanceledException)
+                                {
+                                }
+                            }
+
+                            Settings.Default.BackupLeftoversDirectory = 
+                                MessageBoxes.SelectFolder(Localisable.JunkRemoveWindow_SelectBackupDirectoryTitle);
+
+                            if (string.IsNullOrEmpty(Settings.Default.BackupLeftoversDirectory))
+                            {
+                                Settings.Default.BackupLeftoversDirectory = string.Empty;
+                                Settings.Default.BackupLeftovers = YesNoAsk.Ask;
+                                return;
+                            }
                         }
                     }
                 }
-            }
 
-            DialogResult = DialogResult.OK;
-            Close();
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            finally
+            {
+                Enabled = true;
+            }
         }
 
         private void CreateBackup(string backupPath)
@@ -306,7 +314,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (e.Model == null)
                 return;
-            
+
             EnsureSingleSelection(e.Item);
 
             e.MenuStrip = listViewContextMenuStrip;

@@ -59,15 +59,15 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.fileTargeter1);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // fileTargeter1
             // 
-            resources.ApplyResources(this.fileTargeter1, "fileTargeter1");
             this.fileTargeter1.AllowDrop = true;
+            resources.ApplyResources(this.fileTargeter1, "fileTargeter1");
             this.fileTargeter1.Name = "fileTargeter1";
             // 
             // flowLayoutPanel1
@@ -104,8 +104,8 @@
             // 
             // NukeWindow
             // 
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -120,7 +120,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

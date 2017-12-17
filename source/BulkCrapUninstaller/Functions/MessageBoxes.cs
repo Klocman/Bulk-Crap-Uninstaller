@@ -16,6 +16,7 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.UpdateSystem;
 using Klocman.Tools;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -653,6 +654,36 @@ namespace BulkCrapUninstaller.Functions
 
                 default:
                     return PressedButton.Cancel;
+            }
+        }
+
+        public static string SelectFolder(string title)
+        {
+            try
+            {
+                var dialog = new CommonOpenFileDialog
+                {
+                    IsFolderPicker = true,
+                    AllowNonFileSystemItems = false,
+                    Multiselect = false,
+                    Title = title,
+                    ShowHiddenItems = true
+                };
+
+                return dialog.ShowDialog() == CommonFileDialogResult.Ok ? dialog.FileName : null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+                var dialog = new FolderBrowserDialog
+                {
+                    RootFolder = Environment.SpecialFolder.Desktop,
+                    Description = title,
+                    ShowNewFolderButton = false
+                };
+
+                return dialog.ShowDialog() == DialogResult.OK ? dialog.SelectedPath : null;
             }
         }
     }
