@@ -6,10 +6,10 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using Klocman.Extensions;
+using Klocman.Tools;
 
 namespace UninstallerAutomatizer
 {
@@ -22,7 +22,7 @@ namespace UninstallerAutomatizer
 
             try
             {
-                Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+                Icon = DrawingTools.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
             }
             catch (Exception e)
             {

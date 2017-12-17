@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using Klocman.Forms;
+using Klocman.Tools;
 using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
@@ -18,7 +19,7 @@ namespace UniversalUninstaller
 
             try
             {
-                Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+                Icon = DrawingTools.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
             }
             catch (Exception ex)
             {
