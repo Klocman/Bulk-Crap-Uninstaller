@@ -19,7 +19,6 @@ using Klocman.Forms.Tools;
 using Klocman.Localising;
 using Klocman.Resources;
 using Klocman.Tools;
-using UninstallTools.Junk;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 
@@ -307,13 +306,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (e.Model == null)
                 return;
-
-            /*if (objectListViewMain.CheckBoxes && !objectListViewMain.IsChecked(e.Model))
-            {
-                objectListViewMain.UncheckAll();
-                objectListViewMain.CheckObject(e.Model);
-            }*/
-
+            
             EnsureSingleSelection(e.Item);
 
             e.MenuStrip = listViewContextMenuStrip;

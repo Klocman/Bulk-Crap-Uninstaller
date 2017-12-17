@@ -63,7 +63,7 @@ namespace UninstallTools.Junk.Finders.Drive
                 if (appExecutables.Any(x => x.StartsWith(filename, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     var node = new FileSystemJunk(new DirectoryInfo(reportPath),target, this);
-                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     yield return node;
                 }
             }

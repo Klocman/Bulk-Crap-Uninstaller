@@ -20,7 +20,7 @@ namespace UninstallTools.Junk.Finders.Drive
             if (resultNode != null)
             {
                 if (target.UninstallerKind == UninstallerType.StoreApp)
-                    resultNode.Confidence.Add(ConfidenceRecord.IsStoreApp);
+                    resultNode.Confidence.Add(ConfidenceRecords.IsStoreApp);
                 yield return resultNode;
             }
         }

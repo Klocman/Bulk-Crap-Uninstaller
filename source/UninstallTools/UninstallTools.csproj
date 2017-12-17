@@ -89,6 +89,7 @@
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
     <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />
     <Compile Include="Junk\Confidence\ConfidenceRecord.cs" />
+    <Compile Include="Junk\Confidence\ConfidenceRecords.cs" />
     <Compile Include="Junk\Containers\FileSystemJunk.cs" />
     <Compile Include="Junk\Containers\JunkResultBase.cs" />
     <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />

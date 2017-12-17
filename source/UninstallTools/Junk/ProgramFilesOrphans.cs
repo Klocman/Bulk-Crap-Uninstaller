@@ -18,27 +18,6 @@ namespace UninstallTools.Junk
 {
     public class ProgramFilesOrphans : IJunkCreator
     {
-        public static readonly ConfidenceRecord ConfidenceEmptyFolder = new ConfidenceRecord(4,
-            Localisation.Confidence_PF_EmptyFolder);
-
-        public static readonly ConfidenceRecord ConfidenceExecsPresent = new ConfidenceRecord(-4,
-            Localisation.Confidence_PF_ExecsPresent);
-
-        public static readonly ConfidenceRecord ConfidenceFilesPresent = new ConfidenceRecord(0,
-            Localisation.Confidence_PF_FilesPresent);
-
-        public static readonly ConfidenceRecord ConfidenceManyFilesPresent = new ConfidenceRecord(-2,
-            Localisation.Confidence_PF_ManyFilesPresent);
-
-        public static readonly ConfidenceRecord ConfidenceNameIsUsed = new ConfidenceRecord(-4,
-            Localisation.Confidence_PF_NameIsUsed);
-
-        public static readonly ConfidenceRecord ConfidenceNoSubdirs = new ConfidenceRecord(2,
-            Localisation.Confidence_PF_NoSubdirs);
-
-        public static readonly ConfidenceRecord ConfidencePublisherIsUsed = new ConfidenceRecord(-4,
-            Localisation.Confidence_PF_PublisherIsUsed);
-
         private string[] _otherInstallLocations;
         private string[] _otherNames;
         private string[] _otherPublishers;
@@ -95,17 +74,17 @@ namespace UninstallTools.Junk
                     {
                         // No executables, MAYBE safe to remove
                         // Executables present, bad idea to remove
-                        resultRecord = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
+                        resultRecord = allFilesContainExe ? ConfidenceRecords.ExecutablesArePresent : ConfidenceRecords.FilesArePresent;
                     }
                     else if (!allFiles.Any())
                     {
                         // Empty folder, safe to remove
-                        resultRecord = ConfidenceEmptyFolder;
+                        resultRecord = ConfidenceRecords.IsEmptyFolder;
                     }
                     else
                     {
                         // This folder is empty, but insides contain stuff
-                        resultRecord = allFilesContainExe ? ConfidenceExecsPresent : ConfidenceFilesPresent;
+                        resultRecord = allFilesContainExe ? ConfidenceRecords.ExecutablesArePresent : ConfidenceRecords.FilesArePresent;
 
                         if (level < 1 && !questionableDirName && !nameIsUsed)
                         {
@@ -119,22 +98,22 @@ namespace UninstallTools.Junk
                     newNode.Confidence.Add(resultRecord);
 
                     if (subDirectory.Name.ContainsAny(_otherPublishers, StringComparison.CurrentCultureIgnoreCase))
-                        newNode.Confidence.Add(ConfidencePublisherIsUsed);
+                        newNode.Confidence.Add(ConfidenceRecords.PublisherIsStillUsed);
 
                     if (nameIsUsed)
-                        newNode.Confidence.Add(ConfidenceNameIsUsed);
+                        newNode.Confidence.Add(ConfidenceRecords.ProgramNameIsStillUsed);
 
                     if (questionableDirName)
-                        newNode.Confidence.Add(ConfidenceRecord.QuestionableDirectoryName);
+                        newNode.Confidence.Add(ConfidenceRecords.QuestionableDirectoryName);
 
                     if (allFiles.Length > 100)
-                        newNode.Confidence.Add(ConfidenceManyFilesPresent);
+                        newNode.Confidence.Add(ConfidenceRecords.ManyFilesArePresent);
 
                     // Remove 2 points for every sublevel
                     newNode.Confidence.Add(level * -2);
 
                     if (!subDirectory.GetDirectories().Any())
-                        newNode.Confidence.Add(ConfidenceNoSubdirs);
+                        newNode.Confidence.Add(ConfidenceRecords.FolderHasNoSubdirectories);
 
                     returnList.Add(newNode);
                 }

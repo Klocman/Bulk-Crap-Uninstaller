@@ -103,7 +103,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 if (SubPathIsInsideBasePath(target.InstallLocation, entry.Value))
                 {
                     var node = new RegistryKeyJunk(entry.Key, target, this);
-                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     results.Add(node);
                 }
             }

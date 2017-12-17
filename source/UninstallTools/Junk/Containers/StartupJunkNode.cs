@@ -15,7 +15,7 @@ namespace UninstallTools.Junk.Containers
 {
     public class StartupJunkNode : JunkResultBase
     {
-        public static readonly ConfidenceRecord ConfidenceIsRunOnce =
+        public static readonly ConfidenceRecord ConfidenceStartupIsRunOnce =
             new ConfidenceRecord(-5, Localisation.Confidence_Startup_IsRunOnce);
 
         public static readonly ConfidenceRecord ConfidenceStartupMatched =
@@ -60,7 +60,7 @@ namespace UninstallTools.Junk.Containers
             {
                 // If the entry is RunOnce, give it some negative points to keep it out of automatic removal.
                 // It might be used to clean up after uninstall on next boot.
-                Confidence.Add(ConfidenceIsRunOnce);
+                Confidence.Add(ConfidenceStartupIsRunOnce);
             }
         }
     }

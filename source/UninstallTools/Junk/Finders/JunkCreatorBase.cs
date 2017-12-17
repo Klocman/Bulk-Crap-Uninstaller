@@ -57,10 +57,10 @@ namespace UninstallTools.Junk.Finders
                     return null;
 
                 var newNode = new FileSystemJunk(dirInfo, app, this);
-                newNode.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                newNode.Confidence.Add(ConfidenceRecords.ExplicitConnection);
 
                 if (CheckIfDirIsStillUsed(dirInfo.FullName, otherInstallLocations))
-                    newNode.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
+                    newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                 return newNode;
             }

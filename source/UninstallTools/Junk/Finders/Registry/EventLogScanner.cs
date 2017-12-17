@@ -40,10 +40,10 @@ namespace UninstallTools.Junk.Finders.Registry
 
                         var node = new RegistryKeyJunk(subkey.Name, target, this);
                         // Already matched names above
-                        node.Confidence.Add(ConfidenceRecord.ProductNamePerfectMatch);
+                        node.Confidence.Add(ConfidenceRecords.ProductNamePerfectMatch);
 
                         if (otherUninstallers.Any(x => SubPathIsInsideBasePath(x.InstallLocation, Path.GetDirectoryName(exePath))))
-                            node.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
+                            node.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                         yield return node;
                     }

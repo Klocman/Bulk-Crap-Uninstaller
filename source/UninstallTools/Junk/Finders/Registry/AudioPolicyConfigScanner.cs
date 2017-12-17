@@ -53,7 +53,7 @@ namespace UninstallTools.Junk.Finders.Registry
                             defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryKeyJunk(subKey.Name, target, this);
-                            junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                            junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                             returnList.Add(junk);
                         }
                     }

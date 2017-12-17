@@ -30,20 +30,20 @@ namespace UninstallTools.Junk.Confidence
                 yield break;
 
             yield return similarityToEntry < 2
-                ? ConfidenceRecord.ProductNamePerfectMatch
-                : ConfidenceRecord.ProductNameDodgyMatch;
+                ? ConfidenceRecords.ProductNamePerfectMatch
+                : ConfidenceRecords.ProductNameDodgyMatch;
 
             // Base rating according to path depth. 0 is best
             yield return new ConfidenceRecord(2 - Math.Abs(level) * 2);
 
             if (ItemNameEqualsCompanyName(applicationUninstallerEntry, itemName))
-                yield return ConfidenceRecord.ItemNameEqualsCompanyName;
+                yield return ConfidenceRecords.ItemNameEqualsCompanyName;
 
             if (level > 0)
             {
                 if (applicationUninstallerEntry.PublisherTrimmed.ToLowerInvariant()
                     .Contains(PathTools.GetName(itemParentPath).Replace('_', ' ').ToLowerInvariant()))
-                    yield return ConfidenceRecord.CompanyNameMatch;
+                    yield return ConfidenceRecords.CompanyNameMatch;
             }
         }
 

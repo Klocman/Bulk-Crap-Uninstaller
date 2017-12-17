@@ -54,7 +54,7 @@ namespace UninstallTools.Junk.Finders.Drive
                 foreach (var fileSystemInfo in matchedItems)
                 {
                     var junk = new FileSystemJunk(fileSystemInfo, target, this);
-                    junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     yield return junk;
                 }
             }

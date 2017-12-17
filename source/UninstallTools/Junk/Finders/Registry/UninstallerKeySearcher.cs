@@ -73,7 +73,7 @@ namespace UninstallTools.Junk.Finders.Registry
             if (target.RegKeyStillExists())
             {
                 var regKeyNode = new RegistryKeyJunk(target.RegistryPath, target, this);
-                regKeyNode.Confidence.Add(ConfidenceRecord.IsUninstallerRegistryKey);
+                regKeyNode.Confidence.Add(ConfidenceRecords.IsUninstallerRegistryKey);
                 yield return regKeyNode;
             }
 
@@ -88,7 +88,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 {
                     var fullKeyPath = Path.Combine(keyPath.Key, keyPath.Value);
                     var result = new RegistryKeyJunk(fullKeyPath, target, this);
-                    result.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    result.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     yield return result;
                 }
             }
