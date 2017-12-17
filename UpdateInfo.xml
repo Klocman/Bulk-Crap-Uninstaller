@@ -2,18 +2,19 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.22.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.22/BCUninstaller_3.22_portable.zip</URL>
+<Version>3.23.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.23/BCUninstaller_3.23_portable.zip</URL>
 <Changes>
-Added proper logging to uninstaller automatizer
-Added daemon mode to uninstall automatizer, not used for now
-Fixed crash when using a virtual list with checkboxes caused by a performance optimization
-Fixed some possible crashes in UniversalUninstaller
-Merged update to Slovenian translation by Jadran
-Changed default list extension from .xml to .bcul in settings
-Updated ProtableSettingsProvider to latest version
-In case of unknown uninstaller type CheckForTypeCollisions assumes worst case
+Upgraded folder select dialogs in nuke window, "Uninstall from directory" and junk backup to the new Win7+ style
+Fixed crash when displaying program files leftovers and prevented similar issues in future
+Fixed Dutch reg key confirm dialog crashing because of error in translated string
+Fixed crashes with invalid unicode code points in path and other strings
+Fixed icon extraction from files failing if files were in an UNC path
+Fixed "could not find CleanLogs.bat" when running from UNC path
+Fixed SeparataArgsFromCommands failing to separate some "cmd /args" type strings
+Fixed possible crash in JunkRemoveWindow with invalid IJunkResult without Confidence
+Fixed possible problem with date AspectToStringConverter, and inconsistent naming of GetAboutUri
 </Changes>
-<Hash>a66bf874219bc45a9a3008cea693c5e2</Hash>
+<Hash>cfc6fe5e0f32547fc891b8093707c5e6</Hash>
 </Update>
 </Root>
