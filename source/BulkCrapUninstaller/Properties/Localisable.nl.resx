@@ -558,7 +558,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
     <value>De volgende onderdelen werden uit het register verwijderd en verdwijnen uit de deïnstaller lijst, maar worden niet gedeïnstalleerd.
 
-{0)</value>
+{0}</value>
   </data>
   <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
     <value>Er is een fout opgetreden bij het opslaan van de geëxporteerde gegevens</value>
