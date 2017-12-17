@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Tools;
 using UninstallTools;
@@ -92,7 +93,7 @@ namespace BulkCrapUninstaller.Controls
             }
 
             var distinctFolders = folders.Where(x => x != null)
-                .Select(x => x.Normalize().ToLowerInvariant().Trim().Trim('\'', '"').Trim())
+                .Select(x => x.SafeNormalize().ToLowerInvariant().Trim().Trim('\'', '"').Trim())
                 .Distinct();
 
             var folderInfos = distinctFolders.Select(x =>

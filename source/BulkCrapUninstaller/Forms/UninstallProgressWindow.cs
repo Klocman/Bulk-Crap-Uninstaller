@@ -101,7 +101,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnId.AspectName = nameof(BulkUninstallEntry.Id);
 
             olvColumnStatus.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.CurrentStatus;
-            olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.Normalize().FirstOrDefault();
+            olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.SafeNormalize().FirstOrDefault();
             olvColumnId.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.Id / 10;
 
             objectListView1.PrimarySortColumn = olvColumnStatus;
