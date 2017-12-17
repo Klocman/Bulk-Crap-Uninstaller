@@ -386,7 +386,7 @@ namespace BulkCrapUninstaller.Forms
         {
             _listViewWrapper = new TypedObjectListView<IJunkResult>(objectListViewMain);
 
-            olvColumnSafety.AspectGetter = x => (x as IJunkResult)?.Confidence.GetConfidence().GetLocalisedName();
+            olvColumnSafety.AspectGetter = x => ((x as IJunkResult)?.Confidence?.GetConfidence() ?? ConfidenceLevel.Unknown).GetLocalisedName();
             olvColumnPath.GroupKeyGetter = x => (x as IJunkResult)?.Source?.CategoryName ?? CommonStrings.Unknown;
             olvColumnPath.AspectGetter = rowObject => (rowObject as IJunkResult)?.GetDisplayName();
             olvColumnUninstallerName.AspectGetter = rowObject =>
