@@ -207,25 +207,51 @@ namespace BulkCrapUninstaller
             try
             {
                 const string cleanerName = "CleanLogs.bat";
-                if (!File.Exists(Path.Combine(AssemblyLocation.FullName, cleanerName)))
+                var cleanerPath = Path.Combine(AssemblyLocation.FullName, cleanerName);
+
+                if (!File.Exists(cleanerPath))
                 {
                     Console.WriteLine(@"WARNING: CleanLogs.bat doesn't exist, can't clean logs.");
                     return;
                 }
-
-                var ps = new ProcessStartInfo
+                
+                var cleanerUri = PathToUri(cleanerPath);
+                if (cleanerUri.IsUnc)
                 {
-                    WorkingDirectory = AssemblyLocation.FullName,
-                    FileName = "cmd.exe",
-                    Arguments = "/c start /min " + cleanerName,
-                    UseShellExecute = true,
-                    WindowStyle = ProcessWindowStyle.Minimized
-                };
-                Process.Start(ps);
+                    // 'cmd.exe /c start' doesn't work with UNC paths, script has to run in foreground.
+                    Process.Start(cleanerPath);
+                }
+                else
+                {
+                    // Run cleanup script in minimized cmd window
+                    var ps = new ProcessStartInfo
+                    {
+                        WorkingDirectory = AssemblyLocation.FullName,
+                        FileName = "cmd.exe",
+                        Arguments = "/c start /min " + cleanerName,
+                        UseShellExecute = true,
+                        WindowStyle = ProcessWindowStyle.Minimized
+                    };
+                    Process.Start(ps);
+                }
             }
-            catch
+            catch (Exception ex)
             {
                 // Ignore errors, not critical
+                Console.WriteLine(ex);
+            }
+        }
+
+        private static Uri PathToUri(string filePath)
+        {
+            try
+            {
+                return new Uri(filePath);
+            }
+            catch (UriFormatException)
+            {
+                filePath = Path.GetFullPath(filePath);
+                return new Uri(filePath);
             }
         }
     }
