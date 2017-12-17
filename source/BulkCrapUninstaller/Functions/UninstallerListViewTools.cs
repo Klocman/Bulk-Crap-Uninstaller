@@ -682,6 +682,7 @@ namespace BulkCrapUninstaller.Functions
             //_reference.olvColumnInstallDate.AspectName = ApplicationUninstallerEntry.RegistryNameInstallDate;
             _reference.olvColumnInstallDate.AspectToStringConverter = x =>
             {
+                if (!(x is DateTime)) return Localisable.Empty;
                 var entry = (DateTime)x;
                 return entry.IsDefault() ? Localisable.Empty : entry.ToShortDateString();
             };
@@ -714,8 +715,8 @@ namespace BulkCrapUninstaller.Functions
             _reference.olvColumnAbout.GroupKeyGetter = x =>
             {
                 var entry = x as ApplicationUninstallerEntry;
-                if (string.IsNullOrEmpty(entry?.AboutUrl)) return Localisable.Empty;
-                return entry.GetUri()?.Host ?? CommonStrings.Unknown;
+                var aboutUri = entry?.GetAboutUri();
+                return aboutUri?.Host ?? Localisable.Empty;
             };
 
             _reference.olvColumnQuietUninstallString.AspectName =

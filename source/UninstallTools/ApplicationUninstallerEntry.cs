@@ -296,7 +296,7 @@ namespace UninstallTools
             return output;
         }
 
-        public Uri GetUri()
+        public Uri GetAboutUri()
         {
             var temp = AboutUrl;
             if (!temp.IsNotEmpty()) return null;

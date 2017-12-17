@@ -651,7 +651,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenAssociatedWebPage(object sender, EventArgs eventArgs)
         {
-            var urls = _listView.SelectedUninstallers.Select(y => y.GetUri()).Where(x => x != null).ToList();
+            var urls = _listView.SelectedUninstallers.Select(y => y.GetAboutUri()).Where(x => x != null).ToList();
 
             OpenUrls(urls);
         }
