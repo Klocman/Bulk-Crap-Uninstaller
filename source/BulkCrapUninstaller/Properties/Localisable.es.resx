@@ -735,4 +735,19 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
   <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
     <value>La aplicación seleccionada no tiene comando de modificación especificado. Puede ser necesario desinstalar e instalar de nuevo para cambiar la configuración de instalación.</value>
   </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Guardar lista de desinstalación</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>¿Desea guardar cambios en la lista de desinstalación abierta?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Hay cambios no guardados en la lista de desinstalación abierta que se perderán al cerrarla.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Seleccione el directorio con las aplicaciones a desinstalar.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Seleccione dónde guardar la copia de seguridad. Se creará un nuevo directorio.</value>
+  </data>
 </root>
