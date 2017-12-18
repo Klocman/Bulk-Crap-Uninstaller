@@ -48,7 +48,7 @@ namespace UninstallTools.Junk.Finders.Registry
                             StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryValueJunk(key.Name, valueName, target, this);
-                            junk.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                            junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                             yield return junk;
                         }
                     }

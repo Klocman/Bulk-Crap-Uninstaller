@@ -34,6 +34,10 @@
   <PropertyGroup>
     <ApplicationIcon>UniversalUninstaller.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogWriter.cs" />
     <Compile Include="Properties\Localisation.ar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +86,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.ar.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.es.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
@@ -89,6 +95,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisation.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localisation.sl.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,10 +109,19 @@
     <EmbeddedResource Include="TargetList.ar.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.es.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TargetList.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.sl.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.ar.resx">
+      <DependentUpon>UninstallSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstallSelection.es.resx">
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.pt.resx">
@@ -114,6 +130,11 @@
     <EmbeddedResource Include="UninstallSelection.resx">
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UninstallSelection.sl.resx">
+      <DependentUpon>UninstallSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

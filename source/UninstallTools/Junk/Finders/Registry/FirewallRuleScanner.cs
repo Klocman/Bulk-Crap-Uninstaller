@@ -40,7 +40,7 @@ namespace UninstallTools.Junk.Finders.Registry
                         {
                             var node = new RegistryValueJunk(fullFirewallRulesKey, valueName,
                                 target, this);
-                            node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                            node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                             results.Add(node);
                         }
                     }

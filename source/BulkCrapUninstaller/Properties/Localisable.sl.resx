@@ -632,7 +632,7 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
     <value>Ni na voljo</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
-    <value>Nekatere odstranjevalci niso bili uspešni</value>
+    <value>Nekateri odstranjevalci niso bili uspešni</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
     <value>Ali želite poskusiti uporabiti tihe odstranjevalce, ko glasen ni bil uspešen?</value>
@@ -735,5 +735,23 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Ni bilo mogoče najti nobenih aplikacij znotraj {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Spremeni aplikacijo</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Izbrane aplikacije ni mogoče spremeniti</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Izbrana aplikacija nima določenega ukaza za spreminjanje. Morda jo bo potrebno odstraniti, nato pa jo znova namestiti, da spremenite nastavitve namestitve.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Shrani seznam odstranjevanja</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Shranim spremembe na odprtem seznamu za odstranitev?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Na odprtem seznamu za odstranjevanje so shranjene neshranjene spremembe, ki bodo izgubljene z njegovim zapiranjem.</value>
   </data>
 </root>

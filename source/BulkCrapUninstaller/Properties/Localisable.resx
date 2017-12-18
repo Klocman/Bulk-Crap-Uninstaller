@@ -756,4 +756,10 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
     <value>There are unsaved changes in the opened uninstall list that will be lost by closing it.</value>
   </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Select the directory with the applications to uninstall.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Select where to save the backup. A new directory will be created.</value>
+  </data>
 </root>

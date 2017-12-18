@@ -124,7 +124,7 @@
     <value>Az eltávolítás befejeződése után végrehajtandó parancssor</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Indításkor automatikusan töltse be a "Default.xml" eltávolítási listát</value>
+    <value>Indításkor automatikusan töltse be a "Default.bcul" eltávolítási listát</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Frissítések keresése a program elindításakor</value>

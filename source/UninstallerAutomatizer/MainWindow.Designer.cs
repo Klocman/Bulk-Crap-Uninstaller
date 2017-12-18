@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,47 +48,27 @@
             // textBoxStatus
             // 
             this.textBoxStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxStatus.Location = new System.Drawing.Point(3, 16);
-            this.textBoxStatus.Multiline = true;
+            resources.ApplyResources(this.textBoxStatus, "textBoxStatus");
             this.textBoxStatus.Name = "textBoxStatus";
             this.textBoxStatus.ReadOnly = true;
-            this.textBoxStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxStatus.Size = new System.Drawing.Size(262, 146);
-            this.textBoxStatus.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(268, 47);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "This tool automatically uninstalls applications that do not have a quiet uninstal" +
-    "ler by clicking on the uninstaller\'s buttons instead of the user.";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxStatus);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(8, 55);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 165);
-            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Status";
             // 
             // panel1
             // 
@@ -95,56 +76,32 @@
             this.panel1.Controls.Add(this.buttonPause);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.buttonAbort);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(8, 220);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(268, 33);
-            this.panel1.TabIndex = 3;
             // 
             // buttonResume
             // 
-            this.buttonResume.AutoSize = true;
-            this.buttonResume.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonResume.Location = new System.Drawing.Point(35, 8);
+            resources.ApplyResources(this.buttonResume, "buttonResume");
             this.buttonResume.Name = "buttonResume";
-            this.buttonResume.Size = new System.Drawing.Size(75, 25);
-            this.buttonResume.TabIndex = 2;
-            this.buttonResume.Text = "Resume";
             this.buttonResume.UseVisualStyleBackColor = true;
-            this.buttonResume.Visible = false;
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
             // 
             // buttonPause
             // 
-            this.buttonPause.AutoSize = true;
-            this.buttonPause.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonPause.Location = new System.Drawing.Point(110, 8);
+            resources.ApplyResources(this.buttonPause, "buttonPause");
             this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(75, 25);
-            this.buttonPause.TabIndex = 0;
-            this.buttonPause.Text = "Pause";
             this.buttonPause.UseVisualStyleBackColor = true;
-            this.buttonPause.Visible = false;
             this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(185, 8);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(8, 25);
-            this.panel2.TabIndex = 1;
             // 
             // buttonAbort
             // 
-            this.buttonAbort.AutoSize = true;
-            this.buttonAbort.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonAbort.Location = new System.Drawing.Point(193, 8);
+            resources.ApplyResources(this.buttonAbort, "buttonAbort");
             this.buttonAbort.Name = "buttonAbort";
-            this.buttonAbort.Size = new System.Drawing.Size(75, 25);
-            this.buttonAbort.TabIndex = 0;
-            this.buttonAbort.Text = "Abort";
             this.buttonAbort.UseVisualStyleBackColor = true;
             this.buttonAbort.Click += new System.EventHandler(this.buttonAbort_Click);
             // 
@@ -154,15 +111,12 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MainWindow";
-            this.Padding = new System.Windows.Forms.Padding(8);
-            this.Text = "Uninstaller automation";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -41,7 +41,7 @@ namespace UninstallTools.Junk.Finders.Drive
                     yield break;
             }
 
-            result.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+            result.Confidence.Add(ConfidenceRecords.ExplicitConnection);
 
             yield return result;
         }

@@ -130,16 +130,16 @@
     <value>Onemogoči preprečevanje sporov, ko se  izvajajo ročna odstranjevanja.</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Samo eden glasen odstranjevalec na enkrat</value>
+    <value>Samo en glasnen odstranjevalec naenkrat</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Samodejno zaženi sočasne odstranjevalce (če je mogoče)</value>
+    <value>Samodejno zaženi hkratne odstranjevalce (če je mogoče)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Največje število delujočih odstranjevalcev:</value>
+    <value>Največje število zagnanih odstranjevalcev:</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Sočasna odstranitev</value>
+    <value>Hkratno odstranjevanje</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
     <value>Prepreči ustavitev/ponovni zagon sistema</value>
@@ -154,7 +154,7 @@
     <value>Enkrat ponovi spodletele tihe odstranjevalce</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Če je mogoče, ustvari tihe odstranjevalce</value>
+    <value>Če je mogoče, ustvari manjkajoče tihe odstranjevalce</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
     <value>Samodejno uniči, če obtičalo čakanje zahteva vnos uporabnika</value>

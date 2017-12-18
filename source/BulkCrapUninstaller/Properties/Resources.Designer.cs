@@ -280,7 +280,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52.
+        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/donate.html.
         /// </summary>
         internal static string DonateLink {
             get {
@@ -420,6 +420,16 @@ namespace BulkCrapUninstaller.Properties {
         internal static System.Drawing.Bitmap layerdown {
             get {
                 object obj = ResourceManager.GetObject("layerdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list {
+            get {
+                object obj = ResourceManager.GetObject("list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -648,6 +658,16 @@ namespace BulkCrapUninstaller.Properties {
         internal static string TwitterLink {
             get {
                 return ResourceManager.GetString("TwitterLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap weather_sun_set {
+            get {
+                object obj = ResourceManager.GetObject("weather.sun.set", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

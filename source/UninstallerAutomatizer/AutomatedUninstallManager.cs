@@ -15,6 +15,7 @@ using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White.WindowsAPI;
+using UninstallerAutomatizer.Properties;
 
 namespace UninstallerAutomatizer
 {
@@ -48,11 +49,11 @@ namespace UninstallerAutomatizer
             {
                 pr = Process.Start(uninstallerCommand);
                 if (pr == null)
-                    throw new IOException("Process failed to start.");
+                    throw new IOException(Localization.Message_Automation_ProcessFailedToStart);
 
                 // NSIS uninstallers are first extracted by the executable to a temporary directory, and then ran from there.
                 // Wait for the extracting exe to close and grab the child process that it started.
-                statusCallback("Waiting for NSIS uninstaller to extract...");
+                statusCallback(Localization.Message_Automation_WaitingForNsisExtraction);
                 pr.WaitForExit();
 
                 // Attempt to get the extracted exe by looking up child processes, might not work in some cases
@@ -71,7 +72,22 @@ namespace UninstallerAutomatizer
                         .OrderByDescending(x => x.StartTime).First();
                     app = Application.Attach(uninstallProcess);
                 }
-                statusCallback("Attached to " + app.Name);
+            }
+            catch (Exception e)
+            {
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e,
+                    uninstallerCommand, app?.Process ?? pr);
+            }
+
+            if (app != null)
+                AutomatizeApplication(app, statusCallback);
+        }
+
+        public static void AutomatizeApplication(Application app, Action<string> statusCallback)
+        {
+            try
+            {
+                statusCallback(string.Format(Localization.Message_Automation_AppAttached, app.Name));
 
                 WaitForApplication(app);
 
@@ -80,12 +96,12 @@ namespace UninstallerAutomatizer
 
                 while (!app.HasExited)
                 {
-                    statusCallback("Looking for windows...");
+                    statusCallback(Localization.Message_Automation_WindowSearching);
                     // NSIS uninstallers always have only one window open (by default)
                     var windows = app.GetWindows();
                     var target = windows.First();
 
-                    statusCallback($"Found window \"{target.Title}\".");
+                    statusCallback(String.Format(Localization.Message_Automation_WindowFound, target.Title));
                     WaitForWindow(target);
 
                     // BUG target.IsClosed changes to true if window gets minimized?
@@ -96,15 +112,14 @@ namespace UninstallerAutomatizer
 
                         ProcessNsisPopups(app, target, seenWindows, statusCallback);
                     }
-                    statusCallback("Window closed.");
+                    statusCallback(Localization.Message_Automation_WindowClosed);
 
                     WaitForApplication(app);
                 }
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException("Automatic uninstallation failed.", e,
-                    uninstallerCommand, app?.Process ?? pr);
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty, app?.Process);
             }
         }
 
@@ -135,9 +150,9 @@ namespace UninstallerAutomatizer
             if (popupWindow == null) return;
 
             if (seenWindows.Contains(popupWindow.Items.Count))
-                throw new InvalidOperationException("Reoccuring popup window detected!");
+                throw new InvalidOperationException(Localization.Message_Automation_PopupRecurringFound);
             seenWindows.Add(popupWindow.Items.Count);
-            statusCallback($"Found a pop-up window - \"{popupWindow.Title}\".");
+            statusCallback(String.Format(Localization.Message_Automation_PopupFound, popupWindow.Title));
 
             while (!popupWindow.IsClosed)
             {
@@ -146,7 +161,7 @@ namespace UninstallerAutomatizer
                 popupWindow.WaitWhileBusy();
                 Thread.Sleep(100);
             }
-            statusCallback("Pop-up window closed.");
+            statusCallback(Localization.Message_Automation_PopupClosed);
         }
 
         private static void TryClickNextNsisButton(IUIItemContainer target, Action<string> statusCallback)
@@ -188,7 +203,7 @@ namespace UninstallerAutomatizer
 
                 ProcessRadioButtons(target, statusCallback);
 
-                statusCallback("Clicking on the \"" + nextButton.Text + "\" button.");
+                statusCallback(string.Format(Localization.Message_Automation_ClickingButton, nextButton.Text));
                 nextButton.Focus();
                 nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
             }
@@ -200,7 +215,7 @@ namespace UninstallerAutomatizer
                                 .Cast<RadioButton>().ToList();
             if (allRadios.Any())
             {
-                statusCallback($"Found {allRadios.Count} radio buttons.");
+                statusCallback(String.Format(Localization.Message_Automation_FoundButtons, allRadios.Count));
 
                 // Select all known good radio buttons first
                 var goodRadios = allRadios.Where(x => GoodRadioIds.Any(
@@ -210,7 +225,7 @@ namespace UninstallerAutomatizer
                 {
                     if (radioButton.Enabled)
                     {
-                        statusCallback($"Selecting known-good radio button: {radioButton.Name}");
+                        statusCallback(String.Format(Localization.Message_Automation_SelectingGoodButton, radioButton.Name));
                         radioButton.IsSelected = true;
                     }
                 }
@@ -225,7 +240,7 @@ namespace UninstallerAutomatizer
                     {
                         if (notBadRadio.Enabled)
                         {
-                            statusCallback($"Selecting non-bad radio button: {notBadRadio.Name}");
+                            statusCallback(String.Format(Localization.Message_Automation_SelectingNotBadButton, notBadRadio.Name));
                             notBadRadio.IsSelected = true;
                         }
                     }

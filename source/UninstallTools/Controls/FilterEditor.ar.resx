@@ -121,10 +121,10 @@
     <value>نص الفلتر</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>اسلوب المقارنة</value>
+    <value>طريقة المقارنة</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>الممتلكات المستهدفة</value>
+    <value>الخصائص المستهدفة</value>
   </data>
   <data name="checkBoxInvert.Text" xml:space="preserve">
     <value>عكس النتائج</value>

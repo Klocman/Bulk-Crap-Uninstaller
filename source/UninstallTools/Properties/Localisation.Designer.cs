@@ -1276,6 +1276,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paused.
+        /// </summary>
+        internal static string UninstallStatus_Paused {
+            get {
+                return ResourceManager.GetString("UninstallStatus_Paused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Protected.
         /// </summary>
         internal static string UninstallStatus_Protected {

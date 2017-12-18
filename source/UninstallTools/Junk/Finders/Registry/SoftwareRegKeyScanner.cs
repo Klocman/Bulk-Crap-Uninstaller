@@ -139,7 +139,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
                     // Check if application's location is explicitly mentioned in any of the values
                     if (softwareKey.TryGetValueNames().Any(valueName => TestValueForMatches(softwareKey, valueName)))
-                        confidence.Add(ConfidenceRecord.ExplicitConnection);
+                        confidence.Add(ConfidenceRecords.ExplicitConnection);
 
                     if (confidence.Any())
                     {

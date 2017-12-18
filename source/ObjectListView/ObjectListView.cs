@@ -1248,11 +1248,24 @@ namespace BrightIdeasSoftware
         public virtual IList CheckedObjects {
             get {
                 ArrayList list = new ArrayList();
-                if (this.CheckBoxes) {
-                    for (int i = 0; i < this.GetItemCount(); i++) {
-                        OLVListItem olvi = this.GetItem(i);
-                        if (olvi.CheckState == CheckState.Checked)
-                            list.Add(olvi.RowObject);
+                if (this.CheckBoxes)
+                {
+                    if(!VirtualMode)
+                    {
+                        // Faster than index access, but doesn't work on virtual lists
+                        foreach (OLVListItem olvi in this.Items)
+                        {
+                            if (olvi.CheckState == CheckState.Checked)
+                                list.Add(olvi.RowObject);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < this.GetItemCount(); i++) {
+                            OLVListItem olvi = this.GetItem(i);
+                            if (olvi.CheckState == CheckState.Checked)
+                                list.Add(olvi.RowObject);
+                        }
                     }
                 }
                 return list;
@@ -4198,6 +4211,8 @@ namespace BrightIdeasSoftware
                 this.BuildList(true);
         }
 
+        private readonly Dictionary<object, OLVListItem> _listItemLookup = new Dictionary<object, OLVListItem>(); 
+
         /// <summary>
         /// Build/rebuild all the list view items in the list
         /// </summary>
@@ -4234,6 +4249,7 @@ namespace BrightIdeasSoftware
 
             this.BeginUpdate();
             try {
+                _listItemLookup.Clear();
                 this.Items.Clear();
                 this.ListViewItemSorter = null;
 
@@ -4244,6 +4260,9 @@ namespace BrightIdeasSoftware
                     foreach (object rowObject in objectsToDisplay) {
                         OLVListItem lvi = new OLVListItem(rowObject);
                         this.FillInValues(lvi, rowObject);
+
+                        _listItemLookup.Add(rowObject, lvi);
+
                         itemList.Add(lvi);
                     }
                     this.Items.AddRange(itemList.ToArray());
@@ -8628,7 +8647,12 @@ namespace BrightIdeasSoftware
         public virtual OLVListItem ModelToItem(object modelObject) {
             if (modelObject == null)
                 return null;
+
+            OLVListItem oli;
+            if (_listItemLookup.TryGetValue(modelObject, out oli))
+                return oli;
             
+            /*
             for (int i = 0; i < this.Items.Count; i++)
             {
                 var olvi = this.Items[i] as OLVListItem;
@@ -8638,6 +8662,7 @@ namespace BrightIdeasSoftware
                 if (rowObject != null && rowObject == modelObject)
                     return olvi;
             }
+            */
             return null;
         }
 

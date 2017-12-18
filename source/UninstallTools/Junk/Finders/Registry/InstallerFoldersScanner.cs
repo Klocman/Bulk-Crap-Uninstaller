@@ -28,10 +28,10 @@ namespace UninstallTools.Junk.Finders.Registry
                     if (!SubPathIsInsideBasePath(installLocation, valueName)) continue;
 
                     var node = new RegistryValueJunk(key.Name, valueName, target, this);
-                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
 
                     if (GetOtherInstallLocations(target).Any(x => SubPathIsInsideBasePath(x, valueName)))
-                        node.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
+                        node.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                     yield return node;
                 }

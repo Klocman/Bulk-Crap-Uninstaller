@@ -2,25 +2,19 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>3.17.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.17/BCUninstaller_3.17_portable.zip</URL>
+<Version>3.23.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v3.23/BCUninstaller_3.23_portable.zip</URL>
 <Changes>
-Major refactoring/rewrite of junk scanning, much easier to add new rules
-Added RegisteredApplications registry junk scanner
-Added scanning of WER\ReportQueue when searching for WER junk
-Search in bin32 and bin64 subfolders for executables
-Look for app executables even if the trimmed app name is short
-Big speedup of CLSID junk scanning
-Speedup of WER search
-Fixed WER search sometimes failing to find raports
-Fixed some store app junk getting flagged as unsafe to remove when it wasn't
-Split junk results into specific groups
-Changed directory junk open action to open parent folder and focus on the directory, instead of directly opening it
-Improved how registry key values are displayed in junk list
-Merged update to Portugese translation by Artur A. Pereira
-Fixed some translation configuration issues
-Fixed missing string placeholder in Portugese Progress_Registry_Processing
+Upgraded folder select dialogs in nuke window, "Uninstall from directory" and junk backup to the new Win7+ style
+Fixed crash when displaying program files leftovers and prevented similar issues in future
+Fixed Dutch reg key confirm dialog crashing because of error in translated string
+Fixed crashes with invalid unicode code points in path and other strings
+Fixed icon extraction from files failing if files were in an UNC path
+Fixed "could not find CleanLogs.bat" when running from UNC path
+Fixed SeparataArgsFromCommands failing to separate some "cmd /args" type strings
+Fixed possible crash in JunkRemoveWindow with invalid IJunkResult without Confidence
+Fixed possible problem with date AspectToStringConverter, and inconsistent naming of GetAboutUri
 </Changes>
-<Hash>f0a351aeafd6d86567c5fa399f713724</Hash>
+<Hash>cfc6fe5e0f32547fc891b8093707c5e6</Hash>
 </Update>
 </Root>

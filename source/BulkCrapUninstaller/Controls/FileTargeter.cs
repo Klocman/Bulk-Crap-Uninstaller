@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Properties;
+using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Tools;
 using UninstallTools;
@@ -20,7 +23,7 @@ namespace BulkCrapUninstaller.Controls
         {
             InitializeComponent();
         }
-        
+
         private void ProcessFiles(ICollection<string> files)
         {
             if (files == null || files.Count < 1)
@@ -34,7 +37,7 @@ namespace BulkCrapUninstaller.Controls
 
                 if (string.IsNullOrEmpty(fname))
                     continue;
-                
+
                 RewindDropLoop:
 
                 if (Directory.Exists(fname))
@@ -92,7 +95,7 @@ namespace BulkCrapUninstaller.Controls
             }
 
             var distinctFolders = folders.Where(x => x != null)
-                .Select(x => x.Normalize().ToLowerInvariant().Trim().Trim('\'', '"').Trim())
+                .Select(x => x.SafeNormalize().ToLowerInvariant().Trim().Trim('\'', '"').Trim())
                 .Distinct();
 
             var folderInfos = distinctFolders.Select(x =>
@@ -130,9 +133,15 @@ namespace BulkCrapUninstaller.Controls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(folderBrowserDialog1.SelectedPath))
-                ProcessFiles(new[] { folderBrowserDialog1.SelectedPath });
+            if (ParentForm != null) ParentForm.Enabled = false;
+            else Enabled = false;
+
+            var path = MessageBoxes.SelectFolder(Localisable.FileTargeter_SelectDirectoryWithAppsToRemove);
+            if (!string.IsNullOrEmpty(path))
+                ProcessFiles(new[] { path });
+            
+            if (ParentForm != null) ParentForm.Enabled = true;
+            else Enabled = true;
         }
     }
 

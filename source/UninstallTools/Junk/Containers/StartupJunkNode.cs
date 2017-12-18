@@ -6,7 +6,6 @@
 using System;
 using System.IO;
 using System.Security.Permissions;
-using JetBrains.Annotations;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
@@ -16,13 +15,13 @@ namespace UninstallTools.Junk.Containers
 {
     public class StartupJunkNode : JunkResultBase
     {
-        public static readonly ConfidenceRecord ConfidenceIsRunOnce =
+        public static readonly ConfidenceRecord ConfidenceStartupIsRunOnce =
             new ConfidenceRecord(-5, Localisation.Confidence_Startup_IsRunOnce);
 
         public static readonly ConfidenceRecord ConfidenceStartupMatched =
             new ConfidenceRecord(6, Localisation.Confidence_Startup_StartupMatched);
-        
-        private StartupEntryBase Entry { get; }
+
+        internal StartupEntryBase Entry { get; }
 
         public override void Backup(string backupDirectory)
         {
@@ -47,7 +46,7 @@ namespace UninstallTools.Junk.Containers
             return Entry.ToString();
         }
 
-        public StartupJunkNode([NotNull] StartupEntryBase entry, ApplicationUninstallerEntry application, IJunkCreator source) 
+        public StartupJunkNode(StartupEntryBase entry, ApplicationUninstallerEntry application, IJunkCreator source) 
             : base(application, source)
         {
             if (entry == null) throw new ArgumentNullException(nameof(entry));
@@ -61,7 +60,7 @@ namespace UninstallTools.Junk.Containers
             {
                 // If the entry is RunOnce, give it some negative points to keep it out of automatic removal.
                 // It might be used to clean up after uninstall on next boot.
-                Confidence.Add(ConfidenceIsRunOnce);
+                Confidence.Add(ConfidenceStartupIsRunOnce);
             }
         }
     }

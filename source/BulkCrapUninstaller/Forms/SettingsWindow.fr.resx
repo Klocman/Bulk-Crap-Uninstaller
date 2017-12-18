@@ -195,7 +195,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Dossiers d'installation des programmes</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Charger automatiquement la liste de désinstalleurs "Default.xml" au démarrage</value>
+    <value>Charger automatiquement la liste de désinstalleurs "Default.bcul" au démarrage</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Activer les notes utilisateurs des applications</value>

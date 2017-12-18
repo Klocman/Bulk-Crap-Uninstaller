@@ -76,7 +76,7 @@ namespace UninstallTools.Junk.Finders.Registry
                             path = Path.GetDirectoryName(path);
                             if (string.IsNullOrEmpty(path)) continue;
 
-                            results.Add(new KeyValuePair<string, string>(subKey.Name, path));
+                            results.Add(new KeyValuePair<string, string>(Path.Combine(key.Name, subKeyName), path));
                         }
                         catch (Exception ex)
                         {
@@ -103,7 +103,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 if (SubPathIsInsideBasePath(target.InstallLocation, entry.Value))
                 {
                     var node = new RegistryKeyJunk(entry.Key, target, this);
-                    node.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                    node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     results.Add(node);
                 }
             }

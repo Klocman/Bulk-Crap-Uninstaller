@@ -140,6 +140,7 @@ namespace UninstallTools.Uninstaller
 
             try
             {
+                StartOfLoop:
                 while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting || x.IsRunning))
                 {
                     do
@@ -179,6 +180,12 @@ namespace UninstallTools.Uninstaller
                         // Fire the event now so the interface can be updated
                         OnStatusChanged?.Invoke(this, EventArgs.Empty);
                     }
+                }
+
+                if (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Paused))
+                {
+                    Thread.Sleep(100);
+                    goto StartOfLoop;
                 }
             }
             finally
@@ -252,9 +259,10 @@ namespace UninstallTools.Uninstaller
                 case UninstallerType.StoreApp:
                 case UninstallerType.SimpleDelete:
                     break;
+
                 default:
                     Debug.Fail("Unhandled UninstallerType - " + target);
-                    break;
+                    goto case UninstallerType.Unknown;
             }
 
             foreach (var item in running)

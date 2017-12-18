@@ -215,14 +215,20 @@ namespace BulkCrapUninstaller.Controls
             if (SelectedEntryGetter == null) throw new ArgumentNullException(nameof(SelectedEntryGetter));
 
             var entries = SelectedEntryGetter();
-            var filters = entries.Select(x => new Filter($"Include \"{x.DisplayName}\"", false,
+            var filters = entries.Select(x => new Filter(x.DisplayName, false,
                 new FilterCondition(x.DisplayName, ComparisonMethod.Equals,
                     nameof(ApplicationUninstallerEntry.DisplayName))));
 
             CurrentList.AddItems(filters);
 
+            RepopulateList();
+        }
+
+        public void RepopulateList()
+        {
             uninstallListEditor1.PopulateList();
-            OnCurrentListChanged(sender, e);
+            //OnCurrentListChanged(this, EventArgs.Empty);
+            OnFiltersChanged(this, EventArgs.Empty);
         }
     }
 }

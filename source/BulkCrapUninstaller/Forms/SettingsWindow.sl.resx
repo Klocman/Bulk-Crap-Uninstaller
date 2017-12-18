@@ -124,7 +124,7 @@
     <value>Ukazna vrstica po koncu odstranjevanja</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Ob zagonu, samodejno naloži seznam odstranjevanja "Default.xml"</value>
+    <value>Ob zagonu, samodejno naloži seznam odstranjevanja "Default.bcul"</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Ob zagonu, pošči posodobitve</value>
@@ -136,7 +136,7 @@
     <value>Jezik aplikacije:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Za uveljavitev sprememebe jezika morate ponovno zagnati aplikacijo.</value>
+    <value>Za spremembo jezika morate ponovno zagnati aplikacijo.</value>
   </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>Razno</value>
@@ -145,7 +145,7 @@
     <value>Vprašaj za odstranjevanje glasnih odstranjevalcev iz tihega opravila</value>
   </data>
   <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Pred brisanjem ostankov vprašaj za izdelavo varnostne kopije registra, </value>
+    <value>Pred brisanjem ostankov vprašaj za izdelavo varnostne kopije registra </value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Po odstranjevanju poišči neuporabne datoteke</value>
@@ -160,9 +160,9 @@
     <value>Omogoči izvajanje zunanjih aplikacij</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Lahko določite ukaze, ki bodo zagnani pred, ali po odstranjevanju. Ena vrstica je enaka enemu ukazu in bo izvršena kot, če bi uporabili pogovorno okno "Zaženi...". 
+    <value>Lahko določite ukaze, ki bodo zagnani pred, ali po odstranjevanju. Ena vrstica je enaka enemu ukazu in bo izvedena kot, če bi uporabili pogovorno okno "Zaženi...". 
 
-BCU bo počakal, da se trenutno delujoč ukaz zaključi preden izvrši naslednjega.</value>
+BCU bo počakal, da se trenutno delujoč ukaz konča preden izvede naslednjega.</value>
   </data>
   <data name="groupBoxExternal.Text" xml:space="preserve">
     <value>Zunanje aplikacije</value>
@@ -177,7 +177,7 @@ BCU bo počakal, da se trenutno delujoč ukaz zaključi preden izvrši naslednje
     <value>Zunanja orodja</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, neregistrirani aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
+    <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, neregistriranih aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
 
 Privzete Windows mape se vedno pregledujejo. Ni jih potrebno vključiti na seznam.
 
@@ -208,7 +208,7 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
     <value>Nikoli ne prosi za pomoč</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
-    <value>Steam</value>
+    <value>Para</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
     <value>Register (priporočeno, da pustite omogočeno)</value>
@@ -217,13 +217,13 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
     <value>Pogoni (zaznava neregistrirane aplikacije)</value>
   </data>
   <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>Zasnovano na pred določnih pravilih</value>
+    <value>Temelji na pred določnih pravilih</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Poišči aplikacije v...</value>
   </data>
   <data name="groupBoxAppStores.Text" xml:space="preserve">
-    <value>Aplikacije za pregledovanje</value>
+    <value>Shranjena aplikacija za pregled</value>
   </data>
   <data name="tabPageDetection.Text" xml:space="preserve">
     <value>Odkrivanje</value>
@@ -232,7 +232,7 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
     <value>Windows Store Apps</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
-    <value>Značilnosti sistema Windows</value>
+    <value>Lastnosti sistema Windows</value>
   </data>
   <data name="labelWinFeatureInfo.Text" xml:space="preserve">
     <value>Odkrivanje funkcij Windows uporablja WMI in je lahko v nekaterih sistemih počasno ali celo neuspešno (ponavadi kaže na okvaro sistema).</value>
@@ -245,6 +245,30 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Poskusi samodejno odkriti namestitvene mape po meri</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Vedno vprašaj za ustvarjanje</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nikoli ne vprašaj za ustvarjanje</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Samodejno ustvari v imeniku:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Varnostno kopiraj pred odstranjevanjem ostankov</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Vmesnik</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Odstranjevanje</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Sporočilna okna</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

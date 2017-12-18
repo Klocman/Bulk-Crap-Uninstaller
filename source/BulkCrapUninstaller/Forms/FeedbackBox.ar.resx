@@ -139,7 +139,7 @@
     <value>او اذا كنت ترغب في اقتراح ميزه جديده ، يرجى التحقق من هذه الروابط BCU،اذا كان لديك اي مشاكل مع:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>(تحتاج إلى حساب) GitHub تقدم على </value>
+    <value>(تحتاج الى حساب) GitHub تقدم على </value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>ارسال الملاحظات</value>

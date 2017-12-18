@@ -30,9 +30,11 @@ namespace BulkCrapUninstaller.Forms
         private BulkUninstallTask _currentTargetStatus;
         private CustomMessageBox _walkAwayBox;
         private BulkUninstallTask _status;
+        private static Func<IEnumerable<ApplicationUninstallerEntry>, bool> _uninstallManuallyAction;
 
-        public static void ShowUninstallDialog(BulkUninstallTask status)
+        public static void ShowUninstallDialog(BulkUninstallTask status, Func<IEnumerable<ApplicationUninstallerEntry>, bool> uninstallManuallyAction)
         {
+            _uninstallManuallyAction = uninstallManuallyAction;
             using (var uninstallWindow = new UninstallProgressWindow())
             {
                 uninstallWindow._status = status;
@@ -99,7 +101,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnId.AspectName = nameof(BulkUninstallEntry.Id);
 
             olvColumnStatus.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.CurrentStatus;
-            olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.Normalize().FirstOrDefault();
+            olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.SafeNormalize().FirstOrDefault();
             olvColumnId.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.Id / 10;
 
             objectListView1.PrimarySortColumn = olvColumnStatus;
@@ -360,6 +362,34 @@ namespace BulkCrapUninstaller.Forms
 
             [DllImport("user32.dll")]
             public static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
+        }
+
+        private void toolStripButtonManualUninstall_Click(object sender, EventArgs e)
+        {
+            var targetGroups = SelectedTaskEntries.GroupBy(x => x.IsRunning).ToList();
+            var running = targetGroups.SingleOrDefault(x => x.Key);
+            var notRunning = targetGroups.SingleOrDefault(x => !x.Key);
+
+            if (running != null && running.Any())
+                MessageBoxes.ForceRunUninstallFailedError(this,
+                    running.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x));
+
+            if (notRunning == null || !notRunning.Any()) return;
+
+            foreach (var bulkUninstallEntry in notRunning)
+                bulkUninstallEntry.Pause();
+
+            var result = _uninstallManuallyAction(notRunning.Select(x => x.UninstallerEntry));
+
+            foreach (var bulkUninstallEntry in notRunning)
+            {
+                if (result)
+                    bulkUninstallEntry.ForceFinished();
+                else
+                    bulkUninstallEntry.Resume();
+            }
+
+            OnTaskUpdated();
         }
     }
 }

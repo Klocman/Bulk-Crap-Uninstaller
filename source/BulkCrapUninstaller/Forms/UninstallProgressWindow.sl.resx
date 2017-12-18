@@ -137,7 +137,7 @@
 Če se vam zdi, da se je postopek zataknil, lahko kliknite na gumb "Preskoči", da se boste izognili čakanju na njegovo dokončanje. To se lahko zgodi, če se odstranjevalec sesuje ali se začenja nov proces, in se ga ne da zapreti.</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Vsebina tega seznama bo odstranjena od vrha do dna.</value>
+    <value>Vsebina tega seznama bo odstranjena od zgoraj navzdol.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Seznam odstranjevalcev</value>
@@ -168,6 +168,9 @@
   </data>
   <data name="toolStripButtonHelp.Text" xml:space="preserve">
     <value>Pomoč</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Ročno odstrani</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

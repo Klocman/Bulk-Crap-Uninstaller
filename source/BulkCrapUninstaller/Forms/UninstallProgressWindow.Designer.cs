@@ -49,6 +49,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonRun = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSkip = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonTerminate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonManualUninstall = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFolderOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonProperties = new System.Windows.Forms.ToolStripButton();
@@ -148,6 +149,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonRun,
             this.toolStripButtonSkip,
             this.toolStripButtonTerminate,
+            this.toolStripButtonManualUninstall,
             this.toolStripSeparator2,
             this.toolStripButtonFolderOpen,
             this.toolStripButtonProperties,
@@ -177,6 +179,14 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripButtonTerminate.Image = global::BulkCrapUninstaller.Properties.Resources.stop;
             this.toolStripButtonTerminate.Name = "toolStripButtonTerminate";
             this.toolStripButtonTerminate.Click += new System.EventHandler(this.toolStripButtonTerminate_Click);
+            // 
+            // toolStripButtonManualUninstall
+            // 
+            this.toolStripButtonManualUninstall.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonManualUninstall.Image = global::BulkCrapUninstaller.Properties.Resources.list;
+            resources.ApplyResources(this.toolStripButtonManualUninstall, "toolStripButtonManualUninstall");
+            this.toolStripButtonManualUninstall.Name = "toolStripButtonManualUninstall";
+            this.toolStripButtonManualUninstall.Click += new System.EventHandler(this.toolStripButtonManualUninstall_Click);
             // 
             // toolStripSeparator2
             // 
@@ -307,5 +317,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripButton toolStripButtonTerminate;
         private ToolStripButton toolStripButtonHelp;
         private Timer forceUpdateTimer;
+        private ToolStripButton toolStripButtonManualUninstall;
     }
 }

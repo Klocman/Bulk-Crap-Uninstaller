@@ -8,15 +8,44 @@ using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
 using UninstallTools.Junk.Containers;
+using UninstallTools.Junk.Finders.Misc;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
 {
     public static class JunkManager
     {
+        private static IEnumerable<IJunkResult> CleanUpResults(IEnumerable<IJunkResult> input)
+        {
+            return RemoveDuplicates(input).Where(JunkDoesNotPointToSelf);
+        }
+
+        /// <summary>
+        /// Make sure that the junk result doesn't point to this application.
+        /// </summary>
+        private static bool JunkDoesNotPointToSelf(IJunkResult x)
+        {
+            var fileSystemJunk = x as FileSystemJunk;
+            if (fileSystemJunk != null)
+            {
+                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+            }
+
+            var startupJunk = x as StartupJunkNode;
+            if (startupJunk != null)
+            {
+                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Merge duplicate junk entries and their confidence parts
+        /// </summary>
         private static IEnumerable<IJunkResult> RemoveDuplicates(IEnumerable<IJunkResult> input)
         {
-            foreach (var appGroup in input.GroupBy(x=>x.Application))
+            foreach (var appGroup in input.GroupBy(x => x.Application))
             {
                 foreach (var group in appGroup.GroupBy(x => x.GetDisplayName()))
                 {
@@ -69,7 +98,7 @@ namespace UninstallTools.Junk
 
             progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Finishing));
 
-            return RemoveDuplicates(results);
+            return CleanUpResults(results);
         }
 
         public static IEnumerable<IJunkResult> FindProgramFilesJunk(
@@ -77,7 +106,7 @@ namespace UninstallTools.Junk
         {
             var pfScanner = new ProgramFilesOrphans();
             pfScanner.Setup(allUninstallers);
-            return RemoveDuplicates(pfScanner.FindAllJunk().ToList());
+            return CleanUpResults(pfScanner.FindAllJunk().ToList());
         }
     }
 }

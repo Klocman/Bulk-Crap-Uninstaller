@@ -139,10 +139,10 @@
     <value>البدء</value>
   </data>
   <data name="olvColumnIs64.Text" xml:space="preserve">
-    <value>64بت</value>
+    <value>64 بت</value>
   </data>
   <data name="olvColumnUninstallString.Text" xml:space="preserve">
-    <value>امر إلغاء التثبيت</value>
+    <value>امر الغاء التثبيت</value>
   </data>
   <data name="olvColumnAbout.Text" xml:space="preserve">
     <value>حول الرابط</value>
@@ -151,10 +151,10 @@
     <value>مصدر التثبيت</value>
   </data>
   <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>تثبيت الموقع</value>
+    <value>موقع التثبيت</value>
   </data>
   <data name="olvColumnUninstallerKind.Text" xml:space="preserve">
-    <value>الغاء التثبيت النوع</value>
+    <value>نوع غير مثبت</value>
   </data>
   <data name="olvColumnSystemComponent.Text" xml:space="preserve">
     <value>مكون النظام</value>
@@ -169,7 +169,7 @@
     <value>رمز المنتج</value>
   </data>
   <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
-    <value>أمر الغاء التثبيت الهادئ</value>
+    <value>امر الغاء التثبيت بهدوء</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>اعاده تحميل التثبيت</value>
@@ -190,7 +190,7 @@
     <value>الغاء التثبيت</value>
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
-    <value>الغاء بهدوء</value>
+    <value>الغاء التثبيت بهدوء</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>التعديل</value>
@@ -208,7 +208,7 @@
     <value>Bcuninstaller</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
-    <value>تصفيه متقدمة</value>
+    <value>فلترة متقدمة</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>بحث</value>
@@ -223,7 +223,7 @@
     <value>الغاء التثبيت &amp;يدويا</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>(/I) &amp;تثبيت أو تكوين  </value>
+    <value>(/I) &amp;تثبيت او تكوين  </value>
   </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value> (/X) &amp;الغاء التثبيت</value>
@@ -250,25 +250,25 @@
     <value>GUID/رمز المنتج</value>
   </data>
   <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>مسار امكتب لتسجيل الكامل</value>
+    <value>مسار مكتب التسجيل الكامل</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>الغاء تثبيت السلسلة</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;نسخ إلى الحافظة...</value>
+    <value>&amp;نسخ الى الحافظة...</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;حذف إدخال التسجيل</value>
+    <value>&amp;حذف ادخال التسجيل</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;اعاده تسميه...</value>
   </data>
   <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;تثبيت الموقع</value>
+    <value>&amp;موقع التثبيت</value>
   </data>
   <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;الغاء التثبيت الموقع</value>
+    <value>&amp;موقع الغاء التثبيت </value>
   </data>
   <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;موقع المصدر</value>
@@ -298,13 +298,13 @@
     <value>FileHippo.com</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;البحث على الإنترنت</value>
+    <value>&amp;بحث على الانترنت</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>معدل...</value>
   </data>
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;الممتلكات</value>
+    <value>&amp;الخصائص</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>XML files|*.xml</value>
@@ -325,52 +325,52 @@
     <value>خ&amp;روج</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>إظهار وسيله ايضاح اللون</value>
+    <value>&amp;ملف</value>
   </data>
   <data name="showColorLegendToolStripMenuItem.Text" xml:space="preserve">
-    <value>إظهار &amp;شريط الاداوات</value>
+    <value>اظهار توضيحات اللون</value>
   </data>
   <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>اظهار الحالة والشريط</value>
+    <value>اظهار &amp;شريط الاداوات</value>
   </data>
   <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>إظهار &amp;اعدادات الشريط الجانبي</value>
+    <value>اظهار شريط &amp;المعلومات</value>
   </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;استخدام موضوع النظام</value>
+    <value>اظهار &amp;اعدادات الشريط الجانبي</value>
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
-    <value>عرض التحديثات</value>
+    <value>&amp;استخدام موضوع النظام</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>عرض ميزات وندوز</value>
+    <value>عرض التحديثات</value>
   </data>
   <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>عرض تطبيقات مخزن وندوز</value>
+    <value>عرض ميزات وندوز</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>بحث عن طريق النافذة...</value>
+    <value>عرض تطبيقات مخزن وندوز</value>
   </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>بحث...</value>
+    <value>بحث عن طريق النافذة...</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;عرض</value>
+    <value>بحث...</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;الغاء التثبيت</value>
+    <value>&amp;عرض</value>
   </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>إلغاء &amp;بهدوء</value>
+    <value>&amp;الغاء التثبيت</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>تعديل</value>
+    <value>الغاء التثبيت &amp;بهدوء</value>
   </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
-    <value>المتقدمة...</value>
+    <value>تعديل</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;المعلومات الكاملة</value>
+    <value>المتقدمة...</value>
   </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;المعلومات الكاملة</value>
@@ -391,10 +391,10 @@
     <value>&amp;نسخ الى الحافظة...</value>
   </data>
   <data name="toolStripMenuItem5.Text" xml:space="preserve">
-    <value>&amp;تثبيت الموقع</value>
+    <value>&amp;موقع التثبيت</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>&amp;الغاء التثبيت الموقع</value>
+    <value>&amp;موقع الغاء التثبيت </value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>&amp;موقع المصدر</value>
@@ -424,13 +424,13 @@
     <value>FileHippo.com</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;بحث على الإنترنت</value>
+    <value>&amp;بحث على الانترنت</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>معدل...</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>العرض &amp;الممتلكات</value>
+    <value>اظهار &amp;الخصائص</value>
   </data>
   <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;العمليات الاساسيه</value>
@@ -445,37 +445,37 @@
     <value>(/X)&amp;الغاء التثبيت  </value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
-    <value>(/X /qb) الغاء تثبيت هادئ </value>
+    <value>(/X /qb) الغاء تثبيت بهدوء</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
     <value>MsiExec الغاء التثبيت باستخدام </value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>اعاده تسميه...</value>
+    <value>&amp;اعاده تسميه...</value>
   </data>
   <data name="disableAutostartToolStripMenuItem.Text" xml:space="preserve">
     <value>تعطيل التشغيل التلقائي</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>حذف مفتاح مكتب ال التسجيل</value>
+    <value>&amp;حذف مفتاح مكتب التسجيل</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>إنشاء &amp;النسخ الاحتياطي...</value>
+    <value>انشاء &amp;نسخ احتياطي...</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
-    <value>فتح المفتاح في مكتب التسجيل</value>
+    <value>&amp;فتح المفتاح في مكتب التسجيل</value>
   </data>
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>العمليات المتقدمة</value>
+    <value>&amp;العمليات المتقدمة</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>فتح اداره بدء التشغيل</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>تنظيف "ملفات البرنامج" المجلدات...</value>
+    <value>&amp;تنظيف "ملفات البرنامج" المجلدات...</value>
   </data>
   <data name="nukeMenuItem.Text" xml:space="preserve">
-    <value>الغاء التثبيت حسب الإطار او الدليل او الملف...</value>
+    <value>الغاء التثبيت حسب الاطار او الدليل او الملف...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>الغاء التثبيت من الدليل...</value>
@@ -520,10 +520,10 @@
     <value>فتح نافذه &amp;التصحيح</value>
   </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
-    <value>|*.reg ملفات مكتبالتسجيل </value>
+    <value>|*.reg ملفات مكتب التسجيل </value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
-    <value>انشاء النسخ الاحتياطي التسجيل</value>
+    <value>انشاء نسخ احتياطي لمكتب التسجيل</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>حماقة  سائبة الغاء التثبيت</value>

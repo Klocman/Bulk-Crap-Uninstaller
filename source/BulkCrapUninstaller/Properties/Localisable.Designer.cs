@@ -97,6 +97,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select the directory with the applications to uninstall..
+        /// </summary>
+        internal static string FileTargeter_SelectDirectoryWithAppsToRemove {
+            get {
+                return ResourceManager.GetString("FileTargeter_SelectDirectoryWithAppsToRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GUID found.
         /// </summary>
         internal static string GuidFound {
@@ -144,6 +153,15 @@ namespace BulkCrapUninstaller.Properties {
         internal static string JunkRemove_SelectionBoxText {
             get {
                 return ResourceManager.GetString("JunkRemove_SelectionBoxText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select where to save the backup. A new directory will be created..
+        /// </summary>
+        internal static string JunkRemoveWindow_SelectBackupDirectoryTitle {
+            get {
+                return ResourceManager.GetString("JunkRemoveWindow_SelectBackupDirectoryTitle", resourceCulture);
             }
         }
         

@@ -53,11 +53,13 @@ namespace WinUpdateHelper
             }
             catch (COMException ex)
             {
+                LogWriter.WriteMessageToLog(ex.ToString());
                 Console.WriteLine("Error: {0}", Hresult.ConvertHresultToDetails(ex.ErrorCode));
                 return 59;
             }
             catch (Exception ex)
             {
+                LogWriter.WriteMessageToLog(ex.ToString());
                 Console.WriteLine("Error: {0}", ex.Message);
                 return 59;
             }

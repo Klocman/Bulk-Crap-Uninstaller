@@ -61,11 +61,11 @@ namespace UninstallTools.Junk.Finders.Drive
                     FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        newNode = new FileSystemJunk(directory, _uninstaller, this);
+                        newNode = new FileSystemJunk(dir, _uninstaller, this);
                         newNode.Confidence.AddRange(generatedConfidence);
 
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))
-                            newNode.Confidence.Add(ConfidenceRecord.DirectoryStillUsed);
+                            newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                         results.Add(newNode);
                     }
@@ -82,7 +82,7 @@ namespace UninstallTools.Junk.Finders.Drive
                         {
                             var subDirs = dir.GetDirectories();
                             if (!subDirs.Any() || subDirs.All(d => junkNodes.Any(y => PathTools.PathsEqual(d.FullName, y.Path.FullName))))
-                                newNode.Confidence.Add(ConfidenceRecord.AllSubdirsMatched);
+                                newNode.Confidence.Add(ConfidenceRecords.AllSubdirsMatched);
                         }
                     }
                 }
@@ -104,7 +104,7 @@ namespace UninstallTools.Junk.Finders.Drive
                 return Enumerable.Empty<ConfidenceRecord>();
 
             if (UninstallToolsGlobalConfig.QuestionableDirectoryNames.Contains(itemName, StringComparison.OrdinalIgnoreCase))
-                baseOutput.Add(ConfidenceRecord.QuestionableDirectoryName);
+                baseOutput.Add(ConfidenceRecords.QuestionableDirectoryName);
 
             return baseOutput;
         }

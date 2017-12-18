@@ -190,7 +190,7 @@ namespace UninstallTools
             {
                 try
                 {
-                    return Icon.ExtractAssociatedIcon(path);
+                    return DrawingTools.ExtractAssociatedIcon(path);
                 }
                 catch (Exception ex)
                 {

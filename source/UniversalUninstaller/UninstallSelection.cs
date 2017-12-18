@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using Klocman.Forms;
+using Klocman.Tools;
 using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
@@ -16,20 +17,32 @@ namespace UniversalUninstaller
             InitializeComponent();
             targetList1.Populate(target);
 
-            Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+            try
+            {
+                Icon = DrawingTools.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+            }
+            catch (Exception ex)
+            {
+                /* Fall back to a low quality icon */
+                var handle = Resources.icon.GetHicon();
+                Icon = Icon.FromHandle(handle);
+
+                Console.WriteLine(ex);
+                LogWriter.WriteMessageToLog(ex.ToString());
+            }
 
             Text = string.Format(Localisation.UninstallSelection_Title, target.Name);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var ex = LoadingDialog.ShowDialog(this, Localisation.UninstallSelection_DeleteProgress_Title, 
+            var ex = LoadingDialog.ShowDialog(this, Localisation.UninstallSelection_DeleteProgress_Title,
                 _ => Program.DeleteItems(targetList1.GetItemsToDelete().ToList()));
 
             if (ex != null)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show(ex.ToString(), Localisation.UninstallSelection_DeleteProgress_FailedTitle, 
+                MessageBox.Show(ex.ToString(), Localisation.UninstallSelection_DeleteProgress_FailedTitle,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 DeleteFailed = true;

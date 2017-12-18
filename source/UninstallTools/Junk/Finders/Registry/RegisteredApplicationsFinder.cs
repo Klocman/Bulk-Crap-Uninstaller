@@ -100,13 +100,13 @@ namespace UninstallTools.Junk.Finders.Registry
                     {
                         // Handle the value under RegisteredApps itself
                         var regAppResult = new RegistryValueJunk(regAppEntry.RegAppFullPath, regAppEntry.ValueName, target, this);
-                        regAppResult.Confidence.Add(ConfidenceRecord.ExplicitConnection);
+                        regAppResult.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                         yield return regAppResult;
 
                         // Handle the key pointed at by the value
                         var appEntryKey = new RegistryKeyJunk(regAppEntry.AppKey, target, this);
-                        appEntryKey.Confidence.Add(ConfidenceRecord.ExplicitConnection);
-                        appEntryKey.Confidence.Add(ConfidenceRecord.IsStoreApp);
+                        appEntryKey.Confidence.Add(ConfidenceRecords.ExplicitConnection);
+                        appEntryKey.Confidence.Add(ConfidenceRecords.IsStoreApp);
                         yield return appEntryKey;
                     }
                 }

@@ -130,7 +130,7 @@
     <value>حفظ البيانات الى ملف</value>
   </data>
   <data name="tabPageOverview.Text" xml:space="preserve">
-    <value>عامه</value>
+    <value>نظرة عامة</value>
   </data>
   <data name="tabPageFileInfo.Text" xml:space="preserve">
     <value>معلومات الغاء التثبيت</value>

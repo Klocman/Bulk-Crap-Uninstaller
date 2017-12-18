@@ -121,7 +121,7 @@
     <value>Windows funkcija</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Neregistrirani aplikacije</value>
+    <value>Neregistrirane aplikacije</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Neveljaven odstranjevalec</value>

@@ -34,7 +34,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -74,12 +73,6 @@
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             this.openFileDialog1.Multiselect = true;
             // 
-            // folderBrowserDialog1
-            // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
-            this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyComputer;
-            this.folderBrowserDialog1.ShowNewFolderButton = false;
-            // 
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
@@ -95,8 +88,8 @@
             // 
             // FileTargeter
             // 
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -120,7 +113,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
     }

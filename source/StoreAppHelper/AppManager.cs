@@ -12,6 +12,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Xml.Linq;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Management.Deployment;
 
@@ -55,27 +56,60 @@ namespace StoreAppHelper
         public static IEnumerable<App> QueryApps()
         {
             var packageManager = new PackageManager();
-
-            var userSecurityId = WindowsIdentity.GetCurrent()?.User?.Value;
+            var userSecurityId = WindowsIdentity.GetCurrent().User?.Value;
             var packages = packageManager.FindPackagesForUserWithPackageTypes(userSecurityId, PackageTypes.Main);
-            return from package in packages
-                let file = Path.Combine(package.InstalledLocation.Path, "AppxManifest.xml")
-                where File.Exists(file) && !package.IsFramework
-                let contents = File.ReadAllText(file)
-                let start = contents.IndexOf("<Properties>", StringComparison.Ordinal)
-                let end = contents.IndexOf("</Properties>", StringComparison.Ordinal)
-                // Get rid of prefixes (pref:name), they are unnecessary and will crash
-                let rootXml = XElement.Parse(contents.Substring(start, end - start + 13).Replace("uap:", string.Empty))
-                let displayName = rootXml.Element("DisplayName")?.Value
-                let logoPath = rootXml.Element("Logo")?.Value
-                let publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value
-                let installPath = package.InstalledLocation.Path
-                let extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName)
-                select
-                    new App(package.Id.FullName,
-                        string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName,
-                        ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName),
-                        ExtractDisplayIcon(installPath, logoPath), installPath);
+
+            foreach (var package in packages)
+            {
+                if ( /*package.IsFramework || package.IsResourcePackage ||*/
+                    package.Status.Disabled || package.Status.NotAvailable)
+                    continue;
+                
+                var result = TryCreateAppFromPackage(package);
+                if (result != null)
+                    yield return result;
+            }
+        }
+
+        private static App TryCreateAppFromPackage(Package package)
+        {
+            var manifestContents = TryGetAppManifest(package);
+            if (manifestContents == null) return null;
+
+            try
+            {
+                var start = manifestContents.IndexOf("<Properties>", StringComparison.Ordinal);
+                var end = manifestContents.IndexOf("</Properties>", StringComparison.Ordinal);
+                var rootXml = XElement.Parse(manifestContents.Substring(start, end - start + 13).Replace("uap:", string.Empty));
+                var displayName = rootXml.Element("DisplayName")?.Value;
+                var logoPath = rootXml.Element("Logo")?.Value;
+                var publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value;
+                var installPath = package.InstalledLocation.Path;
+                var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
+
+                return new App(package.Id.FullName, string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName, ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), ExtractDisplayIcon(installPath, logoPath), installPath);
+            }
+            catch (SystemException exception)
+            {
+                LogWriter.WriteExceptionToLog(exception);
+                return null;
+            }
+        }
+
+        private static string TryGetAppManifest(Package package)
+        {
+            try
+            {
+                var file = Path.Combine(package.InstalledLocation.Path, "AppxManifest.xml");
+                if (!File.Exists(file)) return null;
+                var manifestContents = File.ReadAllText(file);
+                return string.IsNullOrWhiteSpace(manifestContents) ? null : manifestContents;
+            }
+            catch (SystemException exception)
+            {
+                LogWriter.WriteExceptionToLog(exception);
+                return null;
+            }
         }
 
         private static string ExtractDisplayIcon(string appDir, string iconDir)

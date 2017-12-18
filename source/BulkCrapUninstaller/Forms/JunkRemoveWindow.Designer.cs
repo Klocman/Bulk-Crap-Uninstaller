@@ -36,7 +36,6 @@ namespace BulkCrapUninstaller.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JunkRemoveWindow));
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.backupDirDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
             this.buttonExport = new System.Windows.Forms.Button();
@@ -72,10 +71,6 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.exportDialog, "exportDialog");
             this.exportDialog.RestoreDirectory = true;
             this.exportDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportDialog_FileOk);
-            // 
-            // backupDirDialog
-            // 
-            resources.ApplyResources(this.backupDirDialog, "backupDirDialog");
             // 
             // buttonCancel
             // 
@@ -159,7 +154,6 @@ namespace BulkCrapUninstaller.Forms
             this.objectListViewMain.View = System.Windows.Forms.View.Details;
             this.objectListViewMain.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.objectListViewMain_CellEditStarting);
             this.objectListViewMain.CellRightClick += new System.EventHandler<BrightIdeasSoftware.CellRightClickEventArgs>(this.objectListViewMain_CellRightClick);
-            this.objectListViewMain.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.objectListViewMain_ItemChecked);
             // 
             // olvColumnPath
             // 
@@ -248,7 +242,6 @@ namespace BulkCrapUninstaller.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "JunkRemoveWindow";
-            this.Shown += new System.EventHandler(this.JunkRemoveWindow_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -264,7 +257,6 @@ namespace BulkCrapUninstaller.Forms
         #endregion
 
         private SaveFileDialog exportDialog;
-        private FolderBrowserDialog backupDirDialog;
         private Button buttonCancel;
         private Button buttonAccept;
         private Button buttonExport;
