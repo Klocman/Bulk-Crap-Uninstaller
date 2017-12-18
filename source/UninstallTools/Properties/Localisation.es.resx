@@ -542,4 +542,7 @@
   <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
     <value>Lista de carpetas instaladas</value>
   </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Pausado</value>
+  </data>
 </root>
