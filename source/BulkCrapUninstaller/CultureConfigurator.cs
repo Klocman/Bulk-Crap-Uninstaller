@@ -25,7 +25,20 @@ namespace BulkCrapUninstaller
         {
             // Check what translations are available in program dir
             var translationDirectories = Program.AssemblyLocation.GetDirectories()
-                .Where(x => x.Name.Length >= 2 && x.GetFiles("BCUninstaller.resources.dll", SearchOption.TopDirectoryOnly).Any())
+                .Where(x =>
+                {
+                    if (x.Name.Length < 2)
+                        return false;
+                    try
+                    {
+                        return x.GetFiles("BCUninstaller.resources.dll", SearchOption.TopDirectoryOnly).Any();
+                    }
+                    catch (SystemException e)
+                    {
+                        Console.WriteLine(e);
+                        return false;
+                    }
+                })
                 .Select(x => x.Name.Substring(0, 2).ToLower())
                 .ToList();
 
