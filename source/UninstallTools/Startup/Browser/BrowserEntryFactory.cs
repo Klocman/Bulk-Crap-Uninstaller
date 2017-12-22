@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
 using Klocman.Tools;
 using Microsoft.Win32;
@@ -27,7 +28,19 @@ namespace UninstallTools.Startup.Browser
             {
                 foreach (var registryStartupPoint in RegistryStartupPoints)
                 {
-                    using (var mainKey = RegistryTools.CreateSubKeyRecursively(registryStartupPoint))
+                    RegistryKey mainKey;
+
+                    try
+                    {
+                        mainKey = RegistryTools.CreateSubKeyRecursively(registryStartupPoint);
+                    }
+                    catch (UnauthorizedAccessException e)
+                    {
+                        Console.WriteLine(e);
+                        continue;
+                    }
+
+                    using (mainKey)
                     {
                         foreach (var browserHelperEntry in
                             GatherBrowserHelpersFromKey(mainKey, clsidKey, registryStartupPoint, false))
