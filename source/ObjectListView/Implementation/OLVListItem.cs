@@ -35,6 +35,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Linq;
 
 namespace BrightIdeasSoftware {
 
@@ -210,12 +211,9 @@ namespace BrightIdeasSoftware {
         /// Gets whether any cell on this item is showing a hyperlink
         /// </summary>
         public bool HasAnyHyperlinks {
-            get {
-                foreach (OLVListSubItem subItem in this.SubItems) {
-                    if (!String.IsNullOrEmpty(subItem.Url))
-                        return true;
-                }
-                return false;
+            get
+            {
+                return SubItems.OfType<OLVListSubItem>().Any(subItem => !string.IsNullOrEmpty(subItem.Url));
             }
         }
 
