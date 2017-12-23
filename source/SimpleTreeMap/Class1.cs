@@ -118,8 +118,7 @@ namespace SimpleTreeMap
         {
             if (!elements.Any()) return null;
             if (elements.Count == 1)
-                return new Slice<T>
-                { Elements = elements, Size = totalSize };
+                return new Slice<T> { Elements = elements, Size = totalSize };
 
             var sliceResult = GetElementsForSlice(elements, sliceWidth);
 
@@ -136,7 +135,7 @@ namespace SimpleTreeMap
             };
         }
 
-        private void Main()
+        public void Main()
         {
             const int width = 400;
             const int height = 300;

@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableSettingsProvider", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTreeMap", "SimpleTreeMap\SimpleTreeMap.csproj", "{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTreeMapTests", "SimpleTreeMapTests\SimpleTreeMapTests.csproj", "{3F3D249F-885B-4AF5-B760-3900D077D66B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,18 @@ Global
 		{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}.Release|x64.Build.0 = Release|Any CPU
 		{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}.Release|x86.ActiveCfg = Release|Any CPU
 		{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}.Release|x86.Build.0 = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x64.Build.0 = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
