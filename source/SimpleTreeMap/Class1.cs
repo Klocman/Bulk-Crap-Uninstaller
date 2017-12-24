@@ -18,15 +18,18 @@ namespace SimpleTreeMap
             var bmp = new Bitmap(width, height);
             var gfx = Graphics.FromImage(bmp);
 
-            gfx.FillRectangle(Brushes.Blue, new RectangleF(0, 0, width, height));
+            gfx.FillRectangle(new SolidBrush(Control.DefaultBackColor), new RectangleF(0, 0, width, height));
 
             foreach (var r in rectangles)
             {
-                gfx.DrawRectangle(Pens.Black,
+                gfx.FillRectangle(new SolidBrush(Color.Aqua), 
                     new Rectangle(r.X, r.Y, r.Width - 1, r.Height - 1));
 
-                gfx.DrawString(r.Slice.Elements.First().Object.ToString(), font,
-                    Brushes.White, r.X, r.Y);
+
+                ControlPaint.DrawBorder(gfx, new Rectangle(r.X, r.Y, r.Width - 1, r.Height - 1), Control.DefaultForeColor, ButtonBorderStyle.Outset);
+
+                //gfx.DrawString(r.Slice.Elements.First().Object.ToString(), font,
+                //    new SolidBrush(Control.DefaultForeColor), r.X, r.Y);
             }
 
             var form = new Form { AutoSize = true };
