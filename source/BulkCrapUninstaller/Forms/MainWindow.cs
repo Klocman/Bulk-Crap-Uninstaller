@@ -35,10 +35,11 @@ namespace BulkCrapUninstaller.Forms
     {
         private string MainTitleBarText { get; }
 
-        private readonly UninstallerListViewTools _listView;
+        private readonly UninstallerListViewUpdater _listView;
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
         private readonly Uninstaller _uninstaller;
+        private readonly UninstallerListConfigurator _uninstallerListConfigurator;
 
         private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
         private DebugWindow _debugWindow;
@@ -110,13 +111,17 @@ namespace BulkCrapUninstaller.Forms
                 x => x.QuietAutomatizationKillStuck, this);
 
             // Setup list view
-            _listView = new UninstallerListViewTools(this);
+            _listView = new UninstallerListViewUpdater(this);
+
+            _uninstallerListConfigurator = new UninstallerListConfigurator(this, _listView);
+            _uninstallerListConfigurator.AfterFiltering += (x, y) => _listView.StartProcessingThread();
+            _uninstallerListConfigurator.AfterFiltering += RefreshStatusbarTotalLabel;
+            
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
 
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
-            _listView.AfterFiltering += RefreshStatusbarTotalLabel;
             _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
                 string result = null;
@@ -133,13 +138,14 @@ namespace BulkCrapUninstaller.Forms
             _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
 
+
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
             advancedFilters1.CurrentListChanged +=
-                (sender, args) => _listView.FilteringOverride = advancedFilters1.CurrentList;
+                (sender, args) => _uninstallerListConfigurator.FilteringOverride = advancedFilters1.CurrentList;
             advancedFilters1.FiltersChanged += (sender, args) =>
             {
-                if (_listView.FilteringOverride != null)
-                    _listView.UpdateColumnFiltering();
+                if (_uninstallerListConfigurator.FilteringOverride != null)
+                    _uninstallerListConfigurator.UpdateColumnFiltering();
             };
             advancedFilters1.CurrentListFileNameChanged += RefreshTitleBar;
             advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
@@ -234,7 +240,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SearchCriteriaChanged(object sender, EventArgs e)
         {
-            _listView.UpdateColumnFiltering();
+            _uninstallerListConfigurator.UpdateColumnFiltering();
         }
 
         public void LockApplication(bool value)
@@ -1143,7 +1149,7 @@ namespace BulkCrapUninstaller.Forms
         }
 
         private void _listView_ListRefreshIsRunningChanged(object sender,
-            UninstallerListViewTools.ListRefreshEventArgs e)
+            UninstallerListViewUpdater.ListRefreshEventArgs e)
         {
             // Skip notifications about starting the refresh
             if (e.NewValue) return;
@@ -1267,7 +1273,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _listView.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
+            _uninstallerListConfigurator.RatingManagerWrapper.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
 
         private void OpenNukeWindow(object sender, EventArgs e)
@@ -1301,7 +1307,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonAdvFiltering_Click(object sender, EventArgs e)
         {
-            advancedFilters1.LoadUninstallList(new UninstallList(_listView.GenerateEquivalentFilter()));
+            advancedFilters1.LoadUninstallList(new UninstallList(_uninstallerListConfigurator.GenerateEquivalentFilter()));
         }
 
         private void OpenAdvancedClipboardCopy(object sender, EventArgs e)

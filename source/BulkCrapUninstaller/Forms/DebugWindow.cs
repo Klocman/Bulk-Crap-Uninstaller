@@ -19,12 +19,12 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class DebugWindow : Form
     {
-        private readonly UninstallerListViewTools _listView;
+        private readonly UninstallerListViewUpdater _listView;
         private readonly MainWindow _reference;
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private readonly Uninstaller _uninstaller;
 
-        internal DebugWindow(MainWindow reference, UninstallerListViewTools listview, Uninstaller uninstaller)
+        internal DebugWindow(MainWindow reference, UninstallerListViewUpdater listview, Uninstaller uninstaller)
         {
             _reference = reference;
             _listView = listview;
@@ -38,8 +38,8 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxDebug, x => x.Debug, this);
             checkBoxDebug.Checked = Settings.Default.Debug;
 
-            var messageboxes =
-                typeof(MessageBoxes).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+            var messageboxes = typeof(MessageBoxes)
+                .GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
             foreach (var x in messageboxes)
             {
                 var wr = new ComboBoxWrapper<MethodInfo>(x, y =>
@@ -185,7 +185,9 @@ namespace BulkCrapUninstaller.Forms
                 throw new ArithmeticException("Soft crash test", new IndexOutOfRangeException("Yer a bit bored, eh?"));
             }
             catch (Exception ex)
-            { PremadeDialogs.GenericError(ex); }
+            {
+                PremadeDialogs.GenericError(ex);
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)

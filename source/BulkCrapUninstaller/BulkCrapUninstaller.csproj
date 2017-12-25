@@ -220,6 +220,7 @@
     <Compile Include="Forms\NukeWindow.Designer.cs">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\ApplicationListConstants.cs" />
     <Compile Include="Functions\OnlineSearchTools.cs" />
     <Compile Include="Forms\RatingPopup.cs">
       <SubType>Form</SubType>
@@ -260,7 +261,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Functions\Uninstaller.cs" />
-    <Compile Include="Functions\UninstallerListViewTools.cs" />
+    <Compile Include="Functions\UninstallerListConfigurator.cs" />
+    <Compile Include="Functions\RatingManagerWrapper.cs" />
+    <Compile Include="Functions\UninstallerListViewUpdater.cs" />
     <Compile Include="Functions\UpdateGrabber.cs" />
     <Compile Include="LogWriter.cs" />
     <Compile Include="NBugConfigurator.cs" />
