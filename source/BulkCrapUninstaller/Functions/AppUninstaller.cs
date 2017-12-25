@@ -18,7 +18,6 @@ using Klocman.Forms;
 using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Factory.InfoAdders;
@@ -168,44 +167,39 @@ namespace BulkCrapUninstaller.Functions
 
             try
             {
-                var targets = new List<ApplicationUninstallerEntry>(selectedUninstallers);
+                var targetList = new List<ApplicationUninstallerEntry>(selectedUninstallers);
+                var allUninstallerList = allUninstallers as IList<ApplicationUninstallerEntry> ?? allUninstallers.ToList();
 
                 if (!_settings.AdvancedDisableProtection)
                 {
-                    var protectedTargets = targets.Where(x => x.IsProtected).ToList();
+                    var protectedTargets = targetList.Where(x => x.IsProtected).ToList();
                     if (
                         MessageBoxes.ProtectedItemsWarningQuestion(protectedTargets.Select(x => x.DisplayName).ToArray()) ==
                         MessageBoxes.PressedButton.Cancel)
                         return;
 
-                    targets.RemoveAll(protectedTargets);
+                    targetList.RemoveAll(protectedTargets);
                 }
 
-                if (targets.Any())
+                if (targetList.Any())
                 {
                     _lockApplication(true);
 
-                    var taskEntries = ConvertToTaskEntries(quiet, targets);
+                    _visibleCallback(false);
 
-                    taskEntries = _settings.AdvancedIntelligentUninstallerSorting
-                        ? SortIntelligently(taskEntries).ToList()
-                        : taskEntries.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
+                    using (var wizard = new BeginUninstallTaskWizard())
+                    {
+                        wizard.Initialize(targetList, allUninstallerList.ToList(), quiet);
 
-                    taskEntries = UninstallConfirmationWindow.ShowConfirmationDialog(MessageBoxes.DefaultOwner, taskEntries);
+                        wizard.StartPosition = FormStartPosition.CenterParent;
+                        if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK)
+                            return;
+                       // todo extract results
+                    }
 
-                    if (taskEntries == null || taskEntries.Count == 0)
-                        return;
-
-                    if (!SystemRestore.BeginSysRestore(targets.Count))
-                        return;
-
-                    if (!CheckForRunningProcessesBeforeUninstall(taskEntries.Select(x => x.UninstallerEntry), !quiet))
-                        return;
 
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;
-
-                    _visibleCallback(false);
 
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
@@ -220,7 +214,7 @@ namespace BulkCrapUninstaller.Functions
                         : 1;
                     status.Start();
 
-                    UninstallProgressWindow.ShowUninstallDialog(status, entries => SearchForAndRemoveJunk(entries, allUninstallers));
+                    UninstallProgressWindow.ShowUninstallDialog(status, entries => SearchForAndRemoveJunk(entries, allUninstallerList));
 
                     var junkRemoveTargetsQuery = from bulkUninstallEntry in status.AllUninstallersList
                                                  where bulkUninstallEntry.CurrentStatus == UninstallStatus.Completed
@@ -230,7 +224,7 @@ namespace BulkCrapUninstaller.Functions
                                                  select bulkUninstallEntry.UninstallerEntry;
 
                     if (MessageBoxes.LookForJunkQuestion())
-                        SearchForAndRemoveJunk(junkRemoveTargetsQuery, allUninstallers);
+                        SearchForAndRemoveJunk(junkRemoveTargetsQuery, allUninstallerList);
 
                     if (_settings.ExternalEnable && _settings.ExternalPostCommands.IsNotEmpty())
                     {
@@ -282,26 +276,6 @@ namespace BulkCrapUninstaller.Functions
         public static IEnumerable<BulkUninstallEntry> SortIntelligently(List<BulkUninstallEntry> taskEntries)
         {
             return SortIntelligently(taskEntries, entry => entry);
-        }
-
-        private List<BulkUninstallEntry> ConvertToTaskEntries(bool quiet, List<ApplicationUninstallerEntry> targets)
-        {
-            var targetList = new List<BulkUninstallEntry>();
-
-            foreach (var target in targets)
-            {
-                var tempStatus = UninstallStatus.Waiting;
-                if (!target.IsValid)
-                    tempStatus = UninstallStatus.Invalid;
-                else if (!_settings.AdvancedDisableProtection && target.IsProtected)
-                    tempStatus = UninstallStatus.Protected;
-
-                var silentPossible = quiet && target.QuietUninstallPossible;
-
-                targetList.Add(new BulkUninstallEntry(target, silentPossible, tempStatus));
-            }
-
-            return targetList;
         }
 
         public void AdvancedUninstall(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,

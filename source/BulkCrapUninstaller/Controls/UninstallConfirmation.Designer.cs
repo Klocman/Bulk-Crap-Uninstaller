@@ -1,6 +1,6 @@
 ﻿namespace BulkCrapUninstaller.Forms
 {
-    partial class UninstallConfirmationWindow
+    partial class UninstallConfirmation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallConfirmationWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallConfirmation));
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnEnabled = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -36,9 +36,6 @@
             this.olvColumnInstallLocation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonSmartSort = new System.Windows.Forms.Button();
-            this.buttonAccept = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelInfo = new System.Windows.Forms.Label();
             this.labelInfo2 = new System.Windows.Forms.Label();
@@ -94,9 +91,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonSmartSort);
-            this.panel1.Controls.Add(this.buttonAccept);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.buttonCancel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -106,26 +100,6 @@
             this.buttonSmartSort.Name = "buttonSmartSort";
             this.buttonSmartSort.UseVisualStyleBackColor = true;
             this.buttonSmartSort.Click += new System.EventHandler(this.buttonSort_Click);
-            // 
-            // buttonAccept
-            // 
-            resources.ApplyResources(this.buttonAccept, "buttonAccept");
-            this.buttonAccept.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonAccept.Name = "buttonAccept";
-            this.buttonAccept.UseVisualStyleBackColor = true;
-            this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // buttonCancel
-            // 
-            resources.ApplyResources(this.buttonCancel, "buttonCancel");
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -147,21 +121,19 @@
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.layer;
+            this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources.list_reorder;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // UninstallConfirmationWindow
+            // UninstallConfirmation
             // 
-            this.AcceptButton = this.buttonAccept;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancel;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.objectListView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Name = "UninstallConfirmationWindow";
+            this.Name = "UninstallConfirmation";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -177,9 +149,6 @@
 
         private BrightIdeasSoftware.ObjectListView objectListView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonAccept;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label labelInfo;
         private BrightIdeasSoftware.OLVColumn olvColumnEnabled;

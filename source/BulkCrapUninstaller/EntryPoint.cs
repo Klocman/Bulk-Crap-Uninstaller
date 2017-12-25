@@ -147,7 +147,7 @@ namespace BulkCrapUninstaller
 
                 // Necessary to put form constructor here for objectlistbox. It flips out if
                 // the main form is created inside of the EntryPoint constructor.
-                MainForm = new MainWindow();
+                MainForm = new BeginUninstallTaskWizard();
                 return true;
             }
 

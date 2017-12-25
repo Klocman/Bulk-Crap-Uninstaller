@@ -1,0 +1,59 @@
+﻿/*
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using UninstallTools;
+
+namespace BulkCrapUninstaller.Forms
+{
+    public partial class RelatedUninstallerAdder : UserControl
+    {
+        public RelatedUninstallerAdder()
+        {
+            InitializeComponent();
+
+            olvColumnEnabled.AspectGetter = rowObject => ((RelatedApplicationEntry)rowObject).Enabled;
+            olvColumnEnabled.AspectPutter = (rowObject, value) => ((RelatedApplicationEntry)rowObject).Enabled = (bool)value;
+
+            olvColumnRelatedApps.AspectGetter = rowObject => string.Join(", ",
+                ((RelatedApplicationEntry)rowObject).RelatedEntries.Select(x => x.DisplayName).ToArray());
+
+            olvColumnName.AspectGetter = rowObject => ((RelatedApplicationEntry)rowObject).Entry.DisplayName;
+        }
+
+        private IEnumerable<RelatedApplicationEntry> Entries => objectListView1.Objects.Cast<RelatedApplicationEntry>();
+
+        public IEnumerable<ApplicationUninstallerEntry> GetResults()
+        {
+            return Entries.Where(x => x.Enabled).Select(x => x.Entry).ToList();
+        }
+
+        public void SetRelatedApps(IEnumerable<RelatedApplicationEntry> items)
+        {
+            objectListView1.SetObjects(items
+                .OrderBy(x => x.RelatedEntries.FirstOrDefault()?.DisplayName ?? string.Empty)
+                .ThenBy(x => x.Entry.DisplayName));
+        }
+
+        public sealed class RelatedApplicationEntry
+        {
+            public RelatedApplicationEntry(ApplicationUninstallerEntry entry,
+                IEnumerable<ApplicationUninstallerEntry> relatedEntries)
+            {
+                Entry = entry;
+                RelatedEntries = relatedEntries.OrderBy(x => x.DisplayName).ToList();
+                Enabled = false;
+            }
+
+            public bool Enabled { get; set; }
+
+            public ApplicationUninstallerEntry Entry { get; }
+
+            public IEnumerable<ApplicationUninstallerEntry> RelatedEntries { get; }
+        }
+    }
+}

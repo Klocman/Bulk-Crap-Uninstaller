@@ -133,10 +133,10 @@
     <Compile Include="Controls\AdvancedClipboardCopy.Designer.cs">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AdvancedFilters.cs">
+    <Compile Include="Controls\Settings\AdvancedFilters.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AdvancedFilters.Designer.cs">
+    <Compile Include="Controls\Settings\AdvancedFilters.Designer.cs">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClipboardCopyItem.cs" />
@@ -152,11 +152,20 @@
     <Compile Include="Controls\ListLegend.Designer.cs">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UninstallationSettings.cs">
+    <Compile Include="Controls\TabControlWithoutHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Settings\UninstallationSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UninstallationSettings.Designer.cs">
+    <Compile Include="Controls\Settings\UninstallationSettings.Designer.cs">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RelatedUninstallerAdder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RelatedUninstallerAdder.Designer.cs">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </Compile>
     <Compile Include="CultureConfigurator.cs" />
     <Compile Include="EntryPoint.cs" />
@@ -240,11 +249,11 @@
     <Compile Include="Forms\Helpers\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Wizards\UninstallConfirmationWindow.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controls\UninstallConfirmation.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Wizards\UninstallConfirmationWindow.Designer.cs">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <Compile Include="Controls\UninstallConfirmation.Designer.cs">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\Tools\ImportExport.cs" />
     <Compile Include="Functions\ApplicationList\ListViewDelegates.cs" />
@@ -280,10 +289,10 @@
     <Compile Include="Forms\Helpers\PropertiesWindow.Designer.cs">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PropertiesSidebar.cs">
+    <Compile Include="Controls\Settings\PropertiesSidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PropertiesSidebar.Designer.cs">
+    <Compile Include="Controls\Settings\PropertiesSidebar.Designer.cs">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -364,6 +373,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\list.reorder.png" />
+    <None Include="Resources\diagram.png" />
+    <None Include="Resources\layer.add.png" />
     <None Include="Resources\list.png" />
     <None Include="Resources\weather.sun.set.png" />
     <None Include="Resources\edit.box.png" />
@@ -407,40 +420,40 @@
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.sl.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.ar.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ar.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.cs.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.cs.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.es.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.es.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.fr.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.fr.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.hu.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.hu.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.it.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.it.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.nl.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.nl.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.pl.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.pl.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.pt.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.pt.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.ru.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ru.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedFilters.sl.resx">
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.sl.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileTargeter.ar.resx">
@@ -510,81 +523,84 @@
     <EmbeddedResource Include="Controls\ListLegend.sl.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.ar.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.cs.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.cs.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.de.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.de.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.es.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.es.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.hu.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.hu.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.it.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.it.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.nl.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.nl.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.pl.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.pl.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.fr.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.fr.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.pt.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.pt.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.ru.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ru.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.sl.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.sl.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.ar.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.ar.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.cs.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.cs.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.de.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.de.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.es.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.es.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.fr.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.fr.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.hu.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.hu.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.it.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.it.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.nl.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.nl.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.pl.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.pl.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.pt.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.pt.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.ru.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.ru.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallationSettings.sl.resx">
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.sl.resx">
       <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\AboutBox.ar.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -740,6 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.sl.resx">
       <DependentUpon>FeedbackWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\FirstStartBox.ar.resx">
       <DependentUpon>FirstStartBox.cs</DependentUpon>
@@ -934,7 +953,7 @@
     <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.resx">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PropertiesSidebar.resx">
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1023,35 +1042,35 @@
     <EmbeddedResource Include="Forms\Helpers\SettingsWindow.sl.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.ar.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.ar.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.cs.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.cs.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.es.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.es.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.fr.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.fr.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.nl.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.nl.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.pl.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.pl.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.pt.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.pt.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.ru.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.ru.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\UninstallConfirmationWindow.sl.resx">
-      <DependentUpon>UninstallConfirmationWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.sl.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.ar.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
