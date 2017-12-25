@@ -117,32 +117,6 @@ namespace BulkCrapUninstaller.Functions
             return results;
         }
 
-        private Color GetApplicationBackColor(ApplicationUninstallerEntry entry)
-        {
-            if (entry.UninstallerKind == UninstallerType.WindowsFeature)
-                return ApplicationListConstants.WindowsFeatureColor;
-
-            if (entry.UninstallerKind == UninstallerType.StoreApp)
-                return ApplicationListConstants.WindowsStoreAppColor;
-
-            if (entry.IsOrphaned)
-                return ApplicationListConstants.UnregisteredColor;
-
-            if (!entry.IsValid && _settings.Settings.AdvancedTestInvalid)
-                return ApplicationListConstants.InvalidColor;
-
-            if (_settings.Settings.AdvancedTestCertificates)
-            {
-                var result = entry.IsCertificateValid(true);
-                if (result.HasValue)
-                    return result.Value
-                        ? ApplicationListConstants.VerifiedColor
-                        : ApplicationListConstants.UnverifiedColor;
-            }
-
-            return Color.Empty;
-        }
-
         private bool ListViewFilter(object obj)
         {
             var entry = obj as ApplicationUninstallerEntry;
@@ -293,7 +267,7 @@ namespace BulkCrapUninstaller.Functions
             var entry = e.Model as ApplicationUninstallerEntry;
             if (entry == null) return;
 
-            var color = GetApplicationBackColor(entry);
+            var color = ApplicationListConstants.GetApplicationBackColor(entry);
             if (!color.IsEmpty)
                 e.Item.BackColor = color;
         }

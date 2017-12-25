@@ -13,6 +13,7 @@ namespace SimpleTreeMap
         public int X { get; set; }
 
         public int Y { get; set; }
+        public Rectangle PaintRect { get; set; }
 
         public bool Contains(Point p)
         {

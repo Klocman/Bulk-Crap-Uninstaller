@@ -24,6 +24,7 @@ using Klocman.IO;
 using Klocman.Native;
 using Klocman.Subsystems;
 using Klocman.Tools;
+using SimpleTreeMap;
 using UninstallTools;
 using UninstallTools.Dialogs;
 using UninstallTools.Lists;
@@ -88,11 +89,11 @@ namespace BulkCrapUninstaller.Forms
                     .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
                 x => x.FoldersCustomProgramDirs, this);
 
-            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestCertificates, this);
-            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedTestInvalid, this);
-            _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowStoreApps, this);
-            _setMan.Selected.Subscribe(RefreshListLegend, x => x.FilterShowWinFeatures, this);
-            _setMan.Selected.Subscribe(RefreshListLegend, x => x.AdvancedDisplayOrphans, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestCertificates, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestInvalid, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowStoreApps, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowWinFeatures, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedDisplayOrphans, this);
 
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanSteam = y.NewValue, x => x.ScanSteam, this);
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanStoreApps = y.NewValue, x => x.ScanStoreApps, this);
@@ -116,7 +117,7 @@ namespace BulkCrapUninstaller.Forms
             _uninstallerListConfigurator = new UninstallerListConfigurator(this, _listView);
             _uninstallerListConfigurator.AfterFiltering += (x, y) => _listView.StartProcessingThread();
             _uninstallerListConfigurator.AfterFiltering += RefreshStatusbarTotalLabel;
-            
+
             _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
 
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
@@ -190,9 +191,61 @@ namespace BulkCrapUninstaller.Forms
             PremadeDialogs.SendErrorAction = NBug.Exceptions.Report;
 
             SetupHotkeys();
+
+            treeMap1.ObjectNameGetter = o => ((ApplicationUninstallerEntry)o).DisplayName;
+            treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetRawSize(false);
+            treeMap1.ObjectColorGetter = o => ApplicationListConstants.GetApplicationTreemapColor((ApplicationUninstallerEntry)o);
+
+            _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
+            {
+                var update = y.Value == y.Maximum || (y.Value - 1) % 100 == 0;
+
+                if (update)
+                    this.SafeInvoke(() => UpdateTreeMap(x, y));
+            };
+
+            _uninstallerListConfigurator.AfterFiltering += UpdateTreeMap;
+
+            uninstallerObjectListView.SelectionChanged +=
+                (sender, args) => treeMap1.SetSelectedObjects(uninstallerObjectListView.SelectedObjects.Cast<object>());
+
+            treeMap1.SliceClicked += OnTreeMapSliceClicked;
+
+            treeMap1.SliceRightClicked += (sender, args) =>
+            {
+                if (args.AddToSelection || !uninstallerObjectListView.SelectedObjects.Contains(args.Objects.FirstOrDefault()))
+                    OnTreeMapSliceClicked(sender, args);
+                uninstallListContextMenuStrip.Show(MousePosition);
+            };
+
+            _setMan.Selected.BindControl(showTreemapToolStripMenuItem, settings => settings.ShowTreeMap, this);
+            _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
         }
 
-        private void RefreshListLegend(object sender, EventArgs e)
+        private void OnTreeMapSliceClicked(object sender, TreeMap.SliceClickedEventArgs args)
+        {
+            var list = args.Objects.ToList();
+
+            if (args.AddToSelection)
+                list.AddRange(uninstallerObjectListView.SelectedObjects.Cast<object>());
+
+            uninstallerObjectListView.SelectObjects(list);
+
+            uninstallerObjectListView.EnsureModelVisible(list.FirstOrDefault());
+            uninstallerObjectListView.Focus();
+        }
+
+        private void UpdateTreeMap(object sender, EventArgs args)
+        {
+            treeMap1.Populate(_listView.FilteredUninstallers.Cast<object>());
+        }
+
+        private void OnApplicationListVisibleItemsChanged(object sender, EventArgs e)
+        {
+            UpdateListView();
+        }
+
+        private void UpdateListView()
         {
             var force = advancedFilters1.CurrentList != null;
             _listLegendWindow.ListLegend.CertificatesEnabled = force || _setMan.Selected.Settings.AdvancedTestCertificates;
@@ -412,7 +465,7 @@ namespace BulkCrapUninstaller.Forms
             settingsSidebarPanel.Visible = sidebarOpen;
             settingsSidebarPanel.Enabled = sidebarOpen;
 
-            RefreshListLegend(sender, e);
+            OnApplicationListVisibleItemsChanged(sender, e);
 
             ResumeLayout();
             this.EndControlUpdate();
@@ -619,7 +672,7 @@ namespace BulkCrapUninstaller.Forms
             AddOwnedForm(_listLegendWindow);
 
             _listLegendWindow.UpdatePosition(uninstallerObjectListView);
-            Resize += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
+            listViewPanel.Resize += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             Move += (o, args) => _listLegendWindow.UpdatePosition(uninstallerObjectListView);
             Controls[0].EnabledChanged += (o, args) => _listLegendWindow.Enabled = Controls[0].Enabled;
 
@@ -1228,7 +1281,7 @@ namespace BulkCrapUninstaller.Forms
                 }).Start();
             }
 
-            RefreshListLegend(sender, e);
+            OnApplicationListVisibleItemsChanged(sender, e);
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)

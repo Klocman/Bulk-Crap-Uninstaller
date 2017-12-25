@@ -4,6 +4,8 @@
 */
 
 using System.Drawing;
+using BulkCrapUninstaller.Properties;
+using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -15,5 +17,57 @@ namespace BulkCrapUninstaller.Functions
         public static Color UnregisteredColor = Color.FromArgb(unchecked((int)0xffffcccc));
         public static Color WindowsFeatureColor = Color.FromArgb(unchecked((int)0xffddbbff));
         public static Color WindowsStoreAppColor = Color.FromArgb(unchecked((int)0xffa3ffff));
+
+        public static Color GetApplicationBackColor(ApplicationUninstallerEntry entry)
+        {
+            if (entry.UninstallerKind == UninstallerType.WindowsFeature)
+                return WindowsFeatureColor;
+
+            if (entry.UninstallerKind == UninstallerType.StoreApp)
+                return WindowsStoreAppColor;
+
+            if (entry.IsOrphaned)
+                return UnregisteredColor;
+
+            if (!entry.IsValid && Settings.Default.AdvancedTestInvalid)
+                return InvalidColor;
+
+            if (Settings.Default.AdvancedTestCertificates)
+            {
+                var result = entry.IsCertificateValid(true);
+                if (result.HasValue)
+                    return result.Value
+                        ? VerifiedColor
+                        : UnverifiedColor;
+            }
+
+            return Color.Empty;
+        }
+
+        public static Color GetApplicationTreemapColor(ApplicationUninstallerEntry entry)
+        {
+            if (entry.UninstallerKind == UninstallerType.WindowsFeature)
+                return WindowsFeatureColor;
+
+            if (entry.UninstallerKind == UninstallerType.StoreApp)
+                return WindowsStoreAppColor;
+
+            if (entry.IsOrphaned)
+                return UnregisteredColor;
+
+            if (!entry.IsValid)
+                return InvalidColor;
+            
+            if (Settings.Default.AdvancedTestCertificates)
+            {
+                var result = entry.IsCertificateValid(true);
+                if (result.HasValue)
+                    return result.Value
+                        ? VerifiedColor
+                        : UnverifiedColor;
+            }
+
+            return Color.White;
+        }
     }
 }

@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.23.0.38154, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.23.0.28143, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -168,13 +168,13 @@
   <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
     <value>320</value>
   </data>
-  <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="splitContainerListAndMap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="splitContainerListAndMap.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 30</value>
   </data>
-  <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+  <data name="splitContainerListAndMap.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
@@ -286,7 +286,7 @@
     <value>0, 0</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 372</value>
+    <value>360, 398</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -310,7 +310,7 @@
     <value>0, 0</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 374</value>
+    <value>362, 400</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -322,21 +322,21 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listViewPanel.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel1</value>
+    <value>splitContainerListAndMap.Panel1</value>
   </data>
   <data name="&gt;&gt;listViewPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
-    <value>splitContainer2.Panel1</value>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Name" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer2</value>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="treeMap1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -346,7 +346,7 @@
     <value>0, 0</value>
   </data>
   <data name="treeMap1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 77</value>
+    <value>362, 51</value>
   </data>
   <data name="treeMap1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -358,42 +358,42 @@
     <value>SimpleTreeMap.TreeMap, SimpleTreeMap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;treeMap1.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
+    <value>splitContainerListAndMap.Panel2</value>
   </data>
   <data name="&gt;&gt;treeMap1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Name" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel2</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer2</value>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="splitContainerListAndMap.Size" type="System.Drawing.Size, System.Drawing">
     <value>362, 455</value>
   </data>
-  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>374</value>
+  <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, mscorlib">
+    <value>400</value>
   </data>
-  <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
+  <data name="splitContainerListAndMap.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Name" xml:space="preserve">
-    <value>splitContainer2</value>
+  <data name="&gt;&gt;splitContainerListAndMap.Name" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitContainerListAndMap.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -753,7 +753,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.23.0.38154, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.23.0.28143, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -864,7 +864,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.23.0.39001, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=3.23.0.21435, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -1338,17 +1338,23 @@
   <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Show &amp;toolbar</value>
   </data>
-  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="showTreemapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
-  <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show status &amp;bar</value>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show tree&amp;map</value>
   </data>
   <data name="displaySettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Show &amp;settings sidebar</value>
+  </data>
+  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
+  </data>
+  <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show status &amp;bar</value>
   </data>
   <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 6</value>
@@ -1380,11 +1386,8 @@
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>View Windows Store Apps</value>
   </data>
-  <data name="findByWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 22</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Find by window...</value>
+  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 6</value>
   </data>
   <data name="searchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2596,12 +2599,6 @@
   <data name="&gt;&gt;viewWindowsStoreAppsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;findByWindowToolStripMenuItem.Name" xml:space="preserve">
-    <value>findByWindowToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;findByWindowToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;searchToolStripMenuItem.Name" xml:space="preserve">
     <value>searchToolStripMenuItem</value>
   </data>
@@ -3020,7 +3017,19 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.23.0.38154, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.23.0.28143, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;showTreemapToolStripMenuItem.Name" xml:space="preserve">
+    <value>showTreemapToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;showTreemapToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
+    <value>toolStripSeparator28</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
