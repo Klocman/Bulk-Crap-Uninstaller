@@ -134,8 +134,9 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.useSystemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewUnregisteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addWindowsFeaturesToTheListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewWindowsFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1011,13 +1012,15 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator12,
             this.useSystemThemeToolStripMenuItem,
             this.toolStripSeparator20,
+            this.viewUnregisteredToolStripMenuItem,
             this.viewUpdatesToolStripMenuItem,
-            this.addWindowsFeaturesToTheListToolStripMenuItem,
+            this.viewWindowsFeaturesToolStripMenuItem,
             this.viewWindowsStoreAppsToolStripMenuItem,
             this.toolStripSeparator28,
             this.searchToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+            this.viewToolStripMenuItem.DropDownOpening += new System.EventHandler(this.viewToolStripMenuItem_DropDownOpening);
             // 
             // showColorLegendToolStripMenuItem
             // 
@@ -1067,17 +1070,23 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator20.Name = "toolStripSeparator20";
             resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
             // 
+            // viewUnregisteredToolStripMenuItem
+            // 
+            this.viewUnregisteredToolStripMenuItem.Name = "viewUnregisteredToolStripMenuItem";
+            resources.ApplyResources(this.viewUnregisteredToolStripMenuItem, "viewUnregisteredToolStripMenuItem");
+            this.viewUnregisteredToolStripMenuItem.Click += new System.EventHandler(this.viewUnregisteredToolStripMenuItem_Click);
+            // 
             // viewUpdatesToolStripMenuItem
             // 
             this.viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
             resources.ApplyResources(this.viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
             this.viewUpdatesToolStripMenuItem.Click += new System.EventHandler(this.viewUpdatesToolStripMenuItem_Click);
             // 
-            // addWindowsFeaturesToTheListToolStripMenuItem
+            // viewWindowsFeaturesToolStripMenuItem
             // 
-            this.addWindowsFeaturesToTheListToolStripMenuItem.Name = "addWindowsFeaturesToTheListToolStripMenuItem";
-            resources.ApplyResources(this.addWindowsFeaturesToTheListToolStripMenuItem, "addWindowsFeaturesToTheListToolStripMenuItem");
-            this.addWindowsFeaturesToTheListToolStripMenuItem.Click += new System.EventHandler(this.addWindowsFeaturesToTheListToolStripMenuItem_Click);
+            this.viewWindowsFeaturesToolStripMenuItem.Name = "viewWindowsFeaturesToolStripMenuItem";
+            resources.ApplyResources(this.viewWindowsFeaturesToolStripMenuItem, "viewWindowsFeaturesToolStripMenuItem");
+            this.viewWindowsFeaturesToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsFeaturesToolStripMenuItem_Click);
             // 
             // viewWindowsStoreAppsToolStripMenuItem
             // 
@@ -1759,7 +1768,7 @@ namespace BulkCrapUninstaller.Forms
         private AdvancedFilters advancedFilters1;
         private ToolStripMenuItem advancedClipCopyToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem9;
-        private ToolStripMenuItem addWindowsFeaturesToTheListToolStripMenuItem;
+        private ToolStripMenuItem viewWindowsFeaturesToolStripMenuItem;
         private ToolStripMenuItem uninstallFromDirectoryToolStripMenuItem;
         private ToolStripMenuItem googleToolStripMenuItem;
         private ToolStripMenuItem alternativeToToolStripMenuItem;
@@ -1791,6 +1800,7 @@ namespace BulkCrapUninstaller.Forms
         private SimpleTreeMap.TreeMap treeMap1;
         private ToolStripMenuItem showTreemapToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator28;
+        private ToolStripMenuItem viewUnregisteredToolStripMenuItem;
     }
 }
 

@@ -456,8 +456,7 @@ namespace BulkCrapUninstaller.Forms
         {
             this.BeginControlUpdate();
             SuspendLayout();
-
-            var ulistOpen = advancedFilters1.CurrentList != null;
+            bool ulistOpen = IsAdvancedFilteringEnabled;
             splitContainer1.Panel1Collapsed = !ulistOpen;
             splitContainer1.Panel1.Enabled = ulistOpen;
 
@@ -470,6 +469,8 @@ namespace BulkCrapUninstaller.Forms
             ResumeLayout();
             this.EndControlUpdate();
         }
+
+        private bool IsAdvancedFilteringEnabled => advancedFilters1.CurrentList != null;
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1010,7 +1011,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void toolsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
-            addWindowsFeaturesToTheListToolStripMenuItem.Enabled = DismTools.DismIsAvailable;
+            viewWindowsFeaturesToolStripMenuItem.Enabled = DismTools.DismIsAvailable;
         }
 
         private void toolStripLabelStatus_TextChanged(object sender, EventArgs e)
@@ -1346,7 +1347,7 @@ namespace BulkCrapUninstaller.Forms
             _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
         }
 
-        private void addWindowsFeaturesToTheListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void viewWindowsFeaturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _setMan.Selected.Settings.FilterShowWinFeatures = true;
             filterEditor1.Search(nameof(UninstallerType.WindowsFeature), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
@@ -1462,6 +1463,22 @@ namespace BulkCrapUninstaller.Forms
             filters.AddRange(selectedUninstallers.Select(x => new Filter(x.DisplayName, exclude, new FilterCondition(x.DisplayName, ComparisonMethod.Equals,
                     nameof(ApplicationUninstallerEntry.DisplayName)))));
             advancedFilters1.RepopulateList();
+        }
+
+        private void viewUnregisteredToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _setMan.Selected.Settings.AdvancedDisplayOrphans = true;
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned));
+        }
+
+        private void viewToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            var isSimpleFiltering = !IsAdvancedFilteringEnabled;
+
+            viewUnregisteredToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewUpdatesToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewWindowsStoreAppsToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewWindowsFeaturesToolStripMenuItem.Enabled = isSimpleFiltering;
         }
     }
 }

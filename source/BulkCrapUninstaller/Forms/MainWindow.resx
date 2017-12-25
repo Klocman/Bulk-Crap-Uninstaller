@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.23.0.32106, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=3.23.0.32838, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -753,7 +753,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.23.0.32106, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=3.23.0.32838, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -1368,16 +1368,22 @@
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 6</value>
   </data>
+  <data name="viewUnregisteredToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>View Unregistered</value>
+  </data>
   <data name="viewUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>View Updates</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewWindowsFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>View Windows Features</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -2587,16 +2593,22 @@
   <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;viewUnregisteredToolStripMenuItem.Name" xml:space="preserve">
+    <value>viewUnregisteredToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;viewUnregisteredToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;viewUpdatesToolStripMenuItem.Name" xml:space="preserve">
     <value>viewUpdatesToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;viewUpdatesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Name" xml:space="preserve">
-    <value>addWindowsFeaturesToTheListToolStripMenuItem</value>
+  <data name="&gt;&gt;viewWindowsFeaturesToolStripMenuItem.Name" xml:space="preserve">
+    <value>viewWindowsFeaturesToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;addWindowsFeaturesToTheListToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewWindowsFeaturesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;viewWindowsStoreAppsToolStripMenuItem.Name" xml:space="preserve">
@@ -3029,7 +3041,7 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.23.0.32106, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=3.23.0.32838, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
