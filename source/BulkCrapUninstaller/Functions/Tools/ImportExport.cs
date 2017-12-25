@@ -11,7 +11,7 @@ using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using UninstallTools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     internal static class ImportExport
     {

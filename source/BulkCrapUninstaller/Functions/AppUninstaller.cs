@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
+using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Forms;
@@ -27,7 +28,7 @@ using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Functions
 {
-    internal class Uninstaller
+    internal class AppUninstaller
     {
         private readonly Action _initiateListRefresh;
         private readonly Action<bool> _lockApplication;
@@ -41,7 +42,7 @@ namespace BulkCrapUninstaller.Functions
         public readonly object PublicUninstallLock = new object();
 
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
-        internal Uninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
+        internal AppUninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
         {
             if (listRefreshCallback == null) throw new ArgumentNullException(nameof(listRefreshCallback));
             if (applicationLockCallback == null) throw new ArgumentNullException(nameof(applicationLockCallback));

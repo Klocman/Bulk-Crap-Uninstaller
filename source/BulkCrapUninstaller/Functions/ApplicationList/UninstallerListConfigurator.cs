@@ -6,11 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Forms;
+using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Extensions;
@@ -18,7 +18,7 @@ using Klocman.Localising;
 using UninstallTools;
 using UninstallTools.Lists;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal class UninstallerListConfigurator : IDisposable
     {

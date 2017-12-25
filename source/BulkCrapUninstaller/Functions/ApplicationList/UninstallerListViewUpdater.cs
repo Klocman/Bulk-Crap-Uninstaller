@@ -24,7 +24,7 @@ using UninstallTools.Controls;
 using UninstallTools.Factory;
 using UninstallTools.Startup;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal class UninstallerListViewUpdater : IDisposable
     {

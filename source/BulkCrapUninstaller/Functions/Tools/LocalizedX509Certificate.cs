@@ -10,7 +10,7 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Localising;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     internal class LocalizedX509Certificate2
     {

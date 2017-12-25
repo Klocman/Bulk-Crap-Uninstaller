@@ -7,7 +7,7 @@ using System.Drawing;
 using BulkCrapUninstaller.Properties;
 using UninstallTools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal static class ApplicationListConstants
     {

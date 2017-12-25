@@ -89,7 +89,7 @@ namespace BulkCrapUninstaller.Forms
         private void buttonSort_Click(object sender, EventArgs e)
         {
             objectListView1.PrimarySortColumn = null;
-            var results = Uninstaller.SortIntelligently(Entries, entry => entry.Entry);
+            var results = AppUninstaller.SortIntelligently(Entries, entry => entry.Entry);
             objectListView1.SetObjects(results.ToList());
         }
     }

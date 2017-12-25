@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.ApplicationList;
 using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
@@ -22,13 +23,13 @@ namespace BulkCrapUninstaller.Forms
         private readonly UninstallerListViewUpdater _listView;
         private readonly MainWindow _reference;
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-        private readonly Uninstaller _uninstaller;
+        private readonly AppUninstaller _appUninstaller;
 
-        internal DebugWindow(MainWindow reference, UninstallerListViewUpdater listview, Uninstaller uninstaller)
+        internal DebugWindow(MainWindow reference, UninstallerListViewUpdater listview, AppUninstaller appUninstaller)
         {
             _reference = reference;
             _listView = listview;
-            _uninstaller = uninstaller;
+            _appUninstaller = appUninstaller;
 
             InitializeComponent();
 
@@ -168,7 +169,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void TestJunkSearcher(object sender, EventArgs e)
         {
-            _uninstaller.AdvancedUninstall(_listView.SelectedUninstallers,
+            _appUninstaller.AdvancedUninstall(_listView.SelectedUninstallers,
                 _listView.AllUninstallers.Except(_listView.SelectedUninstallers));
         }
 

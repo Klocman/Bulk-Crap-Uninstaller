@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.ApplicationList;
 using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller.Controls

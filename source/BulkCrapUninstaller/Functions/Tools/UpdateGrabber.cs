@@ -8,10 +8,10 @@ using System.Reflection;
 using System.Threading;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
-using Klocman.UpdateSystem;
 using Klocman.Tools;
+using Klocman.UpdateSystem;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     internal static class UpdateGrabber
     {

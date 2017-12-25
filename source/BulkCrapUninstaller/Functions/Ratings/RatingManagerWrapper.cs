@@ -12,7 +12,6 @@ using System.Threading;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Forms;
-using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
@@ -20,7 +19,7 @@ using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Ratings
 {
     internal class RatingManagerWrapper : IDisposable
     {

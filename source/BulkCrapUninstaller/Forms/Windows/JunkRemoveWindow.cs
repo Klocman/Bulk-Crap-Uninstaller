@@ -66,7 +66,7 @@ namespace BulkCrapUninstaller.Forms
             try
             {
                 var filters = SelectedJunk.OfType<FileSystemJunk>().Select(x => x.Path.FullName).Distinct().ToArray();
-                if (!Uninstaller.CheckForRunningProcesses(filters, false, this))
+                if (!AppUninstaller.CheckForRunningProcesses(filters, false, this))
                     return;
 
                 if (SelectedJunk.Any(x => !(x is FileSystemJunk)))

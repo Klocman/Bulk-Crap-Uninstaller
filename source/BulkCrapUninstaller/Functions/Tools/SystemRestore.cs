@@ -8,7 +8,7 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
 using Klocman.IO;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     internal static class SystemRestore
     {

@@ -11,7 +11,7 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     internal sealed class SettingTools
     {

@@ -15,6 +15,8 @@ using System.Threading;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.ApplicationList;
+using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
@@ -39,7 +41,7 @@ namespace BulkCrapUninstaller.Forms
         private readonly UninstallerListViewUpdater _listView;
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
-        private readonly Uninstaller _uninstaller;
+        private readonly AppUninstaller _appUninstaller;
         private readonly UninstallerListConfigurator _uninstallerListConfigurator;
 
         private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
@@ -118,7 +120,7 @@ namespace BulkCrapUninstaller.Forms
             _uninstallerListConfigurator.AfterFiltering += (x, y) => _listView.StartProcessingThread();
             _uninstallerListConfigurator.AfterFiltering += RefreshStatusbarTotalLabel;
 
-            _uninstaller = new Uninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
+            _appUninstaller = new AppUninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
 
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
@@ -136,7 +138,7 @@ namespace BulkCrapUninstaller.Forms
                 if (result != null)
                     this.SafeInvoke(() => toolStripLabelStatus.Text = result);
             };
-            _listView.UninstallerFileLock = _uninstaller.PublicUninstallLock;
+            _listView.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
 
 
@@ -486,7 +488,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void cleanUpProgramFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.SearchForAndRemoveProgramFilesJunk(_listView.AllUninstallers);
+            _appUninstaller.SearchForAndRemoveProgramFilesJunk(_listView.AllUninstallers);
         }
 
         private void ClipboardCopyFullInformation(object x, EventArgs y)
@@ -586,7 +588,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void exportDialog_FileOk(object sender, CancelEventArgs e)
         {
-            if (!Uninstaller.ExportUninstallers(_listView.SelectedUninstallers, exportDialog.FileName))
+            if (!AppUninstaller.ExportUninstallers(_listView.SelectedUninstallers, exportDialog.FileName))
                 e.Cancel = true;
         }
 
@@ -688,17 +690,17 @@ namespace BulkCrapUninstaller.Forms
 
         private void msiInstallContextMenuStripItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.UninstallUsingMsi(MsiUninstallModes.InstallModify, _listView.SelectedUninstallers);
+            _appUninstaller.UninstallUsingMsi(MsiUninstallModes.InstallModify, _listView.SelectedUninstallers);
         }
 
         private void msiQuietUninstallContextMenuStripItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.UninstallUsingMsi(MsiUninstallModes.QuietUninstall, _listView.SelectedUninstallers);
+            _appUninstaller.UninstallUsingMsi(MsiUninstallModes.QuietUninstall, _listView.SelectedUninstallers);
         }
 
         private void msiUninstallContextMenuStripItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.UninstallUsingMsi(MsiUninstallModes.Uninstall, _listView.SelectedUninstallers);
+            _appUninstaller.UninstallUsingMsi(MsiUninstallModes.Uninstall, _listView.SelectedUninstallers);
         }
 
         private void OnFirstApplicationStart()
@@ -720,7 +722,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (_debugWindow == null || _debugWindow.IsDisposed)
             {
-                _debugWindow = new DebugWindow(this, _listView, _uninstaller);
+                _debugWindow = new DebugWindow(this, _listView, _appUninstaller);
             }
 
             _debugWindow.Show();
@@ -917,17 +919,17 @@ namespace BulkCrapUninstaller.Forms
                 return;
             }
 
-            _uninstaller.AdvancedUninstall(items, _listView.AllUninstallers);
+            _appUninstaller.AdvancedUninstall(items, _listView.AllUninstallers);
         }
 
         private void RunLoudUninstall(object x, EventArgs y)
         {
-            _uninstaller.RunUninstall(_listView.SelectedUninstallers, _listView.AllUninstallers, false);
+            _appUninstaller.RunUninstall(_listView.SelectedUninstallers, _listView.AllUninstallers, false);
         }
 
         private void RunQuietUninstall(object x, EventArgs y)
         {
-            _uninstaller.RunUninstall(_listView.SelectedUninstallers, _listView.AllUninstallers, true);
+            _appUninstaller.RunUninstall(_listView.SelectedUninstallers, _listView.AllUninstallers, true);
 
             /*var nonQuiet =
                 _listView.SelectedUninstallers.Where(o => !o.QuietUninstallPossible)
@@ -1026,7 +1028,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void uninstallBCUninstallToolstripMenuItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.AskToSelfUninstall();
+            _appUninstaller.AskToSelfUninstall();
         }
 
         private void uninstallerObjectListView_CellEditStarting(object sender, CellEditEventArgs e)
@@ -1336,7 +1338,7 @@ namespace BulkCrapUninstaller.Forms
 
             if (results == null) return;
 
-            var apps = Uninstaller.GetApplicationsFromDirectories(_listView.AllUninstallers, results);
+            var apps = AppUninstaller.GetApplicationsFromDirectories(_listView.AllUninstallers, results);
 
             if (apps.Count == 0)
             {
@@ -1344,7 +1346,7 @@ namespace BulkCrapUninstaller.Forms
                 return;
             }
 
-            _uninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
+            _appUninstaller.RunUninstall(apps, _listView.AllUninstallers, true);
         }
 
         private void viewWindowsFeaturesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1376,7 +1378,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void uninstallFromDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.UninstallFromDirectory(_listView.AllUninstallers);
+            _appUninstaller.UninstallFromDirectory(_listView.AllUninstallers);
         }
 
         private void openSystemRestoreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1439,7 +1441,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _uninstaller.Modify(_listView.SelectedUninstallers);
+            _appUninstaller.Modify(_listView.SelectedUninstallers);
         }
 
         private void excludeToolStripMenuItem_Click(object sender, EventArgs e)

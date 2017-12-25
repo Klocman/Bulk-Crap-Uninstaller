@@ -8,11 +8,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
-using BulkCrapUninstaller.Forms;
 using Klocman.Tools;
 using UninstallTools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.Tools
 {
     public static class OnlineSearchTools
     {

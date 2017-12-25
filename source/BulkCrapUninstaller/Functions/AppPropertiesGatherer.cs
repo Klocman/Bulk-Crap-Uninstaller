@@ -10,6 +10,7 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
@@ -29,7 +30,7 @@ namespace BulkCrapUninstaller.Functions
         Registry
     }
 
-    internal static class Properties
+    internal static class AppPropertiesGatherer
     {
         public static DataTable GetInfo(ApplicationUninstallerEntry entry, InfoType infoType)
         {

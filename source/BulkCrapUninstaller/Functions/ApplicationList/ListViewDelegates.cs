@@ -13,7 +13,7 @@ using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools;
 
-namespace BulkCrapUninstaller.Functions
+namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal static class ListViewDelegates
     {
