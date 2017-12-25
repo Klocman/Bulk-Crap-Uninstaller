@@ -15,12 +15,10 @@ namespace SimpleTreeMapTests
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var tr=new Class1();
-            tr.Main();
+            
+            treeMap1.ObjectNameGetter = o => o.ToString();
+            treeMap1.ObjectValueGetter = o => (int)o;
+            treeMap1.Populate(new [] {10,9,8,7,6,5,3,3,3,1}.Cast<object>());
         }
     }
 }

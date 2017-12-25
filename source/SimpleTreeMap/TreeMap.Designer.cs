@@ -1,13 +1,13 @@
-﻿namespace SimpleTreeMapTests
+﻿namespace SimpleTreeMap
 {
-    partial class Form1
+    partial class TreeMap
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,41 +20,37 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeMap1 = new SimpleTreeMap.TreeMap();
+            this.components = new System.ComponentModel.Container();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // treeMap1
+            // toolTip1
             // 
-            this.treeMap1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeMap1.Location = new System.Drawing.Point(33, 33);
-            this.treeMap1.MinSliceRatio = 0.3D;
-            this.treeMap1.Name = "treeMap1";
-            this.treeMap1.Size = new System.Drawing.Size(403, 239);
-            this.treeMap1.TabIndex = 1;
+            this.toolTip1.AutomaticDelay = 0;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.UseAnimation = false;
+            this.toolTip1.UseFading = false;
             // 
-            // Form1
+            // TreeMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 305);
-            this.Controls.Add(this.treeMap1);
-            this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(33);
-            this.Text = "Form1";
+            this.Name = "TreeMap";
+            this.Size = new System.Drawing.Size(364, 136);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private SimpleTreeMap.TreeMap treeMap1;
+
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
-
