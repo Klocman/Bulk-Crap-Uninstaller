@@ -35,7 +35,6 @@
             // 
             this.treeMap1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeMap1.Location = new System.Drawing.Point(33, 33);
-            this.treeMap1.MinSliceRatio = 0.3D;
             this.treeMap1.Name = "treeMap1";
             this.treeMap1.Size = new System.Drawing.Size(403, 239);
             this.treeMap1.TabIndex = 1;

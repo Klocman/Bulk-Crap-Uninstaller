@@ -25,6 +25,7 @@ namespace BulkCrapUninstaller.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -45,6 +46,7 @@ namespace BulkCrapUninstaller.Forms
             this.olvColumnRegistryKeyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnGuid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnQuietUninstallString = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.treeMap1 = new SimpleTreeMap.TreeMap();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
@@ -208,6 +210,9 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.listViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).BeginInit();
             this.toolStrip.SuspendLayout();
@@ -231,7 +236,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listViewPanel);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             // 
@@ -240,6 +245,19 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
             this.advancedFilters1.Name = "advancedFilters1";
             this.advancedFilters1.SelectedEntryGetter = null;
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.listViewPanel);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.treeMap1);
             // 
             // listViewPanel
             // 
@@ -400,6 +418,11 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnQuietUninstallString
             // 
             resources.ApplyResources(this.olvColumnQuietUninstallString, "olvColumnQuietUninstallString");
+            // 
+            // treeMap1
+            // 
+            resources.ApplyResources(this.treeMap1, "treeMap1");
+            this.treeMap1.Name = "treeMap1";
             // 
             // toolStrip
             // 
@@ -1553,6 +1576,9 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.ResumeLayout(false);
             this.listViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
             this.toolStrip.ResumeLayout(false);
@@ -1755,6 +1781,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem excludeToolStripMenuItem;
         private ToolStripMenuItem includeToolStripMenuItem;
         private ToolStripSeparator toolStripSeparatorFiltering;
+        private SplitContainer splitContainer2;
+        private SimpleTreeMap.TreeMap treeMap1;
     }
 }
 

@@ -1186,6 +1186,10 @@
       <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>
       <Name>PortableSettingsProvider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj">
+      <Project>{52fcbdb1-48d8-448d-b8ca-07f10ab3ca25}</Project>
+      <Name>SimpleTreeMap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UninstallTools\UninstallTools.csproj">
       <Project>{87091c84-b671-4269-abe4-d0f818ab201c}</Project>
       <Name>UninstallTools</Name>
