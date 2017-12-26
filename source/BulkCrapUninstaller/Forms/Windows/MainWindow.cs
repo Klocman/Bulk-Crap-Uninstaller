@@ -1277,14 +1277,13 @@ namespace BulkCrapUninstaller.Forms
                 {
                     this.SafeInvoke(() =>
                     {
-                        var isFirstRun = _setMan.Selected.Settings.MiscFirstRun;
-                        if (isFirstRun)
+                        if (_setMan.Selected.Settings.MiscFirstRun)
                         {
                             // Run the welcome wizard at first start of the application
                             OnFirstApplicationStart();
                         }
 
-                        if (Program.IsAfterUpgrade || isFirstRun)
+                        if (Program.IsAfterUpgrade || _setMan.Selected.Settings.MiscFirstRun)
                         {
                             NewsPopup.ShowPopup(this);
                         }
