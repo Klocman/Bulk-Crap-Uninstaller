@@ -196,9 +196,7 @@ namespace BulkCrapUninstaller.Forms
 
                     labelApps.Text = string.Join(", ",
                         taskEntries.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x).ToArray());
-                    labelTotalSize.Text =
-                        FileSize.FromBytes(taskEntries.Sum(x => x.UninstallerEntry.EstimatedSize.GetRawSize(false)))
-                            .ToString();
+                    labelTotalSize.Text = FileSize.SumFileSizes(taskEntries.Select(x => x.UninstallerEntry.EstimatedSize)).ToString();
 
                     labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
                     labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();

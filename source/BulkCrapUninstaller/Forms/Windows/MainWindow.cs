@@ -220,6 +220,14 @@ namespace BulkCrapUninstaller.Forms
                 uninstallListContextMenuStrip.Show(MousePosition);
             };
 
+            treeMap1.SliceHovered += (sender, args) =>
+            {
+                toolStripLabelStatus.Text = args.Rectangle.Slice.ToElementNames();
+                toolStripLabelSize.Text =
+                    FileSize.SumFileSizes(args.Objects.Cast<ApplicationUninstallerEntry>().Select(x => x.EstimatedSize))
+                        .ToString();
+            };
+
             _setMan.Selected.BindControl(showTreemapToolStripMenuItem, settings => settings.ShowTreeMap, this);
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
         }
