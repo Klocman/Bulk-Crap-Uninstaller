@@ -168,4 +168,14 @@
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
     <value>Process failed to start.</value>
   </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Starting automatizer as a daemon/service.</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Daemon stopped because of: </value>
+    <comment>This is followed by error/info message</comment>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} is not a valid number</value>
+  </data>
 </root>

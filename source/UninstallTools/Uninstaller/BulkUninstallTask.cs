@@ -6,6 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
@@ -138,6 +141,9 @@ namespace UninstallTools.Uninstaller
             if (targetList == null || configuration == null)
                 throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
 
+            if (configuration.PreferQuiet && AllUninstallersList.Any(x => x.IsSilent))
+                StartAutomationDaemon();
+
             try
             {
                 StartOfLoop:
@@ -176,7 +182,7 @@ namespace UninstallTools.Uninstaller
                     {
                         result.RunUninstaller(
                             new BulkUninstallEntry.RunUninstallerOptions(configuration.AutoKillStuckQuiet,
-                                configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate));
+                                configuration.RetryFailedQuiet, configuration.PreferQuiet, configuration.Simulate, this));
                         // Fire the event now so the interface can be updated
                         OnStatusChanged?.Invoke(this, EventArgs.Empty);
                     }
@@ -190,28 +196,96 @@ namespace UninstallTools.Uninstaller
             }
             finally
             {
+                StopAutomationDaemon();
                 Finished = true;
             }
         }
 
-        /*public bool RunSingle(BulkUninstallEntry entry, bool disableCollisionDetection)
+        private void StopAutomationDaemon()
         {
-            if (!disableCollisionDetection)
+            try
             {
-                var running = AllUninstallersList.Where(x => x.CurrentStatus == UninstallStatus.Uninstalling).ToList();
-                var runningTypes = running.Select(y => y.UninstallerEntry.UninstallerKind).ToList();
+                using (client)
+                using (writer)
+                {
+                    writer?.WriteLine(@"stop");
+                    client = null;
+                    writer = null;
+                }
 
-                if (CheckForTypeCollisions(entry.UninstallerEntry.UninstallerKind, runningTypes))
-                    return false;
+                if (_quietUninstallDaemonProcess != null && !_quietUninstallDaemonProcess.HasExited)
+                    _quietUninstallDaemonProcess.WaitForExit(7000);
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(@"Failed to peacefully close automatizer daemon");
+                Console.WriteLine(ex);
 
-                if (CheckForAdvancedCollisions(entry.UninstallerEntry, running.Select(y => y.UninstallerEntry)))
-                    return false;
+                try { _quietUninstallDaemonProcess?.Kill(); }
+                catch (SystemException) { }
             }
 
-            entry.RunUninstaller(new BulkUninstallEntry.RunUninstallerOptions(Configuration.AutoKillStuckQuiet,
-                    Configuration.RetryFailedQuiet, Configuration.PreferQuiet, Configuration.Simulate));
-            return true;
-        }*/
+            _quietUninstallDaemonProcess = null;
+        }
+
+        Process _quietUninstallDaemonProcess;
+
+        private void StartAutomationDaemon()
+        {
+            if (UninstallToolsGlobalConfig.UseQuietUninstallDaemon)
+            {
+                if (!UninstallToolsGlobalConfig.UninstallerAutomatizerExists)
+                    UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
+                else
+                {
+                    try
+                    {
+                        _quietUninstallDaemonProcess = Process.Start(UninstallToolsGlobalConfig.UninstallerAutomatizerPath, "/d");
+
+                        try
+                        {
+                            client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
+                            writer = new StreamWriter(client);
+
+                            client.Connect(7000);
+                            writer.AutoFlush = true;
+                        }
+                        catch (SystemException ex)
+                        {
+                            UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
+
+                            Console.WriteLine(@"Failed to connect to automatization daemon");
+                            Console.WriteLine(ex);
+
+                            StopAutomationDaemon();
+                        }
+                    }
+                    catch (SystemException ex)
+                    {
+                        UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
+
+                        Console.WriteLine(@"Failed to start automatization daemon");
+                        Console.WriteLine(ex);
+                    }
+                }
+            }
+        }
+
+        NamedPipeClientStream client;
+        StreamWriter writer;
+
+        internal void SendProcessesToWatchToDeamon(IEnumerable<int> processIdsToAutomate)
+        {
+            if (writer == null || client == null || !client.IsConnected) return;
+
+            var pidList = processIdsToAutomate.ToList();
+
+            foreach (var pid in pidList)
+            {
+                Debug.WriteLine("Sending pid: " + pid + " to automatizer daemon");
+                writer.WriteLine(pid.ToString(CultureInfo.InvariantCulture));
+            }
+        }
 
         private static bool CheckForAdvancedCollisions(ApplicationUninstallerEntry target,
             IEnumerable<ApplicationUninstallerEntry> running)

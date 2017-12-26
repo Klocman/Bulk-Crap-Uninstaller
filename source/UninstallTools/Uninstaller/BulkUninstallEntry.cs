@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
@@ -39,7 +41,7 @@ namespace UninstallTools.Uninstaller
                         return null;
                     }
                 }
-            }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] {"explorer"}).Distinct().ToArray();
+            }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] { "explorer" }).Distinct().ToArray();
 
         private readonly object _operationLock = new object();
 
@@ -128,7 +130,7 @@ namespace UninstallTools.Uninstaller
                         : UninstallerEntry.UninstallString;
 
                     // Always reenumerate products in case any were uninstalled
-                    if (ApplicationUninstallerFactory.PathPointsToMsiExec(uninstallString) && 
+                    if (ApplicationUninstallerFactory.PathPointsToMsiExec(uninstallString) &&
                         MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey)))
                     {
                         CurrentStatus = UninstallStatus.Completed;
@@ -141,7 +143,7 @@ namespace UninstallTools.Uninstaller
 
                 try
                 {
-                    _worker = new Thread(UninstallThread) {Name = "RunBulkUninstall_Worker", IsBackground = false};
+                    _worker = new Thread(UninstallThread) { Name = "RunBulkUninstall_Worker", IsBackground = false };
                     _worker.Start(options);
                 }
                 catch
@@ -187,7 +189,7 @@ namespace UninstallTools.Uninstaller
                 if (IsRunning)
                 {
                     // Do not allow skipping of Msiexec uninstallers because they will hold up the rest of Msiexec uninstallers in the task
-                    if (CurrentStatus == UninstallStatus.Uninstalling && 
+                    if (CurrentStatus == UninstallStatus.Uninstalling &&
                         UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                     {
                         SkipWaiting(true);
@@ -228,7 +230,7 @@ namespace UninstallTools.Uninstaller
                     };
                     // Important to NextSample now, they will collect data when we sleep
                     _perfCounterBuffer.Add(childProcessName, new PerfCounterEntry(
-                        perfCounters, new[] {perfCounters[0].NextSample(), perfCounters[1].NextSample()}));
+                        perfCounters, new[] { perfCounters[0].NextSample(), perfCounters[1].NextSample() }));
                 }
                 catch
                 {
@@ -311,7 +313,10 @@ namespace UninstallTools.Uninstaller
 
                     var checkCounters = options.PreferQuiet && options.AutoKillStuckQuiet &&
                                         UninstallerEntry.QuietUninstallPossible;
-                    var watchedProcesses = new List<Process> {uninstaller};
+
+                    var watchedProcesses = new List<Process> { uninstaller };
+                    int[] previousWatchedProcessIds = { };
+
                     var idleCounter = 0;
 
                     while (true)
@@ -322,7 +327,6 @@ namespace UninstallTools.Uninstaller
                         foreach (var watchedProcess in watchedProcesses.ToList())
                             watchedProcesses.AddRange(watchedProcess.GetChildProcesses());
 
-                        // Msiexec service can start processes, but we don't want to watch the service
                         if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                         {
                             foreach (var watchedProcess in Process.GetProcessesByName("msiexec"))
@@ -331,7 +335,8 @@ namespace UninstallTools.Uninstaller
 
                         watchedProcesses = CleanupDeadProcesses(watchedProcesses, processSnapshot).ToList();
 
-                        // Check if we are done, or if there are some proceses left that we missed
+                        // Check if we are done, or if there are some proceses left that we missed.
+                        // We are done when the entry process and all of its spawns exit.
                         if (watchedProcesses.Count == 0)
                         {
                             if (string.IsNullOrEmpty(UninstallerEntry.InstallLocation))
@@ -343,21 +348,22 @@ namespace UninstallTools.Uninstaller
                                 break;
                         }
 
-                        // Check for deadlocks during silent uninstall
+                        // Only try to automate first try. If it fails, don't try to automate 
+                        // the rerun in case user or app itself can resolve the issue.
+                        if (IsSilent && UninstallToolsGlobalConfig.UseQuietUninstallDaemon && _canRetry)
+                        {
+                            var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
+
+                            options.Owner.SendProcessesToWatchToDeamon(processIds.Except(previousWatchedProcessIds));
+
+                            previousWatchedProcessIds = processIds;
+                        }
+
+                        // Check for deadlocks during silent uninstall. Prevents the task from getting stuck 
+                        // idefinitely on stuck uninstallers and unrelated processes spawned by uninstallers.
                         if (checkCounters)
                         {
-                            var processNames = watchedProcesses.Select(x =>
-                            {
-                                try
-                                {
-                                    return x.ProcessName;
-                                }
-                                catch
-                                {
-                                    // Ignore errors caused by processes that exited
-                                    return null;
-                                }
-                            }).Where(x => !string.IsNullOrEmpty(x));
+                            var processNames = SafeGetProcessNames(watchedProcesses);
 
                             if (TestUninstallerForStalls(processNames))
                                 idleCounter++;
@@ -487,6 +493,43 @@ namespace UninstallTools.Uninstaller
             }
         }
 
+        private static IEnumerable<string> SafeGetProcessNames(IEnumerable<Process> processes)
+        {
+            return processes.Select(x =>
+            {
+                try
+                {
+                    return x.ProcessName;
+                }
+                catch
+                {
+                    // Ignore errors caused by processes that exited
+                    return null;
+                }
+            }).Where(x => !string.IsNullOrEmpty(x));
+        }
+
+        private static IEnumerable<int> SafeGetProcessIds(IEnumerable<Process> processes)
+        {
+            return processes.Select(x =>
+            {
+                try
+                {
+                    x.Refresh();
+                    if (x.MainWindowHandle == IntPtr.Zero)
+                        return -1;
+
+                    Debug.WriteLine("Process ID " + x.Id + " is running: " + !Process.GetProcessById(x.Id).HasExited);
+                    return x.Id;
+                }
+                catch
+                {
+                    // Ignore errors caused by processes that exited
+                    return -1;
+                }
+            }).Where(x => x >= 0);
+        }
+
         private void FindAndAddProcessesToWatch(ICollection<Process> watchedProcesses, int[] runningProcessIds)
         {
             var candidates = Process.GetProcesses().Where(x => !runningProcessIds.Contains(x.Id));
@@ -562,12 +605,13 @@ namespace UninstallTools.Uninstaller
 
         internal sealed class RunUninstallerOptions
         {
-            public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate)
+            public RunUninstallerOptions(bool autoKillStuckQuiet, bool retryFailedQuiet, bool preferQuiet, bool simulate, BulkUninstallTask owner)
             {
                 AutoKillStuckQuiet = autoKillStuckQuiet;
                 RetryFailedQuiet = retryFailedQuiet;
                 PreferQuiet = preferQuiet;
                 Simulate = simulate;
+                Owner = owner;
             }
 
             public bool AutoKillStuckQuiet { get; }
@@ -577,6 +621,8 @@ namespace UninstallTools.Uninstaller
             public bool RetryFailedQuiet { get; }
 
             public bool Simulate { get; }
+
+            public BulkUninstallTask Owner { get; }
         }
 
         internal enum SkipCurrentLevel
@@ -590,7 +636,7 @@ namespace UninstallTools.Uninstaller
         {
             lock (_operationLock)
             {
-                if(CurrentStatus == UninstallStatus.Waiting)
+                if (CurrentStatus == UninstallStatus.Waiting)
                     CurrentStatus = UninstallStatus.Paused;
             }
         }

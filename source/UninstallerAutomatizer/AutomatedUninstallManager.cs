@@ -93,13 +93,18 @@ namespace UninstallerAutomatizer
 
                 // Use UI item counts to identify TODO Check using something better
                 var seenWindows = new List<int>();
-
+                
                 while (!app.HasExited)
                 {
                     statusCallback(Localization.Message_Automation_WindowSearching);
                     // NSIS uninstallers always have only one window open (by default)
                     var windows = app.GetWindows();
-                    var target = windows.First();
+                    var target = windows.FirstOrDefault();
+                    if(target == null)
+                    {
+                        Thread.Sleep(1000);
+                        continue;
+                    }
 
                     statusCallback(String.Format(Localization.Message_Automation_WindowFound, target.Title));
                     WaitForWindow(target);

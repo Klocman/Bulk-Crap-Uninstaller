@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Functions\UninstallerRatingManagerTests.cs" />
+    <Compile Include="PipeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

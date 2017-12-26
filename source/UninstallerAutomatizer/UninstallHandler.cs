@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -99,13 +100,13 @@ namespace UninstallerAutomatizer
         private void StartDaemon()
         {
             IsDaemon = true;
-            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, "Starting automatizer as a deamon."));
+            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, Localization.UninstallHandler_StartDaemon));
 
             _automationThread = new Thread(DaemonThread) { Name = "AutomationThread", IsBackground = false, Priority = ThreadPriority.AboveNormal };
             _automationThread.Start();
         }
 
-        readonly Dictionary<int, Task> _runningHooks = new Dictionary<int, Task>();
+        readonly ConcurrentDictionary<int, Task> _runningHooks = new ConcurrentDictionary<int, Task>();
 
         /// <summary>
         /// Run in background as a daemon. Receive application PIDs to monitor, "stop" to exit.
@@ -114,35 +115,51 @@ namespace UninstallerAutomatizer
         {
             try
             {
-                using (var server = new NamedPipeServerStream("UninstallAutomatizerDaemon"))
+                using (var server = new NamedPipeServerStream("UninstallAutomatizerDaemon", PipeDirection.In))
                 using (var reader = new StreamReader(server))
                 {
-                    server.WaitForConnection();
                     while (true)
                     {
-                        var line = reader.ReadLine()?.ToLowerInvariant();
-                        if (line == null || line == "stop")
-                            return;
-
-                        int pid;
-                        if (!int.TryParse(line, out pid))
-                            throw new ArgumentException(pid + " is not a valid number");
-
-                        try
+                        server.WaitForConnection();
+                        Debug.WriteLine("Client connected through pipe");
+                        while (true)
                         {
-                            lock (_runningHooks)
+                            var line = reader.ReadLine()?.ToLowerInvariant();
+
+                            Debug.WriteLine("Received through pipe: " + (line ?? "NULL"));
+
+                            if (line == null)
                             {
-                                if (_runningHooks.ContainsKey(pid) && !_runningHooks[pid].IsCompleted)
+                                Thread.Sleep(500);
+                                continue;
+                            }
+
+                            if (line == "stop")
+                                return;
+
+                            int pid;
+                            if (!int.TryParse(line, out pid))
+                            {
+                                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal,
+                                    string.Format(Localization.UninstallHandler_InvalidProcessNumber, pid)));
+                                continue;
+                            }
+
+                            try
+                            {
+                                Task ttt;
+                                if (_runningHooks.TryGetValue(pid, out ttt) && !ttt.IsCompleted)
                                     continue;
 
                                 var target = Process.GetProcessById(pid);
 
                                 var app = Application.Attach(target);
 
-                                var t = Task.Factory.StartNew(() =>
+                                var t = new Task(() =>
                                 {
                                     try
                                     {
+                                        Debug.WriteLine("Running automatizer on thread pool");
                                         AutomatedUninstallManager.AutomatizeApplication(app, AutomatizeStatusCallback);
                                     }
                                     catch (Exception ex)
@@ -153,27 +170,30 @@ namespace UninstallerAutomatizer
                                     }
                                     finally
                                     {
-                                        lock (_runningHooks)
-                                        {
-                                            _runningHooks.Remove(pid);
-                                        }
+                                        Task tt;
+                                        _runningHooks.TryRemove(pid, out tt);
                                     }
                                 });
-                                
-                                _runningHooks.Add(pid, t);
+
+                                _runningHooks.AddOrUpdate(pid, t, (i, task) => t);
+
+                                Debug.WriteLine("Created automatizer thread");
+                                t.Start();
                             }
+                            catch (SystemException ex) { Console.WriteLine(ex); }
                         }
-                        catch (SystemException) { }
                     }
                 }
             }
             catch (Exception ex)
             {
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal,
-                    string.Format("Daemon stopped because of: {0}", ex.InnerException?.Message ?? ex.Message)));
+                    Localization.UninstallHandler_DaemonStoppedReason + (ex.InnerException?.Message ?? ex.Message)));
             }
-            
-            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, Localization.Message_Success));
+            finally
+            {
+                OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, Localization.Message_Success));
+            }
         }
 
         Thread _automationThread;
