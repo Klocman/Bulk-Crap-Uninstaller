@@ -122,7 +122,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnName.Width" type="System.Int32, mscorlib">
-    <value>238</value>
+    <value>250</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
     <value>Uninstall</value>
@@ -160,31 +160,13 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="buttonSmartSort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonSmartSort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="buttonSmartSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
-  </data>
-  <data name="buttonSmartSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 26</value>
-  </data>
-  <data name="buttonSmartSort.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Intelligent sort</value>
   </data>
   <data name="&gt;&gt;buttonSmartSort.Name" xml:space="preserve">
     <value>buttonSmartSort</value>
@@ -225,8 +207,98 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="buttonSmartSort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonSmartSort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonSmartSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>537, 6</value>
+  </data>
+  <data name="buttonSmartSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 26</value>
+  </data>
+  <data name="buttonSmartSort.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Intelligent sort</value>
+  </data>
+  <data name="&gt;&gt;buttonSmartSort.Name" xml:space="preserve">
+    <value>buttonSmartSort</value>
+  </data>
+  <data name="&gt;&gt;buttonSmartSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSmartSort.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonSmartSort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelInfo.Name" xml:space="preserve">
+    <value>labelInfo</value>
+  </data>
+  <data name="&gt;&gt;labelInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInfo.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelInfo2.Name" xml:space="preserve">
+    <value>labelInfo2</value>
+  </data>
+  <data name="&gt;&gt;labelInfo2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInfo2.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelInfo2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="flowLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 50</value>
+  </data>
+  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 6</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>619, 62</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="labelInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -288,42 +360,6 @@
   <data name="&gt;&gt;labelInfo2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="flowLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 50</value>
-  </data>
-  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 6</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>619, 62</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -367,25 +403,25 @@
     <value>olvColumnName</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnEnabled.Name" xml:space="preserve">
     <value>olvColumnEnabled</value>
   </data>
   <data name="&gt;&gt;olvColumnEnabled.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnQuiet.Name" xml:space="preserve">
     <value>olvColumnQuiet</value>
   </data>
   <data name="&gt;&gt;olvColumnQuiet.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallLocation.Name" xml:space="preserve">
     <value>olvColumnInstallLocation</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallLocation.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UninstallConfirmation</value>

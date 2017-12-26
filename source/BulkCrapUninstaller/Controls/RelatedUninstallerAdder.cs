@@ -29,14 +29,14 @@ namespace BulkCrapUninstaller.Forms
 
         public IEnumerable<ApplicationUninstallerEntry> GetResults()
         {
-            return Entries.Where(x => x.Enabled).Select(x => x.Entry).ToList();
+            return Entries.Where(x => x.Enabled).Select(x => x.Entry);
         }
 
         public void SetRelatedApps(IEnumerable<RelatedApplicationEntry> items)
         {
             objectListView1.SetObjects(items
                 .OrderBy(x => x.RelatedEntries.FirstOrDefault()?.DisplayName ?? string.Empty)
-                .ThenBy(x => x.Entry.DisplayName));
+                .ThenBy(x => x.Entry.DisplayName).ToList());
         }
 
         public sealed class RelatedApplicationEntry
@@ -49,7 +49,13 @@ namespace BulkCrapUninstaller.Forms
                 Enabled = false;
             }
 
-            public bool Enabled { get; set; }
+            private bool _enabled;
+
+            public bool Enabled
+            {
+                get { return _enabled; }
+                set { _enabled = value; }
+            }
 
             public ApplicationUninstallerEntry Entry { get; }
 

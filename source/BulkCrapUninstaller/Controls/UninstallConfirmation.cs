@@ -52,7 +52,7 @@ namespace BulkCrapUninstaller.Forms
 
         public IEnumerable<BulkUninstallEntry> GetResults()
         {
-            return Entries.Where(x => x.Enabled).Select(x => x.Entry).ToList();
+            return Entries.Where(x => x.Enabled).Select(x => x.Entry);
         }
 
         public void SetRelatedApps(IEnumerable<BulkUninstallEntry> items)

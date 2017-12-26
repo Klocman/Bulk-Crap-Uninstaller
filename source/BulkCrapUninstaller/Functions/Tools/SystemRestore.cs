@@ -21,11 +21,11 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         /// <param name="count">How many items are being uninstalled</param>
         /// <returns></returns>
-        public static bool BeginSysRestore(int count)
+        public static bool BeginSysRestore(int count, bool displayMessage = true)
         {
             if (SysRestore.SysRestoreAvailable())
             {
-                switch (MessageBoxes.SysRestoreBeginQuestion())
+                switch (displayMessage ? MessageBoxes.SysRestoreBeginQuestion() : MessageBoxes.PressedButton.Yes)
                 {
                     case MessageBoxes.PressedButton.Yes:
                         var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleCreatingRestorePoint, x =>

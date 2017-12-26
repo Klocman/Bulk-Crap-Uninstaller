@@ -73,8 +73,9 @@
             this.olvColumnEnabled.Hideable = false;
             resources.ApplyResources(this.olvColumnEnabled, "olvColumnEnabled");
             // 
-            // olvColumnInstallLocation
+            // olvColumnRelatedApps
             // 
+            this.olvColumnRelatedApps.FillsFreeSpace = true;
             resources.ApplyResources(this.olvColumnRelatedApps, "olvColumnRelatedApps");
             // 
             // flowLayoutPanel1

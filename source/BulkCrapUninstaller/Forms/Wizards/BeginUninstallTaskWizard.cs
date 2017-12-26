@@ -1,20 +1,12 @@
-﻿/*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
-*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
+using Klocman.IO;
 using UninstallTools;
 using UninstallTools.Uninstaller;
 
@@ -22,56 +14,51 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class BeginUninstallTaskWizard : Form
     {
+        private bool _anyRelatedUninstallers;
         private List<ApplicationUninstallerEntry> _otherUninstallers;
-        private ICollection<ApplicationUninstallerEntry> _selectedUninstallers;
+        private int _previousPageNumber;
         private bool _quiet;
-        private ICollection<ApplicationUninstallerEntry> _allUninstallers;
+        private bool _restorePointWasCreated;
+        private ICollection<ApplicationUninstallerEntry> _selectedUninstallers;
 
         public BeginUninstallTaskWizard()
         {
             InitializeComponent();
 
             Icon = MessageBoxes.DefaultOwner.Icon;
+            DialogResult = DialogResult.Cancel;
+
+            tabControl1.TabIndex = 0;
         }
 
-        public void Initialize(ICollection<ApplicationUninstallerEntry> selectedUninstallers,
-            ICollection<ApplicationUninstallerEntry> allUninstallers, bool quiet)
+        private int PageNumber
         {
-            _allUninstallers = allUninstallers;
-            _quiet = quiet;
-            _selectedUninstallers = selectedUninstallers;
-            _otherUninstallers = allUninstallers.Except(_selectedUninstallers).ToList();
-
-            var relatedUninstallers = _otherUninstallers.Select(
-                x => new { Entry = x, Related = GetRelatedUninstallers(x, _selectedUninstallers).ToList() })
-                .Where(x => x.Related.Any());
-
-            relatedUninstallerAdder1.SetRelatedApps(relatedUninstallers
-                .Select(x => new RelatedUninstallerAdder.RelatedApplicationEntry(x.Entry, x.Related)));
-
-            /*
-            var taskEntries = ConvertToTaskEntries(quiet, targetList);
-
-            taskEntries = _settings.AdvancedIntelligentUninstallerSorting
-                ? SortIntelligently(taskEntries).ToList()
-                : taskEntries.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
-
-            taskEntries = UninstallConfirmation.ShowConfirmationDialog(MessageBoxes.DefaultOwner, taskEntries);
-
-            if (taskEntries == null || taskEntries.Count == 0)
-                return;
-
-            if (!SystemRestore.BeginSysRestore(targetList.Count))
-                return;
-
-            if (!CheckForRunningProcessesBeforeUninstall(taskEntries.Select(x => x.UninstallerEntry), !quiet))
-                return;*/
+            get { return tabControl1.SelectedIndex; }
+            set
+            {
+                tabControl1.SelectedIndex = value;
+                UpdateState();
+            }
         }
 
-        private static IEnumerable<ApplicationUninstallerEntry> GetRelatedUninstallers(ApplicationUninstallerEntry thisUninstaller, IEnumerable<ApplicationUninstallerEntry> other)
+        public BulkUninstallEntry[] Results { get; private set; }
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            // todo more complex checks
-            return other.Where(y => y.InstallLocation.Contains(thisUninstaller.InstallLocation, StringComparison.OrdinalIgnoreCase));
+            Results = uninstallConfirmation1.GetResults().ToArray();
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            PageNumber = Math.Min(tabControl1.TabCount - 1, PageNumber + 1);
+        }
+
+        private void buttonPrev_Click(object sender, EventArgs e)
+        {
+            PageNumber = Math.Max(0, PageNumber - 1);
         }
 
         private List<BulkUninstallEntry> ConvertToTaskEntries(IEnumerable<ApplicationUninstallerEntry> targets)
@@ -94,16 +81,142 @@ namespace BulkCrapUninstaller.Forms
             return targetList;
         }
 
-        private int PageNumber => tabControl1.SelectedIndex;
-
-        private void buttonNext_Click(object sender, EventArgs e)
+        private void CreateRestorePoint(object sender, EventArgs e)
         {
-            if (PageNumber == 0)
+            _restorePointWasCreated = SystemRestore.BeginSysRestore(uninstallConfirmation1.GetResults().Count());
+        }
+
+        private static IEnumerable<ApplicationUninstallerEntry> GetRelatedUninstallers(
+            ApplicationUninstallerEntry thisUninstaller, IEnumerable<ApplicationUninstallerEntry> other)
+        {
+            var displayName = thisUninstaller.DisplayNameTrimmed;
+            var installLocation = thisUninstaller.InstallLocation;
+
+            return other.Where(y =>
             {
-                var additionals = relatedUninstallerAdder1.GetResults();
-                uninstallConfirmation1.SetRelatedApps(ConvertToTaskEntries(_selectedUninstallers.Concat(additionals)));
-                tabControl1.SelectedIndex = 1;
+                if (thisUninstaller.InstallLocation != null && y.InstallLocation != null)
+                {
+                    return y.InstallLocation.Contains(installLocation,
+                        StringComparison.OrdinalIgnoreCase);
+                }
+                return y.DisplayName.Contains(displayName,
+                    StringComparison.OrdinalIgnoreCase);
+            });
+        }
+
+        public void Initialize(ICollection<ApplicationUninstallerEntry> selectedUninstallers,
+            ICollection<ApplicationUninstallerEntry> allUninstallers, bool quiet)
+        {
+            _quiet = quiet;
+            _selectedUninstallers = selectedUninstallers;
+
+            _otherUninstallers = allUninstallers
+                .Except(_selectedUninstallers)
+                .Where(x => !x.SystemComponent && !x.IsProtected)
+                .ToList();
+
+            var relatedUninstallers = _otherUninstallers.Select(
+                x => new {Entry = x, Related = GetRelatedUninstallers(x, _selectedUninstallers).ToList()})
+                .Where(x => x.Related.Any()).ToList();
+
+            relatedUninstallerAdder1.SetRelatedApps(relatedUninstallers
+                .Select(x => new RelatedUninstallerAdder.RelatedApplicationEntry(x.Entry, x.Related)));
+
+            _anyRelatedUninstallers = relatedUninstallers.Any();
+            if (!_anyRelatedUninstallers)
+                PageNumber = 1;
+        }
+
+        private void processWaiterControl1_AllProcessesClosed(object sender, EventArgs e)
+        {
+            //if (PageNumber == 2)
+            //    PageNumber = 3;
+            //todo show greeen text all closed? or skip when clicking next? slow
+        }
+
+        private static List<BulkUninstallEntry> SortTaskEntryList(List<BulkUninstallEntry> taskEntries)
+        {
+            return Settings.Default.AdvancedIntelligentUninstallerSorting
+                ? AppUninstaller.SortIntelligently(taskEntries).ToList()
+                : taskEntries.OrderBy(x => x.UninstallerEntry.DisplayName).ToList();
+        }
+
+        private void UpdateState()
+        {
+            UseWaitCursor = true;
+            Application.DoEvents();
+
+            switch (PageNumber)
+            {
+                case 0:
+                    break;
+
+                case 1:
+                {
+                    processWaiterControl1.StopUpdating();
+
+                    var additionals = relatedUninstallerAdder1.GetResults();
+                    var taskEntries = ConvertToTaskEntries(_selectedUninstallers.Concat(additionals));
+                    taskEntries = SortTaskEntryList(taskEntries);
+                    uninstallConfirmation1.SetRelatedApps(taskEntries);
+                }
+                    break;
+
+                case 2:
+                {
+                    /*if (taskEntries == null || taskEntries.Count == 0) return;*/
+
+                    var selectedTaskEntries = uninstallConfirmation1.GetResults();
+
+                    var relatedPids = AppUninstaller.GetRelatedProcessIds(
+                        selectedTaskEntries.Select(x => x.UninstallerEntry), !_quiet);
+
+                    if (relatedPids.Length == 0)
+                    {
+                        PageNumber = _previousPageNumber < 2 ? 3 : 1;
+                        return;
+                    }
+
+                    processWaiterControl1.Initialize(relatedPids, !_quiet);
+                    processWaiterControl1.StartUpdating();
+                }
+                    break;
+
+                case 3: // Settings
+                    processWaiterControl1.StopUpdating();
+
+                    /*todo final page with
+                    if (!SystemRestore.BeginSysRestore(targetList.Count))
+                        return;*/
+                    break;
+
+                case 4: // Final
+                {
+                    var taskEntries = uninstallConfirmation1.GetResults().ToList();
+
+                    labelApps.Text = string.Join(", ",
+                        taskEntries.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x).ToArray());
+                    labelTotalSize.Text =
+                        FileSize.FromBytes(taskEntries.Sum(x => x.UninstallerEntry.EstimatedSize.GetRawSize(false)))
+                            .ToString();
+
+                    labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
+                    labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();
+                    labelRestorePointCreated.Text = _restorePointWasCreated.ToYesNo();
+                    labelWillBeSilent.Text = _quiet.ToYesNo();
+
+                    labelOther.Text = Settings.Default.AdvancedSimulate ? "Simulating" : "-";
+                }
+                    break;
             }
+
+            labelProgress.Text = PageNumber + 1 + " / " + tabControl1.TabCount;
+            buttonPrev.Enabled = PageNumber > 0 && (PageNumber != 1 || _anyRelatedUninstallers);
+            buttonNext.Enabled = PageNumber + 1 < tabControl1.TabCount;
+
+            UseWaitCursor = false;
+
+            _previousPageNumber = PageNumber;
         }
     }
 }

@@ -40,6 +40,8 @@ namespace BulkCrapUninstaller.Functions
         /// </summary>
         public readonly object PublicUninstallLock = new object();
 
+        private static readonly int MyProcessId = Process.GetCurrentProcess().Id;
+
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
         internal AppUninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
         {
@@ -76,6 +78,14 @@ namespace BulkCrapUninstaller.Functions
             return true;
         }
 
+        internal static int[] GetRelatedProcessIds(IEnumerable<ApplicationUninstallerEntry> entries, bool doNotKillSteam)
+        {
+            var filters = entries.SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
+                .Where(s => !string.IsNullOrEmpty(s)).Distinct().ToArray();
+
+            return GetRelatedProcessIds(filters, doNotKillSteam);
+        }
+
         private static bool CheckForRunningProcessesBeforeUninstall(IEnumerable<ApplicationUninstallerEntry> entries, bool doNotKillSteam)
         {
             var filters = entries.SelectMany(e => new[] { e.InstallLocation, e.UninstallerLocation })
@@ -109,20 +119,32 @@ namespace BulkCrapUninstaller.Functions
 
         internal static bool CheckForRunningProcesses(string[] filters, bool doNotKillSteam, Form parentForm = null)
         {
-            var myId = Process.GetCurrentProcess().Id;
+            var idsToCheck = GetRelatedProcessIds(filters, doNotKillSteam);
+
+            if (idsToCheck.Length > 0)
+            {
+                if (!ProcessWaiter.ShowDialog(parentForm ?? MessageBoxes.DefaultOwner, idsToCheck.ToArray(), false))
+                    return false;
+            }
+
+            return true;
+        }
+
+        private static int[] GetRelatedProcessIds(string[] filters, bool doNotKillSteam)
+        {
             var idsToCheck = new List<int>();
             foreach (var pr in Process.GetProcesses())
             {
                 try
                 {
-                    if (pr.Id == myId)
+                    if (pr.Id == MyProcessId || pr.HasExited)
                         continue;
 
-                    if (doNotKillSteam && pr.ProcessName.Equals("steam", StringComparison.InvariantCultureIgnoreCase))
+                    if (doNotKillSteam && pr.ProcessName.Equals("steam", StringComparison.OrdinalIgnoreCase))
                         continue;
 
                     if (string.IsNullOrEmpty(pr.MainModule.FileName) ||
-                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM), StringComparison.InvariantCultureIgnoreCase))
+                        pr.MainModule.FileName.StartsWith(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_SYSTEM), StringComparison.OrdinalIgnoreCase))
                         continue;
 
                     var filenames = pr.Modules.Cast<ProcessModule>()
@@ -138,7 +160,7 @@ namespace BulkCrapUninstaller.Functions
                         if (!Path.IsPathRooted(filename))
                             return false;
 
-                        return filename.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase);
+                        return filename.StartsWith(filter, StringComparison.OrdinalIgnoreCase);
                     })))
                     {
                         idsToCheck.Add(pr.Id);
@@ -150,13 +172,7 @@ namespace BulkCrapUninstaller.Functions
                 }
             }
 
-            if (idsToCheck.Count > 0)
-            {
-                if (!ProcessWaiter.ShowDialog(parentForm ?? MessageBoxes.DefaultOwner, idsToCheck.ToArray(), false))
-                    return false;
-            }
-
-            return true;
+            return idsToCheck.ToArray();
         }
 
         public void RunUninstall(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers,
@@ -185,7 +201,7 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    _visibleCallback(false);
+                    BulkUninstallEntry[] taskEntries;
 
                     using (var wizard = new BeginUninstallTaskWizard())
                     {
@@ -194,9 +210,11 @@ namespace BulkCrapUninstaller.Functions
                         wizard.StartPosition = FormStartPosition.CenterParent;
                         if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK)
                             return;
-                       // todo extract results
+
+                        taskEntries = wizard.Results;
                     }
 
+                    _visibleCallback(false);
 
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;

@@ -86,6 +86,7 @@
             // 
             // olvColumnInstallLocation
             // 
+            this.olvColumnInstallLocation.FillsFreeSpace = true;
             resources.ApplyResources(this.olvColumnInstallLocation, "olvColumnInstallLocation");
             // 
             // panel1

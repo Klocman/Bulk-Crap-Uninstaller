@@ -122,14 +122,17 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnName.Width" type="System.Int32, mscorlib">
-    <value>272</value>
+    <value>250</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>Add to task</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnEnabled.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="olvColumnEnabled.Width" type="System.Int32, mscorlib">
+    <value>85</value>
   </data>
   <data name="olvColumnRelatedApps.Text" xml:space="preserve">
     <value>Related to:</value>
@@ -154,7 +157,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -305,19 +308,19 @@
     <value>olvColumnName</value>
   </data>
   <data name="&gt;&gt;olvColumnName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnEnabled.Name" xml:space="preserve">
     <value>olvColumnEnabled</value>
   </data>
   <data name="&gt;&gt;olvColumnEnabled.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnRelatedApps.Name" xml:space="preserve">
     <value>olvColumnRelatedApps</value>
   </data>
   <data name="&gt;&gt;olvColumnRelatedApps.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.38925, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RelatedUninstallerAdder</value>
