@@ -237,11 +237,13 @@ begin
 #endif
 
 #ifdef use_dotnetfx35
-	//dotnetfx35();
-	dotnetfx35sp1();
+	//dotnetfx35();        
+	if (not netfxinstalled(NetFx40Client, '') and not netfxinstalled(NetFx40Full, '')) then
+    dotnetfx35sp1();
 #ifdef use_dotnetfx35lp
-	//dotnetfx35lp();
-	dotnetfx35sp1lp();
+	//dotnetfx35lp();       
+	if (not netfxinstalled(NetFx40Client, '') and not netfxinstalled(NetFx40Full, '')) then
+    dotnetfx35sp1lp();
 #endif
 #endif
 
