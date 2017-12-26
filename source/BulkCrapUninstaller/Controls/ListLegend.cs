@@ -8,23 +8,24 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Functions.ApplicationList;
 using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller.Controls
 {
-    [WindowStyleController.ControlStyleAttribute(false)]
+    [WindowStyleController.ControlStyle(false)]
     public partial class ListLegend : UserControl
     {
         public ListLegend()
         {
             InitializeComponent();
             
-            flowLayoutPanellabelInvalid.BackColor = Constants.InvalidColor;
-            flowLayoutPanellabelOrphaned.BackColor = Constants.UnregisteredColor;
-            flowLayoutPanellabelUnverified.BackColor = Constants.UnverifiedColor;
-            flowLayoutPanellabelVerified.BackColor = Constants.VerifiedColor;
-            flowLayoutPanellabelWinFeature.BackColor = Constants.WindowsFeatureColor;
-            flowLayoutPanellabelStoreApp.BackColor = Constants.WindowsStoreAppColor;
+            flowLayoutPanellabelInvalid.BackColor = ApplicationListConstants.InvalidColor;
+            flowLayoutPanellabelOrphaned.BackColor = ApplicationListConstants.UnregisteredColor;
+            flowLayoutPanellabelUnverified.BackColor = ApplicationListConstants.UnverifiedColor;
+            flowLayoutPanellabelVerified.BackColor = ApplicationListConstants.VerifiedColor;
+            flowLayoutPanellabelWinFeature.BackColor = ApplicationListConstants.WindowsFeatureColor;
+            flowLayoutPanellabelStoreApp.BackColor = ApplicationListConstants.WindowsStoreAppColor;
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
