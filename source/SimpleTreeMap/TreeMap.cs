@@ -97,6 +97,7 @@ namespace SimpleTreeMap
 
         private SliceRectangle<object> GetRectangleUnderMouse()
         {
+            if (_rectangles == null) return null;
             var mousePos = PointToClient(MousePosition);
             var hoveredItem = _rectangles.FirstOrDefault(x => x.Contains(mousePos));
             return hoveredItem;

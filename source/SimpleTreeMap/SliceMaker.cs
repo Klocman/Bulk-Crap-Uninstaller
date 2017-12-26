@@ -54,6 +54,9 @@ namespace SimpleTreeMap
         {
             var isHorizontalSplit = sliceRectangle.Width >= sliceRectangle.Height;
             var currentPos = 0;
+
+            if (sliceRectangle.Slice.SubSlices == null) yield break;
+
             foreach (var subSlice in sliceRectangle.Slice.SubSlices)
             {
                 var subRect = new SliceRectangle<T> {Slice = subSlice};
