@@ -426,6 +426,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.treeMap1, "treeMap1");
             this.treeMap1.Name = "treeMap1";
+            this.treeMap1.ShowToolTip = false;
             this.treeMap1.UseLogValueScaling = false;
             // 
             // toolStrip

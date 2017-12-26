@@ -1283,6 +1283,11 @@ namespace BulkCrapUninstaller.Forms
                             OnFirstApplicationStart();
                         }
 
+                        if (Program.IsAfterUpgrade || _setMan.Selected.Settings.MiscFirstRun)
+                        {
+                            NewsPopup.ShowPopup(this);
+                        }
+
                         if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
                         {
                             _setMan.Selected.Settings.MiscNet4NagShown = true;

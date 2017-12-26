@@ -181,6 +181,12 @@
     <Compile Include="Forms\Helpers\AdvancedClipboardCopyWindow.Designer.cs">
       <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Helpers\NewsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Helpers\NewsPopup.Designer.cs">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Wizards\BeginUninstallTaskWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -756,6 +762,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.sl.resx">
       <DependentUpon>FeedbackWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
