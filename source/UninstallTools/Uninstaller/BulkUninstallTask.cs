@@ -246,9 +246,9 @@ namespace UninstallTools.Uninstaller
                         {
                             client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
                             writer = new StreamWriter(client);
-                            writer.AutoFlush = true;
 
                             client.Connect(7000);
+                            writer.AutoFlush = true;
                         }
                         catch (SystemException ex)
                         {
