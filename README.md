@@ -18,6 +18,14 @@ If you need any help please either read the help file included with all releases
 
 [Download at SourceForge](https://sourceforge.net/p/bulk-crap-uninstaller/)
 
+## System requirements
+* OS: Windows Vista or newer is recommended. BCU will also work on XP and 2003 with reduced functionality and possibly some bugs. Both 32bit and 64bit versions are supported.
+* .NET: Recommended .NET 4.0 or newer, can run on only .NET 3.5 with reduced functionality.
+* RAM: Around 300MB or more of free RAM.
+* CPU: Doesn't really matter.
+* Free space: 40MB or more (most of it is for temporary update files).
+* 7200RPM HDD or better is recommended or the scan times can be a long time.
+
 ## Screenshots
 ![Alt text](/doc/Preview.png?raw=true "First start preview")
 
