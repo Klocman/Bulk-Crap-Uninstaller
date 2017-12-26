@@ -100,7 +100,7 @@ namespace UninstallerAutomatizer
         private void StartDaemon()
         {
             IsDaemon = true;
-            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, "Starting automatizer as a deamon."));
+            OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, Localization.UninstallHandler_StartDaemon));
 
             _automationThread = new Thread(DaemonThread) { Name = "AutomationThread", IsBackground = false, Priority = ThreadPriority.AboveNormal };
             _automationThread.Start();
@@ -141,7 +141,7 @@ namespace UninstallerAutomatizer
                             if (!int.TryParse(line, out pid))
                             {
                                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal,
-                                    string.Format("{0} is not a valid number", pid)));
+                                    string.Format(Localization.UninstallHandler_InvalidProcessNumber, pid)));
                                 continue;
                             }
 
@@ -188,7 +188,7 @@ namespace UninstallerAutomatizer
             catch (Exception ex)
             {
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal,
-                    string.Format("Daemon stopped because of: {0}", ex.InnerException?.Message ?? ex.Message)));
+                    Localization.UninstallHandler_DaemonStoppedReason + (ex.InnerException?.Message ?? ex.Message)));
             }
             finally
             {

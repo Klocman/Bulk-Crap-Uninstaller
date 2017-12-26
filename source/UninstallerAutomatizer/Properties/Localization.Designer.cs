@@ -257,5 +257,32 @@ namespace UninstallerAutomatizer.Properties {
                 return ResourceManager.GetString("Message_UserCancelled", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daemon stopped because of: .
+        /// </summary>
+        internal static string UninstallHandler_DaemonStoppedReason {
+            get {
+                return ResourceManager.GetString("UninstallHandler_DaemonStoppedReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is not a valid number.
+        /// </summary>
+        internal static string UninstallHandler_InvalidProcessNumber {
+            get {
+                return ResourceManager.GetString("UninstallHandler_InvalidProcessNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting automatizer as a daemon/service..
+        /// </summary>
+        internal static string UninstallHandler_StartDaemon {
+            get {
+                return ResourceManager.GetString("UninstallHandler_StartDaemon", resourceCulture);
+            }
+        }
     }
 }
