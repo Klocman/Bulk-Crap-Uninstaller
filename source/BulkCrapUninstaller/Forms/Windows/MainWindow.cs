@@ -230,6 +230,9 @@ namespace BulkCrapUninstaller.Forms
 
             _setMan.Selected.BindControl(showTreemapToolStripMenuItem, settings => settings.ShowTreeMap, this);
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
+
+
+            uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
         }
 
         private void OnTreeMapSliceClicked(object sender, TreeMap.SliceClickedEventArgs args)
@@ -616,7 +619,9 @@ namespace BulkCrapUninstaller.Forms
             if (e.KeyCode == Keys.Apps)
             {
                 if (_listView.SelectedUninstallerCount > 0)
+                {
                     uninstallListContextMenuStrip.Show(uninstallerObjectListView.PointToScreen(Point.Empty));
+                }
                 e.SuppressKeyPress = true;
             }
         }
@@ -1069,8 +1074,6 @@ namespace BulkCrapUninstaller.Forms
                 uninstallerObjectListView.UncheckAll();
                 uninstallerObjectListView.CheckObject(e.Model);
             }
-
-            e.MenuStrip = uninstallListContextMenuStrip;
         }
 
         private void uninstallerObjectListView_Click(object sender, EventArgs e)
