@@ -4,6 +4,9 @@
 */
 
 using System;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
@@ -24,6 +27,63 @@ namespace BulkCrapUninstaller.Forms
             labelis64.Text += ProcessTools.Is64BitProcess.ToYesNo();
             labelArchitecture.Text += Assembly.GetExecutingAssembly().GetName().ProcessorArchitecture;
             labelPortable.Text += Program.IsInstalled.ToYesNo();
+
+            var translationCredits = new[]
+            {
+                // en - English
+                new {culture = CultureInfo.GetCultureInfo("en"), translator = "Marcin Szeniak"},
+
+                // ar - Arabic
+                new {culture =  CultureInfo.GetCultureInfo("ar"), translator = "MFM Dawdeh"},
+
+                // Czech
+                new {culture =  CultureInfo.GetCultureInfo("cs-CZ"), translator = "Richard Kahl"},
+
+                // de - German
+                new {culture =  CultureInfo.GetCultureInfo("de"), translator = "Dieter Hummel"},
+
+                // es - Spanish
+                new {culture =  CultureInfo.GetCultureInfo("es"), translator = "Freddynic159 & Emilio J. Grao"},
+
+                // fr - French
+                new {culture =  CultureInfo.GetCultureInfo("fr"), translator = "Thierry Delaunay"},
+
+                // Hungarian
+                new {culture =  CultureInfo.GetCultureInfo("hu"), translator = "Phoenix (Döbröntei Sándor)"},
+
+                // it - Italian
+                new {culture =  CultureInfo.GetCultureInfo("it"), translator = "Luca Carrabba (luca.carrabba@yahoo.com)"},
+
+                // nl - Dutch
+                new {culture =  CultureInfo.GetCultureInfo("nl"), translator = "Jaap Kramer"},
+
+                // Polish
+                new {culture =  CultureInfo.GetCultureInfo("pl"), translator = "Marcin Szeniak"},
+
+                // pt - Portuguese
+                new {culture =  CultureInfo.GetCultureInfo("pt-PT"), translator = "Artur Álvaro Pereira"},
+                new {culture =  CultureInfo.GetCultureInfo("pt-BR"), translator = "Silvio Corral"},
+
+                // Russian
+                new {culture = CultureInfo.GetCultureInfo("ru"), translator = "wvxwxvw"},
+
+                // Slovenian
+                new {culture = CultureInfo.GetCultureInfo("sl"), translator = "Jadran Rudec"},
+            };
+
+            foreach (var translationCredit in translationCredits
+                .Select(x => new { x.culture.DisplayName, x.translator })
+                .OrderBy(x => x.DisplayName))
+            {
+                var l = new Label
+                {
+                    Text = translationCredit.DisplayName + " - " + translationCredit.translator,
+                    Padding = new Padding(0, 0, 0, 3),
+                    AutoSize = true,
+                    TextAlign = ContentAlignment.MiddleLeft
+                };
+                flowLayoutPanel2.Controls.Add(l);
+            }
         }
 
         public static string AssemblyCompany
@@ -31,12 +91,12 @@ namespace BulkCrapUninstaller.Forms
             get
             {
                 var attributes = Assembly.GetExecutingAssembly()
-                    .GetCustomAttributes(typeof (AssemblyCompanyAttribute), false);
+                    .GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
                 if (attributes.Length == 0)
                 {
                     return "";
                 }
-                return ((AssemblyCompanyAttribute) attributes[0]).Company;
+                return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
 
@@ -45,12 +105,12 @@ namespace BulkCrapUninstaller.Forms
             get
             {
                 var attributes = Assembly.GetExecutingAssembly()
-                    .GetCustomAttributes(typeof (AssemblyCopyrightAttribute), false);
+                    .GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
                 if (attributes.Length == 0)
                 {
                     return "";
                 }
-                return ((AssemblyCopyrightAttribute) attributes[0]).Copyright;
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
         }
 
