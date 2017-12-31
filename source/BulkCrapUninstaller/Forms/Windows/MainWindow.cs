@@ -63,6 +63,7 @@ namespace BulkCrapUninstaller.Forms
         private bool _ignoreCellEdit;
 
         private readonly UninstallerListPostProcesser _uninstallerListPostProcesser;
+        private readonly string _certCacheFilename = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
 
         public MainWindow()
         {
@@ -119,6 +120,7 @@ namespace BulkCrapUninstaller.Forms
             _listView = new UninstallerListViewUpdater(this);
             
             _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects));
+            _uninstallerListPostProcesser.LoadCertificateCache(_certCacheFilename);
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe((x, y) =>
             {
@@ -141,6 +143,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 // Prevent the thread from accessing disposed resources before getting aborted.
                 //_uninstallerListPostProcesser.StopProcessingThread(false);
+                _uninstallerListPostProcesser.SaveCertificateCache(_certCacheFilename);
                 _uninstallerListPostProcesser.Dispose();
             };
 

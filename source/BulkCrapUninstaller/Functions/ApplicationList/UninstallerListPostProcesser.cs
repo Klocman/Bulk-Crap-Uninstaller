@@ -7,11 +7,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
+using Klocman.Collections;
 using Klocman.Events;
 using UninstallTools;
 
@@ -43,12 +47,54 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _abortPostprocessingThread = true;
         }
 
+        SerializableDictionary<string, X509Certificate2> _dictionaryCahe;
+
+        public void LoadCertificateCache(string filename)
+        {
+            // todo config option
+            _dictionaryCahe = new SerializableDictionary<string, X509Certificate2>();
+
+            if (!File.Exists(filename)) return;
+
+            try
+            {
+                using (var r = XmlReader.Create(filename))
+                    _dictionaryCahe.ReadXml(r);
+            }
+            catch (SystemException e)
+            {
+                Console.WriteLine(e);
+                File.Delete(filename);
+                _dictionaryCahe.Clear();
+            }
+        }
+
+        public void SaveCertificateCache(string filename)
+        {
+            if (_dictionaryCahe == null)
+            {
+                File.Delete(filename);
+                return;
+            }
+
+            try
+            {
+                using (var r = XmlWriter.Create(filename))
+                    _dictionaryCahe.WriteXml(r);
+            }
+            catch (SystemException e)
+            {
+                File.Delete(filename);
+                Console.WriteLine(e);
+            }
+        }
+
         public void StartProcessingThread(IEnumerable<ApplicationUninstallerEntry> itemsToProcess)
         {
             StopProcessingThread(true);
 
             _finalizerThread = new Thread(UninstallerPostprocessingThread)
-            {Name = "UninstallerPostprocessingThread", IsBackground = true, Priority = ThreadPriority.Lowest};
+            { Name = "UninstallerPostprocessingThread", IsBackground = true, Priority = ThreadPriority.Lowest };
 
             _abortPostprocessingThread = false;
             _finalizerThread.Start(itemsToProcess);
@@ -92,7 +138,20 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 {
                     lock (UninstallerFileLock)
                     {
-                        sendTag = uninstaller.GetCertificate() != null;
+                        var id = uninstaller.RatingId;
+
+                        if (_dictionaryCahe != null && id != null && _dictionaryCahe.ContainsKey(id))
+                        {
+                            uninstaller.SetCertificate(_dictionaryCahe[id]);
+                        }
+                        else
+                        {
+                            var cert = uninstaller.GetCertificate();
+                            sendTag = cert != null;
+
+                            if (_dictionaryCahe != null && id != null)
+                                _dictionaryCahe.Add(id, cert);
+                        }
                     }
                 }
 

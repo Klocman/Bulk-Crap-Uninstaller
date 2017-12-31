@@ -196,7 +196,16 @@ namespace UninstallTools
 
         public string RatingId
         {
-            get { return string.IsNullOrEmpty(_ratingId) ? RegistryKeyName : _ratingId; }
+            get
+            {
+                if (!string.IsNullOrEmpty(_ratingId))
+                    return _ratingId;
+                if (!string.IsNullOrEmpty(RegistryKeyName))
+                    return RegistryKeyName;
+                //if (BundleProviderKey != Guid.Empty)
+                //    return BundleProviderKey.ToString();
+                return null;
+            }
             set { _ratingId = value; }
         }
 
@@ -254,10 +263,10 @@ namespace UninstallTools
         ///     Get the certificate associated to the uninstaller or application.
         /// </summary>
         /// <param name="onlyStored">If true only return the stored value, otherwise generate it if needed.</param>
-        public X509Certificate2 GetCertificate(bool onlyStored)
-        {
-            return onlyStored ? _certificate : GetCertificate();
-        }
+        //public X509Certificate2 GetCertificate(bool onlyStored)
+        //{
+        //    return onlyStored ? _certificate : GetCertificate();
+        //}
 
         /// <summary>
         ///     Get the certificate associated to the uninstaller or application.
@@ -273,6 +282,12 @@ namespace UninstallTools
                     _certificateValid = _certificate.Verify();
             }
             return _certificate;
+        }
+
+        public void SetCertificate(X509Certificate2 c)
+        {
+            _certificateGotten = true;
+            _certificate = c;
         }
 
         public Icon GetIcon()
