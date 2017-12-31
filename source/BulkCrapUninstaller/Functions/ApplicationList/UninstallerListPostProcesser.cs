@@ -22,23 +22,6 @@ using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList
 {
-
-    [Serializable]
-    public class CertSerializeData
-    {
-        public CertSerializeData()
-        {
-        }
-
-        public CertSerializeData(string appId, byte[] certData)
-        {
-            AppId = appId;
-            CertData = certData;
-        }
-
-        public byte[] CertData { get; set; }
-        public string AppId { get; set; }
-    }
     internal class UninstallerListPostProcesser : IDisposable
     {
         readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
@@ -76,9 +59,9 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             try
             {
-                var l = SerializationTools.DeserializeFromXml<List<CertSerializeData>>(filename);
+                var l = SerializationTools.DeserializeDictionary<string, byte[]>(filename);
 
-                _dictionaryCahe = l.ToDictionary(x => x.AppId, x => x.CertData != null ? new X509Certificate2(x.CertData) : null);
+                _dictionaryCahe = l.ToDictionary(x => x.Key, x => x.Value != null ? new X509Certificate2(x.Value) : null);
             }
             catch (SystemException e)
             {
@@ -98,7 +81,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             try
             {
-                SerializationTools.SerializeToXml(filename, _dictionaryCahe.Select(x => new CertSerializeData(x.Key, x.Value?.RawData)).ToList());
+                SerializationTools.SerializeDictionary(_dictionaryCahe.ToDictionary(x => x.Key, x => x.Value?.RawData), filename);
             }
             catch (SystemException e)
             {
