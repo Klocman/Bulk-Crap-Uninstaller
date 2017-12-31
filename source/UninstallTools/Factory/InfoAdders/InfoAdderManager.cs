@@ -74,8 +74,7 @@ namespace UninstallTools.Factory.InfoAdders
                     // If we can't check if the value is default, assume that it is to be safe
                     if (!TargetProperties.TryGetValue(key, out property)) return true;
                     
-                    valIsDefault = Equals(property.CompiledGet(target),
-                        property.Tag);
+                    valIsDefault = Equals(property.CompiledGet(target),property.Tag);
                     valueIsDefaultCache.Add(key, valIsDefault);
                 }
 

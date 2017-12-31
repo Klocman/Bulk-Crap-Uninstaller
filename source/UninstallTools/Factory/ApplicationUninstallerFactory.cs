@@ -19,6 +19,25 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
+        public static ApplicationUninstallerFactoryCache Cache { get; }
+        private static readonly string CachePath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, "InfoCache.xml");
+
+        static ApplicationUninstallerFactory()
+        {
+            try
+            {
+                if (File.Exists(CachePath))
+                    Cache = ApplicationUninstallerFactoryCache.Load(CachePath);
+                else
+                    Cache = new ApplicationUninstallerFactoryCache(CachePath);
+            }
+            catch (SystemException e)
+            {
+                Cache = new ApplicationUninstallerFactoryCache(CachePath);
+                Console.WriteLine(e);
+            }
+        }
+
         public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {
             const int totalStepCount = 7;
@@ -51,6 +70,8 @@ namespace UninstallTools.Factory
                 }).ToList();
 
                 // Fill in instal llocations for the drive search
+                ApplyCache(registryResults, Cache, infoAdder);
+
                 var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                 callback(installLocAddProgress);
                 var installLocAddCount = 0;
@@ -116,6 +137,8 @@ namespace UninstallTools.Factory
             });
 
             // Fill in any missing information
+            ApplyCache(mergedResults, Cache, infoAdder);
+
             var infoAddProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
             callback(infoAddProgress);
             var infoAddCount = 0;
@@ -129,6 +152,19 @@ namespace UninstallTools.Factory
             }
 
             //callback(new GetUninstallerListProgress(currentStep, totalStepCount, "Finished"));
+
+            foreach (var entry in mergedResults.Where(x => !string.IsNullOrEmpty(x.RatingId)))
+                Cache.Cache[entry.RatingId] = entry;
+            try
+            {
+                Cache.Save();
+            }
+            catch (SystemException e)
+            {
+                //todo disable cache?
+                Console.WriteLine(@"Failed to save cache: " + e);
+            }
+
             return mergedResults;
         }
 
@@ -158,6 +194,16 @@ namespace UninstallTools.Factory
             }
 
             return results;
+        }
+
+        private static void ApplyCache(List<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
+        {
+            foreach (var entry in baseEntries.Where(x=>!string.IsNullOrEmpty(x.RatingId)))
+            {
+                ApplicationUninstallerEntry matchedEntry;
+                if (cache.Cache.TryGetValue(entry.RatingId, out matchedEntry))
+                    infoAdder.CopyMissingInformation(entry, matchedEntry);
+            }
         }
 
         private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
@@ -197,17 +243,17 @@ namespace UninstallTools.Factory
 
             var score = -1;
             if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation))
-                AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation, 
+                AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation,
                     StringComparison.InvariantCultureIgnoreCase));
 
             if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation) && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                 return true;
 
-            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation) && 
+            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation) &&
                 baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                 return true;
 
-            AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ? 
+            AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ?
                 baseEntry.Is64Bit == otherEntry.Is64Bit : (bool?)null);
             AddScore(ref score, -3, -1, 5, CompareDates(baseEntry.InstallDate, otherEntry.InstallDate));
 
