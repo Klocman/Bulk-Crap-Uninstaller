@@ -5,7 +5,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
@@ -24,20 +23,15 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
     {
         private readonly FilterCondition _filteringFilterCondition = new FilterCondition {FilterText = string.Empty};
         private readonly TypedObjectListView<ApplicationUninstallerEntry> _listView;
-        private readonly List<object> _objectsToUpdate = new List<object>();
         private readonly MainWindow _reference;
 
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-        private readonly UninstallerListViewUpdater _uninstallerListViewUpdater;
-        private ITestEntry _filteringOverride;
 
-        public UninstallerListConfigurator(MainWindow reference, UninstallerListViewUpdater uninstallerListViewUpdater)
+        public UninstallerListConfigurator(MainWindow reference)
         {
             _reference = reference;
             _listView = new TypedObjectListView<ApplicationUninstallerEntry>(reference.uninstallerObjectListView);
-
-            _uninstallerListViewUpdater = uninstallerListViewUpdater;
-
+            
             _reference.filterEditor1.TargetFilterCondition = _filteringFilterCondition;
 
             SetupListView();
@@ -49,16 +43,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _settings.Subscribe((sender, args) => RatingManagerWrapper.InitializeRatings(), x => x.MiscUserRatings, this);
         }
 
-        public ITestEntry FilteringOverride
-        {
-            get { return _filteringOverride; }
-            set
-            {
-                if (_filteringOverride == value) return;
-                _filteringOverride = value;
-                UpdateColumnFiltering();
-            }
-        }
+        public ITestEntry FilteringOverride { get; set; }
 
         public RatingManagerWrapper RatingManagerWrapper { get; }
 
@@ -235,30 +220,6 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             _reference.uninstallerObjectListView.FormatRow += UninstallerObjectListView_FormatRow;
 
-            _uninstallerListViewUpdater.UninstallerPostprocessingProgressUpdate += (x, y) =>
-            {
-                lock (_objectsToUpdate)
-                {
-                    if (y.Tag != null)
-                        _objectsToUpdate.Add(y.Tag);
-
-                    if (y.Value == y.Maximum || y.Value%35 == 0)
-                    {
-                        try
-                        {
-                            _listView.ListView.RefreshObjects(_objectsToUpdate);
-                        }
-                        catch (InvalidOperationException ex)
-                        {
-                            // The list view got disposed before we could update it.
-                            _uninstallerListViewUpdater.AbortPostprocessingThread();
-                            Debug.Fail(ex.Message, ex.StackTrace);
-                        }
-                        _objectsToUpdate.Clear();
-                    }
-                }
-            };
-
             _listView.ListView.AfterSorting += (x, y) => { AfterFiltering?.Invoke(x, y); };
         }
 
@@ -272,9 +233,9 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 e.Item.BackColor = color;
         }
 
-        public void UpdateColumnFiltering()
+        public void UpdateColumnFiltering(bool anyUninstallers)
         {
-            _listView.ListView.EmptyListMsg = _uninstallerListViewUpdater.AllUninstallers.Any()
+            _listView.ListView.EmptyListMsg = anyUninstallers
                 ? Localisable.SearchNothingFoundMessage
                 : null;
 

@@ -62,6 +62,8 @@ namespace BulkCrapUninstaller.Forms
         /// </summary>
         private bool _ignoreCellEdit;
 
+        private readonly UninstallerListPostProcesser _uninstallerListPostProcesser;
+
         public MainWindow()
         {
             Opacity = 0;
@@ -115,9 +117,35 @@ namespace BulkCrapUninstaller.Forms
 
             // Setup list view
             _listView = new UninstallerListViewUpdater(this);
+            
+            _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects));
+            // Start the processing thread when user changes the test certificates option
+            _setMan.Selected.Subscribe((x, y) =>
+            {
+                if (!_listView.FirstRefreshCompleted)
+                    return;
+                if (y.NewValue) _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
+                else
+                {
+                    _uninstallerListPostProcesser.StopProcessingThread(false);
 
-            _uninstallerListConfigurator = new UninstallerListConfigurator(this, _listView);
-            _uninstallerListConfigurator.AfterFiltering += (x, y) => _listView.StartProcessingThread();
+                    if (_listView.CheckIsAppDisposed()) return;
+
+                    uninstallerObjectListView.SuspendLayout();
+                    uninstallerObjectListView.RefreshObjects(
+                        _listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue).ToList());
+                    uninstallerObjectListView.ResumeLayout();
+                }
+            }, x => x.AdvancedTestCertificates, this);
+            FormClosed += (x, y) =>
+            {
+                // Prevent the thread from accessing disposed resources before getting aborted.
+                //_uninstallerListPostProcesser.StopProcessingThread(false);
+                _uninstallerListPostProcesser.Dispose();
+            };
+
+            _uninstallerListConfigurator = new UninstallerListConfigurator(this);
+            _uninstallerListConfigurator.AfterFiltering += (x, y) => _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
             _uninstallerListConfigurator.AfterFiltering += RefreshStatusbarTotalLabel;
 
             _appUninstaller = new AppUninstaller(_listView.InitiateListRefresh, LockApplication, SetVisible);
@@ -125,7 +153,7 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
-            _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
+            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
                 string result = null;
 
@@ -138,17 +166,20 @@ namespace BulkCrapUninstaller.Forms
                 if (result != null)
                     this.SafeInvoke(() => toolStripLabelStatus.Text = result);
             };
-            _listView.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
+            _uninstallerListPostProcesser.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-
-
+            
+            // Filter changed events
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
-            advancedFilters1.CurrentListChanged +=
-                (sender, args) => _uninstallerListConfigurator.FilteringOverride = advancedFilters1.CurrentList;
+            advancedFilters1.CurrentListChanged += (sender, args) =>
+            {
+                _uninstallerListConfigurator.FilteringOverride = advancedFilters1.CurrentList;
+                _uninstallerListConfigurator.UpdateColumnFiltering(_listView.AllUninstallers.Any());
+            };
             advancedFilters1.FiltersChanged += (sender, args) =>
             {
                 if (_uninstallerListConfigurator.FilteringOverride != null)
-                    _uninstallerListConfigurator.UpdateColumnFiltering();
+                    _uninstallerListConfigurator.UpdateColumnFiltering(_listView.AllUninstallers.Any());
             };
             advancedFilters1.CurrentListFileNameChanged += RefreshTitleBar;
             advancedFilters1.UnsavedChangesChanged += RefreshTitleBar;
@@ -198,7 +229,7 @@ namespace BulkCrapUninstaller.Forms
             treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetRawSize(false);
             treeMap1.ObjectColorGetter = o => ApplicationListConstants.GetApplicationTreemapColor((ApplicationUninstallerEntry)o);
 
-            _listView.UninstallerPostprocessingProgressUpdate += (x, y) =>
+            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += (x, y) =>
             {
                 var update = y.Value == y.Maximum || (y.Value - 1) % 100 == 0;
 
@@ -306,7 +337,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SearchCriteriaChanged(object sender, EventArgs e)
         {
-            _uninstallerListConfigurator.UpdateColumnFiltering();
+            _uninstallerListConfigurator.UpdateColumnFiltering(_listView.AllUninstallers.Any());
         }
 
         public void LockApplication(bool value)
@@ -388,10 +419,7 @@ namespace BulkCrapUninstaller.Forms
         private void BackgroundSearchForUpdates()
         {
             UpdateGrabber.AutoUpdate(() => _listView.FirstRefreshCompleted,
-                () => this.SafeInvoke(() =>
-                {
-                    UpdateGrabber.AskAndBeginUpdate();
-                }));
+                () => this.SafeInvoke(UpdateGrabber.AskAndBeginUpdate));
         }
 
         private void basicOperationsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
@@ -1218,8 +1246,11 @@ namespace BulkCrapUninstaller.Forms
         private void _listView_ListRefreshIsRunningChanged(object sender,
             UninstallerListViewUpdater.ListRefreshEventArgs e)
         {
-            // Skip notifications about starting the refresh
-            if (e.NewValue) return;
+            if (e.RefreshIsRunning)
+            {
+                _uninstallerListPostProcesser.StopProcessingThread(false);
+                return;
+            }
 
             // If refresh has finished update the interface
             _anyStoreApps = _listView.AllUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
