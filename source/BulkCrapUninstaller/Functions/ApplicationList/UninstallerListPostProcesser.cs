@@ -12,10 +12,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
-using Klocman.Collections;
 using Klocman.Events;
 using Klocman.Tools;
 using UninstallTools;
@@ -52,7 +50,6 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void LoadCertificateCache(string filename)
         {
-            // todo config option
             _dictionaryCahe = new Dictionary<string, X509Certificate2>();
 
             if (!File.Exists(filename)) return;
