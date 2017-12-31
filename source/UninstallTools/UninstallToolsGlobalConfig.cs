@@ -54,7 +54,7 @@ namespace UninstallTools
             };
 
             var appDataParentDir = Path.GetDirectoryName(localData.TrimEnd('\\', '/', ' '));
-            if (!string.IsNullOrEmpty(appDataParentDir))
+            if (!String.IsNullOrEmpty(appDataParentDir))
             {
                 var lowDir = Path.Combine(appDataParentDir, "LocalLow");
                 if (Directory.Exists(lowDir))
@@ -66,6 +66,8 @@ namespace UninstallTools
                 paths.AddRange(Directory.GetDirectories(vsPath));
 
             JunkSearchDirs = paths.Distinct().ToList().AsEnumerable();
+
+            AppInfoCachePath = Path.Combine(AssemblyLocation, "InfoCache.xml");
         }
 
         /// <summary>
@@ -210,5 +212,7 @@ namespace UninstallTools
 
         public static string UninstallerAutomatizerPath { get; }
         public static bool UninstallerAutomatizerExists { get; }
+        public static bool EnableAppInfoCache { get; set; }
+        public static string AppInfoCachePath { get; }
     }
 }

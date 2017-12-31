@@ -20,21 +20,24 @@ namespace UninstallTools.Factory
     public static class ApplicationUninstallerFactory
     {
         public static ApplicationUninstallerFactoryCache Cache { get; }
-        private static readonly string CachePath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, "InfoCache.xml");
 
         static ApplicationUninstallerFactory()
         {
-            try
+            if (UninstallToolsGlobalConfig.EnableAppInfoCache)
             {
-                if (File.Exists(CachePath))
-                    Cache = ApplicationUninstallerFactoryCache.Load(CachePath);
-                else
-                    Cache = new ApplicationUninstallerFactoryCache(CachePath);
-            }
-            catch (SystemException e)
-            {
-                Cache = new ApplicationUninstallerFactoryCache(CachePath);
-                Console.WriteLine(e);
+                var cachePath = UninstallToolsGlobalConfig.AppInfoCachePath;
+                try
+                {
+                    if (File.Exists(cachePath))
+                        Cache = ApplicationUninstallerFactoryCache.Load(cachePath);
+                    else
+                        Cache = new ApplicationUninstallerFactoryCache(cachePath);
+                }
+                catch (SystemException e)
+                {
+                    Cache = new ApplicationUninstallerFactoryCache(cachePath);
+                    Console.WriteLine(e);
+                }
             }
         }
 
@@ -70,7 +73,8 @@ namespace UninstallTools.Factory
                 }).ToList();
 
                 // Fill in instal llocations for the drive search
-                ApplyCache(registryResults, Cache, infoAdder);
+                if (Cache != null)
+                    ApplyCache(registryResults, Cache, infoAdder);
 
                 var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                 callback(installLocAddProgress);
@@ -137,7 +141,8 @@ namespace UninstallTools.Factory
             });
 
             // Fill in any missing information
-            ApplyCache(mergedResults, Cache, infoAdder);
+            if (Cache != null)
+                ApplyCache(mergedResults, Cache, infoAdder);
 
             var infoAddProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
             callback(infoAddProgress);
@@ -153,16 +158,19 @@ namespace UninstallTools.Factory
 
             //callback(new GetUninstallerListProgress(currentStep, totalStepCount, "Finished"));
 
-            foreach (var entry in mergedResults.Where(x => !string.IsNullOrEmpty(x.RatingId)))
-                Cache.Cache[entry.RatingId] = entry;
-            try
+            if (Cache != null)
             {
-                Cache.Save();
-            }
-            catch (SystemException e)
-            {
-                //todo disable cache?
-                Console.WriteLine(@"Failed to save cache: " + e);
+                foreach (var entry in mergedResults.Where(x => !string.IsNullOrEmpty(x.RatingId)))
+                    Cache.Cache[entry.RatingId] = entry;
+
+                try
+                {
+                    Cache.Save();
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(@"Failed to save cache: " + e);
+                }
             }
 
             return mergedResults;
@@ -198,7 +206,7 @@ namespace UninstallTools.Factory
 
         private static void ApplyCache(List<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
         {
-            foreach (var entry in baseEntries.Where(x=>!string.IsNullOrEmpty(x.RatingId)))
+            foreach (var entry in baseEntries.Where(x => !string.IsNullOrEmpty(x.RatingId)))
             {
                 ApplicationUninstallerEntry matchedEntry;
                 if (cache.Cache.TryGetValue(entry.RatingId, out matchedEntry))

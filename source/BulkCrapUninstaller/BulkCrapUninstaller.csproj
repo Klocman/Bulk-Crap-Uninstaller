@@ -152,6 +152,12 @@
     <Compile Include="Controls\ListLegend.Designer.cs">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Settings\CacheSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Settings\CacheSettings.Designer.cs">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TabControlWithoutHeader.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -169,10 +175,10 @@
     </Compile>
     <Compile Include="CultureConfigurator.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Forms\Helpers\AboutBox.cs">
+    <Compile Include="Forms\Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Helpers\AboutBox.Designer.cs">
+    <Compile Include="Forms\Windows\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Helpers\AdvancedClipboardCopyWindow.cs">
@@ -250,10 +256,10 @@
     <Compile Include="Forms\Helpers\RatingPopup.Designer.cs">
       <DependentUpon>RatingPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Helpers\SettingsWindow.cs">
+    <Compile Include="Forms\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Helpers\SettingsWindow.Designer.cs">
+    <Compile Include="Forms\Windows\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UninstallConfirmation.cs">
@@ -542,6 +548,9 @@
     <EmbeddedResource Include="Controls\ListLegend.sl.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -630,47 +639,47 @@
     <EmbeddedResource Include="Controls\UninstallConfirmation.pt-BR.resx">
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.ar.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.cs.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.cs.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.de.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.es.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.es.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.hu.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.hu.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.it.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.it.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.nl.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.nl.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.pl.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.pl.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.fr.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.pt-BR.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.pt-BR.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.pt.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.pt.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.ru.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.ru.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AboutBox.sl.resx">
+    <EmbeddedResource Include="Forms\Windows\AboutBox.sl.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.ar.resx">
@@ -809,7 +818,7 @@
     <EmbeddedResource Include="Forms\Helpers\RatingPopup.pt-BR.resx">
       <DependentUpon>RatingPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.pt-BR.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pt-BR.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.pt-BR.resx">
@@ -1069,44 +1078,44 @@
     <EmbeddedResource Include="Forms\Helpers\RatingPopup.sl.resx">
       <DependentUpon>RatingPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.ar.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.ar.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.cs.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.cs.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.de.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.de.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.es.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.es.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.hu.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.hu.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.it.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.it.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.nl.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.nl.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.pl.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pl.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.fr.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.fr.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.pt.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pt.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.ru.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.ru.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\SettingsWindow.sl.resx">
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.sl.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallConfirmation.ar.resx">

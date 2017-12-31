@@ -14,7 +14,7 @@ namespace BulkCrapUninstaller.Controls
 {
     public partial class PropertiesSidebar : UserControl
     {
-        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
+        private readonly SettingBinder<Properties.Settings> _settings = Properties.Settings.Default.SettingBinder;
 
         public PropertiesSidebar()
         {

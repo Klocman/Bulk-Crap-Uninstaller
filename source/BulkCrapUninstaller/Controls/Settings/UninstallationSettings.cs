@@ -6,14 +6,13 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 
 namespace BulkCrapUninstaller.Controls
 {
     public partial class UninstallationSettings : UserControl
     {
-        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
+        private readonly SettingBinder<Properties.Settings> _settings = Properties.Settings.Default.SettingBinder;
 
         public UninstallationSettings()
         {

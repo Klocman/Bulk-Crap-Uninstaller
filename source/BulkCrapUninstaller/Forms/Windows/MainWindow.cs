@@ -63,7 +63,7 @@ namespace BulkCrapUninstaller.Forms
         private bool _ignoreCellEdit;
 
         private readonly UninstallerListPostProcesser _uninstallerListPostProcesser;
-        private readonly string _certCacheFilename = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
+        public static string CertCacheFilename { get; } = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
 
         public MainWindow()
         {
@@ -116,11 +116,15 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
                 x => x.QuietAutomatizationKillStuck, this);
 
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue,
+                x => x.CacheAppInfo, this);
+
             // Setup list view
             _listView = new UninstallerListViewUpdater(this);
-            
+
             _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects));
-            _uninstallerListPostProcesser.LoadCertificateCache(_certCacheFilename);
+            if (_setMan.Selected.Settings.CacheCertificates)
+                _uninstallerListPostProcesser.LoadCertificateCache(CertCacheFilename);
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe((x, y) =>
             {
@@ -141,9 +145,21 @@ namespace BulkCrapUninstaller.Forms
             }, x => x.AdvancedTestCertificates, this);
             FormClosed += (x, y) =>
             {
-                // Prevent the thread from accessing disposed resources before getting aborted.
-                //_uninstallerListPostProcesser.StopProcessingThread(false);
-                _uninstallerListPostProcesser.SaveCertificateCache(_certCacheFilename);
+                try
+                {
+                    if (_setMan.Selected.Settings.CacheCertificates)
+                        _uninstallerListPostProcesser.SaveCertificateCache(CertCacheFilename);
+                    else
+                        File.Delete(CertCacheFilename);
+
+                    if (!_setMan.Selected.Settings.CacheAppInfo)
+                        File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(@"Failed to delete cache: " + e);
+                }
+
                 _uninstallerListPostProcesser.Dispose();
             };
 
@@ -171,7 +187,7 @@ namespace BulkCrapUninstaller.Forms
             };
             _uninstallerListPostProcesser.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
-            
+
             // Filter changed events
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
             advancedFilters1.CurrentListChanged += (sender, args) =>
