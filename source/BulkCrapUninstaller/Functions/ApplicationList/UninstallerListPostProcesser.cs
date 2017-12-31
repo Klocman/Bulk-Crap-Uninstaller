@@ -17,10 +17,28 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Collections;
 using Klocman.Events;
+using Klocman.Tools;
 using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList
 {
+
+    [Serializable]
+    public class CertSerializeData
+    {
+        public CertSerializeData()
+        {
+        }
+
+        public CertSerializeData(string appId, byte[] certData)
+        {
+            AppId = appId;
+            CertData = certData;
+        }
+
+        public byte[] CertData { get; set; }
+        public string AppId { get; set; }
+    }
     internal class UninstallerListPostProcesser : IDisposable
     {
         readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
@@ -47,19 +65,20 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _abortPostprocessingThread = true;
         }
 
-        SerializableDictionary<string, X509Certificate2> _dictionaryCahe;
+        Dictionary<string, X509Certificate2> _dictionaryCahe;
 
         public void LoadCertificateCache(string filename)
         {
             // todo config option
-            _dictionaryCahe = new SerializableDictionary<string, X509Certificate2>();
+            _dictionaryCahe = new Dictionary<string, X509Certificate2>();
 
             if (!File.Exists(filename)) return;
 
             try
             {
-                using (var r = XmlReader.Create(filename))
-                    _dictionaryCahe.ReadXml(r);
+                var l = SerializationTools.DeserializeFromXml<List<CertSerializeData>>(filename);
+
+                _dictionaryCahe = l.ToDictionary(x => x.AppId, x => x.CertData != null ? new X509Certificate2(x.CertData) : null);
             }
             catch (SystemException e)
             {
@@ -79,8 +98,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             try
             {
-                using (var r = XmlWriter.Create(filename))
-                    _dictionaryCahe.WriteXml(r);
+                SerializationTools.SerializeToXml(filename, _dictionaryCahe.Select(x => new CertSerializeData(x.Key, x.Value?.RawData)).ToList());
             }
             catch (SystemException e)
             {
@@ -138,20 +156,8 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 {
                     lock (UninstallerFileLock)
                     {
-                        var id = uninstaller.RatingId;
-
-                        if (_dictionaryCahe != null && id != null && _dictionaryCahe.ContainsKey(id))
-                        {
-                            uninstaller.SetCertificate(_dictionaryCahe[id]);
-                        }
-                        else
-                        {
-                            var cert = uninstaller.GetCertificate();
-                            sendTag = cert != null;
-
-                            if (_dictionaryCahe != null && id != null)
-                                _dictionaryCahe.Add(id, cert);
-                        }
+                        var cert = GetCert(uninstaller);
+                        sendTag = cert != null;
                     }
                 }
 
@@ -161,6 +167,25 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 OnUninstallerPostprocessingProgressUpdate(countingUpdateEventArgs);
 
                 currentCount++;
+            }
+        }
+
+        private X509Certificate2 GetCert(ApplicationUninstallerEntry uninstaller)
+        {
+            var id = uninstaller.RatingId;
+
+            if (_dictionaryCahe != null && id != null && _dictionaryCahe.ContainsKey(id))
+            {
+                var cert = _dictionaryCahe[id];
+                uninstaller.SetCertificate(cert);
+                return cert;
+            }
+            else
+            {
+                var cert = uninstaller.GetCertificate();
+                if (_dictionaryCahe != null && id != null)
+                    _dictionaryCahe.Add(id, cert);
+                return cert;
             }
         }
 

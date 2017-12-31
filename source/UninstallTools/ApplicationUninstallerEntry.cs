@@ -288,6 +288,9 @@ namespace UninstallTools
         {
             _certificateGotten = true;
             _certificate = c;
+
+            if (_certificate != null)
+                _certificateValid = _certificate.Verify();
         }
 
         public Icon GetIcon()
