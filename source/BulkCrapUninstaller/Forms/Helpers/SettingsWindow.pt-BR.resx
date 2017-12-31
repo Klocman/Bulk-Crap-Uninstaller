@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Linha de comando antes do início da desinstalação</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Linha de comando após o fim da desinstalação</value>
+  </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Carregue automaticamente a Lista de desinstalação chamada "Default.bcul" no início</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Habilitar classificações de usuários de aplicativos</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Procure por atualizações na inicialização</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Enviar estatísticas anônimas de uso</value>
+  </data>
+  <data name="groupBoxMisc.Text" xml:space="preserve">
+    <value>Diversos</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Idioma do aplicativo:</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>O aplicativo terá que ser reiniciado para que a alteração de idioma entre em vigor.</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Sempre pergunte para criar</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nunca pergunte para criar</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Crie automaticamente no diretório:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Backup antes da remoção de sobras</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Sempre exibir sobras com baixo nível de confiança</value>
+  </data>
+  <data name="checkBoxLoud.Text" xml:space="preserve">
+    <value>Perguntar para remover desinstaladores fortes de uma tarefa silenciosa</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Nunca pedir comentários ou ajuda</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Procurar sobras após a desinstalação</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Criar ponto de restauração antes de desinstalar</value>
+  </data>
+  <data name="groupBoxMessages.Text" xml:space="preserve">
+    <value>Caixas de mensagens</value>
+  </data>
+  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
+    <value>Habilitar a execução de aplicativos externos</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Você pode especificar comandos que serão executados antes e depois da desinstalação. Uma linha é igual a um comando e será executada como se você usasse a caixa de diálogo "Executar...".
+
+O BCU aguardará até que o comando em execução seja finalizado antes de executar o próximo.</value>
+  </data>
+  <data name="groupBoxExternal.Text" xml:space="preserve">
+    <value>Aplicações externas</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>&amp;Fechar</value>
+  </data>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Desintalação</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registro (recomendado deixar ativado)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Drives (detecta aplicativos não registrados)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Com base em regras pré-definidas</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Procurar aplicativos em...</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Apps da Window Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Recursos do Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>A detecção de recursos do Windows usa WMI e pode ser lenta ou mesmo falhar em alguns sistemas (geralmente indicando corrupção do sistema).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>A detecção de atualizações do Windows usa a WUA, que é lenta. Pode demorar alguns minutos para ser concluído.</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Armazenamento de aplicativos para examinar</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Detecção</value>
+  </data>
+  <data name="tabPageExternal.Text" xml:space="preserve">
+    <value>Ferramentas externas</value>
+  </data>
+  <data name="labelProgramFolders.Text" xml:space="preserve">
+    <value>Você pode especificar pastas personalizadas nas quais você instalou seus aplicativos (por exemplo, D: \ Applications). Essas pastas serão usadas pelo BCU para procurar sobras de desinstalação, aplicativos não registrados e algumas outras coisas. Embora não seja necessário, uma lista dessas pastas permitirá que o BCU funcione melhor.
+
+As pastas padrão do Windows são sempre examinadas, você não precisa incluí-las nesta lista.
+
+Use caminhos de diretório completo, um caminho por linha. Caminhos inválidos e diretórios não existentes serão ignorados.</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Tente detectar automaticamente as pastas de instalação personalizadas</value>
+  </data>
+  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
+    <value>Pastas de instalação dos programas</value>
+  </data>
+  <data name="tabPageFolders.Text" xml:space="preserve">
+    <value>Pastas</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Caixas de mensagens</value>
+  </data>
+  <data name="tabPageMisc.Text" xml:space="preserve">
+    <value>Diversos</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Configurações do Bulk Crap Uninstaller </value>
+  </data>
+  <data name="checkBoxBackup.Text" xml:space="preserve">
+    <value>Pedir para criar uma cópia de segurança do registro antes de eliminar as sobras.</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Desinstalação</value>
+  </data>
+</root>

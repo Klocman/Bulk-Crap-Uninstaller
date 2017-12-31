@@ -61,7 +61,8 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"           
 Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"           
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
-Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"    
+Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Components]
 Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixed
