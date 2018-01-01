@@ -194,6 +194,22 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "QuietUninstallString")]
         public string QuietUninstallString { get; set; }
 
+        /// <summary>
+        /// Get a unique cache ID of this item. 
+        /// Returns null if there isn't enough information to get a reasonably unique key.
+        /// </summary>
+        public string GetCacheId()
+        {
+            var rid = RatingId;
+            if (!string.IsNullOrEmpty(rid))
+                return rid;
+
+            if (!string.IsNullOrEmpty(DisplayName) && !string.IsNullOrEmpty(InstallLocation))
+                return DisplayName + InstallLocation;// + DisplayVersion + InstallDate + EstimatedSize;
+
+            return null;
+        }
+
         public string RatingId
         {
             get

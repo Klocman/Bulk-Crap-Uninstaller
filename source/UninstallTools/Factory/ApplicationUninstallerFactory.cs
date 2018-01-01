@@ -160,8 +160,8 @@ namespace UninstallTools.Factory
 
             if (Cache != null)
             {
-                foreach (var entry in mergedResults.Where(x => !string.IsNullOrEmpty(x.RatingId)))
-                    Cache.Cache[entry.RatingId] = entry;
+                foreach (var entry in mergedResults)
+                    Cache.TryCacheItem(entry);
 
                 try
                 {
@@ -206,10 +206,10 @@ namespace UninstallTools.Factory
 
         private static void ApplyCache(List<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
         {
-            foreach (var entry in baseEntries.Where(x => !string.IsNullOrEmpty(x.RatingId)))
+            foreach (var entry in baseEntries)
             {
-                ApplicationUninstallerEntry matchedEntry;
-                if (cache.Cache.TryGetValue(entry.RatingId, out matchedEntry))
+                var matchedEntry = cache.TryGetCachedItem(entry);
+                if (matchedEntry != null)
                     infoAdder.CopyMissingInformation(entry, matchedEntry);
             }
         }

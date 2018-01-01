@@ -152,9 +152,9 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         private X509Certificate2 GetCert(ApplicationUninstallerEntry uninstaller)
         {
-            var id = uninstaller.RatingId;
+            var id = uninstaller.GetCacheId();
 
-            if (_dictionaryCahe != null && id != null && _dictionaryCahe.ContainsKey(id))
+            if (_dictionaryCahe != null && !string.IsNullOrEmpty(id) && _dictionaryCahe.ContainsKey(id))
             {
                 var cert = _dictionaryCahe[id];
                 uninstaller.SetCertificate(cert);

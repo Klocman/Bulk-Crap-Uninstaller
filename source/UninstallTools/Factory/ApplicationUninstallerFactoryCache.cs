@@ -4,6 +4,8 @@
 */
 
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using Klocman.Tools;
 
@@ -21,20 +23,86 @@ namespace UninstallTools.Factory
         {
         }
 
-        public Dictionary<string, ApplicationUninstallerEntry> Cache { get; }
+        public ApplicationUninstallerEntry TryGetCachedItem(ApplicationUninstallerEntry notCachedEntry)
+        {
+            ApplicationUninstallerEntry matchedEntry;
+            Cache.TryGetValue(notCachedEntry.GetCacheId(), out matchedEntry);
+            return matchedEntry;
+        }
+
+        public void TryCacheItem(ApplicationUninstallerEntry item)
+        {
+            var id = item.GetCacheId();
+            if (!string.IsNullOrEmpty(id))
+                Cache[id] = item;
+        }
+
+        private Dictionary<string, ApplicationUninstallerEntry> Cache { get; }
 
         public string Filename { get; set; }
+        public bool SerializeIcons { get; set; }
 
         public static ApplicationUninstallerFactoryCache Load(string filename)
         {
-            var result = SerializationTools.DeserializeFromXml<List<ApplicationUninstallerEntry>>(filename);
+            var c = new ApplicationUninstallerFactoryCache(filename);
+            c.Read();
+            return c;
+        }
 
-            return new ApplicationUninstallerFactoryCache(filename, result.ToDictionary(x => x.RatingId, x => x));
+        static byte[] SerializeIcon(Icon ic)
+        {
+            using (var stream = new MemoryStream())
+            {
+                ic.Save(stream);
+                return stream.ToArray();
+            }
+        }
+
+        static Icon DeserializeIcon(byte[] bytes)
+        {
+            using (var stream = new MemoryStream(bytes, false))
+                return new Icon(stream);
+        }
+
+        public void Read()
+        {
+            var result = SerializationTools.DeserializeFromXml<List<CacheEntry>>(Filename);
+
+            Cache.Clear();
+            foreach (var cacheEntry in result)
+            {
+                var id = cacheEntry.Entry.GetCacheId();
+                if (id == null) continue;
+
+                if (SerializeIcons && cacheEntry.Icon != null)
+                    cacheEntry.Entry.IconBitmap = DeserializeIcon(cacheEntry.Icon);
+
+                Cache.Add(id, cacheEntry.Entry);
+            }
         }
 
         public void Save()
         {
-            SerializationTools.SerializeToXml(Filename, Cache.Select(x => x.Value).ToList());
+            SerializationTools.SerializeToXml(Filename, Cache.Select(x => new CacheEntry(
+                x.Value,
+                SerializeIcons && x.Value.IconBitmap != null ? SerializeIcon(x.Value.IconBitmap) : null))
+                .ToList());
+        }
+
+        public class CacheEntry
+        {
+            public CacheEntry()
+            {
+            }
+
+            public CacheEntry(ApplicationUninstallerEntry entry, byte[] icon)
+            {
+                Entry = entry;
+                Icon = icon;
+            }
+
+            public ApplicationUninstallerEntry Entry { get; set; }
+            public byte[] Icon { get; set; }
         }
     }
 }
