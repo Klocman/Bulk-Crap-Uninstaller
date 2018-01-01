@@ -2,23 +2,24 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.0.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/4.0/BCUninstaller_4.0_portable.zip</URL>
+<Version>4.1.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.1/BCUninstaller_4.1_portable.zip</URL>
 <Changes>
+Added caching to application scanning
+Added caching of certificates
+Added caching options
+Added Brazilian Portuguese translation by Silvio Corral
+Fixed a crash when there's no app with valid estimated size visible
+Fixed right-clicking on tree view and in list with shortcut not working until user right-clicks on the list with mouse
+Fixed FileSize not exporting
+Dynamically generate the list of translators in credits, fixes some translations
+=== v4.0 partial changelog for reference ===
 Added a treemap to the main window, works the same as the application list
 Added uninstall automatization to all silent uninstallers - prevents silent uninstalls from getting stuck on dialogs
 Added detection of related apps when uninstalling - BCU will ask if you want to uninstall them as well
 Added new pre-uninstallation dialog - combines previous pop-ups and adds more options
 Added "View unregistered" view option
-Added a news popup on first start or update
-Merged Spanish language updates (#153)
-Made automatizer keep looking for windows instead of failing after few seconds
-During installation, if .NET 4.* is installed don't try to install .NET 3.5
-Fixed crash when BCU is unpacked directly to the root of a drive
-Fixed crash on some systems when refreshing main list view (HasAnyHyperlinks)
-Fixed error when searching through Browser Helper Objects registry with insufficient permissions
-Fixed "View xyz" menu items not doing anything if advanced filtering is enabled
 </Changes>
-<Hash>184f97f6a6177cd7510b4fb764596548</Hash>
+<Hash>ec899f52a92816fa9aa2b7c04cfac31a</Hash>
 </Update>
 </Root>
