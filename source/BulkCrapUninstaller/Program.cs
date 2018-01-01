@@ -98,6 +98,8 @@ namespace BulkCrapUninstaller
 
 
         private static bool? _net4IsAvailable;
+        public static Version PreviousVersion { get; private set; }
+
         public static bool Net4IsAvailable
         {
             get
@@ -137,7 +139,8 @@ namespace BulkCrapUninstaller
                 if (result == null || result.Value.Equals("Reset"))
                     throw new FormatException();
 
-                if (new Version(result.Value) < AssemblyVersion)
+                PreviousVersion = new Version(result.Value);
+                if (PreviousVersion < AssemblyVersion)
                     IsAfterUpgrade = true;
                 //if(new Version(result) < )
             }

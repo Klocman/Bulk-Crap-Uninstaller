@@ -24,7 +24,7 @@ namespace BulkCrapUninstaller.Forms
         public static void ShowPopup(Form owner)
         {
             // TODO change when adding a new message
-            if (Program.AssemblyVersion.Major > 4 || Program.AssemblyVersion.Minor > 0)
+            if (Program.PreviousVersion != null && Program.PreviousVersion.Major >= 4)
                 return;
 
             using (var news = new NewsPopup())
