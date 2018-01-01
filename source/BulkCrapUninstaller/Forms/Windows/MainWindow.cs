@@ -19,6 +19,8 @@ using BulkCrapUninstaller.Functions.ApplicationList;
 using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
+using Klocman.Binding.Settings;
+using Klocman.Events;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
@@ -87,37 +89,7 @@ namespace BulkCrapUninstaller.Forms
             // Disable until the first list refresh finishes
             LockApplication(true);
 
-            // Other bindings
-            _setMan.Selected.Subscribe((x, y) =>
-                UninstallToolsGlobalConfig.CustomProgramFiles =
-                    y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries)
-                    .Select(path => path.Trim().Trim('"').Trim()).ToArray(),
-                x => x.FoldersCustomProgramDirs, this);
-
-            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestCertificates, this);
-            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestInvalid, this);
-            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowStoreApps, this);
-            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowWinFeatures, this);
-            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedDisplayOrphans, this);
-
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanSteam = y.NewValue, x => x.ScanSteam, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanStoreApps = y.NewValue, x => x.ScanStoreApps, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinFeatures = y.NewValue, x => x.ScanWinFeatures, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinUpdates = y.NewValue, x => x.ScanWinUpdates, this);
-
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanDrives = y.NewValue, x => x.ScanDrives, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanRegistry = y.NewValue, x => x.ScanRegistry, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanPreDefined = y.NewValue, x => x.ScanPreDefined, this);
-
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles = y.NewValue, x => x.FoldersAutoDetect, this);
-
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,
-                x => x.QuietAutomatization, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
-                x => x.QuietAutomatizationKillStuck, this);
-
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue,
-                x => x.CacheAppInfo, this);
+            SetupBasicSettingBindings();
 
             // Setup list view
             _listView = new UninstallerListViewUpdater(this);
@@ -126,42 +98,8 @@ namespace BulkCrapUninstaller.Forms
             if (_setMan.Selected.Settings.CacheCertificates)
                 _uninstallerListPostProcesser.LoadCertificateCache(CertCacheFilename);
             // Start the processing thread when user changes the test certificates option
-            _setMan.Selected.Subscribe((x, y) =>
-            {
-                if (!_listView.FirstRefreshCompleted)
-                    return;
-                if (y.NewValue) _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
-                else
-                {
-                    _uninstallerListPostProcesser.StopProcessingThread(false);
-
-                    if (_listView.CheckIsAppDisposed()) return;
-
-                    uninstallerObjectListView.SuspendLayout();
-                    uninstallerObjectListView.RefreshObjects(
-                        _listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue).ToList());
-                    uninstallerObjectListView.ResumeLayout();
-                }
-            }, x => x.AdvancedTestCertificates, this);
-            FormClosed += (x, y) =>
-            {
-                try
-                {
-                    if (_setMan.Selected.Settings.CacheCertificates)
-                        _uninstallerListPostProcesser.SaveCertificateCache(CertCacheFilename);
-                    else
-                        File.Delete(CertCacheFilename);
-
-                    if (!_setMan.Selected.Settings.CacheAppInfo)
-                        File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);
-                }
-                catch (SystemException e)
-                {
-                    Console.WriteLine(@"Failed to delete cache: " + e);
-                }
-
-                _uninstallerListPostProcesser.Dispose();
-            };
+            _setMan.Selected.Subscribe(OnTestCertificatesChanged, x => x.AdvancedTestCertificates, this);
+            FormClosed += DisposeListPostProcessor;
 
             _uninstallerListConfigurator = new UninstallerListConfigurator(this);
             _uninstallerListConfigurator.AfterFiltering += (x, y) => _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
@@ -172,19 +110,7 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSelAll.Click += _listView.SelectAllItems;
             toolStripButtonSelNone.Click += _listView.DeselectAllItems;
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
-            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += (x, y) =>
-            {
-                string result = null;
-
-                if (y.Value == y.Maximum)
-                    result = string.Empty;
-                else if ((y.Value - 1) % 15 == 0)
-                    result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers,
-                        y.Value, y.Maximum);
-
-                if (result != null)
-                    this.SafeInvoke(() => toolStripLabelStatus.Text = result);
-            };
+            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateStatusbarOnPostprocessingUpdate;
             _uninstallerListPostProcesser.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
             _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
 
@@ -248,13 +174,7 @@ namespace BulkCrapUninstaller.Forms
             treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetRawSize(false);
             treeMap1.ObjectColorGetter = o => ApplicationListConstants.GetApplicationTreemapColor((ApplicationUninstallerEntry)o);
 
-            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += (x, y) =>
-            {
-                var update = y.Value == y.Maximum || (y.Value - 1) % 100 == 0;
-
-                if (update)
-                    this.SafeInvoke(() => UpdateTreeMap(x, y));
-            };
+            _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateTreemapOnPostprocessingUpdate;
 
             _uninstallerListConfigurator.AfterFiltering += UpdateTreeMap;
 
@@ -262,27 +182,119 @@ namespace BulkCrapUninstaller.Forms
                 (sender, args) => treeMap1.SetSelectedObjects(uninstallerObjectListView.SelectedObjects.Cast<object>());
 
             treeMap1.SliceClicked += OnTreeMapSliceClicked;
-
-            treeMap1.SliceRightClicked += (sender, args) =>
-            {
-                if (args.AddToSelection || !uninstallerObjectListView.SelectedObjects.Contains(args.Objects.FirstOrDefault()))
-                    OnTreeMapSliceClicked(sender, args);
-                uninstallListContextMenuStrip.Show(MousePosition);
-            };
-
-            treeMap1.SliceHovered += (sender, args) =>
-            {
-                toolStripLabelStatus.Text = args.Rectangle.Slice.ToElementNames();
-                toolStripLabelSize.Text =
-                    FileSize.SumFileSizes(args.Objects.Cast<ApplicationUninstallerEntry>().Select(x => x.EstimatedSize))
-                        .ToString();
-            };
+            treeMap1.SliceRightClicked += OnTreeMapSliceRightClicked;
+            treeMap1.SliceHovered += OnTreeMapSliceHovered;
 
             _setMan.Selected.BindControl(showTreemapToolStripMenuItem, settings => settings.ShowTreeMap, this);
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
-
-
+            
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
+        }
+
+        private void OnTreeMapSliceHovered(object sender, TreeMap.SliceEventArgs args)
+        {
+            toolStripLabelStatus.Text = args.Rectangle.Slice.ToElementNames();
+            toolStripLabelSize.Text = FileSize.SumFileSizes(args.Objects.Cast<ApplicationUninstallerEntry>().Select(x => x.EstimatedSize)).ToString();
+        }
+
+        private void OnTreeMapSliceRightClicked(object sender, TreeMap.SliceClickedEventArgs args)
+        {
+            if (args.AddToSelection || !uninstallerObjectListView.SelectedObjects.Contains(args.Objects.FirstOrDefault()))
+                OnTreeMapSliceClicked(sender, args);
+            uninstallListContextMenuStrip.Show(MousePosition);
+        }
+
+        private void SetupBasicSettingBindings()
+        {
+            _setMan.Selected.Subscribe((x, y) =>
+            {
+                var paths = y.NewValue.SplitNewlines(StringSplitOptions.RemoveEmptyEntries);
+                var trimmed = paths.Select(path => path.Trim().Trim('"').Trim()).ToArray();
+                UninstallToolsGlobalConfig.CustomProgramFiles = trimmed;
+            }, x => x.FoldersCustomProgramDirs, this);
+
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestCertificates, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestInvalid, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowStoreApps, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowWinFeatures, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedDisplayOrphans, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanSteam = y.NewValue, x => x.ScanSteam, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanStoreApps = y.NewValue, x => x.ScanStoreApps, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinFeatures = y.NewValue, x => x.ScanWinFeatures, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanWinUpdates = y.NewValue, x => x.ScanWinUpdates, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanDrives = y.NewValue, x => x.ScanDrives, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanRegistry = y.NewValue, x => x.ScanRegistry, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.ScanPreDefined = y.NewValue, x => x.ScanPreDefined, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles = y.NewValue, x => x.FoldersAutoDetect, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,
+                x => x.QuietAutomatization, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
+                x => x.QuietAutomatizationKillStuck, this);
+
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue,
+                x => x.CacheAppInfo, this);
+        }
+
+        private void UpdateTreemapOnPostprocessingUpdate(object x, CountingUpdateEventArgs y)
+        {
+            var update = y.Value == y.Maximum || (y.Value - 1) % 100 == 0;
+
+            if (update)
+                this.SafeInvoke(() => UpdateTreeMap(x, y));
+        }
+
+        private void UpdateStatusbarOnPostprocessingUpdate(object x, CountingUpdateEventArgs y)
+        {
+            string result = null;
+
+            if (y.Value == y.Maximum)
+                result = string.Empty;
+            else if ((y.Value - 1) % 15 == 0)
+                result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers, y.Value, y.Maximum);
+
+            if (result != null)
+                this.SafeInvoke(() => toolStripLabelStatus.Text = result);
+        }
+
+        private void DisposeListPostProcessor(object x, FormClosedEventArgs y)
+        {
+            try
+            {
+                if (_setMan.Selected.Settings.CacheCertificates)
+                    _uninstallerListPostProcesser.SaveCertificateCache(CertCacheFilename);
+                else
+                    File.Delete(CertCacheFilename);
+
+                if (!_setMan.Selected.Settings.CacheAppInfo)
+                    File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);
+            }
+            catch (SystemException e)
+            {
+                Console.WriteLine(@"Failed to delete cache: " + e);
+            }
+
+            _uninstallerListPostProcesser.Dispose();
+        }
+
+        private void OnTestCertificatesChanged(object x, SettingChangedEventArgs<bool> y)
+        {
+            if (!_listView.FirstRefreshCompleted)
+                return;
+            if (y.NewValue) _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
+            else
+            {
+                _uninstallerListPostProcesser.StopProcessingThread(false);
+
+                if (_listView.CheckIsAppDisposed()) return;
+
+                uninstallerObjectListView.SuspendLayout();
+                uninstallerObjectListView.RefreshObjects(_listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue).ToList());
+                uninstallerObjectListView.ResumeLayout();
+            }
         }
 
         private void OnTreeMapSliceClicked(object sender, TreeMap.SliceClickedEventArgs args)
