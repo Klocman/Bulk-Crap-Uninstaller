@@ -24,7 +24,7 @@ If you need any help please either read the help file included with all releases
 * RAM: Around 300MB or more of free RAM.
 * CPU: Doesn't really matter.
 * Free space: 40MB or more (most of it is for temporary update files).
-* 7200RPM HDD or better is recommended or the scan times can be a long time.
+* 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
 
 ## Screenshots
 ![Alt text](/doc/Preview.png?raw=true "First start preview")
