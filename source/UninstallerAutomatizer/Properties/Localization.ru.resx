@@ -117,111 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Недопустимое количество аргументов.</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Версия: </value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Неизвестный тип деинсталлятора: {0}</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Недопустимый путь или файл не существует: {0}</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Создатель</value>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>Автоматизация удаления {0} не поддерживается.</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Версия программы</value>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Автоматическая деинсталляция "{0}"</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Есть 64bit: </value>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>Пользователь отменил операцию</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Инсталлирован: </value>
+  <data name="Message_Success" xml:space="preserve">
+    <value>Автоматизация прошла успешно!</value>
   </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Архитектура: </value>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>Ошибка автоматической деинсталляции. Причина: {0}</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Используемые компоненты</value>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Выбор переключателя не из черного списка: {0}</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Выбор известной кнопки: {0}</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Метро иконки</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Найдено кнопок {0}.</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>Нажатие на кнопку "{0}".</value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Всплывающее окно закрыто.</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider</value>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Найдено всплывающее окно - "{0}".</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Задача планировщика заданий</value>
-    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Повторное всплывающее окно обнаружено!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Закрыть</value>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Автоматическое удаление не удалось.</value>
   </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Официальный сайт</value>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Окно закрыто.</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Разработчик</value>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Найденное окно "{0}".</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Английский, Польский- Marcin Szeniak</value>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Поиск окон...</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Немецкий - Dieter Hummel</value>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Прикреплено к "{0}"</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Французкий - Thierry Delaunay</value>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>Ожидание удаления NSIS для извлечения...</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Чешский- Richard Kahl </value>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Не удалось запустить процесс.</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Словенский - Jadran Rudec</value>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Запуск автоматизации в качестве демона/услуги.</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Переводчики</value>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Демон остановлен из-за:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>О программе BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} не является допустимым числом</value>
   </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Венгерский- Phoenix (Dobrontei Sandor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Португальский - Artur Alvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Русский - wvxwxvw</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Испанский- Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Голландский - Jaap Kramer</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Итальянский - Luca Carrabba</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Арабский - MFM Dawdeh</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

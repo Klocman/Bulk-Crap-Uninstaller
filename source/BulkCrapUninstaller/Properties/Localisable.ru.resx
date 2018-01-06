@@ -738,4 +738,28 @@ The lists are separated by a single newline.</comment>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Приложения в {0} не найдены</value>
   </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Изменить приложение</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Выбранное приложение нельзя изменить</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Выбранное приложение не имеет команды изменения. Возможно, потребуется удалить, а затем снова установить его, чтобы изменить настройки установки.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Сохранить список удаления</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Сохранить изменения в списке удаления?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>В списке удаления есть несохраненные изменения, которые будут потеряны при закрытии.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Выберите каталог с приложениями для удаления.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Выберите, где сохранить резервную копию. Будет создан новый каталог.</value>
+  </data>
 </root>

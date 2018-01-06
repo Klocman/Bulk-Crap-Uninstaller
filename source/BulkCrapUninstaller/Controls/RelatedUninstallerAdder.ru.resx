@@ -117,111 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Имя связанного деинсталлятора</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Версия: </value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Добавить к задаче</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+  <data name="olvColumnRelatedApps.Text" xml:space="preserve">
+    <value>Связан с:</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Создатель</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Это список приложений которые могут быть связаны с приложениями выбранными для удаления. Их можно добавить в очередь удаления, предварительно проверив.</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Версия программы</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Убедитесь, что вы не удаляете компоненты нужные для других приложений.</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Есть 64bit: </value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Инсталлирован: </value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Архитектура: </value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Используемые компоненты</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Метро иконки</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Задача планировщика заданий</value>
-    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Официальный сайт</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Разработчик</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Английский, Польский- Marcin Szeniak</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Немецкий - Dieter Hummel</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Французкий - Thierry Delaunay</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Чешский- Richard Kahl </value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Словенский - Jadran Rudec</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Переводчики</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>О программе BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Венгерский- Phoenix (Dobrontei Sandor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Португальский - Artur Alvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Русский - wvxwxvw</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Испанский- Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Голландский - Jaap Kramer</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Итальянский - Luca Carrabba</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Арабский - MFM Dawdeh</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

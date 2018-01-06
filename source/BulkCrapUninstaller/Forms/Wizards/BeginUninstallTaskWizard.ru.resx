@@ -117,111 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Версия: </value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Назад</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Продолжить</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Создатель</value>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Связанные приложения, которые вы, возможно, захотите удалить</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Версия программы</value>
-  </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Есть 64bit: </value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Инсталлирован: </value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Архитектура: </value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Используемые компоненты</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Метро иконки</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Задача планировщика заданий</value>
-    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Официальный сайт</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Разработчик</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Связанные</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Английский, Польский- Marcin Szeniak</value>
+    <value>Убедитесь, что все, что ниже, безопасно для удаления</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Немецкий - Dieter Hummel</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Подтверждение</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Французкий - Thierry Delaunay</value>
+    <value>Некоторые приложения, возможно, потребуется закрыть перед удалением</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Запущенно</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Создание точки восстановления перед удалением</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Чешский- Richard Kahl </value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Словенский - Jadran Rudec</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Переводчики</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>О программе BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Венгерский- Phoenix (Dobrontei Sandor)</value>
+    <value>Можно создать точку восстановления системы. Рекомендуется создать точку восстановления перед удалением драйверов и важных системных приложений.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Португальский - Artur Alvaro Pereira</value>
+    <value>Предупреждение: для этого должно быть включено восстановление системы!</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Русский - wvxwxvw</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Создание новой точки восстановления</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Испанский- Freddynic159, Emilio J. Grao</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Изменение параметров удаления</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Другое / Разное</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Одновременное удаление включено</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Удаление будет тихим</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Точка восстановления создана</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Голландский - Jaap Kramer</value>
+    <value>Файлы используются запущенными процессами</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Итальянский - Luca Carrabba</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Общий оценочный размер</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Арабский - MFM Dawdeh</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Приложения для удаления</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>116, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="button2.Text" xml:space="preserve">
+    <value>НАЧАТЬ УДАЛЕНИЕ</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Перед началом удаления убедитесь, что следующая информация верна. Это последний шанс!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Завершение</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Начать новую задачу удаления</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
 </root>
