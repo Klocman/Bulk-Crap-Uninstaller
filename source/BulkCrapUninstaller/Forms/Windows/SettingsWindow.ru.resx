@@ -244,7 +244,7 @@ BCU будет ждать завершения одной команды для 
     <value>Обнаружение обновлений Windows использует WUA, что происходит медленно. Это может занять пару минут.</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>Попытатся автоопределить пользовательские папки с приложениями</value>
+    <value>Попытатся автоопределить папки с приложениями</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
     <value>Всегда спрашивать о создании</value>

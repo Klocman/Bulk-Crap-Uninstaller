@@ -495,7 +495,7 @@
     <value>GUID отсутствует</value>
   </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
-    <value>Выберите вплоть до...</value>
+    <value>Выбрать вплоть до...</value>
   </data>
   <data name="Error_FileNotFound" xml:space="preserve">
     <value>Файл не найден.</value>

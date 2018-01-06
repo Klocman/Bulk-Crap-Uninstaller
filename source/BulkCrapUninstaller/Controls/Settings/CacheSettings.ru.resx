@@ -122,10 +122,10 @@
 ПРИМЕЧАНИЕ: Для вступления в силу этих параметров может потребоваться перезагрузка BCU.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>Кеш результатов сканирования сертификатов приложений</value>
+    <value>Кэш результатов сканирования сертификатов приложений</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
-    <value>Кэш собрал недостающую информацию</value>
+    <value>Кэш сбора недостающей информации</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Очистить кэш</value>

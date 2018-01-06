@@ -196,7 +196,7 @@
     <value>Менеджер автозагрузки</value>
   </data>
   <data name="comboBoxFilter.Items4" xml:space="preserve">
-    <value>Показать услуги</value>
+    <value>Показать службы</value>
   </data>
   <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>12, 17</value>

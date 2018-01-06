@@ -147,29 +147,29 @@
     <value>Скрыть Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Скройте все, что подписано Майкрософт.</value>
+    <value>Скрыть все, что подписано Майкрософт.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Показать системные</value>
+    <value>Системные</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
     <value>Некоторые деинсталляторы могут быть помечены как "системные", можете скрыть эти программы из списка.
 Драйвера часто помечены этим тегом.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Показать защищенные</value>
+    <value>Защищенные</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Защищенные элементы имеют пометку "NoRemove", это означает, что разработчик не хочет, чтобы их удаляли.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Показать обновления</value>
+    <value>Обновления</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Обновления для других приложений. Обычно они удаляются вместе с родительским приложением, поэтому их можно скрыть.</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Показать Windows Apps</value>
+    <value>Windows Apps</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Вид списка</value>

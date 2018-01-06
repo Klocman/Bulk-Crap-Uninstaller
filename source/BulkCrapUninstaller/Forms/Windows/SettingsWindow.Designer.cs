@@ -136,19 +136,17 @@ namespace BulkCrapUninstaller.Forms
             // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.textBoxPreUninstall);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.textBoxPostUninstall);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             // 
@@ -254,8 +252,8 @@ namespace BulkCrapUninstaller.Forms
             // 
             // directorySelectBoxBackup
             // 
-            resources.ApplyResources(this.directorySelectBoxBackup, "directorySelectBoxBackup");
             this.directorySelectBoxBackup.DirectoryPath = "";
+            resources.ApplyResources(this.directorySelectBoxBackup, "directorySelectBoxBackup");
             this.directorySelectBoxBackup.Name = "directorySelectBoxBackup";
             // 
             // flowLayoutPanel9
@@ -398,7 +396,6 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.tabPageGeneral);
             this.tabControl.Controls.Add(this.tabPageInterface);
             this.tabControl.Controls.Add(this.tabPageUninstallation);
@@ -406,6 +403,7 @@ namespace BulkCrapUninstaller.Forms
             this.tabControl.Controls.Add(this.tabPageExternal);
             this.tabControl.Controls.Add(this.tabPageFolders);
             this.tabControl.Controls.Add(this.tabPageMisc);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -414,8 +412,8 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageGeneral
             // 
-            resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
             this.tabPageGeneral.Controls.Add(this.propertiesSidebar1);
+            resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
@@ -433,9 +431,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageInterface
             // 
-            resources.ApplyResources(this.tabPageInterface, "tabPageInterface");
             this.tabPageInterface.Controls.Add(this.groupBoxMessages);
             this.tabPageInterface.Controls.Add(this.groupBoxLanguage);
+            resources.ApplyResources(this.tabPageInterface, "tabPageInterface");
             this.tabPageInterface.Name = "tabPageInterface";
             this.tabPageInterface.UseVisualStyleBackColor = true;
             // 
@@ -449,8 +447,8 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageUninstallation
             // 
-            resources.ApplyResources(this.tabPageUninstallation, "tabPageUninstallation");
             this.tabPageUninstallation.Controls.Add(this.uninstallationSettings1);
+            resources.ApplyResources(this.tabPageUninstallation, "tabPageUninstallation");
             this.tabPageUninstallation.Name = "tabPageUninstallation";
             this.tabPageUninstallation.UseVisualStyleBackColor = true;
             // 
@@ -461,9 +459,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageDetection
             // 
-            resources.ApplyResources(this.tabPageDetection, "tabPageDetection");
             this.tabPageDetection.Controls.Add(this.groupBoxAppStores);
             this.tabPageDetection.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPageDetection, "tabPageDetection");
             this.tabPageDetection.Name = "tabPageDetection";
             this.tabPageDetection.UseVisualStyleBackColor = true;
             // 
@@ -551,15 +549,15 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageExternal
             // 
-            resources.ApplyResources(this.tabPageExternal, "tabPageExternal");
             this.tabPageExternal.Controls.Add(this.groupBoxExternal);
+            resources.ApplyResources(this.tabPageExternal, "tabPageExternal");
             this.tabPageExternal.Name = "tabPageExternal";
             this.tabPageExternal.UseVisualStyleBackColor = true;
             // 
             // tabPageFolders
             // 
-            resources.ApplyResources(this.tabPageFolders, "tabPageFolders");
             this.tabPageFolders.Controls.Add(this.groupBoxProgramFolders);
+            resources.ApplyResources(this.tabPageFolders, "tabPageFolders");
             this.tabPageFolders.Name = "tabPageFolders";
             this.tabPageFolders.UseVisualStyleBackColor = true;
             // 
@@ -590,10 +588,10 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageMisc
             // 
-            resources.ApplyResources(this.tabPageMisc, "tabPageMisc");
             this.tabPageMisc.Controls.Add(this.cacheSettings1);
             this.tabPageMisc.Controls.Add(this.groupBoxMisc);
             this.tabPageMisc.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.tabPageMisc, "tabPageMisc");
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
             // 
@@ -619,8 +617,8 @@ namespace BulkCrapUninstaller.Forms
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Controls.Add(this.button2);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
             // usageTracker1

@@ -316,7 +316,7 @@
     <value>&amp;Использовать тему Windows</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать приложения Windows</value>
+    <value>Просмотр приложений Windows</value>
   </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>Найти по окну...</value>
