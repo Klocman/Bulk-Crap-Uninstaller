@@ -169,4 +169,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>تقدم الغاء التثبيت</value>
   </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>الغاء التثبيت يدويا</value>
+  </data>
 </root>

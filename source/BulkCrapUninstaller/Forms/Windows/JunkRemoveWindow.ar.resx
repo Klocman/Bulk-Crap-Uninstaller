@@ -123,9 +123,6 @@
   <data name="exportDialog.Title" xml:space="preserve">
     <value>تصدير القائمه المتبقية</value>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>حدد مكان حفظ النسخة الاحتياطية. سيتم انشاء دليل جديد.</value>
-  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>الغاء الامر</value>
   </data>

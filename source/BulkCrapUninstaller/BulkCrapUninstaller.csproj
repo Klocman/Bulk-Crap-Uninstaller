@@ -442,6 +442,9 @@
     <EmbeddedResource Include="Controls\ListLegend.pt-BR.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ar.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ar.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,6 +551,9 @@
     <EmbeddedResource Include="Controls\ListLegend.sl.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.ar.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -638,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallConfirmation.pt-BR.resx">
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.ar.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -829,6 +838,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.pt-BR.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ar.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>

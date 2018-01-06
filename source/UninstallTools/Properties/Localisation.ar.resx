@@ -539,4 +539,7 @@
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
     <value>يتم الان انشاء معلومات الغاء التثبيت مفقود...</value>
   </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>متوقف</value>
+  </data>
 </root>

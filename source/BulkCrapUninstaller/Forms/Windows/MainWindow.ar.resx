@@ -205,7 +205,7 @@
     <value>التعليمات</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Bcuninstaller</value>
+    <value>BCUninstaller</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>فلترة متقدمة</value>
@@ -345,14 +345,8 @@
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>عرض التحديثات</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>عرض ميزات وندوز</value>
-  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>عرض تطبيقات مخزن وندوز</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>بحث عن طريق النافذة...</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>بحث...</value>
@@ -527,5 +521,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>حماقة  سائبة الغاء التثبيت</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>استبعاد</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>تشمل</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>اظهار الشجرة &amp;الخريطة</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>عرض الغير مسجل</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>عرض ميزات وندوز</value>
   </data>
 </root>

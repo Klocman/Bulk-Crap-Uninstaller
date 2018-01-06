@@ -153,9 +153,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>اطلب ازاله المثبتات بصوت عال من المهمة بهدوء</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>اطلب انشاء نسخه احتياطيه لمكتب التسجل قبل حذف البقايا </value>
-  </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>لا تطلب ابدا للحصول على ملاحظات او مساعده</value>
   </data>
@@ -181,9 +178,6 @@
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>عام</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>الغاء التثبيت</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
     <value>(مكتب التسجيل (مستحسن تركة ممكن</value>
@@ -245,5 +239,29 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>محاولة الكشف عن مجلدات التثبيت المخصصة تلقائيا</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>اطلب الانشاء دائما</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>لا تطلب ابدا انشاء</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>انشاء تلقائيا في الدليل:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>نسخ احتياطي قبل ازالة البقايا</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>الواجهه</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>الغاء التثبيت</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>الشبكة</value>
   </data>
 </root>

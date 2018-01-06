@@ -132,19 +132,10 @@
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>فرز ذكي</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;الغاء التثبيت</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;الغاء الامر</value>
-  </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>هذه هي قائمه من التطبيقات التي سيتم الغاء تثبيتها ، من اجل من اعلى الى اسفل. اذا قمت بالغاء تحديد الحقل "الغاء التثبيت" ، لن يتم الغاء تثبيت التطبيق. اذا لم يكن التثبيت بهدوء متوفرا لمادة ، فلا يمكن التحقق منه</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>تغيير الترتيب اذا تم تمكين الغاء التثبيت المتزامن.BCU يعتمد الترتيب الاولي على اعدادات الغاء التثبيت ، ولكن يمكن تغييره عن طريق سحب المادة. ملاحظه: يمكن ل</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>تاكيد مهمة الغاء التثبيت</value>
   </data>
 </root>

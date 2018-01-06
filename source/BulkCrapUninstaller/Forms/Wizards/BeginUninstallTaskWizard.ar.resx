@@ -117,104 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>الاصدار:</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>الغاء الامر</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>حقوق النشر</value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>للخلف</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>خالق</value>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>استمرار</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>هو 64 بت:</value>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>التطبيقات ذات الصلة التي ترغب في الغاء تثبيتها</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>مثبت:</value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>هيكل:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>اصدار البرنامج</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>ايقونات واجهه المستخدم الحديثة</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>عرض قائمه الكائنات</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>مزود الاعدادات المحمولة</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>الاختبار الابيض</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>الاصول المستخدمة</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>اغلاق</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>الصفحة الرسمية</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>معلومات المطور</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>ذات صلة</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>English, Polish - Marcin Szeniak</value>
+    <value>تاكد من ان كل شيء ادناه امن لالغاء التثبيت</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Czech - Richard Kahl </value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Dutch - Jaap Kramer</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>التاكيد</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>French - Thierry Delaunay</value>
+    <value>قد تحتاج بعض التطبيقات لتكون مغلقة قبل الغاء تثبيتها</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>تشغيل</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>German - Dieter Hummel</value>
+    <value>انشاء نقطه استعاده قبل الغاء التثبيت</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hungarian - Phoenix (D?br?ntei S?ndor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italian - Luca Carrabba (luca.carrabba@yahoo.com)</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>يمكنك انشاء نقطه استعاده النظام الى تسجيل النسخ الاحتياطي ، وبعض الاعدادات والملفات. من المستحسن انشاء نقطه استعاده قبل ازاله برامج التشغيل وتطبيقات النظام الهامه.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Portuguese - Artur ?lvaro Pereira</value>
+    <value>تحذير: يجب تمكين استعاده النظام لكي يعمل هذا!</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russian - wvxwxvw</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>انشاء نقطه استعاده جديده</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Slovenian - Jadran Rudec</value>
+    <value>تغيير اعدادات الغاء التثبيت</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>الاعدادات</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>غيرها/متفرقات</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>تم تمكين الغاء التثبيت المتزامن</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>الغاء التثبيت سيكون صامتا</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>تم انشاء نقطه الاستعادة</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>لا تزال تستخدم الملفات من قبل تشغيل العمليات</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Spanish - Freddynic159, Emilio J. Grao</value>
+    <value>الحجم الإجمالي المقدر</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>المترجمون</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>تطبيقات لالغاء التثبيت</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>بدء الغاء التثبيت</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>الرجاء التاكد من صحة المعلومات التالية قبل بدء عمليه الغاء التثبيت. هذه هي الفرصة الاخيره!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>نهائي</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabic - فتحي الداودية
-lalalogitech@hotmail.com</value>
+    <value>بدء مهمة الغاء تثبيت جديده</value>
   </data>
 </root>

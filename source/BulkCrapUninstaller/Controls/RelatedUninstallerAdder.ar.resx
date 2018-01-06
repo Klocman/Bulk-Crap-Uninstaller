@@ -117,104 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>اسم الغاء التثبيت ذات الصلة</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>الاصدار:</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>اضافة الى المهمة</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>حقوق النشر</value>
+  <data name="olvColumnRelatedApps.Text" xml:space="preserve">
+    <value>تتعلق بما يلي:</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>خالق</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>هذه قائمه بالتطبيقات التي قد تكون مرتبطة بالتطبيقات التي قمت بتحديدها للغاء التثبيت. يمكنك أضافه هذه التطبيقات إلى قائمه انتظار إلغاء التثبيت بواسطة التحقق منها.</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>هو 64 بت:</value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>مثبت:</value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>هيكل:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>اصدار البرنامج</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>ايقونات واجهه المستخدم الحديثة</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>عرض قائمه الكائنات</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>مزود الاعدادات المحمولة</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>الاختبار الابيض</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>الاصول المستخدمة</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>اغلاق</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>الصفحة الرسمية</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>معلومات المطور</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>English, Polish - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Czech - Richard Kahl </value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Dutch - Jaap Kramer</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>French - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>German - Dieter Hummel</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hungarian - Phoenix (D?br?ntei S?ndor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italian - Luca Carrabba (luca.carrabba@yahoo.com)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portuguese - Artur ?lvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russian - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovenian - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Spanish - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>المترجمون</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabic - فتحي الداودية
-lalalogitech@hotmail.com</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>تاكد من عدم إلغاء تثبيت البرامج الهامه التي قد لا تزال التطبيقات الأخرى تحتاج إلى العمل بشكل صحيح.</value>
   </data>
 </root>

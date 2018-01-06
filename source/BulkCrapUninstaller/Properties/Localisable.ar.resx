@@ -723,4 +723,19 @@
   <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
     <value>سيقوم هذا الاجراء بفتح رابط {0} في نفس الوقت ، هل تريد بالتاكيد المتابعة ؟</value>
   </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>حفظ قائمه الغاء التثبيت</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>حفظ التغييرات في قائمه الغاء التثبيت المفتوحة ؟</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>توجد تغييرات غير محفوظه في قائمه الغاء التثبيت المفتوحة سيتم فقدانها عند اغلاقها.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>حدد الدليل مع التطبيقات لالغاء التثبيت.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>حدد مكان حفظ النسخة الاحتياطية. سيتم انشاء دليل جديد.</value>
+  </data>
 </root>

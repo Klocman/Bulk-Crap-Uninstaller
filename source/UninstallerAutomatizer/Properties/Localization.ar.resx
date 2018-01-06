@@ -117,104 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>عدد غير صالح من الوسيطات.</value>
   </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>الاصدار:</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>{نوع الغاء التثبيت مجهول: {0</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>حقوق النشر</value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>{مسار غير صالح او ملف غير موجود: {0</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>خالق</value>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>التنفيذ التلقائي ل {0} المثبت غير معتمد.</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>هو 64 بت:</value>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>الغاء تثبيت "{0}" تلقائيا</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>مثبت:</value>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value> المستخدم الغى العملية</value>
   </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>هيكل:</value>
+  <data name="Message_Success" xml:space="preserve">
+    <value>التنفيذ التلقائي ناجح!</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>اصدار البرنامج</value>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>{فشل الغاء التثبيت التلقائي. السبب: {0</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>{تحديد زر الاختيار غير المدرج في القائمة السوداء: {0</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>ايقونات واجهه المستخدم الحديثة</value>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>{اختيار زر الاختيار المعروف جيدا: {0</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>عرض قائمه الكائنات</value>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>{تم العثور على ازرار الاختيار {0</value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug</value>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>"{النقر على الزر "{0</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>مزود الاعدادات المحمولة</value>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>تم إغلاق النافذة المنبثقة.</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>"{العثور على نافذة منبثقة - "{0</value>
   </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>الاختبار الابيض</value>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>تم الكشف عن نافذة منبثقة المتكررة!</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>الاصول المستخدمة</value>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>اخفقت الازالة التلقائية.</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>اغلاق</value>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>نافذة مغلقة.</value>
   </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>الصفحة الرسمية</value>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>"{تم العثور على النافذة "{0</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>معلومات المطور</value>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>بحث عن النوافذ. . .</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>English, Polish - Marcin Szeniak</value>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>"{مرفق ب "{0</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Czech - Richard Kahl </value>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>لاستخراج NSIS في انتظار إلغاء التثبيت...</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Dutch - Jaap Kramer</value>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>فشلت العملية في البدء.</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>French - Thierry Delaunay</value>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>بدء التشغيل التلقائي باعتباره الخفي/الخدمة.</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>German - Dieter Hummel</value>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>توقف الخفي بسبب:</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hungarian - Phoenix (D?br?ntei S?ndor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italian - Luca Carrabba (luca.carrabba@yahoo.com)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portuguese - Artur ?lvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russian - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovenian - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Spanish - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>المترجمون</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabic - فتحي الداودية
-lalalogitech@hotmail.com</value>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} ليس رقما صحيحا</value>
   </data>
 </root>
