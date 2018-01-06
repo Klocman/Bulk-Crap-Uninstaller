@@ -173,10 +173,6 @@ namespace BulkCrapUninstaller.Forms
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Built in autosize doesn't work properly for the flowLayoutPanel
-            groupBoxAppStores.AutoSize = false;
-            groupBoxAppStores.Height = flowLayoutPanel6.Height +
-                                       (groupBoxAppStores.Height - groupBoxAppStores.DisplayRectangle.Height);
         }
 
         private void radioButtonBackup_CheckedChanged(object sender, EventArgs e)
