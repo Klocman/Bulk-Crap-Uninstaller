@@ -112,46 +112,95 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 19</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Командная строка до деинсталляции</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 19</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Командная строка после деинсталляции</value>
   </data>
+  <data name="checkBoxAutoLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 17</value>
+  </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Автозагрузка списка деинсталляции "Default.bcul" при запуске</value>
-  </data>
-  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Поиск обновлений при запуске</value>
-  </data>
-  <data name="checkBoxSendStats.Text" xml:space="preserve">
-    <value>Отправлять анонимную статистику</value>
-  </data>
-  <data name="checkBoxRatings.Text" xml:space="preserve">
-    <value>Включить пользовательский рейтинг приложений</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Язык приложения:</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Приложение надо перезапустить, чтобы изменения языка вступили в силу.</value>
   </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>Разное</value>
   </data>
+  <data name="checkBoxRatings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 17</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Включить пользовательский рейтинг приложений</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Поиск обновлений при запуске</value>
+  </data>
+  <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 17</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Отправлять анонимную статистику</value>
+  </data>
+  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 0</value>
+  </data>
+  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 21</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 16</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Язык приложения:</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 32</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Приложение надо перезапустить, чтобы изменения языка вступили в силу.</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 17</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Всегда показывать мусорные, с низким доверием</value>
+  </data>
+  <data name="checkBoxLoud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 17</value>
+  </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Запрос отключения громких деинсталляторов из тихих задач</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Запрос создания бэкапа реестра перед удалением хвостов</value>
+  <data name="checkBoxNeverFeedback.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 17</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Никогда не просить отзыв или помощь</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 16</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Искать мусор после деинсталляции</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 16</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Создать точку восстановления перед удалением</value>
@@ -161,6 +210,9 @@
   </data>
   <data name="checkBoxEnableExternal.Text" xml:space="preserve">
     <value>Включить выполнение внешних приложений</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 86</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Можно указать команды, которые будут выполняться до и после удаления. Одна линия равна одной команде и будет выполняться, как через диалог «Выполнить...». 
@@ -176,11 +228,80 @@ BCU будет ждать завершения одной команды для 
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Общие</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Деинсталляция</value>
+  <data name="labelWinUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 126</value>
+  </data>
+  <data name="labelWinUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 29</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Обнаружение обновлений Windows использует WUA, что происходит медленно. Это может занять пару минут.</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 109</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Обновления Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 42</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Обнаружение функций Windows использует WMI и может быть медленным или даже неработоспособным в некоторых системах (обычно это указывает на повреждение системы).</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Функции Windows</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Приложения Windows Store</value>
+  </data>
+  <data name="groupBoxAppStores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 158</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Места с приложениями для сканирования</value>
+  </data>
+  <data name="checkBoxScanRegistry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 17</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Реестр (рекомендуется оставить включенным)</value>
+  </data>
+  <data name="checkBoxScanDrives.Size" type="System.Drawing.Size, System.Drawing">
+    <value>322, 17</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Диски (обнаружение незарегистрированных приложений)</value>
+  </data>
+  <data name="checkBoxPreDefined.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 17</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Основываясь на предопределенных правилах</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Поиск приложений в...</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Обнаружение</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Внешние инструменты</value>
+  </data>
+  <data name="textBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 199</value>
+  </data>
+  <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 132</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 178</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Попытатся автоопределить пользовательские папки с приложениями</value>
+  </data>
+  <data name="labelProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 160</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
     <value>Можно задать пользовательские папки установки приложений (например, D:\Applications). Эти папки будут использоваться BCU для поиска и удаления остатков незарегистрированных приложений и некоторых других вещей. Хотя это не обязательно, со списком таких папок BCU будет работать лучше.
@@ -201,55 +322,4 @@ BCU будет ждать завершения одной команды для 
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки Bulk Crap Uninstaller</value>
   </data>
-  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Всегда показывать мусорные, с низким доверием</value>
-  </data>
-  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
-    <value>Никогда не просить отзыв или помощь</value>
-  </data>
-  <data name="checkBoxScanSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
-    <value>Реестр (рекомендуется оставить включенным)</value>
-  </data>
-  <data name="checkBoxScanDrives.Text" xml:space="preserve">
-    <value>Диски (обнаружение незарегистрированных приложений)</value>
-  </data>
-  <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>Основываясь на предопределенных правилах</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поиск приложений в...</value>
-  </data>
-  <data name="groupBoxAppStores.Text" xml:space="preserve">
-    <value>Места с приложениями для сканирования</value>
-  </data>
-  <data name="tabPageDetection.Text" xml:space="preserve">
-    <value>Обнаружение</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Приложения Windows Store</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
-    <value>Функции Windows</value>
-  </data>
-  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
-    <value>Обнаружение функций Windows использует WMI и может быть медленным или даже неработоспособным в некоторых системах (обычно это указывает на повреждение системы).</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
-    <value>Обновления Windows</value>
-  </data>
-  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Обнаружение обновлений Windows использует WUA, что происходит медленно. Это может занять пару минут.</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>Попытатся автоопределить пользовательские папки с приложениями</value>
-  </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
