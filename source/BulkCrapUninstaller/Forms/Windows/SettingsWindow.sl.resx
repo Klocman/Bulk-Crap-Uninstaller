@@ -179,7 +179,7 @@ BCU bo počakal, da se trenutno delujoč ukaz konča preden izvede naslednjega.<
   <data name="labelProgramFolders.Text" xml:space="preserve">
     <value>Lahko določite mape po meri, kamor boste namestili vaše aplikacije (npr. D:\Aplikacije). Te mape bo BCU uporabil za iskanje ostankov odstranjevanja, neregistriranih aplikacij in še nekaj drugih stvari. Čeprav to ni potrebno, bo seznam teh datotek omogočil boljše delo BCU.
 
-Privzete Windows mape se vedno pregledujejo. Ni jih potrebno vključiti na seznam.
+Privzete se Windows mape  vedno pregledujejo. Ni jih potrebno vključiti na seznam.
 
 Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoječi imeniki bodo prezrti.</value>
   </data>
@@ -229,7 +229,7 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
     <value>Odkrivanje</value>
   </data>
   <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Windows Store Apps</value>
+    <value>Windows Store aplikacije</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Lastnosti sistema Windows</value>
@@ -269,6 +269,9 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Sporočilna okna</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Omrežje</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

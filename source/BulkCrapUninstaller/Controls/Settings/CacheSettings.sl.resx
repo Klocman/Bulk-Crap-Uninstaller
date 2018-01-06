@@ -117,28 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value> Medpomnjenje lahko izjemno skrajša čas iskanja toda, če je aplikacija spremenjena, BCU morda ne bodo opazili sprememb. (npr. velikost)
+OPOMBA: Za uveljavitev teh nastavitev bo morda potrebno BCU ponovno zagnati.</value>
   </data>
-  <data name="buttonGood.Text" xml:space="preserve">
-    <value>Uporabna | Dobra kakovost</value>
+  <data name="checkBoxCerts.Text" xml:space="preserve">
+    <value>Rezultati pregleda certifikata aplikacije za medpomnjenje
+</value>
   </data>
-  <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Vprašljiva |  Slaba kakovost</value>
+  <data name="checkBoxInfo.Text" xml:space="preserve">
+    <value>Manjkajoče informacije zbranega medpomnilnika</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Ocena</value>
-  </data>
-  <data name="buttonBad.Text" xml:space="preserve">
-    <value>Neuporabna | Potencialno nevarna</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Počisti medpomnilnike</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Delite vaše ocene z drugimi uporabniki</value>
+    <value>Medpomnjenje</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>

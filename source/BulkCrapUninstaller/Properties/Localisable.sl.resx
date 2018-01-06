@@ -133,7 +133,7 @@
     <value>Iskanje posodobitev...</value>
   </data>
   <data name="SearchNothingFoundMessage" xml:space="preserve">
-    <value>Tukaj ni ujemajočih vnosov z vašim iskanim nizom.</value>
+    <value>Tukaj ni ujemajočih vnosov z vašim iskalnim kriterijem.</value>
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>BCUninstaller izvoz
@@ -641,7 +641,7 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
     <value>Naslednji odstranjevalci bodo znova glasno zagnani:</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
-    <value>Skeniranje določenega imenika....</value>
+    <value>Pregled določenega imenika....</value>
   </data>
   <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
     <value>Izberite imenik z aplikacijami, ki jih želite odstraniti.</value>
@@ -753,5 +753,11 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
     <value>Na odprtem seznamu za odstranjevanje so shranjene neshranjene spremembe, ki bodo izgubljene z njegovim zapiranjem.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Izberite imenik z aplikacijami za odstranitev.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Izberite, kje želite shraniti varnostno kopijo. Ustvarjen bo nov imenik.</value>
   </data>
 </root>

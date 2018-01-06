@@ -184,4 +184,13 @@
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
     <value>Postopek ni uspešno začet.</value>
   </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Začetek avtomatizerja kot daemon/storitev</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Daemon je ustavljen, ker :</value>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} ni veljavno število</value>
+  </data>
 </root>

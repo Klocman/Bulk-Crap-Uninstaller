@@ -124,18 +124,12 @@
     <value>Pomoč</value>
   </data>
   <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Razveljavi Escape</value>
+    <value>Ne zbeži</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Rezultati</value>
   </data>
   <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vstavi...</value>
+    <value>Vstavi</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>

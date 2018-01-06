@@ -448,6 +448,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ru.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.sl.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ar.resx">
       <DependentUpon>AdvancedFilters.cs</DependentUpon>
     </EmbeddedResource>
@@ -563,6 +566,9 @@
     <EmbeddedResource Include="Controls\Settings\CacheSettings.ru.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.sl.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ar.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +661,9 @@
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.ru.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.sl.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
@@ -855,6 +864,9 @@
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ru.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.sl.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\FirstStartBox.ar.resx">

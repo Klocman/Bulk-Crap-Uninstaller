@@ -457,7 +457,7 @@
     <value>Ocena...</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Poglej Windows Store aplikacije</value>
+    <value>Prikaz Windows Store aplikacije</value>
   </data>
   <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>Najdi z oknom...</value>
@@ -493,7 +493,7 @@
     <value>Zaženi...</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ogled posodobitev</value>
+    <value>Prikaz posodobitev</value>
   </data>
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Odstranitev  z oknom, imenikom ali datoteko...</value>
@@ -534,6 +534,15 @@
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Spremeni
 </value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prikaz neregistriranih</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prikaz Windows funkcij</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prikaži drevo &amp;map</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>

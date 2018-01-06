@@ -117,28 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Potem, ko je že dolgo ostala na različici 3 BCU-ja, dodali majhne izboljšave in odpravili težave, je končno čas za večjo posodobitev s spremembami vmesnika.
+
+- Kot ste verjetno opazili, je na seznamu aplikacij nekaj novega - kartična mapa, ki prikazuje nameščene programe po velikosti. Lahko lebdite in kliknete na zemljevid drevesa in deluje, kot če kliknete na seznam aplikacij.
+
+- Druga sprememba je pogovorno okno za odstranitev - zdaj, ko kliknete odstranitev, bo BCU prikazal pogovorno okno po korakih.
+
+- Vsi tihi deinstalatorji bodo zdaj avtomatizirani, tako da če gre kaj narobe in se pojavi sporočilo, se odstranitev ne bo več zataknila.</value>
   </data>
-  <data name="buttonGood.Text" xml:space="preserve">
-    <value>Uporabna | Dobra kakovost</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Hvala vsem, ki so letos donirali, prevedli, testirali, dali v skupno rabo ali kako drugače podpirali BCU! Brez vaše pomoči bi povratne informacije in podpora napredku na BCU bili veliko počasnejši, ali pa se celo popolnoma ustavili.
+
+Vaša podpora mi je omogočila, da relativno redno objavljam nove različice in mi dovoljuje, da kupim programsko in strojno opremo, ki je močno pripomogla k razvoju. (Potrdilo o podpisu kode, več RAM-a za izvajanje preizkusov na navideznih računalnikih, gostovanje itd.)
+
+In za to želim vsem, ki uporabljajo BCU vesel Božič in srečno Novo leto!
+
+(Kliknite to pogovorno okno, da ga zaprete)</value>
   </data>
-  <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Vprašljiva |  Slaba kakovost</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Ocena</value>
-  </data>
-  <data name="buttonBad.Text" xml:space="preserve">
-    <value>Neuporabna | Potencialno nevarna</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Delite vaše ocene z drugimi uporabniki</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>

@@ -117,28 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Povezano ime odstranjevalca</value>
   </data>
-  <data name="buttonGood.Text" xml:space="preserve">
-    <value>Uporabna | Dobra kakovost</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Dodaj v opravilo</value>
   </data>
-  <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Vprašljiva |  Slaba kakovost</value>
+  <data name="olvColumnRelatedApps.Text" xml:space="preserve">
+    <value>Povezan z:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Ocena</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>To je seznam aplikacij, ki so lahko povezane z izbranimi aplikacijami za odstranitev. Te programe lahko dodate v čakalno vrsto za odstranitev, tako da jih preverite.</value>
   </data>
-  <data name="buttonBad.Text" xml:space="preserve">
-    <value>Neuporabna | Potencialno nevarna</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Prepričajte se, da ne odstranite pomembne programe, ki bi jo lahko še vedno uporabljale druge aplikacije za pravilno delovanje.</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Delite vaše ocene z drugimi uporabniki</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>

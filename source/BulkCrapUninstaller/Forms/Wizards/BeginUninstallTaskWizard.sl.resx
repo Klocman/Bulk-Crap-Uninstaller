@@ -117,28 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonCancel.Text" xml:space="preserve">
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
+  <data name="buttonExit.Text" xml:space="preserve">
     <value>Prekliči</value>
   </data>
-  <data name="buttonGood.Text" xml:space="preserve">
-    <value>Uporabna | Dobra kakovost</value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Nazaj</value>
   </data>
-  <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Vprašljiva |  Slaba kakovost</value>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Nadaljuj</value>
+  </data>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Povezane aplikacije, ki jih morda želite odstraniti</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Povezana</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Potrdite, da je vse spodaj varno odstraniti</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Potrditev</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nekatere aplikacije je morda treba zapreti, preden jih odstranite</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Delovanje</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Preden odstranite program, ustvarite obnovitveno točko</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Ustvarite lahko obnovitveno točko sistema za varnostni kopirni register, nekatere nastavitve in datoteke. Pred odstranjevanjem gonilnikov in pomembnih sistemskih aplikacij priporočamo, da ustvarite obnovitveno točko.</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Opozorilo: Obnovitev sistema mora biti omogočena, da bo to delovalo!</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Ustvari novo obnovitveno točko</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Spremeni nastavitve odstranjevanja</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Nastavitve</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Drugo/Razno</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Sočasno odstranjevanje je omogočeno</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Odstranjevanje bo tiho</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Obnovitvena točka je bila ustvarjena</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Datoteke še vedno uporabljajodelujoči procesi</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Skupna ocenjena velikost</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Aplikacije za odstranjevanje</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>ZAČETEK ODSTRANJEVANJA</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Prepričajte se, da so naslednji podatki pravilni, preden začnete odstranjevati. To je zadnja priložnost!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Končno</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ocena</value>
+    <value>Začnite novo deinstalacijsko opravilo</value>
   </data>
-  <data name="buttonBad.Text" xml:space="preserve">
-    <value>Neuporabna | Potencialno nevarna</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Delite vaše ocene z drugimi uporabniki</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
 </root>
