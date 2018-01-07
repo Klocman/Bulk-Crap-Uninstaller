@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
+    <value>Vyberte vše</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
+  <data name="toolStripButtonExpand.Text" xml:space="preserve">
+    <value>Rozbalit vše</value>
   </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
+  <data name="toolStripButtonCollapse.Text" xml:space="preserve">
+    <value>Sbalit vše</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Jmeno</value>
   </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="olvColumnSize.Text" xml:space="preserve">
+    <value>Velikost</value>
   </data>
 </root>

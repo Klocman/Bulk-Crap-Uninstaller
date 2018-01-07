@@ -499,4 +499,49 @@
   <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
     <value>Vyhledat aktualizace systému Windows</value>
   </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Pravidla brány firewall</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Uživatelská pomoc</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Hlášení o chybách systému Windows</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Nastavení nevyžádaných skenerů ...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Dokončeno ...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Kompatibilita aplikací</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID třída</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Odkaz na odinstalátor</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Umístění odinstalátoru</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Zkratka</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Konfigurace politiky Audia</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Záznamy protokolu událostí</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Sledování informací</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Seznam složek instalací</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
 </root>

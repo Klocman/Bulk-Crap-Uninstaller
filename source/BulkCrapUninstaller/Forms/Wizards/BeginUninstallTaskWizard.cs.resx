@@ -117,19 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Zrušit</value>
   </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Zpět</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Pokračovat</value>
   </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Související aplikace, které budete chtít odinstalovat</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Související</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Potvrďte že všechno níže chcete bezpečně odinstalovat</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Potvrdit</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Před odinstalací může být nutné některé aplikace zavřít</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Spustit</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Před odinstalováním vytvořte bod obnovení</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Můžete vytvořit bod obnovení systému, zálohu registru, některá nastavení a soubory. Doporučujeme vytvořit bod obnovení před odebráním ovladačů a důležitých systémových aplikací.</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Upozornění: obnovení systému musí být povoleno, aby to fungovalo!</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Vytvořit nový bod obnovení</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Změnit nastavení odinstalace</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Ostatní / Různé</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Souběžná odinstalace je povolena.</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Tichá odinstalace</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Bod obnovení byl vytvořen.</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Soubory jsou stále používány spuštěnými procesy.</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Celková odhadovaná velikost</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Aplikace k odinstalování</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>ZAHÁJENÍ ODINSTALACE</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Před zahájením odinstalace se přesvědčte, zda jsou správné následující informace. Tohle je poslední šance!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Závěr</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Zahájit novou odinstalační úlohu</value>
   </data>
 </root>

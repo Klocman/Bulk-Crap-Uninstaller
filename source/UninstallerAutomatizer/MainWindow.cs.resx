@@ -117,19 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tento nástroj automaticky odinstaluje aplikace, které nemají tichý odinstalátor, kliknutím na tlačítka odinstalátoru místo uživatele.</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+    <value>Stav</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
+  <data name="buttonResume.Text" xml:space="preserve">
+    <value>Pokračovat</value>
   </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
+  <data name="buttonPause.Text" xml:space="preserve">
+    <value>Pauza</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
+  <data name="buttonAbort.Text" xml:space="preserve">
+    <value>Přerušit</value>
   </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Automatický odinstalátor</value>
   </data>
 </root>

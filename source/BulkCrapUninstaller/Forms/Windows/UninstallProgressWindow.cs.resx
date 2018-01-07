@@ -170,6 +170,9 @@ Pokud se zdá, že se proces zasekl, můžete kliknout na tlačítko "Přeskoči
   <data name="toolStripButtonHelp.Text" xml:space="preserve">
     <value>Pomoc</value>
   </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Ručně odinstalovat</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

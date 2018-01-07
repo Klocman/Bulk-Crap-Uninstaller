@@ -117,19 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Po dlouhodobém uvíznutí na verzi 3 BCU, přidáno pár malích změn a oprava problémů.
+
+- Jak jste si pravděpodobně všimli, je něco nového v seznamu aplikací-treemap, zobrazují se instalované aplikace podle velikosti. Můžete se pohybovat a kliknout na mapu stromu, a to funguje stejně jako kliknutí na seznam aplikací.
+
+
+- Další změna je dialog odinstalovat-nyní, když kliknete na odinstalovat, BCU zobrazí krok-za-krokem dialogové okno.
+
+- Všechny tiché odinstalace budou nyní automatizovány, pokud se nepodaří a objeví se zpráva, odinstalace se neztratí.</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
-  </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
-  </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Děkujeme, že jste darovali, přeložili, testovali, sdíleli nebo jinak podporovali BCU tento rok! Bez vaší pomoci by zpětná vazba a podpora pokroku v BCU byla mnohem pomalejší nebo dokonce úplná zastavila.
+
+Vaše podpora mi poskytla software a hardware. (Certifikát podepisování kódu, více paměti RAM pro spuštění testů na virtuálních počítačích, hosting atd.)
+
+A dílky tomu přeji všem BCU šťastné Vánoce a šťastný Nový rok!
+
+(Kliknutím na toto dialogové okno jej zavřete)</value>
   </data>
 </root>

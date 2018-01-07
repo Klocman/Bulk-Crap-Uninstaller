@@ -117,19 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ukládání do mezipaměti může výrazně zkrátit dobu vyhledávání, ale jen pokud je aplikace upraveny, BCU nemusí zaznamenat změny. (např. velikost)
+Poznámka: Chcete-li aby se projevilo tato nastavení může být požadován restart  BCU.</value>
+  </data>
+  <data name="checkBoxCerts.Text" xml:space="preserve">
+    <value>Výsledky prohledávání certifikátů aplikací v mezipaměti</value>
+  </data>
+  <data name="checkBoxInfo.Text" xml:space="preserve">
+    <value>Ve vyrovnávací paměti byly shromážděny chybějící informace</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Vymazání mezipamětí</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
-  </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
-  </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
-  </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+    <value>Mezipamět</value>
   </data>
 </root>

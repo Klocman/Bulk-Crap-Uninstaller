@@ -124,16 +124,16 @@
     <value>Uložit cíl jako ...</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
+    <value>Seznam odinstalací|*.bcul</value>
   </data>
   <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
     <value>Otevřené...</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Otevřít seznam Odinstalace ...</value>
+    <value>Otevřít seznam Odinstalací ...</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Odinstalovat seznam|*.bcul</value>
+    <value>Seznam odinstalací|*.bcul</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>Uložit jako výchozí</value>

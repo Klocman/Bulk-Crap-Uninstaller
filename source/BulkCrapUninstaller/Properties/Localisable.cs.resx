@@ -736,4 +736,28 @@ Můžete zkusit zakázat detekci kolizí v nastavení, není doporučeno.</value
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Nepodařilo se najít žádné aplikace uvnitř {0}</value>
   </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Změnit aplikaci</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Vybranou aplikaci nelze změnit.</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Vybraná aplikace nemá žádný příkaz pro úpravu. Bude nutné ji odinstalovat a znovu jej nainstalovat</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Uložit seznam odinstalace</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Uložit změny do seznamu otevřených odinstalací?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>V otevřeném odinstalačním seznamu jsou neuložené změny, které budou ztraceny zavřením.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Vyberte adresář s aplikacemi, které chcete odinstalovat.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Vyberte, kam chcete zálohu uložit. Bude vytvořen nový adresář.</value>
+  </data>
 </root>

@@ -117,19 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
-  </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
-  </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
-  </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="labelMessage.Text" xml:space="preserve">
+    <value>Vyberte, které soubory mají být odebrány. Můžete poklepat na libovolnou položku pro zobrazení v Průzkumníku. Chcete-li zobrazit úplnou cestu, umístěte ukazatel myši na některou z položek. Upozornění: odstraňte pouze soubory, které znáte, a nejsou potřeba.</value>
   </data>
 </root>

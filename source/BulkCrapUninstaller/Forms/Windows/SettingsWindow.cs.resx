@@ -246,6 +246,30 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Pokusit se automaticky rozpoznat vlastní instalační složky</value>
   </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Vždy požádat o vytvoření</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nikdy se neptat</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Vytvořit automaticky v adresáři:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Zálohování před odebráním zbytku</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Rozhraní</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Odinstalace</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Okno zprávy</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

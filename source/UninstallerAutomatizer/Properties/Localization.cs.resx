@@ -117,19 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Neplatný počet argumentů.
+</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Neznámý typ odinstalace: {0}</value>
   </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Neplatná cesta nebo neexitující soubor: {0}</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>Automatická odinstalace jednotek {0} není podporována.</value>
   </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Automaticky odinstalovat "{0}"</value>
+  </data>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>Operace zrušena uživatelem</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>Automatizace byla úspěšná!</value>
+  </data>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>Automatické odinstalování se nezdařilo. Z důvodu: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Výběr přepínacího tlačítka na černé listině: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Výběr funkčního přepínače: {0}</value>
+  </data>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Byly nalezeny přepínací tlačítka {0}.</value>
+  </data>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>Klepnutím na tlačítko "{0}".</value>
+  </data>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Vyskakovací okno zavřeno.</value>
+  </data>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Nalezeno vyskakovací okno - "{0}".</value>
+  </data>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Zjištěno vyskakovací okno!</value>
+  </data>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Automatická odinstalace se nezdařila.</value>
+  </data>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Okno zavřeno.</value>
+  </data>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Nalezeno v okně "{0}".</value>
+  </data>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Vyhledávání v okně</value>
+  </data>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Připojeno k "{0}"</value>
+  </data>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>Čeká se na odinstalaci NSIS, pro extrahování ...</value>
+  </data>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Nepodařilo se spustit proces.</value>
+  </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Spuštění automatizeru jako démona/služba.</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Daemon se zastavil kvůli:</value>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} neplatné číslo</value>
   </data>
 </root>

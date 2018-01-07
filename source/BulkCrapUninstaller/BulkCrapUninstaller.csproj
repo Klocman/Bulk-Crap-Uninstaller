@@ -445,6 +445,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ar.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.cs.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ru.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,6 +563,9 @@
     <EmbeddedResource Include="Controls\Settings\CacheSettings.ar.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.cs.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +664,9 @@
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.ar.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.cs.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.ru.resx">
@@ -858,6 +867,9 @@
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ar.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.cs.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">

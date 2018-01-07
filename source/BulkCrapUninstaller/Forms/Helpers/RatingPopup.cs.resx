@@ -121,7 +121,7 @@
     <value>Užitečné | Dobrá jakost</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>Junk | Potenciálně nebezpečný</value>
+    <value>Nevyžádané | Potenciálně nebezpečný</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Zrušit</value>

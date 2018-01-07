@@ -124,13 +124,13 @@
     <value>Neregistrované aplikace</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value> Neplatný odinstalátor</value>
+    <value>Neplatný odinstalátor</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>Neověřené certifikáty</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
-    <value>Ověření certifikátu</value>
+    <value>Ověřený certifikát</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Barevná legenda</value>

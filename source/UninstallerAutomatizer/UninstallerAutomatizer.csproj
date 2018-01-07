@@ -151,6 +151,9 @@
     <EmbeddedResource Include="MainWindow.ar.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.cs.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.ru.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +161,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.ar.resx" />
+    <EmbeddedResource Include="Properties\Localization.cs.resx" />
     <EmbeddedResource Include="Properties\Localization.es.resx" />
     <EmbeddedResource Include="Properties\Localization.resx">
       <Generator>ResXFileCodeGenerator</Generator>

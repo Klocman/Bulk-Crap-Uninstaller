@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Vzor</value>
+  <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
+    <value>Neplatný počet argumentů. Projděte úplnou cestu adresáře, který chcete odstranit jako argument, a zvolte /q pro tichý režim.</value>
   </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Pomoc</value>
+  <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
+    <value>Univerzální odinstalace</value>
   </data>
-  <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Ukončit</value>
+  <data name="UninstallSelection_DeleteProgress_Title" xml:space="preserve">
+    <value>Smazat položky</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Výsledek</value>
+  <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
+    <value>Některé položky se nepodařilo smazat</value>
   </data>
-  <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Vybrat</value>
+  <data name="UninstallSelection_Title" xml:space="preserve">
+    <value>Smazat "{0}"</value>
   </data>
 </root>

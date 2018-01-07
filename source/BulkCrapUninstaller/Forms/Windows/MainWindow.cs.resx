@@ -522,4 +522,26 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Upravit
+</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vyloučit</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Patřící</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazit strom&amp;mapu</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazit neregistrovaných</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazení funkce systému Windows</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
 </root>
