@@ -124,16 +124,16 @@
     <value>Niet geregistreerd programma</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>Deïnstaller ontbreekt</value>
+    <value>De-installer ontbreekt</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Ongeverifieërd certificaat</value>
+    <value>Ongeverifieerd certificaat</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
-    <value>Geverifieërd certificaat</value>
+    <value>Geverifieerd certificaat</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
-    <value>Legenda kleuren</value>
+    <value>Kleuren legenda</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Windows Store App</value>

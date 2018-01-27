@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kopiëren naar het klembord</value>
+    <value>Kopieer naar klembord</value>
   </data>
   <data name="saveToFileToolStripMenuItem.Text" xml:space="preserve">
     <value>Bestand opslaan...</value>
@@ -133,7 +133,7 @@
     <value>Overzicht</value>
   </data>
   <data name="tabPageFileInfo.Text" xml:space="preserve">
-    <value>Deïnstaller informatie</value>
+    <value>De-installer informatie</value>
   </data>
   <data name="tabPageRegistry.Text" xml:space="preserve">
     <value>Register</value>

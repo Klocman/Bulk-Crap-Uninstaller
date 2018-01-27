@@ -126,9 +126,6 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Link of programma bestand...</value>
   </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Selecteer de map waarin het programma is geinstalleerd.</value>
-  </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Selecteer de bestanden die behoren tot het programma</value>
   </data>

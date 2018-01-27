@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Zoek en deïnstalleer een programma op basis van een van zijn vensters, snelkoppelingen, of zijn installatie locatie of .exe bestand(en).</value>
+    <value>Zoek en de-installeer een programma op basis van een van zijn vensters, snelkoppelingen, of zijn installatie locatie of .exe bestand(en).</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Misleid een programma</value>
@@ -127,12 +127,12 @@
     <value>Selecteer door een venster te  gebruiken</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Selecteer door een venster of programma bestand(en) te gebruiken
+    <value>Selecteer door gebruik te maken van de installatie map of programma bestanden
 </value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Opm: Overtuig u er van dat de door u geselecteerde bestanden zich bevinden in de installatie map.
 
-U kunt een map selecteren die meerdere programma's bevat om deze te deïnstalleren.</value>
+U kunt een map selecteren die meerdere programma's bevat om deze te de-installeren.</value>
   </data>
 </root>

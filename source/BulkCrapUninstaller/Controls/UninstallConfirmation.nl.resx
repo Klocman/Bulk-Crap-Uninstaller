@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Deïnstaller naam</value>
+    <value>De-installer naam</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Deïnstalleer</value>
+    <value>De-installeer</value>
   </data>
   <data name="olvColumnQuiet.Text" xml:space="preserve">
     <value>Stil</value>
@@ -132,19 +132,10 @@
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Intelligent sorteren</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Deïnstalleren</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Annuleren</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Bevestig de deïnstallatie taak</value>
-  </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Dit is een lijst met programma's die zullen worden gedeïnstalleerd, volgordelijk van boven naar beneden. Wanneer u het "Deïnstalleer" veld deselecteerd, wordt het programma niet gedeïnstalleerd. Als stille deïnstallatie niet beschikbaar is voor een onderdeel, kan dit niet worden aangevinkt.</value>
+    <value>Dit is een lijst met programma's die zullen worden gede-installeerd, volgordelijk van boven naar beneden. Wanneer u het "De-installeer" veld deselecteerd, wordt het programma niet gede-installeerd. Als stille de-installatie niet beschikbaar is voor een onderdeel, kan dit niet worden aangevinkt.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>De initiële volgorde hangt af van uw deïnstallatie instellingen, maar dit kan worden gewijzigd door de onderdelen te verslepen. Opm: BCU kan de volgorde wijzigen als gelijktijdige deïnstallatie is ingeschakeld.</value>
+    <value>De initiële volgorde hangt af van uw de-installatie instellingen, maar dit kan worden gewijzigd door de onderdelen te verslepen. Opm: BCU kan de volgorde wijzigen als gelijktijdige de-installatie is ingeschakeld.</value>
   </data>
 </root>

@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
+    <value>Ongeldig aantal argumenten. Geef het volledige pad op van de te verwijderen map  als een argumenten en optioneel /q voor 'stille' modus.</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
+    <value>Universele uninstaller</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="UninstallSelection_DeleteProgress_Title" xml:space="preserve">
+    <value>Verwijderen items</value>
+  </data>
+  <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
+    <value>Verwijderen van enkele items is mislukt</value>
+  </data>
+  <data name="UninstallSelection_Title" xml:space="preserve">
+    <value>Verwijder "{0}"</value>
   </data>
 </root>

@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
+    <value>Alles selecteren</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="toolStripButtonExpand.Text" xml:space="preserve">
+    <value>Alles uitklappen</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="toolStripButtonCollapse.Text" xml:space="preserve">
+    <value>Alles inklappen</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="olvColumnSize.Text" xml:space="preserve">
+    <value>Grootte</value>
   </data>
 </root>

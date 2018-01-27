@@ -117,13 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Doorgaan</value>
+  </data>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Verwante programma's die u wilt de-installeren</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Verwant</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bevestig dat alles hieronder veilig is om te de-installeren</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Bevestiging</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Sommige programma's moeten mogelijk worden afgesloten voor de-installatie</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Loopt nog</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Maak een herstelpunt alvorens te de-installeren</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>U kunt een systeem herstelpunt maken voor een back-up van het register, sommige instellingen en bestanden. Het wordt aanbevolen om een herstelpunt te maken voor het verwijderen van stuurprogramma's en belangrijke systeem programma's.</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Waarschuwing: Systeemherstel moet ingeschakeld zijn om dit te laten werken!</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Maak een nieuw herstelpunt</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Wijzig de-installatie instellingen</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Anders / Divers</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Gelijktijdig de-installeren is ingeschakeld</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>De-installatie zal 'stil' verlopen</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Herstelpunt werd gemaakt</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Bestanden worden nog gebruikt door lopende processen</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Totaal geschatte grootte</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Programma's om te de-installeren</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>START DE-INSTALLATIE</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Wees er van overtuigd dat de volgende informatie juist is, alvorens de de-installatie te starten. Dit is de laatste kans!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Finale</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+    <value>Start nieuwe de-installatie taak</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>l</value>
   </data>
 </root>

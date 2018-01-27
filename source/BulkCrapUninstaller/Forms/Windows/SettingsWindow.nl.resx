@@ -142,10 +142,10 @@
     <value>Bericht vensters</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Altijd rommel die u niet vertrouwt weergeven</value>
+    <value>Rommel die u niet vertrouwt altijd weergeven</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Vragen, of normale deïnstallers uit de lijst met stille deïnstallers moet worden verwijderd</value>
+    <value>Vragen, of normale de-installers uit de lijst met stille deïnstallers moet worden verwijderd</value>
   </data>
   <data name="checkBoxBackup.Text" xml:space="preserve">
     <value>Vragen om een backup van het register te maken, voordat restanten worden verwijderd</value>
@@ -154,10 +154,10 @@
     <value>Vraag nooit om feedback of hulp</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Na deïnstallatie zoeken naar programma restanten</value>
+    <value>Na de-installatie zoeken naar programma restanten</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Voor deïnstallatie een herstelpunt maken</value>
+    <value>Voor de-installatie een herstelpunt maken</value>
   </data>
   <data name="groupBoxExternal.Text" xml:space="preserve">
     <value>Externe programma's</value>
@@ -170,9 +170,6 @@
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Algemeen</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Deïnstallatie</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
@@ -220,7 +217,7 @@
     <value>Opdrachtregel nadat de deïnstallatie is voltooid</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>U kunt opdrachten opgeven die voor en/of na de deïnstallatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.
+    <value>U kunt opdrachten opgeven die voor en/of na de de-installatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.
 
 BCU wacht tot de momenteel uitgevoerde opdracht is voltooïd, voordat de volgende wordt uitgevoerd.</value>
   </data>
@@ -246,5 +243,26 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Proberen aangepaste installatie mappen te detecteren</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Altijd vragen om te maken</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nooit vragen om te maken</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Maak automatisch in de map:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Back-up alvorens restanten te verwijderen</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>De-installatie</value>
   </data>
 </root>

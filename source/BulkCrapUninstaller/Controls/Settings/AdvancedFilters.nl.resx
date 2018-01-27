@@ -133,15 +133,15 @@
     <value>Voeg geselecteerde programma's toe als filters</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
+    <value>De-installeer lijsten|*.bcul</value>
   </data>
   <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst opslaan...</value>
+    <value>Een de-installeer lijst opslaan...</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Deïnstalleer lijsten|*.bcul</value>
+    <value>De-installeer lijsten|*.bcul</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Een deïnstalleer lijst openen</value>
+    <value>Open een de-installeer lijst ...</value>
   </data>
 </root>

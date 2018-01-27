@@ -166,10 +166,10 @@
     <value>Korte naam uitgever</value>
   </data>
   <data name="QuietUninstallPossible" xml:space="preserve">
-    <value>Stille deinstallatie is mogelijk</value>
+    <value>Stille de-installatie is mogelijk</value>
   </data>
   <data name="QuietUninstallString" xml:space="preserve">
-    <value>Stille deinstallatie string</value>
+    <value>Stille de-installatie string</value>
   </data>
   <data name="RegistryKeyName" xml:space="preserve">
     <value>Registersleutel</value>
@@ -184,13 +184,13 @@
     <value>Bestandsnaam v/d uninstaller</value>
   </data>
   <data name="UninstallerKind" xml:space="preserve">
-    <value>Deïnstallatie type</value>
+    <value>De-installatie type</value>
   </data>
   <data name="UninstallPossible" xml:space="preserve">
-    <value>Deïnstallatie is mogelijk</value>
+    <value>De-installatie is mogelijk</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
-    <value>Deïnstallatie string</value>
+    <value>De-installatie string</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Commentaar</value>
@@ -205,19 +205,19 @@
     <value>Vertrouwd</value>
   </data>
   <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
-    <value>Het deïnstallatieproces werd voortijdig beëindigd</value>
+    <value>Het de-installatieproces werd voortijdig beëindigd</value>
   </data>
   <data name="ManagerError_Skipped" xml:space="preserve">
     <value>Overgeslagen door gebruiker</value>
   </data>
   <data name="UninstallerLocation" xml:space="preserve">
-    <value>Deïnstallerpad</value>
+    <value>De-installer pad</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
-    <value>Er is geen geldige methode om deze registratie te deïnstalleren</value>
+    <value>Er is geen geldige methode om deze registratie te de-installeren</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
-    <value>Deïnstaller retourneert een foutcode:</value>
+    <value>De-installer retourneert een foutcode:</value>
   </data>
   <data name="Confidence_Bad" xml:space="preserve">
     <value>Slecht</value>
@@ -235,7 +235,7 @@
     <value>Zeer goed</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
-    <value>Bovenliggende deïnstaller</value>
+    <value>Bovenliggende de-installer</value>
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
@@ -248,10 +248,10 @@
     <value>De map wordt door andere geïnstalleerde toepassingen gebruikt.</value>
   </data>
   <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
-    <value>Het onderdeel wordt expliciet genoemd in de deïnstaller.</value>
+    <value>Het onderdeel wordt expliciet genoemd in de de-installer.</value>
   </data>
   <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
-    <value>Register registratie van de deïnstaller</value>
+    <value>Register registratie van de de-installer</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
     <value>Het onderdeel schijnt aan een totale uitgevers categorie toe te behoren</value>
@@ -302,7 +302,7 @@
     <value>Overgeslagen</value>
   </data>
   <data name="UninstallStatus_Uninstalling" xml:space="preserve">
-    <value>Deïnstalleren</value>
+    <value>De-installeren</value>
   </data>
   <data name="UninstallStatus_Waiting" xml:space="preserve">
     <value>Wachten</value>
@@ -448,7 +448,7 @@
     <value>Gevonden {0} programma GUID's</value>
   </data>
   <data name="Progress_Registry" xml:space="preserve">
-    <value>Register scannen op deïnstallers...</value>
+    <value>Register scannen op de-installers...</value>
   </data>
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Windows Update</value>
@@ -466,7 +466,7 @@
     <value>Verwerking {0}</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
-    <value>Genereren ontbrekende deïnstaller informatie</value>
+    <value>Genereren ontbrekende de-installer informatie</value>
   </data>
   <data name="Progress_DriveScan" xml:space="preserve">
     <value>Schijven scannen op programma's</value>
@@ -497,5 +497,50 @@
   </data>
   <data name="Progress_Merging_Drives" xml:space="preserve">
     <value>Programma's samenvoegen van schijven</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Firewall regel</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Gebruikers assistentie</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Windows foutrapportage rapport</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Instellen rommel scanners...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Afronden...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Programma compatibiliteit</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID klassen</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>De-installer verwijzing</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>De-installer lokatie</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Snelkoppeling</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Configuratie audiobeleid</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Gebeurtenis logbestanden</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Traceer informatie</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Geïnstalleerde maplijst</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Gepauzeerd</value>
   </data>
 </root>

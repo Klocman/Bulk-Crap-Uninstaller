@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Verbonden de-installer naam</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Voeg toe aan taak</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="olvColumnRelatedApps.Text" xml:space="preserve">
+    <value>Verbonden met:</value>
+  </data>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Dit is een lijst met toepassingen die mogelijk verbonden zijn met toepassingen, die u selecteerde om te deinstalleren. U kunt deze toepassingen toevoegen aan de de-installer wachtrij door deze aan te vinken.</value>
+  </data>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Overtuig u zelf ervan dat u geen belangrijke software de-installeert, die andere toepassingen nog nodig hebben om goed te werken.</value>
   </data>
 </root>

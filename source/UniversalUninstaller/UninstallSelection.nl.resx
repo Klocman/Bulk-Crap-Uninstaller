@@ -117,13 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
-  </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="labelMessage.Text" xml:space="preserve">
+    <value>Selecteer welke bestanden moeten worden verwijderd. U kunt dubbelklikken op elk item om deze te zien in de verkenner. Om het volledige pad te zien, zweeft u boven ieder van de items.
+Waarschuwing: Verwijder alleen bestanden waarvan u weet dat deze niet nodig zijn.</value>
   </data>
 </root>

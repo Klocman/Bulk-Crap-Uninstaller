@@ -121,7 +121,7 @@
     <value>Annuleren</value>
   </data>
   <data name="buttonGood.Text" xml:space="preserve">
-    <value>Bruikbaar | Prima kwaliteit</value>
+    <value>Bruikbaar | Goede kwaliteit</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
     <value>Twijfelachtig | Slechte kwaliteit</value>

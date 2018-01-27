@@ -166,10 +166,10 @@
     <value>&amp;Opdracht uitvoeren</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Kopiëren naar het klembord</value>
+    <value>&amp;Kopieer naar klembord</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Backup van register maken...</value>
+    <value>&amp;Back-up van register maken...</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
     <value>Verplaatsen naar het register</value>
@@ -193,7 +193,7 @@
     <value>Opstart registraties exporteren...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Selecteer een lege map voor de backup</value>
+    <value>Selecteer een lege map voor de back-up</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Opstartmanager starten</value>

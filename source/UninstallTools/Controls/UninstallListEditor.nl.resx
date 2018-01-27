@@ -151,7 +151,7 @@
     <value>Naam:</value>
   </data>
   <data name="groupBoxFilterSettings.Text" xml:space="preserve">
-    <value>Fileter instellingen</value>
+    <value>Filter instellingen</value>
   </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>Toevoegen</value>
@@ -166,9 +166,9 @@
     <value>Conditie editor</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Deïnstallatie lijsten (*.xml)|*.xml|Alle bestanden|*.*</value>
+    <value>De-installatie lijsten (*.xml)|*.xml|Alle bestanden|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Deïnstallatie lijst laden...</value>
+    <value>De-installatie lijst laden...</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>Zoeken naar programma restanten</value>
   </data>
   <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
-    <value>De deïnstallatie lijst vullen...</value>
+    <value>De de-installatie lijst vullen...</value>
   </data>
   <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
     <value>Programma restanten verwijderen...</value>
@@ -137,7 +137,7 @@
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>BCUninstaller Export
-Uitgever | Versie | Datum | Grootte | Registry | Deïnstallatie type | Deïnstallatie string | Deïnstallatie string (stil) | Commentaar</value>
+Uitgever | Versie | Datum | Grootte | Registry | De-installatie type | De-installatie string | De-installatie string (stil) | Commentaar</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Portabel</value>
@@ -146,7 +146,7 @@ Uitgever | Versie | Datum | Grootte | Registry | Deïnstallatie type | Deïnstal
     <value>Oproep van API mislukt</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
-    <value>Backup van register is mislukt. Wilt u toch doorgaan?</value>
+    <value>Back-up van register is mislukt. Wilt u toch doorgaan?</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>
@@ -163,7 +163,7 @@ Fout details:
 </value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
-    <value>Wilt u een backup van het register maken, voordat u verder gaat?</value>
+    <value>Wilt u een back-up van het register maken, voordat u verder gaat?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
     <value>U kunt alle wijzigingen terug zetten, als u daar later op dubbel klikt.
@@ -177,7 +177,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>U moet één registratie voor deze bewerking selecteren</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>Selecteer exact één deïnstaller uit de lijst. Maakt u gebruikt van checkboxen, controleer deze dan voor de uitvoering!</value>
+    <value>Selecteer exact één de-installer uit de lijst. Maakt u gebruikt van checkboxen, controleer deze dan voor de uitvoering!</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>Zoeken naar updates</value>
@@ -198,7 +198,8 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Export is mislukt</value>
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
-    <value>BCUninstaller deïnstalleert {0} programma('s)</value>
+    <value>BCUninstaller de-installeert {0} programma('s)</value>
+    <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Deïnstaller hernoemen</value>
@@ -261,11 +262,11 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Voltooid</value>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
-    <value>{0} Deïnstaller(s) geselecteerd</value>
+    <value>{0} De-installer(s) geselecteerd</value>
     <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
-    <value>{0} Deïnstaller(s) in totaal, {1}</value>
+    <value>{0} De-installer(s) in totaal, {1}</value>
     <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
@@ -291,17 +292,17 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Certificaat ontbreekt</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Verwerking van de deïnstallers {0} / {1}</value>
+    <value>Verwerking van de de-installers {0} / {1}</value>
     <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
-    <value>Wilt u het wachten op de nu lopende deïnstallatie overslaan?</value>
+    <value>Wilt u het wachten op de nu lopende de-installatie overslaan?</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
     <value>Actueel uitgevoerde taken overslaan</value>
   </data>
   <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
-    <value>Er wordt al een andere deïnstallatie taak uitgevoerd. Wacht a.u.b. tot deze is voltooid en probeer het opnieuw.</value>
+    <value>Er wordt al een andere de-installatie taak uitgevoerd. Wacht a.u.b. tot deze is voltooid en probeer het opnieuw.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
     <value>Waardering: {0}
@@ -345,10 +346,10 @@ The lists are separated by a single newline.</comment>
     <value>{0} Programma's</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
-    <value>Forceer deïnstallatie</value>
+    <value>Forceer de-installatie</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
-    <value>Het uitvoeren van enkele deïnstallers is mislukt</value>
+    <value>Het uitvoeren van enkele de-installers is mislukt</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
     <value>.NET Framework v4.0 niet gevonden</value>
@@ -360,13 +361,13 @@ The lists are separated by a single newline.</comment>
     <value>Het v4.0 Framework is optioneel, maar wordt aanbevolen. De functies die zijn gebaseerd op dit Framework, zullen worden uitgeschakeld tot dat u dit installeert.</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
-    <value>Enkele deïnstallers mislukten</value>
+    <value>Enkele de-installers mislukten</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Wilt u proberen om lopende stille deïnstallers die mislukten zichtbaar te maken?</value>
+    <value>Wilt u proberen om lopende stille de-installers die mislukten zichtbaar te maken?</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
-    <value>De volgende deïnstallers worden zichtbaar herstart:</value>
+    <value>De volgende de-installers worden zichtbaar herstart:</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
     <value>De opgegeven map scannen...</value>
@@ -375,7 +376,7 @@ The lists are separated by a single newline.</comment>
     <value>Selecteer de map met programma's die u wilt verwijderen.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
-    <value>Deïnstalleer uit map</value>
+    <value>De-installeer uit map</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
     <value>Er werden geen programma's gevonden in de opgegeven map</value>
@@ -487,16 +488,16 @@ Mist u functionaliteiten of wilt u een oplossing voor een fout? Stuur mij dan uw
     <value>Een nieuwe versie {0} is beschikbaar, wilt u nu upgraden?</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
-    <value>De geselecteerde registratie kan niet met de MsiEx-Installer worden gedeïnstalleerd.</value>
+    <value>De geselecteerde registratie kan niet met de MsiEx-Installer worden gede-installeerd.</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
     <value>De geselecteerde uninstaller heeft geen geldige Guid voor het gebruik met MsiExec.</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
-    <value>De actuele deïnstallatie taak beëindigen?</value>
+    <value>De actuele de-installatie taak beëindigen?</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende deïnstaller en kan er in resulteren dat de deïnstallatie niet wordt afgesloten. In de regel kunt u de deïnstaller opnieuw uitvoeren om de deïnstallatie af te sluiten.
+    <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende de-installer en kan er in resulteren dat de de-installatie niet wordt afgesloten. In de regel kunt u de de-installer opnieuw uitvoeren om de de-installatie af te sluiten.
 
 Als alternatief kunt u de wachttijd voor dit proces overslaan. Hierdoor werkt de deïnstaller door, terwijl de taak naar het volgende onderdeel springt.
 Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
@@ -508,7 +509,7 @@ Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat he
     <value>Windows onderdelen laden...</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
-    <value>De volgende deïnstallers werden uitgevoerd, mogelijk vanwege een conflict. Wacht tot de andere deïnstallers zijn voltooid en probeer het opnieuw.
+    <value>De volgende de-installers werden uitgevoerd, mogelijk vanwege een conflict. Wacht tot de andere de-installers zijn voltooid en probeer het opnieuw.
 {0}
 
 U kunt proberen de detectie van conflicten in de instellingen uit te schakelen, maar dit wordt niet aanbevolen.</value>
@@ -531,7 +532,7 @@ Waarschuwing: Tijdens de update worden de map "Update" en het bestand "Update.zi
     <value>DEBUG</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
-    <value>Deïnstallatie voortgang</value>
+    <value>De-installatie voortgang</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
     <value>U kunt de computer nu uitzetten.</value>
@@ -553,10 +554,10 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Sleutels uit het register verwijderen</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
-    <value>Weet u zekere dat u de geselecteerde deïnstaller registraties wilt verwijderen?</value>
+    <value>Weet u zekere dat u de geselecteerde de-installer registraties wilt verwijderen?</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
-    <value>De volgende onderdelen werden uit het register verwijderd en verdwijnen uit de deïnstaller lijst, maar worden niet gedeïnstalleerd.
+    <value>De volgende onderdelen werden uit het register verwijderd en verdwijnen uit de deïnstaller lijst, maar worden niet gede-installeerd.
 
 {0}</value>
   </data>
@@ -571,7 +572,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
 {0}</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
-    <value>Wilt na uitvoering van deïnstallatie(s) zoeken naar restanten?</value>
+    <value>Wilt na uitvoering van de-installatie(s) zoeken naar restanten?</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Er was niets om te kopieëren naar het klembord. Of u heeft niets geselecteerd of de informatie is afkomstig van de deïnstaller.</value>
@@ -586,7 +587,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Deze bewerking opent {0} mappen tegelijk. Weet u zeker dat u verder wilt gaan?</value>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
-    <value>Stille deïnstallatie</value>
+    <value>Stille de-installatie</value>
   </data>
   <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
     <value>Standaard instellingen herstellen</value>
@@ -595,7 +596,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Alle instellingen gaan blijvend verloren. BCUinstaller moet worden herstart om deze bewerking te voltooiïen. </value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
-    <value>Deïnstallatie lijst openen</value>
+    <value>De-installatie lijst openen</value>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
     <value>Het herstelpunt WERD NIET GEMAAKT, u kunt wijzigingen niet herstellen! Wilt u toch doorgaan met de deïnstallatie?</value>
@@ -610,7 +611,8 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Taak voltooid</value>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
-    <value>Deïnstallatie</value>
+    <value>De-installatie</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
     <value>Keuze onthouden</value>
@@ -622,7 +624,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Het bestand bestaat niet</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
-    <value>Niets om weer te geven. Dit programmma wordt mbv. de Windows Installer (MsiExec) gedeïnstalleerd.</value>
+    <value>Niets om weer te geven. Dit programmma wordt mbv. de Windows Installer (MsiExec) gede-installeerd.</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
     <value>Jammer dat u ons gaat verlaten! Als u enkele minuten heeft, laat mij dan met een kort bericht op mijn website (http://klocmansoftware.weebly.com/) weten waarom u BCU deïnstalleerde. Ik zal mijn best doen om gemelde problemen op te lossen.</value>
@@ -631,7 +633,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Bij het openen van de pagina "Zoeken" trad een fout op</value>
   </data>
   <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
-    <value>Deïnstallatiie lijst opslaan</value>
+    <value>De-installatiie lijst opslaan</value>
   </data>
   <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
     <value>De lijst kon niet in een bestand worden opgeslagen</value>
@@ -661,7 +663,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>De geselecteerde bestanden konden niet worden geladen</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
-    <value>Geen uninstaller geselecteerd, er is niets om te deïnstalleren
+    <value>Geen uninstaller geselecteerd, er is niets om te de-installeren
 </value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
@@ -677,7 +679,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
     <value>Beveilgd onderdeel wijzigen</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
-    <value>Deïnstallatie met Msi</value>
+    <value>De-installatie met Msi</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
     <value>Het voortijdig beëindigen van de taak maakt, dat terugzetten niet mogelijk is.
@@ -688,7 +690,7 @@ De lopende uninstaller wordt niet gestopt, deze taak wacht op zijn voltooiïng.<
 Mocht er onverhoopt iets mis gaan, dan kunt u met systeemherstel de wijziging(en) ongedaan maken.</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
-    <value>Om programma's te deïnstalleren moet u deze eerst in de getoonde lijst selecteren. Als u gebruik maakt van checkboxen, controleer dan dat deze aangevinkt zijn.</value>
+    <value>Om programma's te de-installeren moet u deze eerst in de getoonde lijst selecteren. Als u gebruik maakt van checkboxen, controleer dan dat deze aangevinkt zijn.</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
     <value>Als u de huidige selectie wilt bewaren, wordt deze met de geopende lijst(en) samengevoegd.</value>
@@ -713,7 +715,7 @@ Om deze registratie te wijzigen, moet u de beveiliging van de deïnstaller in he
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>
-De volgende onderdelen hebben geen onzichtbare deïnstaller(s):
+De volgende onderdelen hebben geen onzichtbare de-installer(s):
 {0}
 
 Wilt u voor deze onderdelen de standaard uninstaller gebruiken of moeten de registraties uit de taak worden verwijderd?</value>
@@ -730,5 +732,30 @@ Wilt u voor deze onderdelen de standaard uninstaller gebruiken of moeten de regi
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Zoeken naar programma's in {0} is mislukt</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Wijzig programma</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Het geselecteerde programma kan niet worden gewijzigd</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Voor het geselecteerde programma is geen wijzig opdracht gespecificeerd.
+Het kan noodzakelijk zijn om te de-installeren en het dan opnieuw te installeren om de installatie instellingen te wijzigen.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Opslaan de-installeer lijst</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Wijzigingen opslaan in de de-installatie lijst?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Er zijn niet opgeslagen wijzigingen in de geopende de-installatie lijst, die verloren gaan door deze te sluiten.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Selecteer de map met de programma's om te de-installeren.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Selecteer waar de back-up opgeslagen moet worden. Een nieuwe map zal worden gemaakt.</value>
   </data>
 </root>

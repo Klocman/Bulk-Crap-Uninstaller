@@ -117,13 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Caching kan zoektijden aanzienlijk reduceren, maar als een programma is gewijzigd, heeft BCU de wijziging(en) mogelijk niet opgemerkt, (bijv. de omvang).
+Opm: Voordat deze instellingen effect hebben, moet BCU mogelijk herstart worden.</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="checkBoxCerts.Text" xml:space="preserve">
+    <value>Cache programma certifcaat scan resultaten</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="checkBoxInfo.Text" xml:space="preserve">
+    <value>Ontbrekende door cache verzamelde informatie</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Wissen caches</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Caching</value>
   </data>
 </root>

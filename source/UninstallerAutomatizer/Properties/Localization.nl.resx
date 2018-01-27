@@ -117,13 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonClose.Text" xml:space="preserve">
-    <value>Sluiten</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Ongeldig aantal argumenten.</value>
   </data>
-  <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Onbekend uninstaller type: {0}</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Ongeldig pad of bestand bestaat niet: {0} </value>
+  </data>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>Automatisering van {0} uninstallers wordt niet ondersteund.</value>
+  </data>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Automatisch de-installeren "{0}"</value>
+  </data>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>Gebruiker annuleerde de activiteiten</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>Automatisering was succesvol!</value>
+  </data>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>Automatische de-installatie mislukte. Reden: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Selecteren niet op de zwartelijst staand keuzerondje: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Selecteren bekend-goed keuzerondje: {0}</value>
+  </data>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Gevonden {0} keuzerondjes</value>
+  </data>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>Klikken op de "{0}" knop.</value>
+  </data>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Pop-up venster gesloten.</value>
+  </data>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Pop-up venster gevonden - "{0}".</value>
+  </data>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Geruststellend pop-up venster gedetecteerd!</value>
+  </data>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Automatische de-installatie mislukte.</value>
+  </data>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Venster gesloten.</value>
+  </data>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Gevonden venster(s) "{0}".</value>
+  </data>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Zoeken naar vensters...</value>
+  </data>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Verbonden met "{0}"</value>
+  </data>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>Wachten op NSIS uninstaller om uit te pakken...</value>
+  </data>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Start van process mislukte.</value>
+  </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Starten automatiseerder als een daemon/service.</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Daemon gestopt als gevolg van:</value>
+    <comment>This is followed by error/info message</comment>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} is geen geldig aantal</value>
   </data>
 </root>

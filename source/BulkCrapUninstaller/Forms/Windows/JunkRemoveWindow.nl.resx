@@ -124,9 +124,6 @@
     <value>Lijst met restanten exporteren</value>
     <comment>leftover=rimanenti</comment>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Kies waar de backup moet worden opgeslagen. Er wordt een nieuwe map gemaakt.</value>
-  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Annuleren</value>
   </data>
@@ -149,7 +146,7 @@
     <value>Deïnstaller naam</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
-    <value>De volgende onderdelen zijn waarschijnlijk door uw deïnstaller achter gebleven. Sommige deïnstallers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
+    <value>De volgende onderdelen zijn waarschijnlijk door uw de-installer achter gebleven. Sommige de-installers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Vertrouwens waardering</value>
@@ -167,7 +164,7 @@
     <value>&amp;Openen</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Kopieër naar het klembord</value>
+    <value>&amp;Kopieër naar klembord</value>
   </data>
   <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Details</value>
