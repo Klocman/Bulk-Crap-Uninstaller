@@ -700,4 +700,40 @@ Puoi provare a disabilitare la rilevazione delle collisioni nella configurazione
   <data name="Progress_Finishing_Startup" xml:space="preserve">
     <value>Ricerca delle voci all'avvio</value>
   </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Ricerca applicazione</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Non sono stati selezionati files o cartelle validi. Assicurati di avere i corretti diritti di accesso e che non abbiano attributi di sistema</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Ricerca applicazioni</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Impossibile rilevare applicazioni all'interno {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modifica applicazione</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>L'applicazione selezionata non uò essere modificata</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>L'applicazione selezionata non ha comandi di modifica specificati. Potrebbe essere necessario disinstallare e quindi reinstallare per cambiare i parametri di installazione.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Salvare la lista di disinstallazione</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Salvare le modifiche alla lista di disinstallazione aperta?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Sono presenti alcune modifiche non salvate nella lista di disinstallazione aperta che saranno perse alla chiusura.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Seleziona la cartella con le applicazioni da disinstallare.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Seleziona dove salvare la copia di sicurezza. Sarà creata una nuova cartella.</value>
+  </data>
 </root>

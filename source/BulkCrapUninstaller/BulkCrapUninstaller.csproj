@@ -436,6 +436,9 @@
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.sl.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileTargeter.it.resx">
+      <DependentUpon>FileTargeter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileTargeter.pt-BR.resx">
       <DependentUpon>FileTargeter.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +449,9 @@
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.cs.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.it.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.nl.resx">
@@ -569,6 +575,9 @@
     <EmbeddedResource Include="Controls\Settings\CacheSettings.cs.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.it.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.nl.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +675,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.it.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallConfirmation.pt-BR.resx">
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
@@ -680,6 +692,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.sl.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NukeWindow.it.resx">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -876,6 +891,9 @@
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.cs.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.it.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.nl.resx">

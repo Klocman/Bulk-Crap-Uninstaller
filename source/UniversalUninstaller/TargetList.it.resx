@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loadingLabel.Text" xml:space="preserve">
-    <value>Caricamento, per favore attendi...</value>
+  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
+    <value>Selezionare tutto</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Invia feedback</value>
+  <data name="toolStripButtonExpand.Text" xml:space="preserve">
+    <value>Espandere tutto</value>
+  </data>
+  <data name="toolStripButtonCollapse.Text" xml:space="preserve">
+    <value>Comprimere tutto</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="olvColumnSize.Text" xml:space="preserve">
+    <value>Dimensione</value>
   </data>
 </root>

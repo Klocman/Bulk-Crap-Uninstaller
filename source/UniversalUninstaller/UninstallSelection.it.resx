@@ -117,10 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loadingLabel.Text" xml:space="preserve">
-    <value>Caricamento, per favore attendi...</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Invia feedback</value>
+  <data name="labelMessage.Text" xml:space="preserve">
+    <value>Seleziona gli archivi che possono essere rimossi. Puoi fare un doppio click su qualunque oggetto per visualizzarlo in explorer. Per vedere il percorso completo  ferma il mouse su un elemento. Attenzione: cancella solo i files che sicuramente non servono.</value>
   </data>
 </root>

@@ -210,4 +210,64 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
   </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Chiedi sempre per creare</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Non chiedere mai per creare</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Crea automaticamente nella cartella:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Backup prima della rimozione degli scarti</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interfaccia</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Disinstallazione</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registro (si raccomanda di lasciarlo abilitato)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Dischi (rilevamento applicazioni non registrate)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Basato su regole predefinite</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ricerca applicazioni in...</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Apps di Windows Store</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Funzionalità di Windows</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Il rilevamento di funzionalità di Windows utilizza WMI, può quindi essere lento o persino fallire su alcuni sistemi (generalmente indica una corruzione del sistema).</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Il rilevamento di Windows Update utilizza WUA, che è lento. Potrebbe essere completato in alcuni minuti.</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Archivi di applicazioni da controllare</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Rilevamento</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Prova a rilevare automaticamente la cartella di installazione personalizzata</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Rete</value>
+  </data>
 </root>

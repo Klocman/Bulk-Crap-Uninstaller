@@ -193,7 +193,7 @@
     <value>Proprietà</value>
   </data>
   <data name="toolStripButton7.Text" xml:space="preserve">
-    <value>Configurazione</value>
+    <value>Configurazioni</value>
   </data>
   <data name="toolStripButton8.Text" xml:space="preserve">
     <value>Aiuto</value>
@@ -512,5 +512,35 @@
   </data>
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Disinstalla da finestra, cartella o file...</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Escludi</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Includi</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mostra &amp;mappa ad albero</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Visualizza non registrato</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Visualizza aggiornamenti</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Visualizza funzionalità di Windows</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modificare</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Disinstalla da finestra, cartella o file...</value>
   </data>
 </root>

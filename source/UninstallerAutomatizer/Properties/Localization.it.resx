@@ -117,10 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loadingLabel.Text" xml:space="preserve">
-    <value>Caricamento, per favore attendi...</value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Numero di argomento non valido.</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Invia feedback</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Tipo di disinstallatore sconosciuto: {0}</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Percorso invalido o file inesistente: {0}</value>
+  </data>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>L'automazione di {0} disinstallatori non è supportata.</value>
+  </data>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Disinstallando automaticamente "{0}"</value>
+  </data>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>L'utente ha cancellato l'operazione</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>L'automazione si è conclusa correttamente!</value>
+  </data>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>La disinstallazione automatica non è riuscita. Motivo: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Selezione del pulsante a scelta singola (radio button) non oscurata: {0}</value>
+  </data>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Selezione del pulsante a scelta singola (radio button) sicuramente valida: {0}</value>
+  </data>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Trovati {0} pulsanti a scelta singola (radio button)</value>
+  </data>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>Click sul bottone "{0}". </value>
+  </data>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Finestra pop-up chiusa.</value>
+  </data>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Trovata una finestra pop-up - "{0}".</value>
+  </data>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Rilevata una finestra pop-up ricorrente!</value>
+  </data>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Disinstallazione automatica fallita.</value>
+  </data>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Finestra chiusa.</value>
+  </data>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Trovata finestra "{0}".</value>
+  </data>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Ricerca delle finestre...</value>
+  </data>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Collegato a "{0}"</value>
+  </data>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>In attesa dell'estrazione del disinstallatore NSIS...</value>
+  </data>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Avvio del processo fallito.</value>
+  </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Avvio dell'automatizzatore come demone/servizio.</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Demone fermato per: </value>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} non è un numero valido</value>
   </data>
 </root>

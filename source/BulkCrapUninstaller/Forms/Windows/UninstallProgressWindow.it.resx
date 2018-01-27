@@ -155,7 +155,7 @@ Se il processo sembra bloccato puoi cliccare su "Salta" per evitare di attendere
     <value>Proprietà</value>
   </data>
   <data name="toolStripButtonSettings.Text" xml:space="preserve">
-    <value>Configurazione</value>
+    <value>Configurazioni</value>
   </data>
   <data name="toolStripButtonHelp.Text" xml:space="preserve">
     <value>Aiuto</value>
@@ -168,5 +168,8 @@ Se il processo sembra bloccato puoi cliccare su "Salta" per evitare di attendere
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Avanzamento disinstallazione</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Disinstallare manualmente</value>
   </data>
 </root>

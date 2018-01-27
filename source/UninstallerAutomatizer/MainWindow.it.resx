@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loadingLabel.Text" xml:space="preserve">
-    <value>Caricamento, per favore attendi...</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="buttonResume.Text" xml:space="preserve">
+    <value>Riprendere</value>
+  </data>
+  <data name="buttonPause.Text" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="buttonAbort.Text" xml:space="preserve">
+    <value>Interrompere</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Invia feedback</value>
+    <value>Automazione disinstallatore</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Questo strumento disinstalla automaticamente le applicazioni che non hanno un disinstallatore silenzioso cliccando sui tasti del disinstallatore al posto dell'utente.</value>
   </data>
 </root>

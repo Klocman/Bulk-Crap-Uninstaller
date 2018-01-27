@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loadingLabel.Text" xml:space="preserve">
-    <value>Caricamento, per favore attendi...</value>
+  <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
+    <value>Numero di argomenti non valido. Inserisci il percorso completo della cartella da rimuovere come argomento e opzionalmente /q per la modalità silenziosa.</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Invia feedback</value>
+  <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
+    <value>Disinstallatore Universale</value>
+  </data>
+  <data name="UninstallSelection_DeleteProgress_Title" xml:space="preserve">
+    <value>Eliminazione degli elementi</value>
+  </data>
+  <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
+    <value>Errore nella cancellazione di alcuni elementi</value>
+  </data>
+  <data name="UninstallSelection_Title" xml:space="preserve">
+    <value>Cancellazione "{0}"</value>
   </data>
 </root>

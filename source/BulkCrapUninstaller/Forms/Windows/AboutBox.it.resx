@@ -208,4 +208,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Su BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Olandese - Jaap Kramer</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Italiano - Luca Carrabba</value>
+  </data>
 </root>
