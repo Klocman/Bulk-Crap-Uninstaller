@@ -762,4 +762,10 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Select where to save the backup. A new directory will be created.</value>
   </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU has been updated to v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Welcome to BCU version {0}!</value>
+  </data>
 </root>

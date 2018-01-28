@@ -338,11 +338,29 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller.
+        /// </summary>
+        internal static string GithubLink {
+            get {
+                return ResourceManager.GetString("GithubLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new.
         /// </summary>
         internal static string GithubNewIssueLink {
             get {
                 return ResourceManager.GetString("GithubNewIssueLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/releases.
+        /// </summary>
+        internal static string GithubReleasesLink {
+            get {
+                return ResourceManager.GetString("GithubReleasesLink", resourceCulture);
             }
         }
         
@@ -445,6 +463,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Licence.txt.
+        /// </summary>
+        internal static string LicenceFilename {
+            get {
+                return ResourceManager.GetString("LicenceFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap list {
@@ -531,6 +558,15 @@ namespace BulkCrapUninstaller.Properties {
             get {
                 object obj = ResourceManager.GetObject("pagecopy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PrivacyPolicy.txt.
+        /// </summary>
+        internal static string PrivacyPolicyFilename {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyFilename", resourceCulture);
             }
         }
         

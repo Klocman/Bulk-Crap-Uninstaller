@@ -1586,6 +1586,24 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Welcome to BCU version {0}!.
+        /// </summary>
+        internal static string NewsPopup_FirstStartTitle {
+            get {
+                return ResourceManager.GetString("NewsPopup_FirstStartTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BCU has been updated to v{0}!.
+        /// </summary>
+        internal static string NewsPopup_UpdatedTitle {
+            get {
+                return ResourceManager.GetString("NewsPopup_UpdatedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not available.
         /// </summary>
         internal static string NotAvailable {

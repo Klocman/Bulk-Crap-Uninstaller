@@ -4,13 +4,11 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions;
+using BulkCrapUninstaller.Properties;
+using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -19,14 +17,14 @@ namespace BulkCrapUninstaller.Forms
         private NewsPopup()
         {
             InitializeComponent();
+
+            var version = Program.AssemblyVersion;
+            labelTitle.Text = string.Format(Program.IsAfterUpgrade ? Localisable.NewsPopup_UpdatedTitle : Localisable.NewsPopup_FirstStartTitle,
+                version.Major + "." + version.Minor + (version.Build > 0 ? "." + version.Build : string.Empty));
         }
 
         public static void ShowPopup(Form owner)
         {
-            // TODO change when adding a new message
-            if (Program.PreviousVersion != null && Program.PreviousVersion.Major >= 4)
-                return;
-
             using (var news = new NewsPopup())
             {
                 news.StartPosition = FormStartPosition.CenterParent;
@@ -34,14 +32,44 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
             Close();
         }
 
-        protected override void OnClick(EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            MainWindow.OpenUrls(new[] { new Uri(Resources.GithubReleasesLink) });
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBoxes.DisplayHelp();
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FeedbackBox.ShowFeedbackBox(this, false);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MainWindow.OpenUrls(new[] { new Uri(Resources.GithubLink) });
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.LicenceFilename));
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.PrivacyPolicyFilename));
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MainWindow.OpenUrls(new[] { new Uri(Resources.DonateLink) });
         }
     }
 }
