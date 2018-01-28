@@ -1,0 +1,20 @@
+BCUninstaller by Marcin Szeniak collects the following information:
+- Anonymous usage statistics
+- Anonymous error reports
+- User-selected application ratings
+
+All collected information is not personally identifiable, and does not include any sensitive information.
+
+During first start of BCU an user ID is generated to help keep track of application ratings and usage statistics. It can be freely changed and is not guaranteed to be unique.
+
+Marcin Szeniak collects this information in order to provide the following benefits:
+- Improve BCUninstaller
+- Provide overall application ratings
+- Help plan future features and/or applications
+
+Marcin Szeniak shares this information with the following parties:
+- No one
+
+User-selected application ratings are used to generate overall application ratings, which are visible to all users.
+
+This policy is subject to change without notice. Please check this page for the latest privacy policy. If you disagree with this policy, please discontinue use of the application.
