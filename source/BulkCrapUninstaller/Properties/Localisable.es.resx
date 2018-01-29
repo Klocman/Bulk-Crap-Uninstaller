@@ -750,4 +750,10 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Seleccione dónde guardar la copia de seguridad. Se creará un nuevo directorio.</value>
   </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>¡BCU se ha actualizado a v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>¡Bienvenido a BCU, versión {0}!</value>
+  </data>
 </root>
