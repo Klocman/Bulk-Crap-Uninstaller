@@ -1452,14 +1452,14 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y /R /C /D "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\StoreAppHelper.exe" "$(TargetDir)"
+xcopy /Y /R /C /D "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\StoreAppHelper.exe*" "$(TargetDir)"
 xcopy /Y /R /C /D "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\SteamHelper.exe" "$(TargetDir)"
+xcopy /Y /R /C /D "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\SteamHelper.exe*" "$(TargetDir)"
 xcopy /Y /R /C /D "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\WinUpdateHelper.exe" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\UninstallerAutomatizer.exe" "$(TargetDir)"
+xcopy /Y /R /C /D "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\WinUpdateHelper.exe*" "$(TargetDir)"
+xcopy /Y /R /C /D "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\UninstallerAutomatizer.exe*" "$(TargetDir)"
 xcopy /Y /R /C /D "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\*.dll" 
-xcopy /Y /R /C /D "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\UniversalUninstaller.exe" "$(TargetDir)"
+xcopy /Y /R /C /D "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\UniversalUninstaller.exe*" "$(TargetDir)"
 xcopy /Y /R /C /D "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
