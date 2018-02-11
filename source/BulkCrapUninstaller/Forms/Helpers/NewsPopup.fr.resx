@@ -117,104 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version : </value>
-  </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Créateur</value>
-  </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Est 64bits : </value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Est installé : </value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Architecture : </value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Version du programme</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug par Teoman Soygul</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Icônes Modern UI</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider par CodeChimp</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Eléments actifs utilisés</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page web officielle</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Infos développeur</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Traducteurs</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>A propos de BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Français - Thierry Delaunay</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Anglais, Polonais - Marcin Szeniak</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
+    <value>Après avoir été longtemps bloqué sur BCU version 3, ajoutant de petites améliorations et corrigeant les problèmes, il est enfin temps pour une mise à jour plus importante avec des changements d'interface.
+
+- Comme vous l'avez probablement noté, il y a quelque chose de nouveau dans la liste des applications - une carte en arbre qui montre par taille les applications installées. Vous pouvez survoler et cliquer sur la carte en arbre, et elle agira comme si vous cliquiez sur la liste des applications.
+
+- Un autre changement est la boîte de dialogue de désinstallation - désormais, lorsque vous cliquerez sur désinstaller, BCU affichera une boîte de dialogue étape par étape.
+
+- Tous les désinstalleurs silencieux seront maintenant automatisés, donc si quelque chose ne va pas et qu'un message apparaît, la désinstallation ne sera plus bloquée.</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Allemand - Dieter Hummel</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Tchèque - Richard Kahl</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hongrois - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portugais - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russe - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovène - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espagnol - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Hollandais - Jaap Kramer</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italien - Luca Carrabba</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabe - MFM Dawdeh</value>
+    <value>Merci à tous ceux qui ont donné, traduit, testé, partagé ou encore soutenu BCU cette année ! Sans votre aide, vos commentaires et votre soutien,  les progrès de BCU seraient beaucoup plus lents, ou même cesseraient complètement.
+
+Votre soutien m'a aidé à publier de nouvelles versions (relativement) régulièrement et m'a permis d'acheter des logiciels et du matériel qui ont grandement aidé au développement (certificat de signature de code, plus de RAM pour exécuter des tests sur des machines virtuelles, hébergement, etc.)
+
+Et pour cela, je souhaite à tous ceux qui utilisent BCU un joyeux Noël et une bonne année !
+
+(Cliquez sur cette boîte de dialogue pour la refermer)</value>
   </data>
 </root>

@@ -498,4 +498,52 @@
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Windows Update</value>
   </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Recherche de Mises à jour Windows</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Règle de pare-feu</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Assistant utilisateur</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Rapports de Windows Error Reporting</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Réglage des scanners de résidus... </value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>En train de finir...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Compatibilité d'application</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>Classes CLSID</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Référence de désinstalleur</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Emplacement de désinstalleur</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Raccourci</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Config de stratégie audio</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Journaux d'Event Log</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Traçage d'information</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Liste de dossiers d'installation</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>En pause</value>
+  </data>
 </root>

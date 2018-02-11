@@ -117,104 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version : </value>
-  </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Créateur</value>
-  </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Est 64bits : </value>
-  </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Est installé : </value>
-  </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Architecture : </value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cet outil désinstalle automatiquement les applications qui n'ont pas de désinstalleur silencieux en cliquant sur les boutons du désinstalleur à la place de l'utilisateur.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Version du programme</value>
+    <value>Statut</value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug par Teoman Soygul</value>
+  <data name="buttonResume.Text" xml:space="preserve">
+    <value>Reprendre</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Icônes Modern UI</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
+  <data name="buttonPause.Text" xml:space="preserve">
+    <value>Mettre en pause</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider par CodeChimp</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Eléments actifs utilisés</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page web officielle</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Infos développeur</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Traducteurs</value>
+  <data name="buttonAbort.Text" xml:space="preserve">
+    <value>Abandonner</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>A propos de BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Français - Thierry Delaunay</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Anglais, Polonais - Marcin Szeniak</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
-  </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Allemand - Dieter Hummel</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Tchèque - Richard Kahl</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hongrois - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portugais - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russe - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovène - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espagnol - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Hollandais - Jaap Kramer</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italien - Luca Carrabba</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabe - MFM Dawdeh</value>
+    <value>Automatisation du désinstalleur</value>
   </data>
 </root>

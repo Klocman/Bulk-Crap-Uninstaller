@@ -738,4 +738,28 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Impossible de trouver une application dans {0}</value>
   </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modifier l'application</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>L'application sélectionnée ne peut être modifiée</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>L'application sélectionnée n'a pas la commande modifier spécifiée. Il peut être nécessaire de la désinstaller, puis de l'installer à nouveau pour changer les réglages d'installation.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Sauver la liste de désinstallation</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Sauver les changements de la liste de désinstallation ouverte?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Il y a des changements non sauvés dans la liste de désinstallation ouverte qui seront perdus en la fermant.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Sélectionner le dossier avec les applications à désinstaller.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Sélectionner où enregistrer la sauvegarde. Un nouveau dossier sera créé.</value>
+  </data>
 </root>

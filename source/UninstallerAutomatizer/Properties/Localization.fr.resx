@@ -117,104 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version : </value>
+  <data name="Error_Invalid_number_of_arguments" xml:space="preserve">
+    <value>Nombre d'arguments invalide.</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Créateur</value>
+  <data name="Error_UnknownUninstallerType" xml:space="preserve">
+    <value>Type de désinstalleur inconnu: {0}</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Est 64bits : </value>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Chemin invalide, ou fichier inexistant: {0}</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Est installé : </value>
+  <data name="Error_NotSupported" xml:space="preserve">
+    <value>Automatisation de {0} désinstalleurs non supportée.</value>
   </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Architecture : </value>
+  <data name="Message_Starting" xml:space="preserve">
+    <value>Désinstallation automatique de "{0}"</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Version du programme</value>
+  <data name="Message_UserCancelled" xml:space="preserve">
+    <value>L'utilisateur a annulé l'opération</value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug par Teoman Soygul</value>
+  <data name="Message_Success" xml:space="preserve">
+    <value>L'automatisation a réussi!</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Icônes Modern UI</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
+  <data name="Message_UninstallFailed" xml:space="preserve">
+    <value>Désinstallation automatique échouée. Raison: {0}</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider par CodeChimp</value>
+  <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
+    <value>Sélection d'un bouton radio non sur liste noire: {0}</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Eléments actifs utilisés</value>
+  <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
+    <value>Sélection d'un bouton radio bien connu: {0}</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Fermer</value>
+  <data name="Message_Automation_FoundButtons" xml:space="preserve">
+    <value>Trouvé {0} boutons radio.</value>
   </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page web officielle</value>
+  <data name="Message_Automation_ClickingButton" xml:space="preserve">
+    <value>Cliquant sur le bouton {0}.</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Infos développeur</value>
+  <data name="Message_Automation_PopupClosed" xml:space="preserve">
+    <value>Fenêtre pop-up fermée.</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Traducteurs</value>
+  <data name="Message_Automation_PopupFound" xml:space="preserve">
+    <value>Trouvé une fenêtre pop-up - "{0}".</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>A propos de BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
+    <value>Fenêtre pop-up réapparue détectée!</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+  <data name="Message_Automation_Failed" xml:space="preserve">
+    <value>Désinstallation automatique échouée.</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Français - Thierry Delaunay</value>
+  <data name="Message_Automation_WindowClosed" xml:space="preserve">
+    <value>Fenêtre fermée.</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Anglais, Polonais - Marcin Szeniak</value>
+  <data name="Message_Automation_WindowFound" xml:space="preserve">
+    <value>Fenêtre "{0}" trouvée.</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
+  <data name="Message_Automation_WindowSearching" xml:space="preserve">
+    <value>Recherche de fenêtres...</value>
   </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="Message_Automation_AppAttached" xml:space="preserve">
+    <value>Attaché à "{0}"</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
+  <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
+    <value>Attente du désinstalleur NSIS pour extraire...</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Allemand - Dieter Hummel</value>
+  <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
+    <value>Processus échoué au démarrage.</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Tchèque - Richard Kahl</value>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Démarrage de l'automatiseur comme démon/service.</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>Démon stoppé à cause de:</value>
   </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hongrois - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portugais - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russe - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovène - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espagnol - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Hollandais - Jaap Kramer</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italien - Luca Carrabba</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabe - MFM Dawdeh</value>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} n'est pas un nombre valide</value>
   </data>
 </root>

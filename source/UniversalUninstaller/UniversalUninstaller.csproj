@@ -88,6 +88,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.cs.resx" />
     <EmbeddedResource Include="Properties\Localisation.es.resx" />
+    <EmbeddedResource Include="Properties\Localisation.fr.resx" />
     <EmbeddedResource Include="Properties\Localisation.it.resx" />
     <EmbeddedResource Include="Properties\Localisation.nl.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt-BR.resx" />
@@ -120,6 +121,9 @@
     <EmbeddedResource Include="TargetList.es.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.fr.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TargetList.it.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +146,9 @@
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.es.resx">
+      <DependentUpon>UninstallSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstallSelection.fr.resx">
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.it.resx">

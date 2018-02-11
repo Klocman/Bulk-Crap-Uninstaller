@@ -463,7 +463,7 @@
     <value>Avancé...</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir les apps Windows Store</value>
+    <value>Voir les Apps Windows Store</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Avancé...</value>
@@ -521,5 +521,26 @@
   </data>
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exclure</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inclure</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer la &amp;carte en arbre</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir les Non Enregistrés</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir les Fonctionnalités Windows</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modifier</value>
   </data>
 </root>

@@ -117,104 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version : </value>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
   </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Créateur</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Annuler</value>
   </data>
-  <data name="labelis64.Text" xml:space="preserve">
-    <value>Est 64bits : </value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Précédent</value>
   </data>
-  <data name="labelPortable.Text" xml:space="preserve">
-    <value>Est installé : </value>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Continuer</value>
   </data>
-  <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Architecture : </value>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Applications connexes que vous pouvez désinstaller</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Version du programme</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>NBug par Teoman Soygul</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Icônes Modern UI</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>PortableSettingsProvider par CodeChimp</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Eléments actifs utilisés</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page web officielle</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Infos développeur</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Traducteurs</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>A propos de BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Français - Thierry Delaunay</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Connexes</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Anglais, Polonais - Marcin Szeniak</value>
+    <value>Confirmez que tout ci-dessous est à désinstaller avec certitude</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>DotNetZip</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Confirmation</value>
   </data>
-  <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Certaines applications doivent peut-être être fermées avant désinstallation</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ObjectListView</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>En cours</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Allemand - Dieter Hummel</value>
+    <value>Créer un point de restauration avant désinstallation</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Tchèque - Richard Kahl</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
-  </data>
-  <data name="linkLabel8.Text" xml:space="preserve">
-    <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hongrois - Phoenix (Döbröntei Sándor)</value>
+    <value>Vous pouvez créer un point de restauration système pour sauvegarder le registre, certains paramètres et fichiers. Il est recommandé de créer un point de restauration avant de supprimer des pilotes et des applications système importantes.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Portugais - Artur Álvaro Pereira</value>
+    <value>Attention: la restauration système doit être activée pour que cela fonctionne!</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russe - wvxwxvw</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Créer un nouveau point de restauration</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Slovène - Jadran Rudec</value>
+    <value>Changer les réglages de désinstallation</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espagnol - Freddynic159, Emilio J. Grao</value>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Autre / Divers</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>La désinstallation concurrence est activée</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>La désinstallation sera silencieuse</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Un point de restauration a été créé</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>|</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Hollandais - Jaap Kramer</value>
+    <value>Des fichiers sont encore utilisés par des processus en cours</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italien - Luca Carrabba</value>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>|</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabe - MFM Dawdeh</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Taille totale estimée</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Applications à désinstaller</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>COMMENCER LA DESINSTALLATION</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Assurez-vous que les informations suivantes sont correctes avant de commencer la désinstallation. C'est la dernière chance!</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Commencer une nouvelle tâche de désinstallation</value>
   </data>
 </root>

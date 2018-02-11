@@ -144,7 +144,7 @@ d'une tâche silencieuse</value>
   </data>
   <data name="checkBoxBackup.Text" xml:space="preserve">
     <value>Demander pour créer une sauvegarde de registre 
-avant la suppression des vestiges</value>
+avant la suppression des résidus</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Rechercher des résidus après désinstallation</value>
@@ -207,7 +207,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Toujours montrer les résidus avec faible confiance</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
-    <value>Ne jamais demander  mes impressions ou  de l'aide</value>
+    <value>Ne jamais demander les impressions ou  de l'aide</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
@@ -244,5 +244,32 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
     <value>La détection de Windows Update utilise WUA, qui est lent. Cela peut prendre quelques minutes.</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Toujours demander pour créer</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Ne jamais demander pour créer</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Créer automatiquement dans le dossier:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Sauvegarder avant la suppression des résidus</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Désinstallation</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Tenter de détecter automatiquement les dossiers d'installation personnalisés</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Réseau</value>
   </data>
 </root>
