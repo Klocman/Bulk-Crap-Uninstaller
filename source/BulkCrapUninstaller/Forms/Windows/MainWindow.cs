@@ -1086,6 +1086,7 @@ namespace BulkCrapUninstaller.Forms
         private void toolsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
             viewWindowsFeaturesToolStripMenuItem.Enabled = DismTools.DismIsAvailable;
+            tryToInstallNETV35ToolStripMenuItem.Enabled = DismTools.DismIsAvailable && !WindowsTools.CheckNetFramework35Installed();
         }
 
         private void toolStripLabelStatus_TextChanged(object sender, EventArgs e)
@@ -1560,6 +1561,11 @@ namespace BulkCrapUninstaller.Forms
             viewUpdatesToolStripMenuItem.Enabled = isSimpleFiltering;
             viewWindowsStoreAppsToolStripMenuItem.Enabled = isSimpleFiltering;
             viewWindowsFeaturesToolStripMenuItem.Enabled = isSimpleFiltering;
+        }
+
+        private void tryToInstallNETV35ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely(DismTools.DismFullPath, "/Online /Enable-Feature /FeatureName:NetFx3 /All");
         }
     }
 }

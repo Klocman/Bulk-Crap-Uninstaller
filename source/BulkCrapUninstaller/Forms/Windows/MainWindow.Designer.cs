@@ -189,6 +189,8 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uninstallFromDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.tryToInstallNETV35ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.openProgramsAndFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSystemRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
@@ -1407,6 +1409,8 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem,
             this.uninstallFromDirectoryToolStripMenuItem,
             this.toolStripSeparator13,
+            this.tryToInstallNETV35ToolStripMenuItem,
+            this.toolStripSeparator29,
             this.openProgramsAndFeaturesToolStripMenuItem,
             this.openSystemRestoreToolStripMenuItem,
             this.toolStripSeparator19,
@@ -1449,6 +1453,17 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+            // 
+            // tryToInstallNETV35ToolStripMenuItem
+            // 
+            this.tryToInstallNETV35ToolStripMenuItem.Name = "tryToInstallNETV35ToolStripMenuItem";
+            resources.ApplyResources(this.tryToInstallNETV35ToolStripMenuItem, "tryToInstallNETV35ToolStripMenuItem");
+            this.tryToInstallNETV35ToolStripMenuItem.Click += new System.EventHandler(this.tryToInstallNETV35ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator29
+            // 
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            resources.ApplyResources(this.toolStripSeparator29, "toolStripSeparator29");
             // 
             // openProgramsAndFeaturesToolStripMenuItem
             // 
@@ -1802,6 +1817,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem showTreemapToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator28;
         private ToolStripMenuItem viewUnregisteredToolStripMenuItem;
+        private ToolStripMenuItem tryToInstallNETV35ToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator29;
     }
 }
 
