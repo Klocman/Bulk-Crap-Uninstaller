@@ -2,23 +2,16 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.2.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.2/BCUninstaller_4.2_portable.zip</URL>
+<Version>4.3.0.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3/BCUninstaller_4.3_portable.zip</URL>
 <Changes>
-((The unknown publisher thing is a known issue))
-Added a privacy policy
-Changed the news popup to be more generic, show useful links
-Updated Readme.md
-Removed unused code / Code cleanup
-Fixed some text in settings getting cut off in translations
-Update to Arabic translation by lculator
-Update to Czech translation by Richard Kahl
-Update to Dutch translation by Jaap Kramer
-Update to Italian translation by Luca Carrabba
-Update to Russian translation by wvxwxvw
-Update to Slovenian translation by Jadran
-Update to Spanish translation by Jhovany200
+BCU is signed and verified again
+Added option to install NET 3.5 feature in tools (if possible)
+Added link to "Disk Cleanup" to tools menu
+Fixed app.manifests not copying for helpers, causing NET 3.5 install dialogs
+Merged update to Spanish translation by Jhovany200
+Merged update to French translation by Thierry
 </Changes>
-<Hash>a384fbb8e31ad35f457e654781e43916</Hash>
+<Hash>b46f419e2a32ed3374426a038221daa4</Hash>
 </Update>
 </Root>
