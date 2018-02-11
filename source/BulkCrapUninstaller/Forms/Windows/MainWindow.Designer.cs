@@ -211,6 +211,7 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -1409,6 +1410,7 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem,
             this.uninstallFromDirectoryToolStripMenuItem,
             this.toolStripSeparator13,
+            this.startDiskCleanupToolStripMenuItem,
             this.tryToInstallNETV35ToolStripMenuItem,
             this.toolStripSeparator29,
             this.openProgramsAndFeaturesToolStripMenuItem,
@@ -1591,6 +1593,12 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
+            // 
+            // startDiskCleanupToolStripMenuItem
+            // 
+            this.startDiskCleanupToolStripMenuItem.Name = "startDiskCleanupToolStripMenuItem";
+            resources.ApplyResources(this.startDiskCleanupToolStripMenuItem, "startDiskCleanupToolStripMenuItem");
+            this.startDiskCleanupToolStripMenuItem.Click += new System.EventHandler(this.startDiskCleanupToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1819,6 +1827,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem viewUnregisteredToolStripMenuItem;
         private ToolStripMenuItem tryToInstallNETV35ToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator29;
+        private ToolStripMenuItem startDiskCleanupToolStripMenuItem;
     }
 }
 

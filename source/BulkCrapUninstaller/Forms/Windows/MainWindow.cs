@@ -1567,5 +1567,10 @@ namespace BulkCrapUninstaller.Forms
         {
             PremadeDialogs.StartProcessSafely(DismTools.DismFullPath, "/Online /Enable-Feature /FeatureName:NetFx3 /All");
         }
+
+        private void startDiskCleanupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely("cleanmgr.exe");
+        }
     }
 }
