@@ -213,7 +213,7 @@
     <value>Asegúrese de que la siguiente información sea correcta antes de comenzar la desinstalación. ¡Esta es la última oportunidad!</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
-    <value>Final</value>
+    <value>Finalización</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Iniciar nueva tarea de desinstalación</value>
