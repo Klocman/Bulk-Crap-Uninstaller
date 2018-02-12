@@ -528,4 +528,10 @@
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Modificar</value>
   </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instalar .NET v3.5 (Añadir característica)</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Iniciar limpieza del disco</value>
+  </data>
 </root>
