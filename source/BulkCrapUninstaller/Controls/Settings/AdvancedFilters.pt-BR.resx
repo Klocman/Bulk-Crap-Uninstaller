@@ -144,4 +144,7 @@
   <data name="openUlDialog.Title" xml:space="preserve">
     <value>Abrir uma Lista de Desinstalação...</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Excluir padrão</value>
+  </data>
 </root>

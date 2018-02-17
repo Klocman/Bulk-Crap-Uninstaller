@@ -537,10 +537,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exibir recursos do Windows</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Procurar usando a janela...</value>
-  </data>
 </root>

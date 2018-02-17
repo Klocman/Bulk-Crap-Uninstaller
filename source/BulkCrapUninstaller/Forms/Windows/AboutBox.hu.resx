@@ -146,6 +146,7 @@
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Modern UI ikonok</value>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>ObjectListView</value>
@@ -158,6 +159,7 @@
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Task Scheduler Managed Wrapper</value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
@@ -173,33 +175,6 @@
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Fejlesztői infó</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Angol, Lengyel - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Cseh - Richard Kahl </value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Francia - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Német - Dieter Hummel</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Magyar - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portugál - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Orosz - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Szlovén - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Spanyol - Freddynic159, Emilio J. Grao</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Fordítók</value>

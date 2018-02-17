@@ -236,6 +236,7 @@
   </data>
   <data name="ParentKeyName" xml:space="preserve">
     <value>Desinstalador de pais</value>
+    <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
     <value>O nome da empresa não coincidiu</value>
@@ -335,9 +336,11 @@
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>Recurso do Windows</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Contém qualquer</value>
+    <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
     <value>Comandos de inicialização</value>
@@ -401,6 +404,7 @@
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
     <value>Tarefa</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>Objeto Auxiliar do Navegador</value>
@@ -422,6 +426,7 @@
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>Não está registrado</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
     <value>Remoção dos dados da App Store é problemática</value>
@@ -437,6 +442,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Todas as propriedades</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>Analisando produtos MSI instalados...</value>

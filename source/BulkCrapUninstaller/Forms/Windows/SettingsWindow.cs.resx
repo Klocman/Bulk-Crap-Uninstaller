@@ -141,9 +141,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Zeptat se, zda chcete odebrat hlasité odinstalace z tichého zadání</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Zeptat se na zálohu registrů</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Hledání pozůstatky odinstalování</value>
   </data>
@@ -204,9 +201,6 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Nepožadovat zpětnou vazbu, nebo pomoc</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Odinstalace</value>
-  </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -266,9 +260,6 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
   </data>
   <data name="tabPageUninstallation.Text" xml:space="preserve">
     <value>Odinstalace</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Okno zprávy</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

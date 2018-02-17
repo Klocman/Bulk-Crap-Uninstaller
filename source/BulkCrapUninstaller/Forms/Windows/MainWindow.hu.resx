@@ -324,14 +324,8 @@
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>Ren&amp;dszertéma használata</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Windows-szolgáltatások eltávolítása...</value>
-  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Windows Áruházbeli alkalmazások megtekintése</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Keresés az ablakban...</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Keresés...</value>

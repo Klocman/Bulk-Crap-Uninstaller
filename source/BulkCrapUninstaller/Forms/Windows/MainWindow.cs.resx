@@ -390,9 +390,6 @@
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Otevřít Manažera po spuštění </value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Odinstalovat funkce systému Windows ...</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Otevřít "&amp;Programy a funkce"</value>
   </data>
@@ -473,9 +470,6 @@
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Zobrazit Windows Store aplikace</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Najít okno....</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Upřesnit...</value>

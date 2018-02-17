@@ -150,9 +150,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Chiedi di rimuovere i disinstallatori guidati da una procedura silenziosa</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Chiedi di effettuare un backup del registro prima di cancellare oggetti residui</value>
-  </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Non chiedere mai per aiuto o feedback</value>
   </data>
@@ -181,9 +178,6 @@ BCU attenderà il completamento del comando in esecuzione prima dell'esecuzione 
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Generale</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Disinstallazione</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Strumenti esterni</value>

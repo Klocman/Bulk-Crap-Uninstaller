@@ -146,6 +146,7 @@
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>ايقونات واجهه المستخدم الحديثة</value>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>عرض قائمه الكائنات</value>
@@ -158,6 +159,7 @@
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>الاختبار الابيض</value>
@@ -174,47 +176,10 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>معلومات المطور</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>English, Polish - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Czech - Richard Kahl </value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Dutch - Jaap Kramer</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>French - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>German - Dieter Hummel</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Hungarian - Phoenix (D?br?ntei S?ndor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italian - Luca Carrabba (luca.carrabba@yahoo.com)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portuguese - Artur ?lvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russian - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovenian - Jadran Rudec</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Spanish - Freddynic159, Emilio J. Grao</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>المترجمون</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabic - فتحي الداودية
-lalalogitech@hotmail.com</value>
   </data>
 </root>

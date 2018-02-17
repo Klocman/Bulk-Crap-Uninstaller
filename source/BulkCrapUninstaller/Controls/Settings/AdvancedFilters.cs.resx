@@ -144,4 +144,7 @@
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
     <value>Přidat vybrané aplikace jako filtry</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Odstranit výchozí</value>
+  </data>
 </root>

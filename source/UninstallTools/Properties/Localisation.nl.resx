@@ -336,6 +336,7 @@
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>Windows functie</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Bevat wat ... dan ook</value>
@@ -403,6 +404,7 @@
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
     <value>Taak</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>Browser Helper Objekt</value>
@@ -440,6 +442,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Alle eigenschappen</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>Scannen op geïnstalleerde MSI producten...</value>

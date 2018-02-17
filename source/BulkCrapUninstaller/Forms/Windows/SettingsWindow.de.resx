@@ -142,10 +142,6 @@
     <value>Fragen, ob normale Uninstaller von der Liste der stillen 
 entfernt werden sollen</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Fragen, ob vor Beseitigung der Programmreste eine 
-Registry-Sicherung erfolgen soll</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Nach Deinstallation nach Programmresten suchen</value>
   </data>

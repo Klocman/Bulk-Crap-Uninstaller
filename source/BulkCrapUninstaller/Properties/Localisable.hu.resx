@@ -141,6 +141,7 @@ Kiadó | Verzió | Dátum | Méret | Beállításjegyzék | Eltávolító típus
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Hordozható</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Az API meghívása nem sikerült</value>
@@ -256,9 +257,11 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Eltávolítási folyamat</value>

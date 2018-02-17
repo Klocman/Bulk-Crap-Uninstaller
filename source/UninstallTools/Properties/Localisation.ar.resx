@@ -332,6 +332,7 @@
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>ميزة ويندوز</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>يحتوي على اي</value>
@@ -484,6 +485,7 @@
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
     <value>مهمة</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>كائن مساعد المستعرض</value>
@@ -505,6 +507,7 @@
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>غير مسجل</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
     <value>ازاله بيانات تطبيق مخزن الاشكاليه</value>
@@ -520,6 +523,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>كافة الخصائص</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>المثبتة MSI مسح منتجات...</value>

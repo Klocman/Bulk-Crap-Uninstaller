@@ -393,9 +393,6 @@
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Odpri upravitelja zagona</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Odstrani &amp;Windows funkcije...</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Odpri "&amp;Programi in funkcije"</value>
   </data>
@@ -458,9 +455,6 @@
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Prikaz Windows Store aplikacije</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Najdi z oknom...</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Napredno...</value>

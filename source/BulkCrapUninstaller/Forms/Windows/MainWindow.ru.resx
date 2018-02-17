@@ -318,9 +318,6 @@
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Просмотр приложений Windows</value>
   </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Найти по окну...</value>
-  </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Поиск...</value>
   </data>
@@ -419,9 +416,6 @@
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Открыть автозагрузку</value>
-  </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать компоненты Windows</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Открыть "&amp;Программы и компоненты"</value>

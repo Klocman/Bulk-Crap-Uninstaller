@@ -142,10 +142,6 @@
     <value>Demander pour supprimer les désinstalleurs causants
 d'une tâche silencieuse</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Demander pour créer une sauvegarde de registre 
-avant la suppression des résidus</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Rechercher des résidus après désinstallation</value>
   </data>
@@ -199,9 +195,6 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Activer les notes utilisateurs des applications</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Désinstallation</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Toujours montrer les résidus avec faible confiance</value>

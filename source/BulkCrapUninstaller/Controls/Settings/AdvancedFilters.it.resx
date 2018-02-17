@@ -144,4 +144,7 @@
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
     <value>Aggiungi selezionati come filtri</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Elimina predefinito</value>
+  </data>
 </root>

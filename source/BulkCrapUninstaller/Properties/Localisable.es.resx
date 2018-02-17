@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -125,6 +125,7 @@
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Portable</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>Detalles del error:</value>
@@ -134,7 +135,7 @@
 
 Detalles del error:
 </value>
-    <comment>Añada espacio o nueva línea y después dos líneas nuevas antes</comment>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>¿Le gustaría crear una copia de seguridad del registro antes de continuar?</value>
@@ -162,7 +163,7 @@ Detalles del error:
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Por defecto</value>
-    <comment>Utilice el cuadro de selección de idioma, cuando quiera utilizar el idioma del sistema</comment>
+    <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
     <value>Buscando restos...</value>
@@ -194,23 +195,26 @@ Editor | Versión | Fecha | Tamaño | Registro | Tipo de desinstalación | Caden
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Listo</value>
-    <comment>Se muestrará cuando no aparezca nada más en la barra de estado.</comment>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>{0} desinstaladores seleccionados</value>
+    <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
     <value>{0} desinstaladores en total, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
     <value>Cargando características de Windows...</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>No disponible</value>
-    <comment>Utilice la lista de aplicaciones cuando el valor no está disponible</comment>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} aplicaciones</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Promedio de calificación: {0}; Mi calificación: {1}</value>
@@ -254,6 +258,7 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Actualizando información de inicio...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>No hay directorios que abrir</value>
@@ -272,6 +277,7 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
     <value>Procesando desinstaladores {0}/{1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
     <value>Cambiar configuración de la aplicación</value>
@@ -305,10 +311,11 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
     <value>Tarea finalizada</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
     <value>Desinstalando</value>
-    <comment>Se muestra en la barra de estado</comment>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
     <value>Recordar elección</value>
@@ -381,7 +388,7 @@ Puede enviarlo más tarde desde la barra de menú superior (Ayuda-&gt;Enviar com
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>Nueva versión {0} disponible, ¿desea actualizar ahora?</value>
-    <comment>0 es el número de la versión</comment>
+    <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
     <value>BCUninstaller descargará automáticamente la actualización y la aplicará después de un reinicio. Tenga en cuenta que es posible que pierda su configuración en el proceso.
@@ -390,6 +397,7 @@ Lista de cambios:
 - {0}
 
 Advertencia: Durante la actualización serán eliminados la carpeta "Update" y el archivo "Update.zip" dentro del directorio delBCU.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
     <value>Desinstalar utilizando MSI</value>
@@ -417,6 +425,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEPURAR</value>
@@ -468,7 +477,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>BCUninstaller está desinstalando {0} aplicaciones</value>
-    <comment>0 es el recuento de las desinstalaciones</comment>
+    <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Renombrar desinstalador</value>
@@ -479,6 +488,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
     <value>Asegúrese de que no ha incluido alguno de los siguientes caracteres:
 {0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
     <value>¿Desea buscar restos de las desinstalaciones realizadas?</value>
@@ -503,6 +513,8 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Esta acción abrirá {0} directorios a la vez, ¿está seguro de que desea continuar?</value>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
     <value>Buscar en línea</value>
@@ -556,7 +568,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>El siguiente comando no se pudo ejecutar:
 {0}</value>
-    <comment>{0} es la línea de comandos (c:\ejemplo.exe /help)</comment>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
     <value>Error de ejecución externa</value>
@@ -604,12 +616,14 @@ Para modificar estas entradas desactive la protección de desinstalación de la 
     <value>Entrada protegida: {0}
 
 Para modificar esta entrada tiene que desactivar la protección de desinstalación desde el panel de configuración.</value>
+    <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>Los siguientes elementos no tienen desinstaladores silenciosos:
 {0}
 
 ¿Desea usar desinstaladores "fuertes" para estos elementos, o deberían ser removidos de la tarea?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
     <value>Todos los ajustes se perderán de forma permanente. BCUninstaller tendrá que reiniciarse para completar esta acción.</value>

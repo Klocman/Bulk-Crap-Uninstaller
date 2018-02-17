@@ -363,9 +363,6 @@
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Nettoyer Program Files</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Désinstaller des fonctionnalités Windows...</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir "&amp;Programmes et Fonctionnalités"</value>
   </data>
@@ -446,9 +443,6 @@
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Passez en revue...</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Trouver par fenêtre...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>

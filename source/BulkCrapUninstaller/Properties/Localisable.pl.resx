@@ -140,6 +140,7 @@
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Portable</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Błąd dostępu do API</value>
@@ -255,9 +256,11 @@ Uwaga: Podczas aktualizacji folder "Update" i plik "Update.zip" w folderze BCU z
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Postęp dezinstalacji</value>
@@ -737,5 +740,35 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
     <value>Nie znaleziono żadnych aplikacji w {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Zmodyfikuj aplikację</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Wybranej aplikacji nie można zmodyfikować</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Wybrana aplikacja nie ma określonego polecenia modyfikacji. Może być konieczne odinstalowanie, a następnie ponownie zainstalowanie aplikacji w celu zmiany ustawień jej instalacji.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Zapisz listę odinstalowywania</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Czy zapisać zmiany na otwartej liście odinstalowywania?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Istnieją niezapisane zmiany na otwartej liście odinstalowań, które zostaną utracone przez zamknięcie.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Wybierz katalog z aplikacjami do odinstalowania.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Wybierz lokalizację, w której chcesz zapisać kopię zapasową. Zostanie utworzony nowy katalog.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU został zaktualizowany do wersji v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Witamy w wersji BCU v{0}!</value>
   </data>
 </root>

@@ -150,9 +150,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Kérdezzen rá, hogy egy csendes feladatot normál végezzen-e el</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Kérdezzen rá a Registry mentésére, a maradványok törlése előtt</value>
-  </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Ne kérdezzen rá a visszajelzésre, vagy a segítségre</value>
   </data>
@@ -181,9 +178,6 @@ A BCU, a következő elindítása előtt megvárja amíg az adott parancs befeje
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Általános</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Külső eszközök</value>

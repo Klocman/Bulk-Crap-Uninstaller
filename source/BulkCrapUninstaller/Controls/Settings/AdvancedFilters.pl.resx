@@ -156,7 +156,7 @@
     <value>146, 26</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Zapisz jako domyślny</value>
+    <value>Zapisz jako domyślne</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
     <value>Listy dezinstalatorów|*.bcul</value>
@@ -172,5 +172,8 @@
   </data>
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
     <value>Dodaj wybrane aplikacje jako filtry</value>
+  </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Usuń domyślne</value>
   </data>
 </root>

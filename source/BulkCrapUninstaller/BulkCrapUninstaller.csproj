@@ -463,6 +463,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.nl.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.pl.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ru.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
@@ -590,6 +593,9 @@
     <EmbeddedResource Include="Controls\Settings\CacheSettings.nl.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.pl.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -697,6 +703,9 @@
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.fr.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.pl.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.ru.resx">
@@ -912,6 +921,9 @@
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.nl.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.pl.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">

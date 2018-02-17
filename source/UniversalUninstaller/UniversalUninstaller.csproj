@@ -91,6 +91,7 @@
     <EmbeddedResource Include="Properties\Localisation.fr.resx" />
     <EmbeddedResource Include="Properties\Localisation.it.resx" />
     <EmbeddedResource Include="Properties\Localisation.nl.resx" />
+    <EmbeddedResource Include="Properties\Localisation.pl.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Localisation.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +131,9 @@
     <EmbeddedResource Include="TargetList.nl.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.pl.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TargetList.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +159,9 @@
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.nl.resx">
+      <DependentUpon>UninstallSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstallSelection.pl.resx">
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.pt-BR.resx">

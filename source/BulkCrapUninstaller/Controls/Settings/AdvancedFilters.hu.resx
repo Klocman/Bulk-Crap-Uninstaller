@@ -141,4 +141,10 @@
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Alap szűrés</value>
   </data>
+  <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
+    <value>Szuroként adja hozzá a kiválasztott alkalmazásokat</value>
+  </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Alapértelmezett törlés</value>
+  </data>
 </root>

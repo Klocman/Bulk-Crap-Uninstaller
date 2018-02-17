@@ -141,6 +141,7 @@ Editore | Versione | Data | Grandezza | Registro | Tipo di disinstallatore | Str
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Portable</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Chiamata dell'API non riuscita</value>
@@ -159,6 +160,7 @@ Editore | Versione | Data | Grandezza | Registro | Tipo di disinstallatore | Str
 
 Dettagli errori:
 </value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>Creare un backup del registro prima di continuare?</value>
@@ -216,6 +218,7 @@ Desideri siano aggiunte nuove funzionalità o correggere un errore? Puoi inviarm
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>La nuova versione {0} è disponibile, vuoi aggiornare adesso?</value>
+    <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
     <value>BCUninstaller scaricherà automaticamente l'aggiornamento e lo installerà al riavvio. Potresti perdere le tue configurazioni nel corso del processo.
@@ -224,6 +227,7 @@ Cambiamenti (changelog):
 - {0}
 
 Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.zip" nella cartella di BCU saranno rimossi.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
     <value>Disinstalla utilizzando Msi</value>
@@ -251,9 +255,11 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Avanzamento disinstallazione</value>
@@ -295,6 +301,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>BCUninstaller sta disinstallando {0} applicazione/i</value>
+    <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Rinomina disinstallatore</value>
@@ -305,6 +312,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
     <value>Assicurati di non aver incluso nessuno dei seguenti caratteri:
 {0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
     <value>Vuoi controllare le presenza di elementi rimanenti dalle disinstallazioni effettuate?</value>
@@ -329,6 +337,8 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Questa azione aprirà {0} cartelle alla volta, sei sicuro di voler continuare?</value>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
     <value>Ricerca in linea</value>
@@ -414,11 +424,13 @@ Se qualunque cosa non dovesse funzionare dopo la procedura potrai ripristinare i
 {0}
 
 Per modificare queste voci devi disabilitare la protezione della disinstallazione dalla barra laterale di configurazione. Se preferisci puoi rimuoverle dall'attività e continuare con gli altri elementi.</value>
+    <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
     <value>Voci protette: {0}
 
 Per modificare queste voci devi disabilitare la protezione della disinstallazione dal pannello di configurazione.</value>
+    <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>I seguenti elementi non hanno un disinstallatore silenzioso:
@@ -450,9 +462,11 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi, o preferisci sian
   </data>
   <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
     <value>Attività conclusa</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
     <value>Disinstallando</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
     <value>Ricorda la scelta</value>
@@ -495,22 +509,27 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi, o preferisci sian
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Pronto</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>{0} disinstallatori selezionati</value>
+    <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
     <value>{0} disinstallatori in totale, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>Fallita esecuzione del seguente comando:
 {0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
     <value>Fallita esecuzione esterna</value>
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Default</value>
+    <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
     <value>Alcuni parametri non saranno attivi fino a quando l'applicazione non sarà riavviata.</value>
@@ -526,6 +545,7 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi, o preferisci sian
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
     <value>Elaborazione dei disinstallatori {0}/{1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Selezionando "Termina" sarà immediatamente fermato il disinstallatore in esecuzione; la disinstallazione potrebbe non essere completata. Normalmente è possibile eseguire nuovamente il disinstallatore per finire l'attività.
@@ -549,6 +569,10 @@ Positive:
 
 Negative:
 {2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>Dettagli della valutazione</value>
@@ -564,12 +588,14 @@ Negative:
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Aggiornamento informazioni di avvio...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>Nessuna cartella da aprire</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>Non disponibile</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>Valutazioni non disponibili</value>
@@ -582,6 +608,7 @@ Negative:
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} applicazioni</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Valutazione media: {0}; La mia valutazione: {1}</value>

@@ -149,9 +149,11 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Найдено кнопок {0}.</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>Нажатие на кнопку "{0}".</value>
+    <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>Всплывающее окно закрыто.</value>
@@ -170,12 +172,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>Найденное окно "{0}".</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>Поиск окон...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Прикреплено к "{0}"</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>Ожидание удаления NSIS для извлечения...</value>
@@ -188,6 +192,7 @@
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
     <value>Демон остановлен из-за:</value>
+    <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} не является допустимым числом</value>

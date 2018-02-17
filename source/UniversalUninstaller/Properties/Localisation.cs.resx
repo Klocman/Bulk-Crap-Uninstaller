@@ -131,5 +131,6 @@
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
     <value>Smazat "{0}"</value>
+    <comment>{0} is the name of application/folder to delete</comment>
   </data>
 </root>

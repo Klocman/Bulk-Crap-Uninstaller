@@ -378,9 +378,6 @@
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Autostart Manager</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Windowsfunktionen &amp;deinstallieren...</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>"&amp;Programme und Features" öffnen</value>
   </data>

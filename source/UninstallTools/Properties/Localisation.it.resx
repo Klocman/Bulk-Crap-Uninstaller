@@ -236,6 +236,7 @@
   </data>
   <data name="ParentKeyName" xml:space="preserve">
     <value>Dipendenze del disinstallatore</value>
+    <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
     <value>Il nome dell'impresa non coincide</value>
@@ -339,6 +340,7 @@
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Contiene qualunque</value>
+    <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
     <value>Comandi di avvio</value>
@@ -402,6 +404,7 @@
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
     <value>Operazione</value>
+    <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
     <value>Estensione del navigatore</value>
@@ -439,6 +442,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Tutte le proprietà</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>Controllando i prodotti con installatore MSI...</value>

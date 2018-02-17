@@ -146,7 +146,7 @@
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Sodobne ikone uporabniškega vmesnika</value>
-    <comment>If "Modern UI Icons" means "Modern User Interface ícons" than, if translation wanted, it will be "Icones Modernos de Interface do Utilizador"</comment>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>ObjectListView</value>
@@ -159,7 +159,7 @@
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Ovijalec upravljan z urnikom opravil </value>
-    <comment>If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Uporabljena sredstva</value>
@@ -173,18 +173,6 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Informacije o razvijalcu</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Nemški - Dieter Hummel</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Francoski - Thierry Delaunay</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Češki - Richard Kahl </value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Angleški, Poljski - Marcin Szeniak</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Prevajalci</value>
   </data>
@@ -193,31 +181,6 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Madžarski - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Portugalski - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Ruski - wvxwxvw</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Slovenski - Jadran Rudec
-(jrudec@gmail.com)</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Španski - Freddynic159, Emilio J. Grao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Nizozemski - Jaap Kramer</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Arabski - MFM Dawdeh</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italijanski - Luca Carrabba (luca.carrabba@yahoo.com)</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>

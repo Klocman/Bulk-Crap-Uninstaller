@@ -150,9 +150,11 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Byly nalezeny přepínací tlačítka {0}.</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>Klepnutím na tlačítko "{0}".</value>
+    <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>Vyskakovací okno zavřeno.</value>
@@ -171,12 +173,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>Nalezeno v okně "{0}".</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>Vyhledávání v okně</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Připojeno k "{0}"</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>Čeká se na odinstalaci NSIS, pro extrahování ...</value>
@@ -189,6 +193,7 @@
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
     <value>Daemon se zastavil kvůli:</value>
+    <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} neplatné číslo</value>

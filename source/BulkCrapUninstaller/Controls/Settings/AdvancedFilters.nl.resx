@@ -144,4 +144,7 @@
   <data name="openUlDialog.Title" xml:space="preserve">
     <value>Open een de-installeer lijst ...</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Standaard verwijderen</value>
+  </data>
 </root>

@@ -144,9 +144,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Vprašaj za odstranjevanje glasnih odstranjevalcev iz tihega opravila</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Pred brisanjem ostankov vprašaj za izdelavo varnostne kopije registra </value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Po odstranjevanju poišči neuporabne datoteke</value>
   </data>
@@ -197,9 +194,6 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Omogoči uporabnikove ocene aplikacij</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Odstranjevanje</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Vedno pokaži smeti z nizko oceno</value>
@@ -266,9 +260,6 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   </data>
   <data name="tabPageUninstallation.Text" xml:space="preserve">
     <value>Odstranjevanje</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Sporočilna okna</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Omrežje</value>

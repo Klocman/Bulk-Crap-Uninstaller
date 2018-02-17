@@ -149,6 +149,7 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Najdeno je {0}  radijskih gumbov.</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>S klikom na gumb "{0}".</value>
@@ -171,12 +172,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>Najdeno je okno "{0}".</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>Iskanje oken...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Pripeto v "{0}"</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>Čakanje, da NSIS odstranjevalec razširi...</value>
@@ -189,6 +192,7 @@
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
     <value>Daemon je ustavljen, ker :</value>
+    <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} ni veljavno število</value>

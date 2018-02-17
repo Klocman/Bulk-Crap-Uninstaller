@@ -149,9 +149,11 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>{تم العثور على ازرار الاختيار {0</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>"{النقر على الزر "{0</value>
+    <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>تم إغلاق النافذة المنبثقة.</value>
@@ -170,12 +172,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>"{تم العثور على النافذة "{0</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>بحث عن النوافذ. . .</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>"{مرفق ب "{0</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>لاستخراج NSIS في انتظار إلغاء التثبيت...</value>
@@ -188,6 +192,7 @@
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
     <value>توقف الخفي بسبب:</value>
+    <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} ليس رقما صحيحا</value>

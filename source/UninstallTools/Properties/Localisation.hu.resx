@@ -336,6 +336,7 @@
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
     <value>Windows szolgáltatás</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
     <value>Bármit tartalmazhat</value>
@@ -441,6 +442,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Minden tulajdonság</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
     <value>Telepített MSI termékek ellenőrzése...</value>

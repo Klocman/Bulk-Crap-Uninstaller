@@ -414,8 +414,10 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Alle Eigenschaften</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>Ist unregistriert</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
 </root>

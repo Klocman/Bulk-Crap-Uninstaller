@@ -144,4 +144,7 @@
   <data name="openUlDialog.Title" xml:space="preserve">
     <value>فتح قائمه الغاء التثبيت...</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>حذف الافتراضي</value>
+  </data>
 </root>

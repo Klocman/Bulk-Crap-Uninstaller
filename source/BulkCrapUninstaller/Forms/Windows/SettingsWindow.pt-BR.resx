@@ -255,19 +255,10 @@ Use caminhos de diretório completo, um caminho por linha. Caminhos inválidos e
   <data name="tabPageFolders.Text" xml:space="preserve">
     <value>Pastas</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Caixas de mensagens</value>
-  </data>
   <data name="tabPageMisc.Text" xml:space="preserve">
     <value>Diversos</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Configurações do Bulk Crap Uninstaller </value>
-  </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Pedir para criar uma cópia de segurança do registro antes de eliminar as sobras.</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Desinstalação</value>
   </data>
 </root>

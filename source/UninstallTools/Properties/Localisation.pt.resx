@@ -433,6 +433,7 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Todas as propriedades</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Junk_Drive_GroupName" xml:space="preserve">
     <value>Arquivos e Directórios</value>

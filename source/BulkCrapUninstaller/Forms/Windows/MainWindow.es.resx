@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -315,14 +315,8 @@
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Usar tema del sistema</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar características de Windows</value>
-  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Mostrar apps de Windows Store</value>
-  </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Encontrar por ventana...</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Buscar...</value>

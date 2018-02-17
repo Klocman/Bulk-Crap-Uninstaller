@@ -141,8 +141,8 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Zapytaj czy usunąć głośne dezinstalatory z cichego zadania</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Zapytaj o utworzenie kopii zapasowej rejestru</value>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nigdy nie proś o tworzenie</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Szukaj pozostałości po dezinstalacji</value>
@@ -198,8 +198,8 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Włącz oceny użytkowników dla aplikacji</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Dezinstalacja</value>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Zawsze proś o utworzenie</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Zawsze pokazuj śmieci z niskim wynikiem</value>
@@ -245,5 +245,23 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Spróbuj wykryć niestandardowe foldery z programami automatycznie</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Utwórz automatycznie w katalogu:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Twórz kopię zapasową przed usunięciem</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interfejs</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Dezinstalacja</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Sieć</value>
   </data>
 </root>

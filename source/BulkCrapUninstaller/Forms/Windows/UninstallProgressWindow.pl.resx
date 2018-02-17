@@ -168,4 +168,7 @@
   <data name="toolStripButtonHelp.Text" xml:space="preserve">
     <value>Pomoc</value>
   </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Odinstaluj recznie</value>
+  </data>
 </root>

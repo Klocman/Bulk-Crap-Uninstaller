@@ -141,6 +141,7 @@ Založnik | Različica | Datum | Velikost | Register | Vrsta odstranjevalca | Od
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Prenosni</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Ni uspel klic API funcije</value>
@@ -254,9 +255,11 @@ Opozorilo: Med posodabljanjem bo odstranjena mapa "Update" in datoteka "Update.z
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Napredek odstranjevanja</value>
@@ -630,6 +633,7 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>Ni na voljo</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
     <value>Nekateri odstranjevalci niso bili uspešni</value>

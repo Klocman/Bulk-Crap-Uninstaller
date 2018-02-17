@@ -159,6 +159,7 @@
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Pacote de Gestão do Programador de Tarefas </value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
@@ -175,45 +176,11 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Informação do Programador</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Inglês, Polaco - Marcin Szeniak</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Checo - Richard Kahl </value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Francês - Thierry Delaunay</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Alemão - Dieter Hummel</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Esloveno - Jadran Rudec</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Russo - wvxwxvw</value>
-    <comment>Português (PT) - Artur Álvaro Pereira</comment>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Translators</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Acerca do BCUninstaller (Bulk Crap Uninstaller)</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Holandês - Jaap Kramer</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Húngaro - Phoenix (Döbröntei Sándor)</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Italiano - Luca Carrabba</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Português (PT) - Artur Álvaro Pereira</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Espanhol - Freddynic159, Emilio J. Grao</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>

@@ -327,9 +327,6 @@
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Bekijk updates</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Windows onderdelen tonen</value>
-  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Bekijk Windows Store Apps</value>
   </data>

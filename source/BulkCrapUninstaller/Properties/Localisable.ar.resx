@@ -201,9 +201,11 @@
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SearchNothingFoundMessage" xml:space="preserve">
     <value>لا توجد ادخالات مطابقه لمعايير البحث.</value>
@@ -234,11 +236,13 @@
 {0}
 
 لتعديل هذه الادخالات تعطيل الحماية من الغاء التثبيت من الشريط الجانبي الاعدادات. يمكنك ازالتها من المهمة ومتابعه المواد الاخرى اذا اردت.</value>
+    <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
     <value>لادخال المحمي: {0}
 
 لتعديل هذا الادخال ، تحتاج الى تعطيل حماية الغاء التثبيت من لوحه الاعدادات.</value>
+    <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>المواد التالية مفقوده غير مثبتات بهدوء:
@@ -270,9 +274,11 @@
   </data>
   <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
     <value>انتهت المهمة</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
     <value>تثبيت</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
     <value>تذكر الاختيار</value>
@@ -288,22 +294,27 @@
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>جاهز</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>تم تحديد {0} الغاء التثبيت</value>
+    <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
     <value>{0} الغاء التثبيت في المجموع ، {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>فشل تنفيذ الامر التالي:
 {0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
     <value>فشل التنفيذ الخارجي</value>
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>افتراضي</value>
+    <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
     <value>لن تصبح بعض الاعدادات نافذه المفعول حتى يتم اعاده تشغيل التطبيق.</value>
@@ -319,6 +330,7 @@
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
     <value>معالجه الغاء التثبيت {0}/{1} </value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>هل تريد تخطي انتظار الغاء التثبيت قيد التشغيل حاليا ؟</value>
@@ -337,6 +349,10 @@
 
 نفي:
 {2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>تفاصيل التصنيف</value>
@@ -352,12 +368,14 @@
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>تحديث معلومات بدء التشغيل...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
     <value>لا توجد دلائل للفتح</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>غير متاحه</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>التصنيفات غير متوفرة</value>
@@ -370,6 +388,7 @@
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} التطبيقات</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>متوسط التقييم: {0}; تقييمي: {1} </value>
@@ -539,6 +558,7 @@
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>الاصدار الجديد {0} متوفر ، هل تريد الترقية الان ؟</value>
+    <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
     <value>سيقوم المثبت بتحميل التحديث تلقائيا وتطبيقه بعد اعاده التشغيل. يرجى ملاحظه انه قد تفقد اعداداتك في العملية.
@@ -613,6 +633,7 @@
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>يتم ازاله تثبيت التطبيق (التطبيقات) {0} </value>
+    <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>اعاده تسميه الغاء التثبيت</value>
@@ -623,6 +644,7 @@
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
     <value>تاكد من انك لم تقم بتضمين اي من الاحرف التالية:
 {0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
     <value>هل تريد البحث عن البقايا التي تم اجراؤها من غير المنشات ؟</value>
@@ -647,6 +669,8 @@
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>سيقوم هذا الاجراء بفتح {0} دليل في نفس الوقت ، هل تريد بالتاكيد المتابعة ؟</value>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
     <value>بحث عن الخط</value>

@@ -149,6 +149,7 @@
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Modern UI Icons</value>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider von CodeChimp</value>
@@ -168,26 +169,15 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Hersteller-Info</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Französisch - Thierry Delaunay</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Englisch, Polnisch - Marcin Szeniak</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Übersetzer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Über BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Deutsch - Dieter Hummel</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Tschechische - Richard Kahl</value>
-  </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Task Scheduler Managed Wrapper</value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>

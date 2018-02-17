@@ -141,6 +141,7 @@ Vydavatel | Verze | Datum | Velikost | Registr | Typ odinstalátoru | Odinstalov
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Přenosná</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Nepodařilo se volání API</value>
@@ -254,9 +255,11 @@ Upozornění: Během aktualizace bude odstraněna složka "Update" a soubor "Upd
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>Odinstalační proces</value>

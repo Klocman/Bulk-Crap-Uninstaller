@@ -414,9 +414,11 @@
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
     <value>Všechny vlastnosti</value>
+    <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>Neregistrovaný</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="Junk_Drive_GroupName" xml:space="preserve">
     <value>Soubory a adresáře</value>

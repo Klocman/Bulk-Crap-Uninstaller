@@ -144,6 +144,9 @@
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
     <value>Dodaj izbrane aplikacije kot filtre</value>
   </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Izbriši privzeto</value>
+  </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>pl</value>
   </metadata>

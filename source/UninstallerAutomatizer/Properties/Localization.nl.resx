@@ -149,9 +149,11 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Gevonden {0} keuzerondjes</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>Klikken op de "{0}" knop.</value>
+    <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>Pop-up venster gesloten.</value>
@@ -170,12 +172,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>Gevonden venster(s) "{0}".</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>Zoeken naar vensters...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Verbonden met "{0}"</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>Wachten op NSIS uninstaller om uit te pakken...</value>

@@ -147,9 +147,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Запрос отключения громких деинсталляторов из тихих задач</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Запрос создания бэкапа реестра перед удалением хвостов</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Искать мусор после деинсталляции</value>
   </data>
@@ -175,9 +172,6 @@ BCU будет ждать завершения одной команды для 
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Общие</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Деинсталляция</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Внешние инструменты</value>
@@ -269,9 +263,6 @@ BCU будет ждать завершения одной команды для 
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Сеть</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Окна сообщений</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

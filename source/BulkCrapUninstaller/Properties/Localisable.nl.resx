@@ -141,6 +141,7 @@ Uitgever | Versie | Datum | Grootte | Registry | De-installatie type | De-instal
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value>Portabel</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Oproep van API mislukt</value>
@@ -161,6 +162,7 @@ Fout details:
 
 Fout details:
 </value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>Wilt u een back-up van het register maken, voordat u verder gaat?</value>
@@ -260,6 +262,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Voltooid</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
   </data>
   <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
     <value>{0} De-installer(s) geselecteerd</value>
@@ -272,12 +275,14 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
     <value>De volgende opdracht kon niet worden uitgevoerd:
 {0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
     <value>Externe uitvoering is mislukt</value>
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
     <value>Voorinstelling</value>
+    <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
     <value>Sommige instellingen worden pas na een herstart  van het programma effectief.</value>
@@ -332,6 +337,7 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="NotAvailable" xml:space="preserve">
     <value>Niet beschikbaar</value>
+    <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
     <value>Waarderingen niet beschikbaar</value>
@@ -344,6 +350,7 @@ The lists are separated by a single newline.</comment>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} Programma's</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
     <value>Forceer de-installatie</value>
@@ -486,6 +493,7 @@ Mist u functionaliteiten of wilt u een oplossing voor een fout? Stuur mij dan uw
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
     <value>Een nieuwe versie {0} is beschikbaar, wilt u nu upgraden?</value>
+    <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
     <value>De geselecteerde registratie kan niet met de MsiEx-Installer worden gede-installeerd.</value>
@@ -521,15 +529,18 @@ Wijzigingen log:
 - {0}
 
 Waarschuwing: Tijdens de update worden de map "Update" en het bestand "Update.zip" in de BCU mappen verwijderd.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
     <value>Kon geen nieuw herstelpunt maken</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value>x64</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
     <value>DEBUG</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
     <value>De-installatie voortgang</value>
@@ -570,6 +581,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
     <value>Controleer of u niet een van de volgende tekens heeft gebruikt:
 {0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
     <value>Wilt na uitvoering van de-installatie(s) zoeken naar restanten?</value>
@@ -585,6 +597,8 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Deze bewerking opent {0} mappen tegelijk. Weet u zeker dat u verder wilt gaan?</value>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
     <value>Stille de-installatie</value>
@@ -609,6 +623,7 @@ Van tijd tot tijd zou u moeten of een van de uninstallers niet is gecrashed.</va
   </data>
   <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
     <value>Taak voltooid</value>
+    <comment>Shown on the status bar</comment>
   </data>
   <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
     <value>De-installatie</value>

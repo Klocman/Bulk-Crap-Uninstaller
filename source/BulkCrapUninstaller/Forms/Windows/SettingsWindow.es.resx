@@ -150,9 +150,6 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Desinstalación</value>
-  </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Herramientas externas</value>
   </data>
@@ -179,9 +176,6 @@
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Preguntar para eliminar desinstaladores fuertes de una tarea silenciosa</value>
-  </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Preguntar si crear un backup del registro antes eliminar los restos</value>
   </data>
   <data name="checkBoxEnableExternal.Text" xml:space="preserve">
     <value>Permitir la ejecución de aplicaciones externas</value>

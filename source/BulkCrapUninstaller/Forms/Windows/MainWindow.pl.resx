@@ -390,9 +390,6 @@
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz Menedżer Autostartu</value>
   </data>
-  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Odinstaluj funkcje systemu Windows...</value>
-  </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz &amp;Programy i funkcje</value>
   </data>
@@ -456,9 +453,6 @@
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Zaawansowane filtrowanie</value>
   </data>
-  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Znajdź przez okno...</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
   </data>
@@ -521,5 +515,32 @@
   </data>
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Odinstaluj wskazując okno, folder, lub plik...</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pokaż tree&amp;map</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pokaż niezarejestrowane</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pokaż funkcje systemu Windows</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modyfikuj</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Uruchom Oczyszczanie dysku</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zainstaluj .NET v3.5 (dodaj funkcję)</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Modyfikuj</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Wyklucz</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Załącz</value>
   </data>
 </root>

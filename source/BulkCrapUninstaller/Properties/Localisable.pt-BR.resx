@@ -141,6 +141,7 @@ Editora | Versão | Data | Tamanho | Registro | Tipo de desinstalador | Cadeia d
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value> Portátil</value>
+    <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Falha ao chamar a API</value>
@@ -158,6 +159,7 @@ Editora | Versão | Data | Tamanho | Registro | Tipo de desinstalador | Cadeia d
     <value>
 Detalhes do erro:
 </value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
     <value>Você deseja criar um backup do registro antes de continuar?</value>
