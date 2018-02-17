@@ -8,6 +8,7 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.IO;
 using UninstallTools;
+using UninstallTools.Factory;
 using UninstallTools.Uninstaller;
 
 namespace BulkCrapUninstaller.Forms
@@ -89,19 +90,7 @@ namespace BulkCrapUninstaller.Forms
         private static IEnumerable<ApplicationUninstallerEntry> GetRelatedUninstallers(
             ApplicationUninstallerEntry thisUninstaller, IEnumerable<ApplicationUninstallerEntry> other)
         {
-            var displayName = thisUninstaller.DisplayNameTrimmed;
-            var installLocation = thisUninstaller.InstallLocation;
-
-            return other.Where(y =>
-            {
-                if (thisUninstaller.InstallLocation != null && y.InstallLocation != null)
-                {
-                    return y.InstallLocation.Contains(installLocation,
-                        StringComparison.OrdinalIgnoreCase);
-                }
-                return y.DisplayName.Contains(displayName,
-                    StringComparison.OrdinalIgnoreCase);
-            });
+            return other.Where(y => ApplicationEntryTools.AreEntriesRelated(thisUninstaller, y, -3));
         }
 
         public void Initialize(ICollection<ApplicationUninstallerEntry> selectedUninstallers,
