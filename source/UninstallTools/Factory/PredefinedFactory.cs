@@ -49,7 +49,7 @@ namespace UninstallTools.Factory
                         return null;
 
                     result.DisplayIcon = key.GetValue("OneDriveTrigger") as string;
-                    result.DisplayVersion = ApplicationUninstallerFactory.CleanupDisplayVersion(key.GetValue("Version") as string);
+                    result.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(key.GetValue("Version") as string);
                 }
             }
             catch

@@ -43,7 +43,7 @@ namespace UninstallTools.Factory.InfoAdders
         {
             // Detect MSI installer based on the uninstall string
             //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
-            if (ApplicationUninstallerFactory.PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
+            if (ApplicationEntryTools.PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
                 new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 return UninstallerType.Msiexec;
 

@@ -53,6 +53,7 @@
     <Compile Include="Controls\UninstallerIconGetter.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Factory\ApplicationEntryTools.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactoryCache.cs" />
     <Compile Include="Factory\InfoAdders\BasicIconGetter.cs" />

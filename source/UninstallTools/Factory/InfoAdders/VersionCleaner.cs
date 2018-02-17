@@ -11,7 +11,7 @@ namespace UninstallTools.Factory.InfoAdders
         {
             if (string.IsNullOrEmpty(target.DisplayVersion)) return;
 
-            ApplicationUninstallerFactory.CleanupDisplayVersion(target.DisplayVersion);
+            ApplicationEntryTools.CleanupDisplayVersion(target.DisplayVersion);
         }
 
         public string[] RequiredValueNames { get; } = {

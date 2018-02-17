@@ -94,7 +94,7 @@ namespace UninstallTools.Factory
                 RegistryKeyName = uninstallerKey.GetKeyName(),
                 Comment = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameComment) as string,
                 RawDisplayName = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameDisplayName) as string,
-                DisplayVersion = ApplicationUninstallerFactory.CleanupDisplayVersion(uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameDisplayVersion) as string),
+                DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameDisplayVersion) as string),
                 ParentKeyName = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameParentKeyName) as string,
                 Publisher = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNamePublisher) as string,
                 UninstallString = uninstallerKey.GetValue(ApplicationUninstallerEntry.RegistryNameUninstallString) as string,

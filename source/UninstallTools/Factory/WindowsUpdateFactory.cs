@@ -63,7 +63,7 @@ namespace UninstallTools.Factory
                                 entry.BundleProviderKey = result;
                             break;
                         case "RevisionNumber":
-                            entry.DisplayVersion =  ApplicationUninstallerFactory.CleanupDisplayVersion(valuePair.Value);
+                            entry.DisplayVersion =  ApplicationEntryTools.CleanupDisplayVersion(valuePair.Value);
                             break;
                         case "Title":
                             entry.RawDisplayName = valuePair.Value;

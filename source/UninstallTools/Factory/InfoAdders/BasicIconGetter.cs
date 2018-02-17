@@ -17,7 +17,7 @@ namespace UninstallTools.Factory.InfoAdders
 
             // Check for any specified icons
             if (!string.IsNullOrEmpty(entry.DisplayIcon) &&
-                !ApplicationUninstallerFactory.PathPointsToMsiExec(entry.DisplayIcon))
+                !ApplicationEntryTools.PathPointsToMsiExec(entry.DisplayIcon))
             {
                 string resultFilename = null;
 

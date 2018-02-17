@@ -7,9 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using Klocman.Extensions;
@@ -130,7 +128,7 @@ namespace UninstallTools.Uninstaller
                         : UninstallerEntry.UninstallString;
 
                     // Always reenumerate products in case any were uninstalled
-                    if (ApplicationUninstallerFactory.PathPointsToMsiExec(uninstallString) &&
+                    if (ApplicationEntryTools.PathPointsToMsiExec(uninstallString) &&
                         MsiTools.MsiEnumProducts().All(g => !g.Equals(UninstallerEntry.BundleProviderKey)))
                     {
                         CurrentStatus = UninstallStatus.Completed;
