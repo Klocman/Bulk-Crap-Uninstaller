@@ -105,7 +105,7 @@ namespace BulkCrapUninstaller.Forms
                 .ToList();
 
             var relatedUninstallers = _otherUninstallers.Select(
-                x => new {Entry = x, Related = GetRelatedUninstallers(x, _selectedUninstallers).ToList()})
+                x => new { Entry = x, Related = GetRelatedUninstallers(x, _selectedUninstallers).ToList() })
                 .Where(x => x.Related.Any()).ToList();
 
             relatedUninstallerAdder1.SetRelatedApps(relatedUninstallers
@@ -141,34 +141,42 @@ namespace BulkCrapUninstaller.Forms
                     break;
 
                 case 1:
-                {
-                    processWaiterControl1.StopUpdating();
+                    {
+                        processWaiterControl1.StopUpdating();
 
-                    var additionals = relatedUninstallerAdder1.GetResults();
-                    var taskEntries = ConvertToTaskEntries(_selectedUninstallers.Concat(additionals));
-                    taskEntries = SortTaskEntryList(taskEntries);
-                    uninstallConfirmation1.SetRelatedApps(taskEntries);
-                }
+                        var additionals = relatedUninstallerAdder1.GetResults();
+                        var taskEntries = ConvertToTaskEntries(_selectedUninstallers.Concat(additionals));
+                        taskEntries = SortTaskEntryList(taskEntries);
+                        uninstallConfirmation1.SetRelatedApps(taskEntries);
+                    }
                     break;
 
                 case 2:
-                {
-                    /*if (taskEntries == null || taskEntries.Count == 0) return;*/
-
-                    var selectedTaskEntries = uninstallConfirmation1.GetResults();
-
-                    var relatedPids = AppUninstaller.GetRelatedProcessIds(
-                        selectedTaskEntries.Select(x => x.UninstallerEntry), !_quiet);
-
-                    if (relatedPids.Length == 0)
                     {
-                        PageNumber = _previousPageNumber < 2 ? 3 : 1;
-                        return;
-                    }
+                        /*if (taskEntries == null || taskEntries.Count == 0) return;*/
 
-                    processWaiterControl1.Initialize(relatedPids, !_quiet);
-                    processWaiterControl1.StartUpdating();
-                }
+                        var selectedTaskEntries = uninstallConfirmation1.GetResults().ToList();
+
+                        if (!selectedTaskEntries.Any())
+                        {
+                            MessageBoxes.NoUninstallersSelectedInfo();
+
+                            PageNumber = 1;
+                            return;
+                        }
+
+                        var relatedPids = AppUninstaller.GetRelatedProcessIds(
+                            selectedTaskEntries.Select(x => x.UninstallerEntry), !_quiet);
+
+                        if (relatedPids.Length == 0)
+                        {
+                            PageNumber = _previousPageNumber < 2 ? 3 : 1;
+                            return;
+                        }
+
+                        processWaiterControl1.Initialize(relatedPids, !_quiet);
+                        processWaiterControl1.StartUpdating();
+                    }
                     break;
 
                 case 3: // Settings
@@ -180,20 +188,20 @@ namespace BulkCrapUninstaller.Forms
                     break;
 
                 case 4: // Final
-                {
-                    var taskEntries = uninstallConfirmation1.GetResults().ToList();
+                    {
+                        var taskEntries = uninstallConfirmation1.GetResults().ToList();
 
-                    labelApps.Text = string.Join(", ",
-                        taskEntries.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x).ToArray());
-                    labelTotalSize.Text = FileSize.SumFileSizes(taskEntries.Select(x => x.UninstallerEntry.EstimatedSize)).ToString();
+                        labelApps.Text = string.Join(", ",
+                            taskEntries.Select(x => x.UninstallerEntry.DisplayName).OrderBy(x => x).ToArray());
+                        labelTotalSize.Text = FileSize.SumFileSizes(taskEntries.Select(x => x.UninstallerEntry.EstimatedSize)).ToString();
 
-                    labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
-                    labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();
-                    labelRestorePointCreated.Text = _restorePointWasCreated.ToYesNo();
-                    labelWillBeSilent.Text = _quiet.ToYesNo();
+                        labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
+                        labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();
+                        labelRestorePointCreated.Text = _restorePointWasCreated.ToYesNo();
+                        labelWillBeSilent.Text = _quiet.ToYesNo();
 
-                    labelOther.Text = Settings.Default.AdvancedSimulate ? "Simulating" : "-";
-                }
+                        labelOther.Text = Settings.Default.AdvancedSimulate ? "Simulating" : "-";
+                    }
                     break;
             }
 
