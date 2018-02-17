@@ -53,9 +53,11 @@ namespace UninstallTools.Factory
 
         private static ApplicationUninstallerEntry WindowsFeatureToUninstallerEntry(WindowsFeatureInfo info)
         {
+            var displayName = !string.IsNullOrEmpty(info.DisplayName) ? info.DisplayName : info.FeatureName;
+
             return new ApplicationUninstallerEntry
             {
-                RawDisplayName = info.DisplayName,
+                RawDisplayName = displayName,
                 Comment = info.Description,
                 UninstallString = DismTools.GetDismUninstallString(info.FeatureName, false),
                 QuietUninstallString = DismTools.GetDismUninstallString(info.FeatureName, true),
