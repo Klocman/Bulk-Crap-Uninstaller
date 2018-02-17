@@ -405,7 +405,7 @@ namespace UninstallTools
             sb.Append(DisplayName);
             sb.AppendFormat(" | {0}", Publisher);
             sb.AppendFormat(" | {0}", DisplayVersion);
-            sb.AppendFormat(" | {0}", DateTime.MinValue.Equals(InstallDate) ? "" : InstallDate.ToShortDateString());
+            sb.AppendFormat(" | {0}", GetInstallDateString());
             sb.AppendFormat(" | {0}", EstimatedSize);
             sb.AppendFormat(" | {0}", RegistryPath);
             sb.AppendFormat(" | {0}", UninstallerKind);
@@ -414,6 +414,18 @@ namespace UninstallTools
             sb.AppendFormat(" | {0}", Comment);
 
             return sb.ToString();
+        }
+
+        private string GetInstallDateString()
+        {
+            try
+            {
+                return DateTime.MinValue.Equals(InstallDate) ? string.Empty : InstallDate.ToShortDateString();
+            }
+            catch (SystemException)
+            {
+                return string.Empty;
+            }
         }
 
         public override string ToString()

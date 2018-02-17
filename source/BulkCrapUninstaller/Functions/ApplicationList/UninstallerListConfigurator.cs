@@ -165,7 +165,14 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             {
                 if (!(x is DateTime)) return Localisable.Empty;
                 var entry = (DateTime) x;
-                return entry.IsDefault() ? Localisable.Empty : entry.ToShortDateString();
+                try
+                {
+                    return entry.IsDefault() ? Localisable.Empty : entry.ToShortDateString();
+                }
+                catch (SystemException)
+                {
+                    return Localisable.NotAvailable;
+                }
             };
 
             _reference.olvColumnGuid.AspectGetter = ListViewDelegates.ColumnGuidAspectGetter;
