@@ -139,7 +139,7 @@
     <value>uninstallListEditor1</value>
   </data>
   <data name="&gt;&gt;uninstallListEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.UninstallListEditor, UninstallTools, Version=3.19.0.32944, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.UninstallListEditor, UninstallTools, Version=4.3.0.34856, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallListEditor1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -223,6 +223,15 @@
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>Save as default</value>
   </data>
+  <data name="toolStripButtonDelete.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 26</value>
+  </data>
+  <data name="toolStripButtonDelete.Text" xml:space="preserve">
+    <value>Delete default</value>
+  </data>
   <data name="toolStripUninstallerList.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -283,6 +292,18 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripButtonAddSelectedAsFilters.Name" xml:space="preserve">
+    <value>toolStripButtonAddSelectedAsFilters</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAddSelectedAsFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripButtonOpenUl.Name" xml:space="preserve">
     <value>toolStripButtonOpenUl</value>
   </data>
@@ -301,12 +322,6 @@
   <data name="&gt;&gt;toolStripButtonSaveUlDef.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonAddSelectedAsFilters.Name" xml:space="preserve">
-    <value>toolStripButtonAddSelectedAsFilters</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonAddSelectedAsFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;saveUlDialog.Name" xml:space="preserve">
     <value>saveUlDialog</value>
   </data>
@@ -319,11 +334,11 @@
   <data name="&gt;&gt;openUlDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
+  <data name="&gt;&gt;toolStripButtonDelete.Name" xml:space="preserve">
+    <value>toolStripButtonDelete</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripButtonDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AdvancedFilters</value>

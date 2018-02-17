@@ -62,6 +62,8 @@ namespace BulkCrapUninstaller.Controls
 
             uninstallListEditor1.CurrentListChanged += OnCurrentListChanged;
             uninstallListEditor1.FiltersChanged += OnFiltersChanged;
+            
+            toolStripButtonDelete.Enabled = File.Exists(DefaultUninstallListPath);
         }
 
         private bool AskToSaveUnsaved()
@@ -199,6 +201,8 @@ namespace BulkCrapUninstaller.Controls
         {
             CurrentList.SaveToFile(DefaultUninstallListPath);
             CurrentListFileName = DefaultUninstallListPath;
+
+            toolStripButtonDelete.Enabled = true;
         }
 
         private void toolStripButtonToBasicFilters_Click(object sender, EventArgs e)
@@ -229,6 +233,20 @@ namespace BulkCrapUninstaller.Controls
             uninstallListEditor1.PopulateList();
             //OnCurrentListChanged(this, EventArgs.Empty);
             OnFiltersChanged(this, EventArgs.Empty);
+        }
+
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.Delete(DefaultUninstallListPath);
+
+                toolStripButtonDelete.Enabled = false;
+            }
+            catch (SystemException ex)
+            {
+                PremadeDialogs.GenericError(ex);
+            }
         }
     }
 }
