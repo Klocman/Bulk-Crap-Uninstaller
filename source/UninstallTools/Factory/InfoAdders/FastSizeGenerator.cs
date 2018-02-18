@@ -28,7 +28,8 @@ namespace UninstallTools.Factory.InfoAdders
 
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
-            if (FileSystemObject == null || !Directory.Exists(target.InstallLocation))
+            if (FileSystemObject == null || !Directory.Exists(target.InstallLocation) || 
+                UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
                 return;
 
             try
