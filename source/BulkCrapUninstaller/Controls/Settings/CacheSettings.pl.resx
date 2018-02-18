@@ -122,10 +122,10 @@
 UWAGA: Aby zastosować te ustawienia może być konieczne ponowne uruchomienie BCU.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>UWAGA: Aby zastosowac te ustawienia, moze byc konieczne ponowne uruchomienie BCU.</value>
+    <value>Buforuj zebrane informacje o certyfikatach</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
-    <value>Buforuj zebrane dodatkowe informacje</value>
+    <value>Buforuj zebrane informacje o aplikacjach</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Wyczyść bufory</value>
