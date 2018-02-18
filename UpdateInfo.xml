@@ -3,7 +3,7 @@
 <AppName>BCUninstaller</AppName>
 <Update>
 <Version>4.3.1.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.1/BCUninstaller_4.3,1_portable.zip</URL>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.1/BCUninstaller_4.3.1_portable.zip</URL>
 <Changes>
 Added toolbar button in advanced filters to delete default filters
 Added error message when trying to start empty uninstall task, prevents crash
