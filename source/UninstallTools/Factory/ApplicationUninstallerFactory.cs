@@ -17,28 +17,6 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
-        public static ApplicationUninstallerFactoryCache Cache { get; }
-
-        static ApplicationUninstallerFactory()
-        {
-            if (UninstallToolsGlobalConfig.EnableAppInfoCache)
-            {
-                var cachePath = UninstallToolsGlobalConfig.AppInfoCachePath;
-                try
-                {
-                    if (File.Exists(cachePath))
-                        Cache = ApplicationUninstallerFactoryCache.Load(cachePath);
-                    else
-                        Cache = new ApplicationUninstallerFactoryCache(cachePath);
-                }
-                catch (SystemException e)
-                {
-                    Cache = new ApplicationUninstallerFactoryCache(cachePath);
-                    Console.WriteLine(e);
-                }
-            }
-        }
-
         public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {
             const int totalStepCount = 7;
@@ -71,8 +49,8 @@ namespace UninstallTools.Factory
                 }).ToList();
 
                 // Fill in instal llocations for the drive search
-                if (Cache != null)
-                    ApplyCache(registryResults, Cache, infoAdder);
+                if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
+                    ApplyCache(registryResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, infoAdder);
 
                 var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                 callback(installLocAddProgress);
@@ -139,8 +117,8 @@ namespace UninstallTools.Factory
             });
 
             // Fill in any missing information
-            if (Cache != null)
-                ApplyCache(mergedResults, Cache, infoAdder);
+            if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
+                ApplyCache(mergedResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, infoAdder);
 
             var infoAddProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
             callback(infoAddProgress);
@@ -156,14 +134,14 @@ namespace UninstallTools.Factory
 
             //callback(new GetUninstallerListProgress(currentStep, totalStepCount, "Finished"));
 
-            if (Cache != null)
+            if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
             {
                 foreach (var entry in mergedResults)
-                    Cache.TryCacheItem(entry);
+                    UninstallToolsGlobalConfig.UninstallerFactoryCache.TryCacheItem(entry);
 
                 try
                 {
-                    Cache.Save();
+                    UninstallToolsGlobalConfig.UninstallerFactoryCache.Save();
                 }
                 catch (SystemException e)
                 {

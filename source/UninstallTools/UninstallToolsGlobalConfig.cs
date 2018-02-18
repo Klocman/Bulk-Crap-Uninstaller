@@ -8,6 +8,7 @@ using System.Reflection;
 using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
+using UninstallTools.Factory;
 
 namespace UninstallTools
 {
@@ -70,6 +71,39 @@ namespace UninstallTools
             AppInfoCachePath = Path.Combine(AssemblyLocation, "InfoCache.xml");
         }
 
+        public static bool EnableAppInfoCache
+        {
+            get { return UninstallerFactoryCache != null; }
+            set
+            {
+                if (value)
+                {
+                    var cachePath = AppInfoCachePath;
+                    try
+                    {
+                        if (File.Exists(cachePath))
+                            UninstallerFactoryCache = ApplicationUninstallerFactoryCache.Load(cachePath);
+                        else
+                            UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                    }
+                    catch (SystemException e)
+                    {
+                        UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                        Console.WriteLine(e);
+                    }
+                }
+                else
+                {
+                    UninstallerFactoryCache?.Delete();
+                    UninstallerFactoryCache = null;
+                }
+            }
+        }
+
+        public static string AppInfoCachePath { get; }
+        
+        internal static ApplicationUninstallerFactoryCache UninstallerFactoryCache { get; private set; }
+        
         /// <summary>
         ///     Path to directory this assembly sits in.
         /// </summary>
@@ -219,7 +253,5 @@ namespace UninstallTools
 
         public static string UninstallerAutomatizerPath { get; }
         public static bool UninstallerAutomatizerExists { get; }
-        public static bool EnableAppInfoCache { get; set; }
-        public static string AppInfoCachePath { get; }
     }
 }

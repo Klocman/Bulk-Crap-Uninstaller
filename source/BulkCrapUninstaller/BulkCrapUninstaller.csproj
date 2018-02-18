@@ -248,6 +248,7 @@
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\ApplicationList\ApplicationListConstants.cs" />
+    <Compile Include="Functions\ApplicationList\CertificateCache.cs" />
     <Compile Include="Functions\ApplicationList\UninstallerListPostProcesser.cs" />
     <Compile Include="Functions\Tools\OnlineSearchTools.cs" />
     <Compile Include="Forms\Helpers\RatingPopup.cs">

@@ -40,6 +40,9 @@ namespace BulkCrapUninstaller.Forms
     {
         private string MainTitleBarText { get; }
 
+        public static string CertificateCacheFilename { get; } = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
+        public static CertificateCache CertificateCache { get; } = new CertificateCache(CertificateCacheFilename);
+
         private readonly UninstallerListViewUpdater _listView;
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
@@ -65,7 +68,6 @@ namespace BulkCrapUninstaller.Forms
         private bool _ignoreCellEdit;
 
         private readonly UninstallerListPostProcesser _uninstallerListPostProcesser;
-        public static string CertCacheFilename { get; } = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
 
         public MainWindow()
         {
@@ -94,9 +96,10 @@ namespace BulkCrapUninstaller.Forms
             // Setup list view
             _listView = new UninstallerListViewUpdater(this);
 
-            _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects));
             if (_setMan.Selected.Settings.CacheCertificates)
-                _uninstallerListPostProcesser.LoadCertificateCache(CertCacheFilename);
+                CertificateCache.LoadCertificateCache();
+            _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects), CertificateCache);
+
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe(OnTestCertificatesChanged, x => x.AdvancedTestCertificates, this);
             FormClosed += DisposeListPostProcessor;
@@ -187,7 +190,7 @@ namespace BulkCrapUninstaller.Forms
 
             _setMan.Selected.BindControl(showTreemapToolStripMenuItem, settings => settings.ShowTreeMap, this);
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
-            
+
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
         }
 
@@ -265,9 +268,9 @@ namespace BulkCrapUninstaller.Forms
             try
             {
                 if (_setMan.Selected.Settings.CacheCertificates)
-                    _uninstallerListPostProcesser.SaveCertificateCache(CertCacheFilename);
+                    CertificateCache.SaveCertificateCache();
                 else
-                    File.Delete(CertCacheFilename);
+                    CertificateCache.Delete();
 
                 if (!_setMan.Selected.Settings.CacheAppInfo)
                     File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);

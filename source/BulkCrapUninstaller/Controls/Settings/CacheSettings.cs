@@ -34,13 +34,17 @@ namespace BulkCrapUninstaller.Controls.Settings
         {
             try
             {
-                File.Delete(MainWindow.CertCacheFilename);
-                File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);
+                MainWindow.CertificateCache.Delete();
+
+                UninstallToolsGlobalConfig.EnableAppInfoCache = false;
+                UninstallToolsGlobalConfig.EnableAppInfoCache = _settings.Settings.CacheAppInfo;
             }
             catch (SystemException systemException)
             {
                 PremadeDialogs.GenericError(systemException);
             }
+
+            button1.Enabled = false;
         }
     }
 }

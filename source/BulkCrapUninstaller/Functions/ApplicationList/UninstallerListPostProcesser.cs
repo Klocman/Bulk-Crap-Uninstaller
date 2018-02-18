@@ -33,58 +33,20 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         /// </summary>
         internal object UninstallerFileLock { get; set; } = new object();
 
+        private readonly CertificateCache _certificateCache;
+
         public event EventHandler<CountingUpdateEventArgs> UninstallerPostprocessingProgressUpdate;
 
-        public UninstallerListPostProcesser(Action<IList> updateItemsCallback)
+        public UninstallerListPostProcesser(Action<IList> updateItemsCallback, CertificateCache certificateCache)
         {
             if (updateItemsCallback == null) throw new ArgumentNullException(nameof(updateItemsCallback));
             _updateItemsCallback = updateItemsCallback;
+            _certificateCache = certificateCache;
         }
 
         public void AbortPostprocessingThread()
         {
             _abortPostprocessingThread = true;
-        }
-
-        Dictionary<string, X509Certificate2> _dictionaryCahe;
-
-        public void LoadCertificateCache(string filename)
-        {
-            _dictionaryCahe = new Dictionary<string, X509Certificate2>();
-
-            if (!File.Exists(filename)) return;
-
-            try
-            {
-                var l = SerializationTools.DeserializeDictionary<string, byte[]>(filename);
-
-                _dictionaryCahe = l.ToDictionary(x => x.Key, x => x.Value != null ? new X509Certificate2(x.Value) : null);
-            }
-            catch (SystemException e)
-            {
-                Console.WriteLine(e);
-                File.Delete(filename);
-                _dictionaryCahe.Clear();
-            }
-        }
-
-        public void SaveCertificateCache(string filename)
-        {
-            if (_dictionaryCahe == null)
-            {
-                File.Delete(filename);
-                return;
-            }
-
-            try
-            {
-                SerializationTools.SerializeDictionary(_dictionaryCahe.ToDictionary(x => x.Key, x => x.Value?.RawData), filename);
-            }
-            catch (SystemException e)
-            {
-                File.Delete(filename);
-                Console.WriteLine(e);
-            }
         }
 
         public void StartProcessingThread(IEnumerable<ApplicationUninstallerEntry> itemsToProcess)
@@ -154,17 +116,16 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         {
             var id = uninstaller.GetCacheId();
 
-            if (_dictionaryCahe != null && !string.IsNullOrEmpty(id) && _dictionaryCahe.ContainsKey(id))
+            if (_certificateCache.ContainsKey(id))
             {
-                var cert = _dictionaryCahe[id];
+                var cert = _certificateCache.GetCachedItem(id);
                 uninstaller.SetCertificate(cert);
                 return cert;
             }
             else
             {
                 var cert = uninstaller.GetCertificate();
-                if (_dictionaryCahe != null && id != null)
-                    _dictionaryCahe.Add(id, cert);
+                _certificateCache.AddItem(id, cert);
                 return cert;
             }
         }

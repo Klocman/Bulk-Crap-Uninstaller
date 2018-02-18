@@ -104,5 +104,11 @@ namespace UninstallTools.Factory
             public ApplicationUninstallerEntry Entry { get; set; }
             public byte[] Icon { get; set; }
         }
+
+        public void Delete()
+        {
+            File.Delete(Filename);
+            Cache.Clear();
+        }
     }
 }
