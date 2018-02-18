@@ -2,16 +2,22 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.3.0.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3/BCUninstaller_4.3_portable.zip</URL>
+<Version>4.3.1.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.1/BCUninstaller_4.3,1_portable.zip</URL>
 <Changes>
-BCU is signed and verified again
-Added option to install NET 3.5 feature in tools (if possible)
-Added link to "Disk Cleanup" to tools menu
-Fixed app.manifests not copying for helpers, causing NET 3.5 install dialogs
+Added toolbar button in advanced filters to delete default filters
+Added error message when trying to start empty uninstall task, prevents crash
+Added section about Treemap to the manual
+Improved related uninstaller detection (when starting uninstall)
+Fixed some new Windows Features having no name
+Fixed crash on start and uninstaller info copy for people using UmAlQuraCalendar
+Fixed "Delete caches" button not working properly; Better handle enabling/disabling caches
+Fixed huge estimated size when install path is set to an invalid (system) directory
+Fixed \Windows directory sometimes not being detected as system dir
+Updated Polish translation
 Merged update to Spanish translation by Jhovany200
-Merged update to French translation by Thierry
+Cleaned up some other translations
 </Changes>
-<Hash>b46f419e2a32ed3374426a038221daa4</Hash>
+<Hash>f26257e63096409c440917dd6ca8f327</Hash>
 </Update>
 </Root>
