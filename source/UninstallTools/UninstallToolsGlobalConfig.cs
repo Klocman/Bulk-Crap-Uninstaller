@@ -30,7 +30,7 @@ namespace UninstallTools
             DirectoryBlacklist = new[]
             {
                 "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
-                "Desktop", "Internet Explorer", "Windows NT", "Windows Photo Viewer", "Windows Mail",
+                "Desktop", "Internet Explorer", "Windows", "Windows NT", "Windows Photo Viewer", "Windows Mail",
                 "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
                 "InstallShield Installation Information"
             }.AsEnumerable();
@@ -54,7 +54,7 @@ namespace UninstallTools
             };
 
             var appDataParentDir = Path.GetDirectoryName(localData.TrimEnd('\\', '/', ' '));
-            if (!String.IsNullOrEmpty(appDataParentDir))
+            if (!string.IsNullOrEmpty(appDataParentDir))
             {
                 var lowDir = Path.Combine(appDataParentDir, "LocalLow");
                 if (Directory.Exists(lowDir))
@@ -186,9 +186,16 @@ namespace UninstallTools
         /// </summary>
         public static bool IsSystemDirectory(DirectoryInfo dir)
         {
-            return //dir.Name.StartsWith("Windows ") //Probably overkill
-                DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
+            return DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
                 || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
+        }
+        
+        /// <summary>
+        ///     Check if dir is a system directory and should be left alone.
+        /// </summary>
+        public static bool IsSystemDirectory(string installLocation)
+        {
+            return IsSystemDirectory(new DirectoryInfo(installLocation));
         }
 
         /// <summary>
