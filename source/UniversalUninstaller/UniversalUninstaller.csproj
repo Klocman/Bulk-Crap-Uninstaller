@@ -134,6 +134,9 @@
     <EmbeddedResource Include="TargetList.pl.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.pt.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TargetList.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>

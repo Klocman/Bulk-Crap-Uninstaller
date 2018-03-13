@@ -169,6 +169,9 @@ Se o processo lhe parecer ter bloqueado, pode clicar no botão "Ignorar" para ev
   <data name="$this.Text" xml:space="preserve">
     <value>Progresso da desinstalação</value>
   </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Desinstalar manualmente</value>
+  </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>252, 17</value>
   </metadata>

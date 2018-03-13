@@ -309,8 +309,14 @@
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Usar o tema do sistema</value>
   </data>
+  <data name="addWindowsFeaturesToTheListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ver características do Windows</value>
+  </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ver app no Windows Store</value>
+  </data>
+  <data name="findByWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Procurar usando a janela...</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Procurar...</value>
