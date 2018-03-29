@@ -38,7 +38,7 @@ namespace UninstallTools.Junk.Finders.Drive
         {
             _uninstaller = target;
 
-            return _foldersToCheck.SelectMany(FindJunkRecursively).Cast<IJunkResult>();
+            return _foldersToCheck.SelectMany((x) => FindJunkRecursively(x)).Cast<IJunkResult>();
         }
 
         public override string CategoryName => Localisation.Junk_Drive_GroupName;
