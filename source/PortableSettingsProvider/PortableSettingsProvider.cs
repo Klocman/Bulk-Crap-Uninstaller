@@ -147,6 +147,11 @@ namespace PortableSettingsProvider
 
         private void SetValue(SettingsPropertyValue propVal)
         {
+            if (propVal == null)
+                throw new ArgumentNullException(nameof(propVal));
+            if (propVal.SerializedValue == null)
+                throw new ArgumentNullException(nameof(propVal.SerializedValue));
+
             XmlElement settingNode;
 
             //Determine if the setting is roaming.
