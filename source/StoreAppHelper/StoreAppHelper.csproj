@@ -65,8 +65,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime">
-      <HintPath>E:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Runtime.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
