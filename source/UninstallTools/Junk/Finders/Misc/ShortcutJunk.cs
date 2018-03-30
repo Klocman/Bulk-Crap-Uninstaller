@@ -85,19 +85,26 @@ namespace UninstallTools.Junk.Finders.Misc
                     .DoForEach(x => x.Confidence.Add(ConfidenceRecords.ExplicitConnection)));
             }
 
-            if (!string.IsNullOrEmpty(target.UninstallerFullFilename))
+            if (target.UninstallerKind == UninstallerType.Steam)
             {
-                results.AddRange(GetLinksPointingToLocation(entry => entry.UninstallerFullFilename, target)
-                    .DoForEach(x => x.Confidence.Add(ConfidenceRecords.ExplicitConnection)));
+                results.AddRange(GetLinksPointingToSteamApp(target));
             }
-
-            if (!string.IsNullOrEmpty(target.UninstallerLocation))
+            else
             {
-                var exceptUninstallerShortcut = GetLinksPointingToLocation(entry => entry.UninstallerLocation, target)
-                    .Where(possibleResult => results.All(result => !PathTools.PathsEqual(result.Path, possibleResult.Path)))
-                    .ToList();
+                if (!string.IsNullOrEmpty(target.UninstallerFullFilename))
+                {
+                    results.AddRange(GetLinksPointingToLocation(entry => entry.UninstallerFullFilename, target)
+                        .DoForEach(x => x.Confidence.Add(ConfidenceRecords.ExplicitConnection)));
+                }
 
-                results.AddRange(exceptUninstallerShortcut);
+                if (!string.IsNullOrEmpty(target.UninstallerLocation))
+                {
+                    var exceptUninstallerShortcut = GetLinksPointingToLocation(entry => entry.UninstallerLocation, target)
+                        .Where(possibleResult => results.All(result => !PathTools.PathsEqual(result.Path, possibleResult.Path)))
+                        .ToList();
+
+                    results.AddRange(exceptUninstallerShortcut);
+                }
             }
 
             // Remove shortcuts that we aren't sure about
@@ -111,6 +118,29 @@ namespace UninstallTools.Junk.Finders.Misc
             }
 
             return results.Cast<IJunkResult>();
+        }
+
+        /// <summary>
+        /// Avoids marking all steam application shortcuts as junk (they use same exe path as uninstall commands)
+        /// </summary>
+        private IEnumerable<FileSystemJunk> GetLinksPointingToSteamApp(ApplicationUninstallerEntry target)
+        {
+            Debug.Assert(target.UninstallerKind == UninstallerType.Steam);
+
+            var appId = System.Text.RegularExpressions.Regex.Replace(target.RegistryKeyName, @"[^0-9]", "");
+
+            if (!string.IsNullOrEmpty(appId))
+            {
+                foreach (var source in _links)
+                {
+                    if (source.LinkTarget.Contains(appId, StringComparison.Ordinal)
+                        && source.LinkTarget.Contains("steam", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var result = CreateJunkNode(source, target);
+                        yield return result;
+                    }
+                }
+            }
         }
 
         public override string CategoryName => Localisation.Junk_Shortcut_GroupName;
