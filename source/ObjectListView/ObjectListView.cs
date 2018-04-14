@@ -4235,7 +4235,7 @@ namespace BrightIdeasSoftware
         /// </para>
         /// </remarks>
         public virtual void BuildList(bool shouldPreserveState) {
-            if (this.Frozen)
+            if (this.Frozen || IsDisposed || Disposing)
                 return;
 
             //Stopwatch sw = Stopwatch.StartNew();
@@ -10101,14 +10101,22 @@ namespace BrightIdeasSoftware
         /// <summary>
         /// Force the hot item to be recalculated
         /// </summary>
-        public virtual void ClearHotItem() {
+        public virtual void ClearHotItem()
+        {
+            if (IsDisposed || Disposing)
+                return;
+
             this.UpdateHotItem(new Point(-1, -1));
         }
 
         /// <summary>
         /// Force the hot item to be recalculated
         /// </summary>
-        public virtual void RefreshHotItem() {
+        public virtual void RefreshHotItem()
+        {
+            if (IsDisposed || Disposing)
+                return;
+
             this.UpdateHotItem(this.PointToClient(Cursor.Position));
         }
 
