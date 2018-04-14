@@ -2500,7 +2500,7 @@ namespace BrightIdeasSoftware
         [Browsable(false),
          DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual IEnumerable Objects {
-            get { return this.objects ?? Enumerable.Empty<object>(); }
+            get { return this.objects; }
             set { this.SetObjects(value, true); }
         }
         private IEnumerable objects;
