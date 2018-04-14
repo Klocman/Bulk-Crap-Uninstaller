@@ -217,6 +217,7 @@ namespace BulkCrapUninstaller.Controls
         private void toolStripButtonAddSelectedAsFilters_Click(object sender, EventArgs e)
         {
             if (SelectedEntryGetter == null) throw new ArgumentNullException(nameof(SelectedEntryGetter));
+            if (CurrentList == null) throw new ArgumentNullException(nameof(CurrentList));
 
             var entries = SelectedEntryGetter();
             var filters = entries.Select(x => new Filter(x.DisplayName, false,
