@@ -97,7 +97,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             : _listView.SelectedObjects.Count;
 
         public IEnumerable<ApplicationUninstallerEntry> SelectedUninstallers => _listView.ListView.CheckBoxes
-            ? _listView.CheckedObjects
+            ? _listView.ListView.GetAllObjectsWithMappedCheckState(CheckState.Checked).Cast<ApplicationUninstallerEntry>()
             : _listView.SelectedObjects;
 
         public void Dispose()

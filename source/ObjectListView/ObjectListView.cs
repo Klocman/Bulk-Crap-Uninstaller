@@ -2640,6 +2640,15 @@ namespace BrightIdeasSoftware
         private Dictionary<Object, CheckState> checkStateMap;
 
         /// <summary>
+        /// Get checked objects even if they are filtered and currently not visible on the list. 
+        /// This works only when PersistentCheckBoxes is true and for virtual lists.
+        /// </summary>
+        public IEnumerable GetAllObjectsWithMappedCheckState(CheckState state)
+        {
+            return CheckStateMap.Where(x => x.Value == state).Select(x => x.Key);
+        }
+
+        /// <summary>
         /// Which column did we last sort by
         /// </summary>
         [Browsable(false),
