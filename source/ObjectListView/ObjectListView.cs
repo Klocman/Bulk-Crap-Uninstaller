@@ -10762,6 +10762,8 @@ namespace BrightIdeasSoftware
             //    filters.Add(this.AdditionalFilter);
             //this.ModelFilter = filters.Count == 0 ? null : new CompositeAllFilter(filters);
 
+            if (IsDisposed || Disposing) return;
+
             if (this.AdditionalFilter == null)
                 this.ModelFilter = this.CreateColumnFilter();
             else {
