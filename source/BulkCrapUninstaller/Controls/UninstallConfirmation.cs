@@ -41,7 +41,7 @@ namespace BulkCrapUninstaller.Forms
             objectListView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
         }
 
-        private IEnumerable<ConfirmationEntry> Entries => objectListView1.Objects.Cast<ConfirmationEntry>();
+        private IEnumerable<ConfirmationEntry> Entries => (objectListView1.Objects ?? Enumerable.Empty<ConfirmationEntry>()).Cast<ConfirmationEntry>();
 
         private void buttonSort_Click(object sender, EventArgs e)
         {
