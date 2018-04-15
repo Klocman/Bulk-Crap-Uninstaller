@@ -2,15 +2,16 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.3.2.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.2/BCUninstaller_4.3.2_portable.zip</URL>
+<Version>4.3.3.0</Version>
+<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.3/BCUninstaller_4.3.3_portable.zip</URL>
 <Changes>
-Fixed a crash when trying to show an error message during loading
-Fixed a mistake causing bad detection rate of file/folder junk
-Fixed junk scan for Steam apps detecting shortcuts of other Steam apps
-Fixed library reference issue in StoreAppHelper
-Updated libraries
+Fixed checked applications not being "seen" as checked if they are filtered out. Clicking uninstall will now properly uninstall them.
+Fixed crashes when OLV objects collection is not yet initialized
+Fixed some ObjectDisposedException crashes in OLV
+Fixed disposed OLV crash when filtering and shutting down
+Fixed crash with legend window updating position during shutdown
+Added extra debug info
 </Changes>
-<Hash>9208306b8dc551d34c429cde556b46e7</Hash>
+<Hash>6b05b161dcc863efb5b6a4473c6d41b8</Hash>
 </Update>
 </Root>
