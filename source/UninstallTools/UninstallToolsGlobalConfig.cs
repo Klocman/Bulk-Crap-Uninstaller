@@ -33,7 +33,7 @@ namespace UninstallTools
                 "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
                 "Desktop", "Internet Explorer", "Windows", "Windows NT", "Windows Photo Viewer", "Windows Mail",
                 "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
-                "InstallShield Installation Information"
+                "InstallShield Installation Information", "Installer"
             }.AsEnumerable();
 
             StockProgramFiles = new[]
