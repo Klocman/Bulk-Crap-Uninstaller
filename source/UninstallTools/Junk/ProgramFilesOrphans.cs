@@ -56,11 +56,7 @@ namespace UninstallTools.Junk
                     if (subDirectory.FullName.ContainsAny(_otherInstallLocations, StringComparison.CurrentCultureIgnoreCase))
                         continue;
 
-                    var questionableDirName = subDirectory.Name.ContainsAny(
-                        UninstallToolsGlobalConfig.QuestionableDirectoryNames, StringComparison.CurrentCultureIgnoreCase)
-                                              ||
-                                              UninstallToolsGlobalConfig.QuestionableDirectoryNames.Any(
-                                                  x => x.Contains(subDirectory.Name, StringComparison.CurrentCultureIgnoreCase));
+                    var questionableDirName = subDirectory.Name.ContainsAny(UninstallToolsGlobalConfig.QuestionableDirectoryNames, StringComparison.CurrentCultureIgnoreCase);
 
                     var nameIsUsed = subDirectory.Name.ContainsAny(_otherNames, StringComparison.CurrentCultureIgnoreCase);
 
