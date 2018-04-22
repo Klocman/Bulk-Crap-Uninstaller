@@ -42,9 +42,9 @@ namespace BulkCrapUninstaller.Forms
             MainWindow.OpenUrls(new[] { new Uri(Resources.SubmitFeedbackLink) });
         }
 
-        private void buttonSourceForgeRate_Click(object sender, EventArgs e)
+        private void buttonRate_Click(object sender, EventArgs e)
         {
-            MainWindow.OpenUrls(new[] { new Uri(Resources.SourceForgeReviewLink) });
+            MainWindow.OpenUrls(new[] { new Uri(Resources.ReviewLink) });
         }
 
         private void buttonTwitter_Click(object sender, EventArgs e)

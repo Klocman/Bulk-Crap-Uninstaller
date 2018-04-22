@@ -165,7 +165,7 @@ Alle hulp wordt op prijs gesteld, ongeacht de wijze waarop!</value>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>Als u deze vrije open-source tool handig vindt, overweeg dan even om de helpfunctie te raadplegen! Vertel uw vrienden hierover, deel het op social media, stuur feedback - alle kleine beetjes helpen!</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Waarderen op SourceForce</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Tarief (onderaan de pagina)</value>
   </data>
 </root>

@@ -34,7 +34,7 @@
             this.p1welcomeSubheading = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSendFeedback2 = new System.Windows.Forms.Button();
-            this.buttonSourceForgeRate = new System.Windows.Forms.Button();
+            this.buttonRate = new System.Windows.Forms.Button();
             this.buttonTwitter = new System.Windows.Forms.Button();
             this.p1FeedbackHeading = new System.Windows.Forms.Label();
             this.p1FeedbackDesc = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.buttonSendFeedback2);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSourceForgeRate);
+            this.flowLayoutPanel1.Controls.Add(this.buttonRate);
             this.flowLayoutPanel1.Controls.Add(this.buttonTwitter);
             this.flowLayoutPanel5.SetFlowBreak(this.flowLayoutPanel1, true);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -99,12 +99,12 @@
             this.buttonSendFeedback2.UseVisualStyleBackColor = true;
             this.buttonSendFeedback2.Click += new System.EventHandler(this.buttonSendFeedback2_Click);
             // 
-            // buttonSourceForgeRate
+            // buttonRate
             // 
-            resources.ApplyResources(this.buttonSourceForgeRate, "buttonSourceForgeRate");
-            this.buttonSourceForgeRate.Name = "buttonSourceForgeRate";
-            this.buttonSourceForgeRate.UseVisualStyleBackColor = true;
-            this.buttonSourceForgeRate.Click += new System.EventHandler(this.buttonSourceForgeRate_Click);
+            resources.ApplyResources(this.buttonRate, "buttonRate");
+            this.buttonRate.Name = "buttonRate";
+            this.buttonRate.UseVisualStyleBackColor = true;
+            this.buttonRate.Click += new System.EventHandler(this.buttonRate_Click);
             // 
             // buttonTwitter
             // 
@@ -243,7 +243,7 @@
         private System.Windows.Forms.Label p1FeedbackDesc;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonSendFeedback2;
-        private System.Windows.Forms.Button buttonSourceForgeRate;
+        private System.Windows.Forms.Button buttonRate;
         private System.Windows.Forms.Button buttonTwitter;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button buttonSubmitGithub;

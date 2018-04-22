@@ -126,8 +126,8 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Enviar comentario</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Puntuar en SourceForge</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Tarifa (parte inferior de la página)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Compartir en Twitter</value>

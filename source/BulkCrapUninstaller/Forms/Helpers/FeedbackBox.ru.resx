@@ -126,8 +126,8 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Отправить отзыв</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Оценить на SourceForge</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Скорость (внизу страницы)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Поделиться в Twitter</value>

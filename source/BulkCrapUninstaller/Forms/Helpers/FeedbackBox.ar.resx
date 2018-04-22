@@ -126,8 +126,8 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>ارسال الملاحظات</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>معدل على تشكيل المصدر</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>السعر (في أسفل الصفحة)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>شاركنا على تويتر</value>

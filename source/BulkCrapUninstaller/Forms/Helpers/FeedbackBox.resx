@@ -228,34 +228,34 @@
   <data name="&gt;&gt;buttonSendFeedback2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="buttonSourceForgeRate.AutoSize" type="System.Boolean, mscorlib">
+  <data name="buttonRate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="buttonSourceForgeRate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="buttonRate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="buttonSourceForgeRate.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="buttonRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>99, 3</value>
   </data>
-  <data name="buttonSourceForgeRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 23</value>
+  <data name="buttonRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 23</value>
   </data>
-  <data name="buttonSourceForgeRate.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonRate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Rate on SourceForge</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Rate (at the bottom of the page)</value>
   </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Name" xml:space="preserve">
-    <value>buttonSourceForgeRate</value>
+  <data name="&gt;&gt;buttonRate.Name" xml:space="preserve">
+    <value>buttonRate</value>
   </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonRate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonRate.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;buttonSourceForgeRate.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonRate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="buttonTwitter.AutoSize" type="System.Boolean, mscorlib">
@@ -265,7 +265,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="buttonTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 3</value>
+    <value>3, 32</value>
   </data>
   <data name="buttonTwitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 23</value>
@@ -292,7 +292,7 @@
     <value>11, 84</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 29</value>
+    <value>270, 58</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -319,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="p1FeedbackHeading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 116</value>
+    <value>11, 145</value>
   </data>
   <data name="p1FeedbackHeading.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 8, 0, 3</value>
@@ -352,7 +352,7 @@
     <value>NoControl</value>
   </data>
   <data name="p1FeedbackDesc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 150</value>
+    <value>11, 179</value>
   </data>
   <data name="p1FeedbackDesc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 4</value>
@@ -442,7 +442,7 @@
     <value>1</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 183</value>
+    <value>11, 212</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 29</value>
@@ -472,7 +472,7 @@
     <value>NoControl</value>
   </data>
   <data name="p1HelpHeading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 215</value>
+    <value>11, 244</value>
   </data>
   <data name="p1HelpHeading.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 8, 0, 3</value>
@@ -505,7 +505,7 @@
     <value>NoControl</value>
   </data>
   <data name="p1HelpDesc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 249</value>
+    <value>11, 278</value>
   </data>
   <data name="p1HelpDesc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 4</value>
@@ -622,7 +622,7 @@
     <value>2</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 295</value>
+    <value>11, 324</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 29</value>
@@ -652,7 +652,7 @@
     <value>8, 4, 8, 8</value>
   </data>
   <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 335</value>
+    <value>359, 364</value>
   </data>
   <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -745,7 +745,7 @@
     <value>Top</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 335</value>
+    <value>0, 364</value>
   </data>
   <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 8</value>
@@ -770,9 +770,6 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>

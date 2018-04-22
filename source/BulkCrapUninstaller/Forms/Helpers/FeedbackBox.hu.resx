@@ -138,8 +138,8 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Visszajelzés</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>SourceForge minősítés</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Ár (az oldal alján)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Twitter megosztás</value>

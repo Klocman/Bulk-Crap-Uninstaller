@@ -117,50 +117,149 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="p1welcomeHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 57</value>
+  </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Dziekujemy za korzystanie z BCUninstaller!</value>
+  </data>
+  <data name="p1welcomeSubheading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 61</value>
+  </data>
+  <data name="p1welcomeSubheading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 43</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>Jeśli to darmowe i otwarte narzędzie było tobie przydatne, pomyśl o pomocy temu projektowi! Powiedz znajomym o BCU, podziel się nim w portalach społecznościowych, zostaw opinię - wszystko się liczy!</value>
   </data>
-  <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Jakieś problemy lub brakujące funkcje?</value>
-  </data>
-  <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>Sprawdź te linki aby zasugerować nową funkcję, lub zgłosić błąd w aplikacji:</value>
-  </data>
-  <data name="p1HelpHeading.Text" xml:space="preserve">
-    <value>Chcesz pomóc?</value>
-  </data>
-  <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Nie trzeba być programistą aby pomóc! Można przekazać darowiznę aby przyśpieszyć rozwój, lub przetłumaczyć BCU do swojego ojczystego języka. Każda pomoc jest mile widziana, nie ważne jak mała!</value>
+  <data name="buttonSendFeedback2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Wyślij opinię</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Oceń na SourceForge</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonRate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonRate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="buttonRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 23</value>
+  </data>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Oceń (na dole strony)</value>
+  </data>
+  <data name="buttonTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 3</value>
+  </data>
+  <data name="buttonTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 23</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Twittuj o BCU</value>
   </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 107</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 29</value>
+  </data>
+  <data name="p1FeedbackHeading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 139</value>
+  </data>
+  <data name="p1FeedbackHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 57</value>
+  </data>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>Jakieś problemy lub brakujące funkcje?</value>
+  </data>
+  <data name="p1FeedbackDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 196</value>
+  </data>
+  <data name="p1FeedbackDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 30</value>
+  </data>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>Sprawdź te linki aby zasugerować nową funkcję, lub zgłosić błąd w aplikacji:</value>
+  </data>
+  <data name="buttonSubmitGithub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
     <value>Pomóż na GitHub</value>
+  </data>
+  <data name="buttonSendFeedback.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 3</value>
+  </data>
+  <data name="buttonSendFeedback.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>Wyślij opinię</value>
   </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 229</value>
+  </data>
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 29</value>
+  </data>
+  <data name="p1HelpHeading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 261</value>
+  </data>
+  <data name="p1HelpHeading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 34</value>
+  </data>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>Chcesz pomóc?</value>
+  </data>
+  <data name="p1HelpDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 295</value>
+  </data>
+  <data name="p1HelpDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 56</value>
+  </data>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>Nie trzeba być programistą aby pomóc! Można przekazać darowiznę aby przyśpieszyć rozwój, lub przetłumaczyć BCU do swojego ojczystego języka. Każda pomoc jest mile widziana, nie ważne jak mała!</value>
+  </data>
+  <data name="buttonTranslate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 23</value>
+  </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
     <value>Przetłumacz BCU</value>
   </data>
+  <data name="buttonIssues.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 3</value>
+  </data>
+  <data name="buttonIssues.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
   <data name="buttonIssues.Text" xml:space="preserve">
     <value>Problemy na GitHub</value>
+  </data>
+  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 354</value>
+  </data>
+  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 29</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 394</value>
+  </data>
+  <data name="checkBoxNeverShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Nigdy nie pokazuj ponownie tego okna</value>
   </data>
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Zamknij</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 394</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Wyślij opinię</value>

@@ -126,8 +126,8 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Poslat zpětnou vazbu</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Rychlost na SourceForge</value>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Poměr (v dolní části stránky)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Podělte se na Twitteru</value>
