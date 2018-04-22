@@ -37,8 +37,26 @@ namespace SimpleTreeMap
 
         public static IEnumerable<SliceRectangle<T>> GetRectangles<T>(Slice<T> slice, int width, int height)
         {
+            if (slice == null)
+                yield break;
+
             var area = new SliceRectangle<T>
             {Slice = slice, Width = width, Height = height};
+
+            // Handle single-item lists
+            if(slice.SubSlices == null && slice.Elements.Count == 1)
+            {
+                var sliceRectangle = new SliceRectangle<T>
+                {
+                    X = 0,
+                    Y = 0,
+                    Height = height,
+                    Width = width,
+                    Slice = slice
+                };
+                yield return sliceRectangle;
+                yield break;
+            }
 
             foreach (var rect in GetRectangles(area))
             {
