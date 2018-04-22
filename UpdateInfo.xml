@@ -2,16 +2,18 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.3.3.0</Version>
-<URL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v4.3.3/BCUninstaller_4.3.3_portable.zip</URL>
+<Version>4.3.4.0</Version>
+<URL></URL>
+<PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Fixed checked applications not being "seen" as checked if they are filtered out. Clicking uninstall will now properly uninstall them.
-Fixed crashes when OLV objects collection is not yet initialized
-Fixed some ObjectDisposedException crashes in OLV
-Fixed disposed OLV crash when filtering and shutting down
-Fixed crash with legend window updating position during shutdown
-Added extra debug info
+NOTE: Automatic updates are broken for the moment, you will have to download it manually. New version will open the download page instead of automatically updating.
+
+Added capability to open update link in web browser
+Fixed treemap not working correctly with only 1 item on the list
+Blacklisted "Installer" folder for drive scanning
+Relaxed overly strict check for questionable directory names
+Updated rate link to a new website
 </Changes>
-<Hash>6b05b161dcc863efb5b6a4473c6d41b8</Hash>
+<Hash></Hash>
 </Update>
 </Root>
