@@ -31,6 +31,8 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "UninstallerType_StoreApp")]
         StoreApp,
         [LocalisedName(typeof(Localisation), "UninstallerType_SimpleDelete")]
-        SimpleDelete
+        SimpleDelete,
+        [LocalisedName(typeof(Localisation), "UninstallerType_Chocolatey")]
+        Chocolatey
     }
 }

@@ -229,6 +229,8 @@ namespace UninstallTools.Factory
                 miscFactories.Add(new WindowsFeatureFactory(), Localisation.Progress_AppStores_WinFeatures);
             if (UninstallToolsGlobalConfig.ScanWinUpdates)
                 miscFactories.Add(new WindowsUpdateFactory(), Localisation.Progress_AppStores_WinUpdates);
+            if (UninstallToolsGlobalConfig.ScanChocolatey)
+                miscFactories.Add(new ChocolateyFactory(), Localisation.Progress_AppStores_Chocolatey);
 
             var progress = 0;
             foreach (var kvp in miscFactories)

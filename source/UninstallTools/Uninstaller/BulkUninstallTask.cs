@@ -322,6 +322,8 @@ namespace UninstallTools.Uninstaller
                 case UninstallerType.WindowsFeature:
                 case UninstallerType.WindowsUpdate:
                 case UninstallerType.Unknown:
+                // Chocolatey can use app's original uninstaller, so it's essentially unknown
+                case UninstallerType.Chocolatey:
                     target = UninstallerType.Msiexec;
                     break;
 
