@@ -1,9 +1,7 @@
 ﻿using Klocman.Tools;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 
 namespace UninstallTools.Factory
@@ -67,6 +65,7 @@ namespace UninstallTools.Factory
                 Console.WriteLine(ex);
             }
         }
+
         private static readonly string[] NewlineSeparators = StringTools.NewLineChars.ToArray();
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
