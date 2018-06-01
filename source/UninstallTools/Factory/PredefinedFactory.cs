@@ -108,7 +108,7 @@ namespace UninstallTools.Factory
                 IsOrphaned = true,
                 IsValid = File.Exists(Path.Combine(SteamFactory.SteamLocation, "uninstall.exe")),
                 InstallDate = Directory.GetCreationTime(SteamFactory.SteamLocation),
-                Publisher = "Valve Software"
+                Publisher = "Valve Corporation"
             };
         }
     }
