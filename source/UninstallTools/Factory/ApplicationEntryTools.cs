@@ -25,19 +25,26 @@ namespace UninstallTools.Factory
             if (PathTools.PathsEqual(baseEntry.InstallLocation, otherEntry.InstallLocation))
                 return true;
 
+            if (!string.IsNullOrEmpty(baseEntry.UninstallString))
+            {
+                if (PathTools.PathsEqual(baseEntry.UninstallString, otherEntry.UninstallString))
+                    return true;
+
+                if (!string.IsNullOrEmpty(otherEntry.InstallLocation) 
+                    && baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                    return true;
+            }
+
+            if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
+                && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+                return true;
+
             minimumScore -= 1;
             var score = -1;
 
             if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation))
                 AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation,
                     StringComparison.InvariantCultureIgnoreCase));
-
-            if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation) && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                return true;
-
-            if (!string.IsNullOrEmpty(baseEntry.UninstallString) && !string.IsNullOrEmpty(otherEntry.InstallLocation) &&
-                baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                return true;
 
             AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ?
                 baseEntry.Is64Bit == otherEntry.Is64Bit : (bool?)null);
