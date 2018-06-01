@@ -79,7 +79,7 @@ namespace UninstallTools.Factory
             var appEntries = result.Split(NewlineSeparators, StringSplitOptions.RemoveEmptyEntries);
             var appNames = appEntries.Select(x =>
             {
-                var i = x.LastIndexOf('|');
+                var i = x.IndexOf('|');
                 if (i <= 0) return null;
                 return new { name = x.Substring(0, i), version = x.Substring(i + 1) };
             });
