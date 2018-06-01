@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
@@ -19,7 +20,6 @@ namespace UninstallTools.Factory
                     GetChocoInfo();
                 return _chocoLocation;
             }
-            private set { _chocoLocation = value; }
         }
 
         internal static bool ChocoIsAvailable
@@ -82,7 +82,7 @@ namespace UninstallTools.Factory
                 var i = x.IndexOf('|');
                 if (i <= 0) return null;
                 return new { name = x.Substring(0, i), version = x.Substring(i + 1) };
-            });
+            }).Where(x => x != null);
 
             foreach (var appName in appNames)
             {
@@ -120,16 +120,16 @@ namespace UninstallTools.Factory
 
                 // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
                 psc.Arguments += " -n --skipautouninstaller";
-
-                var junk = new Junk.Containers.RunProcessJunk(entry, null, psc, "Uninstall in Chocolatey");
+                var junk = new Junk.Containers.RunProcessJunk(entry, null, psc, Localisation.ChocolateyFactory_UninstallInChocolateyJunkName);
                 junk.Confidence.Add(Junk.Confidence.ConfidenceRecords.ExplicitConnection);
                 entry.AdditionalJunk.Add(junk);
-                
+
                 yield return entry;
             }
         }
 
-        private static void AddInfo(ApplicationUninstallerEntry target, Dictionary<string, string> source, string key, Action<ApplicationUninstallerEntry, string> setter)
+        private static void AddInfo(ApplicationUninstallerEntry target, Dictionary<string, string> source, 
+            string key, Action<ApplicationUninstallerEntry, string> setter)
         {
             if (source.TryGetValue(key, out var val))
             {
@@ -139,7 +139,7 @@ namespace UninstallTools.Factory
                 }
                 catch (SystemException ex)
                 {
-                    Console.WriteLine("Exception while extracting info from choco: " + ex.Message);
+                    Console.WriteLine(@"Exception while extracting info from choco: " + ex.Message);
                 }
             }
         }

@@ -79,6 +79,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uninstall in Chocolatey.
+        /// </summary>
+        internal static string ChocolateyFactory_UninstallInChocolateyJunkName {
+            get {
+                return ResourceManager.GetString("ChocolateyFactory_UninstallInChocolateyJunkName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment.
         /// </summary>
         internal static string Comment {

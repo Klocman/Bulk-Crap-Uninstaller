@@ -552,4 +552,8 @@
   <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
     <value>Searching for Chocolatey packages</value>
   </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Uninstall in Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
 </root>
