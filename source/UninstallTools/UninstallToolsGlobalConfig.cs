@@ -149,7 +149,7 @@ namespace UninstallTools
 
         public static bool ScanWinUpdates { get; set; }
 
-        public static bool ScanChocolatey { get; set; } = true;
+        public static bool ScanChocolatey { get; set; }
 
         /// <summary>
         ///     Built-in program files paths.

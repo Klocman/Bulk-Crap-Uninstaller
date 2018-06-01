@@ -102,6 +102,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.checkBoxChoco = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -474,6 +475,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanWinFeatures);
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanStoreApps);
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanSteam);
+            this.groupBoxAppStores.Controls.Add(this.checkBoxChoco);
             this.groupBoxAppStores.Name = "groupBoxAppStores";
             this.groupBoxAppStores.TabStop = false;
             // 
@@ -625,6 +627,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
+            // checkBoxChoco
+            // 
+            resources.ApplyResources(this.checkBoxChoco, "checkBoxChoco");
+            this.checkBoxChoco.Name = "checkBoxChoco";
+            this.checkBoxChoco.UseVisualStyleBackColor = true;
+            // 
             // SettingsWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -769,5 +777,6 @@ namespace BulkCrapUninstaller.Forms
         private Controls.Settings.CacheSettings cacheSettings1;
         private GroupBox groupBox3;
         private FlowLayoutPanel flowLayoutPanel10;
+        private CheckBox checkBoxChoco;
     }
 }

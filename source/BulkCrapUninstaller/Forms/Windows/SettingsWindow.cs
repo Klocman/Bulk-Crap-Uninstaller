@@ -52,6 +52,7 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxScanDrives, x => x.ScanDrives, this);
             _settings.BindControl(checkBoxScanRegistry, x => x.ScanRegistry, this);
             _settings.BindControl(checkBoxPreDefined, x => x.ScanPreDefined, this);
+            _settings.BindControl(checkBoxChoco, x => x.ScanChocolatey, this);
 
             foreach (YesNoAsk value in Enum.GetValues(typeof(YesNoAsk)))
             {
