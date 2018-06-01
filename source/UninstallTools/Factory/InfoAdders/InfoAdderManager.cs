@@ -144,6 +144,12 @@ namespace UninstallTools.Factory.InfoAdders
         /// <param name="source">Copy from this object</param>
         public void CopyMissingInformation(ApplicationUninstallerEntry target, ApplicationUninstallerEntry source)
         {
+            if (target.StartupEntries != null && source.StartupEntries != null)
+            {
+                // In this case the entries will not be automatically merged
+                target.StartupEntries = target.StartupEntries.Concat(source.StartupEntries);
+            }
+
             foreach (var property in TargetProperties.Values)
             {
                 // Skip if target has non-default value assigned to this property
