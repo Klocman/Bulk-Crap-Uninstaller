@@ -99,17 +99,26 @@ namespace UninstallTools.Factory
                 entry.RatingId = "Choco " + appName.name;
                 entry.UninstallerKind = UninstallerType.Chocolatey;
 
-                AddInfo(entry, kvps, "Tags", (e, s) => e.Comment = s);
+                AddInfo(entry, kvps, "Summary", (e, s) => e.Comment = s);
+                if (string.IsNullOrEmpty(entry.Comment))
+                {
+                    AddInfo(entry, kvps, "Description", (e, s) => e.Comment = s);
+                    if (string.IsNullOrEmpty(entry.Comment))
+                        AddInfo(entry, kvps, "Tags", (e, s) => e.Comment = s);
+                }
 
                 AddInfo(entry, kvps, "Documentation", (e, s) => e.AboutUrl = s);
                 if (string.IsNullOrEmpty(entry.AboutUrl))
+                {
                     AddInfo(entry, kvps, "Software Site", (e, s) => e.AboutUrl = s);
+                    if (string.IsNullOrEmpty(entry.AboutUrl))
+                        AddInfo(entry, kvps, "Chocolatey Package Source", (e, s) => e.AboutUrl = s);
+                }
 
                 entry.UninstallString = $"\"{ChocoLocation}\" uninstall {appName.name} -y -r";
 
                 yield return entry;
             }
-
         }
 
         private static void AddInfo(ApplicationUninstallerEntry target, Dictionary<string, string> source, string key, Action<ApplicationUninstallerEntry, string> setter)
