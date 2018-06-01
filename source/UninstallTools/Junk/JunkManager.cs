@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Klocman.Tools;
 using UninstallTools.Junk.Containers;
-using UninstallTools.Junk.Finders.Misc;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Junk
@@ -97,6 +96,11 @@ namespace UninstallTools.Junk
             }
 
             progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Finishing));
+
+            foreach(var target in targets)
+            {
+                results.AddRange(target.AdditionalJunk);
+            }
 
             return CleanUpResults(results);
         }

@@ -391,7 +391,9 @@ namespace BulkCrapUninstaller.Functions
                     var itemsRemoved = 0; // current value
 
                     var sortedJunk = from item in selectedJunk
-                                         // Need to stop and unregister service before deleting its exe
+                                     // Run commands before deleting any files or reg keys to avoid missing files
+                                     orderby item is RunProcessJunk descending
+                                     // Need to stop and unregister service before deleting its exe
                                      orderby item is StartupJunkNode descending
                                      select item;
 

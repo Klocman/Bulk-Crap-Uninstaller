@@ -155,6 +155,8 @@ namespace UninstallTools.Factory.InfoAdders
                 if (!Equals(newValue, property.Tag))
                     property.CompiledSet(target, newValue);
             }
+
+            target.AdditionalJunk.AddRange(source.AdditionalJunk);
         }
     }
 }

@@ -61,6 +61,12 @@ namespace UninstallTools
         {
         }
 
+        /// <summary>
+        /// Junk specified during creation of the entry that would not be detected afterwards. It's added to the results during junk scan.
+        /// </summary>
+        [XmlIgnore]
+        internal readonly List<Junk.Containers.IJunkResult> AdditionalJunk = new List<Junk.Containers.IJunkResult>();
+
         [ComparisonTarget]
         [LocalisedName(typeof(Localisation), "DisplayName")]
         public string DisplayName

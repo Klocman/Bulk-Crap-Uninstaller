@@ -114,8 +114,17 @@ namespace UninstallTools.Factory
                         AddInfo(entry, kvps, "Chocolatey Package Source", (e, s) => e.AboutUrl = s);
                 }
 
-                entry.UninstallString = $"\"{ChocoLocation}\" uninstall {appName.name} -y -r";
+                var psc = new ProcessStartCommand(ChocoLocation, $"uninstall {appName.name} -y -r");
 
+                entry.UninstallString = psc.ToString();
+
+                // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
+                psc.Arguments += " -n --skipautouninstaller";
+
+                var junk = new Junk.Containers.RunProcessJunk(entry, null, psc, "Uninstall in Chocolatey");
+                junk.Confidence.Add(Junk.Confidence.ConfidenceRecords.ExplicitConnection);
+                entry.AdditionalJunk.Add(junk);
+                
                 yield return entry;
             }
         }

@@ -94,6 +94,7 @@
     <Compile Include="Junk\Confidence\ConfidenceRecords.cs" />
     <Compile Include="Junk\Containers\FileSystemJunk.cs" />
     <Compile Include="Junk\Containers\JunkResultBase.cs" />
+    <Compile Include="Junk\Containers\RunProcessJunk.cs" />
     <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />
     <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
     <Compile Include="Junk\Finders\Drive\SpecificUninstallerKindScanner.cs" />

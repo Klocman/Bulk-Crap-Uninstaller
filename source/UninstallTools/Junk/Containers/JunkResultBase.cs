@@ -11,6 +11,7 @@ using UninstallTools.Properties;
 
 namespace UninstallTools.Junk.Containers
 {
+
     public abstract class JunkResultBase : IJunkResult
     {
         protected JunkResultBase(ApplicationUninstallerEntry application, IJunkCreator source) : this(application, source, new ConfidenceCollection())
