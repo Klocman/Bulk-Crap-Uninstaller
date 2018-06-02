@@ -676,8 +676,9 @@ namespace BulkCrapUninstaller.Forms
 
         private void fileToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
-            var selectionCount = _listView.SelectedUninstallerCount;
-            exportSelectedToolStripMenuItem.Enabled = selectionCount > 0;
+            var anySelected = _listView.SelectedUninstallerCount > 0;
+            exportSelectedToolStripMenuItem.Enabled = anySelected;
+            exportToABatchUninstallScriptToolStripMenuItem.Enabled = anySelected;
 
             exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Enabled =
                 _listView.SelectedUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
@@ -1600,6 +1601,38 @@ namespace BulkCrapUninstaller.Forms
                 {
                     try { File.WriteAllLines(d.FileName, StoreAppFactory.ToPowerShellRemoveCommands(_listView.SelectedUninstallers).ToArray()); }
                     catch (SystemException ex) { PremadeDialogs.GenericError(ex); }
+                }
+            }
+        }
+
+        private void exportToABatchUninstallScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var d = new SaveFileDialog())
+            {
+                d.OverwritePrompt = true;
+                d.CreatePrompt = false;
+                d.AddExtension = true;
+                d.DefaultExt = ".bat";
+                d.Filter = "Batch file|*.bat";
+                d.Title = exportToABatchUninstallScriptToolStripMenuItem.Text;
+                d.RestoreDirectory = true;
+                d.InitialDirectory = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_DESKTOPDIRECTORY);
+
+                if (d.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.WriteAllLines(d.FileName,
+                            new[] { "echo off", "cls", "echo BCU Generated batch uninstall script" }.Concat(
+                            _listView.SelectedUninstallers
+                                .Select(x => x.QuietUninstallPossible ? x.QuietUninstallString : x.UninstallString)
+                                .Where(x => !string.IsNullOrEmpty(x))
+                            ).Concat(new[] { "pause", "exit" }).ToArray());
+                    }
+                    catch (SystemException ex)
+                    {
+                        PremadeDialogs.GenericError(ex);
+                    }
                 }
             }
         }

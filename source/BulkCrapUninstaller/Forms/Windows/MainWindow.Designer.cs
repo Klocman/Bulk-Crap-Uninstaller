@@ -214,6 +214,7 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.exportToABatchUninstallScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -968,6 +969,7 @@ namespace BulkCrapUninstaller.Forms
             this.loadUninstallerListToolStripMenuItem,
             this.toolStripSeparator30,
             this.exportSelectedToolStripMenuItem,
+            this.exportToABatchUninstallScriptToolStripMenuItem,
             this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem,
             this.toolStripSeparator10,
             this.exitToolStripMenuItem});
@@ -1615,6 +1617,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker.ContainerControl = this;
             // 
+            // exportToABatchUninstallScriptToolStripMenuItem
+            // 
+            this.exportToABatchUninstallScriptToolStripMenuItem.Name = "exportToABatchUninstallScriptToolStripMenuItem";
+            resources.ApplyResources(this.exportToABatchUninstallScriptToolStripMenuItem, "exportToABatchUninstallScriptToolStripMenuItem");
+            this.exportToABatchUninstallScriptToolStripMenuItem.Click += new System.EventHandler(this.exportToABatchUninstallScriptToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -1845,6 +1853,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem startDiskCleanupToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator30;
         private ToolStripMenuItem exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem;
+        private ToolStripMenuItem exportToABatchUninstallScriptToolStripMenuItem;
     }
 }
 
