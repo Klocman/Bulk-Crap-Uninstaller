@@ -14,11 +14,11 @@ namespace UninstallTools.Junk.Containers
     {
         public ProcessStartCommand ProcessToStart { get; }
 
-        private readonly string junkName;
+        private readonly string _junkName;
 
         public RunProcessJunk(ApplicationUninstallerEntry application, IJunkCreator source, ProcessStartCommand processToStart, string junkName) : base(application, source)
         {
-            this.junkName = junkName;
+            _junkName = junkName;
             ProcessToStart = processToStart;
         }
 
@@ -34,7 +34,7 @@ namespace UninstallTools.Junk.Containers
                 var info = ProcessToStart.ToProcessStartInfo();
                 info.WindowStyle = ProcessWindowStyle.Minimized;
                 info.UseShellExecute = true;
-                Process.Start(info).WaitForExit();
+                Process.Start(info)?.WaitForExit();
             }
             catch (SystemException ex)
             {
@@ -44,7 +44,7 @@ namespace UninstallTools.Junk.Containers
 
         public override string GetDisplayName()
         {
-            return junkName;
+            return _junkName;
         }
 
         public override void Open()

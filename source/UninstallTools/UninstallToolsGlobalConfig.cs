@@ -179,7 +179,7 @@ namespace UninstallTools
 
         /// <summary>
         ///     Get a list of directiories containing programs. Optionally user-defined directories are added.
-        ///     The boolean value is true if the directory is confirmed to contain 64bit applications.
+        ///     The boolean value is true if the directory is confirmed to contain 64bit applications, false if 32bit.
         /// </summary>
         /// <param name="includeUserDirectories">Add user-defined directories.</param>
         internal static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(

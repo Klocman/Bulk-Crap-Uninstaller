@@ -205,12 +205,12 @@ namespace UninstallTools.Uninstaller
         {
             try
             {
-                using (client)
-                using (writer)
+                using (_client)
+                using (_writer)
                 {
-                    writer?.WriteLine(@"stop");
-                    client = null;
-                    writer = null;
+                    _writer?.WriteLine(@"stop");
+                    _client = null;
+                    _writer = null;
                 }
 
                 if (_quietUninstallDaemonProcess != null && !_quietUninstallDaemonProcess.HasExited)
@@ -244,11 +244,11 @@ namespace UninstallTools.Uninstaller
 
                         try
                         {
-                            client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
-                            writer = new StreamWriter(client);
+                            _client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
+                            _writer = new StreamWriter(_client);
 
-                            client.Connect(7000);
-                            writer.AutoFlush = true;
+                            _client.Connect(7000);
+                            _writer.AutoFlush = true;
                         }
                         catch (SystemException ex)
                         {
@@ -271,19 +271,19 @@ namespace UninstallTools.Uninstaller
             }
         }
 
-        NamedPipeClientStream client;
-        StreamWriter writer;
+        private NamedPipeClientStream _client;
+        private StreamWriter _writer;
 
         internal void SendProcessesToWatchToDeamon(IEnumerable<int> processIdsToAutomate)
         {
-            if (writer == null || client == null || !client.IsConnected) return;
+            if (_writer == null || _client == null || !_client.IsConnected) return;
 
             var pidList = processIdsToAutomate.ToList();
 
             foreach (var pid in pidList)
             {
                 Debug.WriteLine("Sending pid: " + pid + " to automatizer daemon");
-                writer.WriteLine(pid.ToString(CultureInfo.InvariantCulture));
+                _writer.WriteLine(pid.ToString(CultureInfo.InvariantCulture));
             }
         }
 
