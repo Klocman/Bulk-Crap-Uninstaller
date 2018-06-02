@@ -124,6 +124,7 @@ namespace BulkCrapUninstaller.Forms
             this.loadUninstallerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.exportSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToABatchUninstallScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -191,6 +192,7 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uninstallFromDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.troubleshootUninstallProblemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tryToInstallNETV35ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
@@ -214,7 +216,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.exportToABatchUninstallScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -1005,6 +1006,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.exportSelectedToolStripMenuItem, "exportSelectedToolStripMenuItem");
             this.exportSelectedToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedToolStripMenuItem_Click);
             // 
+            // exportToABatchUninstallScriptToolStripMenuItem
+            // 
+            this.exportToABatchUninstallScriptToolStripMenuItem.Name = "exportToABatchUninstallScriptToolStripMenuItem";
+            resources.ApplyResources(this.exportToABatchUninstallScriptToolStripMenuItem, "exportToABatchUninstallScriptToolStripMenuItem");
+            this.exportToABatchUninstallScriptToolStripMenuItem.Click += new System.EventHandler(this.exportToABatchUninstallScriptToolStripMenuItem_Click);
+            // 
             // exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem
             // 
             this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Name = "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem";
@@ -1427,6 +1434,7 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem,
             this.uninstallFromDirectoryToolStripMenuItem,
             this.toolStripSeparator13,
+            this.troubleshootUninstallProblemsToolStripMenuItem,
             this.startDiskCleanupToolStripMenuItem,
             this.tryToInstallNETV35ToolStripMenuItem,
             this.toolStripSeparator29,
@@ -1472,6 +1480,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+            // 
+            // troubleshootUninstallProblemsToolStripMenuItem
+            // 
+            this.troubleshootUninstallProblemsToolStripMenuItem.Name = "troubleshootUninstallProblemsToolStripMenuItem";
+            resources.ApplyResources(this.troubleshootUninstallProblemsToolStripMenuItem, "troubleshootUninstallProblemsToolStripMenuItem");
+            this.troubleshootUninstallProblemsToolStripMenuItem.Click += new System.EventHandler(this.troubleshootUninstallProblemsToolStripMenuItem_Click);
             // 
             // startDiskCleanupToolStripMenuItem
             // 
@@ -1616,12 +1630,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
-            // 
-            // exportToABatchUninstallScriptToolStripMenuItem
-            // 
-            this.exportToABatchUninstallScriptToolStripMenuItem.Name = "exportToABatchUninstallScriptToolStripMenuItem";
-            resources.ApplyResources(this.exportToABatchUninstallScriptToolStripMenuItem, "exportToABatchUninstallScriptToolStripMenuItem");
-            this.exportToABatchUninstallScriptToolStripMenuItem.Click += new System.EventHandler(this.exportToABatchUninstallScriptToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1854,6 +1862,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator30;
         private ToolStripMenuItem exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem;
         private ToolStripMenuItem exportToABatchUninstallScriptToolStripMenuItem;
+        private ToolStripMenuItem troubleshootUninstallProblemsToolStripMenuItem;
     }
 }
 

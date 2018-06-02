@@ -1636,5 +1636,12 @@ namespace BulkCrapUninstaller.Forms
                 }
             }
         }
+
+        private void troubleshootUninstallProblemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var toolPath = Path.Combine(Program.AssemblyLocation.FullName,
+                @"Resources\MicrosoftProgram_Install_and_Uninstall.meta.diagcab");
+            PremadeDialogs.StartProcessSafely(toolPath);
+        }
     }
 }

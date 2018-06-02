@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=4.3.4.35116, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=4.3.4.40016, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -744,7 +744,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.3.4.35116, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.3.4.40016, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -828,7 +828,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.3.4.35116, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.3.4.40016, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -1326,6 +1326,219 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>354, 17</value>
   </metadata>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 20</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Basic operations</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Advanced operations</value>
+  </data>
+  <data name="openStartupManagerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAABJ5JREFUaEPdmU1oHVUYhvNzQyAiCtZIF4JgpQupSFFBoSKigYqLIi0olCLSgroS
+        oaAuRJBQquAiIkIL3bgQugsi4sYGRAoFhS5EF0ULCoEg7aJFSzC9Pm+Yc/ny8c7cOzfZjB883Lnv+X7O
+        uXPmzJm5EysrK/8LrNhFrNhFrNhFrNhFrNhFrNhFrNjE1NTUwxMTEy/BEXh8bm5u1vm1hbx7lXNycvI4
+        PNM2rxUdVcevQj/xB4UPuZhRUKfJ8UvKKa7T9vr8/Py0i8tYMYN9Ggo4/un3+/tdbBN0dA+xN1KuzBcu
+        NmPFCMWOmuSFW/AZ3J/j9EuqowzwCYHPvpmZmbuyX6/Xu4+2j+EmuBp98hzPcRkrRrDVmDRwGR6KvhR8
+        FG0RLoEG6eJ+hzP4PhenDYPdjf598IusxjoOKxaqC9sl/jxejJgu/h+rtjZcgTfKgPTJ91OhfYD6Uuo5
+        rFjQKTVJT5b26enpB/n+XWofh59gX8mLnaz0AfTlaGl3WLGAvRmTwWAQJNZq81dqj/wNv4GmmdBx7XUA
+        N8k5WP2wPJgjpc1hxULV2ZLobNJdp27DMu2HNzY27oy5qrge7c/COXDX0HoajBaSzTbVjLkyVixUhTWP
+        r3J8tzTsKXCD+AoG02MY5NPS+2WIL6zD8/LRj8GxzuQV9SXniFgxgj0NCzom2S6O/4RY+Db6O+7GNTs7
+        ewfL6z1ZjxCr61CdjznXtCxX7Tr7m/WbsGId2JmqUEFT6RXnSwd0/ykdvNy05cD3UJUr5j7nfOuwooNi
+        mgr/pmKLzldgF4Kf5vge51fA3ov+YlhMxIoO7GwsAo3zFtsykGH3AeXCT9djrDFYYIZhxYymBUmvxSIU
+        ftX5FrBWAxHKGWPg2qi7YCtmKBCXYbHadDYE1nogAtuyJVJt55exYoZkH8TksOT8Iti4A1mKcart/DJW
+        zGDLMTkMXw7HH4iee2KtndnGC0x7oVadwrYMBHTz0506c7rcM6q4BYhxF2LeOqyYwX4Oidlx9+91fhEs
+        D6SJwVTFngy6uBjz1mHFDLZlIMzboes7pl87dqiJ8yVOF3dq29Ez8m1IPNJKwlnbj2/eztTxfonD8jWy
+        HPPWYcUM9klILD50fhkG3IPH4DAx6qBjIe7T8M0r5KmYsw4rZjAVjMl/dX47gXKHOqLxOaRgxYxeGpAw
+        Pz+84Hy3A3Yw5Be3hu2eC1Z0YOdDAXHJ+W0H5Qz5xWARGIYVHdUrnVhEnHC+44C9FvJuoprO12HFOrCv
+        YyFYb1OsDnI8Qi4948fc3zjfOqxYByvKAxS4ngpqV3zQ+Y8CphtgXqZvsHvY6/zrsGITmFaw/DSn76cZ
+        6OZz/SjoMZiYdyE/5opjLqYJKw4D03zOgxE6W4tNezGm0W4G/BZ+ayEuMnjl1AYrjgJWN5iCXqlqo/hR
+        hY4vQlPMWIMQVhwV7AC4vxrassZZetHVGBUrtkFzvdpW5EVgFPR+bIn4XS53G6w4DtXFewz0ELbl+T6h
+        i/sHeDs+h2wXK24XfuGelk8+9b7qhOD4ZT4PuFepO4EVu4gVu4gVu4gVu4gVu4gVu4gVu8fKxH8/CDAt
+        CHsE6AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="openStartupManagerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Startup Manager</value>
+  </data>
+  <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 6</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAsRJREFUaEPt2D+IE0EYBfBNsiEYES0EueKw8MBCtFLBTiwsRMTGwlawMKVwYC1Y
+        WYiClaCFncU1cgg2RsTC6w4RwUILC8FGwSvEXIzvLbsyDm+Tmf2XjNzAj0vezs7Od7Ob3SQaDof/BRmG
+        SIYhkmGIZNikyWRyMoqidf5V213JsEksAiap9VarFat+s8iwKelqZEXQI9XPhQybgmauxjZWY0X1cyHD
+        JlS5GiTDJqA9M4ootRokw7qhnTOKKL0aJMO6oW0YRZReDZJhndAqXw2SYZ3QKl8NkmFd0GpZDZJhVdrt
+        9hFM9jY8Ba7EF6h8NUiGZfX7/R4m+hh+GxO3bbKf2r8IGZaFxiLU5G2Fn61sMiwD7awxURerahxfMiyr
+        0+kcwgRvgnlN5PmkxvAlwyJwipzGpD7DXTxHHUuzGO8vwBpsgypk0u1299rj+ZKhr7SILWuCm3Ad2/az
+        D4pbwusbyN4bfTLL9pi+ZOgjpwjTL1hDv/OQXNjpPg+B+23ZYxYhQ1cORdi+Au8rR7k/Tym8PmOPW4QM
+        XRQowsZTb4BxklOvLBnOUkERphfqGL5kOA3aCaiqCJpPIbhHHMTBwy+E0C4ZEylrfoUQ2hWY9lDoar6F
+        UPpLyEdrYr7mXwiNRqNdmMwt+GlMzke9hcRxfMBF1h9tGe7BN1ATzpMUwn+IGl8Zj8d7suP+Pb4dZKyD
+        TfMKkjs19Xq93XjP6+c58PFE7WNKCkEbGNks97PjZf55Y7J2nIUX/RNeM+YYuHHug4vYdgdeww+w912o
+        QkxvYRXf1w+rcVHYCrbzR4ircBlOMUfLK+QB8OOe+DWBWSOFmD4AJ3INBRznaaeORWh5hQyMPu/SrPFC
+        FD4B84HxDbwEXmMs+Duo/gtbiK+dQhLpDouAn3Q8HSn73h9kIcpOIYvGvZDQyDBEMgyRDEMkwxDJMDzD
+        6A+ao+bo+vxNcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clean up "Program Files" folders...</value>
+  </data>
+  <data name="nukeMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="nukeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Uninstall by window, directory, or file...</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Uninstall from directory...</value>
+  </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 6</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Troubleshoot uninstallation problems...</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start Disk Cleanup</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Install .NET v3.5 (add feature)</value>
+  </data>
+  <data name="toolStripSeparator29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 6</value>
+  </data>
+  <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open "&amp;Programs and Features"</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open "System Recovery"</value>
+  </data>
+  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 6</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAA8NJREFUaEPdmU9IVFEYxdWZYciIhMqIiISCFm0iol3QSshFhCAUtIhoFREhCQkR
+        kQsXrVpIRAtpEYFgECEtHYgWBhUR0kZw0UKQkCAXgY7TOfKu3K7nzXz3zRi8+eDHG87ce+5337z7701H
+        pVJpC6SYR6SYR6SYR6SYR6SYlVKptFfpIbVa7XRnZ+cp9V1WpBgL4hx4DX4Xi8V9qowPYhbUwBy43t3d
+        XVblYpCiBdzRIpK4Aj4lSTlGVHlHV1fXyaA8WQGPy+XyblXHghQtIJ4kSYQs17vDiAmvrM+iKm9FihZS
+        7uwm+LWuqTq84/ied1/VG1V1rEjRCmLGS8RnAZ05ww7h8wjB56u4jiXfh6xjAjik2rAiRSuIfi+ZZphS
+        /jFIMQbEvJdQVgaUdwxStJI88x+CpLIw1cyMRaTooDmnWfUdn2kk8DlIqBnm0Vafaos0Wmuk6ECMgyUw
+        5jdSrVb3QPsCVEJ/wDQHN2a2E7j2rK2t7SoUCkehXwBPwS+g6n71fxkurqh/F/p3MO50hRQJDLjgsROu
+        kQ3wDgyCl4kW8hYJH1N+PkjwIMpOBnUdb9D2eVzZBm+K05eYk/IjUiSIIc+kERto5F5vb29BeaWBOjdQ
+        dz3wqseQ8iFSJAi3H7IwrDwsoDO3hF8as8qDSLHeqi14pTxioIfnVxfmJj2UmHSEqzbHhTRMWMWYOKw8
+        YkjGzGrgrZjDbHlWeWwTfPCz96EyZ66fnpnPpKqXBXp5vj7s4HPkUvf8IsUQzuEwehg0QFIHXyz08nwd
+        42i3R5UPkaIChtz0hQ0dUWWzkDIuL6qyCikqEKNeA5u04mTnwLN/IPQHN1VZhRQViG0dUeWywvN+6A/M
+        07oUFXi0uHj90xDvoiqbBfgfD/2BeQxKMeQ/DXZufUL/1gx2mOR7+m2bBbFttigEkf9NI0G0xzaeMxUq
+        LnsmloPV9A4erOq/+FOiAyGPuslLh4/AT8CxddRlp3gsZgKcFKA3Oup+Q72t6bYlR11iePnQijcoDnZi
+        Z14+NCJ5/F4ECWVhDp3Yr9qwIsUYEK142zivvGOQYgyIKS+hZuhX/lakaCUZJ2nT5yM8LpdxHQYP8PkO
+        rgNgAajyM6oNK1K0gti2tU9YSXsFig7xDb2qk7pqW5CiFcSin4jHhCpPxPrk80zVsSBFC0wId/c+Gv8R
+        JNPwziL4n4lfh4/bba45qrwFKcaAzhTBJSTidsup+yEHFzqU4273PRiM3doopJgVdKjP+pxzolB6VqSY
+        R6SYR6SYR6SYR6SYPyodfwH48uDGAyghMQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Settings</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 20</value>
+  </data>
+  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open &amp;debug window</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="menuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 2</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>882, 24</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="reloadUninstallersToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1406,78 +1619,6 @@
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>E&amp;xit</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;View</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 20</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Basic operations</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Advanced operations</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Tools</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
-  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
-  </data>
-  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open &amp;debug window</value>
-  </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="menuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 2, 0, 2</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 24</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="showColorLegendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -1882,141 +2023,6 @@
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Open key in Regedit</value>
-  </data>
-  <data name="openStartupManagerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAABJ5JREFUaEPdmU1oHVUYhvNzQyAiCtZIF4JgpQupSFFBoSKigYqLIi0olCLSgroS
-        oaAuRJBQquAiIkIL3bgQugsi4sYGRAoFhS5EF0ULCoEg7aJFSzC9Pm+Yc/ny8c7cOzfZjB883Lnv+X7O
-        uXPmzJm5EysrK/8LrNhFrNhFrNhFrNhFrNhFrNhFrNjE1NTUwxMTEy/BEXh8bm5u1vm1hbx7lXNycvI4
-        PNM2rxUdVcevQj/xB4UPuZhRUKfJ8UvKKa7T9vr8/Py0i8tYMYN9Ggo4/un3+/tdbBN0dA+xN1KuzBcu
-        NmPFCMWOmuSFW/AZ3J/j9EuqowzwCYHPvpmZmbuyX6/Xu4+2j+EmuBp98hzPcRkrRrDVmDRwGR6KvhR8
-        FG0RLoEG6eJ+hzP4PhenDYPdjf598IusxjoOKxaqC9sl/jxejJgu/h+rtjZcgTfKgPTJ91OhfYD6Uuo5
-        rFjQKTVJT5b26enpB/n+XWofh59gX8mLnaz0AfTlaGl3WLGAvRmTwWAQJNZq81dqj/wNv4GmmdBx7XUA
-        N8k5WP2wPJgjpc1hxULV2ZLobNJdp27DMu2HNzY27oy5qrge7c/COXDX0HoajBaSzTbVjLkyVixUhTWP
-        r3J8tzTsKXCD+AoG02MY5NPS+2WIL6zD8/LRj8GxzuQV9SXniFgxgj0NCzom2S6O/4RY+Db6O+7GNTs7
-        ewfL6z1ZjxCr61CdjznXtCxX7Tr7m/WbsGId2JmqUEFT6RXnSwd0/ykdvNy05cD3UJUr5j7nfOuwooNi
-        mgr/pmKLzldgF4Kf5vge51fA3ov+YlhMxIoO7GwsAo3zFtsykGH3AeXCT9djrDFYYIZhxYymBUmvxSIU
-        ftX5FrBWAxHKGWPg2qi7YCtmKBCXYbHadDYE1nogAtuyJVJt55exYoZkH8TksOT8Iti4A1mKcart/DJW
-        zGDLMTkMXw7HH4iee2KtndnGC0x7oVadwrYMBHTz0506c7rcM6q4BYhxF2LeOqyYwX4Oidlx9+91fhEs
-        D6SJwVTFngy6uBjz1mHFDLZlIMzboes7pl87dqiJ8yVOF3dq29Ez8m1IPNJKwlnbj2/eztTxfonD8jWy
-        HPPWYcUM9klILD50fhkG3IPH4DAx6qBjIe7T8M0r5KmYsw4rZjAVjMl/dX47gXKHOqLxOaRgxYxeGpAw
-        Pz+84Hy3A3Yw5Be3hu2eC1Z0YOdDAXHJ+W0H5Qz5xWARGIYVHdUrnVhEnHC+44C9FvJuoprO12HFOrCv
-        YyFYb1OsDnI8Qi4948fc3zjfOqxYByvKAxS4ngpqV3zQ+Y8CphtgXqZvsHvY6/zrsGITmFaw/DSn76cZ
-        6OZz/SjoMZiYdyE/5opjLqYJKw4D03zOgxE6W4tNezGm0W4G/BZ+ayEuMnjl1AYrjgJWN5iCXqlqo/hR
-        hY4vQlPMWIMQVhwV7AC4vxrassZZetHVGBUrtkFzvdpW5EVgFPR+bIn4XS53G6w4DtXFewz0ELbl+T6h
-        i/sHeDs+h2wXK24XfuGelk8+9b7qhOD4ZT4PuFepO4EVu4gVu4gVu4gVu4gVu4gVu4gVu8fKxH8/CDAt
-        CHsE6AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="openStartupManagerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open Startup Manager</value>
-  </data>
-  <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAsRJREFUaEPt2D+IE0EYBfBNsiEYES0EueKw8MBCtFLBTiwsRMTGwlawMKVwYC1Y
-        WYiClaCFncU1cgg2RsTC6w4RwUILC8FGwSvEXIzvLbsyDm+Tmf2XjNzAj0vezs7Od7Ob3SQaDof/BRmG
-        SIYhkmGIZNikyWRyMoqidf5V213JsEksAiap9VarFat+s8iwKelqZEXQI9XPhQybgmauxjZWY0X1cyHD
-        JlS5GiTDJqA9M4ootRokw7qhnTOKKL0aJMO6oW0YRZReDZJhndAqXw2SYZ3QKl8NkmFd0GpZDZJhVdrt
-        9hFM9jY8Ba7EF6h8NUiGZfX7/R4m+hh+GxO3bbKf2r8IGZaFxiLU5G2Fn61sMiwD7awxURerahxfMiyr
-        0+kcwgRvgnlN5PmkxvAlwyJwipzGpD7DXTxHHUuzGO8vwBpsgypk0u1299rj+ZKhr7SILWuCm3Ad2/az
-        D4pbwusbyN4bfTLL9pi+ZOgjpwjTL1hDv/OQXNjpPg+B+23ZYxYhQ1cORdi+Au8rR7k/Tym8PmOPW4QM
-        XRQowsZTb4BxklOvLBnOUkERphfqGL5kOA3aCaiqCJpPIbhHHMTBwy+E0C4ZEylrfoUQ2hWY9lDoar6F
-        UPpLyEdrYr7mXwiNRqNdmMwt+GlMzke9hcRxfMBF1h9tGe7BN1ATzpMUwn+IGl8Zj8d7suP+Pb4dZKyD
-        TfMKkjs19Xq93XjP6+c58PFE7WNKCkEbGNks97PjZf55Y7J2nIUX/RNeM+YYuHHug4vYdgdeww+w912o
-        QkxvYRXf1w+rcVHYCrbzR4ircBlOMUfLK+QB8OOe+DWBWSOFmD4AJ3INBRznaaeORWh5hQyMPu/SrPFC
-        FD4B84HxDbwEXmMs+Duo/gtbiK+dQhLpDouAn3Q8HSn73h9kIcpOIYvGvZDQyDBEMgyRDEMkwxDJMDzD
-        6A+ao+bo+vxNcgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Clean up "Program Files" folders...</value>
-  </data>
-  <data name="nukeMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="nukeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
-    <value>Uninstall by window, directory, or file...</value>
-  </data>
-  <data name="uninstallFromDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uninstall from directory...</value>
-  </data>
-  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="startDiskCleanupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start Disk Cleanup</value>
-  </data>
-  <data name="tryToInstallNETV35ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Install .NET v3.5 (add feature)</value>
-  </data>
-  <data name="toolStripSeparator29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open "&amp;Programs and Features"</value>
-  </data>
-  <data name="openSystemRestoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open "System Recovery"</value>
-  </data>
-  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAA8NJREFUaEPdmU9IVFEYxdWZYciIhMqIiISCFm0iol3QSshFhCAUtIhoFREhCQkR
-        kQsXrVpIRAtpEYFgECEtHYgWBhUR0kZw0UKQkCAXgY7TOfKu3K7nzXz3zRi8+eDHG87ce+5337z7701H
-        pVJpC6SYR6SYR6SYR6SYR6SYlVKptFfpIbVa7XRnZ+cp9V1WpBgL4hx4DX4Xi8V9qowPYhbUwBy43t3d
-        XVblYpCiBdzRIpK4Aj4lSTlGVHlHV1fXyaA8WQGPy+XyblXHghQtIJ4kSYQs17vDiAmvrM+iKm9FihZS
-        7uwm+LWuqTq84/ied1/VG1V1rEjRCmLGS8RnAZ05ww7h8wjB56u4jiXfh6xjAjik2rAiRSuIfi+ZZphS
-        /jFIMQbEvJdQVgaUdwxStJI88x+CpLIw1cyMRaTooDmnWfUdn2kk8DlIqBnm0Vafaos0Wmuk6ECMgyUw
-        5jdSrVb3QPsCVEJ/wDQHN2a2E7j2rK2t7SoUCkehXwBPwS+g6n71fxkurqh/F/p3MO50hRQJDLjgsROu
-        kQ3wDgyCl4kW8hYJH1N+PkjwIMpOBnUdb9D2eVzZBm+K05eYk/IjUiSIIc+kERto5F5vb29BeaWBOjdQ
-        dz3wqseQ8iFSJAi3H7IwrDwsoDO3hF8as8qDSLHeqi14pTxioIfnVxfmJj2UmHSEqzbHhTRMWMWYOKw8
-        YkjGzGrgrZjDbHlWeWwTfPCz96EyZ66fnpnPpKqXBXp5vj7s4HPkUvf8IsUQzuEwehg0QFIHXyz08nwd
-        42i3R5UPkaIChtz0hQ0dUWWzkDIuL6qyCikqEKNeA5u04mTnwLN/IPQHN1VZhRQViG0dUeWywvN+6A/M
-        07oUFXi0uHj90xDvoiqbBfgfD/2BeQxKMeQ/DXZufUL/1gx2mOR7+m2bBbFttigEkf9NI0G0xzaeMxUq
-        LnsmloPV9A4erOq/+FOiAyGPuslLh4/AT8CxddRlp3gsZgKcFKA3Oup+Q72t6bYlR11iePnQijcoDnZi
-        Z14+NCJ5/F4ECWVhDp3Yr9qwIsUYEK142zivvGOQYgyIKS+hZuhX/lakaCUZJ2nT5yM8LpdxHQYP8PkO
-        rgNgAajyM6oNK1K0gti2tU9YSXsFig7xDb2qk7pqW5CiFcSin4jHhCpPxPrk80zVsSBFC0wId/c+Gv8R
-        JNPwziL4n4lfh4/bba45qrwFKcaAzhTBJSTidsup+yEHFzqU4273PRiM3doopJgVdKjP+pxzolB6VqSY
-        R6SYR6SYR6SYR6SYPyodfwH48uDGAyghMQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Settings</value>
   </data>
   <data name="openHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
@@ -2635,6 +2641,12 @@
   <data name="&gt;&gt;exportSelectedToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;exportToABatchUninstallScriptToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportToABatchUninstallScriptToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exportToABatchUninstallScriptToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Name" xml:space="preserve">
     <value>exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem</value>
   </data>
@@ -3037,6 +3049,12 @@
   <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;troubleshootUninstallProblemsToolStripMenuItem.Name" xml:space="preserve">
+    <value>troubleshootUninstallProblemsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;troubleshootUninstallProblemsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;startDiskCleanupToolStripMenuItem.Name" xml:space="preserve">
     <value>startDiskCleanupToolStripMenuItem</value>
   </data>
@@ -3173,13 +3191,7 @@
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.3.4.35116, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;exportToABatchUninstallScriptToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportToABatchUninstallScriptToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exportToABatchUninstallScriptToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.3.4.40016, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
