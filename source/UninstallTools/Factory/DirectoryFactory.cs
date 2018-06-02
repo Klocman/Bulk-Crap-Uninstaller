@@ -46,9 +46,9 @@ namespace UninstallTools.Factory
                     directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
-                var detectedEntries = TryCreateFromDirectory(directory.Key, directory.Value, dirsToSkip);
+                var detectedEntries = TryCreateFromDirectory(directory.Key, directory.Value, dirsToSkip).ToList();
 
-                results.AddRange(detectedEntries);
+                results = ApplicationUninstallerFactory.MergeResults(results, detectedEntries, null);
             }
 
             return results;
@@ -77,12 +77,12 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Get directories to scan for applications
         /// </summary>
-        private static IEnumerable<KVP> GetDirectoriesToScan(IEnumerable<ApplicationUninstallerEntry> existingUninstallers, 
+        private static IEnumerable<KVP> GetDirectoriesToScan(IEnumerable<ApplicationUninstallerEntry> existingUninstallers,
             IEnumerable<KVP> pfDirs, IEnumerable<string> dirsToSkip)
         {
             var pfDirectories = pfDirs.ToList();
 
-            if(UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles)
+            if (UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles)
             {
                 var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
                   .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))

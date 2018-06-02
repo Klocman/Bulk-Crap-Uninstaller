@@ -16,31 +16,42 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Try to figure out if base uninstaller entry and other entry are pointing to the same application.
         /// Minimum score changes how similar the applications have to be (best use small values, higher is harder)
+        /// Suggested min score is 1
         /// </summary>
-        public static bool AreEntriesRelated(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry otherEntry, int minimumScore = 1)
+        public static bool AreEntriesRelated(ApplicationUninstallerEntry baseEntry,
+            ApplicationUninstallerEntry otherEntry, int minimumScore)
         {
-            //Debug.Assert(!(otherEntry.DisplayName.Contains("vnc", StringComparison.OrdinalIgnoreCase) && 
-            //    baseEntry.DisplayName.Contains("vnc", StringComparison.OrdinalIgnoreCase)));
+            var score = AreEntriesRelated(baseEntry, otherEntry);
+            return score > minimumScore;
+        }
+
+        /// <summary>
+        /// Check how related are the two entries.
+        /// Values above 0 mean there is good confidence
+        /// </summary>
+        public static int AreEntriesRelated(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry otherEntry)
+        {
+            //Debug.Assert(!(otherEntry.DisplayName.Contains("Steam", StringComparison.OrdinalIgnoreCase) && 
+            //    baseEntry.DisplayName.Contains("Steam", StringComparison.OrdinalIgnoreCase)));
 
             if (PathTools.PathsEqual(baseEntry.InstallLocation, otherEntry.InstallLocation))
-                return true;
+                return 100;
 
             if (!string.IsNullOrEmpty(baseEntry.UninstallString))
             {
                 if (PathTools.PathsEqual(baseEntry.UninstallString, otherEntry.UninstallString))
-                    return true;
+                    return 100;
 
                 if (!string.IsNullOrEmpty(otherEntry.InstallLocation) 
                     && baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                    return true;
+                    return 100;
             }
 
             if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
                 && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
-                return true;
-
-            minimumScore -= 1;
-            var score = -1;
+                return 100;
+            
+            var score = 0;
 
             if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation))
                 AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation,
@@ -61,8 +72,6 @@ namespace UninstallTools.Factory
                     otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase));
             }
 
-            if (score <= -14 - minimumScore) return false;
-
             var nameSimilarity = CompareStrings(baseEntry.DisplayName, otherEntry.DisplayName);
             AddScore(ref score, -5, -2, 8, nameSimilarity);
             if (!nameSimilarity.HasValue || nameSimilarity == false)
@@ -73,18 +82,17 @@ namespace UninstallTools.Factory
                 AddScore(ref score, -5, -2, 8, trimmedSimilarity);
             }
 
-            if (score <= -4 - minimumScore) return false;
-
             try
             {
-                AddScore(ref score, -2, -2, 5, CompareStrings(baseEntry.DisplayNameTrimmed.Length < 5 ? baseEntry.DisplayName : baseEntry.DisplayNameTrimmed, Path.GetFileName(otherEntry.InstallLocation)));
+                AddScore(ref score, -2, -2, 5, CompareStrings(baseEntry.DisplayNameTrimmed.Length < 5 ? 
+                    baseEntry.DisplayName : baseEntry.DisplayNameTrimmed, Path.GetFileName(otherEntry.InstallLocation)));
             }
             catch (Exception ex)
             {
                 Debug.Fail(ex.Message);
             }
             //Debug.Assert(score <= 0);
-            return score > minimumScore;
+            return score;
         }
 
         /// <summary>

@@ -17,12 +17,12 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
+        private static readonly InfoAdderManager InfoAdder = new InfoAdderManager();
+
         public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {
             const int totalStepCount = 7;
             var currentStep = 1;
-
-            var infoAdder = new InfoAdderManager();
 
             // Find msi products
             var msiProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_MSI);
@@ -50,7 +50,7 @@ namespace UninstallTools.Factory
 
                 // Fill in instal llocations for the drive search
                 if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
-                    ApplyCache(registryResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, infoAdder);
+                    ApplyCache(registryResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
                 var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                 callback(installLocAddProgress);
@@ -60,7 +60,7 @@ namespace UninstallTools.Factory
                     installLocAddProgress.Inner = new ListGenerationProgress(installLocAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
                     callback(installLocAddProgress);
 
-                    infoAdder.AddMissingInformation(result, true);
+                    InfoAdder.AddMissingInformation(result, true);
                 }
             }
             else
@@ -99,7 +99,7 @@ namespace UninstallTools.Factory
             var mergeProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
             callback(mergeProgress);
             var mergedResults = registryResults.ToList();
-            mergedResults = MergeResults(mergedResults, otherResults, infoAdder, report =>
+            mergedResults = MergeResults(mergedResults, otherResults, report =>
             {
                 mergeProgress.Inner = report;
                 report.TotalCount *= 2;
@@ -107,7 +107,7 @@ namespace UninstallTools.Factory
                 callback(mergeProgress);
             });
             // Make sure to merge driveResults last
-            mergedResults = MergeResults(mergedResults, driveResults, infoAdder, report =>
+            mergedResults = MergeResults(mergedResults, driveResults, report =>
             {
                 mergeProgress.Inner = report;
                 report.CurrentCount += report.TotalCount;
@@ -118,7 +118,7 @@ namespace UninstallTools.Factory
 
             // Fill in any missing information
             if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
-                ApplyCache(mergedResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, infoAdder);
+                ApplyCache(mergedResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
             var infoAddProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
             callback(infoAddProgress);
@@ -128,7 +128,7 @@ namespace UninstallTools.Factory
                 infoAddProgress.Inner = new ListGenerationProgress(infoAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
                 callback(infoAddProgress);
 
-                infoAdder.AddMissingInformation(result);
+                InfoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
 
@@ -152,24 +152,29 @@ namespace UninstallTools.Factory
             return mergedResults;
         }
 
-        private static List<ApplicationUninstallerEntry> MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
-            ICollection<ApplicationUninstallerEntry> newResults, InfoAdderManager infoAdder, ListGenerationProgress.ListGenerationCallback progressCallback)
+        internal static List<ApplicationUninstallerEntry> MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
+            ICollection<ApplicationUninstallerEntry> newResults, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             // Add all of the base results straight away
             var results = new List<ApplicationUninstallerEntry>(baseEntries);
             var progress = 0;
             foreach (var entry in newResults)
             {
-                progressCallback(new ListGenerationProgress(progress++, newResults.Count, null));
+                progressCallback?.Invoke(new ListGenerationProgress(progress++, newResults.Count, null));
 
-                var matchedEntries = baseEntries.Where(x => ApplicationEntryTools.AreEntriesRelated(x, entry)).Take(2).ToList();
-                if (matchedEntries.Count == 1)
+                var matchedEntry = baseEntries.Select(x => new { x, score = ApplicationEntryTools.AreEntriesRelated(x, entry) })
+                    .Where(x => x.score >= 1)
+                    .OrderByDescending(x => x.score)
+                    .Select(x => x.x)
+                    .FirstOrDefault();
+
+                if (matchedEntry != null)
                 {
                     // Prevent setting incorrect UninstallerType
-                    if (matchedEntries[0].UninstallPossible)
+                    if (matchedEntry.UninstallPossible)
                         entry.UninstallerKind = UninstallerType.Unknown;
 
-                    infoAdder.CopyMissingInformation(matchedEntries[0], entry);
+                    InfoAdder.CopyMissingInformation(matchedEntry, entry);
                     continue;
                 }
 
@@ -238,7 +243,7 @@ namespace UninstallTools.Factory
                 progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.Value));
                 try
                 {
-                    otherResults.AddRange(kvp.Key.GetUninstallerEntries(null));
+                    otherResults = MergeResults(otherResults, kvp.Key.GetUninstallerEntries(null).ToList(), null);
                 }
                 catch (Exception ex)
                 {
