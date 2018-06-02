@@ -163,7 +163,7 @@ namespace UninstallTools
         /// <summary>
         /// TODO hook up
         /// </summary>
-        public static bool UseQuietUninstallDaemon { get; set; } = true;
+        public static bool UseQuietUninstallDaemon { get; set; }
 
         /// <summary>
         ///     Directiories containing programs, both built in "Program Files" and user-defined ones. Fast.

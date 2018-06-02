@@ -238,6 +238,8 @@ namespace BulkCrapUninstaller.Forms
                 x => x.QuietAutomatization, this);
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
                 x => x.QuietAutomatizationKillStuck, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.UseQuietUninstallDaemon = y.NewValue,
+                x => x.QuietUseDaemon, this);
 
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue,
                 x => x.CacheAppInfo, this);
@@ -498,7 +500,7 @@ namespace BulkCrapUninstaller.Forms
                 }
                 catch (InvalidOperationException)
                 {
-                    // Setting CheckBoxes value throws this exception (even though it works fine). Bug in objectlistview?
+                    // Setting CheckBoxes value throws this exception (even though it works fine).
                 }
                 _listView.RefreshList();
                 uninstallerObjectListView_SelectedChanged(this, EventArgs.Empty);

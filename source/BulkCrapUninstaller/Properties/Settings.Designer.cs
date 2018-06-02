@@ -992,5 +992,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["ScanChocolatey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool QuietUseDaemon {
+            get {
+                return ((bool)(this["QuietUseDaemon"]));
+            }
+            set {
+                this["QuietUseDaemon"] = value;
+            }
+        }
     }
 }

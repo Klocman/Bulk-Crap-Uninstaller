@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallationSettings));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrentOneLoud = new System.Windows.Forms.CheckBox();
             this.checkBoxConcurrent = new System.Windows.Forms.CheckBox();
             this.numericUpDownMaxConcurrent = new System.Windows.Forms.NumericUpDown();
@@ -46,7 +47,7 @@
             this.checkBoxRetryQuiet = new System.Windows.Forms.CheckBox();
             this.checkBoxGenerate = new System.Windows.Forms.CheckBox();
             this.checkBoxGenerateStuck = new System.Windows.Forms.CheckBox();
-            this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
+            this.checkBoxAutoDaemon = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxConcurrent)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -65,6 +66,12 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // checkBoxManualNoCollisionProtection
+            // 
+            resources.ApplyResources(this.checkBoxManualNoCollisionProtection, "checkBoxManualNoCollisionProtection");
+            this.checkBoxManualNoCollisionProtection.Name = "checkBoxManualNoCollisionProtection";
+            this.checkBoxManualNoCollisionProtection.UseVisualStyleBackColor = true;
             // 
             // checkBoxConcurrentOneLoud
             // 
@@ -157,6 +164,7 @@
             this.flowLayoutPanel1.Controls.Add(this.checkBoxRetryQuiet);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxGenerate);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxGenerateStuck);
+            this.flowLayoutPanel1.Controls.Add(this.checkBoxAutoDaemon);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // checkBoxAutoKillQuiet
@@ -183,11 +191,11 @@
             this.checkBoxGenerateStuck.Name = "checkBoxGenerateStuck";
             this.checkBoxGenerateStuck.UseVisualStyleBackColor = true;
             // 
-            // checkBoxManualNoCollisionProtection
+            // checkBoxAutoDaemon
             // 
-            resources.ApplyResources(this.checkBoxManualNoCollisionProtection, "checkBoxManualNoCollisionProtection");
-            this.checkBoxManualNoCollisionProtection.Name = "checkBoxManualNoCollisionProtection";
-            this.checkBoxManualNoCollisionProtection.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxAutoDaemon, "checkBoxAutoDaemon");
+            this.checkBoxAutoDaemon.Name = "checkBoxAutoDaemon";
+            this.checkBoxAutoDaemon.UseVisualStyleBackColor = true;
             // 
             // UninstallationSettings
             // 
@@ -233,5 +241,6 @@
         private System.Windows.Forms.CheckBox checkBoxGenerate;
         private System.Windows.Forms.CheckBox checkBoxGenerateStuck;
         private System.Windows.Forms.CheckBox checkBoxManualNoCollisionProtection;
+        private System.Windows.Forms.CheckBox checkBoxAutoDaemon;
     }
 }

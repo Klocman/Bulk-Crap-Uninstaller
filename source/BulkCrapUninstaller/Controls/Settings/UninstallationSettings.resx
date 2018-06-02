@@ -278,7 +278,7 @@ uninstallers manually</value>
     <value>Top</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 222</value>
+    <value>0, 258</value>
   </data>
   <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>
@@ -619,6 +619,37 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxGenerateStuck.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="checkBoxAutoDaemon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAutoDaemon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 95</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 30</value>
+  </data>
+  <data name="checkBoxAutoDaemon.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Monitor "silent" uninstallers for popups or other stalls
+and automatize them (run automatizer daemon)</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoDaemon.Name" xml:space="preserve">
+    <value>checkBoxAutoDaemon</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoDaemon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoDaemon.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoDaemon.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -629,7 +660,7 @@ uninstallers manually</value>
     <value>5, 16</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 92</value>
+    <value>288, 128</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -659,7 +690,7 @@ uninstallers manually</value>
     <value>5, 3, 5, 3</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 111</value>
+    <value>298, 147</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

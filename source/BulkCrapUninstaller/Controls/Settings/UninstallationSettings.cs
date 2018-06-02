@@ -40,6 +40,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxRetryQuiet, x => x.QuietRetryFailedOnce, this);
             _settings.BindControl(checkBoxGenerate, x => x.QuietAutomatization, this);
             _settings.BindControl(checkBoxGenerateStuck, x => x.QuietAutomatizationKillStuck, this);
+            _settings.BindControl(checkBoxAutoDaemon, x => x.QuietUseDaemon, this);
 
             if (!Program.Net4IsAvailable)
             {
