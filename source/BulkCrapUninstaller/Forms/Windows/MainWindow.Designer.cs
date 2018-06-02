@@ -122,7 +122,9 @@ namespace BulkCrapUninstaller.Forms
             this.reloadUninstallersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.loadUninstallerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.exportSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -189,6 +191,7 @@ namespace BulkCrapUninstaller.Forms
             this.nukeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uninstallFromDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tryToInstallNETV35ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.openProgramsAndFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,7 +214,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -964,7 +966,9 @@ namespace BulkCrapUninstaller.Forms
             this.reloadUninstallersToolStripMenuItem,
             this.toolStripSeparator1,
             this.loadUninstallerListToolStripMenuItem,
+            this.toolStripSeparator30,
             this.exportSelectedToolStripMenuItem,
+            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem,
             this.toolStripSeparator10,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -988,11 +992,22 @@ namespace BulkCrapUninstaller.Forms
             this.loadUninstallerListToolStripMenuItem.Name = "loadUninstallerListToolStripMenuItem";
             this.loadUninstallerListToolStripMenuItem.Click += new System.EventHandler(this.OpenUninstallLists);
             // 
+            // toolStripSeparator30
+            // 
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            resources.ApplyResources(this.toolStripSeparator30, "toolStripSeparator30");
+            // 
             // exportSelectedToolStripMenuItem
             // 
             this.exportSelectedToolStripMenuItem.Name = "exportSelectedToolStripMenuItem";
             resources.ApplyResources(this.exportSelectedToolStripMenuItem, "exportSelectedToolStripMenuItem");
             this.exportSelectedToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedToolStripMenuItem_Click);
+            // 
+            // exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem
+            // 
+            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Name = "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem";
+            resources.ApplyResources(this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem, "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem");
+            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Click += new System.EventHandler(this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
@@ -1456,6 +1471,12 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
             // 
+            // startDiskCleanupToolStripMenuItem
+            // 
+            this.startDiskCleanupToolStripMenuItem.Name = "startDiskCleanupToolStripMenuItem";
+            resources.ApplyResources(this.startDiskCleanupToolStripMenuItem, "startDiskCleanupToolStripMenuItem");
+            this.startDiskCleanupToolStripMenuItem.Click += new System.EventHandler(this.startDiskCleanupToolStripMenuItem_Click);
+            // 
             // tryToInstallNETV35ToolStripMenuItem
             // 
             this.tryToInstallNETV35ToolStripMenuItem.Name = "tryToInstallNETV35ToolStripMenuItem";
@@ -1593,12 +1614,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
-            // 
-            // startDiskCleanupToolStripMenuItem
-            // 
-            this.startDiskCleanupToolStripMenuItem.Name = "startDiskCleanupToolStripMenuItem";
-            resources.ApplyResources(this.startDiskCleanupToolStripMenuItem, "startDiskCleanupToolStripMenuItem");
-            this.startDiskCleanupToolStripMenuItem.Click += new System.EventHandler(this.startDiskCleanupToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1828,6 +1843,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem tryToInstallNETV35ToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator29;
         private ToolStripMenuItem startDiskCleanupToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator30;
+        private ToolStripMenuItem exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem;
     }
 }
 

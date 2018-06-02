@@ -31,6 +31,7 @@ using Klocman.Tools;
 using SimpleTreeMap;
 using UninstallTools;
 using UninstallTools.Dialogs;
+using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Uninstaller;
 
@@ -677,6 +678,9 @@ namespace BulkCrapUninstaller.Forms
         {
             var selectionCount = _listView.SelectedUninstallerCount;
             exportSelectedToolStripMenuItem.Enabled = selectionCount > 0;
+
+            exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Enabled =
+                _listView.SelectedUninstallers.Any(x => x.UninstallerKind == UninstallerType.StoreApp);
         }
 
         private void HandleListViewMenuKeystroke(object sender, KeyEventArgs e)
@@ -1577,6 +1581,27 @@ namespace BulkCrapUninstaller.Forms
         private void startDiskCleanupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PremadeDialogs.StartProcessSafely("cleanmgr.exe");
+        }
+
+        private void exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var d = new SaveFileDialog())
+            {
+                d.OverwritePrompt = true;
+                d.CreatePrompt = false;
+                d.AddExtension = true;
+                d.DefaultExt = ".ps1";
+                d.Filter = "PowerShell script|*.ps1";
+                d.Title = exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text;
+                d.RestoreDirectory = true;
+                d.InitialDirectory = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_DESKTOPDIRECTORY);
+
+                if (d.ShowDialog() == DialogResult.OK)
+                {
+                    try { File.WriteAllLines(d.FileName, StoreAppFactory.ToPowerShellRemoveCommands(_listView.SelectedUninstallers).ToArray()); }
+                    catch (SystemException ex) { PremadeDialogs.GenericError(ex); }
+                }
+            }
         }
     }
 }

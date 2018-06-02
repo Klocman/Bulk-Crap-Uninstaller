@@ -16,6 +16,21 @@ namespace UninstallTools.Factory
 {
     public class StoreAppFactory : IUninstallerFactory
     {
+        public static string GetPowerShellRemoveCommand(string fullName)
+        {
+            return $"Remove-AppxPackage -package {fullName} -confirm:$false";
+        }
+
+        /// <summary>
+        /// Convert supplied store app entries to power shell uninstall commands. Non-store app entries are ignored.
+        /// </summary>
+        public static string[] ToPowerShellRemoveCommands(IEnumerable<ApplicationUninstallerEntry> appEntries)
+        {
+            return appEntries.Where(x => x.UninstallerKind == UninstallerType.StoreApp)
+                .Select(x => GetPowerShellRemoveCommand(x.RatingId))
+                .ToArray();
+        }
+
         private static string StoreAppHelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
