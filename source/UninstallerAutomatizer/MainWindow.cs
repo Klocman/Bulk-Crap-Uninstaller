@@ -120,5 +120,10 @@ namespace UninstallerAutomatizer
         {
             Close();
         }
+
+        private void checkBoxUninstallerVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            AutomatedUninstallManager.HideAutomatizedWindows = !checkBoxUninstallerVisible.Checked;
+        }
     }
 }

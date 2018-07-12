@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonAbort = new System.Windows.Forms.Button();
             this.timerClose = new System.Windows.Forms.Timer(this.components);
+            this.checkBoxUninstallerVisible = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBoxUninstallerVisible);
             this.panel1.Controls.Add(this.buttonResume);
             this.panel1.Controls.Add(this.buttonPause);
             this.panel1.Controls.Add(this.panel2);
@@ -109,6 +111,13 @@
             // 
             this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
             // 
+            // checkBoxUninstallerVisible
+            // 
+            resources.ApplyResources(this.checkBoxUninstallerVisible, "checkBoxUninstallerVisible");
+            this.checkBoxUninstallerVisible.Name = "checkBoxUninstallerVisible";
+            this.checkBoxUninstallerVisible.UseVisualStyleBackColor = true;
+            this.checkBoxUninstallerVisible.CheckedChanged += new System.EventHandler(this.checkBoxUninstallerVisible_CheckedChanged);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -140,5 +149,6 @@
         private System.Windows.Forms.Button buttonAbort;
         private System.Windows.Forms.Button buttonResume;
         private System.Windows.Forms.Timer timerClose;
+        private System.Windows.Forms.CheckBox checkBoxUninstallerVisible;
     }
 }

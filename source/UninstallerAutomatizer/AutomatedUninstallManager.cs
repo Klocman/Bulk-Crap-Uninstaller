@@ -8,14 +8,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
+using System.Windows.Forms;
 using Klocman.Tools;
-using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White.WindowsAPI;
 using UninstallerAutomatizer.Properties;
+using Application = TestStack.White.Application;
+using Button = TestStack.White.UIItems.Button;
+using RadioButton = TestStack.White.UIItems.RadioButton;
 
 namespace UninstallerAutomatizer
 {
@@ -35,6 +39,19 @@ namespace UninstallerAutomatizer
 
         private static readonly string[] GoodButtonNames = { "Uninstall", "OK", "Accept", "Apply", "Close", "Yes" };
         private static readonly string[] ControlBoxButtonNames = { "Minimize", "Maximize", "Close" };
+        private static bool _hideAutomatizedWindows = true;
+
+        public static event EventHandler HideAutomatizedWindowsChanged;
+        public static bool HideAutomatizedWindows
+        {
+            get => _hideAutomatizedWindows;
+            set
+            {
+                if (_hideAutomatizedWindows == value) return;
+                _hideAutomatizedWindows = value;
+                HideAutomatizedWindowsChanged?.Invoke(null, EventArgs.Empty);
+            }
+        }
 
         /// <summary>
         ///     Automate uninstallation of an NSIS uninstaller.
@@ -85,6 +102,11 @@ namespace UninstallerAutomatizer
 
         public static void AutomatizeApplication(Application app, Action<string> statusCallback)
         {
+            var windows = new List<Window>();
+
+            void VisibleChangedHandler(object sender, EventArgs args) => SetWindowVisibility(windows, HideAutomatizedWindows);
+            HideAutomatizedWindowsChanged += VisibleChangedHandler;
+
             try
             {
                 statusCallback(string.Format(Localization.Message_Automation_AppAttached, app.Name));
@@ -93,14 +115,18 @@ namespace UninstallerAutomatizer
 
                 // Use UI item counts to identify TODO Check using something better
                 var seenWindows = new List<int>();
-                
+
                 while (!app.HasExited)
                 {
                     statusCallback(Localization.Message_Automation_WindowSearching);
                     // NSIS uninstallers always have only one window open (by default)
-                    var windows = app.GetWindows();
+                    windows.Clear();
+                    windows.AddRange(app.GetWindows());
+
+                    SetWindowVisibility(windows, HideAutomatizedWindows);
+
                     var target = windows.FirstOrDefault();
-                    if(target == null)
+                    if (target == null)
                     {
                         Thread.Sleep(1000);
                         continue;
@@ -124,7 +150,39 @@ namespace UninstallerAutomatizer
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty, app?.Process);
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty,
+                    app?.Process);
+            }
+            finally
+            {
+                HideAutomatizedWindowsChanged -= VisibleChangedHandler;
+            }
+        }
+
+        private static void SetWindowVisibility(IEnumerable<Window> windows, bool hide)
+        {
+            var primaryScreenBounds = Screen.PrimaryScreen.Bounds;
+            foreach (var window in windows)
+            {
+                try
+                {
+                    if (hide)
+                    {
+                        // Move window mostly off-screen. A part of it has to be on some screen for teststack to work properly.
+                        window.Move(primaryScreenBounds.Right - 1, primaryScreenBounds.Bottom - 1);
+                    }
+                    else
+                    {
+                        var b = window.Bounds;
+                        // Move window to main screen center
+                        window.Move((int)(primaryScreenBounds.X + primaryScreenBounds.Width / 2 - b.Width / 2),
+                            (int)(primaryScreenBounds.Y + primaryScreenBounds.Height / 2 - b.Height / 2));
+                    }
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
         }
 
@@ -286,6 +344,38 @@ namespace UninstallerAutomatizer
 
             public string UninstallerCommand { get; }
             public Process UninstallerProcess { get; }
+        }
+    }
+
+    public static class WindowExtensions
+    {
+        private const int SWP_NOSIZE = 0x0001;
+        private const int SWP_NOMOVE = 0x0002;
+        private const int SWP_NOZORDER = 0x0004;
+
+        // see https://msdn.microsoft.com/en-us/library/windows/desktop/ms633545(v=vs.85).aspx
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hwndAfter, int x, int y, int width, int height, int flags);
+
+        public static void Resize(this Window window, int width, int height)
+        {
+            SetWindowPos(window, 0, 0, width, height, SWP_NOMOVE | SWP_NOZORDER);
+        }
+
+        public static void Move(this Window window, int x, int y)
+        {
+            SetWindowPos(window, x, y, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+        }
+
+        public static void Move(this Window window, int x, int y, int width, int height)
+        {
+            SetWindowPos(window, x, y, width, height, SWP_NOZORDER);
+        }
+
+        private static void SetWindowPos(this Window window, int x, int y, int width, int height, int flags)
+        {
+            var handle = new IntPtr(window.AutomationElement.Current.NativeWindowHandle);
+            SetWindowPos(handle, IntPtr.Zero, x, y, width, height, flags);
         }
     }
 }
