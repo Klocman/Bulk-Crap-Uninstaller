@@ -112,8 +112,7 @@ namespace UninstallerAutomatizer
                 statusCallback(string.Format(Localization.Message_Automation_AppAttached, app.Name));
 
                 WaitForApplication(app);
-
-                // Use UI item counts to identify TODO Check using something better
+                
                 var seenWindows = new List<int>();
 
                 while (!app.HasExited)
@@ -134,8 +133,7 @@ namespace UninstallerAutomatizer
 
                     statusCallback(String.Format(Localization.Message_Automation_WindowFound, target.Title));
                     WaitForWindow(target);
-
-                    // BUG target.IsClosed changes to true if window gets minimized?
+                    
                     while (!target.IsClosed)
                     {
                         TryClickNextNsisButton(target, statusCallback);
@@ -212,9 +210,10 @@ namespace UninstallerAutomatizer
 
             if (popupWindow == null) return;
 
-            if (seenWindows.Contains(popupWindow.Items.Count))
+            var handle = popupWindow.GetHandle();
+            if (seenWindows.Contains(handle))
                 throw new InvalidOperationException(Localization.Message_Automation_PopupRecurringFound);
-            seenWindows.Add(popupWindow.Items.Count);
+            seenWindows.Add(handle);
             statusCallback(String.Format(Localization.Message_Automation_PopupFound, popupWindow.Title));
 
             while (!popupWindow.IsClosed)
@@ -376,6 +375,11 @@ namespace UninstallerAutomatizer
         {
             var handle = new IntPtr(window.AutomationElement.Current.NativeWindowHandle);
             SetWindowPos(handle, IntPtr.Zero, x, y, width, height, flags);
+        }
+
+        public static int GetHandle(this Window window)
+        {
+            return window.AutomationElement.Current.NativeWindowHandle;
         }
     }
 }
