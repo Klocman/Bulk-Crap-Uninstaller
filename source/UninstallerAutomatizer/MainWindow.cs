@@ -41,6 +41,8 @@ namespace UninstallerAutomatizer
 
             _handler.StatusUpdate += HandlerOnStatusUpdate;
             _handler.Start();
+
+            timerOpacity.Start();
         }
 
         private void HandlerOnStatusUpdate(object sender, UninstallHandlerUpdateArgs uninstallHandlerUpdateArgs)
@@ -124,6 +126,14 @@ namespace UninstallerAutomatizer
         private void checkBoxUninstallerVisible_CheckedChanged(object sender, EventArgs e)
         {
             AutomatedUninstallManager.HideAutomatizedWindows = !checkBoxUninstallerVisible.Checked;
+        }
+
+        private void timerOpacity_Tick(object sender, EventArgs e)
+        {
+            if (ContainsFocus || ClientRectangle.Contains(PointToClient(MousePosition)))
+                Opacity = Math.Min(1, Opacity + 0.1);
+            else
+                Opacity = Math.Max(0.4, Opacity - 0.1);
         }
     }
 }
