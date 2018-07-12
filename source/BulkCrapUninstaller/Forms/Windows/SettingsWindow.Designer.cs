@@ -85,6 +85,7 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxScanWinFeatures = new System.Windows.Forms.CheckBox();
             this.checkBoxScanStoreApps = new System.Windows.Forms.CheckBox();
             this.checkBoxScanSteam = new System.Windows.Forms.CheckBox();
+            this.checkBoxChoco = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxScanRegistry = new System.Windows.Forms.CheckBox();
@@ -102,7 +103,6 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxChoco = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -432,9 +432,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageInterface
             // 
+            resources.ApplyResources(this.tabPageInterface, "tabPageInterface");
             this.tabPageInterface.Controls.Add(this.groupBoxMessages);
             this.tabPageInterface.Controls.Add(this.groupBoxLanguage);
-            resources.ApplyResources(this.tabPageInterface, "tabPageInterface");
             this.tabPageInterface.Name = "tabPageInterface";
             this.tabPageInterface.UseVisualStyleBackColor = true;
             // 
@@ -448,8 +448,8 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageUninstallation
             // 
-            this.tabPageUninstallation.Controls.Add(this.uninstallationSettings1);
             resources.ApplyResources(this.tabPageUninstallation, "tabPageUninstallation");
+            this.tabPageUninstallation.Controls.Add(this.uninstallationSettings1);
             this.tabPageUninstallation.Name = "tabPageUninstallation";
             this.tabPageUninstallation.UseVisualStyleBackColor = true;
             // 
@@ -460,9 +460,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPageDetection
             // 
+            resources.ApplyResources(this.tabPageDetection, "tabPageDetection");
             this.tabPageDetection.Controls.Add(this.groupBoxAppStores);
             this.tabPageDetection.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPageDetection, "tabPageDetection");
             this.tabPageDetection.Name = "tabPageDetection";
             this.tabPageDetection.UseVisualStyleBackColor = true;
             // 
@@ -512,6 +512,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxScanSteam, "checkBoxScanSteam");
             this.checkBoxScanSteam.Name = "checkBoxScanSteam";
             this.checkBoxScanSteam.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxChoco
+            // 
+            resources.ApplyResources(this.checkBoxChoco, "checkBoxChoco");
+            this.checkBoxChoco.Name = "checkBoxChoco";
+            this.checkBoxChoco.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -626,12 +632,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker1
             // 
             this.usageTracker1.ContainerControl = this;
-            // 
-            // checkBoxChoco
-            // 
-            resources.ApplyResources(this.checkBoxChoco, "checkBoxChoco");
-            this.checkBoxChoco.Name = "checkBoxChoco";
-            this.checkBoxChoco.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 

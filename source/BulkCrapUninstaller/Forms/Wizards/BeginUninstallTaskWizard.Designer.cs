@@ -38,7 +38,6 @@ namespace BulkCrapUninstaller.Forms
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new BulkCrapUninstaller.Controls.TabControlWithoutHeader();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.relatedUninstallerAdder1 = new BulkCrapUninstaller.Forms.RelatedUninstallerAdder();
@@ -76,6 +75,7 @@ namespace BulkCrapUninstaller.Forms
             this.label9 = new System.Windows.Forms.Label();
             this.labelApps = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.panelNavigation.SuspendLayout();
@@ -142,13 +142,6 @@ namespace BulkCrapUninstaller.Forms
             this.panel1.Controls.Add(this.tabControl1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
             // 
@@ -239,9 +232,9 @@ namespace BulkCrapUninstaller.Forms
             // 
             // tabPage4
             // 
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.uninstallationSettings1);
             this.tabPage4.Controls.Add(this.flowLayoutPanel1);
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -389,6 +382,13 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // flowLayoutPanel2
             // 

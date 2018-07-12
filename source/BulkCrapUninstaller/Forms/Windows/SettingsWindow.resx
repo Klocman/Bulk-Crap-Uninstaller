@@ -649,7 +649,7 @@
     <value>directorySelectBoxBackup</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6726.32630, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6767.30372, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
     <value>groupBoxBackup</value>
@@ -1344,7 +1344,7 @@ BCU will wait until the currently running command completes before executing the
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.3.4.38585, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1378,6 +1378,9 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tabPageInterface.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBoxLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1439,6 +1442,9 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;tabPageInterface.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tabPageUninstallation.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="uninstallationSettings1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1461,7 +1467,7 @@ BCU will wait until the currently running command completes before executing the
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.3.4.38585, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPageUninstallation</value>
@@ -1495,6 +1501,9 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;tabPageUninstallation.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="tabPageDetection.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBoxAppStores.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2182,7 +2191,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>cacheSettings1</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.3.4.38585, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Parent" xml:space="preserve">
     <value>tabPageMisc</value>
@@ -2356,7 +2365,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.3.4.38585, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsWindow</value>

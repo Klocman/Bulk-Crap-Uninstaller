@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -328,7 +328,7 @@
     <value>relatedUninstallerAdder1</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=3.23.0.20235, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -448,7 +448,7 @@
     <value>uninstallConfirmation1</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=3.23.0.20235, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -568,7 +568,7 @@
     <value>processWaiterControl1</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Type" xml:space="preserve">
-    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.4.6569.276, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.4.6767.30372, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -669,6 +669,9 @@
   <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="tabPage4.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="uninstallationSettings1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -676,16 +679,16 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="uninstallationSettings1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Top</value>
   </data>
   <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 141</value>
+    <value>44, 154</value>
   </data>
   <data name="uninstallationSettings1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
   </data>
   <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 309</value>
+    <value>471, 366</value>
   </data>
   <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -694,7 +697,7 @@
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=3.23.0.20235, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPage4</value>
@@ -727,7 +730,7 @@
     <value>0, 0, 0, 3</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 26</value>
+    <value>407, 26</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -757,7 +760,7 @@
     <value>3, 26</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 26</value>
+    <value>407, 39</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -784,7 +787,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 52</value>
+    <value>3, 65</value>
   </data>
   <data name="label8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 4, 0, 0</value>
@@ -817,7 +820,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 79</value>
+    <value>10, 92</value>
   </data>
   <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -856,13 +859,13 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 112</value>
+    <value>3, 125</value>
   </data>
   <data name="label5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 3</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 26</value>
+    <value>407, 26</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -892,7 +895,7 @@
     <value>44, 3</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 138</value>
+    <value>471, 151</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1537,7 +1540,7 @@
     <value>0, 0, 0, 3</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 72</value>
+    <value>475, 72</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1630,7 +1633,7 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=3.23.0.20235, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1662,14 +1665,14 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 526</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -1683,7 +1686,4 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
