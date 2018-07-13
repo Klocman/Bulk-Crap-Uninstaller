@@ -175,6 +175,8 @@ BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
 
         private static IList<ApplicationUninstallerEntry> QueryApps(bool isQuiet, bool isUnattended, bool isVerbose)
         {
+            ConfigureUninstallTools();
+
             Console.WriteLine("Looking for applications...");
             string previousMain = null;
             var result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
@@ -196,6 +198,21 @@ BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
 
             Console.WriteLine("Found {0} applications.", result.Count);
             return result;
+        }
+
+        private static void ConfigureUninstallTools()
+        {
+            UninstallToolsGlobalConfig.ScanChocolatey = true;
+            UninstallToolsGlobalConfig.ScanDrives = true;
+            UninstallToolsGlobalConfig.ScanPreDefined = true;
+            UninstallToolsGlobalConfig.ScanRegistry = true;
+            UninstallToolsGlobalConfig.ScanSteam = true;
+            UninstallToolsGlobalConfig.ScanStoreApps = true;
+            UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = true;
+            UninstallToolsGlobalConfig.QuietAutomatization = true;
+            UninstallToolsGlobalConfig.UseQuietUninstallDaemon = true;
+            UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles = true;
+            UninstallToolsGlobalConfig.EnableAppInfoCache = false;
         }
 
         private static int ShowInvalidSyntaxError(string message)
