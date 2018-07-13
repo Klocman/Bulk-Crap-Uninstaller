@@ -24,14 +24,16 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applications
  
- path - Path to a .bcul file that contains information about applications to uninstall.
- /Q   - Use quiet uninstallers wherever possible (by default only use loud).
- /U   - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER THOROUGH TESTING. 
-        UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID FALSE POSITIVES. THERE ARE NO 
-        WARRANTIES, ONLY YOU ARE CONSIDERED RESPONSIBLE FOR THE RESULTS.
- /V   - Verbose logging mode (show more information about what is currently happening).");
+ [drive:][path]	– Specifies drive and directory of the uninstall list.
+ filename       – Specifies filename of the .bcul uninstall list that contains information about
+                  what applications to uninstall.
+ /Q             - Use quiet uninstallers wherever possible (by default only use loud).
+ /U             - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER
+                  THOROUGH TESTING. UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID
+                  FALSE POSITIVES. THERE ARE NO WARRANTIES, USE WITH CAUTION.
+ /V             - Verbose logging mode (show more information about what is currently happening).");
         }
 
         private static int Main(string[] args)
