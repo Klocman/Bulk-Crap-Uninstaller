@@ -95,7 +95,7 @@ namespace UninstallTools.Uninstaller
         public static object IsSilentAspectGetter(object rowObj)
         {
             var temp = rowObj as BulkUninstallEntry;
-            return temp?.IsSilent.ToYesNo();
+            return temp?.IsSilentPossible.ToYesNo();
         }
 
         public static object StatusAspectGetter(object rowObj)
@@ -141,7 +141,7 @@ namespace UninstallTools.Uninstaller
             if (targetList == null || configuration == null)
                 throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
 
-            if (configuration.PreferQuiet && AllUninstallersList.Any(x => x.IsSilent))
+            if (configuration.PreferQuiet && AllUninstallersList.Any(x => x.IsSilentPossible))
                 StartAutomationDaemon();
 
             try
@@ -162,11 +162,11 @@ namespace UninstallTools.Uninstaller
                     var running =
                         AllUninstallersList.Where(x => x.CurrentStatus == UninstallStatus.Uninstalling).ToList();
                     var runningTypes = running.Select(y => y.UninstallerEntry.UninstallerKind).ToList();
-                    var loudBlocked = OneLoudLimit && running.Any(y => !y.IsSilent);
+                    var loudBlocked = OneLoudLimit && running.Any(y => !y.IsSilentPossible);
 
                     var result = AllUninstallersList.FirstOrDefault(x =>
                     {
-                        if (x.CurrentStatus != UninstallStatus.Waiting || (loudBlocked && !x.IsSilent))
+                        if (x.CurrentStatus != UninstallStatus.Waiting || (loudBlocked && !x.IsSilentPossible))
                             return false;
 
                         if (CheckForTypeCollisions(x.UninstallerEntry.UninstallerKind, runningTypes))

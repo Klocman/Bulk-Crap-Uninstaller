@@ -169,13 +169,13 @@ namespace BulkCrapUninstaller.Forms
             if (!_currentTargetStatus.Aborted && _currentTargetStatus.Configuration.PreferQuiet)
             {
                 var failedSilent = _currentTargetStatus.AllUninstallersList
-                    .Where(x => x.CurrentStatus == UninstallStatus.Failed && x.IsSilent).ToList();
+                    .Where(x => x.CurrentStatus == UninstallStatus.Failed && x.IsSilentPossible).ToList();
                 if (failedSilent.Count > 0 && MessageBoxes.AskToRetryFailedQuietAsLoud(this, failedSilent.Select(x => x.UninstallerEntry.DisplayName)))
                 {
                     foreach (var uninstallEntry in failedSilent)
                     {
                         uninstallEntry.Reset();
-                        uninstallEntry.IsSilent = false;
+                        uninstallEntry.IsSilentPossible = false;
                     }
                     objectListView1.UpdateObjects(failedSilent);
                     objectListView1.BuildGroups();
@@ -200,12 +200,12 @@ namespace BulkCrapUninstaller.Forms
                 // Show the walk away box if there are no running/waiting loud uninstallers and at least one quiet unistaller running/waiting
                 if (_walkAwayBox == null &&
                     // There is at least one loud uninstaller
-                    uninstList.Any(x => !x.IsSilent) &&
+                    uninstList.Any(x => !x.IsSilentPossible) &&
                     // There are no loud uninstallers running or waiting
-                    !uninstList.Any(x => !x.IsSilent &&
+                    !uninstList.Any(x => !x.IsSilentPossible &&
                         (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)) &&
                     // There is at least one silent uninstaller running or waiting
-                    uninstList.Any(x => x.IsSilent &&
+                    uninstList.Any(x => x.IsSilentPossible &&
                         (x.CurrentStatus == UninstallStatus.Waiting || x.CurrentStatus == UninstallStatus.Uninstalling)))
                 {
                     _walkAwayBox = MessageBoxes.CanWalkAwayInfo(this);

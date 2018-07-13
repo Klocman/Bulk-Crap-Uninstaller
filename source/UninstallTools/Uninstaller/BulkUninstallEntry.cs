@@ -50,11 +50,11 @@ namespace UninstallTools.Uninstaller
         private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
         private Thread _worker;
 
-        public BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilent,
+        public BulkUninstallEntry(ApplicationUninstallerEntry uninstallerEntry, bool isSilentPossible,
             UninstallStatus startingStatus)
         {
             CurrentStatus = startingStatus;
-            IsSilent = isSilent;
+            IsSilentPossible = isSilentPossible;
             UninstallerEntry = uninstallerEntry;
         }
 
@@ -75,7 +75,7 @@ namespace UninstallTools.Uninstaller
             }
         }
 
-        public bool IsSilent { get; set; }
+        public bool IsSilentPossible { get; set; }
 
         public ApplicationUninstallerEntry UninstallerEntry { get; }
 
@@ -123,7 +123,7 @@ namespace UninstallTools.Uninstaller
 
                 if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec)
                 {
-                    var uninstallString = IsSilent && UninstallerEntry.QuietUninstallPossible
+                    var uninstallString = IsSilentPossible && UninstallerEntry.QuietUninstallPossible
                         ? UninstallerEntry.QuietUninstallString
                         : UninstallerEntry.UninstallString;
 
@@ -348,7 +348,7 @@ namespace UninstallTools.Uninstaller
 
                         // Only try to automate first try. If it fails, don't try to automate 
                         // the rerun in case user or app itself can resolve the issue.
-                        if (IsSilent && UninstallToolsGlobalConfig.UseQuietUninstallDaemon && _canRetry)
+                        if (IsSilentPossible && UninstallToolsGlobalConfig.UseQuietUninstallDaemon && _canRetry)
                         {
                             var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
 

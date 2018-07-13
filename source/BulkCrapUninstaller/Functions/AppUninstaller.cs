@@ -275,7 +275,7 @@ namespace BulkCrapUninstaller.Functions
                             // For safety always run simple deletes last so that actual uninstallers have a chance to run
                             item.UninstallerEntry.UninstallerKind == UninstallerType.SimpleDelete ascending,
                             // Always run loud first so later user can have some time to watch cat pics
-                            item.IsSilent ascending,
+                            item.IsSilentPossible ascending,
                             // Updates usually get uninstalled by their parent uninstallers
                             item.UninstallerEntry.IsUpdate ascending,
                             // SysCmps and Protected usually get uninstalled by their parent, user-visible uninstallers

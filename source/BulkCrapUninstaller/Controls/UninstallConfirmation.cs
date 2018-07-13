@@ -17,11 +17,11 @@ namespace BulkCrapUninstaller.Forms
             olvColumnEnabled.AspectGetter = rowObject => ((ConfirmationEntry) rowObject).Enabled;
             olvColumnEnabled.AspectPutter = (rowObject, value) => ((ConfirmationEntry) rowObject).Enabled = (bool) value;
 
-            olvColumnQuiet.AspectGetter = rowObject => ((ConfirmationEntry) rowObject).Entry.IsSilent;
+            olvColumnQuiet.AspectGetter = rowObject => ((ConfirmationEntry) rowObject).Entry.IsSilentPossible;
             olvColumnQuiet.AspectPutter = (rowObject, value) =>
             {
                 var entry = ((ConfirmationEntry) rowObject).Entry;
-                entry.IsSilent = (bool) value && entry.UninstallerEntry.QuietUninstallPossible;
+                entry.IsSilentPossible = (bool) value && entry.UninstallerEntry.QuietUninstallPossible;
             };
 
             olvColumnInstallLocation.AspectGetter =
