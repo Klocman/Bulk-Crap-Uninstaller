@@ -2,22 +2,21 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.4.0.0</Version>
+<Version>4.5.0.0</Version>
 <URL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added support for Chocolatey application manager
-Added automatic removal of uninstalled apps from Chocolatey (if possible)
-Added ability to export uninstall commands to a batch file
-Added ability to create a PowerShell script that removes selected Store Apps
-Added "Tools" -> "Troubleshoot uninstallation problems" tool
-Added option to disable quiet uninstall daemon
-Added capability to pre-create junk early during app detection (for now used only for Chocolatey)
-Renamed export function to be less confusing about its function
-Improved merging of similar application entries, fixed duplicate uninstallers
-Updated Steam publisher string
-Fixed apps that are no longer present still being seen as checked
-Fixed detected startup entries sometimes being lost during application scan
+Added console utility for scripting - fully automatic uninstalls
+Added quick filters menu and new filtering presets
+Added ability to filter appications by them having startup entries
+Added ability to hide automatized uninstaller windows (enabled by default)
+Added scrollbars to setting pages that can overflow to fix cutoffs
+Uninstaller automation window now has opacity when not focused
+Improved identification of dialog boxes during automation, fixes some rare problems
+Updated taskscheduler and dotnetzip libraries
+Updated manual
+Fixed possible resource leak
+Refactoring and minor bugfixes
 </Changes>
 <Hash></Hash>
 </Update>
