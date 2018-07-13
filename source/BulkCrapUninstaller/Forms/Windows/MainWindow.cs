@@ -1566,12 +1566,6 @@ namespace BulkCrapUninstaller.Forms
 
         private void viewToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
-            var isSimpleFiltering = !IsAdvancedFilteringEnabled;
-
-            viewUnregisteredToolStripMenuItem.Enabled = isSimpleFiltering;
-            viewUpdatesToolStripMenuItem.Enabled = isSimpleFiltering;
-            viewWindowsStoreAppsToolStripMenuItem.Enabled = isSimpleFiltering;
-            viewWindowsFeaturesToolStripMenuItem.Enabled = isSimpleFiltering;
         }
 
         private void tryToInstallNETV35ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1642,6 +1636,81 @@ namespace BulkCrapUninstaller.Forms
             var toolPath = Path.Combine(Program.AssemblyLocation.FullName,
                 @"Resources\MicrosoftProgram_Install_and_Uninstall.meta.diagcab");
             PremadeDialogs.StartProcessSafely(toolPath);
+        }
+
+        private void filteringToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            var isSimpleFiltering = !IsAdvancedFilteringEnabled;
+
+            viewUnregisteredToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewUpdatesToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewWindowsStoreAppsToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewWindowsFeaturesToolStripMenuItem.Enabled = isSimpleFiltering;
+        }
+
+        private void automaticallyStartedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.HasStartups));
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = true;
+            s.FilterHideMicrosoft = false;
+            s.FilterShowSystemComponents = true;
+            s.FilterShowProtected = true;
+            s.FilterShowUpdates = true;
+            s.FilterShowWinFeatures = true;
+            s.FilterShowStoreApps = true;
+        }
+
+        private void basicApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(null, ComparisonMethod.Any);
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = false;
+            s.FilterHideMicrosoft = true;
+            s.FilterShowSystemComponents = false;
+            s.FilterShowProtected = false;
+            s.FilterShowUpdates = false;
+            s.FilterShowWinFeatures = false;
+            s.FilterShowStoreApps = true;
+        }
+
+        private void advancedApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(null, ComparisonMethod.Any);
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = true;
+            s.FilterHideMicrosoft = true;
+            s.FilterShowSystemComponents = false;
+            s.FilterShowProtected = false;
+            s.FilterShowUpdates = false;
+            s.FilterShowWinFeatures = false;
+            s.FilterShowStoreApps = true;
+        }
+
+        private void systemComponentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.SystemComponent));
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = false;
+            s.FilterHideMicrosoft = false;
+            s.FilterShowSystemComponents = true;
+            s.FilterShowProtected = false;
+            s.FilterShowUpdates = false;
+            s.FilterShowWinFeatures = true;
+            s.FilterShowStoreApps = true;
+        }
+
+        private void everythingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(null, ComparisonMethod.Any);
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = true;
+            s.FilterHideMicrosoft = false;
+            s.FilterShowSystemComponents = true;
+            s.FilterShowProtected = true;
+            s.FilterShowUpdates = true;
+            s.FilterShowWinFeatures = true;
+            s.FilterShowStoreApps = true;
         }
     }
 }

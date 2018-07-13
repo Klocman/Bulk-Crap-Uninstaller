@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GithubReleasesLink" xml:space="preserve">
+    <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,11 +133,8 @@
   <data name="Icon_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checkmarkpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkmark.pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="layer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer.delete1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,26 +147,6 @@
   </data>
   <data name="oswindows8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\os.windows.8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAwFJREFUaEPdlz9rFFEUxbP/WFwLbVwLP4CFaGEh6DewsNMina1fwl4FO6sUgnYp
-        BCvbSeEnEBEkiKCQYGMKEXGD47nLXrl757gz71/c9cKP3ZzcOfedbN7Om62qqv4LqLiJUHEToeImQkUF
-        VRdkbzwen2ZzY6Ci4gaXIFsYKipuaCmyhKGi4gaWJDkMFRU3rGY9XfFehKQwVFTcoNxBXhItOgwVFTck
-        a5DJZDLGa7YwVFTcgKxBRMsZhoqKM88eRMgVhoqKMy4SRMgRhoqKMy0WREgNQ0XFGRYNIqSEoaLizIoH
-        EVaFYf0KFRVnlDVIDMxXoaISYtSG94qB+SpUVEKM2vBeMTBfhYpKiFEb3isG5qtQUQkxKkHIfCoqIUYl
-        CJlPRSXEqAQh86mohBiVAPW663wqKtakzSgUufH1er3b8H0O3oOv4Dv4CF6Be/j9WXkFR2D9gqBugQ/q
-        u4JDhLk7HA7P4/0u81KoqBjDOawnhOl0OoDPA/DL+nZgB4GGzFOhouLMkoOgHlu/QJ4wT4WKijNKCoLa
-        tl4LjsEzcF32w2w2O4X3l8Ej8A34/m3mLVBRcSbRQeQIjus/O78DcIP1CygJJBvfXnP4t+N8Q7A4k+gg
-        smGd13Fd19dYrwU9V9C79MmIF+ttCBZrILCeLqB2rQ94yvoYKL+v6LdXQ7A4g5Qgn6yP/KVZH2Pxqdh1
-        vGV9DcHiDFKC/Ij1QZBz9lrwhfU1BIszSAkS7TMajc64649YX0OwOIN1+dfaZ30NweIMUoL4zb7D+hgo
-        v9lf0D4mKs4gJcgd6wM6ff2i5F6yPl+/ck7C9fvO7wBhrrJ+AbV+N8TBYHAB1/sgwp8jiixQjvb9fv8S
-        fl6/I8oihDxvLHlFkO/QGMjDjCHyHuMDaAshB8g3TmPMH6zY2jxUVJxpV1pDYB9cXDxk3QTyqPsOyJ74
-        CSTk/FFXboZsXQwqKii2kFV0CsFmpULFWP5VCIGKsaD2zMJPLIRAxVhQS6fcBcVDCFSMBXXfBDixEFVV
-        bf0GeDTIxb8Pvs8AAAAASUVORK5CYII=
-</value>
   </data>
   <data name="rating4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -212,6 +192,9 @@
   <data name="diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagram.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LicenceFilename" xml:space="preserve">
+    <value>Licence.txt</value>
+  </data>
   <data name="DbCommandGetRating" xml:space="preserve">
     <value>getRatings</value>
   </data>
@@ -233,8 +216,8 @@
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rating3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rating3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_bcu_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -245,14 +228,37 @@
   <data name="magnify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HelpFilename" xml:space="preserve">
-    <value>BCU_manual.html</value>
+  <data name="DonateLink" xml:space="preserve">
+    <value>http://klocmansoftware.weebly.com/donate.html</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAwFJREFUaEPdlz9rFFEUxbP/WFwLbVwLP4CFaGEh6DewsNMina1fwl4FO6sUgnYp
+        BCvbSeEnEBEkiKCQYGMKEXGD47nLXrl757gz71/c9cKP3ZzcOfedbN7Om62qqv4LqLiJUHEToeImQkUF
+        VRdkbzwen2ZzY6Ci4gaXIFsYKipuaCmyhKGi4gaWJDkMFRU3rGY9XfFehKQwVFTcoNxBXhItOgwVFTck
+        a5DJZDLGa7YwVFTcgKxBRMsZhoqKM88eRMgVhoqKMy4SRMgRhoqKMy0WREgNQ0XFGRYNIqSEoaLizIoH
+        EVaFYf0KFRVnlDVIDMxXoaISYtSG94qB+SpUVEKM2vBeMTBfhYpKiFEb3isG5qtQUQkxKkHIfCoqIUYl
+        CJlPRSXEqAQh86mohBiVAPW663wqKtakzSgUufH1er3b8H0O3oOv4Dv4CF6Be/j9WXkFR2D9gqBugQ/q
+        u4JDhLk7HA7P4/0u81KoqBjDOawnhOl0OoDPA/DL+nZgB4GGzFOhouLMkoOgHlu/QJ4wT4WKijNKCoLa
+        tl4LjsEzcF32w2w2O4X3l8Ej8A34/m3mLVBRcSbRQeQIjus/O78DcIP1CygJJBvfXnP4t+N8Q7A4k+gg
+        smGd13Fd19dYrwU9V9C79MmIF+ttCBZrILCeLqB2rQ94yvoYKL+v6LdXQ7A4g5Qgn6yP/KVZH2Pxqdh1
+        vGV9DcHiDFKC/Ij1QZBz9lrwhfU1BIszSAkS7TMajc64649YX0OwOIN1+dfaZ30NweIMUoL4zb7D+hgo
+        v9lf0D4mKs4gJcgd6wM6ff2i5F6yPl+/ck7C9fvO7wBhrrJ+AbV+N8TBYHAB1/sgwp8jiixQjvb9fv8S
+        fl6/I8oihDxvLHlFkO/QGMjDjCHyHuMDaAshB8g3TmPMH6zY2jxUVJxpV1pDYB9cXDxk3QTyqPsOyJ74
+        CSTk/FFXboZsXQwqKii2kFV0CsFmpULFWP5VCIGKsaD2zMJPLIRAxVhQS6fcBcVDCFSMBXXfBDixEFVV
+        bf0GeDTIxb8Pvs8AAAAASUVORK5CYII=
+</value>
   </data>
   <data name="layer.add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="timer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="radioactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\radioactive.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -263,8 +269,8 @@
   <data name="DbDebugConnectionString" xml:space="preserve">
     <value>server=192.168.100.200;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
   </data>
-  <data name="layer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer.delete1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add.multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DbCommandStats" xml:space="preserve">
     <value>sendStats</value>
@@ -275,17 +281,20 @@
   <data name="SubmitFeedbackLink" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
   </data>
-  <data name="ReviewLink" xml:space="preserve">
-    <value>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</value>
+  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpFilename" xml:space="preserve">
+    <value>BCU_manual.html</value>
   </data>
   <data name="pagecopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page.copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add.multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bigImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bigImage.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PrivacyPolicyFilename" xml:space="preserve">
+    <value>PrivacyPolicy.txt</value>
   </data>
   <data name="list.reorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list.reorder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -299,8 +308,8 @@
   <data name="layerdelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DonateLink" xml:space="preserve">
-    <value>http://klocmansoftware.weebly.com/donate.html</value>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -311,11 +320,11 @@
   <data name="magnifyforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.forward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rating3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rating3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="weather.sun.set" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weather.sun.set.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rating1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -335,6 +344,9 @@
   <data name="rating5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ReviewLink" xml:space="preserve">
+    <value>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</value>
+  </data>
   <data name="folderopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder.open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -347,25 +359,17 @@
   <data name="HomepageUrl" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/</value>
   </data>
-  <data name="control.fastforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\control.fastforward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LicenceFilename" xml:space="preserve">
-    <value>Licence.txt</value>
-  </data>
-  <data name="PrivacyPolicyFilename" xml:space="preserve">
-    <value>PrivacyPolicy.txt</value>
-  </data>
   <data name="GithubLink" xml:space="preserve">
     <value>https://github.com/Klocman/Bulk-Crap-Uninstaller</value>
   </data>
-  <data name="GithubReleasesLink" xml:space="preserve">
-    <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases</value>
+  <data name="control.fastforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control.fastforward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmarkpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark.pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
