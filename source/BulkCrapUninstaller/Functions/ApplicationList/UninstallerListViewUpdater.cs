@@ -170,9 +170,13 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             var dialog = LoadingDialog.Show(_reference, Localisable.LoadingDialogTitlePopulatingList,
                 ListRefreshThread, new Point(-35, -35), ContentAlignment.BottomRight);
+            
+            dialog.FormClosed += OnRefreshFinished;
 
-            dialog.FormClosed += (sender, args) =>
+            void OnRefreshFinished(object sender, FormClosedEventArgs args)
             {
+                dialog.FormClosed -= OnRefreshFinished;
+
                 if (dialog.Error != null)
                 {
                     if (dialog.Error is OperationCanceledException)
@@ -180,9 +184,9 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                     throw new Exception("Uncaught exception in ListRefreshThread", dialog.Error);
                 }
 
-                if (CheckIsAppDisposed() || args.CloseReason == CloseReason.WindowsShutDown ||
-                    args.CloseReason == CloseReason.ApplicationExitCall ||
-                    args.CloseReason == CloseReason.FormOwnerClosing ||
+                if (CheckIsAppDisposed() || args.CloseReason == CloseReason.WindowsShutDown || 
+                    args.CloseReason == CloseReason.ApplicationExitCall || 
+                    args.CloseReason == CloseReason.FormOwnerClosing || 
                     args.CloseReason == CloseReason.TaskManagerClosing) return;
 
                 var oldList = _listView.ListView.SmallImageList;
@@ -208,7 +212,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
                 // Set after running events
                 _firstRefresh = false;
-            };
+            }
 
             dialog.StartWork();
         }
