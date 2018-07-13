@@ -128,13 +128,11 @@ BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
                 {
                     ClearCurrentConsoleLine();
 
-                    var running = task.AllUninstallersList.Select(x => x.IsRunning).Count();
-                    var waiting = task.AllUninstallersList.Select(x => x.CurrentStatus == UninstallStatus.Waiting)
-                        .Count();
-                    var finished = task.AllUninstallersList.Select(x => x.Finished).Count();
-                    var errors = task.AllUninstallersList.Select(x =>
-                            x.CurrentStatus == UninstallStatus.Failed || x.CurrentStatus == UninstallStatus.Invalid)
-                        .Count();
+                    var running = task.AllUninstallersList.Count(x => x.IsRunning);
+                    var waiting = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Waiting);
+                    var finished = task.AllUninstallersList.Count(x => x.Finished);
+                    var errors = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Failed ||
+                        x.CurrentStatus == UninstallStatus.Invalid);
                     Console.Write("Running: {0}, Waiting: {1}, Finished: {2}, Failed: {3}",
                         running, waiting, finished, errors);
                 }
