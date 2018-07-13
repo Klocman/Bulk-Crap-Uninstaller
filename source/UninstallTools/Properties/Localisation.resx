@@ -556,4 +556,7 @@
     <value>Uninstall in Chocolatey</value>
     <comment>Shown in junk results window</comment>
   </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Can start automatically</value>
+  </data>
 </root>

@@ -143,7 +143,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnStartup.AspectGetter = x =>
             {
                 var obj = x as ApplicationUninstallerEntry;
-                return (obj?.StartupEntries != null && obj.StartupEntries.Any()).ToYesNo();
+                return (obj?.HasStartups).ToYesNo();
             };
 
             _reference.olvColumnPublisher.AspectName = ApplicationUninstallerEntry.RegistryNamePublisher;

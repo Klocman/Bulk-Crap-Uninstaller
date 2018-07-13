@@ -246,6 +246,10 @@ namespace UninstallTools
         public IEnumerable<StartupEntryBase> StartupEntries { get; set; }
 
         [ComparisonTarget]
+        [LocalisedName(typeof(Localisation), "HasStartupEntries")]
+        public bool HasStartups => StartupEntries != null && StartupEntries.Any();
+
+        [ComparisonTarget]
         [LocalisedName(typeof(Localisation), "SystemComponent")]
         public bool SystemComponent { get; set; }
 

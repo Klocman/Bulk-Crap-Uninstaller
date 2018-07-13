@@ -448,6 +448,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can start automatically.
+        /// </summary>
+        internal static string HasStartupEntries {
+            get {
+                return ResourceManager.GetString("HasStartupEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date of installation.
         /// </summary>
         internal static string InstallDate {
