@@ -19,7 +19,7 @@ namespace UninstallTools.Uninstaller
     public sealed class BulkUninstallTask : IDisposable
     {
         private readonly object _operationLock = new object();
-        private int _concurrentUninstallerCount;
+        private int _concurrentUninstallerCount = 1;
         private bool _finished;
         private Thread _workerThread;
 
