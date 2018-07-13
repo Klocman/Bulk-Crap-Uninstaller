@@ -725,9 +725,6 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Nalaganje ikon</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Iskanje zagonskih vnosov</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Poglej za aplikacijo</value>
   </data>

@@ -916,6 +916,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Searching for start-up entries.
+        /// </summary>
+        internal static string Progress_Startup {
+            get {
+                return ResourceManager.GetString("Progress_Startup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Publisher name.
         /// </summary>
         internal static string Publisher {

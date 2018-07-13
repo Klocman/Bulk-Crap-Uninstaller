@@ -726,9 +726,6 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Ładowanie ikon</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Wyszukiwanie wpisów startowych</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Szukaj aplikację</value>
   </data>

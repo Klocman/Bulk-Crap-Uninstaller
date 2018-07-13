@@ -726,9 +726,6 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Icônes de chargement</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Recherche des entrées de démarrage</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Chercher une application</value>
   </data>

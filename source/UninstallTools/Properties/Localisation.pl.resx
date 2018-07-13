@@ -546,4 +546,7 @@
   <data name="UninstallStatus_Paused" xml:space="preserve">
     <value>Wstrzymany</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Wyszukiwanie wpisów startowych</value>
+  </data>
 </root>

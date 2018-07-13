@@ -725,9 +725,6 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Cargando iconos</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Buscando entradas de inicio</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Buscar aplicación</value>
   </data>

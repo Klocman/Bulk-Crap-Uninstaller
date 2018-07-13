@@ -546,4 +546,7 @@
   <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
     <value>Seznam nameščenih map</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Iskanje zagonskih vnosov</value>
+  </data>
 </root>

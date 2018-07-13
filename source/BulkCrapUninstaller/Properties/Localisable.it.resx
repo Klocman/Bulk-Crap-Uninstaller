@@ -724,9 +724,6 @@ Puoi provare a disabilitare la rilevazione delle collisioni nella configurazione
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Caricando le icone</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Ricerca delle voci all'avvio</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Ricerca applicazione</value>
   </data>

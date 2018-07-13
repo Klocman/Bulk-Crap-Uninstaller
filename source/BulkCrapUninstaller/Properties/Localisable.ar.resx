@@ -471,9 +471,6 @@ The lists are separated by a single newline.</comment>
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>تحميل الايقونات</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>البحث عن ادخالات بدء التشغيل</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>بحث عن التطبيق</value>
   </data>

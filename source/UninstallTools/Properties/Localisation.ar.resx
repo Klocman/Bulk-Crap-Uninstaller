@@ -546,4 +546,7 @@
   <data name="UninstallStatus_Paused" xml:space="preserve">
     <value>متوقف</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>البحث عن ادخالات بدء التشغيل</value>
+  </data>
 </root>

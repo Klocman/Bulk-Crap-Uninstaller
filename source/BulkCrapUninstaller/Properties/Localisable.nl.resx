@@ -457,9 +457,6 @@ The lists are separated by a single newline.</comment>
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Pictogrammen laden...</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Zoeken naar opstart registraties</value>
-  </data>
   <data name="RatingEntry_ToString" xml:space="preserve">
     <value>Gemiddelde waardering: {0}; Mijn waardering: {1}</value>
   </data>

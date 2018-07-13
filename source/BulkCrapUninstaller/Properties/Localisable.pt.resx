@@ -731,7 +731,4 @@ Pode sentir-se tentado a desactivar o detector de conflitos nas configurações.
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>A carregar os ícones</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Pesquisa de itens de inicialização</value>
-  </data>
 </root>

@@ -546,4 +546,7 @@
   <data name="UninstallStatus_Paused" xml:space="preserve">
     <value>Пауза</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Поиск загрузочных записей</value>
+  </data>
 </root>

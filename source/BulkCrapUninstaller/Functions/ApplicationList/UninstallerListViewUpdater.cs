@@ -230,7 +230,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             var progressMax = 0;
             var uninstallerEntries = ApplicationUninstallerFactory.GetUninstallerEntries(x =>
             {
-                progressMax = x.TotalCount + 2;
+                progressMax = x.TotalCount + 1;
                 dialogInterface.SetMaximum(progressMax);
                 dialogInterface.SetProgress(x.CurrentCount, x.Message);
 
@@ -249,26 +249,9 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 if (dialogInterface.Abort)
                     throw new OperationCanceledException();
             });
-
-            dialogInterface.SetProgress(progressMax - 1, Localisable.Progress_Finishing_Startup);
-            dialogInterface.SetSubMaximum(StartupManager.Factories.Count);
-            var i = 0;
-            var startupEntries = new List<StartupEntryBase>();
-            foreach (var factory in StartupManager.Factories)
-            {
-                dialogInterface.SetSubProgress(i++, factory.Key);
-                try
-                {
-                    startupEntries.AddRange(factory.Value());
-                }
-                catch (Exception ex)
-                {
-                    PremadeDialogs.GenericError(ex);
-                }
-            }
-
+            
             dialogInterface.SetProgress(progressMax, Localisable.Progress_Finishing, true);
-            dialogInterface.SetSubMaximum(3);
+            dialogInterface.SetSubMaximum(2);
             dialogInterface.SetSubProgress(0, string.Empty);
 
             if (!string.IsNullOrEmpty(Program.InstalledRegistryKeyName))
@@ -276,18 +259,8 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                     x => PathTools.PathsEqual(x.RegistryKeyName, Program.InstalledRegistryKeyName));
 
             AllUninstallers = uninstallerEntries;
-
-            dialogInterface.SetSubProgress(1, Localisable.MainWindow_Statusbar_RefreshingStartup);
-            try
-            {
-                ReassignStartupEntries(false, startupEntries);
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
-
-            dialogInterface.SetSubProgress(2, Localisable.Progress_Finishing_Icons);
+            
+            dialogInterface.SetSubProgress(1, Localisable.Progress_Finishing_Icons);
             try
             {
                 _iconGetter.UpdateIconList(AllUninstallers);
@@ -309,9 +282,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         internal void ReassignStartupEntries(bool refreshListView, IEnumerable<StartupEntryBase> items)
         {
-            // Using DoForEach to avoid multiple enumerations
-            StartupManager.AssignStartupEntries(AllUninstallers
-                .DoForEach(x => { if (x != null) x.StartupEntries = null; }), items);
+            ApplicationUninstallerFactory.AttachStartupEntries(AllUninstallers, items);
 
             if (refreshListView)
                 RefreshList();

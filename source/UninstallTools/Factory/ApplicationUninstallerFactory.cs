@@ -12,6 +12,7 @@ using Klocman.Forms.Tools;
 using Klocman.IO;
 using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Properties;
+using UninstallTools.Startup;
 
 namespace UninstallTools.Factory
 {
@@ -21,20 +22,20 @@ namespace UninstallTools.Factory
 
         public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {
-            const int totalStepCount = 7;
+            const int totalStepCount = 8;
             var currentStep = 1;
 
-            // Find msi products
+            // Find msi products ---------------------------------------------------------------------------------------
             var msiProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_MSI);
             callback(msiProgress);
             var msiGuidCount = 0;
             var msiProducts = MsiTools.MsiEnumProducts().DoForEach(x =>
             {
-                msiProgress.Inner = new ListGenerationProgress(0, -1, string.Format(Localisation.Progress_MSI_sub, ++msiGuidCount));
+                msiProgress.Inner = new ListGenerationProgress(0, -1, String.Format(Localisation.Progress_MSI_sub, ++msiGuidCount));
                 callback(msiProgress);
             }).ToList();
 
-            // Find stuff mentioned in registry
+            // Find stuff mentioned in registry ------------------------------------------------------------------------
             List<ApplicationUninstallerEntry> registryResults;
             if (UninstallToolsGlobalConfig.ScanRegistry)
             {
@@ -68,7 +69,8 @@ namespace UninstallTools.Factory
                 registryResults = new List<ApplicationUninstallerEntry>();
             }
 
-            // Look for entries on drives, based on info in registry. Need to check for duplicates with other entries later
+            // Look for entries on drives, based on info in registry. ----------------------------------------------------
+            // Will introduce duplicates to already detected stuff. Need to check for duplicates with other entries later.
             List<ApplicationUninstallerEntry> driveResults;
             if (UninstallToolsGlobalConfig.ScanDrives)
             {
@@ -86,7 +88,7 @@ namespace UninstallTools.Factory
                 driveResults = new List<ApplicationUninstallerEntry>();
             }
 
-            // Get misc entries that use fancy logic
+            // Get misc entries that use fancy logic --------------------------------------------------------------------
             var miscProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_AppStores);
             callback(miscProgress);
             var otherResults = GetMiscUninstallerEntries(report =>
@@ -95,7 +97,7 @@ namespace UninstallTools.Factory
                 callback(miscProgress);
             });
 
-            // Handle duplicate entries
+            // Handle duplicate entries ----------------------------------------------------------------------------------
             var mergeProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
             callback(mergeProgress);
             var mergedResults = registryResults.ToList();
@@ -116,11 +118,11 @@ namespace UninstallTools.Factory
                 callback(mergeProgress);
             });
 
-            // Fill in any missing information
+            // Fill in any missing information -------------------------------------------------------------------------
             if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
                 ApplyCache(mergedResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
-            var infoAddProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_GeneratingInfo);
+            var infoAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GeneratingInfo);
             callback(infoAddProgress);
             var infoAddCount = 0;
             foreach (var result in mergedResults)
@@ -131,9 +133,8 @@ namespace UninstallTools.Factory
                 InfoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
-
-            //callback(new GetUninstallerListProgress(currentStep, totalStepCount, "Finished"));
-
+            
+            // Cache missing information to speed up future scans
             if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
             {
                 foreach (var entry in mergedResults)
@@ -147,6 +148,36 @@ namespace UninstallTools.Factory
                 {
                     Console.WriteLine(@"Failed to save cache: " + e);
                 }
+            }
+
+            // Detect startups and attach them to uninstaller entries ----------------------------------------------------
+            var startupsProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_Startup);
+            callback(startupsProgress);
+            var i = 0;
+            var startupEntries = new List<StartupEntryBase>();
+            foreach (var factory in StartupManager.Factories)
+            {
+                startupsProgress.Inner = new ListGenerationProgress(i++, StartupManager.Factories.Count, factory.Key);
+                callback(startupsProgress);
+                try
+                {
+                    startupEntries.AddRange(factory.Value());
+                }
+                catch (Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                }
+            }
+
+            startupsProgress.Inner = new ListGenerationProgress(1, 1, Localisation.Progress_Merging);
+            callback(startupsProgress);
+            try
+            {
+                AttachStartupEntries(mergedResults, startupEntries);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError(ex);
             }
 
             return mergedResults;
@@ -197,7 +228,7 @@ namespace UninstallTools.Factory
 
         private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
         {
-            if (string.IsNullOrEmpty(target.UninstallerFullFilename))
+            if (String.IsNullOrEmpty(target.UninstallerFullFilename))
                 return false;
 
             bool isPathRooted;
@@ -252,6 +283,16 @@ namespace UninstallTools.Factory
             }
 
             return otherResults;
+        }
+
+        /// <summary>
+        /// Attach startup entries to uninstaller entries that are automatically detected as related.
+        /// </summary>
+        public static void AttachStartupEntries(IEnumerable<ApplicationUninstallerEntry> uninstallers, IEnumerable<StartupEntryBase> startupEntries)
+        {
+            // Using DoForEach to avoid multiple enumerations
+            StartupManager.AssignStartupEntries(uninstallers
+                .DoForEach(x => { if (x != null) x.StartupEntries = null; }), startupEntries);
         }
     }
 }

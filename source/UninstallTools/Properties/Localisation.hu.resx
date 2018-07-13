@@ -498,4 +498,7 @@
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
     <value>Windows frissítés</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Indítópult bejegyzések keresése</value>
+  </data>
 </root>

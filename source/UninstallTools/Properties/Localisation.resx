@@ -559,4 +559,7 @@
   <data name="HasStartupEntries" xml:space="preserve">
     <value>Can start automatically</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Searching for start-up entries</value>
+  </data>
 </root>

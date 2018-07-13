@@ -726,9 +726,6 @@ You can try disabling collision detection in the settings, but it is not recomme
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Loading icons</value>
   </data>
-  <data name="Progress_Finishing_Startup" xml:space="preserve">
-    <value>Searching for start-up entries</value>
-  </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Look for application</value>
   </data>

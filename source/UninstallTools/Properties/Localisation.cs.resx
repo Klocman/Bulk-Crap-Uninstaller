@@ -546,4 +546,7 @@
   <data name="UninstallStatus_Paused" xml:space="preserve">
     <value>Pauza</value>
   </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Hledání položek po spouštění</value>
+  </data>
 </root>
