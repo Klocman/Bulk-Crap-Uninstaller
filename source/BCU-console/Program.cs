@@ -28,14 +28,14 @@ BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
         WARRANTIES, ONLY YOU ARE CONSIDERED RESPONSIBLE FOR THE RESULTS.
  /V   - Verbose logging mode (show more information about what is currently happening).");
         }
-        
+
         private static int Main(string[] args)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
 
             try { Console.OutputEncoding = Encoding.Unicode; }
-            catch(SystemException) { }
+            catch (SystemException) { }
 
             var info = Assembly.GetExecutingAssembly();
             Console.WriteLine(info.FullName);
@@ -181,13 +181,13 @@ BCU-console uninstall path [/Q] [/U] [/V] - Uninstall applications
             string previousMain = null;
             var result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
             {
+                if (previousMain != report.Message)
+                {
+                    previousMain = report.Message;
+                    Console.WriteLine(report.Message);
+                }
                 if (isVerbose)
                 {
-                    if (previousMain != report.Message)
-                    {
-                        previousMain = report.Message;
-                        Console.WriteLine(report.Message);
-                    }
                     if (!string.IsNullOrEmpty(report.Inner?.Message))
                     {
                         Console.Write("-> ");
