@@ -43,5 +43,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj">
+      <Project>{87091C84-B671-4269-ABE4-D0F818AB201C}</Project>
+      <Name>UninstallTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
