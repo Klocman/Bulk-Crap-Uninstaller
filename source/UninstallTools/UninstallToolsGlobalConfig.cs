@@ -193,7 +193,7 @@ namespace UninstallTools
             if (!PathTools.PathsEqual(pf32, pf64))
                 pfDirectories.Add(new KeyValuePair<string, bool?>(pf64, true));
 
-            if (includeUserDirectories)
+            if (includeUserDirectories && CustomProgramFiles != null)
                 pfDirectories.AddRange(CustomProgramFiles.Where(
                     x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
                     .Select(x => new KeyValuePair<string, bool?>(x, null)));
