@@ -423,25 +423,22 @@ namespace UninstallTools.Uninstaller
                             {
                                 switch (exitVar)
                                 {
-                                    // The system cannot find the file specified. Indicates that the file can not be found in specified location.
                                     case 2:
-                                    // The system cannot find the path specified. Indicates that the specified path can not be found.
+                                        throw new Exception("The system cannot find the file specified. Indicates that the file can not be found in specified location.");
                                     case 3:
-                                    // Access is denied. Indicates that user has no access right to specified resource.
+                                        throw new Exception("The system cannot find the path specified. Indicates that the specified path can not be found.");
                                     case 5:
-                                    // Program is not recognized as an internal or external command, operable program or batch file. 
+                                        throw new Exception("Access is denied. Indicates that user has no access right to specified resource.");
                                     case 9009:
-                                    // 0x80070032 - This app is part of Windows and cannot be uninstalled on a per-user basis.
+                                        throw new Exception("Program is not recognized as an internal or external command, operable program or batch file.");
                                     case -2147024846:
-                                        break;
+                                        throw new Exception("0x80070032 - This app is part of Windows and cannot be uninstalled on a per-user basis.");
 
                                     default:
                                         if (options.RetryFailedQuiet || (UninstallerEntry.UninstallerKind == UninstallerType.Nsis && !options.PreferQuiet))
                                             retry = true;
-                                        break;
+                                        throw new IOException(Localisation.UninstallError_UninstallerReturnedCode + exitVar);
                                 }
-                                throw new IOException(Localisation.UninstallError_UninstallerReturnedCode +
-                                                      exitVar);
                             }
                         }
                     }
