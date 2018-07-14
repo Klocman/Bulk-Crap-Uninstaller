@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -45,44 +46,50 @@ namespace UninstallTools.Factory
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
-            var parts = output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries);
-            var current = parts.Take(5).ToList();
-            while (current.Count == 5)
+            // Apps are separated by empty lines
+            var allParts = output.SplitNewlines(StringSplitOptions.None);
+            
+            while (true)
             {
-                /*
-               @"FullName: "
-               @"DisplayName: "
-               @"PublisherDisplayName: "
-               @"Logo: "
-               @"InstalledLocation: "
-               */
+                var singleAppParts = allParts.TakeWhile(x => !string.IsNullOrEmpty(x)).ToList();
+                allParts = allParts.Skip(singleAppParts.Count + 1).ToArray();
 
-                //Trim the labels
-                for (var i = 0; i < current.Count; i++)
-                    current[i] = current[i].Substring(current[i].IndexOf(" ", StringComparison.Ordinal)).Trim();
-
-                if (Directory.Exists(current[4]))
+                if (!singleAppParts.Any())
                 {
-                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{current[0]}\"";
+                    if (allParts.Length == 0)
+                        break;
+                    continue;
+                }
+
+                var data = singleAppParts.Where(x=>x.Contains(':')).ToDictionary(
+                    x => x.Substring(0, x.IndexOf(":", StringComparison.Ordinal)).Trim(),
+                    x => x.Substring(x.IndexOf(":", StringComparison.Ordinal) + 1).Trim());
+                
+                if (data.ContainsKey("InstalledLocation") && Directory.Exists(data["InstalledLocation"]))
+                {
+                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{data["FullName"]}\"";
+                    var isProtected = data.ContainsKey("IsProtected") && Convert.ToBoolean(data["IsProtected"], CultureInfo.InvariantCulture);
                     var result = new ApplicationUninstallerEntry
                     {
-                        RatingId = current[0],
+                        RatingId = data["FullName"],
                         UninstallString = uninstallStr,
                         QuietUninstallString = uninstallStr,
-                        RawDisplayName = string.IsNullOrEmpty(current[1]) ? current[0] : current[1],
-                        Publisher = current[2],
+                        RawDisplayName = string.IsNullOrEmpty(data["DisplayName"]) ? data["FullName"] : data["DisplayName"],
+                        Publisher = data["PublisherDisplayName"],
                         IsValid = true,
                         UninstallerKind = UninstallerType.StoreApp,
-                        InstallLocation = current[4],
-                        InstallDate = Directory.GetCreationTime(current[4])
+                        InstallLocation = data["InstalledLocation"],
+                        InstallDate = Directory.GetCreationTime(data["InstalledLocation"]),
+                        IsProtected = isProtected,
+                        SystemComponent = isProtected
                     };
 
-                    if (File.Exists(current[3]))
+                    if (File.Exists(data["Logo"]))
                     {
                         try
                         {
-                            result.DisplayIcon = current[3];
-                            result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(current[3]));
+                            result.DisplayIcon = data["Logo"];
+                            result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(data["Logo"]));
                         }
                         catch
                         {
@@ -99,9 +106,6 @@ namespace UninstallTools.Factory
 
                     yield return result;
                 }
-
-                parts = parts.Skip(5).ToArray();
-                current = parts.Take(5).ToList();
             }
         }
     }

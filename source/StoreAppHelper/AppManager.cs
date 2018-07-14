@@ -5,13 +5,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
 using Windows.ApplicationModel;
@@ -80,7 +78,6 @@ namespace StoreAppHelper
         {
             var manifestContents = TryGetAppManifest(package);
             if (manifestContents == null) return null;
-
             try
             {
                 var start = manifestContents.IndexOf("<Properties>", StringComparison.Ordinal);
@@ -92,7 +89,12 @@ namespace StoreAppHelper
                 var installPath = package.InstalledLocation.Path;
                 var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
 
-                return new App(package.Id.FullName, string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName, ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), ExtractDisplayIcon(installPath, logoPath), installPath);
+                return new App(package.Id.FullName, 
+                    string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName, 
+                    ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), 
+                    ExtractDisplayIcon(installPath, logoPath), 
+                    installPath,
+                    package.SignatureKind == PackageSignatureKind.System);
             }
             catch (SystemException exception)
             {
@@ -158,13 +160,14 @@ namespace StoreAppHelper
         public sealed class App
         {
             public App(string fullName, string displayName, string publisherDisplayName, string logo,
-                string installedLocation)
+                string installedLocation, bool isProtected)
             {
                 FullName = fullName;
                 DisplayName = displayName;
                 PublisherDisplayName = publisherDisplayName;
                 Logo = logo;
                 InstalledLocation = installedLocation;
+                IsProtected = isProtected;
             }
 
             public string FullName { get; }
@@ -172,6 +175,7 @@ namespace StoreAppHelper
             public string PublisherDisplayName { get; }
             public string Logo { get; }
             public string InstalledLocation { get; }
+            public bool IsProtected { get; }
         }
 
         private static class NativeMethods

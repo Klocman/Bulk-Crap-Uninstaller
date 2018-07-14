@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace StoreAppHelper
 {
@@ -26,7 +27,7 @@ namespace StoreAppHelper
         {
             if (args.Length == 0)
                 return InvalidArgumentCode;
-
+            
             try { Console.OutputEncoding = Encoding.Unicode; }
             catch(IOException) { /*Old .NET v4 without support for unicode output*/ }
 
@@ -42,6 +43,7 @@ namespace StoreAppHelper
                         Console.WriteLine(@"PublisherDisplayName: " + app.PublisherDisplayName);
                         Console.WriteLine(@"Logo: " + app.Logo);
                         Console.WriteLine(@"InstalledLocation: " + app.InstalledLocation);
+                        Console.WriteLine(@"IsProtected: " + app.IsProtected.ToString(CultureInfo.InvariantCulture));
                         Console.WriteLine();
                     }
                     return OkCode;
