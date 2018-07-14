@@ -39,6 +39,7 @@ namespace StoreAppHelper
                         Console.WriteLine(@"PublisherDisplayName: " + app.PublisherDisplayName);
                         Console.WriteLine(@"Logo: " + app.Logo);
                         Console.WriteLine(@"InstalledLocation: " + app.InstalledLocation);
+                        Console.WriteLine();
                     }
                     return OkCode;
                 }

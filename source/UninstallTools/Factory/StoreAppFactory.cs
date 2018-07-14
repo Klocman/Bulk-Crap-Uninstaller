@@ -45,7 +45,7 @@ namespace UninstallTools.Factory
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
-            var parts = output.SplitNewlines(StringSplitOptions.None);
+            var parts = output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries);
             var current = parts.Take(5).ToList();
             while (current.Count == 5)
             {
