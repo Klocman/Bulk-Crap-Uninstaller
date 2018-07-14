@@ -28,7 +28,7 @@ namespace UninstallTools.Factory
         public static string[] ToPowerShellRemoveCommands(IEnumerable<ApplicationUninstallerEntry> appEntries)
         {
             return appEntries.Where(x => x.UninstallerKind == UninstallerType.StoreApp)
-                .Select(x => GetPowerShellRemoveCommand(x.RatingId))
+                .Select(x => GetPowerShellRemoveCommand(x.Comment))
                 .ToArray();
         }
 
@@ -48,7 +48,7 @@ namespace UninstallTools.Factory
 
             // Apps are separated by empty lines
             var allParts = output.SplitNewlines(StringSplitOptions.None);
-            
+
             while (true)
             {
                 var singleAppParts = allParts.TakeWhile(x => !string.IsNullOrEmpty(x)).ToList();
@@ -61,20 +61,23 @@ namespace UninstallTools.Factory
                     continue;
                 }
 
-                var data = singleAppParts.Where(x=>x.Contains(':')).ToDictionary(
+                var data = singleAppParts.Where(x => x.Contains(':')).ToDictionary(
                     x => x.Substring(0, x.IndexOf(":", StringComparison.Ordinal)).Trim(),
                     x => x.Substring(x.IndexOf(":", StringComparison.Ordinal) + 1).Trim());
-                
+
                 if (data.ContainsKey("InstalledLocation") && Directory.Exists(data["InstalledLocation"]))
                 {
-                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{data["FullName"]}\"";
+                    var fullName = data["FullName"];
+                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{fullName}\"";
                     var isProtected = data.ContainsKey("IsProtected") && Convert.ToBoolean(data["IsProtected"], CultureInfo.InvariantCulture);
                     var result = new ApplicationUninstallerEntry
                     {
-                        RatingId = data["FullName"],
+                        Comment = fullName,
+                        CacheIdOverride = fullName,
+                        RatingId = fullName.Substring(0, fullName.IndexOf("_", StringComparison.Ordinal)),
                         UninstallString = uninstallStr,
                         QuietUninstallString = uninstallStr,
-                        RawDisplayName = string.IsNullOrEmpty(data["DisplayName"]) ? data["FullName"] : data["DisplayName"],
+                        RawDisplayName = string.IsNullOrEmpty(data["DisplayName"]) ? fullName : data["DisplayName"],
                         Publisher = data["PublisherDisplayName"],
                         IsValid = true,
                         UninstallerKind = UninstallerType.StoreApp,

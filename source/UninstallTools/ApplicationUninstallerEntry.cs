@@ -206,6 +206,9 @@ namespace UninstallTools
         /// </summary>
         public string GetCacheId()
         {
+            if (!string.IsNullOrEmpty(CacheIdOverride))
+                return CacheIdOverride;
+
             var rid = RatingId;
             if (!string.IsNullOrEmpty(rid))
                 return rid;
@@ -215,6 +218,8 @@ namespace UninstallTools
 
             return null;
         }
+
+        internal string CacheIdOverride;
 
         public string RatingId
         {
