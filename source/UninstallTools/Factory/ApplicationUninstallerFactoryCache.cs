@@ -3,10 +3,12 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Tools;
 
 namespace UninstallTools.Factory
@@ -69,15 +71,18 @@ namespace UninstallTools.Factory
             var result = SerializationTools.DeserializeFromXml<List<CacheEntry>>(Filename);
 
             Cache.Clear();
-            foreach (var cacheEntry in result)
+
+            // Ignore entries if more than 1 have the same cache id
+            foreach (var group in result
+                .GroupBy(x => x.Entry.GetCacheId())
+                .Where(g => g.Key != null && g.CountEquals(1)))
             {
-                var id = cacheEntry.Entry.GetCacheId();
-                if (id == null) continue;
+                var cacheEntry = group.Single();
 
                 if (SerializeIcons && cacheEntry.Icon != null)
                     cacheEntry.Entry.IconBitmap = DeserializeIcon(cacheEntry.Icon);
 
-                Cache.Add(id, cacheEntry.Entry);
+                Cache.Add(group.Key, cacheEntry.Entry);
             }
         }
 
