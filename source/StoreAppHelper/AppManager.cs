@@ -5,11 +5,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
 using Windows.ApplicationModel;
@@ -40,13 +42,16 @@ namespace StoreAppHelper
                     var deploymentResult = deploymentOperation.GetResults();
                     Console.WriteLine(@"Error code: {0}", deploymentOperation.ErrorCode);
                     Console.WriteLine(@"Error text: {0}", deploymentResult.ErrorText);
-                    throw new IOException();
+                    throw new IOException(deploymentResult.ErrorText);
+
                 case AsyncStatus.Canceled:
                     Console.WriteLine(@"Uninstallation was cancelled");
                     throw new OperationCanceledException();
+
                 case AsyncStatus.Completed:
                     Console.WriteLine(@"Uninstallation completed successfully");
                     return;
+
                 default:
                     Console.WriteLine(@"Invalid status: {0}", deploymentOperation.Status);
                     throw new IOException();

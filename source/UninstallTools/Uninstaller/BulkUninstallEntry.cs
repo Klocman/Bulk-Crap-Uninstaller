@@ -431,7 +431,10 @@ namespace UninstallTools.Uninstaller
                                     case 5:
                                     // Program is not recognized as an internal or external command, operable program or batch file. 
                                     case 9009:
+                                    // 0x80070032 - This app is part of Windows and cannot be uninstalled on a per-user basis.
+                                    case -2147024846:
                                         break;
+
                                     default:
                                         if (options.RetryFailedQuiet || (UninstallerEntry.UninstallerKind == UninstallerType.Nsis && !options.PreferQuiet))
                                             retry = true;

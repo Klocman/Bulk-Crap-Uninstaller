@@ -4,8 +4,11 @@
 */
 
 using System;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StoreAppHelper
 {
@@ -43,6 +46,11 @@ namespace StoreAppHelper
                     }
                     return OkCode;
                 }
+                catch (IOException ex)
+                {
+                    LogWriter.WriteExceptionToLog(ex);
+                    return HandleHrefMessage(ex);
+                }
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
@@ -57,6 +65,10 @@ namespace StoreAppHelper
                     AppManager.UninstallApp(args[1]);
                     return OkCode;
                 }
+                catch (IOException ex)
+                {
+                    return HandleHrefMessage(ex);
+                }
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
@@ -65,6 +77,20 @@ namespace StoreAppHelper
             }
 
             return InvalidArgumentCode;
+        }
+
+        private static int HandleHrefMessage(Exception ex)
+        {
+            var errorCode = Regex.Match(ex.Message, @"0x[\d\w]{8}")
+                .Captures.Cast<Capture>().FirstOrDefault()?.Value;
+
+            if (string.IsNullOrWhiteSpace(errorCode) || errorCode.Length < 8)
+                return FunctionFailedCode;
+
+            int.TryParse(errorCode.Substring(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture,
+                out var errorNumber);
+
+            return errorNumber > 0 ? errorNumber : FunctionFailedCode;
         }
     }
 }
