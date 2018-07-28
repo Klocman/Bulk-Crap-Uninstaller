@@ -43,7 +43,7 @@ namespace BulkCrapUninstaller.Forms
                 new {culture =  CultureInfo.GetCultureInfo("de"), translator = "Dieter Hummel"},
 
                 // es - Spanish
-                new {culture =  CultureInfo.GetCultureInfo("es"), translator = "Freddynic159 & Emilio J. Grao"},
+                new {culture =  CultureInfo.GetCultureInfo("es"), translator = "MS-PC2 & Freddynic159 & Emilio J. Grao"},
 
                 // fr - French
                 new {culture =  CultureInfo.GetCultureInfo("fr"), translator = "Thierry Delaunay"},
