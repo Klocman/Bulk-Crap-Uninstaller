@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman;
@@ -11,6 +12,10 @@ namespace OculusHelper
 {
     internal class OculusManager
     {
+        private static IEnumerable<string> _oculusLibraryLocations;
+        private static IEnumerable<string> OculusLibraryLocations =>
+            _oculusLibraryLocations ?? (_oculusLibraryLocations = FindOculusLibraryLocations());
+
         private static IEnumerable<string> FindOculusLibraryLocations()
         {
             var libPaths = new List<string>();
@@ -73,11 +78,9 @@ namespace OculusHelper
 
         public static IEnumerable<OculusApp> QueryOculusApps()
         {
-            var libs = FindOculusLibraryLocations();
-
             var apps = new List<OculusApp>();
 
-            foreach (var lib in libs)
+            foreach (var lib in OculusLibraryLocations)
             {
                 var software = Path.Combine(lib, "Software");
                 //var support = Path.Combine(lib, "Support");
@@ -121,6 +124,49 @@ namespace OculusHelper
             }
 
             return apps;
+        }
+
+        public static void RemoveApp(string canonicalName)
+        {
+            Console.WriteLine("Looking for apps with canonical name: " + canonicalName);
+
+            var apps = QueryOculusApps()
+                .Where(x => canonicalName.Equals(x.CanonicalName, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (apps.Count == 0)
+                Console.WriteLine("Invalid app name or app can't be uninstalled");
+            else foreach (var app in apps)
+                    RemoveApp(app);
+        }
+
+        public static void RemoveApp(OculusApp app)
+        {
+            Console.WriteLine("Removing Oculus app: " + app.CanonicalName);
+            Debug.Assert(app.CanonicalName.Length > 10);
+
+            foreach (var libraryLocation in OculusLibraryLocations)
+            {
+                // Collect paths first to avoid crashing halfway
+                var dirs = Directory.GetDirectories(libraryLocation,
+                    $"*{app.CanonicalName}*", SearchOption.AllDirectories);
+                var files = Directory.GetFiles(libraryLocation,
+                    $"*{app.CanonicalName}*", SearchOption.AllDirectories);
+
+                foreach (var path in dirs)
+                {
+                    Console.WriteLine("Deleting " + path);
+                    Directory.Delete(path, true);
+                }
+
+                foreach (var path in files)
+                {
+                    Console.WriteLine("Deleting " + path);
+                    File.Delete(path);
+                }
+            }
+
+            Console.WriteLine("Finished");
         }
     }
 }

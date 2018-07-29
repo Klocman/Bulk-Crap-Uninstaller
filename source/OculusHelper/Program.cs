@@ -34,6 +34,24 @@ namespace OculusHelper
                 }
             }
 
+            if (args.Length == 2 && string.Equals(args[0], @"/uninstall", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    OculusManager.RemoveApp(args[1]);
+                    return HelperTools.OkCode;
+                }
+                catch (IOException ex)
+                {
+                    return HelperTools.HandleHrefMessage(ex);
+                }
+                catch (Exception ex)
+                {
+                    LogWriter.WriteExceptionToLog(ex);
+                    return HelperTools.FunctionFailedCode;
+                }
+            }
+
             return HelperTools.InvalidArgumentCode;
         }
     }
