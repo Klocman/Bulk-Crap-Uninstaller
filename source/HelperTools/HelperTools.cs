@@ -26,12 +26,12 @@ namespace Klocman
                 .Captures.Cast<Capture>().FirstOrDefault()?.Value;
 
             if (String.IsNullOrWhiteSpace(errorCode) || errorCode.Length < 8)
-                return HelperTools.FunctionFailedCode;
+                return FunctionFailedCode;
 
             Int32.TryParse(errorCode.Substring(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture,
                 out var errorNumber);
 
-            return errorNumber > 0 ? errorNumber : HelperTools.FunctionFailedCode;
+            return errorNumber > 0 ? errorNumber : FunctionFailedCode;
         }
 
         /// <summary>

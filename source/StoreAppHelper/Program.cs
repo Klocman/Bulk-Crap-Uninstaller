@@ -4,20 +4,13 @@
 */
 
 using System;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using Klocman;
 
 namespace StoreAppHelper
 {
     internal static class Program
     {
-
-        /// <summary>
-        ///     The main entry point for the application.
-        /// </summary>
         [STAThread]
         private static int Main(string[] args)
         {
