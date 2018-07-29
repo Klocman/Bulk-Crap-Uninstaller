@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
 
@@ -55,6 +56,9 @@ namespace UninstallTools.Factory
                 var executable = data["LaunchFile"];
                 if (File.Exists(executable))
                     ExecutableAttributeExtractor.FillInformationFromFileAttribs(entry, executable, true);
+
+                if (string.IsNullOrEmpty(entry.RawDisplayName))
+                    entry.RawDisplayName = name.Replace('-', ' ').ToTitleCase();
 
                 yield return entry;
             }

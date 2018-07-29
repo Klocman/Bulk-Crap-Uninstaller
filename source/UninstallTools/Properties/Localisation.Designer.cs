@@ -1177,7 +1177,7 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Oculus Store.
+        ///   Looks up a localized string similar to Oculus.
         /// </summary>
         internal static string UninstallerType_Oculus {
             get {

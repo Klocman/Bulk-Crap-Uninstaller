@@ -566,6 +566,6 @@
     <value>Oculus Apps</value>
   </data>
   <data name="UninstallerType_Oculus" xml:space="preserve">
-    <value>Oculus Store</value>
+    <value>Oculus</value>
   </data>
 </root>
