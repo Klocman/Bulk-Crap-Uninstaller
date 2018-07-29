@@ -47,7 +47,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
@@ -67,7 +67,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <Optimize>false</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -1497,18 +1497,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /R /C /D "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)StoreAppHelper\bin\$(ConfigurationName)\StoreAppHelper.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)SteamHelper\bin\$(ConfigurationName)\SteamHelper.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)WinUpdateHelper\bin\$(ConfigurationName)\WinUpdateHelper.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\UninstallerAutomatizer.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)UninstallerAutomatizer\bin\$(ConfigurationName)\*.dll" 
-xcopy /Y /R /C /D "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\UniversalUninstaller.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)UniversalUninstaller\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)BCU-console\bin\$(ConfigurationName)\BCU-console.exe*" "$(TargetDir)"
-xcopy /Y /R /C /D "$(SolutionDir)BCU-console\bin\$(ConfigurationName)\*.dll" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
