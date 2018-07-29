@@ -267,6 +267,8 @@ namespace UninstallTools.Factory
                 miscFactories.Add(new WindowsUpdateFactory(), Localisation.Progress_AppStores_WinUpdates);
             if (UninstallToolsGlobalConfig.ScanChocolatey)
                 miscFactories.Add(new ChocolateyFactory(), Localisation.Progress_AppStores_Chocolatey);
+            if(UninstallToolsGlobalConfig.ScanOculus)
+                miscFactories.Add(new OculusFactory(), Localisation.Progress_AppStores_Oculus);
 
             var progress = 0;
             foreach (var kvp in miscFactories)

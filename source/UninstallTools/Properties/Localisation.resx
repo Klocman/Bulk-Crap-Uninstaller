@@ -562,4 +562,7 @@
   <data name="Progress_Startup" xml:space="preserve">
     <value>Searching for start-up entries</value>
   </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus Apps</value>
+  </data>
 </root>

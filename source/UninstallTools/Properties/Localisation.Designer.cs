@@ -763,6 +763,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oculus Apps.
+        /// </summary>
+        internal static string Progress_AppStores_Oculus {
+            get {
+                return ResourceManager.GetString("Progress_AppStores_Oculus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Searching for Steam Apps.
         /// </summary>
         internal static string Progress_AppStores_Steam {

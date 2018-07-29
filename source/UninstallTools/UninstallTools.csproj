@@ -82,6 +82,7 @@
     <Compile Include="Factory\InfoAdders\InstallDateAdder.cs" />
     <Compile Include="Factory\InfoAdders\VersionCleaner.cs" />
     <Compile Include="Factory\IUninstallerFactory.cs" />
+    <Compile Include="Factory\OculusFactory.cs" />
     <Compile Include="Factory\PredefinedFactory.cs" />
     <Compile Include="Factory\RegistryFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />

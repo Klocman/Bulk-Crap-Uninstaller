@@ -144,6 +144,7 @@ namespace UninstallTools
         public static bool ScanSteam { get; set; }
 
         public static bool ScanStoreApps { get; set; }
+        public static bool ScanOculus { get; set; }
 
         public static bool ScanWinFeatures { get; set; }
 
