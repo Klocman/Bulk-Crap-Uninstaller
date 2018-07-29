@@ -19,7 +19,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
     {
         internal static string AspectToStringConverter(object x)
         {
-            return x is long ? new FileSize((long)x).ToString() : string.Empty;
+            return x is long l ? new FileSize(l).ToString() : string.Empty;
         }
 
         internal static string BoolToYesNoAspectConverter(object rowObject)
@@ -30,8 +30,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         internal static object ColumnGuidAspectGetter(object rowObj)
         {
-            var entry = rowObj as ApplicationUninstallerEntry;
-            if (entry != null)
+            if (rowObj is ApplicationUninstallerEntry entry)
             {
                 var result = entry.BundleProviderKey;
                 if (!result.IsEmpty())
@@ -42,8 +41,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         internal static object ColumnGuidGroupKeyGetter(object rowObj)
         {
-            var entry = rowObj as ApplicationUninstallerEntry;
-            if (entry != null)
+            if (rowObj is ApplicationUninstallerEntry entry)
             {
                 var result = entry.BundleProviderKey;
                 if (result.Equals(Guid.Empty))
@@ -78,8 +76,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         internal static object ColumnSizeAspectGetter(object x)
         {
-            var applicationUninstallerEntry = x as ApplicationUninstallerEntry;
-            if (applicationUninstallerEntry != null)
+            if (x is ApplicationUninstallerEntry applicationUninstallerEntry)
                 return applicationUninstallerEntry.EstimatedSize.GetRawSize();
             return (long)0;
         }
@@ -159,6 +156,40 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 // Assume path is invalid
             }
             return Localisable.Empty;
+        }
+
+        private static readonly string UninstallStringTrimString = '"' + Program.AssemblyLocation.FullName + '\\';
+
+        private static object CleanupUninstallString(string uninstallString)
+        {
+            if (uninstallString == null)
+                return string.Empty;
+
+            if (uninstallString.StartsWith(UninstallStringTrimString, StringComparison.OrdinalIgnoreCase))
+            {
+                var trimmed = uninstallString.Substring(UninstallStringTrimString.Length);
+                var closingQuote = trimmed.IndexOf('"');
+                if (closingQuote > 0)
+                {
+                    trimmed = trimmed.Remove(closingQuote, 1);
+                    return trimmed;
+                }
+            }
+            return uninstallString;
+        }
+
+        public static object ColumnUninstallStringGetter(object rowobject)
+        {
+            if (rowobject is ApplicationUninstallerEntry entry)
+                return CleanupUninstallString(entry.UninstallString);
+            return string.Empty;
+        }
+
+        public static object ColumnQuietUninstallStringGetter(object rowobject)
+        {
+            if (rowobject is ApplicationUninstallerEntry entry)
+                return CleanupUninstallString(entry.QuietUninstallString);
+            return string.Empty;
         }
     }
 }

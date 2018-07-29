@@ -152,8 +152,11 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnDisplayVersion.AspectName = ApplicationUninstallerEntry.RegistryNameDisplayVersion;
             _reference.olvColumnDisplayVersion.GroupKeyGetter = ListViewDelegates.DisplayVersionGroupKeyGetter;
 
-            _reference.olvColumnUninstallString.AspectName = ApplicationUninstallerEntry.RegistryNameUninstallString;
+            _reference.olvColumnUninstallString.AspectGetter = ListViewDelegates.ColumnUninstallStringGetter;
             _reference.olvColumnUninstallString.GroupKeyGetter = ListViewDelegates.ColumnUninstallStringGroupKeyGetter;
+            
+            _reference.olvColumnQuietUninstallString.AspectGetter = ListViewDelegates.ColumnQuietUninstallStringGetter;
+            _reference.olvColumnQuietUninstallString.GroupKeyGetter = ListViewDelegates.ColumnQuietUninstallStringGroupKeyGetter;
 
             _reference.olvColumnInstallDate.AspectGetter = x =>
             {
@@ -206,11 +209,6 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 var aboutUri = entry?.GetAboutUri();
                 return aboutUri?.Host ?? Localisable.Empty;
             };
-
-            _reference.olvColumnQuietUninstallString.AspectName =
-                ApplicationUninstallerEntry.RegistryNameQuietUninstallString;
-            _reference.olvColumnQuietUninstallString.GroupKeyGetter =
-                ListViewDelegates.ColumnQuietUninstallStringGroupKeyGetter;
 
             _reference.olvColumnSize.TextAlign = HorizontalAlignment.Right;
             _reference.olvColumnSize.AspectGetter = ListViewDelegates.ColumnSizeAspectGetter;
