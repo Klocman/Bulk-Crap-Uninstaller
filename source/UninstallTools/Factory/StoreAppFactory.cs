@@ -9,7 +9,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 
@@ -40,75 +39,57 @@ namespace UninstallTools.Factory
             if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
                 yield break;
 
-            var output = SteamFactory.StartProcessAndReadOutput(StoreAppHelperPath, "/query");
+            var output = FactoryTools.StartProcessAndReadOutput(StoreAppHelperPath, "/query");
             if (string.IsNullOrEmpty(output))
                 yield break;
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
-
-            // Apps are separated by empty lines
-            var allParts = output.SplitNewlines(StringSplitOptions.None);
-
-            while (true)
+            
+            foreach (var data in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
-                var singleAppParts = allParts.TakeWhile(x => !string.IsNullOrEmpty(x)).ToList();
-                allParts = allParts.Skip(singleAppParts.Count + 1).ToArray();
+                if (!data.ContainsKey("InstalledLocation") || !Directory.Exists(data["InstalledLocation"])) continue;
 
-                if (!singleAppParts.Any())
+                var fullName = data["FullName"];
+                var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{fullName}\"";
+                var isProtected = data.ContainsKey("IsProtected") && Convert.ToBoolean(data["IsProtected"], CultureInfo.InvariantCulture);
+                var result = new ApplicationUninstallerEntry
                 {
-                    if (allParts.Length == 0)
-                        break;
-                    continue;
+                    Comment = fullName,
+                    CacheIdOverride = fullName,
+                    RatingId = fullName.Substring(0, fullName.IndexOf("_", StringComparison.Ordinal)),
+                    UninstallString = uninstallStr,
+                    QuietUninstallString = uninstallStr,
+                    RawDisplayName = string.IsNullOrEmpty(data["DisplayName"]) ? fullName : data["DisplayName"],
+                    Publisher = data["PublisherDisplayName"],
+                    IsValid = true,
+                    UninstallerKind = UninstallerType.StoreApp,
+                    InstallLocation = data["InstalledLocation"],
+                    InstallDate = Directory.GetCreationTime(data["InstalledLocation"]),
+                    IsProtected = isProtected,
+                    SystemComponent = isProtected
+                };
+
+                if (File.Exists(data["Logo"]))
+                {
+                    try
+                    {
+                        result.DisplayIcon = data["Logo"];
+                        result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(data["Logo"]));
+                    }
+                    catch
+                    {
+                        result.DisplayIcon = null;
+                        result.IconBitmap = null;
+                    }
                 }
 
-                var data = singleAppParts.Where(x => x.Contains(':')).ToDictionary(
-                    x => x.Substring(0, x.IndexOf(":", StringComparison.Ordinal)).Trim(),
-                    x => x.Substring(x.IndexOf(":", StringComparison.Ordinal) + 1).Trim());
-
-                if (data.ContainsKey("InstalledLocation") && Directory.Exists(data["InstalledLocation"]))
+                if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    var fullName = data["FullName"];
-                    var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{fullName}\"";
-                    var isProtected = data.ContainsKey("IsProtected") && Convert.ToBoolean(data["IsProtected"], CultureInfo.InvariantCulture);
-                    var result = new ApplicationUninstallerEntry
-                    {
-                        Comment = fullName,
-                        CacheIdOverride = fullName,
-                        RatingId = fullName.Substring(0, fullName.IndexOf("_", StringComparison.Ordinal)),
-                        UninstallString = uninstallStr,
-                        QuietUninstallString = uninstallStr,
-                        RawDisplayName = string.IsNullOrEmpty(data["DisplayName"]) ? fullName : data["DisplayName"],
-                        Publisher = data["PublisherDisplayName"],
-                        IsValid = true,
-                        UninstallerKind = UninstallerType.StoreApp,
-                        InstallLocation = data["InstalledLocation"],
-                        InstallDate = Directory.GetCreationTime(data["InstalledLocation"]),
-                        IsProtected = isProtected,
-                        SystemComponent = isProtected
-                    };
-
-                    if (File.Exists(data["Logo"]))
-                    {
-                        try
-                        {
-                            result.DisplayIcon = data["Logo"];
-                            result.IconBitmap = DrawingTools.IconFromImage(new Bitmap(data["Logo"]));
-                        }
-                        catch
-                        {
-                            result.DisplayIcon = null;
-                            result.IconBitmap = null;
-                        }
-                    }
-
-                    if (result.InstallLocation.StartsWith(windowsPath, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        result.SystemComponent = true;
-                        //result.IsProtected = true;
-                    }
-
-                    yield return result;
+                    result.SystemComponent = true;
+                    //result.IsProtected = true;
                 }
+
+                yield return result;
             }
         }
     }

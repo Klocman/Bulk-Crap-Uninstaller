@@ -56,6 +56,7 @@
     <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
     <Compile Include="Factory\ApplicationUninstallerFactoryCache.cs" />
     <Compile Include="Factory\ChocolateyFactory.cs" />
+    <Compile Include="Factory\FactoryTools.cs" />
     <Compile Include="Factory\InfoAdders\BasicIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
     <Compile Include="Factory\DirectoryFactory.cs" />

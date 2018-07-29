@@ -40,7 +40,7 @@ namespace UninstallTools.Factory
             if (!HelperIsAvailable)
                 yield break;
 
-            var output = SteamFactory.StartProcessAndReadOutput(HelperPath, "list");
+            var output = FactoryTools.StartProcessAndReadOutput(HelperPath, "list");
             if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.OrdinalIgnoreCase))
                 yield break;
 

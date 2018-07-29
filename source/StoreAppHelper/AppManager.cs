@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Management.Deployment;
+using Klocman;
 
 namespace StoreAppHelper
 {

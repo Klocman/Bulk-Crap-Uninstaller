@@ -1177,6 +1177,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oculus Store.
+        /// </summary>
+        internal static string UninstallerType_Oculus {
+            get {
+                return ResourceManager.GetString("UninstallerType_Oculus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SDBInst.
         /// </summary>
         internal static string UninstallerType_SdbInst {

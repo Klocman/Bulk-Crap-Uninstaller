@@ -5,10 +5,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
@@ -50,7 +48,7 @@ namespace UninstallTools.Factory
 
             if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
             {
-                var output = StartProcessAndReadOutput(SteamHelperPath, "steam");
+                var output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "steam");
                 if (!string.IsNullOrEmpty(output)
                     && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
                     && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
@@ -70,24 +68,12 @@ namespace UninstallTools.Factory
             return GetSteamApps();
         }
 
-        internal static string StartProcessAndReadOutput(string filename, string args)
-        {
-            using (var process = Process.Start(new ProcessStartInfo(filename, args)
-            {
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = false,
-                CreateNoWindow = true,
-                StandardOutputEncoding = Encoding.Unicode
-            })) return process?.StandardOutput.ReadToEnd();
-        }
-
         private static IEnumerable<ApplicationUninstallerEntry> GetSteamApps()
         {
             if (!SteamHelperIsAvailable)
                 yield break;
 
-            var output = StartProcessAndReadOutput(SteamHelperPath, "list");
+            var output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "list");
             if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
                 yield break;
 
@@ -96,7 +82,7 @@ namespace UninstallTools.Factory
                 int appId;
                 if (!int.TryParse(idString, out appId)) continue;
 
-                output = StartProcessAndReadOutput(SteamHelperPath,
+                output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath,
                     "info " + appId.ToString("G"));
                 if (string.IsNullOrEmpty(output) ||
                     output.Contains("error", StringComparison.InvariantCultureIgnoreCase))

@@ -33,6 +33,8 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "UninstallerType_SimpleDelete")]
         SimpleDelete,
         [LocalisedName(typeof(Localisation), "UninstallerType_Chocolatey")]
-        Chocolatey
+        Chocolatey,
+        [LocalisedName(typeof(Localisation), "UninstallerType_Oculus")]
+        Oculus
     }
 }
