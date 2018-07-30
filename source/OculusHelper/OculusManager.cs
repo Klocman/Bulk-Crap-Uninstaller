@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.ServiceProcess;
 using System.Threading;
 using Klocman;
 using Klocman.Extensions;
@@ -168,7 +169,38 @@ namespace OculusHelper
                 }
             }
 
+            RestartOculusService();
+
             Console.WriteLine("Finished");
+        }
+
+        /// <summary>
+        /// After removing an app the oculus library service has to be restarted to update the state.
+        /// </summary>
+        private static void RestartOculusService()
+        {
+            try
+            {
+                // Library service can't be restarted by itself, have to do it through OVRService
+                var serviceController = new ServiceController(@"OVRService");
+
+                if(serviceController.Status.Equals(ServiceControllerStatus.Stopped)) return;
+
+                if (serviceController.Status.Equals(ServiceControllerStatus.Running) || 
+                    serviceController.Status.Equals(ServiceControllerStatus.StartPending))
+                {
+                    Console.WriteLine("Stopping Oculus VR Services...");
+                    serviceController.Stop();
+                }
+                serviceController.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(20));
+                Console.WriteLine("Restarting Oculus VR Services...");
+                serviceController.Start();
+                serviceController.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(20));
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine("Restarting Oculus VR Service failed - " + ex.Message);
+            }
         }
 
         private static void CloseOculusClient()
