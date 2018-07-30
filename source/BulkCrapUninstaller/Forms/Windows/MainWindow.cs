@@ -1713,5 +1713,18 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowWinFeatures = true;
             s.FilterShowStoreApps = true;
         }
+
+        private void onlyWebBrowsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsWebBrowser));
+            var s = _setMan.Selected.Settings;
+            s.AdvancedDisplayOrphans = true;
+            s.FilterHideMicrosoft = false;
+            s.FilterShowSystemComponents = true;
+            s.FilterShowProtected = true;
+            s.FilterShowUpdates = true;
+            s.FilterShowWinFeatures = true;
+            s.FilterShowStoreApps = true;
+        }
     }
 }
