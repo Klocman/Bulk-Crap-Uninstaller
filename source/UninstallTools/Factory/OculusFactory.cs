@@ -47,7 +47,7 @@ namespace UninstallTools.Factory
                 var entry = new ApplicationUninstallerEntry
                 {
                     RatingId = name,
-                    RegistryKeyName = name,
+                    //RegistryKeyName = name,
                     UninstallString = uninstallStr,
                     QuietUninstallString = uninstallStr,
                     IsValid = true,
