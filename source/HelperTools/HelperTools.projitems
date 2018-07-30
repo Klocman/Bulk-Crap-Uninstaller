@@ -6,7 +6,7 @@
     <SharedGUID>73a9796d-334c-400c-87ac-1dfdd613266e</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>HelperTools</Import_RootNamespace>
+    <Import_RootNamespace>Klocman</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)HelperTools.cs" />
