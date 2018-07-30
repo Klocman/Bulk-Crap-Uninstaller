@@ -2,21 +2,23 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.5.0.0</Version>
+<Version>4.6.0.0</Version>
 <URL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added console utility for scripting - fully automatic uninstalls
-Added quick filters menu and new filtering presets
-Added ability to filter appications by them having startup entries
-Added ability to hide automatized uninstaller windows (enabled by default)
-Added scrollbars to setting pages that can overflow to fix cutoffs
-Uninstaller automation window now has opacity when not focused
-Improved identification of dialog boxes during automation, fixes some rare problems
-Updated taskscheduler and dotnetzip libraries
-Updated manual
-Fixed possible resource leak
-Refactoring and minor bugfixes
+Added support for Oculus store apps/games
+Added new property that marks apps as web browsers
+Added filtering option to show detected web browsers
+Added detection of unremovable Store Apps, mark them as protected components
+Added MS-PC2 to Spanish translation credits
+Added duplicate cache entry handling
+Use more generic rating id for StoreApps to keep ratings between versions
+Hide paths from some uninstall strings in the list view to reduce clutter
+Show more error information from failed uninstallers on the task list
+Improved formatting of store app helper output
+Made store app helper pass the hresult error back to BCU
+Fixed some Spanish and Italian translations not being used
+Fixed invalid metadata of UniversalUninstaller
 </Changes>
 <Hash></Hash>
 </Update>
