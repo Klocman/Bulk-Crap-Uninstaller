@@ -1,4 +1,9 @@
-﻿using System.Reflection;
+﻿/*
+    Copyright (c) 2018 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following

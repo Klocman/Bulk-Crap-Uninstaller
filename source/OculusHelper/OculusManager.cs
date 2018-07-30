@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+    Copyright (c) 2018 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -13,6 +18,7 @@ namespace OculusHelper
     internal class OculusManager
     {
         private static IEnumerable<string> _oculusLibraryLocations;
+
         private static IEnumerable<string> OculusLibraryLocations =>
             _oculusLibraryLocations ?? (_oculusLibraryLocations = FindOculusLibraryLocations());
 
@@ -21,30 +27,26 @@ namespace OculusHelper
             var libPaths = new List<string>();
 
             // Default library is in install dir and is not listed in the Libraries key.
-            foreach (var softwareKey in new[] { @"SOFTWARE\Oculus VR, LLC\Oculus", @"SOFTWARE\WOW6432Node\Oculus VR, LLC\Oculus" })
-            {
+            foreach (var softwareKey in new[]
+                {@"SOFTWARE\Oculus VR, LLC\Oculus", @"SOFTWARE\WOW6432Node\Oculus VR, LLC\Oculus"})
                 try
                 {
                     using (var key = Registry.LocalMachine.OpenSubKey(softwareKey))
                     {
                         if (key != null)
-                        {
                             if (key.GetValue("Base", null, RegistryValueOptions.None) is string path)
                                 libPaths.Add(path);
-                        }
                     }
                 }
                 catch (SystemException ex)
                 {
                     Console.WriteLine(ex);
                 }
-            }
 
             const string oculusLibPath = @"Software\Oculus VR, LLC\Oculus\Libraries";
 
             // Each user can have different libaries set up
             foreach (var userName in Registry.Users.GetSubKeyNames())
-            {
                 try
                 {
                     using (var key = Registry.Users.OpenSubKey(Path.Combine(userName, oculusLibPath), false))
@@ -52,23 +54,18 @@ namespace OculusHelper
                         if (key == null) continue;
 
                         foreach (var libKeyName in key.GetSubKeyNames())
-                        {
                             using (var libKey = key.OpenSubKey(libKeyName))
                             {
                                 if (libKey != null)
-                                {
                                     if (libKey.GetValue("Path", null, RegistryValueOptions.None) is string path)
                                         libPaths.Add(path);
-                                }
                             }
-                        }
                     }
                 }
                 catch (SystemException ex)
                 {
                     Console.WriteLine(ex);
                 }
-            }
 
             return libPaths.Select(x => x.Trim().ToLowerInvariant())
                 .Select(PathTools.ResolveVolumeIdToPath)
@@ -136,7 +133,8 @@ namespace OculusHelper
 
             if (apps.Count == 0)
                 Console.WriteLine("Invalid app name or app can't be uninstalled");
-            else foreach (var app in apps)
+            else
+                foreach (var app in apps)
                     RemoveApp(app);
         }
 

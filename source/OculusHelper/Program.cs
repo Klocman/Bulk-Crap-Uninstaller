@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+    Copyright (c) 2018 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
+using System;
 using System.IO;
 using Klocman;
 
@@ -14,7 +19,6 @@ namespace OculusHelper
             HelperTools.SetupEncoding();
 
             if (args.Length == 1 && string.Equals(args[0], @"/query", StringComparison.OrdinalIgnoreCase))
-            {
                 try
                 {
                     var result = OculusManager.QueryOculusApps();
@@ -32,10 +36,8 @@ namespace OculusHelper
                     LogWriter.WriteExceptionToLog(ex);
                     return HelperTools.FunctionFailedCode;
                 }
-            }
 
             if (args.Length == 2 && string.Equals(args[0], @"/uninstall", StringComparison.OrdinalIgnoreCase))
-            {
                 try
                 {
                     OculusManager.RemoveApp(args[1]);
@@ -50,7 +52,6 @@ namespace OculusHelper
                     LogWriter.WriteExceptionToLog(ex);
                     return HelperTools.FunctionFailedCode;
                 }
-            }
 
             return HelperTools.InvalidArgumentCode;
         }
