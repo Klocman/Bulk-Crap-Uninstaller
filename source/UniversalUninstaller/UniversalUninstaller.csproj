@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="LogWriter.cs" />
     <Compile Include="Properties\Localisation.ar.Designer.cs">
       <AutoGen>True</AutoGen>
