@@ -568,4 +568,7 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Is a web browser</value>
+  </data>
 </root>

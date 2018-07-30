@@ -68,7 +68,7 @@ namespace UninstallTools
         internal readonly List<Junk.Containers.IJunkResult> AdditionalJunk = new List<Junk.Containers.IJunkResult>();
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "DisplayName")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.DisplayName))]
         public string DisplayName
         {
             get { return (string.IsNullOrEmpty(RawDisplayName) ? RegistryKeyName : RawDisplayName) ?? string.Empty; }
@@ -76,41 +76,41 @@ namespace UninstallTools
         }
 
         [XmlIgnore]
-        [LocalisedName(typeof(Localisation), "DisplayNameTrimmed")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.DisplayNameTrimmed))]
         public string DisplayNameTrimmed => StringTools.StripStringFromVersionNumber(DisplayName);
 
         [XmlIgnore]
-        [LocalisedName(typeof(Localisation), "PublisherTrimmed")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.PublisherTrimmed))]
         public string PublisherTrimmed => string.IsNullOrEmpty(Publisher)
             ? string.Empty
             : Publisher.Replace("(R)", string.Empty)
                 .ExtendedTrimEndAny(CompanyNameEndTrimmers, StringComparison.CurrentCultureIgnoreCase);
 
         [XmlIgnore]
-        [LocalisedName(typeof(Localisation), "QuietUninstallPossible")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.QuietUninstallPossible))]
         public bool QuietUninstallPossible => !string.IsNullOrEmpty(QuietUninstallString) ||
                                               (UninstallerKind == UninstallerType.Msiexec &&
                                                BundleProviderKey != Guid.Empty);
 
         [XmlIgnore]
-        [LocalisedName(typeof(Localisation), "UninstallPossible")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallPossible))]
         public bool UninstallPossible => !string.IsNullOrEmpty(UninstallString);
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "AboutUrl")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.AboutUrl))]
         public string AboutUrl { get; set; }
 
         /// <summary>
         ///     Product code used by msiexec. If it wasn't found, returns Guid.Empty.
         /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "BundleProviderKey")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.BundleProviderKey))]
         public Guid BundleProviderKey { get; set; }
 
-        [LocalisedName(typeof(Localisation), "Comment")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.Comment))]
         public string Comment { get; set; }
 
-        [LocalisedName(typeof(Localisation), "DisplayIcon")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.DisplayIcon))]
         public string DisplayIcon
         {
             get { return _displayIcon; }
@@ -118,17 +118,17 @@ namespace UninstallTools
         }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "DisplayVersion")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.DisplayVersion))]
         public string DisplayVersion { get; set; }
 
-        [LocalisedName(typeof(Localisation), "EstimatedSize")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.EstimatedSize))]
         public FileSize EstimatedSize { get; set; }
 
-        [LocalisedName(typeof(Localisation), "InstallDate")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.InstallDate))]
         public DateTime InstallDate { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "InstallLocation")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.InstallLocation))]
         public string InstallLocation
         {
             get { return _installLocation; }
@@ -136,7 +136,7 @@ namespace UninstallTools
         }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "InstallSource")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.InstallSource))]
         public string InstallSource
         {
             get { return _installSource; }
@@ -144,60 +144,67 @@ namespace UninstallTools
         }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "Is64Bit")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.Is64Bit))]
         public MachineType Is64Bit { get; set; }
 
         /// <summary>
         ///     Protection from uninstalling.
         /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "IsProtected")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsProtected))]
         public bool IsProtected { get; set; }
 
         /// <summary>
         ///     The application's uniunstaller is mentioned in the registry (if it's not normal uninstallers will not see it)
         /// </summary>
-        [LocalisedName(typeof(Localisation), "IsRegistered")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsRegistered))]
         public bool IsRegistered { get; set; }
 
         /// <summary>
         ///     The application is present on the drive, but not in any of the application listings
         /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "IsOrphaned")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsOrphaned))]
         public bool IsOrphaned { get; set; }
 
         /// <summary>
         ///     True if this is an update for another product
         /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "IsUpdate")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsUpdate))]
         public bool IsUpdate { get; set; }
 
         /// <summary>
         ///     True if the application can be uninstalled. False if the uninstaller is missing or is otherwise invalid.
         /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "IsValid")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsValid))]
         public bool IsValid { get; set; }
 
+        /// <summary>
+        ///     True if the application is listed as a web browser.
+        /// </summary>
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "ModifyPath")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.IsWebBrowser))]
+        public bool IsWebBrowser { get; set; }
+
+        [ComparisonTarget]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.ModifyPath))]
         public string ModifyPath
         {
             get { return _modifyPath; }
             set { _modifyPath = CleanupPath(value); }
         }
 
-        [LocalisedName(typeof(Localisation), "ParentKeyName")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.ParentKeyName))]
         public string ParentKeyName { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "Publisher")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.Publisher))]
         public string Publisher { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "QuietUninstallString")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.QuietUninstallString))]
         public string QuietUninstallString { get; set; }
 
         /// <summary>
@@ -237,43 +244,43 @@ namespace UninstallTools
         }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "RegistryKeyName")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.RegistryKeyName))]
         public string RegistryKeyName { get; set; }
 
         /// <summary>
         ///     Full registry path of this entry
         /// </summary>
-        [LocalisedName(typeof(Localisation), "RegistryPath")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.RegistryPath))]
         public string RegistryPath { get; set; }
 
         [XmlIgnore]
-        [LocalisedName(typeof(Localisation), "StartupEntries")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.StartupEntries))]
         public IEnumerable<StartupEntryBase> StartupEntries { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "HasStartupEntries")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.HasStartupEntries))]
         public bool HasStartups => StartupEntries != null && StartupEntries.Any();
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "SystemComponent")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.SystemComponent))]
         public bool SystemComponent { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "UninstallerFullFilename")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerFullFilename))]
         public string UninstallerFullFilename { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "UninstallerKind")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerKind))]
         public UninstallerType UninstallerKind { get; set; }
 
-        //[LocalisedName(typeof(Localisation), "IsInstalled")]
+        //[LocalisedName(typeof(Localisation), nameof(Localisation.IsInstalled))]
         //public bool IsInstalled { get; internal set; }
 
-        [LocalisedName(typeof(Localisation), "UninstallerLocation")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerLocation))]
         public string UninstallerLocation { get; set; }
 
         [ComparisonTarget]
-        [LocalisedName(typeof(Localisation), "UninstallString")]
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallString))]
         public string UninstallString { get; set; }
 
         internal string RawDisplayName { get; set; }

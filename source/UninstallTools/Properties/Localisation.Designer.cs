@@ -538,6 +538,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is a web browser.
+        /// </summary>
+        internal static string IsWebBrowser {
+            get {
+                return ResourceManager.GetString("IsWebBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Application compatibility.
         /// </summary>
         internal static string Junk_AppCompat_GroupName {
