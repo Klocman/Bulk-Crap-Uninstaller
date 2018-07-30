@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using Klocman;
+using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -140,6 +142,8 @@ namespace OculusHelper
 
         public static void RemoveApp(OculusApp app)
         {
+            CloseOculusClient();
+
             Console.WriteLine("Removing Oculus app: " + app.CanonicalName);
             Debug.Assert(app.CanonicalName.Length > 10);
 
@@ -165,6 +169,36 @@ namespace OculusHelper
             }
 
             Console.WriteLine("Finished");
+        }
+
+        private static void CloseOculusClient()
+        {
+            var processes = Process.GetProcessesByName("OculusClient");
+
+            if (processes.Length == 0) return;
+
+            Console.WriteLine("Closing Oculus Client...");
+
+            foreach (var process in processes)
+            {
+                try
+                {
+                    if (!process.HasExited)
+                        process.Kill(true);
+                }
+                catch (SystemException ex)
+                {
+                    Console.WriteLine($"Failed to kill process {process.ProcessName} - {ex.Message}");
+                    Console.WriteLine("Please close the Oculus Client manually to continue.");
+                }
+            }
+
+            Console.WriteLine("Waiting for Oculus Client to close...");
+
+            while (processes.Any(x=>!x.HasExited))
+            {
+                Thread.Sleep(250);
+            }
         }
     }
 }
