@@ -135,10 +135,13 @@ namespace OculusHelper
                 .ToList();
 
             if (apps.Count == 0)
+            {
                 Console.WriteLine("Invalid app name or app can't be uninstalled");
-            else
-                foreach (var app in apps)
-                    RemoveApp(app);
+                throw new Exception($"{canonicalName} is not a recognized or allowed app name");
+            }
+
+            foreach (var app in apps)
+                RemoveApp(app);
         }
 
         public static void RemoveApp(OculusApp app)
