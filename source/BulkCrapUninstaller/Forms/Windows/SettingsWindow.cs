@@ -46,6 +46,7 @@ namespace BulkCrapUninstaller.Forms
 
             _settings.BindControl(checkBoxScanSteam, x => x.ScanSteam, this);
             _settings.BindControl(checkBoxScanStoreApps, x => x.ScanStoreApps, this);
+            _settings.BindControl(checkBoxOculus, x => x.ScanOculus, this);
             _settings.BindControl(checkBoxScanWinFeatures, x => x.ScanWinFeatures, this);
             _settings.BindControl(checkBoxScanWinUpdates, x => x.ScanWinUpdates, this);
 

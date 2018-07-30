@@ -221,6 +221,7 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applicat
             UninstallToolsGlobalConfig.ScanRegistry = true;
             UninstallToolsGlobalConfig.ScanSteam = true;
             UninstallToolsGlobalConfig.ScanStoreApps = true;
+            UninstallToolsGlobalConfig.ScanOculus = true;
             UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = true;
             UninstallToolsGlobalConfig.QuietAutomatization = true;
             UninstallToolsGlobalConfig.UseQuietUninstallDaemon = true;

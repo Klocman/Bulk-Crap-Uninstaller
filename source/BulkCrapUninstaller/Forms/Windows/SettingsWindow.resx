@@ -649,7 +649,7 @@
     <value>directorySelectBoxBackup</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6767.30372, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6785.636, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
     <value>groupBoxBackup</value>
@@ -1344,7 +1344,7 @@ BCU will wait until the currently running command completes before executing the
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1467,7 +1467,7 @@ BCU will wait until the currently running command completes before executing the
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPageUninstallation</value>
@@ -1521,7 +1521,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="labelWinUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 148</value>
+    <value>3, 168</value>
   </data>
   <data name="labelWinUpdateInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>360, 0</value>
@@ -1560,7 +1560,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanWinUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 128</value>
+    <value>3, 148</value>
   </data>
   <data name="checkBoxScanWinUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -1599,7 +1599,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="labelWinFeatureInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 96</value>
+    <value>3, 116</value>
   </data>
   <data name="labelWinFeatureInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>360, 0</value>
@@ -1638,7 +1638,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanWinFeatures.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 76</value>
+    <value>3, 96</value>
   </data>
   <data name="checkBoxScanWinFeatures.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -1674,7 +1674,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanStoreApps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 56</value>
+    <value>3, 76</value>
   </data>
   <data name="checkBoxScanStoreApps.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -1710,7 +1710,7 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 36</value>
+    <value>3, 56</value>
   </data>
   <data name="checkBoxScanSteam.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -1735,6 +1735,42 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;checkBoxScanSteam.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="checkBoxOculus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxOculus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxOculus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxOculus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 36</value>
+  </data>
+  <data name="checkBoxOculus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxOculus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxOculus.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Name" xml:space="preserve">
+    <value>checkBoxOculus</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="checkBoxChoco.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1770,7 +1806,7 @@ BCU will wait until the currently running command completes before executing the
     <value>groupBoxAppStores</value>
   </data>
   <data name="&gt;&gt;checkBoxChoco.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="groupBoxAppStores.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1779,7 +1815,7 @@ BCU will wait until the currently running command completes before executing the
     <value>3, 91</value>
   </data>
   <data name="groupBoxAppStores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 183</value>
+    <value>368, 203</value>
   </data>
   <data name="groupBoxAppStores.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2191,7 +2227,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>cacheSettings1</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Parent" xml:space="preserve">
     <value>tabPageMisc</value>
@@ -2365,7 +2401,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsWindow</value>
