@@ -51,6 +51,7 @@
     <None Include="..\Licence.licenseheader">
       <Link>Licence.licenseheader</Link>
     </None>
+    <None Include="Properties\app.manifest" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
