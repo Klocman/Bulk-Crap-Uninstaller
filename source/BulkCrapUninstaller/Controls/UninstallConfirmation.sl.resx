@@ -145,6 +145,6 @@
     <value>Začetno zaporedje je odvisno od vaših nastavitev za odstranitev, vendar ga lahko spremenite tako, da povlečete vnose. Opomba: BCU lahko spremeni vrstni red, če je omogočeno sočasno odstranjevanje.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Potrdi opravilo za odstranjevanje</value>
+    <value>Potrdi opravilo za odstranitev</value>
   </data>
 </root>

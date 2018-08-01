@@ -494,7 +494,7 @@ Ali želite za te vnose uporabiti "glasne" odstranjevalce, ali morajo ti biti od
     <value>GUID je najden</value>
   </data>
   <data name="GuidMissing" xml:space="preserve">
-    <value>GUID je manjkajoč</value>
+    <value>Manjkajoč GUID</value>
   </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
     <value>Izberi navzdol...</value>
@@ -592,7 +592,7 @@ The lists are separated by a single newline.</comment>
     <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
-    <value>Ni imenikov za odpiranje</value>
+    <value>Ni map za odpiranje</value>
   </data>
   <data name="RateTitle_Counted" xml:space="preserve">
     <value>{0} aplikacij</value>
@@ -617,7 +617,7 @@ The lists are separated by a single newline.</comment>
 Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporočeno.</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
-    <value>Vsili odstranjevanje</value>
+    <value>Vsili odstranitev</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
     <value>Spodletel zagon nekaterih odstranjevalcev</value>
@@ -645,19 +645,19 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
     <value>Naslednji odstranjevalci bodo znova glasno zagnani:</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
-    <value>Pregled določenega imenika....</value>
+    <value>Pregled določene mape....</value>
   </data>
   <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
-    <value>Izberite imenik z aplikacijami, ki jih želite odstraniti.</value>
+    <value>Izberite mapo z aplikacijami, ki jih želite odstraniti.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
-    <value>Odstrani iz imenika</value>
+    <value>Odstrani iz mape</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
-    <value>V določenem imeniku niso bile najdene nobene aplikacije.</value>
+    <value>V določeni mapi niso bile najdene nobene aplikacije.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
-    <value>Prepričajte se, da ste izbrali pravilen imenik in da so izvršljive datoteke aplikacij še vedno prisotne.</value>
+    <value>Prepričajte se, da ste izbrali pravilno mapo in, da so izvedljive datoteke aplikacij še vedno prisotne.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
     <value>Najden je odstranjevalec za {0}</value>
@@ -720,10 +720,13 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
     <value>Ni uspelo shranjevanje nastavitev</value>
   </data>
   <data name="Progress_Finishing" xml:space="preserve">
-    <value>Dokončevanje...</value>
+    <value>Dokončanje...</value>
   </data>
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Nalaganje ikon</value>
+  </data>
+  <data name="Progress_Finishing_Startup" xml:space="preserve">
+    <value>Iskanje zagonskih vnosov</value>
   </data>
   <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Poglej za aplikacijo</value>
@@ -760,5 +763,11 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   </data>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Izberite, kje želite shraniti varnostno kopijo. Ustvarjen bo nov imenik.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU je bil posodobljen v  različico {0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Dobrodošli pri delu z BCU različice {0}!</value>
   </data>
 </root>

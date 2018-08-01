@@ -133,13 +133,13 @@
     <value>Ali želite pomagati?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate donacijo, da pospešite posodabljanje ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
+    <value>Saj ni treba biti programer, da boste lahko pomagali! Lahko prispevate darilo, da pospešite posodabljanje ali prevedete BCU v svoj materni jezik. Vsa pomoč je zelo cenjena, ne glede na to, kako majhna bo!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Pošlji povratno informacijo</value>
   </data>
-  <data name="buttonRate.Text" xml:space="preserve">
-    <value>Stopnja (na dnu strani)</value>
+  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
+    <value>Oceni na SourceForge</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Deli na Twitterju</value>

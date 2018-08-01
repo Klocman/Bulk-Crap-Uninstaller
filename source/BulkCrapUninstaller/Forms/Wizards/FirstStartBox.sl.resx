@@ -136,7 +136,7 @@
     <value>Neveljavni odstranjevalci so označeni  v sivi barvi.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Prikaži neregistrirani aplikacije na seznamu</value>
+    <value>Prikaži neregistrirane aplikacije na seznamu</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
     <value>Zaščiteni odstranjevalci</value>

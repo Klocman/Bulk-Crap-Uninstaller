@@ -538,6 +538,12 @@
   <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
     <value>Prikaži drevo &amp;map</value>
   </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Začni čiščenje diska</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Namesti .NET v3.5 (dodaj funkcijo)</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>
   </metadata>

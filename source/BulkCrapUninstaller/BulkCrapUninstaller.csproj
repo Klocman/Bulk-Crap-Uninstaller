@@ -365,6 +365,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localisable.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Localisable.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localisable.pt-BR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Localisable.pt.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1323,7 +1328,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisable.nl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Localisable.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisable.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisable.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localisable.pt.Designer.cs</LastGenOutput>

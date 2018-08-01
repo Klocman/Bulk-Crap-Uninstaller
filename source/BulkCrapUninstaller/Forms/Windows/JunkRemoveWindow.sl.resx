@@ -123,6 +123,7 @@
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Izvoz seznama ostankov</value>
+    <comment>leftover=rimanenti</comment>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Prekliči</value>
@@ -152,7 +153,7 @@
     <value>Ocena zaupanja</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Odkrivanje teh ostankov je kompleksen proces, ki lahko dela napake. Zaradi tega so vsi vnosi podani glede na oceno zaupanja in končna odločitev je prepuščena vam kot uporabniku. Vnose z dobrim in zelo dobrim zaupanjem je ponavadi varno odstraniti, vendar jih še vedno treba dva krat preveriti.</value>
+    <value>Odkrivanje teh ostankov je kompleksen proces, ki lahko povzroči napake. Zaradi tega so vsi vnosi podani glede na oceno zaupanja in končna odločitev je prepuščena vam kot uporabniku. Vnose z dobrim in zelo dobrim zaupanjem je ponavadi varno odstraniti, vendar jih še vedno treba dva krat preveriti.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Seznam datotek in/ali, preostalih registrskih ključev, po odstranjevanju</value>
@@ -170,7 +171,7 @@
     <value>Po&amp;drobnosti</value>
   </data>
   <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Izberite kje bo shranjena varnostna kopija. Ustvarjen bo nov imenik.</value>
+    <value>Izberite kje bo shranjena varnostna kopija. Ustvarjena bo nova mapa.</value>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

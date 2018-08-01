@@ -160,7 +160,7 @@
     <value>Ustvari novo obnovitveno točko</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Spremeni nastavitve odstranjevanja</value>
+    <value>Spremeni nastavitve odstranitve</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Nastavitve</value>
@@ -175,13 +175,13 @@
     <value>l</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Sočasno odstranjevanje je omogočeno</value>
+    <value>Sočasna odstranitev je omogočena</value>
   </data>
   <data name="labelWillBeSilent.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Odstranjevanje bo tiho</value>
+    <value>Odstranitev bo tiha</value>
   </data>
   <data name="labelRestorePointCreated.Text" xml:space="preserve">
     <value>l</value>
@@ -193,7 +193,7 @@
     <value>l</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Datoteke še vedno uporabljajodelujoči procesi</value>
+    <value>Datoteke še vedno uporabljajo delujoči procesi</value>
   </data>
   <data name="labelTotalSize.Text" xml:space="preserve">
     <value>l</value>
@@ -205,18 +205,18 @@
     <value>l</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Aplikacije za odstranjevanje</value>
+    <value>Aplikacije za odstranitev</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>ZAČETEK ODSTRANJEVANJA</value>
+    <value>ZAČETEK ODSTRANITVE</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Prepričajte se, da so naslednji podatki pravilni, preden začnete odstranjevati. To je zadnja priložnost!</value>
+    <value>Prepričajte se, da so naslednji podatki pravilni, preden začnete z odstranitvijo. To je zadnja priložnost!</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Končno</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Začnite novo deinstalacijsko opravilo</value>
+    <value>Začni novo opravilo odstranjevanja</value>
   </data>
 </root>

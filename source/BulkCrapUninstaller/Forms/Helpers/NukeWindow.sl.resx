@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Poiščite in odstranite aplikacijo na podlagi ene od njegovih oken, bližnjic ali mesta namestitve ali datoteke .exe.</value>
+    <value>Poiščite in odstranite aplikacijo na podlagi enega od njunih oken, bližnjic, mesta njune namestitve ali datoteke .exe.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Uniči aplikacijo</value>
@@ -127,10 +127,10 @@
     <value>Izberi z oknom</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Izberi z namestitveno mapo ali programskimi datotekami</value>
+    <value>Izberi s pomočjo namestitvene mape ali programskimi datotekami</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Opomba: Prepričajte se, da so vse izbrane datoteke znotraj mape bnameščene aplikacije.
+    <value>Opomba: Prepričajte se, da so vse izbrane datoteke znotraj mape nameščene aplikacije.
 
 Izberete lahko mapo, ki vsebuje več aplikacij, da jih vse odstranite.</value>
   </data>

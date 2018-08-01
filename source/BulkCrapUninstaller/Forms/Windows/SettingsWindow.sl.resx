@@ -202,7 +202,7 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
     <value>Nikoli ne prosi za pomoč</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
-    <value>Para</value>
+    <value>Steam</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
     <value>Register (priporočeno, da pustite omogočeno)</value>
