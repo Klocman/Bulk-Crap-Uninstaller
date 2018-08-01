@@ -264,4 +264,10 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rete</value>
   </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
 </root>

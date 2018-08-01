@@ -504,4 +504,10 @@
   <data name="Progress_Startup" xml:space="preserve">
     <value>Pesquisa de itens de inicialização</value>
   </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
 </root>

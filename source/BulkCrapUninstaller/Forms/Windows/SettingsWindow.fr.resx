@@ -265,4 +265,10 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Réseau</value>
   </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
 </root>

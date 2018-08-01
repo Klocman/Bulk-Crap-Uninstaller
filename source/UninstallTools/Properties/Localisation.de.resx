@@ -420,4 +420,10 @@
     <value>Ist unregistriert</value>
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
 </root>

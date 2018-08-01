@@ -138,9 +138,6 @@
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Pošlji povratno informacijo</value>
   </data>
-  <data name="buttonSourceForgeRate.Text" xml:space="preserve">
-    <value>Oceni na SourceForge</value>
-  </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Deli na Twitterju</value>
   </data>

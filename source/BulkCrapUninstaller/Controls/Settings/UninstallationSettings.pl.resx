@@ -163,4 +163,8 @@ dezinstalatorów ręcznie</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Cicha dezinstalacja</value>
   </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Monitoruj "ciche" deinstalatory I zautomatyzuj
+nieprzewidziane wyskakujące okiena</value>
+  </data>
 </root>

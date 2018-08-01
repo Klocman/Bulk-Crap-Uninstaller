@@ -546,4 +546,10 @@
   <data name="UninstallStatus_Paused" xml:space="preserve">
     <value>Pausado</value>
   </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
 </root>

@@ -262,4 +262,10 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   <data name="tabPageUninstallation.Text" xml:space="preserve">
     <value>De-installatie</value>
   </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
 </root>

@@ -204,4 +204,10 @@ Soronként egy teljes elérési útvonalat adjon meg. Az érvénytelen útvonala
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
   </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
 </root>

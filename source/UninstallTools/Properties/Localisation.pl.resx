@@ -549,4 +549,26 @@
   <data name="Progress_Startup" xml:space="preserve">
     <value>Wyszukiwanie wpisów startowych</value>
   </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Wyszukiwanie pakietów Chocolatey</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Odinstaluj w Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Może uruchomić się automatycznie</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Aplikacje Oculus</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Przeglądarka internetowa</value>
+  </data>
 </root>

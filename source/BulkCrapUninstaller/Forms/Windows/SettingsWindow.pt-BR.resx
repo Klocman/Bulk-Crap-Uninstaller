@@ -261,4 +261,10 @@ Use caminhos de diretório completo, um caminho por linha. Caminhos inválidos e
   <data name="$this.Text" xml:space="preserve">
     <value>Configurações do Bulk Crap Uninstaller </value>
   </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
 </root>

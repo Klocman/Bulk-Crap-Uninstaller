@@ -147,9 +147,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Pedir para remover desinstaladores activos de uma tarefa em segundo plano.</value>
   </data>
-  <data name="checkBoxBackup.Text" xml:space="preserve">
-    <value>Pedir para criar uma cópia de segurança do registo antes de eliminar os vestígios residuais.</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Procurar lixo após a desinstalação</value>
   </data>
@@ -175,9 +172,6 @@ O BCU vai esperar até que o comando actualmente em execução esteja concluído
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Geral</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Desinstalação</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
     <value>Ferramentas externas</value>
@@ -243,6 +237,12 @@ Utilize caminhos de diretório completos, um caminho por linha. Caminhos inváli
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Procurar aplicativos em...</value>
+  </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
