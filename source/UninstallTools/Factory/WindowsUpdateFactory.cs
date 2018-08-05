@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -58,8 +59,7 @@ namespace UninstallTools.Factory
                     {
                         case "UpdateID":
                             entry.RatingId = valuePair.Value;
-                            Guid result;
-                            if (GuidTools.TryExtractGuid(valuePair.Value, out result))
+                            if (GuidTools.TryExtractGuid(valuePair.Value, out var result))
                                 entry.BundleProviderKey = result;
                             break;
                         case "RevisionNumber":
@@ -79,10 +79,15 @@ namespace UninstallTools.Factory
                             if (long.TryParse(valuePair.Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var size))
                                 entry.EstimatedSize = FileSize.FromBytes(size);
                             break;
+                        case "MaxDownloadSize":
+                            break;
                         case "LastDeploymentChangeTime":
                             if (DateTime.TryParse(valuePair.Value, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) &&
                                 !DateTime.MinValue.Equals(date))
                                 entry.InstallDate = date;
+                            break;
+                        default:
+                            Debug.Fail("Unknown label");
                             break;
                     }
                 }
