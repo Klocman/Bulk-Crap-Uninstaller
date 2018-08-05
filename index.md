@@ -35,7 +35,7 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 * Uninstall applications even if they don't have any uninstallers
 * Can handle crashing and hanging uninstallers
 
-![Startup manager preview](assets/1.png)
+![Advanced filtering](assets/3.png)
 
 ## Other features
 * Find and remove leftovers after uninstallation
@@ -49,6 +49,8 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 * Can run user-specified commands before and after uninstalling
 * Can run on .Net 4.0 or newer, or, if not available, on .Net 3.5 with reduced functionality (will work on Windows 7 or newer with no updates installed)
 * Fully portable, settings are saved to a single file
+
+![Startup manager preview](assets/2.png)
 
 BCU is translated to Arabic, Czech, Dutch, English, French, German, Hungarian, Italian, Polish, Portuguese (Brazil and Portugal), Russian, Slovenian and Spanish at the moment of writing this. More to come!
 
