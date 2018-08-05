@@ -15,6 +15,7 @@ using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
 using UninstallTools;
+using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller
 {
@@ -181,7 +182,7 @@ namespace BulkCrapUninstaller
                         using (var subKey = regKey.OpenSubKey(keyName, true))
                         {
                             var installLocation = subKey?.GetValue(
-                                ApplicationUninstallerEntry.RegistryNameInstallLocation) as string;
+                                RegistryFactory.RegistryNameInstallLocation) as string;
                             if (String.IsNullOrEmpty(installLocation)) continue;
 
                             var item1 = AssemblyLocation.FullName;

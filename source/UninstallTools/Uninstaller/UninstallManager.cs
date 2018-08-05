@@ -12,6 +12,7 @@ using System.Security.Permissions;
 using System.Threading;
 using Klocman.Extensions;
 using Klocman.Tools;
+using UninstallTools.Factory;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Uninstaller
@@ -30,7 +31,7 @@ namespace UninstallTools.Uninstaller
 
             using (var key = entry.OpenRegKey(true))
             {
-                key.SetValue(ApplicationUninstallerEntry.RegistryNameDisplayName, newName);
+                key.SetValue(RegistryFactory.RegistryNameDisplayName, newName);
             }
             return true;
         }

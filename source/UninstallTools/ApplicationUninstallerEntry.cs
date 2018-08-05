@@ -28,26 +28,6 @@ namespace UninstallTools
         public static readonly IEnumerable<string> CompanyNameEndTrimmers =
             new[] { "corp", "corporation", "limited", "inc", "incorporated" };
 
-        public static readonly string RegistryNameBundleProviderKey = "BundleProviderKey";
-        public static readonly string RegistryNameComment = "Comment";
-        public static readonly string RegistryNameDisplayIcon = "DisplayIcon";
-        public static readonly string RegistryNameDisplayName = "DisplayName";
-        public static readonly string RegistryNameDisplayVersion = "DisplayVersion";
-        public static readonly string RegistryNameEstimatedSize = "EstimatedSize";
-        public static readonly string RegistryNameInstallDate = "InstallDate";
-        public static readonly string RegistryNameInstallLocation = "InstallLocation";
-        public static readonly string RegistryNameInstallSource = "InstallSource";
-        public static readonly string RegistryNameModifyPath = "ModifyPath";
-        public static readonly string RegistryNameParentKeyName = "ParentKeyName";
-        public static readonly string RegistryNamePublisher = "Publisher";
-        public static readonly string RegistryNameQuietUninstallString = "QuietUninstallString";
-
-        public static readonly IEnumerable<string> RegistryNamesOfUrlSources = new[]
-        {"URLInfoAbout", "URLUpdateInfo", "HelpLink"};
-
-        public static readonly string RegistryNameSystemComponent = "SystemComponent";
-        public static readonly string RegistryNameUninstallString = "UninstallString";
-        public static readonly string RegistryNameWindowsInstaller = "WindowsInstaller";
         private X509Certificate2 _certificate;
         private bool _certificateGotten;
         private bool? _certificateValid;

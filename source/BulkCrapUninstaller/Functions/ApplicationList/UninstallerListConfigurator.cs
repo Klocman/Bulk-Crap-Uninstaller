@@ -15,6 +15,7 @@ using Klocman.Binding.Settings;
 using Klocman.Extensions;
 using Klocman.Localising;
 using UninstallTools;
+using UninstallTools.Factory;
 using UninstallTools.Lists;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList
@@ -137,7 +138,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         {
             _reference.uninstallerObjectListView.VirtualMode = false;
 
-            _reference.olvColumnDisplayName.AspectName = ApplicationUninstallerEntry.RegistryNameDisplayName;
+            _reference.olvColumnDisplayName.AspectName = RegistryFactory.RegistryNameDisplayName;
             _reference.olvColumnDisplayName.GroupKeyGetter = ListViewDelegates.GetFirstCharGroupKeyGetter;
 
             _reference.olvColumnStartup.AspectGetter = x =>
@@ -146,10 +147,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 return (obj?.HasStartups).ToYesNo();
             };
 
-            _reference.olvColumnPublisher.AspectName = ApplicationUninstallerEntry.RegistryNamePublisher;
+            _reference.olvColumnPublisher.AspectName = RegistryFactory.RegistryNamePublisher;
             _reference.olvColumnPublisher.GroupKeyGetter = ListViewDelegates.ColumnPublisherGroupKeyGetter;
 
-            _reference.olvColumnDisplayVersion.AspectName = ApplicationUninstallerEntry.RegistryNameDisplayVersion;
+            _reference.olvColumnDisplayVersion.AspectName = RegistryFactory.RegistryNameDisplayVersion;
             _reference.olvColumnDisplayVersion.GroupKeyGetter = ListViewDelegates.DisplayVersionGroupKeyGetter;
 
             _reference.olvColumnUninstallString.AspectGetter = ListViewDelegates.ColumnUninstallStringGetter;
@@ -181,7 +182,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnGuid.AspectGetter = ListViewDelegates.ColumnGuidAspectGetter;
             _reference.olvColumnGuid.GroupKeyGetter = ListViewDelegates.ColumnGuidGroupKeyGetter;
 
-            _reference.olvColumnSystemComponent.AspectName = ApplicationUninstallerEntry.RegistryNameSystemComponent;
+            _reference.olvColumnSystemComponent.AspectName = RegistryFactory.RegistryNameSystemComponent;
             _reference.olvColumnSystemComponent.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
             _reference.olvColumnSystemComponent.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
@@ -191,10 +192,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnProtected.AspectToStringConverter = ListViewDelegates.BoolToYesNoAspectConverter;
             _reference.olvColumnProtected.GroupKeyToTitleConverter = ListViewDelegates.BoolToYesNoAspectConverter;
 
-            _reference.olvColumnInstallLocation.AspectName = ApplicationUninstallerEntry.RegistryNameInstallLocation;
+            _reference.olvColumnInstallLocation.AspectName = RegistryFactory.RegistryNameInstallLocation;
             _reference.olvColumnInstallLocation.GroupKeyGetter = ListViewDelegates.ColumnInstallLocationGroupKeyGetter;
 
-            _reference.olvColumnInstallSource.AspectName = ApplicationUninstallerEntry.RegistryNameInstallSource;
+            _reference.olvColumnInstallSource.AspectName = RegistryFactory.RegistryNameInstallSource;
             _reference.olvColumnInstallSource.GroupKeyGetter = ListViewDelegates.ColumnInstallSourceGroupKeyGetter;
 
             _reference.olvColumnRegistryKeyName.AspectName = "RegistryKeyName";
