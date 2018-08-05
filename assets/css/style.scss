@@ -36,6 +36,9 @@
 .download-color {
     color: rgba(255,255,255,1);
     background-color: rgba(0,255,0,0.4);
+  &:hover {
+    background-color: rgba(0,255,0,0.7);
+  }
 }
 
 .shields {
