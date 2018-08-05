@@ -8,6 +8,8 @@ It can detect most applications and games (even portable or not registered), cle
 frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 </div>
 
+[View readme](BCU_manual.html)
+
 # Features
 In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers. Some of the most notable features of Bulk Crap Uninstaller:
 
