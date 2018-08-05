@@ -63,38 +63,32 @@ namespace UninstallTools.Factory
                                 entry.BundleProviderKey = result;
                             break;
                         case "RevisionNumber":
-                            entry.DisplayVersion =  ApplicationEntryTools.CleanupDisplayVersion(valuePair.Value);
+                            entry.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(valuePair.Value);
                             break;
                         case "Title":
                             entry.RawDisplayName = valuePair.Value;
                             break;
                         case "IsUninstallable":
-                            bool isUnins;
-                            if (bool.TryParse(valuePair.Value, out isUnins))
-                                entry.IsValid = isUnins;
+                            if (bool.TryParse(valuePair.Value, out var isUnins))
+                                entry.IsProtected = !isUnins;
                             break;
                         case "SupportUrl":
                             entry.AboutUrl = valuePair.Value;
                             break;
                         case "MinDownloadSize":
-                            long size;
-                            if (long.TryParse(valuePair.Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out size))
+                            if (long.TryParse(valuePair.Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var size))
                                 entry.EstimatedSize = FileSize.FromBytes(size);
                             break;
                         case "LastDeploymentChangeTime":
-                            DateTime date;
-                            if (DateTime.TryParse(valuePair.Value, CultureInfo.InvariantCulture, DateTimeStyles.None, out date) &&
+                            if (DateTime.TryParse(valuePair.Value, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) &&
                                 !DateTime.MinValue.Equals(date))
                                 entry.InstallDate = date;
                             break;
                     }
                 }
 
-                if (entry.IsValid)
-                {
-                    entry.UninstallString = $"\"{HelperPath}\" uninstall {entry.RatingId}";
-                    entry.QuietUninstallString = entry.UninstallString;
-                }
+                entry.UninstallString = $"\"{HelperPath}\" uninstall {entry.RatingId}";
+                entry.QuietUninstallString = entry.UninstallString;
 
                 yield return entry;
             }
