@@ -44,11 +44,11 @@
     text-align: center;
     opacity: 0.8;
     transition: opacity 0.2s;
+    
+  &:hover {
+      opacity: 1;
+  }
 }
 .shields a {
     margin-right: 0.5rem
-}
-
-.shields a:hover {
-    opacity: 1;
 }

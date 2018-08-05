@@ -8,7 +8,8 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 
 It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
 
-![preview](assets/1.png)
+
+![Main window preview](assets/1.png)
 
 # Features
 In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers. Some of the most notable features of Bulk Crap Uninstaller:
