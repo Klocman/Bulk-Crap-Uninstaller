@@ -1,3 +1,8 @@
+[![Donate](https://img.shields.io/badge/donate-paypal%20%2F%20bitcoin-pink.svg)](http://klocmansoftware.weebly.com/donate.html)
+[![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases)
+[![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
+[![Issues](https://img.shields.io/github/issues/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues)
+
 # What is Bulk Crap Uninstaller? 
 **Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) bulk program uninstaller with advanced automation. It excels at removing large amounts of applications with minimal to no user input, _while requiring next to no technical knowledge_.
 
