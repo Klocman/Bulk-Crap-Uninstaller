@@ -1,5 +1,9 @@
-# What is BCUninstaller? 
-**Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) program uninstaller. It excels at removing large amounts of applications with minimal user input. It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more. In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers.
+# What is Bulk Crap Uninstaller? 
+**Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) bulk program uninstaller with advanced automation. It excels at removing large amounts of applications with minimal to no user input, _while requiring next to no technical knowledge_.
+
+It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
+
+In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers.
 
 <div class="container">
 <iframe src="https://www.youtube-nocookie.com/embed/8v7r_jQl28Y?rel=0" 
@@ -7,7 +11,9 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 </div>
 
 # Features
-## Detect, manage and quietly uninstall (even if other uninstallers can't see them):
+Some of the most notable features of BCUninstaller:
+
+## Detect, manage and quietly uninstall
 * Applications with damaged or missing uninstallers
 * Portable applications (might require a path to folders with only portable apps)
 * Chocolatey packages
@@ -16,7 +22,8 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 * Windows Features
 * Windows Store apps (Universal Windows Platform apps)
 * Windows Updates
-## Fast, automatic uninstall:
+
+## Fast, automatic uninstall
 * Uninstall any number of applications in a single batch
 * Minimal to no user input is required during uninstallation
 * Uninstall multiple items at once to speed up the process (with collision prevention)
@@ -24,7 +31,8 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 * Quietly uninstall many uninstallers that don't support silent uninstallation
 * Uninstall applications even if they don't have any uninstallers
 * Can handle crashing and hanging uninstallers
-## Some of the other features:
+
+## Other features
 * Find and remove leftovers after uninstallation
 * Manually uninstall any application, bypasing it's uninstaller (Force uninstall)
 * Startup manager
@@ -37,7 +45,7 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 * Can run on .Net 4.0 or newer, or, if not available, on .Net 3.5 with reduced functionality (will work on Windows 7 or newer with no updates installed)
 * Fully portable, settings are saved to a single file
 
-Translated to Arabic, Czech, Dutch, English, French, German, Hungarian, Italian, Polish, Portuguese (Brazil and Portugal), Russian, Slovenian and Spanish at the moment of writing this. More to come!
+BCU is translated to Arabic, Czech, Dutch, English, French, German, Hungarian, Italian, Polish, Portuguese (Brazil and Portugal), Russian, Slovenian and Spanish at the moment of writing this. More to come!
 
 # Screenshots
 ![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
@@ -49,3 +57,6 @@ Translated to Arabic, Czech, Dutch, English, French, German, Hungarian, Italian,
 * CPU: Doesn't really matter.
 * Free space: 40MB or more (most of it is for temporary update files).
 * 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
+
+
+Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
