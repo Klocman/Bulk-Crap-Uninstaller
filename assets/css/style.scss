@@ -37,3 +37,15 @@
     color: rgba(255,255,255,1);
     background-color: rgba(0,255,0,0.4);
 }
+
+.shields {
+    margin-top: 1rem;
+    margi-bottom: 0rem;
+    text-align: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+shields:hover {
+    opacity: 1;
+}
