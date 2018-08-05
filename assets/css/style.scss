@@ -45,10 +45,10 @@
     opacity: 0.8;
     transition: opacity 0.2s;
 }
-a.shields {
+.shields a {
     margin-right: 0.5rem
 }
 
-shields:hover {
+.shields a:hover {
     opacity: 1;
 }
