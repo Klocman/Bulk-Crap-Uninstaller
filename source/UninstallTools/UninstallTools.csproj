@@ -77,7 +77,6 @@
     <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
     <Compile Include="Factory\InfoAdders\QuietUninstallStringCopier.cs" />
     <Compile Include="Factory\InfoAdders\SimpleDeleteUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\UninstallerLocationGenerator.cs" />
     <Compile Include="Factory\InfoAdders\UninstallerSearcher.cs" />
     <Compile Include="Factory\InfoAdders\UninstallerTypeAdder.cs" />
     <Compile Include="Factory\InfoAdders\InstallDateAdder.cs" />
@@ -89,7 +88,6 @@
     <Compile Include="Factory\RegistryFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />
     <Compile Include="Factory\StoreAppFactory.cs" />
-    <Compile Include="Factory\InfoAdders\UninstallerFullFilenameAdder.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
     <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />

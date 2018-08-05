@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
 
@@ -157,6 +158,41 @@ namespace UninstallTools.Factory
         public static string CleanupDisplayVersion(string version)
         {
             return version?.Replace(", ", ".").Replace(". ", ".").Replace(",", ".").Replace(". ", ".").Trim();
+        }
+
+        public static string ExtractDirectoryName(string uninstallerLocation)
+        {
+            if (!string.IsNullOrEmpty(uninstallerLocation))
+            {
+                try
+                {
+                    return Path.GetDirectoryName(uninstallerLocation);
+                }
+                catch (ArgumentException) { }
+                catch (PathTooLongException) { }
+            }
+
+            return null;
+        }
+
+        public static string ExtractFullFilename(string uninstallString)
+        {
+            if (!string.IsNullOrEmpty(uninstallString))
+            {
+                try
+                {
+                    var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
+
+                    Debug.Assert(!string.IsNullOrEmpty(fileName?.Trim()),
+                        $@"SeparateArgsFromCommand failed for {fileName}");
+
+                    return fileName;
+                }
+                catch (ArgumentException) { }
+                catch (FormatException) { }
+            }
+
+            return null;
         }
     }
 }

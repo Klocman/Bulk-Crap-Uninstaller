@@ -16,6 +16,7 @@ using Klocman.IO;
 using Klocman.Localising;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools.Factory;
 using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Lists;
 using UninstallTools.Properties;
@@ -36,6 +37,7 @@ namespace UninstallTools
         private string _installSource;
         private string _modifyPath;
         private string _displayIcon;
+        private string _uninstallString;
 
         internal ApplicationUninstallerEntry()
         {
@@ -261,7 +263,20 @@ namespace UninstallTools
 
         [ComparisonTarget]
         [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallString))]
-        public string UninstallString { get; set; }
+        public string UninstallString
+        {
+            get { return _uninstallString; }
+            set
+            {
+                _uninstallString = value;
+
+                UninstallerFullFilename = ApplicationEntryTools.ExtractFullFilename(value) 
+                    ?? UninstallerFullFilename ?? string.Empty;
+
+                UninstallerLocation = ApplicationEntryTools.ExtractDirectoryName(UninstallerFullFilename) 
+                    ?? UninstallerLocation ?? string.Empty;
+            }
+        }
 
         internal string RawDisplayName { get; set; }
 
