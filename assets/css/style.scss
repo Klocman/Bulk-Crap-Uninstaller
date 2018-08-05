@@ -2,19 +2,6 @@
 ---
 
 
-.page-header {
-    color: #fff;
-    text-align: center;
-    background-color: #333333;
-    background-image: linear-gradient(180deg, #555555, #333333);
-}
-
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #333333;
-}
 
 @import "{{ site.theme }}";
 
@@ -30,4 +17,17 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+.page-header {
+    color: #fff;
+    text-align: center;
+    background-color: #333333;
+    background-image: linear-gradient(180deg, #555555, #333333);
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: #333333;
 }
