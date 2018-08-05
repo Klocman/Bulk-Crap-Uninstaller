@@ -3,17 +3,17 @@
 [![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
 [![Issues](https://img.shields.io/github/issues/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues)
 
-# What is Bulk Crap Uninstaller? 
-**Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) bulk program uninstaller with advanced automation. It excels at removing large amounts of applications with minimal to no user input, _while requiring next to no technical knowledge_.
-
-It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
-
 <div class="container">
 <iframe src="https://www.youtube-nocookie.com/embed/8v7r_jQl28Y?rel=0" 
 frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 </div>
 
-[View readme](BCU_manual.html)
+# What is Bulk Crap Uninstaller? 
+![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
+
+**Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) bulk program uninstaller with advanced automation. It excels at removing large amounts of applications with minimal to no user input, _while requiring next to no technical knowledge_.
+
+It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
 
 # Features
 In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers. Some of the most notable features of Bulk Crap Uninstaller:
@@ -53,9 +53,6 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 * Fully portable, settings are saved to a single file
 
 BCU is translated to Arabic, Czech, Dutch, English, French, German, Hungarian, Italian, Polish, Portuguese (Brazil and Portugal), Russian, Slovenian and Spanish at the moment of writing this. More to come!
-
-# Screenshots
-![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
 
 # System requirements
 * OS: Windows Vista or newer is recommended. BCU will also work on XP and 2003 with reduced functionality and possibly some bugs. Both 32bit and 64bit versions are supported.
