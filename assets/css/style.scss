@@ -36,9 +36,9 @@
 .download-color {
     color: rgba(255,255,255,1);
     background-color: rgba(0,255,0,0.4);
-  &:hover {
-    background-color: rgba(0,255,0,0.7);
-  }
+    &:hover {
+        background-color: rgba(0,255,0,0.7);
+    }
 }
 
 .shields {
@@ -47,8 +47,7 @@
     text-align: center;
 }
 .shields a {
-    margin-right: 0.5rem
-    
+    margin-right: 0.5rem;
     opacity: 0.8;
     transition: opacity 0.2s;
     &:hover {
