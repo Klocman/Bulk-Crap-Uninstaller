@@ -1,19 +1,20 @@
-[![Donate](https://img.shields.io/badge/donate-paypal%2Fbitcoin-brightgreen.svg)](http://klocmansoftware.weebly.com/donate.html)
-[![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases)
-[![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
-[![Issues](https://img.shields.io/github/issues/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues)
-
 <div class="container">
 <iframe src="https://www.youtube-nocookie.com/embed/8v7r_jQl28Y?rel=0" 
 frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 </div>
+<p style="text-align: center;">
+[![Donate](https://img.shields.io/badge/donate-paypal%2Fbitcoin-brightgreen.svg)](http://klocmansoftware.weebly.com/donate.html)
+[![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases)
+[![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
+[![Issues](https://img.shields.io/github/issues/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues)
+</p>
 
 # What is Bulk Crap Uninstaller? 
-![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
-
 **Bulk Crap Uninstaller** (in short **BCUninstaller** or **BCU**) is a free (as in speech *and* beer) bulk program uninstaller with advanced automation. It excels at removing large amounts of applications with minimal to no user input, _while requiring next to no technical knowledge_.
 
 It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
+
+![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
 
 # Features
 In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers. Some of the most notable features of Bulk Crap Uninstaller:
