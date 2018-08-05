@@ -42,13 +42,13 @@
     margin-top: 1.2rem;
     margi-bottom: 0rem;
     text-align: center;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-    
-  &:hover {
-      opacity: 1;
-  }
 }
 .shields a {
     margin-right: 0.5rem
+    
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 1;
+    }
 }
