@@ -23,7 +23,7 @@
     text-align: center;
     background-color: #333333;
     background-image: linear-gradient(180deg, #555555, #333333);
-    padding: 3rem 3rem;
+    padding: 2.5rem 2.5rem;
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
@@ -39,11 +39,14 @@
 }
 
 .shields {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     margi-bottom: 0rem;
     text-align: center;
     opacity: 0.8;
     transition: opacity 0.2s;
+}
+.shields.a {
+    margin-right: 0.1rem
 }
 
 shields:hover {
