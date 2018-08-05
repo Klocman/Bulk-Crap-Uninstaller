@@ -35,6 +35,8 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 * Uninstall applications even if they don't have any uninstallers
 * Can handle crashing and hanging uninstallers
 
+![Startup manager preview](assets/1.png)
+
 ## Other features
 * Find and remove leftovers after uninstallation
 * Manually uninstall any application, bypasing it's uninstaller (Force uninstall)
