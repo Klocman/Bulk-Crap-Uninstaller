@@ -116,8 +116,8 @@ namespace UninstallTools.Factory
                 DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(uninstallerKey.GetValue(RegistryNameDisplayVersion) as string),
                 ParentKeyName = uninstallerKey.GetValue(RegistryNameParentKeyName) as string,
                 Publisher = uninstallerKey.GetValue(RegistryNamePublisher) as string,
-                UninstallString = uninstallerKey.GetValue(RegistryNameUninstallString) as string,
-                QuietUninstallString = uninstallerKey.GetValue(RegistryNameQuietUninstallString) as string,
+                UninstallString = GetUninstallString(uninstallerKey),
+                QuietUninstallString = GetQuietUninstallString(uninstallerKey),
                 ModifyPath = uninstallerKey.GetValue(RegistryNameModifyPath) as string,
                 InstallLocation = uninstallerKey.GetValue(RegistryNameInstallLocation) as string,
                 InstallSource = uninstallerKey.GetValue(RegistryNameInstallSource) as string,
@@ -143,11 +143,34 @@ namespace UninstallTools.Factory
 
             if (GuidTools.TryExtractGuid(uninstallerKey.GetKeyName(), out resultGuid))
                 return resultGuid;
-
-            var uninstallString =
-                uninstallerKey.GetValue(RegistryNameUninstallString) as string;
+            string uninstallString = GetUninstallString(uninstallerKey);
             // Look for a valid GUID in the path
             return GuidTools.TryExtractGuid(uninstallString, out resultGuid) ? resultGuid : Guid.Empty;
+        }
+        
+        private static string GetUninstallString(RegistryKey uninstallerKey)
+        {
+            return GetKeyFuzzy(uninstallerKey, RegistryNameUninstallString) ?? GetQuietUninstallString(uninstallerKey);
+        }
+
+        private static string GetQuietUninstallString(RegistryKey uninstallerKey)
+        {
+            return GetKeyFuzzy(uninstallerKey, RegistryNameQuietUninstallString);
+        }
+
+        private static string GetKeyFuzzy(RegistryKey uninstallerKey, string keyName)
+        {
+            var uninstallString = uninstallerKey.GetValue(keyName) as string;
+            if (uninstallString == null)
+            {
+                // Handle hidden uninstall strings like UninstallString_hidden
+                uninstallString = uninstallerKey.GetValueNames()
+                    .Where(x => x.StartsWith(RegistryNameUninstallString, StringComparison.OrdinalIgnoreCase))
+                    .Select(name => uninstallerKey.GetValue(name) as string)
+                    .FirstOrDefault(x => !string.IsNullOrEmpty(x));
+            }
+
+            return uninstallString;
         }
 
         private static DateTime GetInstallDate(RegistryKey uninstallerKey)
@@ -252,8 +275,7 @@ namespace UninstallTools.Factory
                 return UninstallerType.Steam;
             }
 
-            var uninstallString =
-                uninstallerKey.GetValue(RegistryNameUninstallString) as string;
+            var uninstallString = GetUninstallString(uninstallerKey);
 
             return string.IsNullOrEmpty(uninstallString)
                 ? UninstallerType.Unknown
