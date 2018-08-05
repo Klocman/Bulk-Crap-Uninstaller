@@ -57,5 +57,5 @@ BCU is translated to Arabic, Czech, Dutch, English, French, German, Hungarian, I
 * Free space: 40MB or more (most of it is for temporary update files).
 * 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
 
-
+# Licensing and commercial use
 Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
