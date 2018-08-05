@@ -3,19 +3,19 @@
 
 It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
 
-In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers.
-
 <div class="container">
 <iframe src="https://www.youtube-nocookie.com/embed/8v7r_jQl28Y?rel=0" 
 frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 </div>
 
 # Features
-Some of the most notable features of BCUninstaller:
+In its basic form BCU is easy to use by most users, but it also has tools useful for power users, system admins and developers. Some of the most notable features of Bulk Crap Uninstaller:
 
 ## Detect, manage and quietly uninstall
+* Normal registered applications (same as Programs and Features and many other uninstallers)
+* Hidden/protected registered applications
 * Applications with damaged or missing uninstallers
-* Portable applications (might require a path to folders with only portable apps)
+* Portable applications (might have to point BCU where to look)
 * Chocolatey packages
 * Oculus games/apps
 * Steam games/apps
