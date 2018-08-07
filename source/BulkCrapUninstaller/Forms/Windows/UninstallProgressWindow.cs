@@ -186,6 +186,8 @@ namespace BulkCrapUninstaller.Forms
 
             label1.Text = Localisable.UninstallProgressWindow_TaskDone;
             progressBar1.Value = progressBar1.Maximum;
+            //progressBar1.Visible = false;
+            //panelProgressMargin.Visible = false;
             buttonClose.Text = Buttons.ButtonClose;
             buttonClose.Enabled = true;
         }

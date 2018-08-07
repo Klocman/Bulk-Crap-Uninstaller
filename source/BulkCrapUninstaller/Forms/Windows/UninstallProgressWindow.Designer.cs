@@ -59,6 +59,8 @@ namespace BulkCrapUninstaller.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelProgressMargin = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.forceUpdateTimer = new System.Windows.Forms.Timer(this.components);
@@ -66,6 +68,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,14 +80,14 @@ namespace BulkCrapUninstaller.Forms
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
             this.label1.AutoEllipsis = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
             // buttonClose
             // 
-            resources.ApplyResources(this.buttonClose, "buttonClose");
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonClose, "buttonClose");
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -241,11 +244,23 @@ namespace BulkCrapUninstaller.Forms
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.progressBar1);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.buttonClose);
+            this.panel3.Controls.Add(this.panel1);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.panelProgressMargin);
+            this.panel1.Controls.Add(this.buttonClose);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // panelProgressMargin
+            // 
+            resources.ApplyResources(this.panelProgressMargin, "panelProgressMargin");
+            this.panelProgressMargin.Name = "panelProgressMargin";
             // 
             // pictureBox1
             // 
@@ -281,6 +296,7 @@ namespace BulkCrapUninstaller.Forms
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -318,5 +334,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripButton toolStripButtonHelp;
         private Timer forceUpdateTimer;
         private ToolStripButton toolStripButtonManualUninstall;
+        private Panel panel1;
+        private Panel panelProgressMargin;
     }
 }
