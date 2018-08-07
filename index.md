@@ -40,6 +40,7 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 
 ## Other features
 * Find and remove leftovers after uninstallation
+* Clean Program Files directories from unused or empty folders
 * Manually uninstall any application, bypasing it's uninstaller (Force uninstall)
 * Startup manager
 * Application ratings
