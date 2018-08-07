@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ using Klocman.Binding.Settings;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
+using Klocman.Tools;
 using UninstallTools;
 using UninstallTools.Uninstaller;
 
@@ -186,10 +188,12 @@ namespace BulkCrapUninstaller.Forms
 
             label1.Text = Localisable.UninstallProgressWindow_TaskDone;
             progressBar1.Value = progressBar1.Maximum;
-            //progressBar1.Visible = false;
-            //panelProgressMargin.Visible = false;
             buttonClose.Text = Buttons.ButtonClose;
+            pictureBox1.Image = Resources.check;
             buttonClose.Enabled = true;
+
+            WindowsTools.FlashWindowEx(this);
+            SystemSounds.Exclamation.Play();
         }
 
         private void OnTaskUpdated()
