@@ -384,7 +384,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/.
+        ///   Looks up a localized string similar to https://www.bcuninstaller.com/.
         /// </summary>
         internal static string HomepageUrl {
             get {
