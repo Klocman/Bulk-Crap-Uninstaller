@@ -147,11 +147,16 @@ namespace UninstallerAutomatizer
 
                             try
                             {
-                                Task ttt;
-                                if (_runningHooks.TryGetValue(pid, out ttt) && !ttt.IsCompleted)
+                                if (_runningHooks.TryGetValue(pid, out var ttt) && !ttt.IsCompleted)
                                     continue;
 
                                 var target = Process.GetProcessById(pid);
+
+                                if (!ProcessCanBeAutomatized(target))
+                                {
+                                    Debug.WriteLine("Tried to automate not allowed process: " + target.ProcessName);
+                                    continue;
+                                }
 
                                 var app = Application.Attach(target);
 
@@ -194,6 +199,11 @@ namespace UninstallerAutomatizer
             {
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Succeeded, Localization.Message_Success));
             }
+        }
+
+        private static bool ProcessCanBeAutomatized(Process target)
+        {
+            return target.Id > 4 && !string.Equals(target.ProcessName, Program.AutomatizerProcessName, StringComparison.Ordinal);
         }
 
         Thread _automationThread;
