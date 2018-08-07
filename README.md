@@ -51,6 +51,7 @@ If you need any help please either read the help file included with all releases
 * Can handle crashing and hanging uninstallers
 ### Some of the other features:
 * Find and remove leftovers after uninstallation
+* Clean Program Files directories from unused or empty folders
 * Manually uninstall any application, bypasing it's uninstaller (Force uninstall)
 * Startup manager
 * Application ratings
