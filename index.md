@@ -33,6 +33,7 @@ In its basic form BCU is easy to use by most users, but it also has tools useful
 * Console interface can automatically uninstall applications based on conditions with no user input
 * Quietly uninstall many uninstallers that don't support silent uninstallation
 * Uninstall applications even if they don't have any uninstallers
+* Uninstall applications by window, shortcut or directory
 * Can handle crashing and hanging uninstallers
 
 ![Advanced filtering](assets/3.png)
