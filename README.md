@@ -47,6 +47,7 @@ If you need any help please either read the help file included with all releases
 * Console interface can automatically uninstall applications based on conditions with no user input
 * Quietly uninstall many uninstallers that don't support silent uninstallation
 * Uninstall applications even if they don't have any uninstallers
+* Uninstall applications by window, shortcut or directory
 * Can handle crashing and hanging uninstallers
 ### Some of the other features:
 * Find and remove leftovers after uninstallation
