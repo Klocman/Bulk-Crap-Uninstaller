@@ -15,7 +15,7 @@ namespace StoreAppHelper
         private static int Main(string[] args)
         {
             if (args.Length == 0)
-                return HelperTools.InvalidArgumentCode;
+                return (int)ReturnValue.InvalidArgumentCode;
 
             HelperTools.SetupEncoding();
 
@@ -26,7 +26,7 @@ namespace StoreAppHelper
                     var result = AppManager.QueryApps();
                     foreach (var app in result)
                         Console.WriteLine(HelperTools.ObjectToConsoleOutput(app));
-                    return HelperTools.OkCode;
+                    return (int)ReturnValue.OkCode;
                 }
                 catch (IOException ex)
                 {
@@ -36,7 +36,7 @@ namespace StoreAppHelper
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
-                    return HelperTools.FunctionFailedCode;
+                    return (int)ReturnValue.FunctionFailedCode;
                 }
             }
 
@@ -45,7 +45,7 @@ namespace StoreAppHelper
                 try
                 {
                     AppManager.UninstallApp(args[1]);
-                    return HelperTools.OkCode;
+                    return (int)ReturnValue.OkCode;
                 }
                 catch (IOException ex)
                 {
@@ -54,11 +54,11 @@ namespace StoreAppHelper
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
-                    return HelperTools.FunctionFailedCode;
+                    return (int)ReturnValue.FunctionFailedCode;
                 }
             }
 
-            return HelperTools.InvalidArgumentCode;
+            return (int)ReturnValue.InvalidArgumentCode;
         }
     }
 }

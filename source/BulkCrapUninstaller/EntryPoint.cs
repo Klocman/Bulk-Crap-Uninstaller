@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
+using Klocman;
 using Klocman.Forms.Tools;
 using Klocman.UpdateSystem;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -28,7 +29,7 @@ namespace BulkCrapUninstaller
             Application.SetCompatibleTextRenderingDefault(false);
             NBugConfigurator.SetupNBug();
 
-            using (LogWriter.StartLogging(Path.Combine(Program.AssemblyLocation.FullName, "BCUninstaller.log")))
+            using (LogWriter.StartLogging())
             {
                 try
                 {

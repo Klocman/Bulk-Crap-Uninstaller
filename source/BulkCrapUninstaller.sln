@@ -62,7 +62,10 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HelperTools\HelperTools.projitems*{319c4596-0ee6-4392-9d7b-f937794133c7}*SharedItemsImports = 4
+		HelperTools\HelperTools.projitems*{43022440-594d-437c-96c8-6aa24f6cee63}*SharedItemsImports = 4
+		HelperTools\HelperTools.projitems*{5086cdde-5b1d-485b-aabc-a63c633579b6}*SharedItemsImports = 4
 		HelperTools\HelperTools.projitems*{73a9796d-334c-400c-87ac-1dfdd613266e}*SharedItemsImports = 13
+		HelperTools\HelperTools.projitems*{9c818d14-22ae-46db-b179-119069ae6116}*SharedItemsImports = 4
 		HelperTools\HelperTools.projitems*{dca3f6ad-0a1a-4e14-894a-114cc9b3b3e5}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

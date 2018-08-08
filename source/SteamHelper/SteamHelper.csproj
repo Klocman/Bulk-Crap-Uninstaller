@@ -50,7 +50,6 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="LogWriter.cs" />
     <Compile Include="SteamApplicationInfo.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
@@ -67,6 +66,7 @@
     </None>
     <None Include="app.config" />
   </ItemGroup>
+  <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

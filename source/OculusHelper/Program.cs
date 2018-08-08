@@ -14,7 +14,7 @@ namespace OculusHelper
         private static int Main(string[] args)
         {
             if (args.Length == 0)
-                return HelperTools.InvalidArgumentCode;
+                return (int)ReturnValue.InvalidArgumentCode;
 
             HelperTools.SetupEncoding();
 
@@ -24,7 +24,7 @@ namespace OculusHelper
                     var result = OculusManager.QueryOculusApps();
                     foreach (var app in result)
                         Console.WriteLine(HelperTools.ObjectToConsoleOutput(app));
-                    return HelperTools.OkCode;
+                    return (int)ReturnValue.OkCode;
                 }
                 catch (IOException ex)
                 {
@@ -34,14 +34,14 @@ namespace OculusHelper
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
-                    return HelperTools.FunctionFailedCode;
+                    return (int)ReturnValue.FunctionFailedCode;
                 }
 
             if (args.Length == 2 && string.Equals(args[0], @"/uninstall", StringComparison.OrdinalIgnoreCase))
                 try
                 {
                     OculusManager.RemoveApp(args[1]);
-                    return HelperTools.OkCode;
+                    return (int)ReturnValue.OkCode;
                 }
                 catch (IOException ex)
                 {
@@ -50,10 +50,10 @@ namespace OculusHelper
                 catch (Exception ex)
                 {
                     LogWriter.WriteExceptionToLog(ex);
-                    return HelperTools.FunctionFailedCode;
+                    return (int)ReturnValue.FunctionFailedCode;
                 }
 
-            return HelperTools.InvalidArgumentCode;
+            return (int)ReturnValue.InvalidArgumentCode;
         }
     }
 }

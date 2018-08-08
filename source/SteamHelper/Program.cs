@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Klocman;
 
 namespace SteamHelper
 {
@@ -17,8 +18,6 @@ namespace SteamHelper
         private static QueryType _queryType = QueryType.None;
         private static bool _silent;
         private static int _appId;
-
-        private const int InvalidArgumentCode = 10022;
 
         /// <summary>
         /// Return codes:
@@ -68,21 +67,19 @@ namespace SteamHelper
             }
             catch (OperationCanceledException)
             {
-                return 1223;
+                return (int)ReturnValue.CancelledByUserCode;
             }
-            catch(FormatException ex)
+            catch (FormatException ex)
             {
                 LogWriter.WriteExceptionToLog(ex);
-                Console.WriteLine("Error: {0}", ex.Message);
-                return InvalidArgumentCode;
+                return (int)ReturnValue.InvalidArgumentCode;
             }
             catch (Exception ex)
             {
                 LogWriter.WriteExceptionToLog(ex);
-                Console.WriteLine("Error: {0}", ex.Message);
-                return 59;
+                return (int)ReturnValue.UnexpectedNetworkErrorCode;
             }
-            return 0;
+            return (int)ReturnValue.OkCode;
         }
 
         private static void ProcessCommandlineArguments(IEnumerable<string> args)

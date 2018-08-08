@@ -12,6 +12,7 @@ using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Klocman;
 using Klocman.Extensions;
 using TestStack.White;
 using UninstallerAutomatizer.Properties;
@@ -54,7 +55,7 @@ namespace UninstallerAutomatizer
 
             if (args.Length < 2)
             {
-                Program.ReturnValue = ReturnValue.InvalidArgument;
+                Program.ReturnValue = ReturnValue.InvalidArgumentCode;
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, Localization.Error_Invalid_number_of_arguments));
                 return;
             }
@@ -62,7 +63,7 @@ namespace UninstallerAutomatizer
             UninstallerType uType;
             if (!Enum.TryParse(args[0], out uType))
             {
-                Program.ReturnValue = ReturnValue.InvalidArgument;
+                Program.ReturnValue = ReturnValue.InvalidArgumentCode;
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_UnknownUninstallerType, args[0])));
                 return;
             }
@@ -79,14 +80,14 @@ namespace UninstallerAutomatizer
 
             if (!File.Exists(UninstallTarget))
             {
-                Program.ReturnValue = ReturnValue.InvalidArgument;
+                Program.ReturnValue = ReturnValue.InvalidArgumentCode;
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_InvalidPath, UninstallTarget)));
                 return;
             }
 
             if (uType != UninstallerType.Nsis)
             {
-                Program.ReturnValue = ReturnValue.InvalidArgument;
+                Program.ReturnValue = ReturnValue.InvalidArgumentCode;
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_NotSupported, uType)));
                 return;
             }

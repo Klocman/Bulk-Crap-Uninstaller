@@ -14,7 +14,6 @@ using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
-using UninstallTools;
 using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller

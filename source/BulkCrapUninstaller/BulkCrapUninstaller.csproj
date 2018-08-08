@@ -293,7 +293,6 @@
     <Compile Include="Functions\Ratings\RatingManagerWrapper.cs" />
     <Compile Include="Functions\ApplicationList\UninstallerListViewUpdater.cs" />
     <Compile Include="Functions\Tools\UpdateGrabber.cs" />
-    <Compile Include="LogWriter.cs" />
     <Compile Include="NBugConfigurator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Forms\Helpers\PropertiesWindow.cs">
@@ -1504,6 +1503,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
+  <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

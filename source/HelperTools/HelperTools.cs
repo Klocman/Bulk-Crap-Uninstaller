@@ -10,9 +10,6 @@ namespace Klocman
 {
     public static class HelperTools
     {
-        public const int InvalidArgumentCode = 10022;
-        public const int FunctionFailedCode = 1627;
-        public const int OkCode = 0;
 
         public static void SetupEncoding()
         {
@@ -31,13 +28,13 @@ namespace Klocman
             var errorCode = Regex.Match(ex.Message, @"0x[\d\w]{8}")
                 .Captures.Cast<Capture>().FirstOrDefault()?.Value;
 
-            if (string.IsNullOrWhiteSpace(errorCode) || errorCode.Length < 8)
-                return FunctionFailedCode;
+            if (string.IsNullOrEmpty(errorCode) || errorCode.Length < 8)
+                return (int) ReturnValue.FunctionFailedCode;
 
             int.TryParse(errorCode.Substring(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture,
                 out var errorNumber);
 
-            return errorNumber > 0 ? errorNumber : FunctionFailedCode;
+            return errorNumber > 0 ? errorNumber : (int)ReturnValue.FunctionFailedCode;
         }
 
         /// <summary>
@@ -55,7 +52,7 @@ namespace Klocman
             var propInfos = obj.GetType()
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(prop => prop.CanRead)
-                .Select(prop => new {prop.Name, val = prop.GetValue(obj, null)})
+                .Select(prop => new { prop.Name, val = prop.GetValue(obj, null) })
                 .ToList();
 
             var maxLen = propInfos.Max(x => x.Name.Length) + 2;
