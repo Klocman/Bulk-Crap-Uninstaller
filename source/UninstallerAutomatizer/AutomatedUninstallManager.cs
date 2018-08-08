@@ -49,10 +49,11 @@ namespace UninstallerAutomatizer
 
         static AutomatedUninstallManager()
         {
+            var loc = Localization.Culture;
+
             var rm = new ResourceManager(typeof(Localization));
             var validCultureInfos = CultureInfo.GetCultures(CultureTypes.AllCultures)
-                .Where(x => !x.IsNeutralCulture)
-                .Where(c => rm.GetResourceSet(c, false, false) != null)
+                .Where(c => rm.GetResourceSet(c, true, false) != null)
                 .ToList();
             
             string[] GetValuesFromAllLanguages(IEnumerable<CultureInfo> cultureInfos, Func<string> targetFieldSelector)
@@ -69,6 +70,8 @@ namespace UninstallerAutomatizer
             GoodButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_GoodButtons);
             CancelButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_CancelButtons);
             BadButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_BadButtons);
+
+            Localization.Culture = loc;
         }
 
         public static event EventHandler HideAutomatizedWindowsChanged;
