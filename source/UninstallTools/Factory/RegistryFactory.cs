@@ -165,7 +165,7 @@ namespace UninstallTools.Factory
             {
                 // Handle hidden uninstall strings like UninstallString_hidden
                 uninstallString = uninstallerKey.GetValueNames()
-                    .Where(x => x.StartsWith(RegistryNameUninstallString, StringComparison.OrdinalIgnoreCase))
+                    .Where(x => x.StartsWith(keyName, StringComparison.OrdinalIgnoreCase))
                     .Select(name => uninstallerKey.GetValue(name) as string)
                     .FirstOrDefault(x => !string.IsNullOrEmpty(x));
             }
