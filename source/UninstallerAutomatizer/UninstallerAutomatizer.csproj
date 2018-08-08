@@ -110,6 +110,7 @@
     <Compile Include="UninstallHandler.cs" />
     <Compile Include="UninstallHandlerUpdateArgs.cs" />
     <Compile Include="UninstallHandlerUpdateKind.cs" />
+    <Compile Include="WindowExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Licence.licenseheader">

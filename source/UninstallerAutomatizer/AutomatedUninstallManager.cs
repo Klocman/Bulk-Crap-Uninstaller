@@ -6,11 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
+using Klocman.Extensions;
 using Klocman.Tools;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
@@ -27,19 +29,47 @@ namespace UninstallerAutomatizer
     {
         private const string NsisRebootNowRadioAutomationId = "1203";
         private const string NsisRebootLaterRadioAutomationId = "1204";
-        private static readonly string[] GoodRadioIds = { NsisRebootLaterRadioAutomationId };
-        private static readonly string[] BadRadioIds = { NsisRebootNowRadioAutomationId };
-
         private const string NsisForwardAutomationId = "1";
         private const string NsisCancelAutomationId = "2";
         private const string NsisYesAutomationId = "6";
         private const string NsisNoAutomationId = "7";
-        private static readonly string[] BadButtonIds = { NsisCancelAutomationId, NsisNoAutomationId };
-        private static readonly string[] GoodButtonIds = { NsisForwardAutomationId, NsisYesAutomationId };
 
-        private static readonly string[] GoodButtonNames = { "Uninstall", "OK", "Accept", "Apply", "Close", "Yes" };
-        private static readonly string[] ControlBoxButtonNames = { "Minimize", "Maximize", "Close" };
+        private static readonly string[] GoodRadioIds = { NsisRebootLaterRadioAutomationId };
+        private static readonly string[] BadRadioIds = { NsisRebootNowRadioAutomationId };
+        private static readonly string[] BadButtonIds = { NsisNoAutomationId };
+        private static readonly string[] CancelButtonIds = { NsisCancelAutomationId };
+        private static readonly string[] GoodButtonIds = { NsisForwardAutomationId, NsisYesAutomationId };
+        private static readonly string[] ControlBoxButtonIds = { "Minimize", "Maximize", "Close" };
+
+        private static readonly string[] GoodButtonNames;
+        private static readonly string[] CancelButtonNames;
+        private static readonly string[] BadButtonNames;
+
         private static bool _hideAutomatizedWindows = true;
+
+        static AutomatedUninstallManager()
+        {
+            var rm = new ResourceManager(typeof(Localization));
+            var validCultureInfos = CultureInfo.GetCultures(CultureTypes.AllCultures)
+                .Where(x => !x.IsNeutralCulture)
+                .Where(c => rm.GetResourceSet(c, false, false) != null)
+                .ToList();
+            
+            string[] GetValuesFromAllLanguages(IEnumerable<CultureInfo> cultureInfos, Func<string> targetFieldSelector)
+            {
+                return cultureInfos
+                    .Do(c => Localization.Culture = c)
+                    .SelectMany(_ => targetFieldSelector().Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+                    .Select(x => x.Trim().ToLowerInvariant())
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Distinct()
+                    .ToArray();
+            }
+
+            GoodButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_GoodButtons);
+            CancelButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_CancelButtons);
+            BadButtonNames = GetValuesFromAllLanguages(validCultureInfos, () => Localization.Auto_BadButtons);
+        }
 
         public static event EventHandler HideAutomatizedWindowsChanged;
         public static bool HideAutomatizedWindows
@@ -112,7 +142,7 @@ namespace UninstallerAutomatizer
                 statusCallback(string.Format(Localization.Message_Automation_AppAttached, app.Name));
 
                 WaitForApplication(app);
-                
+
                 var seenWindows = new List<int>();
 
                 while (!app.HasExited)
@@ -131,9 +161,9 @@ namespace UninstallerAutomatizer
                         continue;
                     }
 
-                    statusCallback(String.Format(Localization.Message_Automation_WindowFound, target.Title));
+                    statusCallback(string.Format(Localization.Message_Automation_WindowFound, target.Title));
                     WaitForWindow(target);
-                    
+
                     while (!target.IsClosed)
                     {
                         TryClickNextNsisButton(target, statusCallback);
@@ -214,7 +244,7 @@ namespace UninstallerAutomatizer
             if (seenWindows.Contains(handle))
                 throw new InvalidOperationException(Localization.Message_Automation_PopupRecurringFound);
             seenWindows.Add(handle);
-            statusCallback(String.Format(Localization.Message_Automation_PopupFound, popupWindow.Title));
+            statusCallback(string.Format(Localization.Message_Automation_PopupFound, popupWindow.Title));
 
             while (!popupWindow.IsClosed)
             {
@@ -230,42 +260,53 @@ namespace UninstallerAutomatizer
         {
             statusCallback("Looking for buttons to press...");
 
-            var allButtons =
-                target.GetMultiple(SearchCriteria.ByControlType(typeof(Button), WindowsFramework.Win32))
-                    .Cast<Button>();
+            var allButtons = target
+                .GetMultiple(SearchCriteria.ByControlType(typeof(Button), WindowsFramework.Win32))
+                .Cast<Button>()
+                .ToList();
 
-            // Filter out buttons that should not be pressed like "Cancel".
-            var filteredButtons = allButtons.Where(x => x.Enabled).Where(NotControlBoxButton).ToList();
+            var filteredButtons = allButtons
+                .Where(x => x.Enabled)
+                .Where(NotControlBoxButton)
+                .ToList();
 
-            var buttons = filteredButtons.Count > 1
-                ? filteredButtons
-                    .Where(x => !BadButtonIds.Any(y => x.Id.Equals(y, StringComparison.InvariantCulture)))
-                    .ToList()
-                : filteredButtons;
+            var cancelButtons = FilterButtonsByName(filteredButtons, CancelButtonNames)
+                .Concat(FilterButtonsById(filteredButtons, CancelButtonIds))
+                .ToList();
 
-            if (buttons.Any())
+            filteredButtons.RemoveAll(cancelButtons);
+
+            var badButtons = FilterButtonsById(filteredButtons, BadButtonIds)
+                .Concat(FilterButtonsByName(filteredButtons, BadButtonNames)).ToList();
+
+            var applicableButtons = filteredButtons.Count == 1 ? filteredButtons : filteredButtons.Except(badButtons).ToList();
+
+            if (applicableButtons.Any())
             {
-                var nextButton = buttons.FirstOrDefault(x =>
-                             GoodButtonIds.Any(
-                                 y => x.Id.Equals(y, StringComparison.InvariantCulture)));
+                var nextButton = FilterButtonsById(applicableButtons, GoodButtonIds)
+                    .Concat(FilterButtonsByName(applicableButtons, GoodButtonNames))
+                    .FirstOrDefault();
 
                 if (nextButton == null)
                 {
-                    nextButton = TryGetByName(buttons);
-
-                    if (nextButton == null)
+                    if (applicableButtons.Count == 1 && cancelButtons.Any() && allButtons.All(x=>x.Enabled))
+                    {
+                        // If there is only one valid button, and the rest are cancel buttons,
+                        // assume the valid button is the correct choice.
+                        nextButton = applicableButtons.Single();
+                    }
+                    else
                     {
                         //Debug.Fail("Nothing to press!");
                         return;
                     }
                 }
 
-                // Finally press the button, doesn't require messing with the mouse.
-                //nextButton.RaiseClickEvent();
-
                 ProcessRadioButtons(target, statusCallback);
 
                 statusCallback(string.Format(Localization.Message_Automation_ClickingButton, nextButton.Text));
+                // Finally press the button, doesn't require messing with the mouse.
+                //nextButton.RaiseClickEvent();
                 nextButton.Focus();
                 nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
             }
@@ -277,7 +318,7 @@ namespace UninstallerAutomatizer
                                 .Cast<RadioButton>().ToList();
             if (allRadios.Any())
             {
-                statusCallback(String.Format(Localization.Message_Automation_FoundButtons, allRadios.Count));
+                statusCallback(string.Format(Localization.Message_Automation_FoundButtons, allRadios.Count));
 
                 // Select all known good radio buttons first
                 var goodRadios = allRadios.Where(x => GoodRadioIds.Any(
@@ -287,7 +328,7 @@ namespace UninstallerAutomatizer
                 {
                     if (radioButton.Enabled)
                     {
-                        statusCallback(String.Format(Localization.Message_Automation_SelectingGoodButton, radioButton.Name));
+                        statusCallback(string.Format(Localization.Message_Automation_SelectingGoodButton, radioButton.Name));
                         radioButton.IsSelected = true;
                     }
                 }
@@ -302,7 +343,7 @@ namespace UninstallerAutomatizer
                     {
                         if (notBadRadio.Enabled)
                         {
-                            statusCallback(String.Format(Localization.Message_Automation_SelectingNotBadButton, notBadRadio.Name));
+                            statusCallback(string.Format(Localization.Message_Automation_SelectingNotBadButton, notBadRadio.Name));
                             notBadRadio.IsSelected = true;
                         }
                     }
@@ -310,15 +351,20 @@ namespace UninstallerAutomatizer
             }
         }
 
-        /// <summary>
-        ///     Return first button matching any of the known GoodButtonNames.
-        /// </summary>
-        private static Button TryGetByName(IEnumerable<Button> buttons)
+        private static IEnumerable<Button> FilterButtonsByName(IEnumerable<Button> buttons, IEnumerable<string> buttonNames)
         {
-            return GoodButtonNames.Select(
-                buttonName =>
-                    buttons.FirstOrDefault(x => x.Name.Equals(buttonName, StringComparison.InvariantCultureIgnoreCase)))
-                .FirstOrDefault(nextButton => nextButton != null);
+            return buttonNames
+                .Select(buttonName => buttons.FirstOrDefault(
+                    x => x.Name.Equals(buttonName, StringComparison.InvariantCultureIgnoreCase)))
+                .Where(button => button != null);
+        }
+
+        private static IEnumerable<Button> FilterButtonsById(IEnumerable<Button> buttons, IEnumerable<string> buttonIds)
+        {
+            return buttonIds
+                .Select(buttonName => buttons.FirstOrDefault(
+                    x => x.Id.Equals(buttonName, StringComparison.InvariantCultureIgnoreCase)))
+                .Where(button => button != null);
         }
 
         /// <summary>
@@ -328,7 +374,7 @@ namespace UninstallerAutomatizer
         private static bool NotControlBoxButton(Button x)
         {
             var id = x.Id;
-            return !ControlBoxButtonNames.Any(y => id.Equals(y));
+            return !ControlBoxButtonIds.Any(y => id.Equals(y));
         }
 
         public class AutomatedUninstallException : Exception
@@ -343,43 +389,6 @@ namespace UninstallerAutomatizer
 
             public string UninstallerCommand { get; }
             public Process UninstallerProcess { get; }
-        }
-    }
-
-    public static class WindowExtensions
-    {
-        private const int SWP_NOSIZE = 0x0001;
-        private const int SWP_NOMOVE = 0x0002;
-        private const int SWP_NOZORDER = 0x0004;
-
-        // see https://msdn.microsoft.com/en-us/library/windows/desktop/ms633545(v=vs.85).aspx
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hwndAfter, int x, int y, int width, int height, int flags);
-
-        public static void Resize(this Window window, int width, int height)
-        {
-            SetWindowPos(window, 0, 0, width, height, SWP_NOMOVE | SWP_NOZORDER);
-        }
-
-        public static void Move(this Window window, int x, int y)
-        {
-            SetWindowPos(window, x, y, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
-        }
-
-        public static void Move(this Window window, int x, int y, int width, int height)
-        {
-            SetWindowPos(window, x, y, width, height, SWP_NOZORDER);
-        }
-
-        private static void SetWindowPos(this Window window, int x, int y, int width, int height, int flags)
-        {
-            var handle = new IntPtr(window.AutomationElement.Current.NativeWindowHandle);
-            SetWindowPos(handle, IntPtr.Zero, x, y, width, height, flags);
-        }
-
-        public static int GetHandle(this Window window)
-        {
-            return window.AutomationElement.Current.NativeWindowHandle;
         }
     }
 }

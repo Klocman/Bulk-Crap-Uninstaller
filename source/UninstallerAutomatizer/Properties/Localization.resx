@@ -197,4 +197,16 @@
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} is not a valid number</value>
   </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>No | Decline</value>
+    <comment>Text displayed on buttons that are most likely not what you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Cancel | Abort | Back</value>
+    <comment>Text displayed on Cancel buttons that you never want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>Uninstall | OK | Accept | Apply | Close | Yes</value>
+    <comment>Text from buttons that application uninstallers use. Only add buttons that you want to press to progress the uninstallation. Separated by |</comment>
+  </data>
 </root>
