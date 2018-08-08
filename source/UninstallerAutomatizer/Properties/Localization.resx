@@ -199,14 +199,19 @@
   </data>
   <data name="Auto_BadButtons" xml:space="preserve">
     <value>No | Decline</value>
-    <comment>Text displayed on buttons that are most likely not what you want to press. Separated by |</comment>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
   </data>
   <data name="Auto_CancelButtons" xml:space="preserve">
     <value>Cancel | Abort | Back</value>
-    <comment>Text displayed on Cancel buttons that you never want to press. Separated by |</comment>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
   </data>
   <data name="Auto_GoodButtons" xml:space="preserve">
-    <value>Uninstall | OK | Accept | Apply | Close | Yes</value>
-    <comment>Text from buttons that application uninstallers use. Only add buttons that you want to press to progress the uninstallation. Separated by |</comment>
+    <value>Uninstall | OK | Accept | Apply | Close | Yes | Delete | Remove | Clean</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
   </data>
 </root>

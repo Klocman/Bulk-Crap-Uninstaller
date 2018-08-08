@@ -149,9 +149,11 @@
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Znaleziono {0} przyciski radiowe.</value>
+    <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
     <value>Kliknięcie przycisku "{0}".</value>
+    <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>Wyskakujące okno zostało zamknięte.</value>
@@ -170,12 +172,14 @@
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
     <value>Znaleziono okno "{0}".</value>
+    <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>Szukanie okien...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Podłączono do "{0}"</value>
+    <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
     <value>Oczekiwanie na rozpakowanie dezinstalatora NSIS...</value>
@@ -188,8 +192,26 @@
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
     <value>Daemon zatrzymał się z powodu:</value>
+    <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} nie jest prawidłową liczbą</value>
+  </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>Nie | Odmawiam | Odmów</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Anuluj | Wróć | Wstecz</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>Odinstaluj | Akceptuj | Zaakceptuj | Dezinstaluj | Zamknij | Tak | Zatwierdź | Potwierdź | Usuń | Wyczyść</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
   </data>
 </root>
