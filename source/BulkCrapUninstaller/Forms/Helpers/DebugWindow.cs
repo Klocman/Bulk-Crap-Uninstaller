@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -154,12 +155,14 @@ namespace BulkCrapUninstaller.Forms
 
         private void TestCrashBackgroundThread(object sender, EventArgs e)
         {
-            new Thread(() => { throw new ArgumentException("TestCrashBackgroundThread"); }).Start();
+            NBug.Settings.ReleaseMode = false;
+            new Thread(() => { throw new ArgumentException("TestCrashBackgroundThread", new IOException("Inner exception")); }).Start();
         }
 
         private void TestCrashUiThread(object sender, EventArgs e)
         {
-            throw new ArgumentException("TestCrashUiThread");
+            NBug.Settings.ReleaseMode = false;
+            throw new ArgumentException("TestCrashUiThread", new IOException("Inner exception"));
         }
 
         private void TestHandler(object sender, SettingChangedEventArgs<bool> args)
