@@ -145,7 +145,7 @@ namespace UninstallTools.Controls
 
         private void OnComparisonMethodChanged(object sender, EventArgs e)
         {
-            if (Enabled)
+            if (!IsDisposed && !Disposing && Enabled)
                 ComparisonMethodChanged?.Invoke(sender, e);
         }
 

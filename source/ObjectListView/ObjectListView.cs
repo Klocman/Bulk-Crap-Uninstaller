@@ -4240,64 +4240,76 @@ namespace BrightIdeasSoftware
 
             //Stopwatch sw = Stopwatch.StartNew();
 
-            this.ApplyExtendedStyles();
-            this.ClearHotItem();
-            int previousTopIndex = this.TopItemIndex;
-            Point currentScrollPosition = this.LowLevelScrollPosition;
+            try
+            {
+                this.ApplyExtendedStyles();
+                this.ClearHotItem();
+                int previousTopIndex = this.TopItemIndex;
+                Point currentScrollPosition = this.LowLevelScrollPosition;
 
-            IList previousSelection = new ArrayList();
-            Object previousFocus = null;
-            if (shouldPreserveState && this.objects != null) {
-                previousSelection = this.SelectedObjects;
-                OLVListItem focusedItem = this.FocusedItem as OLVListItem;
-                if (focusedItem != null)
-                    previousFocus = focusedItem.RowObject;
-            }
+                IList previousSelection = new ArrayList();
+                Object previousFocus = null;
+                if (shouldPreserveState && this.objects != null)
+                {
+                    previousSelection = this.SelectedObjects;
+                    OLVListItem focusedItem = this.FocusedItem as OLVListItem;
+                    if (focusedItem != null)
+                        previousFocus = focusedItem.RowObject;
+                }
 
-            IEnumerable objectsToDisplay = this.FilteredObjects;
+                IEnumerable objectsToDisplay = this.FilteredObjects;
 
-            this.BeginUpdate();
-            try {
-                _listItemLookup.Clear();
-                this.Items.Clear();
-                this.ListViewItemSorter = null;
+                this.BeginUpdate();
+                try
+                {
+                    _listItemLookup.Clear();
+                    this.Items.Clear();
+                    this.ListViewItemSorter = null;
 
-                if (objectsToDisplay != null) {
-                    // Build a list of all our items and then display them. (Building
-                    // a list and then doing one AddRange is about 10-15% faster than individual adds)
-                    List<ListViewItem> itemList = new List<ListViewItem>(); // use ListViewItem to avoid co-variant conversion
-                    foreach (object rowObject in objectsToDisplay) {
-                        OLVListItem lvi = new OLVListItem(rowObject);
-                        this.FillInValues(lvi, rowObject);
+                    if (objectsToDisplay != null)
+                    {
+                        // Build a list of all our items and then display them. (Building
+                        // a list and then doing one AddRange is about 10-15% faster than individual adds)
+                        List<ListViewItem> itemList = new List<ListViewItem>(); // use ListViewItem to avoid co-variant conversion
+                        foreach (object rowObject in objectsToDisplay)
+                        {
+                            OLVListItem lvi = new OLVListItem(rowObject);
+                            this.FillInValues(lvi, rowObject);
 
-                        _listItemLookup.Add(rowObject, lvi);
+                            _listItemLookup.Add(rowObject, lvi);
 
-                        itemList.Add(lvi);
-                    }
-                    this.Items.AddRange(itemList.ToArray());
-                    this.Sort();
+                            itemList.Add(lvi);
+                        }
+                        this.Items.AddRange(itemList.ToArray());
+                        this.Sort();
 
-                    if (shouldPreserveState) {
-                        this.SelectedObjects = previousSelection;
-                        this.FocusedItem = this.ModelToItem(previousFocus);
+                        if (shouldPreserveState)
+                        {
+                            this.SelectedObjects = previousSelection;
+                            this.FocusedItem = this.ModelToItem(previousFocus);
+                        }
                     }
                 }
-            } finally {
-                this.EndUpdate();
-            }
+                finally
+                {
+                    this.EndUpdate();
+                }
 
-            this.RefreshHotItem();
+                this.RefreshHotItem();
 
-            // We can only restore the scroll position after the EndUpdate() because
-            // of caching that the ListView does internally during a BeginUpdate/EndUpdate pair.
-            if (shouldPreserveState) {
-                // Restore the scroll position. TopItemIndex is best, but doesn't work
-                // when the control is grouped.
-                if (this.ShowGroups)
-                    this.LowLevelScroll(currentScrollPosition.X, currentScrollPosition.Y);
-                else
-                    this.TopItemIndex = previousTopIndex;
+                // We can only restore the scroll position after the EndUpdate() because
+                // of caching that the ListView does internally during a BeginUpdate/EndUpdate pair.
+                if (shouldPreserveState)
+                {
+                    // Restore the scroll position. TopItemIndex is best, but doesn't work
+                    // when the control is grouped.
+                    if (this.ShowGroups)
+                        this.LowLevelScroll(currentScrollPosition.X, currentScrollPosition.Y);
+                    else
+                        this.TopItemIndex = previousTopIndex;
+                }
             }
+            catch (ObjectDisposedException) { }
 
             // System.Diagnostics.Debug.WriteLine(String.Format("PERF - Building list for {2} objects took {0}ms / {1} ticks", sw.ElapsedMilliseconds, sw.ElapsedTicks, this.GetItemCount()));
         }
