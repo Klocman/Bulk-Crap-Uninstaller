@@ -126,8 +126,8 @@ namespace UninstallTools.Junk.Finders.Misc
         private IEnumerable<FileSystemJunk> GetLinksPointingToSteamApp(ApplicationUninstallerEntry target)
         {
             Debug.Assert(target.UninstallerKind == UninstallerType.Steam);
-
-            var appId = System.Text.RegularExpressions.Regex.Replace(target.RegistryKeyName, @"[^0-9]", "");
+            
+            var appId = System.Text.RegularExpressions.Regex.Replace(target.RegistryKeyName ?? string.Empty, @"[^0-9]", "");
 
             if (!string.IsNullOrEmpty(appId))
             {
@@ -140,6 +140,10 @@ namespace UninstallTools.Junk.Finders.Misc
                         yield return result;
                     }
                 }
+            }
+            else
+            {
+                Debug.Fail("Steam app has an invalid RegistryKeyName, it should contain its ID. Actual value: " + target.RegistryKeyName);
             }
         }
 
