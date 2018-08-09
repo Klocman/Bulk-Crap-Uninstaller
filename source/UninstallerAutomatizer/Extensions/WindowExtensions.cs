@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using TestStack.White.UIItems.WindowItems;
 
-namespace UninstallerAutomatizer
+namespace UninstallerAutomatizer.Extensions
 {
     internal static class WindowExtensions
     {
