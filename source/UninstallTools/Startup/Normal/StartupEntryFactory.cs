@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
@@ -116,6 +117,10 @@ namespace UninstallTools.Startup.Normal
             {
                 // Key doesn't exist, create it
                 RegistryTools.CreateSubKeyRecursively(point.Path)?.Close();
+            }
+            catch (SecurityException ex)
+            {
+                Console.WriteLine(@"Failed to process startup entries: " + ex);
             }
 
             return results;
