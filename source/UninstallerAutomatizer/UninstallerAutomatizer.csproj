@@ -91,7 +91,6 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AutomatedUninstallManager.cs" />
-    <Compile Include="LogWriter.cs" />
     <Compile Include="Properties\Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.ru.resx" />
     <EmbeddedResource Include="Properties\Localization.sl.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Automation\" />
   </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

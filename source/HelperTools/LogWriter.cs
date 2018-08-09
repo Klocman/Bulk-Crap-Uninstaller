@@ -15,10 +15,7 @@ namespace Klocman
     {
         public static void WriteExceptionToLog(Exception ex)
         {
-            var location = Assembly.GetCallingAssembly().Location;
-            if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
-                location = location.Remove(location.Length - 3);
-            location += ".log";
+            var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
 
             using (var writer = new StreamWriter(location, true))
             {
@@ -26,6 +23,15 @@ namespace Klocman
                 writer.Write(" - ");
                 writer.WriteLine(ex.ToString());
             }
+        }
+
+        private static string CreateLogFilenameForAssembly(Assembly assembly)
+        {
+            var location = assembly.Location;
+            if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
+                location = location.Remove(location.Length - 3);
+            location += ".log";
+            return location;
         }
 
         public LogWriter(string path) : base(path, true, Encoding.UTF8)
@@ -47,8 +53,7 @@ namespace Klocman
         /// </summary>
         public static LogWriter StartLogging()
         {
-            var location = Assembly.GetCallingAssembly().Location;
-            location = location + ".log";
+            var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
             return StartLogging(location);
         }
 

@@ -24,16 +24,15 @@ namespace UninstallerAutomatizer
         [STAThread]
         private static int Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            using (LogWriter.StartLogging(Path.Combine(dir ?? string.Empty, "UninstallerAutomatizer.log")))
+            using (LogWriter.StartLogging())
             {
-                Application.Run(new MainWindow());
-            }
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-            return (int)ReturnValue;
+                Application.Run(new MainWindow());
+
+                return (int)ReturnValue;
+            }
         }
     }
 }
