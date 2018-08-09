@@ -65,6 +65,8 @@ namespace Klocman
                 sb.Append(':');
                 sb.Append(' ', maxLen - prop.Name.Length);
 
+                if (prop.val is string s)
+                    sb.Append(s.Replace("\r\n", " ").Replace('\n', ' ').Replace('\r', ' '));
                 if (prop.val is IConvertible convertible)
                     sb.Append(convertible.ToString(provider));
                 else
