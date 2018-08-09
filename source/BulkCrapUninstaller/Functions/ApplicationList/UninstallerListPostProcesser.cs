@@ -6,6 +6,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -148,7 +149,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                     {
                         _updateItemsCallback(_objectsToUpdate);
                     }
-                    catch (InvalidOperationException ex)
+                    catch (SystemException ex)
                     {
                         // The list view got disposed before we could update it.
                         AbortPostprocessingThread();
