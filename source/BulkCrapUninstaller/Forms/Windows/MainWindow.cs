@@ -1182,16 +1182,16 @@ namespace BulkCrapUninstaller.Forms
                 e.Cancel = true;
                 return;
             }
-
             var advancedFiltering = advancedFilters1.CurrentList != null;
             toolStripSeparatorFiltering.Visible = advancedFiltering;
             excludeToolStripMenuItem.Visible = advancedFiltering;
             includeToolStripMenuItem.Visible = advancedFiltering;
+            
+            var selectedUninstallers = _listView.SelectedUninstallers.ToList();
 
-            var singleItem = _listView.SelectedUninstallerCount == 1;
-
+            var singleItem = selectedUninstallers.Count == 1;
             uninstallUsingMsiExecContextMenuStripItem.Enabled =
-                singleItem && !_listView.SelectedUninstallers.First().BundleProviderKey.IsEmpty();
+                singleItem && !selectedUninstallers.First().BundleProviderKey.IsEmpty();
 
             foreach (var itemToDisable in new[]
             {
@@ -1210,7 +1210,7 @@ namespace BulkCrapUninstaller.Forms
 
             runToolStripMenuItem.DropDownItems.Clear();
 
-            foreach (var item in _listView.SelectedUninstallers)
+            foreach (var item in selectedUninstallers)
             {
                 if (item.IsValid)
                 {
