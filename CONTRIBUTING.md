@@ -5,6 +5,9 @@ It's also possible to submit bug reports anonymously to my [feedback form](http:
 # How to suggest a new feature
 The same as bug report. Well-explained suggestions are preferred.
 
+# How to donate
+Check [README.md](README.md) or main window of BCUninstaller for the donate link. Only donate using the official donate links.
+
 # How to help translate
 Translations are stored in .resx files (almost all except for Resources.resx). It's suggested to use the [ResxTranslator](https://github.com/HakanL/resxtranslator) to translate these files. It will save you a lot of work. Most if not all of translators here use it.
 
