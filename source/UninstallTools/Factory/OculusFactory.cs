@@ -53,14 +53,19 @@ namespace UninstallTools.Factory
                     IsValid = true,
                     UninstallerKind = UninstallerType.Oculus,
                     InstallLocation = data["InstallLocation"],
-                    InstallDate = Directory.GetCreationTime(data["InstallLocation"]),
                     DisplayVersion = data["Version"],
                     IsProtected = "true".Equals(data["IsCore"], StringComparison.OrdinalIgnoreCase),
                 };
 
                 var executable = data["LaunchFile"];
                 if (File.Exists(executable))
+                {
                     ExecutableAttributeExtractor.FillInformationFromFileAttribs(entry, executable, true);
+                    entry.DisplayIcon = executable;
+                }
+
+                if (Directory.Exists(entry.InstallLocation))
+                    entry.InstallDate = Directory.GetCreationTime(entry.InstallLocation);
 
                 if (string.IsNullOrEmpty(entry.RawDisplayName))
                     entry.RawDisplayName = name.Replace('-', ' ').ToTitleCase();
