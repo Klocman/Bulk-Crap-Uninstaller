@@ -160,6 +160,9 @@
     <value>Automatisch beëindigen, als een vastgelopen de-installer wacht op gebruikers invoer</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Onzichtbare installatie</value>
+    <value>Onzichtbare de-installatie</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Monitor "stille" de-installers voor popups of andere vertragingen en automatiseer deze (start automatiseer daemon)</value>
   </data>
 </root>

@@ -555,4 +555,20 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Zoeken naar Chocolatey pakketten</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>De-installeren in Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Kan automatisch starten</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus Apps</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Is een web browser</value>
+  </data>
 </root>

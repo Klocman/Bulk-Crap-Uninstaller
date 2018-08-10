@@ -117,25 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Donaties helpen mij om mijn interesse te bewaren in dit project. Evenals betalingen voor code ondertekening van certificaten, hosting en andere benodigdheden.</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Bekijk de release notities en het wijzigingen logboek</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Bekijk de broncode of draag daaraan bij</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Lees de licentie</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Lees de privacyverklaring</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Lees het helpbestand</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Stuur feedback / Neem contact op met de ontwikkelaar</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Doneer (PayPal, Bitcoin, Steam giften)</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Deze tool de-installeert automatisch programma's die geen 'stille' installer hebben, door te klikken op de knoppen van de uninstaller in plaats van door de gebruiker.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="buttonResume.Text" xml:space="preserve">
-    <value>Doorgaan</value>
-  </data>
-  <data name="buttonPause.Text" xml:space="preserve">
-    <value>Pauze</value>
-  </data>
-  <data name="buttonAbort.Text" xml:space="preserve">
-    <value>Afbreken</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Uninstaller automatisering</value>
-  </data>
-  <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
-    <value>De-installer zichtbaar</value>
+    <value>(Klik ergens om dit dialoogvenster te sluiten)
+</value>
   </data>
 </root>

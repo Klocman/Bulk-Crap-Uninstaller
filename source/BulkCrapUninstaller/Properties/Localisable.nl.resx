@@ -770,4 +770,10 @@ Het kan noodzakelijk zijn om te de-installeren en het dan opnieuw te installeren
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Selecteer waar de back-up opgeslagen moet worden. Een nieuwe map zal worden gemaakt.</value>
   </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU is geüpdated naar v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Welkom bij BCU versie {0}!</value>
+  </data>
 </root>

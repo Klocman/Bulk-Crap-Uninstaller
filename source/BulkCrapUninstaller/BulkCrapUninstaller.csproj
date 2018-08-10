@@ -727,6 +727,9 @@
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.fr.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.nl.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.pl.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>

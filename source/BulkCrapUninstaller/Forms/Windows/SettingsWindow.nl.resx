@@ -268,4 +268,7 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Netwerk</value>
+  </data>
 </root>
