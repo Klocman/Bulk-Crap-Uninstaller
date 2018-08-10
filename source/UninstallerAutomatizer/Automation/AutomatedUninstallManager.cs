@@ -98,7 +98,8 @@ namespace UninstallerAutomatizer
             Application app = null;
             try
             {
-                pr = Process.Start(uninstallerCommand);
+
+                pr = ProcessTools.SeparateArgsFromCommand(uninstallerCommand).ToProcessStartInfo().Start();
                 if (pr == null)
                     throw new IOException(Localization.Message_Automation_ProcessFailedToStart);
 

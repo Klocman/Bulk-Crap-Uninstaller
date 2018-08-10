@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Klocman;
 using Klocman.Extensions;
+using Klocman.Tools;
 using TestStack.White;
 using UninstallerAutomatizer.Properties;
 using UninstallTools;
@@ -77,8 +78,9 @@ namespace UninstallerAutomatizer
             }
 
             UninstallTarget = string.Join(" ", args);
+            
 
-            if (!File.Exists(UninstallTarget))
+            if (!File.Exists(ProcessTools.SeparateArgsFromCommand(UninstallTarget).FileName))
             {
                 Program.ReturnValue = ReturnValue.InvalidArgumentCode;
                 OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Failed, string.Format(Localization.Error_InvalidPath, UninstallTarget)));
