@@ -28,7 +28,9 @@ If you need any help please either read the help file included with all releases
 * 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
 
 ## Screenshots
-![preview](https://user-images.githubusercontent.com/14913904/34364884-93bcf34e-ea8a-11e7-9aa2-bb229631498a.png)
+![preview](../gh-pages/assets/1.png)
+![preview](../gh-pages/assets/3.png)
+![preview](../gh-pages/assets/2.png)
 
 ## Features
 ### Detect, manage and quietly uninstall (even if other uninstallers can't see them):
