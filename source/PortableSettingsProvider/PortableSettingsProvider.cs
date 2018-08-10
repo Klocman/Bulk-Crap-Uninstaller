@@ -35,8 +35,10 @@ namespace PortableSettingsProvider
             //Do nothing
             set { }
         }
-        
+
         private XmlDocument _settingsXml;
+        private XmlNode _settingsRootNode;
+
         private XmlDocument SettingsXml
         {
             get
@@ -63,6 +65,16 @@ namespace PortableSettingsProvider
                 }
 
                 return _settingsXml;
+            }
+        }
+
+        private XmlNode SettingsRootNode
+        {
+            get
+            {
+                if (_settingsRootNode == null)
+                    _settingsRootNode = SettingsXml.SelectSingleNode(SettingsRootName);
+                return _settingsRootNode;
             }
         }
 
@@ -161,12 +173,13 @@ namespace PortableSettingsProvider
             {
                 if (IsRoaming(propVal.Property))
                 {
-                    settingNode = (XmlElement) SettingsXml.SelectSingleNode(SettingsRootName + "/" + propVal.Name);
+                    settingNode = (XmlElement)SettingsXml.SelectSingleNode(
+                        SettingsRootName + "/" + propVal.Name);
                 }
                 else
                 {
-                    settingNode = (XmlElement) SettingsXml.SelectSingleNode(SettingsRootName + "/" + Environment.MachineName
-                                                                            + "/" + propVal.Name);
+                    settingNode = (XmlElement)SettingsXml.SelectSingleNode(
+                        SettingsRootName + "/" + Environment.MachineName + "/" + propVal.Name);
                 }
             }
             catch (Exception)
@@ -174,7 +187,6 @@ namespace PortableSettingsProvider
                 settingNode = null;
             }
 
-            //Check to see if the node exists, if so then set its new value
             if (settingNode != null)
             {
                 settingNode.InnerText = propVal.SerializedValue.ToString();
@@ -183,55 +195,69 @@ namespace PortableSettingsProvider
             {
                 if (IsRoaming(propVal.Property))
                 {
-                    //Store the value as an element of the Settings Root Node
-                    settingNode = SettingsXml.CreateElement(propVal.Name);
-                    settingNode.InnerText = propVal.SerializedValue.ToString();
-                    SettingsXml.SelectSingleNode(SettingsRootName).AppendChild(settingNode);
+                    CreateRoamingValue(propVal);
                 }
                 else
                 {
-                    //Its machine specific, store as an element of the machine name node,
-                    //creating a new machine name node if one doesnt exist.
-                    XmlElement machineNode;
-                    try
-                    {
-                        machineNode =
-                            (XmlElement) SettingsXml.SelectSingleNode(SettingsRootName + "/" + Environment.MachineName);
-                    }
-                    catch (Exception)
-                    {
-                        machineNode = SettingsXml.CreateElement(Environment.MachineName);
-                        SettingsXml.SelectSingleNode(SettingsRootName).AppendChild(machineNode);
-                    }
-
-                    if (machineNode == null)
-                    {
-                        machineNode = SettingsXml.CreateElement(Environment.MachineName);
-                        SettingsXml.SelectSingleNode(SettingsRootName).AppendChild(machineNode);
-                    }
-
-                    settingNode = SettingsXml.CreateElement(propVal.Name);
-                    settingNode.InnerText = propVal.SerializedValue.ToString();
-                    machineNode.AppendChild(settingNode);
+                    CreateLocalValue(propVal);
                 }
             }
         }
 
+        /// <summary>
+        /// Its machine specific, store as an element of the machine name node,
+        /// creating a new machine name node if one doesnt exist.
+        /// </summary>
+        private void CreateLocalValue(SettingsPropertyValue propVal)
+        {
+            XmlElement machineNode;
+            try
+            {
+                machineNode = (XmlElement)SettingsXml.SelectSingleNode(
+                    SettingsRootName + "/" + Environment.MachineName);
+            }
+            catch (Exception)
+            {
+                machineNode = SettingsXml.CreateElement(Environment.MachineName);
+                SettingsRootNode.AppendChild(machineNode);
+            }
+
+            if (machineNode == null)
+            {
+                machineNode = SettingsXml.CreateElement(Environment.MachineName);
+                SettingsRootNode.AppendChild(machineNode);
+            }
+
+            var settingNode = SettingsXml.CreateElement(propVal.Name);
+            settingNode.InnerText = propVal.SerializedValue.ToString();
+            machineNode.AppendChild(settingNode);
+        }
+
+        /// <summary>
+        /// Store the value as an element of the Settings Root Node
+        /// </summary>
+        private void CreateRoamingValue(SettingsPropertyValue propVal)
+        {
+            var settingNode = SettingsXml.CreateElement(propVal.Name);
+            settingNode.InnerText = propVal.SerializedValue.ToString();
+            SettingsRootNode.AppendChild(settingNode);
+        }
+
+        /// <summary>
+        /// Determine if the setting is marked as Roaming
+        /// </summary>
         private bool IsRoaming(SettingsProperty prop)
         {
-            //Determine if the setting is marked as Roaming
-            return prop.Attributes.Cast<DictionaryEntry>().Select(x => x.Value)
-                .OfType<SettingsManageabilityAttribute>().Any();
-
-            /*foreach (DictionaryEntry d in prop.Attributes)
+            try
             {
-                Attribute a = (Attribute)d.Value;
-                if (a is SettingsManageabilityAttribute)
-                {
-                    return true;
-                }
+                return prop.Attributes.Cast<DictionaryEntry>().Select(x => x.Value)
+                    .OfType<SettingsManageabilityAttribute>()
+                    .Any(x => x.Manageability == SettingsManageability.Roaming);
             }
-            return false;*/
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
