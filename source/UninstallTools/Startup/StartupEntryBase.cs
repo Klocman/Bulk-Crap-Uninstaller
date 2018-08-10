@@ -116,9 +116,14 @@ namespace UninstallTools.Startup
             {
                 var info = FileVersionInfo.GetVersionInfo(commandFilename);
                 Company = info.CompanyName;
-                ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
-                    ? info.ProductName
-                    : StringTools.StripStringFromVersionNumber(ProgramName);
+
+                var fileDesc = StringTools.StripStringFromVersionNumber(info.FileDescription);
+                if (!string.IsNullOrEmpty(fileDesc))
+                    ProgramNameTrimmed = fileDesc;
+                else
+                    ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
+                        ? info.ProductName
+                        : StringTools.StripStringFromVersionNumber(ProgramName);
             }
             catch
             {

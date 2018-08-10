@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using Klocman.Tools;
 
 namespace UninstallTools.Factory.InfoAdders
 {
@@ -62,9 +63,20 @@ namespace UninstallTools.Factory.InfoAdders
             if (unpopulatedCheck(targetEntry.Publisher) && !string.IsNullOrEmpty(companyName))
                 targetEntry.Publisher = companyName;
 
-            var productName = verInfo.ProductName?.Trim();
-            if (unpopulatedCheck(targetEntry.RawDisplayName) && !string.IsNullOrEmpty(productName))
-                targetEntry.RawDisplayName = productName;
+            if (unpopulatedCheck(targetEntry.RawDisplayName))
+            {
+                var productName = StringTools.StripStringFromVersionNumber(verInfo.FileDescription?.Trim());
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    targetEntry.RawDisplayName = productName;
+                }
+                else
+                {
+                    productName = verInfo.ProductName?.Trim();
+                    if (!string.IsNullOrEmpty(productName))
+                        targetEntry.RawDisplayName = productName;
+                }
+            }
 
             var comment = verInfo.Comments?.Trim();
             if (unpopulatedCheck(targetEntry.Comment) && !string.IsNullOrEmpty(comment))
