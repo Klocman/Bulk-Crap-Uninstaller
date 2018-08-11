@@ -2,23 +2,28 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.6.0.0</Version>
+<Version>4.7.0.0</Version>
 <URL></URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added support for Oculus store apps/games
-Added new property that marks apps as web browsers
-Added filtering option to show detected web browsers
-Added detection of unremovable Store Apps, mark them as protected components
-Added MS-PC2 to Spanish translation credits
-Added duplicate cache entry handling
-Use more generic rating id for StoreApps to keep ratings between versions
-Hide paths from some uninstall strings in the list view to reduce clutter
-Show more error information from failed uninstallers on the task list
-Improved formatting of store app helper output
-Made store app helper pass the hresult error back to BCU
-Fixed some Spanish and Italian translations not being used
-Fixed invalid metadata of UniversalUninstaller
+Added reading hidden uninstall strings (mostly Nvidia stuff)
+Made it clearer when uninstallation task finishes (sound and flashing)
+Improved app name detection for unregisted apps and startups
+Improved layout of uninstall task progress window
+Improved Uninstaller Automatizer button selection logic, can handle non-English button text now
+Fixed Automatizer deamon trying to automatize other Automatizers
+Fixed Automatizer failing with invalid path error on some uninstall commands
+Fixed BCU-console not using its manifest file
+Fixed protected Windows updates having no uninstall strings generated instead of setting the Protected flag
+Fixed some uninstallers being wrongly marked as unregistered
+Fixed crash when changing filters as list is being closed
+Fixed crash when opening context menu as application list is updated
+Fixed crash when scanning for leftovers if there are invalid SteamApp entries
+Fixed crash when scanning startups in case of malformed registry security settings
+Fixed crash when updating certificate info on list
+Fixed potential crash in Oculus factory
+Fixed potential crash when saving settings
+Prevent newlines in helper outputs, fixes rare crashes during app scanning
 </Changes>
 <Hash></Hash>
 </Update>
