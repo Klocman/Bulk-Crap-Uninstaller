@@ -24,8 +24,8 @@ If you need any help please either read the help file included with all releases
 * .NET: Recommended .NET 4.0 or newer, can run on only .NET 3.5 with reduced functionality.
 * RAM: Around 300MB or more of free RAM.
 * CPU: Doesn't really matter.
-* Free space: 40MB or more (most of it is for temporary update files).
-* 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
+* Free space: 50MB or more.
+* HDD: Anything will work, but slower drives will make scan times proportionally longer.
 
 ## Screenshots
 ![preview](../gh-pages/assets/1.png)
