@@ -61,8 +61,8 @@ BCU is translated to Arabic, Czech, Dutch, English, French, German, Hungarian, I
 * .NET: Recommended .NET 4.0 or newer, can run on only .NET 3.5 with reduced functionality.
 * RAM: Around 300MB or more of free RAM.
 * CPU: Doesn't really matter.
-* Free space: 40MB or more (most of it is for temporary update files).
-* 7200RPM HDD or better is recommended or scan times can get very long depending on configuration. (not as bad in v4.1 thanks to caching)
+* Free space: 50MB or more.
+* HDD: Anything will work, but slower drives will make scan times proportionally longer.
 
 # Licensing and commercial use
 Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
