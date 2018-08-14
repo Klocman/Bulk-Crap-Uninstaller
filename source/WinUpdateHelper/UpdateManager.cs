@@ -4,10 +4,11 @@
 */
 
 using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Klocman;
 using WUApiLib;
 
 namespace WinUpdateHelper
@@ -71,31 +72,27 @@ namespace WinUpdateHelper
             var wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch = wuaSearcher.Search("IsInstalled=1 and IsPresent=1 and Type='Software'");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
-
-            var first = true;
+            
             foreach (var update in updates)
             {
-                if (!first)
-                    Console.WriteLine();
-                first = false;
-
                 var id = update.Identity;
-                Console.WriteLine(nameof(id.UpdateID) + " - " + id.UpdateID);
-                Console.WriteLine(nameof(id.RevisionNumber) + " - " +
-                                  id.RevisionNumber.ToString(CultureInfo.InvariantCulture));
 
-                Console.WriteLine(nameof(update.Title) + " - " + update.Title);
-                Console.WriteLine(nameof(update.IsUninstallable) + " - " +
-                                  update.IsUninstallable.ToString(CultureInfo.InvariantCulture));
+                var result = HelperTools.KeyValueListToConsoleOutput(new List<KeyValuePair<string, object>>
+                {
+                    new KeyValuePair<string, object>(nameof(id.UpdateID), id.UpdateID),
+                    new KeyValuePair<string, object>(nameof(id.RevisionNumber), id.RevisionNumber),
 
-                Console.WriteLine(nameof(update.SupportUrl) + " - " + update.SupportUrl);
+                    new KeyValuePair<string, object>(nameof(update.Title), update.Title),
+                    new KeyValuePair<string, object>(nameof(update.IsUninstallable), update.IsUninstallable),
 
-                Console.WriteLine(nameof(update.MinDownloadSize) + " - " +
-                                  update.MinDownloadSize.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine(nameof(update.MaxDownloadSize) + " - " +
-                                  update.MaxDownloadSize.ToString(CultureInfo.InvariantCulture));
-                Console.WriteLine(nameof(update.LastDeploymentChangeTime) + " - " +
-                                  update.LastDeploymentChangeTime.ToString(CultureInfo.InvariantCulture));
+                    new KeyValuePair<string, object>(nameof(update.SupportUrl), update.SupportUrl),
+
+                    new KeyValuePair<string, object>(nameof(update.MinDownloadSize), update.MinDownloadSize),
+                    new KeyValuePair<string, object>(nameof(update.MaxDownloadSize), update.MaxDownloadSize),
+                    new KeyValuePair<string, object>(nameof(update.LastDeploymentChangeTime), update.LastDeploymentChangeTime)
+                });
+
+                Console.WriteLine(result);
             }
         }
     }

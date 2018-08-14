@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -52,25 +53,32 @@ namespace Klocman
             var propInfos = obj.GetType()
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(prop => prop.CanRead)
-                .Select(prop => new { prop.Name, val = prop.GetValue(obj, null) })
-                .ToList();
+                .ToDictionary(prop => prop.Name, prop => prop.GetValue(obj, null));
+            return KeyValueListToConsoleOutput(propInfos, provider);
+        }
 
-            var maxLen = propInfos.Max(x => x.Name.Length) + 2;
+        public static string KeyValueListToConsoleOutput(ICollection<KeyValuePair<string, object>> propertyKeyValues,
+            IFormatProvider provider = null)
+        {
+            if (propertyKeyValues == null) throw new ArgumentNullException(nameof(propertyKeyValues));
+            if (provider == null) provider = CultureInfo.InvariantCulture;
+
+            var maxLen = propertyKeyValues.Max(x => x.Key.Length) + 2;
 
             var sb = new StringBuilder();
 
-            foreach (var prop in propInfos)
+            foreach (var prop in propertyKeyValues)
             {
-                sb.Append(prop.Name);
+                sb.Append(prop.Key);
                 sb.Append(':');
-                sb.Append(' ', maxLen - prop.Name.Length);
+                sb.Append(' ', maxLen - prop.Key.Length);
 
-                if (prop.val is string s)
+                if (prop.Value is string s)
                     sb.Append(s.Replace("\r\n", " ").Replace('\n', ' ').Replace('\r', ' '));
-                else if (prop.val is IConvertible convertible)
+                else if (prop.Value is IConvertible convertible)
                     sb.Append(convertible.ToString(provider));
                 else
-                    sb.Append(prop.val);
+                    sb.Append(prop.Value);
 
                 sb.AppendLine();
             }

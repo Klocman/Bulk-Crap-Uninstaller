@@ -42,10 +42,10 @@ namespace UninstallTools.Factory
                 yield break;
 
             var output = FactoryTools.StartProcessAndReadOutput(HelperPath, "list");
-            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrEmpty(output) || output.Trim().StartsWith("Error", StringComparison.OrdinalIgnoreCase))
                 yield break;
 
-            foreach (var group in ProcessInput(output))
+            foreach (var group in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
                 var entry = new ApplicationUninstallerEntry
                 {
@@ -97,30 +97,6 @@ namespace UninstallTools.Factory
 
                 yield return entry;
             }
-        }
-
-        private static IEnumerable<List<KeyValuePair<string, string>>> ProcessInput(string input)
-        {
-            var res = new List<List<KeyValuePair<string, string>>> { new List<KeyValuePair<string, string>>() };
-
-            foreach (var line in input.Trim().Trim('\n', '\r').Trim().SplitNewlines(StringSplitOptions.None))
-            {
-                if (string.IsNullOrEmpty(line))
-                {
-                    if (res.Last().Any())
-                        res.Add(new List<KeyValuePair<string, string>>());
-                }
-                else
-                {
-                    var o = line.Split(new[] { " - " }, StringSplitOptions.None);
-                    res.Last().Add(new KeyValuePair<string, string>(o[0], o[1]));
-                }
-            }
-
-            if (!res.Last().Any())
-                res.RemoveAt(res.Count - 1);
-
-            return res;
         }
     }
 }

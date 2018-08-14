@@ -8,15 +8,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using Klocman;
 
 namespace WinUpdateHelper
 {
     /// <summary>
     ///     https://msdn.microsoft.com/en-us/library/windows/desktop/aa386065(v=vs.85).aspx
-    ///     Return codes:
-    ///     0 - The operation completed successfully.
-    ///     59 - An unexpected network error occurred.
-    ///     1223 - The operation was canceled by the user.
+    /// 
     ///     Commands
     ///     u[ninstall] UpdateID     - Uninstall an update
     ///     l[ist]                   - List updates
@@ -49,21 +47,21 @@ namespace WinUpdateHelper
             }
             catch (OperationCanceledException)
             {
-                return 1223;
+                return (int) ReturnValue.CancelledByUserCode;
             }
             catch (COMException ex)
             {
                 LogWriter.WriteMessageToLog(ex.ToString());
                 Console.WriteLine("Error: {0}", Hresult.ConvertHresultToDetails(ex.ErrorCode));
-                return 59;
+                return (int)ReturnValue.UnexpectedNetworkErrorCode;
             }
             catch (Exception ex)
             {
                 LogWriter.WriteMessageToLog(ex.ToString());
                 Console.WriteLine("Error: {0}", ex.Message);
-                return 59;
+                return (int)ReturnValue.UnexpectedNetworkErrorCode;
             }
-            return 0;
+            return (int)ReturnValue.OkCode;
         }
 
         private static void ProcessCommandlineArguments(IEnumerable<string> args)
