@@ -3,7 +3,6 @@
     Apache License Version 2.0
 */
 
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -27,9 +26,12 @@ namespace UninstallTools.Factory
 
         public ApplicationUninstallerEntry TryGetCachedItem(ApplicationUninstallerEntry notCachedEntry)
         {
-            ApplicationUninstallerEntry matchedEntry;
-            Cache.TryGetValue(notCachedEntry.GetCacheId(), out matchedEntry);
-            return matchedEntry;
+            var key = notCachedEntry?.GetCacheId();
+
+            if (!string.IsNullOrEmpty(key) && Cache.TryGetValue(key, out var matchedEntry))
+                return matchedEntry;
+
+            return null;
         }
 
         public void TryCacheItem(ApplicationUninstallerEntry item)
