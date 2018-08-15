@@ -26,9 +26,9 @@ namespace UninstallTools.Factory
 
         public ApplicationUninstallerEntry TryGetCachedItem(ApplicationUninstallerEntry notCachedEntry)
         {
-            var key = notCachedEntry?.GetCacheId();
+            var id = notCachedEntry?.GetCacheId();
 
-            if (!string.IsNullOrEmpty(key) && Cache.TryGetValue(key, out var matchedEntry))
+            if (!string.IsNullOrEmpty(id) && Cache.TryGetValue(id, out var matchedEntry))
                 return matchedEntry;
 
             return null;
@@ -36,7 +36,7 @@ namespace UninstallTools.Factory
 
         public void TryCacheItem(ApplicationUninstallerEntry item)
         {
-            var id = item.GetCacheId();
+            var id = item?.GetCacheId();
             if (!string.IsNullOrEmpty(id))
                 Cache[id] = item;
         }
