@@ -29,7 +29,7 @@ namespace Klocman
         {
             var location = assembly.Location;
             if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
-                location = location.Remove(location.Length - 3);
+                location = location.Remove(location.Length - 4);
             location += ".log";
             return location;
         }
