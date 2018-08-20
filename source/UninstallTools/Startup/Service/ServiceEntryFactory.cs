@@ -36,12 +36,12 @@ namespace UninstallTools.Startup.Service
 
         public static IEnumerable<ServiceEntry> GetServiceEntries()
         {
-            var searcher = new ManagementObjectSearcher("root\\CIMV2",
-                "SELECT * FROM Win32_Service");
-
             var results = new List<ServiceEntry>();
             try
             {
+                var searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Service");
+
                 foreach (var queryObj in searcher.Get())
                 {
                     // Skip drivers and adapters
@@ -66,9 +66,14 @@ namespace UninstallTools.Startup.Service
                     results.Add(e);
                 }
             }
-            catch (COMException ex)
+            catch (ManagementException ex)
             {
-                Console.WriteLine(@"Error while gathering services");
+                Console.Write(@"Error while gathering services - ");
+                Console.WriteLine(ex);
+            }
+            catch (ExternalException ex)
+            {
+                Console.Write(@"Error while gathering services - ");
                 Console.WriteLine(ex);
             }
 
@@ -124,13 +129,13 @@ namespace UninstallTools.Startup.Service
             if (exitCode == 2) // 2 - Access Denied
                 throw new SecurityException("The user does not have the necessary access.");
 
-            throw new ManagementException("Action failed with return value " + outParams["ReturnValue"] + 
+            throw new ManagementException("Action failed with return value " + outParams["ReturnValue"] +
                 ". Check return codes of Win32_Service class methods for more information.");
         }
 
         private static ManagementObject GetServiceObject(string serviceName)
         {
-            return new ManagementObject("root\\CIMV2", 
+            return new ManagementObject("root\\CIMV2",
                 $"Win32_Service.Name='{serviceName}'", null);
         }
     }
