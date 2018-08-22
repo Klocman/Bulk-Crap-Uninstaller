@@ -238,9 +238,13 @@ namespace PortableSettingsProvider
         /// </summary>
         private void CreateRoamingValue(SettingsPropertyValue propVal)
         {
-            var settingNode = SettingsXml.CreateElement(propVal.Name);
-            settingNode.InnerText = propVal.SerializedValue.ToString();
-            SettingsRootNode.AppendChild(settingNode);
+            var serializedValue = propVal.SerializedValue;
+            if (serializedValue != null)
+            {
+                var settingNode = SettingsXml.CreateElement(propVal.Name);
+                settingNode.InnerText = serializedValue.ToString();
+                SettingsRootNode.AppendChild(settingNode);
+            }
         }
 
         /// <summary>
