@@ -28,8 +28,19 @@ namespace UninstallTools.Junk.Finders.Registry
 
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return returnList;
+            
+            string pathRoot;
 
-            var pathRoot = Path.GetPathRoot(target.InstallLocation);
+            try
+            {
+                pathRoot = Path.GetPathRoot(target.InstallLocation);
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
+                return returnList;
+            }
+
             var unrootedLocation = pathRoot.Length >= 1
                 ? target.InstallLocation.Replace(pathRoot, string.Empty)
                 : target.InstallLocation;
