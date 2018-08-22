@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Windows.Forms;
 using UninstallTools;
 using UninstallTools.Lists;
@@ -104,9 +105,14 @@ namespace BulkCrapUninstaller.Controls
                 uninstallListEditor1.CurrentList = result;
                 UnsavedChanges = false;
             }
-            catch (Exception ex)
+            catch (SecurityException ex)
             {
                 PremadeDialogs.GenericError(ex);
+            }
+            catch (Exception ex)
+            {
+                PremadeDialogs.GenericError("File is not an uninstall list or it can't be opened", 
+                    "Please note that uninstall lists are saved in the \"Advanced filtering\" view, not by exporting. Lists should have the .bcul extension.\n\nError message: " + ex.Message);
             }
         }
 
