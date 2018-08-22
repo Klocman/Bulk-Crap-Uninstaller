@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
+using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
@@ -180,6 +181,8 @@ namespace UninstallTools.Dialogs
             {
                 try
                 {
+                    if (item.CommandFilePath == null)
+                        throw new IOException(Localisation.Error_InvalidPath + "\n" + item.Command);
                     WindowsTools.OpenExplorerFocusedOnObject(item.CommandFilePath);
                 }
                 catch (Exception ex)

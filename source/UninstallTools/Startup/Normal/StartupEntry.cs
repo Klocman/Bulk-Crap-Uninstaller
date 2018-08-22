@@ -5,7 +5,9 @@
 
 using System;
 using System.IO;
+using Klocman.Resources;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Startup.Normal
 {
@@ -27,7 +29,7 @@ namespace UninstallTools.Startup.Normal
             ParentLongName = dataPoint.Path?.TrimEnd('\\');
 
             Command = targetString ?? string.Empty;
-            
+
             if (!string.IsNullOrEmpty(EntryLongName))
                 ProgramName = IsRegKey ? EntryLongName : Path.GetFileNameWithoutExtension(EntryLongName);
 
@@ -35,14 +37,17 @@ namespace UninstallTools.Startup.Normal
             {
                 CommandFilePath = ProcessCommandString(Command);
 
-                if (CommandFilePath == null)
-                    throw new ArgumentException("Failed to extract program path from supplied information: " + targetString);
-
-                FillInformationFromFile(CommandFilePath);
+                if (CommandFilePath != null)
+                    FillInformationFromFile(CommandFilePath);
 
                 if (string.IsNullOrEmpty(ProgramName))
                     ProgramName = ProgramNameTrimmed;
             }
+
+            if (string.IsNullOrEmpty(ProgramName))
+                ProgramName = targetString ?? dataPoint.Name ?? CommonStrings.Unknown;
+            if (string.IsNullOrEmpty(ProgramNameTrimmed))
+                ProgramNameTrimmed = StringTools.StripStringFromVersionNumber(ProgramName);
         }
 
         /// <summary>
