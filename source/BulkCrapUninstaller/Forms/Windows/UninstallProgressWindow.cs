@@ -94,7 +94,16 @@ namespace BulkCrapUninstaller.Forms
 
                 // Shutdown blocking not available below Windows Vista
                 if (_settings.Settings.UninstallPreventShutdown && Environment.OSVersion.Version >= new Version(6, 0))
-                    NativeMethods.ShutdownBlockReasonDestroy(Handle);
+                {
+                    try
+                    {
+                        NativeMethods.ShutdownBlockReasonDestroy(Handle);
+                    }
+                    catch (SystemException ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
             };
 
             olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
