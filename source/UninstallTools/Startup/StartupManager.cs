@@ -42,38 +42,55 @@ namespace UninstallTools.Startup
         /// Fill in the ApplicationUninstallerEntry.StartupEntries property with a list of related StartupEntry objects.
         /// Old data is not cleared, only overwritten if necessary.
         /// </summary>
-        /// <param name="uninstallers">Uninstaller entries to assign to</param>
-        /// <param name="startupEntries">Startup entries to assign</param>
-        public static void AssignStartupEntries(IEnumerable<ApplicationUninstallerEntry> uninstallers,
-            IEnumerable<StartupEntryBase> startupEntries)
+        /// <param name="allUninstallerEntries">Uninstaller entries to assign to</param>
+        /// <param name="allStartupEntries">Startup entries to assign</param>
+        public static void AssignStartupEntries(IEnumerable<ApplicationUninstallerEntry> allUninstallerEntries,
+            IEnumerable<StartupEntryBase> allStartupEntries)
         {
             //if (startupEntries == null || uninstallers == null)
             //    return;
 
-            var startups = startupEntries.ToList();
+            var startups = allStartupEntries.ToList();
+            var uninstallers = allUninstallerEntries.ToList();
 
             if (startups.Count == 0)
                 return;
 
             foreach (var uninstaller in uninstallers)
             {
-                var positives = startups.Where(x =>
+                var positives = startups.Where(startup =>
                 {
-                    if (
-                        x.ProgramNameTrimmed?.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase) ==
-                        true)
+                    if (startup.ProgramNameTrimmed?.Equals(uninstaller.DisplayNameTrimmed, StringComparison.OrdinalIgnoreCase) == true)
                         return true;
 
-                    if (x.CommandFilePath == null)
+                    if (startup.CommandFilePath == null)
                         return false;
+                    
+                    var instLoc = uninstaller.InstallLocation;
+                    if (uninstaller.IsInstallLocationValid() && startup.CommandFilePath.StartsWith(instLoc, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Don't assign if there are any applications with more specific/deep install locations (same depth is fine)
+                        var instLocations = uninstallers
+                            .Where(e => e.IsInstallLocationValid())
+                            .Select(e => e.InstallLocation)
+                            .Where(i=>startup.CommandFilePath.StartsWith(i, StringComparison.OrdinalIgnoreCase));
 
-                    if (uninstaller.IsInstallLocationValid() &&
-                        x.CommandFilePath.StartsWith(uninstaller.InstallLocation, StringComparison.OrdinalIgnoreCase))
-                        return true;
+                        if (!instLocations.Any(i => i.Length > instLoc.Length))
+                            return true;
+                    }
 
-                    if (!string.IsNullOrEmpty(uninstaller.UninstallerLocation) &&
-                        x.CommandFilePath.StartsWith(uninstaller.UninstallerLocation, StringComparison.OrdinalIgnoreCase))
-                        return true;
+                    var uninLoc = uninstaller.UninstallerLocation;
+                    if (!string.IsNullOrEmpty(uninLoc) && startup.CommandFilePath.StartsWith(uninLoc, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Don't assign if there are any applications with more specific/deep install locations (same depth is fine)
+                        var uninLocations = uninstallers
+                            .Where(e => !string.IsNullOrEmpty(e.UninstallerLocation))
+                            .Select(e => e.UninstallerLocation)
+                            .Where(i => startup.CommandFilePath.StartsWith(i, StringComparison.OrdinalIgnoreCase)); 
+
+                        if (!uninLocations.Any(i => i.Length > uninLoc.Length))
+                            return true;
+                    }
 
                     return false;
                 }).ToList();
