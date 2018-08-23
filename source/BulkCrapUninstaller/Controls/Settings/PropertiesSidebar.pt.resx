@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
@@ -198,10 +198,13 @@ Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa des
     <value>Actualizações de outras aplicações. Normalmente, elas são desinstaladas em conjunto com aplicações semelhantes, para que possam ser ignoradas.</value>
   </data>
   <data name="checkBoxWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>180, 17</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Mostrar os recursos do Windows</value>
+  </data>
+  <data name="checkBoxWinFeature.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBoxShowStoreApps.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
@@ -209,14 +212,23 @@ Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa des
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Mostrar as app do Windows Store</value>
   </data>
+  <data name="checkBoxShowStoreApps.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 161</value>
+  </data>
+  <data name="flowLayoutPanel2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 180</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrando</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 30</value>
@@ -251,11 +263,17 @@ O agrupamento da maior parte das colunas utiliza uma triagem inteligente.
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 131</value>
   </data>
+  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 150</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Configurações da lista de exibição</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 330</value>

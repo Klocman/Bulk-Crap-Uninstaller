@@ -217,8 +217,11 @@ namespace BulkCrapUninstaller.Forms
                 UninstallToolsGlobalConfig.CustomProgramFiles = trimmed;
             }, x => x.FoldersCustomProgramDirs, this);
 
+            _setMan.Selected.Subscribe((x,y)=> _listView.RefreshList(), x => x.AdvancedHighlightSpecial, this);
+
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestInvalid, this);
+            _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedHighlightSpecial, this);
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowStoreApps, this);
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.FilterShowWinFeatures, this);
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedDisplayOrphans, this);
@@ -297,10 +300,16 @@ namespace BulkCrapUninstaller.Forms
             {
                 _uninstallerListPostProcesser.StopProcessingThread(false);
 
-                if (_listView.CheckIsAppDisposed()) return;
+                SafeRefreshObjects(_listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue));
+            }
+        }
 
+        private void SafeRefreshObjects(IEnumerable<ApplicationUninstallerEntry> itemsToUpdate)
+        {
+            if (!_listView.CheckIsAppDisposed())
+            {
                 uninstallerObjectListView.SuspendLayout();
-                uninstallerObjectListView.RefreshObjects(_listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue).ToList());
+                uninstallerObjectListView.RefreshObjects(itemsToUpdate.ToList());
                 uninstallerObjectListView.ResumeLayout();
             }
         }
@@ -333,9 +342,9 @@ namespace BulkCrapUninstaller.Forms
             var force = advancedFilters1.CurrentList != null;
             _listLegendWindow.ListLegend.CertificatesEnabled = force || _setMan.Selected.Settings.AdvancedTestCertificates;
             _listLegendWindow.ListLegend.InvalidEnabled = force || _setMan.Selected.Settings.AdvancedTestInvalid && _anyInvalid;
-            _listLegendWindow.ListLegend.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && _anyStoreApps;
-            _listLegendWindow.ListLegend.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && _anyOrphans;
-            _listLegendWindow.ListLegend.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && _anyWinFeatures;
+            _listLegendWindow.ListLegend.StoreAppEnabled = force || _setMan.Selected.Settings.FilterShowStoreApps && _anyStoreApps && _setMan.Selected.Settings.AdvancedHighlightSpecial;
+            _listLegendWindow.ListLegend.OrphanedEnabled = force || _setMan.Selected.Settings.AdvancedDisplayOrphans && _anyOrphans && _setMan.Selected.Settings.AdvancedHighlightSpecial;
+            _listLegendWindow.ListLegend.WinFeatureEnabled = force || _setMan.Selected.Settings.FilterShowWinFeatures && _anyWinFeatures && _setMan.Selected.Settings.AdvancedHighlightSpecial;
             _listLegendWindow.UpdatePosition(uninstallerObjectListView);
         }
 

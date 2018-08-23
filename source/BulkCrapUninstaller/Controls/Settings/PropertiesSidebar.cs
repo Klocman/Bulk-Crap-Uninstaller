@@ -33,6 +33,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);
             _settings.BindControl(checkBoxCertTest, x => x.AdvancedTestCertificates, this);
             _settings.BindControl(checkBoxOrphans, x => x.AdvancedDisplayOrphans, this);
+            _settings.BindControl(checkBoxHighlightSpecial, x => x.AdvancedHighlightSpecial, this);
 
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);

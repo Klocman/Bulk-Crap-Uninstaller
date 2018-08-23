@@ -20,14 +20,17 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public static Color GetApplicationBackColor(ApplicationUninstallerEntry entry)
         {
-            if (entry.UninstallerKind == UninstallerType.WindowsFeature)
-                return WindowsFeatureColor;
+            if (Settings.Default.AdvancedHighlightSpecial)
+            {
+                if (entry.UninstallerKind == UninstallerType.WindowsFeature)
+                    return WindowsFeatureColor;
 
-            if (entry.UninstallerKind == UninstallerType.StoreApp)
-                return WindowsStoreAppColor;
+                if (entry.UninstallerKind == UninstallerType.StoreApp)
+                    return WindowsStoreAppColor;
 
-            if (entry.IsOrphaned)
-                return UnregisteredColor;
+                if (entry.IsOrphaned)
+                    return UnregisteredColor;
+            }
 
             if (!entry.IsValid && Settings.Default.AdvancedTestInvalid)
                 return InvalidColor;
