@@ -3,6 +3,7 @@ using Klocman.Extensions;
 using Klocman.Tools;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace BulkCrapUninstaller
                 .Select(x => x.Name.Substring(0, 2).ToLower())
                 .ToList();
 
-            return new[]
+            var supportedCultures = new[]
             {
                 // en - English
                 EnUsCulture, //CultureInfo.GetCultureInfo("en-US"),
@@ -138,7 +139,12 @@ namespace BulkCrapUninstaller
 
                 // Slovenian
                 CultureInfo.GetCultureInfo("sl-SI")
-            }.Where(x =>
+            };
+
+            Debug.Assert(translationDirectories.All(x => supportedCultures.Select(c => c.Name.Substring(0, 2)).Contains(x, StringComparison.OrdinalIgnoreCase)),
+                "Translation is not added to supported cultures - " + translationDirectories.FirstOrDefault(x => !supportedCultures.Select(c => c.Name.Substring(0, 2)).Contains(x, StringComparison.OrdinalIgnoreCase)));
+
+            return supportedCultures.Where(x =>
             {
                 var code = x.Name.Substring(0, 2).ToLower();
                 return code.Equals("en", StringComparison.Ordinal) || translationDirectories.Contains(code, StringComparison.Ordinal);
