@@ -208,7 +208,7 @@ namespace UninstallTools
             return null;
         }
 
-        internal string CacheIdOverride;
+        public string CacheIdOverride;
 
         public string RatingId
         {

@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -216,14 +217,23 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        private static void ApplyCache(List<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
+        private static void ApplyCache(ICollection<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
         {
+            var hits = 0;
             foreach (var entry in baseEntries)
             {
                 var matchedEntry = cache.TryGetCachedItem(entry);
                 if (matchedEntry != null)
+                {
                     infoAdder.CopyMissingInformation(entry, matchedEntry);
+                    hits++;
+                }
+                else
+                {
+                    Debug.WriteLine("Cache miss: " + entry.DisplayName);
+                }
             }
+            Console.WriteLine($@"Cache hits: {hits}/{baseEntries.Count}");
         }
 
         private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
