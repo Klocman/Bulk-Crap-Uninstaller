@@ -89,6 +89,52 @@ namespace UninstallTools.Factory
                   .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.Key.FullName, extraDir.Key.FullName)));
 
                 pfDirectories.AddRange(extraPfDirectories);
+
+                string[] goodNames = new[]
+                {
+                    "Apps", "Applications", "Programs", "Games",
+                    "Portable", "PortableApps", "PortableApplications", "PortablePrograms", "PortableGames"
+                };
+
+                IEnumerable<KVP> FindDirsOnDrive(DriveInfo d)
+                {
+                    return d.RootDirectory.GetDirectories()
+                        .Where(x => goodNames.Contains(x.Name, StringComparison.InvariantCultureIgnoreCase))
+                        .Select(x => new KVP(x, null));
+                }
+
+                var drives = DriveInfo.GetDrives();
+                foreach (var driveInfo in drives)
+                {
+                    if (!driveInfo.IsReady) continue;
+                    switch (driveInfo.DriveType)
+                    {
+                        case DriveType.Fixed:
+                            try
+                            {
+                                pfDirectories.AddRange(FindDirsOnDrive(driveInfo));
+                            }
+                            catch (SystemException ex)
+                            {
+                                Console.WriteLine(ex);
+                            }
+                            break;
+
+                        case DriveType.Removable:
+                            // todo add option to scan?
+                            break;
+                        case DriveType.Network:
+                            // Slow and unreliable, might also be buggy
+                            break;
+
+                        case DriveType.Unknown:
+                        case DriveType.NoRootDirectory:
+                        case DriveType.CDRom:
+                        case DriveType.Ram:
+                            // No point in scanning
+                            break;
+                    }
+                }
             }
 
             var directoriesToSkip = dirsToSkip.ToList();
