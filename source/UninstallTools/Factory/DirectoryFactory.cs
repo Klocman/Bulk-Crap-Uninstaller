@@ -90,10 +90,11 @@ namespace UninstallTools.Factory
 
                 pfDirectories.AddRange(extraPfDirectories);
 
-                string[] goodNames = new[]
+                string[] goodNames =
                 {
                     "Apps", "Applications", "Programs", "Games",
-                    "Portable", "PortableApps", "PortableApplications", "PortablePrograms", "PortableGames"
+                    "Portable", "PortableApplications", "PortablePrograms", "PortableGames",
+                    "PortableApps", "LiberKey"
                 };
 
                 IEnumerable<KVP> FindDirsOnDrive(DriveInfo d)
