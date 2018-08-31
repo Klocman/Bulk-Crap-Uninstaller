@@ -43,6 +43,8 @@ namespace BulkCrapUninstaller.Forms
 
             _settings.BindControl(textBoxProgramFolders, x => x.FoldersCustomProgramDirs, this);
             _settings.BindControl(checkBoxAutoInstallFolderDetect, x => x.FoldersAutoDetect, this);
+            _settings.BindControl(checkBoxRemovable, x => x.FoldersScanRemovable, this);
+            _settings.Subscribe((x, y) => checkBoxRemovable.Enabled = y.NewValue, x => x.FoldersAutoDetect, this);
 
             _settings.BindControl(checkBoxScanSteam, x => x.ScanSteam, this);
             _settings.BindControl(checkBoxScanStoreApps, x => x.ScanStoreApps, this);

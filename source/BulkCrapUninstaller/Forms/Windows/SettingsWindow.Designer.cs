@@ -85,6 +85,7 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxScanWinFeatures = new System.Windows.Forms.CheckBox();
             this.checkBoxScanStoreApps = new System.Windows.Forms.CheckBox();
             this.checkBoxScanSteam = new System.Windows.Forms.CheckBox();
+            this.checkBoxOculus = new System.Windows.Forms.CheckBox();
             this.checkBoxChoco = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
@@ -103,7 +104,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxOculus = new System.Windows.Forms.CheckBox();
+            this.checkBoxRemovable = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -515,6 +516,12 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxScanSteam.Name = "checkBoxScanSteam";
             this.checkBoxScanSteam.UseVisualStyleBackColor = true;
             // 
+            // checkBoxOculus
+            // 
+            resources.ApplyResources(this.checkBoxOculus, "checkBoxOculus");
+            this.checkBoxOculus.Name = "checkBoxOculus";
+            this.checkBoxOculus.UseVisualStyleBackColor = true;
+            // 
             // checkBoxChoco
             // 
             resources.ApplyResources(this.checkBoxChoco, "checkBoxChoco");
@@ -575,6 +582,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.groupBoxProgramFolders, "groupBoxProgramFolders");
             this.groupBoxProgramFolders.Controls.Add(this.textBoxProgramFolders);
+            this.groupBoxProgramFolders.Controls.Add(this.checkBoxRemovable);
             this.groupBoxProgramFolders.Controls.Add(this.checkBoxAutoInstallFolderDetect);
             this.groupBoxProgramFolders.Controls.Add(this.labelProgramFolders);
             this.groupBoxProgramFolders.Name = "groupBoxProgramFolders";
@@ -635,11 +643,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
-            // checkBoxOculus
+            // checkBoxRemovable
             // 
-            resources.ApplyResources(this.checkBoxOculus, "checkBoxOculus");
-            this.checkBoxOculus.Name = "checkBoxOculus";
-            this.checkBoxOculus.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxRemovable, "checkBoxRemovable");
+            this.checkBoxRemovable.Name = "checkBoxRemovable";
+            this.checkBoxRemovable.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -787,5 +795,6 @@ namespace BulkCrapUninstaller.Forms
         private FlowLayoutPanel flowLayoutPanel10;
         private CheckBox checkBoxChoco;
         private CheckBox checkBoxOculus;
+        private CheckBox checkBoxRemovable;
     }
 }

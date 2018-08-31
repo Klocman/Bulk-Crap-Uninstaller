@@ -111,6 +111,8 @@ namespace UninstallTools
 
         public static bool AutoDetectCustomProgramFiles { get; set; }
 
+        public static bool AutoDetectScanRemovable { get; set; }
+
         /// <summary>
         ///     Custom "Program Files" directories. Use with dirs that get used to install applications to.
         /// </summary>

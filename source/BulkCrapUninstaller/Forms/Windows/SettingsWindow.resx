@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -649,7 +649,7 @@
     <value>directorySelectBoxBackup</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6785.636, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6811.33322, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
     <value>groupBoxBackup</value>
@@ -1344,7 +1344,7 @@ BCU will wait until the currently running command completes before executing the
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1467,7 +1467,7 @@ BCU will wait until the currently running command completes before executing the
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPageUninstallation</value>
@@ -2049,13 +2049,13 @@ BCU will wait until the currently running command completes before executing the
     <value>Fill</value>
   </data>
   <data name="textBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 175</value>
+    <value>6, 198</value>
   </data>
   <data name="textBoxProgramFolders.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 156</value>
+    <value>356, 133</value>
   </data>
   <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2071,6 +2071,42 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;textBoxProgramFolders.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="checkBoxRemovable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxRemovable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxRemovable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxRemovable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 175</value>
+  </data>
+  <data name="checkBoxRemovable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 3, 3, 3</value>
+  </data>
+  <data name="checkBoxRemovable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 23</value>
+  </data>
+  <data name="checkBoxRemovable.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Scan removable drives</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Name" xml:space="preserve">
+    <value>checkBoxRemovable</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Parent" xml:space="preserve">
+    <value>groupBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2106,7 +2142,7 @@ BCU will wait until the currently running command completes before executing the
     <value>groupBoxProgramFolders</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="labelProgramFolders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2152,7 +2188,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>groupBoxProgramFolders</value>
   </data>
   <data name="&gt;&gt;labelProgramFolders.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="groupBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2227,7 +2263,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>cacheSettings1</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Parent" xml:space="preserve">
     <value>tabPageMisc</value>
@@ -2376,6 +2412,12 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -2395,7 +2437,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.5.0.1508, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsWindow</value>
@@ -2403,10 +2445,4 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

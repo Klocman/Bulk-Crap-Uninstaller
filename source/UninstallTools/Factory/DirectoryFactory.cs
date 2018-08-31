@@ -121,8 +121,10 @@ namespace UninstallTools.Factory
                             break;
 
                         case DriveType.Removable:
-                            // todo add option to scan?
+                            if (UninstallToolsGlobalConfig.AutoDetectScanRemovable)
+                                goto case DriveType.Fixed;
                             break;
+
                         case DriveType.Network:
                             // Slow and unreliable, might also be buggy
                             break;
