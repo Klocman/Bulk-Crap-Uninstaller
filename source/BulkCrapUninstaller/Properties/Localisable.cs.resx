@@ -324,7 +324,7 @@ Upozornění: Během aktualizace bude odstraněna složka "Update" a soubor "Upd
     <value>Nebyly nalezeny žádné zbytky</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Nebyl nalezen žádný zbytek. Aby se ujistil, můžete spustit další program pro čištění smetí, např. CCleaner.</value>
+    <value>Nebyl nalezen žádný zbytek. Aby se ujistil, můžete spustit další program pro čištění smetí, např. BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Nebylo co zkopírovat do schránky. Buď není vybraný odinstalátor nebo nějaké informace, nebo jste nevybrali nic.</value>

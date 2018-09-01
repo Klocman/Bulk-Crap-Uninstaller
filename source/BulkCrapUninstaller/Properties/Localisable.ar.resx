@@ -653,7 +653,7 @@ The lists are separated by a single newline.</comment>
     <value>لم يتم العثور على البقايا </value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>CCleaner لم يتم العثور علي البقايا. لا يزال هناك قد يكون بعض البقايا متبقية حتى تتمكن من تشغيل ملف مؤقت المنظف مثل</value>
+    <value>BleachBit لم يتم العثور علي البقايا. لا يزال هناك قد يكون بعض البقايا متبقية حتى تتمكن من تشغيل ملف مؤقت المنظف مثل</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>ليس هناك شيء للنسخ الى الحافظة. اما اي الغاء التثبيت المحدد لديه هذا القليل من المعلومات او انك لم تحدد اي شيء.</value>

@@ -326,7 +326,7 @@ Warning: During update the folder "Update" and the file "Update.zip" inside of t
     <value>No leftovers were found</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like CCleaner.</value>
+    <value>No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>There was nothing to copy to the clipboard. Either no selected uninstaller has this bit of information or you didn't select anything.</value>

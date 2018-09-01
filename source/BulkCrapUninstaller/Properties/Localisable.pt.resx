@@ -329,7 +329,7 @@ Aviso: Durante a actualização, a pasta "Actualizar" e o arquivo "Update.zip" i
     <value>Não foram encontrados vestígios residuais</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Não foram detectctados vestígios residuais. Ainda assim poderão ter ficado alguns, de maneira que poderá correr um utilitário de limpeza como o CCleaner.</value>
+    <value>Não foram detectctados vestígios residuais. Ainda assim poderão ter ficado alguns, de maneira que poderá correr um utilitário de limpeza como o BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Não havia nada para copiar para a área de transferência. Ou, então, o desinstalador selecionado não tem a mínima informação ou você não seleccionou nada.</value>

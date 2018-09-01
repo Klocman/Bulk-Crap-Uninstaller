@@ -84,7 +84,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ExternalPostCommands" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
-      <Value Profile="(Default)">../CCleaner/CCleaner.exe /AUTO</Value>
+      <Value Profile="(Default)">../BleachBit/bleachbit_console.exe --clean system.tmp system.logs system.memory_dump system.muicache system.prefetch system.recycle_bin</Value>
     </Setting>
     <Setting Name="ToolbarsShowStatusbar" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

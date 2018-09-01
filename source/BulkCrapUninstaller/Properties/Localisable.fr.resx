@@ -326,7 +326,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Aucun vestige trouvé</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Aucun élément n'a été trouvé. Il pourrait encore rester des résidus, de sorte que vous pouvez lancer un nettoyeur de fichiers temporaires comme CCleaner.</value>
+    <value>Aucun élément n'a été trouvé. Il pourrait encore rester des résidus, de sorte que vous pouvez lancer un nettoyeur de fichiers temporaires comme BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Il n'y a rien à copier dans le presse-papiers. Soit aucun désinstalleur sélectionné n'a ce bout d'information, soit vous n'avez rien sélectionné.</value>

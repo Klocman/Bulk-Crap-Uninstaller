@@ -326,7 +326,7 @@
     <value>Остатки не найдены</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Остатки не найдены. Тем не менее, могли остаться временные файлы, вы можете запустить чистку временных файлов, например в CCleaner.</value>
+    <value>Остатки не найдены. Тем не менее, могли остаться временные файлы, вы можете запустить чистку временных файлов, например в BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Нечего копировать в буфер обмена. Выбранное не имеет этот блок информации, либо ничего не выбрано.</value>

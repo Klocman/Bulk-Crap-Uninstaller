@@ -216,7 +216,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Geen programma restanten gevonden</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Geen restanten gevonden. Mogelijke restanten kunt u met een tijdelijke bestanden reiniger zoals CCleaner verwijderen.</value>
+    <value>Geen restanten gevonden. Mogelijke restanten kunt u met een tijdelijke bestanden reiniger zoals BleachBit verwijderen.</value>
   </data>
   <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
     <value>Online zoeken</value>

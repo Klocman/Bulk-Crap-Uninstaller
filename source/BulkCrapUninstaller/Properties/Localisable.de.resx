@@ -326,7 +326,7 @@ Von Zeit zu Zeit sollten Sie kontrollieren, ob nicht einer der Uninstaller abges
     <value>Keine Programm-Rückstände gefunden</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Keine Elemente gefunden. Mögliche Rückstände können Sie mit einem temporären Dateireiniger wie CCleaner entfernen.</value>
+    <value>Keine Elemente gefunden. Mögliche Rückstände können Sie mit einem temporären Dateireiniger wie BleachBit entfernen.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Es gab nichts in die Zwischenablage zu kopieren. Sie haben entweder nichts ausgewählt oder die Information stammt vom Uninstaller</value>

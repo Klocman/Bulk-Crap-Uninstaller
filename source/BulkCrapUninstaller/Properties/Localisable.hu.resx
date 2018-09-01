@@ -326,7 +326,7 @@ Figyelem: A frissítés közben a BCU könyvtárában levő "Update" mappa, és 
     <value>Nem találhatók maradványok</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Nem találhatók maradványok. Ennek ellenére bizonyos szemét hátramaradhatott, ezért futtasson le egy olyan jellegű takarítót, mint például a CCleaner.</value>
+    <value>Nem találhatók maradványok. Ennek ellenére bizonyos szemét hátramaradhatott, ezért futtasson le egy olyan jellegű takarítót, mint például a BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Semmi sem lett kimásolva a Vágólapra. Vagy nem jelölt ki semmit se, vagy az eltávolító nagyon kevés információval rendelkezik.</value>

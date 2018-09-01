@@ -855,7 +855,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like CCleaner..
+        ///   Looks up a localized string similar to No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like BleachBit.
         /// </summary>
         internal static string MessageBoxes_NoJunkFoundInfo_Details {
             get {

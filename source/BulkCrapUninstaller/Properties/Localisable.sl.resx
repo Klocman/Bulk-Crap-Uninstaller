@@ -324,7 +324,7 @@ Opozorilo: Med posodabljanjem bo odstranjena mapa "Update" in datoteka "Update.z
     <value>Niso bili najdeni ostanki namestitve</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Niso bili najdeni ostanki namestitve. So pa še vedno prisotni nekateri drugi neuporabni ostanki. Zato lahko zaženete čistilec začasnih datotek kot je npr. CCleaner.</value>
+    <value>Niso bili najdeni ostanki namestitve. So pa še vedno prisotni nekateri drugi neuporabni ostanki. Zato lahko zaženete čistilec začasnih datotek kot je npr. BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Ničesar ni za kopiranje v odložišče. Ali ni izbran odstranjevalec s tako malo informacijami ali pa niste nič izbrali.</value>

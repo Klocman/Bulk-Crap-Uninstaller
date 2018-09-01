@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxOrphans.AutoSize" type="System.Boolean, mscorlib">
@@ -138,9 +138,6 @@
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Show unregistered applications</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>202, 17</value>
-  </metadata>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Display applications that do not have any registered uninstallers. They are not visible in most uninstall managers but still take up space. Unregistered items are marked with a red color. 
 
@@ -368,18 +365,6 @@ Warning: Verification can take a long time to complete.</value>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -400,18 +385,6 @@ Warning: Verification can take a long time to complete.</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filter out everything that was published by Microsoft. It's that simple.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Name" xml:space="preserve">
-    <value>checkBoxListHideMicrosoft</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListHideMicrosoft.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="checkBoxListSysComp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -435,18 +408,6 @@ Warning: Verification can take a long time to complete.</value>
     <value>Some uninstallers can be marked as "system components" to hide them from the Add/Remove software list.
 Drivers are often marked with this tag.</value>
   </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Name" xml:space="preserve">
-    <value>checkBoxListSysComp</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListSysComp.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="checkBoxListProtected.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -467,18 +428,6 @@ Drivers are often marked with this tag.</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Protected items are marked with the "NoRemove" tag, which means that the publisher doesn't want you to remove them.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Name" xml:space="preserve">
-    <value>checkBoxListProtected</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="checkBoxShowUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -501,18 +450,6 @@ Drivers are often marked with this tag.</value>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Updates of other applications. Usually they are uninstalled together with their parent application, so they can be ignored.</value>
   </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Name" xml:space="preserve">
-    <value>checkBoxShowUpdates</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowUpdates.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="checkBoxWinFeature.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -531,18 +468,6 @@ Drivers are often marked with this tag.</value>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Show Windows features</value>
   </data>
-  <data name="&gt;&gt;checkBoxWinFeature.Name" xml:space="preserve">
-    <value>checkBoxWinFeature</value>
-  </data>
-  <data name="&gt;&gt;checkBoxWinFeature.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxWinFeature.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxWinFeature.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="checkBoxShowStoreApps.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -560,18 +485,6 @@ Drivers are often marked with this tag.</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Show Windows Store apps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Name" xml:space="preserve">
-    <value>checkBoxShowStoreApps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowStoreApps.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -748,12 +661,6 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>299, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -784,4 +691,13 @@ Grouping of most of the columns uses smart filtering.</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>202, 17</value>
+  </metadata>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -324,7 +324,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
     <value>Nessun elemento rimanente è stato trovato</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Nessun elemento rimanente trovato. Ci potrebbero essere alcuni residui e file temporanei che puoi rimuovere con programmi tipo CCleaner.</value>
+    <value>Nessun elemento rimanente trovato. Ci potrebbero essere alcuni residui e file temporanei che puoi rimuovere con programmi tipo BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Non c'è nulla da copiare nella clipboard. Nessun disinstallatore selezionato ha questo bit  di informazione oppure non hai selezionato nulla.</value>

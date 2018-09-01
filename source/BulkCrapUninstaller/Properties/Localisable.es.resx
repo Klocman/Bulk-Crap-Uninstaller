@@ -500,7 +500,7 @@ Advertencia: Durante la actualización serán eliminados la carpeta "Update" y e
     <value>No se encontraron restos</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>No se encontraron restos. Todavía puede haber algún residuo faltante por lo que debería ejecutar un limpiador de archivos temporales como CCleaner o similar.</value>
+    <value>No se encontraron restos. Todavía puede haber algún residuo faltante por lo que debería ejecutar un limpiador de archivos temporales como BleachBit o similar.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>No había nada que copiar en el portapapeles. Ningún desinstalador seleccionado tiene este bit de información o no ha seleccionado nada.</value>

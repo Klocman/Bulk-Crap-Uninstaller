@@ -400,7 +400,8 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("../CCleaner/CCleaner.exe /AUTO")]
+        [global::System.Configuration.DefaultSettingValueAttribute("../BleachBit/bleachbit_console.exe --clean system.tmp system.logs system.memory_d" +
+            "ump system.muicache system.prefetch system.recycle_bin")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
         public string ExternalPostCommands {
             get {

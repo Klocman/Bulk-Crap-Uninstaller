@@ -325,7 +325,7 @@ Uwaga: Podczas aktualizacji folder "Update" i plik "Update.zip" w folderze BCU z
     <value>Nie znaleziono pozostałości</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Nie znaleziono żadnych pozostałości. Dla pewności można uruchomić inny program czyszczący śmieci, np. CCleaner.</value>
+    <value>Nie znaleziono żadnych pozostałości. Dla pewności można uruchomić inny program czyszczący śmieci, np. BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Nie znaleziono nic do skopiowania. Wybrane dezinstalatory nie posiadały tych informacji lub nie wybrałeś żadnego dezinstalatora.</value>
