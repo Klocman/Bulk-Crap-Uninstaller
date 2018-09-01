@@ -2,28 +2,30 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.7.0.0</Version>
+<Version>4.8.0.0</Version>
 <URL></URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added reading hidden uninstall strings (mostly Nvidia stuff)
-Made it clearer when uninstallation task finishes (sound and flashing)
-Improved app name detection for unregisted apps and startups
-Improved layout of uninstall task progress window
-Improved Uninstaller Automatizer button selection logic, can handle non-English button text now
-Fixed Automatizer deamon trying to automatize other Automatizers
-Fixed Automatizer failing with invalid path error on some uninstall commands
-Fixed BCU-console not using its manifest file
-Fixed protected Windows updates having no uninstall strings generated instead of setting the Protected flag
-Fixed some uninstallers being wrongly marked as unregistered
-Fixed crash when changing filters as list is being closed
-Fixed crash when opening context menu as application list is updated
-Fixed crash when scanning for leftovers if there are invalid SteamApp entries
-Fixed crash when scanning startups in case of malformed registry security settings
-Fixed crash when updating certificate info on list
-Fixed potential crash in Oculus factory
-Fixed potential crash when saving settings
-Prevent newlines in helper outputs, fixes rare crashes during app scanning
+Added scanning of drive roots for common application folders
+Added ability to scan removable drives for portable apps (off by default)
+Added detection of PortableApps and LiberKey portable app stores
+Added option to disable highlighting of special uninstallers (can completely disable colors on the list now)
+Added more descriptive error message when opening invalid uninstall lists
+Added check for Translations not added to supported cultures
+Added cache stat logging
+Improved accuracy of linking startups to applications
+Replaced references to CCleaner with BleachBit
+Specified support for Windos 10 in application manifest
+Standardized UpdateHelper I/O and error codes, fixes some crashes
+Fixed store apps not being cached properly
+Fixed startups that point to invalid file paths causing errors
+Fixed possible NullRef crash when saving settings
+Fixed nullref crash in TryCacheItem
+Fixed invalid InstallLocations crashing AudioPolicy junk scan
+Fixed double dots in log file names
+Fixed crash when trying to get invalid cache entry
+Fixed crash when scanning services caused by WMI problems
+Fixed crash when closing UninstallProgressWindow with reboot prevention
 </Changes>
 <Hash></Hash>
 </Update>
