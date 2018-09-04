@@ -18,21 +18,25 @@ namespace UninstallTools.Startup.Service
             EntryLongName = displayName;
 
             Command = command;
-            CommandFilePath = ProcessTools.SeparateArgsFromCommand(command).FileName;
-            
+
+            if (ProcessStartCommand.TryParse(command, out var pc))
+                CommandFilePath = pc.FileName;
+            else if (File.Exists(command))
+                CommandFilePath = command;
+
             FillInformationFromFile(CommandFilePath);
         }
 
         public override string ParentShortName
         {
             get { return Localisation.Startup_ShortName_Service; }
-            protected set {  }
+            protected set { }
         }
 
         public override string ParentLongName
         {
             get { return Localisation.Startup_ShortName_Service; }
-            protected set {  }
+            protected set { }
         }
 
         public override bool Disabled
@@ -75,12 +79,12 @@ namespace UninstallTools.Startup.Service
 
             using (var key = RegistryTools.OpenRegistryKey(path))
             {
-                if(key == null)
+                if (key == null)
                     throw new IOException();
             }
 
             var filename = PathTools.SanitizeFileName(FullLongName) + ".reg";
-            RegistryTools.ExportRegistry(Path.Combine(backupPath, filename), new[] {path});
+            RegistryTools.ExportRegistry(Path.Combine(backupPath, filename), new[] { path });
         }
     }
 }
