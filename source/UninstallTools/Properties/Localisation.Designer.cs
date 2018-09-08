@@ -1195,6 +1195,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PowerShell script.
+        /// </summary>
+        internal static string UninstallerType_PowerShell {
+            get {
+                return ResourceManager.GetString("UninstallerType_PowerShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SDBInst.
         /// </summary>
         internal static string UninstallerType_SdbInst {

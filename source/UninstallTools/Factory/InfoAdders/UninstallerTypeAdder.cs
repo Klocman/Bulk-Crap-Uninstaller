@@ -55,6 +55,10 @@ namespace UninstallTools.Factory.InfoAdders
             if (uninstallString.Contains(@"InstallShield Installation Information\{", StringComparison.OrdinalIgnoreCase))
                 return UninstallerType.InstallShield;
 
+            if (uninstallString.Contains("powershell.exe", StringComparison.OrdinalIgnoreCase) ||
+                uninstallString.Contains(".ps1", StringComparison.OrdinalIgnoreCase))
+                return UninstallerType.PowerShell;
+
             ProcessStartCommand ps;
             if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) &&
                 File.Exists(ps.FileName))

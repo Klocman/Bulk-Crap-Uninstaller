@@ -35,6 +35,8 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "UninstallerType_Chocolatey")]
         Chocolatey,
         [LocalisedName(typeof(Localisation), "UninstallerType_Oculus")]
-        Oculus
+        Oculus,
+        [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerType_PowerShell))]
+        PowerShell
     }
 }
