@@ -110,7 +110,7 @@ namespace UninstallTools.Factory
             try
             {
                 if (!Path.IsPathRooted(scriptName))
-                    scriptName = Path.Combine(directoryName, scriptName);
+                    scriptName = Path.GetFullPath(Path.Combine(directoryName, scriptName));
 
                 const string psPrefix = "powershell.exe -NoLogo -ExecutionPolicy Bypass -File ";
 
