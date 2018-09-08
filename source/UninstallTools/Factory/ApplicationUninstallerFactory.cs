@@ -134,7 +134,7 @@ namespace UninstallTools.Factory
                 InfoAdder.AddMissingInformation(result);
                 result.IsValid = CheckIsValid(result, msiProducts);
             }
-            
+
             // Cache missing information to speed up future scans
             if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
             {
@@ -266,7 +266,10 @@ namespace UninstallTools.Factory
 
             var miscFactories = new Dictionary<IUninstallerFactory, string>();
             if (UninstallToolsGlobalConfig.ScanPreDefined)
+            {
                 miscFactories.Add(new PredefinedFactory(), Localisation.Progress_AppStores_Templates);
+                miscFactories.Add(new ScriptFactory(), Localisation.Progress_AppStores_Templates);
+            }
             if (UninstallToolsGlobalConfig.ScanSteam)
                 miscFactories.Add(new SteamFactory(), Localisation.Progress_AppStores_Steam);
             if (UninstallToolsGlobalConfig.ScanStoreApps)
@@ -277,7 +280,7 @@ namespace UninstallTools.Factory
                 miscFactories.Add(new WindowsUpdateFactory(), Localisation.Progress_AppStores_WinUpdates);
             if (UninstallToolsGlobalConfig.ScanChocolatey)
                 miscFactories.Add(new ChocolateyFactory(), Localisation.Progress_AppStores_Chocolatey);
-            if(UninstallToolsGlobalConfig.ScanOculus)
+            if (UninstallToolsGlobalConfig.ScanOculus)
                 miscFactories.Add(new OculusFactory(), Localisation.Progress_AppStores_Oculus);
 
             var progress = 0;

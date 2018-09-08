@@ -86,6 +86,7 @@
     <Compile Include="Factory\OculusFactory.cs" />
     <Compile Include="Factory\PredefinedFactory.cs" />
     <Compile Include="Factory\RegistryFactory.cs" />
+    <Compile Include="Factory\ScriptFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />
     <Compile Include="Factory\StoreAppFactory.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />

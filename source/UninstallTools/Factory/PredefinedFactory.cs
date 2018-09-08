@@ -9,6 +9,7 @@ using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Native;
 using Klocman.Tools;
+using UninstallTools.Lists;
 
 namespace UninstallTools.Factory
 {
