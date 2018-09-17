@@ -197,4 +197,21 @@
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} n'est pas un nombre valide</value>
   </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>Non | Décliner</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Annuler | Abandonner | Arrière</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>Désinstaller | OK | Accepter | Appliquer | Fermer | Oui | Supprimer | Enlever | Nettoyer</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
+  </data>
 </root>

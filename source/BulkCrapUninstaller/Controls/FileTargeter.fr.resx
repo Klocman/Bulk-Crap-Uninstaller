@@ -121,7 +121,7 @@
     <value>Lien ou fichier d'application...</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Tous fichiers|*.*</value>
+    <value>Tous les fichiers|*.*</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Sélectionner tout fichier appartenant à l'application</value>

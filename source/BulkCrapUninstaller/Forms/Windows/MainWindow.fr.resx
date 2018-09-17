@@ -537,4 +537,40 @@
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Modifier</value>
   </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter vers un script de désinstallation batch...</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un script PowerShell de désinstallation pour les applications du Windows Store...</value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtres par &amp;défaut</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Applications &amp;basiques seules</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Composants système seuls</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tout</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Démarrages automatiques seuls</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Navigateurs web seuls</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtres &amp;Rapides</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Résolutions de problèmes de désinstallation...</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lancer le Nettoyage de disque</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Installer .NET v3.5 (ajout de fonctionalité)</value>
+  </data>
 </root>

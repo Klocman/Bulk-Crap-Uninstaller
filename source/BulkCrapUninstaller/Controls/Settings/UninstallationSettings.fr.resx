@@ -162,6 +162,9 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Désinstallation silencieuse</value>
   </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Surveiller les popups des désinstalleurs "silencieux" et autres attentes et les automatiser (lancer un démon automatiseur)</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

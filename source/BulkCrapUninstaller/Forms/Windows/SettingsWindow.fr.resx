@@ -271,4 +271,7 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Scanner les lecteurs amovibles</value>
+  </data>
 </root>

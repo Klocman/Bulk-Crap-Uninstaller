@@ -140,7 +140,7 @@
 Editeur | Version | Date | Taille | Registre | Type de désinstalleur | Chaîne de désinstallation | Chaîne de désinstallation silencieuse | Commentaires</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value>Portable</value>
+    <value> Portable</value>
     <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
@@ -256,11 +256,11 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Echec en créant un nouveau point de restauration</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
-    <value>x64</value>
+    <value> x64</value>
     <comment>keep space in front</comment>
   </data>
   <data name="StrDebug" xml:space="preserve">
-    <value>DEBUG</value>
+    <value> DEBUG</value>
     <comment>keep space in front</comment>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
@@ -761,5 +761,11 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
   </data>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Sélectionner où enregistrer la sauvegarde. Un nouveau dossier sera créé.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU a été mis à jour en v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Bienvenue à BCU version {0}!</value>
   </data>
 </root>
