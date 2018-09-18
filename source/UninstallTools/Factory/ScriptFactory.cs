@@ -50,7 +50,7 @@ namespace UninstallTools.Factory
                 var conditionScript = contents.Element("ConditionScript")?.Value;
                 if (!string.IsNullOrEmpty(conditionScript))
                 {
-                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), conditionScript, contents.Element("ConditionScriptArgs")?.Value);
+                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), conditionScript, contents.Element("ConditionScriptArgs")?.Value, true);
                     if (!string.IsNullOrEmpty(psc))
                     {
                         if (!PowershellExists || !CheckCondition(psc))
@@ -81,7 +81,7 @@ namespace UninstallTools.Factory
                 var script = contents.Element("Script")?.Value;
                 if (!string.IsNullOrEmpty(script))
                 {
-                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), script, contents.Element("ScriptArgs")?.Value);
+                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), script, contents.Element("ScriptArgs")?.Value, false);
                     if (!string.IsNullOrEmpty(psc))
                     {
                         if(!PowershellExists)
@@ -109,8 +109,22 @@ namespace UninstallTools.Factory
         {
             try
             {
-                var p = Process.Start(ProcessTools.SeparateArgsFromCommand(psc).ToProcessStartInfo());
-                return p != null && p.WaitForExit(1000) && p.ExitCode == 0;
+                var startInfo = ProcessTools.SeparateArgsFromCommand(psc).ToProcessStartInfo();
+                startInfo.CreateNoWindow = true;
+                startInfo.ErrorDialog = false;
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+                var p = Process.Start(startInfo);
+                if (p == null) return false;
+
+                if (!p.WaitForExit(5000))
+                {
+                    Console.WriteLine(@"Script's ConditionScript command timed out - " + psc);
+                    p.Kill();
+                    return false;
+                }
+
+                return p.ExitCode == 0;
             }
             catch (SystemException ex)
             {
@@ -119,16 +133,17 @@ namespace UninstallTools.Factory
             }
         }
 
-        private static string MakePsCommand(string directoryName, string scriptName, string scriptArgs)
+        private static string MakePsCommand(string directoryName, string scriptName, string scriptArgs, bool hidden)
         {
             try
             {
                 if (!Path.IsPathRooted(scriptName))
                     scriptName = Path.GetFullPath(Path.Combine(directoryName, scriptName));
 
-                const string psPrefix = "powershell.exe -NoLogo -ExecutionPolicy Bypass -File ";
+                const string psPrefix = "powershell.exe -NoLogo -ExecutionPolicy Bypass ";
+                const string psPrefix2 = "-File ";
 
-                return $@"{psPrefix}""{scriptName}"" {scriptArgs}";
+                return $@"{psPrefix + (hidden ? "-NonInteractive -WindowStyle Hidden" : "") + psPrefix2}""{scriptName}"" {scriptArgs}";
             }
             catch (SystemException)
             {

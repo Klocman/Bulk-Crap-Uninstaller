@@ -316,7 +316,8 @@ namespace UninstallTools.Uninstaller
         {
             switch (target)
             {
-                // Might cause collisions, don't run concurrently
+                // Might cause collisions with Msiexec, don't run concurrently
+                case UninstallerType.Msiexec:
                 case UninstallerType.InstallShield:
                 case UninstallerType.SdbInst:
                 case UninstallerType.WindowsFeature:
@@ -324,11 +325,12 @@ namespace UninstallTools.Uninstaller
                 case UninstallerType.Unknown:
                 // Chocolatey can use app's original uninstaller, so it's essentially unknown
                 case UninstallerType.Chocolatey:
+                // Scripts can do many things that could interfere
+                case UninstallerType.PowerShell:
                     target = UninstallerType.Msiexec;
                     break;
 
                 // Can be ran concurrently
-                case UninstallerType.Msiexec:
                 case UninstallerType.InnoSetup:
                 case UninstallerType.Steam:
                 case UninstallerType.Nsis:
