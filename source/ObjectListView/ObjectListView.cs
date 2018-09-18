@@ -6810,30 +6810,48 @@ namespace BrightIdeasSoftware
                     break;
                 case HDN_TRACKA:
                 case HDN_TRACKW:
-                    if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count) {
-                        NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
-                        OLVColumn column = this.GetColumn(nmheader.iItem);
-                        if (hditem.cxy < column.MinimumWidth)
-                            hditem.cxy = column.MinimumWidth;
-                        else if (column.MaximumWidth != -1 && hditem.cxy > column.MaximumWidth)
-                            hditem.cxy = column.MaximumWidth;
-                        Marshal.StructureToPtr(hditem, nmheader.pHDITEM, false);
+                    if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count)
+                    {
+                        try
+                        {
+                            NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
+                            OLVColumn column = this.GetColumn(nmheader.iItem);
+                            if (hditem.cxy < column.MinimumWidth)
+                                hditem.cxy = column.MinimumWidth;
+                            else if (column.MaximumWidth != -1 && hditem.cxy > column.MaximumWidth)
+                                hditem.cxy = column.MaximumWidth;
+                            Marshal.StructureToPtr(hditem, nmheader.pHDITEM, false);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            // Catch error 0x80070459 in PtrToStructure - No mapping for the Unicode character exists in the target multi-byte code page
+                            // It can happen on some Japanese systems, it's better to have some ui glitching than crashing
+                        }
                     }
                     break;
 
                 case HDN_ITEMCHANGINGA:
                 case HDN_ITEMCHANGINGW:
                     nmheader = (NativeMethods.NMHEADER)m.GetLParam(typeof(NativeMethods.NMHEADER));
-                    if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count) {
-                        NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
-                        OLVColumn column = this.GetColumn(nmheader.iItem);
-                        // Check the mask to see if the width field is valid, and if it is, make sure it's within range
-                        if ((hditem.mask & 1) == 1) {
-                            if (hditem.cxy < column.MinimumWidth ||
-                                (column.MaximumWidth != -1 && hditem.cxy > column.MaximumWidth)) {
-                                m.Result = (IntPtr)1; // prevent the change from happening
-                                isMsgHandled = true;
+                    if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count)
+                    {
+                        try
+                        {
+                            NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
+                            OLVColumn column = this.GetColumn(nmheader.iItem);
+                            // Check the mask to see if the width field is valid, and if it is, make sure it's within range
+                            if ((hditem.mask & 1) == 1) {
+                                if (hditem.cxy < column.MinimumWidth ||
+                                    (column.MaximumWidth != -1 && hditem.cxy > column.MaximumWidth)) {
+                                    m.Result = (IntPtr)1; // prevent the change from happening
+                                    isMsgHandled = true;
+                                }
                             }
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            // Catch error 0x80070459 in PtrToStructure - No mapping for the Unicode character exists in the target multi-byte code page
+                            // It can happen on some Japanese systems, it's better to have some ui glitching than crashing
                         }
                     }
                     break;
