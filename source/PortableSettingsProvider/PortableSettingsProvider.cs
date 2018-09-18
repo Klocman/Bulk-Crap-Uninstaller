@@ -52,6 +52,9 @@ namespace PortableSettingsProvider
                     try
                     {
                         _settingsXml.Load(Path.Combine(GetAppSettingsPath(), GetAppSettingsFilename()));
+
+                        if(_settingsXml.SelectSingleNode(SettingsRootName) == null)
+                            throw new Exception("Invalid config file");
                     }
                     catch (Exception)
                     {
