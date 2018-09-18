@@ -14,6 +14,8 @@ namespace UninstallTools.Factory
         private static readonly string ScriptDir;
         private static readonly PropertyInfo[] EntryProps;
 
+        private static bool PowershellExists { get; }
+
         static ScriptFactory()
         {
             ScriptDir = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"Resources\Scripts");
@@ -22,6 +24,15 @@ namespace UninstallTools.Factory
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(p => p.CanWrite && p.PropertyType == typeof(string))
                 .ToArray();
+            
+            try
+            {
+                PowershellExists = File.Exists(PathTools.GetFullPathOfExecutable("powershell.exe"));
+            }
+            catch (SystemException)
+            {
+                PowershellExists = false;
+            }
         }
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
@@ -42,13 +53,13 @@ namespace UninstallTools.Factory
                     var psc = MakePsCommand(Path.GetDirectoryName(manifest), conditionScript, contents.Element("ConditionScriptArgs")?.Value);
                     if (!string.IsNullOrEmpty(psc))
                     {
-                        if(!CheckCondition(psc))
+                        if (!PowershellExists || !CheckCondition(psc))
                             continue;
                     }
                 }
 
                 var entry = new ApplicationUninstallerEntry();
-                
+
                 // Automatically fill in any supplied static properties
                 foreach (var entryProp in EntryProps)
                 {
@@ -65,7 +76,7 @@ namespace UninstallTools.Factory
                         }
                     }
                 }
-                
+
                 // Override any static uninstall strings if valid script is supplied
                 var script = contents.Element("Script")?.Value;
                 if (!string.IsNullOrEmpty(script))
@@ -73,6 +84,9 @@ namespace UninstallTools.Factory
                     var psc = MakePsCommand(Path.GetDirectoryName(manifest), script, contents.Element("ScriptArgs")?.Value);
                     if (!string.IsNullOrEmpty(psc))
                     {
+                        if(!PowershellExists)
+                            continue;
+
                         entry.UninstallString = psc;
                         entry.QuietUninstallString = psc;
                         entry.UninstallerKind = UninstallerType.PowerShell;
