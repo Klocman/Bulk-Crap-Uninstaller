@@ -112,9 +112,9 @@ namespace PortableSettingsProvider
             {
                 SettingsXml.Save(Path.Combine(GetAppSettingsPath(), GetAppSettingsFilename()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //Ignore if cant save, device been ejected
+                Console.WriteLine("Failed to save settings - " + ex);
             }
         }
 
