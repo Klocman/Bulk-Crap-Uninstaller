@@ -448,6 +448,9 @@
     </None>
     <None Include="packages.config" />
     <None Include="Resources\folder.open.png" />
+    <None Include="Resources\Scripts\Credits.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Scripts\lib\force-mkdir.psm1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
