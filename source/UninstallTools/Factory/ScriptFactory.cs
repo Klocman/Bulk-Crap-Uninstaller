@@ -54,11 +54,13 @@ namespace UninstallTools.Factory
 
                 if (contents == null || !contents.HasElements) continue;
 
+                var manifestDirectoryName = Path.GetDirectoryName(manifest);
+
                 var conditionScript = contents.Element("ConditionScript")?.Value;
                 if (!string.IsNullOrEmpty(conditionScript))
                 {
-                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), conditionScript, contents.Element("ConditionScriptArgs")?.Value, true);
-                    if (!string.IsNullOrEmpty(psc) && !Debugger.IsAttached)
+                    var psc = MakePsCommand(manifestDirectoryName, conditionScript, contents.Element("ConditionScriptArgs")?.Value, true);
+                    if (!string.IsNullOrEmpty(psc))
                     {
                         if (!PowershellExists || !CheckCondition(psc))
                             continue;
@@ -75,6 +77,15 @@ namespace UninstallTools.Factory
                     {
                         try
                         {
+                            const string registryHeader = "Registry::";
+                            if (item.StartsWith(registryHeader, StringComparison.OrdinalIgnoreCase))
+                            {
+                                var fullPath = item.Substring(registryHeader.Length);
+                                item = RegistryTools.OpenRegistryKey(Path.GetDirectoryName(fullPath))
+                                    ?.GetValue(Path.GetFileName(fullPath))
+                                    ?.ToString();
+                            }
+
                             entryProp.SetValue(entry, item, null);
                         }
                         catch (SystemException ex)
@@ -88,14 +99,15 @@ namespace UninstallTools.Factory
                 var script = contents.Element("Script")?.Value;
                 if (!string.IsNullOrEmpty(script))
                 {
-                    var psc = MakePsCommand(Path.GetDirectoryName(manifest), script, contents.Element("ScriptArgs")?.Value, false);
+                    var scriptArgs = contents.Element("ScriptArgs")?.Value;
+                    var psc = MakePsCommand(manifestDirectoryName, script, scriptArgs, false);
                     if (!string.IsNullOrEmpty(psc))
                     {
                         if (!PowershellExists)
                             continue;
 
                         entry.UninstallString = psc;
-                        entry.QuietUninstallString = psc;
+                        entry.QuietUninstallString = MakePsCommand(manifestDirectoryName, script, scriptArgs, true);
                         entry.UninstallerKind = UninstallerType.PowerShell;
                     }
                 }
@@ -158,10 +170,7 @@ namespace UninstallTools.Factory
                 if (!Path.IsPathRooted(scriptName))
                     scriptName = Path.GetFullPath(Path.Combine(directoryName, scriptName));
 
-                const string psPrefix = "powershell.exe -NoLogo -ExecutionPolicy Bypass ";
-                const string psPrefix2 = "-File ";
-
-                return $@"{psPrefix + (hidden ? "-NonInteractive -WindowStyle Hidden " : "") + psPrefix2}""{scriptName}"" {scriptArgs}";
+                return $@"powershell.exe -File ""{scriptName}"" {scriptArgs} -NoLogo -ExecutionPolicy Bypass {(hidden ? "-NonInteractive -WindowStyle Hidden" : "")}";
             }
             catch (SystemException)
             {
