@@ -1,0 +1,7 @@
+<script>
+    <ConditionScript>mouse-acceleration-fix_check.ps1</ConditionScript>
+    <Script>mouse-acceleration-fix.ps1</Script>
+    <DisplayName>Mouse Acceleration</DisplayName>
+    <Publisher>Microsoft Corporation</Publisher>
+    <SystemIcon>Shield</SystemIcon>
+</script>

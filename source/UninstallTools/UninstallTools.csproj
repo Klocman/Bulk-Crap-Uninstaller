@@ -469,6 +469,12 @@
     <None Include="Resources\Scripts\Tweak\disable-subscribed-content_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix_check.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Scripts\Tweak\remove-special-folders-from-this-pc.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -517,7 +523,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scripts\Remove\remove-onedrive.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
