@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -13,6 +14,7 @@ namespace UninstallTools.Factory
     {
         private static readonly string ScriptDir;
         private static readonly PropertyInfo[] EntryProps;
+        private static readonly PropertyInfo[] SystemIconProps;
 
         private static bool PowershellExists { get; }
 
@@ -24,7 +26,12 @@ namespace UninstallTools.Factory
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(p => p.CanWrite && p.PropertyType == typeof(string))
                 .ToArray();
-            
+
+            SystemIconProps = typeof(SystemIcons)
+                .GetProperties(BindingFlags.Static | BindingFlags.Public)
+                .Where(p => p.CanRead)
+                .ToArray();
+
             try
             {
                 PowershellExists = File.Exists(PathTools.GetFullPathOfExecutable("powershell.exe"));
@@ -51,7 +58,7 @@ namespace UninstallTools.Factory
                 if (!string.IsNullOrEmpty(conditionScript))
                 {
                     var psc = MakePsCommand(Path.GetDirectoryName(manifest), conditionScript, contents.Element("ConditionScriptArgs")?.Value, true);
-                    if (!string.IsNullOrEmpty(psc))
+                    if (!string.IsNullOrEmpty(psc) && !Debugger.IsAttached)
                     {
                         if (!PowershellExists || !CheckCondition(psc))
                             continue;
@@ -84,7 +91,7 @@ namespace UninstallTools.Factory
                     var psc = MakePsCommand(Path.GetDirectoryName(manifest), script, contents.Element("ScriptArgs")?.Value, false);
                     if (!string.IsNullOrEmpty(psc))
                     {
-                        if(!PowershellExists)
+                        if (!PowershellExists)
                             continue;
 
                         entry.UninstallString = psc;
@@ -99,6 +106,14 @@ namespace UninstallTools.Factory
                         entry.DisplayName = Path.GetFileNameWithoutExtension(manifest);
                     if (string.IsNullOrEmpty(entry.Publisher))
                         entry.Publisher = "Script";
+
+                    var icon = contents.Element("SystemIcon")?.Value;
+                    if (!string.IsNullOrEmpty(icon))
+                    {
+                        var iconObj = SystemIconProps.FirstOrDefault(p => p.Name.Equals(icon, StringComparison.OrdinalIgnoreCase))
+                            ?.GetValue(null, null) as Icon;
+                        entry.IconBitmap = iconObj;
+                    }
 
                     yield return entry;
                 }
@@ -143,7 +158,7 @@ namespace UninstallTools.Factory
                 const string psPrefix = "powershell.exe -NoLogo -ExecutionPolicy Bypass ";
                 const string psPrefix2 = "-File ";
 
-                return $@"{psPrefix + (hidden ? "-NonInteractive -WindowStyle Hidden" : "") + psPrefix2}""{scriptName}"" {scriptArgs}";
+                return $@"{psPrefix + (hidden ? "-NonInteractive -WindowStyle Hidden " : "") + psPrefix2}""{scriptName}"" {scriptArgs}";
             }
             catch (SystemException)
             {
