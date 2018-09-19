@@ -449,7 +449,7 @@
     <None Include="packages.config" />
     <None Include="Resources\folder.open.png" />
     <None Include="Resources\Scripts\Credits.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Scripts\lib\force-mkdir.psm1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -467,6 +467,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Scripts\Tweak\disable-subscribed-content_check.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-special-folders-from-this-pc.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-special-folders-from-this-pc_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -513,12 +519,33 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Resources\Scripts\Remove\remove-onedrive.xml">
+    <None Include="Resources\Scripts\Remove\remove-onedrive.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Scripts\Tweak\disable-subscribed-content.xml">
+    </None>
+    <None Include="Resources\Scripts\Tweak\disable-subscribed-content.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_3dobjects.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_desktop.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_documents.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_downloads.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_music.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_pictures.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_videos.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
