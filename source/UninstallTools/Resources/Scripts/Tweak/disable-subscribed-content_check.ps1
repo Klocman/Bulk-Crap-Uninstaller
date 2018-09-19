@@ -1,4 +1,4 @@
-if(-Not (Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"))
+if(-Not (Test-Path "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"))
 {
     # If ContentDeliveryManager doesn't exist it's likely not supported by the OS
     exit 2 
@@ -6,7 +6,7 @@ if(-Not (Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliv
 
 try
 {
-    $prop = Get-ItemPropertyValue "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContentEnabled" 
+    $prop = Get-ItemPropertyValue "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContentEnabled" 
 }
 catch
 {
