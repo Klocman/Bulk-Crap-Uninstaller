@@ -114,6 +114,9 @@ namespace UninstallTools.Factory
                             ?.GetValue(null, null) as Icon;
                         entry.IconBitmap = iconObj;
                     }
+                    
+                    if (string.IsNullOrEmpty(entry.RatingId))
+                        entry.RatingId = manifest.Remove(0, ScriptDir.Length).Trim(' ', '\\', '/').ToLowerInvariant().Replace(".xml", "", StringComparison.Ordinal);
 
                     yield return entry;
                 }
