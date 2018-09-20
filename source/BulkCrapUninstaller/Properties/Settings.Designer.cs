@@ -1047,5 +1047,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["FoldersScanRemovable"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FilterShowTweaks {
+            get {
+                return ((bool)(this["FilterShowTweaks"]));
+            }
+            set {
+                this["FilterShowTweaks"] = value;
+            }
+        }
     }
 }

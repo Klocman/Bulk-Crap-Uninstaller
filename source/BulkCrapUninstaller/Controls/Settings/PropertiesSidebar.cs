@@ -29,6 +29,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxListProtected, x => x.FilterShowProtected, this);
             _settings.BindControl(checkBoxShowStoreApps, x => x.FilterShowStoreApps, this);
             _settings.BindControl(checkBoxWinFeature, x => x.FilterShowWinFeatures, this);
+            _settings.BindControl(checkBoxTweaks, x => x.FilterShowTweaks, this);
 
             _settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);
             _settings.BindControl(checkBoxCertTest, x => x.AdvancedTestCertificates, this);
@@ -99,6 +100,13 @@ namespace BulkCrapUninstaller.Controls
         {
             get { return checkBoxWinFeature.Enabled; }
             set { checkBoxWinFeature.Enabled = value; }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        public bool ShowTweaksEnabled
+        {
+            get { return checkBoxTweaks.Enabled; }
+            set { checkBoxTweaks.Enabled = value; }
         }
     }
 }

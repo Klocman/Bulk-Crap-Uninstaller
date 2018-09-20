@@ -61,6 +61,7 @@ namespace BulkCrapUninstaller.Forms
         private bool _anySysComponents;
         private bool _anyUpdates;
         private bool _anyInvalid;
+        private bool _anyTweaks;
 
         /// <summary>
         ///     Set to false in the list view clicked event. Prevents firing of extra CellEditStarting events.
@@ -532,6 +533,7 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe(RefreshList, x => x.FilterShowProtected, this);
             settings.Subscribe(RefreshList, x => x.FilterShowStoreApps, this);
             settings.Subscribe(RefreshList, x => x.FilterShowWinFeatures, this);
+            settings.Subscribe(RefreshList, x => x.FilterShowTweaks, this);
 
             settings.Subscribe((sender, args) =>
             {
@@ -1315,9 +1317,11 @@ namespace BulkCrapUninstaller.Forms
             _anySysComponents = _listView.AllUninstallers.Any(x => x.SystemComponent);
             _anyUpdates = _listView.AllUninstallers.Any(x => x.IsUpdate);
             _anyInvalid = _listView.AllUninstallers.Any(x => !x.IsValid);
+            _anyTweaks = _listView.AllUninstallers.Any(x => x.RatingId != null && x.RatingId.StartsWith("tweak", StringComparison.OrdinalIgnoreCase));
 
             propertiesSidebar.StoreAppsEnabled = _anyStoreApps;
             propertiesSidebar.WinFeaturesEnabled = _anyWinFeatures;
+            propertiesSidebar.ShowTweaksEnabled = _anyTweaks;
 
             propertiesSidebar.OrphansEnabled = _anyOrphans;
             propertiesSidebar.ProtectedEnabled = _anyProtected;
@@ -1670,6 +1674,7 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = true;
             s.FilterShowWinFeatures = true;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = true;
         }
 
         private void basicApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1683,6 +1688,7 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = false;
             s.FilterShowWinFeatures = false;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = false;
         }
 
         private void advancedApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1696,6 +1702,7 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = false;
             s.FilterShowWinFeatures = false;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = true;
         }
 
         private void systemComponentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1709,6 +1716,7 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = false;
             s.FilterShowWinFeatures = true;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = true;
         }
 
         private void everythingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1722,6 +1730,7 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = true;
             s.FilterShowWinFeatures = true;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = true;
         }
 
         private void onlyWebBrowsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1735,6 +1744,13 @@ namespace BulkCrapUninstaller.Forms
             s.FilterShowUpdates = true;
             s.FilterShowWinFeatures = true;
             s.FilterShowStoreApps = true;
+            s.FilterShowTweaks = true;
+        }
+
+        private void viewTweaksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            everythingToolStripMenuItem_Click(sender, e);
+            filterEditor1.Search(@"\Resources\Scripts\Tweak", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallString));
         }
     }
 }

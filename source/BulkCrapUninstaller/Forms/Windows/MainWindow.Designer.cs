@@ -143,6 +143,7 @@ namespace BulkCrapUninstaller.Forms
             this.everythingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.automaticallyStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyWebBrowsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
             this.viewUnregisteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,7 +224,7 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.onlyWebBrowsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTweaksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -635,6 +636,7 @@ namespace BulkCrapUninstaller.Forms
             this.propertiesSidebar.Name = "propertiesSidebar";
             this.propertiesSidebar.OrphansEnabled = true;
             this.propertiesSidebar.ProtectedEnabled = true;
+            this.propertiesSidebar.ShowTweaksEnabled = true;
             this.propertiesSidebar.StoreAppsEnabled = true;
             this.propertiesSidebar.SysCompEnabled = true;
             this.propertiesSidebar.UpdatesEnabled = true;
@@ -1106,6 +1108,7 @@ namespace BulkCrapUninstaller.Forms
             this.automaticallyStartedToolStripMenuItem,
             this.onlyWebBrowsersToolStripMenuItem,
             this.toolStripSeparator31,
+            this.viewTweaksToolStripMenuItem,
             this.viewUnregisteredToolStripMenuItem,
             this.viewUpdatesToolStripMenuItem,
             this.viewWindowsFeaturesToolStripMenuItem,
@@ -1152,6 +1155,12 @@ namespace BulkCrapUninstaller.Forms
             this.automaticallyStartedToolStripMenuItem.Name = "automaticallyStartedToolStripMenuItem";
             resources.ApplyResources(this.automaticallyStartedToolStripMenuItem, "automaticallyStartedToolStripMenuItem");
             this.automaticallyStartedToolStripMenuItem.Click += new System.EventHandler(this.automaticallyStartedToolStripMenuItem_Click);
+            // 
+            // onlyWebBrowsersToolStripMenuItem
+            // 
+            this.onlyWebBrowsersToolStripMenuItem.Name = "onlyWebBrowsersToolStripMenuItem";
+            resources.ApplyResources(this.onlyWebBrowsersToolStripMenuItem, "onlyWebBrowsersToolStripMenuItem");
+            this.onlyWebBrowsersToolStripMenuItem.Click += new System.EventHandler(this.onlyWebBrowsersToolStripMenuItem_Click);
             // 
             // toolStripSeparator31
             // 
@@ -1691,11 +1700,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker.ContainerControl = this;
             // 
-            // onlyWebBrowsersToolStripMenuItem
+            // viewTweaksToolStripMenuItem
             // 
-            this.onlyWebBrowsersToolStripMenuItem.Name = "onlyWebBrowsersToolStripMenuItem";
-            resources.ApplyResources(this.onlyWebBrowsersToolStripMenuItem, "onlyWebBrowsersToolStripMenuItem");
-            this.onlyWebBrowsersToolStripMenuItem.Click += new System.EventHandler(this.onlyWebBrowsersToolStripMenuItem_Click);
+            this.viewTweaksToolStripMenuItem.Name = "viewTweaksToolStripMenuItem";
+            resources.ApplyResources(this.viewTweaksToolStripMenuItem, "viewTweaksToolStripMenuItem");
+            this.viewTweaksToolStripMenuItem.Click += new System.EventHandler(this.viewTweaksToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1937,6 +1946,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator31;
         private ToolStripMenuItem everythingToolStripMenuItem;
         private ToolStripMenuItem onlyWebBrowsersToolStripMenuItem;
+        private ToolStripMenuItem viewTweaksToolStripMenuItem;
     }
 }
 
