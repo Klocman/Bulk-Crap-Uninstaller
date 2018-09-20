@@ -339,6 +339,36 @@ Drivers are often marked with this tag.</value>
   <data name="&gt;&gt;checkBoxListProtected.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="checkBoxTweaks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxTweaks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxTweaks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 95</value>
+  </data>
+  <data name="checkBoxTweaks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="checkBoxTweaks.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Show tweaks</value>
+  </data>
+  <data name="&gt;&gt;checkBoxTweaks.Name" xml:space="preserve">
+    <value>checkBoxTweaks</value>
+  </data>
+  <data name="&gt;&gt;checkBoxTweaks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxTweaks.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxTweaks.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="checkBoxShowUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -346,7 +376,7 @@ Drivers are often marked with this tag.</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxShowUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 95</value>
+    <value>3, 118</value>
   </data>
   <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 17</value>
@@ -370,36 +400,6 @@ Drivers are often marked with this tag.</value>
     <value>flowLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;checkBoxShowUpdates.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="checkBoxTweaks.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxTweaks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxTweaks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 118</value>
-  </data>
-  <data name="checkBoxTweaks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
-  </data>
-  <data name="checkBoxTweaks.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="checkBoxTweaks.Text" xml:space="preserve">
-    <value>Show tweaks</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTweaks.Name" xml:space="preserve">
-    <value>checkBoxTweaks</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTweaks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTweaks.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxTweaks.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="checkBoxWinFeature.AutoSize" type="System.Boolean, mscorlib">
@@ -722,7 +722,7 @@ Grouping of most of the columns uses smart filtering.</value>
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.8.0.37015, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.33868, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PropertiesSidebar</value>

@@ -44,6 +44,7 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxListSysComp = new System.Windows.Forms.CheckBox();
             this.checkBoxListProtected = new System.Windows.Forms.CheckBox();
             this.checkBoxShowUpdates = new System.Windows.Forms.CheckBox();
+            this.checkBoxTweaks = new System.Windows.Forms.CheckBox();
             this.checkBoxWinFeature = new System.Windows.Forms.CheckBox();
             this.checkBoxShowStoreApps = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,7 +54,6 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxHighlightSpecial = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxTweaks = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,8 +95,8 @@ namespace BulkCrapUninstaller.Controls
             this.flowLayoutPanel2.Controls.Add(this.checkBoxOrphans);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListSysComp);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxListProtected);
-            this.flowLayoutPanel2.Controls.Add(this.checkBoxShowUpdates);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxTweaks);
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxShowUpdates);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxWinFeature);
             this.flowLayoutPanel2.Controls.Add(this.checkBoxShowStoreApps);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -128,6 +128,12 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxShowUpdates.Name = "checkBoxShowUpdates";
             this.toolTip1.SetToolTip(this.checkBoxShowUpdates, resources.GetString("checkBoxShowUpdates.ToolTip"));
             this.checkBoxShowUpdates.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTweaks
+            // 
+            resources.ApplyResources(this.checkBoxTweaks, "checkBoxTweaks");
+            this.checkBoxTweaks.Name = "checkBoxTweaks";
+            this.checkBoxTweaks.UseVisualStyleBackColor = true;
             // 
             // checkBoxWinFeature
             // 
@@ -182,12 +188,6 @@ namespace BulkCrapUninstaller.Controls
             // usageTracker1
             // 
             this.usageTracker1.ContainerControl = this;
-            // 
-            // checkBoxTweaks
-            // 
-            resources.ApplyResources(this.checkBoxTweaks, "checkBoxTweaks");
-            this.checkBoxTweaks.Name = "checkBoxTweaks";
-            this.checkBoxTweaks.UseVisualStyleBackColor = true;
             // 
             // PropertiesSidebar
             // 
