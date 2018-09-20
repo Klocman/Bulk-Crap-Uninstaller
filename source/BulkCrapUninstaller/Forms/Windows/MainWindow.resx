@@ -132,7 +132,7 @@
     <value>0, 0</value>
   </data>
   <data name="advancedFilters1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 505</value>
+    <value>320, 515</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="advancedFilters1.TabIndex" type="System.Int32, mscorlib">
@@ -142,7 +142,7 @@
     <value>advancedFilters1</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=4.8.0.33574, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.AdvancedFilters, BCUninstaller, Version=4.9.0.33868, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;advancedFilters1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -286,7 +286,7 @@
     <value>0, 0</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 405</value>
+    <value>360, 415</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -295,7 +295,7 @@
     <value>uninstallerObjectListView</value>
   </data>
   <data name="&gt;&gt;uninstallerObjectListView.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;uninstallerObjectListView.Parent" xml:space="preserve">
     <value>listViewPanel</value>
@@ -310,7 +310,7 @@
     <value>0, 0</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 407</value>
+    <value>362, 417</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -376,10 +376,10 @@
     <value>1</value>
   </data>
   <data name="splitContainerListAndMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 455</value>
+    <value>362, 465</value>
   </data>
   <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, mscorlib">
-    <value>407</value>
+    <value>417</value>
   </data>
   <data name="splitContainerListAndMap.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -669,7 +669,7 @@
     <value>60, 17</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 485</value>
+    <value>0, 495</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>362, 22</value>
@@ -702,7 +702,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 507</value>
+    <value>688, 517</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>320</value>
@@ -753,7 +753,7 @@
     <value>propertiesSidebar</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.8.0.33574, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.9.0.33868, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
     <value>settingsSidebarPanel</value>
@@ -777,7 +777,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 476</value>
+    <value>6, 486</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 25</value>
@@ -864,7 +864,7 @@
     <value>filterEditor1</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
-    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=4.8.0.37011, Culture=neutral, PublicKeyToken=null</value>
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Version=4.9.0.33864, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -912,7 +912,7 @@
     <value>6, 2, 5, 6</value>
   </data>
   <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 507</value>
+    <value>194, 517</value>
   </data>
   <data name="settingsSidebarPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2099,7 +2099,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>884, 531</value>
+    <value>884, 541</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 300</value>
@@ -2114,109 +2114,109 @@
     <value>olvColumnDisplayName</value>
   </data>
   <data name="&gt;&gt;olvColumnDisplayName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnPublisher.Name" xml:space="preserve">
     <value>olvColumnPublisher</value>
   </data>
   <data name="&gt;&gt;olvColumnPublisher.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnRating.Name" xml:space="preserve">
     <value>olvColumnRating</value>
   </data>
   <data name="&gt;&gt;olvColumnRating.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnDisplayVersion.Name" xml:space="preserve">
     <value>olvColumnDisplayVersion</value>
   </data>
   <data name="&gt;&gt;olvColumnDisplayVersion.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallDate.Name" xml:space="preserve">
     <value>olvColumnInstallDate</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallDate.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnSize.Name" xml:space="preserve">
     <value>olvColumnSize</value>
   </data>
   <data name="&gt;&gt;olvColumnSize.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnStartup.Name" xml:space="preserve">
     <value>olvColumnStartup</value>
   </data>
   <data name="&gt;&gt;olvColumnStartup.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnIs64.Name" xml:space="preserve">
     <value>olvColumnIs64</value>
   </data>
   <data name="&gt;&gt;olvColumnIs64.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnUninstallString.Name" xml:space="preserve">
     <value>olvColumnUninstallString</value>
   </data>
   <data name="&gt;&gt;olvColumnUninstallString.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnAbout.Name" xml:space="preserve">
     <value>olvColumnAbout</value>
   </data>
   <data name="&gt;&gt;olvColumnAbout.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallSource.Name" xml:space="preserve">
     <value>olvColumnInstallSource</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallSource.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallLocation.Name" xml:space="preserve">
     <value>olvColumnInstallLocation</value>
   </data>
   <data name="&gt;&gt;olvColumnInstallLocation.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnUninstallerKind.Name" xml:space="preserve">
     <value>olvColumnUninstallerKind</value>
   </data>
   <data name="&gt;&gt;olvColumnUninstallerKind.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnSystemComponent.Name" xml:space="preserve">
     <value>olvColumnSystemComponent</value>
   </data>
   <data name="&gt;&gt;olvColumnSystemComponent.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnProtected.Name" xml:space="preserve">
     <value>olvColumnProtected</value>
   </data>
   <data name="&gt;&gt;olvColumnProtected.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnRegistryKeyName.Name" xml:space="preserve">
     <value>olvColumnRegistryKeyName</value>
   </data>
   <data name="&gt;&gt;olvColumnRegistryKeyName.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnGuid.Name" xml:space="preserve">
     <value>olvColumnGuid</value>
   </data>
   <data name="&gt;&gt;olvColumnGuid.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumnQuietUninstallString.Name" xml:space="preserve">
     <value>olvColumnQuietUninstallString</value>
   </data>
   <data name="&gt;&gt;olvColumnQuietUninstallString.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1844, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.33861, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -2746,6 +2746,12 @@
   <data name="&gt;&gt;toolStripSeparator31.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;viewTweaksToolStripMenuItem.Name" xml:space="preserve">
+    <value>viewTweaksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;viewTweaksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;viewUnregisteredToolStripMenuItem.Name" xml:space="preserve">
     <value>viewUnregisteredToolStripMenuItem</value>
   </data>
@@ -3206,25 +3212,19 @@
     <value>globalHotkeys1</value>
   </data>
   <data name="&gt;&gt;globalHotkeys1.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.4.6836.36464, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.4.6837.33862, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;splashScreen1.Name" xml:space="preserve">
     <value>splashScreen1</value>
   </data>
   <data name="&gt;&gt;splashScreen1.Type" xml:space="preserve">
-    <value>Klocman.Forms.SplashScreen, KlocTools, Version=3.4.6836.36464, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.SplashScreen, KlocTools, Version=3.4.6837.33862, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;usageTracker.Name" xml:space="preserve">
     <value>usageTracker</value>
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.8.0.33574, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;viewTweaksToolStripMenuItem.Name" xml:space="preserve">
-    <value>viewTweaksToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;viewTweaksToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.33868, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

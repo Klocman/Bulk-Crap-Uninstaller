@@ -145,6 +145,7 @@ namespace BulkCrapUninstaller.Forms
             this.automaticallyStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlyWebBrowsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewTweaksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUnregisteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewWindowsFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,7 +225,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.viewTweaksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -1167,6 +1167,12 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripSeparator31.Name = "toolStripSeparator31";
             resources.ApplyResources(this.toolStripSeparator31, "toolStripSeparator31");
             // 
+            // viewTweaksToolStripMenuItem
+            // 
+            this.viewTweaksToolStripMenuItem.Name = "viewTweaksToolStripMenuItem";
+            resources.ApplyResources(this.viewTweaksToolStripMenuItem, "viewTweaksToolStripMenuItem");
+            this.viewTweaksToolStripMenuItem.Click += new System.EventHandler(this.viewTweaksToolStripMenuItem_Click);
+            // 
             // viewUnregisteredToolStripMenuItem
             // 
             this.viewUnregisteredToolStripMenuItem.Name = "viewUnregisteredToolStripMenuItem";
@@ -1699,12 +1705,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
-            // 
-            // viewTweaksToolStripMenuItem
-            // 
-            this.viewTweaksToolStripMenuItem.Name = "viewTweaksToolStripMenuItem";
-            resources.ApplyResources(this.viewTweaksToolStripMenuItem, "viewTweaksToolStripMenuItem");
-            this.viewTweaksToolStripMenuItem.Click += new System.EventHandler(this.viewTweaksToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
