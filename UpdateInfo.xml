@@ -2,30 +2,29 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.8.0.0</Version>
+<Version>4.9.0.0</Version>
 <URL></URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added scanning of drive roots for common application folders
-Added ability to scan removable drives for portable apps (off by default)
-Added detection of PortableApps and LiberKey portable app stores
-Added option to disable highlighting of special uninstallers (can completely disable colors on the list now)
-Added more descriptive error message when opening invalid uninstall lists
-Added check for Translations not added to supported cultures
-Added cache stat logging
-Improved accuracy of linking startups to applications
-Replaced references to CCleaner with BleachBit
-Specified support for Windos 10 in application manifest
-Standardized UpdateHelper I/O and error codes, fixes some crashes
-Fixed store apps not being cached properly
-Fixed startups that point to invalid file paths causing errors
-Fixed possible NullRef crash when saving settings
-Fixed nullref crash in TryCacheItem
-Fixed invalid InstallLocations crashing AudioPolicy junk scan
-Fixed double dots in log file names
-Fixed crash when trying to get invalid cache entry
-Fixed crash when scanning services caused by WMI problems
-Fixed crash when closing UninstallProgressWindow with reboot prevention
+Added support for scripts (custom user-created list entries)
+- Added PowerShell Script uninstaller kind
+Added Tweaks (uses the new script functionality)
+- Added Tweak filtering
+- Added disable-subscribed-content script (stop automatic app downloads)
+- Added mouse acceleration disable script
+- Added script to disable easy keys shortcuts
+- Added scripts to remove special folders from This PC
+Added Custom rules, Scripts and Tweaks section to readme
+Merged fr translation update by Thierry Delaunay and Orphée V.
+Changed default portable install dir to C:\BCUninstaller
+Don't scan Steam size if not necessary
+Improved OneDrive uninstallation to remove explorer hooks
+Improved setting save error logging
+Improved WindowsFeatureFactory fail message
+Increased default window height slightly
+Fixed crash on some Japanese systems
+Fixed crash with invalid config files
+Fixed error when scanning services with badly formatted filenames
 </Changes>
 <Hash></Hash>
 </Update>
