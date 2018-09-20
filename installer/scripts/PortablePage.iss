@@ -125,3 +125,12 @@ begin
   if PageID = wpSelectProgramGroup then
     Result := IsPortable();       
 end;
+
+procedure CurPageChanged(CurPageID: Integer);
+begin
+  // Change the default install path if user selected portable install
+  if CurPageID = wpLicense then begin
+    if(AdvancedRadioButton.Checked = True) then
+      WizardForm.DirEdit.Text := ExpandConstant('{sd}\{#MyAppName}');
+  end;
+end;
