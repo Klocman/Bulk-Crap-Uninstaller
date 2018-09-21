@@ -181,7 +181,7 @@
     <value>&amp;Izbriši</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seznam ukazov, ki jih je mogoče samodejno izvršiti, brez uporabnikovega posega</value>
+    <value>Seznam ukazov, ki jih je mogoče samodejno izvesti brez uporabnikovega posega</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Besedilne datoteke|*.txt</value>

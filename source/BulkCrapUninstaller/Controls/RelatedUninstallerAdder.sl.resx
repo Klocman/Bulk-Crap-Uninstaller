@@ -130,6 +130,6 @@
     <value>To je seznam aplikacij, ki so lahko povezane z izbranimi aplikacijami za odstranitev. Te programe lahko dodate v čakalno vrsto za odstranitev, tako da jih preverite.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Prepričajte se, da ne odstranite pomembne programe, ki bi jo lahko še vedno uporabljale druge aplikacije za pravilno delovanje.</value>
+    <value>Prepričajte se, da ne odstranite pomembne programe, ki bi jih lahko še vedno uporabljale druge aplikacije za pravilno delovanje.</value>
   </data>
 </root>

@@ -135,4 +135,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Avtomatizacija odstranjevalca</value>
   </data>
+  <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
+    <value>Odstranjevalec je viden</value>
+  </data>
 </root>

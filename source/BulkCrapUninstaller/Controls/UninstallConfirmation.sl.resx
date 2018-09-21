@@ -132,19 +132,10 @@
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Inteligentno razvrsti</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Ods&amp;trani</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Pre&amp;kliči</value>
-  </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>To je seznam aplikacij, ki bodo odstranjene, v zaporedju od zgoraj navzdol. Če počistite polje »Odstrani«, aplikacija ne bo odstranjena. Če za vnos ni na voljo tiho odstranjevanje, ga ni mogoče vklopiti</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>Začetno zaporedje je odvisno od vaših nastavitev za odstranitev, vendar ga lahko spremenite tako, da povlečete vnose. Opomba: BCU lahko spremeni vrstni red, če je omogočeno sočasno odstranjevanje.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Potrdi opravilo za odstranitev</value>
   </data>
 </root>

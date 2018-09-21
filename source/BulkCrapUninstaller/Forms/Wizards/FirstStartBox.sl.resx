@@ -162,7 +162,7 @@ Označi neveljavne odstranjevalce</value>
 Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Dobrodošli v BCUninstaller</value>
+    <value>Dobrodošli v BCUninstallerju</value>
   </data>
   <data name="buttonFinish.Text" xml:space="preserve">
     <value>Končaj namestitev</value>
@@ -264,14 +264,14 @@ Iz menijske vrstice lahko ročno poiščete posodobitve.</value>
     <value>Namestitev je končana</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Ob zagonu aplikacije, samodejno preveri za posodobitve</value>
+    <value>Ob zagonu aplikacije, samodejno preveri obstoj posodobitev</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
     <value>Neregistrirane aplikacije so označene z rdečo barvo.
 Če ni mogoče najti izvirnega odstranjevalca, boste morali uporabiti možnost "Odstrani ročno", da jih odstranite.</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
-    <value>Odprite kontaktni obrazec</value>
+    <value>Odpri obrazec za stik</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
     <value>Preverjeni odstranjevalci so označeni z zeleno barvo, nepreverjeni pa so v modri barvi.
@@ -292,7 +292,7 @@ uninstaller</value>
     <value>● Uporabite filtre in poiščite ključne besede (v vseh stolpcih)</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
-    <value>Odprite kontaktni obrazec</value>
+    <value>Odpri obrazec za stik</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
     <value>Če ste pripravljeni pomagati prevesti BCUninstaller v vaš jezik, kliknite na spodnjo povezavo, da stopite v stik z mano. Vsa pomoč je zelo cenjena!</value>

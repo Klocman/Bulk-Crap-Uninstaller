@@ -270,6 +270,9 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstoje�
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Preišči odstranljive diske</value>
+  </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

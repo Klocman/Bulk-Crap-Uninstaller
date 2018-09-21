@@ -126,9 +126,6 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Povezava ali datoteka aplikacije...</value>
   </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Izberite mapo v kateri je je nameščena aplikacija.</value>
-  </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Izberite vse datoteke, ki pripadajo aplikaciji</value>
   </data>

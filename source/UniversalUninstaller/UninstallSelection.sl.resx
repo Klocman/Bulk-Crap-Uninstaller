@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelMessage.Text" xml:space="preserve">
-    <value>Izberite datoteke, ki jih je treba odstraniti. Dvokliknete lahko katerikoli vnos, da ga lahko vidite v Raziskovalcu. Če si želite ogledati celotno pot, pomaknite se nad katero koli vnos. Opozorilo: Izbrišite samo datoteke, za katere veste, da niso potrebne.</value>
+    <value>Izberite datoteke, ki jih je treba odstraniti. Dvokliknete lahko katerikoli vnos, da ga lahko vidite v Raziskovalcu. Če si želite ogledati celotno pot, pomaknite se nad katero koli vnos. Opozorilo: Izbrišite samo datoteke za katere veste, da niso potrebne.</value>
   </data>
 </root>

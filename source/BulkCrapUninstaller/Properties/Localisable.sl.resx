@@ -211,7 +211,7 @@ Kasneje jih lahko pošljete iz glavne menijske vrstice (Pomoč-&gt;Pošlji povra
 Želite nove funkcije ali popravljen hrošč? Prosimo, pošljite nam vaše povratne informacije z uporabo menija "Pomoč-&gt;Pošlji povratne informacije".</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
-    <value>Pri preverjanju za posodobitve je prišlo je do napake </value>
+    <value>Pri preverjanju obstoja posodobitev je prišlo je do napake </value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
     <value>Zagotovite, da BCUninstaller ni blokiran z vašim požarnim zidom in, da ste povezani z internetom.</value>
@@ -344,7 +344,7 @@ Opozorilo: Med posodabljanjem bo odstranjena mapa "Update" in datoteka "Update.z
     <value>Poišči na spletu</value>
   </data>
   <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
-    <value>Ničesar ni za iskanje</value>
+    <value>Ničr ni za iskanje</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
     <value>Odstrani BCUninstaller</value>
@@ -360,7 +360,7 @@ Opozorilo: Med posodabljanjem bo odstranjena mapa "Update" in datoteka "Update.z
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
     <value>
-Če niste prepričani, ali so aplikacije, ki ste jih odstranili, pomembne ali zahtevane za stabilnost sistema je priporočljivo, da ustvarite obnovitveno točko.
+Če niste prepričani, ali so aplikacije, ki ste jih odstranili, pomembne ali zahtevane za stabilnost sistema, je priporočljivo, da ustvarite obnovitveno točko.
   Če se karkoli zalomi po pravljenem postopki, lahko uporabite Obnovitev sistema, da povrnete nazaj vse opravljene spremembe.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">

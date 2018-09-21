@@ -555,4 +555,23 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Iskanje Chocolatey paketov</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Odstrani v Chocolatey</value>
+    <comment>Prikazano v oknu z rezultati smetja</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Lahko se zažene samodejno</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus aplikacije</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Je spletni brskalnik</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell skripta</value>
+  </data>
 </root>

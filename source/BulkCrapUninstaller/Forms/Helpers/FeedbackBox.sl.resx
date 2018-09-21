@@ -162,4 +162,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Pošlji povratne informacije</value>
   </data>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>Ocena (na dnu strani)</value>
+  </data>
 </root>

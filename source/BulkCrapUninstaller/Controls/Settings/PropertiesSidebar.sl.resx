@@ -192,6 +192,15 @@ Združevanje v skupine uporablja pametno filtriranje.</value>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Prikaži Windows funkcije</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Prikaži izboljšave</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Označi posebne odstranjevalce</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Uporabi barve zarazlikovanje posebnih aplikacij, kot so npr. Store Apps in funkcije Windows.</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

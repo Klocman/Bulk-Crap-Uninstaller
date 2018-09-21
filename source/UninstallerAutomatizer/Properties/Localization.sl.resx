@@ -148,7 +148,7 @@
     <value>Izbira znanega dobrega radijskega gumba: {0}</value>
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
-    <value>Najdeno je {0}  radijskih gumbov.</value>
+    <value>Najdeno je {0} radijskih gumbov.</value>
     <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
@@ -178,7 +178,7 @@
     <value>Iskanje oken...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
-    <value>Pripeto v "{0}"</value>
+    <value>Priloženo v "{0}"</value>
     <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
@@ -188,13 +188,30 @@
     <value>Postopek ni uspešno začet.</value>
   </data>
   <data name="UninstallHandler_StartDaemon" xml:space="preserve">
-    <value>Začetek avtomatizerja kot daemon/storitev</value>
+    <value>Začetek avtomatizerja kot demona/storitev</value>
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
-    <value>Daemon je ustavljen, ker :</value>
+    <value>Demon je ustavljen, ker :</value>
     <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} ni veljavno število</value>
+  </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>Ne | Zavrni</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Prekliči | Prekini | Nazaj</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>Odstrani | Vredu | Sprejmi | Uporabi | Zapri | Da | Izbriši | Odstrani | Počisti</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
   </data>
 </root>

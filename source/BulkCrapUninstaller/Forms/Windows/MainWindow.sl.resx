@@ -355,7 +355,7 @@
     <value>Osnov&amp;ne operacije</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ročno odstrani &amp;ročno</value>
+    <value>&amp;Ročno odstrani</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Namest&amp;i ali konfiguriraj (/I)</value>
@@ -367,7 +367,7 @@
     <value>&amp;Tiho odstrani (/X /qb)</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>Ods&amp;trani z MsiExec</value>
+    <value>Ods&amp;trani z uporabo MsiExec</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>P&amp;reimenuj...</value>
@@ -409,7 +409,7 @@
     <value>Zažni čarovnika za namestitev</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Preveri za posodobitve</value>
+    <value>Preveri obstoj posodobitev</value>
   </data>
   <data name="submitFeedbackToolStripMenuItem.Text" xml:space="preserve">
     <value>Pošlji povratne informacije...</value>
@@ -543,6 +543,39 @@
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Namesti .NET v3.5 (dodaj funkcijo)</value>
+  </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Izvozi v serijsko skripto za odstranitev...</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ustvarite PowerShell skripto za shranjevanje aplikacij...</value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Privzeti &amp;filtri</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Samo &amp;osnovne aplikacije</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Samo sistemske komponente</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Vse</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Samo zagnane aplikacije</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Samo spletne brskalnike</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prikaz izboljšav</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hitri filtri</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Odpravljanje težav pri odstranjevanju...</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>
