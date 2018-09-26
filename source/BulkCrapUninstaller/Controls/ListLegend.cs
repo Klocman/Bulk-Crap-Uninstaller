@@ -19,13 +19,19 @@ namespace BulkCrapUninstaller.Controls
         public ListLegend()
         {
             InitializeComponent();
-            
-            flowLayoutPanellabelInvalid.BackColor = ApplicationListConstants.InvalidColor;
-            flowLayoutPanellabelOrphaned.BackColor = ApplicationListConstants.UnregisteredColor;
-            flowLayoutPanellabelUnverified.BackColor = ApplicationListConstants.UnverifiedColor;
-            flowLayoutPanellabelVerified.BackColor = ApplicationListConstants.VerifiedColor;
-            flowLayoutPanellabelWinFeature.BackColor = ApplicationListConstants.WindowsFeatureColor;
-            flowLayoutPanellabelStoreApp.BackColor = ApplicationListConstants.WindowsStoreAppColor;
+
+            Properties.Settings.Default.SettingBinder.Subscribe((x, y) => UpdateColors(), settings => settings.MiscColorblind, this);
+            UpdateColors();
+        }
+
+        private void UpdateColors()
+        {
+            flowLayoutPanellabelInvalid.BackColor = ApplicationListConstants.Colors.InvalidColor;
+            flowLayoutPanellabelOrphaned.BackColor = ApplicationListConstants.Colors.UnregisteredColor;
+            flowLayoutPanellabelUnverified.BackColor = ApplicationListConstants.Colors.UnverifiedColor;
+            flowLayoutPanellabelVerified.BackColor = ApplicationListConstants.Colors.VerifiedColor;
+            flowLayoutPanellabelWinFeature.BackColor = ApplicationListConstants.Colors.WindowsFeatureColor;
+            flowLayoutPanellabelStoreApp.BackColor = ApplicationListConstants.Colors.WindowsStoreAppColor;
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]

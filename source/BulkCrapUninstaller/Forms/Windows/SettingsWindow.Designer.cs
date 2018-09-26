@@ -96,6 +96,7 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageFolders = new System.Windows.Forms.TabPage();
             this.groupBoxProgramFolders = new System.Windows.Forms.GroupBox();
             this.textBoxProgramFolders = new System.Windows.Forms.TextBox();
+            this.checkBoxRemovable = new System.Windows.Forms.CheckBox();
             this.checkBoxAutoInstallFolderDetect = new System.Windows.Forms.CheckBox();
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
@@ -104,7 +105,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxRemovable = new System.Windows.Forms.CheckBox();
+            this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -184,6 +185,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Controls.Add(this.checkBoxAutoLoad);
+            this.flowLayoutPanel3.Controls.Add(this.checkBoxColorblind);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
             // checkBoxAutoLoad
@@ -423,7 +425,15 @@ namespace BulkCrapUninstaller.Forms
             // propertiesSidebar1
             // 
             resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
+            this.propertiesSidebar1.InvalidEnabled = true;
             this.propertiesSidebar1.Name = "propertiesSidebar1";
+            this.propertiesSidebar1.OrphansEnabled = true;
+            this.propertiesSidebar1.ProtectedEnabled = true;
+            this.propertiesSidebar1.ShowTweaksEnabled = true;
+            this.propertiesSidebar1.StoreAppsEnabled = true;
+            this.propertiesSidebar1.SysCompEnabled = true;
+            this.propertiesSidebar1.UpdatesEnabled = true;
+            this.propertiesSidebar1.WinFeaturesEnabled = true;
             // 
             // tabPageInterface
             // 
@@ -586,6 +596,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.textBoxProgramFolders, "textBoxProgramFolders");
             this.textBoxProgramFolders.Name = "textBoxProgramFolders";
             // 
+            // checkBoxRemovable
+            // 
+            resources.ApplyResources(this.checkBoxRemovable, "checkBoxRemovable");
+            this.checkBoxRemovable.Name = "checkBoxRemovable";
+            this.checkBoxRemovable.UseVisualStyleBackColor = true;
+            // 
             // checkBoxAutoInstallFolderDetect
             // 
             resources.ApplyResources(this.checkBoxAutoInstallFolderDetect, "checkBoxAutoInstallFolderDetect");
@@ -636,11 +652,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
-            // checkBoxRemovable
+            // checkBoxColorblind
             // 
-            resources.ApplyResources(this.checkBoxRemovable, "checkBoxRemovable");
-            this.checkBoxRemovable.Name = "checkBoxRemovable";
-            this.checkBoxRemovable.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxColorblind, "checkBoxColorblind");
+            this.checkBoxColorblind.Name = "checkBoxColorblind";
+            this.checkBoxColorblind.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
@@ -789,5 +805,6 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxChoco;
         private CheckBox checkBoxOculus;
         private CheckBox checkBoxRemovable;
+        private CheckBox checkBoxColorblind;
     }
 }

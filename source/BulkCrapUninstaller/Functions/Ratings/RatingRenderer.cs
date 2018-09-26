@@ -68,7 +68,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 {
                     if (ListItem.Enabled)
                     {
-                        var displayedImage = aspect.MyRating.HasValue ? _baseImage : _coloredImages[numberOfImages - 1];
+                        var displayedImage = aspect.MyRating.HasValue || Settings.Default.MiscColorblind ? _baseImage : _coloredImages[numberOfImages - 1];
                         g.DrawImage(displayedImage, singleImageRect);
                         //DrawImage(g, singleImageRect, image);
                     }

@@ -1059,5 +1059,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["FilterShowTweaks"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MiscColorblind {
+            get {
+                return ((bool)(this["MiscColorblind"]));
+            }
+            set {
+                this["MiscColorblind"] = value;
+            }
+        }
     }
 }

@@ -241,15 +241,13 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles = y.NewValue, x => x.FoldersAutoDetect, this);
             _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.AutoDetectScanRemovable = y.NewValue, x => x.FoldersScanRemovable, this);
 
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue,
-                x => x.QuietAutomatization, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue,
-                x => x.QuietAutomatizationKillStuck, this);
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.UseQuietUninstallDaemon = y.NewValue,
-                x => x.QuietUseDaemon, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatization = y.NewValue, x => x.QuietAutomatization, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.QuietAutomatizationKillStuck = y.NewValue, x => x.QuietAutomatizationKillStuck, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.UseQuietUninstallDaemon = y.NewValue, x => x.QuietUseDaemon, this);
 
-            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue,
-                x => x.CacheAppInfo, this);
+            _setMan.Selected.Subscribe((x, y) => UninstallToolsGlobalConfig.EnableAppInfoCache = y.NewValue, x => x.CacheAppInfo, this);
+
+            _setMan.Selected.Subscribe((o, args) => _listView.RefreshList(), x => x.MiscColorblind, this);
         }
 
         private void UpdateTreemapOnPostprocessingUpdate(object x, CountingUpdateEventArgs y)

@@ -246,6 +246,7 @@
     <Compile Include="Forms\Helpers\NukeWindow.Designer.cs">
       <DependentUpon>NukeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\ApplicationList\ApplicationListColors.cs" />
     <Compile Include="Functions\ApplicationList\ApplicationListConstants.cs" />
     <Compile Include="Functions\ApplicationList\CertificateCache.cs" />
     <Compile Include="Functions\ApplicationList\UninstallerListPostProcesser.cs" />

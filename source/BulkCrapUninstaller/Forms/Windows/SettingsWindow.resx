@@ -339,6 +339,36 @@
   <data name="&gt;&gt;checkBoxAutoLoad.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkBoxColorblind.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxColorblind.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxColorblind.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 26</value>
+  </data>
+  <data name="checkBoxColorblind.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 17</value>
+  </data>
+  <data name="checkBoxColorblind.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Color blind friendly mode</value>
+  </data>
+  <data name="&gt;&gt;checkBoxColorblind.Name" xml:space="preserve">
+    <value>checkBoxColorblind</value>
+  </data>
+  <data name="&gt;&gt;checkBoxColorblind.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxColorblind.Parent" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;checkBoxColorblind.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="flowLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -352,7 +382,7 @@
     <value>2, 0, 2, 2</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 25</value>
+    <value>362, 48</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -376,7 +406,7 @@
     <value>3, 91</value>
   </data>
   <data name="groupBoxMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 44</value>
+    <value>368, 67</value>
   </data>
   <data name="groupBoxMisc.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,7 +679,7 @@
     <value>directorySelectBoxBackup</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6811.33322, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6837.33862, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
     <value>groupBoxBackup</value>
@@ -1344,7 +1374,7 @@ BCU will wait until the currently running command completes before executing the
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.9.0.39999, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1467,7 +1497,7 @@ BCU will wait until the currently running command completes before executing the
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.9.0.39999, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPageUninstallation</value>
@@ -2251,10 +2281,10 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Fill</value>
   </data>
   <data name="cacheSettings1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 135</value>
+    <value>3, 158</value>
   </data>
   <data name="cacheSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 205</value>
+    <value>368, 182</value>
   </data>
   <data name="cacheSettings1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2263,7 +2293,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>cacheSettings1</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.9.0.39999, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Parent" xml:space="preserve">
     <value>tabPageMisc</value>
@@ -2437,7 +2467,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.7.0.40671, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.39999, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsWindow</value>
