@@ -16,12 +16,12 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class FirstStartBox : Form
     {
-        private const int LastPageIndex = 5;
+        private readonly Panel[] _pages;
         private readonly int _pageWidth;
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private int _pageNumber;
         private int _targetXPos;
-
+        
         public FirstStartBox()
         {
             InitializeComponent();
@@ -32,8 +32,9 @@ namespace BulkCrapUninstaller.Forms
             p5LinkHomepage.TabStop = false;
             p5LinkContact.TabStop = false;
 
+            _pages = new[] { page1, page2, page3, pageCorrupted, pageNetwork, page5 };
             _pageWidth = page1.Width + spacer4.Width;
-
+            
             // List view
             _settings.BindControl(checkBoxCheckboxes, x => x.UninstallerListUseCheckboxes, this);
             _settings.BindControl(checkBoxGroups, x => x.UninstallerListUseGroups, this);
@@ -71,6 +72,8 @@ namespace BulkCrapUninstaller.Forms
             }
 
             _settings.SendUpdates(this);
+
+            UpdatePageEnabledState();
         }
 
         private void buttonLanguageApply_Click(object sender, EventArgs e)
@@ -86,8 +89,8 @@ namespace BulkCrapUninstaller.Forms
         private void buttonNext_Click(object sender, EventArgs e)
         {
             _pageNumber++;
-            if (_pageNumber > LastPageIndex)
-                _pageNumber = LastPageIndex;
+            if (_pageNumber >= _pages.Length)
+                _pageNumber = _pages.Length - 1;
 
             UpdateScrollPosition();
         }
@@ -164,14 +167,14 @@ namespace BulkCrapUninstaller.Forms
             {
                 timer1.Enabled = false;
 
-                if (_pageNumber == LastPageIndex)
+                if (_pageNumber == _pages.Length)
                     buttonFinish.Focus();
             }
         }
 
         private void UpdateScrollPosition()
         {
-            labelProgress.Text = $"{_pageNumber + 1} / {LastPageIndex + 1}";
+            labelProgress.Text = $"{_pageNumber + 1} / {_pages.Length + 1}";
 
             _targetXPos = _pageNumber * _pageWidth;
 
@@ -179,14 +182,27 @@ namespace BulkCrapUninstaller.Forms
             var currentValue = scrollPanel.HorizontalScroll.Value;
 
             // Bug in the control: Scroll bar resets when the Enabled property is set to false
-            buttonNext.Enabled = _pageNumber < LastPageIndex;
+            buttonNext.Enabled = _pageNumber < _pages.Length - 1;
             buttonPrev.Enabled = _pageNumber > 0;
 
             // Double assign is needed because of a bug in the control
             scrollPanel.HorizontalScroll.Value = currentValue;
             scrollPanel.HorizontalScroll.Value = currentValue;
 
+            UpdatePageEnabledState();
+
             timer1.Enabled = true;
+        }
+
+        private void UpdatePageEnabledState()
+        {
+            for (var index = 0; index < _pages.Length; index++)
+            {
+                var page = _pages[index];
+                var current = index == _pageNumber;
+                page.Enabled = current;
+                if (current) page.Focus();
+            }
         }
 
         private void buttonMore_Click(object sender, EventArgs e)

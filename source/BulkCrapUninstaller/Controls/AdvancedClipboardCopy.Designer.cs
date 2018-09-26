@@ -46,9 +46,9 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.textBoxPatternInput);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -98,15 +98,15 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.textBoxResults);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // textBoxResults
             // 
-            resources.ApplyResources(this.textBoxResults, "textBoxResults");
             this.textBoxResults.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.textBoxResults, "textBoxResults");
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ReadOnly = true;
             // 

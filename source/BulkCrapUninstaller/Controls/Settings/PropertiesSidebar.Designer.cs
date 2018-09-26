@@ -43,8 +43,8 @@ namespace BulkCrapUninstaller.Controls
             this.checkBoxListHideMicrosoft = new System.Windows.Forms.CheckBox();
             this.checkBoxListSysComp = new System.Windows.Forms.CheckBox();
             this.checkBoxListProtected = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowUpdates = new System.Windows.Forms.CheckBox();
             this.checkBoxTweaks = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowUpdates = new System.Windows.Forms.CheckBox();
             this.checkBoxWinFeature = new System.Windows.Forms.CheckBox();
             this.checkBoxShowStoreApps = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -122,18 +122,18 @@ namespace BulkCrapUninstaller.Controls
             this.toolTip1.SetToolTip(this.checkBoxListProtected, resources.GetString("checkBoxListProtected.ToolTip"));
             this.checkBoxListProtected.UseVisualStyleBackColor = true;
             // 
+            // checkBoxTweaks
+            // 
+            resources.ApplyResources(this.checkBoxTweaks, "checkBoxTweaks");
+            this.checkBoxTweaks.Name = "checkBoxTweaks";
+            this.checkBoxTweaks.UseVisualStyleBackColor = true;
+            // 
             // checkBoxShowUpdates
             // 
             resources.ApplyResources(this.checkBoxShowUpdates, "checkBoxShowUpdates");
             this.checkBoxShowUpdates.Name = "checkBoxShowUpdates";
             this.toolTip1.SetToolTip(this.checkBoxShowUpdates, resources.GetString("checkBoxShowUpdates.ToolTip"));
             this.checkBoxShowUpdates.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTweaks
-            // 
-            resources.ApplyResources(this.checkBoxTweaks, "checkBoxTweaks");
-            this.checkBoxTweaks.Name = "checkBoxTweaks";
-            this.checkBoxTweaks.UseVisualStyleBackColor = true;
             // 
             // checkBoxWinFeature
             // 

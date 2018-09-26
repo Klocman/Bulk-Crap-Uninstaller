@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -133,7 +133,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>2</value>
   </data>
   <data name="labelProgress.Text" xml:space="preserve">
     <value>1 / 6</value>
@@ -166,7 +166,7 @@
     <value>94, 25</value>
   </data>
   <data name="buttonExit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Exit wizard</value>
@@ -199,7 +199,7 @@
     <value>75, 25</value>
   </data>
   <data name="buttonPrev.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Back</value>
@@ -295,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelNavigation.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="scrollPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -307,7 +307,7 @@
     <value>2184, 6</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -331,7 +331,7 @@
     <value>2162, 6</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -348,6 +348,24 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="buttonMore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonMore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 36</value>
+  </data>
+  <data name="buttonMore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 23</value>
+  </data>
+  <data name="buttonMore.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>More settings</value>
+  </data>
   <data name="&gt;&gt;buttonMore.Name" xml:space="preserve">
     <value>buttonMore</value>
   </data>
@@ -360,6 +378,24 @@
   <data name="&gt;&gt;buttonMore.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="buttonHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="buttonHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 65</value>
+  </data>
+  <data name="buttonHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 23</value>
+  </data>
+  <data name="buttonHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>View help</value>
+  </data>
   <data name="&gt;&gt;buttonHelp.Name" xml:space="preserve">
     <value>buttonHelp</value>
   </data>
@@ -371,6 +407,24 @@
   </data>
   <data name="&gt;&gt;buttonHelp.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="buttonFinish.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonFinish.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 113</value>
+  </data>
+  <data name="buttonFinish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 23</value>
+  </data>
+  <data name="buttonFinish.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Finish setup</value>
   </data>
   <data name="&gt;&gt;buttonFinish.Name" xml:space="preserve">
     <value>buttonFinish</value>
@@ -394,7 +448,7 @@
     <value>331, 148</value>
   </data>
   <data name="panel12.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;panel12.Name" xml:space="preserve">
     <value>panel12</value>
@@ -411,6 +465,24 @@
   <data name="flowLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="p5finishContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p5finishContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="p5finishContact.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 4</value>
+  </data>
+  <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 38</value>
+  </data>
+  <data name="p5finishContact.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>You can now start using BCUninstaller. If you have any questions or would like to suggest a new feature visit the link below.</value>
+  </data>
   <data name="&gt;&gt;p5finishContact.Name" xml:space="preserve">
     <value>p5finishContact</value>
   </data>
@@ -422,6 +494,21 @@
   </data>
   <data name="&gt;&gt;p5finishContact.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="p5LinkContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p5LinkContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 42</value>
+  </data>
+  <data name="p5LinkContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
+  </data>
+  <data name="p5LinkContact.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Open the contact form</value>
   </data>
   <data name="&gt;&gt;p5LinkContact.Name" xml:space="preserve">
     <value>p5LinkContact</value>
@@ -435,6 +522,24 @@
   <data name="&gt;&gt;p5LinkContact.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="p5finishHomepage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p5finishHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 55</value>
+  </data>
+  <data name="p5finishHomepage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 8, 0, 4</value>
+  </data>
+  <data name="p5finishHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 38</value>
+  </data>
+  <data name="p5finishHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>You can read detailed change logs and check out more of my software on the homepage.</value>
+  </data>
   <data name="&gt;&gt;p5finishHomepage.Name" xml:space="preserve">
     <value>p5finishHomepage</value>
   </data>
@@ -446,6 +551,21 @@
   </data>
   <data name="&gt;&gt;p5finishHomepage.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="p5LinkHomepage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="p5LinkHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 93</value>
+  </data>
+  <data name="p5LinkHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="p5LinkHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Open the homepage</value>
   </data>
   <data name="&gt;&gt;p5LinkHomepage.Name" xml:space="preserve">
     <value>p5LinkHomepage</value>
@@ -502,7 +622,7 @@
     <value>331, 56</value>
   </data>
   <data name="p5finishTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="p5finishTitle.Text" xml:space="preserve">
     <value>Setup has been finished</value>
@@ -532,7 +652,7 @@
     <value>0, 0, 10, 0</value>
   </data>
   <data name="page5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="page5.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -556,7 +676,7 @@
     <value>1799, 6</value>
   </data>
   <data name="spacer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="spacer4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -589,7 +709,7 @@
     <value>155, 26</value>
   </data>
   <data name="p4netTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Network access</value>
@@ -619,7 +739,7 @@
     <value>287, 29</value>
   </data>
   <data name="p4netDesc.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
     <value>BCUninstaller can attempt to connect to the internet for the following reasons:</value>
@@ -649,7 +769,7 @@
     <value>169, 15</value>
   </data>
   <data name="p4netDesc1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
     <value>● To search for program updates.</value>
@@ -679,7 +799,7 @@
     <value>131, 15</value>
   </data>
   <data name="p4netDesc2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
     <value>● To upload error reports.</value>
@@ -709,7 +829,7 @@
     <value>195, 15</value>
   </data>
   <data name="p4netDesc3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
     <value>● To send anonymous usage statistics.</value>
@@ -742,7 +862,7 @@
     <value>205, 15</value>
   </data>
   <data name="p4netDesc4.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>6</value>
   </data>
   <data name="p4netDesc4.Text" xml:space="preserve">
     <value>● To fetch and upload application ratings</value>
@@ -772,7 +892,7 @@
     <value>323, 68</value>
   </data>
   <data name="p4netErrors.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
     <value>Every time an error occurs you will be asked if you want to send it. You can check what data is being sent in error and usage reports by inspecting their respective XML files in BCUninstaller's directory. The sent data is not shared with any third parties.</value>
@@ -808,7 +928,7 @@
     <value>263, 17</value>
   </data>
   <data name="checkBoxUpdateSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Automatically look for updates on application start</value>
@@ -877,7 +997,7 @@
     <value>250, 17</value>
   </data>
   <data name="checkBoxSendStats.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Automatically send anonymous usage statistics</value>
@@ -910,7 +1030,7 @@
     <value>273, 19</value>
   </data>
   <data name="p4netUsageAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
     <value>Sending these statistics will help improve BCUninstaller.</value>
@@ -946,7 +1066,7 @@
     <value>191, 17</value>
   </data>
   <data name="checkBoxRatings.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Enable user ratings of applications</value>
@@ -976,7 +1096,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1000,7 +1120,7 @@
     <value>1458, 6</value>
   </data>
   <data name="pageNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="pageNetwork.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1024,7 +1144,7 @@
     <value>1436, 6</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1060,7 +1180,7 @@
     <value>209, 26</value>
   </data>
   <data name="pCorTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="pCorTitle.Text" xml:space="preserve">
     <value>Corrupted uninstallers</value>
@@ -1093,7 +1213,7 @@
     <value>327, 29</value>
   </data>
   <data name="pCorDesc.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
     <value>Over time you may find that some applications will refuse to uninstall, or will just disappear from most of the uninstall managers.</value>
@@ -1129,7 +1249,7 @@
     <value>217, 27</value>
   </data>
   <data name="pCorViewInvalidTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>2</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
     <value>Corrupted or missing uninstallers</value>
@@ -1162,7 +1282,7 @@
     <value>302, 42</value>
   </data>
   <data name="pCorViewInvalid.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>3</value>
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>In some cases uninstallers can get corrupted, making them impossible to uninstall. BCUninstaller can remove these entries easily using the "Uninstall manually" option.</value>
@@ -1198,7 +1318,7 @@
     <value>159, 17</value>
   </data>
   <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>4</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Highlight invalid uninstallers</value>
@@ -1234,7 +1354,7 @@
     <value>192, 13</value>
   </data>
   <data name="pCorViewinvalidComment.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>5</value>
   </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
     <value>Invalid uninstallers are marked in grey.</value>
@@ -1270,7 +1390,7 @@
     <value>170, 27</value>
   </data>
   <data name="pCorOrphansTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>6</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
     <value>Unregistered applications</value>
@@ -1303,7 +1423,7 @@
     <value>319, 42</value>
   </data>
   <data name="pCorOrphansMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>7</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
     <value>Sometimes whole applications can be left on your drive even after being uninstalled. This can also happen if only the uninstaller is removed.</value>
@@ -1339,7 +1459,7 @@
     <value>221, 17</value>
   </data>
   <data name="checkBoxOrphans.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>8</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Show unregistered applications in the list</value>
@@ -1375,7 +1495,7 @@
     <value>291, 39</value>
   </data>
   <data name="pCorOrphansComment.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>9</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
     <value>Unregistered applications are marked in red.
@@ -1406,7 +1526,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1430,7 +1550,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>1095, 6</value>
   </data>
   <data name="pageCorrupted.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="pageCorrupted.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1454,7 +1574,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>1073, 6</value>
   </data>
   <data name="spacer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="spacer3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1487,7 +1607,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>152, 26</value>
   </data>
   <data name="p3advTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Advanced users</value>
@@ -1514,7 +1634,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>319, 26</value>
   </data>
   <data name="p3advDesc.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
     <value>While BCUninstaller can be used as a basic uninstaller, most of its functions are aimed at power users. Proceed with caution!</value>
@@ -1547,7 +1667,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>135, 27</value>
   </data>
   <data name="p3advSyscompTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>2</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>System components</value>
@@ -1577,7 +1697,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>326, 42</value>
   </data>
   <data name="p3advSyscomp.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>3</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
     <value>Applications marked as "system components" are hidden from most of the basic uninstall managers. This tag does NOT mean that the application is a part of the operating system.</value>
@@ -1613,7 +1733,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>270, 17</value>
   </data>
   <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>4</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Show uninstallers marked as "system components"</value>
@@ -1646,7 +1766,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>146, 23</value>
   </data>
   <data name="p3advProtectTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>5</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
     <value>Protected uninstallers</value>
@@ -1676,7 +1796,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>325, 55</value>
   </data>
   <data name="p3advProtect.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>6</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
     <value>Protected items are marked with the "NoRemove" tag, which means that the publisher doesn't want you to remove them. This tag is often used by large software packages to prevent you from uninstalling their individual parts.</value>
@@ -1712,7 +1832,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>222, 17</value>
   </data>
   <data name="checkBoxListProtected.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>7</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Show uninstallers marked as "protected"</value>
@@ -1748,7 +1868,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>292, 17</value>
   </data>
   <data name="checkBoxDiisableProtection.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>8</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Disable protection of uninstallers marked as "protected"</value>
@@ -1781,7 +1901,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>203, 13</value>
   </data>
   <data name="p3advProtectAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>9</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
     <value>This will let you uninstall protected items.</value>
@@ -1811,10 +1931,10 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
     <value>flowLayoutPanel4</value>
@@ -1835,7 +1955,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>732, 6</value>
   </data>
   <data name="page3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="page3.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1859,7 +1979,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>710, 6</value>
   </data>
   <data name="spacer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="spacer2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1892,7 +2012,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>184, 26</value>
   </data>
   <data name="p2viewTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>Uninstaller list view</value>
@@ -1922,7 +2042,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>320, 29</value>
   </data>
   <data name="p2viewDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
     <value>All of the uninstallers found in your system are in the main list view. Here are some ways to browse this data:</value>
@@ -1952,7 +2072,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>258, 15</value>
   </data>
   <data name="p2viewDetail1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>2</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Use filters and search for keywords (in all columns)</value>
@@ -1982,7 +2102,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>293, 15</value>
   </data>
   <data name="p2viewDetail2.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>4</value>
   </data>
   <data name="p2viewDetail2.Text" xml:space="preserve">
     <value>● Sort uninstallers by any column. Freely rearrange columns.</value>
@@ -2012,7 +2132,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>136, 17</value>
   </data>
   <data name="p2viewDetail3.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>5</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
     <value>● Group similar uninstallers</value>
@@ -2048,7 +2168,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>158, 17</value>
   </data>
   <data name="checkBoxGroups.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>6</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
     <value>Show uninstallers in groups</value>
@@ -2084,7 +2204,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>149, 17</value>
   </data>
   <data name="checkBoxCheckboxes.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>7</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
     <value>Select using checkboxes</value>
@@ -2117,7 +2237,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>139, 27</value>
   </data>
   <data name="p2viewCertsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>8</value>
   </data>
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
     <value>Certified uninstallers</value>
@@ -2147,7 +2267,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>327, 42</value>
   </data>
   <data name="p2viewCerts.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
     <value>Uninstallers can be signed with certificates issued by relevant authorities. If the certificate passes validation the software package has not been altered and is reputable.</value>
@@ -2183,7 +2303,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>166, 17</value>
   </data>
   <data name="checkBoxCertTest.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>10</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Highlight certified uninstallers</value>
@@ -2216,7 +2336,7 @@ If the original uninstaller isn't found you will have to use the "Uninstall manu
     <value>307, 26</value>
   </data>
   <data name="p2viewAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
     <value>Verified uninstallers are marked in green, unverified are in blue.
@@ -2247,10 +2367,10 @@ Warning: Verification can take a long time.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
     <value>flowLayoutPanel3</value>
@@ -2271,7 +2391,7 @@ Warning: Verification can take a long time.</value>
     <value>369, 6</value>
   </data>
   <data name="page2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
+    <value>341, 325</value>
   </data>
   <data name="page2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2295,7 +2415,7 @@ Warning: Verification can take a long time.</value>
     <value>347, 6</value>
   </data>
   <data name="spacer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 372</value>
+    <value>22, 325</value>
   </data>
   <data name="spacer1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2328,7 +2448,7 @@ Warning: Verification can take a long time.</value>
     <value>244, 34</value>
   </data>
   <data name="p1welcomeHeading.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Welcome to BCUninstaller!</value>
@@ -2355,7 +2475,7 @@ Warning: Verification can take a long time.</value>
     <value>291, 26</value>
   </data>
   <data name="p1welcomeSubheading.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>This wizard will give you a quick tour and help configure the application.</value>
@@ -2388,7 +2508,7 @@ Warning: Verification can take a long time.</value>
     <value>176, 34</value>
   </data>
   <data name="p1languageHeading.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>Selected language</value>
@@ -2418,7 +2538,7 @@ Warning: Verification can take a long time.</value>
     <value>325, 43</value>
   </data>
   <data name="p1languageDesc.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
     <value>You can force BCUninstaller to use a specific localization if the default language is incorrect. A restart will be performed to apply the new language.</value>
@@ -2435,6 +2555,18 @@ Warning: Verification can take a long time.</value>
   <data name="&gt;&gt;p1languageDesc.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="comboBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 6, 3, 3</value>
+  </data>
+  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 21</value>
+  </data>
+  <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
     <value>comboBoxLanguage</value>
   </data>
@@ -2446,6 +2578,21 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="buttonLanguageApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="buttonLanguageApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 2</value>
+  </data>
+  <data name="buttonLanguageApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonLanguageApply.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Apply</value>
   </data>
   <data name="&gt;&gt;buttonLanguageApply.Name" xml:space="preserve">
     <value>buttonLanguageApply</value>
@@ -2469,7 +2616,7 @@ Warning: Verification can take a long time.</value>
     <value>326, 27</value>
   </data>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;panel9.Name" xml:space="preserve">
     <value>panel9</value>
@@ -2496,7 +2643,7 @@ Warning: Verification can take a long time.</value>
     <value>326, 32</value>
   </data>
   <data name="p1languageExtradetails.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
     <value>If you are willing to help translate BCUninstaller to your language, click on the link below to contact me. All help is greatly appreciated!</value>
@@ -2523,7 +2670,7 @@ Warning: Verification can take a long time.</value>
     <value>113, 13</value>
   </data>
   <data name="p1linkLabelContact.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
     <value>Open the contact form</value>
@@ -2553,10 +2700,10 @@ Warning: Verification can take a long time.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 270</value>
+    <value>341, 223</value>
   </data>
   <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
     <value>flowLayoutPanel5</value>
@@ -2569,252 +2716,6 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 102</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>page1</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="page1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="page1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="page1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 372</value>
-  </data>
-  <data name="page1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;page1.Name" xml:space="preserve">
-    <value>page1</value>
-  </data>
-  <data name="&gt;&gt;page1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;page1.Parent" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;page1.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="scrollPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="scrollPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="scrollPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="scrollPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 401</value>
-  </data>
-  <data name="scrollPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;scrollPanel.Name" xml:space="preserve">
-    <value>scrollPanel</value>
-  </data>
-  <data name="&gt;&gt;scrollPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scrollPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;scrollPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonMore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="buttonMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonMore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 36</value>
-  </data>
-  <data name="buttonMore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="buttonMore.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="buttonMore.Text" xml:space="preserve">
-    <value>More settings</value>
-  </data>
-  <data name="buttonHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="buttonHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 65</value>
-  </data>
-  <data name="buttonHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="buttonHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="buttonHelp.Text" xml:space="preserve">
-    <value>View help</value>
-  </data>
-  <data name="buttonFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="buttonFinish.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonFinish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 113</value>
-  </data>
-  <data name="buttonFinish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="buttonFinish.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="buttonFinish.Text" xml:space="preserve">
-    <value>Finish setup</value>
-  </data>
-  <data name="p5finishContact.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="p5finishContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
-  </data>
-  <data name="p5finishContact.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 8, 0, 4</value>
-  </data>
-  <data name="p5finishContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 38</value>
-  </data>
-  <data name="p5finishContact.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="p5finishContact.Text" xml:space="preserve">
-    <value>You can now start using BCUninstaller. If you have any questions or would like to suggest a new feature visit the link below.</value>
-  </data>
-  <data name="p5LinkContact.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="p5LinkContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 42</value>
-  </data>
-  <data name="p5LinkContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 13</value>
-  </data>
-  <data name="p5LinkContact.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="p5LinkContact.Text" xml:space="preserve">
-    <value>Open the contact form</value>
-  </data>
-  <data name="p5finishHomepage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="p5finishHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 55</value>
-  </data>
-  <data name="p5finishHomepage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 8, 0, 4</value>
-  </data>
-  <data name="p5finishHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 38</value>
-  </data>
-  <data name="p5finishHomepage.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="p5finishHomepage.Text" xml:space="preserve">
-    <value>You can read detailed change logs and check out more of my software on the homepage.</value>
-  </data>
-  <data name="p5LinkHomepage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="p5LinkHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 93</value>
-  </data>
-  <data name="p5LinkHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
-  </data>
-  <data name="p5LinkHomepage.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="p5LinkHomepage.Text" xml:space="preserve">
-    <value>Open the homepage</value>
-  </data>
-  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="comboBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 6, 3, 3</value>
-  </data>
-  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 21</value>
-  </data>
-  <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="buttonLanguageApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonLanguageApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 2</value>
-  </data>
-  <data name="buttonLanguageApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonLanguageApply.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="buttonLanguageApply.Text" xml:space="preserve">
-    <value>Apply</value>
   </data>
   <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -2830,6 +2731,18 @@ Warning: Verification can take a long time.</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -2856,6 +2769,99 @@ uninstaller</value>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 102</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>page1</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="page1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="page1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="page1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 325</value>
+  </data>
+  <data name="page1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;page1.Name" xml:space="preserve">
+    <value>page1</value>
+  </data>
+  <data name="&gt;&gt;page1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;page1.Parent" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="&gt;&gt;page1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="scrollPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scrollPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="scrollPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="scrollPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 354</value>
+  </data>
+  <data name="scrollPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Name" xml:space="preserve">
+    <value>scrollPanel</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;scrollPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -2880,10 +2886,4 @@ uninstaller</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

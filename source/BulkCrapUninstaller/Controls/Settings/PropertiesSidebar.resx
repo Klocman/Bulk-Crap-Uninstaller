@@ -133,7 +133,7 @@
     <value>173, 17</value>
   </data>
   <data name="checkBoxOrphans.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Show unregistered applications</value>
@@ -171,7 +171,7 @@ Warning: Double check before removing these applications, they might still be ne
     <value>159, 17</value>
   </data>
   <data name="checkBoxInvalidTest.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Highlight missing uninstallers</value>
@@ -285,7 +285,7 @@ Warning: Verification can take a long time to complete.</value>
     <value>149, 17</value>
   </data>
   <data name="checkBoxListSysComp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Show system components</value>
@@ -319,7 +319,7 @@ Drivers are often marked with this tag.</value>
     <value>128, 17</value>
   </data>
   <data name="checkBoxListProtected.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Show protected items</value>
@@ -352,7 +352,7 @@ Drivers are often marked with this tag.</value>
     <value>90, 17</value>
   </data>
   <data name="checkBoxTweaks.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
     <value>Show tweaks</value>
@@ -382,7 +382,7 @@ Drivers are often marked with this tag.</value>
     <value>94, 17</value>
   </data>
   <data name="checkBoxShowUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Show updates</value>
@@ -445,7 +445,7 @@ Drivers are often marked with this tag.</value>
     <value>154, 17</value>
   </data>
   <data name="checkBoxShowStoreApps.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Show Windows Store apps</value>
@@ -502,7 +502,7 @@ Drivers are often marked with this tag.</value>
     <value>100, 203</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtering</value>
@@ -614,7 +614,7 @@ Grouping of most of the columns uses smart filtering.</value>
     <value>158, 17</value>
   </data>
   <data name="checkBoxHighlightSpecial.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
     <value>Highlight special uninstallers</value>
@@ -677,7 +677,7 @@ Grouping of most of the columns uses smart filtering.</value>
     <value>100, 134</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>List view settings</value>
@@ -722,7 +722,7 @@ Grouping of most of the columns uses smart filtering.</value>
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.33868, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.2011, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PropertiesSidebar</value>

@@ -172,7 +172,7 @@
     <value>94, 25</value>
   </data>
   <data name="buttonExit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -208,7 +208,7 @@
     <value>75, 25</value>
   </data>
   <data name="buttonPrev.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Back</value>
@@ -328,7 +328,7 @@
     <value>relatedUninstallerAdder1</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -448,7 +448,7 @@
     <value>uninstallConfirmation1</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -568,7 +568,7 @@
     <value>processWaiterControl1</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Type" xml:space="preserve">
-    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.4.6767.30372, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.4.6844.2007, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -691,13 +691,13 @@
     <value>471, 366</value>
   </data>
   <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Name" xml:space="preserve">
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPage4</value>
@@ -898,7 +898,7 @@
     <value>471, 151</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1468,7 +1468,7 @@
     <value>488, 260</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -1498,7 +1498,7 @@
     <value>488, 33</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>BEGIN UNINSTALLATION</value>
@@ -1543,7 +1543,7 @@
     <value>475, 72</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>0</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Please make sure the following information is correct before starting the uninstallation. This is the last chance!</value>
@@ -1633,7 +1633,7 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=4.4.0.30478, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>panel1</value>

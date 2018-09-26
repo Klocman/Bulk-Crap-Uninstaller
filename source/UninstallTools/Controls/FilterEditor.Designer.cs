@@ -35,16 +35,17 @@ namespace UninstallTools.Controls
             this.textBoxFilterText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxCompareMethod = new System.Windows.Forms.ComboBox();
-            this.searchBox1 = new Klocman.Controls.SearchBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxInvert = new System.Windows.Forms.CheckBox();
+            this.searchBox1 = new Klocman.Controls.SearchBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelText
             // 
+            this.labelText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             resources.ApplyResources(this.labelText, "labelText");
             this.labelText.Name = "labelText";
             // 
@@ -56,6 +57,7 @@ namespace UninstallTools.Controls
             // 
             // label2
             // 
+            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
@@ -67,13 +69,6 @@ namespace UninstallTools.Controls
             this.comboBoxCompareMethod.Sorted = true;
             this.comboBoxCompareMethod.SelectedIndexChanged += new System.EventHandler(this.comboBoxCompareMethod_SelectedIndexChanged);
             // 
-            // searchBox1
-            // 
-            this.searchBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.searchBox1, "searchBox1");
-            this.searchBox1.Name = "searchBox1";
-            this.searchBox1.SearchTextChanged += this.searchBox1_SearchTextChanged;
-            // 
             // comboBox1
             // 
             resources.ApplyResources(this.comboBox1, "comboBox1");
@@ -83,6 +78,7 @@ namespace UninstallTools.Controls
             // 
             // label1
             // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
@@ -98,6 +94,17 @@ namespace UninstallTools.Controls
             this.checkBoxInvert.Name = "checkBoxInvert";
             this.checkBoxInvert.UseVisualStyleBackColor = true;
             this.checkBoxInvert.CheckedChanged += new System.EventHandler(this.checkBoxInvert_CheckedChanged);
+            // 
+            // searchBox1
+            // 
+            resources.ApplyResources(this.searchBox1, "searchBox1");
+            this.searchBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.searchBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.searchBox1.InactiveSearchColor = System.Drawing.SystemColors.GrayText;
+            this.searchBox1.Name = "searchBox1";
+            this.searchBox1.NormalSearchColor = System.Drawing.SystemColors.WindowText;
+            this.searchBox1.SearchBoxBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchBox1.SearchTextChanged += new System.EventHandler<Klocman.Controls.SearchBox.SearchEventArgs>(this.searchBox1_SearchTextChanged);
             // 
             // FilterEditor
             // 

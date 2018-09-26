@@ -234,7 +234,6 @@
             resources.ApplyResources(this.buttonMore, "buttonMore");
             this.buttonMore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonMore.Name = "buttonMore";
-            this.buttonMore.TabStop = false;
             this.buttonMore.UseVisualStyleBackColor = true;
             this.buttonMore.Click += new System.EventHandler(this.buttonMore_Click);
             // 
@@ -243,7 +242,6 @@
             resources.ApplyResources(this.buttonHelp, "buttonHelp");
             this.buttonHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.TabStop = false;
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
@@ -252,7 +250,6 @@
             resources.ApplyResources(this.buttonFinish, "buttonFinish");
             this.buttonFinish.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.TabStop = false;
             this.buttonFinish.UseVisualStyleBackColor = true;
             this.buttonFinish.Click += new System.EventHandler(this.CloseWizard);
             // 
@@ -361,7 +358,7 @@
             // 
             resources.ApplyResources(this.checkBoxUpdateSearch, "checkBoxUpdateSearch");
             this.checkBoxUpdateSearch.Name = "checkBoxUpdateSearch";
-            this.checkBoxUpdateSearch.TabStop = false;
+
             this.checkBoxUpdateSearch.UseVisualStyleBackColor = true;
             // 
             // p4netUpdateAdd
@@ -373,7 +370,7 @@
             // 
             resources.ApplyResources(this.checkBoxSendStats, "checkBoxSendStats");
             this.checkBoxSendStats.Name = "checkBoxSendStats";
-            this.checkBoxSendStats.TabStop = false;
+
             this.checkBoxSendStats.UseVisualStyleBackColor = true;
             // 
             // p4netUsageAdd
@@ -385,7 +382,7 @@
             // 
             resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
             this.checkBoxRatings.Name = "checkBoxRatings";
-            this.checkBoxRatings.TabStop = false;
+
             this.checkBoxRatings.UseVisualStyleBackColor = true;
             // 
             // panel5
@@ -438,7 +435,7 @@
             // 
             resources.ApplyResources(this.checkBoxInvalidTest, "checkBoxInvalidTest");
             this.checkBoxInvalidTest.Name = "checkBoxInvalidTest";
-            this.checkBoxInvalidTest.TabStop = false;
+
             this.checkBoxInvalidTest.UseVisualStyleBackColor = true;
             // 
             // pCorViewinvalidComment
@@ -460,7 +457,7 @@
             // 
             resources.ApplyResources(this.checkBoxOrphans, "checkBoxOrphans");
             this.checkBoxOrphans.Name = "checkBoxOrphans";
-            this.checkBoxOrphans.TabStop = false;
+
             this.checkBoxOrphans.UseVisualStyleBackColor = true;
             // 
             // pCorOrphansComment
@@ -518,7 +515,7 @@
             // 
             resources.ApplyResources(this.checkBoxListSysComp, "checkBoxListSysComp");
             this.checkBoxListSysComp.Name = "checkBoxListSysComp";
-            this.checkBoxListSysComp.TabStop = false;
+
             this.checkBoxListSysComp.UseVisualStyleBackColor = true;
             // 
             // p3advProtectTitle
@@ -535,14 +532,14 @@
             // 
             resources.ApplyResources(this.checkBoxListProtected, "checkBoxListProtected");
             this.checkBoxListProtected.Name = "checkBoxListProtected";
-            this.checkBoxListProtected.TabStop = false;
+
             this.checkBoxListProtected.UseVisualStyleBackColor = true;
             // 
             // checkBoxDiisableProtection
             // 
             resources.ApplyResources(this.checkBoxDiisableProtection, "checkBoxDiisableProtection");
             this.checkBoxDiisableProtection.Name = "checkBoxDiisableProtection";
-            this.checkBoxDiisableProtection.TabStop = false;
+
             this.checkBoxDiisableProtection.UseVisualStyleBackColor = true;
             // 
             // p3advProtectAdd
@@ -606,14 +603,14 @@
             // 
             resources.ApplyResources(this.checkBoxGroups, "checkBoxGroups");
             this.checkBoxGroups.Name = "checkBoxGroups";
-            this.checkBoxGroups.TabStop = false;
+
             this.checkBoxGroups.UseVisualStyleBackColor = true;
             // 
             // checkBoxCheckboxes
             // 
             resources.ApplyResources(this.checkBoxCheckboxes, "checkBoxCheckboxes");
             this.checkBoxCheckboxes.Name = "checkBoxCheckboxes";
-            this.checkBoxCheckboxes.TabStop = false;
+
             this.checkBoxCheckboxes.UseVisualStyleBackColor = true;
             // 
             // p2viewCertsTitle
@@ -630,7 +627,7 @@
             // 
             resources.ApplyResources(this.checkBoxCertTest, "checkBoxCertTest");
             this.checkBoxCertTest.Name = "checkBoxCertTest";
-            this.checkBoxCertTest.TabStop = false;
+
             this.checkBoxCertTest.UseVisualStyleBackColor = true;
             // 
             // p2viewAdd
@@ -695,13 +692,11 @@
             this.comboBoxLanguage.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.TabStop = false;
             // 
             // buttonLanguageApply
             // 
             resources.ApplyResources(this.buttonLanguageApply, "buttonLanguageApply");
             this.buttonLanguageApply.Name = "buttonLanguageApply";
-            this.buttonLanguageApply.TabStop = false;
             this.buttonLanguageApply.UseVisualStyleBackColor = true;
             this.buttonLanguageApply.Click += new System.EventHandler(this.buttonLanguageApply_Click);
             // 
@@ -729,7 +724,7 @@
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            
             // 
             // label2
             // 
@@ -750,8 +745,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.buttonExit;
             this.ControlBox = false;
-            this.Controls.Add(this.panelNavigation);
             this.Controls.Add(this.scrollPanel);
+            this.Controls.Add(this.panelNavigation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

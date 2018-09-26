@@ -41,6 +41,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxMisc = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
+            this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
             this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
             this.checkBoxSendStats = new System.Windows.Forms.CheckBox();
@@ -105,7 +106,6 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -193,6 +193,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxAutoLoad, "checkBoxAutoLoad");
             this.checkBoxAutoLoad.Name = "checkBoxAutoLoad";
             this.checkBoxAutoLoad.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxColorblind
+            // 
+            resources.ApplyResources(this.checkBoxColorblind, "checkBoxColorblind");
+            this.checkBoxColorblind.Name = "checkBoxColorblind";
+            this.checkBoxColorblind.UseVisualStyleBackColor = true;
             // 
             // checkBoxRatings
             // 
@@ -651,12 +657,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker1
             // 
             this.usageTracker1.ContainerControl = this;
-            // 
-            // checkBoxColorblind
-            // 
-            resources.ApplyResources(this.checkBoxColorblind, "checkBoxColorblind");
-            this.checkBoxColorblind.Name = "checkBoxColorblind";
-            this.checkBoxColorblind.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
