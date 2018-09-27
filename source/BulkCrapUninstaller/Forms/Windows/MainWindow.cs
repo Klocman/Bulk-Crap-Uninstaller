@@ -1389,6 +1389,8 @@ namespace BulkCrapUninstaller.Forms
             }
 
             OnApplicationListVisibleItemsChanged(sender, e);
+
+            filterEditor1.FocusSearchbox();
         }
 
         private void openStartupManagerToolStripMenuItem_Click(object sender, EventArgs e)
