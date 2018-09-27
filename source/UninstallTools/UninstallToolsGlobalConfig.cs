@@ -33,8 +33,10 @@ namespace UninstallTools
                 "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
                 "Desktop", "Internet Explorer", "Windows", "Windows NT", "Windows Photo Viewer", "Windows Mail",
                 "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
-                "InstallShield Installation Information", "Installer"
+                "InstallShield Installation Information", "Installer", "winsxs", "WindowsApps"
             }.AsEnumerable();
+
+            WindowsDirectory = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
             StockProgramFiles = new[]
             {
@@ -101,9 +103,9 @@ namespace UninstallTools
         }
 
         public static string AppInfoCachePath { get; }
-        
+
         internal static ApplicationUninstallerFactoryCache UninstallerFactoryCache { get; private set; }
-        
+
         /// <summary>
         ///     Path to directory this assembly sits in.
         /// </summary>
@@ -122,6 +124,8 @@ namespace UninstallTools
         ///     Directory names that should be ignored for safety.
         /// </summary>
         internal static IEnumerable<string> DirectoryBlacklist { get; }
+
+        internal static string WindowsDirectory { get; }
 
         /// <summary>
         ///     Directories that can contain program junk.
@@ -144,15 +148,10 @@ namespace UninstallTools
         public static bool QuietAutomatizationKillStuck { get; set; }
 
         public static bool ScanSteam { get; set; }
-
         public static bool ScanStoreApps { get; set; }
-
         public static bool ScanOculus { get; set; }
-
         public static bool ScanWinFeatures { get; set; }
-
         public static bool ScanWinUpdates { get; set; }
-
         public static bool ScanChocolatey { get; set; }
 
         /// <summary>
@@ -163,10 +162,7 @@ namespace UninstallTools
         public static bool ScanRegistry { get; set; }
         public static bool ScanDrives { get; set; }
         public static bool ScanPreDefined { get; set; }
-
-        /// <summary>
-        /// TODO hook up
-        /// </summary>
+        
         public static bool UseQuietUninstallDaemon { get; set; }
 
         /// <summary>
@@ -226,10 +222,11 @@ namespace UninstallTools
         /// </summary>
         public static bool IsSystemDirectory(DirectoryInfo dir)
         {
-            return DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase))
-                || (dir.Attributes & FileAttributes.System) == FileAttributes.System;
+            return (dir.Attributes & FileAttributes.System) == FileAttributes.System
+                   || dir.FullName.StartsWith(WindowsDirectory, StringComparison.OrdinalIgnoreCase)
+                   || DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase));
         }
-        
+
         /// <summary>
         ///     Check if dir is a system directory and should be left alone.
         /// </summary>
