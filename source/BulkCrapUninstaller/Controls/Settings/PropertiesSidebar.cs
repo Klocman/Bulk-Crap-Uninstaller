@@ -7,7 +7,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 
 namespace BulkCrapUninstaller.Controls
@@ -57,56 +56,56 @@ namespace BulkCrapUninstaller.Controls
         public bool SysCompEnabled
         {
             get { return checkBoxListSysComp.Enabled; }
-            set { checkBoxListSysComp.Enabled = value; }
+            set { checkBoxListSysComp.Enabled = value; checkBoxListSysComp.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool ProtectedEnabled
         {
             get { return checkBoxListProtected.Enabled; }
-            set { checkBoxListProtected.Enabled = value; }
+            set { checkBoxListProtected.Enabled = value; checkBoxListProtected.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool UpdatesEnabled
         {
             get { return checkBoxShowUpdates.Enabled; }
-            set { checkBoxShowUpdates.Enabled = value; }
+            set { checkBoxShowUpdates.Enabled = value; checkBoxShowUpdates.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool OrphansEnabled
         {
             get { return checkBoxOrphans.Enabled; }
-            set { checkBoxOrphans.Enabled = value; }
+            set { checkBoxOrphans.Enabled = value; checkBoxOrphans.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool StoreAppsEnabled
         {
             get { return checkBoxShowStoreApps.Enabled; }
-            set { checkBoxShowStoreApps.Enabled = value; }
+            set { checkBoxShowStoreApps.Enabled = value; checkBoxShowStoreApps.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool InvalidEnabled
         {
             get { return checkBoxInvalidTest.Enabled; }
-            set { checkBoxInvalidTest.Enabled = value; }
+            set { checkBoxInvalidTest.Enabled = value; checkBoxInvalidTest.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool WinFeaturesEnabled
         {
             get { return checkBoxWinFeature.Enabled; }
-            set { checkBoxWinFeature.Enabled = value; }
+            set { checkBoxWinFeature.Enabled = value; checkBoxWinFeature.Visible = value; }
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public bool ShowTweaksEnabled
         {
             get { return checkBoxTweaks.Enabled; }
-            set { checkBoxTweaks.Enabled = value; }
+            set { checkBoxTweaks.Enabled = value; checkBoxTweaks.Visible = value; }
         }
     }
 }
