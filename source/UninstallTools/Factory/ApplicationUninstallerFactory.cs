@@ -11,6 +11,7 @@ using System.Linq;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.IO;
+using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
@@ -264,32 +265,19 @@ namespace UninstallTools.Factory
         {
             var otherResults = new List<ApplicationUninstallerEntry>();
 
-            var miscFactories = new Dictionary<IUninstallerFactory, string>();
-            if (UninstallToolsGlobalConfig.ScanPreDefined)
-            {
-                miscFactories.Add(new PredefinedFactory(), Localisation.Progress_AppStores_Templates);
-                miscFactories.Add(new ScriptFactory(), Localisation.Progress_AppStores_Templates);
-            }
-            if (UninstallToolsGlobalConfig.ScanSteam)
-                miscFactories.Add(new SteamFactory(), Localisation.Progress_AppStores_Steam);
-            if (UninstallToolsGlobalConfig.ScanStoreApps)
-                miscFactories.Add(new StoreAppFactory(), Localisation.Progress_AppStores_WinStore);
-            if (UninstallToolsGlobalConfig.ScanWinFeatures)
-                miscFactories.Add(new WindowsFeatureFactory(), Localisation.Progress_AppStores_WinFeatures);
-            if (UninstallToolsGlobalConfig.ScanWinUpdates)
-                miscFactories.Add(new WindowsUpdateFactory(), Localisation.Progress_AppStores_WinUpdates);
-            if (UninstallToolsGlobalConfig.ScanChocolatey)
-                miscFactories.Add(new ChocolateyFactory(), Localisation.Progress_AppStores_Chocolatey);
-            if (UninstallToolsGlobalConfig.ScanOculus)
-                miscFactories.Add(new OculusFactory(), Localisation.Progress_AppStores_Oculus);
+            var miscFactories = ReflectionTools.GetTypesImplementingBase<IIndependantUninstallerFactory>()
+                .Attempt(Activator.CreateInstance)
+                .Cast<IIndependantUninstallerFactory>()
+                .Where(x => x.IsEnabled())
+                .ToList();
 
             var progress = 0;
             foreach (var kvp in miscFactories)
             {
-                progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.Value));
+                progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.DisplayName));
                 try
                 {
-                    otherResults = MergeResults(otherResults, kvp.Key.GetUninstallerEntries(null).ToList(), null);
+                    otherResults = MergeResults(otherResults, kvp.GetUninstallerEntries(null).ToList(), null);
                 }
                 catch (Exception ex)
                 {

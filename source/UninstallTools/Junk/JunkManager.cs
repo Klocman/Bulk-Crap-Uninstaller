@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -69,7 +70,7 @@ namespace UninstallTools.Junk
             progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Startup));
 
             var scanners = ReflectionTools.GetTypesImplementingBase<IJunkCreator>()
-                .Select(Activator.CreateInstance)
+                .Attempt(Activator.CreateInstance)
                 .Cast<IJunkCreator>()
                 .ToList();
 

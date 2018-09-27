@@ -5,18 +5,15 @@
 
 using System.Collections.Generic;
 using System.IO;
-using Klocman.Extensions;
 using Klocman.IO;
-using Klocman.Native;
-using Klocman.Tools;
-using UninstallTools.Lists;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
     /// <summary>
     /// Get uninstallers that were manually pre-defined.
     /// </summary>
-    public class PredefinedFactory : IUninstallerFactory
+    public class PredefinedFactory : IIndependantUninstallerFactory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
@@ -50,5 +47,8 @@ namespace UninstallTools.Factory
                 EstimatedSize = FileSize.FromKilobytes(1024 * 700)
             };
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanPreDefined;
+        public string DisplayName => Localisation.Progress_AppStores_Templates;
     }
 }

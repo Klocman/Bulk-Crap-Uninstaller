@@ -9,10 +9,11 @@ using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class OculusFactory : IUninstallerFactory
+    public class OculusFactory : IIndependantUninstallerFactory
     {
         private static bool? _helperAvailable;
         private static string HelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"OculusHelper.exe");
@@ -73,5 +74,8 @@ namespace UninstallTools.Factory
                 yield return entry;
             }
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanOculus;
+        public string DisplayName => Localisation.Progress_AppStores_Oculus;
     }
 }

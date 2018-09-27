@@ -1,3 +1,8 @@
+/*
+    Copyright (c) 2018 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,10 +12,11 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class ScriptFactory : IUninstallerFactory
+    public class ScriptFactory : IIndependantUninstallerFactory
     {
         private static readonly string ScriptDir;
         private static readonly PropertyInfo[] EntryProps;
@@ -190,5 +196,8 @@ namespace UninstallTools.Factory
                 return null;
             }
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanPreDefined;
+        public string DisplayName => Localisation.Progress_AppStores_Templates;
     }
 }

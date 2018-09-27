@@ -12,10 +12,11 @@ using System.Linq;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class WindowsUpdateFactory : IUninstallerFactory
+    public class WindowsUpdateFactory : IIndependantUninstallerFactory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
@@ -98,5 +99,8 @@ namespace UninstallTools.Factory
                 yield return entry;
             }
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanWinUpdates;
+        public string DisplayName => Localisation.Progress_AppStores_WinUpdates;
     }
 }

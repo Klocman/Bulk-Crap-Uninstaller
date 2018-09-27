@@ -10,10 +10,11 @@ using System.Linq;
 using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class SteamFactory : IUninstallerFactory
+    public class SteamFactory : IIndependantUninstallerFactory
     {
         private static bool? _steamHelperIsAvailable;
         private static string _steamLocation;
@@ -79,46 +80,42 @@ namespace UninstallTools.Factory
 
             foreach (var idString in output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries))
             {
-                int appId;
-                if (!int.TryParse(idString, out appId)) continue;
+                if (!int.TryParse(idString, out var appId)) continue;
 
-                output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath,
-                    "info " + appId.ToString("G"));
-                if (string.IsNullOrEmpty(output) ||
-                    output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
+                output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "info " + appId.ToString("G"));
+
+                if (string.IsNullOrEmpty(output)) continue;
 
                 var lines = output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries).Select(x =>
                 {
-                    var o = x.Split(new[] {" - "}, StringSplitOptions.None);
+                    var o = x.Split(new[] { " - " }, StringSplitOptions.None);
                     return new KeyValuePair<string, string>(o[0], o[1]);
                 }).ToList();
+                
+                string GetValue(string fieldName)
+                {
+                    return lines.Single(x => x.Key.Equals(fieldName, StringComparison.InvariantCultureIgnoreCase)).Value;
+                }
 
                 var entry = new ApplicationUninstallerEntry
                 {
-                    DisplayName =
-                        lines.Single(x => x.Key.Equals("Name", StringComparison.InvariantCultureIgnoreCase)).Value,
-                    UninstallString =
-                        lines.Single(x => x.Key.Equals("UninstallString", StringComparison.InvariantCultureIgnoreCase))
-                            .Value,
-                    InstallLocation =
-                        lines.Single(x => x.Key.Equals("InstallDirectory", StringComparison.InvariantCultureIgnoreCase))
-                            .Value,
+                    DisplayName = GetValue("Name"),
+                    UninstallString = GetValue("UninstallString"),
+                    InstallLocation = GetValue("InstallDirectory"),
                     UninstallerKind = UninstallerType.Steam,
                     IsValid = true,
                     IsOrphaned = true,
                     RatingId = "Steam App " + appId.ToString("G")
                 };
 
-                long bytes;
-                if (
-                    long.TryParse(
-                        lines.Single(x => x.Key.Equals("SizeOnDisk", StringComparison.InvariantCultureIgnoreCase)).Value,
-                        out bytes))
+                if (long.TryParse(GetValue("SizeOnDisk"), out var bytes))
                     entry.EstimatedSize = FileSize.FromBytes(bytes);
 
                 yield return entry;
             }
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanSteam;
+        public string DisplayName => Localisation.Progress_AppStores_Steam;
     }
 }

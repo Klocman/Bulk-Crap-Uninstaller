@@ -11,10 +11,11 @@ using System.IO;
 using System.Linq;
 using Klocman.Native;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class StoreAppFactory : IUninstallerFactory
+    public class StoreAppFactory : IIndependantUninstallerFactory
     {
         public static string GetPowerShellRemoveCommand(string fullName)
         {
@@ -92,5 +93,8 @@ namespace UninstallTools.Factory
                 yield return result;
             }
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanStoreApps;
+        public string DisplayName => Localisation.Progress_AppStores_WinStore;
     }
 }

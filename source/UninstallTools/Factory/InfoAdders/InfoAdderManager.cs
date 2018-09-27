@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Klocman.Extensions;
 using Klocman.Tools;
 
 namespace UninstallTools.Factory.InfoAdders
@@ -51,7 +52,7 @@ namespace UninstallTools.Factory.InfoAdders
             var types = Assembly.GetExecutingAssembly().GetTypes() //AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes())
                 .Where(p => type.IsAssignableFrom(p) && p.IsClass && !p.IsAbstract);
 
-            var instances = types.Select(Activator.CreateInstance);
+            var instances = types.Attempt(Activator.CreateInstance);
 
             return instances.Cast<IMissingInfoAdder>().OrderByDescending(x => x.Priority);
         }

@@ -7,7 +7,7 @@ using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public sealed class ChocolateyFactory : IUninstallerFactory
+    public sealed class ChocolateyFactory : IIndependantUninstallerFactory
     {
         private static bool? _chocoIsAvailable;
         private static string _chocoLocation;
@@ -167,5 +167,8 @@ namespace UninstallTools.Factory
 
             return kvps;
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanChocolatey;
+        public string DisplayName => Localisation.Progress_AppStores_Chocolatey;
     }
 }

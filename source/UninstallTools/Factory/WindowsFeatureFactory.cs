@@ -10,10 +10,11 @@ using System.Linq;
 using System.Threading;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class WindowsFeatureFactory : IUninstallerFactory
+    public class WindowsFeatureFactory : IIndependantUninstallerFactory
     {
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
@@ -68,5 +69,8 @@ namespace UninstallTools.Factory
                 RatingId = "WindowsFeature_" + info.FeatureName
             };
         }
+
+        public bool IsEnabled() => UninstallToolsGlobalConfig.ScanWinFeatures;
+        public string DisplayName => Localisation.Progress_AppStores_WinFeatures;
     }
 }
