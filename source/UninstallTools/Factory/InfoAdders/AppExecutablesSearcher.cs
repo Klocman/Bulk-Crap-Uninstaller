@@ -16,7 +16,7 @@ namespace UninstallTools.Factory.InfoAdders
     {
         internal static readonly string[] BinaryDirectoryNames =
         {
-            "bin", "bin32", "bin64", "program", "client", "app", "application", "win32", "win64" //"system"
+            "bin", "bin32", "bin64", "binaries", "program", "client", "app", "application", "win32", "win64" //"system"
         };
 
         public string[] CanProduceValueNames { get; } = {
