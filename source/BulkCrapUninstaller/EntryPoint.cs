@@ -33,6 +33,15 @@ namespace BulkCrapUninstaller
             {
                 try
                 {
+                    Directory.SetCurrentDirectory(Program.AssemblyLocation.FullName);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+                try
+                {
                     var instance = new SingleInstanceWrapper();
                     instance.Run(args);
                 }
