@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Klocman.Extensions;
+using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -14,17 +15,15 @@ namespace UninstallTools.Junk.Finders.Registry
 {
     public class FirewallRuleScanner : JunkCreatorBase
     {
+        private const string FirewallRulesKey = @"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
+
         public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            const string firewallRulesKey =
-                @"SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules";
-            const string fullFirewallRulesKey = @"HKEY_LOCAL_MACHINE\" + firewallRulesKey;
-
             var results = new List<IJunkResult>();
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return results;
 
-            using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(firewallRulesKey))
+            using (var key = GetFirewallRulesKey())
             {
                 if (key != null)
                 {
@@ -38,7 +37,7 @@ namespace UninstallTools.Junk.Finders.Registry
                         var fullPath = Environment.ExpandEnvironmentVariables(value.Substring(start, charCount));
                         if (fullPath.StartsWith(target.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            var node = new RegistryValueJunk(fullFirewallRulesKey, valueName,
+                            var node = new RegistryValueJunk(FirewallRulesKey, valueName,
                                 target, this);
                             node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                             results.Add(node);
@@ -48,6 +47,19 @@ namespace UninstallTools.Junk.Finders.Registry
             }
 
             return results;
+        }
+
+        private static Microsoft.Win32.RegistryKey GetFirewallRulesKey()
+        {
+            try
+            {
+                return RegistryTools.OpenRegistryKey(FirewallRulesKey);
+            }
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
         }
 
         public override string CategoryName => Localisation.Junk_FirewallRule_GroupName;
