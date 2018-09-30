@@ -824,13 +824,12 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenInRegedit(object sender, EventArgs e)
         {
-            if (_listView.SelectedUninstallerCount == 1 && _listView.SelectedUninstallers.First().IsRegistered)
+            var targetEntry = _listView.SelectedUninstallers.FirstOrDefault(x=>x.RegKeyStillExists());
+            if(targetEntry != null)
             {
-                //MessageBox.Show("To properly open the uninstaller key Regedit will be restarted if it's already running.",
-                //    "Open key in regedit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 try
                 {
-                    RegistryTools.OpenRegKeyInRegedit(_listView.SelectedUninstallers.First().RegistryPath);
+                    RegistryTools.OpenRegKeyInRegedit(targetEntry.RegistryPath);
                 }
                 catch (IOException ex)
                 {
