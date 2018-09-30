@@ -35,25 +35,9 @@ namespace UninstallTools.Factory
             var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
 
             var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
-
-            var progress = 0;
-            var results = new List<ApplicationUninstallerEntry>();
-            foreach (var directory in itemsToScan)
-            {
-                progressCallback(new ListGenerationProgress(progress++, itemsToScan.Count, directory.Key.FullName));
-
-                if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||
-                    directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
-
-                var detectedEntries = TryCreateFromDirectory(directory.Key, directory.Value, dirsToSkip).ToList();
-
-                results = ApplicationUninstallerFactory.MergeResults(results, detectedEntries, null);
-            }
-
-            return results;
+            return DirectoryFactoryThreadedHelper.ThreadedApplicationScan(progressCallback, dirsToSkip, itemsToScan);
         }
-
+        
         public static IEnumerable<ApplicationUninstallerEntry> TryGetApplicationsFromDirectories(
             ICollection<DirectoryInfo> directoriesToScan, IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
         {
