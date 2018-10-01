@@ -298,6 +298,7 @@ Jede Hilfe ist willkommen!</value>
   <data name="label2.Text" xml:space="preserve">
     <value>ulk crap
 uninstaller</value>
+    <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Willkommen beim BCUninstaller</value>
@@ -313,5 +314,8 @@ uninstaller</value>
   </data>
   <data name="labelProgress.Text" xml:space="preserve">
     <value>1 / 6</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Zeige Hilfe</value>
   </data>
 </root>

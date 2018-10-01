@@ -141,4 +141,34 @@
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Uninstall-Liste laden...</value>
   </data>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Filter Name</value>
+  </data>
+  <data name="columnHeaderType.Text" xml:space="preserve">
+    <value>Vorbild</value>
+  </data>
+  <data name="columnHeaderConditions.Text" xml:space="preserve">
+    <value>Bedingungen</value>
+  </data>
+  <data name="labelFilterType.Text" xml:space="preserve">
+    <value>Vorbild</value>
+  </data>
+  <data name="comboBoxFilterType.Items" xml:space="preserve">
+    <value>Einschließen</value>
+  </data>
+  <data name="comboBoxFilterType.Items1" xml:space="preserve">
+    <value>Ausschließen</value>
+  </data>
+  <data name="labelFilterName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="groupBoxFilterSettings.Text" xml:space="preserve">
+    <value>Filter Einstellungen</value>
+  </data>
+  <data name="groupBoxConditions.Text" xml:space="preserve">
+    <value>Filterbedingungen</value>
+  </data>
+  <data name="groupBoxConditionEditor.Text" xml:space="preserve">
+    <value>Bedingungseditor</value>
+  </data>
 </root>

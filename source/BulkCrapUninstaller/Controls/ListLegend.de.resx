@@ -135,4 +135,7 @@
   <data name="labelLegend.Text" xml:space="preserve">
     <value>Farblegende</value>
   </data>
+  <data name="labelStoreApp.Text" xml:space="preserve">
+    <value>Windows Store Programme</value>
+  </data>
 </root>

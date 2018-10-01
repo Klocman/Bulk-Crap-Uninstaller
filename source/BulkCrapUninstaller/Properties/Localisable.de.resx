@@ -603,4 +603,169 @@ The lists are separated by a single newline.</comment>
     <value>{0} Anwendungen</value>
     <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
   </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Bewertung nicht verfügbar</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Sie müssen zuerst Bewertungen anhand der Einstellungen aktivieren.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Sie können Anwendungen nicht bewerteten wenn sie nicht vollständig installiert wurden.</value>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Durchschnittliche Bewertung: {0}; Meine Bewertung: {1}</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0 nicht gefunden</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0 wurde nicht gefunden, einige Funktionen sind nicht verfügbar.</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Öffentlicher Schlüssel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Serien Nummer</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Fingerabdruck</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Lade Icons</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Willkommen zu BCU version {0}!</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Nachfolgende Uninstaller verhinderten die Ausführung wahrscheinlich wegen einer Kollision. Bitte warten Sie, bis andere Uninstaller fertig sind, und versuchen Sie es erneut. {0}
+
+Sie können versuchen, die Kollisionserkennung in den Einstellungen zu deaktivieren, dieses wird jedoch nicht empfohlen.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Deinstallation erzwingen</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Einige der Deinstallationsprogramme konnten nicht ausgeführt werden</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Das .NET v4.0 Framework ist optional, wird aber empfohlen. Die Funktionen, die auf diesem Framework basieren, werden deaktiviert, bis Sie es installieren.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Einige Deinstallationsprogramme sind fehlgeschlagen</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Möchten Sie versuchen, quiet Deinstallationsprogramme auszuführen, die fehlgeschlagen sind?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Folgende Deinstallationsprogramme werden neu gestartet:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Überprüfen des angegebenen Verzeichnisses</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Wählen Sie das Verzeichnis mit den Anwendungen aus, die Sie entfernen möchten</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Deinstallieren aus dem Verzeichnis</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Im angegebenen Verzeichnis wurden keine Anwendungen gefunden</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Stellen Sie sicher, dass Sie das richtige Verzeichnis ausgewählt haben und dass die ausführbaren Dateien der Anwendung noch vorhanden sind.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Deinstallationsprogramm für {0} gefunden</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Möchten Sie dieses Deinstallationsprogramm ausführen?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Aussteller</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Gegenstand</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Archiviert</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Erweiterungen</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Anzeigename</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Name des Ausstellers</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>nicht nach</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>nicht vor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Privater Schlüssel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Hat einen privaten Schlüssel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Rohdaten</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Gegenstands Name</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Signaturalgorithmus</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Einstellungen konnten nicht gespeichert werden</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Suchen Sie nach Anwendung</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Es wurden keine gültigen Dateien oder Ordner ausgewählt. Stellen sie sicher, dass sie Zugriff auf diese haben und es keine Systemdateien sind.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Suchen Sie nach Anwendung</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Fehler bei der Suche nach Anwendungen {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Ändern der Anwendung</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Ausgewählte Anwendung kann nicht verändert werden.</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Für die ausgewählte Anwendung wurde kein Änderungsbefehl angegeben.
+Möglicherweise muss eine Deinstallation durchgeführt werden und eine Neuinstallation durchgeführt werden um Änderungen zu speichern.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Speichern der Uninstall Liste</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Speichern der Änderungen in der geöffneten Uninstall Liste</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Änderungen wurden in der geöffneten Uninstall Liste noch nicht gespeichert und werden beim Schließen verloren gehen.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Wählen Sie das Verzeichnis mit den zu deinstallierenden Anwendungen aus.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Wählen Sie, wo die Sicherung gespeichert werden soll. Ein neues Verzeichnis wird erstellt.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU wurde Upgedated auf v{0}!</value>
+  </data>
 </root>

@@ -483,4 +483,97 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
+  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+    <value>Deinstallieren über Fenster, Ordner oder Datei</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Ändern</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="buttonAdvFiltering.Text" xml:space="preserve">
+    <value>Erweiterte Filter</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ausschließen</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Einschließen</value>
+  </data>
+  <data name="runToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ausführen</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Windows Store Programme</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Schnelle Filter</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Änderungen</value>
+  </data>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="nukeMenuItem.Text" xml:space="preserve">
+    <value>Deinstalliere durch Fenster, Ordner oder Datei</value>
+  </data>
+  <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deinstalliere aus Ordner</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Installiere .NET v3.5 (für weitere funktionen)</value>
+  </data>
+  <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Öffne "Systemwiederherstellung"</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Baumstruktur&amp;Verzeichnis</value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Voreingestellte Filter</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nur &amp;Grundlegende Anwendungen</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nur System Komponenten</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Alles</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nur Automatisch startend</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nur Web Browser</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Verbesserungen</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Unregistrierte</value>
+  </data>
+  <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Updates</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige Windows Eigenschaften</value>
+  </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportiere in einem Batch Uninstall script</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Erzeuge eine PowerShell entfernungs script für Store Programme</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beheben von Installationsproblemen</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Starte Disk Cleanup</value>
+  </data>
 </root>

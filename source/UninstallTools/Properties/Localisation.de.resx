@@ -426,4 +426,43 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Dateien und Ordner</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Ungültiger oder unbekannter startup registrierungs schlüssel</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Store Programm</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Neue Bedingung</value>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Die Entfernung der Store App Data kann zu Problemen führen</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Einfaches Löschen</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Das Verzeichnis ist oder wird nach dem Entfernen von Junk leer sein.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Suche nach Windows Updates</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Firewall Regel</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Angehalten</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Ist ein Web Browser</value>
+  </data>
 </root>

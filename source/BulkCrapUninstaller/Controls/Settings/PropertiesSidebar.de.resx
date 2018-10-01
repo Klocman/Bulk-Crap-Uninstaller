@@ -179,7 +179,7 @@ und die Leertaste drücken.</value>
 'Smartes' Filtern findet bei den meisten Spalten Verwendung.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Ansichtseinstellungen</value>
+    <value>Ansicht der Einstellungen</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Nicht registrierte Anwendungen anzeigen</value>
@@ -189,5 +189,20 @@ und die Leertaste drücken.</value>
 Sie bleiben den meisten Uninstall-Programmen verborgen, benöteigen aber dennoch Plattenplatz. Nicht registrierte Elemente werden rot dargestellt.
 
 Achtung: Vor dem Entfernen dieser Anwendungen bitte genau überprüfen, ob sie nicht doch noch beötigt werden.</value>
+  </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Zeige Windows Eigenschaften</value>
+  </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Zeige Windows Store Programme</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Hervorheben spezieller Uninstaller</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Benutze Farben für spezielle Programme wie z.B. Windows Store Programme oder Eigenschaften.</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Änderungen anzeigen</value>
   </data>
 </root>

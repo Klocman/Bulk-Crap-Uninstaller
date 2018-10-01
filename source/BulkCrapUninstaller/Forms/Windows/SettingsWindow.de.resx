@@ -205,4 +205,73 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Immer Fragen zum Erstellen</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Niemals Fragen zum Erstellen</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Erzeuge automatisch im Verzeichnis:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Backup vor der Resteentfernung</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Anzeige von Junk immer mit geringem Vertrauen</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Niemals nach Rückmeldungen und Hilfe fragen</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Schnittstelle</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Deinstallation</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Erkennung, dass Windows Update WUA benutzt welches langsam ist. Es kann einige Minuten dauern um fertig zu stellen.</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Erkennung das Windowseigenschaften nutzen WMI, welches sehr langsam und manchmal auf bestimmten Systemen versagt. (weist in der Regel auf Systembeschädigung hin)</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Windows Eigenschaft</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Windows Store Programme</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Anwendungsspeicher Scannen</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registrierung (empfohlen, aktiviert zu lassen)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Laufwerke (Erkennung nicht registrieter Programme)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Basierend auf vordefinierten Regeln</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Suche nach Programmen in...</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Erkennung</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Überprüfe Wechseldatenträger</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Automatischer Versuch benutzerdefinierte Installation zu finden</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Netzwerk</value>
+  </data>
 </root>

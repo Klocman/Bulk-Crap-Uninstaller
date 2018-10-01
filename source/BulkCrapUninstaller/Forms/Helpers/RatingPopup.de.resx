@@ -127,7 +127,7 @@
     <value>Abbrechen</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Fragwürdige | Bad Qualität</value>
+    <value>Fragwürdige | Schlechte Qualität</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Sagen Sie Ihre Bewertung</value>

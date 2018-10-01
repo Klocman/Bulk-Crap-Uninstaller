@@ -126,6 +126,45 @@
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Intelligente Sortierung</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Allgemeine Einstellungen</value>
+  </data>
+  <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
+    <value>Ausschalten der Kollisionsverhütung beim manuellen Deinstallieren</value>
+  </data>
+  <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
+    <value>Nur eine Instanz erlauben</value>
+  </data>
+  <data name="checkBoxConcurrent.Text" xml:space="preserve">
+    <value>Automatisch Uninstaller gleichzeitig benutzen (wenn möglich)</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Maximale Anzahl der laufenden Uninstaller</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Gleichzeitiges deinstallieren</value>
+  </data>
+  <data name="checkBoxShutdown.Text" xml:space="preserve">
+    <value>Verhinderung des Neustarts/Beenden</value>
+  </data>
+  <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
+    <value>Automatisches Abbrechen hängender leiser Uninstaller</value>
+  </data>
+  <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
+    <value>Einmaliger Versuch leise Deinstaller neu zu starten</value>
+  </data>
+  <data name="checkBoxGenerate.Text" xml:space="preserve">
+    <value>Erzeugen von fehlenden stillen Uninstaller wenn möglich</value>
+  </data>
+  <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
+    <value>Automatisches Beenden eines Uninstallers wenn auf Benutzereingabe gewartet wird</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Überwachung "stiller" Uninstaller nach Popups oder andere Hinweise zu automatisierung (Start automatisierter Daemon)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Stille Deinstallation</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -152,6 +152,27 @@ Dies kann passieren, wenn der Uninstaller abstürzt oder einen neuen Prozess sta
   <data name="olvColumnId.Text" xml:space="preserve">
     <value>Id</value>
   </data>
+  <data name="toolStripButtonRun.Text" xml:space="preserve">
+    <value>Starte Uninstaller</value>
+  </data>
+  <data name="toolStripButtonTerminate.Text" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Manuelles Deinstallieren</value>
+  </data>
+  <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
+    <value>Öffne Install Ordner</value>
+  </data>
+  <data name="toolStripButtonProperties.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="toolStripButtonSettings.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="toolStripButtonHelp.Text" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>fr</value>
   </metadata>
