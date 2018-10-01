@@ -41,17 +41,27 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         private long UserId { get; }
 
-        public int RatingCount => _cashe?.Rows.Count ?? 0;
+        public int RatingCount
+        {
+            get
+            {
+                lock (_cashe)
+                    return _cashe.Rows.Count;
+            }
+        }
 
         public IEnumerable<RatingEntry> Items
         {
             get
             {
-                if (_cashe == null || _cashe.Columns.Count != 3)
-                    return Enumerable.Empty<RatingEntry>();
+                lock (_cacheLock)
+                {
+                    if (_cashe == null || _cashe.Columns.Count != 3)
+                        return Enumerable.Empty<RatingEntry>();
 
-                return from DataRow row in _cashe.Rows
-                       select ToRatingEntry(row);
+                    return (from DataRow row in _cashe.Rows
+                            select ToRatingEntry(row)).ToList();
+                }
             }
         }
 
@@ -76,7 +86,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 var userRatingCommand = connection.CreateCommand();
                 userRatingCommand.CommandText = "CALL getUserRatings(@uid)";
                 userRatingCommand.Parameters.AddWithValue("@uid", UserId);
-                
+
                 connection.Open();
 
                 ratingTable.Load(avgRatingCommand.ExecuteReader());
