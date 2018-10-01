@@ -53,7 +53,7 @@ namespace PortableSettingsProvider
                     {
                         _settingsXml.Load(Path.Combine(GetAppSettingsPath(), GetAppSettingsFilename()));
 
-                        if(_settingsXml.SelectSingleNode(SettingsRootName) == null)
+                        if (_settingsXml.SelectSingleNode(SettingsRootName) == null)
                             throw new Exception("Invalid config file");
                     }
                     catch (Exception)
@@ -244,7 +244,10 @@ namespace PortableSettingsProvider
             var serializedValue = propVal.SerializedValue;
             if (serializedValue != null)
             {
+                if (SettingsRootNode == null) throw new ArgumentNullException(nameof(SettingsRootNode));
+                if (SettingsXml == null) throw new ArgumentNullException(nameof(SettingsXml));
                 var settingNode = SettingsXml.CreateElement(propVal.Name);
+                if (settingNode == null) throw new ArgumentNullException(nameof(settingNode));
                 settingNode.InnerText = serializedValue.ToString();
                 SettingsRootNode.AppendChild(settingNode);
             }

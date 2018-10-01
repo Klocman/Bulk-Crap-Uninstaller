@@ -62,10 +62,10 @@ namespace UninstallTools.Factory
             foreach (var workerData in workerDatas)
             {
                 try { workerData.Worker.Join(); }
-                catch(Exception ex) { Console.WriteLine(ex); }
+                catch (Exception ex) { Console.WriteLine(ex); }
             }
 
-            var results = workerDatas.Aggregate(new List<ApplicationUninstallerEntry>(), 
+            var results = workerDatas.Aggregate(new List<ApplicationUninstallerEntry>(),
                 (entries, data) => ApplicationUninstallerFactory.MergeResults(entries, data.Results, null));
 
             return results;
@@ -79,14 +79,15 @@ namespace UninstallTools.Factory
             workerInterface.Results = new List<ApplicationUninstallerEntry>();
             foreach (var directory in workerInterface.Input)
             {
-                workerInterface.OnInputItemDone(directory.Key.FullName);
+                try { workerInterface.OnInputItemDone(directory.Key.FullName); }
+                catch (OperationCanceledException) { return; }
 
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(directory.Key) ||
                     directory.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
-                var detectedEntries = DirectoryFactory
-                    .TryCreateFromDirectory(directory.Key, directory.Value, workerInterface.DirsToSkip).ToList();
+                var detectedEntries = DirectoryFactory.TryCreateFromDirectory(
+                    directory.Key, directory.Value, workerInterface.DirsToSkip).ToList();
 
                 workerInterface.Results =
                     ApplicationUninstallerFactory.MergeResults(workerInterface.Results, detectedEntries, null);
@@ -116,11 +117,11 @@ namespace UninstallTools.Factory
 
                     var correlatedDriveList = ltp.Join(dtp, arg => arg.Partition, arg => arg.Partition, (x, y) => new
                     {
-                        LogicalName = x.LogicalDrive.Split(new[] {'"'}, StringSplitOptions.RemoveEmptyEntries).LastOrDefault()?.Append(@"\"),
+                        LogicalName = x.LogicalDrive.Split(new[] { '"' }, StringSplitOptions.RemoveEmptyEntries).LastOrDefault()?.Append(@"\"),
                         y.Drive
                     }).Where(x => !string.IsNullOrEmpty(x.LogicalName)).GroupBy(x => x.Drive);
 
-                    var inputList = itemsToScan.Select(x => new {x.Key.Root.Name, x}).ToList();
+                    var inputList = itemsToScan.Select(x => new { x.Key.Root.Name, x }).ToList();
                     foreach (var logicalDriveGroup in correlatedDriveList)
                     {
                         var filteredByPhysicalDrive = inputList.Where(x =>
