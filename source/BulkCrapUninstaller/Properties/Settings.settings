@@ -129,7 +129,7 @@
       <Value Profile="(Default)">1990-01-01</Value>
     </Setting>
     <Setting Name="_CacheUpdateRate" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.TimeSpan" Scope="Application">
-      <Value Profile="(Default)">2.00:00:00</Value>
+      <Value Profile="(Default)">10.00:00:00</Value>
     </Setting>
     <Setting Name="UninstallPreventShutdown" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

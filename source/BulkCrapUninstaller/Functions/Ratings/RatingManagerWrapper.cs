@@ -63,7 +63,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     }
                     _ratingManager.Dispose();
                 })
-                {IsBackground = false, Name = "ProcessRatingDispose_Thread"}.Start();
+                { IsBackground = false, Name = "ProcessRatingDispose_Thread" }.Start();
             }
             else
             {
@@ -161,10 +161,11 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
                     // If _ratingManager has no ratings it means that deserialization failed so we need to fetch from db
                     // Otherwise fetch at most every few hours, unless user manually clears the cache
-                    if (!WindowsTools.IsNetworkAvailable() || (_ratingManager.RatingCount > 0
-                                                               &&
-                                                               (DateTime.Now - _settings.Settings.MiscRatingCacheDate)
-                                                                   .Duration() < _settings.Settings._CacheUpdateRate))
+                    if (_ratingManager.RatingCount > 0 && 
+                        (DateTime.Now - _settings.Settings.MiscRatingCacheDate).Duration() < _settings.Settings._CacheUpdateRate)
+                        return;
+
+                    if (!WindowsTools.IsNetworkAvailable())
                         return;
 
                     try
@@ -177,7 +178,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                         Console.WriteLine(ex);
                     }
                 })
-                {IsBackground = false, Name = "ProcessRatingInit_Thread"}.Start();
+                { IsBackground = false, Name = "ProcessRatingInit_Thread" }.Start();
             }
             else
             {

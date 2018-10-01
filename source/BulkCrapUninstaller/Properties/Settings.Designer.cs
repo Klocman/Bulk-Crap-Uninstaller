@@ -611,7 +611,7 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.00:00:00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.00:00:00")]
         public global::System.TimeSpan _CacheUpdateRate {
             get {
                 return ((global::System.TimeSpan)(this["_CacheUpdateRate"]));
