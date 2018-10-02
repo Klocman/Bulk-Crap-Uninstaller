@@ -40,13 +40,13 @@ namespace BulkCrapUninstaller.Forms
                 new {culture =  CultureInfo.GetCultureInfo("cs-CZ"), translator = "Richard Kahl"},
 
                 // de - German
-                new {culture =  CultureInfo.GetCultureInfo("de"), translator = "Dieter Hummel & Thomas Werk"},
+                new {culture =  CultureInfo.GetCultureInfo("de"), translator = "Dieter Hummel, Thomas Werk"},
 
                 // es - Spanish
-                new {culture =  CultureInfo.GetCultureInfo("es"), translator = "MS-PC2 & Freddynic159 & Emilio J. Grao"},
+                new {culture =  CultureInfo.GetCultureInfo("es"), translator = "MS-PC2, Freddynic159, Emilio J. Grao"},
 
                 // fr - French
-                new {culture =  CultureInfo.GetCultureInfo("fr"), translator = "Thierry Delaunay & Orphée V."},
+                new {culture =  CultureInfo.GetCultureInfo("fr"), translator = "Thierry Delaunay, Orphée V."},
 
                 // Hungarian
                 new {culture =  CultureInfo.GetCultureInfo("hu"), translator = "Phoenix (Döbröntei Sándor)"},
