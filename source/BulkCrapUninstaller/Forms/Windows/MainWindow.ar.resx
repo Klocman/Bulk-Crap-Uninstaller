@@ -514,7 +514,7 @@
     <value>فتح نافذه &amp;التصحيح</value>
   </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
-    <value>|*.reg ملفات مكتب التسجيل </value>
+    <value>ملفات مكتب التسجيل |*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>انشاء نسخ احتياطي لمكتب التسجيل</value>

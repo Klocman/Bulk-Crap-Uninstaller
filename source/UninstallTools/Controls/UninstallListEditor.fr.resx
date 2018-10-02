@@ -136,7 +136,7 @@
     <value>Supprimer</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Listes de désinstallation (*.xml)|*.xml|Tous les fichiers|*.*</value>
+    <value>Listes de désinstallation (*.bcul)|*.bcul|Tous les fichiers|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Charger la liste de désinstallation...</value>

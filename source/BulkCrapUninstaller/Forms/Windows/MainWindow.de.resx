@@ -252,9 +252,6 @@
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Eigenschaften</value>
   </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Textdateien|*.txt</value>
-  </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Export ausgewählter Uninstaller-Eigenschaften</value>
   </data>

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="columnHeaderName.Text" xml:space="preserve">
     <value>Název filtru</value>
@@ -197,7 +197,7 @@
     <value>Editor podmínek</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Seznam odinstalace (*.xml)|*.xml|All files|*.*</value>
+    <value>Seznam odinstalace (*.bcul)|*.bcul|All files|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Načíst seznam odinstalace...</value>

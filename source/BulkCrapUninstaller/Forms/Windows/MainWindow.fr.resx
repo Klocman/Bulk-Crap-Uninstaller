@@ -240,9 +240,6 @@
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Propriétés</value>
   </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Fichiers texte|*.txt</value>
-  </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Exporter les propriétés du désinstalleur sélectionné</value>
   </data>

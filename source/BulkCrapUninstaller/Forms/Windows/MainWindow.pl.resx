@@ -262,7 +262,7 @@
     <value>&amp;Właściwości</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Pliki tekstowe|*.txt</value>
+    <value>Pliki XML|*.xml</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Eksportuj właściwości wybranych elementów</value>

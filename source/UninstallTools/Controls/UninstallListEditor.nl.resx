@@ -166,7 +166,7 @@
     <value>Conditie editor</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>De-installatie lijsten (*.xml)|*.xml|Alle bestanden|*.*</value>
+    <value>De-installatie lijsten (*.bcul)|*.bcul|Alle bestanden|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>De-installatie lijst laden...</value>

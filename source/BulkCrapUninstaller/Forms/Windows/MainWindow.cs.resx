@@ -258,9 +258,6 @@
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Vlastnosti</value>
   </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Textové soubory|*.txt</value>
-  </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Export vybraných vlastností odinstalátoru</value>
   </data>

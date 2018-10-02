@@ -166,7 +166,7 @@
     <value>Edytor kondycji</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Listy dezinstalatorów (*.xml)|*.xml|Wszystkie pliki|*.*</value>
+    <value>Listy dezinstalatorów (*.bcul)|*.bcul|Wszystkie pliki|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Otwórz listę dezinstalatorów...</value>

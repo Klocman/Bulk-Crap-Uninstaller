@@ -148,7 +148,7 @@
     <value>Nome do filtro</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalações (*.xml)|*.xml|Todos os ficheiros|*.*</value>
+    <value>Listas de Desinstalações (*.bcul)|*.bcul|Todos os ficheiros|*.*</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Remover</value>

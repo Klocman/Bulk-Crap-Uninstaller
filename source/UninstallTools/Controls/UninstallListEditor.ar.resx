@@ -166,7 +166,7 @@
     <value>محرر الشرط</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>(*.bcul)|*.bcul|All files|*.*قوائم الغاء تثبيت</value>
+    <value>قوائم الغاء تثبيت(*.bcul)|*.bcul|All files|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>تحميل قائمه الغاء التثبيت...</value>

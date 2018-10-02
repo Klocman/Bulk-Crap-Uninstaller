@@ -148,7 +148,7 @@
     <value>Имя фильтра</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Список деинсталляции (*.xml)|*.xml|Все файлы|*.*</value>
+    <value>Список деинсталляции (*.bcul)|*.bcul|Все файлы|*.*</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Удалить</value>

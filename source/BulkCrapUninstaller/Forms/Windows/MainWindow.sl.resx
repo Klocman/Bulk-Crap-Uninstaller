@@ -264,9 +264,6 @@
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Lastnosti</value>
   </data>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Besedilne datoteke|*.txt</value>
-  </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Izvozi izbrane lastnosti odstranjevalca</value>
   </data>

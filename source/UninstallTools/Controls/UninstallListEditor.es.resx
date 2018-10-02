@@ -163,7 +163,7 @@
     <value>Condiciones</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Listas de desinstalación (*.xml)|*.xml|Todos los archivos|*.*</value>
+    <value>Listas de desinstalación (*.bcul)|*.bcul|Todos los archivos|*.*</value>
   </data>
   <data name="labelFilterType.Text" xml:space="preserve">
     <value>Tipo:</value>

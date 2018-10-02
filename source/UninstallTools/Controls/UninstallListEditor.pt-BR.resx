@@ -166,7 +166,7 @@
     <value>Editor de condição</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Listas de Desinstalações (*.xml)|*.xml|Todos os arquivos|*.*</value>
+    <value>Listas de Desinstalações (*.bcul)|*.bcul|Todos os arquivos|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Carregar a Lista de Desinstalação...</value>

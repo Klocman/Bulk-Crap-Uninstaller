@@ -121,7 +121,7 @@
     <value>تثبيت الدليل...</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>كل الملفات |*. *</value>
+    <value>كل الملفات |*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>ملف الارتباط او التطبيق...</value>

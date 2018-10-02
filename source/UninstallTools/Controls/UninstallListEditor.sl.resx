@@ -121,7 +121,7 @@
     <value>Filtriraj seznam</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Seznami odstranjevanja (*.xml)|*.xml|Vse datoteke|*.*</value>
+    <value>Seznami odstranjevanja (*.bcul)|*.bcul|Vse datoteke|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
     <value>Naloži seznam odstranjevanja...</value>

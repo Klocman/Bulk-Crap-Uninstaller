@@ -148,7 +148,7 @@
     <value>Szűrőnév</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Eltávolítási lista (*.xml)|*.xml|Minden fájl|*.*</value>
+    <value>Eltávolítási lista (*.bcul)|*.bcul|Minden fájl|*.*</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Törlés</value>
