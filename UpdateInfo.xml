@@ -2,29 +2,22 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.9.0.0</Version>
+<Version>4.10.0.0</Version>
 <URL></URL>
-<PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
+<PageURL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases</PageURL>
 <Changes>
-Added support for scripts (custom user-created list entries)
-- Added PowerShell Script uninstaller kind
-Added Tweaks (uses the new script functionality)
-- Added Tweak filtering
-- Added disable-subscribed-content script (stop automatic app downloads)
-- Added mouse acceleration disable script
-- Added script to disable easy keys shortcuts
-- Added scripts to remove special folders from This PC
-Added Custom rules, Scripts and Tweaks section to readme
-Merged fr translation update by Thierry Delaunay and Orphée V.
-Changed default portable install dir to C:\BCUninstaller
-Don't scan Steam size if not necessary
-Improved OneDrive uninstallation to remove explorer hooks
-Improved setting save error logging
-Improved WindowsFeatureFactory fail message
-Increased default window height slightly
-Fixed crash on some Japanese systems
-Fixed crash with invalid config files
-Fixed error when scanning services with badly formatted filenames
+Scan all physical disks at the same time for applications
+Use a second thread to scan application stores
+Added color blind friendly mode
+Added "binaries" directories to program executable scanning
+Blacklist common DirectX redist directories from drive scan
+Standardized additional store app scanners - they have the same output and log format now
+Hide unavailable filters in sidebar instead of just disabling them
+Enabled tabbing in startup wizard
+Merged German translation update by Thomas W.
+Merged Slovenian translation update by Jadran Rudec
+Updated Polish translation
+... and many fixes and improvements
 </Changes>
 <Hash></Hash>
 </Update>
