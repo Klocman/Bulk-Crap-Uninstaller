@@ -270,4 +270,12 @@ Użyj pełnych ścieżek folderów, jedna ścieżka na linię. Nieprawidłowe ś
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Tryb dla daltonistów</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Skanuj napędy przenośne</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
 </root>

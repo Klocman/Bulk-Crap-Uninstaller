@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -355,7 +355,8 @@
     <value>1</value>
   </data>
   <data name="checkBoxColorblind.Text" xml:space="preserve">
-    <value>Color blind friendly mode</value>
+    <value>Color-blind mode</value>
+    <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="&gt;&gt;checkBoxColorblind.Name" xml:space="preserve">
     <value>checkBoxColorblind</value>
@@ -585,18 +586,6 @@
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
-    <value>comboBoxLanguage</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -620,18 +609,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Application language:</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -795,18 +772,6 @@
   <data name="groupBoxBackup.Text" xml:space="preserve">
     <value>Backup before leftover removal</value>
   </data>
-  <data name="&gt;&gt;groupBoxBackup.Name" xml:space="preserve">
-    <value>groupBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;groupBoxBackup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxBackup.Parent" xml:space="preserve">
-    <value>groupBoxMessages</value>
-  </data>
-  <data name="&gt;&gt;groupBoxBackup.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="directorySelectBoxBackup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -827,18 +792,6 @@
   </data>
   <data name="directorySelectBoxBackup.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Name" xml:space="preserve">
-    <value>directorySelectBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6844.2007, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
-    <value>groupBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="flowLayoutPanel9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -894,18 +847,6 @@
   <data name="flowLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Name" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Parent" xml:space="preserve">
-    <value>groupBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="radioButtonBackupAsk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -923,18 +864,6 @@
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
     <value>Always ask to create</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Name" xml:space="preserve">
-    <value>radioButtonBackupAsk</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="radioButtonBackupNever.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -954,18 +883,6 @@
   <data name="radioButtonBackupNever.Text" xml:space="preserve">
     <value>Never ask to create</value>
   </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Name" xml:space="preserve">
-    <value>radioButtonBackupNever</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="radioButtonBackupAuto.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -983,18 +900,6 @@
   </data>
   <data name="radioButtonBackupAuto.Text" xml:space="preserve">
     <value>Create automatically in directory:</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Name" xml:space="preserve">
-    <value>radioButtonBackupAuto</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1059,18 +964,6 @@
   <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>groupBoxMessages</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="checkBoxShowAllBadJunk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1088,18 +981,6 @@
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Always show junk with low confidence</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Name" xml:space="preserve">
-    <value>checkBoxShowAllBadJunk</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="checkBoxLoud.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1119,18 +1000,6 @@
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Ask to remove loud uninstallers from a quiet task</value>
   </data>
-  <data name="&gt;&gt;checkBoxLoud.Name" xml:space="preserve">
-    <value>checkBoxLoud</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="checkBoxNeverFeedback.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1148,18 +1017,6 @@
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Never ask for feedback or help</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Name" xml:space="preserve">
-    <value>checkBoxNeverFeedback</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1206,18 +1063,6 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>groupBoxMessages</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="comboBoxJunk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1229,18 +1074,6 @@
   </data>
   <data name="comboBoxJunk.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Name" xml:space="preserve">
-    <value>comboBoxJunk</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1265,18 +1098,6 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Search for junk after uninstalling</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="panel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1323,18 +1144,6 @@
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>groupBoxMessages</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="comboBoxRestore.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1346,18 +1155,6 @@
   </data>
   <data name="comboBoxRestore.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Name" xml:space="preserve">
-    <value>comboBoxRestore</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1382,18 +1179,6 @@
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Create restore point before uninstalling</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="groupBoxExternal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1476,18 +1261,6 @@
   <data name="checkBoxEnableExternal.Text" xml:space="preserve">
     <value>Enable execution of external applications</value>
   </data>
-  <data name="&gt;&gt;checkBoxEnableExternal.Name" xml:space="preserve">
-    <value>checkBoxEnableExternal</value>
-  </data>
-  <data name="&gt;&gt;checkBoxEnableExternal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxEnableExternal.Parent" xml:space="preserve">
-    <value>groupBoxExternal</value>
-  </data>
-  <data name="&gt;&gt;checkBoxEnableExternal.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1518,18 +1291,6 @@
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>groupBoxExternal</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1558,18 +1319,6 @@
     <value>You can specify commands that will run before and after uninstallation. One line equals to one command and will be executed as if you used the "Run..." dialog. 
 
 BCU will wait until the currently running command completes before executing the next one.</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -2006,18 +1755,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;propertiesSidebar1.Name" xml:space="preserve">
-    <value>propertiesSidebar1</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
-    <value>tabPageGeneral</value>
-  </data>
-  <data name="&gt;&gt;propertiesSidebar1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="groupBoxLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2039,18 +1776,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="groupBoxLanguage.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="&gt;&gt;groupBoxLanguage.Name" xml:space="preserve">
-    <value>groupBoxLanguage</value>
-  </data>
-  <data name="&gt;&gt;groupBoxLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxLanguage.Parent" xml:space="preserve">
-    <value>tabPageInterface</value>
-  </data>
-  <data name="&gt;&gt;groupBoxLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="uninstallationSettings1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2067,18 +1792,6 @@ BCU will wait until the currently running command completes before executing the
     <value>368, 337</value>
   </data>
   <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;uninstallationSettings1.Name" xml:space="preserve">
-    <value>uninstallationSettings1</value>
-  </data>
-  <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
-    <value>tabPageUninstallation</value>
-  </data>
-  <data name="&gt;&gt;uninstallationSettings1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBoxAppStores.AutoSize" type="System.Boolean, mscorlib">
@@ -2195,18 +1908,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="groupBoxAppStores.Text" xml:space="preserve">
     <value>Application stores to scan</value>
   </data>
-  <data name="&gt;&gt;groupBoxAppStores.Name" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAppStores.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAppStores.Parent" xml:space="preserve">
-    <value>tabPageDetection</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAppStores.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="labelWinUpdateInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2237,18 +1938,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
     <value>Detection of Windows Updates uses WUA, which is slow. It can take a couple of minutes to complete.</value>
   </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Name" xml:space="preserve">
-    <value>labelWinUpdateInfo</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxScanWinUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2272,18 +1961,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
     <value>Windows Update</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Name" xml:space="preserve">
-    <value>checkBoxScanWinUpdates</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="labelWinFeatureInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2315,18 +1992,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="labelWinFeatureInfo.Text" xml:space="preserve">
     <value>Detection of Windows Features uses WMI, and can be slow or even fail on some systems (usually indicating system corruption).</value>
   </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Name" xml:space="preserve">
-    <value>labelWinFeatureInfo</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="checkBoxScanWinFeatures.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2350,18 +2015,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Windows Features</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Name" xml:space="preserve">
-    <value>checkBoxScanWinFeatures</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="checkBoxScanStoreApps.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2387,18 +2040,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
     <value>Windows Store Apps</value>
   </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Name" xml:space="preserve">
-    <value>checkBoxScanStoreApps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="checkBoxScanSteam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2422,18 +2063,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Name" xml:space="preserve">
-    <value>checkBoxScanSteam</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="checkBoxOculus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2459,18 +2088,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="checkBoxOculus.Text" xml:space="preserve">
     <value>Oculus Store</value>
   </data>
-  <data name="&gt;&gt;checkBoxOculus.Name" xml:space="preserve">
-    <value>checkBoxOculus</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="checkBoxChoco.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2494,18 +2111,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Name" xml:space="preserve">
-    <value>checkBoxChoco</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2539,18 +2144,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Search for applications in...</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>tabPageDetection</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="flowLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2606,18 +2199,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxScanRegistry.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2635,18 +2216,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
     <value>Registry (recommended to leave enabled)</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Name" xml:space="preserve">
-    <value>checkBoxScanRegistry</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="checkBoxScanDrives.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2666,18 +2235,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="checkBoxScanDrives.Text" xml:space="preserve">
     <value>Drives (detects unregistered apps)</value>
   </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Name" xml:space="preserve">
-    <value>checkBoxScanDrives</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="checkBoxPreDefined.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2695,18 +2252,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxPreDefined.Text" xml:space="preserve">
     <value>Based on pre-defined rules</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Name" xml:space="preserve">
-    <value>checkBoxPreDefined</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="groupBoxProgramFolders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2777,18 +2322,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="groupBoxProgramFolders.Text" xml:space="preserve">
     <value>Program installation folders</value>
   </data>
-  <data name="&gt;&gt;groupBoxProgramFolders.Name" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;groupBoxProgramFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxProgramFolders.Parent" xml:space="preserve">
-    <value>tabPageFolders</value>
-  </data>
-  <data name="&gt;&gt;groupBoxProgramFolders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="textBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2803,18 +2336,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Name" xml:space="preserve">
-    <value>textBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="checkBoxRemovable.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2839,18 +2360,7 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
     <value>Scan removable drives</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Name" xml:space="preserve">
-    <value>checkBoxRemovable</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2875,18 +2385,6 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Try to detect custom installation folders automatically</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Name" xml:space="preserve">
-    <value>checkBoxAutoInstallFolderDetect</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="labelProgramFolders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2922,18 +2420,6 @@ The default Windows folders are always scanned, you do not need to include them 
 
 Use full directory paths, one path per line. Invalid paths and non-existing directories will be ignored.</value>
   </data>
-  <data name="&gt;&gt;labelProgramFolders.Name" xml:space="preserve">
-    <value>labelProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -2958,12 +2444,6 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -2991,4 +2471,10 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

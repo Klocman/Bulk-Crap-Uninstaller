@@ -155,6 +155,9 @@
     <EmbeddedResource Include="Forms\MainWindow.cs.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainWindow.de.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.fr.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

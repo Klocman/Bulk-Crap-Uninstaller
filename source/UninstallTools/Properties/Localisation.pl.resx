@@ -571,4 +571,7 @@
   <data name="IsWebBrowser" xml:space="preserve">
     <value>Przeglądarka internetowa</value>
   </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>Skrypt PowerShell</value>
+  </data>
 </root>

@@ -273,5 +273,6 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
     <value>Scanner les lecteurs amovibles</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
 </root>

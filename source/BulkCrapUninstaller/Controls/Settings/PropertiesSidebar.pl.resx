@@ -193,4 +193,13 @@ Grupowanie większości kolumn używa inteligentnych filtrów.</value>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Pokaż funkcje systemu</value>
   </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Zaznacz specjalne</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Użyj kolorów do rozróżniania specjalnych aplikacji, na przykład aplikacji ze sklepu Windows i Funkcji systemu Windows.</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Pokaż usprawnienia</value>
+  </data>
 </root>

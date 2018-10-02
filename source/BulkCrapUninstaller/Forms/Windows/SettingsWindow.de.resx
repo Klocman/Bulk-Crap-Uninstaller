@@ -267,6 +267,7 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
     <value>Überprüfe Wechseldatenträger</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Automatischer Versuch benutzerdefinierte Installation zu finden</value>

@@ -122,6 +122,9 @@
     <EmbeddedResource Include="TargetList.cs.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TargetList.de.resx">
+      <DependentUpon>TargetList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TargetList.es.resx">
       <DependentUpon>TargetList.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +156,9 @@
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.cs.resx">
+      <DependentUpon>UninstallSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstallSelection.de.resx">
       <DependentUpon>UninstallSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstallSelection.es.resx">

@@ -573,4 +573,7 @@
   <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Szybkie filtry</value>
   </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pokaż usprawnienia</value>
+  </data>
 </root>

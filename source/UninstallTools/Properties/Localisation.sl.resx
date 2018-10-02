@@ -560,7 +560,7 @@
   </data>
   <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
     <value>Odstrani v Chocolatey</value>
-    <comment>Prikazano v oknu z rezultati smetja</comment>
+    <comment>Shown in junk results window</comment>
   </data>
   <data name="HasStartupEntries" xml:space="preserve">
     <value>Lahko se zažene samodejno</value>

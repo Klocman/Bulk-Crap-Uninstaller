@@ -477,6 +477,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.de.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.es.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.fr.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
@@ -968,6 +971,9 @@
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.cs.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.de.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.es.resx">
