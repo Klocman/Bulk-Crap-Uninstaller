@@ -4,7 +4,7 @@
 <Update>
 <Version>4.10.0.0</Version>
 <URL></URL>
-<PageURL>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases</PageURL>
+<PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
 Scan all physical disks at the same time for applications
 Use a second thread to scan application stores
