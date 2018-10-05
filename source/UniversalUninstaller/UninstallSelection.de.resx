@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelMessage.Text" xml:space="preserve">
+    <value>Bitte wählen Sie, welche Dateien entfernt werden sollen. Sie können auf ein beliebiges Objekt doppelklicken, um es im Explorer anzuzeigen. Um den vollständigen Pfad anzuzeigen, bewegen Sie den Mauszeiger über eines der Elemente. Warnung: Löschen Sie nur Dateien, von denen Sie wissen, dass sie nicht benötigt werden.</value>
+  </data>
 </root>

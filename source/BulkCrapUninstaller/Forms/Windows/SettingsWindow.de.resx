@@ -275,4 +275,8 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Netzwerk</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Farbblinden Einstellung</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
 </root>

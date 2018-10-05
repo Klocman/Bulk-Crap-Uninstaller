@@ -186,7 +186,7 @@ und die Leertaste drücken.</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Anzeige von Anwendungen, die über keine registrierten Uninstaller verfügen. 
-Sie bleiben den meisten Uninstall-Programmen verborgen, benöteigen aber dennoch Plattenplatz. Nicht registrierte Elemente werden rot dargestellt.
+Sie bleiben den meisten Uninstall-Programmen verborgen, benötigen aber dennoch Plattenplatz. Nicht registrierte Elemente werden rot dargestellt.
 
 Achtung: Vor dem Entfernen dieser Anwendungen bitte genau überprüfen, ob sie nicht doch noch beötigt werden.</value>
   </data>

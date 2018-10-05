@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Wählen Sie ein Fenster aus</value>
+    <value>Wähle ein Fenster aus</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Wählen Sie einen Installationsordner oder Programmdateien aus</value>
+    <value>Wähle einen Installationsordner oder Programmdateien aus</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Finde und deinstalliere ein Programm auf Grund seiner Fenster, seiner Shortcuts, seines Installierungsordners oder seiner .exe Datei</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Bemerkung: Stellen Sie sicher, dass sich alle ausgewählten Dateien im Installationsverzeichnis der Anwendung befinden.                                                Sie können ein Verzeichnis auswählen, das mehrere Anwendungen enthält, um alle zu deinstallieren.</value>
+    <value>Bemerkung: Stelle sicher, dass sich alle ausgewählten Dateien im Installationsverzeichnis der Anwendung befinden.                                                Du kannst ein Verzeichnis auswählen, das mehrere Anwendungen enthält, um alle zu deinstallieren.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Beende ein Programm</value>

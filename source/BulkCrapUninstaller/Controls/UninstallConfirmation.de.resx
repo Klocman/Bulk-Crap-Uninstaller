@@ -145,6 +145,6 @@
     <value>Bestätigung der Deinstallierung</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Die erste Sortierung beruht auf deine Uninstall Optionen, kann aber durch Ziehen der Items angepasst werden. Bemerkung: BCU kann die Reihenfolge ändern wenn gleichzeitiges Deinstallieren angeklickt ist.</value>
+    <value>Die erste Sortierung beruht auf deinen Uninstall Optionen, kann aber durch Ziehen der Items angepasst werden. Bemerkung: BCU kann die Reihenfolge ändern wenn gleichzeitiges Deinstallieren angeklickt ist.</value>
   </data>
 </root>

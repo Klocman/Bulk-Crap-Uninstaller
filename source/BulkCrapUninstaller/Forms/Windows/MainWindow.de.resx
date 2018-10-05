@@ -523,7 +523,7 @@
     <value>Deinstalliere aus Ordner</value>
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Installiere .NET v3.5 (für weitere funktionen)</value>
+    <value>Installiere .NET v3.5 (für weitere Funktionen)</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Öffne "Systemwiederherstellung"</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
     <value>Starte Disk Cleanup</value>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>XML Dateien|*.xml</value>
   </data>
 </root>

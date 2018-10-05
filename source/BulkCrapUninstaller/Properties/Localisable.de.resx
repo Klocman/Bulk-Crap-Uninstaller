@@ -163,7 +163,7 @@ Fehlerdetails:
     <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
-    <value>Sicherung der Registry erstellen, bevor Sie fortfahren?</value>
+    <value>Möchten Sie eine Sicherung der Registry erstellen, bevor Sie fortfahren?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
     <value>Sie können alle Änderungen zurücksetzen, in dem Sie später darauf doppelklicken.
@@ -177,7 +177,7 @@ Dateien und Verzeichnisse werden in den Papierkorb veschoben, von wo Sie sie wie
     <value>Sie müssen nur einen Eintrag für diese Aktion auswählen</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>Genau einen Uninstaller aus der Liste auswählen. Bei Verwendung von Checkboxen, vor Ausführung überprüfen!</value>
+    <value>Einen bestimmten Uninstaller aus der Liste auswählen. Bei Verwendung von Checkboxen, vor Ausführung überprüfen!</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>Suche nach Updates</value>
@@ -189,7 +189,7 @@ Dateien und Verzeichnisse werden in den Papierkorb veschoben, von wo Sie sie wie
     <value>Keine Verbindung zum Internet. Es sind keine Netzwerke verfügbar.</value>
   </data>
   <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
-    <value>Stellen Sie sicher, dass das Netzwerkkabel angeschlossen ist. Bei Verwendung von Wi-Fi achten Sie auf gute Signalstärke.</value>
+    <value>Stellen Sie sicher, dass das Netzwerkkabel angeschlossen ist. Bei Verwendung von Wi-Fi achten Sie auf eine gute Signalstärke.</value>
   </data>
   <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
     <value>Feedback senden</value>
@@ -320,7 +320,7 @@ Von Zeit zu Zeit sollten Sie kontrollieren, ob nicht einer der Uninstaller abges
     <value>Nach durchgeführter Deinstallation nach Programmresten suchen?</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
-    <value>Hinweis: dieses Feature ist nur für erfahrene Anwender, die verstehen, wie es funktioniert. Es ist nicht erforderlich, diese Dateien zu entfernen, weil sie die Systemleistung nicht bedeutend   beeinträchtigen</value>
+    <value>Hinweis: dieses Feature ist nur für erfahrene Anwender, die verstehen, wie es funktioniert. Es ist nicht erforderlich, diese Dateien zu entfernen, weil sie die Systemleistung nicht bedeutend beeinträchtigen</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
     <value>Keine Programm-Rückstände gefunden</value>
@@ -448,7 +448,7 @@ Möchten Sie für diese Elemente die Standard Uninstaller verwenden oder sollen 
     <value>Standardeinstellungen wiederherstellen</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
-    <value>Alle Einstellungen werden dauerhaft gelöscht. BCUninstaller  neu starten, um diesen Vorgang zu beenden.</value>
+    <value>Alle Einstellungen werden dauerhaft gelöscht. BCUninstaller neu starten, um diesen Vorgang zu beenden.</value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
     <value>Deinstallations-Liste öffnen</value>

@@ -465,4 +465,107 @@
   <data name="IsWebBrowser" xml:space="preserve">
     <value>Ist ein Web Browser</value>
   </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Durchsuche installierte MSI Produkte...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Anwendungens GUIDs {0} gefunden</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Durchsuche Registry nach Uninstallern...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Registrierungsschlüssel sammeln</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Ausführen {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Fehlende Deinstallationsinformationen werden generiert ...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Laufwerke nach Anwendungen scannen ...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Nach Anwendungsvorlagen suchen</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Suche nach Steam Anwendungen</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Suche nach Windows Store Anwendungen</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Suche nach Windows Eigenschaften</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Zusammenführen gefundener Anwendungen ...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Zusammenführen von Anwendungen aus Store</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Anwendungen von Laufwerken zusammenführen</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Fehlende Informationen erzeugen ...</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Benutzer Unterstützung</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Windows Fehlerberichterstattung melden.</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Junk-Scanner einrichten ...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Anwendungs Kompatibilität</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID Klassen</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Deinstallationsprogramm-Referenz</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Standort des Deinstallationsprogramms</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Kurzbefehl</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Audio policy Einstellungen</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Ereignisprotokoll erzeugen</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Spur Information</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Liste der Insatllierten Ordner</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Suche nach Chocolatey Paketen</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Deinstallation durch Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Besitzt Autostarteintrag</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Suche nach Starteinträgen</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus Anwendungen</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell script</value>
+  </data>
 </root>

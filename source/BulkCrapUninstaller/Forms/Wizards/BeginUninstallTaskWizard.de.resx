@@ -117,4 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1/6</value>
+  </data>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Verwandte Anwendungen, die Sie möglicherweise deinstallieren möchten</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Verwandt</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bestätigen Sie, dass alles, was unten aufgeführt ist, sicher deinstalliert werden kann</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Einige Anwendungen müssen geschlossen werden, bevor sie deinstalliert werden können</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Laufende Programme</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Wiederherstellungspunkt vor dem Deinstallieren erzeugen</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Sie können einen Systemwiederherstellungspunkt für die Backup-Registrierung, einigen Einstellungen und Dateien erstellen. Es wird empfohlen, vor dem Entfernen von Treibern und wichtigen Systemanwendungen einen Wiederherstellungspunkt zu erstellen.</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Achtung: Die Systemwiederherstellung muss aktiviert sein, damit dies funktioniert</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Einen neuen Wiederherstellungspunkt setzen</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ändere Uninstall Einstellungen</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Anderes / Verschiedenes</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Die gleichzeitige Deinstallation ist aktiviert</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Die Installation wird "still" sein</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Wiederherstellungspunkt wurde erzeugt</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Dateien werden weiterhin von laufenden Prozessen verwendet</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Geschätzte Gesamtgröße</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Anwendungen zum deinstallieren</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>STARTE DEINSTALLATION</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Bitte stellen Sie sicher, dass die folgenden Informationen korrekt sind, bevor Sie mit der Deinstallation beginnen. Das ist die letzte Chance</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Starte einen neuen Deinstallationstask</value>
+  </data>
 </root>

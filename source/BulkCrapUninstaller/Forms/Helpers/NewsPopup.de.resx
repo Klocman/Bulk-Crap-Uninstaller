@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label3.Text" xml:space="preserve">
-    <value>Spenden helfen die Weiterentwicklung dieses Projektes wie z.B. Zertifikate, Hosting und andere Keinigkeiten</value>
+    <value>Spenden helfen bei der Weiterentwicklung dieses Projektes wie z.B. Zertifikate, Hosting und andere Keinigkeiten</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>Versionshinweise und Änderungen</value>
@@ -142,6 +142,6 @@
     <value>Spende (PayPal, Bitcoin, Steam Geschenke)</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Um den Dialog zu schließen, klicke irgendwo hin</value>
+    <value>Um den Dialog zu schließen, klicke in diesem Fenster irgendwo hin</value>
   </data>
 </root>
