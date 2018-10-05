@@ -739,6 +739,15 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/CONTRIBUTING.md.
+        /// </summary>
+        internal static string TranslateLink {
+            get {
+                return ResourceManager.GetString("TranslateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://twitter.com/intent/tweet?text=Check+out+this+cool+uninstaller+that+I+found!+sourceforge.net/projects/bulk-crap-uninstaller/.
         /// </summary>
         internal static string TwitterLink {

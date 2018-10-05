@@ -64,7 +64,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
-            MainWindow.OpenUrls(new[] { new Uri(Resources.SubmitFeedbackLink) });
+            MainWindow.OpenUrls(new[] { new Uri(Resources.TranslateLink) });
         }
 
         private void buttonDonate_Click(object sender, EventArgs e)
