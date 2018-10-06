@@ -206,10 +206,10 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
     <value>Chocolatey</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
-    <value>Immer Fragen zum Erstellen</value>
+    <value>Immer Fragen beim Erstellen</value>
   </data>
   <data name="radioButtonBackupNever.Text" xml:space="preserve">
-    <value>Niemals Fragen zum Erstellen</value>
+    <value>Niemals Fragen beim Erstellen</value>
   </data>
   <data name="radioButtonBackupAuto.Text" xml:space="preserve">
     <value>Erzeuge automatisch im Verzeichnis:</value>
@@ -270,7 +270,7 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>Automatischer Versuch benutzerdefinierte Installation zu finden</value>
+    <value>Automatischer Versuch benutzerdefinierte Installallierte Ordner zu finden</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Netzwerk</value>

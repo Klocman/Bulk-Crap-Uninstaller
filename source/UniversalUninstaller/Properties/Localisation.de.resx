@@ -130,4 +130,7 @@
     <value>Lösche "{0}"</value>
     <comment>{0} is the name of application/folder to delete</comment>
   </data>
+  <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
+    <value>Ungültige Anzahl von Werten. Geben sie den gesammten Verzeichnis Pfad ein oder geben sie optional /q für eine stille Deinstallation ein. </value>
+  </data>
 </root>

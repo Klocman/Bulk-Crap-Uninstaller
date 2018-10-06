@@ -203,7 +203,7 @@
 These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
   </data>
   <data name="Auto_CancelButtons" xml:space="preserve">
-    <value>Wiederufen | Abbruch | Zurück</value>
+    <value>Wiederrufen | Abbruch | Zurück</value>
     <comment>Used to select buttons to automatically press when silently uninstallng some programs.
 These are texts displayed on buttons that you never want to press.
 Separated by |</comment>

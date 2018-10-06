@@ -547,7 +547,7 @@
     <value>Spur Information</value>
   </data>
   <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
-    <value>Liste der Insatllierten Ordner</value>
+    <value>Liste der Installierten Ordner</value>
   </data>
   <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
     <value>Suche nach Chocolatey Paketen</value>
@@ -567,5 +567,11 @@
   </data>
   <data name="UninstallerType_PowerShell" xml:space="preserve">
     <value>PowerShell script</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Gruppierung von Dateien</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Überprüfe Anwendungs Store</value>
   </data>
 </root>
