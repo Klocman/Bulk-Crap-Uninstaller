@@ -1,3 +1,8 @@
+/*
+    Copyright (c) 2018 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+*/
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,7 +26,7 @@ namespace UninstallTools.Factory
             })) return process?.StandardOutput.ReadToEnd();
         }
 
-        public static IEnumerable<Dictionary<string, string>> ExtractAppDataSetsFromHelperOutput(string helperOutput)
+        internal static IEnumerable<Dictionary<string, string>> ExtractAppDataSetsFromHelperOutput(string helperOutput)
         {
             ICollection<string> allParts = helperOutput.SplitNewlines(StringSplitOptions.None);
             while (allParts.Count > 0)

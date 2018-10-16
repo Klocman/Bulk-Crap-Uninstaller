@@ -38,11 +38,7 @@ namespace UninstallTools
         private string _modifyPath;
         private string _displayIcon;
         private string _uninstallString;
-
-        internal ApplicationUninstallerEntry()
-        {
-        }
-
+        
         /// <summary>
         /// Junk specified during creation of the entry that would not be detected afterwards. It's added to the results during junk scan.
         /// </summary>

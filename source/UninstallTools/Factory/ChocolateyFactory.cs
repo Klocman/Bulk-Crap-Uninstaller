@@ -34,18 +34,7 @@ namespace UninstallTools.Factory
                 return _chocoIsAvailable.Value;
             }
         }
-
-        private static string StartProcessAndReadOutput(string filename, string args)
-        {
-            using (var process = Process.Start(new ProcessStartInfo(filename, args)
-            {
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = false,
-                CreateNoWindow = true,
-            })) return process?.StandardOutput.ReadToEnd();
-        }
-
+        
         private static void GetChocoInfo()
         {
             try
@@ -53,7 +42,7 @@ namespace UninstallTools.Factory
                 var chocoPath = PathTools.GetFullPathOfExecutable("choco.exe");
                 if (string.IsNullOrEmpty(chocoPath)) return;
 
-                var result = StartProcessAndReadOutput(chocoPath, string.Empty);
+                var result = FactoryTools.StartProcessAndReadOutput(chocoPath, string.Empty);
                 if (result.StartsWith("Chocolatey", StringComparison.Ordinal))
                 {
                     _chocoLocation = chocoPath;
@@ -72,7 +61,7 @@ namespace UninstallTools.Factory
         {
             if (!ChocoIsAvailable) yield break;
 
-            var result = StartProcessAndReadOutput(ChocoLocation, @"list -l -nocolor -y -r");
+            var result = FactoryTools.StartProcessAndReadOutput(ChocoLocation, @"list -l -nocolor -y -r");
 
             if (string.IsNullOrEmpty(result)) yield break;
 
@@ -86,7 +75,7 @@ namespace UninstallTools.Factory
 
             foreach (var appName in appNames)
             {
-                var info = StartProcessAndReadOutput(ChocoLocation, "info -l -nocolor -y -v " + appName.name);
+                var info = FactoryTools.StartProcessAndReadOutput(ChocoLocation, "info -l -nocolor -y -v " + appName.name);
                 var kvps = ExtractPackageInformation(info);
                 if (kvps.Count == 0) continue;
 
