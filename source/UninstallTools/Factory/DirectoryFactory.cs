@@ -302,10 +302,6 @@ namespace UninstallTools.Factory
 
                 tempEntry.IsRegistered = false;
                 tempEntry.IsOrphaned = true;
-
-                tempEntry.UninstallerKind = tempEntry.UninstallPossible
-                    ? UninstallerTypeAdder.GetUninstallerType(tempEntry.UninstallString)
-                    : UninstallerType.SimpleDelete;
             }
 
             return results;

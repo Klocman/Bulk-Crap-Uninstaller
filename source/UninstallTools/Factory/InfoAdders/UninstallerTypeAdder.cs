@@ -22,14 +22,25 @@ namespace UninstallTools.Factory.InfoAdders
             if (target.UninstallerKind != UninstallerType.Unknown)
                 return;
 
-            var s = target.UninstallString ?? target.QuietUninstallString;
-            if (!string.IsNullOrEmpty(s))
-                target.UninstallerKind = GetUninstallerType(s);
+            var uninstallString = !string.IsNullOrEmpty(target.UninstallString) 
+                ? target.UninstallString 
+                : target.QuietUninstallString;
+
+            if (!string.IsNullOrEmpty(uninstallString))
+            {
+                target.UninstallerKind = GetUninstallerType(uninstallString);
+            }
+            else if (!string.IsNullOrEmpty(target.InstallLocation))
+            {
+                // We don't have a valid uninstaller, so tell simple delete adder to do its job and make our own
+                target.UninstallerKind = UninstallerType.SimpleDelete;
+            }
         }
 
         public string[] RequiredValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.UninstallString),
-            nameof(ApplicationUninstallerEntry.QuietUninstallString)
+            nameof(ApplicationUninstallerEntry.QuietUninstallString),
+            nameof(ApplicationUninstallerEntry.InstallLocation)
         };
         public bool RequiresAllValues { get; } = false;
         public bool AlwaysRun { get; } = false;
@@ -37,12 +48,14 @@ namespace UninstallTools.Factory.InfoAdders
         public string[] CanProduceValueNames { get; } = {
             nameof(ApplicationUninstallerEntry.UninstallerKind)
         };
-        public InfoAdderPriority Priority { get; } = InfoAdderPriority.Normal;
+
+        // Let other adders run first in case they add uninstall strings
+        public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;
 
         public static UninstallerType GetUninstallerType(string uninstallString)
         {
-            // Detect MSI installer based on the uninstall string
-            //"C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
+            // Detect MSI / Windows installer based on the uninstall string
+            // e.g. "C:\ProgramData\Package Cache\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\vcredist_x86.exe"  /uninstall
             if (ApplicationEntryTools.PathPointsToMsiExec(uninstallString) || uninstallString.ContainsAll(
                 new[] { @"\Package Cache\{", @"}\", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 return UninstallerType.Msiexec;
@@ -59,9 +72,9 @@ namespace UninstallTools.Factory.InfoAdders
                 uninstallString.Contains(".ps1", StringComparison.OrdinalIgnoreCase))
                 return UninstallerType.PowerShell;
 
-            ProcessStartCommand ps;
-            if (ProcessStartCommand.TryParse(uninstallString, out ps) && Path.IsPathRooted(ps.FileName) &&
-                File.Exists(ps.FileName))
+            if (ProcessStartCommand.TryParse(uninstallString, out var ps) 
+                && Path.IsPathRooted(ps.FileName) 
+                && File.Exists(ps.FileName))
             {
                 try
                 {
@@ -73,14 +86,14 @@ namespace UninstallTools.Factory.InfoAdders
                         if (File.Exists(ps.FileName.Substring(0, ps.FileName.Length - 3) + "dat"))
                             return UninstallerType.InnoSetup;
                     }
-                    
-                    // Detect NSIS Nullsoft.NSIS
+
+                    // Detect NSIS Nullsoft.NSIS. Slow, but there's no other way than to scan the file
                     using (var reader = new StreamReader(ps.FileName, Encoding.ASCII))
                     {
                         string line;
                         while ((line = reader.ReadLine()) != null)
                         {
-                            if(line.Contains("Nullsoft", StringComparison.Ordinal))
+                            if (line.Contains("Nullsoft", StringComparison.Ordinal))
                                 return UninstallerType.Nsis;
                         }
                     }
