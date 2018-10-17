@@ -66,63 +66,63 @@ namespace UninstallTools.Factory.InfoAdders
             var valueIsDefaultCache = new Dictionary<string, bool>();
 
             // Checks if the value is default, buffering the result
-            Func<string, bool> getIsValDefault = key =>
+            bool IsValueDefault(string key)
             {
-                bool valIsDefault;
-                if (!valueIsDefaultCache.TryGetValue(key, out valIsDefault))
+                if (valueIsDefaultCache.TryGetValue(key, out var valIsDefault))
+                    return valIsDefault;
+
+                if (TargetProperties.TryGetValue(key, out var property))
                 {
-                    CompiledPropertyInfo<ApplicationUninstallerEntry> property;
-                    // If we can't check if the value is default, assume that it is to be safe
-                    if (!TargetProperties.TryGetValue(key, out property)) return true;
-                    
-                    valIsDefault = Equals(property.CompiledGet(target),property.Tag);
+                    valIsDefault = Equals(property.CompiledGet(target), property.Tag);
                     valueIsDefaultCache.Add(key, valIsDefault);
+
+                    return valIsDefault;
                 }
 
-                return valIsDefault;
-            };
+                // If we can't check if the value is default, assume that it is to be safe
+                return true;
+            }
 
-            bool anyRan;
-            do
+            for (var index = 0; index < adders.Count; index++)
             {
-                anyRan = false;
-                foreach (var infoAdder in adders.ToList())
+                var infoAdder = adders[index];
+                var requirements = infoAdder.RequiredValueNames;
+
+                //TODO prioritize ones with all values existing from same priority tier?
+                if (requirements.Any())
                 {
-                    var requirements = infoAdder.RequiredValueNames;
-
-                    //TODO prioritize ones with all values existing from same priority tier?
-                    // Basically Any / All
-
-                    // Always run the adder if it has no requirements
-                    if (requirements.Any())
+                    if (infoAdder.RequiresAllValues)
                     {
-                        if (infoAdder.RequiresAllValues)
-                        {
-                            if (infoAdder.RequiredValueNames.Any(x => getIsValDefault(x)))
-                                continue;
-                        }
-                        else
-                        {
-                            if (infoAdder.RequiredValueNames.All(x => getIsValDefault(x)))
-                                continue;
-                        }
+                        if (infoAdder.RequiredValueNames.Any(IsValueDefault))
+                            continue;
                     }
-
-                    // Only run the adder if it can actually fill in any missing values
-                    if (!infoAdder.AlwaysRun && !infoAdder.CanProduceValueNames.Any(getIsValDefault))
-                        continue;
-
-                    infoAdder.AddMissingInformation(target);
-
-                    // Remove items that might have changed from cache
-                    foreach (var valueName in infoAdder.CanProduceValueNames)
-                        valueIsDefaultCache.Remove(valueName);
-
-                    adders.Remove(infoAdder);
-
-                    anyRan = true;
+                    else
+                    {
+                        if (infoAdder.RequiredValueNames.All(IsValueDefault))
+                            continue;
+                    }
                 }
-            } while (anyRan);
+
+                // Only run the adder if it can actually fill in any missing values
+                if (!infoAdder.AlwaysRun && !infoAdder.CanProduceValueNames.Any(IsValueDefault))
+                    continue;
+
+                infoAdder.AddMissingInformation(target);
+
+                adders.Remove(infoAdder);
+
+                // Remove items that might have changed from cache so they get recalculated
+                foreach (var valueName in infoAdder.CanProduceValueNames)
+                {
+                    valueIsDefaultCache.Remove(valueName);
+
+                    foreach (var relatedValueName in ApplicationUninstallerEntry.PropertyRelationships[valueName])
+                        valueIsDefaultCache.Remove(relatedValueName);
+                }
+
+                // Retry all adders from the start if any of them succeeded
+                index = -1;
+            }
         }
 
         public void TryAddFieldInformation(ApplicationUninstallerEntry target, string targetValueName)
@@ -150,7 +150,7 @@ namespace UninstallTools.Factory.InfoAdders
             {
                 baseEntry.StartupEntries = baseEntry.StartupEntries.Concat(entryToMerge.StartupEntries);
             }
-            
+
             foreach (var property in TargetProperties.Values)
             {
                 // If source has a default (not set) value for this property, skip it
@@ -159,7 +159,7 @@ namespace UninstallTools.Factory.InfoAdders
 
                 // Copy new value to base entry if base doesn't have the value set, or if the values are strings and merged value is longer
                 var oldValue = property.CompiledGet(baseEntry);
-                if (Equals(oldValue, property.Tag) || 
+                if (Equals(oldValue, property.Tag) ||
                     newValue is string sNew && oldValue is string sOld && sNew.Length > sOld.Length)
                 {
                     property.CompiledSet(baseEntry, newValue);

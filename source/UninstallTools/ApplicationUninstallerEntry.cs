@@ -26,7 +26,35 @@ namespace UninstallTools
 {
     public class ApplicationUninstallerEntry
     {
-        public static readonly IEnumerable<string> CompanyNameEndTrimmers =
+        /// <summary>
+        /// List of properties that migh have changed by updating the key property
+        /// IMPORTANT: Keep up to date!
+        /// </summary>
+        internal static readonly ILookup<string, string> PropertyRelationships = new Dictionary<string, List<string>>
+        {
+            {
+                nameof(UninstallString),
+                new List<string>
+                {
+                    nameof(UninstallerLocation),
+                    nameof(UninstallerFullFilename)
+                }
+            },
+            {
+                nameof(UninstallerFullFilename),
+                new List<string> {nameof(UninstallerLocation)}
+            },
+            {
+                nameof(RawDisplayName),
+                new List<string> {nameof(DisplayName)}
+            },
+            {
+                nameof(RegistryKeyName),
+                new List<string> {nameof(RatingId)}
+            },
+        }.SelectMany(x => x.Value.Select(y => new { x.Key, Value = y })).ToLookup(x => x.Key, x => x.Value);
+
+        internal static readonly IEnumerable<string> CompanyNameEndTrimmers =
             new[] { "corp", "corporation", "limited", "inc", "incorporated" };
 
         private X509Certificate2 _certificate;
@@ -38,7 +66,8 @@ namespace UninstallTools
         private string _modifyPath;
         private string _displayIcon;
         private string _uninstallString;
-        
+        private string _uninstallerFullFilename;
+
         /// <summary>
         /// Junk specified during creation of the entry that would not be detected afterwards. It's added to the results during junk scan.
         /// </summary>
@@ -245,7 +274,17 @@ namespace UninstallTools
 
         [ComparisonTarget]
         [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerFullFilename))]
-        public string UninstallerFullFilename { get; set; }
+        public string UninstallerFullFilename
+        {
+            get { return _uninstallerFullFilename; }
+            set
+            {
+                _uninstallerFullFilename = value;
+
+                UninstallerLocation = ApplicationEntryTools.ExtractDirectoryName(UninstallerFullFilename)
+                                      ?? UninstallerLocation ?? string.Empty;
+            }
+        }
 
         [ComparisonTarget]
         [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerKind))]
@@ -266,11 +305,8 @@ namespace UninstallTools
             {
                 _uninstallString = value;
 
-                UninstallerFullFilename = ApplicationEntryTools.ExtractFullFilename(value) 
+                UninstallerFullFilename = ApplicationEntryTools.ExtractFullFilename(value)
                     ?? UninstallerFullFilename ?? string.Empty;
-
-                UninstallerLocation = ApplicationEntryTools.ExtractDirectoryName(UninstallerFullFilename) 
-                    ?? UninstallerLocation ?? string.Empty;
             }
         }
 
