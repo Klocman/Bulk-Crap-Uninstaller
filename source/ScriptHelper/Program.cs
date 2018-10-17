@@ -17,7 +17,7 @@ namespace ScriptHelper
         private static int Main(string[] args)
         {
             if (args.Length != 0)
-                return (int)ReturnValue.InvalidArgumentCode;
+                return (int) ReturnValue.InvalidArgumentCode;
 
             HelperTools.SetupEncoding();
 
@@ -29,7 +29,7 @@ namespace ScriptHelper
                     Console.WriteLine(HelperTools.KeyValueListToConsoleOutput(converted));
                 }
 
-                return (int)ReturnValue.OkCode;
+                return (int) ReturnValue.OkCode;
             }
             catch (IOException ex)
             {
@@ -39,7 +39,7 @@ namespace ScriptHelper
             catch (Exception ex)
             {
                 LogWriter.WriteExceptionToLog(ex);
-                return (int)ReturnValue.FunctionFailedCode;
+                return (int) ReturnValue.FunctionFailedCode;
             }
         }
     }
