@@ -141,29 +141,32 @@ namespace UninstallTools.Factory.InfoAdders
         /// <summary>
         /// Copy missing property values
         /// </summary>
-        /// <param name="target">Copy values to this object</param>
-        /// <param name="source">Copy from this object</param>
-        public void CopyMissingInformation(ApplicationUninstallerEntry target, ApplicationUninstallerEntry source)
+        /// <param name="baseEntry">Copy values to this object</param>
+        /// <param name="entryToMerge">Copy from this object</param>
+        public void CopyMissingInformation(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry entryToMerge)
         {
-            if (target.StartupEntries != null && source.StartupEntries != null)
+            // If one of these is not null it will be merged by loop below. If both are not null they need special logic.
+            if (baseEntry.StartupEntries != null && entryToMerge.StartupEntries != null)
             {
-                // In this case the entries will not be automatically merged
-                target.StartupEntries = target.StartupEntries.Concat(source.StartupEntries);
+                baseEntry.StartupEntries = baseEntry.StartupEntries.Concat(entryToMerge.StartupEntries);
             }
-
+            
             foreach (var property in TargetProperties.Values)
             {
-                // Skip if target has non-default value assigned to this property
-                if (!Equals(property.CompiledGet(target), property.Tag))
-                    continue;
+                // If source has a default (not set) value for this property, skip it
+                var newValue = property.CompiledGet(entryToMerge);
+                if (Equals(newValue, property.Tag)) continue;
 
-                // If source has a non-default value for this property, copy it to target
-                var newValue = property.CompiledGet(source);
-                if (!Equals(newValue, property.Tag))
-                    property.CompiledSet(target, newValue);
+                // Copy new value to base entry if base doesn't have the value set, or if the values are strings and merged value is longer
+                var oldValue = property.CompiledGet(baseEntry);
+                if (Equals(oldValue, property.Tag) || 
+                    newValue is string sNew && oldValue is string sOld && sNew.Length > sOld.Length)
+                {
+                    property.CompiledSet(baseEntry, newValue);
+                }
             }
 
-            target.AdditionalJunk.AddRange(source.AdditionalJunk);
+            baseEntry.AdditionalJunk.AddRange(entryToMerge.AdditionalJunk);
         }
     }
 }
