@@ -68,34 +68,46 @@ namespace UninstallTools.Factory
                 kvp.Key.Close();
             }
 
-            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
-
-            var progress = 0;
-            foreach (var regKey in uninstallerRegistryKeys)
+            void WorkLogic(KeyValuePair<RegistryKey, bool> data, List<ApplicationUninstallerEntry> state)
             {
-                string name;
-                try { name = Path.GetFileName(regKey.Key.Name); }
-                catch { name = string.Empty; }
-                progressCallback(new ListGenerationProgress(progress++, uninstallerRegistryKeys.Count, string.Format(Localisation.Progress_Registry_Processing, name)));
-
                 try
                 {
-                    var entry = TryCreateFromRegistry(regKey.Key, regKey.Value);
+                    var entry = TryCreateFromRegistry(data.Key, data.Value);
                     if (entry != null)
-                        applicationUninstallers.Add(entry);
+                        state.Add(entry);
                 }
                 catch (Exception ex)
                 {
                     //Uninstaller is invalid or there is no uninstaller in the first place. Skip it to avoid problems.
-                    Debug.Fail("Failed to extract reg entry", ex.Message);
+                    Console.WriteLine($@"Failed to extract reg entry {data.Key.Name} - {ex}");
                 }
                 finally
                 {
-                    regKey.Key.Close();
+                    data.Key.Close();
                 }
             }
 
-            return applicationUninstallers;
+            var workSpreader = new ThreadedWorkSpreader<KeyValuePair<RegistryKey, bool>, List<ApplicationUninstallerEntry>>(
+                FactoryThreadedHelpers.MaxThreadsPerDrive, WorkLogic,
+                list => new List<ApplicationUninstallerEntry>(list.Count), 
+                pair =>
+                {
+                    try
+                    {
+                        return string.Format(Localisation.Progress_Registry_Processing, Path.GetFileName(pair.Key.Name));
+                    }
+                    catch
+                    {
+                        return string.Empty;
+                    }
+                });
+
+            // We are mostly reading from registry, so treat everything as on a single drive
+            var dataBuckets = new List<List<KeyValuePair<RegistryKey, bool>>>{uninstallerRegistryKeys};
+
+            workSpreader.Start(dataBuckets, progressCallback);
+
+            return workSpreader.Join().SelectMany(x => x).ToList();
         }
 
         private static string GetAboutUrl(RegistryKey uninstallerKey)
@@ -147,7 +159,7 @@ namespace UninstallTools.Factory
             // Look for a valid GUID in the path
             return GuidTools.TryExtractGuid(uninstallString, out resultGuid) ? resultGuid : Guid.Empty;
         }
-        
+
         private static string GetUninstallString(RegistryKey uninstallerKey)
         {
             return GetKeyFuzzy(uninstallerKey, RegistryNameUninstallString) ?? GetQuietUninstallString(uninstallerKey);

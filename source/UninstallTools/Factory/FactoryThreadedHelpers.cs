@@ -48,14 +48,15 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        public static void GenerateMisingInformation(List<ApplicationUninstallerEntry> entries,
-            InfoAdderManager infoAdder, List<Guid> msiProducts,
+        public static void GenerateMisingInformation(List<ApplicationUninstallerEntry> entries, 
+            InfoAdderManager infoAdder, List<Guid> msiProducts, bool skipRunLast, 
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             void WorkLogic(ApplicationUninstallerEntry entry, object state)
             {
-                infoAdder.AddMissingInformation(entry);
-                entry.IsValid = FactoryTools.CheckIsValid(entry, msiProducts);
+                infoAdder.AddMissingInformation(entry, skipRunLast);
+                if (msiProducts != null)
+                    entry.IsValid = FactoryTools.CheckIsValid(entry, msiProducts);
             }
 
             var workSpreader = new ThreadedWorkSpreader<ApplicationUninstallerEntry, object>(MaxThreadsPerDrive,

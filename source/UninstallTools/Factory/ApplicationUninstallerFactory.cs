@@ -51,6 +51,7 @@ namespace UninstallTools.Factory
                     var regProgress = new ListGenerationProgress(currentStep++, totalStepCount,
                         Localisation.Progress_Registry);
                     callback(regProgress);
+
                     var registryFactory = new RegistryFactory(msiProducts);
                     registryResults = registryFactory.GetUninstallerEntries(report =>
                     {
@@ -58,20 +59,18 @@ namespace UninstallTools.Factory
                         callback(regProgress);
                     }).ToList();
 
-                    // Fill in instal llocations for the drive search
+                    // Fill in install llocations for DirectoryFactory to improve speed and quality of results
                     if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
                         ApplyCache(registryResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
                     var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                     callback(installLocAddProgress);
-                    var installLocAddCount = 0;
-                    foreach (var result in registryResults)
-                    {
-                        installLocAddProgress.Inner = new ListGenerationProgress(installLocAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
-                        callback(installLocAddProgress);
 
-                        InfoAdder.AddMissingInformation(result, true);
-                    }
+                    FactoryThreadedHelpers.GenerateMisingInformation(registryResults, InfoAdder, null, true, report =>
+                    {
+                        installLocAddProgress.Inner = report;
+                        callback(installLocAddProgress);
+                    });
                 }
                 else
                 {
@@ -129,7 +128,7 @@ namespace UninstallTools.Factory
 
                 var infoAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GeneratingInfo);
                 callback(infoAddProgress);
-                FactoryThreadedHelpers.GenerateMisingInformation(mergedResults, InfoAdder, msiProducts, report =>
+                FactoryThreadedHelpers.GenerateMisingInformation(mergedResults, InfoAdder, msiProducts, false, report =>
                 {
                     infoAddProgress.Inner = report;
                     callback(infoAddProgress);
