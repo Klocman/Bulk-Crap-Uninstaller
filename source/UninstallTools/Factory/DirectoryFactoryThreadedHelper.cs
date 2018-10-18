@@ -135,7 +135,7 @@ namespace UninstallTools.Factory
                     output.Add(inputList.Select(x => x.x).ToList());
                 }
             }
-            catch (ManagementException ex)
+            catch (SystemException ex)
             {
                 Console.WriteLine(@"Failed to get logical disk to physical drive relationships - " + ex);
                 output.Clear();
