@@ -129,15 +129,11 @@ namespace UninstallTools.Factory
 
                 var infoAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GeneratingInfo);
                 callback(infoAddProgress);
-                var infoAddCount = 0;
-                foreach (var result in mergedResults)
+                FactoryThreadedHelpers.GenerateMisingInformation(mergedResults, InfoAdder, msiProducts, report =>
                 {
-                    infoAddProgress.Inner = new ListGenerationProgress(infoAddCount++, mergedResults.Count, result.DisplayName ?? string.Empty);
+                    infoAddProgress.Inner = report;
                     callback(infoAddProgress);
-                    
-                    InfoAdder.AddMissingInformation(result);
-                    result.IsValid = CheckIsValid(result, msiProducts);
-                }
+                });
 
                 // Cache missing information to speed up future scans
                 if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
@@ -246,30 +242,6 @@ namespace UninstallTools.Factory
                 }
             }
             Console.WriteLine($@"Cache hits: {hits}/{baseEntries.Count}");
-        }
-
-        private static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
-        {
-            if (String.IsNullOrEmpty(target.UninstallerFullFilename))
-                return false;
-
-            bool isPathRooted;
-            try
-            {
-                isPathRooted = Path.IsPathRooted(target.UninstallerFullFilename);
-            }
-            catch (ArgumentException)
-            {
-                isPathRooted = false;
-            }
-
-            if (isPathRooted && File.Exists(target.UninstallerFullFilename))
-                return true;
-
-            if (target.UninstallerKind == UninstallerType.Msiexec)
-                return msiProducts.Contains(target.BundleProviderKey);
-
-            return !isPathRooted;
         }
 
         private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)

@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using Klocman.Extensions;
+using UninstallTools.Factory.InfoAdders;
 
 namespace UninstallTools.Factory
 {
@@ -38,7 +39,7 @@ namespace UninstallTools.Factory
                 (MaxThreadsPerDrive, GetUninstallerEntriesThread, list => new List<ApplicationUninstallerEntry>(list.Count), data => data.Key.FullName);
 
             workSpreader.Start(dividedItems, progressCallback);
-            
+
             var results = new List<ApplicationUninstallerEntry>();
 
             foreach (var workerResults in workSpreader.Join())
@@ -47,12 +48,41 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        public static void GenerateMisingInformation(IReadOnlyCollection<ApplicationUninstallerEntry> entries,
+        public static void GenerateMisingInformation(List<ApplicationUninstallerEntry> entries,
+            InfoAdderManager infoAdder, List<Guid> msiProducts,
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            throw new NotImplementedException();
+            void WorkLogic(ApplicationUninstallerEntry entry, object state)
+            {
+                infoAdder.AddMissingInformation(entry);
+                entry.IsValid = FactoryTools.CheckIsValid(entry, msiProducts);
+            }
+
+            var workSpreader = new ThreadedWorkSpreader<ApplicationUninstallerEntry, object>(MaxThreadsPerDrive,
+                WorkLogic, list => null, entry => entry.DisplayName ?? entry.RatingId ?? string.Empty);
+
+            var cDrive = new DirectoryInfo(Environment.SystemDirectory).Root;
+            var dividedItems = SplitByPhysicalDrives(entries, entry =>
+            {
+                var loc = entry.InstallLocation ?? entry.UninstallerLocation;
+                if (!string.IsNullOrEmpty(loc))
+                {
+                    try
+                    {
+                        return new DirectoryInfo(loc);
+                    }
+                    catch (SystemException ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+                return cDrive;
+            });
+
+            workSpreader.Start(dividedItems, progressCallback);
+            workSpreader.Join();
         }
-        
+
         private static List<List<TData>> SplitByPhysicalDrives<TData>(List<TData> itemsToScan, Func<TData, DirectoryInfo> locationGetter)
         {
             var output = new List<List<TData>>();

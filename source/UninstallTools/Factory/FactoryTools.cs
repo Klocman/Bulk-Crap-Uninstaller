@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Klocman.Extensions;
@@ -41,6 +42,30 @@ namespace UninstallTools.Factory
                     x => x.Substring(0, x.IndexOf(":", StringComparison.Ordinal)).Trim(),
                     x => x.Substring(x.IndexOf(":", StringComparison.Ordinal) + 1).Trim());
             }
+        }
+
+        internal static bool CheckIsValid(ApplicationUninstallerEntry target, IEnumerable<Guid> msiProducts)
+        {
+            if (string.IsNullOrEmpty(target.UninstallerFullFilename))
+                return false;
+
+            bool isPathRooted;
+            try
+            {
+                isPathRooted = Path.IsPathRooted(target.UninstallerFullFilename);
+            }
+            catch (ArgumentException)
+            {
+                isPathRooted = false;
+            }
+
+            if (isPathRooted && File.Exists(target.UninstallerFullFilename))
+                return true;
+
+            if (target.UninstallerKind == UninstallerType.Msiexec)
+                return msiProducts.Contains(target.BundleProviderKey);
+
+            return !isPathRooted;
         }
     }
 }
