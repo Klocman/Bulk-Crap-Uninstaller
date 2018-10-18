@@ -132,9 +132,9 @@ namespace UninstallTools.Factory
                 var infoAddCount = 0;
                 foreach (var result in mergedResults)
                 {
-                    infoAddProgress.Inner = new ListGenerationProgress(infoAddCount++, registryResults.Count, result.DisplayName ?? string.Empty);
+                    infoAddProgress.Inner = new ListGenerationProgress(infoAddCount++, mergedResults.Count, result.DisplayName ?? string.Empty);
                     callback(infoAddProgress);
-
+                    
                     InfoAdder.AddMissingInformation(result);
                     result.IsValid = CheckIsValid(result, msiProducts);
                 }
