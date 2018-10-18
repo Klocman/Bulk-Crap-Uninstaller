@@ -35,7 +35,7 @@ namespace UninstallTools.Factory
             var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
 
             var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
-            return DirectoryFactoryThreadedHelper.ThreadedApplicationScan(progressCallback, dirsToSkip, itemsToScan);
+            return FactoryThreadedHelpers.DriveApplicationScan(progressCallback, dirsToSkip, itemsToScan);
         }
         
         public static IEnumerable<ApplicationUninstallerEntry> TryGetApplicationsFromDirectories(

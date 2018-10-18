@@ -57,7 +57,7 @@
     <Compile Include="Factory\ApplicationUninstallerFactoryCache.cs" />
     <Compile Include="Factory\ChocolateyFactory.cs" />
     <Compile Include="Factory\ConcurrentApplicationFactory.cs" />
-    <Compile Include="Factory\DirectoryFactoryThreadedHelper.cs" />
+    <Compile Include="Factory\FactoryThreadedHelpers.cs" />
     <Compile Include="Factory\FactoryTools.cs" />
     <Compile Include="Factory\InfoAdders\BasicIconGetter.cs" />
     <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
@@ -91,6 +91,7 @@
     <Compile Include="Factory\ScriptFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />
     <Compile Include="Factory\StoreAppFactory.cs" />
+    <Compile Include="ThreadedWorkSpreader.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
     <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />

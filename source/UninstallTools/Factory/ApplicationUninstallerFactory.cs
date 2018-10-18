@@ -106,7 +106,7 @@ namespace UninstallTools.Factory
                 var mergeProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
                 callback(mergeProgress);
                 var mergedResults = registryResults.ToList();
-                mergedResults = MergeResults(mergedResults, otherResults, report =>
+                MergeResults(mergedResults, otherResults, report =>
                 {
                     mergeProgress.Inner = report;
                     report.TotalCount *= 2;
@@ -114,7 +114,7 @@ namespace UninstallTools.Factory
                     callback(mergeProgress);
                 });
                 // Make sure to merge driveResults last
-                mergedResults = MergeResults(mergedResults, driveResults, report =>
+                MergeResults(mergedResults, driveResults, report =>
                 {
                     mergeProgress.Inner = report;
                     report.CurrentCount += report.TotalCount;
@@ -193,11 +193,13 @@ namespace UninstallTools.Factory
             }
         }
 
-        internal static List<ApplicationUninstallerEntry> MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
+        /// <summary>
+        /// Merge new results into the base list
+        /// </summary>
+        internal static void MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
             ICollection<ApplicationUninstallerEntry> newResults, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            // Add all of the base results straight away
-            var results = new List<ApplicationUninstallerEntry>(baseEntries);
+            var newToAdd = new List<ApplicationUninstallerEntry>();
             var progress = 0;
             foreach (var entry in newResults)
             {
@@ -219,11 +221,12 @@ namespace UninstallTools.Factory
                     continue;
                 }
 
-                // If the entry failed to match to anything, add it to the results
-                results.Add(entry);
+                // If the entry failed to match to anything, add it to the base results as new
+                newToAdd.Add(entry);
             }
 
-            return results;
+            foreach (var newEntry in newToAdd)
+                baseEntries.Add(newEntry);
         }
 
         private static void ApplyCache(ICollection<ApplicationUninstallerEntry> baseEntries, ApplicationUninstallerFactoryCache cache, InfoAdderManager infoAdder)
@@ -285,7 +288,7 @@ namespace UninstallTools.Factory
                 progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.DisplayName));
                 try
                 {
-                    otherResults = MergeResults(otherResults, kvp.GetUninstallerEntries(null).ToList(), null);
+                    MergeResults(otherResults, kvp.GetUninstallerEntries(null).ToList(), null);
                 }
                 catch (Exception ex)
                 {
