@@ -72,7 +72,8 @@ Name: "lang"; Description: "Extra Languages"; Types: full
 Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion               
 Source: "Input\BCU_manual.html"; DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme        
 Source: "Input\CleanLogs.bat"; DestDir: "{app}"; Components: main; Check: IsPortable(); Flags: ignoreversion
-Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"   
+Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"      
+Source: "Input\Resources\*"; DestDir: "{app}\Resources"; Components: main; Flags: ignoreversion recursesubdirs
 
 Source: "Input\*"; DestDir: "{app}"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat" 
                                                                    
