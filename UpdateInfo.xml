@@ -2,22 +2,19 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.10.0.0</Version>
+<Version>4.11.0.0</Version>
 <URL></URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Scan all physical disks at the same time for applications
-Use a second thread to scan application stores
-Added color blind friendly mode
-Added "binaries" directories to program executable scanning
-Blacklist common DirectX redist directories from drive scan
-Standardized additional store app scanners - they have the same output and log format now
-Hide unavailable filters in sidebar instead of just disabling them
-Enabled tabbing in startup wizard
+Added multithreading to information gathering
+Added multithreading to registry scan
+Improved application merging logic, better memory use and speed
+Improved speed of predefined application scan
+Separated Script/tweak scanner into a new helper executable
+Updated OneDrive script information, override built-in windows entry
+Updated TaskScheduler library
 Merged German translation update by Thomas W.
-Merged Slovenian translation update by Jadran Rudec
-Updated Polish translation
-... and many fixes and improvements
+... and many fixes and tweaks
 </Changes>
 <Hash></Hash>
 </Update>
