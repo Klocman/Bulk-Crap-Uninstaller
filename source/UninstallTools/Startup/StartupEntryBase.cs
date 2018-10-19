@@ -61,7 +61,7 @@ namespace UninstallTools.Startup
         ///     Combined ParentLongName and EntryLongName
         /// </summary>
         public virtual string FullLongName => ParentLongName != null && EntryLongName != null
-            ? Path.Combine(ParentLongName, EntryLongName)
+            ? PathTools.GenerousCombine(ParentLongName, EntryLongName)
             : null;
 
         /// <summary>
@@ -100,8 +100,7 @@ namespace UninstallTools.Startup
             if (string.IsNullOrEmpty(command))
                 return null;
 
-            ProcessStartCommand temp;
-            return ProcessStartCommand.TryParse(command, out temp) ? temp.FileName : null;
+            return ProcessStartCommand.TryParse(command, out var temp) ? temp.FileName : null;
         }
 
         /// <summary>
