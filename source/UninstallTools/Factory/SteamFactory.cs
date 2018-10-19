@@ -49,7 +49,7 @@ namespace UninstallTools.Factory
 
             if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
             {
-                var output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "steam");
+                var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "steam");
                 if (!string.IsNullOrEmpty(output)
                     && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
                     && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
@@ -74,7 +74,7 @@ namespace UninstallTools.Factory
             if (!SteamHelperIsAvailable)
                 yield break;
 
-            var output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "list");
+            var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "list");
             if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
                 yield break;
 
@@ -82,7 +82,7 @@ namespace UninstallTools.Factory
             {
                 if (!int.TryParse(idString, out var appId)) continue;
 
-                output = FactoryTools.StartProcessAndReadOutput(SteamHelperPath, "info " + appId.ToString("G"));
+                output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "info " + appId.ToString("G"));
 
                 if (string.IsNullOrEmpty(output)) continue;
 

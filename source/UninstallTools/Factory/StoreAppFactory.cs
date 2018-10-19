@@ -40,7 +40,7 @@ namespace UninstallTools.Factory
             if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
                 yield break;
 
-            var output = FactoryTools.StartProcessAndReadOutput(StoreAppHelperPath, "/query");
+            var output = FactoryTools.StartHelperAndReadOutput(StoreAppHelperPath, "/query");
             if (string.IsNullOrEmpty(output))
                 yield break;
 

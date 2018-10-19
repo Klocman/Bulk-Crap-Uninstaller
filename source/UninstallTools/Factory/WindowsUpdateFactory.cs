@@ -42,7 +42,7 @@ namespace UninstallTools.Factory
             if (!HelperIsAvailable)
                 yield break;
 
-            var output = FactoryTools.StartProcessAndReadOutput(HelperPath, "list");
+            var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "list");
             if (string.IsNullOrEmpty(output) || output.Trim().StartsWith("Error", StringComparison.OrdinalIgnoreCase))
                 yield break;
 

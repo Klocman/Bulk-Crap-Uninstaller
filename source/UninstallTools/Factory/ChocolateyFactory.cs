@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
@@ -42,7 +43,7 @@ namespace UninstallTools.Factory
                 var chocoPath = PathTools.GetFullPathOfExecutable("choco.exe");
                 if (string.IsNullOrEmpty(chocoPath)) return;
 
-                var result = FactoryTools.StartProcessAndReadOutput(chocoPath, string.Empty);
+                var result = StartProcessAndReadOutput(chocoPath, string.Empty);
                 if (result.StartsWith("Chocolatey", StringComparison.Ordinal))
                 {
                     _chocoLocation = chocoPath;
@@ -61,7 +62,7 @@ namespace UninstallTools.Factory
         {
             if (!ChocoIsAvailable) yield break;
 
-            var result = FactoryTools.StartProcessAndReadOutput(ChocoLocation, @"list -l -nocolor -y -r");
+            var result = StartProcessAndReadOutput(ChocoLocation, @"list -l -nocolor -y -r");
 
             if (string.IsNullOrEmpty(result)) yield break;
 
@@ -75,7 +76,7 @@ namespace UninstallTools.Factory
 
             foreach (var appName in appNames)
             {
-                var info = FactoryTools.StartProcessAndReadOutput(ChocoLocation, "info -l -nocolor -y -v " + appName.name);
+                var info = StartProcessAndReadOutput(ChocoLocation, "info -l -nocolor -y -v " + appName.name);
                 var kvps = ExtractPackageInformation(info);
                 if (kvps.Count == 0) continue;
 
@@ -159,5 +160,17 @@ namespace UninstallTools.Factory
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanChocolatey;
         public string DisplayName => Localisation.Progress_AppStores_Chocolatey;
+
+        private static string StartProcessAndReadOutput(string filename, string args)
+        {
+            using (var process = Process.Start(new ProcessStartInfo(filename, args)
+            {
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = false,
+                CreateNoWindow = true,
+                StandardOutputEncoding = Encoding.Default
+            })) return process?.StandardOutput.ReadToEnd();
+        }
     }
 }

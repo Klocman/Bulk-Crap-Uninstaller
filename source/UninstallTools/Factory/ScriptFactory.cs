@@ -40,7 +40,7 @@ namespace UninstallTools.Factory
         {
             if (!File.Exists(ScriptHelperPath) || !WindowsTools.CheckNetFramework4Installed(true)) yield break;
 
-            var result = FactoryTools.StartProcessAndReadOutput(ScriptHelperPath, string.Empty);
+            var result = FactoryTools.StartHelperAndReadOutput(ScriptHelperPath, string.Empty);
 
             if (string.IsNullOrEmpty(result)) yield break;
 

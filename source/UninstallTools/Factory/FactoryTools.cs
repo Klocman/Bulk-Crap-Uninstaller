@@ -15,7 +15,10 @@ namespace UninstallTools.Factory
 {
     internal static class FactoryTools
     {
-        internal static string StartProcessAndReadOutput(string filename, string args)
+        /// <summary>
+        /// Warning: only use with helpers that output unicode and use 0 as success return code.
+        /// </summary>
+        internal static string StartHelperAndReadOutput(string filename, string args)
         {
             using (var process = Process.Start(new ProcessStartInfo(filename, args)
             {
@@ -24,7 +27,11 @@ namespace UninstallTools.Factory
                 RedirectStandardError = false,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Unicode
-            })) return process?.StandardOutput.ReadToEnd();
+            }))
+            {
+                var output = process?.StandardOutput.ReadToEnd();
+                return process?.ExitCode == 0 ? output : null;
+            }
         }
 
         internal static IEnumerable<Dictionary<string, string>> ExtractAppDataSetsFromHelperOutput(string helperOutput)

@@ -33,7 +33,7 @@ namespace UninstallTools.Factory
         {
             if (!HelperAvailable) yield break;
 
-            var output = FactoryTools.StartProcessAndReadOutput(HelperPath, "/query");
+            var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "/query");
             if (string.IsNullOrEmpty(output))
                 yield break;
 
