@@ -8,8 +8,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
 using UninstallTools.Properties;
@@ -29,7 +27,7 @@ namespace UninstallTools.Factory
             get
             {
                 if (!_helperIsAvailable.HasValue)
-                    _helperIsAvailable = File.Exists(HelperPath) && WindowsTools.CheckNetFramework4Installed(true);
+                    _helperIsAvailable = File.Exists(HelperPath) && WindowsTools.CheckNetFramework4Installed(true) != null;
                 return _helperIsAvailable.Value;
             }
         }

@@ -22,7 +22,10 @@ namespace UninstallTools.Factory
 
         static ScriptFactory()
         {
-            ScriptHelperPath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"ScriptHelper.exe");
+            var helper = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"ScriptHelper.exe");
+            var frameworkVersion = WindowsTools.CheckNetFramework4Installed(true);
+            if (File.Exists(helper) && frameworkVersion != null && frameworkVersion >= new Version(4, 5, 0))
+                ScriptHelperPath = helper;
 
             EntryProps = typeof(ApplicationUninstallerEntry)
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
@@ -38,7 +41,7 @@ namespace UninstallTools.Factory
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!File.Exists(ScriptHelperPath) || !WindowsTools.CheckNetFramework4Installed(true)) yield break;
+            if (ScriptHelperPath == null) yield break;
 
             var result = FactoryTools.StartHelperAndReadOutput(ScriptHelperPath, string.Empty);
 

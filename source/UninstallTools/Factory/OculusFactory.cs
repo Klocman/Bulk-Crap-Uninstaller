@@ -23,7 +23,7 @@ namespace UninstallTools.Factory
             get
             {
                 if (!_helperAvailable.HasValue)
-                    _helperAvailable = WindowsTools.CheckNetFramework4Installed(true) && File.Exists(HelperPath);
+                    _helperAvailable = WindowsTools.CheckNetFramework4Installed(true) != null && File.Exists(HelperPath);
 
                 return _helperAvailable.Value;
             }

@@ -17,6 +17,13 @@ namespace UninstallTools.Factory
 {
     public class StoreAppFactory : IIndependantUninstallerFactory
     {
+        static StoreAppFactory()
+        {
+            var storeAppHelperPath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
+            if (WindowsTools.CheckNetFramework4Installed(true) != null && File.Exists(storeAppHelperPath))
+                StoreAppHelperPath = storeAppHelperPath;
+        }
+
         public static string GetPowerShellRemoveCommand(string fullName)
         {
             return $"Remove-AppxPackage -package {fullName} -confirm:$false";
@@ -32,17 +39,15 @@ namespace UninstallTools.Factory
                 .ToArray();
         }
 
-        private static string StoreAppHelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
+        private static string StoreAppHelperPath { get; }
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!WindowsTools.CheckNetFramework4Installed(true) || !File.Exists(StoreAppHelperPath))
-                yield break;
+            if (StoreAppHelperPath == null) yield break;
 
             var output = FactoryTools.StartHelperAndReadOutput(StoreAppHelperPath, "/query");
-            if (string.IsNullOrEmpty(output))
-                yield break;
+            if (string.IsNullOrEmpty(output)) yield break;
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
             

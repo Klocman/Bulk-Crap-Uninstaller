@@ -47,7 +47,7 @@ namespace UninstallTools.Factory
         {
             _steamHelperIsAvailable = false;
 
-            if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true))
+            if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true) != null)
             {
                 var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "steam");
                 if (!string.IsNullOrEmpty(output)
@@ -60,7 +60,7 @@ namespace UninstallTools.Factory
             }
         }
 
-        internal static string SteamHelperPath
+        internal static string SteamHelperPath 
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
         public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
