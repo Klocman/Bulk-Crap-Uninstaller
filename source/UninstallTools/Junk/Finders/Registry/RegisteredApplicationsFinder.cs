@@ -71,7 +71,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
                         var names = regAppsKey.GetValueNames();
 
-                        var results = names.Attempt(n => new { name = n, value = regAppsKey.GetValue(n, null) as string })
+                        var results = names.Attempt(n => new { name = n, value = regAppsKey.GetStringSafe(n) })
                                 .Where(x => !string.IsNullOrEmpty(x.value))
                                 .ToList();
 

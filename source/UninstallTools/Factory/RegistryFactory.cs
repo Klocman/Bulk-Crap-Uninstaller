@@ -5,7 +5,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -112,8 +111,7 @@ namespace UninstallTools.Factory
 
         private static string GetAboutUrl(RegistryKey uninstallerKey)
         {
-            return RegistryNamesOfUrlSources.Select(urlSource =>
-                uninstallerKey.GetValue(urlSource) as string)
+            return RegistryNamesOfUrlSources.Select(uninstallerKey.GetStringSafe)
                 .FirstOrDefault(tempSource => !string.IsNullOrEmpty(tempSource) && tempSource.Contains('.'));
         }
 
@@ -123,18 +121,18 @@ namespace UninstallTools.Factory
             {
                 RegistryPath = uninstallerKey.Name,
                 RegistryKeyName = uninstallerKey.GetKeyName(),
-                Comment = uninstallerKey.GetValue(RegistryNameComment) as string,
-                RawDisplayName = uninstallerKey.GetValue(RegistryNameDisplayName) as string,
-                DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(uninstallerKey.GetValue(RegistryNameDisplayVersion) as string),
-                ParentKeyName = uninstallerKey.GetValue(RegistryNameParentKeyName) as string,
-                Publisher = uninstallerKey.GetValue(RegistryNamePublisher) as string,
+                Comment = uninstallerKey.GetStringSafe(RegistryNameComment),
+                RawDisplayName = uninstallerKey.GetStringSafe(RegistryNameDisplayName),
+                DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(uninstallerKey.GetStringSafe(RegistryNameDisplayVersion)),
+                ParentKeyName = uninstallerKey.GetStringSafe(RegistryNameParentKeyName),
+                Publisher = uninstallerKey.GetStringSafe(RegistryNamePublisher),
                 UninstallString = GetUninstallString(uninstallerKey),
                 QuietUninstallString = GetQuietUninstallString(uninstallerKey),
-                ModifyPath = uninstallerKey.GetValue(RegistryNameModifyPath) as string,
-                InstallLocation = uninstallerKey.GetValue(RegistryNameInstallLocation) as string,
-                InstallSource = uninstallerKey.GetValue(RegistryNameInstallSource) as string,
+                ModifyPath = uninstallerKey.GetStringSafe(RegistryNameModifyPath),
+                InstallLocation = uninstallerKey.GetStringSafe(RegistryNameInstallLocation),
+                InstallSource = uninstallerKey.GetStringSafe(RegistryNameInstallSource),
                 SystemComponent = (int)uninstallerKey.GetValue(RegistryNameSystemComponent, 0) != 0,
-                DisplayIcon = uninstallerKey.GetValue(RegistryNameDisplayIcon) as string
+                DisplayIcon = uninstallerKey.GetStringSafe(RegistryNameDisplayIcon)
             };
         }
 
@@ -147,8 +145,7 @@ namespace UninstallTools.Factory
         private static Guid GetGuid(RegistryKey uninstallerKey)
         {
             // Look for a GUID registry entry
-            var tempGuidString =
-                uninstallerKey.GetValue(RegistryNameBundleProviderKey) as string;
+            var tempGuidString = uninstallerKey.GetStringSafe(RegistryNameBundleProviderKey);
 
             if (GuidTools.GuidTryParse(tempGuidString, out var resultGuid))
                 return resultGuid;
@@ -172,13 +169,13 @@ namespace UninstallTools.Factory
 
         private static string GetKeyFuzzy(RegistryKey uninstallerKey, string keyName)
         {
-            var uninstallString = uninstallerKey.GetValue(keyName) as string;
+            var uninstallString = uninstallerKey.GetStringSafe(keyName);
             if (uninstallString == null)
             {
                 // Handle hidden uninstall strings like UninstallString_hidden
                 uninstallString = uninstallerKey.GetValueNames()
                     .Where(x => x.StartsWith(keyName, StringComparison.OrdinalIgnoreCase))
-                    .Select(name => uninstallerKey.GetValue(name) as string)
+                    .Select(uninstallerKey.GetStringSafe)
                     .FirstOrDefault(x => !string.IsNullOrEmpty(x));
             }
 
@@ -187,7 +184,7 @@ namespace UninstallTools.Factory
 
         private static DateTime GetInstallDate(RegistryKey uninstallerKey)
         {
-            var dateString = uninstallerKey.GetValue(RegistryNameInstallDate) as string;
+            var dateString = uninstallerKey.GetStringSafe(RegistryNameInstallDate);
             if (dateString != null && dateString.Length == 8)
             {
                 try
@@ -209,16 +206,16 @@ namespace UninstallTools.Factory
 
         private static bool GetIsUpdate(RegistryKey uninstallerKey)
         {
-            var parentKeyName = uninstallerKey.GetValue("ParentKeyName", string.Empty) as string;
-            if (parentKeyName.IsNotEmpty())
+            var parentKeyName = uninstallerKey.GetStringSafe("ParentKeyName");
+            if (!string.IsNullOrEmpty(parentKeyName))
                 return true;
 
-            var releaseType = uninstallerKey.GetValue("ReleaseType", string.Empty) as string;
-            if (releaseType.IsNotEmpty() &&
+            var releaseType = uninstallerKey.GetStringSafe("ReleaseType");
+            if (!string.IsNullOrEmpty(releaseType) &&
                 releaseType.ContainsAny(new[] { "Update", "Hotfix" }, StringComparison.OrdinalIgnoreCase))
                 return true;
 
-            var defaultValue = uninstallerKey.GetValue(null) as string;
+            var defaultValue = uninstallerKey.GetStringSafe(null);
             if (string.IsNullOrEmpty(defaultValue))
                 return false;
 
