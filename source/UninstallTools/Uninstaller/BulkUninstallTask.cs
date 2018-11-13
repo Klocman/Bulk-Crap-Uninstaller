@@ -141,7 +141,8 @@ namespace UninstallTools.Uninstaller
             if (targetList == null || configuration == null)
                 throw new ArgumentException("BulkUninstallTask is incomplete, this should not have happened.");
 
-            if (configuration.PreferQuiet && AllUninstallersList.Any(x => x.IsSilentPossible))
+            if (UninstallToolsGlobalConfig.UseQuietUninstallDaemon && configuration.PreferQuiet 
+                && AllUninstallersList.Any(x => x.IsSilentPossible))
                 StartAutomationDaemon();
 
             try
@@ -232,41 +233,38 @@ namespace UninstallTools.Uninstaller
 
         private void StartAutomationDaemon()
         {
-            if (UninstallToolsGlobalConfig.UseQuietUninstallDaemon)
+            if (!UninstallToolsGlobalConfig.UninstallerAutomatizerExists)
+                UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
+            else
             {
-                if (!UninstallToolsGlobalConfig.UninstallerAutomatizerExists)
-                    UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
-                else
+                try
                 {
+                    _quietUninstallDaemonProcess = Process.Start(UninstallToolsGlobalConfig.UninstallerAutomatizerPath, "/d");
+
                     try
                     {
-                        _quietUninstallDaemonProcess = Process.Start(UninstallToolsGlobalConfig.UninstallerAutomatizerPath, "/d");
+                        _client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
+                        _writer = new StreamWriter(_client);
 
-                        try
-                        {
-                            _client = new NamedPipeClientStream(".", "UninstallAutomatizerDaemon", PipeDirection.Out);
-                            _writer = new StreamWriter(_client);
-
-                            _client.Connect(7000);
-                            _writer.AutoFlush = true;
-                        }
-                        catch (SystemException ex)
-                        {
-                            UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
-
-                            Console.WriteLine(@"Failed to connect to automatization daemon");
-                            Console.WriteLine(ex);
-
-                            StopAutomationDaemon();
-                        }
+                        _client.Connect(7000);
+                        _writer.AutoFlush = true;
                     }
                     catch (SystemException ex)
                     {
                         UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
 
-                        Console.WriteLine(@"Failed to start automatization daemon");
+                        Console.WriteLine(@"Failed to connect to automatization daemon");
                         Console.WriteLine(ex);
+
+                        StopAutomationDaemon();
                     }
+                }
+                catch (SystemException ex)
+                {
+                    UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
+
+                    Console.WriteLine(@"Failed to start automatization daemon");
+                    Console.WriteLine(ex);
                 }
             }
         }

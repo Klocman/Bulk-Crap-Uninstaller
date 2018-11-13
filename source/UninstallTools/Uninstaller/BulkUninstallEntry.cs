@@ -350,11 +350,16 @@ namespace UninstallTools.Uninstaller
                         // the rerun in case user or app itself can resolve the issue.
                         if (IsSilentPossible && UninstallToolsGlobalConfig.UseQuietUninstallDaemon && _canRetry)
                         {
-                            var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
+                            // There is no point in trying to automatize command line interface programs, or our own helpers
+                            if (!UninstallerEntry.QuietUninstallerIsCLI() && !UninstallerEntry.QuietUninstallString
+                                .Contains(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase))
+                            {
+                                var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
 
-                            options.Owner.SendProcessesToWatchToDeamon(processIds.Except(previousWatchedProcessIds));
+                                options.Owner.SendProcessesToWatchToDeamon(processIds.Except(previousWatchedProcessIds));
 
-                            previousWatchedProcessIds = processIds;
+                                previousWatchedProcessIds = processIds;
+                            }
                         }
 
                         // Check for deadlocks during silent uninstall. Prevents the task from getting stuck 
