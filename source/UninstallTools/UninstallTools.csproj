@@ -488,6 +488,12 @@
     <None Include="Resources\Scripts\Tweak\disable-subscribed-content_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression_check.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -578,6 +584,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
