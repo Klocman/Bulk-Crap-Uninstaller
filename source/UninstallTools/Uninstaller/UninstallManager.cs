@@ -86,6 +86,11 @@ namespace UninstallTools.Uninstaller
                     {
                         startInfo = ProcessTools.SeparateArgsFromCommand(entry.QuietUninstallString).ToProcessStartInfo();
                         Debug.Assert(!startInfo.FileName.Contains(' ') || File.Exists(startInfo.FileName));
+                        if (QuietUninstallerIsCLI(entry))
+                        {
+                            // Safe to minimize quiet command windows
+                            startInfo.WindowStyle = ProcessWindowStyle.Minimized;
+                        }
                     }
                     catch (FormatException)
                     {
@@ -148,6 +153,25 @@ namespace UninstallTools.Uninstaller
             }
         }
 
+        public static bool QuietUninstallerIsCLI(this ApplicationUninstallerEntry entry)
+        {
+            if (!entry.QuietUninstallPossible) return false;
+            switch (entry.UninstallerKind)
+            {
+                case UninstallerType.PowerShell:
+                case UninstallerType.Steam:
+                case UninstallerType.WindowsFeature:
+                case UninstallerType.WindowsUpdate:
+                case UninstallerType.StoreApp:
+                case UninstallerType.Oculus:
+                    return true;
+
+                default:
+                    return entry.QuietUninstallString.StartsWith("cmd ", StringComparison.OrdinalIgnoreCase) || 
+                        entry.QuietUninstallString.Contains("cmd.exe", StringComparison.OrdinalIgnoreCase);
+            }
+        }
+
         /// <summary>
         ///     Check if NSIS needs to be executed directly to get the return code. If yes, update the ProcessStartInfo
         ///     http://nsis.sourceforge.net/Docs/AppendixD.html#errorlevels
@@ -156,7 +180,7 @@ namespace UninstallTools.Uninstaller
         {
             var dirName = Path.GetFileName(Path.GetDirectoryName(startInfo.FileName));
             if (!string.IsNullOrEmpty(startInfo.Arguments) // Only works reliably if uninstaller doesn't use any Arguments already.
-                // Filter out non-standard uninstallers that might pose problems
+                                                           // Filter out non-standard uninstallers that might pose problems
                 || !Path.GetFileNameWithoutExtension(startInfo.FileName).Contains("uninst", StringComparison.InvariantCultureIgnoreCase)
                 || (dirName != null && dirName.Equals("uninstall", StringComparison.InvariantCultureIgnoreCase)))
                 return;
