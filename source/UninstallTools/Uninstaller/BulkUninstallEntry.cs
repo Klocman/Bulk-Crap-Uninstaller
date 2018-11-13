@@ -398,7 +398,8 @@ namespace UninstallTools.Uninstaller
                         var exitVar = uninstaller.ExitCode;
                         if (exitVar != 0)
                         {
-                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && exitVar == 1602)
+                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && 
+                                exitVar == 1602)
                             {
                                 // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
                                 _skipLevel = SkipCurrentLevel.Skip;
@@ -410,8 +411,13 @@ namespace UninstallTools.Uninstaller
                                 // 2 - Installation aborted by script (often after user clicks cancel)
                                 _skipLevel = SkipCurrentLevel.Skip;
                             }
+                            else if (UninstallerEntry.UninstallerKind == UninstallerType.Nsis &&
+                                     exitVar == 1627)
+                            {
+                                // Nsis OK return code
+                            }
                             else if (UninstallerEntry.UninstallerKind == UninstallerType.SimpleDelete &&
-                                     (exitVar == 1))
+                                     exitVar == 1)
                             {
                                 // 1 - Installation aborted by user (cancel button)
                                 _skipLevel = SkipCurrentLevel.Skip;
