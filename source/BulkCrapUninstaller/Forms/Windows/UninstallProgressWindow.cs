@@ -326,6 +326,7 @@ namespace BulkCrapUninstaller.Forms
             foreach (var target in notRunning)
             {
                 target.Reset();
+                target.IsSilentPossible = false;
             }
 
             OnTaskUpdated();
