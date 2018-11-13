@@ -199,4 +199,7 @@ Le groupage de la plupart des colonnes utilise un tri intelligent.</value>
   <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
     <value>Utiliser des couleurs pour différencier les applications spéciales, par exemple les apps du store et les Fonctionnalités Windows</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Montrer les perfectionnements</value>
+  </data>
 </root>

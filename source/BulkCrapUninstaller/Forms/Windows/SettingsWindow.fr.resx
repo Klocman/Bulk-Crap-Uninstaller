@@ -275,4 +275,8 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Scanner les lecteurs amovibles</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Mode daltonien</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
 </root>

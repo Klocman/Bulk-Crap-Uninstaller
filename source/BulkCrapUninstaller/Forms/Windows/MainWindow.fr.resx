@@ -570,4 +570,10 @@
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Installer .NET v3.5 (ajout de fonctionalité)</value>
   </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Fichiers XML|*.xml</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir les Perfectionnements</value>
+  </data>
 </root>
