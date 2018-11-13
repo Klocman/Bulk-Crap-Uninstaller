@@ -3,7 +3,7 @@
     <ConditionScriptArgs>-itemId 5</ConditionScriptArgs>
     <Script>remove-special-folders-from-this-pc.ps1</Script>
     <ScriptArgs>-itemId 5</ScriptArgs>
-    <DisplayName>Show Pictures under This PC</DisplayName>
+    <DisplayName>Showing Pictures under This PC</DisplayName>
     <Publisher>Microsoft Corporation</Publisher>
     <SystemIcon>Shield</SystemIcon>
 </script>
