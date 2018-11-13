@@ -179,6 +179,9 @@
     <EmbeddedResource Include="Forms\MainWindow.sl.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainWindow.tr.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.ar.resx" />
     <EmbeddedResource Include="Properties\Localization.cs.resx" />
     <EmbeddedResource Include="Properties\Localization.es.resx" />

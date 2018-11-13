@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>Websitesi</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>Ürün kodu</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Görüntülenen ad</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>Kesilmiş görünen ad</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>Versiyon</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>Tahmini boyut</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>Kurulum tarihi</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>Kurulum yeri</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>Kurulum kaynağı</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>64 bit uygulama</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>Korunuyor</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>Bir güncelleme</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>Geçerli</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>Düzenleme yolu</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Yayıncı adı</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>Kesilmiş yayıncı adı</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>Sessiz kaldırma mümkün</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>Sessiz kaldırma dizesi</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>Kayıt defteri anahtarı adı</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>Kayıt defteri yolu</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>Bir sistem bileşeni mi</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>Kaldırıcı dosya adı</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>Kaldırıcı türü</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>Kaldırma mümkündür</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>Uninstall string</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Yorum Yap</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>Görüntülenen simge</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Geçersiz yol</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>Güven</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>Kaldırma erken durduruldu</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>Kullanıcı tarafından atlandı</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>Kaldırıcı konumu</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>Bu girişi kaldırmanın geçerli bir yolu yok</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>Kaldırıcı hata kodu döndürdü:</value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>Kötü</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>İyi</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>Kuşkulu</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>Bilinmeyen</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>Çok iyi</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>Ebeveyn kaldırıcı</value>
+    <comment>Most of the time used to show parent application of an update</comment>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>Şirket adı eşleşmedi</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>Şirket adı eşleşti</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>Dizin diğer yüklü uygulamalar tarafından kullanılır</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>Öğe, kaldırıcıda açıkça belirtilmiştir</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>Kaldırıcı kayıt defteri girişi</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>Öğe, bir yayıncı kategorisi gibi görünüyor</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>Ürün adı çok iyi uyuşmuyor</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>Ürün adı mükemmel bir şekilde eşleşti</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>Dizin adı sorgulanabilir</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>Bilinmeyen</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>Windows yükleyici</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Kurulumu</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft Scriptable Yükleme Sistemi</value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>Tamamlandı</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>Başarısız oldu</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>Geçersiz</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>Korumalı</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>Atlandı</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>Kaldırılıyor</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>Bekleniyor</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>Uygulama kayıtlı</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>Geçersiz filtre</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>Yeni filtre</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>Eşleşme yok</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>İçeren</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>İle biten</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>Eşittir</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>Düzenli ifade</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>İle başlar</value>
+  </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>Windows Özelliği</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>Herhangi biri</value>
+    <comment>As in "matches any word from this string"</comment>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>Başlangıç komutları</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>Artık önyükleme sırasında açılmayacaklar. Çıkarmadan önce seçilen öğelerin gerekli olmadığından emin olun.</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>Seçilen programlar başlangıçtan kaldırılsın mı?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>Başlangıç Yöneticisi</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>Yükleniyor...</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>Boş klasör</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>Yürütülebilir dosyalar mevcut</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>Dosyalar mevcut</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>Birçok dosya mevcut</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>Program adı doğrulandı</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>Alt klasör yok</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>Yayıncı Doğrulandı</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>Bir kez başlatılacak</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>Giriş uygulama ile eşleşti</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Dosyalar ve dizinler</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>Program dosyalarında kalır</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>Kayıt defteri</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>Başlangıç</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>Bu giriş etkinleştirilemedi, aşağıdaki dosya bulunamadı:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>Kaldırıcı zaman aşımına uğradı</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>Görev</value>
+    <comment>Fom Task Scheduler</comment>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>Tarayıcı Yardımcı Nesnesi</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>Değer, içeriksiz veya boş olamaz</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>Değer yeni satırlar içeremez</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Geçersiz veya bilinmeyen başlangıç kayıt defteri anahtar(ları)ı:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Mağazası Uygulaması</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Yeni durum</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Kayıtsız</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Mağaza Uygulama verilerinin kaldırılması sorunludur</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Basit Sil</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Dizin gereksiz veya kaldırıldıktan sonra boş olacaktır.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Servis</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Tüm özellikler</value>
+    <comment>Used in the search box to specify what's being compared</comment>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Yüklü MSI ürünleri taranıyor...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>{0} uygulama GUID'si bulundu</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Kaldırma amaçlı yüklemeler için kayıt tarama ...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Kayıt defteri anahtarlarını toplanıyor</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>{0} işleniyor</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Eksik kaldırıcı bilgileri oluşturuluyor ...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Uygulamalar için sürücüler taranıyor ...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Dizinler toplanıyor</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Tarama uygulamaları depolanıyor ...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Uygulama şablonları aranıyor</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Steam Uygulamaları Aranıyor</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Windows Mağazası Uygulamaları aranıyor</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Windows Özellikleri aranıyor</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Keşfedilen uygulamalar birleştiriliyor...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Uygulamaları mağazalardan birleştirme</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Uygulamaları sürücülerden birleştirme</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Kayıp bilgileri üretiliyor</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Güncelleme</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Windows Güncellemeleri aranıyor</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Güvenlik duvarı kuralı</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Kullanıcı yardımı</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Windows Hata Bildirimi raporları</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Önemsiz tarayıcıların ayarlanması ...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Bitiriliyor...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Uygulama uyumluluğu</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID sınıfları</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Kaldırıcı referansı</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Kaldırıcı konumu</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Kısayol</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Ses politikası yapılandırması</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Olay Günlüğü günlükleri</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>İzleme bilgileri</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Yüklü klasör listesi</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Durduruldu</value>
+  </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Chocolatey paketleri aranıyor</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Chocolatey ile kaldır</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Otomatik olarak başlayabilir</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Başlangıç girişleri aranıyor</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus Uygulamaları</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Bir web tarayıcısı mı</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell betiği</value>
+  </data>
+</root>

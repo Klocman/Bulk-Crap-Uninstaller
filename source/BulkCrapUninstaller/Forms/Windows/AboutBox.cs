@@ -69,6 +69,9 @@ namespace BulkCrapUninstaller.Forms
 
                 // Slovenian
                 new {culture = CultureInfo.GetCultureInfo("sl"), translator = "Jadran Rudec"},
+
+                // Turkish
+                new {culture = CultureInfo.GetCultureInfo("tr"), translator = "Harun Güngör"}
             };
 
             foreach (var translationCredit in translationCredits

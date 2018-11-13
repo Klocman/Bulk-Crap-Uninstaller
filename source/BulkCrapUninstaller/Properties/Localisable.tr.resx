@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>Bir geri yükleme noktası oluşturuluyor ...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>Artıklar aranıyor ...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>Kaldırma listesini kaldırılıyor ...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>Kalıntıları çıkarma ...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>Güncellemeler aranıyor ...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>Arama kriterinizle eşleşen giriş yok.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>BCUninstaller dışa aktarma. Yayıncı | Sürüm | Tarih | Boyut | Kayıt defteri | Kaldırıcı türü | Dizgiyi kaldır | Sessiz kaldırma dizesi | Yorumlar</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value>Taşınabilir</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>API çağrısı başarısız oldu</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>Kayıt defteri yedeği başarısız oldu, yine de devam etmek istiyor musunuz?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>Hata detayları:</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>Kalan kaldırma</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>Hata detayları:</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>Devam etmeden önce bir kayıt defteri yedeği oluşturmak ister misiniz?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>Tüm değişiklikleri daha sonra çift tıklatarak geri alabilirsiniz. Dosyalar ve dizinler geri dönüşüm kutusuna taşınır, onları buradan geri yükleyebilirsiniz.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>Eylem başarısız</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>Bu işlem için yalnızca bir giriş seçmeniz gerekiyor</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>Listeden tam olarak bir kaldırıcı seçin. Onay kutularını kullanıyorsanız, bunları kontrol ettiğinizden emin olun.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>Güncellemeleri arayın</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>Çevrimiçi içeriği aç</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>İnternete bağlanılamıyor, ağ yok.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>Ağ kablonuzun takılı olduğundan emin olun. Wi-Fi kullanıyorsanız, sinyal gücünüzün iyi olduğundan emin olun.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>Geri bildirim gönder</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>BCU ile ilgili geri bildirim göndermek ister misiniz?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>Bu sizi bir dakikadan daha az sürecek ama gelişime büyük ölçüde yardımcı olacak! Tüm geri bildirimler takdir edilir, bir hata raporu, özellik talebi veya basit bir teşekkür! Daha sonra üst menü çubuğundan gönderebilirsiniz (Yardım-&gt; Geri bildirim gönder).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>Güncel versiyon güncel</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Şu anda hiçbir güncelleme bulunamadı, en son sürüme sahipsiniz. Bazı işlevler eklendi mi yoksa bir hata mı düzeltildi? Lütfen "Yardım-&gt; Geri Bildirim Gönder" menüsünü kullanarak geri bildiriminizi gönderin.</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Encountered an error while checking for updates</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Güvenlik duvarınızda BCUninstaller'ın engellenmediğinden ve çalışan bir internet bağlantınızın olduğundan emin olun.</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Yeni sürüm {0} kullanılabilir, şimdi yeni sürüme geçmek istiyor musunuz?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller güncellemeyi otomatik olarak indirecek ve yeniden başlattıktan sonra uygulayacaktır. Lütfen ayarlarınızı bu süreçte kaybedebileceğinizi unutmayın.
+
+Değişiklikler:
+
+- {0}
+
+Uyarı: Güncelleme sırasında "Update" klasörü ve BCU dizininin içindeki "Update.zip" dosyası kaldırılacaktır.
+</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Msi kullanarak kaldır</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>Seçilen giriş MsiExec yükleyici kullanılarak kaldırılamaz</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>Seçilen kaldırıcı, MsiExec ile kullanım için geçerli bir Kılavuza sahip değil.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Mevcut kaldırma görevini durdur</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Şu anda çalışan görevi durdurmak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>Görevi zamanından önce durdurmak herhangi bir değişikliği geri almayacaktır. Şu anda çalışan kaldırıcı durdurulmayacak, görev bitirmek için bekleyecektir.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Geri yükleme noktası oluştur</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Yeni bir geri yükleme noktası oluşturulamadı</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value>x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value>DEBUG</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Kaldırma ilerlemesi</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Şimdi bilgisayarı bırakabilirsin</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>Kalan kaldırıcılar herhangi bir kullanıcı müdahalesi olmadan tamamlayabilmelidir. Kaldırma araçlarından birinin çökmesi durumunda zaman zaman kontrol etmelisiniz.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Önemsiz / Artık Kaldırma</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Düşük güvenli ürünleri gerçekten değiştirmek istiyor musunuz?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>İyi'den daha düşük bir güven ile işaretlenmiş öğeleri çıkarmak çok tehlikeli olabilir! Her bir öğenin silinmesi güvenli olduğunu doğrulamanız önerilir.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Anahtarları kayıt defterinden kaldır</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Seçilen kaldırıcı girişlerini kaldırmak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>Aşağıdaki öğeler kayıt defterinden kaldırılacak ve kaldırıcı listesinden silinecek, ancak kaldırılmayacaktır.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>Dışa aktarma başarısız oldu</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Dışa aktarılan verileri kaydederken bir hatayla karşılaşıldı</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Hata devam ederse, örneğin masaüstüne farklı bir dizine kaydetmeyi deneyin.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller, {0} uygulamasını kaldırıyor</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Kaldırıcıyı yeniden adlandır</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>Sağlanan ad boş veya geçersiz karakterler içeriyor</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Aşağıdaki karakterlerden hiçbirini içermediğinden emin olun:
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Kalan kaldırma işlemlerinden kalanları aramak ister misiniz?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Lütfen bu özelliğin yalnızca nasıl çalıştığını anlayan deneyimli kullanıcıları için olduğunu unutmayın. Bu dosyaları kaldırmak gerekli değildir ve sistem performansını anlamlı bir şekilde etkilemeyecektir.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Artık kalıntı bulunamadı</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Artık kalıntı bulunamadı. BleachBit gibi geçici bir dosya temizleyici çalıştırabilmeniz için hala bir miktar kalıntı kalmış olabilir.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Panoya kopyalamak için hiçbir şey yoktu. Ya seçilen kaldırıcıyı bu bilgi biti yok ya da hiçbir şey seçmediniz.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Panoya kopyala</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Açık dizinler</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Bu işlem bir kerede {0} dizini açacak, devam etmek istediğinizden emin misiniz?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Çevrimiçi ara</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Aranacak bir şey yok</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>BCUninstaller öğesini kaldır</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>BCUninstaller'ı kaldırmak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Ayrıldığın için üzgünüm! Bir iki dakikanız varsa, lütfen web sitemde BCU'yu kaldırdığınıza dair bir söz bırakın (http://klocmansoftware.weebly.com/). Herhangi bir meşru sorunu çözmek için elimden geleni yapacağım.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Devam etmeden önce bir geri yükleme noktası oluşturmak ister misiniz?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>Kaldırmakta olduğunuz uygulamaların önemli veya sistem kararlılığı için gerekli olup olmadığından emin değilseniz bir geri yükleme noktası oluşturmanız önerilir. İşlemden sonra herhangi bir şey olursa, değişiklikleri geri almak için Sistem Geri Yükleme'yi kullanabilirsiniz.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Arama sayfası açılırken bir hatayla karşılaşıldı</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Kaldırma Listesini Kaydet</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Liste bir dosyaya kaydedilemedi</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Tüm uygulama ayarlarını sıfırlamak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Bazı uygulamalar sessizce kaldırılamaz</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Bazı girişler korunur ve değiştirilemez</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>Seçilen giriş korunur ve değiştirilemez</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>URL açılırken bir hatayla karşılaşıldı</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Mevcut seçimi korumak istiyor musunuz?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Dizini açarken bir hatayla karşılaşıldı</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Seçilen dosyalar yüklenemedi</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Kaldırıcı seçilmedi, kaldırılacak hiçbir şey yok</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Kaldırıcıları çalıştır</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>Uygulamaları kaldırmak için önce onları liste görünümünden seçmelisiniz. Onay kutularını kullanıyorsanız, kontrol edildiğinden emin olun.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Mevcut seçimi korumayı seçerseniz, açılan liste (ler) ile birleştirilir.</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Bu işlem bir kerede {0} URL'yi açacak, devam etmek istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>Açık URL'ler</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Açılacak URL yok</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Korunan öğeyi değiştir</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Etkilenen girişler:
+{0}
+
+Bu girişleri değiştirmek için ayarların kenar çubuğundan kaldırıcı korumasını devre dışı bırakmanız gerekir. Bunları görevden kaldırabilir ve isterseniz diğer öğelere devam edebilirsiniz.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Korumalı giriş: {0}
+
+Bu girişi değiştirmek için, kurulum panelinden kaldırıcı korumasını devre dışı bırakmanız gerekir.</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>Aşağıdaki öğeler sessiz kaldırıcılar eksik:
+{0}
+
+Bu öğeler için "yüksek" kaldırıcıları mı kullanmak istiyorsunuz yoksa görevden çıkarılmaları mı gerekiyor?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Sessiz kaldırma</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Ayarları varsayılan duruma getir</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Tüm ayarlarınız kalıcı olarak kaybolacak. Bu eylemi tamamlamak için BCUninstaller'ın yeniden başlatılması gerekecektir.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Yükleme Kaldırma Listesi</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>Geri yükleme noktası OLUŞTURMAZ, değişiklikleri geri yükleyemezsiniz! Kaldırma işlemine devam etmek istiyor musunuz?</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>"{0}" yeniden adlandırılıyor</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Seçilen girişi yeniden adlandır</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>Görev bitti</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Kaldırma</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Seçimi hatırla</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>Dosya mevcut değil.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Gösterilecek bir şey yok. Bu uygulama Windows Installer (MsiExec) kullanılarak kaldırılmıştır.</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Adı</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Boş</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>GUID bulundu</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>GUID eksik</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Aşağıya doğru seçin ...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Dosya bulunamadı.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Yükleme sonrası komutları çalıştırılıyor ...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Ön yükleme komutlarını çalıştırılıyor ...</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Hazır</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0} kaldırıcı seçildi</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>Toplam {@} kaldırıcı, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>Aşağıdaki komut çalıştırılamıyor:
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>Harici yürütme başarısız oldu</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Varsayılan</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Bazı ayarlar uygulama yeniden başlatılıncaya kadar geçerli olmaz.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Yeni ayarları uygulamak için BCU'yu yeniden başlatmak istiyor musunuz?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Uygulama ayarlarını değiştir</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>Sertifika eksik</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Kaldırma işlemlerini gerçekleştirme {0} / {1}</value>
+    <comment>{0} is how many items were processed, {1} is their total number</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>"Sonlandır" seçeneğinin seçilmesi, çalışan kaldırıcıyı hemen kapatır ve kaldırma işleminin tamamlanamamasına neden olabilir. Genellikle kaldırmayı bitirmek için kaldırıcıyı tekrar çalıştırmak mümkündür.
+
+Alternatif olarak, bu işlemi beklemeyi atlayabilirsiniz. Atlama, işleyici sonraki öğeye geçerken kaldırıcıyı çalışmaya devam etmesine izin verecektir. Bazı kaldırıcıların atlanan işlem bitene kadar çalışmaya devam edemeyeceğini unutmayın.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Şu anda çalışan kaldırıcıyı beklemeyi mi atlamak istiyorsunuz?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Şu anda çalışan görevi atla</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>Başka bir kaldırma görevi zaten çalışıyor. Lütfen bitirmesini bekleyin ve tekrar deneyin.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Değerlendirme: {0}
+
+Pozitif:
+{1}
+
+Negatif:
+{2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Derecelendirme detayları</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Bu uygulamanın geçerli bir kayıt defteri girişi yok</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Bu uygulama geçerli bir kaldırıcıya sahip değil</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Windows Özellikleri yükleniyor ...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>Yenileme başlangıç bilgileri ...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Açılacak dizin yok</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Müsait değil</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Puanlar mevcut değil</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>İlk önce ayarlardan puanları etkinleştirmeniz gerekir.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Düzgün yüklenmemiş uygulamaları değerlendiremezsiniz.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} uygulamalar</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Ortalama kullanıcı oyu: {0}; Derecelendirmem: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Yüklemelerin kaldırılması, muhtemelen bir çarpışma nedeniyle yürütülemedi. Lütfen diğer kaldırıcıların bitmesini bekleyin ve tekrar deneyin.
+{0}
+
+Ayarlarda çarpışma algılamayı devre dışı bırakmayı deneyebilirsiniz, ancak önerilmez.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Kaldırma işlemini zorla</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Bazı kaldırıcılar çalıştırılamadı</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0 bulunamadı</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0 bulunamadı, bazı özellikler devre dışı bırakılacak</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>V4.0 çerçevesi isteğe bağlıdır, ancak önerilir. Çerçeveye dayanan özellikler, siz yükleyene kadar devre dışı bırakılacaktır.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Bazı kaldırıcılar başarısız oldu</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Başarısız sessiz kaldırıcıları zorla çalıştırmayı denemek ister misiniz?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Kaldırma işlemlerinin ardından yeniden başlatılacak:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Belirtilen dizini tara ...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Kaldırmak istediğiniz uygulamaların bulunduğu dizini seçin.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Dizinden kaldır</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Belirtilen dizinde uygulama bulunamadı</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Doğru dizini seçtiğinizden ve uygulamanın yürütülebilir dosyalarının bulunduğundan emin olun.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>{0} için bir kaldırıcı bulundu</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Bu kaldırıcıyı çalıştırmak ister misin?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>İhraççı</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Arşivlenmiş</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Eklentiler</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Kısa adı</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>İhracatçı adı</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Sonra değil</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Önce değil</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Özel anahtar</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Özel Anahtarı Var</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Genel anahtar</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>İşlenmemiş veri</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Seri Numarası</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Konu Adı</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>İmza Algoritması</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Versiyon</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Parmakizi</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Ayarlar kaydedilemedi</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Tamamlama</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>İkonlar yükleniyor</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Uygulamaya bak</value>
+  </data>
+  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Geçerli dosya veya dizin seçilmedi. Onlara erişebildiğinizden ve sistem dosyaları olarak işaretlenmediğinden emin olun.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Uygulamalar için bak</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>{0} içinde herhangi bir uygulama bulunamadı</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Uygulamayı düzenle</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Seçilen uygulama düzenlenemez</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Seçilen uygulamada belirtilen değişiklik komutu yok. Yükleme ayarlarını değiştirmek için kaldırmak ve yeniden yüklemek gerekebilir.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Kaldırma listesini kaydet</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Açılan kaldırma listesine değişiklikleri kaydedin?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Açılan kaldırma listesinde, kapatılarak kaybedilecek kaydedilmemiş değişiklikler var.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Kaldırılacak uygulamalar ile dizini seçin.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Yedeklemeyi nereye kaydedeceğinizi seçin. Yeni bir dizin oluşturulacak.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU, v {0} olarak güncellendi!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>BCU {0} sürümüne hoş geldiniz!</value>
+  </data>
+</root>

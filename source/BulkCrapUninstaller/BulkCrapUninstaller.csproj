@@ -453,6 +453,9 @@
     <EmbeddedResource Include="Controls\AdvancedClipboardCopy.sl.resx">
       <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.tr.resx">
+      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileTargeter.de.resx">
       <DependentUpon>FileTargeter.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,7 +468,13 @@
     <EmbeddedResource Include="Controls\FileTargeter.pt-BR.resx">
       <DependentUpon>FileTargeter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileTargeter.tr.resx">
+      <DependentUpon>FileTargeter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ListLegend.pt-BR.resx">
+      <DependentUpon>ListLegend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListLegend.tr.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ar.resx">
@@ -499,6 +508,9 @@
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.sl.resx">
+      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.tr.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ar.resx">
@@ -610,6 +622,9 @@
     <EmbeddedResource Include="Controls\ListLegend.sl.resx">
       <DependentUpon>ListLegend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.tr.resx">
+      <DependentUpon>AdvancedFilters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.ar.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -641,6 +656,9 @@
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\CacheSettings.sl.resx">
+      <DependentUpon>CacheSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\CacheSettings.tr.resx">
       <DependentUpon>CacheSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ar.resx">
@@ -681,6 +699,9 @@
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.sl.resx">
+      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.tr.resx">
       <DependentUpon>PropertiesSidebar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Settings\UninstallationSettings.ar.resx">
@@ -728,6 +749,9 @@
     <EmbeddedResource Include="Controls\RelatedUninstallerAdder.resx">
       <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.tr.resx">
+      <DependentUpon>UninstallationSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallConfirmation.de.resx">
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
@@ -735,6 +759,9 @@
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UninstallConfirmation.pt-BR.resx">
+      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UninstallConfirmation.tr.resx">
       <DependentUpon>UninstallConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.de.resx">
@@ -775,6 +802,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NukeWindow.it.resx">
       <DependentUpon>NukeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NukeWindow.tr.resx">
+      <DependentUpon>NukeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.tr.resx">
+      <DependentUpon>PropertiesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\RatingPopup.tr.resx">
+      <DependentUpon>RatingPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -955,6 +991,15 @@
     <EmbeddedResource Include="Forms\Helpers\RatingPopup.pt-BR.resx">
       <DependentUpon>RatingPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\AboutBox.tr.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.tr.resx">
+      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\MainWindow.tr.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\SettingsWindow.pt-BR.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -964,7 +1009,13 @@
     <EmbeddedResource Include="Forms\Windows\MainWindow.pt-BR.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\SettingsWindow.tr.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.pt-BR.resx">
+      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.tr.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ar.resx">
@@ -1001,6 +1052,9 @@
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.sl.resx">
+      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.tr.resx">
       <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wizards\FirstStartBox.ar.resx">
@@ -1354,6 +1408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.sl.resx">
       <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.tr.resx">
+      <DependentUpon>FirstStartBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisable.ar.resx">
       <Generator>ResXFileCodeGenerator</Generator>

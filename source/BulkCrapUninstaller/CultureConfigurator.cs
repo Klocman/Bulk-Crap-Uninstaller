@@ -138,7 +138,11 @@ namespace BulkCrapUninstaller
                 CultureInfo.GetCultureInfo("ru-RU"),
 
                 // Slovenian
-                CultureInfo.GetCultureInfo("sl-SI")
+                CultureInfo.GetCultureInfo("sl-SI"),
+
+                // Turkish
+                CultureInfo.GetCultureInfo("tr-CY"),
+                CultureInfo.GetCultureInfo("tr-TR")
             };
 
             Debug.Assert(translationDirectories.All(x => supportedCultures.Select(c => c.Name.Substring(0, 2)).Contains(x, StringComparison.OrdinalIgnoreCase)),
