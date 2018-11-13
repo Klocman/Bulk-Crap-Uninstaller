@@ -42,6 +42,9 @@ namespace UninstallerAutomatizer
             _handler.StatusUpdate += HandlerOnStatusUpdate;
             _handler.Start();
 
+            if (_handler.IsDaemon)
+                WindowState = FormWindowState.Minimized;
+
             timerOpacity.Start();
         }
 
