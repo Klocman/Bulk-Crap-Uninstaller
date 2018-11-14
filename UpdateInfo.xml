@@ -2,18 +2,20 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.11.0.0</Version>
+<Version>4.12.0.0</Version>
 <URL></URL>
 <PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
 <Changes>
-Added multithreading to information gathering
-Added multithreading to registry scan
-Improved application merging logic, better memory use and speed
-Improved speed of predefined application scan
-Separated Script/tweak scanner into a new helper executable
-Updated OneDrive script information, override built-in windows entry
-Updated TaskScheduler library
-Merged German translation update by Thomas W.
+Start command line uninstallers minimized if running quiet
+Minimize automatizer daemon by default
+Install location of chocolatey is now detected
+Improved "Uninstall in Chocolatey" junk confidence
+Added "Improve wallpaper quality" tweak
+Clearer naming of "Show x under This PC" tweaks
+Always run loud uninstaller if user clicks "Run uninstaller" in uninstall progress window
+Made Drive junk scanner thread-safe, code cleanup
+Added Turkish translation by Harun Güngör
+Merged French translation update by Thierry
 ... and many fixes and tweaks
 </Changes>
 <Hash></Hash>
