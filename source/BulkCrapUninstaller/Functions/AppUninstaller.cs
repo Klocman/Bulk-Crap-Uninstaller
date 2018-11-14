@@ -392,9 +392,9 @@ namespace BulkCrapUninstaller.Functions
 
                     var sortedJunk = from item in selectedJunk
                                      // Run commands before deleting any files or reg keys to avoid missing files
-                                     orderby item is RunProcessJunk descending
+                                     orderby item is RunProcessJunk descending,
                                      // Need to stop and unregister service before deleting its exe
-                                     orderby item is StartupJunkNode descending
+                                             item is StartupJunkNode descending
                                      select item;
 
                     foreach (var junkNode in sortedJunk)
