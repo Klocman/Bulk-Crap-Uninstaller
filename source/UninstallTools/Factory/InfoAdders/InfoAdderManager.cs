@@ -17,6 +17,8 @@ namespace UninstallTools.Factory.InfoAdders
         private static readonly IMissingInfoAdder[] InfoAdders;
 
         private static readonly Dictionary<string, CompiledPropertyInfo<ApplicationUninstallerEntry>> TargetProperties;
+        private static readonly ICollection<CompiledPropertyInfo<ApplicationUninstallerEntry>> UninstallerProperties;
+        private static readonly ICollection<CompiledPropertyInfo<ApplicationUninstallerEntry>> NonUninstallerProperties;
 
         static InfoAdderManager()
         {
@@ -33,6 +35,17 @@ namespace UninstallTools.Factory.InfoAdders
                      compiled.Tag = compiled.CompiledGet(defaultValues);
                      return compiled;
                  });
+
+            // Split properties related to uninstaller and its type so they can be moved all at same time
+            // TODO Better sorting logic? If names change or props are added without uninstall in name they'll slip through
+            foreach (var group in TargetProperties.Where(x => x.Key != nameof(ApplicationUninstallerEntry.UninstallerKind))
+                .GroupBy(x => x.Key.Contains("uninstall", StringComparison.OrdinalIgnoreCase)))
+            {
+                if (group.Key)
+                    UninstallerProperties = group.Select(x => x.Value).ToList();
+                else
+                    NonUninstallerProperties = group.Select(x => x.Value).ToList();
+            }
         }
 
         private static readonly Type BoolType = typeof(bool);
@@ -151,19 +164,42 @@ namespace UninstallTools.Factory.InfoAdders
                 baseEntry.StartupEntries = baseEntry.StartupEntries.Concat(entryToMerge.StartupEntries);
             }
 
-            foreach (var property in TargetProperties.Values)
+            void CopyPropertyIfBetter(CompiledPropertyInfo<ApplicationUninstallerEntry> property, bool alwaysCopy)
             {
-                // If source has a default (not set) value for this property, skip it
+                // If entryToMerge has a default (not set) value for this property, skip it so we don't lose data
                 var newValue = property.CompiledGet(entryToMerge);
-                if (Equals(newValue, property.Tag)) continue;
+                if (Equals(newValue, property.Tag)) return;
 
-                // Copy new value to base entry if base doesn't have the value set, or if the values are strings and merged value is longer
-                var oldValue = property.CompiledGet(baseEntry);
-                if (Equals(oldValue, property.Tag) ||
-                    newValue is string sNew && oldValue is string sOld && sNew.Length > sOld.Length)
+                if (alwaysCopy)
                 {
                     property.CompiledSet(baseEntry, newValue);
                 }
+                else
+                {
+                    // Copy new value to base entry if base doesn't have the value set, 
+                    // or if the values are strings and merged value is longer
+                    var oldValue = property.CompiledGet(baseEntry);
+                    if (Equals(oldValue, property.Tag) || 
+                        newValue is string sNew && oldValue is string sOld && sNew.Length > sOld.Length)
+                    {
+                        property.CompiledSet(baseEntry, newValue);
+                    }
+                }
+            }
+
+            foreach (var property in NonUninstallerProperties)
+                CopyPropertyIfBetter(property, false);
+
+            // Make sure that all uninstaller-related properties are only copied when necessary, and that UninstallerKind 
+            // always changes together with the uninstall strings or we will get bugs elsewhere if there is a mismatch
+            if (baseEntry.UninstallerKind == UninstallerType.Unknown || 
+                baseEntry.UninstallerKind == UninstallerType.SimpleDelete && entryToMerge.UninstallPossible || 
+                !baseEntry.UninstallPossible || 
+                entryToMerge.UninstallerKind == UninstallerType.PowerShell)
+            {
+                baseEntry.UninstallerKind = entryToMerge.UninstallerKind;
+                foreach (var property in UninstallerProperties)
+                    CopyPropertyIfBetter(property, true);
             }
 
             baseEntry.AdditionalJunk.AddRange(entryToMerge.AdditionalJunk);
