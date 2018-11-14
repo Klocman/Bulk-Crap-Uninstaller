@@ -18,7 +18,7 @@ using UninstallTools.Uninstaller;
 
 namespace BCU_console
 {
-    internal class Program
+    internal static class Program
     {
         private static void ShowHelp()
         {

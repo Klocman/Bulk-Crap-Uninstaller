@@ -6,7 +6,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using Klocman.Extensions;
 using Klocman.Tools;
 

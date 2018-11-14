@@ -3,7 +3,6 @@
     Apache License Version 2.0
 */
 
-using System.IO;
 using Klocman.Extensions;
 
 namespace UninstallTools.Factory.InfoAdders

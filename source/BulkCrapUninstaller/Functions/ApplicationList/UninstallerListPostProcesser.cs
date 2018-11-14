@@ -6,9 +6,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -16,7 +14,6 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Events;
-using Klocman.Tools;
 using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList

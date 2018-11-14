@@ -19,7 +19,7 @@ namespace WinUpdateHelper
     ///     u[ninstall] UpdateID     - Uninstall an update
     ///     l[ist]                   - List updates
     /// </summary>
-    internal class Program
+    internal static class Program
     {
         private static QueryType _queryType;
 

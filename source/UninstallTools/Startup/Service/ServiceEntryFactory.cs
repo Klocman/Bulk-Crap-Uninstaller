@@ -15,7 +15,7 @@ using Klocman.Tools;
 
 namespace UninstallTools.Startup.Service
 {
-    internal class ServiceEntryFactory
+    internal static class ServiceEntryFactory
     {
         internal enum StartMode
         {

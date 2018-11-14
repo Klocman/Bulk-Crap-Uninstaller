@@ -13,7 +13,7 @@ using WUApiLib;
 
 namespace WinUpdateHelper
 {
-    internal class UpdateManager
+    internal static class UpdateManager
     {
         public static void UninstallUpdate(string updateId)
         {

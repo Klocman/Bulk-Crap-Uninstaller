@@ -98,7 +98,7 @@ namespace UninstallTools.Junk
 
             progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Finishing));
 
-            foreach(var target in targets)
+            foreach(var target in targetEntries)
             {
                 results.AddRange(target.AdditionalJunk);
             }

@@ -4,7 +4,6 @@
 */
 
 using System;
-using System.IO;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman.Binding.Settings;

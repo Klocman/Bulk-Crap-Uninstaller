@@ -13,7 +13,7 @@ namespace UninstallerAutomatizer
     /// <summary>
     /// UninstallerAutomatizer.exe UninstallerType [/K] UninstallCommand
     /// </summary>
-    internal class Program
+    internal static class Program
     {
         public static readonly string AutomatizerProcessName = Process.GetCurrentProcess().ProcessName;
 

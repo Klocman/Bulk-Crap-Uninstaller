@@ -14,7 +14,6 @@ using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
-using Klocman.Resources;
 using Klocman.Tools;
 using UninstallTools.Properties;
 using UninstallTools.Startup;

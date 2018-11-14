@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace SteamHelper
 {
-    internal class SteamUninstaller
+    internal static class SteamUninstaller
     {
         public static void UninstallSteamApp(SteamApplicationInfo appInfo, bool silent)
         {

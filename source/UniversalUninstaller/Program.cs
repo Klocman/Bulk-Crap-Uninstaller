@@ -89,9 +89,10 @@ namespace UniversalUninstaller
         {
             foreach (var fileSystemInfo in it)
             {
-                var di = fileSystemInfo as DirectoryInfo;
-                if (di != null)
+                if (fileSystemInfo is DirectoryInfo di)
+                {
                     RecursiveDelete(di);
+                }
                 else
                 {
                     ClearReadOnlyFlag(fileSystemInfo);

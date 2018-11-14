@@ -13,7 +13,7 @@ using Klocman;
 
 namespace SteamHelper
 {
-    internal class Program
+    internal static class Program
     {
         private static QueryType _queryType = QueryType.None;
         private static bool _silent;

@@ -9,7 +9,7 @@ using Klocman;
 
 namespace OculusHelper
 {
-    internal class Program
+    internal static class Program
     {
         private static int Main(string[] args)
         {

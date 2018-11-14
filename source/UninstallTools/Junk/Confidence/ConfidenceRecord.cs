@@ -3,8 +3,6 @@
     Apache License Version 2.0
 */
 
-using UninstallTools.Properties;
-
 namespace UninstallTools.Junk.Confidence
 {
     public sealed class ConfidenceRecord

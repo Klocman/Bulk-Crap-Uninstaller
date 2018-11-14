@@ -10,7 +10,7 @@ namespace UninstallTools.Junk.Confidence
     /// <summary>
     /// Universal confidence pieces
     /// </summary>
-    public sealed class ConfidenceRecords
+    public static class ConfidenceRecords
     {
         public static readonly ConfidenceRecord CompanyNameDidNotMatch =
             new ConfidenceRecord(-2, Localisation.ConfidencePart_CompanyNameDidNotMatch);

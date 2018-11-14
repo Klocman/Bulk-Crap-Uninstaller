@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace OculusHelper
 {
-    internal class OculusManager
+    internal static class OculusManager
     {
         private static IEnumerable<string> _oculusLibraryLocations;
 
