@@ -100,7 +100,22 @@ namespace UninstallTools.Factory.InfoAdders
 
         internal static IEnumerable<FileInfo> SortListExecutables(IEnumerable<FileInfo> targets, string targetString)
         {
-            return targets.OrderBy(x => Sift4.SimplestDistance(x.Name, targetString, 3));
+            int GetPenaltyPoints(FileInfo fileInfo)
+            {
+                if (fileInfo.Name.Equals("uninstaller.exe", StringComparison.OrdinalIgnoreCase)
+                    || fileInfo.Name.Equals("uninstall.exe", StringComparison.OrdinalIgnoreCase)
+                    || fileInfo.Name.Contains("unins00", StringComparison.OrdinalIgnoreCase))
+                    return 20;
+                if (fileInfo.Name.Contains("uninsta", StringComparison.OrdinalIgnoreCase))
+                    return 4;
+                if (fileInfo.Name.Contains("unins", StringComparison.OrdinalIgnoreCase))
+                    return 2;
+                return 0;
+            }
+
+            return targets.Select(x => new { x, p = GetPenaltyPoints(x) })
+                .OrderBy(x => Sift4.SimplestDistance(x.x.Name, targetString, 3) + x.p)
+                .Select(x => x.x);
         }
 
         internal sealed class ScanDirectoryResult
