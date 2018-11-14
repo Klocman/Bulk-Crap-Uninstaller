@@ -116,6 +116,7 @@ namespace UninstallTools.Factory
                 psc.Arguments += " -n --skipautouninstaller";
                 var junk = new Junk.Containers.RunProcessJunk(entry, null, psc, Localisation.ChocolateyFactory_UninstallInChocolateyJunkName);
                 junk.Confidence.Add(Junk.Confidence.ConfidenceRecords.ExplicitConnection);
+                junk.Confidence.Add(4);
                 entry.AdditionalJunk.Add(junk);
 
                 yield return entry;
