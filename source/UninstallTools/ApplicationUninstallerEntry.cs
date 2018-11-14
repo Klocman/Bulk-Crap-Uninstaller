@@ -324,14 +324,14 @@ namespace UninstallTools
             return !UninstallToolsGlobalConfig.GetAllProgramFiles().Any(x => PathTools.PathsEqual(x, InstallLocation));
         }
 
-        /// <summary>
+        /*/// <summary>
         ///     Get the certificate associated to the uninstaller or application.
         /// </summary>
         /// <param name="onlyStored">If true only return the stored value, otherwise generate it if needed.</param>
-        //public X509Certificate2 GetCertificate(bool onlyStored)
-        //{
-        //    return onlyStored ? _certificate : GetCertificate();
-        //}
+        public X509Certificate2 GetCertificate(bool onlyStored)
+        {
+            return onlyStored ? _certificate : GetCertificate();
+        }*/
 
         /// <summary>
         ///     Get the certificate associated to the uninstaller or application.

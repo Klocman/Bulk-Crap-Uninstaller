@@ -12,7 +12,9 @@ namespace BulkCrapUninstaller.Functions.Tools
 {
     internal static class SystemRestore
     {
-        // Currently running system restore number
+        /// <summary>
+        /// Currently running system restore number
+        /// </summary>
         private static long _currentRestoreId;
 
         /// <summary>
@@ -20,7 +22,7 @@ namespace BulkCrapUninstaller.Functions.Tools
         ///     operation.
         /// </summary>
         /// <param name="count">How many items are being uninstalled</param>
-        /// <returns></returns>
+        /// <param name="displayMessage">If user should be asked to create the restore point. If false, always create</param>
         public static bool BeginSysRestore(int count, bool displayMessage = true)
         {
             if (SysRestore.SysRestoreAvailable())
