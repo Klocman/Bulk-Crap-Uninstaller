@@ -1,16 +1,16 @@
 ﻿#include "InstallDependancies.iss"
 
-#define MyAppName "BCUninstaller"      
-#define MyAppNameShort "BCUninstaller"   
+#define MyAppName "BCUninstaller"
+#define MyAppNameShort "BCUninstaller"
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/"
-#define MyAppExeName "BCUninstaller.exe" 
+#define MyAppExeName "BCUninstaller.exe"
 #define MyAppCopyright "Copyright 2018 Marcin Szeniak"
-                                
-#define MyAppVersion "4.11.0.0"     
-#define MyAppVersionShort "4.11"
 
-#include "Scripts\PortablePage.iss" 
+#define MyAppVersion "4.12.0.0"
+#define MyAppVersionShort "4.12"
+
+#include "Scripts\PortablePage.iss"
 #include "Scripts\PortableIcons.iss"
 #include "Scripts\Ngen.iss"
 
@@ -25,9 +25,9 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-UninstallDisplayIcon={app}\{#MyAppExeName}   
+UninstallDisplayIcon={app}\{#MyAppExeName}
 
-WizardImageFile=bigImage.bmp  
+WizardImageFile=bigImage.bmp
 WizardSmallImageFile=smallImage.bmp
 SetupIconFile=logo.ico
 
@@ -49,34 +49,33 @@ VersionInfoCompany={#MyAppPublisher}
 VersionInfoCopyright={#MyAppCopyright}
 VersionInfoProductName={#MyAppName}
 VersionInfoProductVersion={#MyAppVersion}
-VersionInfoProductTextVersion={#MyAppVersion}       
-VersionInfoVersion={#MyAppVersion}          
+VersionInfoProductTextVersion={#MyAppVersion}
+VersionInfoVersion={#MyAppVersion}
 VersionInfoTextVersion={#MyAppVersion}
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "fr"; MessagesFile: "compiler:Languages\French.isl"              
-Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"               
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"              
-Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"           
-Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"           
+Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
+Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
-Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"    
+Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Components]
 Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixed
 Name: "lang"; Description: "Extra Languages"; Types: full
 
-[Files]                                           
-Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion               
-Source: "Input\BCU_manual.html"; DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme        
+[Files]
+Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion
+Source: "Input\BCU_manual.html"; DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme
 Source: "Input\CleanLogs.bat"; DestDir: "{app}"; Components: main; Check: IsPortable(); Flags: ignoreversion
-Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"      
+Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"
 Source: "Input\Resources\*"; DestDir: "{app}\Resources"; Components: main; Flags: ignoreversion recursesubdirs
 
-Source: "Input\*"; DestDir: "{app}"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat" 
-                                                                   
+Source: "Input\*"; DestDir: "{app}"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"
+
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
-        
