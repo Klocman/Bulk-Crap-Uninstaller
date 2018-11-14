@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using UninstallTools.Properties;
@@ -13,7 +14,7 @@ namespace UninstallTools.Factory
         private static bool? _chocoIsAvailable;
         private static string _chocoLocation;
 
-        internal static string ChocoLocation
+        private static string ChocoFullFilename
         {
             get
             {
@@ -23,7 +24,7 @@ namespace UninstallTools.Factory
             }
         }
 
-        internal static bool ChocoIsAvailable
+        private static bool ChocoIsAvailable
         {
             get
             {
@@ -35,7 +36,7 @@ namespace UninstallTools.Factory
                 return _chocoIsAvailable.Value;
             }
         }
-        
+
         private static void GetChocoInfo()
         {
             try
@@ -62,7 +63,7 @@ namespace UninstallTools.Factory
         {
             if (!ChocoIsAvailable) yield break;
 
-            var result = StartProcessAndReadOutput(ChocoLocation, @"list -l -nocolor -y -r");
+            var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -l -nocolor -y -r");
 
             if (string.IsNullOrEmpty(result)) yield break;
 
@@ -76,7 +77,7 @@ namespace UninstallTools.Factory
 
             foreach (var appName in appNames)
             {
-                var info = StartProcessAndReadOutput(ChocoLocation, "info -l -nocolor -y -v " + appName.name);
+                var info = StartProcessAndReadOutput(ChocoFullFilename, "info -l -nocolor -y -v " + appName.name);
                 var kvps = ExtractPackageInformation(info);
                 if (kvps.Count == 0) continue;
 
@@ -104,9 +105,12 @@ namespace UninstallTools.Factory
                         AddInfo(entry, kvps, "Chocolatey Package Source", (e, s) => e.AboutUrl = s);
                 }
 
-                var psc = new ProcessStartCommand(ChocoLocation, $"uninstall {appName.name} -y -r");
+                var psc = new ProcessStartCommand(ChocoFullFilename, $"uninstall {appName.name} -y -r");
 
                 entry.UninstallString = psc.ToString();
+
+                if (entry.RawDisplayName == "Chocolatey")
+                    entry.InstallLocation = GetChocoInstallLocation();
 
                 // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
                 psc.Arguments += " -n --skipautouninstaller";
@@ -118,7 +122,16 @@ namespace UninstallTools.Factory
             }
         }
 
-        private static void AddInfo(ApplicationUninstallerEntry target, Dictionary<string, string> source, 
+        private static string GetChocoInstallLocation()
+        {
+            // The path is C:\ProgramData\chocolatey\bin\choco.exe OR C:\ProgramData\chocolatey\choco.exe
+            var chocoLocation = Path.GetDirectoryName(ChocoFullFilename);
+            if (chocoLocation != null && chocoLocation.EndsWith(@"\bin", StringComparison.OrdinalIgnoreCase))
+                return chocoLocation.Substring(0, chocoLocation.Length - 4);
+            return chocoLocation;
+        }
+
+        private static void AddInfo(ApplicationUninstallerEntry target, Dictionary<string, string> source,
             string key, Action<ApplicationUninstallerEntry, string> setter)
         {
             if (source.TryGetValue(key, out var val))
