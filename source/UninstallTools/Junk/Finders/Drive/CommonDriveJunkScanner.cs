@@ -19,7 +19,6 @@ namespace UninstallTools.Junk.Finders.Drive
     public class CommonDriveJunkScanner : JunkCreatorBase
     {
         private static IEnumerable<DirectoryInfo> _foldersToCheck;
-        private ApplicationUninstallerEntry _uninstaller;
 
         public override void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
@@ -36,14 +35,12 @@ namespace UninstallTools.Junk.Finders.Drive
 
         public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            _uninstaller = target;
-
-            return _foldersToCheck.SelectMany((x) => FindJunkRecursively(x)).Cast<IJunkResult>();
+            return _foldersToCheck.SelectMany(x => FindJunkRecursively(x, target)).Cast<IJunkResult>();
         }
 
         public override string CategoryName => Localisation.Junk_Drive_GroupName;
 
-        private IEnumerable<FileSystemJunk> FindJunkRecursively(DirectoryInfo directory, int level = 0)
+        private IEnumerable<FileSystemJunk> FindJunkRecursively(DirectoryInfo directory, ApplicationUninstallerEntry uninstaller, int level = 0)
         {
             var results = new List<FileSystemJunk>();
 
@@ -56,15 +53,15 @@ namespace UninstallTools.Junk.Finders.Drive
                     if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
                         continue;
 
-                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, level).ToList();
+                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, uninstaller, level).ToList();
 
                     FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
                     {
-                        newNode = new FileSystemJunk(dir, _uninstaller, this);
+                        newNode = new FileSystemJunk(dir, uninstaller, this);
                         newNode.Confidence.AddRange(generatedConfidence);
 
-                        if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(_uninstaller)))
+                        if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(uninstaller)))
                             newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                         results.Add(newNode);
@@ -72,7 +69,7 @@ namespace UninstallTools.Junk.Finders.Drive
 
                     if (level > 1) continue;
 
-                    var junkNodes = FindJunkRecursively(dir, level + 1).ToList();
+                    var junkNodes = FindJunkRecursively(dir, uninstaller, level + 1).ToList();
                     results.AddRange(junkNodes);
 
                     if (newNode != null)
@@ -96,9 +93,10 @@ namespace UninstallTools.Junk.Finders.Drive
             return results;
         }
 
-        protected IEnumerable<ConfidenceRecord> GenerateConfidence(string itemName, string itemParentPath, int level)
+        private static IEnumerable<ConfidenceRecord> GenerateConfidence(string itemName, string itemParentPath,
+            ApplicationUninstallerEntry uninstaller, int level)
         {
-            var baseOutput = ConfidenceGenerators.GenerateConfidence(itemName, itemParentPath, level, _uninstaller).ToList();
+            var baseOutput = ConfidenceGenerators.GenerateConfidence(itemName, itemParentPath, level, uninstaller).ToList();
 
             if (!baseOutput.Any(x => x.Change > 0))
                 return Enumerable.Empty<ConfidenceRecord>();
