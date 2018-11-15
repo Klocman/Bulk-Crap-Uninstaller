@@ -186,9 +186,7 @@ namespace ScriptHelper
                 if (!Path.IsPathRooted(scriptName))
                     scriptName = Path.GetFullPath(Path.Combine(directoryName, scriptName));
 
-                return $@"powershell.exe -File ""{scriptName}"" {scriptArgs} -NoLogo -ExecutionPolicy Bypass {
-                        (hidden ? "-NonInteractive -WindowStyle Hidden" : "")
-                    }";
+                return $@"powershell.exe -NoLogo -ExecutionPolicy Bypass {(hidden ? "-NonInteractive -WindowStyle Hidden " : "")}-File ""{scriptName}"" {scriptArgs}";
             }
             catch (SystemException)
             {
