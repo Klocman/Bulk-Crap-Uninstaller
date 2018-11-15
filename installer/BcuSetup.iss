@@ -32,6 +32,7 @@ WizardSmallImageFile=smallImage.bmp
 SetupIconFile=logo.ico
 
 AllowNoIcons=yes
+DisableDirPage=no
 LicenseFile=Input\Licence.txt
 OutputBaseFilename={#MyAppNameShort}_{#MyAppVersionShort}_setup
 
