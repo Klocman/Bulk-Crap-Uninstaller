@@ -46,104 +46,106 @@ namespace BulkCrapUninstaller
             var supportedCultures = new[]
             {
                 // en - English
-                EnUsCulture, //CultureInfo.GetCultureInfo("en-US"),
-                CultureInfo.GetCultureInfo("en-AU"),
-                CultureInfo.GetCultureInfo("en-BZ"),
-                CultureInfo.GetCultureInfo("en-CA"),
-                CultureInfo.GetCultureInfo("en-IE"),
-                CultureInfo.GetCultureInfo("en-JM"),
-                CultureInfo.GetCultureInfo("en-NZ"),
-                CultureInfo.GetCultureInfo("en-PH"),
-                CultureInfo.GetCultureInfo("en-ZA"),
-                CultureInfo.GetCultureInfo("en-TT"),
-                CultureInfo.GetCultureInfo("en-GB"),
-                CultureInfo.GetCultureInfo("en-ZW"),
+                //("en-US"),
+                "en-AU",
+                "en-BZ",
+                "en-CA",
+                "en-IE",
+                "en-JM",
+                "en-NZ",
+                "en-PH",
+                "en-ZA",
+                "en-TT",
+                "en-GB",
+                "en-ZW",
 
                 // ar - Arabic
-                CultureInfo.GetCultureInfo("ar-DZ"),
-                CultureInfo.GetCultureInfo("ar-BH"),
-                CultureInfo.GetCultureInfo("ar-EG"),
-                CultureInfo.GetCultureInfo("ar-IQ"),
-                CultureInfo.GetCultureInfo("ar-JO"),
-                CultureInfo.GetCultureInfo("ar-KW"),
-                CultureInfo.GetCultureInfo("ar-LB"),
-                CultureInfo.GetCultureInfo("ar-LY"),
-                CultureInfo.GetCultureInfo("ar-MA"),
-                CultureInfo.GetCultureInfo("ar-OM"),
-                CultureInfo.GetCultureInfo("ar-QA"),
-                CultureInfo.GetCultureInfo("ar-SA"),
-                CultureInfo.GetCultureInfo("ar-SY"),
-                CultureInfo.GetCultureInfo("ar-TN"),
-                CultureInfo.GetCultureInfo("ar-AE"),
-                CultureInfo.GetCultureInfo("ar-YE"),
+                "ar-DZ",
+                "ar-BH",
+                "ar-EG",
+                "ar-IQ",
+                "ar-JO",
+                "ar-KW",
+                "ar-LB",
+                "ar-LY",
+                "ar-MA",
+                "ar-OM",
+                "ar-QA",
+                "ar-SA",
+                "ar-SY",
+                "ar-TN",
+                "ar-AE",
+                "ar-YE",
 
                 // Czech
-                CultureInfo.GetCultureInfo("cs-CZ"),
+                "cs-CZ",
 
                 // de - German
-                CultureInfo.GetCultureInfo("de-AT"),
-                CultureInfo.GetCultureInfo("de-DE"),
-                CultureInfo.GetCultureInfo("de-LI"),
-                CultureInfo.GetCultureInfo("de-LU"),
-                CultureInfo.GetCultureInfo("de-CH"),
+                "de-AT",
+                "de-DE",
+                "de-LI",
+                "de-LU",
+                "de-CH",
 
                 // es - Spanish
-                CultureInfo.GetCultureInfo("es-AR"),
-                CultureInfo.GetCultureInfo("es-BO"),
-                CultureInfo.GetCultureInfo("es-CL"),
-                CultureInfo.GetCultureInfo("es-CO"),
-                CultureInfo.GetCultureInfo("es-CR"),
-                CultureInfo.GetCultureInfo("es-DO"),
-                CultureInfo.GetCultureInfo("es-EC"),
-                CultureInfo.GetCultureInfo("es-SV"),
-                CultureInfo.GetCultureInfo("es-GT"),
-                CultureInfo.GetCultureInfo("es-HN"),
-                CultureInfo.GetCultureInfo("es-MX"),
-                CultureInfo.GetCultureInfo("es-NI"),
-                CultureInfo.GetCultureInfo("es-PA"),
-                CultureInfo.GetCultureInfo("es-PY"),
-                CultureInfo.GetCultureInfo("es-PE"),
-                CultureInfo.GetCultureInfo("es-PR"),
-                CultureInfo.GetCultureInfo("es-ES"),
-                CultureInfo.GetCultureInfo("es-UY"),
-                CultureInfo.GetCultureInfo("es-VE"),
+                "es-AR",
+                "es-BO",
+                "es-CL",
+                "es-CO",
+                "es-CR",
+                "es-DO",
+                "es-EC",
+                "es-SV",
+                "es-GT",
+                "es-HN",
+                "es-MX",
+                "es-NI",
+                "es-PA",
+                "es-PY",
+                "es-PE",
+                "es-PR",
+                "es-ES",
+                "es-UY",
+                "es-VE",
 
                 // fr - French
-                CultureInfo.GetCultureInfo("fr-BE"),
-                CultureInfo.GetCultureInfo("fr-CA"),
-                CultureInfo.GetCultureInfo("fr-FR"),
-                CultureInfo.GetCultureInfo("fr-LU"),
-                CultureInfo.GetCultureInfo("fr-MC"),
-                CultureInfo.GetCultureInfo("fr-CH"),
+                "fr-BE",
+                "fr-CA",
+                "fr-FR",
+                "fr-LU",
+                "fr-MC",
+                "fr-CH",
 
                 // Hungarian
-                CultureInfo.GetCultureInfo("hu-HU"),
+                "hu-HU",
 
                 // it - Italian
-                CultureInfo.GetCultureInfo("it-IT"),
-                CultureInfo.GetCultureInfo("it-CH"),
+                "it-IT",
+                "it-CH",
 
                 // nl - Dutch
-                CultureInfo.GetCultureInfo("nl-NL"),
-                CultureInfo.GetCultureInfo("nl-BE"),
+                "nl-NL",
+                "nl-BE",
 
                 // Polish
-                CultureInfo.GetCultureInfo("pl-PL"),
+                "pl-PL",
 
                 // pt - Portuguese
-                CultureInfo.GetCultureInfo("pt-PT"),
-                CultureInfo.GetCultureInfo("pt-BR"),
+                "pt-PT",
+                "pt-BR",
 
                 // Russian
-                CultureInfo.GetCultureInfo("ru-RU"),
+                "ru-RU",
 
                 // Slovenian
-                CultureInfo.GetCultureInfo("sl-SI"),
+                "sl-SI",
 
                 // Turkish
-                CultureInfo.GetCultureInfo("tr-CY"),
-                CultureInfo.GetCultureInfo("tr-TR")
-            };
+                "tr-CY",
+                "tr-TR"
+            }.Attempt(CultureInfo.GetCultureInfo).ToList();
+
+            supportedCultures.Add(EnUsCulture);
 
             Debug.Assert(translationDirectories.All(x => supportedCultures.Select(c => c.Name.Substring(0, 2)).Contains(x, StringComparison.OrdinalIgnoreCase)),
                 "Translation is not added to supported cultures - " + translationDirectories.FirstOrDefault(x => !supportedCultures.Select(c => c.Name.Substring(0, 2)).Contains(x, StringComparison.OrdinalIgnoreCase)));
