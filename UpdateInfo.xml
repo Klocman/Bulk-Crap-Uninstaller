@@ -4,7 +4,7 @@
 <Update>
 <Version>4.12.1.0</Version>
 <URL></URL>
-<PageURL>https://www.fosshub.com/Bulk-Crap-Uninstaller.html</PageURL>
+<PageURL>https://www.bcuninstaller.com/</PageURL>
 <Changes>
 Start command line uninstallers minimized if running quiet
 Minimize automatizer daemon by default
