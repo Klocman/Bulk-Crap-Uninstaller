@@ -358,7 +358,6 @@
             // 
             resources.ApplyResources(this.checkBoxUpdateSearch, "checkBoxUpdateSearch");
             this.checkBoxUpdateSearch.Name = "checkBoxUpdateSearch";
-
             this.checkBoxUpdateSearch.UseVisualStyleBackColor = true;
             // 
             // p4netUpdateAdd
@@ -370,7 +369,6 @@
             // 
             resources.ApplyResources(this.checkBoxSendStats, "checkBoxSendStats");
             this.checkBoxSendStats.Name = "checkBoxSendStats";
-
             this.checkBoxSendStats.UseVisualStyleBackColor = true;
             // 
             // p4netUsageAdd
@@ -382,7 +380,6 @@
             // 
             resources.ApplyResources(this.checkBoxRatings, "checkBoxRatings");
             this.checkBoxRatings.Name = "checkBoxRatings";
-
             this.checkBoxRatings.UseVisualStyleBackColor = true;
             // 
             // panel5
@@ -435,7 +432,6 @@
             // 
             resources.ApplyResources(this.checkBoxInvalidTest, "checkBoxInvalidTest");
             this.checkBoxInvalidTest.Name = "checkBoxInvalidTest";
-
             this.checkBoxInvalidTest.UseVisualStyleBackColor = true;
             // 
             // pCorViewinvalidComment
@@ -457,7 +453,6 @@
             // 
             resources.ApplyResources(this.checkBoxOrphans, "checkBoxOrphans");
             this.checkBoxOrphans.Name = "checkBoxOrphans";
-
             this.checkBoxOrphans.UseVisualStyleBackColor = true;
             // 
             // pCorOrphansComment
@@ -515,7 +510,6 @@
             // 
             resources.ApplyResources(this.checkBoxListSysComp, "checkBoxListSysComp");
             this.checkBoxListSysComp.Name = "checkBoxListSysComp";
-
             this.checkBoxListSysComp.UseVisualStyleBackColor = true;
             // 
             // p3advProtectTitle
@@ -532,14 +526,12 @@
             // 
             resources.ApplyResources(this.checkBoxListProtected, "checkBoxListProtected");
             this.checkBoxListProtected.Name = "checkBoxListProtected";
-
             this.checkBoxListProtected.UseVisualStyleBackColor = true;
             // 
             // checkBoxDiisableProtection
             // 
             resources.ApplyResources(this.checkBoxDiisableProtection, "checkBoxDiisableProtection");
             this.checkBoxDiisableProtection.Name = "checkBoxDiisableProtection";
-
             this.checkBoxDiisableProtection.UseVisualStyleBackColor = true;
             // 
             // p3advProtectAdd
@@ -603,14 +595,12 @@
             // 
             resources.ApplyResources(this.checkBoxGroups, "checkBoxGroups");
             this.checkBoxGroups.Name = "checkBoxGroups";
-
             this.checkBoxGroups.UseVisualStyleBackColor = true;
             // 
             // checkBoxCheckboxes
             // 
             resources.ApplyResources(this.checkBoxCheckboxes, "checkBoxCheckboxes");
             this.checkBoxCheckboxes.Name = "checkBoxCheckboxes";
-
             this.checkBoxCheckboxes.UseVisualStyleBackColor = true;
             // 
             // p2viewCertsTitle
@@ -627,7 +617,6 @@
             // 
             resources.ApplyResources(this.checkBoxCertTest, "checkBoxCertTest");
             this.checkBoxCertTest.Name = "checkBoxCertTest";
-
             this.checkBoxCertTest.UseVisualStyleBackColor = true;
             // 
             // p2viewAdd
@@ -724,7 +713,7 @@
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
             this.pictureBox1.Name = "pictureBox1";
-            
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -745,8 +734,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.buttonExit;
             this.ControlBox = false;
-            this.Controls.Add(this.scrollPanel);
             this.Controls.Add(this.panelNavigation);
+            this.Controls.Add(this.scrollPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

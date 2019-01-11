@@ -536,7 +536,7 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe((sender, args) =>
             {
                 if (_listView.CheckIsAppDisposed()) return;
-
+                
                 olvColumnRating.IsVisible = args.NewValue;
                 uninstallerObjectListView.RebuildColumns();
             }, x => x.MiscUserRatings, this);
@@ -799,7 +799,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OnFirstApplicationStart()
         {
-            StartSetupWizard(this, EventArgs.Empty);
+            StartSetupWizard(false);
 
             // On first start the updates are not searched from constructor to give user a chance to disable them.
             BackgroundSearchForUpdates();
@@ -1095,9 +1095,14 @@ namespace BulkCrapUninstaller.Forms
                 settingsToolStripMenuItem));
         }
 
-        private void StartSetupWizard(object sender, EventArgs e)
+        private void OnClickStartSetupWizard(object sender, EventArgs e)
         {
-            using (var wizard = new FirstStartBox())
+            StartSetupWizard(true);
+        }
+
+        private void StartSetupWizard(bool canExit)
+        {
+            using (var wizard = new FirstStartBox(canExit))
             {
                 wizard.StartPosition = FormStartPosition.CenterParent;
                 wizard.ShowDialog(this);

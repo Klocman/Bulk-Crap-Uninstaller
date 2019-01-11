@@ -22,9 +22,15 @@ namespace BulkCrapUninstaller.Forms
         private int _pageNumber;
         private int _targetXPos;
         
-        public FirstStartBox()
+        public FirstStartBox(bool canExit)
         {
             InitializeComponent();
+
+            if (!canExit)
+            {
+                buttonExit.Enabled = false;
+                buttonExit.Visible = false;
+            }
 
             Icon = Resources.Icon_Logo;
 

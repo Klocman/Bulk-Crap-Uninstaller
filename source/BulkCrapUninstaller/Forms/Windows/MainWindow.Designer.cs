@@ -1630,7 +1630,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.startSetupWizardToolStripMenuItem.Name = "startSetupWizardToolStripMenuItem";
             resources.ApplyResources(this.startSetupWizardToolStripMenuItem, "startSetupWizardToolStripMenuItem");
-            this.startSetupWizardToolStripMenuItem.Click += new System.EventHandler(this.StartSetupWizard);
+            this.startSetupWizardToolStripMenuItem.Click += new System.EventHandler(this.OnClickStartSetupWizard);
             // 
             // toolStripSeparator16
             // 
