@@ -153,9 +153,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Предупреждение: для этого должно быть включено восстановление системы!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Создание новой точки восстановления</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Изменение параметров удаления</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="labelProgress.Text" xml:space="preserve">
     <value>1 / 6</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Создание новой точки восстановления</value>
   </data>
 </root>

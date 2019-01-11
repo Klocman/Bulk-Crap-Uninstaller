@@ -328,7 +328,7 @@
     <value>relatedUninstallerAdder1</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.RelatedUninstallerAdder, BCUninstaller, Version=4.12.1.29630, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;relatedUninstallerAdder1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -448,7 +448,7 @@
     <value>uninstallConfirmation1</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Forms.UninstallConfirmation, BCUninstaller, Version=4.12.1.29630, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallConfirmation1.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -568,7 +568,7 @@
     <value>processWaiterControl1</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Type" xml:space="preserve">
-    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.4.6844.2007, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.ProcessWaiterControl, KlocTools, Version=3.5.6950.29624, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processWaiterControl1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -697,7 +697,7 @@
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.12.1.29630, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPage4</value>
@@ -813,37 +813,37 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="buttonCreateRestore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonCreateRestore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="buttonCreateRestore.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 92</value>
   </data>
-  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="buttonCreateRestore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonCreateRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 23</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonCreateRestore.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
     <value>Create a new restore point</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;buttonCreateRestore.Name" xml:space="preserve">
+    <value>buttonCreateRestore</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonCreateRestore.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonCreateRestore.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonCreateRestore.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
@@ -1633,7 +1633,7 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.TabControlWithoutHeader, BCUninstaller, Version=4.12.1.29630, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>panel1</value>

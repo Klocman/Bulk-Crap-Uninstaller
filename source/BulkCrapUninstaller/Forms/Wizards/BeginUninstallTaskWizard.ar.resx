@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>تحذير: يجب تمكين استعاده النظام لكي يعمل هذا!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>انشاء نقطه استعاده جديده</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>تغيير اعدادات الغاء التثبيت</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>بدء مهمة الغاء تثبيت جديده</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>انشاء نقطه استعاده جديده</value>
   </data>
 </root>

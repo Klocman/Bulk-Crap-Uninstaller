@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Waarschuwing: Systeemherstel moet ingeschakeld zijn om dit te laten werken!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Maak een nieuw herstelpunt</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Wijzig de-installatie instellingen</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Maak een nieuw herstelpunt</value>
   </data>
 </root>

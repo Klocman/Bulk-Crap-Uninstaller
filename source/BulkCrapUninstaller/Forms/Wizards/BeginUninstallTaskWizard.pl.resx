@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Ostrzezenie: Przywracanie systemu musi byc wlaczone aby to dzialalo!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Utwórz nowy punkt przywracania</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Zmien ustawienia deinstalacji</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Rozpocznij nowe zadanie dezinstalacji</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Utwórz nowy punkt przywracania</value>
   </data>
 </root>

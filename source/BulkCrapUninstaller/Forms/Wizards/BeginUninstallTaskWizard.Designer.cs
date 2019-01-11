@@ -57,7 +57,7 @@ namespace BulkCrapUninstaller.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCreateRestore = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -249,7 +249,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.label8);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.buttonCreateRestore);
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
@@ -270,13 +270,13 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
-            // button1
+            // buttonCreateRestore
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.flowLayoutPanel1.SetFlowBreak(this.button1, true);
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CreateRestorePoint);
+            resources.ApplyResources(this.buttonCreateRestore, "buttonCreateRestore");
+            this.flowLayoutPanel1.SetFlowBreak(this.buttonCreateRestore, true);
+            this.buttonCreateRestore.Name = "buttonCreateRestore";
+            this.buttonCreateRestore.UseVisualStyleBackColor = true;
+            this.buttonCreateRestore.Click += new System.EventHandler(this.CreateRestorePoint);
             // 
             // label5
             // 
@@ -415,6 +415,7 @@ namespace BulkCrapUninstaller.Forms
             this.MaximizeBox = false;
             this.Name = "BeginUninstallTaskWizard";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BeginUninstallTaskWizard_FormClosed);
             this.panelNavigation.ResumeLayout(false);
             this.panelNavigation.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -465,7 +466,7 @@ namespace BulkCrapUninstaller.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private UninstallationSettings uninstallationSettings1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCreateRestore;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

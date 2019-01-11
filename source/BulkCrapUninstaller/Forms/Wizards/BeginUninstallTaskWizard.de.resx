@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Achtung: Die Systemwiederherstellung muss aktiviert sein, damit dies funktioniert</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Einen neuen Wiederherstellungspunkt setzen</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Ändere Uninstall Einstellungen</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Starte einen neuen Deinstallationstask</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Einen neuen Wiederherstellungspunkt setzen</value>
   </data>
 </root>

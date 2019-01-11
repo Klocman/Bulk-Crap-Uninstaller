@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Uyarı: Bunun çalışması için sistem geri yüklemesi etkinleştirilmelidir!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Yeni bir geri yükleme noktası oluştur</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Kaldırma ayarlarının değiştirilmesi</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Yeni kaldırma görevine başla</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Yeni bir geri yükleme noktası oluştur</value>
   </data>
 </root>

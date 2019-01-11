@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Aviso: o restauro do sistema deve estar activo para que isto funcione!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Criar um novo ponto de restauro</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Alterar as configurações de desinstalação</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Inicie uma nova tarefa de desinstalação</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Criar um novo ponto de restauro</value>
   </data>
 </root>

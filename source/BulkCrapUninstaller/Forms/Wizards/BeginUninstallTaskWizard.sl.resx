@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Opozorilo: Obnovitev sistema mora biti omogočena, da bo to delovalo!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Ustvari novo obnovitveno točko</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Spremeni nastavitve odstranitve</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Začni novo odstranjevanje</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Ustvari novo obnovitveno točko</value>
   </data>
 </root>

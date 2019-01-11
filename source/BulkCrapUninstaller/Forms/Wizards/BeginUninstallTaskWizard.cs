@@ -30,6 +30,8 @@ namespace BulkCrapUninstaller.Forms
             DialogResult = DialogResult.Cancel;
 
             tabControl1.TabIndex = 0;
+
+            buttonCreateRestore.Enabled = SysRestore.SysRestoreAvailable();
         }
 
         private int PageNumber
@@ -84,7 +86,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void CreateRestorePoint(object sender, EventArgs e)
         {
-            _restorePointWasCreated = SystemRestore.BeginSysRestore(uninstallConfirmation1.GetResults().Count());
+            _restorePointWasCreated = SystemRestore.BeginSysRestore(uninstallConfirmation1.GetResults().Count(), false);
+            buttonCreateRestore.Enabled = false;
         }
 
         private static IEnumerable<ApplicationUninstallerEntry> GetRelatedUninstallers(
@@ -212,6 +215,12 @@ namespace BulkCrapUninstaller.Forms
             UseWaitCursor = false;
 
             _previousPageNumber = PageNumber;
+        }
+
+        private void BeginUninstallTaskWizard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(DialogResult != DialogResult.OK)
+                SystemRestore.CancelSysRestore();
         }
     }
 }

@@ -156,9 +156,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Attenzione: il Ripristino di Sistema deve essere abilitato per funzionare!</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Creare un nuovo punto di ripristino</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Cambiare configurazioni di disinstallazione</value>
   </data>
@@ -218,5 +215,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Avviamento nuova procedura di disinstallazione</value>
+  </data>
+  <data name="buttonCreateRestore.Text" xml:space="preserve">
+    <value>Creare un nuovo punto di ripristino</value>
   </data>
 </root>

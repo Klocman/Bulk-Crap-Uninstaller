@@ -36,7 +36,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                             EndSysRestore();
 
                             var result = SysRestore.StartRestore(MessageBoxes.GetSystemRestoreDescription(count),
-                                SysRestore.RestoreType.ApplicationUninstall, out _currentRestoreId);
+                                SysRestore.RestoreType.ApplicationUninstall, out _currentRestoreId, 3);
                             if (result < 0)
                                 throw new IOException(Localisable.SysRestoreGenericError);
                         });
@@ -57,20 +57,12 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         public static void CancelSysRestore()
         {
-            if (_currentRestoreId > 0)
-            {
-                SysRestore.CancelRestore(_currentRestoreId);
-                _currentRestoreId = 0;
-            }
+            SysRestore.CancelRestore(_currentRestoreId);
         }
 
         public static void EndSysRestore()
         {
-            if (_currentRestoreId > 0)
-            {
-                SysRestore.EndRestore(_currentRestoreId);
-                _currentRestoreId = 0;
-            }
+            SysRestore.EndRestore(_currentRestoreId);
         }
     }
 }
