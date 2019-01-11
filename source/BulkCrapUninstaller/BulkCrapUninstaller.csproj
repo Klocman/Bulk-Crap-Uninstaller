@@ -767,8 +767,17 @@
     <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.de.resx">
       <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.tr.resx">
+      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\FeedbackBox.de.resx">
       <DependentUpon>FeedbackBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.tr.resx">
+      <DependentUpon>FeedbackBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.tr.resx">
+      <DependentUpon>FeedbackWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.ar.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
@@ -795,6 +804,9 @@
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NewsPopup.sl.resx">
+      <DependentUpon>NewsPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Helpers\NewsPopup.tr.resx">
       <DependentUpon>NewsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Helpers\NukeWindow.de.resx">
