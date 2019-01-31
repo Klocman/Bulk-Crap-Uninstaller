@@ -91,6 +91,7 @@
     <Compile Include="Factory\ScriptFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />
     <Compile Include="Factory\StoreAppFactory.cs" />
+    <Compile Include="Junk\Finders\Registry\DebugTracingScanner.cs" />
     <Compile Include="ThreadedWorkSpreader.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />

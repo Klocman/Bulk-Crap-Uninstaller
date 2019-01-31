@@ -574,6 +574,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debug Tracing/Logging Configuration.
+        /// </summary>
+        internal static string Junk_DebugTracing_GroupName {
+            get {
+                return ResourceManager.GetString("Junk_DebugTracing_GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Files and directories.
         /// </summary>
         internal static string Junk_Drive_GroupName {
