@@ -28,7 +28,7 @@ namespace SteamHelper
             foreach (var steamAppsLocation in steam.SteamAppsLocations)
             {
                 var result = Directory.GetFiles(steamAppsLocation, @"appmanifest_*.acf")
-                    .FirstOrDefault(x => appIdStr.Equals(Path.GetFileNameWithoutExtension(x)?.Substring(12), StringComparison.InvariantCulture));
+                    .FirstOrDefault(x => appIdStr.Equals(Path.GetFileNameWithoutExtension(x).Substring(12), StringComparison.InvariantCulture));
                 if (!string.IsNullOrEmpty(result))
                 {
                     output.ManifestPath = result;

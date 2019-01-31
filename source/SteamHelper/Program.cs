@@ -55,8 +55,10 @@ namespace SteamHelper
                     case QueryType.List:
                         foreach (var result in SteamInstallation.Instance.SteamAppsLocations
                             .SelectMany(x => Directory.GetFiles(x, @"appmanifest_*.acf")
-                                .Select(p => (Path.GetFileNameWithoutExtension(p)?.Substring(12))).Where(p => p != null))
-                            .Select(int.Parse).OrderBy(x => x))
+                                .Select(p => Path.GetFileNameWithoutExtension(p).Substring(12)))
+                            .Select(x => int.TryParse(x, out var num) ? num : (int?)null)
+                            .Where(x => x != null)
+                            .OrderBy(x => x))
                             Console.WriteLine(result);
                         break;
 

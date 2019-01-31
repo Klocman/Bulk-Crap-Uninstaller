@@ -35,18 +35,16 @@ namespace SteamHelper
             var libFoldersFile = Path.Combine(steamApps[0], @"libraryfolders.vdf");
             if (File.Exists(libFoldersFile))
             {
-                int dummy;
                 foreach (var str in File.ReadAllLines(libFoldersFile))
                 {
                     var pieces = str.Split('\"').Where(p => !string.IsNullOrEmpty(p?.Trim())).ToList();
-                    if (pieces.Count != 2 || !int.TryParse(pieces[0], out dummy)) continue;
+                    if (pieces.Count != 2 || !int.TryParse(pieces[0], out var _)) continue;
 
                     var path = Path.Combine(pieces[1].Replace(@"\\", @"\"), "steamapps");
-                    if (Directory.Exists(path))
-                        steamApps.Add(path);
+                    steamApps.Add(path);
                 }
             }
-            return steamApps;
+            return steamApps.Where(Directory.Exists);
         }
 
         private static string FindSteamInstallationLocation()
