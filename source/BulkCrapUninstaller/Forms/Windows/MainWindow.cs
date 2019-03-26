@@ -218,7 +218,7 @@ namespace BulkCrapUninstaller.Forms
                 UninstallToolsGlobalConfig.CustomProgramFiles = trimmed;
             }, x => x.FoldersCustomProgramDirs, this);
 
-            _setMan.Selected.Subscribe((x,y)=> _listView.RefreshList(), x => x.AdvancedHighlightSpecial, this);
+            _setMan.Selected.Subscribe((x, y) => _listView.RefreshList(), x => x.AdvancedHighlightSpecial, this);
 
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestCertificates, this);
             _setMan.Selected.Subscribe(OnApplicationListVisibleItemsChanged, x => x.AdvancedTestInvalid, this);
@@ -462,6 +462,26 @@ namespace BulkCrapUninstaller.Forms
             var autostart = _listView.SelectedUninstallers.Any(
                 u => u.StartupEntries != null && u.StartupEntries.Any(se => !se.Disabled));
             disableAutostartToolStripMenuItem.Enabled = autostart;
+
+            // Take ownership list
+            var ownershipList = takeOwnershipToolStripMenuItem.DropDownItems.Cast<ToolStripItem>().ToList();
+            takeOwnershipToolStripMenuItem.DropDownItems.Clear();
+            foreach (var dropDownItem in ownershipList)
+                dropDownItem.Dispose();
+
+            takeOwnershipToolStripMenuItem.DropDownItems.AddRange(
+                _listView.SelectedUninstallers
+                .SelectMany(x => new[] { x.InstallLocation, x.UninstallerLocation })
+                .Where(dir => !string.IsNullOrEmpty(dir))
+                .DistinctBy(x=>x.ToLowerInvariant())
+                .OrderBy(x=>x)
+                .Select(dir => (ToolStripItem)new ToolStripMenuItem(dir, null, (obj, args) => TakeOwnership(dir)))
+                .ToArray());
+        }
+
+        private static void TakeOwnership(string directoryPath)
+        {
+            PremadeDialogs.StartProcessSafely("cmd.exe", $"/c takeown /f \"{directoryPath}\" && icacls \"{directoryPath}\" /grant administrators:F && pause");
         }
 
         private void BackgroundSearchForUpdates()
@@ -536,7 +556,7 @@ namespace BulkCrapUninstaller.Forms
             settings.Subscribe((sender, args) =>
             {
                 if (_listView.CheckIsAppDisposed()) return;
-                
+
                 olvColumnRating.IsVisible = args.NewValue;
                 uninstallerObjectListView.RebuildColumns();
             }, x => x.MiscUserRatings, this);
@@ -824,8 +844,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenInRegedit(object sender, EventArgs e)
         {
-            var targetEntry = _listView.SelectedUninstallers.FirstOrDefault(x=>x.RegKeyStillExists());
-            if(targetEntry != null)
+            var targetEntry = _listView.SelectedUninstallers.FirstOrDefault(x => x.RegKeyStillExists());
+            if (targetEntry != null)
             {
                 try
                 {
@@ -1200,7 +1220,7 @@ namespace BulkCrapUninstaller.Forms
             toolStripSeparatorFiltering.Visible = advancedFiltering;
             excludeToolStripMenuItem.Visible = advancedFiltering;
             includeToolStripMenuItem.Visible = advancedFiltering;
-            
+
             var selectedUninstallers = _listView.SelectedUninstallers.ToList();
 
             var singleItem = selectedUninstallers.Count == 1;
