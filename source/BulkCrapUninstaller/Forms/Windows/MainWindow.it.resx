@@ -537,4 +537,43 @@
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Disinstalla da finestra, cartella o file...</value>
   </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Esporta in uno script per disinstallazione a blocchi...</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crea uno script PowerShell di rimozione per applicazioni dello Store... </value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtro di &amp;default</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Solo applicazioni di &amp;base</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Solo componenti di sistema</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tutto</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Solo avviati automaticamente</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Solo web browser</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vedi i miglioramenti</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtro &amp;rapido</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Risoluzione dei problemi di disinstallazione...</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Avvia pulizia disco</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Installa .NET v3.5 (aggiungi funzionalità)</value>
+  </data>
 </root>

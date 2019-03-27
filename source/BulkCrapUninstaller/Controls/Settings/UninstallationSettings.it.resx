@@ -162,4 +162,7 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Disinstallazione silenziosa</value>
   </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Controlla i popup o le fasi di stallo dei disinstallatori "silenziosi" e rendili automatici (esegui demone che automatizza)</value>
+  </data>
 </root>

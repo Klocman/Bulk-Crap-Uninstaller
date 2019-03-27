@@ -760,4 +760,10 @@ Puoi provare a disabilitare la rilevazione delle collisioni nella configurazione
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Seleziona dove salvare la copia di sicurezza. Sarà creata una nuova cartella.</value>
   </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU è stato aggiornato alla versione v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Benvenuto/a alla versione v{0} di BCU!</value>
+  </data>
 </root>

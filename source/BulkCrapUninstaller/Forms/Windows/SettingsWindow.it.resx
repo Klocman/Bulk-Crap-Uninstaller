@@ -270,4 +270,12 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Modalità per daltonici</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Controlla dischi rimovibili</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
 </root>

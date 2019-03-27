@@ -190,4 +190,13 @@ Il raggruppamento della maggior parte delle colonne usa un filtraggio intelligen
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Gli elementi protetti sono marcati con l'attributo "NoRemove"; indica che il produttore non vuole che vengano rimossi.</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Mostra i miglioramenti</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Evidenzia disinstallatori speciali</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Usa i colori per distinguere applicazioni speciali, ad esempio Store Apps e funzionalità di Windows.</value>
+  </data>
 </root>

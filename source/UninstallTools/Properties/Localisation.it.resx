@@ -555,4 +555,26 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Ricerca dei pacchetti Chocolatey</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Disinstalla con Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Può avviarsi automaticamente</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus App</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>E' un browser web</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>Script PowerShell</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Debug Tracing/Registrazione Configurazione</value>
+  </data>
 </root>
