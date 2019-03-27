@@ -91,6 +91,7 @@
     <Compile Include="Factory\ScriptFactory.cs" />
     <Compile Include="Factory\SteamFactory.cs" />
     <Compile Include="Factory\StoreAppFactory.cs" />
+    <Compile Include="Junk\Finders\Registry\ComScanner.cs" />
     <Compile Include="Junk\Finders\Registry\DebugTracingScanner.cs" />
     <Compile Include="ThreadedWorkSpreader.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
@@ -114,7 +115,6 @@
     <Compile Include="Junk\Containers\StartupJunkNode.cs" />
     <Compile Include="Junk\Finders\Registry\AppCompatFlagScanner.cs" />
     <Compile Include="Junk\Finders\Registry\AudioPolicyConfigScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\ClsidScanner.cs" />
     <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
     <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
     <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
