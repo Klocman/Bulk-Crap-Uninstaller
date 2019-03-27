@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Spenden helfen bei der Weiterentwicklung dieses Projektes wie z.B. Zertifikate, Hosting und andere Keinigkeiten</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Versionshinweise und Änderungen</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Zeige oder ändere den Source Code</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Lizenzbestimmungen</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Datenschutzrichtlinie</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Hilfe lesen</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Sende Feedback / Kontakt zum Entwickler</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Um den Dialog zu schließen, klicke in diesem Fenster irgendwo hin</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Spende (PayPal, Bitcoin, Steam Geschenke)</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Um den Dialog zu schließen, klicke in diesem Fenster irgendwo hin</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Sende Feedback / Kontakt zum Entwickler</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Hilfe lesen</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Datenschutzrichtlinie</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Lizenzbestimmungen</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Zeige oder ändere den Source Code</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Versionshinweise und Änderungen</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Spenden helfen bei der Weiterentwicklung dieses Projektes wie z.B. Zertifikate, Hosting und andere Keinigkeiten</value>
   </data>
 </root>

@@ -117,60 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Fichiers texte|*.txt</value>
-    <comment>keep the |*.txt</comment>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Détails</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copier dans le presse-papiers</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ouvrir</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Suppression des vestiges</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Liste des fichiers et/ou clés de registre laissés après désinstallation</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>La détection de ces vestiges est un processus complexe qui peut commettre des erreurs. Pour cette raison, il est donné un taux de confiance à tous les éléments et la décision finale revient à l'utilisateur. Les éléments avec une bonne ou très bonne confiance sont habituellement bons à supprimer, mais vous devriez tout de même les vérifier deux fois.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Niveau de confiance</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Les éléments suivants semblent avoir été laissés en arrière par leurs désinstalleurs. Quelques désinstalleurs peuvent échouer à supprimer des parties de l'application, avec pour résultat un coût en capacité du lecteur. Ceci étant dit, la plupart de ces éléments sont susceptibles d'être des réglages de l'application, qui prennent peu d'espace et sont sans danger.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Nom du désinstalleur</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Confiance</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Chemin de l'élément</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Cacher les éléments avec une confiance peu élevée</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exporter...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Supprimer la sélection</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Exporter la liste des vestiges</value>
     <comment>leftover=rimanenti</comment>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Supprimer la sélection</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exporter...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Cacher les éléments avec une confiance peu élevée</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Liste des fichiers et/ou clés de registre laissés après désinstallation</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Chemin de l'élément</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Confiance</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Nom du désinstalleur</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Les éléments suivants semblent avoir été laissés en arrière par leurs désinstalleurs. Quelques désinstalleurs peuvent échouer à supprimer des parties de l'application, avec pour résultat un coût en capacité du lecteur. Ceci étant dit, la plupart de ces éléments sont susceptibles d'être des réglages de l'application, qui prennent peu d'espace et sont sans danger.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Niveau de confiance</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>La détection de ces vestiges est un processus complexe qui peut commettre des erreurs. Pour cette raison, il est donné un taux de confiance à tous les éléments et la décision finale revient à l'utilisateur. Les éléments avec une bonne ou très bonne confiance sont habituellement bons à supprimer, mais vous devriez tout de même les vérifier deux fois.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Suppression des vestiges</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ouvrir</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copier dans le presse-papiers</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Détails</value>
-  </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Sélectionner où enregistrer la sauvegarde. Un nouveau dossier sera créé.</value>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Fichiers texte|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

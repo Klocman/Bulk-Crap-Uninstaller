@@ -117,59 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Arquivos texto |*.txt</value>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Exportar lista de sobras</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Excluir selecionado</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportar...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Ocultar itens com má confiança</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Caminho do item</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Confiança</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Nome do desinstalador</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Os itens seguintes parecem ter sido deixados para trás por seus desinstaladores. Alguns desinstaladores podem não remover partes do aplicativo, resultando em ocupação de espaço na unidade. Dito isto, a maioria desses itens provavelmente serão configurações de aplicativos, que ocupam pouco espaço e são inofensivas.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Nível de confiança</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>A detecção desses restos é um processo complexo que pode cometer erros. Por isso, são dados a todos os itens uma avaliação de confiança e a decisão final é deixada ao usuário. Itens com boa e muito boa confiança geralmente são seguros para remover, mas você ainda deve verificar novamente.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista de arquivos e/ou de chaves de registro deixados após a desinstalação.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Remoção de sobras</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Abrir</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Detalhes</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Copiar para a Área de Transferência</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Detalhes</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Abrir</value>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Selecionar o local para salvar a Cópia de Segurança.
-Um novo diretório será criado.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Remoção de sobras</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Lista de arquivos e/ou de chaves de registro deixados após a desinstalação.</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>A detecção desses restos é um processo complexo que pode cometer erros. Por isso, são dados a todos os itens uma avaliação de confiança e a decisão final é deixada ao usuário. Itens com boa e muito boa confiança geralmente são seguros para remover, mas você ainda deve verificar novamente.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Nível de confiança</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Os itens seguintes parecem ter sido deixados para trás por seus desinstaladores. Alguns desinstaladores podem não remover partes do aplicativo, resultando em ocupação de espaço na unidade. Dito isto, a maioria desses itens provavelmente serão configurações de aplicativos, que ocupam pouco espaço e são inofensivas.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Nome do desinstalador</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Confiança</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Caminho do item</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Ocultar itens com má confiança</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportar...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Excluir selecionado</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Exportar lista de sobras</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Arquivos texto |*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

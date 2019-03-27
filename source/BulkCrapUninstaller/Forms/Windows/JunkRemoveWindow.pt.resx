@@ -117,61 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Ficheiros de texto |*.txt</value>
-    <comment>keep the |*.txt</comment>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Pormenores</value>
   </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Exportar a lista de vestígios residuuais</value>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copiar para a Área de Transferência</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Abrir</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Suprimir a selecção</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Remoção de vestígios residuais</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportar...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Ocultar itens duvidosos</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Percurso do item</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Confiança</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Nome do desinstalador</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Os itens seguintes aparentam ter ficado para trás pelos seus desinstaladores. Alguns desinstaladores falham na remoção de partes da aplicação, resultando numa ocupação da capacidade da unidade. Dito isto, a maioria destes itens são susceptíveis de serem configurações do aplicativo que ocupam pouco espaço e são inofensivos.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Nível de confiança</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Lista de ficheiros e/ou de chaves de registo deixados após a desinstalação.</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
     <value>A detecção destes resíduos é um processo complexo que pode provocar erros. Por esse motivo, são dados a todos os itens um nível de confiança e a decisão final fica a cargo do utilizador. Itens com avaliação de confiança bom ou muito bom são, geralmente, seguros para remover mas, ainda assim, verifique-os por duas vezes antes de se decidir.
 </value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista de ficheiros e/ou de chaves de registo deixados após a desinstalação.</value>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Nível de confiança</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Remoção de vestígios residuais</value>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Os itens seguintes aparentam ter ficado para trás pelos seus desinstaladores. Alguns desinstaladores falham na remoção de partes da aplicação, resultando numa ocupação da capacidade da unidade. Dito isto, a maioria destes itens são susceptíveis de serem configurações do aplicativo que ocupam pouco espaço e são inofensivos.</value>
   </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Abrir</value>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Nome do desinstalador</value>
   </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copiar para a Área de Transferência</value>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Confiança</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Pormenores</value>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Percurso do item</value>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Seleccionar o local onde guardar a cópia de segurança. Será criado um novo directório.</value>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Ocultar itens duvidosos</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportar...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Suprimir a selecção</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Exportar a lista de vestígios residuuais</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Ficheiros de texto |*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

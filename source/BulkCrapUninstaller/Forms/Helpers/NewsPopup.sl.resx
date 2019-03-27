@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Darila mi pomagajo, da ohranim zanimanje za ta projekt, pa tudi kot plačailo potrebnih digitalnih potrdil kode, gostovanja in drugih potreb.</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Ogled opomb o izdaji in dnevnika sprememb</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Ogled izvorne kodo ali prispevkov</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Preberite licenco</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Preberite pravilnik o zasebnosti</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Preberite datoteko pomoči</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Pošljite povratne informacije/obrnite se na razvijalca</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Kliknite kjerkoli, da zaprete to pogovorno okno)</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Darujte (PayPal, Bitcoin, darila Steam)</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>(Kliknite kjerkoli, da zaprete to pogovorno okno)</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Pošljite povratne informacije/obrnite se na razvijalca</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Preberite datoteko pomoči</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Preberite pravilnik o zasebnosti</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Preberite licenco</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Ogled izvorne kodo ali prispevkov</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Ogled opomb o izdaji in dnevnika sprememb</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Darila mi pomagajo, da ohranim zanimanje za ta projekt, pa tudi kot plačailo potrebnih digitalnih potrdil kode, gostovanja in drugih potreb.</value>
   </data>
 </root>

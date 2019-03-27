@@ -112,19 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Text files|*.txt</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Details</value>
   </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Export leftover list</value>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copy to clipboard</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -144,8 +141,8 @@
   <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Open</value>
   </data>
   <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
     <value>buttonCancel</value>
@@ -174,8 +171,8 @@
   <data name="buttonAccept.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Delete selected</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Leftover removal</value>
   </data>
   <data name="&gt;&gt;buttonAccept.Name" xml:space="preserve">
     <value>buttonAccept</value>
@@ -201,8 +198,8 @@
   <data name="buttonExport.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Export...</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>List of files and/or registry keys left after uninstallation</value>
   </data>
   <data name="&gt;&gt;buttonExport.Name" xml:space="preserve">
     <value>buttonExport</value>
@@ -252,8 +249,8 @@
   <data name="checkBoxHideLowConfidence.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Hide items with bad confidence</value>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Detection of these leftovers is a complex process that can make mistakes. Because of this, all items are given a confidence rating and the final decision is left to the user. Items with good and very good confidence are usually safe to remove, but you still should double check them.</value>
   </data>
   <data name="&gt;&gt;checkBoxHideLowConfidence.Name" xml:space="preserve">
     <value>checkBoxHideLowConfidence</value>
@@ -291,14 +288,14 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Item path</value>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Confidence rating</value>
   </data>
   <data name="olvColumnPath.Width" type="System.Int32, mscorlib">
     <value>412</value>
   </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Confidence</value>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Following items seem to have been left behind by their uninstallers. Some uninstallers might fail to remove parts of the application, resulting in drive capacity cost. That being said, most of these items are likely to be application settings, which take up little space and are harmless.</value>
   </data>
   <data name="olvColumnSafety.Width" type="System.Int32, mscorlib">
     <value>103</value>
@@ -354,8 +351,8 @@
   <data name="headerIntro.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Following items seem to have been left behind by their uninstallers. Some uninstallers might fail to remove parts of the application, resulting in drive capacity cost. That being said, most of these items are likely to be application settings, which take up little space and are harmless.</value>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Confidence</value>
   </data>
   <data name="&gt;&gt;headerIntro.Name" xml:space="preserve">
     <value>headerIntro</value>
@@ -387,8 +384,8 @@
   <data name="headerConfTitle.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Confidence rating</value>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Item path</value>
   </data>
   <data name="&gt;&gt;headerConfTitle.Name" xml:space="preserve">
     <value>headerConfTitle</value>
@@ -420,8 +417,8 @@
   <data name="headerConfInfo.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Detection of these leftovers is a complex process that can make mistakes. Because of this, all items are given a confidence rating and the final decision is left to the user. Items with good and very good confidence are usually safe to remove, but you still should double check them.</value>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Hide items with bad confidence</value>
   </data>
   <data name="&gt;&gt;headerConfInfo.Name" xml:space="preserve">
     <value>headerConfInfo</value>
@@ -474,8 +471,8 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>List of files and/or registry keys left after uninstallation</value>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Export...</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -489,12 +486,6 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>330, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -510,8 +501,8 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Leftover removal</value>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Delete selected</value>
   </data>
   <data name="&gt;&gt;exportDialog.Name" xml:space="preserve">
     <value>exportDialog</value>
@@ -573,17 +564,14 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="listViewContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>454, 17</value>
-  </metadata>
   <data name="openToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
   </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
   </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Open</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 6</value>
@@ -591,14 +579,16 @@
   <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
   </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copy to clipboard</value>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Export leftover list</value>
+    <comment>leftover=rimanenti</comment>
   </data>
   <data name="detailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Details</value>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Text files|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
   <data name="listViewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 76</value>
@@ -609,4 +599,16 @@
   <data name="&gt;&gt;listViewContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>330, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="listViewContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>454, 17</value>
+  </metadata>
 </root>

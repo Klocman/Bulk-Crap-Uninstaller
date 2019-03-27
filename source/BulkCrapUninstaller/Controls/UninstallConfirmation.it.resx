@@ -117,34 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Nome del disinstallatore</value>
-  </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Disinstalla</value>
-  </data>
-  <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Silenzioso</value>
-  </data>
-  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Cartella di installazione</value>
-  </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Ordinamento intelligente</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>L'ordine iniziale dipende dalla tua configurazione di disinstallazione, ma può essere modificato trascinando gli elementi. Nota: BCU può cambiare l'ordine se è abilitata la disinstallazione simultanea.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Questa è una lista di applicazioni che saranno disinstallate, ordinatamente dall'inizio alla fine.Se tu deselezioni l'opzione "Disinstalla" l'applicazione non sarà disinstallata. Se la disinstallazione silenziosa non è disponibile per un elemento non si potrà verificare</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>L'ordine iniziale dipende dalla tua configurazione di disinstallazione, ma può essere modificato trascinando gli elementi. Nota: BCU può cambiare l'ordine se è abilitata la disinstallazione simultanea.</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Ordinamento intelligente</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Disintallare</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Cartella di installazione</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancellare</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Silenzioso</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Confermare l'attività di disinstallazione</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Disinstalla</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nome del disinstallatore</value>
   </data>
 </root>

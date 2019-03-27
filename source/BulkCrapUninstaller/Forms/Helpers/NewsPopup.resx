@@ -186,8 +186,8 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Donations help keep me interested in this project, as well as pay for code signing certificates, hosting, and other necessities.</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Click anywhere to close this dialog)</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -222,8 +222,8 @@
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>View release notes and changelog</value>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Donate (PayPal, Bitcoin, Steam gifts)</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
     <value>linkLabel1</value>
@@ -261,8 +261,8 @@
   <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>View the source code or contribute</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Send feedback / Contact the developer</value>
   </data>
   <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
     <value>linkLabel2</value>
@@ -300,8 +300,8 @@
   <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Read the licence</value>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Read the help file</value>
   </data>
   <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
     <value>linkLabel3</value>
@@ -378,8 +378,8 @@
   <data name="linkLabel5.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Read the help file</value>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Read the licence</value>
   </data>
   <data name="&gt;&gt;linkLabel5.Name" xml:space="preserve">
     <value>linkLabel5</value>
@@ -417,8 +417,8 @@
   <data name="linkLabel6.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Send feedback / Contact the developer</value>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>View the source code or contribute</value>
   </data>
   <data name="&gt;&gt;linkLabel6.Name" xml:space="preserve">
     <value>linkLabel6</value>
@@ -456,8 +456,8 @@
   <data name="linkLabel7.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Donate (PayPal, Bitcoin, Steam gifts)</value>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>View release notes and changelog</value>
   </data>
   <data name="&gt;&gt;linkLabel7.Name" xml:space="preserve">
     <value>linkLabel7</value>
@@ -498,8 +498,8 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>(Click anywhere to close this dialog)</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Donations help keep me interested in this project, as well as pay for code signing certificates, hosting, and other necessities.</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>

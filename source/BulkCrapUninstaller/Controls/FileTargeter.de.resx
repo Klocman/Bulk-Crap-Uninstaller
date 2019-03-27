@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Link oder Anwendungsdatei...</value>
-  </data>
-  <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Alle Dateien|*.*</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Install Verzeichnis</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Wählen Sie alle Dateien aus, die zur Anwendung gehören</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Install Verzeichnis</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Alle Dateien|*.*</value>
   </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Wählen sie einen Ordner oder den Ort wo die Anwendung installiert ist</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Link oder Anwendungsdatei...</value>
   </data>
 </root>

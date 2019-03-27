@@ -117,58 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Szövegfájlok|*.txt</value>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Maradványlista exportálása</value>
-  </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Válassza ki a mentés helyét. Az új könyvtár létrehozásra kerül.</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Mégse</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Kijelölt törlése</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportálás...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Nem biztonságos elemek elrejtése</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Útvonal</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Biztonságosság</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Eltávolító neve</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Úgy tűnik, hogy a következő elemeket hátrahagyták az eltávolítóik. Néhány eltávolító nem távolítja el az összes programelemet, és ezek feleslegesen foglalják a területet. A legtöbb itt látható elem általában programbeállításokat tartalmaz, amelyek kis helyen is elférnek és veszélytelenek.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Biztonsági besorolás</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>A maradványoknak a beazonosítása egy összetett folyamat, amely néha hibás lehet. Emiatt az összes elem biztonságosságának besorolásában a végső döntést a felhasználónak kell meghoznia. A jó és a nagyon jó besorolású elemek általában biztonsággal eltávolíthatók, de mindig ellenőrizze azokat.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Eltávolítás után visszamaradt fájlok és beállításkulcsok listája</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Maradvány eltávolítás</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Megnyi&amp;tás</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Részletek</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>Más&amp;olás a Vágólapra</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Részletek</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Megnyi&amp;tás</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Maradvány eltávolítás</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Eltávolítás után visszamaradt fájlok és beállításkulcsok listája</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>A maradványoknak a beazonosítása egy összetett folyamat, amely néha hibás lehet. Emiatt az összes elem biztonságosságának besorolásában a végső döntést a felhasználónak kell meghoznia. A jó és a nagyon jó besorolású elemek általában biztonsággal eltávolíthatók, de mindig ellenőrizze azokat.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Biztonsági besorolás</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Úgy tűnik, hogy a következő elemeket hátrahagyták az eltávolítóik. Néhány eltávolító nem távolítja el az összes programelemet, és ezek feleslegesen foglalják a területet. A legtöbb itt látható elem általában programbeállításokat tartalmaz, amelyek kis helyen is elférnek és veszélytelenek.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Eltávolító neve</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Biztonságosság</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Útvonal</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Nem biztonságos elemek elrejtése</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportálás...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Kijelölt törlése</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Maradványlista exportálása</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Szövegfájlok|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

@@ -117,34 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Kaldırıcı adı</value>
-  </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Sessiz</value>
-  </data>
-  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Kurulum yeri</value>
-  </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Akıllı sıralama</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>İlk işlem, kaldırma ayarlarınıza bağlıdır, ancak öğeleri sürükleyerek değiştirilebilir. Not: Eşzamanlı kaldırma etkinse BCU işlemi değiştirebilir.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Bu, yukarıdan aşağıya doğru sırayla kaldırılacak uygulamaların bir listesidir. "Kaldır" alanının seçimini kaldırırsanız, uygulama kaldırılmayacaktır. Bir öğe için sessiz kaldırma mevcut değilse, kontrol edilemez</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>İlk işlem, kaldırma ayarlarınıza bağlıdır, ancak öğeleri sürükleyerek değiştirilebilir. Not: Eşzamanlı kaldırma etkinse BCU işlemi değiştirebilir.</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Akıllı sıralama</value>
   </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Kaldır</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Kurulum yeri</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Vazgeç</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Sessiz</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kaldırma görevini onayla</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Kaldırıcı adı</value>
   </data>
 </root>

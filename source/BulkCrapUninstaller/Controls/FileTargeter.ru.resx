@@ -120,16 +120,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>папка установки</value>
   </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Выберите файлы, которые принадлежат приложению</value>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Все|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Ссылка или файл приложения</value>
-  </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Выберите каталог, в котором установлено приложение.</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Выберите файлы, которые принадлежат приложению</value>
   </data>
 </root>

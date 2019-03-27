@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Bağlantı veya uygulamanın dosyası ...</value>
-  </data>
-  <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Tüm dosyalar|*.*</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Kurulum dizini</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Uygulamaya ait tüm dosyaları seçin</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Kurulum dizini</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Tüm dosyalar|*.*</value>
   </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Uygulamanın yüklü olduğu dizini seçin.</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Bağlantı veya uygulamanın dosyası ...</value>
   </data>
 </root>

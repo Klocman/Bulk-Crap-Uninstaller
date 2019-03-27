@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Bağışlar, bu projeyle ilgilenmeme yardımcı olurken, kod imzalama sertifikaları, barındırma ve diğer gereksinimler için de ödeme yapmanıza yardımcı olur.</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Sürüm notlarını ve changelog'u görüntüle</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Kaynak kodunu görüntüleyin veya katkıda bulunun</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Lisansı oku</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Gizlilik politikasını okuyun</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Yardım dosyasını okuyun</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Geri bildirim gönder / Geliştiriciye başvurun</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Bu iletişim kutusunu kapatmak için herhangi bir yere tıklayın)</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Bağış (PayPal, Bitcoin, Steam hediyeleri)</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>(Bu iletişim kutusunu kapatmak için herhangi bir yere tıklayın)</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Geri bildirim gönder / Geliştiriciye başvurun</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Yardım dosyasını okuyun</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Gizlilik politikasını okuyun</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Lisansı oku</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Kaynak kodunu görüntüleyin veya katkıda bulunun</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Sürüm notlarını ve changelog'u görüntüle</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Bağışlar, bu projeyle ilgilenmeme yardımcı olurken, kod imzalama sertifikaları, barındırma ve diğer gereksinimler için de ödeme yapmanıza yardımcı olur.</value>
   </data>
 </root>

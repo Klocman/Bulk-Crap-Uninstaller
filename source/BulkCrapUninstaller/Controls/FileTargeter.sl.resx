@@ -120,13 +120,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Mapa za nameščanje...</value>
   </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Izberite vse datoteke, ki pripadajo aplikaciji</value>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Vse datoteke|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Povezava ali datoteka aplikacije...</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Izberite vse datoteke, ki pripadajo aplikaciji</value>
   </data>
 </root>

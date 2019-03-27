@@ -120,13 +120,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>تثبيت الدليل...</value>
   </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>حدد اي الملفات التي تنتمي للتطبيق</value>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>كل الملفات |*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>ملف الارتباط او التطبيق...</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>حدد اي الملفات التي تنتمي للتطبيق</value>
   </data>
 </root>

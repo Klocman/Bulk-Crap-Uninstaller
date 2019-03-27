@@ -120,16 +120,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Directório de Instalação</value>
   </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Seleccione qualquer dos arquivos que pertencem à aplicação</value>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Todos os arquivos|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Link ou arquivo da aplicação...</value>
-  </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Seleccione o directório no qual está instalada a aplicação</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Seleccione qualquer dos arquivos que pertencem à aplicação</value>
   </data>
 </root>

@@ -117,60 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Textdateien|*.txt</value>
-    <comment>keep the |*.txt</comment>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Details</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>In Zwischenablage &amp;kopieren</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ö&amp;ffnen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Übrig gebliebene Dateien entfernen</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Liste der Dateien, die nach der Deinstallation übrig blieben</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Die Erkennung dieser Rückstände  ist ein komplexer Prozess, bei dem Fehler auftreten können. Aus diesem Grund gibt es für jedes Element eine Vertrauensbewertung. Die endgültige Entscheidung hat am Ende der Benutzer. Elemente mit hohem oder sehr hohem Vertrauensgrad können gefahrlos entfernt werden, dennoch sollten Sie alles vor dem Löschen sorgfältig überprüfen. Bewertungsdetails können Sie sich nach Doppelklick auf das Element anzeigen lassen.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Vertrauensbewertung</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Folgende Elemente scheinen von ihren Uninstallern zurückgelassen worden zu sein. Mitunter werden nicht alle Programmteile vollständigen entfernt - was auf Kosten der Laufwerkskapazität geht. Jedoch sind die meisten dieser Elemente wahrscheinlich Anwendungseinstellungen, belegen wenig Platz und sind harmlos.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Name des Uninstallers</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Vertrauensgrad</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Elementpfad</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Ausblenden von Elementen mit niedrigem Vertrauensgrad</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportieren...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Ausgewählte löschen</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Liste mit Rückständen exportieren</value>
     <comment>leftover=rimanenti</comment>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Ausgewählte löschen</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportieren...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Ausblenden von Elementen mit niedrigem Vertrauensgrad</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Elementpfad</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Vertrauensgrad</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Name des Uninstallers</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Folgende Elemente scheinen von ihren Uninstallern zurückgelassen worden zu sein. Mitunter werden nicht alle Programmteile vollständigen entfernt - was auf Kosten der Laufwerkskapazität geht. Jedoch sind die meisten dieser Elemente wahrscheinlich Anwendungseinstellungen, belegen wenig Platz und sind harmlos.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Vertrauensbewertung</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Die Erkennung dieser Rückstände  ist ein komplexer Prozess, bei dem Fehler auftreten können. Aus diesem Grund gibt es für jedes Element eine Vertrauensbewertung. Die endgültige Entscheidung hat am Ende der Benutzer. Elemente mit hohem oder sehr hohem Vertrauensgrad können gefahrlos entfernt werden, dennoch sollten Sie alles vor dem Löschen sorgfältig überprüfen. Bewertungsdetails können Sie sich nach Doppelklick auf das Element anzeigen lassen.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Liste der Dateien, die nach der Deinstallation übrig blieben</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Übrig gebliebene Dateien entfernen</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ö&amp;ffnen</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>In Zwischenablage &amp;kopieren</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Details</value>
-  </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Wählen Sie den Ort, wohin die Sicherung gespeichert werden soll. Ein neuer Ordner wird erstellt.</value>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Textdateien|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

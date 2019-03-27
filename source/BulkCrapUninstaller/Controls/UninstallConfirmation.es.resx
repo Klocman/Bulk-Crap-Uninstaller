@@ -117,34 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Nombre del desinstalador</value>
-  </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Desinstalar</value>
-  </data>
-  <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Silencioso</value>
-  </data>
-  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Instalar ubicación</value>
-  </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Clasificación inteligente</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Desinstalar</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancelar</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>El orden inicial depende de la configuración de desinstalación, pero se puede cambiar arrastrando los elementos. Nota: BCU puede cambiar el orden si la desinstalación simultánea está habilitada.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Esta es una lista de aplicaciones que se desinstalarán, en orden de arriba a abajo. Si anula la selección del campo "Desinstalar", la aplicación no se desinstalará. Si la desinstalación silenciosa no está disponible para un elemento, no se puede comprobar</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>El orden inicial depende de la configuración de desinstalación, pero se puede cambiar arrastrando los elementos. Nota: BCU puede cambiar el orden si la desinstalación simultánea está habilitada.</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Clasificación inteligente</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Confirmar tarea de desinstalación</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Instalar ubicación</value>
+  </data>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Silencioso</value>
+  </data>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Desinstalar</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nombre del desinstalador</value>
   </data>
 </root>

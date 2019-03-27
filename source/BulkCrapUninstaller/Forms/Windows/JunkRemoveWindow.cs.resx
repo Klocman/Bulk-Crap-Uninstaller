@@ -117,60 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Textové soubory|*.txt</value>
-    <comment>keep the |*.txt</comment>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Export seznamu pozůstatků</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Zrušit</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Smazat vybrané</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Export...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Skrýt neduvěryhodné položky</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>cesta k položce</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Důveryhodné</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Název odinstalátoru</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Následující položky po sobě zanechal jejich odinstalátor. Některé odinstalátory můžou selhat odstraní části aplikace, což má za následek obsazení kapacity disku. Jak již bylo řečeno, většina z těchto položek které by mohly být nastavením aplikace, zabírají málo místa a jsou neškodné.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Hodnocení důvěry</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Detekce těchto zbytků je složitý proces, který může udělat chybu. Z tohoto důvodu jsou všechny položky uvedeny mírou spolehlivosti a konečné rozhodnutí je ponecháno na uživateli. Položky s dobrou a velmi dobrou důvěry jsou obvykle bezpečné odstraněny, ale stále by se měli zkontrolovat.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seznam souborů, které zůstaly po odinstalování</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Odstranit zbylé soubory</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Otevřít</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Detaily</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zkopírovat do schránky</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Detaily</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Otevřít</value>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Vyberte, kam chcete uložit zálohu. Bude vytvořen nový adresář.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Odstranit zbylé soubory</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Seznam souborů, které zůstaly po odinstalování</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Detekce těchto zbytků je složitý proces, který může udělat chybu. Z tohoto důvodu jsou všechny položky uvedeny mírou spolehlivosti a konečné rozhodnutí je ponecháno na uživateli. Položky s dobrou a velmi dobrou důvěry jsou obvykle bezpečné odstraněny, ale stále by se měli zkontrolovat.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Hodnocení důvěry</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Následující položky po sobě zanechal jejich odinstalátor. Některé odinstalátory můžou selhat odstraní části aplikace, což má za následek obsazení kapacity disku. Jak již bylo řečeno, většina z těchto položek které by mohly být nastavením aplikace, zabírají málo místa a jsou neškodné.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Název odinstalátoru</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Důveryhodné</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>cesta k položce</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Skrýt neduvěryhodné položky</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Smazat vybrané</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Export seznamu pozůstatků</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Textové soubory|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -117,55 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Text files|*.txt</value>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>تصدير القائمه المتبقية</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>الغاء الامر</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>حذف محدد</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>تصدير...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>اخفاء المواد بثقة سيئه</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>مسار المادة</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>ثقة</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>اسم الغاء التثبيت</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>يبدو ان المواد التالية قد تركت وراءها من قبل المثبتات الخاصة بهم. قد يفشل بعض المثبتين في ازاله اجزاء من التطبيق ، مما يؤدي الى تكلفه سعة المحرك . ومع ذلك ، فان معظم هذه المواد من المرجح ان تكون اعدادات التطبيق ، والتي تاخذ مساحة صغيره وغير مؤذيه.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>تقييم الثقة</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>الكشف عن هذه البقايا هو عمليه معقده التي يمكن ان تسبب الاخطاء. وبسبب هذا ، يتم منح كافة المواد تقدير الثقة ويترك القرار النهائي للمستخدم. البنود ذات الثقة الجيدة والجيدة وعاده ما تكون امنه للازاله ، ولكن لا يزال عليك التحقق منها مرتين.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>قائمه الملفات و/او مفاتيح التسجيل المتبقية بعد الغاء التثبيت</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ازاله البقايا</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;افتح</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;تفاصيل</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;نسخ الى الحافظة</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;تفاصيل</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;افتح</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ازاله البقايا</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>قائمه الملفات و/او مفاتيح التسجيل المتبقية بعد الغاء التثبيت</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>الكشف عن هذه البقايا هو عمليه معقده التي يمكن ان تسبب الاخطاء. وبسبب هذا ، يتم منح كافة المواد تقدير الثقة ويترك القرار النهائي للمستخدم. البنود ذات الثقة الجيدة والجيدة وعاده ما تكون امنه للازاله ، ولكن لا يزال عليك التحقق منها مرتين.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>تقييم الثقة</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>يبدو ان المواد التالية قد تركت وراءها من قبل المثبتات الخاصة بهم. قد يفشل بعض المثبتين في ازاله اجزاء من التطبيق ، مما يؤدي الى تكلفه سعة المحرك . ومع ذلك ، فان معظم هذه المواد من المرجح ان تكون اعدادات التطبيق ، والتي تاخذ مساحة صغيره وغير مؤذيه.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>اسم الغاء التثبيت</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>ثقة</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>مسار المادة</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>اخفاء المواد بثقة سيئه</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>تصدير...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>حذف محدد</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>الغاء الامر</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>تصدير القائمه المتبقية</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Text files|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

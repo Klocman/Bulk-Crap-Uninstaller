@@ -117,56 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Tekst bestanden|*.txt</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Details</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Kopieër naar klembord</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Openen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Achtergebleven bestanden verwijderen</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Lijst met bestanden en/of registersleutels, die na deïnstallatie zijn achtergebleven.</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Het detecteren van deze restanten is een complex proces dat tot vergissingen kan leiden. Daarom is er voor elk onderdeel een vertrouwens waardering, waarbij de gebruiker de eindbeslissing heeft. Onderdelen met een (zeer) hoge graad van vertrouwen kunnen  zonder gevaar worden verwijderd. Desalniettemin moet u alles alvorens te verwijderen zorgvuldig controleren. Waarderings details kunt u na een dubbelklik op het onderdeel weergeven.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Vertrouwens waardering</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>De volgende onderdelen zijn waarschijnlijk door uw de-installer achter gebleven. Sommige de-installers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Deïnstaller naam</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Vertrouwen</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Onderdeel pad</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Verbergen van onderdelen die u niet vertrouwd</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exporteren...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Geselecteerde verwijderen</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Annuleren</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Lijst met restanten exporteren</value>
     <comment>leftover=rimanenti</comment>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Annuleren</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Geselecteerde verwijderen</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exporteren...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Verbergen van onderdelen die u niet vertrouwd</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Onderdeel pad</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Vertrouwen</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Deïnstaller naam</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>De volgende onderdelen zijn waarschijnlijk door uw de-installer achter gebleven. Sommige de-installers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Vertrouwens waardering</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Het detecteren van deze restanten is een complex proces dat tot vergissingen kan leiden. Daarom is er voor elk onderdeel een vertrouwens waardering, waarbij de gebruiker de eindbeslissing heeft. Onderdelen met een (zeer) hoge graad van vertrouwen kunnen  zonder gevaar worden verwijderd. Desalniettemin moet u alles alvorens te verwijderen zorgvuldig controleren. Waarderings details kunt u na een dubbelklik op het onderdeel weergeven.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lijst met bestanden en/of registersleutels, die na deïnstallatie zijn achtergebleven.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Achtergebleven bestanden verwijderen</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Openen</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Kopieër naar klembord</value>
-  </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Details</value>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Tekst bestanden|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
 </root>

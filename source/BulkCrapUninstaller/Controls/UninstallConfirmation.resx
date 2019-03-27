@@ -112,27 +112,27 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Uninstaller name</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>The initial order depends on your uninstall settings, but it can be changed by dragging the items. Note: BCU can change the order if concurrent uninstallation is enabled.</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnName.Width" type="System.Int32, mscorlib">
     <value>250</value>
   </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Uninstall</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>This is a list of applications that will be uninstalled, in order from top to bottom. If you deselect the "Uninstall" field, the application will not be uninstalled. If quiet uninstallation is not available for an item, it can't be checked on</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnEnabled.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Quiet</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Intelligent sort</value>
   </data>
   <data name="olvColumnQuiet.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -222,20 +222,8 @@
   <data name="buttonSmartSort.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Intelligent sort</value>
-  </data>
-  <data name="&gt;&gt;buttonSmartSort.Name" xml:space="preserve">
-    <value>buttonSmartSort</value>
-  </data>
-  <data name="&gt;&gt;buttonSmartSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSmartSort.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonSmartSort.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Quiet</value>
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -315,20 +303,8 @@
   <data name="labelInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelInfo.Text" xml:space="preserve">
-    <value>This is a list of applications that will be uninstalled, in order from top to bottom. If you deselect the "Uninstall" field, the application will not be uninstalled. If quiet uninstallation is not available for an item, it can't be checked on</value>
-  </data>
-  <data name="&gt;&gt;labelInfo.Name" xml:space="preserve">
-    <value>labelInfo</value>
-  </data>
-  <data name="&gt;&gt;labelInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInfo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Uninstall</value>
   </data>
   <data name="labelInfo2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -345,20 +321,8 @@
   <data name="labelInfo2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>The initial order depends on your uninstall settings, but it can be changed by dragging the items. Note: BCU can change the order if concurrent uninstallation is enabled.</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Name" xml:space="preserve">
-    <value>labelInfo2</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelInfo2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Uninstaller name</value>
   </data>
   <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -387,9 +351,6 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -429,4 +390,7 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

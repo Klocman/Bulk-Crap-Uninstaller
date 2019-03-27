@@ -141,9 +141,6 @@
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Link or application's file...</value>
-  </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
@@ -240,8 +237,8 @@
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>All files|*.*</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Install directory...</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
     <value>Select any files that belong to the applcation</value>
@@ -267,8 +264,8 @@
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Install directory...</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>All files|*.*</value>
   </data>
   <data name="&gt;&gt;button2.Name" xml:space="preserve">
     <value>button2</value>
@@ -330,8 +327,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value />
+  <data name="button1.Text" xml:space="preserve">
+    <value>Link or application's file...</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -117,60 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Текстовый|*.txt</value>
-    <comment>keep the |*.txt</comment>
-  </data>
-  <data name="exportDialog.Title" xml:space="preserve">
-    <value>Экспорт списка оставшегося</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Удалить отмеченное</value>
-  </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Экспорт...</value>
-  </data>
-  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>Скрыть элементы с плохой уверенностью</value>
-  </data>
-  <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Путь элемента</value>
-  </data>
-  <data name="olvColumnSafety.Text" xml:space="preserve">
-    <value>Уверенные</value>
-  </data>
-  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Имя деинсталлятора</value>
-  </data>
-  <data name="headerIntro.Text" xml:space="preserve">
-    <value>Следующие элементы, как представляется, остались после удаления программ(ы). Некоторые деинсталляторы могут не удалять части своего приложения. Чаще всего эти элементы являются параметрами приложений, которые занимают мало места и безвредны.</value>
-  </data>
-  <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Рейтинг доверия</value>
-  </data>
-  <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Обнаружение остатков сложный процесс, в котором возможны ошибки. Из-за этого все элементы рейтингуются и окончательное решение остается за пользователем. Элементы с хорошим и очень хорошим рейтингом доверия обычно безопасны для удаления, но вам все же стоит проверить их.</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Список файлов и/или ключей реестра, оставшихся после удаления</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Удаление остатков</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Открыть</value>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Детали</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>Копировать в &amp;буфер</value>
   </data>
-  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Детали</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Открыть</value>
   </data>
-  <data name="backupDirDialog.Description" xml:space="preserve">
-    <value>Выберите, где сохранить резервную копию. Будет создан новый каталог.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Удаление остатков</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Список файлов и/или ключей реестра, оставшихся после удаления</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Обнаружение остатков сложный процесс, в котором возможны ошибки. Из-за этого все элементы рейтингуются и окончательное решение остается за пользователем. Элементы с хорошим и очень хорошим рейтингом доверия обычно безопасны для удаления, но вам все же стоит проверить их.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Рейтинг доверия</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Следующие элементы, как представляется, остались после удаления программ(ы). Некоторые деинсталляторы могут не удалять части своего приложения. Чаще всего эти элементы являются параметрами приложений, которые занимают мало места и безвредны.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Имя деинсталлятора</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Уверенные</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Путь элемента</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Скрыть элементы с плохой уверенностью</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Экспорт...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Удалить отмеченное</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Экспорт списка оставшегося</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Текстовый|*.txt</value>
+    <comment>keep the |*.txt</comment>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

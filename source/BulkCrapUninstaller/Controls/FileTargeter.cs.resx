@@ -120,16 +120,13 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Adresář instalace</value>
   </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Vyberte všechny soubory, které patří k aplikaci</value>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Všechny soubory|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Odkaz nebo soubor aplikace...</value>
-  </data>
-  <data name="folderBrowserDialog1.Description" xml:space="preserve">
-    <value>Vyberte adresář, ve kterém je aplikace nainstalována.</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Vyberte všechny soubory, které patří k aplikaci</value>
   </data>
 </root>

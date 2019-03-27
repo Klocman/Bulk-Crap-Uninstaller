@@ -127,23 +127,14 @@
   <data name="buttonSmartSort.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 26</value>
   </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Inteligentne sortowanie</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Odinstaluj</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Anuluj</value>
-  </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>619, 75</value>
   </data>
   <data name="labelInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>604, 43</value>
   </data>
-  <data name="labelInfo.Text" xml:space="preserve">
-    <value>Poniżej znajduje się lista aplikacji, które zostaną odinstalowane, w kolejności od góry do dołu. Jeśli odznaczysz pole „Odinstaluj”, aplikacja nie zostanie odinstalowana. Jeśli cicha dezinstalacja nie jest dostępna, nie można jej zaznaczyć.</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Początkowa kolejność zależy od ustawień odinstalowywania, ale można ją zmienić przeciągając elementy. Uwaga: BCU może zmienić kolejność jeśli jest włączona równoczesna dezinstalacja.</value>
   </data>
   <data name="labelInfo2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 43</value>
@@ -151,22 +142,22 @@
   <data name="labelInfo2.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 26</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Początkowa kolejność zależy od ustawień odinstalowywania, ale można ją zmienić przeciągając elementy. Uwaga: BCU może zmienić kolejność jeśli jest włączona równoczesna dezinstalacja.</value>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Poniżej znajduje się lista aplikacji, które zostaną odinstalowane, w kolejności od góry do dołu. Jeśli odznaczysz pole „Odinstaluj”, aplikacja nie zostanie odinstalowana. Jeśli cicha dezinstalacja nie jest dostępna, nie można jej zaznaczyć.</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Potwierdź dezinstalację</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Inteligentne sortowanie</value>
   </data>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Nazwa dezinstalatora</value>
-  </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Odinstaluj</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Miejsce zainstalowania</value>
   </data>
   <data name="olvColumnQuiet.Text" xml:space="preserve">
     <value>Cicho</value>
   </data>
-  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Miejsce zainstalowania</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Odinstaluj</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nazwa dezinstalatora</value>
   </data>
 </root>

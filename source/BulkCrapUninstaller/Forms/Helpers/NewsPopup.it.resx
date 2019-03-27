@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Le donazioni mi aiutano a finanziare il progetto e a pagare i certificati per la firma del codice sorgente, l'hosting e altre necessità.</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Leggi le note della versione e i cambiamenti</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Guarda il codice sorgente o contribuisci</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Leggi la licenza</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Leggi la politica della privacy</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Leggi il file dell'aiuto</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Invia i feedback / Contatta lo sviluppatore</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Clicca in qualunque punto per chiudere questo messaggio)</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Dona (PayPal, Bitcoin, Steam gift)</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>(Clicca in qualunque punto per chiudere questo messaggio)</value>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Invia i feedback / Contatta lo sviluppatore</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Leggi il file dell'aiuto</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Leggi la politica della privacy</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Leggi la licenza</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Guarda il codice sorgente o contribuisci</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Leggi le note della versione e i cambiamenti</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Le donazioni mi aiutano a finanziare il progetto e a pagare i certificati per la firma del codice sorgente, l'hosting e altre necessità.</value>
   </data>
 </root>

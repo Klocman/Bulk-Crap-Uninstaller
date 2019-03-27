@@ -117,34 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Název odinstalátoru</value>
-  </data>
-  <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Odinstalovat</value>
-  </data>
-  <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Potichu</value>
-  </data>
-  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Místo instalace</value>
-  </data>
-  <data name="buttonSmartSort.Text" xml:space="preserve">
-    <value>Inteligentní třídění</value>
-  </data>
-  <data name="buttonAccept.Text" xml:space="preserve">
-    <value>&amp;Odinstalovat</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Zrušit</value>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Pořadí závisí na Vašem nastavení odinstalace, ale lze jej změnit přetažením položky. Poznámka: BCU můžete změnit pořadí, pokud je povolena souběžná odinstalace.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Seznam aplikací, které budou odinstalovány, a to shora dolů. Pokud zrušíte výběr "Odinstalovat", aplikace nebude odinstalována. Není-li k dispozici tichá odinstalace pro položku, nelze ji zkontrolovat</value>
   </data>
-  <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Pořadí závisí na Vašem nastavení odinstalace, ale lze jej změnit přetažením položky. Poznámka: BCU můžete změnit pořadí, pokud je povolena souběžná odinstalace.</value>
+  <data name="buttonSmartSort.Text" xml:space="preserve">
+    <value>Inteligentní třídění</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Potvrdit úlohu odinstalace</value>
+  <data name="olvColumnInstallLocation.Text" xml:space="preserve">
+    <value>Místo instalace</value>
+  </data>
+  <data name="olvColumnQuiet.Text" xml:space="preserve">
+    <value>Potichu</value>
+  </data>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Odinstalovat</value>
+  </data>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Název odinstalátoru</value>
   </data>
 </root>
