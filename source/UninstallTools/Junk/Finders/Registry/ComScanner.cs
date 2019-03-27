@@ -32,6 +32,9 @@ namespace UninstallTools.Junk.Finders.Registry
 
         public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
+            if (!_classesKeys.Any())
+                yield break;
+
             if (string.IsNullOrEmpty(target.InstallLocation) ||
                 UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
                 yield break;
@@ -40,7 +43,7 @@ namespace UninstallTools.Junk.Finders.Registry
             {
                 foreach (var interfacePath in comEntry.InterfaceNames)
                 {
-                    using (var interfaceKey = RegistryTools.OpenRegistryKey(interfacePath))
+                    using (var interfaceKey = RegistryTools.OpenRegistryKey(interfacePath, false, true))
                     {
                         if (interfaceKey != null)
                             yield return JunkFromKey(target, interfaceKey);
@@ -49,7 +52,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
                 foreach (var classesKeyPath in _classesKeys)
                 {
-                    using (var classesKey = RegistryTools.OpenRegistryKey(classesKeyPath))
+                    using (var classesKey = RegistryTools.OpenRegistryKey(classesKeyPath, false, true))
                     {
                         if (classesKey == null) continue;
 
@@ -130,7 +133,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
             foreach (var classesKeyPath in _classesKeys)
             {
-                using (var classesKey = RegistryTools.OpenRegistryKey(classesKeyPath))
+                using (var classesKey = RegistryTools.OpenRegistryKey(classesKeyPath, false, true))
                 {
                     if (classesKey == null) continue;
 
@@ -144,7 +147,7 @@ namespace UninstallTools.Junk.Finders.Registry
             // Gather com interface info
             foreach (var classesKeyPath in _classesKeys)
             {
-                using (var interfacesKey = RegistryTools.OpenRegistryKey(Path.Combine(classesKeyPath, "Interface")))
+                using (var interfacesKey = RegistryTools.OpenRegistryKey(Path.Combine(classesKeyPath, "Interface"), false, true))
                 {
                     if (interfacesKey == null) continue;
 
@@ -225,7 +228,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
                         var result = results.FirstOrDefault(x => string.Equals(x.Guid, typeLibKeyGuid, StringComparison.OrdinalIgnoreCase)) ?? new ComEntry(typeLibKeyGuid);
 
-                        foreach (var fileKeyPath in new[] {Path.Combine(versionKeyName, "0\\win32"), Path.Combine(versionKeyName, "0\\win64")})
+                        foreach (var fileKeyPath in new[] { Path.Combine(versionKeyName, "0\\win32"), Path.Combine(versionKeyName, "0\\win64") })
                         {
                             using (var fileKey = guidKey.OpenSubKey(fileKeyPath))
                             {
