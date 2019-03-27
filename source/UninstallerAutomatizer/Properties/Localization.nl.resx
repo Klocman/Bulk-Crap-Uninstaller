@@ -197,4 +197,21 @@
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
     <value>{0} is geen geldig aantal</value>
   </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>Nee | Afwijzen</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Annuleren | Afbreken | Terug</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>De-installeer | OK | Accepteer | Toepassen | Sluiten | Verwijderen  | Opschonen</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
+  </data>
 </root>

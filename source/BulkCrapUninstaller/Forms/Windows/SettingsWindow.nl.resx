@@ -271,4 +271,12 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Netwerk</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Kleurenblind modus</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Scan verwijderbare schijven</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
 </root>

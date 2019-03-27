@@ -571,4 +571,11 @@
   <data name="IsWebBrowser" xml:space="preserve">
     <value>Is een web browser</value>
   </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell script</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Debug tracing/Loggging
+Configuratie</value>
+  </data>
 </root>

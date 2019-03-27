@@ -117,32 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>(Klik ergens om dit dialoogvenster te sluiten)
-</value>
-  </data>
-  <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Doneer (PayPal, Bitcoin, Steam giften)</value>
-  </data>
-  <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Stuur feedback / Neem contact op met de ontwikkelaar</value>
-  </data>
-  <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Lees het helpbestand</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Lees de privacyverklaring</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Lees de licentie</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Bekijk de broncode of draag daaraan bij</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Donaties helpen mij om mijn interesse te bewaren in dit project. Evenals betalingen voor code ondertekening van certificaten, hosting en andere benodigdheden.</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>Bekijk de release notities en het wijzigingen logboek</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Donaties helpen mij om mijn interesse te bewaren in dit project. Evenals betalingen voor code ondertekening van certificaten, hosting en andere benodigdheden.</value>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Bekijk de broncode of draag daaraan bij</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Lees de licentie</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Lees de privacyverklaring</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Lees het helpbestand</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Stuur feedback / Neem contact op met de ontwikkelaar</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Doneer (PayPal, Bitcoin, Steam giften)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Klik ergens om dit dialoogvenster te sluiten)
+</value>
   </data>
 </root>

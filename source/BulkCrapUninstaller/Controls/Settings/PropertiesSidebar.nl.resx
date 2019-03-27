@@ -189,4 +189,13 @@ Waarschuwing: Controleer alvorens deze programma's te verwijderen of deze niet n
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Toon Windows onderdelen</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Tweakes tonen</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Markeer speciale de-installers </value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Gebruik kleuren om speciale applicaties te onderscheiden, bijvoorbeeld Store Apps en Windows functies.</value>
+  </data>
 </root>

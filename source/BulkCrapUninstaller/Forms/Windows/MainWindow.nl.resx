@@ -574,4 +574,7 @@
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Installeer .NET v3.5 (toevoeg functie)</value>
   </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bekijk tweaks</value>
+  </data>
 </root>
