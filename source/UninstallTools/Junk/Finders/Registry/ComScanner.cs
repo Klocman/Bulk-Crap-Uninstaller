@@ -145,6 +145,7 @@ namespace UninstallTools.Junk.Finders.Registry
             }
 
             // Gather com interface info
+            // https://docs.microsoft.com/en-us/windows/desktop/com/interface-key
             foreach (var classesKeyPath in _classesKeys)
             {
                 using (var interfacesKey = RegistryTools.OpenRegistryKey(Path.Combine(classesKeyPath, "Interface"), false, true))
@@ -168,6 +169,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
         private static void GetClsidEntries(ICollection<ComEntry> results, RegistryKey classes)
         {
+            // https://docs.microsoft.com/en-us/windows/desktop/com/clsid-key-hklm
             using (var clsid = classes.OpenSubKey("CLSID"))
             {
                 if (clsid == null) return;
@@ -289,6 +291,7 @@ namespace UninstallTools.Junk.Finders.Registry
             public readonly List<string> InterfaceNames = new List<string>();
 
             public string FullFilename;
+            //https://docs.microsoft.com/en-us/windows/desktop/com/-progid--key
             public string ProgId;
             public string VersionIndependentProgId;
 
