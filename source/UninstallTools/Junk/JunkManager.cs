@@ -47,7 +47,7 @@ namespace UninstallTools.Junk
         {
             foreach (var appGroup in input.GroupBy(x => x.Application))
             {
-                foreach (var group in appGroup.GroupBy(x => x.GetDisplayName()))
+                foreach (var group in appGroup.GroupBy(x => PathTools.NormalizePath(x.GetDisplayName()).ToLowerInvariant()))
                 {
                     IJunkResult firstJunkResult = null;
                     foreach (var junkResult in group)
