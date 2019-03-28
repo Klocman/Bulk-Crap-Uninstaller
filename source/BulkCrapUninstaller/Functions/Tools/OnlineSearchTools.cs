@@ -43,6 +43,11 @@ namespace BulkCrapUninstaller.Functions.Tools
             SearchOnline(selectedUninstallers, @"https://github.com/search?q=", GetTrimmedName, SearchSeparatorType.Plus);
         }
 
+        public static void SearchSlantCo(IEnumerable<ApplicationUninstallerEntry> selectedUninstallers)
+        {
+            SearchOnline(selectedUninstallers, @"https://www.slant.co/search?query=", GetTrimmedName, SearchSeparatorType.Escaped);
+        }
+
         private static string GetTrimmedName(ApplicationUninstallerEntry entry)
         {
             var displayNameTrimmed = entry.DisplayNameTrimmed;

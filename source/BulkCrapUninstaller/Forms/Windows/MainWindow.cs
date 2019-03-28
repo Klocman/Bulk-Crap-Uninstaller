@@ -1549,6 +1549,11 @@ namespace BulkCrapUninstaller.Forms
             OnlineSearchTools.SearchAlternativeTo(_listView.SelectedUninstallers);
         }
 
+        private void slantcoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnlineSearchTools.SearchSlantCo(_listView.SelectedUninstallers);
+        }
+
         private void fossHubcomToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OnlineSearchTools.SearchFosshub(_listView.SelectedUninstallers);
