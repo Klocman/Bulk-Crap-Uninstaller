@@ -8,6 +8,7 @@ frameborder="0" allow="encrypted-media" allowfullscreen class="video"></iframe>
 
 It can detect most applications and games (even portable or not registered), clean up leftovers, force uninstall, automatically uninstall according to premade lists, and much more.
 
+[You can read the manual here](https://htmlpreview.github.io/?https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/doc/BCU_manual.html).
 
 ![Main window preview](assets/1.png)
 
