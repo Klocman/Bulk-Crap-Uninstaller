@@ -17,7 +17,7 @@ If you need any help please either read the help file included with all releases
 ## Download
 [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
-[Download from OSDN](https://osdn.net/projects/bulk-crap-uninstaller/simple/)
+[Download from OSDN](https://osdn.net/projects/bulk-crap-uninstaller/releases/latest-release)
 
 ## System requirements
 * OS: Windows Vista or newer is recommended. BCU will also work on XP and 2003 with reduced functionality and possibly some bugs. Both 32bit and 64bit versions are supported.
