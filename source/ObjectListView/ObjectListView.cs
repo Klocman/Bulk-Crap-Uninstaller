@@ -5674,7 +5674,8 @@ namespace BrightIdeasSoftware
         /// <param name="m"></param>
         protected override void WndProc(ref Message m)
         {
-           
+            try
+            { 
             // System.Diagnostics.Debug.WriteLine(m.Msg);
             switch (m.Msg) {
                 case 2: // WM_DESTROY
@@ -5760,6 +5761,14 @@ namespace BrightIdeasSoftware
                 default:
                     base.WndProc(ref m);
                     break;
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                // Catch error 0x80070459 in PtrToStructure - No mapping for the Unicode character exists in the target multi-byte code page
+                // It can happen on some Japanese systems, it's better to have some ui glitching than crashing
+
+                base.WndProc(ref m);
             }
         }
 
@@ -6812,8 +6821,6 @@ namespace BrightIdeasSoftware
                 case HDN_TRACKW:
                     if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count)
                     {
-                        try
-                        {
                             NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
                             OLVColumn column = this.GetColumn(nmheader.iItem);
                             if (hditem.cxy < column.MinimumWidth)
@@ -6821,12 +6828,6 @@ namespace BrightIdeasSoftware
                             else if (column.MaximumWidth != -1 && hditem.cxy > column.MaximumWidth)
                                 hditem.cxy = column.MaximumWidth;
                             Marshal.StructureToPtr(hditem, nmheader.pHDITEM, false);
-                        }
-                        catch (ArgumentOutOfRangeException)
-                        {
-                            // Catch error 0x80070459 in PtrToStructure - No mapping for the Unicode character exists in the target multi-byte code page
-                            // It can happen on some Japanese systems, it's better to have some ui glitching than crashing
-                        }
                     }
                     break;
 
@@ -6835,8 +6836,6 @@ namespace BrightIdeasSoftware
                     nmheader = (NativeMethods.NMHEADER)m.GetLParam(typeof(NativeMethods.NMHEADER));
                     if (nmheader.iItem >= 0 && nmheader.iItem < this.Columns.Count)
                     {
-                        try
-                        {
                             NativeMethods.HDITEM hditem = (NativeMethods.HDITEM)Marshal.PtrToStructure(nmheader.pHDITEM, typeof(NativeMethods.HDITEM));
                             OLVColumn column = this.GetColumn(nmheader.iItem);
                             // Check the mask to see if the width field is valid, and if it is, make sure it's within range
@@ -6847,12 +6846,6 @@ namespace BrightIdeasSoftware
                                     isMsgHandled = true;
                                 }
                             }
-                        }
-                        catch (ArgumentOutOfRangeException)
-                        {
-                            // Catch error 0x80070459 in PtrToStructure - No mapping for the Unicode character exists in the target multi-byte code page
-                            // It can happen on some Japanese systems, it's better to have some ui glitching than crashing
-                        }
                     }
                     break;
 
