@@ -136,8 +136,16 @@ namespace UninstallTools.Junk.Finders.Registry
 
                     _extensionKeyNames.Add(classesKeyPath, classesKey.GetSubKeyNames().Where(x => x[0] == '.').ToArray());
 
-                    GetClsidEntries(_comEntries, classesKey);
-                    GetTypeLibEntries(_comEntries, classesKey);
+                    try
+                    {
+                        GetClsidEntries(_comEntries, classesKey);
+                        GetTypeLibEntries(_comEntries, classesKey);
+                    }
+                    catch (SystemException ex)
+                    {
+                        Console.WriteLine(@"Unexpected error while scanning COM entries, the registry might be corrupted. COM junk detection will not work.");
+                        Console.WriteLine(ex);
+                    }
                 }
             }
 
@@ -173,10 +181,13 @@ namespace UninstallTools.Junk.Finders.Registry
 
                 foreach (var clsidGuid in clsid.GetSubKeyNames())
                 {
+                    // This catches most system classes, rest is caught by IsSystemDirectory check later
                     if (IsSystemGuid(clsidGuid)) continue;
 
-                    using (var guidKey = clsid.OpenSubKey(clsidGuid))
+                    RegistryKey guidKey = null;
+                    try
                     {
+                        guidKey = clsid.OpenSubKey(clsidGuid);
                         if (guidKey == null) continue;
 
                         var result = results.FirstOrDefault(x => string.Equals(x.Guid, clsidGuid, StringComparison.OrdinalIgnoreCase)) ?? new ComEntry(clsidGuid);
@@ -205,6 +216,14 @@ namespace UninstallTools.Junk.Finders.Registry
                         }
 
                         results.Add(result);
+                    }
+                    catch (SystemException ex)
+                    {
+                        Console.WriteLine($@"Crash while processing COM GUID: {clsidGuid} - {ex}");
+                    }
+                    finally
+                    {
+                        guidKey?.Close();
                     }
                 }
             }
@@ -249,7 +268,6 @@ namespace UninstallTools.Junk.Finders.Registry
 
         private static bool IsSystemGuid(string guid)
         {
-            // This catches most system classes, rest is caught by IsSystemDirectory check later
             return guid.Contains("-0000-") || guid[0] != '{';
         }
 
