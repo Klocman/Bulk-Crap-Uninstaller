@@ -32,9 +32,6 @@ namespace UninstallTools.Junk.Finders.Registry
 
         public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            if (!_classesKeys.Any())
-                yield break;
-
             if (string.IsNullOrEmpty(target.InstallLocation) ||
                 UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
                 yield break;
@@ -170,7 +167,7 @@ namespace UninstallTools.Junk.Finders.Registry
         private static void GetClsidEntries(ICollection<ComEntry> results, RegistryKey classes)
         {
             // https://docs.microsoft.com/en-us/windows/desktop/com/clsid-key-hklm
-            using (var clsid = classes.OpenSubKey("CLSID"))
+            using (var clsid = RegistryTools.OpenRegistryKey(Path.Combine(classes.Name, "CLSID"), false, true))
             {
                 if (clsid == null) return;
 
@@ -215,7 +212,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
         private static void GetTypeLibEntries(ICollection<ComEntry> results, RegistryKey classes)
         {
-            using (var typeLibKey = classes.OpenSubKey("TypeLib"))
+            using (var typeLibKey = RegistryTools.OpenRegistryKey(Path.Combine(classes.Name, "TypeLib"), false, true))
             {
                 if (typeLibKey == null) return;
 
