@@ -106,6 +106,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.checkBoxScoop = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -486,6 +487,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanWinFeatures);
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanStoreApps);
             this.groupBoxAppStores.Controls.Add(this.checkBoxScanSteam);
+            this.groupBoxAppStores.Controls.Add(this.checkBoxScoop);
             this.groupBoxAppStores.Controls.Add(this.checkBoxOculus);
             this.groupBoxAppStores.Controls.Add(this.checkBoxChoco);
             this.groupBoxAppStores.Name = "groupBoxAppStores";
@@ -658,6 +660,12 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
+            // checkBoxScoop
+            // 
+            resources.ApplyResources(this.checkBoxScoop, "checkBoxScoop");
+            this.checkBoxScoop.Name = "checkBoxScoop";
+            this.checkBoxScoop.UseVisualStyleBackColor = true;
+            // 
             // SettingsWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -806,5 +814,6 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxOculus;
         private CheckBox checkBoxRemovable;
         private CheckBox checkBoxColorblind;
+        private CheckBox checkBoxScoop;
     }
 }
