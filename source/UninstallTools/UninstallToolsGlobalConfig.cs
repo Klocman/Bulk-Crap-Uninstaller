@@ -147,22 +147,23 @@ namespace UninstallTools
         /// </summary>
         public static bool QuietAutomatizationKillStuck { get; set; }
 
-        public static bool ScanSteam { get; set; }
-        public static bool ScanStoreApps { get; set; }
-        public static bool ScanOculus { get; set; }
-        public static bool ScanWinFeatures { get; set; }
-        public static bool ScanWinUpdates { get; set; }
-        public static bool ScanChocolatey { get; set; }
+        public static bool ScanRegistry { get; set; } = true;
+        public static bool ScanDrives { get; set; } = true;
+        public static bool ScanPreDefined { get; set; } = true;
+
+        public static bool ScanSteam { get; set; } = true;
+        public static bool ScanStoreApps { get; set; } = true;
+        public static bool ScanOculus { get; set; } = true;
+        public static bool ScanWinFeatures { get; set; } = true;
+        public static bool ScanWinUpdates { get; set; } = true;
+        public static bool ScanChocolatey { get; set; } = true;
+        public static bool ScanScoop { get; set; } = true;
 
         /// <summary>
         ///     Built-in program files paths.
         /// </summary>
         internal static IEnumerable<string> StockProgramFiles { get; }
 
-        public static bool ScanRegistry { get; set; }
-        public static bool ScanDrives { get; set; }
-        public static bool ScanPreDefined { get; set; }
-        
         public static bool UseQuietUninstallDaemon { get; set; }
 
         /// <summary>

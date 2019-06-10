@@ -550,8 +550,8 @@ Quer usar desinstaladores "de primeiro plano" para esses itens ou quer que sejam
     <value>Certificado em falta</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Desinstaladores em curso {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Desinstaladores em curso ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Seleccionar "Terminar" irá imediatamente fechar o desinstalador em curso e poderá resultar numa incompleta desinstalação. Normalmente, é possível retomar a desinstalação para a terminar.

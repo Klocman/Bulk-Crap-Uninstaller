@@ -6,16 +6,29 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 using Klocman.Tools;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList
 {
+    public sealed class CertCacheEntry
+    {
+        public bool Valid { get; set; }
+
+        [XmlIgnore]
+        public X509Certificate2 Cert { get; set; }
+        public byte[] CertData
+        {
+            get => Cert?.RawData;
+            set => Cert = value == null ? null : new X509Certificate2(value);
+        }
+    }
+
     internal class CertificateCache
     {
         public string CacheFilename { get; set; }
-        private Dictionary<string, X509Certificate2> _dictionaryCahe;
+        private IDictionary<string, CertCacheEntry> _dictionaryCache;
 
         public CertificateCache(string cacheFilename)
         {
@@ -24,27 +37,24 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void LoadCertificateCache()
         {
-            _dictionaryCahe = new Dictionary<string, X509Certificate2>();
+            _dictionaryCache = new Dictionary<string, CertCacheEntry>();
 
             if (!File.Exists(CacheFilename)) return;
 
             try
             {
-                var l = SerializationTools.DeserializeDictionary<string, byte[]>(CacheFilename);
-
-                _dictionaryCahe = l.ToDictionary(x => x.Key, x => x.Value != null ? new X509Certificate2(x.Value) : null);
+                _dictionaryCache = SerializationTools.DeserializeDictionary<string, CertCacheEntry>(CacheFilename);
             }
             catch (SystemException e)
             {
                 Console.WriteLine(e);
                 File.Delete(CacheFilename);
-                _dictionaryCahe.Clear();
             }
         }
 
         public void SaveCertificateCache()
         {
-            if (_dictionaryCahe == null)
+            if (_dictionaryCache == null)
             {
                 File.Delete(CacheFilename);
                 return;
@@ -52,7 +62,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             try
             {
-                SerializationTools.SerializeDictionary(_dictionaryCahe.ToDictionary(x => x.Key, x => x.Value?.RawData), CacheFilename);
+                SerializationTools.SerializeDictionary(_dictionaryCache, CacheFilename);
             }
             catch (SystemException e)
             {
@@ -63,24 +73,24 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void Delete()
         {
-            _dictionaryCahe = null;
+            _dictionaryCache = null;
             File.Delete(CacheFilename);
         }
 
-        public void AddItem(string id, X509Certificate2 cert)
+        public void AddItem(string id, X509Certificate2 cert, bool verified)
         {
-            if (_dictionaryCahe != null && id != null)
-                _dictionaryCahe[id] = cert;
+            if (_dictionaryCache != null && id != null)
+                _dictionaryCache[id] = new CertCacheEntry { Cert = cert, Valid = verified };
         }
 
         public bool ContainsKey(string id)
         {
-            return _dictionaryCahe != null && !string.IsNullOrEmpty(id) && _dictionaryCahe.ContainsKey(id);
+            return _dictionaryCache != null && !string.IsNullOrEmpty(id) && _dictionaryCache.ContainsKey(id);
         }
 
-        public X509Certificate2 GetCachedItem(string id)
+        public CertCacheEntry GetCachedItem(string id)
         {
-            return _dictionaryCahe[id];
+            return _dictionaryCache[id];
         }
     }
 }

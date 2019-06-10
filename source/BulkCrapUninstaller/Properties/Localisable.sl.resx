@@ -545,8 +545,8 @@ Ali želite za te vnose uporabiti "glasne" odstranjevalce, ali morajo ti biti od
     <value>Manjka digitalno potrdilo</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Obdelava odstranjevalcev {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Obdelava odstranjevalcev ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Izbira "Prekini", bo takoj zaprla zagnanega odstranjevalca in lahko povzroči nedokončano odstranjevanje. Za dokončanje odstranitve ponavadi zadostuje ponovni zagon odstranjevalca.

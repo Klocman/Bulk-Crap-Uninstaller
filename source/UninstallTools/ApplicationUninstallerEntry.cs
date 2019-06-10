@@ -358,6 +358,13 @@ namespace UninstallTools
                 _certificateValid = _certificate.Verify();
         }
 
+        public void SetCertificate(X509Certificate2 c, bool v)
+        {
+            _certificateGotten = true;
+            _certificate = c;
+            _certificateValid = v;
+        }
+
         public Icon GetIcon()
         {
             return IconBitmap;

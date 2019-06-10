@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -349,14 +349,13 @@
     <value>5, 26</value>
   </data>
   <data name="checkBoxColorblind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 17</value>
+    <value>104, 17</value>
   </data>
   <data name="checkBoxColorblind.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="checkBoxColorblind.Text" xml:space="preserve">
     <value>Color-blind mode</value>
-    <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="&gt;&gt;checkBoxColorblind.Name" xml:space="preserve">
     <value>checkBoxColorblind</value>
@@ -520,6 +519,18 @@
   <data name="panel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="comboBoxLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 0</value>
+  </data>
+  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 21</value>
+  </data>
+  <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;comboBoxLanguage.Name" xml:space="preserve">
     <value>comboBoxLanguage</value>
   </data>
@@ -531,6 +542,30 @@
   </data>
   <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 0</value>
+  </data>
+  <data name="label9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 6, 0</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 16</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Application language:</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -574,42 +609,6 @@
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="comboBoxLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
-  </data>
-  <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 21</value>
-  </data>
-  <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 0</value>
-  </data>
-  <data name="label9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 6, 0</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 16</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Application language:</value>
-  </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -652,6 +651,180 @@
   <data name="groupBoxMessages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="groupBoxBackup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="directorySelectBoxBackup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="directorySelectBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 85</value>
+  </data>
+  <data name="directorySelectBoxBackup.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100000, 22</value>
+  </data>
+  <data name="directorySelectBoxBackup.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>10, 22</value>
+  </data>
+  <data name="directorySelectBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 0, 5, 0</value>
+  </data>
+  <data name="directorySelectBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 22</value>
+  </data>
+  <data name="directorySelectBoxBackup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;directorySelectBoxBackup.Name" xml:space="preserve">
+    <value>directorySelectBoxBackup</value>
+  </data>
+  <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
+    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.7.7100.28607, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
+    <value>groupBoxBackup</value>
+  </data>
+  <data name="&gt;&gt;directorySelectBoxBackup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanel9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanel9.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="radioButtonBackupAsk.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonBackupAsk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonBackupAsk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="radioButtonBackupAsk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="radioButtonBackupAsk.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Always ask to create</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAsk.Name" xml:space="preserve">
+    <value>radioButtonBackupAsk</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAsk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAsk.Parent" xml:space="preserve">
+    <value>flowLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAsk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButtonBackupNever.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonBackupNever.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonBackupNever.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="radioButtonBackupNever.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 17</value>
+  </data>
+  <data name="radioButtonBackupNever.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Never ask to create</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupNever.Name" xml:space="preserve">
+    <value>radioButtonBackupNever</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupNever.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupNever.Parent" xml:space="preserve">
+    <value>flowLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupNever.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButtonBackupAuto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonBackupAuto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonBackupAuto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 49</value>
+  </data>
+  <data name="radioButtonBackupAuto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 17</value>
+  </data>
+  <data name="radioButtonBackupAuto.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Create automatically in directory:</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAuto.Name" xml:space="preserve">
+    <value>radioButtonBackupAuto</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAuto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAuto.Parent" xml:space="preserve">
+    <value>flowLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;radioButtonBackupAuto.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="flowLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 69</value>
+  </data>
+  <data name="flowLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel9.Name" xml:space="preserve">
+    <value>flowLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel9.Parent" xml:space="preserve">
+    <value>groupBoxBackup</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBoxBackup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 133</value>
+  </data>
+  <data name="groupBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 7</value>
+  </data>
+  <data name="groupBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 114</value>
+  </data>
+  <data name="groupBoxBackup.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Backup before leftover removal</value>
+  </data>
   <data name="&gt;&gt;groupBoxBackup.Name" xml:space="preserve">
     <value>groupBoxBackup</value>
   </data>
@@ -663,6 +836,123 @@
   </data>
   <data name="&gt;&gt;groupBoxBackup.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 3</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 17</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Always show junk with low confidence</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowAllBadJunk.Name" xml:space="preserve">
+    <value>checkBoxShowAllBadJunk</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowAllBadJunk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowAllBadJunk.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowAllBadJunk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxLoud.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxLoud.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxLoud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 26</value>
+  </data>
+  <data name="checkBoxLoud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 17</value>
+  </data>
+  <data name="checkBoxLoud.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxLoud.Text" xml:space="preserve">
+    <value>Ask to remove loud uninstallers from a quiet task</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLoud.Name" xml:space="preserve">
+    <value>checkBoxLoud</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLoud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLoud.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLoud.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxNeverFeedback.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxNeverFeedback.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 49</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 17</value>
+  </data>
+  <data name="checkBoxNeverFeedback.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Never ask for feedback or help</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNeverFeedback.Name" xml:space="preserve">
+    <value>checkBoxNeverFeedback</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNeverFeedback.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNeverFeedback.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxNeverFeedback.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 2</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 71</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -676,6 +966,87 @@
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxJunk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="comboBoxJunk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 0</value>
+  </data>
+  <data name="comboBoxJunk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 21</value>
+  </data>
+  <data name="comboBoxJunk.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxJunk.Name" xml:space="preserve">
+    <value>comboBoxJunk</value>
+  </data>
+  <data name="&gt;&gt;comboBoxJunk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxJunk.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxJunk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 0</value>
+  </data>
+  <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 16</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Search for junk after uninstalling</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 39</value>
+  </data>
+  <data name="panel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 23</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -687,6 +1058,87 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="panel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxRestore.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="comboBoxRestore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 0</value>
+  </data>
+  <data name="comboBoxRestore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 21</value>
+  </data>
+  <data name="comboBoxRestore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRestore.Name" xml:space="preserve">
+    <value>comboBoxRestore</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRestore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRestore.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRestore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 0</value>
+  </data>
+  <data name="label2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 16</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Create restore point before uninstalling</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="panel2.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 23</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;panel2.Name" xml:space="preserve">
     <value>panel2</value>
@@ -727,461 +1179,32 @@
   <data name="&gt;&gt;groupBoxMessages.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBoxBackup.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Name" xml:space="preserve">
-    <value>directorySelectBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Type" xml:space="preserve">
-    <value>Klocman.Controls.DirectorySelectBox, KlocTools, Version=3.4.6844.2007, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.Parent" xml:space="preserve">
-    <value>groupBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;directorySelectBoxBackup.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Name" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.Parent" xml:space="preserve">
-    <value>groupBoxBackup</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBoxBackup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 133</value>
-  </data>
-  <data name="groupBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 7</value>
-  </data>
-  <data name="groupBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 114</value>
-  </data>
-  <data name="groupBoxBackup.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBoxBackup.Text" xml:space="preserve">
-    <value>Backup before leftover removal</value>
-  </data>
-  <data name="directorySelectBoxBackup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="directorySelectBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 85</value>
-  </data>
-  <data name="directorySelectBoxBackup.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>100000, 22</value>
-  </data>
-  <data name="directorySelectBoxBackup.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>10, 22</value>
-  </data>
-  <data name="directorySelectBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 0, 5, 0</value>
-  </data>
-  <data name="directorySelectBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 22</value>
-  </data>
-  <data name="directorySelectBoxBackup.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="flowLayoutPanel9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanel9.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Name" xml:space="preserve">
-    <value>radioButtonBackupAsk</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAsk.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Name" xml:space="preserve">
-    <value>radioButtonBackupNever</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupNever.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Name" xml:space="preserve">
-    <value>radioButtonBackupAuto</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.Parent" xml:space="preserve">
-    <value>flowLayoutPanel9</value>
-  </data>
-  <data name="&gt;&gt;radioButtonBackupAuto.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flowLayoutPanel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="flowLayoutPanel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="flowLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 69</value>
-  </data>
-  <data name="flowLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="radioButtonBackupAsk.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonBackupAsk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButtonBackupAsk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="radioButtonBackupAsk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
-  </data>
-  <data name="radioButtonBackupAsk.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
-    <value>Always ask to create</value>
-  </data>
-  <data name="radioButtonBackupNever.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonBackupNever.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButtonBackupNever.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
-  </data>
-  <data name="radioButtonBackupNever.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 17</value>
-  </data>
-  <data name="radioButtonBackupNever.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="radioButtonBackupNever.Text" xml:space="preserve">
-    <value>Never ask to create</value>
-  </data>
-  <data name="radioButtonBackupAuto.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonBackupAuto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButtonBackupAuto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 49</value>
-  </data>
-  <data name="radioButtonBackupAuto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
-  </data>
-  <data name="radioButtonBackupAuto.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
-    <value>Create automatically in directory:</value>
-  </data>
-  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Name" xml:space="preserve">
-    <value>checkBoxShowAllBadJunk</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxShowAllBadJunk.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.Name" xml:space="preserve">
-    <value>checkBoxLoud</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxLoud.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Name" xml:space="preserve">
-    <value>checkBoxNeverFeedback</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxNeverFeedback.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 62</value>
-  </data>
-  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 2</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 71</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 3</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 17</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Always show junk with low confidence</value>
-  </data>
-  <data name="checkBoxLoud.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxLoud.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxLoud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 26</value>
-  </data>
-  <data name="checkBoxLoud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 17</value>
-  </data>
-  <data name="checkBoxLoud.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Ask to remove loud uninstallers from a quiet task</value>
-  </data>
-  <data name="checkBoxNeverFeedback.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxNeverFeedback.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxNeverFeedback.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 49</value>
-  </data>
-  <data name="checkBoxNeverFeedback.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 17</value>
-  </data>
-  <data name="checkBoxNeverFeedback.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
-    <value>Never ask for feedback or help</value>
-  </data>
-  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Name" xml:space="preserve">
-    <value>comboBoxJunk</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;comboBoxJunk.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="panel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 23</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="comboBoxJunk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="comboBoxJunk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 0</value>
-  </data>
-  <data name="comboBoxJunk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 21</value>
-  </data>
-  <data name="comboBoxJunk.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 0</value>
-  </data>
-  <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 16</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Search for junk after uninstalling</value>
-  </data>
-  <data name="panel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Name" xml:space="preserve">
-    <value>comboBoxRestore</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRestore.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="panel2.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 23</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBoxRestore.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="comboBoxRestore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 0</value>
-  </data>
-  <data name="comboBoxRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 21</value>
-  </data>
-  <data name="comboBoxRestore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 0</value>
-  </data>
-  <data name="label2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 0</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 16</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Create restore point before uninstalling</value>
-  </data>
   <data name="groupBoxExternal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBoxEnableExternal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxEnableExternal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxEnableExternal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxEnableExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 104</value>
+  </data>
+  <data name="checkBoxEnableExternal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 0, 4</value>
+  </data>
+  <data name="checkBoxEnableExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 21</value>
+  </data>
+  <data name="checkBoxEnableExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
+    <value>Enable execution of external applications</value>
   </data>
   <data name="&gt;&gt;checkBoxEnableExternal.Name" xml:space="preserve">
     <value>checkBoxEnableExternal</value>
@@ -1194,6 +1217,65 @@
   </data>
   <data name="&gt;&gt;checkBoxEnableExternal.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="label7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 8</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 86</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>You can specify commands that will run before and after uninstallation. One line equals to one command and will be executed as if you used the "Run..." dialog. 
+
+BCU will wait until the currently running command completes before executing the next one.</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel2.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 86</value>
+  </data>
+  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -1237,89 +1319,6 @@
   <data name="&gt;&gt;groupBoxExternal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBoxEnableExternal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxEnableExternal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxEnableExternal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxEnableExternal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 104</value>
-  </data>
-  <data name="checkBoxEnableExternal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 4</value>
-  </data>
-  <data name="checkBoxEnableExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 21</value>
-  </data>
-  <data name="checkBoxEnableExternal.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
-    <value>Enable execution of external applications</value>
-  </data>
-  <data name="flowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="flowLayoutPanel2.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 18</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 86</value>
-  </data>
-  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 8</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 86</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>You can specify commands that will run before and after uninstallation. One line equals to one command and will be executed as if you used the "Run..." dialog. 
-
-BCU will wait until the currently running command completes before executing the next one.</value>
-  </data>
   <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -1350,11 +1349,32 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="propertiesSidebar1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="propertiesSidebar1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="propertiesSidebar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="propertiesSidebar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="propertiesSidebar1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>170, 170</value>
+  </data>
+  <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 337</value>
+  </data>
+  <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;propertiesSidebar1.Name" xml:space="preserve">
     <value>propertiesSidebar1</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Version=4.13.0.28612, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertiesSidebar1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1391,6 +1411,27 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="tabPageInterface.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="groupBoxLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBoxLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBoxLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 7</value>
+  </data>
+  <data name="groupBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 78</value>
+  </data>
+  <data name="groupBoxLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="&gt;&gt;groupBoxLanguage.Name" xml:space="preserve">
     <value>groupBoxLanguage</value>
@@ -1434,11 +1475,29 @@ BCU will wait until the currently running command completes before executing the
   <data name="tabPageUninstallation.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="uninstallationSettings1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uninstallationSettings1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="uninstallationSettings1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 337</value>
+  </data>
+  <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;uninstallationSettings1.Name" xml:space="preserve">
     <value>uninstallationSettings1</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.UninstallationSettings, BCUninstaller, Version=4.13.0.28612, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uninstallationSettings1.Parent" xml:space="preserve">
     <value>tabPageUninstallation</value>
@@ -1476,6 +1535,360 @@ BCU will wait until the currently running command completes before executing the
   <data name="tabPageDetection.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="groupBoxAppStores.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWinUpdateInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWinUpdateInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelWinUpdateInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="labelWinUpdateInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWinUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 188</value>
+  </data>
+  <data name="labelWinUpdateInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>360, 0</value>
+  </data>
+  <data name="labelWinUpdateInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 0, 0, 6</value>
+  </data>
+  <data name="labelWinUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 32</value>
+  </data>
+  <data name="labelWinUpdateInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Detection of Windows Updates uses WUA, which is slow. It can take a couple of minutes to complete.</value>
+  </data>
+  <data name="&gt;&gt;labelWinUpdateInfo.Name" xml:space="preserve">
+    <value>labelWinUpdateInfo</value>
+  </data>
+  <data name="&gt;&gt;labelWinUpdateInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWinUpdateInfo.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;labelWinUpdateInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 168</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinUpdates.Name" xml:space="preserve">
+    <value>checkBoxScanWinUpdates</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinUpdates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinUpdates.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinUpdates.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelWinFeatureInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelWinFeatureInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelWinFeatureInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="labelWinFeatureInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelWinFeatureInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 136</value>
+  </data>
+  <data name="labelWinFeatureInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>360, 0</value>
+  </data>
+  <data name="labelWinFeatureInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 0, 0, 6</value>
+  </data>
+  <data name="labelWinFeatureInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 32</value>
+  </data>
+  <data name="labelWinFeatureInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Detection of Windows Features uses WMI, and can be slow or even fail on some systems (usually indicating system corruption).</value>
+  </data>
+  <data name="&gt;&gt;labelWinFeatureInfo.Name" xml:space="preserve">
+    <value>labelWinFeatureInfo</value>
+  </data>
+  <data name="&gt;&gt;labelWinFeatureInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWinFeatureInfo.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;labelWinFeatureInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 116</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Windows Features</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinFeatures.Name" xml:space="preserve">
+    <value>checkBoxScanWinFeatures</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinFeatures.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinFeatures.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanWinFeatures.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxScanStoreApps.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxScanStoreApps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 96</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxScanStoreApps.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Windows Store Apps</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanStoreApps.Name" xml:space="preserve">
+    <value>checkBoxScanStoreApps</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanStoreApps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanStoreApps.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanStoreApps.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBoxScanSteam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanSteam.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxScanSteam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanSteam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 76</value>
+  </data>
+  <data name="checkBoxScanSteam.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxScanSteam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxScanSteam.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanSteam.Name" xml:space="preserve">
+    <value>checkBoxScanSteam</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanSteam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanSteam.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanSteam.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="checkBoxScoop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScoop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxScoop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScoop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 56</value>
+  </data>
+  <data name="checkBoxScoop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxScoop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxScoop.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScoop.Name" xml:space="preserve">
+    <value>checkBoxScoop</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScoop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScoop.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScoop.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkBoxOculus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxOculus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxOculus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxOculus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 36</value>
+  </data>
+  <data name="checkBoxOculus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxOculus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxOculus.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Name" xml:space="preserve">
+    <value>checkBoxOculus</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOculus.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="checkBoxChoco.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxChoco.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxChoco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxChoco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="checkBoxChoco.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 3</value>
+  </data>
+  <data name="checkBoxChoco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
+  </data>
+  <data name="checkBoxChoco.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="&gt;&gt;checkBoxChoco.Name" xml:space="preserve">
+    <value>checkBoxChoco</value>
+  </data>
+  <data name="&gt;&gt;checkBoxChoco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxChoco.Parent" xml:space="preserve">
+    <value>groupBoxAppStores</value>
+  </data>
+  <data name="&gt;&gt;checkBoxChoco.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="groupBoxAppStores.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBoxAppStores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 91</value>
+  </data>
+  <data name="groupBoxAppStores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 223</value>
+  </data>
+  <data name="groupBoxAppStores.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Application stores to scan</value>
+  </data>
   <data name="&gt;&gt;groupBoxAppStores.Name" xml:space="preserve">
     <value>groupBoxAppStores</value>
   </data>
@@ -1487,6 +1900,147 @@ BCU will wait until the currently running command completes before executing the
   </data>
   <data name="&gt;&gt;groupBoxAppStores.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flowLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanel7.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="checkBoxScanRegistry.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanRegistry.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanRegistry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="checkBoxScanRegistry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="checkBoxScanRegistry.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Registry (recommended to leave enabled)</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanRegistry.Name" xml:space="preserve">
+    <value>checkBoxScanRegistry</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanRegistry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanRegistry.Parent" xml:space="preserve">
+    <value>flowLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanRegistry.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxScanDrives.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxScanDrives.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxScanDrives.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="checkBoxScanDrives.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 17</value>
+  </data>
+  <data name="checkBoxScanDrives.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Drives (detects unregistered apps)</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanDrives.Name" xml:space="preserve">
+    <value>checkBoxScanDrives</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanDrives.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanDrives.Parent" xml:space="preserve">
+    <value>flowLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxScanDrives.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxPreDefined.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPreDefined.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxPreDefined.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 49</value>
+  </data>
+  <data name="checkBoxPreDefined.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 17</value>
+  </data>
+  <data name="checkBoxPreDefined.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Based on pre-defined rules</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreDefined.Name" xml:space="preserve">
+    <value>checkBoxPreDefined</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreDefined.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreDefined.Parent" xml:space="preserve">
+    <value>flowLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreDefined.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 69</value>
+  </data>
+  <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
+    <value>flowLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 88</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Search for applications in...</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -1554,6 +2108,172 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;tabPageExternal.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="groupBoxProgramFolders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 198</value>
+  </data>
+  <data name="textBoxProgramFolders.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 133</value>
+  </data>
+  <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBoxProgramFolders.Name" xml:space="preserve">
+    <value>textBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;textBoxProgramFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxProgramFolders.Parent" xml:space="preserve">
+    <value>groupBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;textBoxProgramFolders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxRemovable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxRemovable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxRemovable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxRemovable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 175</value>
+  </data>
+  <data name="checkBoxRemovable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 3, 3, 3</value>
+  </data>
+  <data name="checkBoxRemovable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 23</value>
+  </data>
+  <data name="checkBoxRemovable.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Scan removable drives</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Name" xml:space="preserve">
+    <value>checkBoxRemovable</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.Parent" xml:space="preserve">
+    <value>groupBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRemovable.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 152</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 23</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Try to detect custom installation folders automatically</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Name" xml:space="preserve">
+    <value>checkBoxAutoInstallFolderDetect</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Parent" xml:space="preserve">
+    <value>groupBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelProgramFolders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="labelProgramFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="labelProgramFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="labelProgramFolders.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>360, 0</value>
+  </data>
+  <data name="labelProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 4</value>
+  </data>
+  <data name="labelProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 134</value>
+  </data>
+  <data name="labelProgramFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelProgramFolders.Text" xml:space="preserve">
+    <value>You can specify custom folders you install your applications into (e.g. D:\Applications). Those folders will be used by BCU to search for uninstallation leftovers, unregistered applications and a few other things. While it is not necessary, a list of these folders will let BCU work better.
+
+The default Windows folders are always scanned, you do not need to include them in this list.
+
+Use full directory paths, one path per line. Invalid paths and non-existing directories will be ignored.</value>
+  </data>
+  <data name="&gt;&gt;labelProgramFolders.Name" xml:space="preserve">
+    <value>labelProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;labelProgramFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelProgramFolders.Parent" xml:space="preserve">
+    <value>groupBoxProgramFolders</value>
+  </data>
+  <data name="&gt;&gt;labelProgramFolders.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBoxProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 5, 6, 6</value>
+  </data>
+  <data name="groupBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 337</value>
+  </data>
+  <data name="groupBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
+    <value>Program installation folders</value>
+  </data>
   <data name="&gt;&gt;groupBoxProgramFolders.Name" xml:space="preserve">
     <value>groupBoxProgramFolders</value>
   </data>
@@ -1609,7 +2329,7 @@ BCU will wait until the currently running command completes before executing the
     <value>cacheSettings1</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Controls.Settings.CacheSettings, BCUninstaller, Version=4.13.0.28612, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cacheSettings1.Parent" xml:space="preserve">
     <value>tabPageMisc</value>
@@ -1734,692 +2454,6 @@ BCU will wait until the currently running command completes before executing the
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="propertiesSidebar1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="propertiesSidebar1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="propertiesSidebar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="propertiesSidebar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="propertiesSidebar1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>170, 170</value>
-  </data>
-  <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 337</value>
-  </data>
-  <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxLanguage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupBoxLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBoxLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 7</value>
-  </data>
-  <data name="groupBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 78</value>
-  </data>
-  <data name="groupBoxLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxLanguage.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="uninstallationSettings1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uninstallationSettings1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="uninstallationSettings1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 337</value>
-  </data>
-  <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxAppStores.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Name" xml:space="preserve">
-    <value>labelWinUpdateInfo</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;labelWinUpdateInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Name" xml:space="preserve">
-    <value>checkBoxScanWinUpdates</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinUpdates.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Name" xml:space="preserve">
-    <value>labelWinFeatureInfo</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;labelWinFeatureInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Name" xml:space="preserve">
-    <value>checkBoxScanWinFeatures</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanWinFeatures.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Name" xml:space="preserve">
-    <value>checkBoxScanStoreApps</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanStoreApps.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Name" xml:space="preserve">
-    <value>checkBoxScanSteam</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanSteam.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.Name" xml:space="preserve">
-    <value>checkBoxOculus</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOculus.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Name" xml:space="preserve">
-    <value>checkBoxChoco</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.Parent" xml:space="preserve">
-    <value>groupBoxAppStores</value>
-  </data>
-  <data name="&gt;&gt;checkBoxChoco.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="groupBoxAppStores.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBoxAppStores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 91</value>
-  </data>
-  <data name="groupBoxAppStores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 203</value>
-  </data>
-  <data name="groupBoxAppStores.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBoxAppStores.Text" xml:space="preserve">
-    <value>Application stores to scan</value>
-  </data>
-  <data name="labelWinUpdateInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWinUpdateInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="labelWinUpdateInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
-  </data>
-  <data name="labelWinUpdateInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWinUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 168</value>
-  </data>
-  <data name="labelWinUpdateInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>360, 0</value>
-  </data>
-  <data name="labelWinUpdateInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>15, 0, 0, 6</value>
-  </data>
-  <data name="labelWinUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 32</value>
-  </data>
-  <data name="labelWinUpdateInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Detection of Windows Updates uses WUA, which is slow. It can take a couple of minutes to complete.</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 148</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
-    <value>Windows Update</value>
-  </data>
-  <data name="labelWinFeatureInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelWinFeatureInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="labelWinFeatureInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
-  </data>
-  <data name="labelWinFeatureInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWinFeatureInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 116</value>
-  </data>
-  <data name="labelWinFeatureInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>360, 0</value>
-  </data>
-  <data name="labelWinFeatureInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>15, 0, 0, 6</value>
-  </data>
-  <data name="labelWinFeatureInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 32</value>
-  </data>
-  <data name="labelWinFeatureInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
-    <value>Detection of Windows Features uses WMI, and can be slow or even fail on some systems (usually indicating system corruption).</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 96</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
-    <value>Windows Features</value>
-  </data>
-  <data name="checkBoxScanStoreApps.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxScanStoreApps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 76</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxScanStoreApps.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Windows Store Apps</value>
-  </data>
-  <data name="checkBoxScanSteam.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanSteam.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxScanSteam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 56</value>
-  </data>
-  <data name="checkBoxScanSteam.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxScanSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxScanSteam.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="checkBoxScanSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="checkBoxOculus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxOculus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxOculus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxOculus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 36</value>
-  </data>
-  <data name="checkBoxOculus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxOculus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxOculus.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxOculus.Text" xml:space="preserve">
-    <value>Oculus Store</value>
-  </data>
-  <data name="checkBoxChoco.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxChoco.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxChoco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxChoco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="checkBoxChoco.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="checkBoxChoco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="checkBoxChoco.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxChoco.Text" xml:space="preserve">
-    <value>Chocolatey</value>
-  </data>
-  <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 88</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Search for applications in...</value>
-  </data>
-  <data name="flowLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanel7.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Name" xml:space="preserve">
-    <value>checkBoxScanRegistry</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanRegistry.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Name" xml:space="preserve">
-    <value>checkBoxScanDrives</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxScanDrives.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Name" xml:space="preserve">
-    <value>checkBoxPreDefined</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPreDefined.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flowLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 69</value>
-  </data>
-  <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxScanRegistry.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanRegistry.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanRegistry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="checkBoxScanRegistry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 17</value>
-  </data>
-  <data name="checkBoxScanRegistry.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
-    <value>Registry (recommended to leave enabled)</value>
-  </data>
-  <data name="checkBoxScanDrives.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxScanDrives.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxScanDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
-  </data>
-  <data name="checkBoxScanDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
-  <data name="checkBoxScanDrives.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxScanDrives.Text" xml:space="preserve">
-    <value>Drives (detects unregistered apps)</value>
-  </data>
-  <data name="checkBoxPreDefined.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxPreDefined.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxPreDefined.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 49</value>
-  </data>
-  <data name="checkBoxPreDefined.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
-  </data>
-  <data name="checkBoxPreDefined.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>Based on pre-defined rules</value>
-  </data>
-  <data name="groupBoxProgramFolders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Name" xml:space="preserve">
-    <value>textBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;textBoxProgramFolders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Name" xml:space="preserve">
-    <value>checkBoxRemovable</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRemovable.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Name" xml:space="preserve">
-    <value>checkBoxAutoInstallFolderDetect</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoInstallFolderDetect.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.Name" xml:space="preserve">
-    <value>labelProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.Parent" xml:space="preserve">
-    <value>groupBoxProgramFolders</value>
-  </data>
-  <data name="&gt;&gt;labelProgramFolders.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="groupBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBoxProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 5, 6, 6</value>
-  </data>
-  <data name="groupBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 337</value>
-  </data>
-  <data name="groupBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
-    <value>Program installation folders</value>
-  </data>
-  <data name="textBoxProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 198</value>
-  </data>
-  <data name="textBoxProgramFolders.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 133</value>
-  </data>
-  <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="checkBoxRemovable.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxRemovable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxRemovable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxRemovable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 175</value>
-  </data>
-  <data name="checkBoxRemovable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>15, 3, 3, 3</value>
-  </data>
-  <data name="checkBoxRemovable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 23</value>
-  </data>
-  <data name="checkBoxRemovable.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="checkBoxRemovable.Text" xml:space="preserve">
-    <value>Scan removable drives</value>
-    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 152</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 23</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>Try to detect custom installation folders automatically</value>
-  </data>
-  <data name="labelProgramFolders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelProgramFolders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="labelProgramFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 18</value>
-  </data>
-  <data name="labelProgramFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="labelProgramFolders.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>360, 0</value>
-  </data>
-  <data name="labelProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 4</value>
-  </data>
-  <data name="labelProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 134</value>
-  </data>
-  <data name="labelProgramFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>You can specify custom folders you install your applications into (e.g. D:\Applications). Those folders will be used by BCU to search for uninstallation leftovers, unregistered applications and a few other things. While it is not necessary, a list of these folders will let BCU work better.
-
-The default Windows folders are always scanned, you do not need to include them in this list.
-
-Use full directory paths, one path per line. Invalid paths and non-existing directories will be ignored.</value>
-  </data>
   <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -2444,6 +2478,12 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -2463,7 +2503,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>usageTracker1</value>
   </data>
   <data name="&gt;&gt;usageTracker1.Type" xml:space="preserve">
-    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.9.0.2369, Culture=neutral, PublicKeyToken=null</value>
+    <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=4.13.0.28612, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsWindow</value>
@@ -2471,10 +2511,4 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

@@ -409,7 +409,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Processing uninstallers {0}/{1}.
+        ///   Looks up a localized string similar to Processing detected applications, {0} left....
         /// </summary>
         internal static string MainWindow_Statusbar_ProcessingUninstallers {
             get {
@@ -855,7 +855,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like BleachBit.
+        ///   Looks up a localized string similar to No leftovers were found. There still might be some residue left so you can run a temporary file cleaner like BleachBit..
         /// </summary>
         internal static string MessageBoxes_NoJunkFoundInfo_Details {
             get {

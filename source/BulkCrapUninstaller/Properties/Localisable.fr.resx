@@ -546,8 +546,8 @@ Voulez-vous utiliser les désinstalleurs "causants" pour ces éléments, ou doiv
     <value>Certificat manquant</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Traitement des désinstalleurs {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Traitement des désinstalleurs ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Sélectionner "Terminer" fermera immédiatement le désinstalleur en cours et pourraient aboutir à une désinstallation incomplète. D'ordinaire, il est possible de relancer le désinstalleur pour finir la désinstallation.

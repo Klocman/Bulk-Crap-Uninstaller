@@ -47,6 +47,8 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxRemovable, x => x.FoldersScanRemovable, this);
             _settings.Subscribe((x, y) => checkBoxRemovable.Enabled = y.NewValue, x => x.FoldersAutoDetect, this);
 
+            _settings.BindControl(checkBoxChoco, x => x.ScanChocolatey, this);
+            _settings.BindControl(checkBoxScoop, x => x.ScanScoop, this);
             _settings.BindControl(checkBoxScanSteam, x => x.ScanSteam, this);
             _settings.BindControl(checkBoxScanStoreApps, x => x.ScanStoreApps, this);
             _settings.BindControl(checkBoxOculus, x => x.ScanOculus, this);
@@ -56,7 +58,6 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxScanDrives, x => x.ScanDrives, this);
             _settings.BindControl(checkBoxScanRegistry, x => x.ScanRegistry, this);
             _settings.BindControl(checkBoxPreDefined, x => x.ScanPreDefined, this);
-            _settings.BindControl(checkBoxChoco, x => x.ScanChocolatey, this);
 
             foreach (YesNoAsk value in Enum.GetValues(typeof(YesNoAsk)))
             {

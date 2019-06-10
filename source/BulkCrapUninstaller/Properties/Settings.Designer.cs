@@ -1071,5 +1071,17 @@ namespace BulkCrapUninstaller.Properties {
                 this["MiscColorblind"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ScanScoop {
+            get {
+                return ((bool)(this["ScanScoop"]));
+            }
+            set {
+                this["ScanScoop"] = value;
+            }
+        }
     }
 }
