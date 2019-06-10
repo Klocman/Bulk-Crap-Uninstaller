@@ -76,7 +76,7 @@ namespace UninstallTools.Factory
 
                 string[] goodNames =
                 {
-                    "Apps", "Applications", "Programs", "Games",
+                    "Apps", "App", "Applications", "Programs", "Games", "Game",
                     "Portable", "PortableApplications", "PortablePrograms", "PortableGames",
                     "PortableApps", "LiberKey"
                 };
