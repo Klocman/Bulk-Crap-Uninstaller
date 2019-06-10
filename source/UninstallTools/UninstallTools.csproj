@@ -49,7 +49,6 @@
     </Compile>
     <Compile Include="ApplicationEntrySerializer.cs" />
     <Compile Include="ApplicationUninstallerEntry.cs" />
-    <Compile Include="FastFile.cs" />
     <Compile Include="Controls\UninstallerIconGetter.cs">
       <SubType>Component</SubType>
     </Compile>
