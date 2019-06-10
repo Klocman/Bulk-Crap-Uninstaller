@@ -407,5 +407,11 @@ namespace BulkCrapUninstaller.Forms
 
             OnTaskUpdated();
         }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (objectListView1.SelectedObjects.Count == 0)
+                e.Cancel = true;
+        }
     }
 }
