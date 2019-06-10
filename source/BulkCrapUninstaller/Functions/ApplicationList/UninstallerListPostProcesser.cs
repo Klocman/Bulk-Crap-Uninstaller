@@ -116,13 +116,13 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             if (_certificateCache.ContainsKey(id))
             {
                 var cert = _certificateCache.GetCachedItem(id);
-                uninstaller.SetCertificate(cert);
-                return cert;
+                uninstaller.SetCertificate(cert?.Cert, cert?.Valid ?? false);
+                return cert?.Cert;
             }
             else
             {
                 var cert = uninstaller.GetCertificate();
-                _certificateCache.AddItem(id, cert);
+                _certificateCache.AddItem(id, cert, uninstaller.IsCertificateValid(true) == true);
                 return cert;
             }
         }

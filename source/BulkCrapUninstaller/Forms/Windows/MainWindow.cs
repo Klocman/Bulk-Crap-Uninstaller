@@ -102,7 +102,7 @@ namespace BulkCrapUninstaller.Forms
                 CertificateCache.LoadCertificateCache();
             _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects =>
             {
-                uninstallerObjectListView.BeginInvoke(new Action(() => uninstallerObjectListView.RefreshObjects(objects)));
+                uninstallerObjectListView.RefreshObjects(objects);
             }, CertificateCache);
 
             // Start the processing thread when user changes the test certificates option
