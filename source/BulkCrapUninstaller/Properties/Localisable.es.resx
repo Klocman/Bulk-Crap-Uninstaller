@@ -276,8 +276,8 @@ The lists are separated by a single newline.</comment>
     <value>¿Desea reiniciar BCU para aplicar los nuevos cambios?</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Procesando desinstaladores {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Procesando desinstaladores ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
     <value>Cambiar configuración de la aplicación</value>

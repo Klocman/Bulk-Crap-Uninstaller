@@ -545,8 +545,8 @@ Pozostawić je w zadaniu i użyć 'głośnych' dezinstalatorów czy całkowicie 
     <value>Brak certyfikatu</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Przetwarzanie dezinstalatorów {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Przetwarzanie wykrytych aplikacji, pozostało {0}...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Wybranie opcji "Zakończ" natychmiast zamknie uruchomiony dezinstalator i może spowodować nie dokończenie dezinstalacji. Zazwyczaj należy uruchomić dezinstalator jeszcze raz, aby dokończyć dezinstalację.

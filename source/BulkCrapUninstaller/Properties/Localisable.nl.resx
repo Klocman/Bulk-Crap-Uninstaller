@@ -297,8 +297,8 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waar uit u deze ku
     <value>Certificaat ontbreekt</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Verwerking van de de-installers {0} / {1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Verwerking van de de-installers ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>Wilt u het wachten op de nu lopende de-installatie overslaan?</value>

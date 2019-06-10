@@ -10,7 +10,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
-using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Events;
@@ -20,9 +19,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal class UninstallerListPostProcesser : IDisposable
     {
-        readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
+        private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortPostprocessingThread;
         private Thread _finalizerThread;
+        private readonly Queue<ApplicationUninstallerEntry> _itemsToProcess = new Queue<ApplicationUninstallerEntry>();
         private readonly List<object> _objectsToUpdate = new List<object>();
         private readonly Action<IList> _updateItemsCallback;
 
@@ -44,51 +44,52 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void AbortPostprocessingThread()
         {
+            _itemsToProcess.Clear();
             _abortPostprocessingThread = true;
         }
 
         public void StartProcessingThread(IEnumerable<ApplicationUninstallerEntry> itemsToProcess)
         {
-            StopProcessingThread(true);
+            lock (_itemsToProcess)
+            {
+                foreach (var entry in itemsToProcess.Except(_itemsToProcess))
+                    _itemsToProcess.Enqueue(entry);
+            }
 
-            _finalizerThread = new Thread(UninstallerPostprocessingThread)
-            { Name = "UninstallerPostprocessingThread", IsBackground = true, Priority = ThreadPriority.Lowest };
+            if (_finalizerThread == null || !_finalizerThread.IsAlive)
+            {
+                _finalizerThread = new Thread(UninstallerPostprocessingThread)
+                { Name = "UninstallerPostprocessingThread", IsBackground = true, Priority = ThreadPriority.Lowest };
 
-            _abortPostprocessingThread = false;
-            _finalizerThread.Start(itemsToProcess);
+                _abortPostprocessingThread = false;
+
+                _finalizerThread.Start();
+            }
         }
 
-        public void StopProcessingThread(bool block)
+        public void StopProcessingThread()
         {
-            if (_finalizerThread == null || !_finalizerThread.IsAlive) return;
-
-            _abortPostprocessingThread = true;
-
-            if (!block) return;
-
-            do
-            {
-                Thread.Sleep(100);
-                // Process events in case we are blocking ui thread and the worker thread is trying to invoke.
-                // TODO Reimplement the whole thing to avoid having to do this
-                Application.DoEvents();
-            } while (_finalizerThread.IsAlive);
+            lock (_itemsToProcess)
+                _itemsToProcess.Clear();
         }
 
-        private void UninstallerPostprocessingThread(object targets)
+        private void UninstallerPostprocessingThread()
         {
-            var items = targets as IEnumerable<ApplicationUninstallerEntry>;
-            if (items == null)
-                return;
-
-            var targetList = items as IList<ApplicationUninstallerEntry> ?? items.ToList();
-            var currentCount = 1;
-            foreach (var uninstaller in targetList)
+            while (true)
             {
-                if (_abortPostprocessingThread)
+                int count;
+                ApplicationUninstallerEntry target;
+                lock (_itemsToProcess)
                 {
-                    OnUninstallerPostprocessingProgressUpdate(new CountingUpdateEventArgs(0, 0, 0));
-                    return;
+                    count = _itemsToProcess.Count;
+                    if (count == 0 || _abortPostprocessingThread)
+                    {
+                        OnUninstallerPostprocessingProgressUpdate(new CountingUpdateEventArgs(0, 0, 0));
+                        _finalizerThread = null;
+                        return;
+                    }
+
+                    target = _itemsToProcess.Dequeue();
                 }
 
                 var sendTag = true;
@@ -96,17 +97,15 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 {
                     lock (UninstallerFileLock)
                     {
-                        var cert = GetCert(uninstaller);
+                        var cert = GetCert(target);
                         sendTag = cert != null;
                     }
                 }
 
-                var countingUpdateEventArgs = new CountingUpdateEventArgs(0, targetList.Count, currentCount);
-                if (sendTag) countingUpdateEventArgs.Tag = uninstaller;
+                var countingUpdateEventArgs = new CountingUpdateEventArgs(0, count, 0);
+                if (sendTag) countingUpdateEventArgs.Tag = target;
 
                 OnUninstallerPostprocessingProgressUpdate(countingUpdateEventArgs);
-
-                currentCount++;
             }
         }
 
@@ -130,7 +129,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void Dispose()
         {
-            StopProcessingThread(false);
+            StopProcessingThread();
         }
 
         protected virtual void OnUninstallerPostprocessingProgressUpdate(CountingUpdateEventArgs y)
@@ -140,11 +139,11 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 if (y.Tag != null)
                     _objectsToUpdate.Add(y.Tag);
 
-                if (y.Value == y.Maximum || y.Value % 35 == 0)
+                if (y.Value == y.Maximum || _objectsToUpdate.Count % 35 == 0)
                 {
                     try
                     {
-                        _updateItemsCallback(_objectsToUpdate);
+                        _updateItemsCallback(_objectsToUpdate.ToList());
                     }
                     catch (SystemException ex)
                     {

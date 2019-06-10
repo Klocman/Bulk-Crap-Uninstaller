@@ -546,8 +546,8 @@ Möchten Sie für diese Elemente die Standard Uninstaller verwenden oder sollen 
     <value>Zertifikat fehlt</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Verarbeitung der Uninstaller {0} / {1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Verarbeitung der Uninstaller ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Die Auswahl "Beenden" schließt unmittelbar den laufenden Uninstaller und kann dazu führen, dass die Deinstallation nicht abgeschlossen wird. In der Regel können Sie den Uninstaller erneut ausführen, um die Deinstallation abzuschließen.

@@ -546,8 +546,8 @@ Do you want to use "loud" uninstallers for those items, or should they be remove
     <value>Certificate is missing</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Processing uninstallers {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Processing detected applications, {0} left...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Selecting "Terminate" will immediately close the running uninstaller and might result in uninstallation not being completed. Usually it is possible to run the uninstaller again to finish the uninstallation.

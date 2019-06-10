@@ -544,8 +544,8 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi, o preferisci sian
     <value>Certificato mancante</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Elaborazione dei disinstallatori {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Elaborazione dei disinstallatori ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Selezionando "Termina" sarà immediatamente fermato il disinstallatore in esecuzione; la disinstallazione potrebbe non essere completata. Normalmente è possibile eseguire nuovamente il disinstallatore per finire l'attività.

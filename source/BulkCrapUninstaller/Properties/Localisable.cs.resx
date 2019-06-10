@@ -544,8 +544,8 @@ Ponechat je v úloze a použijte "hlasité" odinstalace nebo zcela odstranit z �
     <value>Certifikát chybí</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Zpracování odinstalace {0}/{1}</value>
-    <comment>{0} is how many items were processed, {1} is their total number</comment>
+    <value>Zpracování odinstalace ({0})</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
     <value>Volba "Ukončit" se okamžitě uzavře běžící odinstalace a může způsobit že odinstalace není dokončena. Obvykle je možné spustit odinstalátor znovu a dokončit odinstalování.

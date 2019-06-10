@@ -100,7 +100,10 @@ namespace BulkCrapUninstaller.Forms
 
             if (_setMan.Selected.Settings.CacheCertificates)
                 CertificateCache.LoadCertificateCache();
-            _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects => uninstallerObjectListView.RefreshObjects(objects), CertificateCache);
+            _uninstallerListPostProcesser = new UninstallerListPostProcesser(objects =>
+            {
+                uninstallerObjectListView.BeginInvoke(new Action(() => uninstallerObjectListView.RefreshObjects(objects)));
+            }, CertificateCache);
 
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe(OnTestCertificatesChanged, x => x.AdvancedTestCertificates, this);
@@ -265,8 +268,8 @@ namespace BulkCrapUninstaller.Forms
 
             if (y.Value == y.Maximum)
                 result = string.Empty;
-            else if ((y.Value - 1) % 15 == 0)
-                result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers, y.Value, y.Maximum);
+            else if (y.Maximum % 15 == 0)
+                result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers, y.Maximum);
 
             if (result != null)
                 this.SafeInvoke(() => toolStripLabelStatus.Text = result);
@@ -299,7 +302,7 @@ namespace BulkCrapUninstaller.Forms
             if (y.NewValue) _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
             else
             {
-                _uninstallerListPostProcesser.StopProcessingThread(false);
+                _uninstallerListPostProcesser.StopProcessingThread();
 
                 SafeRefreshObjects(_listView.AllUninstallers.Where(u => u.IsCertificateValid(true).HasValue));
             }
@@ -474,8 +477,8 @@ namespace BulkCrapUninstaller.Forms
                 _listView.SelectedUninstallers
                 .SelectMany(x => new[] { x.InstallLocation, x.UninstallerLocation })
                 .Where(dir => !string.IsNullOrEmpty(dir))
-                .DistinctBy(x=>x.ToLowerInvariant())
-                .OrderBy(x=>x)
+                .DistinctBy(x => x.ToLowerInvariant())
+                .OrderBy(x => x)
                 .Select(dir => (ToolStripItem)new ToolStripMenuItem(dir, null, (obj, args) => TakeOwnership(dir)))
                 .ToArray());
         }
@@ -1327,7 +1330,7 @@ namespace BulkCrapUninstaller.Forms
         {
             if (e.RefreshIsRunning)
             {
-                _uninstallerListPostProcesser.StopProcessingThread(false);
+                _uninstallerListPostProcesser.StopProcessingThread();
                 return;
             }
 
