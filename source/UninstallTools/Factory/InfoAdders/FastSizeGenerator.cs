@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using Klocman.Extensions;
 using Klocman.IO;
 using Scripting;
@@ -97,7 +98,8 @@ namespace UninstallTools.Factory.InfoAdders
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = false,
-                CreateNoWindow = true
+                CreateNoWindow = true,
+                StandardOutputEncoding = Encoding.UTF8
             }))
             {
                 if (process == null) throw new ArgumentNullException(nameof(process));
