@@ -61,6 +61,7 @@ namespace BulkCrapUninstaller.Forms
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -148,6 +149,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.linkLabel6);
+            this.flowLayoutPanel1.Controls.Add(this.linkLabel9);
             this.flowLayoutPanel1.Controls.Add(this.linkLabel3);
             this.flowLayoutPanel1.Controls.Add(this.linkLabel1);
             this.flowLayoutPanel1.Controls.Add(this.linkLabel5);
@@ -268,6 +270,13 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
+            // linkLabel9
+            // 
+            resources.ApplyResources(this.linkLabel9, "linkLabel9");
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
+            // 
             // AboutBox
             // 
             this.AcceptButton = this.button1;
@@ -334,5 +343,6 @@ namespace BulkCrapUninstaller.Forms
         private FlowLayoutPanel flowLayoutPanel2;
         private Panel panel5;
         private LinkLabel linkLabel8;
+        private LinkLabel linkLabel9;
     }
 }

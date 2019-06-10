@@ -3,39 +3,30 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Klocman.Extensions;
 
 namespace UninstallTools
 {
     /// <summary>
     /// Wrapper for File and Directory classes that can use Everything search engine if it's available for speedup
+    /// Doesn't support symlink paths
     /// </summary>
-    public static class FastFile
+    public static class EverythingInterface
     {
         public static bool _everythingIsAvailable = true;
 
         private static readonly Dictionary<string, bool> _indexedDrives = new Dictionary<string, bool>();
 
-        /*static FastFile()
-        {
-            try
-            {
-                _everythingIsAvailable = EvGetFileSize("bcuninstaller.exe") > 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(@"Could not connect to Everything search service - " + ex);
-            }
-        }*/
-
         public static bool DirectoryExists(string path)
         {
             if (!IsEverythingReady(GetPathRoot(path))) return Directory.Exists(path);
 
+            path = Path.GetFullPath(path);
             try
             {
-                return EvGetNames(path.TrimEnd('\\', '/'), false, true, false).Any();
+                var result = EvGetNames(path.TrimEnd('\\', '/'), false, true, false).Any();
+                Debug.Assert(result == Directory.Exists(path));
+                return result;
             }
             catch (ArgumentNullException)
             {
@@ -63,9 +54,12 @@ namespace UninstallTools
         {
             if (!IsEverythingReady(GetPathRoot(path))) return File.Exists(path);
 
+            path = Path.GetFullPath(path);
             try
             {
-                return EvGetNames(path, false, false, true).Any(x => string.Equals(x, path, StringComparison.OrdinalIgnoreCase));
+                var result = EvGetNames(path, false, false, true).Any(x => string.Equals(x, path, StringComparison.OrdinalIgnoreCase));
+                Debug.Assert(result == File.Exists(path));
+                return result;
             }
             catch (ArgumentNullException)
             {
@@ -88,15 +82,20 @@ namespace UninstallTools
             if (!IsEverythingReady(GetPathRoot(path)))
                 return Directory.GetDirectories(path, "*", searchOption);
 
+            path = Path.GetFullPath(path);
             try
             {
                 switch (searchOption)
                 {
                     case SearchOption.TopDirectoryOnly:
-                        return EvGetNames(path, true, true, false);
+                        var names = EvGetNames(path, true, true, false);
+                        Debug.Assert(names.Select(x => x.ToLower()).OrderBy(x => x).SequenceEqual(Directory.GetDirectories(path, "*", searchOption).Select(x => x.ToLower()).OrderBy(x => x)));
+                        return names;
                     case SearchOption.AllDirectories:
                         // Add \ to end to prevent the path itself appearing in results
-                        return EvGetNames(path.TrimEnd('\\', '/').Append("\\"), false, true, false);
+                        var allNames = EvGetNames(path.TrimEnd('\\', '/').Append("\\"), false, true, false);
+                        Debug.Assert(allNames.Select(x => x.ToLower()).OrderBy(x => x).SequenceEqual(Directory.GetDirectories(path, "*", searchOption).Select(x => x.ToLower()).OrderBy(x => x)));
+                        return allNames;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(searchOption), searchOption, null);
                 }
@@ -122,6 +121,7 @@ namespace UninstallTools
             if (!IsEverythingReady(GetPathRoot(directory)))
                 return Directory.GetCreationTime(directory);
 
+            directory = Path.GetFullPath(directory);
             try
             {
                 var dates = EvGetDates(directory.TrimEnd('\\', '/'), false, true, false, true).ToList();
@@ -149,6 +149,7 @@ namespace UninstallTools
             if (!IsEverythingReady(GetPathRoot(file)))
                 return File.GetCreationTime(file);
 
+            file = Path.GetFullPath(file);
             try
             {
                 var dates = EvGetDates(file, false, false, true, true).ToList();
@@ -176,15 +177,20 @@ namespace UninstallTools
             if (!IsEverythingReady(GetPathRoot(path)))
                 return Directory.GetFiles(path, "*", searchOption);
 
+            path = Path.GetFullPath(path);
             try
             {
                 switch (searchOption)
                 {
                     case SearchOption.TopDirectoryOnly:
-                        return EvGetNames(path, true, false, true);
+                        var topNames = EvGetNames(path, true, false, true);
+                        Debug.Assert(topNames.Select(x => x.ToLower()).OrderBy(x => x).SequenceEqual(Directory.GetFiles(path, "*", searchOption).Select(x => x.ToLower()).OrderBy(x => x)));
+                        return topNames;
                     case SearchOption.AllDirectories:
                         // Add \ to end to prevent the path itself appearing in results
-                        return EvGetNames(path.TrimEnd('\\', '/').Append("\\"), false, false, true);
+                        var allNames = EvGetNames(path.TrimEnd('\\', '/').Append("\\"), false, false, true);
+                        Debug.Assert(allNames.Select(x => x.ToLower()).OrderBy(x => x).SequenceEqual(Directory.GetFiles(path, "*", searchOption).Select(x => x.ToLower()).OrderBy(x => x)));
+                        return allNames;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(searchOption), searchOption, null);
                 }
@@ -257,12 +263,15 @@ namespace UninstallTools
         {
             if (!_everythingIsAvailable || string.IsNullOrEmpty(root)) return false;
 
-            if (_indexedDrives.TryGetValue(root.ToLower(), out var result))
-                return result;
+            lock (_indexedDrives)
+            {
+                if (_indexedDrives.TryGetValue(root.ToLower(), out var result))
+                    return result;
 
-            var indexed = EvGetNames(root + ":\\", true, false, false).Any();
-            _indexedDrives.Add(root.ToLower(), indexed);
-            return indexed;
+                var indexed = EvGetNames(root + ":\\", true, false, false).Any();
+                _indexedDrives.Add(root.ToLower(), indexed);
+                return indexed;
+            }
         }
 
         private static string StartHelperAndReadOutput(string args)
@@ -274,7 +283,7 @@ namespace UninstallTools
                     RedirectStandardOutput = true,
                     RedirectStandardError = false,
                     CreateNoWindow = true,
-                    StandardOutputEncoding = Encoding.Unicode
+                    //StandardOutputEncoding = Encoding.Unicode
                 }))
             {
                 Console.WriteLine(args);
