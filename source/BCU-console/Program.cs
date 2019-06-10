@@ -24,16 +24,26 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applications
- 
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applications.
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
+
+BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed application data to xml file.
+ [drive:][path]	– Specifies drive and directory to where the export should be saved.
+ filename       – Specifies filename of the .xml file to save the exported application information to.
+
+Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
  /U             - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER
                   THOROUGH TESTING. UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID
                   FALSE POSITIVES. THERE ARE NO WARRANTIES, USE WITH CAUTION.
- /V             - Verbose logging mode (show more information about what is currently happening).");
+ /V             - Verbose logging mode (show more information about what is currently happening).
+
+Return codes:
+ 0	- The operation completed successfully.
+ 1	- Invalid arguments.
+ 1223	- The operation was canceled by the user.");
         }
 
         private static int Main(string[] args)
@@ -64,6 +74,9 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applicat
                     case "uninstall":
                         return ProcessUninstallCommand(args.Skip(1).ToArray());
 
+                    case "export":
+                        return ProcessExportCommand(args.Skip(1).ToArray());
+
                     default:
                         Console.WriteLine("Invalid command \"{0}\"\n", args[0]);
                         ShowHelp();
@@ -76,6 +89,25 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applicat
                 Console.WriteLine(ex);
                 return 13;
             }
+        }
+
+        private static int ProcessExportCommand(string[] args)
+        {
+            var isVerbose = args.Any(x => x.Equals("/V", StringComparison.OrdinalIgnoreCase));
+            var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
+            var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
+
+            args = args.Where(x => !x.StartsWith("/")).ToArray();
+            if (args.Length != 1)
+                return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
+
+            Console.WriteLine($"Starting export to {args[0]}");
+            var apps = QueryApps(isQuiet, isUnattended, isVerbose);
+
+            Console.WriteLine("Exporting data...");
+            ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
+            Console.WriteLine("Success!");
+            return 0;
         }
 
         private static int ProcessUninstallCommand(string[] args)
@@ -103,7 +135,7 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applicat
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            if(isUnattended)
+            if (isUnattended)
                 Console.WriteLine("WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
             return RunUninstall(list, isQuiet, isUnattended, isVerbose);
