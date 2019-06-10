@@ -164,5 +164,10 @@ namespace BulkCrapUninstaller.Forms
         {
             PremadeDialogs.StartProcessSafely(@"https://github.com/TestStack/White");
         }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PremadeDialogs.StartProcessSafely(@"https://www.voidtools.com/");
+        }
     }
 }

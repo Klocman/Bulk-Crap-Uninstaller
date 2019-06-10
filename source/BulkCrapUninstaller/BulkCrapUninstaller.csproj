@@ -1503,6 +1503,10 @@
       <Link>PrivacyPolicy.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\es.exe">
+      <Link>es.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="CleanLogs.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
