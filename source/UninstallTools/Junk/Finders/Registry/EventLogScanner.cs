@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -35,7 +36,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 {
                     using (var subkey = key.OpenSubKey(result))
                     {
-                        var exePath = subkey?.GetValue("EventMessageFile") as string;
+                        var exePath = subkey?.GetStringSafe("EventMessageFile");
                         if (string.IsNullOrEmpty(exePath) || !SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(exePath))) continue;
 
                         var node = new RegistryKeyJunk(subkey.Name, target, this);

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Microsoft.Win32;
 
 namespace SteamHelper
@@ -55,7 +56,7 @@ namespace SteamHelper
                 {
                     if (key == null) continue;
 
-                    var path = key.GetValue(@"InstallPath") as string;
+                    var path = key.GetStringSafe(@"InstallPath");
                     if (path != null && Directory.Exists(path))
                         return path;
                 }
@@ -65,7 +66,7 @@ namespace SteamHelper
             {
                 using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Classes\steam\Shell\Open\Command"))
                 {
-                    var command = key?.GetValue(null) as string;
+                    var command = key?.GetStringSafe(null);
                     var path = Path.GetDirectoryName(Misc.SeparateArgsFromCommand(command).Key);
 
                     if (path != null && Directory.Exists(path))

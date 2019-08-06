@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 using Microsoft.Win32;
@@ -60,10 +61,10 @@ namespace UninstallTools.Startup.Normal
                     {
                         if (subKey == null) continue;
 
-                        var key = subKey.GetValue("key") as string;
-                        var hkey = subKey.GetValue("hkey") as string;
-                        var item = subKey.GetValue("item") as string;
-                        var command = subKey.GetValue("command") as string;
+                        var key = subKey.GetStringSafe("key");
+                        var hkey = subKey.GetStringSafe("hkey");
+                        var item = subKey.GetStringSafe("item");
+                        var command = subKey.GetStringSafe("command");
                         if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(hkey)
                             || string.IsNullOrEmpty(item) || string.IsNullOrEmpty(command))
                             continue;
@@ -125,10 +126,10 @@ namespace UninstallTools.Startup.Normal
                     {
                         if (subKey == null) continue;
 
-                        var path = subKey.GetValue("path") as string;
-                        var location = subKey.GetValue("location") as string;
-                        var backup = subKey.GetValue("backup") as string;
-                        var command = subKey.GetValue("command") as string;
+                        var path = subKey.GetStringSafe("path");
+                        var location = subKey.GetStringSafe("location");
+                        var backup = subKey.GetStringSafe("backup");
+                        var command = subKey.GetStringSafe("command");
                         if (backup == null || location == null || path == null || command == null)
                             continue;
 

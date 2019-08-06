@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security;
+using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Native;
 using Klocman.Tools;
@@ -97,7 +98,7 @@ namespace UninstallTools.Startup.Normal
                     {
                         foreach (var name in rKey.GetValueNames())
                         {
-                            var result = rKey.GetValue(name) as string;
+                            var result = rKey.GetStringSafe(name);
                             if (string.IsNullOrEmpty(result))
                                 continue;
 

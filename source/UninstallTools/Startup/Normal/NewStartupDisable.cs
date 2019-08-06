@@ -62,7 +62,7 @@ namespace UninstallTools.Startup.Normal
             if (startupEntry.IsRegKey)
             {
                 using (var key = RegistryTools.OpenRegistryKey(startupEntry.ParentLongName))
-                    return !string.IsNullOrEmpty(key.GetValue(startupEntry.EntryLongName) as string);
+                    return !string.IsNullOrEmpty(key.GetStringSafe(startupEntry.EntryLongName));
             }
 
             return File.Exists(startupEntry.FullLongName);
@@ -74,8 +74,9 @@ namespace UninstallTools.Startup.Normal
             {
                 using (var key = RegistryTools.CreateSubKeyRecursively(GetStartupApprovedKey(startupEntry)))
                 {
-                    var bytes = key.GetValue(startupEntry.EntryLongName) as byte[];
-                    return bytes != null && bytes.Length > 0 && !bytes[0].Equals(0x02);
+                    return key.GetValue(startupEntry.EntryLongName) is byte[] bytes 
+                        && bytes.Length > 0 
+                        && !bytes[0].Equals(0x02);
                 }
             }
             catch (SystemException ex)

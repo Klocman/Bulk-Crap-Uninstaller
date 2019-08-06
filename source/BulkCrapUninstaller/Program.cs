@@ -180,8 +180,7 @@ namespace BulkCrapUninstaller
                     {
                         using (var subKey = regKey.OpenSubKey(keyName, true))
                         {
-                            var installLocation = subKey?.GetValue(
-                                RegistryFactory.RegistryNameInstallLocation) as string;
+                            var installLocation = subKey?.GetStringSafe(RegistryFactory.RegistryNameInstallLocation);
                             if (String.IsNullOrEmpty(installLocation)) continue;
 
                             var item1 = AssemblyLocation.FullName;

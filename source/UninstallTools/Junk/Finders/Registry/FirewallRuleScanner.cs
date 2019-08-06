@@ -29,7 +29,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 {
                     foreach (var valueName in key.TryGetValueNames())
                     {
-                        var value = key.GetValue(valueName) as string;
+                        var value = key.GetStringSafe(valueName);
                         if (string.IsNullOrEmpty(value)) continue;
 
                         var start = value.IndexOf("|App=", StringComparison.InvariantCultureIgnoreCase) + 5;

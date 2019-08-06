@@ -6,7 +6,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using Klocman.Extensions;
 using Klocman.Tools;
+using Microsoft.Win32;
 
 namespace UninstallTools.Junk.Containers
 {
@@ -24,20 +26,24 @@ namespace UninstallTools.Junk.Containers
         {
             using (var key = OpenRegKey())
             {
-                var target = key.GetValue(ValueName);
-
-                var targetValue = target as string;
-                if (targetValue != null)
+                switch (key.GetValueKind(ValueName))
                 {
-                    var dir = CreateBackupDirectory(backupDirectory);
-                    var fileName = PathTools.SanitizeFileName(string.Concat(FullRegKeyPath, " - ", ValueName)
-                        .TrimStart('\\').Replace('.', '_')) + ".reg";
-                    RegistryTools.ExportRegistryStringValues(Path.Combine(dir, fileName), FullRegKeyPath,
-                        new KeyValuePair<string, string>(ValueName, targetValue));
-                }
-                else
-                {
-                    Debug.Fail("Unsupported type " + target.GetType().FullName);
+                    case RegistryValueKind.ExpandString:
+                    case RegistryValueKind.String:
+                        var targetValue = key.GetStringSafe(ValueName);
+                        var dir = CreateBackupDirectory(backupDirectory);
+                        var fileName = PathTools.SanitizeFileName(string.Concat(FullRegKeyPath, " - ", ValueName)
+                                           .TrimStart('\\').Replace('.', '_')) + ".reg";
+                        RegistryTools.ExportRegistryStringValues(Path.Combine(dir, fileName), FullRegKeyPath,
+                            new KeyValuePair<string, string>(ValueName, targetValue));
+                        break;
+                    case RegistryValueKind.MultiString:
+                    case RegistryValueKind.Binary:
+                    case RegistryValueKind.DWord:
+                    case RegistryValueKind.QWord:
+                    case RegistryValueKind.Unknown:
+                        Debug.Fail("Unsupported type " + ValueName);
+                        break;
                 }
             }
         }

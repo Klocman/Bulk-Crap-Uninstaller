@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
 
@@ -67,14 +68,14 @@ namespace UninstallTools.Startup.Browser
             {
                 using (var classKey = clsidKey.OpenSubKey(registryKey))
                 {
-                    var name = classKey?.GetValue(null) as string;
+                    var name = classKey?.GetStringSafe(null);
                     if (string.IsNullOrEmpty(name))
                         continue;
 
                     string command;
                     using (var runKey = classKey.OpenSubKey("InProcServer32") ?? classKey.OpenSubKey("InProcServer"))
                     {
-                        command = runKey?.GetValue(null) as string;
+                        command = runKey?.GetStringSafe(null);
                     }
 
                     yield return new BrowserHelperEntry(name, command,

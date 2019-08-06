@@ -59,7 +59,7 @@ namespace UninstallTools.Junk.Finders.Registry
                     {
                         if (subKey == null) continue;
 
-                        var defVal = subKey.GetValue(null) as string;
+                        var defVal = subKey.GetStringSafe(null);
                         if (defVal != null &&
                             defVal.Contains(unrootedLocation, StringComparison.InvariantCultureIgnoreCase))
                         {

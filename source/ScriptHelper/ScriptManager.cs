@@ -12,6 +12,7 @@ using System.Management.Automation.Runspaces;
 using System.Reflection;
 using System.Xml.Linq;
 using Klocman;
+using Klocman.Extensions;
 using Klocman.Tools;
 
 namespace ScriptHelper
@@ -80,8 +81,7 @@ namespace ScriptHelper
                                 {
                                     var fullPath = item.Substring(registryHeader.Length);
                                     item = RegistryTools.OpenRegistryKey(Path.GetDirectoryName(fullPath))
-                                        ?.GetValue(Path.GetFileName(fullPath))
-                                        ?.ToString();
+                                        ?.GetStringSafe(Path.GetFileName(fullPath));
                                 }
 
                                 output[entryProp.Name.ToString()] = item;

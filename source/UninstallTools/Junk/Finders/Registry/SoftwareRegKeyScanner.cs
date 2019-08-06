@@ -185,22 +185,22 @@ namespace UninstallTools.Junk.Finders.Registry
             bool hit;
             if (InstallDirKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
             {
-                hit = SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetValue(valueName) as string);
+                hit = SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetStringSafe(valueName));
             }
             else if (ExePathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
             {
-                hit = TestPathsMatchExe(softwareKey.GetValue(valueName) as string);
+                hit = TestPathsMatchExe(softwareKey.GetStringSafe(valueName));
             }
             else if (ExeOrDirPathKeyNames.Contains(valueName, StringComparison.InvariantCultureIgnoreCase))
             {
-                var path = softwareKey.GetValue(valueName) as string;
+                var path = softwareKey.GetStringSafe(valueName);
                 hit = File.Exists(path)
-                    ? TestPathsMatchExe(softwareKey.GetValue(valueName) as string)
-                    : SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetValue(valueName) as string);
+                    ? TestPathsMatchExe(softwareKey.GetStringSafe(valueName))
+                    : SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetStringSafe(valueName));
             }
             else
             {
-                hit = SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetValue(null) as string);
+                hit = SubPathIsInsideBasePath(_uninstaller.InstallLocation, softwareKey.GetStringSafe(null));
             }
 
             return hit;

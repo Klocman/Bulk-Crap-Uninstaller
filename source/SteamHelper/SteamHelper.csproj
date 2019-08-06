@@ -66,6 +66,13 @@
     </None>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
+      <Project>{4F843421-01D4-48E8-B88B-CDF30DD671A4}</Project>
+      <Name>KlocTools</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
