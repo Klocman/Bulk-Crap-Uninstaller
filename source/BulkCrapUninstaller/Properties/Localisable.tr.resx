@@ -507,7 +507,7 @@ Bu öğeler için "yüksek" kaldırıcıları mı kullanmak istiyorsunuz yoksa g
     <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
-    <value>Toplam {@} kaldırıcı, {1}</value>
+    <value>Toplam {0} kaldırıcı, {1}</value>
     <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
