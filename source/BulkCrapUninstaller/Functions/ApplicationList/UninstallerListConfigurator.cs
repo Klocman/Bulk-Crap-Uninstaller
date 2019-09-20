@@ -21,9 +21,11 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal class UninstallerListConfigurator : IDisposable
     {
-        private readonly FilterCondition _filteringFilterCondition = new FilterCondition {FilterText = string.Empty};
+        private readonly FilterCondition _filteringFilterCondition = new FilterCondition { FilterText = string.Empty };
         private readonly TypedObjectListView<ApplicationUninstallerEntry> _listView;
         private readonly MainWindow _reference;
+
+        private readonly Timer _updateThrottleTimer;
 
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
 
@@ -31,8 +33,15 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         {
             _reference = reference;
             _listView = new TypedObjectListView<ApplicationUninstallerEntry>(reference.uninstallerObjectListView);
-            
+
             _reference.filterEditor1.TargetFilterCondition = _filteringFilterCondition;
+
+            _updateThrottleTimer = new Timer { Interval = 500 };
+            _updateThrottleTimer.Tick += (sender, args) =>
+            {
+                _updateThrottleTimer.Stop();
+                _listView.ListView.UpdateColumnFiltering();
+            };
 
             SetupListView();
 
@@ -65,10 +74,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             if (string.IsNullOrEmpty(_filteringFilterCondition.FilterText))
                 results.Add(new Filter("Include all", false, new FilterCondition("!",
                     ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned))
-                {InvertResults = true}));
+                { InvertResults = true }));
             else
                 results.Add(new Filter(_filteringFilterCondition.FilterText, false,
-                    (FilterCondition) _filteringFilterCondition.Clone()));
+                    (FilterCondition)_filteringFilterCondition.Clone()));
 
             if (_settings.Settings.FilterHideMicrosoft)
                 results.Add(new Filter("Published by Microsoft", true, new FilterCondition("Microsoft",
@@ -165,7 +174,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
             _reference.olvColumnUninstallString.AspectGetter = ListViewDelegates.ColumnUninstallStringGetter;
             _reference.olvColumnUninstallString.GroupKeyGetter = ListViewDelegates.ColumnUninstallStringGroupKeyGetter;
-            
+
             _reference.olvColumnQuietUninstallString.AspectGetter = ListViewDelegates.ColumnQuietUninstallStringGetter;
             _reference.olvColumnQuietUninstallString.GroupKeyGetter = ListViewDelegates.ColumnQuietUninstallStringGroupKeyGetter;
 
@@ -178,7 +187,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnInstallDate.AspectToStringConverter = x =>
             {
                 if (!(x is DateTime)) return Localisable.Empty;
-                var entry = (DateTime) x;
+                var entry = (DateTime)x;
                 try
                 {
                     return entry.IsDefault() ? Localisable.Empty : entry.ToShortDateString();
@@ -255,7 +264,8 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 ? Localisable.SearchNothingFoundMessage
                 : null;
 
-            _listView.ListView.UpdateColumnFiltering();
+            _updateThrottleTimer.Stop();
+            _updateThrottleTimer.Start();
         }
     }
 }
