@@ -78,18 +78,18 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             while (true)
             {
                 int count;
-                ApplicationUninstallerEntry target;
+                ApplicationUninstallerEntry target = null;
                 lock (_itemsToProcess)
                 {
                     count = _itemsToProcess.Count;
-                    if (count == 0 || _abortPostprocessingThread)
-                    {
-                        OnUninstallerPostprocessingProgressUpdate(new CountingUpdateEventArgs(0, 0, 0));
-                        _finalizerThread = null;
-                        return;
-                    }
+                    if (count > 0) target = _itemsToProcess.Dequeue();
+                }
 
-                    target = _itemsToProcess.Dequeue();
+                if (count == 0 || _abortPostprocessingThread)
+                {
+                    _finalizerThread = null;
+                    OnUninstallerPostprocessingProgressUpdate(new CountingUpdateEventArgs(0, 0, 0));
+                    return;
                 }
 
                 var sendTag = true;
