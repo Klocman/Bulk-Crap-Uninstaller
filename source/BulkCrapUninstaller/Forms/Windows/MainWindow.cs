@@ -269,7 +269,11 @@ namespace BulkCrapUninstaller.Forms
             if (y.Value == y.Maximum)
                 result = string.Empty;
             else if (y.Maximum % 15 == 0)
-                result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers, y.Maximum);
+            {
+                // Can crash on some locales even though format string is correct
+                try { result = string.Format(CultureInfo.CurrentCulture, Localisable.MainWindow_Statusbar_ProcessingUninstallers, y.Maximum); }
+                catch (FormatException ex) { Console.WriteLine(ex); }
+            }
 
             if (result != null)
                 this.SafeInvoke(() => toolStripLabelStatus.Text = result);
