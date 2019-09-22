@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 using Klocman.Tools;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -92,16 +93,15 @@ namespace UninstallTools.Junk
                     scannerProgress.Inner = new ListGenerationProgress(entryProgress++, targetEntries.Count, target.DisplayName);
                     progressCallback(scannerProgress);
 
-                    results.AddRange(junkCreator.FindJunk(target));
+                    try { results.AddRange(junkCreator.FindJunk(target)); }
+                    catch (SystemException ex) { PremadeDialogs.GenericError(ex); }
                 }
             }
 
             progressCallback(new ListGenerationProgress(-1, 0, Localisation.Junk_Progress_Finishing));
 
-            foreach(var target in targetEntries)
-            {
+            foreach (var target in targetEntries)
                 results.AddRange(target.AdditionalJunk);
-            }
 
             return CleanUpResults(results);
         }
