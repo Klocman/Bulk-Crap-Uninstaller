@@ -255,6 +255,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void UninstallProgressWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (_currentTargetStatus == null) return;
+
             if (_currentTargetStatus.Finished || _currentTargetStatus.Aborted ||
                 e.CloseReason != CloseReason.UserClosing)
             {
