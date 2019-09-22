@@ -5,11 +5,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 
 namespace UninstallTools.Factory
 {
@@ -20,6 +22,8 @@ namespace UninstallTools.Factory
         /// </summary>
         internal static string StartHelperAndReadOutput(string filename, string args)
         {
+            if (!File.Exists(filename)) return null;
+
             using (var process = Process.Start(new ProcessStartInfo(filename, args)
             {
                 UseShellExecute = false,
@@ -29,8 +33,16 @@ namespace UninstallTools.Factory
                 StandardOutputEncoding = Encoding.Unicode
             }))
             {
-                var output = process?.StandardOutput.ReadToEnd();
-                return process?.ExitCode == 0 ? output : null;
+                try
+                {
+                    var output = process?.StandardOutput.ReadToEnd();
+                    return process?.ExitCode == 0 ? output : null;
+                }
+                catch (Win32Exception ex)
+                {
+                    PremadeDialogs.GenericError(ex);
+                    return null;
+                }
             }
         }
 

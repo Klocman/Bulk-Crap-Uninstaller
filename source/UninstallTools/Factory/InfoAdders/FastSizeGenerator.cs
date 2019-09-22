@@ -10,13 +10,14 @@ using System.Text;
 using Klocman.Extensions;
 using Klocman.IO;
 using Scripting;
+using File = System.IO.File;
 
 namespace UninstallTools.Factory.InfoAdders
 {
     public class FastSizeGenerator : IMissingInfoAdder
     {
         private static readonly FileSystemObjectClass _fileSystemObject;
-        private static readonly bool _everythingAvailable;
+        private static bool _everythingAvailable;
 
         static FastSizeGenerator()
         {
@@ -58,6 +59,7 @@ namespace UninstallTools.Factory.InfoAdders
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
+                    _everythingAvailable = false;
                 }
             }
 
@@ -93,7 +95,10 @@ namespace UninstallTools.Factory.InfoAdders
 
         private static string StartHelperAndReadOutput(string args)
         {
-            using (var process = Process.Start(new ProcessStartInfo(Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, "es.exe"), args)
+            var esPath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, "es.exe");
+            if(!File.Exists(esPath)) throw new FileNotFoundException();
+
+            using (var process = Process.Start(new ProcessStartInfo(esPath, args)
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
