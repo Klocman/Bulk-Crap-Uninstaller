@@ -221,7 +221,8 @@ namespace BulkCrapUninstaller.Functions
 
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
-                        LoadingDialog.ShowDialog(MessageBoxes.DefaultOwner, Localisable.LoadingDialogTitlePreUninstallCommands,
+                        LoadingDialog.ShowDialog(
+                            MessageBoxes.DefaultOwner, Localisable.LoadingDialogTitlePreUninstallCommands,
                             controller => { RunExternalCommands(_settings.ExternalPreCommands, controller); });
                     }
 
@@ -246,19 +247,25 @@ namespace BulkCrapUninstaller.Functions
 
                     if (_settings.ExternalEnable && _settings.ExternalPostCommands.IsNotEmpty())
                     {
-                        LoadingDialog.ShowDialog(MessageBoxes.DefaultOwner, Localisable.LoadingDialogTitlePostUninstallCommands,
+                        LoadingDialog.ShowDialog(
+                            MessageBoxes.DefaultOwner, Localisable.LoadingDialogTitlePostUninstallCommands,
                             controller => { RunExternalCommands(_settings.ExternalPostCommands, controller); });
                     }
-
-                    SystemRestore.EndSysRestore();
                 }
                 else
                 {
                     MessageBoxes.NoUninstallersSelectedInfo();
                 }
             }
+            catch (ObjectDisposedException ex)
+            {
+                // ODE at CreateHandle can be caused by closing main window in the middle of the process
+                // It gets thrown at ShowDialog, it's safe to cancel the process at these points
+                if (ex.TargetSite.Name != "CreateHandle") throw;
+            }
             finally
             {
+                SystemRestore.EndSysRestore();
                 ReleaseUninstallLock();
                 _lockApplication(false);
                 _visibleCallback(true);
@@ -361,10 +368,12 @@ namespace BulkCrapUninstaller.Functions
                 });
 
             if (error != null)
+            {
                 PremadeDialogs.GenericError(error);
-            else
-                return ShowJunkWindow(junk);
-            return false;
+                return false;
+            }
+
+            return ShowJunkWindow(junk);
         }
 
         private bool ShowJunkWindow(List<IJunkResult> junk)
@@ -391,7 +400,7 @@ namespace BulkCrapUninstaller.Functions
                     var itemsRemoved = 0; // current value
 
                     var sortedJunk = from item in selectedJunk
-                                     // Run commands before deleting any files or reg keys to avoid missing files
+                                         // Run commands before deleting any files or reg keys to avoid missing files
                                      orderby item is RunProcessJunk descending,
                                      // Need to stop and unregister service before deleting its exe
                                              item is StartupJunkNode descending

@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.IO;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
@@ -57,12 +58,14 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         public static void CancelSysRestore()
         {
-            SysRestore.CancelRestore(_currentRestoreId);
+            try { SysRestore.CancelRestore(_currentRestoreId); }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         public static void EndSysRestore()
         {
-            SysRestore.EndRestore(_currentRestoreId);
+            try { SysRestore.EndRestore(_currentRestoreId); }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
     }
 }
