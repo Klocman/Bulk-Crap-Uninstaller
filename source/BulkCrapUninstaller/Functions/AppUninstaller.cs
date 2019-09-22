@@ -208,7 +208,7 @@ namespace BulkCrapUninstaller.Functions
                         wizard.Initialize(targetList, allUninstallerList.ToList(), quiet);
 
                         wizard.StartPosition = FormStartPosition.CenterParent;
-                        if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK)
+                        if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK || wizard.Results.Length == 0)
                             return;
 
                         taskEntries = wizard.Results;
