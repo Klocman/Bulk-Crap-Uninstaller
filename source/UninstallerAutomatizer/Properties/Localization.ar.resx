@@ -121,10 +121,10 @@
     <value>عدد غير صالح من الوسيطات.</value>
   </data>
   <data name="Error_UnknownUninstallerType" xml:space="preserve">
-    <value>{نوع الغاء التثبيت مجهول: {0</value>
+    <value>{0} :نوع الغاء التثبيت مجهول</value>
   </data>
   <data name="Error_InvalidPath" xml:space="preserve">
-    <value>{مسار غير صالح او ملف غير موجود: {0</value>
+    <value>{0} :مسار غير صالح او ملف غير موجود</value>
   </data>
   <data name="Error_NotSupported" xml:space="preserve">
     <value>التنفيذ التلقائي ل {0} المثبت غير معتمد.</value>
@@ -139,27 +139,27 @@
     <value>التنفيذ التلقائي ناجح!</value>
   </data>
   <data name="Message_UninstallFailed" xml:space="preserve">
-    <value>{فشل الغاء التثبيت التلقائي. السبب: {0</value>
+    <value>{0} :فشل الغاء التثبيت التلقائي. السبب</value>
   </data>
   <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
-    <value>{تحديد زر الاختيار غير المدرج في القائمة السوداء: {0</value>
+    <value>{0} :تحديد زر الاختيار غير المدرج في القائمة السوداء</value>
   </data>
   <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
-    <value>{اختيار زر الاختيار المعروف جيدا: {0</value>
+    <value>{0} :اختيار زر الاختيار المعروف جيدا</value>
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
-    <value>{تم العثور على ازرار الاختيار {0</value>
+    <value>{0} تم العثور على ازرار الاختيار</value>
     <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
-    <value>"{النقر على الزر "{0</value>
+    <value>"{0}" النقر على الزر</value>
     <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
     <value>تم إغلاق النافذة المنبثقة.</value>
   </data>
   <data name="Message_Automation_PopupFound" xml:space="preserve">
-    <value>"{العثور على نافذة منبثقة - "{0</value>
+    <value>"{0}" - العثور على نافذة منبثقة</value>
   </data>
   <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
     <value>تم الكشف عن نافذة منبثقة المتكررة!</value>
@@ -171,14 +171,14 @@
     <value>نافذة مغلقة.</value>
   </data>
   <data name="Message_Automation_WindowFound" xml:space="preserve">
-    <value>"{تم العثور على النافذة "{0</value>
+    <value>"{0}" تم العثور على النافذة</value>
     <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
     <value>بحث عن النوافذ. . .</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
-    <value>"{مرفق ب "{0</value>
+    <value>"{0}" مرفق ب</value>
     <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">

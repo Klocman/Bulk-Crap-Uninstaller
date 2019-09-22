@@ -130,7 +130,7 @@
     <value>فشل حذف بعض المواد</value>
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
-    <value>"{حذف "{0 </value>
+    <value>"{0}" حذف</value>
     <comment>{0} is the name of application/folder to delete</comment>
   </data>
 </root>
