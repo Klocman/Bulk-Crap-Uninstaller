@@ -580,4 +580,8 @@
   <data name="Progress_AppStores_Scoop" xml:space="preserve">
     <value>Searching for Scoop packages</value>
   </data>
+    <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Might belong to a different app with a similar name</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
 </root>

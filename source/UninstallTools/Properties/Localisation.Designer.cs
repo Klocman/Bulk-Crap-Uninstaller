@@ -223,6 +223,15 @@ namespace UninstallTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Might belong to a different app with a similar name.
+        /// </summary>
+        internal static string Confidence_UsedBySimilarNamedApp {
+            get {
+                return ResourceManager.GetString("Confidence_UsedBySimilarNamedApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Very good.
         /// </summary>
         internal static string Confidence_VeryGood {

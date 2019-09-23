@@ -5,7 +5,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Klocman.Tools;
+using UninstallTools.Junk.Containers;
 
 namespace UninstallTools.Junk.Confidence
 {
@@ -99,6 +101,36 @@ namespace UninstallTools.Junk.Confidence
             var publisher = applicationUninstallerEntry.PublisherTrimmed.ToLowerInvariant();
             itemName = itemName.ToLowerInvariant();
             return !publisher.Equals(applicationUninstallerEntry.DisplayNameTrimmed.ToLowerInvariant()) && publisher.Contains(itemName);
+        }
+
+        /// <summary>
+        /// Check if there are any similar names that match DisplayNameTrimmed, and if there are then add negative confidence to names other than the best match.
+        /// This is to avoid e.g. `AppX Extended` matching junk entries from `AppX`
+        /// </summary>
+        internal static void TestForSimilarNames(ApplicationUninstallerEntry thisUninstaller, IEnumerable<ApplicationUninstallerEntry> otherUninstallers,
+            ICollection<KeyValuePair<JunkResultBase, string>> createdJunk)
+        {
+            if (createdJunk.Count == 0) return;
+
+            var thisDisplayName = thisUninstaller.DisplayNameTrimmed;
+
+            // Check if any of the other apps match any of the entries, as long as the app names don't contain this app's name
+            var otherFiltered = otherUninstallers.Where(x => x != thisUninstaller && !x.DisplayNameTrimmed.Contains(thisDisplayName)).ToList();
+            var matchingWithOther = createdJunk.Where(x => otherFiltered.Any(y => y.DisplayNameTrimmed.Contains(x.Value)));
+
+            if (createdJunk.Count >= 2)
+            {
+                // Check for folders with similar names like `AppX Extended` and `AppX` and give confidence penalty to every one other than the best match
+                matchingWithOther = matchingWithOther
+                    .Concat(createdJunk
+                        .Where(x => x.Value.Contains(thisDisplayName) || thisDisplayName.Contains(x.Value))
+                        .OrderBy(x => Sift4.SimplestDistance(x.Value, thisDisplayName, 100))
+                        .Skip(1))
+                    .Distinct();
+            }
+
+            foreach (var sketchyJunk in matchingWithOther)
+                sketchyJunk.Key.Confidence.Add(ConfidenceRecords.UsedBySimilarNamedApp);
         }
     }
 }

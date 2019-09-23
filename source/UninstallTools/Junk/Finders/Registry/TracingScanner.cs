@@ -17,13 +17,16 @@ namespace UninstallTools.Junk.Finders.Registry
         private const string TracingKey = @"SOFTWARE\Microsoft\Tracing";
         private const string FullTracingKey = @"HKEY_LOCAL_MACHINE\" + TracingKey;
 
+        private ICollection<ApplicationUninstallerEntry> _allEntries;
+
         public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers)
         {
+            _allEntries = allUninstallers;
         }
 
         public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            var results = new List<IJunkResult>();
+            var results = new List<RegistryKeyJunk>();
             using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(TracingKey))
             {
                 if (key != null)
@@ -46,7 +49,10 @@ namespace UninstallTools.Junk.Finders.Registry
                     }
                 }
             }
-            return results;
+
+            ConfidenceGenerators.TestForSimilarNames(target, _allEntries, results.Select(x => new KeyValuePair<JunkResultBase, string>(x, x.RegKeyName)).ToList());
+
+            return results.Cast<IJunkResult>();
         }
 
         public string CategoryName => Localisation.Junk_Tracing_GroupName;

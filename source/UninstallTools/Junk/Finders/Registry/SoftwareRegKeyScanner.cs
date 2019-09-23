@@ -125,7 +125,8 @@ namespace UninstallTools.Junk.Finders.Registry
 
         private IEnumerable<RegistryKeyJunk> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
         {
-            var returnList = new List<RegistryKeyJunk>();
+            var added = new List<RegistryKeyJunk>();
+            IEnumerable<RegistryKeyJunk> returnList = added;
 
             try
             {
@@ -134,8 +135,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 {
                     var keyName = Path.GetFileName(softwareKey.Name);
                     var keyDir = Path.GetDirectoryName(softwareKey.Name);
-                    var confidence =
-                        ConfidenceGenerators.GenerateConfidence(keyName, keyDir, level, _uninstaller).ToList();
+                    var confidence = ConfidenceGenerators.GenerateConfidence(keyName, keyDir, level, _uninstaller).ToList();
 
                     // Check if application's location is explicitly mentioned in any of the values
                     if (softwareKey.TryGetValueNames().Any(valueName => TestValueForMatches(softwareKey, valueName)))
@@ -146,7 +146,7 @@ namespace UninstallTools.Junk.Finders.Registry
                         // TODO Add extra confidence if the key is, or will be empty after junk removal
                         var newNode = new RegistryKeyJunk(softwareKey.Name, _uninstaller, this);
                         newNode.Confidence.AddRange(confidence);
-                        returnList.Add(newNode);
+                        added.Add(newNode);
                     }
                 }
 
@@ -161,10 +161,12 @@ namespace UninstallTools.Junk.Finders.Registry
                         using (var subKey = softwareKey.OpenSubKey(subKeyName, false))
                         {
                             if (subKey != null)
-                                returnList.AddRange(FindJunkRecursively(subKey, level + 1));
+                                returnList = returnList.Concat(FindJunkRecursively(subKey, level + 1));
                         }
                     }
                 }
+
+                ConfidenceGenerators.TestForSimilarNames(_uninstaller, AllUninstallers, added.Select(x => new KeyValuePair<JunkResultBase, string>(x, x.RegKeyName)).ToList());
             }
             // Reg key invalid
             catch (ArgumentException)

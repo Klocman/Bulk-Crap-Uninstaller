@@ -42,7 +42,8 @@ namespace UninstallTools.Junk.Finders.Drive
 
         private IEnumerable<FileSystemJunk> FindJunkRecursively(DirectoryInfo directory, ApplicationUninstallerEntry uninstaller, int level = 0)
         {
-            var results = new List<FileSystemJunk>();
+            var added = new List<FileSystemJunk>();
+            IEnumerable<FileSystemJunk> results = added;
 
             try
             {
@@ -53,7 +54,7 @@ namespace UninstallTools.Junk.Finders.Drive
                     if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
                         continue;
 
-                    var generatedConfidence = GenerateConfidence(dir.Name, directory.FullName, uninstaller, level).ToList();
+                    var generatedConfidence = GenerateConfidence(dir.GetNameWithoutExtension(), directory.FullName, uninstaller, level).ToList();
 
                     FileSystemJunk newNode = null;
                     if (generatedConfidence.Any())
@@ -64,13 +65,13 @@ namespace UninstallTools.Junk.Finders.Drive
                         if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(uninstaller)))
                             newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
-                        results.Add(newNode);
+                        added.Add(newNode);
                     }
 
                     if (level > 1) continue;
 
                     var junkNodes = FindJunkRecursively(dir, uninstaller, level + 1).ToList();
-                    results.AddRange(junkNodes);
+                    results = results.Concat(junkNodes);
 
                     if (newNode != null)
                     {
@@ -83,6 +84,8 @@ namespace UninstallTools.Junk.Finders.Drive
                         }
                     }
                 }
+
+                ConfidenceGenerators.TestForSimilarNames(uninstaller, AllUninstallers, added.Select(x => new KeyValuePair<JunkResultBase, string>(x, x.Path.GetNameWithoutExtension())).ToList());
             }
             catch (Exception ex)
             {
