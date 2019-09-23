@@ -37,8 +37,14 @@ namespace UninstallTools.Factory
         {
             try
             {
-                _scoopUserPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROFILE), "scoop");
-                _scoopGlobalPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA), "scoop");
+                _scoopUserPath = Environment.GetEnvironmentVariable("SCOOP");
+                if (string.IsNullOrEmpty(_scoopUserPath))
+                    _scoopUserPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROFILE), "scoop");
+
+                _scoopGlobalPath = Environment.GetEnvironmentVariable("SCOOP_GLOBAL");
+                if (string.IsNullOrEmpty(_scoopGlobalPath))
+                    _scoopGlobalPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA), "scoop");
+
                 _scriptPath = Path.Combine(_scoopUserPath, "shims\\scoop.ps1");
 
                 if (File.Exists(_scriptPath))
