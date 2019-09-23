@@ -2,13 +2,18 @@
 <Root>
 <AppName>BCUninstaller</AppName>
 <Update>
-<Version>4.12.3.0</Version>
+<Version>4.15.0</Version>
 <URL></URL>
 <PageURL>https://www.bcuninstaller.com/</PageURL>
 <Changes>
-Added junk scanner for Debug Tracing/Logging Configuration
-Use renewed code signing certificate (fixes unknown publisher warning)
-Fixed invalid Steam library folders causing detection issues
+Added checking if junk might belong to a different application with a similar name to junk scan (e.g. Chrome, Chrome Updater, Chrome Remote Desktop) - more accurate junk confidence with less false positives
+Added quiet uninstall of Edge developer builds
+Reduced lag when writing in the search box
+Fixed loading dialog staying on top of all windows
+Fixed Scoop not being detected if placed in a custom directory
+Fixed deadlock when changing filtering options rapidly
+Fixed system restore being wrongly detected as unavailable if periodic restore point creation was disabled
+... and many more fixes and improvements
 </Changes>
 <Hash></Hash>
 </Update>
