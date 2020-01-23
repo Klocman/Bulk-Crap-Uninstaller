@@ -22,6 +22,11 @@ namespace UninstallTools.Junk.Containers
 
         public string ValueName { get; }
 
+        /// <summary>
+        /// If not null, overrides ValueName in GetDisplayName
+        /// </summary>
+        public string DisplayValueName { get; set; }
+
         public override void Backup(string backupDirectory)
         {
             using (var key = OpenRegKey())
@@ -50,7 +55,7 @@ namespace UninstallTools.Junk.Containers
 
         public override string GetDisplayName()
         {
-            return base.GetDisplayName() + " => " + ValueName;
+            return base.GetDisplayName() + " => " + (DisplayValueName ?? ValueName);
         }
 
         public override void Delete()

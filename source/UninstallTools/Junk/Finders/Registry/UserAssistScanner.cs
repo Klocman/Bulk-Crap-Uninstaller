@@ -59,6 +59,7 @@ namespace UninstallTools.Junk.Finders.Registry
                             StringComparison.InvariantCultureIgnoreCase))
                         {
                             var junk = new RegistryValueJunk(key.Name, valueName, target, this);
+                            junk.DisplayValueName = convertedName;
                             junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                             yield return junk;
                         }
