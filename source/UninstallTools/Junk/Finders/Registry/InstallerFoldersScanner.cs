@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
@@ -25,12 +26,12 @@ namespace UninstallTools.Junk.Finders.Registry
 
                 foreach (var valueName in key.GetValueNames())
                 {
-                    if (!SubPathIsInsideBasePath(installLocation, valueName)) continue;
+                    if (!PathTools.SubPathIsInsideBasePath(installLocation, valueName, true)) continue;
 
                     var node = new RegistryValueJunk(key.Name, valueName, target, this);
                     node.Confidence.Add(ConfidenceRecords.ExplicitConnection);
 
-                    if (GetOtherInstallLocations(target).Any(x => SubPathIsInsideBasePath(x, valueName)))
+                    if (GetOtherInstallLocations(target).Any(x => PathTools.SubPathIsInsideBasePath(x, valueName, true)))
                         node.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                     yield return node;

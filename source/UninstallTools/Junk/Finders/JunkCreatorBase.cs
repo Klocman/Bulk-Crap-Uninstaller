@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
@@ -69,19 +68,6 @@ namespace UninstallTools.Junk.Finders
             {
                 return null;
             }
-        }
-
-        protected static bool SubPathIsInsideBasePath(string basePath, string subPath)
-        {
-            basePath = basePath?.SafeNormalize().Trim().Trim('\\', '/');
-            if (string.IsNullOrEmpty(basePath))
-                return false;
-
-            subPath = subPath?.SafeNormalize().Trim().Trim('\\', '/');
-            if (string.IsNullOrEmpty(subPath))
-                return false;
-
-            return subPath.StartsWith(basePath, StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

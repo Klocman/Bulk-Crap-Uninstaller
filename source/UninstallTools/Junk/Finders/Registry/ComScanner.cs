@@ -32,11 +32,17 @@ namespace UninstallTools.Junk.Finders.Registry
 
         public override IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            if (string.IsNullOrEmpty(target.InstallLocation) ||
-                UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
+            if (string.IsNullOrEmpty(target.InstallLocation))
                 yield break;
 
-            foreach (var comEntry in _comEntries.Where(x => SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename)))
+            try
+            {
+                if (UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
+                    yield break;
+            }
+            catch (ArgumentException ex) { Console.WriteLine(ex); }
+
+            foreach (var comEntry in _comEntries.Where(x => PathTools.SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename, true)))
             {
                 foreach (var interfacePath in comEntry.InterfaceNames)
                 {
