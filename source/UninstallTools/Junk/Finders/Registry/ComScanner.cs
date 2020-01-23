@@ -140,7 +140,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 {
                     if (classesKey == null) continue;
 
-                    _extensionKeyNames.Add(classesKeyPath, classesKey.GetSubKeyNames().Where(x => x[0] == '.').ToArray());
+                    _extensionKeyNames.Add(classesKeyPath, classesKey.GetSubKeyNames().Where(x => x.Length > 0 && x[0] == '.').ToArray());
 
                     try
                     {
