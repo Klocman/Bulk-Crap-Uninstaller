@@ -188,7 +188,13 @@ namespace UninstallTools.Factory
                 RedirectStandardError = false,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Default
-            })) return process?.StandardOutput.ReadToEnd();
+            }))
+            {
+                var sw = Stopwatch.StartNew();
+                var output = process?.StandardOutput.ReadToEnd();
+                Console.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
+                return output;
+            }
         }
     }
 }

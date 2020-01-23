@@ -136,7 +136,12 @@ namespace UninstallTools.Factory
             startInfo.StandardOutputEncoding = Encoding.Default;
 
             using (var process = Process.Start(startInfo))
-                return process?.StandardOutput.ReadToEnd();
+            {
+                var sw = Stopwatch.StartNew();
+                var output = process?.StandardOutput.ReadToEnd();
+                Console.WriteLine($"[Performance] Running command {startInfo.FileName} {startInfo.Arguments} took {sw.ElapsedMilliseconds}ms");
+                return output;
+            }
         }
 
         private static ProcessStartCommand MakeScoopCommand(string scoopArgs)
