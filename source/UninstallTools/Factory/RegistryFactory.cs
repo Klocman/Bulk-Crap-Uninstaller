@@ -50,7 +50,7 @@ namespace UninstallTools.Factory
             _windowsInstallerValidGuids = windowsInstallerValidGuids;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var uninstallerRegistryKeys = new List<KeyValuePair<RegistryKey, bool>>();
 
@@ -88,7 +88,7 @@ namespace UninstallTools.Factory
 
             var workSpreader = new ThreadedWorkSpreader<KeyValuePair<RegistryKey, bool>, List<ApplicationUninstallerEntry>>(
                 FactoryThreadedHelpers.MaxThreadsPerDrive, WorkLogic,
-                list => new List<ApplicationUninstallerEntry>(list.Count), 
+                list => new List<ApplicationUninstallerEntry>(list.Count),
                 pair =>
                 {
                     try
@@ -102,7 +102,7 @@ namespace UninstallTools.Factory
                 });
 
             // We are mostly reading from registry, so treat everything as on a single drive
-            var dataBuckets = new List<List<KeyValuePair<RegistryKey, bool>>>{uninstallerRegistryKeys};
+            var dataBuckets = new List<IList<KeyValuePair<RegistryKey, bool>>> { uninstallerRegistryKeys };
 
             workSpreader.Start(dataBuckets, progressCallback);
 

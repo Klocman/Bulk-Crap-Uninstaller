@@ -15,7 +15,7 @@ namespace UninstallTools.Factory
     /// </summary>
     public class PredefinedFactory : IIndependantUninstallerFactory
     {
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var items = new List<ApplicationUninstallerEntry>();

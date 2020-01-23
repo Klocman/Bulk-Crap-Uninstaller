@@ -17,7 +17,7 @@ namespace UninstallTools.Factory
     {
         public static int MaxThreadsPerDrive = 2;
 
-        public static IEnumerable<ApplicationUninstallerEntry> DriveApplicationScan(
+        public static IList<ApplicationUninstallerEntry> DriveApplicationScan(
             ListGenerationProgress.ListGenerationCallback progressCallback,
             List<string> dirsToSkip,
             List<KeyValuePair<DirectoryInfo, bool?>> itemsToScan)
@@ -48,8 +48,8 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        public static void GenerateMisingInformation(List<ApplicationUninstallerEntry> entries, 
-            InfoAdderManager infoAdder, List<Guid> msiProducts, bool skipRunLast, 
+        public static void GenerateMisingInformation(IList<ApplicationUninstallerEntry> entries, 
+            InfoAdderManager infoAdder, IList<Guid> msiProducts, bool skipRunLast, 
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             void WorkLogic(ApplicationUninstallerEntry entry, object state)
@@ -84,9 +84,9 @@ namespace UninstallTools.Factory
             workSpreader.Join();
         }
 
-        private static List<List<TData>> SplitByPhysicalDrives<TData>(List<TData> itemsToScan, Func<TData, DirectoryInfo> locationGetter)
+        private static IList<IList<TData>> SplitByPhysicalDrives<TData>(IList<TData> itemsToScan, Func<TData, DirectoryInfo> locationGetter)
         {
-            var output = new List<List<TData>>();
+            var output = new List<IList<TData>>();
             try
             {
                 using (var searcherDtp = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDriveToDiskPartition"))

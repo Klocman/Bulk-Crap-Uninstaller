@@ -16,19 +16,18 @@ namespace UninstallTools.Factory
 {
     public class WindowsFeatureFactory : IIndependantUninstallerFactory
     {
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (Environment.OSVersion.Version < WindowsTools.Windows7)
-                return Enumerable.Empty<ApplicationUninstallerEntry>();
+            var results = new List<ApplicationUninstallerEntry>();
+            if (Environment.OSVersion.Version < WindowsTools.Windows7) return results;
 
             Exception error = null;
-            var applicationUninstallers = new List<ApplicationUninstallerEntry>();
             var t = new Thread(() =>
             {
                 try
                 {
-                    applicationUninstallers.AddRange(WmiQueries.GetWindowsFeatures()
+                    results.AddRange(WmiQueries.GetWindowsFeatures()
                         .Where(x => x.Enabled)
                         .Select(WindowsFeatureToUninstallerEntry));
                 }
@@ -49,7 +48,7 @@ namespace UninstallTools.Factory
                 throw new TimeoutException("WMI query has hung while collecting Windows Features, try restarting your computer. If the error persists read the KB957310 article.");
             }
 
-            return applicationUninstallers;
+            return results;
         }
 
         private static ApplicationUninstallerEntry WindowsFeatureToUninstallerEntry(WindowsFeatureInfo info)

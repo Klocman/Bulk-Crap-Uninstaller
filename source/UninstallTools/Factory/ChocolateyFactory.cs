@@ -59,13 +59,15 @@ namespace UninstallTools.Factory
 
         private static readonly string[] NewlineSeparators = StringTools.NewLineChars.ToArray();
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!ChocoIsAvailable) yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+
+            if (!ChocoIsAvailable) return results;
 
             var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -l -nocolor -y -r");
 
-            if (string.IsNullOrEmpty(result)) yield break;
+            if (string.IsNullOrEmpty(result)) return results;
 
             var appEntries = result.Split(NewlineSeparators, StringSplitOptions.RemoveEmptyEntries);
             var appNames = appEntries.Select(x =>
@@ -119,8 +121,10 @@ namespace UninstallTools.Factory
                 junk.Confidence.Add(4);
                 entry.AdditionalJunk.Add(junk);
 
-                yield return entry;
+                results.Add(entry);
             }
+
+            return results;
         }
 
         private static string GetChocoInstallLocation()

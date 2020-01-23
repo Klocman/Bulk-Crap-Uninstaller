@@ -44,19 +44,21 @@ namespace UninstallTools.Factory
                 concurrentFactory.Start();
 
                 // Find stuff mentioned in registry ------------------------------------------------------------------------
-                List<ApplicationUninstallerEntry> registryResults;
+                IList<ApplicationUninstallerEntry> registryResults;
                 if (UninstallToolsGlobalConfig.ScanRegistry)
                 {
                     var regProgress = new ListGenerationProgress(currentStep++, totalStepCount,
                         Localisation.Progress_Registry);
                     callback(regProgress);
 
+                    var sw = Stopwatch.StartNew();
                     var registryFactory = new RegistryFactory(msiProducts);
                     registryResults = registryFactory.GetUninstallerEntries(report =>
                     {
                         regProgress.Inner = report;
                         callback(regProgress);
-                    }).ToList();
+                    });
+                    Console.WriteLine($"[Performance] Factory {typeof(RegistryFactory).Name} took {sw.ElapsedMilliseconds}ms to finish");
 
                     // Fill in install llocations for DirectoryFactory to improve speed and quality of results
                     if (UninstallToolsGlobalConfig.UninstallerFactoryCache != null)
@@ -78,17 +80,20 @@ namespace UninstallTools.Factory
 
                 // Look for entries on drives, based on info in registry. ----------------------------------------------------
                 // Will introduce duplicates to already detected stuff. Need to check for duplicates with other entries later.
-                List<ApplicationUninstallerEntry> driveResults;
+                IList<ApplicationUninstallerEntry> driveResults;
                 if (UninstallToolsGlobalConfig.ScanDrives)
                 {
                     var driveProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
                     callback(driveProgress);
+
+                    var sw = Stopwatch.StartNew();
                     var driveFactory = new DirectoryFactory(registryResults);
                     driveResults = driveFactory.GetUninstallerEntries(report =>
                     {
                         driveProgress.Inner = report;
                         callback(driveProgress);
-                    }).ToList();
+                    });
+                    Console.WriteLine($"[Performance] Factory {typeof(DirectoryFactory).Name} took {sw.ElapsedMilliseconds}ms to finish");
                 }
                 else
                 {
@@ -258,7 +263,9 @@ namespace UninstallTools.Factory
                 progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.DisplayName));
                 try
                 {
-                    MergeResults(otherResults, kvp.GetUninstallerEntries(null).ToList(), null);
+                    var sw = Stopwatch.StartNew();
+                    MergeResults(otherResults, kvp.GetUninstallerEntries(null), null);
+                    Console.WriteLine($"[Performance] Factory {kvp.DisplayName} took {sw.ElapsedMilliseconds}ms to finish");
                 }
                 catch (Exception ex)
                 {

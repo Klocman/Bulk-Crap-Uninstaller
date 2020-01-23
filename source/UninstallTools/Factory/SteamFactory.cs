@@ -63,20 +63,14 @@ namespace UninstallTools.Factory
         internal static string SteamHelperPath 
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            return GetSteamApps();
-        }
-
-        private static IEnumerable<ApplicationUninstallerEntry> GetSteamApps()
-        {
-            if (!SteamHelperIsAvailable)
-                yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (!SteamHelperIsAvailable) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "list");
-            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase))
-                yield break;
+            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase)) return results;
 
             foreach (var idString in output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries))
             {
@@ -111,8 +105,10 @@ namespace UninstallTools.Factory
                 if (long.TryParse(GetValue("SizeOnDisk"), out var bytes))
                     entry.EstimatedSize = FileSize.FromBytes(bytes);
 
-                yield return entry;
+                results.Add(entry);
             }
+
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanSteam;

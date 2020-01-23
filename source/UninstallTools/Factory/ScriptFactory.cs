@@ -38,14 +38,15 @@ namespace UninstallTools.Factory
                 .ToArray();
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (ScriptHelperPath == null) yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (ScriptHelperPath == null) return results;
 
             var result = FactoryTools.StartHelperAndReadOutput(ScriptHelperPath, string.Empty);
 
-            if (string.IsNullOrEmpty(result)) yield break;
+            if (string.IsNullOrEmpty(result)) return results;
 
             var dataSets = FactoryTools.ExtractAppDataSetsFromHelperOutput(result);
 
@@ -82,8 +83,10 @@ namespace UninstallTools.Factory
                     entry.IconBitmap = iconObj;
                 }
 
-                yield return entry;
+                results.Add(entry);
             }
+
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanPreDefined;

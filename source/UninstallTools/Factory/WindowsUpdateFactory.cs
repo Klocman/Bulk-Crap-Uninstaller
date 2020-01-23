@@ -16,10 +16,6 @@ namespace UninstallTools.Factory
 {
     public class WindowsUpdateFactory : IIndependantUninstallerFactory
     {
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
-        {
-            return GetUpdates();
-        }
         private static bool? _helperIsAvailable;
 
         private static bool HelperIsAvailable
@@ -32,17 +28,15 @@ namespace UninstallTools.Factory
             }
         }
 
-        private static string HelperPath
-            => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"WinUpdateHelper.exe");
+        private static string HelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"WinUpdateHelper.exe");
 
-        private static IEnumerable<ApplicationUninstallerEntry> GetUpdates()
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!HelperIsAvailable)
-                yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (!HelperIsAvailable) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "list");
-            if (string.IsNullOrEmpty(output) || output.Trim().StartsWith("Error", StringComparison.OrdinalIgnoreCase))
-                yield break;
+            if (string.IsNullOrEmpty(output) || output.Trim().StartsWith("Error", StringComparison.OrdinalIgnoreCase)) return results;
 
             foreach (var group in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
@@ -94,8 +88,10 @@ namespace UninstallTools.Factory
                 entry.UninstallString = $"\"{HelperPath}\" uninstall {entry.RatingId}";
                 entry.QuietUninstallString = entry.UninstallString;
 
-                yield return entry;
+                results.Add(entry);
             }
+
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanWinUpdates;

@@ -29,13 +29,13 @@ namespace UninstallTools.Factory
             }
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!HelperAvailable) yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (!HelperAvailable) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "/query");
-            if (string.IsNullOrEmpty(output))
-                yield break;
+            if (string.IsNullOrEmpty(output)) return results;
 
             foreach (var data in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
@@ -71,8 +71,9 @@ namespace UninstallTools.Factory
                 if (string.IsNullOrEmpty(entry.RawDisplayName))
                     entry.RawDisplayName = name.Replace('-', ' ').ToTitleCase();
 
-                yield return entry;
+                results.Add(entry);
             }
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanOculus;

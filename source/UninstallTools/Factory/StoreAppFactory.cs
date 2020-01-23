@@ -41,16 +41,17 @@ namespace UninstallTools.Factory
 
         private static string StoreAppHelperPath { get; }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (StoreAppHelperPath == null) yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (StoreAppHelperPath == null) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(StoreAppHelperPath, "/query");
-            if (string.IsNullOrEmpty(output)) yield break;
+            if (string.IsNullOrEmpty(output)) return results;
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
-            
+
             foreach (var data in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
                 if (!data.ContainsKey("InstalledLocation") || !Directory.Exists(data["InstalledLocation"])) continue;
@@ -95,8 +96,10 @@ namespace UninstallTools.Factory
                     //result.IsProtected = true;
                 }
 
-                yield return result;
+                results.Add(result);
             }
+
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanStoreApps;

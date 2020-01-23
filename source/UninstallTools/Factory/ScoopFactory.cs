@@ -62,9 +62,10 @@ namespace UninstallTools.Factory
         }
 
         // TODO read the app manifests for more info, requires json parsing - var manifest = Path.Combine(installDir, "current\\manifest.json");
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (!ScoopIsAvailable) yield break;
+            var results = new List<ApplicationUninstallerEntry>();
+            if (!ScoopIsAvailable) return results;
 
             // Make uninstaller for scoop itself
             var scoopEntry = new ApplicationUninstallerEntry();
@@ -81,11 +82,11 @@ namespace UninstallTools.Factory
 
             scoopEntry.UninstallString = MakeScoopCommand("uninstall scoop").ToString();
             scoopEntry.UninstallerKind = UninstallerType.PowerShell;
-            yield return scoopEntry;
+            results.Add(scoopEntry);
 
             // Make uninstallers for apps installed by scoop
             var result = RunScoopCommand("export");
-            if (string.IsNullOrEmpty(result)) yield break;
+            if (string.IsNullOrEmpty(result)) return results;
 
             var appEntries = result.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries);
             var exeSearcher = new AppExecutablesSearcher();
@@ -116,8 +117,10 @@ namespace UninstallTools.Factory
                 entry.UninstallerKind = UninstallerType.PowerShell;
                 entry.UninstallString = MakeScoopCommand("uninstall " + name + (isGlobal ? " --global" : "")).ToString();
 
-                yield return entry;
+                results.Add(entry);
             }
+
+            return results;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanScoop;

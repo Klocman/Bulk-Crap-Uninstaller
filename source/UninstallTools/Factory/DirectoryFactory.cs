@@ -25,7 +25,7 @@ namespace UninstallTools.Factory
             _existingUninstallerEntries = existing;
         }
 
-        public IEnumerable<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             progressCallback(new ListGenerationProgress(0, -1, Localisation.Progress_DriveScan_Gathering));
 

@@ -15,7 +15,7 @@ namespace UninstallTools
         private readonly List<WorkerData> _workers = new List<WorkerData>();
 
         public ThreadedWorkSpreader(int maxThreadsPerBucket, Action<TData, TState> workLogic,
-            Func<List<TData>, TState> stateGenerator, Func<TData, string> dataNameGetter)
+            Func<IList<TData>, TState> stateGenerator, Func<TData, string> dataNameGetter)
         {
             if (maxThreadsPerBucket <= 0)
                 throw new ArgumentOutOfRangeException(nameof(maxThreadsPerBucket), maxThreadsPerBucket, @"Minimum value is 1");
@@ -25,13 +25,13 @@ namespace UninstallTools
             DataNameGetter = dataNameGetter ?? throw new ArgumentNullException(nameof(dataNameGetter));
         }
 
-        public Func<List<TData>, TState> StateGenerator { get; }
+        public Func<IList<TData>, TState> StateGenerator { get; }
         public Func<TData, string> DataNameGetter { get; }
         public Action<TData, TState> WorkLogic { get; }
 
         public int MaxThreadsPerBucket { get; }
         
-        public void Start(List<List<TData>> dataBuckets, ListGenerationProgress.ListGenerationCallback progressCallback)
+        public void Start(IList<IList<TData>> dataBuckets, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             if (dataBuckets == null) throw new ArgumentNullException(nameof(dataBuckets));
             if (progressCallback == null) throw new ArgumentNullException(nameof(progressCallback));
