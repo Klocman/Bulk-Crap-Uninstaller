@@ -117,7 +117,7 @@ namespace BulkCrapUninstaller.Forms
                                 }
                             }
 
-                            Settings.Default.BackupLeftoversDirectory = 
+                            Settings.Default.BackupLeftoversDirectory =
                                 MessageBoxes.SelectFolder(Localisable.JunkRemoveWindow_SelectBackupDirectoryTitle);
 
                             if (string.IsNullOrEmpty(Settings.Default.BackupLeftoversDirectory))
@@ -357,15 +357,20 @@ namespace BulkCrapUninstaller.Forms
                 {
                     junkNode.Backup(targetdir);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    failed.Add(junkNode.GetDisplayName());
+                    var displayName = junkNode.GetDisplayName();
+                    failed.Add(ex.Message + " - " + displayName);
+                    Console.WriteLine($"Backup failed for item {displayName} with exception: {ex}");
                 }
             }
 
             if (failed.Any())
             {
                 failed.Sort();
+                
+                // Prevent the dialog from getting too large
+                if (failed.Count > 6) failed = failed.Take(5).Concat(new[] { "... (check log for the full list)" }).ToList();
 
                 if (MessageBoxes.BackupFailedQuestion(string.Join("\n", failed.ToArray()), this)
                     != MessageBoxes.PressedButton.Yes)
