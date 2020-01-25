@@ -96,6 +96,7 @@
     <Compile Include="Junk\Finders\Drive\PrefetchScanner.cs" />
     <Compile Include="Junk\Finders\Registry\ComScanner.cs" />
     <Compile Include="Junk\Finders\Registry\DebugTracingScanner.cs" />
+    <Compile Include="Junk\Finders\Registry\HeapLeakDetectionScanner.cs" />
     <Compile Include="ThreadedWorkSpreader.cs" />
     <Compile Include="Factory\WindowsFeatureFactory.cs" />
     <Compile Include="Factory\WindowsUpdateFactory.cs" />
