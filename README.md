@@ -29,4 +29,4 @@ Any modern version of Visual Studio should work. You might need to download [thi
 ![preview](../gh-pages/assets/1.png)
 ![preview](../gh-pages/assets/4.png)
 
-To see a full list of quirks and features please visit the [official homepage](https://www.bcuninstaller.com/)!
+To see the full list of quirks and features please visit the [official homepage](https://www.bcuninstaller.com/)!
