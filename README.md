@@ -10,9 +10,9 @@ BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has
 
 Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
 
-[Visit official homepage](https://www.bcuninstaller.com/)
+[Visit the official homepage](https://www.bcuninstaller.com/) to see the full list of quirks and features!
 
-If you need any help please either read the help file included with all releases, or the [online help file here](https://htmlpreview.github.io/?https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/doc/BCU_manual.html)!
+[Read the online documentation](https://htmlpreview.github.io/?https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/doc/BCU_manual.html) if you have any questions or issues (the help file included with all releases). If you didn't find an answer to your question, feel free to [open a new issue](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new).
 
 ## Download
 [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
@@ -28,5 +28,3 @@ Any modern version of Visual Studio should work. You might need to download [thi
 ## Screenshots
 ![preview](../gh-pages/assets/1.png)
 ![preview](../gh-pages/assets/4.png)
-
-To see the full list of quirks and features please visit the [official homepage](https://www.bcuninstaller.com/)!
