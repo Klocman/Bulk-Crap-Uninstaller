@@ -22,6 +22,7 @@ namespace BulkCrapUninstaller
     /// <summary>
     ///     Can not be contained inside of a static class as it needs to be serialized
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Used during serialization")]
     public class BugReportExtraInfo
     {
         public bool Is64Bit = ProcessTools.Is64BitProcess;
@@ -37,22 +38,22 @@ namespace BulkCrapUninstaller
     {
         public static void SetupNBug()
         {
-            //Settings.UIMode = UIMode.Full;
-            //Settings.UIProvider = UIProvider.WinForms;
-            //Settings.SleepBeforeSend = 3;
-            //Settings.MaxQueuedReports = 4;
-            //Settings.StopReportingAfter = 10;
-            //Settings.MiniDumpType = MiniDumpType.None;
-            //Settings.WriteLogToDisk = false;
-            //Settings.ExitApplicationImmediately = true;
-            //Settings.HandleProcessCorruptedStateExceptions = false;
-            //
-            //Settings.ReleaseMode = true;
-            //
-            //Settings.Destinations.Add(new NBugDatabaseSenderWrapper());
-            //
-            //AppDomain.CurrentDomain.UnhandledException += Handler.UnhandledException;
-            //Application.ThreadException += Handler.ThreadException;
+            Settings.UIMode = UIMode.Full;
+            Settings.UIProvider = UIProvider.WinForms;
+            Settings.SleepBeforeSend = 3;
+            Settings.MaxQueuedReports = 4;
+            Settings.StopReportingAfter = 10;
+            Settings.MiniDumpType = MiniDumpType.None;
+            Settings.WriteLogToDisk = false;
+            Settings.ExitApplicationImmediately = true;
+            Settings.HandleProcessCorruptedStateExceptions = false;
+
+            Settings.ReleaseMode = true;
+
+            Settings.Destinations.Add(new NBugDatabaseSenderWrapper());
+
+            AppDomain.CurrentDomain.UnhandledException += Handler.UnhandledException;
+            Application.ThreadException += Handler.ThreadException;
         }
 
         private class NBugDatabaseSenderWrapper : ProtocolBase

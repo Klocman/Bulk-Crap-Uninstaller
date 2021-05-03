@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScriptHelper", "ScriptHelpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSettingBinder", "NetSettingBinder\NetSettingBinder.csproj", "{C28A3493-8FCA-4571-8F9E-27B8420C0720}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBug", "NBug_custom\NBug.csproj", "{B5F0E648-A6E8-4D63-842C-90562148A930}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HelperTools\HelperTools.projitems*{319c4596-0ee6-4392-9d7b-f937794133c7}*SharedItemsImports = 5
@@ -283,6 +285,18 @@ Global
 		{C28A3493-8FCA-4571-8F9E-27B8420C0720}.Release|x64.Build.0 = Release|Any CPU
 		{C28A3493-8FCA-4571-8F9E-27B8420C0720}.Release|x86.ActiveCfg = Release|Any CPU
 		{C28A3493-8FCA-4571-8F9E-27B8420C0720}.Release|x86.Build.0 = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|x64.Build.0 = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Debug|x86.Build.0 = Debug|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|x64.ActiveCfg = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|x64.Build.0 = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

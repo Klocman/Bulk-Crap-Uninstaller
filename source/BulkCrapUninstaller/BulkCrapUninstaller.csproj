@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
+    <ProjectReference Include="..\NBug_custom\NBug.csproj" />
     <ProjectReference Include="..\NetSettingBinder\NetSettingBinder.csproj" />
     <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj" />
     <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.csproj" />
