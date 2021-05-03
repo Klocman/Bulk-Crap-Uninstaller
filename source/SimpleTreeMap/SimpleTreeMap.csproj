@@ -1,76 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}</ProjectGuid>
+        <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleTreeMap</RootNamespace>
-    <AssemblyName>SimpleTreeMap</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SliceMaker.cs" />
-    <Compile Include="Element.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Slice.cs" />
-    <Compile Include="SliceRectangle.cs" />
-    <Compile Include="SliceResult.cs" />
-    <Compile Include="TreeMap.cs">
+    <Compile Update="TreeMap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TreeMap.Designer.cs">
-      <DependentUpon>TreeMap.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TreeMap.resx">
-      <DependentUpon>TreeMap.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
-      <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
-      <Name>ObjectListView2012</Name>
-    </ProjectReference>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

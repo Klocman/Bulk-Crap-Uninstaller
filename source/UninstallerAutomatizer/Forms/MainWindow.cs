@@ -22,7 +22,7 @@ namespace UninstallerAutomatizer
 
             try
             {
-                Icon = DrawingTools.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+                Icon = ProcessTools.GetIconFromEntryExe();
             }
             catch (Exception e)
             {

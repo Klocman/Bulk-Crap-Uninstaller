@@ -27,7 +27,7 @@ namespace SteamHelper
         {
             Console.WriteLine("Running " + appInfo.UninstallString);
             var uninstallCommand = Misc.SeparateArgsFromCommand(appInfo.UninstallString);
-            Process.Start(uninstallCommand.Key, uninstallCommand.Value);
+            Process.Start(new ProcessStartInfo(uninstallCommand.Key, uninstallCommand.Value) { UseShellExecute = true });
 
             Console.WriteLine();
             Console.WriteLine("To stop waiting for Steam and cancel the operation press any key.");

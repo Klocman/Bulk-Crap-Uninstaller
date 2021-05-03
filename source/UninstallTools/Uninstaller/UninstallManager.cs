@@ -128,7 +128,7 @@ namespace UninstallTools.Uninstaller
                 }
 
                 if (fallBack != null)
-                    return Process.Start(fallBack);
+                    return Process.Start(new ProcessStartInfo(fallBack) { UseShellExecute = true });
 
                 if (startInfo != null)
                 {
@@ -167,7 +167,7 @@ namespace UninstallTools.Uninstaller
                     return true;
 
                 default:
-                    return entry.QuietUninstallString.StartsWith("cmd ", StringComparison.OrdinalIgnoreCase) || 
+                    return entry.QuietUninstallString.StartsWith("cmd ", StringComparison.OrdinalIgnoreCase) ||
                         entry.QuietUninstallString.Contains("cmd.exe", StringComparison.OrdinalIgnoreCase);
             }
         }

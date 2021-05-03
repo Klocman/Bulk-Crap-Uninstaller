@@ -186,7 +186,7 @@ namespace UniversalUninstaller
         {
             treeListView1.Refresh();
         }
-        
+
         private void treeListView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var x = treeListView1.GetItemAt(e.X, e.Y) as OLVListItem;
@@ -196,7 +196,7 @@ namespace UniversalUninstaller
             {
                 if (en.IsDirectory)
                 {
-                    Process.Start('"' + en.FileSystemInfo.FullName + '"');
+                    Process.Start(new ProcessStartInfo('"' + en.FileSystemInfo.FullName + '"') { UseShellExecute = true });
                 }
                 else
                 {

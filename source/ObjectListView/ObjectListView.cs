@@ -10169,7 +10169,7 @@ namespace BrightIdeasSoftware
             try
             {
                 Cursor = Cursors.WaitCursor;
-                System.Diagnostics.Process.Start(args.Url);
+                Process.Start(new ProcessStartInfo(args.Url) { UseShellExecute = true });
             }
             catch (Win32Exception)
             {

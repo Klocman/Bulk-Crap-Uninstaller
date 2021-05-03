@@ -4,46 +4,40 @@
 */
 
 using System;
+using System.Diagnostics;
+using System.Net;
 using System.Reflection;
 using System.Threading;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
 using Klocman.Tools;
-using Klocman.UpdateSystem;
 
 namespace BulkCrapUninstaller.Functions.Tools
 {
     internal static class UpdateGrabber
     {
-        private static readonly Uri DebugUpdateFeedUri =
-            new Uri(@"https://raw.githubusercontent.com/Klocman/Bulk-Crap-Uninstaller/master/UpdateInfo_Debug.xml");
-        private static readonly Uri UpdateFeedUri =
-            new Uri(@"https://raw.githubusercontent.com/Klocman/Bulk-Crap-Uninstaller/master/UpdateInfo.xml");
-
         /// <summary>
         ///     Look for updates while displaying a progress bar. At the end display a message box with the result.
         /// </summary>
         public static void LookForUpdates()
         {
-            var result = UpdateSystem.UpdateStatus.CheckFailed;
+            bool? result = null;
             var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleSearchingForUpdates,
-                x => { result = UpdateSystem.CheckForUpdates(); });
+                _ => { result = IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version); });
 
             if (error == null)
             {
                 switch (result)
                 {
-                    case UpdateSystem.UpdateStatus.CheckFailed:
-                        MessageBoxes.UpdateFailed(UpdateSystem.LastError != null
-                            ? UpdateSystem.LastError.Message
-                            : "Unknown error");
+                    case null:
+                        MessageBoxes.UpdateFailed("Unknown error");
                         break;
 
-                    case UpdateSystem.UpdateStatus.NewAvailable:
+                    case true:
                         AskAndBeginUpdate();
                         break;
 
-                    case UpdateSystem.UpdateStatus.UpToDate:
+                    case false:
                         MessageBoxes.UpdateUptodate();
                         break;
                 }
@@ -61,9 +55,9 @@ namespace BulkCrapUninstaller.Functions.Tools
                 try
                 {
                     // Prevent log cleaner from running in portable builds
-                    EntryPoint.IsRestarting = true;
+                    //EntryPoint.IsRestarting = true;
 
-                    UpdateSystem.BeginUpdate();
+                    Process.Start(new ProcessStartInfo(LatestReleaseUrl) { UseShellExecute = true });
                 }
                 catch (Exception ex)
                 {
@@ -81,8 +75,8 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         public static void Setup()
         {
-            UpdateSystem.UpdateFeedUri = Program.EnableDebug ? DebugUpdateFeedUri : UpdateFeedUri;
-            UpdateSystem.CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            //UpdateSystem.UpdateFeedUri = Program.EnableDebug ? DebugUpdateFeedUri : UpdateFeedUri;
+            //UpdateSystem.CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version;
         }
 
         /// <summary>
@@ -97,23 +91,124 @@ namespace BulkCrapUninstaller.Functions.Tools
             {
                 new Thread(() =>
                 {
-                    if (UpdateSystem.CheckForUpdates() != UpdateSystem.UpdateStatus.NewAvailable)
-                        return;
-
-                    while (!canDisplayMessage())
-                        Thread.Sleep(100);
-
-                    try
+                    if (IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version) == true)
                     {
-                        updateFoundCallback();
-                    }
-                    catch
-                    {
-                        // Ignore background error, not necessary
+                        while (!canDisplayMessage())
+                            Thread.Sleep(100);
+
+                        try
+                        {
+                            updateFoundCallback();
+                        }
+                        catch
+                        {
+                            // Ignore background error, not necessary
+                        }
                     }
                 })
                 { Name = "UpdateCheck_Thread", IsBackground = true }.Start();
             }
+        }
+        
+        public static string LatestReleaseUrl = "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/latest";
+
+        public static Version CheckLatestVersion()
+        {
+            // Should result in something like "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v4.1"
+            var url = GetFinalRedirect(LatestReleaseUrl);
+            var i = url.LastIndexOf('/');
+            var tag = url.Substring(i).TrimStart('/', 'v');
+            return new Version(tag);
+        }
+
+        /// <summary>
+        /// Returns null if failed to look for updates, else returns if there is a newer version available
+        /// </summary>
+        public static bool? IsUpdateAvailable(Version currentVersion)
+        {
+            try
+            {
+                var latestVersion = CheckLatestVersion();
+                if (latestVersion > currentVersion)
+                {
+                    Console.WriteLine("A new version is available: " + latestVersion);
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("The current version is the latest");
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to check for new versions: " + e.Message);
+                return null;
+            }
+        }
+
+        // https://stackoverflow.com/a/28424940
+        private static string GetFinalRedirect(string url)
+        {
+            if (string.IsNullOrEmpty(url))
+                return url;
+
+            if (ServicePointManager.SecurityProtocol < SecurityProtocolType.Tls12)
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            int maxRedirCount = 8; // prevent infinite loops
+            string newUrl = url;
+            do
+            {
+                HttpWebResponse resp = null;
+                try
+                {
+                    var req = WebRequest.CreateHttp(new Uri(url));
+                    req.Method = "HEAD";
+                    req.AllowAutoRedirect = false;
+                    resp = (HttpWebResponse)req.GetResponse();
+                    switch (resp.StatusCode)
+                    {
+                        case HttpStatusCode.OK:
+                            return newUrl;
+                        case HttpStatusCode.Redirect:
+                        case HttpStatusCode.MovedPermanently:
+                        case HttpStatusCode.RedirectKeepVerb:
+                        case HttpStatusCode.RedirectMethod:
+                            newUrl = resp.Headers["Location"];
+                            if (newUrl == null)
+                                return url;
+
+                            if (newUrl.IndexOf("://", System.StringComparison.Ordinal) == -1)
+                            {
+                                // Doesn't have a URL Schema, meaning it's a relative or absolute URL
+                                Uri u = new Uri(new Uri(url), newUrl);
+                                newUrl = u.ToString();
+                            }
+
+                            break;
+                        default:
+                            return newUrl;
+                    }
+                    url = newUrl;
+                }
+                catch (WebException)
+                {
+                    // Return the last known good URL
+                    return newUrl;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    if (resp != null)
+                        resp.Close();
+                }
+            } while (maxRedirCount-- > 0);
+
+            return newUrl;
         }
     }
 }

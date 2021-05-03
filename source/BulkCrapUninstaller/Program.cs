@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
@@ -97,29 +98,30 @@ namespace BulkCrapUninstaller
         private static string ConfigFileFullname => Path.Combine(AssemblyLocation.FullName, @"BCUninstaller.settings");
 
 
-        private static bool? _net4IsAvailable;
+        //private static bool? _net4IsAvailable;
         public static Version PreviousVersion { get; private set; }
 
         public static bool Net4IsAvailable
         {
             get
             {
-                if (!_net4IsAvailable.HasValue)
-                {
-                    try
-                    {
-                        using (var key = RegistryTools.OpenRegistryKey(
-                            @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"))
-                        {
-                            _net4IsAvailable = (int)key.GetValue("Install", 0) == 1;
-                        }
-                    }
-                    catch
-                    {
-                        _net4IsAvailable = false;
-                    }
-                }
-                return _net4IsAvailable.Value;
+                return true;
+                //if (!_net4IsAvailable.HasValue)
+                //{
+                //    try
+                //    {
+                //        using (var key = RegistryTools.OpenRegistryKey(
+                //            @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"))
+                //        {
+                //            _net4IsAvailable = (int)key.GetValue("Install", 0) == 1;
+                //        }
+                //    }
+                //    catch
+                //    {
+                //        _net4IsAvailable = false;
+                //    }
+                //}
+                //return _net4IsAvailable.Value;
             }
         }
 
@@ -221,7 +223,7 @@ namespace BulkCrapUninstaller
                 if (cleanerUri.IsUnc)
                 {
                     // 'cmd.exe /c start' doesn't work with UNC paths, script has to run in foreground.
-                    Process.Start(cleanerPath);
+                    Process.Start(new ProcessStartInfo(cleanerPath) { UseShellExecute = true });
                 }
                 else
                 {

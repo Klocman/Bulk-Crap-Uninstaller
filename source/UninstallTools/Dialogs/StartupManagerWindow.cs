@@ -248,25 +248,25 @@ namespace UninstallTools.Dialogs
             }
 
             var query = from item in AllItems
-                where comboBoxFilter.SelectedIndex == 0 ||
-                      comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
-                      comboBoxFilter.SelectedIndex == 2 && item is TaskEntry ||
-                      comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
-                      comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
+                        where comboBoxFilter.SelectedIndex == 0 ||
+                              comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
+                              comboBoxFilter.SelectedIndex == 2 && item is TaskEntry ||
+                              comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
+                              comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
                         orderby item.ProgramName ascending
-                select new ListViewItem(new[]
-                {
+                        select new ListViewItem(new[]
+                        {
                     item.ProgramName,
                     (!item.Disabled).ToYesNo(),
                     item.Company,
                     item.ParentShortName,
                     item.Command
                 })
-                {
-                    Tag = item,
-                    ForeColor = item.Disabled ? SystemColors.GrayText : SystemColors.ControlText,
-                    ImageIndex = Math.Max(listView1.SmallImageList.Images.IndexOfKey(item.ProgramName), 0)
-                };
+                        {
+                            Tag = item,
+                            ForeColor = item.Disabled ? SystemColors.GrayText : SystemColors.ControlText,
+                            ImageIndex = Math.Max(listView1.SmallImageList.Images.IndexOfKey(item.ProgramName), 0)
+                        };
 
             // Populate list items
             listView1.Items.Clear();
@@ -394,7 +394,7 @@ namespace UninstallTools.Dialogs
                 }
             }
 
-            Process.Start(folderBrowserDialog.SelectedPath);
+            Process.Start(new ProcessStartInfo(folderBrowserDialog.SelectedPath) { UseShellExecute = true });
 
             UpdateList();
         }

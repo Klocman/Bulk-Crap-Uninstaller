@@ -10,13 +10,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
 using Klocman;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
-using Klocman.UpdateSystem;
 using Klocman.Tools;
-using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace BulkCrapUninstaller.Functions
 {
@@ -557,15 +556,20 @@ namespace BulkCrapUninstaller.Functions
 
         internal static bool UpdateAskToDownload()
         {
-            var changes = UpdateSystem.LatestReply.GetChanges().ToArray();
-            var versionNumber = UpdateSystem.LatestReply.GetUpdateVersion().ToString(3);
+            //var changes = UpdateSystem.LatestReply.GetChanges().ToArray();
+            var versionNumber = UpdateGrabber.CheckLatestVersion(); //UpdateSystem.LatestReply.GetUpdateVersion().ToString(3);
 
+            //return CustomMessageBox.ShowDialog(DefaultOwner,
+            //    new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
+            //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
+            //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
+            //        SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
+            
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
                     string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
-                    string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
-                    SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) ==
-                   CustomMessageBox.PressedButton.Middle;
+                    string.Format(CultureInfo.CurrentCulture, "Do you want to open the download page to get the latest version of BCUninstaller?"), //todo localize
+                    SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
         }
 
         internal static void UpdateFailed(string errorMessage)
@@ -661,16 +665,14 @@ namespace BulkCrapUninstaller.Functions
         {
             try
             {
-                var dialog = new CommonOpenFileDialog
+                var dialog = new FolderBrowserDialog()
                 {
-                    IsFolderPicker = true,
-                    AllowNonFileSystemItems = false,
-                    Multiselect = false,
-                    Title = title,
-                    ShowHiddenItems = true
+                    AutoUpgradeEnabled = true,
+                    Description = title,
+                    UseDescriptionForTitle = true,
                 };
 
-                return dialog.ShowDialog() == CommonFileDialogResult.Ok ? dialog.FileName : null;
+                return dialog.ShowDialog() == DialogResult.OK ? dialog.SelectedPath : null;
             }
             catch (Exception e)
             {

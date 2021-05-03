@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62CED1D5-F603-40DE-8BF5-3E49D3A392F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NBug</RootNamespace>
+    <AssemblyName>NBug</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Signing.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Submission\Custom\Custom.cs" />
+    <Compile Include="Core\Submission\IProtocol.cs" />
+    <Compile Include="Core\Submission\IProtocolFactory.cs" />
+    <Compile Include="Core\Submission\Tracker\BugNet.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\AccountData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\AttachmentData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\CustomFieldValueForIssueData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\IMantisConnectService.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\IssueData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\IssueNoteData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\Mantis.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\MantisConnectService.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\ObjectRef.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\ProjectVersionData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\RelationshipData.cs" />
+    <Compile Include="Core\Submission\Tracker\Mantis\UserData.cs" />
+    <Compile Include="Core\UI\Custom\CustomUI.cs" />
+    <Compile Include="Core\UI\Developer\InternalExceptionViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalExceptionViewer.Designer.cs">
+      <DependentUpon>InternalExceptionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalLogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalLogViewer.Designer.cs">
+      <DependentUpon>InternalLogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Panels\ExceptionDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Panels\ExceptionDetails.Designer.cs">
+      <DependentUpon>ExceptionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Util\Web\StreamUpload.cs" />
+    <Compile Include="Core\Util\ConnectionStringParser.cs" />
+    <Compile Include="Core\Util\PublicResources.cs" />
+    <Compile Include="Events\CustomSubmissionEventArgs.cs" />
+    <Compile Include="Events\CustomUIEventArgs.cs" />
+    <Compile Include="Enums\MiniDumpType.cs" />
+    <Compile Include="Enums\StoragePath.cs" />
+    <Compile Include="Enums\UIMode.cs" />
+    <Compile Include="Enums\UIProvider.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Handler.cs" />
+    <Compile Include="Helpers\EmailDestinationBuilder.cs" />
+    <Compile Include="Properties\Localization.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.cs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.fi-FI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.fi-FI.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.hr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.hr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.hu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.ko-KR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ko-KR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.pl.Designer.cs">
+      <DependentUpon>Localization.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Localization.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.pt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Localization.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Reporting\BugReport.cs" />
+    <Compile Include="Core\Reporting\Feedback.cs" />
+    <Compile Include="Core\Reporting\Info\AssemblyInfo.cs" />
+    <Compile Include="Core\Reporting\Info\ConfigurationInfo.cs" />
+    <Compile Include="Core\Reporting\Info\GeneralInfo.cs" />
+    <Compile Include="Core\Reporting\MiniDump\DumpWriter.cs" />
+    <Compile Include="Core\Reporting\Info\Report.cs" />
+    <Compile Include="Core\Reporting\Info\SystemInfo.cs" />
+    <Compile Include="Core\Reporting\MiniDump\DumpTypeFlag.cs" />
+    <Compile Include="Core\Submission\Database\Ado.cs" />
+    <Compile Include="Core\Submission\Database\MsSql.cs" />
+    <Compile Include="Core\Submission\Database\MySql.cs" />
+    <Compile Include="Core\Submission\Dispatcher.cs" />
+    <Compile Include="Core\Submission\ProtocolBase.cs" />
+    <Compile Include="Core\Submission\Tracker\Bugzilla.cs" />
+    <Compile Include="Core\Submission\Tracker\GitHub.cs" />
+    <Compile Include="Core\Submission\Tracker\GoogleCode.cs" />
+    <Compile Include="Core\Submission\Tracker\Redmine.cs" />
+    <Compile Include="Core\Submission\Tracker\Trac.cs" />
+    <Compile Include="Core\Submission\Web\Ftp.cs" />
+    <Compile Include="Core\Submission\Web\Http.cs" />
+    <Compile Include="Core\Submission\Web\Mail.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Core\UI\Console\ConsoleUI.cs" />
+    <Compile Include="Core\UI\UISelector.cs" />
+    <Compile Include="Core\UI\UIDialogResult.cs" />
+    <Compile Include="Core\UI\WinForms\Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Full.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Full.Designer.cs">
+      <DependentUpon>Full.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Panels\ExceptionDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Panels\ExceptionDetailView.Designer.cs">
+      <DependentUpon>ExceptionDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Minimal.cs" />
+    <Compile Include="Core\UI\WinForms\Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\WinForms\Normal.Designer.cs">
+      <DependentUpon>Normal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Reporting\MiniDump\ExceptionFilters.cs" />
+    <Compile Include="Properties\SettingsOverride.cs" />
+    <Compile Include="Core\UI\WinForms\WinFormsUI.cs" />
+    <Compile Include="Core\UI\WPF\WPFUI.cs" />
+    <Compile Include="Core\Util\Exceptions\NBugConfigurationException.cs" />
+    <Compile Include="Core\Util\Exceptions\NBugException.cs" />
+    <Compile Include="Core\Util\Exceptions\NBugRuntimeException.cs" />
+    <Compile Include="Core\Util\ExceptionThread.cs" />
+    <Compile Include="Core\Util\Logging\Logger.cs" />
+    <Compile Include="Enums\LoggerCategory.cs" />
+    <Compile Include="Core\Util\ProtectedConfiguration.cs" />
+    <Compile Include="Core\Util\Serialization\SerializableDictionary.cs" />
+    <Compile Include="Core\Util\Serialization\SerializableException.cs" />
+    <Compile Include="Core\Util\Storage\StoragePath.cs" />
+    <Compile Include="Core\Util\Storage\StoredItemFile.cs" />
+    <Compile Include="Core\Util\Storage\Storer.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Signing.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\UI\Developer\InternalExceptionViewer.resx">
+      <DependentUpon>InternalExceptionViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Developer\InternalLogViewer.resx">
+      <DependentUpon>InternalLogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\WinForms\Panels\ExceptionDetails.resx">
+      <DependentUpon>ExceptionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.pt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.hu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.sl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.cs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.cs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localization.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Localization.fi-FI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.fi-FI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Localization.hr.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.hr.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Localization.ko-KR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ko-KR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Localization.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ja.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Localization.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.pt-BR.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Properties\Localization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\WinForms\Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\WinForms\Full.resx">
+      <DependentUpon>Full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\WinForms\Panels\ExceptionDetailView.resx">
+      <DependentUpon>ExceptionDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\WinForms\Normal.resx">
+      <DependentUpon>Normal.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

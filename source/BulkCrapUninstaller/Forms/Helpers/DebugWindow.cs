@@ -15,7 +15,6 @@ using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
-using Klocman.UpdateSystem;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -72,20 +71,20 @@ namespace BulkCrapUninstaller.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateSystem.BeginUpdate();
+            //UpdateSystem.BeginUpdate();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(UpdateSystem.CheckForUpdates().ToString());
-            if (UpdateSystem.LastError != null)
-                MessageBox.Show(UpdateSystem.LastError.Message);
-
-            if (UpdateSystem.LatestReply != null)
-            {
-                MessageBox.Show(UpdateSystem.LatestReply.FullReply.ToString());
-                labelVersion.Text = UpdateSystem.LatestReply.GetUpdateVersion().ToString();
-            }
+            //MessageBox.Show(UpdateSystem.CheckForUpdates().ToString());
+            //if (UpdateSystem.LastError != null)
+            //    MessageBox.Show(UpdateSystem.LastError.Message);
+            //
+            //if (UpdateSystem.LatestReply != null)
+            //{
+            //    MessageBox.Show(UpdateSystem.LatestReply.FullReply.ToString());
+            //    labelVersion.Text = UpdateSystem.LatestReply.GetUpdateVersion().ToString();
+            //}
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -304,7 +304,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception ex)
                 {

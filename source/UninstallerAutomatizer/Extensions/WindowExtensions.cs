@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using TestStack.White.UIItems.WindowItems;
+using FlaUI.Core.AutomationElements;
+using FlaUI.UIA3.Converters;
 
 namespace UninstallerAutomatizer.Extensions
 {
@@ -31,13 +32,13 @@ namespace UninstallerAutomatizer.Extensions
 
         private static void SetWindowPos(this Window window, int x, int y, int width, int height, int flags)
         {
-            var handle = new IntPtr(window.AutomationElement.Current.NativeWindowHandle);
+            var handle = new IntPtr(window.GetHandle());
             SetWindowPos(handle, IntPtr.Zero, x, y, width, height, flags);
         }
 
         public static int GetHandle(this Window window)
         {
-            return window.AutomationElement.Current.NativeWindowHandle;
+            return (int) window.ToNative().CurrentNativeWindowHandle;
         }
     }
 }

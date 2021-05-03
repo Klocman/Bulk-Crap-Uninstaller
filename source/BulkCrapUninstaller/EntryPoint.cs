@@ -5,23 +5,27 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
+using Windows.UI.Popups;
 using BulkCrapUninstaller.Forms;
 using Klocman;
+using Klocman.Forms;
 using Klocman.Forms.Tools;
-using Klocman.UpdateSystem;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace BulkCrapUninstaller
 {
     internal class EntryPoint
     {
         public static bool IsRestarting { get; internal set; }
+
+        private const string MUTEX_NAME = @"Global\BCU-singleinstance";
+        private static Mutex mutex;
 
         [STAThread]
         public static void Main(string[] args)
@@ -42,24 +46,30 @@ namespace BulkCrapUninstaller
 
                 try
                 {
-                    var instance = new SingleInstanceWrapper();
-                    instance.Run(args);
+                    mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
+                    if (!createdNew)
+                    {
+                        mutex.Dispose();
+                        HandleBeingSecondInstance();
+                        return;
+                    }
+
+                    SetupDependancies();
+                    Application.EnableVisualStyles();
+                    Application.Run(new MainWindow());
                 }
-                catch (SocketException ex)
+                finally
                 {
-                    Console.WriteLine(ex);
-                    SafeRun();
-                }
-                catch (CantStartSingleInstanceException ex)
-                {
-                    Console.WriteLine(ex);
-                    SafeRun();
+                    ProcessShutdown();
                 }
             }
         }
 
         private static void ProcessShutdown()
         {
+            if (!IsRestarting && !mutex.SafeWaitHandle.IsClosed)
+                mutex.ReleaseMutex();
+            mutex.Dispose();
             // If running as portable, delete any leftovers from the system
             if (!IsRestarting && !Program.IsInstalled && !Program.EnableDebug)
                 Program.StartLogCleaner();
@@ -70,7 +80,9 @@ namespace BulkCrapUninstaller
             try
             {
                 IsRestarting = true;
-                UpdateSystem.RestartApplication();
+
+                mutex.ReleaseMutex();
+                Application.Restart();
             }
             catch (Exception ex)
             {
@@ -79,42 +91,45 @@ namespace BulkCrapUninstaller
             }
         }
 
-        /// <summary>
-        /// Alternative startup routine in case WindowsFormsApplicationBase fails.
-        /// Uses Process.GetProcesses to check for other instances.
-        /// </summary>
-        private static void SafeRun()
-        {
-            var location = Assembly.GetAssembly(typeof (EntryPoint)).Location;
-            var otherBcu = Process.GetProcesses().FirstOrDefault(x =>
-            {
-                try
-                {
-                    return string.Equals(x.MainModule.FileName, location, StringComparison.OrdinalIgnoreCase);
-                }
-                catch
-                {
-                    return false;
-                }
-            });
 
-            if (otherBcu != null)
+
+        private static void HandleBeingSecondInstance()
+        {
+            try
             {
-                try
+                var location = Assembly.GetAssembly(typeof(EntryPoint)).Location;
+                if (location.EndsWith(".dll")) location = location.Substring(0, location.Length - 3) + "exe";
+                var otherBcu = Process.GetProcesses().FirstOrDefault(x =>
                 {
-                    SetForegroundWindow(otherBcu.MainWindowHandle.ToInt32());
+                    try
+                    {
+                        return string.Equals(x.MainModule.FileName, location, StringComparison.OrdinalIgnoreCase);
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                });
+                var mainWind = otherBcu?.MainWindowHandle;
+                if (mainWind != null)
+                {
+                    try
+                    {
+                        SetForegroundWindow(otherBcu.MainWindowHandle.ToInt32());
+                    }
+                    catch (Exception ex)
+                    {
+                        PremadeDialogs.GenericError(ex);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    PremadeDialogs.GenericError(ex);
+                    CustomMessageBox.ShowDialog(null, new CmbBasicSettings("BCUninstaller is already running", "BCUninstaller is already running", "You can start only one instance of BCUninstaller. Close previous instances and try again. If you don't see the BCUninstaller window or it's not responding, try closing it with Task Manager.", Icon.ExtractAssociatedIcon(location), "OK"));
                 }
             }
-            else
+            catch (Exception ex)
             {
-                SetupDependancies();
-                Application.ApplicationExit += (sender, eventArgs) => ProcessShutdown();
-                Application.EnableVisualStyles();
-                Application.Run(new MainWindow());
+                Console.WriteLine(ex);
             }
         }
 
@@ -126,52 +141,14 @@ namespace BulkCrapUninstaller
             // Order is semi-important, prepare settings should go first.
             Program.PrepareSettings();
             CultureConfigurator.SetupCulture();
-            try
-            {
-                UpdateSystem.ProcessPendingUpdates();
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
-        }
-
-        private class SingleInstanceWrapper : WindowsFormsApplicationBase
-        {
-            public SingleInstanceWrapper()
-            {
-                EnableVisualStyles = true;
-                IsSingleInstance = true;
-            }
-
-            protected override void OnShutdown()
-            {
-                ProcessShutdown();
-
-                base.OnShutdown();
-            }
-
-            protected override bool OnStartup(StartupEventArgs eventArgs)
-            {
-                SetupDependancies();
-
-                // Necessary to put form constructor here for objectlistbox. It flips out if
-                // the main form is created inside of the EntryPoint constructor.
-                MainForm = new MainWindow();
-                return true;
-            }
-
-            protected override void OnStartupNextInstance(StartupNextInstanceEventArgs eventArgs)
-            {
-                try
-                {
-                    MainForm?.Activate();
-                }
-                catch (Exception ex)
-                {
-                    PremadeDialogs.GenericError(ex);
-                }
-            }
+            //try
+            //{
+            //    UpdateSystem.ProcessPendingUpdates();
+            //}
+            //catch (Exception ex)
+            //{
+            //    PremadeDialogs.GenericError(ex);
+            //}
         }
     }
 }

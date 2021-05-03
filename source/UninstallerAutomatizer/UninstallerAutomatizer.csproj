@@ -1,17 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C818D14-22AE-46DB-B179-119069AE6116}</ProjectGuid>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UninstallerAutomatizer</RootNamespace>
-    <AssemblyName>UninstallerAutomatizer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,25 +17,15 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>UninstallerAutomatizer.Program</StartupObject>
@@ -59,74 +39,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug on VM|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>\\192.168.56.101\Users\ygu\Desktop\New folder\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.0\lib\net40-client\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="TestStack.White, Version=0.13.0.0, Culture=neutral, PublicKeyToken=2672efbf3e161801, processorArchitecture=MSIL">
-      <HintPath>..\packages\TestStack.White.0.13.3\lib\net40\TestStack.White.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UIAutomationClient" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Automation\AutomatedUninstallManager.cs" />
-    <Compile Include="Properties\Localization.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localization.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\TestStackWhiteExtensions.cs" />
-    <Compile Include="Automation\UninstallHandler.cs" />
-    <Compile Include="Automation\UninstallHandlerUpdateArgs.cs" />
-    <Compile Include="Automation\UninstallHandlerUpdateKind.cs" />
-    <Compile Include="Extensions\WindowExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Licence.licenseheader">
       <Link>Licence.licenseheader</Link>
     </None>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
-      <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
-      <Name>KlocTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj">
-      <Project>{87091c84-b671-4269-abe4-d0f818ab201c}</Project>
-      <Name>UninstallTools</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
+    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -149,65 +76,13 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\MainWindow.ar.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.cs.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.de.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.fr.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.it.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.nl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.pl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.pt.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.ru.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.sl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.tr.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.ar.resx" />
-    <EmbeddedResource Include="Properties\Localization.cs.resx" />
-    <EmbeddedResource Include="Properties\Localization.es.resx" />
-    <EmbeddedResource Include="Properties\Localization.fr.resx" />
-    <EmbeddedResource Include="Properties\Localization.it.resx" />
-    <EmbeddedResource Include="Properties\Localization.nl.resx" />
-    <EmbeddedResource Include="Properties\Localization.pl.resx" />
-    <EmbeddedResource Include="Properties\Localization.pt.resx" />
-    <EmbeddedResource Include="Properties\Localization.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainWindow.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localization.ru.resx" />
-    <EmbeddedResource Include="Properties\Localization.sl.resx" />
+    <PackageReference Include="FlaUI.Adapter.White" Version="0.1.0" />
+    <PackageReference Include="FlaUI.UIA3" Version="3.2.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Remove="Properties\Localization.de.resx" />
+    <EmbeddedResource Remove="Properties\Localization.tr.resx" />
+  </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

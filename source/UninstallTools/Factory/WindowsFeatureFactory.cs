@@ -44,7 +44,7 @@ namespace UninstallTools.Factory
                 throw new IOException("Error while collecting Windows Features. If Windows Update is running wait until it finishes and try again. If the error persists try restarting your computer. In case nothing helps, read the KB957310 article.", error);
             if (t.IsAlive)
             {
-                t.Abort();
+                //t.Abort();
                 throw new TimeoutException("WMI query has hung while collecting Windows Features, try restarting your computer. If the error persists read the KB957310 article.");
             }
 

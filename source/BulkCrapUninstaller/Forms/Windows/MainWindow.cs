@@ -439,7 +439,7 @@ namespace BulkCrapUninstaller.Forms
                 {
                     try
                     {
-                        urlList.ForEach(x => Process.Start(x.AbsoluteUri));
+                        urlList.ForEach(x => Process.Start(new ProcessStartInfo(x.AbsoluteUri) { UseShellExecute = true }));
                     }
                     catch (Exception e)
                     {
@@ -877,7 +877,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception e)
                 {
@@ -897,7 +897,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception e)
                 {
@@ -946,7 +946,7 @@ namespace BulkCrapUninstaller.Forms
                         if (File.Exists(x.UninstallerFullFilename))
                             WindowsTools.OpenExplorerFocusedOnObject(x.UninstallerFullFilename);
                         else
-                            Process.Start(x.UninstallerLocation);
+                            Process.Start(new ProcessStartInfo(x.UninstallerLocation) { UseShellExecute = true });
                     });
                 }
                 catch (Exception e)

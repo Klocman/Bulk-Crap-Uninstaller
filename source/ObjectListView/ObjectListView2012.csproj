@@ -1,196 +1,80 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{18FEDA0C-D147-4286-B39A-01204808106A}</ProjectGuid>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BrightIdeasSoftware</RootNamespace>
     <AssemblyName>ObjectListView</AssemblyName>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>olv-keyfile.snk</AssemblyOriginatorKeyFile>
-    <TargetFrameworkProfile />
     <SccProjectName>%24/ObjectListView/trunk/ObjectListView</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
     <SccAuxPath>https://grammarian.visualstudio.com/defaultcollection</SccAuxPath>
     <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>1</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>1</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accessibility" />
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="DataTreeListView.cs">
+    <Compile Update="DataTreeListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DragDrop\OLVDataObject.cs" />
-    <Compile Include="Filtering\DateTimeClusteringStrategy.cs" />
-    <Compile Include="Filtering\FlagClusteringStrategy.cs" />
-    <Compile Include="Filtering\TextMatchFilter.cs" />
-    <Compile Include="Implementation\Delegates.cs" />
-    <Compile Include="Implementation\Enums.cs">
+    <Compile Update="Implementation\Enums.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Implementation\GroupingParameters.cs" />
-    <Compile Include="Implementation\NullableDictionary.cs" />
-    <Compile Include="Implementation\OLVListItem.cs" />
-    <Compile Include="Implementation\OLVListSubItem.cs" />
-    <Compile Include="Implementation\OlvListViewHitTestInfo.cs" />
-    <Compile Include="Implementation\TreeDataSourceAdapter.cs" />
-    <Compile Include="OLVColumn.cs">
+    <Compile Update="OLVColumn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Rendering\Adornments.cs" />
-    <Compile Include="Implementation\Attributes.cs" />
-    <Compile Include="CellEditing\CellEditors.cs" />
-    <Compile Include="CellEditing\EditorRegistry.cs" />
-    <Compile Include="DataListView.cs">
+    <Compile Update="DataListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Implementation\DataSourceAdapter.cs" />
-    <Compile Include="Rendering\Decorations.cs" />
-    <Compile Include="DragDrop\DragSource.cs" />
-    <Compile Include="DragDrop\DropSink.cs" />
-    <Compile Include="Implementation\Events.cs">
+    <Compile Update="Implementation\Events.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FastDataListView.cs">
+    <Compile Update="FastDataListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Filtering\ClusteringStrategy.cs" />
-    <Compile Include="Filtering\Cluster.cs" />
-    <Compile Include="Filtering\ClustersFromGroupsStrategy.cs" />
-    <Compile Include="FastObjectListView.cs">
+    <Compile Update="FastObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Filtering\FilterMenuBuilder.cs" />
-    <Compile Include="Filtering\Filters.cs" />
-    <Compile Include="Filtering\ICluster.cs" />
-    <Compile Include="Filtering\IClusteringStrategy.cs" />
-    <Compile Include="Rendering\TreeRenderer.cs">
+    <Compile Update="Rendering\TreeRenderer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SubControls\ToolStripCheckedListBox.cs">
+    <Compile Update="SubControls\ToolStripCheckedListBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\ColumnSelectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilities\ColumnSelectionForm.Designer.cs">
-      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utilities\Generator.cs" />
-    <Compile Include="SubControls\GlassPanelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Implementation\Groups.cs" />
-    <Compile Include="SubControls\HeaderControl.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CellEditing\CellEditKeyEngine.cs" />
-    <Compile Include="Implementation\Munger.cs" />
-    <Compile Include="Implementation\NativeMethods.cs" />
-    <Compile Include="Implementation\Comparers.cs">
-    </Compile>
-    <Compile Include="ObjectListView.cs">
+    <Compile Update="ObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ObjectListView.DesignTime.cs" />
-    <Compile Include="Rendering\Overlays.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rendering\Renderers.cs">
+    <Compile Update="Rendering\Renderers.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Rendering\Styles.cs">
+    <Compile Update="Rendering\Styles.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SubControls\ToolTipControl.cs" />
-    <Compile Include="TreeListView.cs">
+    <Compile Update="TreeListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\OLVExporter.cs" />
-    <Compile Include="Utilities\TypedObjectListView.cs" />
-    <Compile Include="Implementation\VirtualGroups.cs" />
-    <Compile Include="Implementation\VirtualListDataSource.cs" />
-    <Compile Include="VirtualObjectListView.cs">
+    <Compile Update="VirtualObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CustomDictionary.xml" />
-    <None Include="FullClassDiagram.cd" />
-    <None Include="ObjectListView2012.nuspec">
+    <None Update="ObjectListView2012.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\sort-descending.png" />
-    <None Include="Resources\sort-ascending.png" />
-    <None Include="Resources\filter.png" />
-    <None Include="Resources\clear-filter.png" />
-    <None Include="Resources\filter-icons3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="olv-keyfile.snk" />
+    <Compile Remove="Implementation\DragSource.cs" />
+    <Compile Remove="Implementation\DropSink.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Utilities\ColumnSelectionForm.resx">
-      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

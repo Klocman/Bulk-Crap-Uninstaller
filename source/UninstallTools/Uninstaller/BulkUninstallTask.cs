@@ -115,15 +115,18 @@ namespace UninstallTools.Uninstaller
             {
                 if (_workerThread != null && _workerThread.IsAlive)
                 {
-                    if (Finished)
-                    {
-                        if (!_workerThread.Join(TimeSpan.FromSeconds(10)))
-                            _workerThread.Abort();
-                        else
-                            return;
-                    }
-                    else
+                    if (!_workerThread.Join(TimeSpan.FromSeconds(10)) && !Finished)
                         return;
+                    
+                    //if (Finished)
+                    //{
+                    //    if (!_workerThread.Join(TimeSpan.FromSeconds(10)))
+                    //        _workerThread.Abort();
+                    //    else
+                    //        return;
+                    //}
+                    //else
+                    //    return;
                 }
 
                 Aborted = false;
