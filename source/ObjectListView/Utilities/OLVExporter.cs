@@ -221,8 +221,8 @@ namespace BrightIdeasSoftware {
             if (text == null)
                 return null;
 
-            const char DOUBLEQUOTE = '"'; // one double quote
-            const string TWODOUBEQUOTES = @""""""; // two double quotes
+            const string DOUBLEQUOTE = "\""; // one double quote
+            const string TWODOUBEQUOTES = "\"\""; // two double quotes
 
             StringBuilder sb = new StringBuilder(DOUBLEQUOTE);
             sb.Append(text.Replace(DOUBLEQUOTE, TWODOUBEQUOTES));

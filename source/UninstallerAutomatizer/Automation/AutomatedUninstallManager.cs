@@ -385,7 +385,7 @@ namespace UninstallerAutomatizer
         private static bool NotControlBoxButton(Button x)
         {
             var id = x.AutomationId;
-            return !ControlBoxButtonIds.Any(y => id.Equals(y)); //todo check
+            return !ControlBoxButtonIds.Any(y => id.Equals(y)); //todo check if this works
         }
 
         public class AutomatedUninstallException : Exception

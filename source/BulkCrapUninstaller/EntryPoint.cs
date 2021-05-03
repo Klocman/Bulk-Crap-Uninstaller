@@ -12,7 +12,6 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using Windows.UI.Popups;
 using BulkCrapUninstaller.Forms;
 using Klocman;
 using Klocman.Forms;
@@ -20,12 +19,12 @@ using Klocman.Forms.Tools;
 
 namespace BulkCrapUninstaller
 {
-    internal class EntryPoint
+    internal static class EntryPoint
     {
         public static bool IsRestarting { get; internal set; }
 
         private const string MUTEX_NAME = @"Global\BCU-singleinstance";
-        private static Mutex mutex;
+        private static Mutex _mutex;
 
         [STAThread]
         public static void Main(string[] args)
@@ -46,10 +45,10 @@ namespace BulkCrapUninstaller
 
                 try
                 {
-                    mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
+                    _mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
                     if (!createdNew)
                     {
-                        mutex.Dispose();
+                        _mutex.Dispose();
                         HandleBeingSecondInstance();
                         return;
                     }
@@ -67,9 +66,9 @@ namespace BulkCrapUninstaller
 
         private static void ProcessShutdown()
         {
-            if (!IsRestarting && !mutex.SafeWaitHandle.IsClosed)
-                mutex.ReleaseMutex();
-            mutex.Dispose();
+            if (!IsRestarting && !_mutex.SafeWaitHandle.IsClosed)
+                _mutex.ReleaseMutex();
+            _mutex.Dispose();
             // If running as portable, delete any leftovers from the system
             if (!IsRestarting && !Program.IsInstalled && !Program.EnableDebug)
                 Program.StartLogCleaner();
@@ -81,7 +80,7 @@ namespace BulkCrapUninstaller
             {
                 IsRestarting = true;
 
-                mutex.ReleaseMutex();
+                _mutex.ReleaseMutex();
                 Application.Restart();
             }
             catch (Exception ex)
