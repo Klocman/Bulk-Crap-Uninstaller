@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Resources;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Windows-only app")]
+[assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>")]
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information

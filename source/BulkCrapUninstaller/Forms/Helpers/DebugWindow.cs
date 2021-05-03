@@ -133,7 +133,9 @@ namespace BulkCrapUninstaller.Forms
                     }
                     else if (first.ParameterType == typeof(Exception))
                     {
+#pragma warning disable CA2201 // Do not raise reserved exception types
                         methodInfo.Invoke(null, new object[] { new Exception(textBoxMessages.Text) });
+#pragma warning restore CA2201 // Do not raise reserved exception types
                     }
                     else
                     {
@@ -185,7 +187,7 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                throw new ArithmeticException("Soft crash test", new IndexOutOfRangeException("Yer a bit bored, eh?"));
+                throw new ArithmeticException("Soft crash test", new ArgumentException("Yer a bit bored, eh?"));
             }
             catch (Exception ex)
             {

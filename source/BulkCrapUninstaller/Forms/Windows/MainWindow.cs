@@ -107,7 +107,6 @@ namespace BulkCrapUninstaller.Forms
 
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe(OnTestCertificatesChanged, x => x.AdvancedTestCertificates, this);
-            FormClosed += DisposeListPostProcessor;
 
             _uninstallerListConfigurator = new UninstallerListConfigurator(this);
             _uninstallerListConfigurator.AfterFiltering += (x, y) => _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
@@ -166,7 +165,6 @@ namespace BulkCrapUninstaller.Forms
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
-            FormClosed += (x, y) => new Thread(UsageTrackerSendData).Start();
 
             // Misc
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
@@ -197,6 +195,25 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
 
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            try
+            {
+                new Thread(UsageTrackerSendData).Start();
+
+                DisposeListPostProcessor(this, e);
+                _listLegendWindow?.Dispose();
+                _uninstallerListConfigurator?.Dispose();
+            }
+            catch (Exception exception)
+            {
+                // Eat non-critical exceptions to let the app close in peace
+                Console.WriteLine(exception);
+            }
+
+            base.OnFormClosed(e);
         }
 
         private void OnTreeMapSliceHovered(object sender, TreeMap.SliceEventArgs args)
@@ -996,10 +1013,9 @@ namespace BulkCrapUninstaller.Forms
             if (!selected.IsRegistered)
                 return;
 
-            string output;
             if (StringEditBox.ShowDialog(string.Format(CultureInfo.InvariantCulture, Localisable.MainWindow_Rename_Description, selected.DisplayName),
                 Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
-                out output))
+                out var output))
             {
                 try
                 {

@@ -1880,7 +1880,7 @@ namespace BrightIdeasSoftware
         [Category("ObjectListView"),
          Description("The image list from which group header will take their images"),
          DefaultValue(null)]
-        public ImageList GroupImageList
+        public new ImageList GroupImageList
         {
             get { return groupImageList; }
             set
@@ -9434,8 +9434,7 @@ namespace BrightIdeasSoftware
             if (modelObject == null)
                 return null;
 
-            OLVListItem oli;
-            if (_listItemLookup.TryGetValue(modelObject, out oli))
+            if (_listItemLookup.TryGetValue(modelObject, out var oli))
                 return oli;
 
             /*
@@ -11804,8 +11803,7 @@ namespace BrightIdeasSoftware
         /// <returns>The checkedness of the model. Defaults to unchecked.</returns>
         protected virtual CheckState GetPersistentCheckState(object model)
         {
-            CheckState state;
-            if (model != null && CheckStateMap.TryGetValue(model, out state))
+            if (model != null && CheckStateMap.TryGetValue(model, out CheckState state))
                 return state;
             return CheckState.Unchecked;
         }

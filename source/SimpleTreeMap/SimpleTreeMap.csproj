@@ -13,9 +13,6 @@
     <OutputPath>..\..\bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Design" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="TreeMap.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -15,18 +15,15 @@
     <StartupObject>ScriptHelper.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.1.3" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Management.Automation.dll" Version="10.0.10586.0" />
+    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
   </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>

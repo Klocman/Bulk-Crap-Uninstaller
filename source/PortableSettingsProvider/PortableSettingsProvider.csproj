@@ -15,7 +15,4 @@
     <OutputPath>..\..\bin\Release\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.configuration" />
-  </ItemGroup>
 </Project>

@@ -182,7 +182,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="MySql.Data" Version="8.0.24" />
-    <PackageReference Include="NBug" Version="1.2.2" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Forms\Helpers\NewsPopup.it.resx" />

@@ -30,6 +30,7 @@ namespace BulkCrapUninstaller.Forms
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
 
         private BulkUninstallTask _currentTargetStatus;
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2213:Disposable fields should be disposed", Justification = "False positive")]
         private CustomMessageBox _walkAwayBox;
         private BulkUninstallTask _status;
         private static Func<IEnumerable<ApplicationUninstallerEntry>, bool> _uninstallManuallyAction;
@@ -104,6 +105,8 @@ namespace BulkCrapUninstaller.Forms
                         Console.WriteLine(ex);
                     }
                 }
+
+                _walkAwayBox?.Dispose();
             };
 
             olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
@@ -126,7 +129,7 @@ namespace BulkCrapUninstaller.Forms
                     forceUpdateTimer.Stop();
             };
         }
-
+        
         private IEnumerable<BulkUninstallEntry> SelectedTaskEntries
             => objectListView1.SelectedObjects.Cast<BulkUninstallEntry>();
 

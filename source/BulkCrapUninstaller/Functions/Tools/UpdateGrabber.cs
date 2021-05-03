@@ -199,6 +199,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     return null;
                 }
                 finally
