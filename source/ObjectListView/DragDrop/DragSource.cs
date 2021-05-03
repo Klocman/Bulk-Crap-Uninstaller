@@ -188,8 +188,7 @@ namespace BrightIdeasSoftware
         /// <param name="dragObject"></param>
         /// <param name="effect"></param>
         public virtual void EndDrag(Object dragObject, DragDropEffects effect) {
-            OLVDataObject data = dragObject as OLVDataObject;
-            if (data == null)
+            if (dragObject is not OLVDataObject data)
                 return;
 
             if (this.RefreshAfterDrop)

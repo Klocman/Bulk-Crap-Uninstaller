@@ -115,7 +115,7 @@ namespace BulkCrapUninstaller.Forms
                 var methodInfo = wrapper.WrappedObject;
                 var parameters = methodInfo.GetParameters();
                 if (parameters.Length == 0)
-                    methodInfo.Invoke(null, new object[] { });
+                    methodInfo.Invoke(null, Array.Empty<object>());
                 else
                 {
                     var first = parameters.First();

@@ -89,8 +89,7 @@ namespace UninstallTools.Dialogs
                 else if (enableCheckState.Value != (item.Disabled ? CheckState.Unchecked : CheckState.Checked))
                     enableCheckState = CheckState.Indeterminate;
 
-                var normalStartupEntry = item as StartupEntry;
-                if (normalStartupEntry != null)
+                if (item is StartupEntry normalStartupEntry)
                 {
                     if (!allUserCheckState.HasValue)
                         allUserCheckState = normalStartupEntry.AllUsers ? CheckState.Checked : CheckState.Unchecked;

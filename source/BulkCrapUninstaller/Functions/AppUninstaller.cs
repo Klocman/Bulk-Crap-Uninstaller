@@ -40,16 +40,13 @@ namespace BulkCrapUninstaller.Functions
         /// </summary>
         public readonly object PublicUninstallLock = new object();
 
-        private static readonly int MyProcessId = Process.GetCurrentProcess().Id;
+        private static readonly int MyProcessId = Environment.ProcessId;
 
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
         internal AppUninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
         {
-            if (listRefreshCallback == null) throw new ArgumentNullException(nameof(listRefreshCallback));
-            if (applicationLockCallback == null) throw new ArgumentNullException(nameof(applicationLockCallback));
-
-            _initiateListRefresh = listRefreshCallback;
-            _lockApplication = applicationLockCallback;
+            _initiateListRefresh = listRefreshCallback ?? throw new ArgumentNullException(nameof(listRefreshCallback));
+            _lockApplication = applicationLockCallback ?? throw new ArgumentNullException(nameof(applicationLockCallback));
             _visibleCallback = visibleCallback;
         }
 
@@ -528,7 +525,7 @@ namespace BulkCrapUninstaller.Functions
                     _ =>
                     {
                         items.AddRange(DirectoryFactory.TryCreateFromDirectory(
-                            new DirectoryInfo(result), null, new string[] { }));
+                            new DirectoryInfo(result), null, Array.Empty<string>()));
                     });
 
                 if (items.Count == 0)

@@ -9,13 +9,8 @@ namespace Klocman.Binding.Settings
     {
         internal SettingChangedHandlerEntry(SettingChangedEventHandler<T> handler, object tag)
         {
-            if (handler == null)
-                throw new ArgumentNullException(nameof(handler));
-            if (tag == null)
-                throw new ArgumentNullException(nameof(tag));
-
-            Handler = handler;
-            Tag = tag;
+            Handler = handler ?? throw new ArgumentNullException(nameof(handler));
+            Tag = tag ?? throw new ArgumentNullException(nameof(tag));
         }
 
         private SettingChangedEventHandler<T> Handler { get; }

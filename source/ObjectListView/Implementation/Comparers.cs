@@ -149,12 +149,10 @@ namespace BrightIdeasSoftware
         public int CompareValues(object x, object y)
         {
             // Force case insensitive compares on strings
-            String xAsString = x as String;
-            if (xAsString != null)
+            if (x is string xAsString)
                 return CompareStrings(xAsString, y as String);
-            
-            IComparable comparable = x as IComparable;
-            return comparable != null ? comparable.CompareTo(y) : 0;
+
+            return x is IComparable comparable ? comparable.CompareTo(y) : 0;
         }
 
         private static int CompareStrings(string x, string y)
@@ -302,12 +300,10 @@ namespace BrightIdeasSoftware
         public int CompareValues(object x, object y)
         {
             // Force case insensitive compares on strings
-            String xStr = x as String;
-            if (xStr != null)
+            if (x is string xStr)
                 return CompareStrings(xStr, y as String);
-            
-            IComparable comparable = x as IComparable;
-            return comparable != null ? comparable.CompareTo(y) : 0;
+
+            return x is IComparable comparable ? comparable.CompareTo(y) : 0;
         }
 
         private static int CompareStrings(string x, string y)

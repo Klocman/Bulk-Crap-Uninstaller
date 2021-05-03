@@ -7,8 +7,7 @@ namespace UniversalUninstaller
     {
         public TreeEntry(FileSystemInfo fileSystemInfo)
         {
-            if (fileSystemInfo == null) throw new ArgumentNullException(nameof(fileSystemInfo));
-            FileSystemInfo = fileSystemInfo;
+            FileSystemInfo = fileSystemInfo ?? throw new ArgumentNullException(nameof(fileSystemInfo));
             IsDirectory = fileSystemInfo is DirectoryInfo;
             Checked = true;
         }

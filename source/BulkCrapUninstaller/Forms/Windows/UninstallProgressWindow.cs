@@ -138,10 +138,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SetTargetStatus(BulkUninstallTask targetStatus)
         {
-            if (targetStatus == null)
-                throw new ArgumentNullException(nameof(targetStatus));
-
-            _currentTargetStatus = targetStatus;
+            _currentTargetStatus = targetStatus ?? throw new ArgumentNullException(nameof(targetStatus));
 
             progressBar1.Maximum = _currentTargetStatus.AllUninstallersList.Count;
 

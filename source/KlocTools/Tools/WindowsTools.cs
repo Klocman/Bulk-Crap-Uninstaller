@@ -431,8 +431,8 @@ namespace Klocman.Tools
                     continue;
 
                 // discard virtual cards (virtual box, virtual pc, etc.)
-                if ((ni.Description.IndexOf("virtual", StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (ni.Name.IndexOf("virtual", StringComparison.OrdinalIgnoreCase) >= 0))
+                if ((ni.Description.Contains("virtual", StringComparison.OrdinalIgnoreCase)) ||
+                    (ni.Name.Contains("virtual", StringComparison.OrdinalIgnoreCase)))
                     continue;
 
                 // discard "Microsoft Loopback Adapter", it will not show as NetworkInterfaceType.Loopback but as Ethernet Card.
@@ -488,7 +488,7 @@ namespace Klocman.Tools
             ((NativeMethods.IPersistFile)link).Load(filename, NativeMethods.STGM_READ);
             var sb = new StringBuilder(NativeMethods.MAX_PATH);
             var data = new NativeMethods.WIN32_FIND_DATAW();
-            ((NativeMethods.IShellLinkW)link).GetPath(sb, sb.Capacity, out data, 0);
+            ((NativeMethods.IShellLinkW)link).GetPath(sb, sb.Capacity, ref data, 0);
             return sb.ToString();
         }
 
@@ -583,7 +583,7 @@ namespace Klocman.Tools
             internal const uint STGM_READ = 0;
             internal const int MAX_PATH = 260;
             //public const int CSIDL_COMMON_STARTMENU = 0x16; // All Users\Start Menu
-            [DllImport("shell32.dll")]
+            [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
             internal static extern bool SHGetSpecialFolderPath(IntPtr hwndOwner, [Out] StringBuilder lpszPath,
                 int nFolder, bool fCreate);
 
@@ -678,7 +678,7 @@ namespace Klocman.Tools
             {
                 /// <summary>Retrieves the path and file name of a Shell link object</summary>
                 void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath,
-                    out WIN32_FIND_DATAW pfd, SLGP_FLAGS fFlags);
+                    ref WIN32_FIND_DATAW pfd, SLGP_FLAGS fFlags);
 
                 /// <summary>Retrieves the list of item identifiers for a Shell link object</summary>
                 void GetIDList(out IntPtr ppidl);

@@ -119,7 +119,7 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
             _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateStatusbarOnPostprocessingUpdate;
             _uninstallerListPostProcesser.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
-            _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
+            _listView.ListRefreshIsRunningChanged += listView_ListRefreshIsRunningChanged;
 
             // Filter changed events
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
@@ -1345,7 +1345,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private void _listView_ListRefreshIsRunningChanged(object sender,
+        private void listView_ListRefreshIsRunningChanged(object sender,
             UninstallerListViewUpdater.ListRefreshEventArgs e)
         {
             if (e.RefreshIsRunning)

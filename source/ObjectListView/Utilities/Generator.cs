@@ -178,8 +178,7 @@ namespace BrightIdeasSoftware
         /// <param name="allProperties">Will columns be generated for properties that are not marked with [OLVColumn].</param>
         public virtual void GenerateAndReplaceColumns(ObjectListView olv, Type type, bool allProperties) {
             IList<OLVColumn> columns = this.GenerateColumns(type, allProperties);
-            TreeListView tlv = olv as TreeListView;
-            if (tlv != null)
+            if (olv is TreeListView tlv)
                 this.TryGenerateChildrenDelegates(tlv, type);
             this.ReplaceColumns(olv, columns);
         }
@@ -205,8 +204,7 @@ namespace BrightIdeasSoftware
                 if (Attribute.GetCustomAttribute(pinfo, typeof(OLVIgnoreAttribute)) != null)
                     continue;
 
-                OLVColumnAttribute attr = Attribute.GetCustomAttribute(pinfo, typeof(OLVColumnAttribute)) as OLVColumnAttribute;
-                if (attr == null) {
+                if (Attribute.GetCustomAttribute(pinfo, typeof(OLVColumnAttribute)) is not OLVColumnAttribute attr) {
                     if (allProperties)
                         columns.Add(this.MakeColumnFromPropertyInfo(pinfo));
                 } else {
@@ -394,8 +392,7 @@ namespace BrightIdeasSoftware
         /// <param name="type"></param>
         protected virtual void TryGenerateChildrenDelegates(TreeListView tlv, Type type) {
             foreach (PropertyInfo pinfo in type.GetProperties()) {
-                OLVChildrenAttribute attr = Attribute.GetCustomAttribute(pinfo, typeof(OLVChildrenAttribute)) as OLVChildrenAttribute;
-                if (attr != null) {
+                if (Attribute.GetCustomAttribute(pinfo, typeof(OLVChildrenAttribute)) is OLVChildrenAttribute attr) {
                     this.GenerateChildrenDelegates(tlv, pinfo);
                     return;
                 }

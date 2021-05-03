@@ -21,8 +21,7 @@ namespace Klocman.Localising
         public static string GetLocalisedMemberName<TContainer, TMember>(this TContainer instance,
             Expression<Func<TContainer, TMember>> selector) where TContainer : class
         {
-            var expression = selector.Body as MemberExpression;
-            if (expression == null)
+            if (selector.Body is not MemberExpression expression)
                 throw new ArgumentException("Selector is invalid, it has to be in format x => x.Property");
             
             var member = expression.Member;
@@ -35,8 +34,7 @@ namespace Klocman.Localising
         public static string GetLocalisedMemberName<TContainer, TMember>(Expression<Func<TContainer, TMember>> selector) 
             where TContainer : class
         {
-            var expression = selector.Body as MemberExpression;
-            if (expression == null)
+            if (selector.Body is not MemberExpression expression)
                 throw new ArgumentException("Selector is invalid, it has to be in format x => x.Property");
 
             var member = expression.Member;
@@ -48,10 +46,8 @@ namespace Klocman.Localising
         /// </summary>
         public static string GetLocalisedMemberName(MemberInfo member)
         {
-            var attrib = member.GetCustomAttributes(typeof (LocalisedNameAttribute), false)
-                .FirstOrDefault() as LocalisedNameAttribute;
-
-            return attrib == null ? member.Name : attrib.GetName();
+            return member.GetCustomAttributes(typeof (LocalisedNameAttribute), false)
+                .FirstOrDefault() is not LocalisedNameAttribute attrib ? member.Name : attrib.GetName();
         }
 
         /// <summary>
@@ -65,10 +61,8 @@ namespace Klocman.Localising
 
             var getName = new Func<FieldInfo, string>(f =>
             {
-                var attribute = f.GetCustomAttributes(typeof(LocalisedNameAttribute), false)
-                    .FirstOrDefault() as LocalisedNameAttribute;
-
-                return attribute == null ? f.Name : attribute.GetName();
+                return f.GetCustomAttributes(typeof(LocalisedNameAttribute), false)
+                    .FirstOrDefault() is not LocalisedNameAttribute attribute ? f.Name : attribute.GetName();
             });
 
             var type = enumValue.GetType();
@@ -97,10 +91,8 @@ namespace Klocman.Localising
         /// </summary>
         public static string GetLocalisedName(this PropertyInfo propertyInfo)
         {
-            var attribute = propertyInfo.GetCustomAttributes(typeof (LocalisedNameAttribute), false)
-                .FirstOrDefault() as LocalisedNameAttribute;
-
-            return attribute == null ? propertyInfo.Name : attribute.GetName();
+            return propertyInfo.GetCustomAttributes(typeof (LocalisedNameAttribute), false)
+                .FirstOrDefault() is not LocalisedNameAttribute attribute ? propertyInfo.Name : attribute.GetName();
         }
     }
 }

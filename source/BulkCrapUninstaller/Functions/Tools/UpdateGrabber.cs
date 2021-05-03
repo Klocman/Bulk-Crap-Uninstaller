@@ -179,7 +179,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                             if (newUrl == null)
                                 return url;
 
-                            if (newUrl.IndexOf("://", System.StringComparison.Ordinal) == -1)
+                            if (!newUrl.Contains("://"))
                             {
                                 // Doesn't have a URL Schema, meaning it's a relative or absolute URL
                                 Uri u = new Uri(new Uri(url), newUrl);

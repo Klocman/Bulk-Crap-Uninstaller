@@ -137,19 +137,18 @@ namespace BrightIdeasSoftware {
         public override object GetClusterKey(object model) {
             // Get the data attribute we want from the given model
             // Make sure the returned value is a DateTime
-            DateTime? dateTime = this.Column.GetValue(model) as DateTime?;
-            if (!dateTime.HasValue)
+            if (this.Column.GetValue(model) is not DateTime dateTime)
                 return null;
 
             // Extract the parts of the datetime that we are intereted in.
             // Even if we aren't interested in a particular portion, we still have to give it a reasonable default
             // otherwise we won't be able to build a DateTime object for it
-            int year = ((this.Portions & DateTimePortion.Year) == DateTimePortion.Year) ? dateTime.Value.Year : 1;
-            int month = ((this.Portions & DateTimePortion.Month) == DateTimePortion.Month) ? dateTime.Value.Month : 1;
-            int day = ((this.Portions & DateTimePortion.Day) == DateTimePortion.Day) ? dateTime.Value.Day : 1;
-            int hour = ((this.Portions & DateTimePortion.Hour) == DateTimePortion.Hour) ? dateTime.Value.Hour : 0;
-            int minute = ((this.Portions & DateTimePortion.Minute) == DateTimePortion.Minute) ? dateTime.Value.Minute : 0;
-            int second = ((this.Portions & DateTimePortion.Second) == DateTimePortion.Second) ? dateTime.Value.Second : 0;
+            int year = ((this.Portions & DateTimePortion.Year) == DateTimePortion.Year) ? dateTime.Year : 1;
+            int month = ((this.Portions & DateTimePortion.Month) == DateTimePortion.Month) ? dateTime.Month : 1;
+            int day = ((this.Portions & DateTimePortion.Day) == DateTimePortion.Day) ? dateTime.Day : 1;
+            int hour = ((this.Portions & DateTimePortion.Hour) == DateTimePortion.Hour) ? dateTime.Hour : 0;
+            int minute = ((this.Portions & DateTimePortion.Minute) == DateTimePortion.Minute) ? dateTime.Minute : 0;
+            int second = ((this.Portions & DateTimePortion.Second) == DateTimePortion.Second) ? dateTime.Second : 0;
 
             return new DateTime(year, month, day, hour, minute, second);
         }

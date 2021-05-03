@@ -330,9 +330,8 @@ namespace BrightIdeasSoftware
                         BindingFlags.NonPublic | BindingFlags.Instance);
                     System.Diagnostics.Debug.Assert(OLVGroup.groupIdPropInfo != null);
                 }
-                
-                int? groupId = OLVGroup.groupIdPropInfo.GetValue(this.ListViewGroup, null) as int?;
-                return groupId.HasValue ? groupId.Value : -1;
+
+                return OLVGroup.groupIdPropInfo.GetValue(this.ListViewGroup, null) is int groupId ? groupId : -1;
             }
         }
         private static PropertyInfo groupIdPropInfo;
@@ -563,8 +562,7 @@ namespace BrightIdeasSoftware
             if (imageSelector is Int32)
                 return (int)imageSelector;
 
-            String imageSelectorAsString = imageSelector as String;
-            if (imageSelectorAsString != null)
+            if (imageSelector is string imageSelectorAsString)
                 return this.ListView.GroupImageList.Images.IndexOfKey(imageSelectorAsString);
 
             return -1;
@@ -622,8 +620,7 @@ namespace BrightIdeasSoftware
         /// using a ListViewGroup
         /// </summary>
         public void SetItemsOldStyle() {
-            List<OLVListItem> list = this.Items as List<OLVListItem>;
-            if (list == null) {
+            if (this.Items is not List<OLVListItem> list) {
                 foreach (OLVListItem item in this.Items) {
                     this.ListViewGroup.Items.Add(item);
                 }

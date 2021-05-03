@@ -123,7 +123,7 @@ namespace Klocman.Extensions
             if (value == null)
                 throw new ArgumentNullException(nameof(value));
 
-            return value.IndexOf(str, comparisonType) >= 0;
+            return value.Contains(str, comparisonType);
         }
 
         /// <summary>

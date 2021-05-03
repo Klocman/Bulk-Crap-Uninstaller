@@ -149,8 +149,7 @@ namespace BrightIdeasSoftware
         public IEnumerable<TextMatchFilter> TextFilters {
             get {
                 foreach (IModelFilter filter in this.Filters) {
-                    TextMatchFilter textFilter = filter as TextMatchFilter;
-                    if (textFilter != null)
+                    if (filter is TextMatchFilter textFilter)
                         yield return textFilter;
                 }
             }
@@ -295,8 +294,7 @@ namespace BrightIdeasSoftware
                 return false;
 
             object result = this.ValueGetter(modelObject);
-            IEnumerable enumerable = result as IEnumerable;
-            if (result is string || enumerable == null)
+            if (result is string || result is not IEnumerable enumerable)
                 return this.DoesValueMatch(result);
 
             foreach (object x in enumerable) {

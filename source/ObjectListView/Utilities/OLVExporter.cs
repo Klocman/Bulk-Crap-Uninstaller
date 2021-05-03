@@ -83,10 +83,9 @@ namespace BrightIdeasSoftware {
         /// <param name="olv"></param>
         /// <param name="objectsToExport"></param>
         public OLVExporter(ObjectListView olv, IEnumerable objectsToExport) {
-            if (olv == null) throw new ArgumentNullException("olv");
             if (objectsToExport == null) throw new ArgumentNullException("objectsToExport");
 
-            this.ListView = olv;
+            this.ListView = olv ?? throw new ArgumentNullException("olv");
             this.ModelObjects = ObjectListView.EnumerableToArray(objectsToExport, true);
         }
 
@@ -222,7 +221,7 @@ namespace BrightIdeasSoftware {
             if (text == null)
                 return null;
 
-            const string DOUBLEQUOTE = @""""; // one double quote
+            const char DOUBLEQUOTE = '"'; // one double quote
             const string TWODOUBEQUOTES = @""""""; // two double quotes
 
             StringBuilder sb = new StringBuilder(DOUBLEQUOTE);
@@ -264,7 +263,7 @@ namespace BrightIdeasSoftware {
                             // decimal numeric entity
                             sb.Append("&#");
                             sb.Append(((int)text[i]).ToString(CultureInfo.InvariantCulture));
-                            sb.Append(";");
+                            sb.Append(';');
                         } else
                             sb.Append(text[i]);
                         break;

@@ -11,9 +11,7 @@ namespace Klocman.Localising
     {
         public LocalisedEnumWrapper(Enum targetEnum)
         {
-            if (targetEnum == null)
-                throw new ArgumentNullException(nameof(targetEnum));
-            TargetEnum = targetEnum;
+            TargetEnum = targetEnum ?? throw new ArgumentNullException(nameof(targetEnum));
         }
 
         public Enum TargetEnum { get; }

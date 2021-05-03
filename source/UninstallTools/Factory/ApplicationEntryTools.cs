@@ -136,7 +136,7 @@ namespace UninstallTools.Factory
 
         private static void AddScore(ref int score, int failScore, int unsureScore, int successScore, bool? testResult)
         {
-            if (!testResult.HasValue) score = score + unsureScore;
+            if (!testResult.HasValue) score += unsureScore;
             else score = testResult.Value ? score + successScore : score + failScore;
         }
 

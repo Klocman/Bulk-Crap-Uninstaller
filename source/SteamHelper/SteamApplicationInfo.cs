@@ -72,7 +72,7 @@ namespace SteamHelper
         public static string GetManifestValue(string[] manifestStrings, string keyName)
         {
             var targetLine = manifestStrings
-                .FirstOrDefault(x => x.IndexOf($"\"{keyName.Trim().Trim('\"')}\"", StringComparison.InvariantCultureIgnoreCase) >= 0);
+                .FirstOrDefault(x => x.Contains($"\"{keyName.Trim().Trim('\"')}\"", StringComparison.InvariantCultureIgnoreCase));
 
             return string.IsNullOrEmpty(targetLine) ? null : targetLine.Split('\"').Select(x => x.Trim()).LastOrDefault(p => !string.IsNullOrEmpty(p?.Trim()));
         }

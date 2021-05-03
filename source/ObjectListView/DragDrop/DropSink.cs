@@ -665,8 +665,7 @@ namespace BrightIdeasSoftware
             this.dropEventArgs.ListView = this.ListView;
             this.dropEventArgs.DragEventArgs = args;
             this.dropEventArgs.DataObject = args.Data;
-            OLVDataObject olvData = args.Data as OLVDataObject;
-            if (olvData != null) {
+            if (args.Data is OLVDataObject olvData) {
                 this.dropEventArgs.SourceListView = olvData.ListView;
                 this.dropEventArgs.SourceModels = olvData.ModelObjects;
             }
@@ -1400,8 +1399,7 @@ namespace BrightIdeasSoftware
             get { return this.dragModels; }
             internal set { 
                 this.dragModels = value;
-                TreeListView tlv = this.SourceListView as TreeListView;
-                if (tlv != null) {
+                if (this.SourceListView is TreeListView tlv) {
                     foreach (object model in this.SourceModels) {
                         object parent = tlv.GetParent(model);
                         if (!toBeRefreshed.Contains(parent))
@@ -1438,14 +1436,12 @@ namespace BrightIdeasSoftware
         public void RefreshObjects() {
 
             toBeRefreshed.AddRange(this.SourceModels);
-            TreeListView tlv = this.SourceListView as TreeListView;
-            if (tlv == null)
+            if (this.SourceListView is not TreeListView tlv)
                 this.SourceListView.RefreshObjects(toBeRefreshed);
             else
                 tlv.RebuildAll(true);
 
-            TreeListView tlv2 = this.ListView as TreeListView;
-            if (tlv2 == null)
+            if (this.ListView is not TreeListView tlv2)
                 this.ListView.RefreshObject(this.TargetModel);
             else
                 tlv2.RebuildAll(true);

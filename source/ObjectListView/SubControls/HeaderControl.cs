@@ -1024,7 +1024,7 @@ namespace BrightIdeasSoftware {
             }
 
             g.FillPolygon(Brushes.SlateGray, pts);
-            r.Width = r.Width - triangleWidth;
+            r.Width -= triangleWidth;
             return r;
         }
 

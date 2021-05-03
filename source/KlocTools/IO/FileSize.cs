@@ -158,11 +158,11 @@ namespace Klocman.IO
             if (tempSize < 1000)
                 return Localisation.FileSize_KB_Long;
 
-            tempSize = tempSize / 1024;
+            tempSize /= 1024;
             if (tempSize < 1000)
                 return Localisation.FileSize_MB_Long;
 
-            tempSize = tempSize / 1024;
+            tempSize /= 1024;
             if (tempSize < 1000)
                 return Localisation.FileSize_GB_Long;
 
@@ -182,17 +182,17 @@ namespace Klocman.IO
                 return (float)tempSize;
 
             sizeRange = SizeRange.Mb;
-            tempSize = tempSize / 1024;
+            tempSize /= 1024;
             if (tempSize < 1024)
                 return (float)tempSize;
 
             sizeRange = SizeRange.Gb;
-            tempSize = tempSize / 1024;
+            tempSize /= 1024;
             if (tempSize < 1024)
                 return (float)tempSize;
 
             sizeRange = SizeRange.Tb;
-            tempSize = tempSize / 1024;
+            tempSize /= 1024;
             return (float)tempSize;
         }
 
@@ -211,8 +211,7 @@ namespace Klocman.IO
         /// </summary>
         public string ToString(bool longFormat)
         {
-            SizeRange range;
-            var value = GetCompactSize(out range);
+            var value = GetCompactSize(out var range);
 
             if (range == SizeRange.None || value <= 0)
                 return string.Empty;

@@ -68,11 +68,13 @@ namespace UninstallTools.Factory
             if (!ScoopIsAvailable) return results;
 
             // Make uninstaller for scoop itself
-            var scoopEntry = new ApplicationUninstallerEntry();
-            scoopEntry.RawDisplayName = "Scoop";
-            scoopEntry.Comment = "Automated program installer";
-            scoopEntry.AboutUrl = "https://github.com/lukesampson/scoop";
-            scoopEntry.InstallLocation = _scoopUserPath;
+            var scoopEntry = new ApplicationUninstallerEntry
+            {
+                RawDisplayName = "Scoop",
+                Comment = "Automated program installer",
+                AboutUrl = "https://github.com/lukesampson/scoop",
+                InstallLocation = _scoopUserPath
+            };
 
             // Make sure the global directory gets removed as well
             var junk = new FileSystemJunk(new DirectoryInfo(_scoopGlobalPath), scoopEntry, null);
@@ -99,10 +101,12 @@ namespace UninstallTools.Factory
                 var version = str.Substring(startIndex + 3, verEndIndex - startIndex - 3);
                 var isGlobal = str.Substring(verEndIndex).Contains("*global*");
 
-                var entry = new ApplicationUninstallerEntry();
-                entry.RawDisplayName = name;
-                entry.DisplayVersion = version;
-                entry.RatingId = "Scoop " + name;
+                var entry = new ApplicationUninstallerEntry
+                {
+                    RawDisplayName = name,
+                    DisplayVersion = version,
+                    RatingId = "Scoop " + name
+                };
 
                 var installDir = Path.Combine(isGlobal ? _scoopGlobalPath : _scoopUserPath, "apps\\" + name);
                 if (Directory.Exists(installDir))

@@ -53,7 +53,7 @@ namespace UninstallTools.Junk.Finders.Drive
             {
                 var startIndex = reportPath.LastIndexOf(CrashLabel, StringComparison.InvariantCultureIgnoreCase);
                 if (startIndex <= 0) continue;
-                startIndex = startIndex + CrashLabel.Length;
+                startIndex += CrashLabel.Length;
 
                 var count = reportPath.IndexOf('_', startIndex) - startIndex;
                 if (count <= 1) continue;

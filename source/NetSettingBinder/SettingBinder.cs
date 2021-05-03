@@ -22,11 +22,8 @@ namespace Klocman.Binding.Settings
         /// <param name="settingSet">Custom Settings class this binder is hooked into</param>
         public SettingBinder(TSettingClass settingSet)
         {
-            if (settingSet == null)
-                throw new ArgumentNullException(nameof(settingSet));
-
             _eventEntries = new LockedList<KeyValuePair<string, ISettingChangedHandlerEntry>>();
-            Settings = settingSet;
+            Settings = settingSet ?? throw new ArgumentNullException(nameof(settingSet));
             Settings.PropertyChanged += PropertyChangedCallback;
         }
 
@@ -52,7 +49,7 @@ namespace Klocman.Binding.Settings
             where TPropertyClass : class
         {
             var propertyInfo = ReflectionTools.GetPropertyInfo(targetProperty);
-            var eventInfo = typeof (TPropertyClass).GetEvent(eventHandlerName,
+            var eventInfo = typeof(TPropertyClass).GetEvent(eventHandlerName,
                 BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
 
             if (eventInfo == null)
@@ -60,7 +57,7 @@ namespace Klocman.Binding.Settings
                     nameof(eventHandlerName));
 
             Bind(x => propertyInfo.SetValue(targetClass, x, null),
-                () => (TProperty) propertyInfo.GetValue(targetClass, null),
+                () => (TProperty)propertyInfo.GetValue(targetClass, null),
                 handler => eventInfo.AddEventHandler(targetClass, handler),
                 handler => eventInfo.RemoveEventHandler(targetClass, handler), selectedSetting, tag);
         }
@@ -82,27 +79,28 @@ namespace Klocman.Binding.Settings
         {
             var propertyInfo = ReflectionTools.GetPropertyInfo(targetProperty);
             var propertyName = propertyInfo.Name;
-            var eventInterface = (INotifyPropertyChanged) targetClass;
+            var eventInterface = (INotifyPropertyChanged)targetClass;
 
             EventHandler handlerCallback = null;
-            PropertyChangedEventHandler propertyChangedHandler = (sender, args) =>
+
+            void PropertyChangedHandler(object sender, PropertyChangedEventArgs args)
             {
-                if (args.PropertyName.Equals(propertyName))
+                if (propertyName.Equals(args.PropertyName))
                     handlerCallback?.Invoke(sender, args);
-            };
+            }
 
             Bind(x => propertyInfo.SetValue(targetClass, x, null),
-                () => (TProperty) propertyInfo.GetValue(targetClass, null),
+                () => (TProperty)propertyInfo.GetValue(targetClass, null),
                 handler =>
                 {
                     handlerCallback = handler;
-                    eventInterface.PropertyChanged += propertyChangedHandler;
+                    eventInterface.PropertyChanged += PropertyChangedHandler;
                 },
                 handler =>
                 {
-                    eventInterface.PropertyChanged -= propertyChangedHandler;
-                }, 
-                selectedSetting, 
+                    eventInterface.PropertyChanged -= PropertyChangedHandler;
+                },
+                selectedSetting,
                 tag);
         }
 
@@ -122,23 +120,25 @@ namespace Klocman.Binding.Settings
         {
             var property = ReflectionTools.GetPropertyInfo(targetSetting);
 
-            EventHandler checkedChanged = (x, y) => { property.SetValue(Settings, getter(), null); };
+            void CheckedChanged(object x, EventArgs y)
+            {
+                property.SetValue(Settings, getter(), null);
+            }
 
-            registerEvent(checkedChanged);
+            registerEvent(CheckedChanged);
 
-            SettingChangedEventHandler<T> settingChanged = (x, y) =>
+            void SettingChanged(object x, SettingChangedEventArgs<T> y)
             {
                 var remoteValue = getter();
-                if ((remoteValue != null && !remoteValue.Equals(y.NewValue))
-                    || (remoteValue == null && y.NewValue != null))
+                if ((remoteValue != null && !remoteValue.Equals(y.NewValue)) || (remoteValue == null && y.NewValue != null))
                 {
-                    unregisterEvent(checkedChanged);
+                    unregisterEvent(CheckedChanged);
                     setter(y.NewValue);
-                    registerEvent(checkedChanged);
+                    registerEvent(CheckedChanged);
                 }
-            };
+            }
 
-            Subscribe(settingChanged, targetSetting, tag);
+            Subscribe(SettingChanged, targetSetting, tag);
         }
 
         /// <summary>

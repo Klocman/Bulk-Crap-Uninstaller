@@ -792,17 +792,14 @@ namespace BrightIdeasSoftware
 
             if (!alwaysCreate)
             {
-                ArrayList array = collection as ArrayList;
-                if (array != null)
+                if (collection is ArrayList array)
                     return array;
 
-                IList iList = collection as IList;
-                if (iList != null)
+                if (collection is IList iList)
                     return ArrayList.Adapter(iList);
             }
 
-            ICollection iCollection = collection as ICollection;
-            if (iCollection != null)
+            if (collection is ICollection iCollection)
                 return new ArrayList(iCollection);
 
             ArrayList newObjects = new ArrayList();
@@ -823,8 +820,7 @@ namespace BrightIdeasSoftware
             if (collection == null)
                 return 0;
 
-            ICollection iCollection = collection as ICollection;
-            if (iCollection != null)
+            if (collection is ICollection iCollection)
                 return iCollection.Count;
 
             int i = 0;
@@ -1443,7 +1439,7 @@ namespace BrightIdeasSoftware
                     Rectangle hdrBounds = new Rectangle();
                     NativeMethods.GetClientRect(HeaderControl.Handle, ref hdrBounds);
                     r.Y = hdrBounds.Height;
-                    r.Height = r.Height - hdrBounds.Height;
+                    r.Height -= hdrBounds.Height;
                 }
 
                 return r;
@@ -1672,8 +1668,7 @@ namespace BrightIdeasSoftware
                     return;
 
                 // Stop listening for events on the old sink
-                SimpleDropSink oldSink = dropSink as SimpleDropSink;
-                if (oldSink != null)
+                if (dropSink is SimpleDropSink oldSink)
                 {
                     oldSink.CanDrop -= new EventHandler<OlvDropEventArgs>(DropSinkCanDrop);
                     oldSink.Dropped -= new EventHandler<OlvDropEventArgs>(DropSinkDropped);
@@ -1687,8 +1682,7 @@ namespace BrightIdeasSoftware
                     dropSink.ListView = this;
 
                 // Start listening for events on the new sink
-                SimpleDropSink newSink = value as SimpleDropSink;
-                if (newSink != null)
+                if (value is SimpleDropSink newSink)
                 {
                     newSink.CanDrop += new EventHandler<OlvDropEventArgs>(DropSinkCanDrop);
                     newSink.Dropped += new EventHandler<OlvDropEventArgs>(DropSinkDropped);
@@ -1731,13 +1725,11 @@ namespace BrightIdeasSoftware
         {
             get
             {
-                TextOverlay overlay = EmptyListMsgOverlay as TextOverlay;
-                return overlay == null ? null : overlay.Text;
+                return EmptyListMsgOverlay is not TextOverlay overlay ? null : overlay.Text;
             }
             set
             {
-                TextOverlay overlay = EmptyListMsgOverlay as TextOverlay;
-                if (overlay != null)
+                if (EmptyListMsgOverlay is TextOverlay overlay)
                 {
                     overlay.Text = value;
                     Invalidate();
@@ -1757,13 +1749,11 @@ namespace BrightIdeasSoftware
         {
             get
             {
-                TextOverlay overlay = EmptyListMsgOverlay as TextOverlay;
-                return overlay == null ? null : overlay.Font;
+                return EmptyListMsgOverlay is not TextOverlay overlay ? null : overlay.Font;
             }
             set
             {
-                TextOverlay overlay = EmptyListMsgOverlay as TextOverlay;
-                if (overlay != null)
+                if (EmptyListMsgOverlay is TextOverlay overlay)
                     overlay.Font = value;
             }
         }
@@ -4129,9 +4119,8 @@ namespace BrightIdeasSoftware
                     checkedAspectMunger = new Munger(checkedAspectName);
                     CheckStateGetter = delegate (Object modelObject)
                     {
-                        bool? result = checkedAspectMunger.GetValue(modelObject) as bool?;
-                        if (result.HasValue)
-                            return result.Value ? CheckState.Checked : CheckState.Unchecked;
+                        if (checkedAspectMunger.GetValue(modelObject) is bool result)
+                            return result ? CheckState.Checked : CheckState.Unchecked;
                         return TriStateCheckBoxes ? CheckState.Indeterminate : CheckState.Unchecked;
                     };
                     CheckStatePutter = delegate (Object modelObject, CheckState newValue)
@@ -4586,8 +4575,7 @@ namespace BrightIdeasSoftware
                 if (shouldPreserveState && objects != null)
                 {
                     previousSelection = SelectedObjects;
-                    OLVListItem focusedItem = FocusedItem as OLVListItem;
-                    if (focusedItem != null)
+                    if (FocusedItem is OLVListItem focusedItem)
                         previousFocus = focusedItem.RowObject;
                 }
 
@@ -5439,8 +5427,7 @@ namespace BrightIdeasSoftware
             for (int i = 0; i < Columns.Count; i++)
             {
                 OLVColumn col = GetColumn(i);
-                ImageRenderer renderer = col.Renderer as ImageRenderer;
-                if (renderer != null)
+                if (col.Renderer is ImageRenderer renderer)
                     renderer.Paused = isPause;
             }
         }
@@ -5783,8 +5770,7 @@ namespace BrightIdeasSoftware
                 return;
             foreach (object x in models)
             {
-                INotifyPropertyChanged notifier = x as INotifyPropertyChanged;
-                if (notifier != null && !subscribedModels.ContainsKey(notifier))
+                if (x is INotifyPropertyChanged notifier && !subscribedModels.ContainsKey(notifier))
                 {
                     notifier.PropertyChanged += HandleModelOnPropertyChanged;
                     subscribedModels[notifier] = notifier;
@@ -5811,8 +5797,7 @@ namespace BrightIdeasSoftware
             {
                 foreach (object x in models)
                 {
-                    INotifyPropertyChanged notifier = x as INotifyPropertyChanged;
-                    if (notifier != null)
+                    if (x is INotifyPropertyChanged notifier)
                     {
                         notifier.PropertyChanged -= HandleModelOnPropertyChanged;
                         subscribedModels.Remove(notifier);
@@ -7197,8 +7182,8 @@ namespace BrightIdeasSoftware
                         {
                             // Remove the state indicies so that we don't trigger the OnItemChecked method
                             // when we call our base method after exiting this method
-                            nmlistviewPtr2.uOldState = (nmlistviewPtr2.uOldState & 0x0FFF);
-                            nmlistviewPtr2.uNewState = (nmlistviewPtr2.uNewState & 0x0FFF);
+                            nmlistviewPtr2.uOldState &= 0x0FFF;
+                            nmlistviewPtr2.uNewState &= 0x0FFF;
                             Marshal.StructureToPtr(nmlistviewPtr2, m.LParam, false);
                         }
                         else
@@ -7915,11 +7900,9 @@ namespace BrightIdeasSoftware
         private void ColumnSelectMenuItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             contextMenuStaysOpen = false;
-            ToolStripMenuItem menuItemClicked = e.ClickedItem as ToolStripMenuItem;
-            if (menuItemClicked == null)
+            if (e.ClickedItem is not ToolStripMenuItem menuItemClicked)
                 return;
-            OLVColumn col = menuItemClicked.Tag as OLVColumn;
-            if (col == null)
+            if (menuItemClicked.Tag is not OLVColumn col)
                 return;
             menuItemClicked.Checked = !menuItemClicked.Checked;
             col.IsVisible = menuItemClicked.Checked;
@@ -9039,7 +9022,7 @@ namespace BrightIdeasSoftware
             // Fill in default values, if the parameters don't make sense
             if (ShowGroups)
             {
-                columnToSort = columnToSort ?? GetColumn(0);
+                columnToSort ??= GetColumn(0);
                 if (order == SortOrder.None)
                 {
                     order = Sorting;
@@ -9377,8 +9360,7 @@ namespace BrightIdeasSoftware
             if (imageSelector is Int32)
                 return (int)imageSelector;
 
-            String imageSelectorAsString = imageSelector as String;
-            if (imageSelectorAsString != null && SmallImageList != null)
+            if (imageSelector is string imageSelectorAsString && SmallImageList != null)
                 return SmallImageList.Images.IndexOfKey(imageSelectorAsString);
 
             return -1;
@@ -10556,8 +10538,7 @@ namespace BrightIdeasSoftware
         protected virtual void SetControlValue(Control control, Object value, String stringValue)
         {
             // Handle combobox explicitly
-            ComboBox cb = control as ComboBox;
-            if (cb != null)
+            if (control is ComboBox cb)
             {
                 if (cb.Created)
                     cb.SelectedValue = value;
@@ -10603,16 +10584,13 @@ namespace BrightIdeasSoftware
             if (control == null)
                 return null;
 
-            TextBox box = control as TextBox;
-            if (box != null)
+            if (control is TextBox box)
                 return box.Text;
 
-            ComboBox comboBox = control as ComboBox;
-            if (comboBox != null)
+            if (control is ComboBox comboBox)
                 return comboBox.SelectedValue;
 
-            CheckBox checkBox = control as CheckBox;
-            if (checkBox != null)
+            if (control is CheckBox checkBox)
                 return checkBox.Checked;
 
             try
@@ -11693,7 +11671,7 @@ namespace BrightIdeasSoftware
         protected virtual IEnumerable FilterObjects(IEnumerable originalObjects, IModelFilter aModelFilter, IListFilter aListFilter)
         {
             // Being cautious
-            originalObjects = originalObjects ?? new ArrayList();
+            originalObjects ??= new ArrayList();
 
             // Tell the world to filter the objects. If they do so, don't do anything else
             // ReSharper disable PossibleMultipleEnumeration
@@ -11780,8 +11758,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         protected virtual void NotifyNewModelFilter()
         {
-            IFilterAwareRenderer filterAware = DefaultRenderer as IFilterAwareRenderer;
-            if (filterAware != null)
+            if (DefaultRenderer is IFilterAwareRenderer filterAware)
                 filterAware.Filter = ModelFilter;
 
             foreach (OLVColumn column in AllColumns)

@@ -934,8 +934,7 @@ namespace BrightIdeasSoftware {
             set {
                 isButton = value;
                 if (value) {
-                    ColumnButtonRenderer buttonRenderer = this.Renderer as ColumnButtonRenderer;
-                    if (buttonRenderer == null) {
+                    if (this.Renderer is not ColumnButtonRenderer buttonRenderer) {
                         this.Renderer = this.CreateColumnButtonRenderer();
                         this.FillInColumnButtonRenderer();
                     }
@@ -959,8 +958,7 @@ namespace BrightIdeasSoftware {
         /// Fill in details to our ColumnButtonRenderer based on the properties set on the column
         /// </summary>
         protected virtual void FillInColumnButtonRenderer() {
-            ColumnButtonRenderer buttonRenderer = this.Renderer as ColumnButtonRenderer;
-            if (buttonRenderer == null)
+            if (this.Renderer is not ColumnButtonRenderer buttonRenderer)
                 return;
 
             buttonRenderer.SizingMode = this.ButtonSizing;
@@ -1178,8 +1176,7 @@ namespace BrightIdeasSoftware {
          DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public RenderDelegate RendererDelegate {
             get {
-                Version1Renderer version1Renderer = this.Renderer as Version1Renderer;
-                return version1Renderer != null ? version1Renderer.RenderDelegate : null;
+                return this.Renderer is Version1Renderer version1Renderer ? version1Renderer.RenderDelegate : null;
             }
             set {
                 this.Renderer = value == null ? null : new Version1Renderer(value);
@@ -1430,11 +1427,9 @@ namespace BrightIdeasSoftware {
                 if (this.Renderer == null)
                     this.Renderer = new HighlightTextRenderer();
 
-                BaseRenderer baseRenderer = this.Renderer as BaseRenderer;
-
                 // If there is a custom renderer (not descended from BaseRenderer), 
                 // we leave it up to them to implement wrapping
-                if (baseRenderer == null)
+                if (this.Renderer is not BaseRenderer baseRenderer)
                     return;
 
                 baseRenderer.CanWrap = wordWrap;
@@ -1467,9 +1462,8 @@ namespace BrightIdeasSoftware {
             if (!this.CheckBoxes)
                 return CheckState.Unchecked;
 
-            bool? aspectAsBool = this.GetValue(rowObject) as bool?;
-            if (aspectAsBool.HasValue) {
-                if (aspectAsBool.Value)
+            if (this.GetValue(rowObject) is bool aspectAsBool) {
+                if (aspectAsBool)
                     return CheckState.Checked;
                 else
                     return CheckState.Unchecked;
@@ -1586,8 +1580,7 @@ namespace BrightIdeasSoftware {
 
             var stringValue = this.GetStringValue(rowObject);
 
-            DescribedTaskRenderer dtr = this.Renderer as DescribedTaskRenderer;
-            if (dtr != null) {
+            if (this.Renderer is DescribedTaskRenderer dtr) {
                 return new string[] { stringValue, dtr.GetDescription(rowObject) };
             }
 
@@ -1700,8 +1693,7 @@ namespace BrightIdeasSoftware {
         public Type DataType {
             get {
                 if (this.dataType == null) {
-                    ObjectListView olv = this.ListView as ObjectListView;
-                    if (olv != null) {
+                    if (this.ListView is ObjectListView olv) {
                         object value = olv.GetFirstNonNullValue(this);
                         if (value != null)
                             return value.GetType(); // THINK: Should we cache this?

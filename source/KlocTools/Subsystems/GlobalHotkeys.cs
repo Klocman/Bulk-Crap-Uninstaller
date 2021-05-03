@@ -105,8 +105,7 @@ namespace Klocman.Subsystems
 
         protected override void OnContainerInitialized(object obj, EventArgs args)
         {
-            var form = ContainerControl as Form;
-            if (form != null)
+            if (ContainerControl is Form form)
                 ParentForm = form;
             else if (ContainerControl.ParentForm != null)
                 ParentForm = ContainerControl.ParentForm;

@@ -138,8 +138,7 @@ namespace BrightIdeasSoftware
             // Listen for changes in the hierachy
             foreach (Control ancestor in this.ancestors) {
                 ancestor.ParentChanged += new EventHandler(objectListView_ParentChanged);
-                TabControl tabControl = ancestor as TabControl;
-                if (tabControl != null) {
+                if (ancestor is TabControl tabControl) {
                     tabControl.Selected += new TabControlEventHandler(tabControl_Selected);
                 }
             }
@@ -232,8 +231,7 @@ namespace BrightIdeasSoftware
             if (this.ancestors != null) {
                 foreach (Control parent in this.ancestors) {
                     parent.ParentChanged -= new EventHandler(objectListView_ParentChanged);
-                    TabControl tabControl = parent as TabControl;
-                    if (tabControl != null) {
+                    if (parent is TabControl tabControl) {
                         tabControl.Selected -= new TabControlEventHandler(tabControl_Selected);
                     }
                 }
@@ -413,8 +411,7 @@ namespace BrightIdeasSoftware
         }
 
         internal void UpdateTransparency() {
-            ITransparentOverlay transparentOverlay = this.Overlay as ITransparentOverlay;
-            if (transparentOverlay == null)
+            if (this.Overlay is not ITransparentOverlay transparentOverlay)
                 this.Opacity = this.objectListView.OverlayTransparency / 255.0f;
             else
                 this.Opacity = transparentOverlay.Transparency / 255.0f;

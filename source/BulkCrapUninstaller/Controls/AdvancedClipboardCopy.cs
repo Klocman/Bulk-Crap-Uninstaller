@@ -53,8 +53,7 @@ namespace BulkCrapUninstaller.Controls
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxInsert.SelectedIndex == 0) return;
-            var x = comboBoxInsert.SelectedItem as ClipboardCopyItem;
-            if (x != null)
+            if (comboBoxInsert.SelectedItem is ClipboardCopyItem x)
                 textBoxPatternInput.SelectedText = x.Name;
             comboBoxInsert.SelectedIndex = 0;
         }

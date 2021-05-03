@@ -23,8 +23,7 @@ namespace UninstallTools.Junk.Confidence
 
         public override bool Equals(object obj)
         {
-            var casted = obj as ConfidenceRecord;
-            if (casted == null)
+            if (obj is not ConfidenceRecord casted)
                 return false;
 
             if (ReferenceEquals(this, obj))

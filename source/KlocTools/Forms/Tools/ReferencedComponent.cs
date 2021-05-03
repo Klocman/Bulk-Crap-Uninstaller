@@ -53,8 +53,7 @@ namespace Klocman.Forms.Tools
                     return;
 
                 var host = value.GetService(typeof (IDesignerHost)) as IDesignerHost;
-                var control = host?.RootComponent as ContainerControl;
-                if (control != null)
+                if (host?.RootComponent is ContainerControl control)
                     ContainerControl = control;
             }
         }
