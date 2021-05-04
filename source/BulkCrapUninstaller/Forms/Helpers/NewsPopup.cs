@@ -59,12 +59,12 @@ namespace BulkCrapUninstaller.Forms
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.LicenceFilename));
+            MessageBoxes.DisplayLicense();
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.PrivacyPolicyFilename));
+            MessageBoxes.DisplayPrivacyPolicy();
         }
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

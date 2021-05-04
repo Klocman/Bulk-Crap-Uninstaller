@@ -564,7 +564,7 @@ namespace BulkCrapUninstaller.Functions
             //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
             //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
             //        SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
-            
+
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
                     string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
@@ -611,7 +611,36 @@ namespace BulkCrapUninstaller.Functions
 
         public static void DisplayHelp()
         {
-            PremadeDialogs.StartProcessSafely(Path.Combine(Program.AssemblyLocation.FullName, Resources.HelpFilename));
+            var path = GetBundledFilePath(Resources.HelpFilename);
+            if (path != null) PremadeDialogs.StartProcessSafely(path);
+        }
+
+        public static void DisplayLicense()
+        {
+            var path = GetBundledFilePath(Resources.LicenceFilename);
+            if (path != null) PremadeDialogs.StartProcessSafely(path);
+        }
+
+        public static void DisplayPrivacyPolicy()
+        {
+            var path = GetBundledFilePath(Resources.PrivacyPolicyFilename);
+            if (path != null) PremadeDialogs.StartProcessSafely(path);
+        }
+
+        private static string GetBundledFilePath(string filename)
+        {
+            var path = Path.Combine(Program.AssemblyLocation.FullName, filename);
+            if (!File.Exists(path))
+            {
+                path = Path.Combine(Program.AssemblyLocation.FullName, "..", filename);
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("Could not find file " + filename);
+                    path = null;
+                }
+            }
+
+            return path;
         }
 
         public static bool AskToRetryFailedQuietAsLoud(Form owner, IEnumerable<string> failedNames)
