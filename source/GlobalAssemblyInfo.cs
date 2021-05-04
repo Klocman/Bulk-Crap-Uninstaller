@@ -15,7 +15,7 @@ using System.Resources;
 // associated with an assembly.
 
 [assembly: AssemblyCompany("Marcin Szeniak")]
-[assembly: AssemblyCopyright("Copyright © 2017")]
+[assembly: AssemblyCopyright("Copyright © 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -37,4 +37,4 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("4.13.0.1")]
+[assembly: AssemblyVersion("5.0.0.0")]
