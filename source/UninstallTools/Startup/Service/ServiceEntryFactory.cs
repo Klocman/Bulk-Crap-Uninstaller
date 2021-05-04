@@ -63,12 +63,7 @@ namespace UninstallTools.Startup.Service
                     results.Add(e);
                 }
             }
-            catch (ManagementException ex)
-            {
-                Console.Write(@"Error while gathering services - ");
-                Console.WriteLine(ex);
-            }
-            catch (ExternalException ex)
+            catch (Exception ex) when (ex is TypeInitializationException || ex is ManagementException || ex is ExternalException)
             {
                 Console.Write(@"Error while gathering services - ");
                 Console.WriteLine(ex);
