@@ -28,7 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj" />
+    <ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Scripting">

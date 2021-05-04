@@ -1,12 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-        <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <SccProjectName></SccProjectName>
-    <SccLocalPath></SccLocalPath>
-    <SccAuxPath></SccAuxPath>
-    <SccProvider></SccProvider>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
@@ -26,9 +21,6 @@
     <DocumentationFile></DocumentationFile>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Update="Core\UI\WinForms\Panels\ExceptionDetails.cs">
       <SubType>UserControl</SubType>
@@ -36,13 +28,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Core\Submission\Protocols.cs" />
-    <EmbeddedResource Remove="Properties\Localization.fi-FI.resx" />
-    <EmbeddedResource Remove="Properties\Localization.hr.resx" />
-    <EmbeddedResource Remove="Properties\Localization.ja.resx" />
-    <EmbeddedResource Remove="Properties\Localization.ko-KR.resx" />
-    <EmbeddedResource Remove="Properties\Localization.pt-BR.resx" />
-    <EmbeddedResource Remove="Properties\Localization.tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="NBug_LICENSE.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="NBug_README.md">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <PropertyGroup />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

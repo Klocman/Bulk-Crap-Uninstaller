@@ -4,7 +4,6 @@
     <OutputType>WinExe</OutputType>
     <AssemblyName>BCUninstaller</AssemblyName>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -14,8 +13,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -41,26 +38,10 @@
     <OutputPath>..\..\bin\Release\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <OutputPath>bin\x64\</OutputPath>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\</OutputPath>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <OutputPath>..\..\bin\Debug\</OutputPath>
     <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -143,7 +124,7 @@
     <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
     <ProjectReference Include="..\NBug_custom\NBug.csproj" />
     <ProjectReference Include="..\NetSettingBinder\NetSettingBinder.csproj" />
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj" />
+    <ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
     <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.csproj" />
     <ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj" />
     <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
@@ -183,9 +164,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="MySql.Data" Version="8.0.24" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Forms\Helpers\NewsPopup.it.resx" />
   </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
   <PropertyGroup />
