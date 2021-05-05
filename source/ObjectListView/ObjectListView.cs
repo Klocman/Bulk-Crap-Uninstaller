@@ -6237,6 +6237,11 @@ namespace BrightIdeasSoftware
 
                 base.WndProc(ref m);
             }
+            catch (ArgumentNullException e) when (e.ParamName == "owningItem")
+            {
+                // Bug in <= .NET 5.0.5 forms
+                // https://github.com/dotnet/winforms/pull/4764
+            }
         }
 
         /// <summary>
