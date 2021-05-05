@@ -111,9 +111,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         internal static object ColumnSizeGroupKeyGetter(object rowObject)
         {
-            return rowObject is not ApplicationUninstallerEntry entry || entry.EstimatedSize == FileSize.Empty
-                ? CommonStrings.Unknown
-                : "x " + entry.EstimatedSize.GetUnitName();
+            return rowObject is not ApplicationUninstallerEntry entry ? 0L : entry.EstimatedSize.GetRoundedKbSize();
         }
 
         /// <summary>

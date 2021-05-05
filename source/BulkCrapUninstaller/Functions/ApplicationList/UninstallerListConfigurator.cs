@@ -12,7 +12,9 @@ using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Extensions;
+using Klocman.IO;
 using Klocman.Localising;
+using Klocman.Resources;
 using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Lists;
@@ -234,7 +236,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnSize.AspectGetter = ListViewDelegates.ColumnSizeAspectGetter;
             _reference.olvColumnSize.AspectToStringConverter = ListViewDelegates.AspectToStringConverter;
             _reference.olvColumnSize.GroupKeyGetter = ListViewDelegates.ColumnSizeGroupKeyGetter;
-            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x.ToString();
+            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x is long num && num > 0 ? FileSize.GetUnitName(num) : CommonStrings.Unknown;
 
             _reference.uninstallerObjectListView.PrimarySortColumn = _reference.olvColumnDisplayName;
             _reference.uninstallerObjectListView.SecondarySortColumn = _reference.olvColumnPublisher;

@@ -177,7 +177,7 @@ namespace BulkCrapUninstaller.Forms
             SetupHotkeys();
 
             treeMap1.ObjectNameGetter = o => ((ApplicationUninstallerEntry)o).DisplayName;
-            treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetRawSize(false);
+            treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetKbSize();
             treeMap1.ObjectColorGetter = o => ApplicationListConstants.GetApplicationTreemapColor((ApplicationUninstallerEntry)o);
 
             _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateTreemapOnPostprocessingUpdate;

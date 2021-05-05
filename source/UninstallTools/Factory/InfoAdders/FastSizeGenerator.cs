@@ -32,7 +32,7 @@ namespace UninstallTools.Factory.InfoAdders
 
             try
             {
-                if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetRawSize(false) == 0)
+                if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetKbSize() == 0)
                     throw new SystemException("Test failed to get valid BCU directory size");
 
                 _everythingAvailable = true;

@@ -286,11 +286,11 @@ namespace BulkCrapUninstaller.Functions
                             item.UninstallerEntry.SystemComponent ascending,
                             item.UninstallerEntry.IsProtected ascending,
                             // Calculate number of digits (Floor of Log10 + 1) and divide it by 4 to create buckets of sizes
-                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetRawSize(true)) + 1) / 4) descending,
+                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetKbSize(true)) + 1) / 4) descending,
                             // Prioritize Msi uninstallers because they tend to take the longest
                             item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
                             // Final sorting to get things deterministic
-                            item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
+                            item.UninstallerEntry.EstimatedSize.GetKbSize(true) descending
                         select x;
             return query;
         }

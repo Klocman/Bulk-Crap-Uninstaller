@@ -15,33 +15,6 @@ namespace Klocman.IO
 {
     public struct FileSize : IXmlSerializable, IComparable<FileSize>, IEquatable<FileSize>, IComparable
     {
-        /* Does not work with new float system
-        /// <summary>
-        /// Returns string representation of the filesize that is at most 3 digits long.
-        /// Example: 943 MB
-        /// </summary>
-        /// <returns></returns>
-        public string ToFixedNumberCountString()
-        {
-            var tempSize = (float)_sizeInKb;
-            if (tempSize <= 0)
-                return string.Empty;
-
-            if (tempSize < 1000)
-                return string.Format("{0:g3} {1}", tempSize, Localisation.FileSize_KB_Short);
-
-            tempSize = tempSize / 1024;
-            if (tempSize < 1000)
-                return string.Format("{0:g3} {1}", tempSize, Localisation.FileSize_MB_Short);
-
-            tempSize = tempSize / 1024;
-            if (tempSize < 1000)
-                return string.Format("{0:g3} {1}", tempSize, Localisation.FileSize_GB_Short);
-
-            tempSize = tempSize / 1024;
-            return string.Format("{0:g3} {1}", tempSize, Localisation.FileSize_TB_Short);
-        }*/
-
         public enum SizeRange
         {
             None = 0,
@@ -53,7 +26,7 @@ namespace Klocman.IO
 
         public static FileSize SumFileSizes(IEnumerable<FileSize> sizes)
         {
-            return FromKilobytes(sizes.Sum(x => x.GetRawSize(false)));
+            return FromKilobytes(sizes.Sum(x => x.GetKbSize()));
         }
 
         public static readonly FileSize Empty = new FileSize(0);
@@ -124,21 +97,10 @@ namespace Klocman.IO
             return _sizeInKb == other._sizeInKb;
         }
         
-        public long GetKbSize()
-        {
-            return _sizeInKb;
-        }
-        
-        [Obsolete("Use GetKbSize")]
-        public long GetRawSize()
-        {
-            return _sizeInKb;
-        }
-
         /// <summary>
         ///     Empty items return long.MaxValue. For use in sorting
         /// </summary>
-        public long GetRawSize(bool treatEmptyAsLargest)
+        public long GetKbSize(bool treatEmptyAsLargest = false)
         {
             if (treatEmptyAsLargest && _sizeInKb <= 0)
                 return long.MaxValue;
@@ -151,7 +113,13 @@ namespace Klocman.IO
         /// </summary>
         public string GetUnitName()
         {
-            var tempSize = _sizeInKb;
+            return GetUnitName(_sizeInKb);
+        }
+
+        /// <inheritdoc cref="GetUnitName()"/>
+        public static string GetUnitName(long sizeInKb)
+        {
+            var tempSize = sizeInKb;
             if (tempSize <= 0)
                 return string.Empty;
 
@@ -267,6 +235,19 @@ namespace Klocman.IO
         public void WriteXml(XmlWriter writer)
         {
             writer.WriteValue(_sizeInKb);
+        }
+
+        public long GetRoundedKbSize()
+        {
+            var size = _sizeInKb;
+            if (size <= 0) return 0;
+            var result = 1;
+            while(size >= 1024)
+            {
+                size /= 1024;
+                result *= 1024;
+            }
+            return result;
         }
     }
 }
