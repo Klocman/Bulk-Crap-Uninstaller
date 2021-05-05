@@ -66,7 +66,7 @@ namespace BulkCrapUninstaller
         /// <summary>
         /// Don't use settings
         /// </summary>
-        public static string DbConnectionString => 
+        public static string DbConnectionString =>
             Debugger.IsAttached ? Resources.DbDebugConnectionString : Resources.DbConnectionString;
 
         public static string InstalledRegistryKeyName
@@ -141,8 +141,7 @@ namespace BulkCrapUninstaller
                 if (result == null || result.Value.Equals("Reset"))
                     throw new FormatException();
 
-                PreviousVersion = new Version(result.Value);
-                if (PreviousVersion < AssemblyVersion)
+                if (!string.IsNullOrWhiteSpace(result.Value) && new Version(result.Value) < AssemblyVersion)
                     IsAfterUpgrade = true;
                 //if(new Version(result) < )
             }
@@ -218,7 +217,7 @@ namespace BulkCrapUninstaller
                     Console.WriteLine(@"WARNING: CleanLogs.bat doesn't exist, can't clean logs.");
                     return;
                 }
-                
+
                 var cleanerUri = PathToUri(cleanerPath);
                 if (cleanerUri.IsUnc)
                 {
