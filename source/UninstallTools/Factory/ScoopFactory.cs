@@ -104,7 +104,7 @@ namespace UninstallTools.Factory
                 var entry = new ApplicationUninstallerEntry
                 {
                     RawDisplayName = name,
-                    DisplayVersion = version,
+                    DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(version),
                     RatingId = "Scoop " + name
                 };
 

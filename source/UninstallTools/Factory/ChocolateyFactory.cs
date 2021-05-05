@@ -87,7 +87,7 @@ namespace UninstallTools.Factory
 
                 AddInfo(entry, kvps, "Title", (e, s) => e.RawDisplayName = s);
 
-                entry.DisplayVersion = appName.version;
+                entry.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(appName.version);
                 entry.RatingId = "Choco " + appName.name;
                 entry.UninstallerKind = UninstallerType.Chocolatey;
 
