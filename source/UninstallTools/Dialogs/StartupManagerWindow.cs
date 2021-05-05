@@ -63,6 +63,20 @@ namespace UninstallTools.Dialogs
             }
         }
 
+        public static StartupManagerWindow ShowManagerWindow()
+        {
+            var window = new StartupManagerWindow();
+            try
+            {
+                window.Icon = ProcessTools.GetIconFromEntryExe();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return window;
+        }
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             exportDialog.ShowDialog();
@@ -402,6 +416,12 @@ namespace UninstallTools.Dialogs
         {
             if (AllItems != null)
                 UpdateList();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

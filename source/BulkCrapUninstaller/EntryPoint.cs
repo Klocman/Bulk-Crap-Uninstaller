@@ -14,8 +14,10 @@ using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using Klocman;
+using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
+using UninstallTools.Dialogs;
 
 namespace BulkCrapUninstaller
 {
@@ -55,7 +57,14 @@ namespace BulkCrapUninstaller
 
                     SetupDependancies();
                     Application.EnableVisualStyles();
-                    Application.Run(new MainWindow());
+
+                    var startupMgr = args.Contains("--startupmanager", StringComparison.OrdinalIgnoreCase) || 
+                                     args.Contains("-sm", StringComparison.OrdinalIgnoreCase);
+
+                    if (startupMgr)
+                        Application.Run(StartupManagerWindow.ShowManagerWindow());
+                    else
+                        Application.Run(new MainWindow());
                 }
                 finally
                 {
