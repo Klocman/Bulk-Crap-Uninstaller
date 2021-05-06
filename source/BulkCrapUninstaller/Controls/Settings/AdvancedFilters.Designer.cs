@@ -38,9 +38,9 @@
             this.toolStripButtonOpenUl = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSaveUl = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSaveUlDef = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.saveUlDialog = new System.Windows.Forms.SaveFileDialog();
             this.openUlDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripUninstallerList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,14 +92,12 @@
             // 
             // toolStripButtonOpenUl
             // 
-            this.toolStripButtonOpenUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButtonOpenUl, "toolStripButtonOpenUl");
             this.toolStripButtonOpenUl.Name = "toolStripButtonOpenUl";
             this.toolStripButtonOpenUl.Click += new System.EventHandler(this.toolStripButtonOpenUl_Click);
             // 
             // toolStripButtonSaveUl
             // 
-            this.toolStripButtonSaveUl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButtonSaveUl, "toolStripButtonSaveUl");
             this.toolStripButtonSaveUl.Name = "toolStripButtonSaveUl";
             this.toolStripButtonSaveUl.Click += new System.EventHandler(this.ShowSaveDialog);
@@ -110,6 +108,13 @@
             resources.ApplyResources(this.toolStripButtonSaveUlDef, "toolStripButtonSaveUlDef");
             this.toolStripButtonSaveUlDef.Name = "toolStripButtonSaveUlDef";
             this.toolStripButtonSaveUlDef.Click += new System.EventHandler(this.toolStripButtonSaveUlDef_Click);
+            // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.Image = global::BulkCrapUninstaller.Properties.Resources.delete;
+            resources.ApplyResources(this.toolStripButtonDelete, "toolStripButtonDelete");
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // saveUlDialog
             // 
@@ -122,13 +127,6 @@
             this.openUlDialog.DefaultExt = "bcul";
             resources.ApplyResources(this.openUlDialog, "openUlDialog");
             this.openUlDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openUlDialog_FileOk);
-            // 
-            // toolStripButtonDelete
-            // 
-            this.toolStripButtonDelete.Image = global::BulkCrapUninstaller.Properties.Resources.delete;
-            resources.ApplyResources(this.toolStripButtonDelete, "toolStripButtonDelete");
-            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // AdvancedFilters
             // 
