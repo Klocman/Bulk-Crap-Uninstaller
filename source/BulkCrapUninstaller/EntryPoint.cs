@@ -58,8 +58,8 @@ namespace BulkCrapUninstaller
                     SetupDependancies();
                     Application.EnableVisualStyles();
 
-                    var startupMgr = args.Contains("--startupmanager", StringComparison.OrdinalIgnoreCase) || 
-                                     args.Contains("-sm", StringComparison.OrdinalIgnoreCase);
+                    var startupMgr = args.Contains("/startupmanager", StringComparison.OrdinalIgnoreCase) || 
+                                     args.Contains("/sm", StringComparison.OrdinalIgnoreCase);
 
                     if (startupMgr)
                         Application.Run(StartupManagerWindow.ShowManagerWindow());
