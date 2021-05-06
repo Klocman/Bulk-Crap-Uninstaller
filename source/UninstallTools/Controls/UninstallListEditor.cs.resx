@@ -126,39 +126,17 @@
   <data name="columnHeaderConditions.Text" xml:space="preserve">
     <value>Podmínky</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripButtonAddFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
-  </data>
   <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Přidat</value>
   </data>
-  <data name="toolStripButtonRemoveFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
-  </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
     <value>Odstranit</value>
-  </data>
-  <data name="toolStripButtonAddFiltersFromList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
   </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Přidat ze seznamu ...</value>
   </data>
   <data name="groupBoxFilterList.Text" xml:space="preserve">
     <value>Filtr seznamu</value>
-  </data>
-  <data name="textBoxFilterName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 17</value>
-  </data>
-  <data name="textBoxFilterName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
-  </data>
-  <data name="labelFilterType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 17</value>
-  </data>
-  <data name="labelFilterType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 19</value>
   </data>
   <data name="labelFilterType.Text" xml:space="preserve">
     <value>Typ:</value>
@@ -169,23 +147,14 @@
   <data name="comboBoxFilterType.Items1" xml:space="preserve">
     <value>Vyloučit</value>
   </data>
-  <data name="labelFilterName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 19</value>
-  </data>
   <data name="labelFilterName.Text" xml:space="preserve">
     <value>Název:</value>
   </data>
   <data name="groupBoxFilterSettings.Text" xml:space="preserve">
     <value>Nastavení filtru</value>
   </data>
-  <data name="toolStripButtonAddCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
-  </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>Přidat</value>
-  </data>
-  <data name="toolStripButtonRemoveCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
     <value>Odstranit</value>

@@ -119,53 +119,71 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Došlo je do greške. Zatvaram aplikaciju.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Došlo je do greške. Zatvaram aplikaciju.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Došlo je do greške. Zatvaram aplikaciju.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Greška</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Opće</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Molimo dodajte kratak opis kako bi nam pomogli reproducirati grešku:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>Aplikacija je proizvela grešku i biti će zatvorena. Ako kliknete Izlaz, aplikacija će se odmah zatvoriti. Ako kliknete Pošalji i izađi, aplikacija će se zatvoriti i poslati izvještaj razvojnom timu.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Izlaz</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Sadržaj izvještaja</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Pošalji i izađi</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Greška</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>Aplikacija je proizvela grešku i biti će zatvorena. Izvještaj o grešci poslan je razvojnom timu. Ispričavamo se na neugodnosti.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Greška</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Nastavi</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Došlo je do greške u aplikaciji. Ako kliknete na Nastavi, aplikacija će ignorirati ovu grešku i pokušati nastaviti sa radom. Ako kliknete Odustani aplikacija će se odmah zatvoriti.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Odustani</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Greška</value>
+    <comment>Error</comment>
   </data>
 </root>

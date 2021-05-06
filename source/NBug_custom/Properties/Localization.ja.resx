@@ -119,54 +119,72 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Unhandled exception occurred. Closing application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Unhandled exception occurred. Closing application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Unhandled exception occurred. Closing application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Exception</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>General</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Please add a brief description of how we can reproduce the error:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Quit</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Report Contents</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Send and Quit</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Error</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>The application has crashed and it will now be dismissed.
 A bug report has been sent to the developers. We apologize for the inconvenience.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Error</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Continue</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click quit, the application will close immediately.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Quit</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Error</value>
+    <comment>Error</comment>
   </data>
 </root>

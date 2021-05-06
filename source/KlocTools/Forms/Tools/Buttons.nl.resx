@@ -164,6 +164,7 @@
   </data>
   <data name="ButtonSkip" xml:space="preserve">
     <value>Overslaan</value>
+    <comment>Used as "Skip waiting for process"</comment>
   </data>
   <data name="ButtonStop" xml:space="preserve">
     <value>Stop</value>
@@ -173,6 +174,7 @@
   </data>
   <data name="ButtonTerminate" xml:space="preserve">
     <value>Afbreken</value>
+    <comment>Used as "Terminate process"</comment>
   </data>
   <data name="ButtonUninstall" xml:space="preserve">
     <value>De-installeren</value>

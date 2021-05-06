@@ -119,53 +119,71 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>처리되지 않은 예외가 발생했습니다. 프로그램을 종료합니다.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>처리되지 않은 예외가 발생했습니다. 프로그램을 종료합니다.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>처리되지 않은 예외가 발생했습니다. 프로그램을 종료합니다.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>예외</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>일반</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>오류를 재현할 수 있도록 간단한 설명을 적어주십시오:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>이 프로그램은 충돌이 발생하였으며 종료됩니다. '종료'를 선택하시면 프로그램이 바로 종료됩니다. '보내고 종료'를 선택하시면 프로그램이 닫히고 버그 레포트가 전송됩니다.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>종료(&amp;Q)</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>레포트 내용</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>보내고 종료(&amp;S)</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>오류</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>이 프로그램은 충돌이 발생하였으며 종료됩니다. 버그 레포트가 개발자에게 보내졌습니다. 불편을 끼쳐드려 죄송합니다.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>오류</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>계속(&amp;C)</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>이 프로그램에서 처리되지 않은 예외가 발생했습니다. '계속'을 선택하시면 이 오류를 무시하고 계속 실행하도록 시도합니다. '종료'를 선택하시면 프로그램이 바로 닫힙니다.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>종료(&amp;Q)</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>오류</value>
+    <comment>Error</comment>
   </data>
 </root>

@@ -119,54 +119,72 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Eine Unbehandelte Ausnahme ist aufgetreten. Die Anwendung wird beendet.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Eine Unbehandelte Ausnahme ist aufgetreten. Die Anwendung wird beendet.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Eine Unbehandelte Ausnahme ist aufgetreten. Die Anwendung wird beendet.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Ausnahme</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Allgemein</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Bitte beschreiben Sie hier, wie der Fehler reproduziert werden kann:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>Die Awendung ist abgestürzt und wird jetzt beendet. Wenn Sie auf "Beenden" klicken, wird die Anwendung direkt geschlossen. Wenn Sie auf "Senden und beenden" klicken, wird zunächst ein Fehlerbericht and die Entwickler gesendet und die Anwendung anschließend geschlossen.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Beenden</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Fehlerberichtsinhalt</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Senden und beenden</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Fehler</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>In der Anwendung ist eine unbehandelte Ausnahme aufgetreten. Das Programm wird jetzt beendet.
 Es wurden Fehlerdetails an die Entwickler gesendet.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Fehler</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Weiter</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Eine unbehandelte Ausnahme ist aufgetreten. Wenn Sie auf "Weiter" klicken, wird Fehler ignoriert und die Anwendung wird versuchen, weiter zu arbeiten. Wenn Sie auf "Beenden" klicken, wird die Anwendung sofort geschlossen.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Beenden</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Fehler</value>
+    <comment>Error</comment>
   </data>
 </root>

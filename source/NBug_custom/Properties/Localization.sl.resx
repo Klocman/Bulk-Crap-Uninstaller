@@ -176,7 +176,7 @@ A bug report has been sent to the developers. We apologize for the inconvenience
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>V vaši aplikaciji je prišlo do neobravnavane izjeme. Če kliknete na 'Naprej', bo aplikacija prezrla to napako in poskusila z nadaljevanjem. Če kliknete na 'Končaj', se bo aplikacija takoj zaprla.</value>
-    <comment>Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click quit, the application will close immediately.</comment>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Končaj</value>

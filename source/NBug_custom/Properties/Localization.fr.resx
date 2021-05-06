@@ -119,53 +119,71 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Exception non gérée survenue. Fermeture de l'application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Exception non gérée survenue. Fermeture de l'application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Exception non gérée survenue. Fermeture de l'application.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Exception</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Général</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Merci d'ajouter une brève description sur la façon de reproduire l'erreur :</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>L'application a planté et va être maintenant arrêtée. Si vous cliquez Quitter, l'application fermera immédiatement. Si vous cliquez Envoyer et Quitter, l'application fermera et un rapport d'erreur sera envoyé.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Quitter</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Contenu du rapport</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Envoyer et Quitter</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Erreur</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>L'application a planté et va être maintenant arrêtée. Un rapport d'erreur a été envoyé aux développeurs. Veuillez nous excuser pour le désagrément.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Erreur</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Continuer</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Exception non gérée survenue dans votre application. Si vous cliquez Continuer, l'application ignorera cette erreur et tentera de continuer. Si vous cliquez Quitter, l'application fermera immédiatement.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Quitter</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Erreur</value>
+    <comment>Error</comment>
   </data>
 </root>

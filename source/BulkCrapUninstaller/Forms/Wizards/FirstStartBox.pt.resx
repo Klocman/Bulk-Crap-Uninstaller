@@ -290,6 +290,7 @@ Aviso: A verificação pode levar bastante tempo.</value>
   <data name="label2.Text" xml:space="preserve">
     <value>ulk crap
 uninstaller</value>
+    <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Utilizar os filtros e pesquise por palavras-chave (em todas as colunas).</value>

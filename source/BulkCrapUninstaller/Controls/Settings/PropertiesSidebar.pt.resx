@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxOrphans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
-  </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Mostrar aplicações não registada na lista.</value>
   </data>
@@ -130,24 +126,12 @@ São invisíveis na maioria dos gestores de desinstalação, mas ainda ocupam es
 
 Aviso: Pense duas vezes antes de remover esses aplicativos pois poderão ainda ser necessários!</value>
   </data>
-  <data name="checkBoxInvalidTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 62</value>
-  </data>
-  <data name="checkBoxInvalidTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
-  </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
     <value>Destacar os desinstaladores 
 inválidos</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>Use a cor cinzenta para identificar desinstaladores corrompidos ou ausentes.</value>
-  </data>
-  <data name="checkBoxCertTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 98</value>
-  </data>
-  <data name="checkBoxCertTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 30</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Destacar os desinstaladores 
@@ -159,17 +143,11 @@ certificados</value>
 Atenção: O processo de verificação pode demorar muito tempo.
 </value>
   </data>
-  <data name="checkBoxListHideMicrosoft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
-  </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Ocultar se publicado pela Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filtra tudo o que foi publicado pela Microsoft. Tão simples como isso.</value>
-  </data>
-  <data name="checkBoxListSysComp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Mostrar os componentes do sistema</value>
@@ -179,17 +157,11 @@ Atenção: O processo de verificação pode demorar muito tempo.
 Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa designação.
 </value>
   </data>
-  <data name="checkBoxListProtected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Mostrar itens protegidos</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Itens protegidos assinalados com a denominação "NoRemove (NãoRemover)" significa que o editor não quer que você os remova.</value>
-  </data>
-  <data name="checkBoxShowUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Mostrar actualizações</value>
@@ -197,29 +169,14 @@ Adicionar/Remover Programas. Os drivers são muitas vezes rotulados com essa des
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
     <value>Actualizações de outras aplicações. Normalmente, elas são desinstaladas em conjunto com aplicações semelhantes, para que possam ser ignoradas.</value>
   </data>
-  <data name="checkBoxWinFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 17</value>
-  </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Mostrar os recursos do Windows</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Mostrar as app do Windows Store</value>
   </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 161</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 180</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrando</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 30</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
     <value>Seleccione usando as caixas 
@@ -232,12 +189,6 @@ de selecção.</value>
 Você pode verificar vários itens, destacando-os e carregando na barra de espaço.
 </value>
   </data>
-  <data name="checkBoxViewGroups.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="checkBoxViewGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
-  </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Mostrar os itens em grupos</value>
   </data>
@@ -248,16 +199,7 @@ O agrupamento da maior parte das colunas utiliza uma triagem inteligente.
 
 </value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 131</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 150</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Configurações da lista de exibição</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 330</value>
   </data>
 </root>

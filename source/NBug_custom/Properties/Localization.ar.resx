@@ -119,54 +119,72 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>حدث استثناء غير معالج. اغلاق التطبيق.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>حدث استثناء غير معالج. اغلاق التطبيق.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>حدث استثناء غير معالج. اغلاق التطبيق.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>استثناء</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>عام</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>الرجاء اضافه وصف مختصر للطريقة التي يمكننا بها اعاده انتاج الخطا:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>وقد تحطم الطلب سيتم فصله الان. اذا قمت بالنقر فوق انهاء, سيتم اغلاق التطبيق مباشره. اذا قمت بالنقر فوق ارسال وانهاء ، سيتم اغلاق التطبيق وسيتم ارسال تقرير خطا.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;هروب</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>محتويات التقرير</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;ارسال و انهاء</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>خطا</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>تحطم الطلب سيتم فصله الان.
 تم ارسال تقرير خطا الى المطورين. نعتذر عن الازعاج</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>خطا</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;استمر</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>حدث استثناء غير معالج في تطبيقك. اذا قمت بالنقر فوق "متابعه" ، سيتجاهل التطبيق هذا الخطا ثم محاولة المتابعة. اذا قمت بالنقر فوق انهاء, سيتم اغلاق التطبيق مباشره.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;هروب</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>خطا</value>
+    <comment>Error</comment>
   </data>
 </root>

@@ -164,6 +164,7 @@
   </data>
   <data name="ButtonSkip" xml:space="preserve">
     <value>تخطي</value>
+    <comment>Used as "Skip waiting for process"</comment>
   </data>
   <data name="ButtonStop" xml:space="preserve">
     <value>توقف</value>
@@ -173,6 +174,7 @@
   </data>
   <data name="ButtonTerminate" xml:space="preserve">
     <value>انهاء</value>
+    <comment>Used as "Terminate process"</comment>
   </data>
   <data name="ButtonUninstall" xml:space="preserve">
     <value>الغاء التثبيت</value>

@@ -119,5 +119,6 @@
   </resheader>
   <data name="Unknown" xml:space="preserve">
     <value>Desconhecido</value>
+    <comment>Used when a value is not known or supported, for example unknown size</comment>
   </data>
 </root>

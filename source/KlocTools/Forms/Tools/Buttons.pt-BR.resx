@@ -164,6 +164,7 @@
   </data>
   <data name="ButtonSkip" xml:space="preserve">
     <value>Pular</value>
+    <comment>Used as "Skip waiting for process"</comment>
   </data>
   <data name="ButtonStop" xml:space="preserve">
     <value>Parar</value>
@@ -173,6 +174,7 @@
   </data>
   <data name="ButtonTerminate" xml:space="preserve">
     <value>Finalizar</value>
+    <comment>Used as "Terminate process"</comment>
   </data>
   <data name="ButtonUninstall" xml:space="preserve">
     <value>Desinstalar</value>

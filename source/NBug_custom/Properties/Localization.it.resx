@@ -119,18 +119,23 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Eccezione non gestita. Chiusura dell'applicazione.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Eccezione non gestita. Chiusura dell'applicazione.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Eccezione non gestita. Chiusura dell'applicazione.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Eccezione</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Generale</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Ti invitiamo a scrivere una breve descrizione su come riprodurre l'errore:</value>
@@ -138,27 +143,36 @@
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>L'applicazione si è bloccata e sarà chiusa. Selezionando "Uscita" l'applicazione sarà chiusa immediatamente. Se premi "Invia ed esci" l'applicazione sarà chiusa e sarà inviato un report dell'errore avvenuto.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Uscita</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Contenuti del report</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>&amp;Invia ed esci</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Errore</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>L'applicazione si è bloccata e sarà chiusa. Un report dell'errore è stato inviato allo sviluppatore. Ci scusiamo per l'inconveniente.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Errore</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Continua</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Errore non gestito del tuo programma. Cliccando su "Continua" l'aplicazione ignorerà questo errore e proverà a continuare. Cliccato su "Uscita" l'applicazione sarà chiusa immediatamente.</value>
@@ -166,8 +180,10 @@
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Uscita</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Errore</value>
+    <comment>Error</comment>
   </data>
 </root>

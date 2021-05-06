@@ -119,54 +119,72 @@
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
     <value>Wystąpił nieobsługiwany wyjątek. Zamykanie aplikacji.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
     <value>Wystąpił nieobsługiwany wyjątek. Zamykanie aplikacji.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
     <value>Wystąpił nieobsługiwany wyjątek. Zamykanie aplikacji.</value>
+    <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
     <value>Wyjątek</value>
+    <comment>Exception</comment>
   </data>
   <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
     <value>Ogólne</value>
+    <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
     <value>Proszę dodać krótki opis w jaki sposób możemy odtworzyć błąd:</value>
+    <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
     <value>Aplikacja uległa awarii i zostanie zamknięta. Jeśli klikniesz przycisk Zamknij, aplikacja zostanie natychmiast zamknięta. Jeśli klikniesz przycisk Wyślij i Zamknij, aplikacja zostanie zamknięta i raport o błędzie zostanie wysłany.</value>
+    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
     <value>&amp;Wyjdź</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
     <value>Treść raportu</value>
+    <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
     <value>Wyślij i &amp;Zamknij</value>
+    <comment>&amp;Send and Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
     <value>Błąd</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
     <value>Aplikacja uległa awarii i zostanie zamknięta.
 Raport błędów został wysłany do programistów. Przepraszamy za niedogodności.</value>
+    <comment>The application has crashed and it will now be dismissed.
+A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
   <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
     <value>Błąd</value>
+    <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
     <value>&amp;Kontynuuj</value>
+    <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
     <value>Wystąpił nieobsłużony wyjątek w aplikacji. Jeśli klikniesz przycisk Kontynuuj, aplikacja zignoruje błąd i spróbuje kontynuować. Jeśli klikniesz zamknij, aplikacja zostanie natychmiast zamknięta.</value>
+    <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
     <value>&amp;Wyjdź</value>
+    <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">
     <value>Błąd</value>
+    <comment>Error</comment>
   </data>
 </root>
