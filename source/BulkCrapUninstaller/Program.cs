@@ -9,12 +9,14 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using System.Xml.Linq;
+using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools;
 using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller
@@ -143,7 +145,6 @@ namespace BulkCrapUninstaller
 
                 if (!string.IsNullOrWhiteSpace(result.Value) && new Version(result.Value) < AssemblyVersion)
                     IsAfterUpgrade = true;
-                //if(new Version(result) < )
             }
             catch
             {
@@ -153,6 +154,9 @@ namespace BulkCrapUninstaller
             // Initializes the settings object (unless it has been accessed before, which it shouldnt have)
             if (Settings.Default.MiscUserId == 0)
                 Settings.Default.MiscUserId = WindowsTools.GetUniqueUserId();
+
+            if (IsAfterUpgrade)
+                ClearCaches(false);
         }
 
         private static void DeleteConfigFile()
@@ -255,6 +259,22 @@ namespace BulkCrapUninstaller
             {
                 filePath = Path.GetFullPath(filePath);
                 return new Uri(filePath);
+            }
+        }
+
+        public static void ClearCaches(bool showErrors)
+        {
+            try
+            {
+                MainWindow.CertificateCache.ClearChache();
+                UninstallToolsGlobalConfig.ClearChache();
+            }
+            catch (SystemException systemException)
+            {
+                if (showErrors)
+                    PremadeDialogs.GenericError(systemException);
+                else 
+                    Console.WriteLine(systemException);
             }
         }
     }

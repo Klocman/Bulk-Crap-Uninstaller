@@ -206,6 +206,7 @@ namespace BulkCrapUninstaller.Forms
                 DisposeListPostProcessor(this, e);
                 _listLegendWindow?.Dispose();
                 _uninstallerListConfigurator?.Dispose();
+                _debugWindow?.Dispose();
             }
             catch (Exception exception)
             {
@@ -303,7 +304,7 @@ namespace BulkCrapUninstaller.Forms
                 if (_setMan.Selected.Settings.CacheCertificates)
                     CertificateCache.SaveCertificateCache();
                 else
-                    CertificateCache.Delete();
+                    CertificateCache.ClearChache();
 
                 if (!_setMan.Selected.Settings.CacheAppInfo)
                     File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);

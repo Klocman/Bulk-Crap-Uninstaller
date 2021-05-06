@@ -75,31 +75,35 @@ namespace UninstallTools
 
         public static bool EnableAppInfoCache
         {
-            get { return UninstallerFactoryCache != null; }
+            get => UninstallerFactoryCache != null;
             set
             {
-                if (value)
-                {
-                    var cachePath = AppInfoCachePath;
-                    try
-                    {
-                        if (File.Exists(cachePath))
-                            UninstallerFactoryCache = ApplicationUninstallerFactoryCache.Load(cachePath);
-                        else
-                            UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
-                    }
-                    catch (SystemException e)
-                    {
-                        UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
-                        Console.WriteLine(e);
-                    }
-                }
-                else
-                {
-                    UninstallerFactoryCache?.Delete();
-                    UninstallerFactoryCache = null;
-                }
+                if (value == EnableAppInfoCache) return;
+
+                if (value) ReloadCache();
+                else ClearChache();
             }
+        }
+
+        private static void ReloadCache()
+        {
+            var cachePath = AppInfoCachePath;
+            try
+            {
+                UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                if (File.Exists(cachePath)) UninstallerFactoryCache.Read();
+            }
+            catch (SystemException e)
+            {
+                UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                Console.WriteLine(e);
+            }
+        }
+
+        public static void ClearChache()
+        {
+            UninstallerFactoryCache?.Delete();
+            UninstallerFactoryCache = null;
         }
 
         public static string AppInfoCachePath { get; }

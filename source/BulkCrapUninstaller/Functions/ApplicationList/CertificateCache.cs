@@ -71,7 +71,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             }
         }
 
-        public void Delete()
+        public void ClearChache()
         {
             _dictionaryCache = null;
             File.Delete(CacheFilename);
