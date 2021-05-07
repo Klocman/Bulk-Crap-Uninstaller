@@ -68,7 +68,7 @@
     <Setting Name="MiscCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="BackupLeftovers" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="Klocman.YesNoAsk" Scope="User">
+    <Setting Name="BackupLeftovers" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="Klocman.YesNoAsk" Scope="User">
       <Value Profile="(Default)">Ask</Value>
     </Setting>
     <Setting Name="MessagesAskRemoveLoudItems" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
@@ -161,9 +161,6 @@
     <Setting Name="QuietAutomatizationKillStuck" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MiscNet4NagShown" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="FilterShowWinFeatures" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -212,7 +209,7 @@
     <Setting Name="ScanChocolatey" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="QuietUseDaemon" Type="System.Boolean" Scope="User">
+    <Setting Name="QuietUseDaemon" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ScanOculus" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
@@ -224,14 +221,17 @@
     <Setting Name="FoldersScanRemovable" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FilterShowTweaks" Type="System.Boolean" Scope="User">
+    <Setting Name="FilterShowTweaks" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MiscColorblind" Type="System.Boolean" Scope="User">
+    <Setting Name="MiscColorblind" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ScanScoop" Type="System.Boolean" Scope="User">
+    <Setting Name="ScanScoop" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DpiAwareTest" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
