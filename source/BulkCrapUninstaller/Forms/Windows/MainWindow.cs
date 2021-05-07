@@ -1428,11 +1428,11 @@ namespace BulkCrapUninstaller.Forms
                             NewsPopup.ShowPopup(this);
                         }
 
-                        if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
-                        {
-                            _setMan.Selected.Settings.MiscNet4NagShown = true;
-                            MessageBoxes.Net4MissingInfo();
-                        }
+                        //if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+                        //{
+                        //    _setMan.Selected.Settings.MiscNet4NagShown = true;
+                        //    MessageBoxes.Net4MissingInfo();
+                        //}
                     });
                 }).Start();
             }

@@ -601,13 +601,13 @@ namespace BulkCrapUninstaller.Functions
                     SystemIcons.Error, Buttons.ButtonClose));
         }
 
-        public static void Net4MissingInfo()
-        {
-            CustomMessageBox.ShowDialog(DefaultOwner,
-                new CmbBasicSettings(Localisable.MessageBoxes_Net4Missing_Title,
-                    Localisable.MessageBoxes_Net4Missing_Message,
-                    Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
-        }
+        //public static void Net4MissingInfo()
+        //{
+        //    CustomMessageBox.ShowDialog(DefaultOwner,
+        //        new CmbBasicSettings(Localisable.MessageBoxes_Net4Missing_Title,
+        //            Localisable.MessageBoxes_Net4Missing_Message,
+        //            Localisable.MessageBoxes_Net4Missing_Details, SystemIcons.Warning, Buttons.ButtonOk));
+        //}
 
         public static void DisplayHelp()
         {

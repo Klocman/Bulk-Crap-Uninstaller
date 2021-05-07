@@ -47,14 +47,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.BindControl(checkBoxGenerateStuck, x => x.QuietAutomatizationKillStuck, this);
             _settings.BindControl(checkBoxAutoDaemon, x => x.QuietUseDaemon, this);
 
-            if (!Program.Net4IsAvailable)
-            {
-                checkBoxGenerate.Enabled = false;
-                checkBoxGenerateStuck.Enabled = false; 
-            }
-
-            _settings.Subscribe((sender, args) => checkBoxGenerateStuck.Enabled = args.NewValue && Program.Net4IsAvailable, 
-                settings => settings.QuietAutomatization, this);
+            _settings.Subscribe((sender, args) => checkBoxGenerateStuck.Enabled = args.NewValue, settings => settings.QuietAutomatization, this);
 
             _settings.Subscribe(
                 (x, y) => checkBoxSimulate.ForeColor = y.NewValue ? Color.OrangeRed : SystemColors.ControlText,
