@@ -197,6 +197,16 @@ namespace BulkCrapUninstaller.Forms
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
         }
 
+        protected override void OnDpiChanged(DpiChangedEventArgs e)
+        {
+            base.OnDpiChanged(e);
+
+            var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
+
+            this.toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
+            this.toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
+        }
+
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             try

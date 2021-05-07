@@ -11815,6 +11815,31 @@ namespace BrightIdeasSoftware
 
         #endregion
 
+        private float origFontSize;
+        protected override void RescaleConstantsForDpi(int deviceDpiOld, int deviceDpiNew)
+        {
+            base.RescaleConstantsForDpi(deviceDpiOld, deviceDpiNew);
+            
+            SuspendLayout();
+            BeginUpdate();
+
+            // Storing the font size because the Font property gets changed at weird times
+            // which corrupts the size after a few DPI switches since scaling is sometimes applied twice
+            if (origFontSize == 0) origFontSize = Font.Size;
+
+            var scalingRatio = DeviceDpi / 96f; //e.DeviceDpiNew / (double)e.DeviceDpiOld;
+            //Debug.WriteLine($"DPI CHANGE: {deviceDpiOld} > {deviceDpiNew}");
+
+            Font = new Font(Font.FontFamily, MathF.Round(origFontSize * scalingRatio, 1));
+
+            foreach (OLVListItem listViewItem in Items)
+                RefreshItem(listViewItem);
+            AutoResizeColumns();
+
+            EndUpdate();
+            ResumeLayout();
+        }
+
         #region Implementation variables
 
         private bool isOwnerOfObjects; // does this ObjectListView own the Objects collection?

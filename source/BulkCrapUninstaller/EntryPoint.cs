@@ -31,7 +31,6 @@ namespace BulkCrapUninstaller
         [STAThread]
         public static void Main(string[] args)
         {
-            Application.SetCompatibleTextRenderingDefault(false);
             NBugConfigurator.SetupNBug();
 
             using (LogWriter.StartLogging())
@@ -47,6 +46,9 @@ namespace BulkCrapUninstaller
 
                 try
                 {
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.EnableVisualStyles();
+
                     _mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
                     if (!createdNew)
                     {
@@ -56,7 +58,9 @@ namespace BulkCrapUninstaller
                     }
 
                     SetupDependancies();
-                    Application.EnableVisualStyles();
+
+                    if(Properties.Settings.Default.DpiAwareTest)
+                        Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
                     var startupMgr = args.Contains("/startupmanager", StringComparison.OrdinalIgnoreCase) || 
                                      args.Contains("/sm", StringComparison.OrdinalIgnoreCase);
