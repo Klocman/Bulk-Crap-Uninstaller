@@ -60,6 +60,11 @@ namespace BulkCrapUninstaller.Controls
         public AdvancedFilters()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
 
             uninstallListEditor1.CurrentListChanged += OnCurrentListChanged;
             uninstallListEditor1.FiltersChanged += OnFiltersChanged;

@@ -17,6 +17,11 @@ namespace BulkCrapUninstaller.Controls
         public UninstallationSettings()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
 
             // Shutdown blocking not available below Windows Vista
             if (Environment.OSVersion.Version < new Version(6, 0))

@@ -19,6 +19,11 @@ namespace BulkCrapUninstaller.Controls.Settings
         public CacheSettings()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
 
             _settings.BindControl(checkBoxCerts, x => x.CacheCertificates, this);
             _settings.BindControl(checkBoxInfo, x => x.CacheAppInfo, this);
