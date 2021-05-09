@@ -25,6 +25,8 @@ namespace BulkCrapUninstaller.Controls.Settings
         {
             base.OnLoad(e);
 
+            if (DesignMode) return;
+
             _settings.BindControl(checkBoxCerts, x => x.CacheCertificates, this);
             _settings.BindControl(checkBoxInfo, x => x.CacheAppInfo, this);
 

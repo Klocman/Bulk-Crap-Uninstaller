@@ -24,6 +24,8 @@ namespace BulkCrapUninstaller.Controls
         {
             base.OnLoad(e);
 
+            if (DesignMode) return;
+
             _settings.BindControl(checkBoxViewCheckboxes, x => x.UninstallerListUseCheckboxes, this);
             _settings.BindControl(checkBoxViewGroups, x => x.UninstallerListUseGroups, this);
 

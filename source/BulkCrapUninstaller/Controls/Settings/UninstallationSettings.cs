@@ -23,6 +23,8 @@ namespace BulkCrapUninstaller.Controls
         {
             base.OnLoad(e);
 
+            if (DesignMode) return;
+
             // Shutdown blocking not available below Windows Vista
             if (Environment.OSVersion.Version < new Version(6, 0))
                 checkBoxShutdown.Enabled = false;

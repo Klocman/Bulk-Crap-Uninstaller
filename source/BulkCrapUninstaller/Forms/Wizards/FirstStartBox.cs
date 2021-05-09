@@ -26,6 +26,8 @@ namespace BulkCrapUninstaller.Forms
         {
             InitializeComponent();
 
+            if (DesignMode) return;
+
             if (!canExit)
             {
                 buttonExit.Enabled = false;

@@ -32,6 +32,8 @@ namespace BulkCrapUninstaller.Forms
         {
             base.OnLoad(e);
 
+            if (DesignMode) return;
+
             Icon = Resources.Icon_Logo;
 
             _settings.BindControl(checkBoxLoud, x => x.MessagesAskRemoveLoudItems, this);

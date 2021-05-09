@@ -33,6 +33,8 @@ namespace BulkCrapUninstaller.Forms
 
             InitializeComponent();
 
+            if (DesignMode) return;
+
             _settings.Subscribe(TestHandler, x => x.FilterHideMicrosoft, this);
             _settings.BindControl(checkBox1, x => x.FilterHideMicrosoft, this);
 
