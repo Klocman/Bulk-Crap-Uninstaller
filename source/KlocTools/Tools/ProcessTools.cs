@@ -14,6 +14,7 @@ using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Klocman.Extensions;
 using Klocman.Properties;
 
 namespace Klocman.Tools
@@ -37,17 +38,30 @@ namespace Klocman.Tools
         /// <summary>
         ///     Get IDs of all child processes
         /// </summary>
-        /// <param name="pid"></param>
-        /// <returns></returns>
         public static IEnumerable<int> GetChildProcesses(int pid)
         {
-            var searcher = new ManagementObjectSearcher
-                ("Select * From Win32_Process Where ParentProcessID=" + pid);
-
-            //using (var moc = searcher.Get())
+            try
             {
-                var moc = searcher.Get();
-                return moc.Cast<ManagementObject>().Select(mo => Convert.ToInt32(mo["ProcessID"]));
+                using (var searcher = new ManagementObjectSearcher("Select * From Win32_Process Where ParentProcessID=" + pid))
+                {
+                    var moc = searcher.Get();
+                    var childProcesses = moc.Cast<ManagementObject>().Select(mo => Convert.ToInt32(mo["ProcessID"])).ToList();
+                    return childProcesses;
+                }
+            }
+            catch
+            {
+                Process processById;
+                try
+                {
+                    processById = Process.GetProcessById(pid);
+                }
+                catch (Exception a)
+                {
+                    Console.WriteLine(a);
+                    return Enumerable.Empty<int>();
+                }
+                return processById.GetChildProcesses().Select(x => x.Id);
             }
         }
 
@@ -106,8 +120,8 @@ namespace Klocman.Tools
             return true;
         }
 
-        private static readonly char[] SeparateArgsFromCommandInvalidChars = 
-            Path.GetInvalidFileNameChars().Concat(new[] { ',',';' }).ToArray();
+        private static readonly char[] SeparateArgsFromCommandInvalidChars =
+            Path.GetInvalidFileNameChars().Concat(new[] { ',', ';' }).ToArray();
 
         //static readonly char[] pathFilterChars = StringTools.InvalidPathChars.Except(new char[] { '"' }).ToArray();
         /// <summary>
@@ -282,13 +296,13 @@ namespace Klocman.Tools
                         BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
                         null,
                         culture,
-                        new object[] {culture});
+                        new object[] { culture });
 
                     type.InvokeMember("m_userDefaultUICulture",
                         BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
                         null,
                         culture,
-                        new object[] {culture});
+                        new object[] { culture });
 
                     return;
                 }
@@ -304,13 +318,13 @@ namespace Klocman.Tools
                     BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
                     null,
                     culture,
-                    new object[] {culture});
+                    new object[] { culture });
 
                 type.InvokeMember("s_userDefaultUICulture",
                     BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
                     null,
                     culture,
-                    new object[] {culture});
+                    new object[] { culture });
             }
             catch
             {
