@@ -1818,7 +1818,7 @@ namespace BulkCrapUninstaller.Forms
             filterEditor1.Search(@"\Resources\Scripts\Tweak", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallString));
         }
 
-        private void createRestorePointToolStripMenuItem_Click(object? sender, EventArgs e)
+        private void createRestorePointToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LockApplication(true);
             try

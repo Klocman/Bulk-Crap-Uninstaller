@@ -40,7 +40,6 @@ namespace UninstallTools.Junk.Containers
         /// <summary>
         ///     Preview item in an external application
         /// </summary>
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         void Open();
 
         /// <summary>

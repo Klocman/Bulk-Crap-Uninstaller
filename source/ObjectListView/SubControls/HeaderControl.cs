@@ -394,7 +394,6 @@ namespace BrightIdeasSoftware {
         /// Override the basic message pump
         /// </summary>
         /// <param name="m"></param>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         protected override void WndProc(ref Message m) {
             const int WM_DESTROY = 2;
             const int WM_SETCURSOR = 0x20;

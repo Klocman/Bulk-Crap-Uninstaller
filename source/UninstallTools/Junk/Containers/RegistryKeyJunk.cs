@@ -52,7 +52,6 @@ namespace UninstallTools.Junk.Containers
             }
         }
 
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
             if (!RegKeyExists())

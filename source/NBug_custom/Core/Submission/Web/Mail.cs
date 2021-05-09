@@ -140,7 +140,7 @@ namespace NBug.Core.Submission.Web
                 message.Priority = Priority;
 
                 message.To.Add(To);
-                message.ReplyTo = new MailAddress(ReplyTo);
+                message.ReplyToList.Add(new MailAddress(ReplyTo));
                 message.From = !string.IsNullOrEmpty(FromName) ? new MailAddress(From, FromName) : new MailAddress(From);
 
                 if (UseAttachment)
