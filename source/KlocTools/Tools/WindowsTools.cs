@@ -268,12 +268,9 @@ namespace Klocman.Tools
         /// </summary>
         public static string GetProgramFilesX86Path()
         {
-            if (ProcessTools.Is64BitProcess)
-            {
-                var result = Environment.GetEnvironmentVariable("ProgramFiles(x86)");
-                if (result.IsNotEmpty())
-                    return result;
-            }
+            var result = Environment.GetEnvironmentVariable("ProgramFiles(x86)");
+            if (result.IsNotEmpty())
+                return result;
 
             return GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES);
         }

@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputType>WinExe</OutputType>
     <AssemblyName>BCUninstaller</AssemblyName>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -83,9 +84,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Functions\Ratings\RatingRenderer.cs" />
-    <Compile Update="Functions\Tracking\UsageTracker.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Update="Functions\Tracking\UsageTracker.cs" />
     <Compile Update="Controls\Settings\PropertiesSidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
