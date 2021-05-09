@@ -576,4 +576,7 @@
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Installa .NET v3.5 (aggiungi funzionalità)</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Creare un nuovo punto di ripristino</value>
+  </data>
 </root>

@@ -167,4 +167,10 @@ dezinstalatorów ręcznie</value>
     <value>Monitoruj "ciche" deinstalatory I zautomatyzuj
 nieprzewidziane wyskakujące okiena</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Utwórz punkt przywracania przed odinstalowaniem</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Możesz utworzyć systemowy punkt przywracania systemu (zachowuje rejestr, niektóre ustawienia i pliki). Zaleca się utworzenie punktu przywracania przed usunięciem sterowników i ważnych aplikacji systemowych.</value>
+  </data>
 </root>

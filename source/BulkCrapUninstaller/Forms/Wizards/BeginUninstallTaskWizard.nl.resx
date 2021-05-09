@@ -184,7 +184,7 @@
     <value>l</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Herstelpunt werd gemaakt</value>
+    <value>Maak een nieuw herstelpunt</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Bestanden worden nog gebruikt door lopende processen</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
-  </data>
-  <data name="buttonCreateRestore.Text" xml:space="preserve">
-    <value>Maak een nieuw herstelpunt</value>
   </data>
 </root>

@@ -1456,7 +1456,7 @@ BCU will wait until the currently running command completes before executing the
     <value>198, 196</value>
   </data>
   <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>430, 393</value>
+    <value>430, 407</value>
   </data>
   <data name="propertiesSidebar1.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
@@ -1483,7 +1483,7 @@ BCU will wait until the currently running command completes before executing the
     <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageGeneral.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>438, 399</value>
+    <value>438, 413</value>
   </data>
   <data name="tabPageGeneral.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
@@ -2634,7 +2634,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>4, 3, 4, 3</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>446, 447</value>
+    <value>446, 461</value>
   </data>
   <data name="tabControl.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
@@ -2655,7 +2655,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Bottom</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>7, 454</value>
+    <value>7, 468</value>
   </data>
   <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
     <value>4, 3, 4, 3</value>
@@ -2685,7 +2685,7 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>460, 507</value>
+    <value>460, 521</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
     <value>4, 3, 4, 3</value>
@@ -2710,59 +2710,5 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, System.Private.CoreLib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>6, 28</value>
-  </data>
-  <data name="checkBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>121, 19</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>1</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Color-blind mode</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox2.AutoSize" type="System.Boolean, System.Private.CoreLib">
-    <value>True</value>
-  </data>
-  <data name="checkBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>6, 28</value>
-  </data>
-  <data name="checkBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>121, 19</value>
-  </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>1</value>
-  </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Color-blind mode</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

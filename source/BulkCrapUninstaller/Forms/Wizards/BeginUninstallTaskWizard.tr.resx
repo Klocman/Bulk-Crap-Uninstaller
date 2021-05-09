@@ -184,7 +184,7 @@
     <value>l</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Geri yükleme noktası oluşturuldu</value>
+    <value>Yeni bir geri yükleme noktası oluştur</value>
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Yeni kaldırma görevine başla</value>
-  </data>
-  <data name="buttonCreateRestore.Text" xml:space="preserve">
-    <value>Yeni bir geri yükleme noktası oluştur</value>
   </data>
 </root>

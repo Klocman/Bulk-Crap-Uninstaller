@@ -163,4 +163,10 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>الغاء التثبيت بهدوء</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>انشاء نقطه استعاده قبل الغاء التثبيت</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>يمكنك انشاء نقطه استعاده النظام الى تسجيل النسخ الاحتياطي ، وبعض الاعدادات والملفات. من المستحسن انشاء نقطه استعاده قبل ازاله برامج التشغيل وتطبيقات النظام الهامه.</value>
+  </data>
 </root>

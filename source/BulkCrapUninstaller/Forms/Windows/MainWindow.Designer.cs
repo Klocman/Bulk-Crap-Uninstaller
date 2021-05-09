@@ -28,24 +28,24 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainerListAndMap = new System.Windows.Forms.SplitContainer();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnDisplayName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnPublisher = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnRating = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnDisplayVersion = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnInstallDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnSize = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnStartup = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnIs64 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnUninstallString = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnAbout = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnInstallSource = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnInstallLocation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnUninstallerKind = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnSystemComponent = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnProtected = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnRegistryKeyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnGuid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnQuietUninstallString = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnDisplayName = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnPublisher = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnRating = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnDisplayVersion = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnInstallDate = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnSize = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnStartup = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnIs64 = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnUninstallString = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnAbout = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnInstallSource = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnInstallLocation = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnUninstallerKind = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnSystemComponent = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnProtected = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnRegistryKeyName = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnGuid = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnQuietUninstallString = new BrightIdeasSoftware.OLVColumn();
             this.treeMap1 = new SimpleTreeMap.TreeMap();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -174,6 +174,7 @@ namespace BulkCrapUninstaller.Forms
             this.onlineSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.googleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alternativeToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.slantcoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
@@ -228,10 +229,12 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.slantcoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.createRestorePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerListAndMap)).BeginInit();
             this.splitContainerListAndMap.Panel1.SuspendLayout();
             this.splitContainerListAndMap.Panel2.SuspendLayout();
             this.splitContainerListAndMap.SuspendLayout();
@@ -1374,6 +1377,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.alternativeToToolStripMenuItem, "alternativeToToolStripMenuItem");
             this.alternativeToToolStripMenuItem.Click += new System.EventHandler(this.alternativeToToolStripMenuItem_Click);
             // 
+            // slantcoToolStripMenuItem1
+            // 
+            this.slantcoToolStripMenuItem1.Name = "slantcoToolStripMenuItem1";
+            resources.ApplyResources(this.slantcoToolStripMenuItem1, "slantcoToolStripMenuItem1");
+            this.slantcoToolStripMenuItem1.Click += new System.EventHandler(this.slantcoToolStripMenuItem_Click);
+            // 
             // toolStripSeparator27
             // 
             this.toolStripSeparator27.Name = "toolStripSeparator27";
@@ -1536,6 +1545,7 @@ namespace BulkCrapUninstaller.Forms
             this.troubleshootUninstallProblemsToolStripMenuItem,
             this.startDiskCleanupToolStripMenuItem,
             this.tryToInstallNETV35ToolStripMenuItem,
+            this.createRestorePointToolStripMenuItem,
             this.toolStripSeparator29,
             this.openProgramsAndFeaturesToolStripMenuItem,
             this.openSystemRestoreToolStripMenuItem,
@@ -1730,11 +1740,11 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker.ContainerControl = this;
             // 
-            // slantcoToolStripMenuItem1
+            // createRestorePointToolStripMenuItem
             // 
-            this.slantcoToolStripMenuItem1.Name = "slantcoToolStripMenuItem1";
-            resources.ApplyResources(this.slantcoToolStripMenuItem1, "slantcoToolStripMenuItem1");
-            this.slantcoToolStripMenuItem1.Click += new System.EventHandler(this.slantcoToolStripMenuItem_Click);
+            this.createRestorePointToolStripMenuItem.Name = "createRestorePointToolStripMenuItem";
+            resources.ApplyResources(this.createRestorePointToolStripMenuItem, "createRestorePointToolStripMenuItem");
+            this.createRestorePointToolStripMenuItem.Click += new System.EventHandler(this.createRestorePointToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1751,9 +1761,11 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainerListAndMap.Panel1.ResumeLayout(false);
             this.splitContainerListAndMap.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerListAndMap)).EndInit();
             this.splitContainerListAndMap.ResumeLayout(false);
             this.listViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
@@ -1981,6 +1993,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem takeOwnershipToolStripMenuItem;
         private ToolStripMenuItem slantcoToolStripMenuItem;
         private ToolStripMenuItem slantcoToolStripMenuItem1;
+        private ToolStripMenuItem createRestorePointToolStripMenuItem;
     }
 }
 

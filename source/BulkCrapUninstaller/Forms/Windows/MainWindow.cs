@@ -1168,6 +1168,7 @@ namespace BulkCrapUninstaller.Forms
         {
             viewWindowsFeaturesToolStripMenuItem.Enabled = DismTools.DismIsAvailable;
             tryToInstallNETV35ToolStripMenuItem.Enabled = DismTools.DismIsAvailable && !WindowsTools.CheckNetFramework35Installed();
+            createRestorePointToolStripMenuItem.Enabled = SysRestore.SysRestoreAvailable();
         }
 
         private void toolStripLabelStatus_TextChanged(object sender, EventArgs e)
@@ -1815,6 +1816,23 @@ namespace BulkCrapUninstaller.Forms
         {
             everythingToolStripMenuItem_Click(sender, e);
             filterEditor1.Search(@"\Resources\Scripts\Tweak", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallString));
+        }
+
+        private void createRestorePointToolStripMenuItem_Click(object? sender, EventArgs e)
+        {
+            LockApplication(true);
+            try
+            {
+                SystemRestore.BeginSysRestore(0, false, true, this);
+            }
+            catch (Exception exception)
+            {
+                PremadeDialogs.GenericError(exception);
+            }
+            finally
+            {
+                LockApplication(false);
+            }
         }
     }
 }

@@ -169,7 +169,7 @@
     <value>Удаление будет тихим</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Точка восстановления создана</value>
+    <value>Создание новой точки восстановления</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Файлы используются запущенными процессами</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="labelProgress.Text" xml:space="preserve">
     <value>1 / 6</value>
-  </data>
-  <data name="buttonCreateRestore.Text" xml:space="preserve">
-    <value>Создание новой точки восстановления</value>
   </data>
 </root>

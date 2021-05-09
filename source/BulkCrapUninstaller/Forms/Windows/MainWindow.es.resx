@@ -528,4 +528,7 @@
   <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
     <value>Iniciar limpieza del disco</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crear un nuevo punto de restauración</value>
+  </data>
 </root>

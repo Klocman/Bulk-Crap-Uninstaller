@@ -537,4 +537,7 @@
   <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>عرض ميزات وندوز</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>انشاء نقطه استعاده جديده</value>
+  </data>
 </root>

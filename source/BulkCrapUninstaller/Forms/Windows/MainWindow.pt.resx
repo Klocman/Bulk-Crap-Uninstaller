@@ -516,4 +516,7 @@
   <data name="nukeMenuItem.Text" xml:space="preserve">
     <value>Desinstalar através de janela, directório ou arquivo...</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Criar um novo ponto de restauro</value>
+  </data>
 </root>

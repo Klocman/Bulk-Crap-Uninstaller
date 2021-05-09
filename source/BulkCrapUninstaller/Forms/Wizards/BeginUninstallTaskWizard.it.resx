@@ -184,7 +184,7 @@
     <value>l</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Il punto di ripritino è stato creato</value>
+    <value>Creare un nuovo punto di ripristino</value>
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Avviamento nuova procedura di disinstallazione</value>
-  </data>
-  <data name="buttonCreateRestore.Text" xml:space="preserve">
-    <value>Creare un nuovo punto di ripristino</value>
   </data>
 </root>

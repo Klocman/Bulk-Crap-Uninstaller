@@ -216,6 +216,18 @@ namespace BulkCrapUninstaller.Functions
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;
 
+                    if (_settings.CreateRestorePoint)
+                    {
+                        try
+                        {
+                            SystemRestore.BeginSysRestore(taskEntries.Length, false);
+                        }
+                        catch (Exception exception)
+                        {
+                            PremadeDialogs.GenericError(exception);
+                        }
+                    }
+
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
                         LoadingDialog.ShowDialog(

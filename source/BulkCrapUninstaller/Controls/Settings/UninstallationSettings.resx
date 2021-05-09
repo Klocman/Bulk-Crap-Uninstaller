@@ -1,64 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
+﻿<root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,42 +57,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupBox3.AutoSize" type="System.Boolean, mscorlib">
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+  <data name="groupBox3.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.AutoSize" type="System.Boolean, mscorlib">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="checkBoxManualNoCollisionProtection.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.Enabled" type="System.Boolean, mscorlib">
+  <data name="checkBoxManualNoCollisionProtection.Enabled" type="System.Boolean, System.Private.CoreLib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxManualNoCollisionProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxManualNoCollisionProtection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 82</value>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBoxManualNoCollisionProtection.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>9, 95</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 30</value>
+  <assembly alias="System.Windows.Forms.Primitives" name="System.Windows.Forms.Primitives, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxManualNoCollisionProtection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxManualNoCollisionProtection.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>251, 34</value>
+  </data>
+  <data name="checkBoxManualNoCollisionProtection.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
   </data>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
     <value>Disable collision prevention when running 
 uninstallers manually</value>
   </data>
-  <data name="checkBoxManualNoCollisionProtection.Visible" type="System.Boolean, mscorlib">
+  <data name="checkBoxManualNoCollisionProtection.Visible" type="System.Boolean, System.Private.CoreLib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;checkBoxManualNoCollisionProtection.Name" xml:space="preserve">
     <value>checkBoxManualNoCollisionProtection</value>
   </data>
   <data name="&gt;&gt;checkBoxManualNoCollisionProtection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxManualNoCollisionProtection.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -160,19 +107,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxManualNoCollisionProtection.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxConcurrentOneLoud.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 60</value>
+  <data name="checkBoxConcurrentOneLoud.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>24, 69</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
+  <data name="checkBoxConcurrentOneLoud.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxConcurrentOneLoud.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxConcurrentOneLoud.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>208, 19</value>
+  </data>
+  <data name="checkBoxConcurrentOneLoud.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>3</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
@@ -182,7 +132,7 @@ uninstallers manually</value>
     <value>checkBoxConcurrentOneLoud</value>
   </data>
   <data name="&gt;&gt;checkBoxConcurrentOneLoud.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxConcurrentOneLoud.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -190,19 +140,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxConcurrentOneLoud.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="checkBoxConcurrent.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxConcurrent.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxConcurrent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxConcurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 19</value>
+  <data name="checkBoxConcurrent.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>9, 22</value>
   </data>
-  <data name="checkBoxConcurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 17</value>
+  <data name="checkBoxConcurrent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxConcurrent.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxConcurrent.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>318, 19</value>
+  </data>
+  <data name="checkBoxConcurrent.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
@@ -212,7 +165,7 @@ uninstallers manually</value>
     <value>checkBoxConcurrent</value>
   </data>
   <data name="&gt;&gt;checkBoxConcurrent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxConcurrent.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -223,20 +176,23 @@ uninstallers manually</value>
   <data name="numericUpDownMaxConcurrent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="numericUpDownMaxConcurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 39</value>
+  <data name="numericUpDownMaxConcurrent.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>258, 45</value>
   </data>
-  <data name="numericUpDownMaxConcurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+  <data name="numericUpDownMaxConcurrent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="numericUpDownMaxConcurrent.TabIndex" type="System.Int32, mscorlib">
+  <data name="numericUpDownMaxConcurrent.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>80, 23</value>
+  </data>
+  <data name="numericUpDownMaxConcurrent.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;numericUpDownMaxConcurrent.Name" xml:space="preserve">
     <value>numericUpDownMaxConcurrent</value>
   </data>
   <data name="&gt;&gt;numericUpDownMaxConcurrent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownMaxConcurrent.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -244,19 +200,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;numericUpDownMaxConcurrent.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label2.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 41</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>21, 47</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 13</value>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>200, 15</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
@@ -266,7 +225,7 @@ uninstallers manually</value>
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -277,16 +236,19 @@ uninstallers manually</value>
   <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 258</value>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>0, 309</value>
   </data>
-  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 3, 5, 3</value>
+  <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 131</value>
+  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>6, 3, 6, 3</value>
   </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>348, 151</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
@@ -296,7 +258,7 @@ uninstallers manually</value>
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>$this</value>
@@ -304,25 +266,28 @@ uninstallers manually</value>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="groupBox2.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="flowLayoutPanel4.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="checkBoxShutdown.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxShutdown.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxShutdown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxShutdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="checkBoxShutdown.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 3</value>
   </data>
-  <data name="checkBoxShutdown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 17</value>
+  <data name="checkBoxShutdown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxShutdown.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxShutdown.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>200, 19</value>
+  </data>
+  <data name="checkBoxShutdown.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
@@ -332,7 +297,7 @@ uninstallers manually</value>
     <value>checkBoxShutdown</value>
   </data>
   <data name="&gt;&gt;checkBoxShutdown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxShutdown.Parent" xml:space="preserve">
     <value>flowLayoutPanel4</value>
@@ -340,19 +305,58 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxShutdown.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxRestorePoint.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxRestorePoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxRestorePoint.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 28</value>
+  </data>
+  <data name="checkBoxRestorePoint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="checkBoxRestorePoint.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>241, 19</value>
+  </data>
+  <data name="checkBoxRestorePoint.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Create a restore point before uninstalling</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>You can create a system restore point to backup registry, some settings and files. It's recommended to create a restore point before removing drivers and important system applications.</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRestorePoint.Name" xml:space="preserve">
+    <value>checkBoxRestorePoint</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRestorePoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRestorePoint.Parent" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRestorePoint.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxBatchSortQuiet.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxBatchSortQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
+  <data name="checkBoxBatchSortQuiet.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 53</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
+  <data name="checkBoxBatchSortQuiet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxBatchSortQuiet.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>177, 19</value>
+  </data>
+  <data name="checkBoxBatchSortQuiet.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
@@ -362,27 +366,30 @@ uninstallers manually</value>
     <value>checkBoxBatchSortQuiet</value>
   </data>
   <data name="&gt;&gt;checkBoxBatchSortQuiet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxBatchSortQuiet.Parent" xml:space="preserve">
     <value>flowLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;checkBoxBatchSortQuiet.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="checkBoxDiisableProtection.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxDiisableProtection.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxDiisableProtection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 49</value>
+  <data name="checkBoxDiisableProtection.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 78</value>
   </data>
-  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+  <data name="checkBoxDiisableProtection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxDiisableProtection.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxDiisableProtection.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>122, 19</value>
+  </data>
+  <data name="checkBoxDiisableProtection.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
@@ -392,27 +399,30 @@ uninstallers manually</value>
     <value>checkBoxDiisableProtection</value>
   </data>
   <data name="&gt;&gt;checkBoxDiisableProtection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxDiisableProtection.Parent" xml:space="preserve">
     <value>flowLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;checkBoxDiisableProtection.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="checkBoxSimulate.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxSimulate.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxSimulate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxSimulate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 72</value>
+  <data name="checkBoxSimulate.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 103</value>
   </data>
-  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
+  <data name="checkBoxSimulate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxSimulate.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxSimulate.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>147, 19</value>
+  </data>
+  <data name="checkBoxSimulate.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>3</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
@@ -422,13 +432,13 @@ uninstallers manually</value>
     <value>checkBoxSimulate</value>
   </data>
   <data name="&gt;&gt;checkBoxSimulate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxSimulate.Parent" xml:space="preserve">
     <value>flowLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;checkBoxSimulate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="flowLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -436,23 +446,26 @@ uninstallers manually</value>
   <data name="flowLayoutPanel4.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
+  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>6, 19</value>
   </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 92</value>
+  <data name="flowLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>336, 125</value>
+  </data>
+  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
-  <data name="flowLayoutPanel4.WrapContents" type="System.Boolean, mscorlib">
+  <data name="flowLayoutPanel4.WrapContents" type="System.Boolean, System.Private.CoreLib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
     <value>flowLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -463,16 +476,19 @@ uninstallers manually</value>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>0, 0</value>
   </data>
-  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 3, 5, 3</value>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 111</value>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>6, 3, 6, 3</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>348, 147</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
@@ -482,7 +498,7 @@ uninstallers manually</value>
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -490,25 +506,28 @@ uninstallers manually</value>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="groupBox1.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxAutoKillQuiet.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxAutoKillQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="checkBoxAutoKillQuiet.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 3</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 17</value>
+  <data name="checkBoxAutoKillQuiet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxAutoKillQuiet.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxAutoKillQuiet.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>242, 19</value>
+  </data>
+  <data name="checkBoxAutoKillQuiet.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
@@ -518,7 +537,7 @@ uninstallers manually</value>
     <value>checkBoxAutoKillQuiet</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoKillQuiet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoKillQuiet.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -526,19 +545,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxAutoKillQuiet.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBoxRetryQuiet.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxRetryQuiet.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxRetryQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxRetryQuiet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
+  <data name="checkBoxRetryQuiet.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 28</value>
   </data>
-  <data name="checkBoxRetryQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+  <data name="checkBoxRetryQuiet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxRetryQuiet.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxRetryQuiet.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>207, 19</value>
+  </data>
+  <data name="checkBoxRetryQuiet.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
@@ -548,7 +570,7 @@ uninstallers manually</value>
     <value>checkBoxRetryQuiet</value>
   </data>
   <data name="&gt;&gt;checkBoxRetryQuiet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxRetryQuiet.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -556,19 +578,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxRetryQuiet.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="checkBoxGenerate.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxGenerate.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxGenerate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 49</value>
+  <data name="checkBoxGenerate.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 53</value>
   </data>
-  <data name="checkBoxGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 17</value>
+  <data name="checkBoxGenerate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxGenerate.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxGenerate.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>266, 19</value>
+  </data>
+  <data name="checkBoxGenerate.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
@@ -578,7 +603,7 @@ uninstallers manually</value>
     <value>checkBoxGenerate</value>
   </data>
   <data name="&gt;&gt;checkBoxGenerate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxGenerate.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -586,22 +611,25 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxGenerate.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="checkBoxGenerateStuck.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxGenerateStuck.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxGenerateStuck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxGenerateStuck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 72</value>
+  <data name="checkBoxGenerateStuck.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 78</value>
   </data>
-  <data name="checkBoxGenerateStuck.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>13, 0, 0, 0</value>
+  <data name="checkBoxGenerateStuck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxGenerateStuck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 17</value>
+  <data name="checkBoxGenerateStuck.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>15, 0, 0, 0</value>
   </data>
-  <data name="checkBoxGenerateStuck.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxGenerateStuck.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>290, 19</value>
+  </data>
+  <data name="checkBoxGenerateStuck.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>3</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
@@ -611,7 +639,7 @@ uninstallers manually</value>
     <value>checkBoxGenerateStuck</value>
   </data>
   <data name="&gt;&gt;checkBoxGenerateStuck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxGenerateStuck.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -619,19 +647,22 @@ uninstallers manually</value>
   <data name="&gt;&gt;checkBoxGenerateStuck.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="checkBoxAutoDaemon.AutoSize" type="System.Boolean, mscorlib">
+  <data name="checkBoxAutoDaemon.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="checkBoxAutoDaemon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxAutoDaemon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 95</value>
+  <data name="checkBoxAutoDaemon.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>4, 103</value>
   </data>
-  <data name="checkBoxAutoDaemon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 30</value>
+  <data name="checkBoxAutoDaemon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="checkBoxAutoDaemon.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBoxAutoDaemon.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>308, 34</value>
+  </data>
+  <data name="checkBoxAutoDaemon.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
   </data>
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
@@ -642,7 +673,7 @@ and automatize them (run automatizer daemon)</value>
     <value>checkBoxAutoDaemon</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoDaemon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoDaemon.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -656,23 +687,26 @@ and automatize them (run automatizer daemon)</value>
   <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>6, 19</value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 128</value>
+  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>336, 140</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
   </data>
-  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, mscorlib">
+  <data name="flowLayoutPanel1.WrapContents" type="System.Boolean, System.Private.CoreLib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -683,16 +717,19 @@ and automatize them (run automatizer daemon)</value>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 111</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>0, 147</value>
   </data>
-  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 3, 5, 3</value>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 147</value>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>6, 3, 6, 3</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>348, 162</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
@@ -702,7 +739,7 @@ and automatize them (run automatizer daemon)</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -710,19 +747,28 @@ and automatize them (run automatizer daemon)</value>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
+    <value>7, 15</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 414</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>348, 478</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UninstallationSettings</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

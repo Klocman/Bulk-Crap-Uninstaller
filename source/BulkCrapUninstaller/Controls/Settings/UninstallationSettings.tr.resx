@@ -165,4 +165,10 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Sessiz kaldırma</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Kaldırmadan önce bir geri yükleme noktası oluşturun</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Kayıt defterini, bazı ayarları ve dosyaları yedeklemek için bir sistem geri yükleme noktası oluşturabilirsiniz. Sürücüleri ve önemli sistem uygulamalarını kaldırmadan önce bir geri yükleme noktası oluşturmanız önerilir.</value>
+  </data>
 </root>

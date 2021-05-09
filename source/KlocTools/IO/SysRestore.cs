@@ -165,17 +165,24 @@ namespace Klocman.IO
         /// </summary>
         public static bool SysRestoreAvailable()
         {
-            // See if sys restore is enabled
-            using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", false))
+            try
             {
-                if (key == null) return false;
-                if (key.GetStringSafe("SRInitDone") != "1" && key.GetStringSafe("RPSessionInterval") != "1") return false;
-            }
+                // See if sys restore is enabled
+                using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", false))
+                {
+                    if (key == null) return false;
+                    if (key.GetStringSafe("SRInitDone") != "1" && key.GetStringSafe("RPSessionInterval") != "1") return false;
+                }
 
-            // See if DLL exists
-            var sbPath = new StringBuilder(260);
-            if (SearchPath(null, "srclient.dll", null, 260, sbPath, null) != 0)
-                return true;
+                // See if DLL exists
+                var sbPath = new StringBuilder(260);
+                if (SearchPath(null, "srclient.dll", null, 260, sbPath, null) != 0)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
             // Fall back to checking by system version
             var majorVersion = Environment.OSVersion.Version.Major;
