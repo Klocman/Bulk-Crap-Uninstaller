@@ -239,7 +239,7 @@
     <value>4, 3, 4, 3</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>474, 497</value>
+    <value>474, 496</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>0</value>
@@ -266,7 +266,7 @@
     <value>4, 3, 4, 3</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>476, 499</value>
+    <value>476, 498</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>6</value>
@@ -305,7 +305,7 @@
     <value>5, 3, 5, 3</value>
   </data>
   <data name="treeMap1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>476, 44</value>
+    <value>476, 45</value>
   </data>
   <data name="treeMap1.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
@@ -338,7 +338,7 @@
     <value>476, 548</value>
   </data>
   <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, System.Private.CoreLib">
-    <value>499</value>
+    <value>498</value>
   </data>
   <data name="splitContainerListAndMap.SplitterWidth" type="System.Int32, System.Private.CoreLib">
     <value>5</value>
@@ -590,7 +590,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>96, 17</value>
+    <value>159, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing.Common">
     <value>MiddleLeft</value>
@@ -615,15 +615,6 @@
   </data>
   <data name="toolStripLabelTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing.Common">
     <value>MiddleRight</value>
-  </data>
-  <data name="donateButton.AutoSize" type="System.Boolean, System.Private.CoreLib">
-    <value>False</value>
-  </data>
-  <data name="donateButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="donateButton.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>60, 17</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>0, 578</value>
@@ -2322,12 +2313,6 @@
   <data name="&gt;&gt;toolStripLabelTotal.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;donateButton.Name" xml:space="preserve">
-    <value>donateButton</value>
-  </data>
-  <data name="&gt;&gt;donateButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;uninstallContextMenuStripItem.Name" xml:space="preserve">
     <value>uninstallContextMenuStripItem</value>
   </data>
@@ -3114,6 +3099,12 @@
   <data name="&gt;&gt;tryToInstallNETV35ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;createRestorePointToolStripMenuItem.Name" xml:space="preserve">
+    <value>createRestorePointToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;createRestorePointToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator29.Name" xml:space="preserve">
     <value>toolStripSeparator29</value>
   </data>
@@ -3239,12 +3230,6 @@
   </data>
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
     <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;createRestorePointToolStripMenuItem.Name" xml:space="preserve">
-    <value>createRestorePointToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;createRestorePointToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

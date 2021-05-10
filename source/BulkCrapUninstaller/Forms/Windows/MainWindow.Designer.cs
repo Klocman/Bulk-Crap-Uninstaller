@@ -68,7 +68,6 @@ namespace BulkCrapUninstaller.Forms
             this.toolStripLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
-            this.donateButton = new System.Windows.Forms.ToolStripStatusLabel();
             this.settingsSidebarPanel = new System.Windows.Forms.Panel();
             this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
             this.label1 = new System.Windows.Forms.Label();
@@ -208,6 +207,7 @@ namespace BulkCrapUninstaller.Forms
             this.troubleshootUninstallProblemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tryToInstallNETV35ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createRestorePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.openProgramsAndFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSystemRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -229,7 +229,6 @@ namespace BulkCrapUninstaller.Forms
             this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
             this.splashScreen1 = new Klocman.Forms.SplashScreen();
             this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.createRestorePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -583,8 +582,7 @@ namespace BulkCrapUninstaller.Forms
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabelStatus,
             this.toolStripLabelSize,
-            this.toolStripLabelTotal,
-            this.donateButton});
+            this.toolStripLabelTotal});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
@@ -617,16 +615,6 @@ namespace BulkCrapUninstaller.Forms
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.toolStripLabelTotal.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
             this.toolStripLabelTotal.Name = "toolStripLabelTotal";
-            // 
-            // donateButton
-            // 
-            resources.ApplyResources(this.donateButton, "donateButton");
-            this.donateButton.BackgroundImage = global::BulkCrapUninstaller.Properties.Resources.donate_button;
-            this.donateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.donateButton.IsLink = true;
-            this.donateButton.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
-            this.donateButton.Name = "donateButton";
-            this.donateButton.Click += new System.EventHandler(this.donateButton_Click);
             // 
             // settingsSidebarPanel
             // 
@@ -1608,6 +1596,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.tryToInstallNETV35ToolStripMenuItem, "tryToInstallNETV35ToolStripMenuItem");
             this.tryToInstallNETV35ToolStripMenuItem.Click += new System.EventHandler(this.tryToInstallNETV35ToolStripMenuItem_Click);
             // 
+            // createRestorePointToolStripMenuItem
+            // 
+            this.createRestorePointToolStripMenuItem.Name = "createRestorePointToolStripMenuItem";
+            resources.ApplyResources(this.createRestorePointToolStripMenuItem, "createRestorePointToolStripMenuItem");
+            this.createRestorePointToolStripMenuItem.Click += new System.EventHandler(this.createRestorePointToolStripMenuItem_Click);
+            // 
             // toolStripSeparator29
             // 
             this.toolStripSeparator29.Name = "toolStripSeparator29";
@@ -1739,12 +1733,6 @@ namespace BulkCrapUninstaller.Forms
             // usageTracker
             // 
             this.usageTracker.ContainerControl = this;
-            // 
-            // createRestorePointToolStripMenuItem
-            // 
-            this.createRestorePointToolStripMenuItem.Name = "createRestorePointToolStripMenuItem";
-            resources.ApplyResources(this.createRestorePointToolStripMenuItem, "createRestorePointToolStripMenuItem");
-            this.createRestorePointToolStripMenuItem.Click += new System.EventHandler(this.createRestorePointToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -1908,7 +1896,6 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem startSetupWizardToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator18;
-        private ToolStripStatusLabel donateButton;
         private ToolStripSeparator toolStripSeparator19;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem cleanUpProgramFilesToolStripMenuItem;
