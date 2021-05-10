@@ -39,6 +39,9 @@
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxNeverShow = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -108,12 +111,25 @@
             this.label1.Name = "label1";
             this.label1.Click += new System.EventHandler(this.Close);
             // 
+            // checkBoxNeverShow
+            // 
+            resources.ApplyResources(this.checkBoxNeverShow, "checkBoxNeverShow");
+            this.checkBoxNeverShow.Name = "checkBoxNeverShow";
+            this.checkBoxNeverShow.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxNeverShow, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // NewsPopup
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.linkLabel4);
@@ -132,6 +148,8 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Click += new System.EventHandler(this.Close);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +167,7 @@
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.LinkLabel linkLabel7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxNeverShow;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

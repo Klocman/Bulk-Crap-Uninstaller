@@ -144,4 +144,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Darila mi pomagajo, da ohranim zanimanje za ta projekt, pa tudi kot plačailo potrebnih digitalnih potrdil kode, gostovanja in drugih potreb.</value>
   </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Tega okna ne prikazuj nikoli več</value>
+  </data>
 </root>

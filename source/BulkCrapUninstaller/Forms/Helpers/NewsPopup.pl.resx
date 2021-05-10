@@ -144,4 +144,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Darowizny pomagaja mnie zainteresowac tym projektem, a takze placic za certyfikaty podpisywania kodu, hosting i inne potrzebne rzeczy.</value>
   </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Nigdy nie pokazuj ponownie tego okna</value>
+  </data>
 </root>

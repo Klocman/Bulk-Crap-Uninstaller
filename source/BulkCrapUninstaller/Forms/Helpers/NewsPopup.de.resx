@@ -144,4 +144,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Spenden helfen bei der Weiterentwicklung dieses Projektes wie z.B. Zertifikate, Hosting und andere Keinigkeiten</value>
   </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Niemals mehr dieses Fenster zeigen</value>
+  </data>
 </root>

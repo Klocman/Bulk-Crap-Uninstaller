@@ -18,13 +18,20 @@ namespace BulkCrapUninstaller.Forms
         {
             InitializeComponent();
 
+            if (DesignMode) return;
+
             var version = Program.AssemblyVersion;
             labelTitle.Text = string.Format(Program.IsAfterUpgrade ? Localisable.NewsPopup_UpdatedTitle : Localisable.NewsPopup_FirstStartTitle,
                 version.Major + "." + version.Minor + (version.Build > 0 ? "." + version.Build : string.Empty));
+
+            Settings.Default.SettingBinder.BindControl(checkBoxNeverShow, settings => settings.MiscFeedbackNagNeverShow, this);
+            Settings.Default.SettingBinder.SendUpdates(this);
         }
 
         public static void ShowPopup(Form owner)
         {
+            if (Settings.Default.MiscFeedbackNagNeverShow) return;
+
             using (var news = new NewsPopup())
             {
                 news.StartPosition = FormStartPosition.CenterParent;
