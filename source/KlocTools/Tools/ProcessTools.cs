@@ -366,5 +366,20 @@ namespace Klocman.Tools
             var icon = DrawingTools.ExtractAssociatedIcon(location);
             return icon;
         }
+
+        /// <summary>
+        /// Process.GetProcessById but doesn't throw on issues and instead returns null
+        /// </summary>
+        public static Process GetProcessByIdSafe(int processId)
+        {
+            try
+            {
+                return Process.GetProcessById(processId);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

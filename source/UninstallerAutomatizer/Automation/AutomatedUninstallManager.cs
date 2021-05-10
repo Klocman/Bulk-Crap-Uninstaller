@@ -128,8 +128,8 @@ namespace UninstallerAutomatizer
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e,
-                    uninstallerCommand, app != null ? Process.GetProcessById(app.ProcessId) : pr);
+                var process = app != null ? ProcessTools.GetProcessByIdSafe(app.ProcessId) : null;
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, uninstallerCommand, process ?? pr);
             }
 
             if (app != null)
@@ -138,6 +138,9 @@ namespace UninstallerAutomatizer
 
         public static void AutomatizeApplication(Application app, Action<string> statusCallback)
         {
+            if (app == null) throw new ArgumentNullException(nameof(app));
+            if (statusCallback == null) throw new ArgumentNullException(nameof(statusCallback));
+
             var windows = new List<Window>();
 
             void VisibleChangedHandler(object sender, EventArgs args) => SetWindowVisibility(windows, HideAutomatizedWindows);
@@ -170,7 +173,7 @@ namespace UninstallerAutomatizer
                     statusCallback(string.Format(Localization.Message_Automation_WindowFound, target.Title));
                     WaitForWindow(target);
 
-                    while (target.IsAvailable)
+                    while (target.IsAvailable && target.IsEnabled)
                     {
                         TryClickNextNsisButton(target, statusCallback);
                         WaitForWindow(target);
@@ -184,8 +187,10 @@ namespace UninstallerAutomatizer
             }
             catch (Exception e)
             {
-                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty,
-                    app != null ? Process.GetProcessById(app.ProcessId) : null);
+                var process = ProcessTools.GetProcessByIdSafe(app.ProcessId);
+                if (app.HasExited || process?.HasExited == true) return;
+
+                throw new AutomatedUninstallException(Localization.Message_Automation_Failed, e, string.Empty, process);
             }
             finally
             {
@@ -234,7 +239,20 @@ namespace UninstallerAutomatizer
         /// </summary>
         private static void WaitForWindow(Window target)
         {
-            target.WaitUntilClickable();
+            var totalTimeouts = 0;
+            while (target.IsAvailable && target.IsEnabled && totalTimeouts < 60) // wait for at most 1 minute
+            {
+                try
+                {
+                    target.WaitUntilClickable(TimeSpan.FromSeconds(1));
+                    break;
+                }
+                catch (TimeoutException)
+                {
+                    totalTimeouts++;
+                }
+            }
+
             Thread.Sleep(100);
         }
 
@@ -251,10 +269,10 @@ namespace UninstallerAutomatizer
                     return;
             }
 
-            var handle = popupWindow.AutomationId;
-            if (seenWindows.Contains(handle))
+            var footprint = string.Join(";", popupWindow.FindAllChildren().Select(x => x.Name)) + popupWindow.Title + popupWindow.ActualWidth + popupWindow.ActualHeight;
+            if (seenWindows.Contains(footprint))
                 throw new InvalidOperationException(Localization.Message_Automation_PopupRecurringFound);
-            seenWindows.Add(handle);
+            seenWindows.Add(footprint);
             statusCallback(string.Format(Localization.Message_Automation_PopupFound, popupWindow.Title));
 
             while (!popupWindow.IsAvailable)
@@ -273,7 +291,7 @@ namespace UninstallerAutomatizer
             statusCallback("Looking for buttons to press...");
 
             var allButtons = target.FindAllChildren(SearchCriteria.ConditionFactory.ByControlType(ControlType.Button))
-                .Select(x=>x.AsButton())
+                .Select(x => x.AsButton())
                 .ToList();
 
             var filteredButtons = allButtons
@@ -282,7 +300,9 @@ namespace UninstallerAutomatizer
                 .ToList();
 
             var cancelButtons = FilterButtonsByName(filteredButtons, CancelButtonNames)
-                .Concat(FilterButtonsById(filteredButtons, CancelButtonIds))
+                .Concat(FilterButtonsById(filteredButtons, CancelButtonIds)
+                    .Except(FilterButtonsByName(filteredButtons, GoodButtonNames))
+                    .Except(FilterButtonsByName(filteredButtons, BadButtonNames)))
                 .ToList();
 
             filteredButtons.RemoveAll(cancelButtons);
@@ -294,8 +314,8 @@ namespace UninstallerAutomatizer
 
             if (applicableButtons.Any())
             {
-                var nextButton = FilterButtonsById(applicableButtons, GoodButtonIds)
-                    .Concat(FilterButtonsByName(applicableButtons, GoodButtonNames))
+                var nextButton = FilterButtonsByName(applicableButtons, GoodButtonNames)
+                    .Concat(FilterButtonsById(applicableButtons, GoodButtonIds))
                     .FirstOrDefault();
 
                 if (nextButton == null)
@@ -318,6 +338,7 @@ namespace UninstallerAutomatizer
                 statusCallback(string.Format(Localization.Message_Automation_ClickingButton, nextButton.AutomationId));
                 // Finally press the button, doesn't require messing with the mouse.
                 //nextButton.RaiseClickEvent();
+                target.Focus();
                 nextButton.Focus();
                 nextButton.KeyIn(VirtualKeyShort.RETURN);
             }
@@ -326,7 +347,7 @@ namespace UninstallerAutomatizer
         private static void ProcessRadioButtons(Window target, Action<string> statusCallback)
         {
             var allRadios = target.FindAllChildren(SearchCriteria.ConditionFactory.ByControlType(ControlType.RadioButton))
-                                .Select(x=>x.AsRadioButton()).ToList();
+                                .Select(x => x.AsRadioButton()).ToList();
             if (allRadios.Any())
             {
                 statusCallback(string.Format(Localization.Message_Automation_FoundButtons, allRadios.Count));
