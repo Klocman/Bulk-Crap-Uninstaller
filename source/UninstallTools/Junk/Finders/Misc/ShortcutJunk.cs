@@ -58,7 +58,9 @@ namespace UninstallTools.Junk.Finders.Misc
                 {
                     var target = WindowsTools.ResolveShortcut(linkFilename);
 
-                    if (string.IsNullOrEmpty(target) || target.Contains(syspath, StringComparison.InvariantCultureIgnoreCase))
+                    if (string.IsNullOrEmpty(target) || 
+                        PathTools.SubPathIsInsideBasePath(syspath, target, true) || 
+                        PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AssemblyLocation, target, true))
                         continue;
 
                     results.Add(new Shortcut(linkFilename, target));
