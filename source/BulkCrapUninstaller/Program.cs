@@ -97,7 +97,7 @@ namespace BulkCrapUninstaller
             internal set { _isInstalled = value; }
         }
 
-        private static string ConfigFileFullname => Path.Combine(AssemblyLocation.FullName, @"BCUninstaller.settings");
+        internal static string ConfigFileFullname => Path.Combine(AssemblyLocation.FullName, @"BCUninstaller.settings");
         
         /// <summary>
         ///     Remove old or invalid setting files and make sure settings are ready to be used.
