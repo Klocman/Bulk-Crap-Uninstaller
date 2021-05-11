@@ -347,7 +347,7 @@ namespace Klocman.Tools
             if (string.IsNullOrEmpty(basePath)) return false;
             if (normalizeFilesystemPath)
             {
-                try { basePath = Path.GetFullPath(basePath); }
+                try { basePath = Path.GetFullPath(basePath).Replace('\\', '/'); }
                 catch (SystemException) { }
             }
 
@@ -356,7 +356,7 @@ namespace Klocman.Tools
             if (string.IsNullOrEmpty(subPath)) return false;
             if (normalizeFilesystemPath)
             {
-                try { subPath = Path.GetFullPath(subPath); }
+                try { subPath = Path.GetFullPath(subPath).Replace('\\', '/'); }
                 catch (SystemException) { }
             }
 
