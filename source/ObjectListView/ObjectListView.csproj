@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputType>Library</OutputType>
     <RootNamespace>BrightIdeasSoftware</RootNamespace>
     <AssemblyName>ObjectListView</AssemblyName>
@@ -9,16 +8,41 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\bin\Debug\</OutputPath>
     <WarningLevel>1</WarningLevel>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\..\bin\Release\</OutputPath>
     <WarningLevel>1</WarningLevel>
     <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="DataTreeListView.cs">
