@@ -42,7 +42,6 @@ namespace UninstallTools.Junk.Containers
             return Path.FullName;
         }
 
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
             if (Path.Exists)

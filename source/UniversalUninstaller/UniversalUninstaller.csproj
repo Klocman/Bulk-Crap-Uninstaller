@@ -1,238 +1,52 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{129CBF33-9E19-4D26-A601-5E8394907AE1}</ProjectGuid>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UniversalUninstaller</RootNamespace>
-    <AssemblyName>UniversalUninstaller</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>UniversalUninstaller.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="LogWriter.cs" />
-    <Compile Include="Properties\Localisation.ar.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.ar.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.pt.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.pt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="TreeEntry.cs" />
-    <Compile Include="UninstallSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UninstallSelection.Designer.cs">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TargetList.cs">
+    <Compile Update="TargetList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TargetList.Designer.cs">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Properties\Localisation.ar.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.ar.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.cs.resx" />
-    <EmbeddedResource Include="Properties\Localisation.es.resx" />
-    <EmbeddedResource Include="Properties\Localisation.fr.resx" />
-    <EmbeddedResource Include="Properties\Localisation.it.resx" />
-    <EmbeddedResource Include="Properties\Localisation.nl.resx" />
-    <EmbeddedResource Include="Properties\Localisation.pl.resx" />
-    <EmbeddedResource Include="Properties\Localisation.pt-BR.resx" />
-    <EmbeddedResource Include="Properties\Localisation.pt.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.ru.resx" />
-    <EmbeddedResource Include="Properties\Localisation.sl.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="TargetList.ar.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.cs.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.de.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.es.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.fr.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.it.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.nl.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.pl.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.pt.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.ru.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.sl.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TargetList.tr.resx">
-      <DependentUpon>TargetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.ar.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.cs.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.de.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.es.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.fr.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.it.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.nl.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.pl.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.pt-BR.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.pt.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.ru.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.sl.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UninstallSelection.tr.resx">
-      <DependentUpon>UninstallSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\app.config" />
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
-      <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
-      <Name>KlocTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
-      <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
-      <Name>ObjectListView2012</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page.text.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\app.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\section.expand.all.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\section.collapse.all.png" />
+    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
+    <ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Scripting">
@@ -242,30 +56,17 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Folder_48x48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Generic_Application.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Generic_Document.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\section.expand.all1.png" />
-    <None Include="Resources\section.collapse.all1.png" />
-    <None Include="Resources\icon.png" />
     <Content Include="UniversalUninstaller.ico" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Properties\Localisation.de.resx" />
+    <EmbeddedResource Remove="Properties\Localisation.tr.resx" />
+  </ItemGroup>
 </Project>

@@ -35,7 +35,6 @@ namespace UninstallTools.Junk.Containers
             Entry.Delete();
         }
 
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public override void Open()
         {
             StartupManager.OpenStartupEntryLocations(new[] { Entry });
@@ -49,14 +48,11 @@ namespace UninstallTools.Junk.Containers
         public StartupJunkNode(StartupEntryBase entry, ApplicationUninstallerEntry application, IJunkCreator source) 
             : base(application, source)
         {
-            if (entry == null) throw new ArgumentNullException(nameof(entry));
-
-            Entry = entry;
+            Entry = entry ?? throw new ArgumentNullException(nameof(entry));
 
             Confidence.Add(ConfidenceStartupMatched);
 
-            var normalStartupEntry = entry as StartupEntry;
-            if (normalStartupEntry != null && normalStartupEntry.IsRunOnce)
+            if (entry is StartupEntry normalStartupEntry && normalStartupEntry.IsRunOnce)
             {
                 // If the entry is RunOnce, give it some negative points to keep it out of automatic removal.
                 // It might be used to clean up after uninstall on next boot.

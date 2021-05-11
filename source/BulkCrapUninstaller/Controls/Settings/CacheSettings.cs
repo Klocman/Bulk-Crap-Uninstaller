@@ -19,6 +19,13 @@ namespace BulkCrapUninstaller.Controls.Settings
         public CacheSettings()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode) return;
 
             _settings.BindControl(checkBoxCerts, x => x.CacheCertificates, this);
             _settings.BindControl(checkBoxInfo, x => x.CacheAppInfo, this);
@@ -26,24 +33,11 @@ namespace BulkCrapUninstaller.Controls.Settings
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);
 
-            button1.Click += ClearCaches;
-        }
-
-        private void ClearCaches(object sender, EventArgs e)
-        {
-            try
+            button1.Click += (x, y) =>
             {
-                MainWindow.CertificateCache.Delete();
-
-                UninstallToolsGlobalConfig.EnableAppInfoCache = false;
-                UninstallToolsGlobalConfig.EnableAppInfoCache = _settings.Settings.CacheAppInfo;
-            }
-            catch (SystemException systemException)
-            {
-                PremadeDialogs.GenericError(systemException);
-            }
-
-            button1.Enabled = false;
+                Program.ClearCaches(true);
+                button1.Enabled = false;
+            };
         }
     }
 }

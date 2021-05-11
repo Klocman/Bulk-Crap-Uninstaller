@@ -577,4 +577,7 @@
   <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
     <value>Bekijk tweaks</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Maak een nieuw herstelpunt</value>
+  </data>
 </root>

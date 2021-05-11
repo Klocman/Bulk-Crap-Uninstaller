@@ -135,7 +135,7 @@ namespace UniversalUninstaller
         /// </summary>
         private static void ClearReadOnlyFlag(FileSystemInfo info)
         {
-            info.Attributes = info.Attributes & ~FileAttributes.ReadOnly;
+            info.Attributes &= ~FileAttributes.ReadOnly;
         }
 
         private static void ShowInvalidArgsBox()

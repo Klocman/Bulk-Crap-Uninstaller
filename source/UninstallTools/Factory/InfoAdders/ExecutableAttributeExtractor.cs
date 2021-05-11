@@ -89,7 +89,7 @@ namespace UninstallTools.Factory.InfoAdders
                     productVersion = verInfo.FileVersion?.Trim();
 
                 if (!string.IsNullOrEmpty(productVersion))
-                    targetEntry.DisplayVersion = productVersion;
+                    targetEntry.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(productVersion);
             }
         }
     }

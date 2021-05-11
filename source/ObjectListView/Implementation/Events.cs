@@ -2182,8 +2182,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="group"> </param>
         public GroupExpandingCollapsingEventArgs(OLVGroup group) {
-            if (group == null) throw new ArgumentNullException("group");
-            this.olvGroup = group;
+            this.olvGroup = @group ?? throw new ArgumentNullException("group");
         }
 
         /// <summary>

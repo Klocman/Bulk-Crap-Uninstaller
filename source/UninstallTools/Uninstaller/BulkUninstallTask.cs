@@ -30,24 +30,18 @@ namespace UninstallTools.Uninstaller
         /// </exception>
         internal BulkUninstallTask(IList<BulkUninstallEntry> taskList, BulkUninstallConfiguration configuration)
         {
-            if (taskList == null)
-                throw new ArgumentNullException(nameof(taskList));
-            if (configuration == null)
-                throw new ArgumentNullException(nameof(configuration));
+            Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 
-            if (taskList.Count < 1)
-                throw new ArgumentException("Task list can't be empty");
+            if (taskList == null) throw new ArgumentNullException(nameof(taskList));
+            if (taskList.Count < 1) throw new ArgumentException("Task list can't be empty");
 
             AllUninstallersList = new List<BulkUninstallEntry>();
-
             for (var index = 0; index < taskList.Count; index++)
             {
                 var bulkUninstallEntry = taskList[index];
                 bulkUninstallEntry.Id = index + 1;
                 AllUninstallersList.Add(bulkUninstallEntry);
             }
-
-            Configuration = configuration;
 
             _finished = false;
             Aborted = false;
@@ -100,8 +94,7 @@ namespace UninstallTools.Uninstaller
 
         public static object StatusAspectGetter(object rowObj)
         {
-            var temp = rowObj as BulkUninstallEntry;
-            if (temp == null) return null;
+            if (rowObj is not BulkUninstallEntry temp) return null;
 
             var name = temp.CurrentStatus.GetLocalisedName();
             if (temp.CurrentError != null)
@@ -115,15 +108,18 @@ namespace UninstallTools.Uninstaller
             {
                 if (_workerThread != null && _workerThread.IsAlive)
                 {
-                    if (Finished)
-                    {
-                        if (!_workerThread.Join(TimeSpan.FromSeconds(10)))
-                            _workerThread.Abort();
-                        else
-                            return;
-                    }
-                    else
+                    if (!_workerThread.Join(TimeSpan.FromSeconds(10)) && !Finished)
                         return;
+                    
+                    //if (Finished)
+                    //{
+                    //    if (!_workerThread.Join(TimeSpan.FromSeconds(10)))
+                    //        _workerThread.Abort();
+                    //    else
+                    //        return;
+                    //}
+                    //else
+                    //    return;
                 }
 
                 Aborted = false;

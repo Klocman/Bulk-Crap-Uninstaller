@@ -18,6 +18,11 @@ namespace BulkCrapUninstaller.Controls
         public ListLegend()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
 
             Properties.Settings.Default.SettingBinder.Subscribe((x, y) => UpdateColors(), settings => settings.MiscColorblind, this);
             UpdateColors();

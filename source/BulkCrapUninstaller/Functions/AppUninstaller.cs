@@ -40,16 +40,13 @@ namespace BulkCrapUninstaller.Functions
         /// </summary>
         public readonly object PublicUninstallLock = new object();
 
-        private static readonly int MyProcessId = Process.GetCurrentProcess().Id;
+        private static readonly int MyProcessId = Environment.ProcessId;
 
         /// <exception cref="ArgumentNullException"> One of arguments is <see langword="null" />.</exception>
         internal AppUninstaller(Action listRefreshCallback, Action<bool> applicationLockCallback, Action<bool> visibleCallback)
         {
-            if (listRefreshCallback == null) throw new ArgumentNullException(nameof(listRefreshCallback));
-            if (applicationLockCallback == null) throw new ArgumentNullException(nameof(applicationLockCallback));
-
-            _initiateListRefresh = listRefreshCallback;
-            _lockApplication = applicationLockCallback;
+            _initiateListRefresh = listRefreshCallback ?? throw new ArgumentNullException(nameof(listRefreshCallback));
+            _lockApplication = applicationLockCallback ?? throw new ArgumentNullException(nameof(applicationLockCallback));
             _visibleCallback = visibleCallback;
         }
 
@@ -219,6 +216,18 @@ namespace BulkCrapUninstaller.Functions
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;
 
+                    if (_settings.CreateRestorePoint)
+                    {
+                        try
+                        {
+                            SystemRestore.BeginSysRestore(taskEntries.Length, false);
+                        }
+                        catch (Exception exception)
+                        {
+                            PremadeDialogs.GenericError(exception);
+                        }
+                    }
+
                     if (_settings.ExternalEnable && _settings.ExternalPreCommands.IsNotEmpty())
                     {
                         LoadingDialog.ShowDialog(
@@ -289,11 +298,11 @@ namespace BulkCrapUninstaller.Functions
                             item.UninstallerEntry.SystemComponent ascending,
                             item.UninstallerEntry.IsProtected ascending,
                             // Calculate number of digits (Floor of Log10 + 1) and divide it by 4 to create buckets of sizes
-                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetRawSize(true)) + 1) / 4) descending,
+                            Math.Round(Math.Floor(Math.Log10(item.UninstallerEntry.EstimatedSize.GetKbSize(true)) + 1) / 4) descending,
                             // Prioritize Msi uninstallers because they tend to take the longest
                             item.UninstallerEntry.UninstallerKind == UninstallerType.Msiexec descending,
                             // Final sorting to get things deterministic
-                            item.UninstallerEntry.EstimatedSize.GetRawSize(true) descending
+                            item.UninstallerEntry.EstimatedSize.GetKbSize(true) descending
                         select x;
             return query;
         }
@@ -528,7 +537,7 @@ namespace BulkCrapUninstaller.Functions
                     _ =>
                     {
                         items.AddRange(DirectoryFactory.TryCreateFromDirectory(
-                            new DirectoryInfo(result), null, new string[] { }));
+                            new DirectoryInfo(result), null, Array.Empty<string>()));
                     });
 
                 if (items.Count == 0)

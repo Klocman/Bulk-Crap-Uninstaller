@@ -15,7 +15,6 @@ using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
-using Klocman.UpdateSystem;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -33,6 +32,8 @@ namespace BulkCrapUninstaller.Forms
             _appUninstaller = appUninstaller;
 
             InitializeComponent();
+
+            if (DesignMode) return;
 
             _settings.Subscribe(TestHandler, x => x.FilterHideMicrosoft, this);
             _settings.BindControl(checkBox1, x => x.FilterHideMicrosoft, this);
@@ -72,20 +73,20 @@ namespace BulkCrapUninstaller.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateSystem.BeginUpdate();
+            //UpdateSystem.BeginUpdate();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(UpdateSystem.CheckForUpdates().ToString());
-            if (UpdateSystem.LastError != null)
-                MessageBox.Show(UpdateSystem.LastError.Message);
-
-            if (UpdateSystem.LatestReply != null)
-            {
-                MessageBox.Show(UpdateSystem.LatestReply.FullReply.ToString());
-                labelVersion.Text = UpdateSystem.LatestReply.GetUpdateVersion().ToString();
-            }
+            //MessageBox.Show(UpdateSystem.CheckForUpdates().ToString());
+            //if (UpdateSystem.LastError != null)
+            //    MessageBox.Show(UpdateSystem.LastError.Message);
+            //
+            //if (UpdateSystem.LatestReply != null)
+            //{
+            //    MessageBox.Show(UpdateSystem.LatestReply.FullReply.ToString());
+            //    labelVersion.Text = UpdateSystem.LatestReply.GetUpdateVersion().ToString();
+            //}
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace BulkCrapUninstaller.Forms
                 var methodInfo = wrapper.WrappedObject;
                 var parameters = methodInfo.GetParameters();
                 if (parameters.Length == 0)
-                    methodInfo.Invoke(null, new object[] { });
+                    methodInfo.Invoke(null, Array.Empty<object>());
                 else
                 {
                     var first = parameters.First();
@@ -134,7 +135,9 @@ namespace BulkCrapUninstaller.Forms
                     }
                     else if (first.ParameterType == typeof(Exception))
                     {
+#pragma warning disable CA2201 // Do not raise reserved exception types
                         methodInfo.Invoke(null, new object[] { new Exception(textBoxMessages.Text) });
+#pragma warning restore CA2201 // Do not raise reserved exception types
                     }
                     else
                     {
@@ -186,7 +189,7 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                throw new ArithmeticException("Soft crash test", new IndexOutOfRangeException("Yer a bit bored, eh?"));
+                throw new ArithmeticException("Soft crash test", new ArgumentException("Yer a bit bored, eh?"));
             }
             catch (Exception ex)
             {

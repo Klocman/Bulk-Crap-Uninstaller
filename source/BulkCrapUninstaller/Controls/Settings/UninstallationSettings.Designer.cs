@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UninstallationSettings));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxManualNoCollisionProtection = new System.Windows.Forms.CheckBox();
@@ -38,6 +39,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxShutdown = new System.Windows.Forms.CheckBox();
+            this.checkBoxRestorePoint = new System.Windows.Forms.CheckBox();
             this.checkBoxBatchSortQuiet = new System.Windows.Forms.CheckBox();
             this.checkBoxDiisableProtection = new System.Windows.Forms.CheckBox();
             this.checkBoxSimulate = new System.Windows.Forms.CheckBox();
@@ -48,6 +50,7 @@
             this.checkBoxGenerate = new System.Windows.Forms.CheckBox();
             this.checkBoxGenerateStuck = new System.Windows.Forms.CheckBox();
             this.checkBoxAutoDaemon = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxConcurrent)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -122,6 +125,7 @@
             // 
             resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
             this.flowLayoutPanel4.Controls.Add(this.checkBoxShutdown);
+            this.flowLayoutPanel4.Controls.Add(this.checkBoxRestorePoint);
             this.flowLayoutPanel4.Controls.Add(this.checkBoxBatchSortQuiet);
             this.flowLayoutPanel4.Controls.Add(this.checkBoxDiisableProtection);
             this.flowLayoutPanel4.Controls.Add(this.checkBoxSimulate);
@@ -132,6 +136,13 @@
             resources.ApplyResources(this.checkBoxShutdown, "checkBoxShutdown");
             this.checkBoxShutdown.Name = "checkBoxShutdown";
             this.checkBoxShutdown.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRestorePoint
+            // 
+            resources.ApplyResources(this.checkBoxRestorePoint, "checkBoxRestorePoint");
+            this.checkBoxRestorePoint.Name = "checkBoxRestorePoint";
+            this.toolTip1.SetToolTip(this.checkBoxRestorePoint, resources.GetString("checkBoxRestorePoint.ToolTip"));
+            this.checkBoxRestorePoint.UseVisualStyleBackColor = true;
             // 
             // checkBoxBatchSortQuiet
             // 
@@ -243,5 +254,7 @@
         private System.Windows.Forms.CheckBox checkBoxGenerateStuck;
         private System.Windows.Forms.CheckBox checkBoxManualNoCollisionProtection;
         private System.Windows.Forms.CheckBox checkBoxAutoDaemon;
+        private System.Windows.Forms.CheckBox checkBoxRestorePoint;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

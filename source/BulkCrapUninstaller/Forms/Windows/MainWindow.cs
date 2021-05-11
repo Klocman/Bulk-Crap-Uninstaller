@@ -107,7 +107,6 @@ namespace BulkCrapUninstaller.Forms
 
             // Start the processing thread when user changes the test certificates option
             _setMan.Selected.Subscribe(OnTestCertificatesChanged, x => x.AdvancedTestCertificates, this);
-            FormClosed += DisposeListPostProcessor;
 
             _uninstallerListConfigurator = new UninstallerListConfigurator(this);
             _uninstallerListConfigurator.AfterFiltering += (x, y) => _uninstallerListPostProcesser.StartProcessingThread(_listView.FilteredUninstallers);
@@ -120,7 +119,7 @@ namespace BulkCrapUninstaller.Forms
             toolStripButtonSelInv.Click += _listView.InvertSelectedItems;
             _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateStatusbarOnPostprocessingUpdate;
             _uninstallerListPostProcesser.UninstallerFileLock = _appUninstaller.PublicUninstallLock;
-            _listView.ListRefreshIsRunningChanged += _listView_ListRefreshIsRunningChanged;
+            _listView.ListRefreshIsRunningChanged += listView_ListRefreshIsRunningChanged;
 
             // Filter changed events
             advancedFilters1.CurrentListChanged += RefreshSidebarVisibility;
@@ -166,7 +165,6 @@ namespace BulkCrapUninstaller.Forms
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
                 Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
-            FormClosed += (x, y) => new Thread(UsageTrackerSendData).Start();
 
             // Misc
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;
@@ -179,7 +177,7 @@ namespace BulkCrapUninstaller.Forms
             SetupHotkeys();
 
             treeMap1.ObjectNameGetter = o => ((ApplicationUninstallerEntry)o).DisplayName;
-            treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetRawSize(false);
+            treeMap1.ObjectValueGetter = o => ((ApplicationUninstallerEntry)o).EstimatedSize.GetKbSize();
             treeMap1.ObjectColorGetter = o => ApplicationListConstants.GetApplicationTreemapColor((ApplicationUninstallerEntry)o);
 
             _uninstallerListPostProcesser.UninstallerPostprocessingProgressUpdate += UpdateTreemapOnPostprocessingUpdate;
@@ -197,6 +195,36 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
 
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
+        }
+
+        protected override void OnDpiChanged(DpiChangedEventArgs e)
+        {
+            base.OnDpiChanged(e);
+
+            var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
+
+            this.toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
+            this.toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            try
+            {
+                new Thread(UsageTrackerSendData).Start();
+
+                DisposeListPostProcessor(this, e);
+                _listLegendWindow?.Dispose();
+                _uninstallerListConfigurator?.Dispose();
+                _debugWindow?.Dispose();
+            }
+            catch (Exception exception)
+            {
+                // Eat non-critical exceptions to let the app close in peace
+                Console.WriteLine(exception);
+            }
+
+            base.OnFormClosed(e);
         }
 
         private void OnTreeMapSliceHovered(object sender, TreeMap.SliceEventArgs args)
@@ -286,7 +314,7 @@ namespace BulkCrapUninstaller.Forms
                 if (_setMan.Selected.Settings.CacheCertificates)
                     CertificateCache.SaveCertificateCache();
                 else
-                    CertificateCache.Delete();
+                    CertificateCache.ClearChache();
 
                 if (!_setMan.Selected.Settings.CacheAppInfo)
                     File.Delete(UninstallToolsGlobalConfig.AppInfoCachePath);
@@ -439,7 +467,7 @@ namespace BulkCrapUninstaller.Forms
                 {
                     try
                     {
-                        urlList.ForEach(x => Process.Start(x.AbsoluteUri));
+                        urlList.ForEach(x => Process.Start(new ProcessStartInfo(x.AbsoluteUri) { UseShellExecute = true }));
                     }
                     catch (Exception e)
                     {
@@ -877,7 +905,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception e)
                 {
@@ -897,7 +925,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception e)
                 {
@@ -946,7 +974,7 @@ namespace BulkCrapUninstaller.Forms
                         if (File.Exists(x.UninstallerFullFilename))
                             WindowsTools.OpenExplorerFocusedOnObject(x.UninstallerFullFilename);
                         else
-                            Process.Start(x.UninstallerLocation);
+                            Process.Start(new ProcessStartInfo(x.UninstallerLocation) { UseShellExecute = true });
                     });
                 }
                 catch (Exception e)
@@ -996,10 +1024,9 @@ namespace BulkCrapUninstaller.Forms
             if (!selected.IsRegistered)
                 return;
 
-            string output;
             if (StringEditBox.ShowDialog(string.Format(CultureInfo.InvariantCulture, Localisable.MainWindow_Rename_Description, selected.DisplayName),
                 Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
-                out output))
+                out var output))
             {
                 try
                 {
@@ -1141,6 +1168,7 @@ namespace BulkCrapUninstaller.Forms
         {
             viewWindowsFeaturesToolStripMenuItem.Enabled = DismTools.DismIsAvailable;
             tryToInstallNETV35ToolStripMenuItem.Enabled = DismTools.DismIsAvailable && !WindowsTools.CheckNetFramework35Installed();
+            createRestorePointToolStripMenuItem.Enabled = SysRestore.SysRestoreAvailable();
         }
 
         private void toolStripLabelStatus_TextChanged(object sender, EventArgs e)
@@ -1329,7 +1357,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        private void _listView_ListRefreshIsRunningChanged(object sender,
+        private void listView_ListRefreshIsRunningChanged(object sender,
             UninstallerListViewUpdater.ListRefreshEventArgs e)
         {
             if (e.RefreshIsRunning)
@@ -1411,11 +1439,11 @@ namespace BulkCrapUninstaller.Forms
                             NewsPopup.ShowPopup(this);
                         }
 
-                        if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
-                        {
-                            _setMan.Selected.Settings.MiscNet4NagShown = true;
-                            MessageBoxes.Net4MissingInfo();
-                        }
+                        //if (!_setMan.Selected.Settings.MiscNet4NagShown && !Program.Net4IsAvailable)
+                        //{
+                        //    _setMan.Selected.Settings.MiscNet4NagShown = true;
+                        //    MessageBoxes.Net4MissingInfo();
+                        //}
                     });
                 }).Start();
             }
@@ -1788,6 +1816,23 @@ namespace BulkCrapUninstaller.Forms
         {
             everythingToolStripMenuItem_Click(sender, e);
             filterEditor1.Search(@"\Resources\Scripts\Tweak", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallString));
+        }
+
+        private void createRestorePointToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LockApplication(true);
+            try
+            {
+                SystemRestore.BeginSysRestore(0, false, true, this);
+            }
+            catch (Exception exception)
+            {
+                PremadeDialogs.GenericError(exception);
+            }
+            finally
+            {
+                LockApplication(false);
+            }
         }
     }
 }

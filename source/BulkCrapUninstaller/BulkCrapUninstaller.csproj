@@ -1,21 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5086CDDE-5B1D-485B-AABC-A63C633579B6}</ProjectGuid>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BulkCrapUninstaller</RootNamespace>
     <AssemblyName>BCUninstaller</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,10 +14,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo.ico</ApplicationIcon>
@@ -42,1464 +33,105 @@
   <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <OutputPath>bin\x64\</OutputPath>
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\</OutputPath>
-    <DebugType>pdbonly</DebugType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <Optimize>false</Optimize>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
-    <DefineConstants>DEBUG</DefineConstants>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\packages\MySql.Data.6.9.8\lib\net20\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="NetSettingBinder, Version=1.1.6062.19744, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetSettingBinder.1.1.6062.19744\lib\net35\NetSettingBinder.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System">
+    <Reference Update="System">
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.XML" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Controls\AdvancedClipboardCopy.cs">
+    <Compile Update="Controls\AdvancedClipboardCopy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AdvancedClipboardCopy.Designer.cs">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Settings\AdvancedFilters.cs">
+    <Compile Update="Controls\Settings\AdvancedFilters.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Settings\AdvancedFilters.Designer.cs">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ClipboardCopyItem.cs" />
-    <Compile Include="Controls\FileTargeter.cs">
+    <Compile Update="Controls\FileTargeter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\FileTargeter.Designer.cs">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ListLegend.cs">
+    <Compile Update="Controls\ListLegend.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ListLegend.Designer.cs">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Settings\CacheSettings.cs">
+    <Compile Update="Controls\Settings\CacheSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Settings\CacheSettings.Designer.cs">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TabControlWithoutHeader.cs">
+    <Compile Update="Controls\TabControlWithoutHeader.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Settings\UninstallationSettings.cs">
+    <Compile Update="Controls\Settings\UninstallationSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Settings\UninstallationSettings.Designer.cs">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\RelatedUninstallerAdder.cs">
+    <Compile Update="Controls\RelatedUninstallerAdder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\RelatedUninstallerAdder.Designer.cs">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CultureConfigurator.cs" />
-    <Compile Include="EntryPoint.cs" />
-    <Compile Include="Forms\Windows\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Windows\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\AdvancedClipboardCopyWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\AdvancedClipboardCopyWindow.Designer.cs">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\NewsPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\NewsPopup.Designer.cs">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Wizards\BeginUninstallTaskWizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Wizards\BeginUninstallTaskWizard.Designer.cs">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\DebugWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\DebugWindow.Designer.cs">
-      <DependentUpon>DebugWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\FeedbackBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\FeedbackBox.Designer.cs">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\FeedbackWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\FeedbackWindow.Designer.cs">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Wizards\FirstStartBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Wizards\FirstStartBox.Designer.cs">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Windows\JunkRemoveWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Windows\JunkRemoveWindow.Designer.cs">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\ListLegendWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\ListLegendWindow.Designer.cs">
-      <DependentUpon>ListLegendWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Windows\MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Windows\MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Helpers\NukeWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\NukeWindow.Designer.cs">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Functions\ApplicationList\ApplicationListColors.cs" />
-    <Compile Include="Functions\ApplicationList\ApplicationListConstants.cs" />
-    <Compile Include="Functions\ApplicationList\CertificateCache.cs" />
-    <Compile Include="Functions\ApplicationList\UninstallerListPostProcesser.cs" />
-    <Compile Include="Functions\Tools\OnlineSearchTools.cs" />
-    <Compile Include="Forms\Helpers\RatingPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\RatingPopup.Designer.cs">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Windows\SettingsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Windows\SettingsWindow.Designer.cs">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\UninstallConfirmation.cs">
+    <Compile Update="Controls\UninstallConfirmation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UninstallConfirmation.Designer.cs">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Functions\Tools\ImportExport.cs" />
-    <Compile Include="Functions\ApplicationList\ListViewDelegates.cs" />
-    <Compile Include="Functions\Tools\LocalizedX509Certificate.cs" />
-    <Compile Include="Functions\MessageBoxes.cs" />
-    <Compile Include="Functions\AppPropertiesGatherer.cs" />
-    <Compile Include="Functions\Ratings\RatingEntry.cs" />
-    <Compile Include="Functions\Ratings\RatingRenderer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Functions\Ratings\UninstallerRating.cs" />
-    <Compile Include="Functions\Ratings\UninstallerRatingManager.cs" />
-    <Compile Include="Functions\Tools\SettingTools.cs" />
-    <Compile Include="Functions\Tools\SystemRestore.cs" />
-    <Compile Include="Functions\Tracking\DatabaseStatSender.cs" />
-    <Compile Include="Functions\Tracking\EventHook.cs" />
-    <Compile Include="Functions\Tracking\SingleEventHook.cs" />
-    <Compile Include="Functions\Tracking\UsageManager.cs" />
-    <Compile Include="Functions\Tracking\UsageTracker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Functions\AppUninstaller.cs" />
-    <Compile Include="Functions\ApplicationList\UninstallerListConfigurator.cs" />
-    <Compile Include="Functions\Ratings\RatingManagerWrapper.cs" />
-    <Compile Include="Functions\ApplicationList\UninstallerListViewUpdater.cs" />
-    <Compile Include="Functions\Tools\UpdateGrabber.cs" />
-    <Compile Include="NBugConfigurator.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Forms\Helpers\PropertiesWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Helpers\PropertiesWindow.Designer.cs">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Settings\PropertiesSidebar.cs">
+    <Compile Update="Functions\Ratings\RatingRenderer.cs" />
+    <Compile Update="Functions\Tracking\UsageTracker.cs" />
+    <Compile Update="Controls\Settings\PropertiesSidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Settings\PropertiesSidebar.Designer.cs">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Windows\UninstallProgressWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Windows\UninstallProgressWindow.Designer.cs">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.ar.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Properties\Localisable.Designer.cs">
       <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.ar.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.cs.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.cs.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.de.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Localisable.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Localisable.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.hu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.hu.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.it.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.it.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.nl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.nl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.pl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.pl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.pt-BR.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.pt-BR.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.pt.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.pt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.ru.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisable.sl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisable.sl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.cs" />
     <Content Include="..\..\NOTICE">
       <Link>NOTICE</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\check.png" />
-    <None Include="Resources\filter.png" />
-    <None Include="Resources\MicrosoftProgram_Install_and_Uninstall.meta.diagcab">
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\MicrosoftProgram_Install_and_Uninstall.meta.diagcab">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\warning.png" />
-    <None Include="Resources\list.reorder.png" />
-    <None Include="Resources\diagram.png" />
-    <None Include="Resources\layer.add.png" />
-    <None Include="Resources\list.png" />
-    <None Include="Resources\weather.sun.set.png" />
-    <None Include="Resources\edit.box.png" />
-    <None Include="Resources\radioactive.png" />
-    <None Include="Resources\add.multiple.png" />
-    <None Include="Resources\add.png" />
-    <None Include="Resources\table.add.png" />
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.ar.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.cs.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.de.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.es.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.fr.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.hu.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.it.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.nl.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.pl.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.pt-BR.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.pt.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.ru.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.sl.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedClipboardCopy.tr.resx">
-      <DependentUpon>AdvancedClipboardCopy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.de.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.fr.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.it.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.pt-BR.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.tr.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.pt-BR.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.tr.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ar.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.cs.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.de.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.es.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.fr.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.it.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.nl.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.pl.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.pt.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.ru.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.sl.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.tr.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ar.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.cs.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.de.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.es.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.fr.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.hu.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.it.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.nl.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.pl.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.pt-BR.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.pt.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.ru.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.sl.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.ar.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.cs.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.es.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.nl.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.pl.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.pt.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.ru.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTargeter.sl.resx">
-      <DependentUpon>FileTargeter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.ar.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.cs.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.de.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.es.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.fr.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.hu.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.it.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.nl.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.pl.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.pt.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.ru.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ListLegend.sl.resx">
-      <DependentUpon>ListLegend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\AdvancedFilters.tr.resx">
-      <DependentUpon>AdvancedFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.ar.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.cs.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.de.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.fr.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.it.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.nl.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.pl.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.pt.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.ru.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.sl.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\CacheSettings.tr.resx">
-      <DependentUpon>CacheSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ar.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.cs.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.de.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.es.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.hu.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.it.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.nl.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.pl.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.fr.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.pt-BR.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.pt.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.ru.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.sl.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.tr.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.ar.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.cs.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.de.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.es.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.fr.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.hu.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.it.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.nl.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.pl.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.pt-BR.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.pt.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.ru.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.sl.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\RelatedUninstallerAdder.resx">
-      <DependentUpon>RelatedUninstallerAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\UninstallationSettings.tr.resx">
-      <DependentUpon>UninstallationSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.de.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.it.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.pt-BR.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.tr.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.de.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.tr.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.de.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.tr.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.tr.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.ar.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.cs.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.de.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.es.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.fr.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.nl.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.pl.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.ru.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.sl.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.tr.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.de.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.it.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.tr.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.tr.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.tr.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.ar.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.cs.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.de.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.es.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.hu.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.it.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.nl.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.pl.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.fr.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.pt-BR.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.pt.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.ru.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.sl.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.ar.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.cs.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.es.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.fr.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.hu.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.it.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.nl.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.pl.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.pt-BR.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.pt.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.ru.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\AdvancedClipboardCopyWindow.sl.resx">
-      <DependentUpon>AdvancedClipboardCopyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\DebugWindow.resx">
-      <DependentUpon>DebugWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.ar.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.cs.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.es.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.fr.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.hu.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.it.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.nl.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.pl.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.pt-BR.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.pt.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.ru.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackBox.sl.resx">
-      <DependentUpon>FeedbackBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.ar.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.cs.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.de.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.es.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.hu.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.it.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.nl.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.pl.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.fr.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.pt-BR.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.pt.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.ru.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\FeedbackWindow.sl.resx">
-      <DependentUpon>FeedbackWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NewsPopup.resx">
-      <DependentUpon>NewsPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.pt-BR.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.pt-BR.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.pt-BR.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\AboutBox.tr.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.tr.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.ja.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.tr.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pt-BR.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.pt-BR.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.pt-BR.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.tr.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.pt-BR.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.tr.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ar.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.cs.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.de.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.es.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.fr.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.it.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.nl.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.pl.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.pt.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.ru.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.sl.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\BeginUninstallTaskWizard.tr.resx">
-      <DependentUpon>BeginUninstallTaskWizard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.ar.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.cs.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.de.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.es.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.fr.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.hu.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.it.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.nl.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.pl.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.pt-BR.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.pt.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.ru.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.sl.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.ar.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.cs.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.de.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.es.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.hu.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.it.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.nl.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.pl.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.fr.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.pt.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.ru.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\JunkRemoveWindow.sl.resx">
-      <DependentUpon>JunkRemoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\ListLegendWindow.hu.resx">
-      <DependentUpon>ListLegendWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\ListLegendWindow.resx">
-      <DependentUpon>ListLegendWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.ar.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.cs.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.de.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.es.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.hu.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.it.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.nl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.pl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.fr.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.pt.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.ru.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\MainWindow.sl.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.ar.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.cs.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.es.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.fr.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.nl.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.pl.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.pt.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.ru.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\NukeWindow.sl.resx">
-      <DependentUpon>NukeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.ar.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.cs.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.de.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.es.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.hu.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.it.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.nl.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.pl.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.fr.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.pt.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Settings\PropertiesSidebar.resx">
-      <DependentUpon>PropertiesSidebar.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.ru.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\PropertiesWindow.sl.resx">
-      <DependentUpon>PropertiesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.ar.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.cs.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.de.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.es.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.fr.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.hu.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.it.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.nl.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.pl.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.pt.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.ru.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Helpers\RatingPopup.sl.resx">
-      <DependentUpon>RatingPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.ar.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.cs.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.de.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.es.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.hu.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.it.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.nl.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pl.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.fr.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.pt.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.ru.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\SettingsWindow.sl.resx">
-      <DependentUpon>SettingsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.ar.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.cs.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.es.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.fr.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.nl.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.pl.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.pt.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.ru.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallConfirmation.sl.resx">
-      <DependentUpon>UninstallConfirmation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.ar.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.cs.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.de.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.es.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.hu.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.it.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.nl.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.pl.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.fr.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.pt.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.ru.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.sl.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wizards\FirstStartBox.tr.resx">
-      <DependentUpon>FirstStartBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.ar.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.ar.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.it.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.it.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.nl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.nl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.pt-BR.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.pt-BR.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.pt.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.pt.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.hu.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.hu.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.sl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.sl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.cs.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.cs.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.de.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.pl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.pl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.fr.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisable.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisable.tr.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Forms\Windows\UninstallProgressWindow.resx">
-      <DependentUpon>UninstallProgressWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="..\Licence.licenseheader">
       <Link>Licence.licenseheader</Link>
     </None>
@@ -1514,82 +146,17 @@
     <Content Include="CleanLogs.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="packages.config" />
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
+    <ProjectReference Include="..\NBug_custom\NBug.csproj" />
+    <ProjectReference Include="..\NetSettingBinder\NetSettingBinder.csproj" />
+    <ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
+    <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.csproj" />
+    <ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj" />
+    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
-      <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
-      <Name>KlocTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\UpdateSystem\UpdateSystem\UpdateSystem.csproj">
-      <Project>{e13a335c-3b81-4ae8-84da-b200f69856a9}</Project>
-      <Name>UpdateSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NBug_net35\NBug.csproj">
-      <Project>{62ced1d5-f603-40de-8bf5-3e49d3a392f4}</Project>
-      <Name>NBug</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
-      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
-      <Name>ObjectListView2012</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.csproj">
-      <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>
-      <Name>PortableSettingsProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj">
-      <Project>{52fcbdb1-48d8-448d-b8ca-07f10ab3ca25}</Project>
-      <Name>SimpleTreeMap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj">
-      <Project>{87091c84-b671-4269-abe4-d0f818ab201c}</Project>
-      <Name>UninstallTools</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\control.fastforward.variant.png" />
-    <None Include="Resources\control.fastforward.png" />
-    <None Include="Resources\stop.png" />
-    <None Include="Resources\information.circle.png" />
-    <None Include="Resources\centerline.png" />
-    <None Include="Resources\rating5.png" />
-    <None Include="Resources\rating4.png" />
-    <None Include="Resources\rating3.png" />
-    <None Include="Resources\rating1.png" />
-    <None Include="Resources\star.png" />
-    <None Include="Resources\moon.full.png" />
-    <None Include="Resources\information.png" />
-    <None Include="Resources\message.png" />
-    <None Include="Resources\checkmark.uncrossed.png" />
-    <None Include="Resources\checkmark.png" />
-    <None Include="Resources\checkmark.pencil.png" />
-    <None Include="Resources\settings.png" />
-    <None Include="Resources\os.windows.8.png" />
-    <None Include="Resources\timer.png" />
-    <None Include="Resources\clean.png" />
-    <None Include="Resources\delete.png" />
-    <None Include="Resources\layer.down.png" />
-    <None Include="Resources\magnify.forward.png" />
-    <None Include="Resources\fullscreen.png" />
-    <None Include="Resources\layer.png" />
-    <None Include="Resources\layer.delete1.png" />
-    <None Include="Resources\magnify.png" />
-    <None Include="Resources\refresh.png" />
-    <None Include="Resources\layer.delete.png" />
-    <None Include="Resources\save.png" />
-    <None Include="Resources\magnify.browse.png" />
-    <None Include="Resources\page.copy.png" />
-    <None Include="Resources\folder.open.png" />
-    <None Include="Resources\donate_button.png" />
-    <None Include="Resources\3.png" />
     <Content Include="..\..\..\UpdateSystem\UpdateHelper\bin\Release\UpdateHelper.exe">
       <Link>UpdateHelper.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1603,8 +170,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="logo.ico" />
-    <None Include="Resources\logo.ico" />
-    <None Include="Resources\bigImage.bmp" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -1623,22 +188,16 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.24" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Localisable.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localisable.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  <UsingTask AssemblyFile="C:\Program Files (x86)\Gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' != 'Release' ">
-    <Gendarme Assemblies="$(TargetPath)" Ruleset="klocman" IntegrateWithVisualStudio="True" />
-  </Target>
-  -->
+  <PropertyGroup />
 </Project>

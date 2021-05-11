@@ -53,9 +53,7 @@ namespace BrightIdeasSoftware
         /// Make a DataSourceAdapter
         /// </summary>
         public DataSourceAdapter(ObjectListView olv) {
-            if (olv == null) throw new ArgumentNullException("olv");
-
-            this.ListView = olv;
+            this.ListView = olv ?? throw new ArgumentNullException("olv");
             // ReSharper disable once DoNotCallOverridableMethodsInConstructor
             this.BindListView(this.ListView);
         }
@@ -351,8 +349,7 @@ namespace BrightIdeasSoftware
                 if (column.AspectGetter == null && !String.IsNullOrEmpty(column.AspectName)) {
                     column.AspectGetter = delegate(object row) {
                         // In most cases, rows will be DataRowView objects
-                        DataRowView drv = row as DataRowView;
-                        if (drv == null) 
+                        if (row is not DataRowView drv) 
                             return column.GetAspectByName(row);
                         return (drv.Row.RowState == DataRowState.Detached) ? null : drv[column.AspectName];
                     };
@@ -360,8 +357,7 @@ namespace BrightIdeasSoftware
                 if (column.IsEditable && column.AspectPutter == null && !String.IsNullOrEmpty(column.AspectName)) {
                     column.AspectPutter = delegate(object row, object newValue) {
                         // In most cases, rows will be DataRowView objects
-                        DataRowView drv = row as DataRowView;
-                        if (drv == null)
+                        if (row is not DataRowView drv)
                             column.PutAspectByName(row, newValue);
                         else {
                             if (drv.Row.RowState != DataRowState.Detached)
@@ -470,8 +466,7 @@ namespace BrightIdeasSoftware
             // DataTable, and if it is, testing to see if it's a new row under creation.
 
             Object newRow = this.CurrencyManager.List[e.NewIndex];
-            DataRowView drv = newRow as DataRowView;
-            if (drv == null || !drv.IsNew) {
+            if (newRow is not DataRowView drv || !drv.IsNew) {
                 // Either we're not dealing with a view on a data table, or this is the commit
                 // notification. Either way, this is the final notification, so we want to
                 // handle the new row now!

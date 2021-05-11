@@ -165,4 +165,10 @@
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
     <value>Monitor "stille" de-installers voor popups of andere vertragingen en automatiseer deze (start automatiseer daemon)</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Maak een herstelpunt alvorens te de-installeren</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>U kunt een systeem herstelpunt maken voor een back-up van het register, sommige instellingen en bestanden. Het wordt aanbevolen om een herstelpunt te maken voor het verwijderen van stuurprogramma's en belangrijke systeem programma's.</value>
+  </data>
 </root>

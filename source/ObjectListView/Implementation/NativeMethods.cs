@@ -665,8 +665,7 @@ namespace BrightIdeasSoftware
             lvbkimage.ulFlags = LVBKIF_SOURCE_HBITMAP;
             result = NativeMethods.SendMessageLVBKIMAGE(lv.Handle, LVM_SETBKIMAGE, 0, ref lvbkimage);
 
-            Bitmap bm = image as Bitmap;
-            if (bm != null) {
+            if (image is Bitmap bm) {
                 lvbkimage.hBmp = bm.GetHbitmap();
                 lvbkimage.ulFlags = isWatermark ? LVBKIF_TYPE_WATERMARK : (isTiled ? LVBKIF_SOURCE_HBITMAP | LVBKIF_STYLE_TILE : LVBKIF_SOURCE_HBITMAP);
                 lvbkimage.xOffset = xOffset;

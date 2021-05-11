@@ -54,10 +54,6 @@ namespace BulkCrapUninstaller.Forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.uninstallationSettings1 = new BulkCrapUninstaller.Controls.UninstallationSettings();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonCreateRestore = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -246,37 +242,8 @@ namespace BulkCrapUninstaller.Forms
             // flowLayoutPanel1
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.label8);
-            this.flowLayoutPanel1.Controls.Add(this.buttonCreateRestore);
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.flowLayoutPanel1.SetFlowBreak(this.label3, true);
-            this.label3.Name = "label3";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.flowLayoutPanel1.SetFlowBreak(this.label4, true);
-            this.label4.Name = "label4";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // buttonCreateRestore
-            // 
-            resources.ApplyResources(this.buttonCreateRestore, "buttonCreateRestore");
-            this.flowLayoutPanel1.SetFlowBreak(this.buttonCreateRestore, true);
-            this.buttonCreateRestore.Name = "buttonCreateRestore";
-            this.buttonCreateRestore.UseVisualStyleBackColor = true;
-            this.buttonCreateRestore.Click += new System.EventHandler(this.CreateRestorePoint);
             // 
             // label5
             // 
@@ -463,10 +430,7 @@ namespace BulkCrapUninstaller.Forms
         private Klocman.Forms.ProcessWaiterControl processWaiterControl1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private UninstallationSettings uninstallationSettings1;
-        private System.Windows.Forms.Button buttonCreateRestore;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -493,6 +457,5 @@ namespace BulkCrapUninstaller.Forms
         private System.Windows.Forms.Label p1Heading;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
     }
 }

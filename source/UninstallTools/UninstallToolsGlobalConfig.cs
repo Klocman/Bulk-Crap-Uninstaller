@@ -20,6 +20,11 @@ namespace UninstallTools
             if (AssemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 AssemblyLocation = PathTools.GetDirectory(AssemblyLocation);
 
+            var dir = new DirectoryInfo(AssemblyLocation);
+            if (dir.Name.StartsWith("win-x") && dir.Parent != null)
+                dir = dir.Parent;
+            AppLocation = dir.FullName;
+
             UninstallerAutomatizerPath = Path.Combine(AssemblyLocation, @"UninstallerAutomatizer.exe");
             UninstallerAutomatizerExists = File.Exists(UninstallerAutomatizerPath);
 
@@ -75,31 +80,35 @@ namespace UninstallTools
 
         public static bool EnableAppInfoCache
         {
-            get { return UninstallerFactoryCache != null; }
+            get => UninstallerFactoryCache != null;
             set
             {
-                if (value)
-                {
-                    var cachePath = AppInfoCachePath;
-                    try
-                    {
-                        if (File.Exists(cachePath))
-                            UninstallerFactoryCache = ApplicationUninstallerFactoryCache.Load(cachePath);
-                        else
-                            UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
-                    }
-                    catch (SystemException e)
-                    {
-                        UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
-                        Console.WriteLine(e);
-                    }
-                }
-                else
-                {
-                    UninstallerFactoryCache?.Delete();
-                    UninstallerFactoryCache = null;
-                }
+                if (value == EnableAppInfoCache) return;
+
+                if (value) ReloadCache();
+                else ClearChache();
             }
+        }
+
+        private static void ReloadCache()
+        {
+            var cachePath = AppInfoCachePath;
+            try
+            {
+                UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                if (File.Exists(cachePath)) UninstallerFactoryCache.Read();
+            }
+            catch (SystemException e)
+            {
+                UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
+                Console.WriteLine(e);
+            }
+        }
+
+        public static void ClearChache()
+        {
+            UninstallerFactoryCache?.Delete();
+            UninstallerFactoryCache = null;
         }
 
         public static string AppInfoCachePath { get; }
@@ -110,6 +119,7 @@ namespace UninstallTools
         ///     Path to directory this assembly sits in.
         /// </summary>
         internal static string AssemblyLocation { get; }
+        internal static string AppLocation { get; }
 
         public static bool AutoDetectCustomProgramFiles { get; set; }
 

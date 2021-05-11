@@ -84,7 +84,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                 {
                     try
                     {
-                        items.ForEach(x => Process.Start(x));
+                        items.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                     }
                     catch (Exception ex)
                     {

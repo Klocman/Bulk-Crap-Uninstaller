@@ -352,7 +352,7 @@ namespace UninstallTools.Uninstaller
                         {
                             // There is no point in trying to automatize command line interface programs, or our own helpers
                             if (!UninstallerEntry.QuietUninstallerIsCLI() && !UninstallerEntry.QuietUninstallString
-                                .Contains(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase))
+                                .Contains(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase))
                             {
                                 var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
 
@@ -398,7 +398,7 @@ namespace UninstallTools.Uninstaller
                         var exitVar = uninstaller.ExitCode;
                         if (exitVar != 0)
                         {
-                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec && 
+                            if (UninstallerEntry.UninstallerKind == UninstallerType.Msiexec &&
                                 exitVar == 1602)
                             {
                                 // 1602 ERROR_INSTALL_USEREXIT - The user has cancelled the installation.
@@ -458,6 +458,7 @@ namespace UninstallTools.Uninstaller
             catch (Exception ex)
             {
                 error = ex;
+                Console.WriteLine(@$"Exception when uninstalling {UninstallerEntry.DisplayName}: {ex}");
             }
             finally
             {

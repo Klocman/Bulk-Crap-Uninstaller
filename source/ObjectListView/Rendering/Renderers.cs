@@ -860,8 +860,7 @@ namespace BrightIdeasSoftware {
                     selectorAsInt = (Int32)imageSelector;
                 else
                 {
-                    String selectorAsString = imageSelector as String;
-                    if (selectorAsString != null)
+                    if (imageSelector is string selectorAsString)
                         selectorAsInt = il.Images.IndexOfKey(selectorAsString);
                 }
                 if (selectorAsInt >= 0)
@@ -869,8 +868,7 @@ namespace BrightIdeasSoftware {
             }
 
             // Is the selector actually an image?
-            Image image = imageSelector as Image;
-            if (image != null)
+            if (imageSelector is Image image)
                 return image.Size;
 
             return Size.Empty;
@@ -1008,8 +1006,7 @@ namespace BrightIdeasSoftware {
                     return il.Images[index];
                 }
 
-                String str = imageSelector as String;
-                if (str != null) {
+                if (imageSelector is string str) {
                     if (il.Images.ContainsKey(str))
                         return il.Images[str];
 
@@ -1584,8 +1581,7 @@ namespace BrightIdeasSoftware {
                     if (selectorAsInt >= il.Images.Count)
                         selectorAsInt = -1;
                 } else {
-                    String selectorAsString = imageSelector as String;
-                    if (selectorAsString != null)
+                    if (imageSelector is string selectorAsString)
                         selectorAsInt = il.Images.IndexOfKey(selectorAsString);
                 }
 
@@ -1614,8 +1610,7 @@ namespace BrightIdeasSoftware {
             }
 
             // Is the selector actually an image?
-            Image image = imageSelector as Image;
-            if (image == null)
+            if (imageSelector is not Image image)
                 return 0; // no, give up
 
             if (image.Size.Height < r.Height)
@@ -1890,14 +1885,13 @@ namespace BrightIdeasSoftware {
         }
 
         internal void RegisterNewFilter(IModelFilter newFilter) {
-            TextMatchFilter textFilter = newFilter as TextMatchFilter;
-            if (textFilter != null)
+            if (newFilter is TextMatchFilter textFilter)
             {
                 Filter = textFilter;
                 return;
             }
-            CompositeFilter composite = newFilter as CompositeFilter;
-            if (composite != null)
+
+            if (newFilter is CompositeFilter composite)
             {
                 foreach (TextMatchFilter textSubFilter in composite.TextFilters)
                 {
@@ -2244,8 +2238,7 @@ namespace BrightIdeasSoftware {
             this.DrawBackground(g, r);
             r = this.ApplyCellPadding(r);
 
-            ICollection aspectAsCollection = this.Aspect as ICollection;
-            if (aspectAsCollection == null)
+            if (this.Aspect is not ICollection aspectAsCollection)
                 this.RenderOne(g, r, this.Aspect);
             else
                 this.RenderCollection(g, r, aspectAsCollection);
@@ -2482,8 +2475,7 @@ namespace BrightIdeasSoftware {
             if (this.Aspect is System.Byte[]) {
                 this.DrawAlignedImage(g, r, this.GetImageFromAspect());
             } else {
-                ICollection imageSelectors = this.Aspect as ICollection;
-                if (imageSelectors == null)
+                if (this.Aspect is not ICollection imageSelectors)
                     this.DrawAlignedImage(g, r, this.GetImageFromAspect());
                 else
                     this.DrawImages(g, r, imageSelectors);
@@ -3047,8 +3039,7 @@ namespace BrightIdeasSoftware {
             frameRect = this.AlignRectangle(r, frameRect);
 
             // Convert our aspect to a numeric value
-            IConvertible convertable = this.Aspect as IConvertible;
-            if (convertable == null)
+            if (this.Aspect is not IConvertible convertable)
                 return;
             double aspectValue = convertable.ToDouble(NumberFormatInfo.InvariantInfo);
 
@@ -3228,8 +3219,7 @@ namespace BrightIdeasSoftware {
                 return;
 
             // Convert our aspect to a numeric value
-            IConvertible convertable = this.Aspect as IConvertible;
-            if (convertable == null)
+            if (this.Aspect is not IConvertible convertable)
                 return;
             double aspectValue = convertable.ToDouble(NumberFormatInfo.InvariantInfo);
 
@@ -3294,8 +3284,7 @@ namespace BrightIdeasSoftware {
         public override void Render(Graphics g, Rectangle r) {
             this.DrawBackground(g, r);
 
-            IConvertible convertable = this.Aspect as IConvertible;
-            if (convertable == null)
+            if (this.Aspect is not IConvertible convertable)
                 return;
 
             r = this.ApplyCellPadding(r);
@@ -3321,8 +3310,7 @@ namespace BrightIdeasSoftware {
         /// <param name="x"></param>
         /// <param name="y"></param>
         protected override void HandleHitTest(Graphics g, OlvListViewHitTestInfo hti, int x, int y) {
-            IConvertible convertable = this.Aspect as IConvertible;
-            if (convertable == null)
+            if (this.Aspect is not IConvertible convertable)
                 return;
 
             Int32 v2 = convertable.ToInt32(NumberFormatInfo.InvariantInfo);

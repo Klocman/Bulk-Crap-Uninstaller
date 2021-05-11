@@ -55,7 +55,6 @@ namespace UninstallTools.Uninstaller
         /// <exception cref="IOException">Uninstaller returned error code.</exception>
         /// <exception cref="InvalidOperationException">There are no usable ways of uninstalling this entry </exception>
         /// <exception cref="FormatException">Exception while decoding or attempting to run the uninstaller command. </exception>
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public static Process RunUninstaller(this ApplicationUninstallerEntry entry)
         {
             return RunUninstaller(entry, false, false);
@@ -71,7 +70,6 @@ namespace UninstallTools.Uninstaller
         /// <exception cref="IOException">Uninstaller returned error code.</exception>
         /// <exception cref="InvalidOperationException">There are no usable ways of uninstalling this entry </exception>
         /// <exception cref="FormatException">Exception while decoding or attempting to run the uninstaller command. </exception>
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public static Process RunUninstaller(this ApplicationUninstallerEntry entry, bool silentIfAvailable, bool simulate, bool safeMode = false)
         {
             try
@@ -128,7 +126,7 @@ namespace UninstallTools.Uninstaller
                 }
 
                 if (fallBack != null)
-                    return Process.Start(fallBack);
+                    return Process.Start(new ProcessStartInfo(fallBack) { UseShellExecute = true });
 
                 if (startInfo != null)
                 {
@@ -167,7 +165,7 @@ namespace UninstallTools.Uninstaller
                     return true;
 
                 default:
-                    return entry.QuietUninstallString.StartsWith("cmd ", StringComparison.OrdinalIgnoreCase) || 
+                    return entry.QuietUninstallString.StartsWith("cmd ", StringComparison.OrdinalIgnoreCase) ||
                         entry.QuietUninstallString.Contains("cmd.exe", StringComparison.OrdinalIgnoreCase);
             }
         }
@@ -207,7 +205,6 @@ namespace UninstallTools.Uninstaller
         /// <exception cref="IOException">Uninstaller returned error code.</exception>
         /// <exception cref="InvalidOperationException">There are no usable ways of uninstalling this entry </exception>
         /// <exception cref="FormatException">Exception while decoding or attempting to run the uninstaller command. </exception>
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public static int UninstallUsingMsi(this ApplicationUninstallerEntry entry, MsiUninstallModes mode,
             bool simulate)
         {

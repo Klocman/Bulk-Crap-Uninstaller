@@ -19,7 +19,6 @@ namespace BulkCrapUninstaller.Forms
         private List<ApplicationUninstallerEntry> _otherUninstallers;
         private int _previousPageNumber;
         private bool _quiet;
-        private bool _restorePointWasCreated;
         private ICollection<ApplicationUninstallerEntry> _selectedUninstallers;
 
         public BeginUninstallTaskWizard()
@@ -30,8 +29,6 @@ namespace BulkCrapUninstaller.Forms
             DialogResult = DialogResult.Cancel;
 
             tabControl1.TabIndex = 0;
-
-            buttonCreateRestore.Enabled = SysRestore.SysRestoreAvailable();
         }
 
         private int PageNumber
@@ -82,12 +79,6 @@ namespace BulkCrapUninstaller.Forms
             }
 
             return targetList;
-        }
-
-        private void CreateRestorePoint(object sender, EventArgs e)
-        {
-            _restorePointWasCreated = SystemRestore.BeginSysRestore(uninstallConfirmation1.GetResults().Count(), false);
-            buttonCreateRestore.Enabled = false;
         }
 
         private static IEnumerable<ApplicationUninstallerEntry> GetRelatedUninstallers(
@@ -184,10 +175,6 @@ namespace BulkCrapUninstaller.Forms
 
                 case 3: // Settings
                     processWaiterControl1.StopUpdating();
-
-                    /*todo final page with
-                    if (!SystemRestore.BeginSysRestore(targetList.Count))
-                        return;*/
                     break;
 
                 case 4: // Final
@@ -200,7 +187,7 @@ namespace BulkCrapUninstaller.Forms
 
                         labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
                         labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();
-                        labelRestorePointCreated.Text = _restorePointWasCreated.ToYesNo();
+                        labelRestorePointCreated.Text = (Settings.Default.CreateRestorePoint && SysRestore.SysRestoreAvailable()).ToYesNo();
                         labelWillBeSilent.Text = _quiet.ToYesNo();
 
                         labelOther.Text = Settings.Default.AdvancedSimulate ? "Simulating" : "-";

@@ -117,43 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripButtonToBasicFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 26</value>
-  </data>
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Podstawowe filtrowanie</value>
-  </data>
-  <data name="toolStripButtonOpenUl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFdSURBVGhD7dehS8VQFIDxgYLBYjMYLILVZLBbzFYNgs1q
-        MQoGMdoV/wCjxS6CxWATQbPFYhKZfkd24TIO292d7uzh+eCHj4173HvM3WfheZ7neZ73/1rAM746OMeo
-        msINtIttM6q2oF1kilF1C+0iU/xq2i+w0ittoJVeaQOt9EobaKVX2sDgGhOT9gbEJ1YwMWlvQoSddx3a
-        eQuNd4i24B3ytWMa99Uxa613iLboENIOtPMWztBYfcErZivyun7egtwh82isvmgX0hHq56wcoLV4wQPk
-        72IR8inE56y8QO6O1uJFG3KALhAft7SNpMKCn0dbWZar0TFrd0hOFsSPttx/kv7CGpKTBWHz20R9mJVL
-        dCpsfjN4gjZ0aB9YQqeOq5/70IZaOEHn5NEmm80btKFDk014DlmdQhtqYQ9ZLUOeWtrQoT1CNuSsrqAN
-        tRA2ZM/zPM/zPM/LrSi+AcolLVcO8kgZAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
     <value>Otwórz...</value>
   </data>
-  <data name="toolStripButtonSaveUl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVGhD7Zm9DcIwFAbTMgBj0DAAYgQaNqBCrMM8iHUY
-        gSLwPSk09lOU2HrEiu6kkxv/XZMU7gAAoEV28taIdpdirvLTiHaXYlYf8pbPIG1v78yQkJeMwvb2ziTE
-        IKQCQsYgpAJCxlh9yGr+7EtIiEFIgIQYhARIiEFIgH8JuchzobbW2zM1PqTv+63GIoa17r6JhBiETIWQ
-        mZSEHGX2ddKcvcaMlkMe0pt3lxmEzIQQx0VDJj296TIbjT9O0pt3kBnDWm9+atXTGwAABNB1XwrCm1F2
-        tP9AAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
     <value>Zapisz jako...</value>
-  </data>
-  <data name="toolStripButtonSaveUlDef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 26</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>Zapisz jako domyślne</value>

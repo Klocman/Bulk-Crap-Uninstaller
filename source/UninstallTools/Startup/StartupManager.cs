@@ -129,8 +129,7 @@ namespace UninstallTools.Startup
 
             foreach (var item in startupEntryBases)
             {
-                var s = item as StartupEntry;
-                if (s != null && s.IsRegKey)
+                if (item is StartupEntry s && s.IsRegKey)
                 {
                     if (!regOpened)
                     {

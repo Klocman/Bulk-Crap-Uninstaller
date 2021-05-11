@@ -63,6 +63,20 @@ namespace UninstallTools.Dialogs
             }
         }
 
+        public static StartupManagerWindow ShowManagerWindow()
+        {
+            var window = new StartupManagerWindow();
+            try
+            {
+                window.Icon = ProcessTools.GetIconFromEntryExe();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return window;
+        }
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             exportDialog.ShowDialog();
@@ -89,8 +103,7 @@ namespace UninstallTools.Dialogs
                 else if (enableCheckState.Value != (item.Disabled ? CheckState.Unchecked : CheckState.Checked))
                     enableCheckState = CheckState.Indeterminate;
 
-                var normalStartupEntry = item as StartupEntry;
-                if (normalStartupEntry != null)
+                if (item is StartupEntry normalStartupEntry)
                 {
                     if (!allUserCheckState.HasValue)
                         allUserCheckState = normalStartupEntry.AllUsers ? CheckState.Checked : CheckState.Unchecked;
@@ -248,25 +261,25 @@ namespace UninstallTools.Dialogs
             }
 
             var query = from item in AllItems
-                where comboBoxFilter.SelectedIndex == 0 ||
-                      comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
-                      comboBoxFilter.SelectedIndex == 2 && item is TaskEntry ||
-                      comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
-                      comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
+                        where comboBoxFilter.SelectedIndex == 0 ||
+                              comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
+                              comboBoxFilter.SelectedIndex == 2 && item is TaskEntry ||
+                              comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
+                              comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
                         orderby item.ProgramName ascending
-                select new ListViewItem(new[]
-                {
+                        select new ListViewItem(new[]
+                        {
                     item.ProgramName,
                     (!item.Disabled).ToYesNo(),
                     item.Company,
                     item.ParentShortName,
                     item.Command
                 })
-                {
-                    Tag = item,
-                    ForeColor = item.Disabled ? SystemColors.GrayText : SystemColors.ControlText,
-                    ImageIndex = Math.Max(listView1.SmallImageList.Images.IndexOfKey(item.ProgramName), 0)
-                };
+                        {
+                            Tag = item,
+                            ForeColor = item.Disabled ? SystemColors.GrayText : SystemColors.ControlText,
+                            ImageIndex = Math.Max(listView1.SmallImageList.Images.IndexOfKey(item.ProgramName), 0)
+                        };
 
             // Populate list items
             listView1.Items.Clear();
@@ -394,7 +407,7 @@ namespace UninstallTools.Dialogs
                 }
             }
 
-            Process.Start(folderBrowserDialog.SelectedPath);
+            Process.Start(new ProcessStartInfo(folderBrowserDialog.SelectedPath) { UseShellExecute = true });
 
             UpdateList();
         }
@@ -403,6 +416,12 @@ namespace UninstallTools.Dialogs
         {
             if (AllItems != null)
                 UpdateList();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

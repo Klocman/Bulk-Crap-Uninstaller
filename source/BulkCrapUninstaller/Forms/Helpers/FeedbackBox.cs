@@ -33,6 +33,8 @@ namespace BulkCrapUninstaller.Forms
         {
             InitializeComponent();
 
+            if (DesignMode) return;
+
             Settings.Default.SettingBinder.BindControl(checkBoxNeverShow, x => x.MiscFeedbackNagNeverShow, this);
             Settings.Default.SettingBinder.SendUpdates(this);
         }

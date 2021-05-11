@@ -106,9 +106,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 if (y.Column == null || (y.ModifierKeys != Keys.None) || !y.Column.Equals(olvColumnRating))
                     return;
 
-                var model = y.Model as ApplicationUninstallerEntry;
-
-                if (model == null)
+                if (y.Model is not ApplicationUninstallerEntry model)
                     return;
 
                 RateEntries(new[] {model}, uninstallerObjectListView.PointToScreen(y.Location));

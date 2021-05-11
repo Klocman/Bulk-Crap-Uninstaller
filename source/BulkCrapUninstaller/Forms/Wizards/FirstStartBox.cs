@@ -26,6 +26,8 @@ namespace BulkCrapUninstaller.Forms
         {
             InitializeComponent();
 
+            if (DesignMode) return;
+
             if (!canExit)
             {
                 buttonExit.Enabled = false;
@@ -94,6 +96,8 @@ namespace BulkCrapUninstaller.Forms
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            TopMost = false;
+
             _pageNumber++;
             if (_pageNumber >= _pages.Length)
                 _pageNumber = _pages.Length - 1;

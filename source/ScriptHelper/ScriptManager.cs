@@ -25,7 +25,7 @@ namespace ScriptHelper
         static ScriptManager()
         {
             var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            if (assemblyLocation.EndsWith(".exe"))
+            if (assemblyLocation.EndsWith(".exe") || assemblyLocation.EndsWith(".dll"))
                 assemblyLocation = Path.GetDirectoryName(assemblyLocation);
             ScriptDir = Path.Combine(assemblyLocation ?? string.Empty, @"Resources\Scripts");
 

@@ -61,15 +61,13 @@ namespace UniversalUninstaller
 
         private object SizeGetter(object rowObject)
         {
-            var treeEntry = rowObject as TreeEntry;
-            if (treeEntry == null)
+            if (rowObject is not TreeEntry treeEntry)
                 return FileSize.Empty;
 
             if (treeEntry.IsDirectory == false)
                 return FileSize.FromBytes(((FileInfo)treeEntry.FileSystemInfo).Length);
 
-            var dirInfo = treeEntry.FileSystemInfo as DirectoryInfo;
-            if (FileSystemObject == null || dirInfo == null || !dirInfo.Exists)
+            if (FileSystemObject == null || treeEntry.FileSystemInfo is not DirectoryInfo dirInfo || !dirInfo.Exists)
                 return FileSize.Empty;
 
             try
@@ -87,9 +85,7 @@ namespace UniversalUninstaller
 
         private object ImageGetter(object rowObject)
         {
-            var treeEntry = rowObject as TreeEntry;
-
-            if (treeEntry != null)
+            if (rowObject is TreeEntry treeEntry)
             {
                 if (treeEntry.IsDirectory)
                     return 0;
@@ -115,8 +111,7 @@ namespace UniversalUninstaller
             }
             else
             {
-                var parent = treeListView1.GetParent(rowObject) as TreeEntry;
-                if (parent != null && parent.Checked)
+                if (treeListView1.GetParent(rowObject) is TreeEntry parent && parent.Checked)
                 {
                     treeListView1.UncheckObject(parent);
                 }
@@ -156,9 +151,7 @@ namespace UniversalUninstaller
 
         public IEnumerable<FileSystemInfo> GetSelectedItems(object modelItem)
         {
-            var treeEntry = modelItem as TreeEntry;
-
-            if (treeEntry == null)
+            if (modelItem is not TreeEntry treeEntry)
                 return Enumerable.Empty<FileSystemInfo>();
 
             if (treeEntry.Checked)
@@ -186,17 +179,16 @@ namespace UniversalUninstaller
         {
             treeListView1.Refresh();
         }
-        
+
         private void treeListView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var x = treeListView1.GetItemAt(e.X, e.Y) as OLVListItem;
-            var en = x?.RowObject as TreeEntry;
-            if (en == null) return;
+            if (x?.RowObject is not TreeEntry en) return;
             try
             {
                 if (en.IsDirectory)
                 {
-                    Process.Start('"' + en.FileSystemInfo.FullName + '"');
+                    Process.Start(new ProcessStartInfo('"' + en.FileSystemInfo.FullName + '"') { UseShellExecute = true });
                 }
                 else
                 {

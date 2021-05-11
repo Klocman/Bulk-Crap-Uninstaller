@@ -78,7 +78,15 @@ namespace BulkCrapUninstaller.Functions.Tools
         {
             if (_resetSettings)
             {
-                Selected.Settings.MiscVersion = "Reset";
+                try
+                {
+                    File.Delete(Program.ConfigFileFullname);
+                }
+                catch (Exception ex)
+                {
+                    /*Failed to save settings, probably read only drive*/
+                    PremadeDialogs.GenericError(new IOException(Localisable.Error_SaveSettingsFailed, ex));
+                }
             }
             else
             {
@@ -96,16 +104,16 @@ namespace BulkCrapUninstaller.Functions.Tools
                 Selected.Settings.UninstallerListSortColumn = _mainWindow.uninstallerObjectListView.Columns.IndexOf(
                     _mainWindow.uninstallerObjectListView.PrimarySortColumn);
                 Selected.Settings.MiscVersion = Program.AssemblyVersion.ToString();
-            }
 
-            try
-            {
-                Selected.Settings.Save();
-            }
-            catch (Exception ex)
-            {
-                /*Failed to save settings, probably read only drive*/
-                PremadeDialogs.GenericError(new IOException(Localisable.Error_SaveSettingsFailed, ex));
+                try
+                {
+                    Selected.Settings.Save();
+                }
+                catch (Exception ex)
+                {
+                    /*Failed to save settings, probably read only drive*/
+                    PremadeDialogs.GenericError(new IOException(Localisable.Error_SaveSettingsFailed, ex));
+                }
             }
         }
     }

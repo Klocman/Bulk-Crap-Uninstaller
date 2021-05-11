@@ -241,7 +241,7 @@
     <value>Install directory...</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Select any files that belong to the applcation</value>
+    <value>Select any files that belong to the application</value>
   </data>
   <data name="panel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

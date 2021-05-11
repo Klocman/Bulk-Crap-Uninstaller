@@ -535,4 +535,7 @@
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Upravit</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vytvořit nový bod obnovení</value>
+  </data>
 </root>

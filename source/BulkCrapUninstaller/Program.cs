@@ -10,10 +10,13 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
+using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
+using Klocman.Forms.Tools;
 using Klocman.Tools;
 using Microsoft.Win32;
+using UninstallTools;
 using UninstallTools.Factory;
 
 namespace BulkCrapUninstaller
@@ -65,7 +68,7 @@ namespace BulkCrapUninstaller
         /// <summary>
         /// Don't use settings
         /// </summary>
-        public static string DbConnectionString => 
+        public static string DbConnectionString =>
             Debugger.IsAttached ? Resources.DbDebugConnectionString : Resources.DbConnectionString;
 
         public static string InstalledRegistryKeyName
@@ -94,34 +97,7 @@ namespace BulkCrapUninstaller
             internal set { _isInstalled = value; }
         }
 
-        private static string ConfigFileFullname => Path.Combine(AssemblyLocation.FullName, @"BCUninstaller.settings");
-
-
-        private static bool? _net4IsAvailable;
-        public static Version PreviousVersion { get; private set; }
-
-        public static bool Net4IsAvailable
-        {
-            get
-            {
-                if (!_net4IsAvailable.HasValue)
-                {
-                    try
-                    {
-                        using (var key = RegistryTools.OpenRegistryKey(
-                            @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"))
-                        {
-                            _net4IsAvailable = (int)key.GetValue("Install", 0) == 1;
-                        }
-                    }
-                    catch
-                    {
-                        _net4IsAvailable = false;
-                    }
-                }
-                return _net4IsAvailable.Value;
-            }
-        }
+        internal static string ConfigFileFullname { get; private set; }
 
         /// <summary>
         ///     Remove old or invalid setting files and make sure settings are ready to be used.
@@ -132,6 +108,12 @@ namespace BulkCrapUninstaller
             IsAfterUpgrade = false;
             try
             {
+                var dir = AssemblyLocation;
+                if (dir.Name.StartsWith("win-x") && dir.Parent != null) dir = dir.Parent;
+                var settingsDir = dir.FullName;
+                PortableSettingsProvider.PortableSettingsProvider.AppSettingsPathOverride = settingsDir;
+                ConfigFileFullname = Path.Combine(settingsDir, @"BCUninstaller.settings");
+
                 var settingsXmlDocument = XDocument.Parse(File.ReadAllText(ConfigFileFullname));
                 if (settingsXmlDocument.Root == null)
                     throw new FormatException();
@@ -139,10 +121,8 @@ namespace BulkCrapUninstaller
                 if (result == null || result.Value.Equals("Reset"))
                     throw new FormatException();
 
-                PreviousVersion = new Version(result.Value);
-                if (PreviousVersion < AssemblyVersion)
+                if (!string.IsNullOrWhiteSpace(result.Value) && new Version(result.Value) < AssemblyVersion)
                     IsAfterUpgrade = true;
-                //if(new Version(result) < )
             }
             catch
             {
@@ -152,6 +132,9 @@ namespace BulkCrapUninstaller
             // Initializes the settings object (unless it has been accessed before, which it shouldnt have)
             if (Settings.Default.MiscUserId == 0)
                 Settings.Default.MiscUserId = WindowsTools.GetUniqueUserId();
+
+            if (IsAfterUpgrade)
+                ClearCaches(false);
         }
 
         private static void DeleteConfigFile()
@@ -181,11 +164,9 @@ namespace BulkCrapUninstaller
                         using (var subKey = regKey.OpenSubKey(keyName, true))
                         {
                             var installLocation = subKey?.GetStringSafe(RegistryFactory.RegistryNameInstallLocation);
-                            if (String.IsNullOrEmpty(installLocation)) continue;
+                            if (string.IsNullOrEmpty(installLocation)) continue;
 
-                            var item1 = AssemblyLocation.FullName;
-                            var item2 = installLocation.TrimEnd('\\');
-                            if (item1.Equals(item2, StringComparison.InvariantCultureIgnoreCase))
+                            if (PathTools.SubPathIsInsideBasePath(installLocation, AssemblyLocation.FullName, true))
                             {
                                 // We are installed!
                                 _installedRegistryKeyName = keyName;
@@ -216,12 +197,12 @@ namespace BulkCrapUninstaller
                     Console.WriteLine(@"WARNING: CleanLogs.bat doesn't exist, can't clean logs.");
                     return;
                 }
-                
+
                 var cleanerUri = PathToUri(cleanerPath);
                 if (cleanerUri.IsUnc)
                 {
                     // 'cmd.exe /c start' doesn't work with UNC paths, script has to run in foreground.
-                    Process.Start(cleanerPath);
+                    Process.Start(new ProcessStartInfo(cleanerPath) { UseShellExecute = true });
                 }
                 else
                 {
@@ -254,6 +235,22 @@ namespace BulkCrapUninstaller
             {
                 filePath = Path.GetFullPath(filePath);
                 return new Uri(filePath);
+            }
+        }
+
+        public static void ClearCaches(bool showErrors)
+        {
+            try
+            {
+                MainWindow.CertificateCache.ClearChache();
+                UninstallToolsGlobalConfig.ClearChache();
+            }
+            catch (SystemException systemException)
+            {
+                if (showErrors)
+                    PremadeDialogs.GenericError(systemException);
+                else
+                    Console.WriteLine(systemException);
             }
         }
     }

@@ -30,7 +30,6 @@ namespace UninstallTools.Junk.Containers
 
         public abstract void Backup(string backupDirectory);
         public abstract void Delete();
-        [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public abstract void Open();
 
         public abstract string GetDisplayName();

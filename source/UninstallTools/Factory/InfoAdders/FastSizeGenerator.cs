@@ -32,7 +32,7 @@ namespace UninstallTools.Factory.InfoAdders
 
             try
             {
-                if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetRawSize(false) == 0)
+                if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetKbSize() == 0)
                     throw new SystemException("Test failed to get valid BCU directory size");
 
                 _everythingAvailable = true;
@@ -107,7 +107,7 @@ namespace UninstallTools.Factory.InfoAdders
                 StandardOutputEncoding = Encoding.UTF8
             }))
             {
-                if (process == null) throw new ArgumentNullException(nameof(process));
+                if (process == null) throw new InvalidOperationException("Could not start a new process");
                 var output = process.StandardOutput.ReadToEnd();
                 if (process.ExitCode == 0) return output;
                 throw new IOException("es.exe failed to connect to Everything", process.ExitCode);

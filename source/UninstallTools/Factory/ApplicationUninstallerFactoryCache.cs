@@ -46,14 +46,7 @@ namespace UninstallTools.Factory
         public string Filename { get; set; }
         public bool SerializeIcons { get; set; }
 
-        public static ApplicationUninstallerFactoryCache Load(string filename)
-        {
-            var c = new ApplicationUninstallerFactoryCache(filename);
-            c.Read();
-            return c;
-        }
-
-        static byte[] SerializeIcon(Icon ic)
+        private static byte[] SerializeIcon(Icon ic)
         {
             using (var stream = new MemoryStream())
             {
@@ -62,7 +55,7 @@ namespace UninstallTools.Factory
             }
         }
 
-        static Icon DeserializeIcon(byte[] bytes)
+        private static Icon DeserializeIcon(byte[] bytes)
         {
             using (var stream = new MemoryStream(bytes, false))
                 return new Icon(stream);

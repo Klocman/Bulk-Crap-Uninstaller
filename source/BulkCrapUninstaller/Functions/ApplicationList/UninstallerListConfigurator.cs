@@ -12,7 +12,9 @@ using BulkCrapUninstaller.Functions.Ratings;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Extensions;
+using Klocman.IO;
 using Klocman.Localising;
+using Klocman.Resources;
 using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Lists;
@@ -59,8 +61,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         public void Dispose()
         {
             RatingManagerWrapper.Dispose();
+            _updateThrottleTimer.Dispose();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1713:Events should not have 'Before' or 'After' prefix", Justification = "<Pending>")]
         public event EventHandler AfterFiltering;
 
         /// <summary>
@@ -118,9 +122,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         private bool ListViewFilter(object obj)
         {
-            var entry = obj as ApplicationUninstallerEntry;
-
-            if (entry == null) return false;
+            if (obj is not ApplicationUninstallerEntry entry) return false;
 
             if (FilteringOverride != null) return FilteringOverride.TestEntry(entry) == true;
 
@@ -234,7 +236,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnSize.AspectGetter = ListViewDelegates.ColumnSizeAspectGetter;
             _reference.olvColumnSize.AspectToStringConverter = ListViewDelegates.AspectToStringConverter;
             _reference.olvColumnSize.GroupKeyGetter = ListViewDelegates.ColumnSizeGroupKeyGetter;
-            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x.ToString();
+            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x is long num && num > 0 ? FileSize.GetUnitName(num) : CommonStrings.Unknown;
 
             _reference.uninstallerObjectListView.PrimarySortColumn = _reference.olvColumnDisplayName;
             _reference.uninstallerObjectListView.SecondarySortColumn = _reference.olvColumnPublisher;
@@ -250,8 +252,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         private void UninstallerObjectListView_FormatRow(object sender, FormatRowEventArgs e)
         {
-            var entry = e.Model as ApplicationUninstallerEntry;
-            if (entry == null) return;
+            if (e.Model is not ApplicationUninstallerEntry entry) return;
 
             var color = ApplicationListConstants.GetApplicationBackColor(entry);
             if (!color.IsEmpty)

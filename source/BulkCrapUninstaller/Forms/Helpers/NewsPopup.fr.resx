@@ -144,4 +144,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Les donations m'aident à financer ce projet, dont les certificats de signature, l'hébergement et autres nécessités.</value>
   </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Ne plus jamais montrer cette fenêtre, jamais.</value>
+  </data>
 </root>

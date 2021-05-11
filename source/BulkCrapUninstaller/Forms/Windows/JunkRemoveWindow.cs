@@ -193,8 +193,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void comboBoxChecker_DropDownClosed(object sender, EventArgs e)
         {
-            var localisedEnumWrapper = comboBoxChecker.SelectedItem as LocalisedEnumWrapper;
-            if (localisedEnumWrapper != null)
+            if (comboBoxChecker.SelectedItem is LocalisedEnumWrapper localisedEnumWrapper)
             {
                 var selectedConfidence = (ConfidenceLevel)localisedEnumWrapper.TargetEnum;
 
@@ -234,8 +233,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var item = objectListViewMain.SelectedObject as IJunkResult;
-            if (item == null) return;
+            if (objectListViewMain.SelectedObject is not IJunkResult item) return;
             DisplayDetails(item);
         }
 
@@ -290,8 +288,7 @@ namespace BulkCrapUninstaller.Forms
 
         private bool JunkListFilter(object obj)
         {
-            var item = obj as IJunkResult;
-            if (item == null)
+            if (obj is not IJunkResult item)
                 return false;
 
             if (checkBoxHideLowConfidence.Checked && item.Confidence.GetRawConfidence() < 0)
@@ -303,8 +300,7 @@ namespace BulkCrapUninstaller.Forms
         private void objectListViewMain_CellEditStarting(object sender, CellEditEventArgs e)
         {
             e.Cancel = true;
-            var item = e.RowObject as IJunkResult;
-            if (item == null) return;
+            if (e.RowObject is not IJunkResult item) return;
 
             EnsureSingleSelection(e.ListViewItem);
             OpenJunkNodePreview(item);
@@ -343,8 +339,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var item = objectListViewMain.SelectedObject as IJunkResult;
-            if (item == null) return;
+            if (objectListViewMain.SelectedObject is not IJunkResult item) return;
             OpenJunkNodePreview(item);
         }
 
@@ -404,8 +399,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnPath.AspectGetter = rowObject => (rowObject as IJunkResult)?.GetDisplayName();
             olvColumnUninstallerName.AspectGetter = rowObject =>
             {
-                var junkResult = rowObject as IJunkResult;
-                if (junkResult == null)
+                if (rowObject is not IJunkResult junkResult)
                     return null;
 
                 var displayName = junkResult.Application?.DisplayName;

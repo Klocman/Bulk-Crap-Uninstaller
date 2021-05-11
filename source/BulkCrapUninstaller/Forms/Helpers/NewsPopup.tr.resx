@@ -144,4 +144,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Bağışlar, bu projeyle ilgilenmeme yardımcı olurken, kod imzalama sertifikaları, barındırma ve diğer gereksinimler için de ödeme yapmanıza yardımcı olur.</value>
   </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>Bu pencereyi bir daha asla gösterme</value>
+  </data>
 </root>

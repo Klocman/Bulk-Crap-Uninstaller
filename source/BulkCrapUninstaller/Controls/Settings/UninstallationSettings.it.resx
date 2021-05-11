@@ -165,4 +165,10 @@
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
     <value>Controlla i popup o le fasi di stallo dei disinstallatori "silenziosi" e rendili automatici (esegui demone che automatizza)</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Creare un punto di ripristino prima della disinstallazione</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e files. Si raccomanda di creare un punto di ripristino prima di rimuovere.</value>
+  </data>
 </root>

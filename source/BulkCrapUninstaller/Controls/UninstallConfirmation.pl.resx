@@ -117,30 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="objectListView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 81</value>
-  </data>
-  <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>619, 176</value>
-  </data>
-  <data name="buttonSmartSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 26</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>619, 75</value>
-  </data>
-  <data name="labelInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 43</value>
-  </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>Początkowa kolejność zależy od ustawień odinstalowywania, ale można ją zmienić przeciągając elementy. Uwaga: BCU może zmienić kolejność jeśli jest włączona równoczesna dezinstalacja.</value>
-  </data>
-  <data name="labelInfo2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="labelInfo2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 26</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Poniżej znajduje się lista aplikacji, które zostaną odinstalowane, w kolejności od góry do dołu. Jeśli odznaczysz pole „Odinstaluj”, aplikacja nie zostanie odinstalowana. Jeśli cicha dezinstalacja nie jest dostępna, nie można jej zaznaczyć.</value>

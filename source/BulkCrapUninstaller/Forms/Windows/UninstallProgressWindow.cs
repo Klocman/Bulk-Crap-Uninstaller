@@ -30,9 +30,12 @@ namespace BulkCrapUninstaller.Forms
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
 
         private BulkUninstallTask _currentTargetStatus;
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2213:Disposable fields should be disposed", Justification = "False positive")]
         private CustomMessageBox _walkAwayBox;
         private BulkUninstallTask _status;
         private static Func<IEnumerable<ApplicationUninstallerEntry>, bool> _uninstallManuallyAction;
+
+        private int _sleepTimePassed;
 
         public static void ShowUninstallDialog(BulkUninstallTask status, Func<IEnumerable<ApplicationUninstallerEntry>, bool> uninstallManuallyAction)
         {
@@ -75,8 +78,8 @@ namespace BulkCrapUninstaller.Forms
                 _settings.Subscribe((sender, args) =>
                 {
                     if (args.NewValue)
-                        NativeMethods.ShutdownBlockReasonCreate(Handle, "Bulk uninstallation is in progress.");
-                    else NativeMethods.ShutdownBlockReasonDestroy(Handle);
+                        SleepControls.PreventSleepOrShutdown(Handle, "Bulk uninstallation is in progress.");
+                    else SleepControls.AllowSleepOrShutdown(Handle);
                 }, settings => settings.UninstallPreventShutdown, this);
             }
 
@@ -92,18 +95,9 @@ namespace BulkCrapUninstaller.Forms
             {
                 _settings.RemoveHandlers(this);
 
-                // Shutdown blocking not available below Windows Vista
-                if (_settings.Settings.UninstallPreventShutdown && Environment.OSVersion.Version >= new Version(6, 0))
-                {
-                    try
-                    {
-                        NativeMethods.ShutdownBlockReasonDestroy(Handle);
-                    }
-                    catch (SystemException ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-                }
+                SleepControls.AllowSleepOrShutdown(Handle);
+
+                _walkAwayBox?.Dispose();
             };
 
             olvColumnName.AspectGetter = BulkUninstallTask.DisplayNameAspectGetter;
@@ -125,6 +119,35 @@ namespace BulkCrapUninstaller.Forms
                 else
                     forceUpdateTimer.Stop();
             };
+
+            // Handle sleeping after task finishes
+            sleepTimer.Interval = 1000;
+            sleepTimer.Tick += (sender, args) =>
+            {
+                if (_currentTargetStatus.Finished && checkBoxFinishSleep.Checked)
+                {
+                    _sleepTimePassed++;
+
+                    const int sleepDelay = 30;
+                    label1.Text = Localisable.UninstallProgressWindow_TaskDone + "\n" +
+                                  string.Format(Localisable.UninstallProgressWindow_StatusPuttingToSleepInSeconds, sleepDelay - _sleepTimePassed);
+
+                    if (_sleepTimePassed > sleepDelay)
+                    {
+                        checkBoxFinishSleep.Checked = false;
+                        checkBoxFinishSleep.Enabled = false;
+
+                        SleepControls.AllowSleepOrShutdown(Handle);
+                        SleepControls.PutToSleep();
+                    }
+                }
+                else
+                {
+                    _sleepTimePassed = 0;
+                    if (_currentTargetStatus.Finished)
+                        label1.Text = Localisable.UninstallProgressWindow_TaskDone;
+                }
+            };
         }
 
         private IEnumerable<BulkUninstallEntry> SelectedTaskEntries
@@ -135,10 +158,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void SetTargetStatus(BulkUninstallTask targetStatus)
         {
-            if (targetStatus == null)
-                throw new ArgumentNullException(nameof(targetStatus));
-
-            _currentTargetStatus = targetStatus;
+            _currentTargetStatus = targetStatus ?? throw new ArgumentNullException(nameof(targetStatus));
 
             progressBar1.Maximum = _currentTargetStatus.AllUninstallersList.Count;
 
@@ -154,6 +174,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void currentTargetStatus_OnCurrentTaskChanged(object sender, EventArgs e)
         {
+            sleepTimer.Enabled = true;
             forceUpdateTimer.Stop();
 
             // Needed to call from another thread to avoid blocking the calling thread and deadlocking
@@ -304,7 +325,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 try
                 {
-                    sourceDirs.ForEach(x => Process.Start(x));
+                    sourceDirs.ForEach(x => Process.Start(new ProcessStartInfo(x) { UseShellExecute = true }));
                 }
                 catch (Exception ex)
                 {
@@ -370,16 +391,6 @@ namespace BulkCrapUninstaller.Forms
         private void toolStripButtonHelp_Click(object sender, EventArgs e)
         {
             MessageBoxes.DisplayHelp();
-        }
-
-        private static class NativeMethods
-        {
-            [DllImport("user32.dll")]
-            public static extern bool ShutdownBlockReasonCreate(IntPtr hWnd,
-                [MarshalAs(UnmanagedType.LPWStr)] string pwszReason);
-
-            [DllImport("user32.dll")]
-            public static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
         }
 
         private void toolStripButtonManualUninstall_Click(object sender, EventArgs e)

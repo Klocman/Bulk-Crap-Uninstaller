@@ -5,6 +5,7 @@
 
 using System;
 using System.IO;
+using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
 using Klocman.IO;
@@ -24,14 +25,14 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         /// <param name="count">How many items are being uninstalled</param>
         /// <param name="displayMessage">If user should be asked to create the restore point. If false, always create</param>
-        public static bool BeginSysRestore(int count, bool displayMessage = true)
+        public static bool BeginSysRestore(int count, bool displayMessage = true, bool end = false, Form owner = null)
         {
             if (SysRestore.SysRestoreAvailable())
             {
                 switch (displayMessage ? MessageBoxes.SysRestoreBeginQuestion() : MessageBoxes.PressedButton.Yes)
                 {
                     case MessageBoxes.PressedButton.Yes:
-                        var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleCreatingRestorePoint, x =>
+                        var error = LoadingDialog.ShowDialog(owner, Localisable.LoadingDialogTitleCreatingRestorePoint, x =>
                         {
                             //if (_currentRestoreId > 0)
                             EndSysRestore();

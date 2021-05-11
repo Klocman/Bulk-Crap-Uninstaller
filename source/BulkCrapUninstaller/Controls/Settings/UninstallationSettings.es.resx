@@ -162,4 +162,10 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desinstalación silenciosa</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Crear un punto de restauración antes de desinstalar</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Puede crear un punto de restauración del sistema para hacer una copia de seguridad del registro, algunas configuraciones y archivos. Se recomienda crear un punto de restauración antes de eliminar los controladores y las aplicaciones importantes del sistema.</value>
+  </data>
 </root>

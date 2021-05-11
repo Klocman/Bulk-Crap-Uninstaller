@@ -38,11 +38,11 @@ namespace BulkCrapUninstaller.Forms
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.olvColumnStatus = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnIsSilent = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnStatus = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnIsSilent = new BrightIdeasSoftware.OLVColumn();
+            this.olvColumnName = new BrightIdeasSoftware.OLVColumn();
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnId = new BrightIdeasSoftware.OLVColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.skipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,10 +69,12 @@ namespace BulkCrapUninstaller.Forms
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelProgressMargin = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.forceUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxFinishSleep = new System.Windows.Forms.CheckBox();
+            this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,6 +83,7 @@ namespace BulkCrapUninstaller.Forms
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -131,6 +134,7 @@ namespace BulkCrapUninstaller.Forms
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
+            this.objectListView1.HideSelection = false;
             this.objectListView1.MultiSelect = false;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowItemToolTips = true;
@@ -324,15 +328,8 @@ namespace BulkCrapUninstaller.Forms
             // panel1
             // 
             this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.panelProgressMargin);
-            this.panel1.Controls.Add(this.buttonClose);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // panelProgressMargin
-            // 
-            resources.ApplyResources(this.panelProgressMargin, "panelProgressMargin");
-            this.panelProgressMargin.Name = "panelProgressMargin";
             // 
             // pictureBox1
             // 
@@ -351,12 +348,26 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.forceUpdateTimer.Interval = 3500;
             // 
+            // flowLayoutPanel2
+            // 
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Controls.Add(this.buttonClose);
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxFinishSleep);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // checkBoxFinishSleep
+            // 
+            resources.ApplyResources(this.checkBoxFinishSleep, "checkBoxFinishSleep");
+            this.checkBoxFinishSleep.Name = "checkBoxFinishSleep";
+            this.checkBoxFinishSleep.UseVisualStyleBackColor = true;
+            // 
             // UninstallProgressWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -370,10 +381,11 @@ namespace BulkCrapUninstaller.Forms
             this.toolStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,7 +421,6 @@ namespace BulkCrapUninstaller.Forms
         private Timer forceUpdateTimer;
         private ToolStripButton toolStripButtonManualUninstall;
         private Panel panel1;
-        private Panel panelProgressMargin;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem skipToolStripMenuItem;
         private ToolStripMenuItem terminateToolStripMenuItem;
@@ -419,5 +430,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem openInstallDirectoryToolStripMenuItem;
         private ToolStripMenuItem propertiesToolStripMenuItem;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private CheckBox checkBoxFinishSleep;
+        private Timer sleepTimer;
     }
 }

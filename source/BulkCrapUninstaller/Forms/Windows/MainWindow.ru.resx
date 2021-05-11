@@ -567,4 +567,7 @@
   <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1074, 17</value>
   </metadata>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Создание новой точки восстановления</value>
+  </data>
 </root>

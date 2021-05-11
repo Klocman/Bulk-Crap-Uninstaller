@@ -22,6 +22,7 @@ namespace BulkCrapUninstaller
     /// <summary>
     ///     Can not be contained inside of a static class as it needs to be serialized
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "Used during serialization")]
     public class BugReportExtraInfo
     {
         public bool Is64Bit = ProcessTools.Is64BitProcess;
@@ -57,20 +58,13 @@ namespace BulkCrapUninstaller
 
         private class NBugDatabaseSenderWrapper : ProtocolBase
         {
-            private readonly DatabaseStatSender _sender;
-
-            public NBugDatabaseSenderWrapper()
-            {
-                _sender = new DatabaseStatSender(Program.DbConnectionString,
-                    Resources.DbCommandCrash, Properties.Settings.Default.MiscUserId);
-            }
-
             public override bool Send(string fileName, Stream file, Report report, SerializableException exception)
             {
                 report.CustomInfo = new BugReportExtraInfo();
 
                 var data = string.Concat("<BugReport>", report.ToString(), exception.ToString(), "</BugReport>");
-                return _sender.SendData(CompressionTools.ZipString(data));
+                var sender = new DatabaseStatSender(Program.DbConnectionString, Resources.DbCommandCrash, Properties.Settings.Default.MiscUserId);
+                return sender.SendData(CompressionTools.ZipString(data));
             }
         }
     }

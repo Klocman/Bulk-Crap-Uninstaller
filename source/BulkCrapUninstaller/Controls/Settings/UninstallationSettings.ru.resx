@@ -165,4 +165,10 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Создание точки восстановления перед удалением</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Можно создать точку восстановления системы. Рекомендуется создать точку восстановления перед удалением драйверов и важных системных приложений.</value>
+  </data>
 </root>

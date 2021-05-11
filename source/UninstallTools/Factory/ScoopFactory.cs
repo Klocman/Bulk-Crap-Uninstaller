@@ -68,11 +68,13 @@ namespace UninstallTools.Factory
             if (!ScoopIsAvailable) return results;
 
             // Make uninstaller for scoop itself
-            var scoopEntry = new ApplicationUninstallerEntry();
-            scoopEntry.RawDisplayName = "Scoop";
-            scoopEntry.Comment = "Automated program installer";
-            scoopEntry.AboutUrl = "https://github.com/lukesampson/scoop";
-            scoopEntry.InstallLocation = _scoopUserPath;
+            var scoopEntry = new ApplicationUninstallerEntry
+            {
+                RawDisplayName = "Scoop",
+                Comment = "Automated program installer",
+                AboutUrl = "https://github.com/lukesampson/scoop",
+                InstallLocation = _scoopUserPath
+            };
 
             // Make sure the global directory gets removed as well
             var junk = new FileSystemJunk(new DirectoryInfo(_scoopGlobalPath), scoopEntry, null);
@@ -88,21 +90,41 @@ namespace UninstallTools.Factory
             var result = RunScoopCommand("export");
             if (string.IsNullOrEmpty(result)) return results;
 
-            var appEntries = result.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+            var appEntries = result.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
             var exeSearcher = new AppExecutablesSearcher();
             foreach (var str in appEntries)
             {
-                var startIndex = str.IndexOf("(v:", StringComparison.Ordinal);
-                var verEndIndex = str.IndexOf(')', startIndex);
+                // Format should be "$app (v:$ver) $global_display $bucket $arch"
+                // app has no spaces, $global_display is *global*, bucket is inside [] brackets like [main]
+                // version should always be there but the check errored out for some users, everything after version is optional
+                string name;
+                string version = null;
+                bool isGlobal = false;
+                var spaceIndex = str.IndexOf(" ", StringComparison.Ordinal);
+                if (spaceIndex > 0)
+                {
+                    name = str.Substring(0, spaceIndex);
 
-                var name = str.Substring(0, startIndex - 1);
-                var version = str.Substring(startIndex + 3, verEndIndex - startIndex - 3);
-                var isGlobal = str.Substring(verEndIndex).Contains("*global*");
+                    var startIndex = str.IndexOf("(v:", StringComparison.Ordinal);
+                    if (startIndex > 0)
+                    {
+                        var verEndIndex = str.IndexOf(')', startIndex);
+                        version = str.Substring(Math.Min(startIndex + 3, str.Length - 1), Math.Max(verEndIndex - startIndex - 3, 0));
+                        if (version.Length == 0) version = null;
+                    }
+                    isGlobal = str.Substring(spaceIndex).Contains("*global*");
+                }
+                else
+                {
+                    name = str;
+                }
 
-                var entry = new ApplicationUninstallerEntry();
-                entry.RawDisplayName = name;
-                entry.DisplayVersion = version;
-                entry.RatingId = "Scoop " + name;
+                var entry = new ApplicationUninstallerEntry
+                {
+                    RawDisplayName = name,
+                    DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(version),
+                    RatingId = "Scoop " + name
+                };
 
                 var installDir = Path.Combine(isGlobal ? _scoopGlobalPath : _scoopUserPath, "apps\\" + name);
                 if (Directory.Exists(installDir))

@@ -515,8 +515,7 @@ namespace BrightIdeasSoftware.Design
         /// <param name="value"></param>
         /// <returns></returns>
         protected override string GetDisplayText(object value) {
-            OLVColumn col = value as OLVColumn;
-            if (col == null || String.IsNullOrEmpty(col.AspectName))
+            if (value is not OLVColumn col || String.IsNullOrEmpty(col.AspectName))
                 return base.GetDisplayText(value);
 
             return String.Format("{0} ({1})", base.GetDisplayText(value), col.AspectName);
@@ -534,12 +533,11 @@ namespace BrightIdeasSoftware.Design
 
         public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType) {
             if (destinationType == typeof(string)) {
-                ImageOverlay imageOverlay = value as ImageOverlay;
-                if (imageOverlay != null) {
+                if (value is ImageOverlay imageOverlay) {
                     return imageOverlay.Image == null ? "(none)" : "(set)";
                 }
-                TextOverlay textOverlay = value as TextOverlay;
-                if (textOverlay != null) {
+
+                if (value is TextOverlay textOverlay) {
                     return String.IsNullOrEmpty(textOverlay.Text) ? "(none)" : "(set)";
                 }
             }

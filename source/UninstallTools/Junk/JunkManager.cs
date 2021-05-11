@@ -26,16 +26,14 @@ namespace UninstallTools.Junk
         /// </summary>
         private static bool JunkDoesNotPointToSelf(IJunkResult x)
         {
-            var fileSystemJunk = x as FileSystemJunk;
-            if (fileSystemJunk != null)
+            if (x is FileSystemJunk fileSystemJunk)
             {
-                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
-            var startupJunk = x as StartupJunkNode;
-            if (startupJunk != null)
+            if (x is StartupJunkNode startupJunk)
             {
-                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             return true;

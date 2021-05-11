@@ -28,7 +28,7 @@ namespace Klocman
         private static string CreateLogFilenameForAssembly(Assembly assembly)
         {
             var location = assembly.Location;
-            if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
+            if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || location.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
                 location = location.Remove(location.Length - 4);
             location += ".log";
             return location;
@@ -81,7 +81,7 @@ namespace Klocman
                 Console.SetOut(logWriter);
                 Console.SetError(logWriter);
 
-                Debug.Listeners.Add(new ConsoleTraceListener(false));
+                Trace.Listeners.Add(new ConsoleTraceListener(false));
 
                 return logWriter;
             }

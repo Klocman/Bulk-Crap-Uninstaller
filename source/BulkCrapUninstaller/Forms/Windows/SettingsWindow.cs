@@ -26,6 +26,13 @@ namespace BulkCrapUninstaller.Forms
         public SettingsWindow()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode) return;
 
             Icon = Resources.Icon_Logo;
 
@@ -37,6 +44,7 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxAutoLoad, x => x.MiscAutoLoadDefaultList, this);
             _settings.BindControl(checkBoxRatings, x => x.MiscUserRatings, this);
             _settings.BindControl(checkBoxColorblind, x => x.MiscColorblind, this);
+            _settings.BindControl(checkBoxDpiaware, x => x.DpiAwareTest, this);
 
             _settings.BindControl(checkBoxEnableExternal, x => x.ExternalEnable, this);
             _settings.BindControl(textBoxPreUninstall, x => x.ExternalPreCommands, this);
@@ -105,8 +113,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void comboBoxJunk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var wrapper = comboBoxJunk.SelectedItem as LocalisedEnumWrapper;
-            if (wrapper != null)
+            if (comboBoxJunk.SelectedItem is LocalisedEnumWrapper wrapper)
             {
                 _settings.Settings.MessagesRemoveJunk = (YesNoAsk)wrapper.TargetEnum;
             }
@@ -114,8 +121,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var wrapper = comboBoxLanguage.SelectedItem as ComboBoxWrapper<CultureInfo>;
-            if (wrapper != null)
+            if (comboBoxLanguage.SelectedItem is ComboBoxWrapper<CultureInfo> wrapper)
             {
                 _settings.Settings.Language = wrapper.WrappedObject.Name;
                 _restartNeeded = true;
@@ -129,8 +135,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void comboBoxRestore_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var wrapper = comboBoxRestore.SelectedItem as LocalisedEnumWrapper;
-            if (wrapper != null)
+            if (comboBoxRestore.SelectedItem is LocalisedEnumWrapper wrapper)
             {
                 _settings.Settings.MessagesRestorePoints = (YesNoAsk)wrapper.TargetEnum;
             }
@@ -212,7 +217,7 @@ namespace BulkCrapUninstaller.Forms
                     radioButtonBackupNever.Checked = true;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(args), args.NewValue, "Unknown value");
             }
         }
     }

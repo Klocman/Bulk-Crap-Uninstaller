@@ -103,16 +103,13 @@ namespace BrightIdeasSoftware {
             if (other == null || other == System.DBNull.Value)
                 return 1;
 
-            ICluster otherCluster = other as ICluster;
-            if (otherCluster == null)
+            if (other is not ICluster otherCluster)
                 return 1;
 
-            string keyAsString = this.ClusterKey as string;
-            if (keyAsString != null)
+            if (this.ClusterKey is string keyAsString)
                 return String.Compare(keyAsString, otherCluster.ClusterKey as string, StringComparison.CurrentCultureIgnoreCase);
 
-            IComparable keyAsComparable = this.ClusterKey as IComparable;
-            if (keyAsComparable != null)
+            if (this.ClusterKey is IComparable keyAsComparable)
                 return keyAsComparable.CompareTo(otherCluster.ClusterKey);
 
             return -1;

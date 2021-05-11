@@ -37,8 +37,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public UninstallerListPostProcesser(Action<IList> updateItemsCallback, CertificateCache certificateCache)
         {
-            if (updateItemsCallback == null) throw new ArgumentNullException(nameof(updateItemsCallback));
-            _updateItemsCallback = updateItemsCallback;
+            _updateItemsCallback = updateItemsCallback ?? throw new ArgumentNullException(nameof(updateItemsCallback));
             _certificateCache = certificateCache;
         }
 

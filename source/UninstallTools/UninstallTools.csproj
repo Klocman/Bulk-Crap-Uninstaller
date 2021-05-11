@@ -1,546 +1,101 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87091C84-B671-4269-ABE4-D0F818AB201C}</ProjectGuid>
+        <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UninstallTools</RootNamespace>
-    <AssemblyName>UninstallTools</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Debug\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.8.18.0, Culture=neutral, PublicKeyToken=c416bc1b32d97233, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.8.18\lib\net35\Microsoft.Win32.TaskScheduler.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+       <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+       <OutputPath>..\..\bin\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ApplicationEntrySerializer.cs" />
-    <Compile Include="ApplicationUninstallerEntry.cs" />
-    <Compile Include="Controls\UninstallerIconGetter.cs">
+    <Compile Update="Controls\UninstallerIconGetter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Factory\ApplicationEntryTools.cs" />
-    <Compile Include="Factory\ApplicationUninstallerFactory.cs" />
-    <Compile Include="Factory\ApplicationUninstallerFactoryCache.cs" />
-    <Compile Include="Factory\ChocolateyFactory.cs" />
-    <Compile Include="Factory\ConcurrentApplicationFactory.cs" />
-    <Compile Include="Factory\FactoryThreadedHelpers.cs" />
-    <Compile Include="Factory\FactoryTools.cs" />
-    <Compile Include="Factory\InfoAdders\BasicIconGetter.cs" />
-    <Compile Include="Factory\InfoAdders\CertificateGetter.cs" />
-    <Compile Include="Factory\DirectoryFactory.cs" />
-    <Compile Include="Factory\InfoAdders\ExecutableAttributeExtractor.cs" />
-    <Compile Include="Factory\InfoAdders\AppExecutablesSearcher.cs" />
-    <Compile Include="Factory\InfoAdders\FastSizeGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\GenerateSteamHelperStrings.cs" />
-    <Compile Include="Factory\InfoAdders\FileIconGetter.cs" />
-    <Compile Include="Factory\InfoAdders\IMissingInfoAdder.cs" />
-    <Compile Include="Factory\InfoAdders\InfoAdderManager.cs" />
-    <Compile Include="Factory\InfoAdders\InfoAdderPriority.cs" />
-    <Compile Include="Factory\InfoAdders\InnoSetupQuietUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\Is64BitGetter.cs" />
-    <Compile Include="Factory\InfoAdders\KnownNameIconGetter.cs" />
-    <Compile Include="Factory\InfoAdders\MsiUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\NsisQuietUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\InstallLocationGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\MsiInfoAdder.cs" />
-    <Compile Include="Factory\InfoAdders\PredefinedAppQuietUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\QuietUninstallStringCopier.cs" />
-    <Compile Include="Factory\InfoAdders\SimpleDeleteUninstallStringGenerator.cs" />
-    <Compile Include="Factory\InfoAdders\UninstallerSearcher.cs" />
-    <Compile Include="Factory\InfoAdders\UninstallerTypeAdder.cs" />
-    <Compile Include="Factory\InfoAdders\InstallDateAdder.cs" />
-    <Compile Include="Factory\InfoAdders\VersionCleaner.cs" />
-    <Compile Include="Factory\InfoAdders\WebBrowserMarker.cs" />
-    <Compile Include="Factory\IUninstallerFactory.cs" />
-    <Compile Include="Factory\OculusFactory.cs" />
-    <Compile Include="Factory\PredefinedFactory.cs" />
-    <Compile Include="Factory\RegistryFactory.cs" />
-    <Compile Include="Factory\ScoopFactory.cs" />
-    <Compile Include="Factory\ScriptFactory.cs" />
-    <Compile Include="Factory\SteamFactory.cs" />
-    <Compile Include="Factory\StoreAppFactory.cs" />
-    <Compile Include="Junk\Finders\Drive\PrefetchScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\ComScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\DebugTracingScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\HeapLeakDetectionScanner.cs" />
-    <Compile Include="ThreadedWorkSpreader.cs" />
-    <Compile Include="Factory\WindowsFeatureFactory.cs" />
-    <Compile Include="Factory\WindowsUpdateFactory.cs" />
-    <Compile Include="Junk\Confidence\ConfidenceLevel.cs" />
-    <Compile Include="Junk\Confidence\ConfidenceRecord.cs" />
-    <Compile Include="Junk\Confidence\ConfidenceRecords.cs" />
-    <Compile Include="Junk\Containers\FileSystemJunk.cs" />
-    <Compile Include="Junk\Containers\JunkResultBase.cs" />
-    <Compile Include="Junk\Containers\RunProcessJunk.cs" />
-    <Compile Include="Junk\Finders\Drive\InstallLocationScanner.cs" />
-    <Compile Include="Junk\Finders\JunkCreatorBase.cs" />
-    <Compile Include="Junk\Finders\Drive\SpecificUninstallerKindScanner.cs" />
-    <Compile Include="Junk\Finders\Drive\UninstallerLocationScanner.cs" />
-    <Compile Include="Junk\Finders\Drive\WerScanner.cs" />
-    <Compile Include="Junk\Containers\IJunkResult.cs" />
-    <Compile Include="Junk\Containers\RegistryKeyJunk.cs" />
-    <Compile Include="Junk\Containers\RegistryValueJunk.cs" />
-    <Compile Include="Junk\Finders\Misc\ShortcutJunk.cs" />
-    <Compile Include="Junk\Finders\Misc\StartupJunk.cs" />
-    <Compile Include="Junk\Containers\StartupJunkNode.cs" />
-    <Compile Include="Junk\Finders\Registry\AppCompatFlagScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\AudioPolicyConfigScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\EventLogScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\FirewallRuleScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\InstallerFoldersScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\RegisteredApplicationsFinder.cs" />
-    <Compile Include="Junk\Finders\Registry\TracingScanner.cs" />
-    <Compile Include="Junk\Finders\Registry\UninstallerKeySearcher.cs" />
-    <Compile Include="Junk\Finders\Registry\UserAssistScanner.cs" />
-    <Compile Include="Junk\IJunkCreator.cs" />
-    <Compile Include="ListGenerationProgress.cs" />
-    <Compile Include="Lists\FilterCondition.cs" />
-    <Compile Include="Lists\ComparisonTargetAttribute.cs" />
-    <Compile Include="Lists\ComparisonTargetInfo.cs" />
-    <Compile Include="Lists\ComparisonMethod.cs" />
-    <Compile Include="Lists\ITestEntry.cs" />
-    <Compile Include="Lists\Filter.cs" />
-    <Compile Include="Properties\Localisation.ar.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.ar.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.cs.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.cs.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.hu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.hu.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.it.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.it.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.nl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.nl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.pt.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.pt.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.ru.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.sl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.sl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Startup\Browser\BrowserEntryFactory.cs" />
-    <Compile Include="Startup\Browser\BrowserHelperEntry.cs" />
-    <Compile Include="Startup\Normal\IStartupDisable.cs" />
-    <Compile Include="Startup\Normal\NewStartupDisable.cs" />
-    <Compile Include="Startup\Normal\StartupEntry.cs" />
-    <Compile Include="Startup\Normal\StartupEntryFactory.cs" />
-    <Compile Include="Startup\Normal\OldStartupDisable.cs" />
-    <Compile Include="Startup\Normal\StartupEntryManager.cs" />
-    <Compile Include="Startup\Normal\StartupPointData.cs" />
-    <Compile Include="Startup\Service\ServiceEntry.cs" />
-    <Compile Include="Startup\Service\ServiceEntryFactory.cs" />
-    <Compile Include="Startup\StartupEntryBase.cs" />
-    <Compile Include="Startup\Task\TaskEntry.cs" />
-    <Compile Include="Startup\Task\TaskEntryFactory.cs" />
-    <Compile Include="UninstallerType.cs" />
-    <Compile Include="Uninstaller\BulkUninstallConfiguration.cs" />
-    <Compile Include="Controls\FilterEditor.cs">
+    <Compile Update="Controls\FilterEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\FilterEditor.Designer.cs">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\UninstallListEditor.cs">
+    <Compile Update="Controls\UninstallListEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UninstallListEditor.Designer.cs">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\StartupManagerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\StartupManagerWindow.Designer.cs">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Junk\Finders\Drive\CommonDriveJunkScanner.cs" />
-    <Compile Include="Junk\Confidence\ConfidenceGenerators.cs" />
-    <Compile Include="Junk\Confidence\ConfidenceCollection.cs" />
-    <Compile Include="Junk\JunkManager.cs" />
-    <Compile Include="Junk\ProgramFilesOrphans.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Localisation.de.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Localisation.pl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Localisation.pl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Junk\Finders\Registry\SoftwareRegKeyScanner.cs" />
-    <Compile Include="Startup\StartupManager.cs" />
-    <Compile Include="Uninstaller\BulkUninstallEntry.cs" />
-    <Compile Include="Uninstaller\BulkUninstallTask.cs" />
-    <Compile Include="Uninstaller\MsiUninstallModes.cs" />
-    <Compile Include="Uninstaller\UninstallManager.cs" />
-    <Compile Include="Uninstaller\UninstallStatus.cs" />
-    <Compile Include="UninstallToolsGlobalConfig.cs" />
-    <Compile Include="Lists\UninstallList.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Controls\FilterEditor.ar.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.cs.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.de.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.es.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.fr.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.hu.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.it.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.nl.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.pl.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.pt-BR.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.pt.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.ru.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.sl.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FilterEditor.tr.resx">
-      <DependentUpon>FilterEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.ar.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.cs.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.de.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.es.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.fr.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.hu.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.it.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.nl.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.pl.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.pt-BR.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.pt.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.ru.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.sl.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UninstallListEditor.tr.resx">
-      <DependentUpon>UninstallListEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.ar.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.cs.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.de.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.es.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.fr.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.hu.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.it.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.nl.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.pl.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.pt-BR.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.pt.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.ru.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.sl.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\StartupManagerWindow.tr.resx">
-      <DependentUpon>StartupManagerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.ar.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.ar.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.it.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.it.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.nl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.nl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.pt-BR.resx" />
-    <EmbeddedResource Include="Properties\Localisation.pt.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.pt.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.hu.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.hu.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.sl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.sl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.cs.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.cs.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.de.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.pl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.pl.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localisation.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localisation.tr.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Licence.licenseheader">
       <Link>Licence.licenseheader</Link>
     </None>
-    <None Include="packages.config" />
-    <None Include="Resources\folder.open.png" />
-    <None Include="Resources\Scripts\Credits.md">
+    <None Update="Resources\Scripts\Credits.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\lib\force-mkdir.psm1">
+    <None Update="Resources\Scripts\lib\force-mkdir.psm1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\lib\take-own.psm1">
+    <None Update="Resources\Scripts\lib\take-own.psm1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Remove\remove-onedrive.ps1">
+    <None Update="Resources\Scripts\Remove\remove-onedrive.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Remove\remove-onedrive_check.ps1">
+    <None Update="Resources\Scripts\Remove\remove-onedrive_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts_check.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-subscribed-content.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-subscribed-content.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-subscribed-content_check.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-subscribed-content_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-wallpaper-compression.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression_check.ps1">
+    <None Update="Resources\Scripts\Tweak\disable-wallpaper-compression_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix.ps1">
+    <None Update="Resources\Scripts\Tweak\mouse-acceleration-fix.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix_check.ps1">
+    <None Update="Resources\Scripts\Tweak\mouse-acceleration-fix_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-special-folders-from-this-pc.ps1">
+    <None Update="Resources\Scripts\Tweak\remove-special-folders-from-this-pc.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-special-folders-from-this-pc_check.ps1">
+    <None Update="Resources\Scripts\Tweak\remove-special-folders-from-this-pc_check.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\link.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\app.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page.copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page.duplicate.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrow.right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\KlocTools\KlocTools\KlocTools.csproj">
-      <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
-      <Name>KlocTools</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minus.png" />
+    <ProjectReference Include="..\KlocTools\KlocTools.csproj" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Scripting">
@@ -550,63 +105,56 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Scripts\Tweak\mouse-acceleration-fix.xml">
+    <None Update="Resources\Scripts\Tweak\mouse-acceleration-fix.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Scripts\Remove\remove-onedrive.xml">
+    <None Update="Resources\Scripts\Remove\remove-onedrive.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\disable-subscribed-content.xml">
+    <None Update="Resources\Scripts\Tweak\disable-subscribed-content.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_3dobjects.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_3dobjects.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_desktop.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_desktop.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_documents.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_documents.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_downloads.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_downloads.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_music.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_music.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_pictures.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_pictures.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Scripts\Tweak\remove-from-this-pc_videos.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts.xml">
+    <None Update="Resources\Scripts\Tweak\remove-from-this-pc_videos.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Scripts\Tweak\disable-wallpaper-compression.xml">
+    <None Update="Resources\Scripts\Tweak\disable-easy-access-key-shortcuts.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  <UsingTask AssemblyFile="C:\Program Files (x86)\Gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />
-  <Target Name="AfterBuild" Condition="'$(Configuration)' != 'Release'">
-    <Gendarme Assemblies="$(TargetPath)" Ruleset="klocman" IntegrateWithVisualStudio="True" />
-  </Target>
-  -->
+  <ItemGroup>
+    <None Update="Resources\Scripts\Tweak\disable-wallpaper-compression.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="System.Management" Version="5.0.0" />
+    <PackageReference Include="TaskScheduler" Version="2.8.18" />
+  </ItemGroup>
 </Project>

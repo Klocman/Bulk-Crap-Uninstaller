@@ -42,6 +42,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
             this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
+            this.checkBoxDpiaware = new System.Windows.Forms.CheckBox();
             this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
             this.checkBoxSendStats = new System.Windows.Forms.CheckBox();
@@ -86,6 +87,7 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxScanWinFeatures = new System.Windows.Forms.CheckBox();
             this.checkBoxScanStoreApps = new System.Windows.Forms.CheckBox();
             this.checkBoxScanSteam = new System.Windows.Forms.CheckBox();
+            this.checkBoxScoop = new System.Windows.Forms.CheckBox();
             this.checkBoxOculus = new System.Windows.Forms.CheckBox();
             this.checkBoxChoco = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -106,7 +108,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usageTracker1 = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            this.checkBoxScoop = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -187,6 +189,7 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Controls.Add(this.checkBoxAutoLoad);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxColorblind);
+            this.flowLayoutPanel3.Controls.Add(this.checkBoxDpiaware);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
             // checkBoxAutoLoad
@@ -200,6 +203,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxColorblind, "checkBoxColorblind");
             this.checkBoxColorblind.Name = "checkBoxColorblind";
             this.checkBoxColorblind.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDpiaware
+            // 
+            resources.ApplyResources(this.checkBoxDpiaware, "checkBoxDpiaware");
+            this.checkBoxDpiaware.Name = "checkBoxDpiaware";
+            this.checkBoxDpiaware.UseVisualStyleBackColor = true;
             // 
             // checkBoxRatings
             // 
@@ -527,6 +536,12 @@ namespace BulkCrapUninstaller.Forms
             this.checkBoxScanSteam.Name = "checkBoxScanSteam";
             this.checkBoxScanSteam.UseVisualStyleBackColor = true;
             // 
+            // checkBoxScoop
+            // 
+            resources.ApplyResources(this.checkBoxScoop, "checkBoxScoop");
+            this.checkBoxScoop.Name = "checkBoxScoop";
+            this.checkBoxScoop.UseVisualStyleBackColor = true;
+            // 
             // checkBoxOculus
             // 
             resources.ApplyResources(this.checkBoxOculus, "checkBoxOculus");
@@ -660,12 +675,6 @@ namespace BulkCrapUninstaller.Forms
             // 
             this.usageTracker1.ContainerControl = this;
             // 
-            // checkBoxScoop
-            // 
-            resources.ApplyResources(this.checkBoxScoop, "checkBoxScoop");
-            this.checkBoxScoop.Name = "checkBoxScoop";
-            this.checkBoxScoop.UseVisualStyleBackColor = true;
-            // 
             // SettingsWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -682,6 +691,7 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBoxMisc.ResumeLayout(false);
             this.groupBoxMisc.PerformLayout();
@@ -815,5 +825,6 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxRemovable;
         private CheckBox checkBoxColorblind;
         private CheckBox checkBoxScoop;
+        private CheckBox checkBoxDpiaware;
     }
 }

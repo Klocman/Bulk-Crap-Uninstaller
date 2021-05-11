@@ -54,7 +54,7 @@ namespace UninstallTools.Factory
                     IsValid = true,
                     UninstallerKind = UninstallerType.Oculus,
                     InstallLocation = data["InstallLocation"],
-                    DisplayVersion = data["Version"],
+                    DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(data["Version"]),
                     IsProtected = "true".Equals(data["IsCore"], StringComparison.OrdinalIgnoreCase),
                 };
 

@@ -18,6 +18,13 @@ namespace BulkCrapUninstaller.Controls
         public PropertiesSidebar()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(System.EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode) return;
 
             _settings.BindControl(checkBoxViewCheckboxes, x => x.UninstallerListUseCheckboxes, this);
             _settings.BindControl(checkBoxViewGroups, x => x.UninstallerListUseGroups, this);
@@ -38,7 +45,7 @@ namespace BulkCrapUninstaller.Controls
             _settings.SendUpdates(this);
             Disposed += (x, y) => _settings.RemoveHandlers(this);
         }
-        
+
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public int GetSuggestedWidth()
         {

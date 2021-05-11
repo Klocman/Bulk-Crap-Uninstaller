@@ -193,7 +193,7 @@
     <value>الغاء التثبيت سيكون صامتا</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>تم انشاء نقطه الاستعادة</value>
+    <value>انشاء نقطه استعاده جديده</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>لا تزال تستخدم الملفات من قبل تشغيل العمليات</value>
@@ -215,8 +215,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>بدء مهمة الغاء تثبيت جديده</value>
-  </data>
-  <data name="buttonCreateRestore.Text" xml:space="preserve">
-    <value>انشاء نقطه استعاده جديده</value>
   </data>
 </root>

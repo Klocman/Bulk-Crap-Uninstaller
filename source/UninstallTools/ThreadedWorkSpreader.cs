@@ -30,7 +30,7 @@ namespace UninstallTools
         public Action<TData, TState> WorkLogic { get; }
 
         public int MaxThreadsPerBucket { get; }
-        
+
         public void Start(IList<IList<TData>> dataBuckets, ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             if (dataBuckets == null) throw new ArgumentNullException(nameof(dataBuckets));
@@ -87,8 +87,7 @@ namespace UninstallTools
 
         private void WorkerThread(object obj)
         {
-            var workerInterface = obj as WorkerData;
-            if (workerInterface == null) throw new ArgumentNullException(nameof(workerInterface));
+            if (obj is not WorkerData workerInterface) throw new ArgumentException("obj is not WorkerData", nameof(obj));
 
             foreach (var data in workerInterface.Input)
             {

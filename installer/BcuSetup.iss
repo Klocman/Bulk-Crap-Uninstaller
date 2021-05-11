@@ -1,14 +1,14 @@
-﻿#include "InstallDependancies.iss"
-
-#define MyAppName "BCUninstaller"
+﻿#define MyAppName "BCUninstaller"
 #define MyAppNameShort "BCUninstaller"
 #define MyAppPublisher "Marcin Szeniak"
-#define MyAppURL "http://klocmansoftware.weebly.com/"
+#define MyAppURL "https://github.com/Klocman/Bulk-Crap-Uninstaller"
 #define MyAppExeName "BCUninstaller.exe"
 #define MyAppCopyright "Copyright 2018 Marcin Szeniak"
 
-#define MyAppVersion "4.16.0.0"
-#define MyAppVersionShort "4.16.0"
+#define MyAppVersion "5.0.0.0"
+#define MyAppVersionShort "5.0"
+
+#define InputDir "..\bin\publish"
 
 #include "Scripts\PortablePage.iss"
 #include "Scripts\PortableIcons.iss"
@@ -33,14 +33,19 @@ SetupIconFile=logo.ico
 
 AllowNoIcons=yes
 DisableDirPage=no
-LicenseFile=Input\Licence.txt
+LicenseFile={#InputDir}\Licence.txt
 OutputBaseFilename={#MyAppNameShort}_{#MyAppVersionShort}_setup
 
 Compression=lzma2/ultra
 SolidCompression=yes
+LZMAUseSeparateProcess=yes
+LZMADictionarySize=54857
+LZMANumFastBytes=273
+LZMANumBlockThreads=8
 
 PrivilegesRequired=admin
-ArchitecturesAllowed=x86 x64 ia64
+;x86 x64 ia64
+ArchitecturesAllowed=x86 x64
 ArchitecturesInstallIn64BitMode=x64 ia64
 
 VersionInfoCompany={#MyAppPublisher}
@@ -57,7 +62,7 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
-Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "hu"; MessagesFile: "Hungarian.isl"
 Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
@@ -68,13 +73,26 @@ Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixe
 Name: "lang"; Description: "Extra Languages"; Types: full
 
 [Files]
-Source: "Input\BCUninstaller.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion
-Source: "Input\BCU_manual.html"; DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme
-Source: "Input\CleanLogs.bat"; DestDir: "{app}"; Components: main; Check: IsPortable(); Flags: ignoreversion
-Source: "Input\*"; DestDir: "{app}"; Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"
-Source: "Input\Resources\*"; DestDir: "{app}\Resources"; Components: main; Flags: ignoreversion recursesubdirs
+Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
+Source: "{#InputDir}\BCU_manual.html";          DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme; Check: IsPortable or not IsPortable
 
-Source: "Input\*"; DestDir: "{app}"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"
+; Need to do this to separate the language resource folders from main app files
+Source: "{#InputDir}\win-x64\*";                DestDir: "{app}\win-x64";           Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\Resources\*";      DestDir: "{app}\win-x64\Resources"; Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\runtimes\*";       DestDir: "{app}\win-x64\runtimes";  Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\ref\*";            DestDir: "{app}\win-x64\ref";       Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86";           Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\Resources\*";      DestDir: "{app}\win-x86\Resources"; Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\runtimes\*";       DestDir: "{app}\win-x86\runtimes";  Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\ref\*";            DestDir: "{app}\win-x86\ref";       Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
+
+; If installing languages, copy everything
+Source: "{#InputDir}\win-x64\*";                DestDir: "{app}\win-x64"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"; Check: not Is64BitInstallMode or IsPortable
+
+; Only copy the cleaning script if installing as portable
+Source: "{#InputDir}\win-x64\CleanLogs.bat";    DestDir: "{app}\win-x64"; Components: main; Flags: ignoreversion; Check: IsPortable
+Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Components: main; Flags: ignoreversion; Check: IsPortable
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
