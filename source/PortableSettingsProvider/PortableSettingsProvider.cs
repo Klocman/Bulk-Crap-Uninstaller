@@ -94,9 +94,10 @@ namespace PortableSettingsProvider
         {
             base.Initialize(ApplicationName, col);
         }
-
+        public static string AppSettingsPathOverride { get; set; }
         public virtual string GetAppSettingsPath()
         {
+            if (Directory.Exists(AppSettingsPathOverride)) return AppSettingsPathOverride;
             //Used to determine where to store the settings
             var fi = new FileInfo(Application.ExecutablePath);
             return fi.DirectoryName;

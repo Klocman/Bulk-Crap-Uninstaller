@@ -97,16 +97,7 @@ namespace BulkCrapUninstaller
             internal set { _isInstalled = value; }
         }
 
-        internal static string ConfigFileFullname
-        {
-            get
-            {
-                var dir = AssemblyLocation;
-                if (dir.Name.StartsWith("win-x") && dir.Parent != null)
-                    dir = dir.Parent;
-                return Path.Combine(dir.FullName, @"BCUninstaller.settings");
-            }
-        }
+        internal static string ConfigFileFullname { get; private set; }
 
         /// <summary>
         ///     Remove old or invalid setting files and make sure settings are ready to be used.
@@ -117,6 +108,12 @@ namespace BulkCrapUninstaller
             IsAfterUpgrade = false;
             try
             {
+                var dir = AssemblyLocation;
+                if (dir.Name.StartsWith("win-x") && dir.Parent != null) dir = dir.Parent;
+                var settingsDir = dir.FullName;
+                PortableSettingsProvider.PortableSettingsProvider.AppSettingsPathOverride = settingsDir;
+                ConfigFileFullname = Path.Combine(settingsDir, @"BCUninstaller.settings");
+
                 var settingsXmlDocument = XDocument.Parse(File.ReadAllText(ConfigFileFullname));
                 if (settingsXmlDocument.Root == null)
                     throw new FormatException();
