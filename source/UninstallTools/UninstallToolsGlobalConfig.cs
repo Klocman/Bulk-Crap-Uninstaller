@@ -20,6 +20,11 @@ namespace UninstallTools
             if (AssemblyLocation.ContainsAny(new[] { ".dll", ".exe" }, StringComparison.OrdinalIgnoreCase))
                 AssemblyLocation = PathTools.GetDirectory(AssemblyLocation);
 
+            var dir = new DirectoryInfo(AssemblyLocation);
+            if (dir.Name.StartsWith("win-x") && dir.Parent != null)
+                dir = dir.Parent;
+            AppLocation = dir.FullName;
+
             UninstallerAutomatizerPath = Path.Combine(AssemblyLocation, @"UninstallerAutomatizer.exe");
             UninstallerAutomatizerExists = File.Exists(UninstallerAutomatizerPath);
 
@@ -114,6 +119,7 @@ namespace UninstallTools
         ///     Path to directory this assembly sits in.
         /// </summary>
         internal static string AssemblyLocation { get; }
+        internal static string AppLocation { get; }
 
         public static bool AutoDetectCustomProgramFiles { get; set; }
 

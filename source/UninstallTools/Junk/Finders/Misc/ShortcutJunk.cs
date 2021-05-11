@@ -58,9 +58,9 @@ namespace UninstallTools.Junk.Finders.Misc
                 {
                     var target = WindowsTools.ResolveShortcut(linkFilename);
 
-                    if (string.IsNullOrEmpty(target) || 
-                        PathTools.SubPathIsInsideBasePath(syspath, target, true) || 
-                        PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AssemblyLocation, target, true))
+                    if (string.IsNullOrEmpty(target) ||
+                        PathTools.SubPathIsInsideBasePath(syspath, target, true) ||
+                        PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AppLocation, target, true))
                         continue;
 
                     results.Add(new Shortcut(linkFilename, target));
@@ -128,7 +128,7 @@ namespace UninstallTools.Junk.Finders.Misc
         private IEnumerable<FileSystemJunk> GetLinksPointingToSteamApp(ApplicationUninstallerEntry target)
         {
             Debug.Assert(target.UninstallerKind == UninstallerType.Steam);
-            
+
             var appId = System.Text.RegularExpressions.Regex.Replace(target.RatingId ?? target.RegistryKeyName ?? string.Empty, @"[^0-9]", "");
 
             if (!string.IsNullOrEmpty(appId))

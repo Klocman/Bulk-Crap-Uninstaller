@@ -97,8 +97,17 @@ namespace BulkCrapUninstaller
             internal set { _isInstalled = value; }
         }
 
-        internal static string ConfigFileFullname => Path.Combine(AssemblyLocation.FullName, @"BCUninstaller.settings");
-        
+        internal static string ConfigFileFullname
+        {
+            get
+            {
+                var dir = AssemblyLocation;
+                if (dir.Name.StartsWith("win-x") && dir.Parent != null)
+                    dir = dir.Parent;
+                return Path.Combine(dir.FullName, @"BCUninstaller.settings");
+            }
+        }
+
         /// <summary>
         ///     Remove old or invalid setting files and make sure settings are ready to be used.
         ///     Run before the settings are used, best at the very start of the application.
@@ -158,11 +167,9 @@ namespace BulkCrapUninstaller
                         using (var subKey = regKey.OpenSubKey(keyName, true))
                         {
                             var installLocation = subKey?.GetStringSafe(RegistryFactory.RegistryNameInstallLocation);
-                            if (String.IsNullOrEmpty(installLocation)) continue;
+                            if (string.IsNullOrEmpty(installLocation)) continue;
 
-                            var item1 = AssemblyLocation.FullName;
-                            var item2 = installLocation.TrimEnd('\\');
-                            if (item1.Equals(item2, StringComparison.InvariantCultureIgnoreCase))
+                            if (PathTools.SubPathIsInsideBasePath(installLocation, AssemblyLocation.FullName, true))
                             {
                                 // We are installed!
                                 _installedRegistryKeyName = keyName;
@@ -245,7 +252,7 @@ namespace BulkCrapUninstaller
             {
                 if (showErrors)
                     PremadeDialogs.GenericError(systemException);
-                else 
+                else
                     Console.WriteLine(systemException);
             }
         }

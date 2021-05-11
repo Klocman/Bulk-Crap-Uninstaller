@@ -352,7 +352,7 @@ namespace UninstallTools.Uninstaller
                         {
                             // There is no point in trying to automatize command line interface programs, or our own helpers
                             if (!UninstallerEntry.QuietUninstallerIsCLI() && !UninstallerEntry.QuietUninstallString
-                                .Contains(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase))
+                                .Contains(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase))
                             {
                                 var processIds = SafeGetProcessIds(watchedProcesses).ToArray();
 

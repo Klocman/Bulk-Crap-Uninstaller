@@ -28,12 +28,12 @@ namespace UninstallTools.Junk
         {
             if (x is FileSystemJunk fileSystemJunk)
             {
-                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             if (x is StartupJunkNode startupJunk)
             {
-                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AssemblyLocation, StringComparison.OrdinalIgnoreCase);
+                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             return true;
