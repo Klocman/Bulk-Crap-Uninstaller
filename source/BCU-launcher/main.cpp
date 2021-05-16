@@ -83,6 +83,9 @@ bool isWin7orLater()
     return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 1);
 }
 
+// Needed to get MessageBox working with MFC
+#pragma comment(lib, "user32.lib")
+
 int main()
 {
 	std::wstring p;
@@ -92,7 +95,7 @@ int main()
 		p = ExePath() + L"\\win-x64\\BCUninstaller.exe";
 		if (!fexists(p))
 		{
-			MessageBoxW(nullptr, L"This installation of BCUninstaller does not have files needed to run on 64 bit versions of Windows.\n\nDownload a 64 bit version of BCUninstaller and try again. The installer includes both 32 and 64 bit versions.", L"Could not start BCUninstaller.", MB_OK);
+			MessageBox(nullptr, L"This installation of BCUninstaller does not have files needed to run on 64 bit versions of Windows.\n\nDownload a 64 bit version of BCUninstaller and try again. The installer includes both 32 and 64 bit versions.", L"Could not start BCUninstaller.", MB_ICONERROR | MB_OK);
 			return 1;
 		}
 	}
@@ -101,14 +104,14 @@ int main()
 		p = ExePath() + L"\\win-x86\\BCUninstaller.exe";
 		if (!fexists(p))
 		{
-			MessageBoxW(nullptr, L"This installation of BCUninstaller does not have files needed to run on 32 bit versions of Windows.\n\nDownload a 32 bit version of BCUninstaller and try again. The installer includes both 32 and 64 bit versions.", L"Could not start BCUninstaller.", MB_OK);
+			MessageBox(nullptr, L"This installation of BCUninstaller does not have files needed to run on 32 bit versions of Windows.\n\nDownload a 32 bit version of BCUninstaller and try again. The installer includes both 32 and 64 bit versions.", L"Could not start BCUninstaller.", MB_ICONERROR | MB_OK);
 			return 1;
 		}
 	}
 
 	if(!isWin7orLater())
 	{
-		MessageBoxW(nullptr, L"This version of BCUninstaller needs Windows 7 SP1 / Windows Server 2008 R2 SP1 or later. Either update your system, or use an old version of BCUninstaller.\n\nTo bypass this check you can run BCUninstaller.exe directly from one of the subfolders.", L"Could not start BCUninstaller.", MB_OK);
+		MessageBox(nullptr, L"This version of BCUninstaller needs Windows 7 SP1 / Windows Server 2008 R2 SP1 or later. Either update your system, or use an old version of BCUninstaller.\n\nTo bypass this check you can run BCUninstaller.exe directly from one of the subfolders.", L"Could not start BCUninstaller.", MB_ICONERROR | MB_OK);
 		return 2;
 	}
 
@@ -134,7 +137,7 @@ int main()
 		&pi)           // Pointer to PROCESS_INFORMATION structure
 		)
 	{
-		MessageBoxW(nullptr, (L"Failed to start BCUninstaller - " + GetLastErrorAsString()).c_str(), L"Could not start BCUninstaller.", MB_OK);
+		MessageBox(nullptr, (L"Failed to start BCUninstaller - " + GetLastErrorAsString()).c_str(), L"Could not start BCUninstaller.", MB_ICONERROR | MB_OK);
 		printf("CreateProcess failed (%d).\n", GetLastError());
 		return 3;
 	}
@@ -145,5 +148,4 @@ int main()
 	// Close process and thread handles. 
 	CloseHandle(pi.hProcess);
 	CloseHandle(pi.hThread);
-
 }

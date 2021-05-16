@@ -61,7 +61,7 @@ IDI_ICON1               ICON                    "D:\\SVN_SFW\\BulkCrapUninstalle
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,0
+ FILEVERSION 1,1,0,0
  PRODUCTVERSION 1,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -79,12 +79,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Marcin Szeniak"
             VALUE "FileDescription", "BCUninstaller launcher"
-            VALUE "FileVersion", "1.0.0.0"
+            VALUE "FileVersion", "1.1.0.0"
             VALUE "InternalName", "BCUninstaller.exe"
             VALUE "LegalCopyright", "Copyright (C) 2021"
             VALUE "OriginalFilename", "BCUninstaller.exe"
             VALUE "ProductName", "BCUninstaller launcher"
-            VALUE "ProductVersion", "1.0.0.0"
+            VALUE "ProductVersion", "1.1.0.0"
         END
     END
     BLOCK "VarFileInfo"
