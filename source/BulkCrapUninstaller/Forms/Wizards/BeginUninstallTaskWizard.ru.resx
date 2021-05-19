@@ -127,13 +127,13 @@
     <value>Продолжить</value>
   </data>
   <data name="p1Heading.Text" xml:space="preserve">
-    <value>Связанные приложения, которые вы, возможно, захотите удалить</value>
+    <value>Связанные приложения, которые Вы, возможно, захотите удалить</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Связанные</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Убедитесь, что все, что ниже, безопасно для удаления</value>
+    <value>Убедитесь, что всё, что ниже, безопасно для удаления</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Подтверждение</value>

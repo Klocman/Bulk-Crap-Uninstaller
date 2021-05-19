@@ -137,7 +137,7 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Выбранные деинсталляторы будут выполняться по очереди.
-Если покажется, что процесс завис, вы можете нажать на "Пропустить", чтобы не ждать его завершения. Такое происходит, если деинсталлятор дал сбой или запустил новый процесс и не закрыл его.</value>
+Если покажется, что процесс завис, Вы можете нажать на "Пропустить", чтобы не ждать его завершения. Такое происходит, если деинсталлятор дал сбой или запустил новый процесс и не закрыл его.</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
     <value>Запустить деинсталлятор</value>
@@ -158,7 +158,7 @@
     <value>Установки</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Содержание этого списка деинсталляции идет сверху вниз.</value>
+    <value>Содержание этого списка деинсталляции идёт сверху вниз.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Список деинсталляции</value>
@@ -171,6 +171,27 @@
   </data>
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>Удалить вручную</value>
+  </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Пропустить</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Запустить деинсталлятор </value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ручное удаление</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть место установки</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Перевести компьютер в спящий режим после завершения операции</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>252, 17</value>

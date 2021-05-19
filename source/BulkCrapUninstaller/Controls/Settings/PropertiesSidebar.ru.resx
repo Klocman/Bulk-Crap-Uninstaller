@@ -121,7 +121,7 @@
     <value>Незарегистрированные</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. Они не видны в большинстве менеджеров удаления, но все равно занимают место. Незарегистрированные элементы отмечены красным цветом. 
+    <value>Показывать приложения, которые не имеют зарегистрированных деинсталляторов. Они не видны в большинстве менеджеров удаления, но всё равно занимают место. Незарегистрированные элементы отмечены красным цветом. 
 
 Внимание: Проверьте приложения перед их удалением, они могут быть необходимы!</value>
   </data>
@@ -132,53 +132,53 @@
     <value>Выделять серым цветом деинсталляторы, которые повреждены или отсутствуют.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Подписанные</value>
+    <value>Подписанные деинсталляторы</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Использовать цвета для идентификации сертифицированных деинсталляторов.
-Если сертификат проверен - зеленый цвет, не проверен - синий цвет.
+Если сертификат проверен - зелёный цвет, не проверен - синий цвет.
 
-Внимание: Проверка может занять некоторое время.</value>
+Внимание: Проверка может занять длительное время.</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Фильтрация</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Скрыть Microsoft</value>
+    <value>Скрыть приложения Microsoft</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Скрыть все, что подписано Майкрософт.</value>
+    <value>Скрыть всё, что подписано Майкрософт.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Системные</value>
+    <value>Отобразить системные приложения</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
     <value>Некоторые деинсталляторы могут быть помечены как "системные", можете скрыть эти программы из списка.
 Драйвера часто помечены этим тегом.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Защищенные</value>
+    <value>Отобразить защищённые</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Защищенные элементы имеют пометку "NoRemove", это означает, что разработчик не хочет, чтобы их удаляли.</value>
+    <value>Защищённые элементы имеют пометку "NoRemove", это означает, что разработчик не хочет, чтобы их удаляли.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Обновления</value>
+    <value>Отобразить обновления</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Обновления для других приложений. Обычно они удаляются вместе с родительским приложением, поэтому их можно скрыть.</value>
+    <value>Обновления для других приложений. Обычно они удаляются вместе с родительским приложением, поэтому ими можно пренебречь.</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Windows Apps</value>
+    <value>Отобразить приложения Windows Store</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Вид списка</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Чекбоксы выбора</value>
+    <value>Выбирать, используя флажки </value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Изменяет способ выбора элементов используя флажки. Это более безопасно, так как одним щелчком нельзя отменить все.
+    <value>Изменяет способ выбора элементов, используя флажки. Пользование ими безопасней, так как одним щелчком нельзя отменить всё.
 
 Вы можете отметить несколько элементов, выделив их и нажав пробел.</value>
   </data>
@@ -186,11 +186,20 @@
     <value>Группировать элементы</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Группировка элементов "абзацами" согласно колонке по которой сортируется список.
-Смарт-фильтрация.</value>
+    <value>Группировка элементов "абзацами" согласно колонке, по которой сортируется список.
+Группировка большинства колонок использует смарт-фильтрацию.</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Функции Windows</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Отобразить твики</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Выделить особые деинсталляторы</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Использовать цвета для различения особых приложений, например, приложений магазина и функций Windows.</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>

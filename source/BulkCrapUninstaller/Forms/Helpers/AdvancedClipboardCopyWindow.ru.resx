@@ -124,7 +124,7 @@
     <value>Закрыть</value>
   </data>
   <data name="buttonCopyAll.Text" xml:space="preserve">
-    <value>Копировать все</value>
+    <value>Копировать всё</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

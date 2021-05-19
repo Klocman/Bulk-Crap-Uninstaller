@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Найти и удалить приложение по одногму из его окон, ярлыку, местоположения установки или файлу .exe.</value>
+    <value>Найти и удалить приложение по одному из его окон, ярлыку, местоположению установки или файлу .exe.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Уничтожить приложение</value>
@@ -130,7 +130,7 @@
     <value>Найти по папке или файлам программы</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Примечание. Убедитесь, что выбранные файлы находятся внутри каталога установки приложения.
+    <value>Примечание: Убедитесь, что выбранные файлы находятся внутри каталога установки приложения.
 
 Вы можете выбрать каталог, содержащий несколько приложений, для их удаления.</value>
   </data>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
-    <value>Выбрать все</value>
+    <value>Выбрать всё</value>
   </data>
   <data name="toolStripButtonExpand.Text" xml:space="preserve">
-    <value>Развернуть все</value>
+    <value>Развернуть всё</value>
   </data>
   <data name="toolStripButtonCollapse.Text" xml:space="preserve">
-    <value>Свернуть все</value>
+    <value>Свернуть всё</value>
   </data>
   <data name="olvColumnName.Text" xml:space="preserve">
     <value>Имя</value>

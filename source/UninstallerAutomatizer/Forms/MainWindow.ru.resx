@@ -135,4 +135,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Автоматизация деинсталляции</value>
   </data>
+  <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
+    <value>Видимый деинсталлятор</value>
+  </data>
 </root>

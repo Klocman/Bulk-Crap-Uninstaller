@@ -254,7 +254,7 @@
     <value>Запись реестра деинсталлятора</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
-    <value>Элемент, вроде, соответствует издателю</value>
+    <value>Элемент кажется соответствующим издателю</value>
   </data>
   <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
     <value>Имя продукта не совсем соответствует</value>
@@ -296,7 +296,7 @@
     <value>Недопустимый</value>
   </data>
   <data name="UninstallStatus_Protected" xml:space="preserve">
-    <value>Защищенный</value>
+    <value>Защищённый</value>
   </data>
   <data name="UninstallStatus_Skipped" xml:space="preserve">
     <value>Пропущен</value>
@@ -346,7 +346,7 @@
     <value>Команда запуска</value>
   </data>
   <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
-    <value>Они больше не будут стартовать при запуске системы. Убедитесь, что выбранные элементы не требуются перед их удалением.</value>
+    <value>Они больше не будут стартовать при запуске системы. Убедитесь, что выбранные элементы не обязательные перед их удалением.</value>
   </data>
   <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
     <value>Удалить выбранные программы из автозагрузки?</value>
@@ -379,7 +379,7 @@
     <value>Издатель проверен</value>
   </data>
   <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
-    <value>Будет запущен один раз</value>
+    <value>Будет запущено один раз</value>
   </data>
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
     <value>Запись соответствует приложению</value>
@@ -407,7 +407,7 @@
     <value>Вспомогательный объект браузера</value>
   </data>
   <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
-    <value>Значение не может быть null или пустым</value>
+    <value>Значение не может быть нулевым или пустым</value>
   </data>
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
     <value>Значение не может содержать символ новой строки</value>
@@ -426,7 +426,7 @@
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
-    <value>Удаление Приложений Windows, является проблематичным</value>
+    <value>Удаление приложений магазина является проблематичным</value>
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
     <value>Простое удаление</value>
@@ -439,7 +439,7 @@
     <value>Файлы и папки</value>
   </data>
   <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
-    <value>Папка будет пустой после удаления мусора.</value>
+    <value>Папка уже или будет пуста после удаления мусора.</value>
   </data>
   <data name="Startup_ShortName_Service" xml:space="preserve">
     <value>Служба</value>
@@ -502,13 +502,13 @@
     <value>Поиск обновлений Windows</value>
   </data>
   <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
-    <value>Правило брандмауэра</value>
+    <value>Правило файрвола</value>
   </data>
   <data name="Junk_UserAssist_GroupName" xml:space="preserve">
     <value>Помощник пользователя</value>
   </data>
   <data name="Junk_WerReports_GroupName" xml:space="preserve">
-    <value>Отчеты об ошибках Windows</value>
+    <value>Отчёты об ошибках Windows</value>
   </data>
   <data name="Junk_Progress_Startup" xml:space="preserve">
     <value>Настройка сканеров мусора...</value>
@@ -554,5 +554,31 @@
   </data>
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Поиск пакетов Chocolatey</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Удалить в Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Возможен автозапуск</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Поиск приложений Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Является ли веб-браузером</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>Скрипт PowerShell</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Поиск пакетов Scoop</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Может принадлежать другому приложению с похожим названием</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
 </root>

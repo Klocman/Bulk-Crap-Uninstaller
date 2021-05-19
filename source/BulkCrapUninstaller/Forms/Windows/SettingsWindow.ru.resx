@@ -177,9 +177,9 @@ BCU будет ждать завершения одной команды для 
     <value>Внешние инструменты</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Можно задать пользовательские папки установки приложений (например, D:\Applications). Эти папки будут использоваться BCU для поиска и удаления остатков незарегистрированных приложений и некоторых других вещей. Хотя это не обязательно, со списком таких папок BCU будет работать лучше.
+    <value>Можно задать пользовательские папки установки приложений (например, D:\Applications). Эти папки будут использоваться BCU для поиска и удаления остатков незарегистрированных приложений и некоторых других вещей. Хотя это необязательно, со списком таких папок BCU будет работать лучше.
 
-По умолчанию, папки Windows всегда проверяются, вам не нужно включать их в этот список.
+По умолчанию папки Windows всегда проверяются, Вам не нужно включать их в этот список.
 
 Используйте полный путь каталога, один путь на строку. Недопустимые пути и несуществующие каталоги будут игнорироваться.</value>
   </data>
@@ -196,7 +196,7 @@ BCU будет ждать завершения одной команды для 
     <value>Настройки Bulk Crap Uninstaller</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Всегда показывать мусорные, с низким доверием</value>
+    <value>Всегда показывать мусорные с низким рейтингом</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Никогда не просить отзыв или помощь</value>
@@ -211,7 +211,7 @@ BCU будет ждать завершения одной команды для 
     <value>Диски (обнаружение незарегистрированных приложений)</value>
   </data>
   <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>Основываясь на предопределенных правилах</value>
+    <value>Основываясь на предопределённых правилах</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Поиск приложений в...</value>
@@ -269,6 +269,20 @@ BCU будет ждать завершения одной команды для 
   </data>
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Сканировать извлекаемые носители</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop (консольный установщик)</value>
+  </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Режим цветовой слепоты (для дальтоников)</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Эспериментальное масштабирование интерфейса с учётом DPI</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

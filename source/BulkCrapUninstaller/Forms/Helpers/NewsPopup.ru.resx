@@ -120,4 +120,31 @@
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Никогда не показывать это окно снова</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Пожертвования позволяют мне не терять интерес к этому проекту, а также — оплачивать подписные сертификаты кода, хостинг и другую важную деятельность.  </value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Посмотреть примечания к релизу и историю изменений</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Посмотреть исходный код или внести свой вклад</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Лицензию</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Политика конфиденциальности</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Отправить отзыв / Связаться с разработчиком</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Пожертвовать (PayPal, Bitcoin, Steam gifts)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Кликните в любом месте, чтобы закрыть)</value>
+  </data>
 </root>

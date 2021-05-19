@@ -124,7 +124,7 @@
     <value>Только одно шумное удаление за раз</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Авто запуск деинсталляторов одновременно (если возможно)</value>
+    <value>Автозапуск деинсталляторов одновременно (если возможно)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Максимум запущенных деинсталляторов:</value>
@@ -133,7 +133,7 @@
     <value>Одновременное удаление</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Запрет перезагрузки системы</value>
+    <value>Запрет выключения/перезагрузки системы</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Умная сортировка деинсталляторов</value>
@@ -154,21 +154,24 @@
     <value>Повторить один раз попытку тихой деинсталляции</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Генерировать тихую деинсталляцию если возможно</value>
+    <value>Генерировать тихую деинсталляцию, если возможно</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Авто-убитие застрявших в ожидании ручного ввода</value>
+    <value>Автоубитие застрявших в ожидании ручного ввода</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Тихое удаление</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Создание точки восстановления перед удалением</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>Можно создать точку восстановления системы. Рекомендуется создать точку восстановления перед удалением драйверов и важных системных приложений.</value>
+    <value>Вы можете создать точку восстановления системы, чтобы сделать резервную копию реестра, некоторых настроек и файлов. Рекомендуется создавать точки восстановления перед удалением драйверов и важных системных приложений.</value>
   </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Мониторить "тихие" деинсталляторы на наличие поп-апов или других внезапностей и автоматизировать их (запускать демона-автоматизатора)</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -138,11 +138,11 @@
     <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>Пожалуйста, кратко опишите как воспроизвести проблему:</value>
+    <value>Пожалуйста, кратко опишите, как нам исправить ошибку:</value>
     <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>Произошла ошибка. Если вы нажмете "Закрыть" приложение закроется. Если вы нажмете "Отправить", будет отправлен отчёт об ошибке и приложение будет закрыто.</value>
+    <value>Произошла ошибка и приложение будет закрыто. Если Вы нажмете "Закрыть" приложение закроется. Если Вы нажмёте "Отправить", будет отправлен отчёт об ошибке и приложение будет закрыто.</value>
     <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
@@ -175,7 +175,7 @@ A bug report has been sent to the developers. We apologize for the inconvenience
     <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Произошла ошибка. Если нажмете "Продолжить", приложение проигнорирует ошибку и попытается продолжить. Если нажмете "Закрыть", приложение будет закрыто.</value>
+    <value>Произошла ошибка. Если Вы нажмёте "Продолжить", приложение проигнорирует ошибку и попытается продолжить. Если нажмёте "Закрыть", приложение будет закрыто.</value>
     <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">

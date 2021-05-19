@@ -154,7 +154,7 @@
     <value>Переписать</value>
   </data>
   <data name="ButtonRate" xml:space="preserve">
-    <value>Рейтинг</value>
+    <value>Оценить</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
     <value>Удалить</value>
@@ -180,7 +180,7 @@
     <value>Удалить</value>
   </data>
   <data name="ButtonUseLoud" xml:space="preserve">
-    <value>Обычно</value>
+    <value>"Громко"</value>
   </data>
   <data name="ButtonYes" xml:space="preserve">
     <value>Да</value>

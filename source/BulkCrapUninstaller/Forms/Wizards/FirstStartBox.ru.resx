@@ -136,13 +136,13 @@
     <value>Готово</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
-    <value>Теперь вы можете начать использовать BCUninstaller. Если у вас есть вопросы или вы хотите предложить новую функцию посетите ссылку ниже.</value>
+    <value>Теперь Вы можете начать использовать BCUninstaller. Если у Вас есть вопросы или вы хотите предложить новую функцию — посетите ссылку ниже.</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>Написать разработчику</value>
   </data>
   <data name="p5finishHomepage.Text" xml:space="preserve">
-    <value>Вы можете посмотреть новости и другие мои программы на главной странице.</value>
+    <value>Вы можете посмотреть новости и другие мои программы на домашней странице.</value>
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Домашняя страница</value>
@@ -160,7 +160,7 @@
     <value>● Для поиска обновлений программы.</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
-    <value>● Для отправки отчетов об ошибках.</value>
+    <value>● Для отправки отчётов об ошибках.</value>
   </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
     <value>● Для отправки анонимной статистики.</value>
@@ -169,7 +169,7 @@
     <value>● Для получения и загрузки рейтинга программ</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>Каждый раз когда возникает ошибка вам будет предложено отправить отчет. Вы можете проверить какие данные передаются в отчете, просмотрев XML-файлы в каталоге BCUninstaller. Передаваемые данные не передаются третьим сторонам.</value>
+    <value>Каждый раз, когда возникает ошибка, Вам будет предложено отправить отчёт. Вы можете проверить, какие данные передаются в отчёте, просмотрев XML-файлы в каталоге BCUninstaller. Передаваемые данные не передаются третьим сторонам.</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Искать обновления при запуске приложения</value>
@@ -187,13 +187,13 @@
     <value>Включить пользовательские оценки приложений</value>
   </data>
   <data name="pCorTitle.Text" xml:space="preserve">
-    <value>Поврежденные деинсталляторы</value>
+    <value>Повреждённые деинсталляторы</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
-    <value>Со временем вы можете обнаружить, что некоторые приложения отказываются удалятся, или просто исчезли из большинства менеджеров деинсталляции программ.</value>
+    <value>Со временем Вы можете обнаружить, что некоторые приложения отказываются удаляться или просто исчезли из большинства менеджеров деинсталляции программ.</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
-    <value>Поврежденные или отсутствующие деинсталляторы</value>
+    <value>Повреждённые или отсутствующие деинсталляторы</value>
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
     <value>В некоторых случаях деинсталляторы могут быть повреждены, что делает невозможным их удаление. BCUninstaller может удалить эти записи с помощью опции "Удалить вручную".</value>
@@ -208,14 +208,14 @@
     <value>Незарегистрированные приложения</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>Иногда целые приложения остаются на диске после удаления. Это может произойти по разным причинам.</value>
+    <value>Иногда целые приложения остаются на винчестере даже после удаления. Это обычно происходит, если деинсталлятор удалён.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Показывать незарегистрированные в списке</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
     <value>Незарегистрированные приложения помечены красным.
-Их деинсталлятор не обнаружен и вам надо использовать параметр "Удалить вручную" для их удаления.</value>
+Их деинсталлятор не обнаружен и Вам надо использовать параметр "Удалить вручную" для их удаления.</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Опытные пользователи</value>
@@ -227,16 +227,16 @@
     <value>Системные компоненты</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Приложения, помеченные как "системные" скрыты от большинства основных менеджеров деинсталляции программ. Этот тег не означает, что приложение является частью операционной системы.</value>
+    <value>Приложения, помеченные как "системные", скрыты от большинства основных менеджеров деинсталляции программ. Этот тег не означает, что приложение является частью операционной системы.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Показывать деинсталляторы с тегом "системные"</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
-    <value>Защищенные деинсталляторы</value>
+    <value>Защищённые деинсталляторы</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Защищенные элементы помечены тегом "NoRemove", это означает, что издатель не хочет, чтобы их удаляли. Этот тег часто используется крупными пакетами программного обеспечения, чтобы помешать вам удалить их отдельные части.</value>
+    <value>Защищённые элементы помечены тегом "NoRemove", это означает, что издатель не хочет, чтобы их удаляли. Этот тег часто используется крупными пакетами программного обеспечения, чтобы помешать Вам удалить их отдельные части.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Показывать деинсталляторы с тегом "NoRemove"</value>
@@ -246,13 +246,13 @@
 "NoRemove"</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>Это позволит вам деинсталлировать защищенные элементы.</value>
+    <value>Это позволит Вам деинсталлировать защищённые элементы.</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>Вид списка деинсталяции</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Все деинсталляторы найденные в вашей системе находятся в главном списке. Вот несколько способов, чтобы просматривать эти данные:</value>
+    <value>Все деинсталляторы, найденные в вашей системе, находятся в главном списке. Вот несколько способов, как просматривать эти данные:</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Используйте фильтры и поиск по ключевым словам (во всех колонках)</value>
@@ -273,32 +273,32 @@
     <value>Сертифицированные деинсталляторы</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
-    <value>Деинсталлятор может быть подписан с помощью доверенных сертификатов. Если сертификат проходит проверку подлинности значит программный пакет не был изменен и заслуживает доверия.</value>
+    <value>Деинсталлятор может быть подписан с помощью доверенных сертификатов. Если сертификат проходит проверку подлинности — означает, что программный пакет не был изменён и заслуживает доверия.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Подсвечивать проверенные деинсталляторы</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
-    <value>Проверенные деинсталляторы выделяются зеленым, непроверенные синим.
-Внимание: Проверка может занимать некоторое время.</value>
+    <value>Проверенные деинсталляторы выделяются зелёным, непроверенные — синим.
+Внимание: Проверка может занимать длительное время.</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Добро пожаловать в BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Этот мастер проведет краткий обзор и поможет настроить приложение.</value>
+    <value>Этот мастер проведёт краткий обзор и поможет настроить приложение.</value>
   </data>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>Выбранный язык</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>BCUninstaller может использовать указанную локализацию. Чтобы применить новый язык будет выполнена перезагрузка.</value>
+    <value>BCUninstaller может использовать указанную локализацию. Чтобы применить новый язык, будет выполнена перезагрузка программы.</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Применить</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
-    <value>Если вы готовы помочь в переводе BCUninstaller на ваш язык, нажмите на ссылку ниже, чтобы связаться со мной. Любая помощь будет принята с благодарностью!</value>
+    <value>Если Вы готовы помочь в переводе BCUninstaller на Ваш язык, нажмите на ссылку ниже, чтобы связаться со мной. Любая помощь будет принята с благодарностью!</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
     <value>Открыть форму связи</value>

@@ -147,7 +147,7 @@
     <value>Не удалось вызвать API</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
-    <value>Бэкап реестра не удался, все равно продолжить?</value>
+    <value>Бэкап реестра не удался, всё равно продолжить?</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>Детали ошибки:</value>
@@ -166,9 +166,9 @@
     <value>Вы хотите создать бэкап реестра перед продолжением?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
-    <value>У вас будет возможность откатить все изменения, дважды щелкнув по ним впоследствии.
+    <value>У Вас будет возможность откатить все изменения, дважды щёлкнув по ним впоследствии.
 
-Файлы и каталоги будут перемещены в корзину, вы можете восстановить их оттуда.</value>
+Файлы и каталоги будут перемещены в корзину, Вы можете восстановить их оттуда.</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
     <value>Действие не удалось</value>
@@ -177,7 +177,7 @@
     <value>Нужно выбрать только одну запись для этого действия</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>Выберите один деинсталлятор из списка. Если вы используете чекбоксы, не забудьте проверить их.</value>
+    <value>Выберите один деинсталлятор из списка. Если Вы используете чекбоксы, не забудьте проверить их.</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
     <value>Поиск обновлений</value>
@@ -189,7 +189,7 @@
     <value>Не могу подключиться к интернету, нет доступных сетей.</value>
   </data>
   <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
-    <value>Убедитесь, что сетевой кабель подключен. Если вы используете Wi-Fi убедитесь, что сигнал достаточен.</value>
+    <value>Убедитесь, что сетевой кабель подключён. Если Вы используете Wi-Fi, убедитесь, что сигнал достаточен.</value>
   </data>
   <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
     <value>Отправить отзыв</value>
@@ -198,7 +198,7 @@
     <value>Хотите отправить отзыв о BCU?</value>
   </data>
   <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
-    <value>Это займет меньше минуты, но сильно поможет развитию! Все отзывы высоко ценятсяу, будь то сообщение об ошибке, запрос или просто Спасибо!
+    <value>Это займёт меньше минуты, но сильно поможет развитию! Все отзывы высоко ценятся, будь то сообщение об ошибке, запрос новой фичи, или простое "спасибо"!
 
 Вы можете отправить его позже через меню (Справка-&gt; Обратная связь).</value>
   </data>
@@ -208,34 +208,34 @@
   <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
     <value>Обновления не найдены, у вас последняя версия.
 
-Хотите что бы добавились новыее возможности или была исправлена ошибка? Пожалуйста, присылайте мне ваши отзывы, с помощью меню "Справка-&gt; Обратная связь".</value>
+Хотите, чтобы добавились новые возможности или была исправлена ошибка? Пожалуйста, присылайте мне Ваши отзывы с помощью меню "Справка-&gt; Обратная связь".</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
     <value>Ошибка при проверке наличия обновлений</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
-    <value>Убедитесь, что BCUninstaller не заблокирован в вашем брандмауэре, и что вы подключены к интернету.
+    <value>Убедитесь, что BCUninstaller не заблокирован в вашем файрволе и что Вы подключены к интернету.
 
 </value>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
-    <value>Новая версия {0} доступна, обновить сейчас?</value>
+    <value>Новая версия {0} доступна, желаете обновить сейчас?</value>
     <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
-    <value>BCUninstaller загрузит обновление и применит его после перезагрузки. Вы можете потерять свои настройки в процессе обновления.
+    <value>BCUninstaller загрузит обновление и применит его после перезагрузки программы. Имейте в виду, Вы можете потерять свои настройки в процессе обновления.
 
 Изменения:
 - {0}
 
-Внимание: во время обновления папка "Update" и файл "Update.zip" внутри BCU каталога будут удалены.</value>
+Внимание: Во время обновления папка "Update" и файл "Update.zip" внутри BCU каталога будут удалены.</value>
     <comment>0 is a list of changes separated by "- "</comment>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
     <value>Удалить с помощью Msi</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
-    <value>Выбранный элемент не может быть удален с помощью MsiExec</value>
+    <value>Выбранный элемент не может быть удалён с помощью MsiExec</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
     <value>Выбранный деинсталлятор не имеет допустимый идентификатор Guid для использования с MsiExec.</value>
@@ -247,7 +247,7 @@
     <value>Вы уверены, остановить запущенные задачи?</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
-    <value>Остановка задачи не вернет уже сделанные изменения. Работающий в данный момент деинсталлятор не остановить, это задание будет дожидаться его завершения.</value>
+    <value>Остановка задачи не вернёт уже сделанные изменения. Работающий в данный момент деинсталлятор не остановить, это задание будет дожидаться его завершения.</value>
   </data>
   <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
     <value>Создать точку восстановления</value>
@@ -270,7 +270,7 @@
     <value>Вы можете оставить компьютер, процесс автоматический</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
-    <value>Остальные деинсталляторы должны закончить работу без вмешательства пользователя. Проверяйте процесс время от времени, не случай сбоя какого либо из деинсталляторов.</value>
+    <value>Остальные деинсталляторы должны закончить работу без вмешательства пользователя. Проверяйте процесс время от времени на случай сбоя какого-либо из деинсталляторов.</value>
   </data>
   <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
     <value>Мусор/Остатки удаления</value>
@@ -279,7 +279,7 @@
     <value>Вы действительно хотите изменить неуверенно распознанные элементы?</value>
   </data>
   <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
-    <value>Удаление элементов, помеченных с уверенностью ниже, чем хорошая может быть очень опасно! Рекомендуется убедиться, что каждый отдельный элемент можно безопасно удалять.</value>
+    <value>Удаление элементов, помеченных с уверенностью ниже, чем хорошая, может быть очень опасно! Рекомендуется убедиться, что каждый отдельный элемент можно безопасно удалять.</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
     <value>Удалить ключи из реестра</value>
@@ -299,34 +299,34 @@
     <value>Произошла ошибка при сохранении экспортируемых данных</value>
   </data>
   <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
-    <value>Если ошибка повторяется, попробуйте сохранить в другой каталог, например на рабочем столе.</value>
+    <value>Если ошибка повторяется, попробуйте сохранить в другой каталог, например — на рабочем столе.</value>
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
-    <value>BCUninstaller удаляет {0} программ.</value>
+    <value>BCUninstaller удаляет {0} программ(ы).</value>
     <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
     <value>Переименовать деинсталлятор</value>
   </data>
   <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
-    <value>Имя пустое или содержит недопустимые символы</value>
+    <value>Пустое имя или содержатся недопустимые символы</value>
   </data>
   <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
-    <value>Убедитесь, что вы не включили следующие символы:
+    <value>Убедитесь, что Вы не включили следующие символы:
 {0}</value>
     <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
-    <value>Вы хотите найти остатки удаленных программ?</value>
+    <value>Вы хотите найти остатки удалённых программ?</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
-    <value>Обратите внимание, что эта функция предназначена для опытных пользователей, которые понимают как это работает. Не обязательно удалять эти файлы, и они не будут влиять на производительность системы каким-либо значимым образом.</value>
+    <value>Обратите внимание, что эта функция предназначена для опытных пользователей, которые понимают, как это работает. Необязательно удалять эти файлы, они не будут влиять на производительность системы каким-либо значимым образом.</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
     <value>Остатки не найдены</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Остатки не найдены. Тем не менее, могли остаться временные файлы, вы можете запустить чистку временных файлов, например в BleachBit.</value>
+    <value>Остатки не найдены. Тем не менее, могли остаться временные файлы, Вы можете запустить чистку временных файлов, например, в BleachBit.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Нечего копировать в буфер обмена. Выбранное не имеет этот блок информации, либо ничего не выбрано.</value>
@@ -338,7 +338,7 @@
     <value>Открыть папку</value>
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
-    <value>Это действие откроет {0} каталогов сразу, вы уверены, что хотите продолжить?</value>
+    <value>Это действие откроет {0} каталогов сразу, Вы уверены, что хотите продолжить?</value>
     <comment>0 is number of directories to open
 </comment>
   </data>
@@ -355,14 +355,14 @@
     <value>Вы уверены, что хотите удалить BCUninstaller?</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
-    <value>Мне жаль видеть, что вы уходите! Если у вас есть минута или две, пожалуйста, напишите на моем сайте несколько слов о том, почему была удалена BCU (http://klocmansoftware.weebly.com/). Я сделаю все возможное, чтобы исправить любые действительные проблемы.</value>
+    <value>Мне жаль видеть, что вы уходите! Если у Вас есть минута или две, пожалуйста, напишите на моём сайте несколько слов о том, почему был удалён BCU (http://klocmansoftware.weebly.com/). Я сделаю всё возможное, чтобы исправить любые существенные проблемы.</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
-    <value>Вы хотите создать точку восстановления, прежде чем продолжить?</value>
+    <value>Вы хотите создать точку восстановления прежде, чем продолжить?</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
-    <value>Если вы не уверены при удалении приложения, вдруг оно является важными для стабильности системы, рекомендуется создать точку восстановления. 
- Если возникнут проблемы после удаления можно будет воспользоваться восстановлением системы для отката изменений.</value>
+    <value>Если при удалении приложения Вы не уверены, является ли оно важными или обязательным для стабильности системы, рекомендуется создать точку восстановления. 
+ Если возникнут проблемы после удаления, Вы сможете воспользоваться восстановлением системы для отката изменений.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
     <value>Произошла ошибка при открытии страницы поиска</value>
@@ -374,7 +374,7 @@
     <value>Не удалось сохранить список в файл</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
-    <value>Вы уверены, действительно сбросить все параметры приложения?</value>
+    <value>Вы уверены, действительно хотите сбросить все параметры приложения?</value>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
     <value>Некоторые приложения не могут быть удалены тихо</value>
@@ -398,16 +398,16 @@
     <value>Не удалось загрузить выбранные файлы</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
-    <value>Вы не выбрали элементы, не чего удалять</value>
+    <value>Вы не выбрали элементы, нечего удалять</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
     <value>Запуск деинсталляторов</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
-    <value>Для удаления программ надо сначала выбрать их из списка. Если вы используете чекбоксы, убедитесь, что они отмечены.</value>
+    <value>Для удаления программ надо сначала выбрать их из списка. Если Вы используете флажки, убедитесь, что они отмечены.</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
-    <value>Если вы сохраните выбор, он будет объединен с открытым списком/списками</value>
+    <value>Если Вы сохраните выбор, он будет объединён с открытым списком/списками</value>
   </data>
   <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
     <value>Это действие откроет {0} URL-адресов одновременно, хотите продолжить?</value>
@@ -419,26 +419,26 @@
     <value>Нет URL для открытия</value>
   </data>
   <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
-    <value>Изменить защищенный элемент</value>
+    <value>Изменить защищённый элемент</value>
   </data>
   <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
     <value>Затронутые записи:
 {0}
 
-Чтобы изменить эти записи, нужно отключить защиту в боковой панели настроек. Так же вы можете убрать их из задачи и продолжать с другими элементами.</value>
+Чтобы изменить эти записи, нужно отключить защиту в боковой панели настроек. Также Вы можете убрать их из задания и продолжать с другими элементами по желанию.</value>
     <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
-    <value>Защищенные записи: {0}
+    <value>Защищённые записи: {0}
 
-Чтобы изменить эту запись необходимо отключить защиту в панели настроек.</value>
+Чтобы изменить эту запись, необходимо отключить защиту в панели настроек.</value>
     <comment>0 name of protected uninstaller</comment>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>Следующие пункты не имеют тихие деинсталляторы:
 {0}
 
-Вы хотите использовать "громкие" деинсталляторы для этих элементов, или они должны быть удалены из задачи?</value>
+Вы хотите использовать "громкие" деинсталляторы для этих элементов или они должны быть удалены из задания?</value>
     <comment>0 is names of non-quiet uninstallers</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
@@ -448,13 +448,13 @@
     <value>Восстановление настроек по умолчанию</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
-    <value>Все ваши настройки будут потеряны навсегда. BCUninstaller придется перезапустить, чтобы выполнить это действие.</value>
+    <value>Все ваши настройки будут потеряны навсегда. BCUninstaller придётся перезапустить, чтобы выполнить это действие.</value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
     <value>Открыть список деинсталляции</value>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
-    <value>Точка восстановления не была создана, вы не сможете восстановить изменения! Вы хотите продолжить удаление?</value>
+    <value>Точка восстановления не была создана, Вы не сможете восстановить изменения! Вы хотите всё равно продолжить удаление?</value>
   </data>
   <data name="MainWindow_Rename_Description" xml:space="preserve">
     <value>Переименование "{0}"</value>
@@ -550,9 +550,9 @@
     <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>При выборе "Прервать" процесс удаления немедленно прекратится, это может привести к ошибке. Обычно можно запустить деинсталлятор снова, чтобы завершить удаление программы.
+    <value>При выборе "Прервать" процесс удаления немедленно прекратится, это может привести к неполному удалению. Обычно можно запустить деинсталлятор снова, чтобы завершить удаление программы.
 
-В качестве альтернативы вы можете пропустить ожидание для этого процесса. Пропуск позволит деинсталлятору продолжать работать, а заданию перейти к следующему пункту. Имейте в виду, что некоторые деинсталляторы могут не заработать, пока не завершится предыдущий процесс.</value>
+В качестве альтернативы Вы можете пропустить ожидание для этого процесса. Пропуск позволит деинсталлятору продолжать работать, а заданию — перейти к следующему пункту. Имейте в виду, что некоторые деинсталляторы могут не заработать, пока не завершится предыдущий процесс.</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
     <value>Пропустить ожидание завершения текущей деинсталляции?</value>
@@ -561,15 +561,15 @@
     <value>Пропустить текущее ожидание</value>
   </data>
   <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
-    <value>Уже выполняется другая задача удаления. Дождитесь ее окончания и повторите попытку.</value>
+    <value>Уже выполняется другая задача удаления. Дождитесь её окончания и повторите попытку.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
     <value>Рейтинг: {0}
 
-Позитив:
+Положительные:
 {1}
 
-Негатив:
+Отрицательные:
 {2}</value>
     <comment>{0} - Rating as a string
 {1} - List of strings of positive parts of the rating
@@ -580,27 +580,27 @@ The lists are separated by a single newline.</comment>
     <value>Детали рейтинга</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
-    <value>Это приложение не имеет действительную запись в реестра</value>
+    <value>Это приложение не имеет действительную запись в реестре</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
     <value>Это приложение не имеет валидного деинсталлятора</value>
   </data>
   <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
-    <value>Загрузка компонентов Windows ...</value>
+    <value>Загрузка компонентов Windows...</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
     <value>Обновление информации автозапуска...</value>
     <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
-    <value>Нет папок для открытия</value>
+    <value>Нет каталогов для открытия</value>
   </data>
   <data name="NotAvailable" xml:space="preserve">
-    <value>Не доступно</value>
+    <value>Недоступно</value>
     <comment>Used on application list when value is not available</comment>
   </data>
   <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
-    <value>Рейтинги не доступны</value>
+    <value>Рейтинги недоступны</value>
   </data>
   <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
     <value>Вы должны включить рейтинги в настройках.</value>
@@ -634,19 +634,19 @@ The lists are separated by a single newline.</comment>
     <value>.NET Framework v4.0 не найден, некоторые функции будут отключены</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
-    <value>.NET Framework v4.0 является необязательным, но рекомендуется. Функции, которые зависят от .NET будут отключены, пока вы не установите его.</value>
+    <value>.NET Framework v4.0 является необязательным, но рекомендуется. Функции, которые зависят от .NET, будут отключены, пока Вы не установите его.</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
     <value>Некоторые деинсталляторы дали сбой</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Хотите запустить тихо, те которые не отработали громко?</value>
+    <value>Хотите запустить "тихо" те, которые не отработали "громко"?</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
     <value>Сканирование указанной папки...</value>
   </data>
   <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
-    <value>Выбрать папку с приложениями, которые вы хотите удалить.</value>
+    <value>Выбрать папку с приложениями, которые Вы хотите удалить.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
     <value>Удалить из каталога</value>
@@ -655,13 +655,13 @@ The lists are separated by a single newline.</comment>
     <value>В указанном каталоге не найдено приложений</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
-    <value>Убедитесь, что вы выбрали правильный каталог и исполняемые файлы программ по-прежнему присутствуют.</value>
+    <value>Убедитесь, что Вы выбрали правильный каталог и исполняемые файлы программ присутствуют.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
     <value>Найден деинсталлятор для {0}</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
-    <value>Следующие деинсталляторы будут перезапущены громко:</value>
+    <value>Следующие деинсталляторы будут перезапущены "громко":</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
     <value>Запустить этот деинсталлятор?</value>
@@ -694,7 +694,7 @@ The lists are separated by a single newline.</comment>
     <value>Приватный ключ</value>
   </data>
   <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
-    <value>Приватный ключ</value>
+    <value>Имеет Приватный ключ</value>
   </data>
   <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
     <value>Публичный ключ</value>
@@ -730,7 +730,7 @@ The lists are separated by a single newline.</comment>
     <value>Показать приложение</value>
   </data>
   <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
-    <value>Не выбраны действительные файлы или каталоги. Убедитесь, что у вас есть доступ к ним, и они не помечены как системные.</value>
+    <value>Не выбраны действительные файлы или каталоги. Убедитесь, что у Вас есть доступ к ним и они не помечены как системные.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
     <value>Показать приложения</value>
@@ -754,12 +754,21 @@ The lists are separated by a single newline.</comment>
     <value>Сохранить изменения в списке удаления?</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
-    <value>В списке удаления есть несохраненные изменения, которые будут потеряны при закрытии.</value>
+    <value>В списке удаления есть несохранённые изменения, которые будут потеряны при закрытии.</value>
   </data>
   <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
     <value>Выберите каталог с приложениями для удаления.</value>
   </data>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Выберите, где сохранить резервную копию. Будет создан новый каталог.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU обновлён до v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Добро пожаловать в BCU версии {0}!</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Перевод компьютера в спящий режим через {0}s. Уберите флажок спящего режима для отмены. </value>
   </data>
 </root>

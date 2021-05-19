@@ -172,10 +172,10 @@
     <value>Перейти в реестр</value>
   </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Запуск для всех</value>
+    <value>Запуск для всех пользователей</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вкл&amp;ючено</value>
+    <value>&amp;Включено</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Удалить</value>
@@ -184,7 +184,7 @@
     <value>Список автозагружаемых программ при запуске ОС или входе в систему</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Текстровый|*.txt</value>
+    <value>Текстровые файлы|*.txt</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>Экспорт записей автозагрузки...</value>

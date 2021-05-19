@@ -121,7 +121,7 @@
     <value>папка установки</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Выберите файлы, которые принадлежат приложению</value>
+    <value>Выберите файлы, принадлежащие приложению</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Все|*.*</value>

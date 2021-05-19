@@ -160,7 +160,7 @@
     <value>Компонент системы</value>
   </data>
   <data name="olvColumnProtected.Text" xml:space="preserve">
-    <value>Защищен</value>
+    <value>Защищён</value>
   </data>
   <data name="olvColumnRegistryKeyName.Text" xml:space="preserve">
     <value>Реестр</value>
@@ -175,7 +175,7 @@
     <value>Обновить список</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
-    <value>Выбрать все</value>
+    <value>Выбрать всё</value>
   </data>
   <data name="toolStripButtonSelNone.Text" xml:space="preserve">
     <value>Отменить выбор</value>
@@ -316,7 +316,7 @@
     <value>&amp;Использовать тему Windows</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Просмотр приложений Windows</value>
+    <value>Просмотр приложений магазина Windows</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Поиск...</value>
@@ -391,7 +391,7 @@
     <value>Удалить &amp;тихо (/X /qb)</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>Испол&amp;ьзовать MsiExec...</value>
+    <value>&amp;Использовать MsiExec...</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Переименовать...</value>
@@ -439,10 +439,10 @@
     <value>Обратная связь...</value>
   </data>
   <data name="resetSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reset settings</value>
+    <value>Сбросить настройки по умолчанию</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Uninstall BCUninstaller</value>
+    <value>Самоудаление BCUninstaller</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;О программе</value>
@@ -451,7 +451,7 @@
     <value>&amp;Справка</value>
   </data>
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть окно от&amp;ладки</value>
+    <value>Открыть окно &amp;отладки</value>
   </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
     <value>Reg файл|*.reg</value>
@@ -466,7 +466,7 @@
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>Альтернативный</value>
+    <value>AlternativeTo.net</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
@@ -532,10 +532,61 @@
     <value>Просмотр функций Windows</value>
   </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Измененные</value>
+    <value>Изменённые</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>Изменить</value>
+  </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Создание новой точки восстановления</value>
+  </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Экспортировать в скрипт пакетного удаления</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Создать скрипт-деинсталлятор PowerShell для приложений магазина...  </value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Стандартная фильтрация</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Только &amp;базовые приложения</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Только системные приложения</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Всё подряд</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Только автозапускающиеся</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Только веб-браузеры</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать твики</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Быстрая фильтрация</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Взять ответственность на себя</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Решить проблемы удаления...</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Запустить очистку диска</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Установить .NET v3.5 (доп. фича)</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>462, 17</value>
@@ -567,7 +618,4 @@
   <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1074, 17</value>
   </metadata>
-  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Создание новой точки восстановления</value>
-  </data>
 </root>

@@ -136,7 +136,7 @@
     <value>Список деинсталяции|*.bcul</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Сохранить как по умолчанию</value>
+    <value>Сохранить по умолчанию</value>
   </data>
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
     <value>Основная фильтрация</value>

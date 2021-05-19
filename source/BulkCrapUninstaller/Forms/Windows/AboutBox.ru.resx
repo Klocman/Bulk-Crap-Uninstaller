@@ -148,7 +148,7 @@
     <value>DotNetZip</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Метро иконки</value>
+    <value>Иконки "Метро"</value>
     <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
@@ -161,7 +161,7 @@
     <value>PortableSettingsProvider</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Задача планировщика заданий</value>
+    <value>Оболочка .NET для планировщика заданий Windows</value>
     <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="button1.Text" xml:space="preserve">
@@ -181,6 +181,9 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+  </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (Мгновенный поисковик по файлам) </value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>

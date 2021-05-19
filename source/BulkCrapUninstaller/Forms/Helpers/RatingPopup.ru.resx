@@ -130,7 +130,7 @@
     <value>Сомнительное |  Плохое качество</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поделитесь своей оценкой с другими</value>
+    <value>Поделитесь своей оценкой с другими пользователями</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Рейтинг</value>

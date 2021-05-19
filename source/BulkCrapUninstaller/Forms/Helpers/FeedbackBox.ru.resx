@@ -121,13 +121,13 @@
     <value>Благодарим вас за использование BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Если вы нашли это бесплатное ПО полезным, подумайте о том, чтобы потратить минуту, чтобы помочь в его развитии! Расскажите о нем друзьям, поделитесь им в социальных сетях, отправьте отзыв - любая малость значительна!</value>
+    <value>Если Вы нашли это бесплатное ПО полезным, пожалуйста, подумайте о том, как потратить минуту на то, чтобы помочь  его развитию! Расскажите о нём друзьям, поделитесь им в социальных сетях, отправьте отзыв — любая малость значительна!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Отправить отзыв</value>
   </data>
   <data name="buttonRate.Text" xml:space="preserve">
-    <value>Скорость (внизу страницы)</value>
+    <value>Оценить (внизу страницы)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Поделиться в Twitter</value>
@@ -136,7 +136,7 @@
     <value>Нашли ошибку или нужна функция?</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>Если у вас возникли проблемы с BCU или вы хотите предложить новую функцию, посетите эти ссылки:</value>
+    <value>Если у Вас возникли проблемы с BCU или Вы хотите предложить новую функцию, посетите эти ссылки:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
     <value>Отзыв на GitHub (нужна учетная запись)</value>
@@ -148,7 +148,7 @@
     <value>Хотите помочь?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Вам не обязательно быть программистом, чтобы помочь! Вы можете пожертвовать для ускорения обновлений или перевести BCU на ваш родной язык. Любая помощь приветствуется, независимо от ее размера!</value>
+    <value>Вам не обязательно быть программистом, чтобы помочь! Вы можете сделать пожертвование для ускорения выхода обновлений или перевести BCU на ваш родной язык. Любая помощь приветствуется, независимо от её размера!</value>
   </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
     <value>Перевести BCU</value>
