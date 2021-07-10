@@ -18,7 +18,11 @@ namespace UninstallTools.Junk
     {
         private static IEnumerable<IJunkResult> CleanUpResults(IEnumerable<IJunkResult> input)
         {
-            return RemoveDuplicates(input).Where(JunkDoesNotPointToSelf);
+            var prohibitedLocations = GetProhibitedLocations();
+
+            return RemoveDuplicates(input)
+                .Where(x => JunkDoesNotPointToDirectories(x, prohibitedLocations))
+                .Where(JunkDoesNotPointToSelf);
         }
 
         /// <summary>
@@ -61,6 +65,42 @@ namespace UninstallTools.Junk
                         yield return firstJunkResult;
                 }
             }
+        }
+
+        private static bool JunkDoesNotPointToDirectories(IJunkResult arg, HashSet<string> prohibitedDirs)
+        {
+            if (arg is not FileSystemJunk fileSystemJunk)
+                return true;
+
+            return !prohibitedDirs.Contains(fileSystemJunk.Path.FullName.ToLowerInvariant());
+        }
+
+        /// <summary>
+        /// Prevent suggesting removing special directories if the app for some reason was installed into them or otherwise used them
+        /// </summary>
+        private static HashSet<string> GetProhibitedLocations()
+        {
+            var results = new HashSet<string>();
+
+            void AddRange(IEnumerable<string> paths)
+            {
+                foreach (var path in paths
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Attempt(System.IO.Path.GetFullPath)
+                    .Select(x => x.ToLowerInvariant()))
+                {
+                    results.Add(path);
+                }
+            }
+
+            AddRange(Enum.GetValues<Klocman.Native.CSIDL>().Attempt(WindowsTools.GetEnvironmentPath));
+
+            var knownFolderstype = Type.GetType("Windows.Storage.KnownFolders, Microsoft.Windows.SDK.NET", false);
+            // Might not be available on some systems
+            if (knownFolderstype != null)
+                AddRange(knownFolderstype.GetProperties().Attempt(p => ((Windows.Storage.StorageFolder)p.GetValue(null)).Path));
+
+            return results;
         }
 
         public static IEnumerable<IJunkResult> FindJunk(IEnumerable<ApplicationUninstallerEntry> targets,
