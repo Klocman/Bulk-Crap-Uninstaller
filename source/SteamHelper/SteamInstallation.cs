@@ -31,21 +31,28 @@ namespace SteamHelper
 
         private static IEnumerable<string> FindSteamAppsLocations(string installationDirectory)
         {
-            var steamApps = new List<string> { Path.Combine(installationDirectory, @"SteamApps") };
+            var libraryLocations = new List<string> { Path.Combine(installationDirectory, @"SteamApps") };
 
-            var libFoldersFile = Path.Combine(steamApps[0], @"libraryfolders.vdf");
-            if (File.Exists(libFoldersFile))
+            // The libraryfolders seems to appear in multiple locations. To be safe gather info from all of them
+            foreach (var vdfPath in new[] { @"config\libraryfolders.vdf", @"SteamApps\libraryfolders.vdf" }.Select(x => Path.Combine(installationDirectory, x)))
             {
-                foreach (var str in File.ReadAllLines(libFoldersFile))
-                {
-                    var pieces = str.Split('\"').Where(p => !string.IsNullOrEmpty(p?.Trim())).ToList();
-                    if (pieces.Count != 2 || !int.TryParse(pieces[0], out var _)) continue;
+                if (!File.Exists(vdfPath)) continue;
 
-                    var path = Path.Combine(pieces[1].Replace(@"\\", @"\"), "steamapps");
-                    steamApps.Add(path);
+                foreach (var line in File.ReadAllLines(vdfPath))
+                {
+                    // Gather key/value pairs from the file. It seems to be in a proprietary format
+                    var pieces = line.Split('\"').Where(p => !string.IsNullOrWhiteSpace(p?.Trim())).ToList();
+                    if (pieces.Count != 2) continue;
+                    // Only path matters, it specifies absolute path to the library folder
+                    if (pieces[0] == "path")
+                    {
+                        var path = Path.Combine(pieces[1].Replace(@"\\", @"\"), "steamapps");
+                        libraryLocations.Add(path);
+                    }
                 }
             }
-            return steamApps.Where(Directory.Exists);
+
+            return libraryLocations.Distinct().Where(Directory.Exists);
         }
 
         private static string FindSteamInstallationLocation()
