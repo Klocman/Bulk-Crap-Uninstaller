@@ -72,7 +72,7 @@ namespace Klocman.Extensions
                 }
                 catch (Exception e)
                 {
-                    Console.Error.WriteLine(e);
+                    Console.Error.WriteLine("Attempt failed, skipping. Error: " + e);
                     continue;
                 }
                 yield return output;
