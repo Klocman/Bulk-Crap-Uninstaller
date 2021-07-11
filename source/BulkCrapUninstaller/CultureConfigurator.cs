@@ -142,7 +142,10 @@ namespace BulkCrapUninstaller
 
                 // Turkish
                 "tr-CY",
-                "tr-TR"
+                "tr-TR",
+
+                // Simplified Chinese
+                "zh-Hans"
             }.Attempt(CultureInfo.GetCultureInfo).ToList();
 
             supportedCultures.Add(EnUsCulture);

@@ -71,7 +71,10 @@ namespace BulkCrapUninstaller.Forms
                 new {culture = CultureInfo.GetCultureInfo("sl"), translator = "Jadran Rudec"},
 
                 // Turkish
-                new {culture = CultureInfo.GetCultureInfo("tr"), translator = "Harun Güngör"}
+                new {culture = CultureInfo.GetCultureInfo("tr"), translator = "Harun Güngör"},
+                
+                // Simplified Chinese
+                new {culture = CultureInfo.GetCultureInfo("zh-Hans"), translator = "cc713"}
             };
 
             foreach (var translationCredit in translationCredits
