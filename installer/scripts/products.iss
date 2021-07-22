@@ -11,7 +11,8 @@ hu.depdownload_msg=Ezekre az alkalmazásokra szükség van a telepítés folytat
 sl.depdownload_msg=Preden se nastavitev lahko nadaljuje, so potrebne naslednje aplikacije:%n%n%1%nPrenesem in namestim jih zdaj? 
 nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan voortgaan:%n%n%1%nDownloaden en nu installeren?
 es.depdownload_msg=Las siguientes aplicaciones son necesarias antes de continuar con la instalación:%n%n%1%n¿Deseas descargar e instalar ahora?
-bpt.depdownload_msg=São necessários os estes aplicativos antes que a instalação continue:%n%n%1%nBaixar e instalar agora? 
+bpt.depdownload_msg=São necessários os estes aplicativos antes que a instalação continue:%n%n%1%nBaixar e instalar agora?
+ru.depdownload_msg=Для продолжения установки необходимы следующие приложения:%n%n%1%nЗагрузить и установить их сейчас?
 
 depdownload_memo_title=Download dependencies
 pl.depdownload_memo_title=Pobierz zależności
@@ -22,6 +23,7 @@ sl.depdownload_memo_title=Prenesi odvisnosti
 nl.depdownload_memo_title=Downloaden afhankelijkheden
 es.depdownload_memo_title=Descargar dependencias
 bpt.depdownload_memo_title=Baixar dependencias
+ru.depdownload_memo_title=Загрузка зависимостей
 
 depinstall_memo_title=Install dependencies 
 pl.depinstall_memo_title=Zainstaluj zależności
@@ -31,7 +33,8 @@ hu.depinstall_memo_title=Függõségek telepítése
 sl.depinstall_memo_title=Namesti odvisnosti
 nl.depinstall_memo_title=Installeren afhankelijkheden
 es.depinstall_memo_title=Instalar dependencias
-bpt.depinstall_memo_title=Instalar dependencias 
+bpt.depinstall_memo_title=Instalar dependencias
+ru.depinstall_memo_title=Установка зависимостей
 
 depinstall_title=Installing dependencies
 pl.depinstall_title=Instalacja zależności
@@ -42,6 +45,7 @@ sl.depinstall_title=Namestitev odvisnosti
 nl.depinstall_title=Installeren afhankelijkheden
 es.depinstall_title=Instalando dependencias
 bpt.depinstall_title=Instalando dependencias
+ru.depinstall_title=Устанавливаются зависимости
 
 depinstall_description=Please wait while Setup installs dependencies on your computer.
 pl.depinstall_description=Poczekaj aż instalator instaluje zależności na twoim komputerze.
@@ -52,6 +56,7 @@ sl.depinstall_description=Pocakajte, da namestitveni program namesti odvisnosti 
 nl.depinstall_description=Even wachten a.u.b. Setup installeerd de afhankelijkheden op uw computer.
 es.depinstall_description=Espere mientras el programa de instalación instala las dependencias en su equipo.
 bpt.depinstall_description=Aguarde enquanto Setup instala dependências no seu computador.
+ru.depinstall_description=Подождите, пока программа установки установит зависимости на ваш компьютер.
 
 depinstall_status=Installing %1...
 pl.depinstall_status=Instalacja %1...
@@ -62,6 +67,7 @@ sl.depinstall_status=Namestitev %1...
 nl.depinstall_status=Installeren %1...
 es.depinstall_status=Instalando %1...
 bpt.depinstall_status=Instalando %1...
+ru.depinstall_status=Устанавливается %1...
 
 depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.
 pl.depinstall_missing=%1 musi być zainstalowany zanim instalacja może być kontynuowana. Zainstaluj %1 i ponownie uruchom program instalacyjny.
@@ -72,6 +78,7 @@ sl.depinstall_missing=%1 mora biti namešcen, preden se namestitev lahko nadalju
 nl.depinstall_missing=%1 moet worden geïnstalleerd voor dat setup verder kan gaan. Installeer %1 en voer setup opnieuw uit.
 es.depinstall_missing=%1 debe ser instalado antes de que la instalación pueda continuar. Instalar %1 y vuelva a ejecutar el programa de instalación.
 bpt.depinstall_missing=%1 deve ser instalado antes que o setup continue. Instale %1 e rode o Setup de novo.
+ru.depinstall_missing=%1 должен быть установлен перед продолжением установки. Пожалуйста, установите %1 и запустите программу установки снова.
 
 depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n
 pl.depinstall_error=Wystąpił błąd podczas instalowania zależności. Uruchom ponownie komputer i ponownie uruchom instalację lub ręcznie zainstaluj następujące zależności:%n
@@ -82,6 +89,7 @@ sl.depinstall_error=Pri namestitvi odvisnosti je prišlo do napake. Ponovno zaž
 nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankelijkheden. Herstart de computer en voer de setup opnieuw uit of installeer de volgende afhankelijkheden handmatig:%n
 es.depinstall_error=Error al instalar las dependencias. Reinicie el equipo y vuelva a ejecutar el programa de instalación o instale las siguientes dependencias manualmente:%n
 bpt.depinstall_error=Ocorreu um erro ao instalar as dependências. Reinicie o computador e execute o Setup novamente ou instale as seguintes dependências manualmente:%n
+ru.depinstall_error=Произошла ошибка при установке зависимостей. Перезагрузите компьютер и снова запустите установку программы, или установите следующие зависимости вручную:%n
 
 isxdl_langfile=
 
@@ -92,6 +100,7 @@ Source: "scripts\isxdl\polish.ini"; Flags: dontcopy; Languages: pl
 Source: "scripts\isxdl\german2.ini"; Flags: dontcopy; Languages: de
 Source: "scripts\isxdl\french2.ini"; Flags: dontcopy; Languages: fr
 Source: "scripts\isxdl\spanish.ini"; Flags: dontcopy; Languages: es
+Source: "scripts\isxdl\russian.ini"; Flags: dontcopy; Languages: ru
 
 [Code]
 type
