@@ -1697,7 +1697,7 @@ namespace BulkCrapUninstaller.Forms
                     try
                     {
                         File.WriteAllLines(d.FileName,
-                            new[] { "echo off", "cls", "echo BCU Generated batch uninstall script" }.Concat(
+                            new[] { "@echo off", "echo BCU Generated batch uninstall script" }.Concat(
                             _listView.SelectedUninstallers
                                 .Select(x => x.QuietUninstallPossible ? x.QuietUninstallString : x.UninstallString)
                                 .Where(x => !string.IsNullOrEmpty(x))
