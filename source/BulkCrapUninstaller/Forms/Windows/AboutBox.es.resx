@@ -182,4 +182,7 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Activos utilizados</value>
   </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (CLI for Everything)</value>
+  </data>
 </root>

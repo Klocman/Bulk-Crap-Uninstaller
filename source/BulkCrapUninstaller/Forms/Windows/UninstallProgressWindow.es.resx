@@ -172,4 +172,25 @@ Si el proceso parece atascarse pulse "Saltar" para evitar tener que esperar a qu
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>Desinstalar manualmente</value>
   </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Omitir</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Terminar</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ejecutar desinstalador ahora</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Desinstalación manual</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir directorio de instalación</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Propiedades</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Poner la PC en reposo cuando haya terminado</value>
+  </data>
 </root>

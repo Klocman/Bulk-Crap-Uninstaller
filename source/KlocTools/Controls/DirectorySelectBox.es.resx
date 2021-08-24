@@ -117,13 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filteringTextBox.Text" xml:space="preserve">
-    <value>Buscar...</value>
-  </data>
-  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
-    <value>Cuadro de búsqueda</value>
-  </data>
-  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
-    <value>Cuadro de búsqueda</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Explorar...</value>
   </data>
 </root>

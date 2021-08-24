@@ -117,13 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filteringTextBox.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>El almacenamiento en caché puede reducir en gran medida los tiempos de búsqueda, pero si una aplicación se modifica, BCU podría no notar los cambios. (ej. el tamaño)
+NOTA: Para que estos ajustes surtan efecto puede ser necesario reiniciar BCU.</value>
   </data>
-  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
-    <value>Cuadro de búsqueda</value>
+  <data name="checkBoxCerts.Text" xml:space="preserve">
+    <value>Almacenar en caché los resultados del escaneo de certificados de aplicación</value>
   </data>
-  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
-    <value>Cuadro de búsqueda</value>
+  <data name="checkBoxInfo.Text" xml:space="preserve">
+    <value>Almacenar en caché la información faltante recopilada</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Limpiar cachés</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Almacenamiento en la caché</value>
   </data>
 </root>

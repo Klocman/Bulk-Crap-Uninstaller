@@ -767,4 +767,8 @@ Para modificar esta entrada tiene que desactivar la protección de desinstalaci�
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>¡Bienvenido a BCU, versión {0}!</value>
   </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Poniendo la PC en reposo en {0}s.
+Desmarque la casilla de reposo para cancelar.</value>
+  </data>
 </root>

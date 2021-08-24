@@ -187,4 +187,31 @@
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
     <value>El proceso no pudo iniciar.</value>
   </data>
+  <data name="UninstallHandler_StartDaemon" xml:space="preserve">
+    <value>Iniciando automatizador como daemon/servicio</value>
+  </data>
+  <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
+    <value>El daemon se detuvo debido a que:</value>
+    <comment>This is followed by error/info message</comment>
+  </data>
+  <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
+    <value>{0} no es un número válido</value>
+  </data>
+  <data name="Auto_BadButtons" xml:space="preserve">
+    <value>No | Rechazar</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
+  </data>
+  <data name="Auto_CancelButtons" xml:space="preserve">
+    <value>Cancelar | Abortar | Retroceder</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you never want to press.
+Separated by |</comment>
+  </data>
+  <data name="Auto_GoodButtons" xml:space="preserve">
+    <value>Desinstalar | OK | Aceptar | Aplicar | Cerrar | Sí | Borrar | Eliminar | Limpiar</value>
+    <comment>Used to select buttons to automatically press when silently uninstallng some programs.
+These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
+Separated by |</comment>
+  </data>
 </root>

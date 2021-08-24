@@ -246,4 +246,42 @@ Utilice rutas de directorio completas, una ruta por línea. Las rutas no válida
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Modo para daltónicos</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Habilitar el escalado experimental de la interfaz en función del DPI</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Siempre pedir crear</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Nunca pedir crear</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Crear automáticamente en el directorio:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Respaldar antes de limpiar restos</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Interfaz</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Desinstalación</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Escanear unidades extraíbles</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
 </root>

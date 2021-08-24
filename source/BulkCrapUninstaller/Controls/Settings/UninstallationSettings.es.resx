@@ -168,4 +168,7 @@
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Puede crear un punto de restauración del sistema para hacer una copia de seguridad del registro, algunas configuraciones y archivos. Se recomienda crear un punto de restauración antes de eliminar los controladores y las aplicaciones importantes del sistema.</value>
   </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Monitorear los desinstaladores "silenciosos" en busca de ventanas emergentes u otros atascos y automatizarlos (ejecutar daemon automatizador)</value>
+  </data>
 </root>

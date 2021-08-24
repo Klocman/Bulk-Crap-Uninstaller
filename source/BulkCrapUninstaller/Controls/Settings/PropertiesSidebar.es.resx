@@ -129,7 +129,7 @@ ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sea
     <value>Resaltar los desinstaladores que faltan</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Usar el color gris para identificar desinstaladores ausentes o dañados.</value>
+    <value>Utilizar el color gris para identificar desinstaladores ausentes o dañados.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Resaltar desinstaladores certificados</value>
@@ -191,5 +191,14 @@ Agrupar la mayoría de las columnas usa filtrado inteligente.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Configuración de la vista de lista</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Mostrar retoques</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Destacar los desinstaladores especiales</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Utilizar colores para diferencias las aplicaciones especiales, por ejemplo, Aplicaciones de la Tienda y Características de Windows.</value>
   </data>
 </root>
