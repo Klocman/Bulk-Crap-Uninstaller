@@ -67,10 +67,11 @@ Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 
 [Components]
-Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixed
-Name: "lang"; Description: "Extra Languages"; Types: full
+Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
+Name: "lang"; Description: "{cm:ExtraLanguages}"; Types: full
 
 [Files]
 Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
@@ -96,3 +97,26 @@ Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Compon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
+
+[CustomMessages] 
+en.MainFiles=Main Files
+pl.MainFiles=Główne pliki
+fr.MainFiles=Principaux fichiers
+de.MainFiles=Haupt Dateien 
+hu.MainFiles=Fő fájlok
+sl.MainFiles=Glavne datoteke
+nl.MainFiles=Hoofdbestanden
+es.MainFiles=Archivos principales
+bpt.MainFiles=Arquivos principais
+ru.MainFiles=Основные файлы программы
+
+en.ExtraLanguages=Extra Languages
+pl.ExtraLanguages=Dodatkowe języki
+fr.ExtraLanguages=Langues supplémentaires
+de.ExtraLanguages=Zusätzliche Sprachen 
+hu.ExtraLanguages=Extra nyelvek
+sl.ExtraLanguages=Dodatni jeziki
+nl.ExtraLanguages=Extra talen
+es.ExtraLanguages=Idiomas adicionales
+bpt.ExtraLanguages=Línguas extras
+ru.ExtraLanguages=Дополнительные языки
