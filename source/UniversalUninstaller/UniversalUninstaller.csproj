@@ -65,8 +65,4 @@
   <ItemGroup>
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Properties\Localisation.de.resx" />
-    <EmbeddedResource Remove="Properties\Localisation.tr.resx" />
-  </ItemGroup>
 </Project>

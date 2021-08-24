@@ -93,9 +93,5 @@
     <PackageReference Include="FlaUI.UIA3" Version="3.2.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Properties\Localization.de.resx" />
-    <EmbeddedResource Remove="Properties\Localization.tr.resx" />
-  </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>
