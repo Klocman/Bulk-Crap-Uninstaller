@@ -65,21 +65,24 @@ namespace UninstallTools.Factory
 
             if (!ChocoIsAvailable) return results;
 
-            var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -l -nocolor -y -r");
+            var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -lo -nocolor --detail");
 
             if (string.IsNullOrEmpty(result)) return results;
 
-            var appEntries = result.Split(NewlineSeparators, StringSplitOptions.RemoveEmptyEntries);
-            var appNames = appEntries.Select(x =>
-            {
-                var i = x.IndexOf('|');
-                if (i <= 0) return null;
-                return new { name = x.Substring(0, i), version = x.Substring(i + 1) };
-            }).Where(x => x != null);
+            var re = new System.Text.RegularExpressions.Regex(@"\n\w");
+            var match = re.Match(result);
+            if (!match.Success) return results;
+            var begin = match.Index + 1;
 
-            foreach (var appName in appNames)
+            while(true)
             {
-                var info = StartProcessAndReadOutput(ChocoFullFilename, "info -l -nocolor -y -v " + appName.name);
+                match = match.NextMatch();
+                if (!match.Success) break;
+                var end = match.Index + 1;
+                var info = result.Substring(begin, end-begin);
+                int i = info.IndexOf(' '), j = info.IndexOf("\r\n");
+                var appName = new { name = info.Substring(0, i), version = info.Substring(i+1, j-i-1) };
+
                 var kvps = ExtractPackageInformation(info);
                 if (kvps.Count == 0) continue;
 
@@ -122,6 +125,7 @@ namespace UninstallTools.Factory
                 entry.AdditionalJunk.Add(junk);
 
                 results.Add(entry);
+                begin = end;
             }
 
             return results;
