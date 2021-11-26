@@ -133,6 +133,9 @@ namespace UninstallTools.Factory
                 {
                     return x.Key.GetDirectories().Select(y => new KVP(y, x.Value));
                 }
+                catch (ArgumentException)
+                {
+                }
                 catch (IOException)
                 {
                 }
