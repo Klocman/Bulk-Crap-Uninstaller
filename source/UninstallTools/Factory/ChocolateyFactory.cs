@@ -69,7 +69,7 @@ namespace UninstallTools.Factory
 
             if (string.IsNullOrEmpty(result)) return results;
 
-            var re = new System.Text.RegularExpressions.Regex(@"\n\w");
+            var re = new System.Text.RegularExpressions.Regex(@"\n\w.+\r\n Title:");
             var match = re.Match(result);
             if (!match.Success) return results;
             var begin = match.Index + 1;
