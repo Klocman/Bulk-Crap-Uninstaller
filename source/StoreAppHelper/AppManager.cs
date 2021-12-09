@@ -16,6 +16,7 @@ using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Management.Deployment;
 using Klocman;
+using System.Xml;
 
 namespace StoreAppHelper
 {
@@ -81,17 +82,21 @@ namespace StoreAppHelper
             if (manifestContents == null) return null;
             try
             {
-                var start = manifestContents.IndexOf("<Properties>", StringComparison.Ordinal);
-                var end = manifestContents.IndexOf("</Properties>", StringComparison.Ordinal);
-                var rootXml = XElement.Parse(manifestContents.Substring(start, end - start + 13).Replace("uap:", string.Empty));
-                var displayName = rootXml.Element("DisplayName")?.Value;
-                var logoPath = rootXml.Element("Logo")?.Value;
-                var publisherDisplayName = rootXml.Element("PublisherDisplayName")?.Value;
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(manifestContents);
+                // namespaces are mandatory, even if there's a default namespace
+                XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
+                nsmgr.AddNamespace("ns", xmlDoc.DocumentElement.NamespaceURI);
+                var properties = xmlDoc.DocumentElement.SelectSingleNode("//ns:Properties", nsmgr);
+                var displayName = properties.SelectSingleNode("ns:DisplayName/text()", nsmgr)?.Value;
+                var logoPath = properties.SelectSingleNode("ns:Logo/text()", nsmgr)?.Value;
+                var publisherDisplayName = properties.SelectSingleNode("ns:PublisherDisplayName/text()", nsmgr)?.Value;
                 var installPath = package.InstalledLocation.Path;
                 var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
 
-                return new App(package.Id.FullName, 
-                    string.IsNullOrWhiteSpace(extractedDisplayName) ? package.Id.Name : extractedDisplayName, 
+                return new App(package.Id.FullName,
+                    new string[] {  extractedDisplayName, displayName, package.DisplayName, package.Id.Name}
+                        .FirstOrDefault(s => !(string.IsNullOrEmpty(s) || s.StartsWith("ms-resource:"))) ?? "",
                     ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), 
                     ExtractDisplayIcon(installPath, logoPath), 
                     installPath,
