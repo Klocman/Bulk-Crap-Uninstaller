@@ -133,14 +133,9 @@ namespace UninstallTools.Factory
                 {
                     return x.Key.GetDirectories().Select(y => new KVP(y, x.Value));
                 }
-                catch (ArgumentException)
+                catch (SystemException ex)
                 {
-                }
-                catch (IOException)
-                {
-                }
-                catch (UnauthorizedAccessException)
-                {
+                    Console.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
                 }
                 return Enumerable.Empty<KVP>();
             });
