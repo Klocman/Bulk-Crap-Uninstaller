@@ -127,7 +127,7 @@
     <value>Clasificación inteligente</value>
   </data>
   <data name="olvColumnInstallLocation.Text" xml:space="preserve">
-    <value>Instalar ubicación</value>
+    <value>Ubicación de la instalación</value>
   </data>
   <data name="olvColumnQuiet.Text" xml:space="preserve">
     <value>Silencioso</value>
