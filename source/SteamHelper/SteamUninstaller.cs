@@ -15,7 +15,7 @@ namespace SteamHelper
     {
         public static void UninstallSteamApp(SteamApplicationInfo appInfo, bool silent)
         {
-            Console.WriteLine("Uninstalling SteapApp with ID {0}{1}", appInfo.AppId, silent ? " silently" : string.Empty);
+            Console.WriteLine("Uninstalling SteamApp with ID {0}{1}", appInfo.AppId, silent ? " silently" : string.Empty);
 
             if (silent)
                 QuietUninstall(appInfo);
