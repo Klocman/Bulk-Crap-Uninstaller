@@ -6,7 +6,6 @@
 using System;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -23,11 +22,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
 {
     internal class RatingManagerWrapper : IDisposable
     {
-        private static readonly string RatingCacheFilename =
-            Path.Combine(Program.AssemblyLocation.FullName, "RatingCashe.xml");
+        private readonly UninstallerRatingManager _ratingManager = new(Settings.Default.MiscUserId);
 
-        private readonly UninstallerRatingManager _ratingManager
-            = new UninstallerRatingManager(WindowsTools.GetUniqueUserId());
 
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
 
@@ -55,7 +51,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     }
                     try
                     {
-                        _ratingManager.SerializeCache(RatingCacheFilename);
+                        _ratingManager.SerializeCache(Program.AssemblyLocation);
                     }
                     catch
                     {
@@ -89,16 +85,16 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
                 if (!_settings.Settings.MiscUserRatings
                     || string.IsNullOrEmpty(model?.RatingId)
-                    || _ratingManager.RatingCount <= 0)
+                    || _ratingManager.RemoteRatingCount <= 0)
                     return Localisable.NotAvailable;
 
                 var rating = _ratingManager.GetRating(model.RatingId);
-
-                if (rating.IsEmpty || (!rating.AverageRating.HasValue && !rating.MyRating.HasValue))
+                if (rating.MyRating.HasValue)
+                    return string.Format("Your rating: {0}", RatingEntry.ToRating(rating.MyRating.Value));
+                else if (rating.AverageRating.HasValue)
+                    return string.Format("Average rating: {0}", RatingEntry.ToRating(rating.AverageRating.Value));
+                else
                     return CommonStrings.Unknown;
-
-                return (rating.MyRating.HasValue ? "Your rating:" : "Average rating:") + " " +
-                       RatingEntry.ToRating(rating.MyRating ?? (int) rating.AverageRating);
             };
 
             uninstallerObjectListView.CellClick += (x, y) =>
@@ -109,7 +105,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 if (y.Model is not ApplicationUninstallerEntry model)
                     return;
 
-                RateEntries(new[] {model}, uninstallerObjectListView.PointToScreen(y.Location));
+                RateEntries(new[] { model }, uninstallerObjectListView.PointToScreen(y.Location));
             };
         }
 
@@ -149,7 +145,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 {
                     try
                     {
-                        _ratingManager.DeserializeCache(RatingCacheFilename);
+                        _ratingManager.DeserializeCache(Program.AssemblyLocation);
                     }
                     catch (Exception ex)
                     {
@@ -159,7 +155,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
                     // If _ratingManager has no ratings it means that deserialization failed so we need to fetch from db
                     // Otherwise fetch at most every few hours, unless user manually clears the cache
-                    if (_ratingManager.RatingCount > 0 && 
+                    if (_ratingManager.RemoteRatingCount > 0 &&
                         (DateTime.Now - _settings.Settings.MiscRatingCacheDate).Duration() < _settings.Settings._CacheUpdateRate)
                         return;
 
@@ -189,7 +185,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             try
             {
                 _ratingManager.ClearRatings();
-                UninstallerRatingManager.DeleteCache(RatingCacheFilename);
+                UninstallerRatingManager.DeleteCache(Program.AssemblyLocation);
             }
             catch
             {

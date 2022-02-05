@@ -163,8 +163,7 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Settings.AdvancedSimulate = Program.EnableDebug;
 
             // Tracking
-            UsageManager.DataSender = new DatabaseStatSender(Program.DbConnectionString,
-                Resources.DbCommandStats, _setMan.Selected.Settings.MiscUserId);
+            UsageManager.DataSender = new DatabaseStatSender(Settings.Default.MiscUserId);
 
             // Misc
             filterEditor1.ComparisonMethodChanged += SearchCriteriaChanged;

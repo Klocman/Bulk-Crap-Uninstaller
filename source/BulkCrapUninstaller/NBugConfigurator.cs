@@ -6,9 +6,8 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Net.Http;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Functions.Tracking;
-using BulkCrapUninstaller.Properties;
 using Klocman.Tools;
 using NBug;
 using NBug.Core.Reporting.Info;
@@ -60,11 +59,23 @@ namespace BulkCrapUninstaller
         {
             public override bool Send(string fileName, Stream file, Report report, SerializableException exception)
             {
-                report.CustomInfo = new BugReportExtraInfo();
+                try
+                {
+                    report.CustomInfo = new BugReportExtraInfo();
+                    var data = string.Concat("<BugReport>", report.ToString(), exception.ToString(), "</BugReport>");
 
-                var data = string.Concat("<BugReport>", report.ToString(), exception.ToString(), "</BugReport>");
-                var sender = new DatabaseStatSender(Program.DbConnectionString, Resources.DbCommandCrash, Properties.Settings.Default.MiscUserId);
-                return sender.SendData(CompressionTools.ZipString(data));
+                    var compressed = CompressionTools.BrotliCompress(data);
+
+                    using var s = Program.GetHttpClient();
+                    var result = s.PostAsync(new Uri($"SendCrashReport?userId={Properties.Settings.Default.MiscUserId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null).Result;
+                    result.EnsureSuccessStatusCode();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to send crash report: " + e);
+                    return false;
+                }
+                return true;
             }
         }
     }

@@ -14,14 +14,15 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             unchecked
             {
-                return (AverageRating.GetHashCode()*397) ^ MyRating.GetHashCode();
+                return (AverageRating.GetHashCode() * 397) ^ MyRating.GetHashCode();
             }
         }
 
         public string ApplicationName { get; set; }
         public int? AverageRating { get; set; }
         public int? MyRating { get; set; }
-        public bool IsEmpty => ApplicationName == null && !AverageRating.HasValue && !MyRating.HasValue;
+        public bool IsEmpty => ApplicationName == null && !HasValue;
+        public bool HasValue => AverageRating.HasValue || MyRating.HasValue;
         public static RatingEntry Empty { get; } = default(RatingEntry);
 
         public static RatingEntry NotAvailable { get; } = new RatingEntry
@@ -39,14 +40,14 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
-            return obj is RatingEntry && Equals((RatingEntry) obj);
+            return obj is RatingEntry && Equals((RatingEntry)obj);
         }
 
         public static UninstallerRating ToRating(int value)
         {
-            if (value <= ((int) UninstallerRating.Bad + (int) UninstallerRating.Neutral)/2)
+            if (value <= ((int)UninstallerRating.Bad + (int)UninstallerRating.Neutral) / 2)
                 return UninstallerRating.Bad;
-            if (value >= ((int) UninstallerRating.Good + (int) UninstallerRating.Neutral)/2)
+            if (value >= ((int)UninstallerRating.Good + (int)UninstallerRating.Neutral) / 2)
                 return UninstallerRating.Good;
 
             return UninstallerRating.Neutral;

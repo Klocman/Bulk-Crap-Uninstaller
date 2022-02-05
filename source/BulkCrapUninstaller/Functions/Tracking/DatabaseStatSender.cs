@@ -4,48 +4,37 @@
 */
 
 using System;
-using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+using System.Net.Http;
+using Klocman.Tools;
 
 namespace BulkCrapUninstaller.Functions.Tracking
 {
     public class DatabaseStatSender
     {
-        public DatabaseStatSender(string connectionString, string commandName, long key)
+        private readonly ulong userId;
+
+        public DatabaseStatSender(ulong userId)
         {
-            ConnectionString = connectionString;
-            CommandName = commandName;
-            Key = key;
+            this.userId = userId;
         }
 
-        public string ConnectionString { get; set; }
-        public string CommandName { get; set; }
-        public long Key { get; set; }
-        public static bool SuppressSqlExceptions { get; set; } = true;
-
-        public bool SendData(byte[] value)
+        public bool SendData(string value)
         {
-            using (var connection = new MySqlConnection(ConnectionString))
+            try
             {
-                var command = connection.CreateCommand();
-                command.CommandText = "CALL " + CommandName + "(@userParam, @dataParam)";
+                var compressed = CompressionTools.BrotliCompress(value);
 
-                if (Key == 0) Key = new Random().Next(-1000, -1);
-                command.Parameters.Add(new MySqlParameter("@userParam", Key));
-                command.Parameters.Add(new MySqlParameter("@dataParam", value));
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    return true;
-                }
-                catch (MySqlException)
-                {
-                    if (!SuppressSqlExceptions)
-                        throw;
-                }
+                using var s = Program.GetHttpClient();
+                var response = s.PostAsync(new Uri($"SendStats?userId={userId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null).Result;
+                response.EnsureSuccessStatusCode();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to send stats: " + e);
                 return false;
             }
+            return true;
         }
     }
 }

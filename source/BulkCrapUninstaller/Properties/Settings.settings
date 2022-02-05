@@ -95,7 +95,7 @@
     <Setting Name="Language" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MiscUserId" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Int64" Scope="User">
+    <Setting Name="MiscUserId" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.UInt64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="AdvancedTestCertificates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
