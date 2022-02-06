@@ -30,7 +30,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="D:\SVN_SFW\BulkCrapUninstaller\source\BulkCrapUninstaller\logo.ico">
+    <Image Include="..\BulkCrapUninstaller\logo.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
