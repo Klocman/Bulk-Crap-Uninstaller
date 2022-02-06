@@ -130,7 +130,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
 
             lock (OperationLock)
             {
-                DataSender.SendData(CompressionTools.ZipString(CurrentData.ToString(SaveOptions.DisableFormatting)));
+                DataSender.SendData(CurrentData.ToString(SaveOptions.DisableFormatting));
             }
         }
 

@@ -112,15 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GithubReleasesLink" xml:space="preserve">
     <value>https://github.com/Klocman/Bulk-Crap-Uninstaller/releases</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,32 +154,6 @@
   <data name="magnifybrowse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.browse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DbRatingSchema" xml:space="preserve">
-    <value>&lt;?xml version="1.0" standalone="yes"?&gt;
-&lt;xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;
-  &lt;xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="user_ratings" msdata:UseCurrentLocale="true"&gt;
-    &lt;xs:complexType&gt;
-      &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
-        &lt;xs:element name="user_ratings"&gt;
-          &lt;xs:complexType&gt;
-            &lt;xs:sequence&gt;
-              &lt;xs:element name="applicationName"&gt;
-                &lt;xs:simpleType&gt;
-                  &lt;xs:restriction base="xs:string"&gt;
-                    &lt;xs:maxLength value="150" /&gt;
-                  &lt;/xs:restriction&gt;
-                &lt;/xs:simpleType&gt;
-              &lt;/xs:element&gt;
-              &lt;xs:element name="averageRating" type="xs:decimal" minOccurs="0" /&gt;
-              &lt;xs:element name="userRating" type="xs:long" minOccurs="0" /&gt;
-            &lt;/xs:sequence&gt;
-          &lt;/xs:complexType&gt;
-        &lt;/xs:element&gt;
-      &lt;/xs:choice&gt;
-    &lt;/xs:complexType&gt;
-  &lt;/xs:element&gt;
-&lt;/xs:schema&gt;</value>
-  </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -194,9 +168,6 @@
   </data>
   <data name="LicenceFilename" xml:space="preserve">
     <value>Licence.txt</value>
-  </data>
-  <data name="DbCommandGetRating" xml:space="preserve">
-    <value>getRatings</value>
   </data>
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,7 +202,7 @@
   <data name="DonateLink" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/donate.html</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="properties" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -266,14 +237,8 @@
   <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DbDebugConnectionString" xml:space="preserve">
-    <value>server=192.168.100.200;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
-  </data>
   <data name="add.multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.multiple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DbCommandStats" xml:space="preserve">
-    <value>sendStats</value>
   </data>
   <data name="centerline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\centerline.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,9 +263,6 @@
   </data>
   <data name="list.reorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list.reorder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DbCommandCrash" xml:space="preserve">
-    <value>sendCrash</value>
   </data>
   <data name="checkmarkuncrossed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark.uncrossed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -332,9 +294,6 @@
   <data name="donate_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\donate_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DbConnectionString" xml:space="preserve">
-    <value>server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;</value>
-  </data>
   <data name="ContactUrl" xml:space="preserve">
     <value>http://klocmansoftware.weebly.com/feedback--contact.html</value>
   </data>
@@ -352,9 +311,6 @@
   </data>
   <data name="edit.box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.box.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DbCommandSetRating" xml:space="preserve">
-    <value>sendRating</value>
   </data>
   <data name="HomepageUrl" xml:space="preserve">
     <value>https://www.bcuninstaller.com/</value>

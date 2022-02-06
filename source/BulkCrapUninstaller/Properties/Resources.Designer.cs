@@ -19,7 +19,7 @@ namespace BulkCrapUninstaller.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -186,77 +186,6 @@ namespace BulkCrapUninstaller.Properties {
             get {
                 object obj = ResourceManager.GetObject("control.fastforward.variant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to sendCrash.
-        /// </summary>
-        internal static string DbCommandCrash {
-            get {
-                return ResourceManager.GetString("DbCommandCrash", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to getRatings.
-        /// </summary>
-        internal static string DbCommandGetRating {
-            get {
-                return ResourceManager.GetString("DbCommandGetRating", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to sendRating.
-        /// </summary>
-        internal static string DbCommandSetRating {
-            get {
-                return ResourceManager.GetString("DbCommandSetRating", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to sendStats.
-        /// </summary>
-        internal static string DbCommandStats {
-            get {
-                return ResourceManager.GetString("DbCommandStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to server=bugsklocman.ddns.net;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;.
-        /// </summary>
-        internal static string DbConnectionString {
-            get {
-                return ResourceManager.GetString("DbConnectionString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to server=192.168.100.200;uid=application;pwd=sy9jSnUEae3XJXPV;database=bcu;charset=utf8;.
-        /// </summary>
-        internal static string DbDebugConnectionString {
-            get {
-                return ResourceManager.GetString("DbDebugConnectionString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;
-        ///&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;
-        ///  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;user_ratings&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;
-        ///    &lt;xs:complexType&gt;
-        ///      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;
-        ///        &lt;xs:element name=&quot;user_ratings&quot;&gt;
-        ///          &lt;xs:complexType&gt;
-        ///            &lt;xs:sequence&gt;
-        ///              &lt;xs:element name=&quot;applica [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string DbRatingSchema {
-            get {
-                return ResourceManager.GetString("DbRatingSchema", resourceCulture);
             }
         }
         
