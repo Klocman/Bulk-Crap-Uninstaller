@@ -11,7 +11,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
     {
         internal static class Utils
         {
-            public static T DecompressAndDeserialize<T>(byte[] bytes)
+            public static T DecompressAndDeserialize<T>(byte[] bytes, JsonSerializerOptions jsonSerializerOptions = null)
             {
                 using (var msInput = new MemoryStream(bytes))
                 using (var bs = new BrotliStream(msInput, CompressionMode.Decompress))
@@ -20,7 +20,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     bs.CopyTo(msOutput);
                     msOutput.Seek(0, SeekOrigin.Begin);
                     var output = msOutput.ToArray();
-                    return JsonSerializer.Deserialize<T>(output);
+                    return JsonSerializer.Deserialize<T>(output, jsonSerializerOptions);
                 }
             }
 
@@ -42,22 +42,19 @@ namespace BulkCrapUninstaller.Functions.Ratings
             }
 
 
-            static Utils()
-            {
-                _md5 = System.Security.Cryptography.MD5.Create();
-            }
-
-            [ThreadStatic] private static readonly System.Security.Cryptography.MD5 _md5;
+            [ThreadStatic] private static System.Security.Cryptography.MD5 _md5;
             private static readonly ConcurrentDictionary<string, ulong> _hashCache = new();
 
             public static ulong StableHash(string str)
             {
+                if (str == null) return 0;
                 if (_hashCache.TryGetValue(str, out var hash))
                 {
                     return hash;
                 }
                 else
                 {
+                    if (_md5 == null) _md5 = System.Security.Cryptography.MD5.Create();
                     byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(str);
                     var hashBytes = _md5.ComputeHash(inputBytes);
                     var stableHash = BitConverter.ToUInt64(hashBytes, 0) ^ BitConverter.ToUInt64(hashBytes, 8);

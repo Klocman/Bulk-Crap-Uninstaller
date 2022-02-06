@@ -30,22 +30,6 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public int UserRatingCount => _myRatings.Count;
 
-        //public IEnumerable<RatingEntry> Items
-        //{
-        //    get
-        //    {
-        //        lock (_cacheLock)
-        //        {
-        //            
-        //            if (_cashe == null || _cashe.Columns.Count != 3)
-        //                return Enumerable.Empty<RatingEntry>();
-        //
-        //            return (from DataRow row in _cashe.Rows
-        //                    select ToRatingEntry(row)).ToList();
-        //        }
-        //    }
-        //}
-
         public void Dispose()
         {
             //lock (_ratingsToSend)
@@ -56,12 +40,14 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             using var cl = Program.GetHttpClient();
 
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
             var txt = cl.GetStringAsync(new Uri(@"GetAverageRatingsComp", UriKind.Relative)).Result.Trim('"');
             var bytes = Convert.FromBase64String(txt);
-            var remoteAvgRatings = Utils.DecompressAndDeserialize<List<Utils.AverageRatingEntry>>(bytes);
+            var remoteAvgRatings = Utils.DecompressAndDeserialize<List<Utils.AverageRatingEntry>>(bytes, options);
 
             var txt2 = cl.GetStringAsync(new Uri(@"GetUserRatings?userId=" + UserId, UriKind.Relative)).Result;
-            var remoteMyRatings = JsonSerializer.Deserialize<List<Utils.UserRatingEntry>>(txt2);
+            var remoteMyRatings = JsonSerializer.Deserialize<List<Utils.UserRatingEntry>>(txt2, options);
 
             _avgRatings.Clear();
             foreach (Utils.AverageRatingEntry entry in remoteAvgRatings)
@@ -166,7 +152,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
         {
             try
             {
-                var avgRatings = JsonSerializer.Deserialize<Dictionary<ulong, int>>(File.ReadAllText(path));
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var avgRatings = JsonSerializer.Deserialize<Dictionary<ulong, int>>(File.ReadAllText(path), options);
 
                 if (avgRatings != null)
                 {
