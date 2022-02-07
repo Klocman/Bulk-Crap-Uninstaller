@@ -5,8 +5,8 @@
 #define MyAppExeName "BCUninstaller.exe"
 #define MyAppCopyright "Copyright 2018 Marcin Szeniak"
 
-#define MyAppVersion "5.1.0.0"
-#define MyAppVersionShort "5.1"
+#define MyAppVersion "5.2.0.0"
+#define MyAppVersionShort "5.2"
 
 #define InputDir "..\bin\publish"
 
