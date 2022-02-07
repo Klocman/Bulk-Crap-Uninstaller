@@ -1,7 +1,0 @@
-<script>
-    <ConditionScript>disable-wallpaper-compression_check.ps1</ConditionScript>
-    <Script>disable-wallpaper-compression.ps1</Script>
-    <DisplayName>Decreased Wallpaper quality (high compression)</DisplayName>
-    <Publisher>Microsoft Corporation</Publisher>
-    <SystemIcon>Shield</SystemIcon>
-</script>

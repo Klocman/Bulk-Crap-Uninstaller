@@ -44,7 +44,7 @@ namespace UninstallTools.Factory
             var results = new List<ApplicationUninstallerEntry>();
             if (ScriptHelperPath == null) return results;
 
-            var result = FactoryTools.StartHelperAndReadOutput(ScriptHelperPath, string.Empty);
+            var result = FactoryTools.StartHelperAndReadOutput(ScriptHelperPath, "list");
 
             if (string.IsNullOrEmpty(result)) return results;
 
@@ -75,13 +75,14 @@ namespace UninstallTools.Factory
                 if (string.IsNullOrEmpty(entry.Publisher))
                     entry.Publisher = "Script";
 
-                if (dataSet.TryGetValue("SystemIcon", out var icon) && !string.IsNullOrEmpty(icon))
-                {
-                    var iconObj = SystemIconProps
-                        .FirstOrDefault(p => p.Name.Equals(icon, StringComparison.OrdinalIgnoreCase))
-                        ?.GetValue(null, null) as Icon;
-                    entry.IconBitmap = iconObj;
-                }
+                //if (dataSet.TryGetValue("SystemIcon", out var icon) && !string.IsNullOrEmpty(icon))
+                //{
+                //    var iconObj = SystemIconProps
+                //        .FirstOrDefault(p => p.Name.Equals(icon, StringComparison.OrdinalIgnoreCase))
+                //        ?.GetValue(null, null) as Icon;
+                //    entry.IconBitmap = iconObj;
+                //}
+                entry.IconBitmap = SystemIcons.Shield;
 
                 results.Add(entry);
             }

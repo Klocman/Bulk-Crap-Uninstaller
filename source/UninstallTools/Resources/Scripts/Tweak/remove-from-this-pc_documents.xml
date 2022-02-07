@@ -1,9 +1,0 @@
-<script>
-    <ConditionScript>remove-special-folders-from-this-pc_check.ps1</ConditionScript>
-    <ConditionScriptArgs>-itemId 2</ConditionScriptArgs>
-    <Script>remove-special-folders-from-this-pc.ps1</Script>
-    <ScriptArgs>-itemId 2</ScriptArgs>
-    <DisplayName>Showing Documents under This PC</DisplayName>
-    <Publisher>Microsoft Corporation</Publisher>
-    <SystemIcon>Shield</SystemIcon>
-</script>

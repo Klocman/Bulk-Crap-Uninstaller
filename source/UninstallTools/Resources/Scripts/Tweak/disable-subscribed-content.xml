@@ -1,7 +1,0 @@
-<script>
-    <ConditionScript>disable-subscribed-content_check.ps1</ConditionScript>
-    <Script>disable-subscribed-content.ps1</Script>
-    <DisplayName>Subscribed content (Auto-install suggested apps)</DisplayName>
-    <Publisher>Microsoft Corporation</Publisher>
-    <SystemIcon>Shield</SystemIcon>
-</script>

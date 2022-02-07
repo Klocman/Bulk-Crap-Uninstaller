@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ScriptHelper": {
+      "commandName": "Project",
+      "commandLineArgs": "list"
+    },
+    "newProfile1": {
+      "commandName": "Project",
+      "commandLineArgs": "uninstall Tweak-Showing3DObjectsUnderThisPC"
+    }
+  }
+}

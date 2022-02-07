@@ -1,7 +1,0 @@
-<script>
-    <ConditionScript>disable-easy-access-key-shortcuts_check.ps1</ConditionScript>
-    <Script>disable-easy-access-key-shortcuts.ps1</Script>
-    <DisplayName>Easy Access Keyboard Shortcuts</DisplayName>
-    <Publisher>Microsoft Corporation</Publisher>
-    <SystemIcon>Shield</SystemIcon>
-</script>
