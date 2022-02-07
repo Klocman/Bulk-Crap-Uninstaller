@@ -39,7 +39,7 @@ OutputBaseFilename={#MyAppNameShort}_{#MyAppVersionShort}_setup
 Compression=lzma2/ultra
 SolidCompression=yes
 LZMAUseSeparateProcess=yes
-LZMADictionarySize=54857
+LZMADictionarySize=548570
 LZMANumFastBytes=273
 LZMANumBlockThreads=8
 
@@ -80,12 +80,8 @@ Source: "{#InputDir}\BCU_manual.html";          DestDir: "{app}"; Components: ma
 ; Need to do this to separate the language resource folders from main app files
 Source: "{#InputDir}\win-x64\*";                DestDir: "{app}\win-x64";           Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; Check: Is64BitInstallMode or IsPortable
 Source: "{#InputDir}\win-x64\Resources\*";      DestDir: "{app}\win-x64\Resources"; Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
-Source: "{#InputDir}\win-x64\runtimes\*";       DestDir: "{app}\win-x64\runtimes";  Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
-Source: "{#InputDir}\win-x64\ref\*";            DestDir: "{app}\win-x64\ref";       Components: main; Flags: ignoreversion recursesubdirs;             Check: Is64BitInstallMode or IsPortable
 Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86";           Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; Check: not Is64BitInstallMode or IsPortable
 Source: "{#InputDir}\win-x86\Resources\*";      DestDir: "{app}\win-x86\Resources"; Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
-Source: "{#InputDir}\win-x86\runtimes\*";       DestDir: "{app}\win-x86\runtimes";  Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
-Source: "{#InputDir}\win-x86\ref\*";            DestDir: "{app}\win-x86\ref";       Components: main; Flags: ignoreversion recursesubdirs;             Check: not Is64BitInstallMode or IsPortable
 
 ; If installing languages, copy everything
 Source: "{#InputDir}\win-x64\*";                DestDir: "{app}\win-x64"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"; Check: Is64BitInstallMode or IsPortable
