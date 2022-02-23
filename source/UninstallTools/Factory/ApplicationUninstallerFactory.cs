@@ -17,11 +17,12 @@ using UninstallTools.Startup;
 
 namespace UninstallTools.Factory
 {
+#nullable enable
     public static class ApplicationUninstallerFactory
     {
         private static readonly InfoAdderManager InfoAdder = new InfoAdderManager();
 
-        public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
+        public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback? callback)
         {
             const int totalStepCount = 8;
             var currentStep = 1;
@@ -32,12 +33,12 @@ namespace UninstallTools.Factory
             {
                 // Find msi products ---------------------------------------------------------------------------------------
                 var msiProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_MSI);
-                callback(msiProgress);
+                callback?.Invoke(msiProgress);
                 var msiGuidCount = 0;
-                var msiProducts = MsiTools.MsiEnumProducts().DoForEach(x =>
+                var msiProducts = MsiTools.MsiEnumProducts().DoForEach(_ =>
                 {
                     msiProgress.Inner = new ListGenerationProgress(0, -1, string.Format(Localisation.Progress_MSI_sub, ++msiGuidCount));
-                    callback(msiProgress);
+                    callback?.Invoke(msiProgress);
                 }).ToList();
 
                 // Run some factories in a separate thread -----------------------------------------------------------------
@@ -49,14 +50,14 @@ namespace UninstallTools.Factory
                 {
                     var regProgress = new ListGenerationProgress(currentStep++, totalStepCount,
                         Localisation.Progress_Registry);
-                    callback(regProgress);
+                    callback?.Invoke(regProgress);
 
                     var sw = Stopwatch.StartNew();
                     var registryFactory = new RegistryFactory(msiProducts);
                     registryResults = registryFactory.GetUninstallerEntries(report =>
                     {
                         regProgress.Inner = report;
-                        callback(regProgress);
+                        callback?.Invoke(regProgress);
                     });
                     Console.WriteLine($"[Performance] Factory {typeof(RegistryFactory).Name} took {sw.ElapsedMilliseconds}ms to finish");
 
@@ -65,12 +66,12 @@ namespace UninstallTools.Factory
                         ApplyCache(registryResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
                     var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
-                    callback(installLocAddProgress);
+                    callback?.Invoke(installLocAddProgress);
 
                     FactoryThreadedHelpers.GenerateMisingInformation(registryResults, InfoAdder, null, true, report =>
                     {
                         installLocAddProgress.Inner = report;
-                        callback(installLocAddProgress);
+                        callback?.Invoke(installLocAddProgress);
                     });
                 }
                 else
@@ -84,14 +85,14 @@ namespace UninstallTools.Factory
                 if (UninstallToolsGlobalConfig.ScanDrives)
                 {
                     var driveProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_DriveScan);
-                    callback(driveProgress);
+                    callback?.Invoke(driveProgress);
 
                     var sw = Stopwatch.StartNew();
                     var driveFactory = new DirectoryFactory(registryResults);
                     driveResults = driveFactory.GetUninstallerEntries(report =>
                     {
                         driveProgress.Inner = report;
-                        callback(driveProgress);
+                        callback?.Invoke(driveProgress);
                     });
                     Console.WriteLine($"[Performance] Factory {typeof(DirectoryFactory).Name} took {sw.ElapsedMilliseconds}ms to finish");
                 }
@@ -102,19 +103,19 @@ namespace UninstallTools.Factory
 
                 // Join up with the thread ----------------------------------------------------------------------------------
                 var miscProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_AppStores);
-                callback(miscProgress);
+                callback?.Invoke(miscProgress);
                 var otherResults = concurrentFactory.GetResults(callback, miscProgress);
 
                 // Handle duplicate entries ----------------------------------------------------------------------------------
                 var mergeProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_Merging);
-                callback(mergeProgress);
+                callback?.Invoke(mergeProgress);
                 var mergedResults = registryResults.ToList();
                 MergeResults(mergedResults, otherResults, report =>
                 {
                     mergeProgress.Inner = report;
                     report.TotalCount *= 2;
                     report.Message = Localisation.Progress_Merging_Stores;
-                    callback(mergeProgress);
+                    callback?.Invoke(mergeProgress);
                 });
                 // Make sure to merge driveResults last
                 MergeResults(mergedResults, driveResults, report =>
@@ -123,7 +124,7 @@ namespace UninstallTools.Factory
                     report.CurrentCount += report.TotalCount;
                     report.TotalCount *= 2;
                     report.Message = Localisation.Progress_Merging_Drives;
-                    callback(mergeProgress);
+                    callback?.Invoke(mergeProgress);
                 });
 
                 // Fill in any missing information -------------------------------------------------------------------------
@@ -131,11 +132,11 @@ namespace UninstallTools.Factory
                     ApplyCache(mergedResults, UninstallToolsGlobalConfig.UninstallerFactoryCache, InfoAdder);
 
                 var infoAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GeneratingInfo);
-                callback(infoAddProgress);
+                callback?.Invoke(infoAddProgress);
                 FactoryThreadedHelpers.GenerateMisingInformation(mergedResults, InfoAdder, msiProducts, false, report =>
                 {
                     infoAddProgress.Inner = report;
-                    callback(infoAddProgress);
+                    callback?.Invoke(infoAddProgress);
                 });
 
                 // Cache missing information to speed up future scans
@@ -150,19 +151,19 @@ namespace UninstallTools.Factory
                     }
                     catch (SystemException e)
                     {
-                        Console.WriteLine(@"Failed to save cache: " + e);
+                        Console.WriteLine("Failed to save cache: " + e);
                     }
                 }
 
                 // Detect startups and attach them to uninstaller entries ----------------------------------------------------
                 var startupsProgress = new ListGenerationProgress(currentStep, totalStepCount, Localisation.Progress_Startup);
-                callback(startupsProgress);
+                callback?.Invoke(startupsProgress);
                 var i = 0;
                 var startupEntries = new List<StartupEntryBase>();
                 foreach (var factory in StartupManager.Factories)
                 {
                     startupsProgress.Inner = new ListGenerationProgress(i++, StartupManager.Factories.Count, factory.Key);
-                    callback(startupsProgress);
+                    callback?.Invoke(startupsProgress);
                     try
                     {
                         startupEntries.AddRange(factory.Value());
@@ -174,7 +175,7 @@ namespace UninstallTools.Factory
                 }
 
                 startupsProgress.Inner = new ListGenerationProgress(1, 1, Localisation.Progress_Merging);
-                callback(startupsProgress);
+                callback?.Invoke(startupsProgress);
                 try
                 {
                     AttachStartupEntries(mergedResults, startupEntries);
@@ -196,7 +197,7 @@ namespace UninstallTools.Factory
         /// Merge new results into the base list
         /// </summary>
         internal static void MergeResults(ICollection<ApplicationUninstallerEntry> baseEntries,
-            ICollection<ApplicationUninstallerEntry> newResults, ListGenerationProgress.ListGenerationCallback progressCallback)
+            ICollection<ApplicationUninstallerEntry> newResults, ListGenerationProgress.ListGenerationCallback? progressCallback)
         {
             var newToAdd = new List<ApplicationUninstallerEntry>();
             var progress = 0;
@@ -244,10 +245,10 @@ namespace UninstallTools.Factory
                     Debug.WriteLine("Cache miss: " + entry.DisplayName);
                 }
             }
-            Console.WriteLine($@"Cache hits: {hits}/{baseEntries.Count}");
+            Console.WriteLine($"Cache hits: {hits}/{baseEntries.Count}");
         }
 
-        private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
+        private static List<ApplicationUninstallerEntry> GetMiscUninstallerEntries(ListGenerationProgress.ListGenerationCallback? progressCallback)
         {
             var otherResults = new List<ApplicationUninstallerEntry>();
 
@@ -260,7 +261,7 @@ namespace UninstallTools.Factory
             var progress = 0;
             foreach (var kvp in miscFactories)
             {
-                progressCallback(new ListGenerationProgress(progress++, miscFactories.Count, kvp.DisplayName));
+                progressCallback?.Invoke(new ListGenerationProgress(progress++, miscFactories.Count, kvp.DisplayName));
                 try
                 {
                     var sw = Stopwatch.StartNew();
