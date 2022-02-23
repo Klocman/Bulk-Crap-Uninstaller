@@ -192,8 +192,10 @@ Return codes:
 
                     foreach (var error in task.AllUninstallersList.Where(x =>
                         x.CurrentStatus != UninstallStatus.Completed && x.CurrentError != null))
+                    {
                         Console.WriteLine("Error: {0} - {1}", error.UninstallerEntry.DisplayName,
                             error.CurrentError.Message);
+                    }
                 }
             };
             task.Start();
@@ -224,22 +226,31 @@ Return codes:
 
             Console.WriteLine("Looking for applications...");
             string previousMain = null;
-            var result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
+
+            IList<ApplicationUninstallerEntry> result;
+            if (isQuiet || isUnattended)
             {
-                if (previousMain != report.Message)
-                {
-                    previousMain = report.Message;
-                    Console.WriteLine(report.Message);
-                }
-                if (isVerbose)
-                {
-                    if (!string.IsNullOrEmpty(report.Inner?.Message))
-                    {
-                        Console.Write("-> ");
-                        Console.WriteLine(report.Inner.Message);
-                    }
-                }
-            });
+                result = ApplicationUninstallerFactory.GetUninstallerEntries(_ => { });
+            }
+            else
+            {
+                result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
+                            {
+                                if (previousMain != report.Message)
+                                {
+                                    previousMain = report.Message;
+                                    Console.WriteLine(report.Message);
+                                }
+                                if (isVerbose)
+                                {
+                                    if (!string.IsNullOrEmpty(report.Inner?.Message))
+                                    {
+                                        Console.Write("-> ");
+                                        Console.WriteLine(report.Inner.Message);
+                                    }
+                                }
+                            });
+            }
 
             Console.WriteLine("Found {0} applications.", result.Count);
             return result;
