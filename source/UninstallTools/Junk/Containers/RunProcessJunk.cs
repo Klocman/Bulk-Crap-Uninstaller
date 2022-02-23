@@ -38,7 +38,7 @@ namespace UninstallTools.Junk.Containers
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
             }
         }
 

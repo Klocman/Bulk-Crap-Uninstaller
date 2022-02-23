@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
@@ -28,7 +29,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
             if (string.IsNullOrEmpty(target.InstallLocation))
                 return returnList;
-            
+
             string pathRoot;
 
             try
@@ -37,7 +38,7 @@ namespace UninstallTools.Junk.Finders.Registry
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
                 return returnList;
             }
 

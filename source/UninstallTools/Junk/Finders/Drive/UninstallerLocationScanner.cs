@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -28,7 +29,7 @@ namespace UninstallTools.Junk.Finders.Drive
         {
             var uninLoc = target.UninstallerLocation;
             if (string.IsNullOrEmpty(uninLoc)) yield break;
-            
+
             if (_allProgramFiles.Any(x => uninLoc.StartsWith(x, StringComparison.InvariantCultureIgnoreCase))
                 && !CheckIfDirIsStillUsed(uninLoc, GetOtherInstallLocations(target)))
             {
@@ -47,7 +48,7 @@ namespace UninstallTools.Junk.Finders.Drive
                 }
                 catch (SystemException e)
                 {
-                    Console.WriteLine(e);
+                    Debug.WriteLine(e);
                     yield break;
                 }
 

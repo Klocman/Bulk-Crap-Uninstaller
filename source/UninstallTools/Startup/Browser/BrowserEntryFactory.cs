@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
@@ -37,7 +38,7 @@ namespace UninstallTools.Startup.Browser
                     }
                     catch (UnauthorizedAccessException e)
                     {
-                        Console.WriteLine(e);
+                        Debug.WriteLine(e);
                         continue;
                     }
 

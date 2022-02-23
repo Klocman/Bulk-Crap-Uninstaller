@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -36,7 +37,7 @@ namespace UninstallTools.Junk.Finders.Registry
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
                 return returnList;
             }
 
@@ -76,7 +77,7 @@ namespace UninstallTools.Junk.Finders.Registry
             catch (Exception ex)
             {
                 if (ex is UnauthorizedAccessException || ex is SecurityException || ex is IOException)
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                 else
                     throw;
             }

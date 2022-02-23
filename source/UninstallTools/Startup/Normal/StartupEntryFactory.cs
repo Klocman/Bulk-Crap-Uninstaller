@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -45,7 +46,7 @@ namespace UninstallTools.Startup.Normal
             new StartupPointData(true, false, false, false, @"Common\Startup",
                 WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_STARTUP))
         }.AsEnumerable();
-        
+
         /// <summary>
         ///     Look for and return all of the startup entries stored in Startup folders and Run/RunOnce registry keys.
         /// </summary>
@@ -121,7 +122,7 @@ namespace UninstallTools.Startup.Normal
             }
             catch (SecurityException ex)
             {
-                Console.WriteLine(@"Failed to process startup entries: " + ex);
+                Debug.WriteLine(@"Failed to process startup entries: " + ex);
             }
 
             return results;

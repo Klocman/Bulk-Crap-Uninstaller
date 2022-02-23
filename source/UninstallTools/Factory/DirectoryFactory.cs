@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -37,7 +38,7 @@ namespace UninstallTools.Factory
             var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
             return FactoryThreadedHelpers.DriveApplicationScan(progressCallback, dirsToSkip, itemsToScan);
         }
-        
+
         public static IEnumerable<ApplicationUninstallerEntry> TryGetApplicationsFromDirectories(
             ICollection<DirectoryInfo> directoriesToScan, IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
         {
@@ -101,7 +102,7 @@ namespace UninstallTools.Factory
                             }
                             catch (SystemException ex)
                             {
-                                Console.WriteLine(ex);
+                                Debug.WriteLine(ex);
                             }
                             break;
 
@@ -135,7 +136,7 @@ namespace UninstallTools.Factory
                 }
                 catch (SystemException ex)
                 {
-                    Console.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
+                    Debug.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
                 }
                 return Enumerable.Empty<KVP>();
             });

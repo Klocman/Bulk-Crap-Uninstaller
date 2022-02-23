@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -48,8 +49,8 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        public static void GenerateMisingInformation(IList<ApplicationUninstallerEntry> entries, 
-            InfoAdderManager infoAdder, IList<Guid> msiProducts, bool skipRunLast, 
+        public static void GenerateMisingInformation(IList<ApplicationUninstallerEntry> entries,
+            InfoAdderManager infoAdder, IList<Guid> msiProducts, bool skipRunLast,
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             void WorkLogic(ApplicationUninstallerEntry entry, object state)
@@ -74,7 +75,7 @@ namespace UninstallTools.Factory
                     }
                     catch (SystemException ex)
                     {
-                        Console.WriteLine(ex);
+                        Debug.WriteLine(ex);
                     }
                 }
                 return cDrive;
@@ -126,7 +127,7 @@ namespace UninstallTools.Factory
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(@"Failed to get logical disk to physical drive relationships - " + ex);
+                Debug.WriteLine(@"Failed to get logical disk to physical drive relationships - " + ex);
                 output.Clear();
                 output.Add(itemsToScan);
             }

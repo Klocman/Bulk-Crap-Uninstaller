@@ -90,7 +90,7 @@ namespace UninstallTools.Junk.Finders.Drive
             catch (Exception ex)
             {
                 if (Debugger.IsAttached) throw;
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
             }
 
             return results;

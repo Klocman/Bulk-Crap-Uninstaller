@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
@@ -25,13 +26,13 @@ namespace UninstallTools.Startup.Service
         }
 
         /* ServiceType
-        Kernel Driver 
-        File System Driver 
-        Adapter 
-        Recognizer Driver 
-        Own Process 
-        Share Process 
-        Interactive Process 
+        Kernel Driver
+        File System Driver
+        Adapter
+        Recognizer Driver
+        Own Process
+        Share Process
+        Interactive Process
         */
 
         public static IEnumerable<ServiceEntry> GetServiceEntries()
@@ -65,8 +66,8 @@ namespace UninstallTools.Startup.Service
             }
             catch (Exception ex) when (ex is TypeInitializationException || ex is ManagementException || ex is ExternalException)
             {
-                Console.Write(@"Error while gathering services - ");
-                Console.WriteLine(ex);
+                Debug.Write(@"Error while gathering services - ");
+                Debug.WriteLine(ex);
             }
 
             return results.ToArray();

@@ -215,8 +215,8 @@ namespace UninstallTools.Uninstaller
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(@"Failed to peacefully close automatizer daemon");
-                Console.WriteLine(ex);
+                Debug.WriteLine(@"Failed to peacefully close automatizer daemon");
+                Debug.WriteLine(ex);
 
                 try { _quietUninstallDaemonProcess?.Kill(); }
                 catch (SystemException) { }
@@ -249,8 +249,8 @@ namespace UninstallTools.Uninstaller
                     {
                         UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
 
-                        Console.WriteLine(@"Failed to connect to automatization daemon");
-                        Console.WriteLine(ex);
+                        Debug.WriteLine(@"Failed to connect to automatization daemon");
+                        Debug.WriteLine(ex);
 
                         StopAutomationDaemon();
                     }
@@ -259,8 +259,8 @@ namespace UninstallTools.Uninstaller
                 {
                     UninstallToolsGlobalConfig.UseQuietUninstallDaemon = false;
 
-                    Console.WriteLine(@"Failed to start automatization daemon");
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(@"Failed to start automatization daemon");
+                    Debug.WriteLine(ex);
                 }
             }
         }

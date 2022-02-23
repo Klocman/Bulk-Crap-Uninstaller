@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
@@ -74,18 +75,18 @@ namespace UninstallTools.Startup.Normal
             {
                 using (var key = RegistryTools.CreateSubKeyRecursively(GetStartupApprovedKey(startupEntry)))
                 {
-                    return key.GetValue(startupEntry.EntryLongName) is byte[] bytes 
-                        && bytes.Length > 0 
+                    return key.GetValue(startupEntry.EntryLongName) is byte[] bytes
+                        && bytes.Length > 0
                         && !bytes[0].Equals(0x02);
                 }
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
                 return false;
             }
         }
-        
+
         private static string GetStartupApprovedKey(StartupEntry startupEntry)
         {
             if (!startupEntry.IsRegKey)
