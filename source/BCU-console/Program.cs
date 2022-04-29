@@ -33,7 +33,7 @@ BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed appl
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
  filename       – Specifies filename of the .xml file to save the exported application information to.
 
-BCU-console list /Q] [/U] [/V] - Display a list of installed applications.
+BCU-console list [/Q] [/U] [/V] - Display a list of installed applications.
 
 Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
@@ -87,7 +87,7 @@ Return codes:
             }
             catch (SystemException ex)
             {
-                Console.WriteLine("Encountered an unexpected error!");
+                Console.WriteLine(@"Encountered an unexpected error!");
                 Console.WriteLine(ex);
                 return 13;
             }
@@ -99,16 +99,11 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal)).ToArray();
-            if (args.Length != 1)
-                return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
+            var serializer = new ApplicationEntrySerializer(QueryApps(isQuiet, isUnattended, isVerbose));
 
-            var apps = QueryApps(isQuiet, isUnattended, isVerbose);
-            var serializer = new ApplicationEntrySerializer(apps);
-
-            Console.WriteLine(string.Format("{0,-40}  {1,-20}  {2,-40}", "Display Name", "Version", "Source"));
+            Console.WriteLine($@"{"Display Name",-40}  {"Version",-20}  {"Source",-40}");
             var sb = new StringBuilder(82);
-            for (int i = 0; i < 82; i++)
+            for (var i = 0; i < 102; i++)
             {
                 sb.Append('-');
             }
@@ -134,7 +129,7 @@ Return codes:
                     source = source.Substring(0, 40);
                 }
 
-                Console.WriteLine(string.Format("{0,-40}  {1,-20}  {2,-40}", displayName, version, source));
+                Console.WriteLine($"{displayName,-40}  {version,-20}  {source,-40}");
             }
             return 0;
         }
@@ -149,12 +144,12 @@ Return codes:
             if (args.Length != 1)
                 return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
 
-            Console.WriteLine($"Starting export to {args[0]}");
+            Console.WriteLine($@"Starting export to {args[0]}");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
-            Console.WriteLine("Exporting data...");
+            Console.WriteLine(@"Exporting data...");
             ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
-            Console.WriteLine("Success!");
+            Console.WriteLine(@"Success!");
             return 0;
         }
 
@@ -184,37 +179,37 @@ Return codes:
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
             if (isUnattended)
-                Console.WriteLine("WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
+                Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
             return RunUninstall(list, isQuiet, isUnattended, isVerbose);
         }
 
         private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose)
         {
-            Console.WriteLine("Starting bulk uninstall...");
+            Console.WriteLine(@"Starting bulk uninstall...");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             apps = apps.Where(a => list.TestEntry(a) == true).OrderBy(x => x.DisplayName).ToList();
 
             if (apps.Count == 0)
             {
-                Console.WriteLine("No applications matched the supplied uninstall list.");
+                Console.WriteLine(@"No applications matched the supplied uninstall list.");
                 return 0;
             }
 
             Console.WriteLine("{0} application(s) were matched by the list: {1}", apps.Count,
                           string.Join("; ", apps.Select(x => x.DisplayName)));
 
-            Console.WriteLine("These applications will now be uninstalled PERMANENTLY.");
+            Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
 
             if (!isUnattended)
             {
-                Console.WriteLine("Do you want to continue? [Y]es/[N]o");
+                Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                 if (Console.ReadKey(true).Key != ConsoleKey.Y)
                     return CancelledByUser();
             }
 
-            Console.WriteLine("Setting-up for the uninstall task...");
+            Console.WriteLine(@"Setting-up for the uninstall task...");
             var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting))
                 .ToList();
             var task = UninstallManager.CreateBulkUninstallTask(targets,
@@ -236,11 +231,11 @@ Return codes:
                 {
                     isDone = true;
                     Console.WriteLine();
-                    Console.WriteLine("Uninstall task Finished.");
+                    Console.WriteLine(@"Uninstall task Finished.");
 
                     foreach (var error in task.AllUninstallersList.Where(x =>
                         x.CurrentStatus != UninstallStatus.Completed && x.CurrentError != null))
-                        Console.WriteLine($"Error: {error.UninstallerEntry.DisplayName} - {error.CurrentError.Message}");
+                        Console.WriteLine($@"Error: {error.UninstallerEntry.DisplayName} - {error.CurrentError.Message}");
                 }
             };
             task.Start();
@@ -261,7 +256,7 @@ Return codes:
 
         private static int CancelledByUser()
         {
-            Console.WriteLine("Operation cancelled by the user.");
+            Console.WriteLine(@"Operation cancelled by the user.");
             return 1223;
         }
 
@@ -269,7 +264,7 @@ Return codes:
         {
             ConfigureUninstallTools();
 
-            Console.WriteLine("Looking for applications...");
+            Console.WriteLine(@"Looking for applications...");
             string previousMain = null;
             var result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
             {
