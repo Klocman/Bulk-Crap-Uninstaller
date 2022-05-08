@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -44,7 +45,7 @@ namespace UninstallTools.Junk.Finders.Drive
             }
             catch (SystemException ex)
             {
-                Console.WriteLine("Failed to gather prefetch files - " + ex);
+                Trace.WriteLine("Failed to gather prefetch files - " + ex);
             }
         }
 

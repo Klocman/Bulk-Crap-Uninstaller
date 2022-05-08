@@ -37,7 +37,7 @@ namespace UninstallTools.Factory
                 {
                     var sw = Stopwatch.StartNew();
                     var output = process?.StandardOutput.ReadToEnd();
-                    Console.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
+                    Trace.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
                     return process?.ExitCode == 0 ? output : null;
                 }
                 catch (Win32Exception ex)

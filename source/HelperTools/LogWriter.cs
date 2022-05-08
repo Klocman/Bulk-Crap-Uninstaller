@@ -81,7 +81,7 @@ namespace Klocman
                 Console.SetOut(logWriter);
                 Console.SetError(logWriter);
 
-                Trace.Listeners.Add(new ConsoleTraceListener(false));
+                Trace.Listeners.Add(new TextWriterTraceListener(logWriter));
 
                 return logWriter;
             }
@@ -104,6 +104,7 @@ namespace Klocman
             if (Disposed) return;
             value = DateTime.UtcNow.ToLongTimeString() + " - " + value;
             base.WriteLine(value);
+            base.Flush();
         }
     }
 }

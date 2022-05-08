@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -101,7 +102,7 @@ namespace UninstallTools.Factory
                             }
                             catch (SystemException ex)
                             {
-                                Console.WriteLine(ex);
+                                Trace.WriteLine(ex);
                             }
                             break;
 
@@ -135,7 +136,7 @@ namespace UninstallTools.Factory
                 }
                 catch (SystemException ex)
                 {
-                    Console.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
+                    Trace.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
                 }
                 return Enumerable.Empty<KVP>();
             });

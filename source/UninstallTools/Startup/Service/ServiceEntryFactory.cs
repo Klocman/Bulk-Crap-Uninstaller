@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
@@ -65,8 +66,7 @@ namespace UninstallTools.Startup.Service
             }
             catch (Exception ex) when (ex is TypeInitializationException || ex is ManagementException || ex is ExternalException)
             {
-                Console.Write(@"Error while gathering services - ");
-                Console.WriteLine(ex);
+                Trace.WriteLine(@"Error while gathering services - " + ex);
             }
 
             return results.ToArray();

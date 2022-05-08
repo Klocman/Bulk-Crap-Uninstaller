@@ -53,7 +53,7 @@ namespace UninstallTools.Factory
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Trace.WriteLine("Failed to get Choco info: " + ex);
             }
         }
 
@@ -151,7 +151,7 @@ namespace UninstallTools.Factory
                 }
                 catch (SystemException ex)
                 {
-                    Console.WriteLine(@"Exception while extracting info from choco: " + ex.Message);
+                    Trace.WriteLine(@"Exception while extracting info from choco: " + ex.Message);
                 }
             }
         }
@@ -196,7 +196,7 @@ namespace UninstallTools.Factory
             {
                 var sw = Stopwatch.StartNew();
                 var output = process?.StandardOutput.ReadToEnd();
-                Console.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
+                Trace.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
                 return output;
             }
         }

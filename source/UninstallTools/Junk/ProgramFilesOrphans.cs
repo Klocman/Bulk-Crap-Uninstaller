@@ -117,7 +117,7 @@ namespace UninstallTools.Junk
             catch (Exception ex)
             {
                 if (Debugger.IsAttached) throw;
-                Console.WriteLine(ex);
+                Trace.WriteLine($"Crash while scanning for {CategoryName} junk: {ex}");
             }
         }
 

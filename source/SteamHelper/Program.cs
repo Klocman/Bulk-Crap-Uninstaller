@@ -58,6 +58,7 @@ namespace SteamHelper
                                 .Select(p => Path.GetFileNameWithoutExtension(p).Substring(12)))
                             .Select(x => int.TryParse(x, out var num) ? num : (int?)null)
                             .Where(x => x != null)
+                            .Distinct()
                             .OrderBy(x => x))
                             Console.WriteLine(result);
                         break;

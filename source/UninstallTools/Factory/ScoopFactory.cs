@@ -57,7 +57,7 @@ namespace UninstallTools.Factory
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Trace.WriteLine("Failed to get Scoop info: " + ex);
             }
         }
 
@@ -161,7 +161,7 @@ namespace UninstallTools.Factory
             {
                 var sw = Stopwatch.StartNew();
                 var output = process?.StandardOutput.ReadToEnd();
-                Console.WriteLine($"[Performance] Running command {startInfo.FileName} {startInfo.Arguments} took {sw.ElapsedMilliseconds}ms");
+                Trace.WriteLine($"[Performance] Running command {startInfo.FileName} {startInfo.Arguments} took {sw.ElapsedMilliseconds}ms");
                 return output;
             }
         }

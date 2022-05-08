@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace UninstallTools.Factory.InfoAdders
@@ -21,7 +22,7 @@ namespace UninstallTools.Factory.InfoAdders
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Trace.WriteLine(e);
 
                 UniversalUninstallerFilename = null;
                 UniversalUninstallerIsAvailable = false;

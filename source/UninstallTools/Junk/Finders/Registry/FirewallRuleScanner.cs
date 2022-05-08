@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Klocman.Extensions;
 using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
@@ -57,7 +58,7 @@ namespace UninstallTools.Junk.Finders.Registry
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Trace.WriteLine("Failed to get firewall rule registry key: " + ex);
                 return null;
             }
         }

@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -47,7 +48,7 @@ namespace UninstallTools.Junk.Finders.Drive
                 }
                 catch (SystemException e)
                 {
-                    Console.WriteLine(e);
+                    Trace.WriteLine(e);
                     yield break;
                 }
 

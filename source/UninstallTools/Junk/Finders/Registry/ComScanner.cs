@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Tools;
@@ -40,7 +41,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 if (UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
                     yield break;
             }
-            catch (ArgumentException ex) { Console.WriteLine(ex); }
+            catch (ArgumentException ex) { Trace.WriteLine(ex); }
 
             foreach (var comEntry in _comEntries.Where(x => PathTools.SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename, true)))
             {
@@ -149,8 +150,7 @@ namespace UninstallTools.Junk.Finders.Registry
                     }
                     catch (SystemException ex)
                     {
-                        Console.WriteLine(@"Unexpected error while scanning COM entries, the registry might be corrupted. COM junk detection will not work.");
-                        Console.WriteLine(ex);
+                        Trace.WriteLine(@"Unexpected error while scanning COM entries, the registry might be corrupted. COM junk detection will not work. Error: " + ex);
                     }
                 }
             }
@@ -225,7 +225,7 @@ namespace UninstallTools.Junk.Finders.Registry
                     }
                     catch (SystemException ex)
                     {
-                        Console.WriteLine($@"Crash while processing COM GUID: {clsidGuid} - {ex}");
+                        Trace.WriteLine($@"Crash while processing COM GUID: {clsidGuid} - {ex}");
                     }
                     finally
                     {
