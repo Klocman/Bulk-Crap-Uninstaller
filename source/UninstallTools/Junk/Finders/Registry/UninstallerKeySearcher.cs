@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Klocman.Extensions;
@@ -52,7 +53,7 @@ namespace UninstallTools.Junk.Finders.Registry
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Trace.WriteLine(ex);
             }
         }
 

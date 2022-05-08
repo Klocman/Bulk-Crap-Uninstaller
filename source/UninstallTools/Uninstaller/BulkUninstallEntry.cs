@@ -458,7 +458,7 @@ namespace UninstallTools.Uninstaller
             catch (Exception ex)
             {
                 error = ex;
-                Console.WriteLine(@$"Exception when uninstalling {UninstallerEntry.DisplayName}: {ex}");
+                Trace.WriteLine(@$"Exception when uninstalling {UninstallerEntry.DisplayName}: {ex}");
             }
             finally
             {

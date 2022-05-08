@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace UninstallTools.Factory
                     }
                     catch (SystemException ex)
                     {
-                        Console.WriteLine(ex);
+                        Trace.WriteLine(ex);
                     }
                 }
 

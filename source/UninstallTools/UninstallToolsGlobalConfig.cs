@@ -101,7 +101,7 @@ namespace UninstallTools
             catch (SystemException e)
             {
                 UninstallerFactoryCache = new ApplicationUninstallerFactoryCache(cachePath);
-                Console.WriteLine(e);
+                Trace.WriteLine("Cache reload failed: " + e);
             }
         }
 

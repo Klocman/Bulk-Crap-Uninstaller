@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Klocman.Extensions;
 using Klocman.Tools;
@@ -81,7 +82,7 @@ namespace UninstallTools.Startup.Normal
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
+                Trace.WriteLine($"Failed to get Disabled start-up state for {startupEntry.ProgramName}: {ex}");
                 return false;
             }
         }

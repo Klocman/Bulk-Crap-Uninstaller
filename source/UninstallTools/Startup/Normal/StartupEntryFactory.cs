@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -121,7 +122,7 @@ namespace UninstallTools.Startup.Normal
             }
             catch (SecurityException ex)
             {
-                Console.WriteLine(@"Failed to process startup entries: " + ex);
+                Trace.WriteLine(@"Failed to process startup entries: " + ex);
             }
 
             return results;

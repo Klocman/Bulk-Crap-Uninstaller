@@ -113,7 +113,7 @@ namespace UninstallTools.Startup.Normal
 #if DEBUG
                     Debug.Fail(errorString);
 #else
-                    Console.WriteLine(errorString);
+                    Trace.WriteLine(errorString);
 #endif
                 }
             }

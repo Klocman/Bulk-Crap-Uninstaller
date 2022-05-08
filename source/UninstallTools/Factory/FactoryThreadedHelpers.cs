@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -74,7 +75,7 @@ namespace UninstallTools.Factory
                     }
                     catch (SystemException ex)
                     {
-                        Console.WriteLine(ex);
+                        Trace.WriteLine(ex);
                     }
                 }
                 return cDrive;
@@ -126,7 +127,7 @@ namespace UninstallTools.Factory
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(@"Failed to get logical disk to physical drive relationships - " + ex);
+                Trace.WriteLine(@"Failed to get logical disk to physical drive relationships - " + ex);
                 output.Clear();
                 output.Add(itemsToScan);
             }
