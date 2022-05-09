@@ -483,10 +483,10 @@
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Otevřete "Obnovení systému"</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Odinstalovat z windows adresáře nebo souboru...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Odinstalovat z windows adresáře nebo souboru...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">

@@ -183,7 +183,7 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Inverter seleção</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Desinstalar por janela, diretório ou arquivo ...</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
@@ -483,7 +483,7 @@
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Limpar pastas "Arquivos de Programas"...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Desinstalar por janela, diretório ou arquivo...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">

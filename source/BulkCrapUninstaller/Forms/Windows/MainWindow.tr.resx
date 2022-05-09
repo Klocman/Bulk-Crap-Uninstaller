@@ -183,7 +183,7 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Seçimi ters çevir</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Pencere, dizin veya dosyaya göre kaldır ...</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
@@ -513,7 +513,7 @@
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>"Program Dosyaları" klasörlerini temiz&amp;le ...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Pencere, dizin veya dosyaya göre kaldır ...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">

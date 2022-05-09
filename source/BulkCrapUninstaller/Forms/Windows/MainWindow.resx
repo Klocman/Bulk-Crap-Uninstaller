@@ -462,13 +462,13 @@
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>6, 29</value>
   </data>
-  <data name="toolStripButtonNuke.ImageTransparentColor" type="System.Drawing.Color, System.Drawing.Primitives">
+  <data name="toolStripButtonTarget.ImageTransparentColor" type="System.Drawing.Color, System.Drawing.Primitives">
     <value>Magenta</value>
   </data>
-  <data name="toolStripButtonNuke.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+  <data name="toolStripButtonTarget.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>26, 26</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Uninstall by window, directory, or file...</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing.Primitives">
@@ -1857,13 +1857,13 @@
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Clean up "Program Files" folders...</value>
   </data>
-  <data name="nukeMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing.Primitives">
+  <data name="targetMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing.Primitives">
     <value>Magenta</value>
   </data>
-  <data name="nukeMenuItem.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+  <data name="targetMenuItem.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>280, 22</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Uninstall by window, directory, or file...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing.Primitives">
@@ -2235,10 +2235,10 @@
   <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonNuke.Name" xml:space="preserve">
-    <value>toolStripButtonNuke</value>
+  <data name="&gt;&gt;toolStripButtonTarget.Name" xml:space="preserve">
+    <value>toolStripButtonTarget</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonNuke.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripButtonTarget.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
@@ -3063,10 +3063,10 @@
   <data name="&gt;&gt;cleanUpProgramFilesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nukeMenuItem.Name" xml:space="preserve">
-    <value>nukeMenuItem</value>
+  <data name="&gt;&gt;targetMenuItem.Name" xml:space="preserve">
+    <value>targetMenuItem</value>
   </data>
-  <data name="&gt;&gt;nukeMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;targetMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;uninstallFromDirectoryToolStripMenuItem.Name" xml:space="preserve">

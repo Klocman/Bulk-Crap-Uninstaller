@@ -1497,9 +1497,9 @@ namespace BulkCrapUninstaller.Forms
             _uninstallerListConfigurator.RatingManagerWrapper.RateEntries(_listView.SelectedUninstallers.ToArray(), Point.Empty);
         }
 
-        private void OpenNukeWindow(object sender, EventArgs e)
+        private void OpenTargetWindow(object sender, EventArgs e)
         {
-            var results = NukeWindow.ShowDialog(this);
+            var results = TargetWindow.ShowDialog(this);
 
             if (results == null) return;
 

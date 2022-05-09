@@ -724,10 +724,10 @@ Puoi provare a disabilitare la rilevazione delle collisioni nella configurazione
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Caricando le icone</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Ricerca applicazione</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>Non sono stati selezionati files o cartelle validi. Assicurati di avere i corretti diritti di accesso e che non abbiano attributi di sistema</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

@@ -1,6 +1,6 @@
 ﻿namespace BulkCrapUninstaller.Forms
 {
-    partial class NukeWindow
+    partial class TargetWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NukeWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TargetWindow));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.windowTargeter1 = new Klocman.Controls.WindowTargeter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -102,7 +102,7 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // NukeWindow
+            // TargetWindow
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
@@ -116,7 +116,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NukeWindow";
+            this.Name = "TargetWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

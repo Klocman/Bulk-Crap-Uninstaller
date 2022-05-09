@@ -715,10 +715,10 @@ Ayarlarda çarpışma algılamayı devre dışı bırakmayı deneyebilirsiniz, a
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>İkonlar yükleniyor</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Uygulamaya bak</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>Geçerli dosya veya dizin seçilmedi. Onlara erişebildiğinizden ve sistem dosyaları olarak işaretlenmediğinden emin olun.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

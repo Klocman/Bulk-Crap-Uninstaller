@@ -420,10 +420,10 @@ You can select a directory that contains multiple applications to uninstall them
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nuke an application</value>
+    <value>Target an application</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>NukeWindow</value>
+    <value>TargetWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

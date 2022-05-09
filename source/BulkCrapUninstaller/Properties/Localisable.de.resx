@@ -728,10 +728,10 @@ Sie können versuchen, die Kollisionserkennung in den Einstellungen zu deaktivie
   <data name="Progress_Finishing" xml:space="preserve">
     <value>Beenden</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Suchen Sie nach Anwendung</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>Es wurden keine gültigen Dateien oder Ordner ausgewählt. Stellen sie sicher, dass sie Zugriff auf diese haben und es keine Systemdateien sind.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

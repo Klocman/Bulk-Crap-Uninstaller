@@ -483,10 +483,10 @@
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Ouvrir "Récupération"</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Désinstaller par fenêtre, dossier ou fichier...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Désinstaller par fenêtre, dossier ou fichier...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">

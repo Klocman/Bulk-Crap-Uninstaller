@@ -733,10 +733,10 @@ De volgende onderdelen hebben geen onzichtbare de-installer(s):
 Wilt u voor deze onderdelen de standaard uninstaller gebruiken of moeten de registraties uit de taak worden verwijderd?</value>
     <comment>0 is names of non-quiet uninstallers</comment>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Zoeken naar programma</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>Er werden geen geldige mappen of bestanden. Controleer of u daar toegang toe hebt en dat deze niet zijn aangeduid als systeem bestanden.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

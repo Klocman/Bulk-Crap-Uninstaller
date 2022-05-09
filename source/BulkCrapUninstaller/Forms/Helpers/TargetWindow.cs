@@ -16,11 +16,11 @@ using BulkCrapUninstaller.Properties;
 
 namespace BulkCrapUninstaller.Forms
 {
-    public partial class NukeWindow : Form
+    public partial class TargetWindow : Form
     {
         public event EventHandler<DirectoriesSelectedEventArgs> DirectoriesSelected;
 
-        public NukeWindow()
+        public TargetWindow()
         {
             InitializeComponent();
 
@@ -33,8 +33,8 @@ namespace BulkCrapUninstaller.Forms
             if (e.SelectedFiles.Count == 0)
             {
                 MessageBox.Show(
-                    Localisable.NukeWindow_NoFilesSelected_Message,
-                    Localisable.NukeWindow_NoFilesSelected_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Localisable.TargetWindow_NoFilesSelected_Message,
+                    Localisable.TargetWindow_NoFilesSelected_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace BulkCrapUninstaller.Forms
 
         public new static ICollection<DirectoryInfo> ShowDialog(IWin32Window owner)
         {
-            using (var window = new NukeWindow())
+            using (var window = new TargetWindow())
             {
                 window.StartPosition = FormStartPosition.Manual;
                 var targeterHalf = window.windowTargeter1.Height / 2;
