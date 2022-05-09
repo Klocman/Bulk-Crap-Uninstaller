@@ -78,8 +78,9 @@ namespace UninstallTools.Factory.InfoAdders
         internal static ScanDirectoryResult ScanDirectory(DirectoryInfo directory)
         {
             var results = new List<FileInfo>(directory.GetFiles("*.exe", SearchOption.TopDirectoryOnly));
-            var otherSubdirs = new List<DirectoryInfo>();
             var binSubdirs = new List<DirectoryInfo>();
+            var otherSubdirs = new List<DirectoryInfo>();
+            var maybeSubdirs = new List<DirectoryInfo>();
             foreach (var subdir in directory.GetDirectories())
             {
                 try
@@ -92,11 +93,14 @@ namespace UninstallTools.Factory.InfoAdders
                     }
                     else
                     {
+                        // This skips ISO language codes, much faster than a more specific compare
+                        if (subName.Length == 5 && subName[2].Equals('-')) continue;
+
                         // Directories with very short names likely contain program files
-                        if (subName.Length > 3 &&
-                            // This skips ISO language codes, much faster than a more specific compare
-                            (subName.Length != 5 || !subName[2].Equals('-')))
+                        if (subName.Length > 3)
                             otherSubdirs.Add(subdir);
+                        else 
+                            maybeSubdirs.Add(subdir);
                     }
                 }
                 catch (IOException)
@@ -106,6 +110,9 @@ namespace UninstallTools.Factory.InfoAdders
                 {
                 }
             }
+
+            if (results.Count == 0 && binSubdirs.Count == 0)
+                otherSubdirs.AddRange(maybeSubdirs);
 
             return new ScanDirectoryResult(results, binSubdirs, otherSubdirs);
         }
