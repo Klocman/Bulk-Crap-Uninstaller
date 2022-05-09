@@ -1624,7 +1624,7 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Look for application.
         /// </summary>
-        internal static string TargertWindow_NoFilesSelected_Title {
+        internal static string TargetWindow_NoFilesSelected_Title {
             get {
                 return ResourceManager.GetString("TargetWindow_NoFilesSelected_Title", resourceCulture);
             }
