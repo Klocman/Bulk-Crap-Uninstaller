@@ -64,7 +64,7 @@ namespace UninstallTools.Startup.Service
                     results.Add(e);
                 }
             }
-            catch (Exception ex) when (ex is TypeInitializationException || ex is ManagementException || ex is ExternalException)
+            catch (Exception ex) when (ex is TypeInitializationException || ex is ManagementException || ex is ExternalException || ex is PlatformNotSupportedException)
             {
                 Trace.WriteLine(@"Error while gathering services - " + ex);
             }
