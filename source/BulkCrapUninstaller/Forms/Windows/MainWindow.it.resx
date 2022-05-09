@@ -507,7 +507,7 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Disinstalla da finestra, cartella o file...</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
@@ -534,7 +534,7 @@
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Modificare</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Disinstalla da finestra, cartella o file...</value>
   </data>
   <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">

@@ -480,7 +480,7 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Deinstallieren über Fenster, Ordner oder Datei</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
@@ -516,7 +516,7 @@
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Erweitert</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Deinstalliere durch Fenster, Ordner oder Datei</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">

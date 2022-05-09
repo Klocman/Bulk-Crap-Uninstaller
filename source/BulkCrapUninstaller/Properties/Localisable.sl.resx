@@ -725,10 +725,10 @@ Lahko poskusite onemogočiti zaznavanje sporov v Nastavitvah, toda to ni priporo
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>Nalaganje ikon</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>Poglej za aplikacijo</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>Ni izbranih veljavnih datotek ali map. Prepričajte se, da imate dostop do njih in, da te niso označene kot sistemske datoteke.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

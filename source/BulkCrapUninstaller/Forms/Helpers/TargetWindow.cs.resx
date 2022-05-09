@@ -118,20 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>البحث عن تطبيق والغاء تثبيته استنادا الى احد الاطارات الخاصة به او الاختصارات او موقع التثبيت او ملفات .تنفيذية.</value>
+    <value>Najít a odstranit aplikace prostřednictvím údaj o jejich umístění, zástupci nebo jejím umístění nebo .exe soubory instalace.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nuke تطبيق</value>
+    <value>Target aplikace</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>تحديد باستخدام اطار</value>
+    <value>Vybrat okno</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>تحديد استخدام مجلد التثبيت او ملفات البرنامج</value>
+    <value>Vyberte pomocí instalační složky nebo program files</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ملاحظه: تاكد من ان اي ملفات تقوم بتحديدها موجودة داخل دليل تثبيت التطبيق.
-
-يمكنك تحديد دليل يحتوي على تطبيقات متعددة لالغاء تثبيتها جميعا.</value>
+    <value>Poznámka: Ujistěte se, že vybrané soubory jsou uvnitř instalačního adresáře aplikace.</value>
   </data>
 </root>

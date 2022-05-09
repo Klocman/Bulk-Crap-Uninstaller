@@ -477,7 +477,7 @@
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Odpri "Obnovitev sistema"</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Odstranitev po oknu, imeniku ali datoteki...</value>
   </data>
   <data name="runToolStripMenuItem.Text" xml:space="preserve">
@@ -486,7 +486,7 @@
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Prikaz posodobitev</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Odstranitev  z oknom, imenikom ali datoteko...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">

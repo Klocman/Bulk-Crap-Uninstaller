@@ -486,7 +486,7 @@
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Pokaż aktualizacje</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Odinstaluj wskazujac okno, folder, lub plik...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
@@ -513,7 +513,7 @@
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Odinstaluj wskazując okno, folder, lub plik...</value>
   </data>
   <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">

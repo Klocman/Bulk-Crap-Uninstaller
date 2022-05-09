@@ -1615,18 +1615,18 @@ namespace BulkCrapUninstaller.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No valid files or directories were selected. Make sure you have access to them, and they aren&apos;t marked as system files..
         /// </summary>
-        internal static string NukeWindow_NoFilesSelected_Message {
+        internal static string TargetWindow_NoFilesSelected_Message {
             get {
-                return ResourceManager.GetString("NukeWindow_NoFilesSelected_Message", resourceCulture);
+                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Message", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Look for application.
         /// </summary>
-        internal static string NukeWindow_NoFilesSelected_Title {
+        internal static string TargetWindow_NoFilesSelected_Title {
             get {
-                return ResourceManager.GetString("NukeWindow_NoFilesSelected_Title", resourceCulture);
+                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Title", resourceCulture);
             }
         }
         

@@ -183,7 +183,7 @@
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>عكس التحديد</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>الغاء التثبيت حسب الاطار او الدليل او الملف...</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
@@ -468,7 +468,7 @@
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;تنظيف "ملفات البرنامج" المجلدات...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>الغاء التثبيت حسب الاطار او الدليل او الملف...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">

@@ -733,10 +733,10 @@ The lists are separated by a single newline.</comment>
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>加载图标</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>查找应用程序</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>未选择有效的文件或目录。确保你有权访问它们，并且它们没有被标记为系统文件。</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

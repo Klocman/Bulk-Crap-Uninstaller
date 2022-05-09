@@ -471,10 +471,10 @@ The lists are separated by a single newline.</comment>
   <data name="Progress_Finishing_Icons" xml:space="preserve">
     <value>تحميل الايقونات</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Title" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
     <value>بحث عن التطبيق</value>
   </data>
-  <data name="NukeWindow_NoFilesSelected_Message" xml:space="preserve">
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
     <value>لم يتم تحديد ايه ملفات او دلائل صالحه. تاكد من ان لديك حق الوصول اليها ، ولا يتم وضع علامة عليها كملفات نظام.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">

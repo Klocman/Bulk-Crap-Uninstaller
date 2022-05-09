@@ -486,10 +486,10 @@
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Help openen</value>
   </data>
-  <data name="toolStripButtonNuke.Text" xml:space="preserve">
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>De-installeer mbv. venster, map of bestand...</value>
   </data>
-  <data name="nukeMenuItem.Text" xml:space="preserve">
+  <data name="targetMenuItem.Text" xml:space="preserve">
     <value>De-installeer mbv. venster, map of bestand...</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
