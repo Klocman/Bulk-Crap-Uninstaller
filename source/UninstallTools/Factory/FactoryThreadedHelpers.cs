@@ -21,23 +21,23 @@ namespace UninstallTools.Factory
         public static IList<ApplicationUninstallerEntry> DriveApplicationScan(
             ListGenerationProgress.ListGenerationCallback progressCallback,
             List<string> dirsToSkip,
-            List<KeyValuePair<DirectoryInfo, bool?>> itemsToScan)
+            List<DirectoryInfo> itemsToScan)
         {
-            var dividedItems = SplitByPhysicalDrives(itemsToScan, pair => pair.Key);
+            var dividedItems = SplitByPhysicalDrives(itemsToScan, d => d);
 
-            void GetUninstallerEntriesThread(KeyValuePair<DirectoryInfo, bool?> data, List<ApplicationUninstallerEntry> state)
+            void GetUninstallerEntriesThread(DirectoryInfo data, List<ApplicationUninstallerEntry> state)
             {
-                if (UninstallToolsGlobalConfig.IsSystemDirectory(data.Key) ||
-                    data.Key.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
+                if (UninstallToolsGlobalConfig.IsSystemDirectory(data) ||
+                    data.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     return;
 
-                var detectedEntries = DirectoryFactory.TryCreateFromDirectory(data.Key, data.Value, dirsToSkip).ToList();
+                var detectedEntries = DirectoryFactory.TryCreateFromDirectory(data, dirsToSkip).ToList();
 
                 ApplicationUninstallerFactory.MergeResults(state, detectedEntries, null);
             }
 
-            var workSpreader = new ThreadedWorkSpreader<KeyValuePair<DirectoryInfo, bool?>, List<ApplicationUninstallerEntry>>
-                (MaxThreadsPerDrive, GetUninstallerEntriesThread, list => new List<ApplicationUninstallerEntry>(list.Count), data => data.Key.FullName);
+            var workSpreader = new ThreadedWorkSpreader<DirectoryInfo, List<ApplicationUninstallerEntry>>
+                (MaxThreadsPerDrive, GetUninstallerEntriesThread, list => new List<ApplicationUninstallerEntry>(list.Count), data => data.FullName);
 
             workSpreader.Start(dividedItems, progressCallback);
 

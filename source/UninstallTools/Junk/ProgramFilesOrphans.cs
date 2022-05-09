@@ -21,7 +21,7 @@ namespace UninstallTools.Junk
         private string[] _otherInstallLocations;
         private string[] _otherNames;
         private string[] _otherPublishers;
-        private IEnumerable<KeyValuePair<DirectoryInfo, bool?>> _programFilesDirectories;
+        private List<DirectoryInfo> _programFilesDirectories;
 
         public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
@@ -34,9 +34,9 @@ namespace UninstallTools.Junk
             var output = new List<FileSystemJunk>();
 
             foreach (var kvp in _programFilesDirectories)
-                FindJunkRecursively(output, kvp.Key, 0);
+                FindJunkRecursively(output, kvp, 0);
 
-            return output.Cast<IJunkResult>();
+            return output;
         }
 
         private void FindJunkRecursively(ICollection<FileSystemJunk> returnList, DirectoryInfo parentDirectory, int level)

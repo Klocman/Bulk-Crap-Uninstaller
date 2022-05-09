@@ -15,8 +15,6 @@ using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    using KVP = KeyValuePair<DirectoryInfo, bool?>;
-
     public class DirectoryFactory : IUninstallerFactory
     {
         private readonly IEnumerable<ApplicationUninstallerEntry> _existingUninstallerEntries;
@@ -32,7 +30,7 @@ namespace UninstallTools.Factory
 
             var existingUninstallers = _existingUninstallerEntries.ToList();
 
-            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
+            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
             var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
 
             var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
@@ -42,7 +40,7 @@ namespace UninstallTools.Factory
         public static IEnumerable<ApplicationUninstallerEntry> TryGetApplicationsFromDirectories(
             ICollection<DirectoryInfo> directoriesToScan, IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
         {
-            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
+            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
             var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
 
             var results = new List<ApplicationUninstallerEntry>();
@@ -52,7 +50,7 @@ namespace UninstallTools.Factory
                     directory.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                     continue;
 
-                var detectedEntries = TryCreateFromDirectory(directory, null, dirsToSkip);
+                var detectedEntries = TryCreateFromDirectory(directory, dirsToSkip);
 
                 results.AddRange(detectedEntries);
             }
@@ -62,16 +60,16 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Get directories to scan for applications
         /// </summary>
-        private static IEnumerable<KVP> GetDirectoriesToScan(IEnumerable<ApplicationUninstallerEntry> existingUninstallers,
-            IEnumerable<KVP> pfDirs, IEnumerable<string> dirsToSkip)
+        private static IEnumerable<DirectoryInfo> GetDirectoriesToScan(IEnumerable<ApplicationUninstallerEntry> existingUninstallers,
+            IEnumerable<DirectoryInfo> pfDirs, IEnumerable<string> dirsToSkip)
         {
             var pfDirectories = pfDirs.ToList();
 
             if (UninstallToolsGlobalConfig.AutoDetectCustomProgramFiles)
             {
                 var extraPfDirectories = FindExtraPfDirectories(existingUninstallers)
-                  .Where(extraDir => !extraDir.Key.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
-                  .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.Key.FullName, extraDir.Key.FullName)));
+                  .Where(extraDir => !extraDir.FullName.Contains(@"\Common Files", StringComparison.InvariantCultureIgnoreCase))
+                  .Where(extraDir => pfDirectories.All(pfDir => !PathTools.PathsEqual(pfDir.FullName, extraDir.FullName)));
 
                 pfDirectories.AddRange(extraPfDirectories);
 
@@ -82,11 +80,9 @@ namespace UninstallTools.Factory
                     "PortableApps", "LiberKey"
                 };
 
-                IEnumerable<KVP> FindDirsOnDrive(DriveInfo d)
+                IEnumerable<DirectoryInfo> FindDirsOnDrive(DriveInfo d)
                 {
-                    return d.RootDirectory.GetDirectories()
-                        .Where(x => goodNames.Contains(x.Name, StringComparison.InvariantCultureIgnoreCase))
-                        .Select(x => new KVP(x, null));
+                    return d.RootDirectory.GetDirectories().Where(x => goodNames.Contains(x.Name, StringComparison.InvariantCultureIgnoreCase));
                 }
 
                 var drives = DriveInfo.GetDrives();
@@ -132,26 +128,26 @@ namespace UninstallTools.Factory
             {
                 try
                 {
-                    return x.Key.GetDirectories().Select(y => new KVP(y, x.Value));
+                    return x.GetDirectories();
                 }
                 catch (SystemException ex)
                 {
-                    Trace.WriteLine($"Could not access a program files directory: {x.Key?.Name} | Reason:{ex.Message}");
+                    Trace.WriteLine($"Could not access a program files directory: {x?.Name} | Reason:{ex.Message}");
                 }
-                return Enumerable.Empty<KVP>();
+                return Enumerable.Empty<DirectoryInfo>();
             });
 
             // Get directories that can be relatively safely checked
             return directoriesToCheck.Where(check => !directoriesToSkip.Any(skip =>
-                check.Key.FullName.Contains(skip, StringComparison.InvariantCultureIgnoreCase)))
-                .Distinct((pair, otherPair) => PathTools.PathsEqual(pair.Key.FullName, otherPair.Key.FullName));
+                check.FullName.StartsWith(skip, StringComparison.InvariantCultureIgnoreCase)))
+                .Distinct((pair, otherPair) => PathTools.PathsEqual(pair.FullName, otherPair.FullName));
         }
 
         /// <summary>
         /// Get directories which are already used and should be skipped
         /// </summary>
         private static IEnumerable<string> GetDirectoriesToSkip(IEnumerable<ApplicationUninstallerEntry> existingUninstallers,
-            IEnumerable<KVP> pfDirectories)
+            IEnumerable<DirectoryInfo> pfDirectories)
         {
             var dirs = new List<string>();
             foreach (var x in existingUninstallers)
@@ -175,10 +171,10 @@ namespace UninstallTools.Factory
             }
 
             return dirs.Where(x => !string.IsNullOrEmpty(x)).Distinct()
-                .Where(x => !pfDirectories.Any(pfd => pfd.Key.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)));
+                .Where(x => !pfDirectories.Any(pfd => pfd.FullName.Contains(x, StringComparison.InvariantCultureIgnoreCase)));
         }
 
-        private static IEnumerable<KVP> FindExtraPfDirectories(IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
+        private static IEnumerable<DirectoryInfo> FindExtraPfDirectories(IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
         {
             var extraSearchLocations = existingUninstallers
                 .Select(x => x.InstallLocation)
@@ -210,8 +206,7 @@ namespace UninstallTools.Factory
                 {
                     return null;
                 }
-            }).Where(x => x != null)
-            .Select(x => new KVP(x, null));
+            }).Where(x => x != null);
         }
 
 
@@ -284,8 +279,8 @@ namespace UninstallTools.Factory
         /// <summary>
         /// Try to get the main executable from the filtered folders. If no executables are present check subfolders.
         /// </summary>
-        public static IEnumerable<ApplicationUninstallerEntry> TryCreateFromDirectory(DirectoryInfo directory, bool? is64Bit,
-            ICollection<string> dirsToSkip)
+        public static IEnumerable<ApplicationUninstallerEntry> TryCreateFromDirectory(
+            DirectoryInfo directory, ICollection<string> dirsToSkip)
         {
             if (directory == null)
                 throw new ArgumentNullException(nameof(directory));
@@ -296,8 +291,8 @@ namespace UninstallTools.Factory
 
             foreach (var tempEntry in results)
             {
-                if (is64Bit.HasValue && tempEntry.Is64Bit == MachineType.Unknown)
-                    tempEntry.Is64Bit = is64Bit.Value ? MachineType.X64 : MachineType.X86;
+                if (tempEntry.Is64Bit == MachineType.Unknown)
+                    tempEntry.Is64Bit = UninstallToolsGlobalConfig.IsPathInsideProgramFiles(directory.FullName);
 
                 tempEntry.IsRegistered = false;
                 tempEntry.IsOrphaned = true;
@@ -309,15 +304,14 @@ namespace UninstallTools.Factory
         public static IEnumerable<ApplicationUninstallerEntry> TryCreateFromDirectory(
             DirectoryInfo directoryToScan, IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
         {
-            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true).ToList();
+            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
             var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
 
             if (UninstallToolsGlobalConfig.IsSystemDirectory(directoryToScan) ||
                 directoryToScan.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
                 return Enumerable.Empty<ApplicationUninstallerEntry>();
 
-            return TryCreateFromDirectory(directoryToScan, null, dirsToSkip);
-
+            return TryCreateFromDirectory(directoryToScan, dirsToSkip);
         }
     }
 }

@@ -534,15 +534,10 @@ namespace BulkCrapUninstaller.Functions
 
                 var items = new List<ApplicationUninstallerEntry>();
                 LoadingDialog.ShowDialog(MessageBoxes.DefaultOwner, Localisable.UninstallFromDirectory_ScanningTitle,
-                    _ =>
-                    {
-                        items.AddRange(DirectoryFactory.TryCreateFromDirectory(
-                            new DirectoryInfo(result), null, Array.Empty<string>()));
-                    });
+                    _ => items.AddRange(DirectoryFactory.TryCreateFromDirectory(new DirectoryInfo(result), Array.Empty<string>())));
 
                 if (items.Count == 0)
-                    items.AddRange(applicationUninstallerEntries
-                        .Where(x => PathTools.PathsEqual(result, x.InstallLocation)));
+                    items.AddRange(applicationUninstallerEntries.Where(x => PathTools.PathsEqual(result, x.InstallLocation)));
 
                 if (items.Count == 0)
                     MessageBoxes.UninstallFromDirectoryNothingFound();

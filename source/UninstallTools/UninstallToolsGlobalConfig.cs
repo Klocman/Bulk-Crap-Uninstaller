@@ -76,6 +76,10 @@ namespace UninstallTools
             JunkSearchDirs = paths.Distinct().ToList().AsEnumerable();
 
             AppInfoCachePath = Path.Combine(AssemblyLocation, "InfoCache.xml");
+
+            _pf32 = WindowsTools.GetProgramFilesX86Path();
+            _pf64 = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES);
+            if (string.IsNullOrWhiteSpace(_pf64) || PathTools.PathsEqual(_pf32, _pf64)) _pf64 = null;
         }
 
         public static bool EnableAppInfoCache
@@ -188,36 +192,32 @@ namespace UninstallTools
             return StockProgramFiles.Concat(CustomProgramFiles).ToList();
         }
 
+        private static readonly string _pf64, _pf32;
+
         /// <summary>
         ///     Get a list of directiories containing programs. Optionally user-defined directories are added.
         ///     The boolean value is true if the directory is confirmed to contain 64bit applications, false if 32bit.
         /// </summary>
         /// <param name="includeUserDirectories">Add user-defined directories.</param>
-        internal static IEnumerable<KeyValuePair<DirectoryInfo, bool?>> GetProgramFilesDirectories(
-            bool includeUserDirectories)
+        internal static List<DirectoryInfo> GetProgramFilesDirectories(bool includeUserDirectories)
         {
-            var pfDirectories = new List<KeyValuePair<string, bool?>>(2);
+            var pfDirectories = new List<string>(2);
 
-            var pf64 = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES);
-            var pf32 = WindowsTools.GetProgramFilesX86Path();
-            pfDirectories.Add(new KeyValuePair<string, bool?>(pf32, false));
-            if (!PathTools.PathsEqual(pf32, pf64))
-                pfDirectories.Add(new KeyValuePair<string, bool?>(pf64, true));
+            pfDirectories.Add(_pf32);
+            if (_pf64 != null) pfDirectories.Add(_pf64);
 
             if (includeUserDirectories && CustomProgramFiles != null)
-                pfDirectories.AddRange(CustomProgramFiles.Where(
-                    x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
-                    .Select(x => new KeyValuePair<string, bool?>(x, null)));
+                pfDirectories.AddRange(CustomProgramFiles.Where(x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y))));
 
-            var output = new List<KeyValuePair<DirectoryInfo, bool?>>();
+            var output = new List<DirectoryInfo>();
             foreach (var directory in pfDirectories.ToList())
             {
                 // Ignore missing or inaccessible directories
                 try
                 {
-                    var di = new DirectoryInfo(directory.Key);
+                    var di = new DirectoryInfo(directory);
                     if (di.Exists)
-                        output.Add(new KeyValuePair<DirectoryInfo, bool?>(di, directory.Value));
+                        output.Add(di);
                 }
                 catch (Exception ex)
                 {
@@ -226,6 +226,18 @@ namespace UninstallTools
             }
 
             return output;
+        }
+
+        /// <summary>
+        /// Check if the path is inside of 64 or 32 bit program files
+        /// </summary>
+        public static MachineType IsPathInsideProgramFiles(string fullPath)
+        {
+            if (fullPath.StartsWith(_pf32, StringComparison.InvariantCultureIgnoreCase))
+                return MachineType.X86;
+            if (_pf64 != null && fullPath.StartsWith(_pf64, StringComparison.InvariantCultureIgnoreCase))
+                return MachineType.X64;
+            return MachineType.Unknown;
         }
 
         /// <summary>
