@@ -65,17 +65,17 @@ namespace UninstallTools.Factory.InfoAdders
 
             if (unpopulatedCheck(targetEntry.RawDisplayName))
             {
-                var productName = StringTools.StripStringFromVersionNumber(verInfo.FileDescription?.Trim());
-                if (!string.IsNullOrEmpty(productName))
+                var fileDescription = StringTools.StripStringFromVersionNumber(verInfo.FileDescription?.Trim());
+                var productName = verInfo.ProductName?.Trim();
+                if (!string.IsNullOrEmpty(fileDescription))
                 {
-                    targetEntry.RawDisplayName = productName;
-                }
-                else
-                {
-                    productName = verInfo.ProductName?.Trim();
-                    if (!string.IsNullOrEmpty(productName))
+                    if (!string.IsNullOrEmpty(productName) && productName.Length > fileDescription.Length)
                         targetEntry.RawDisplayName = productName;
+                    else
+                        targetEntry.RawDisplayName = fileDescription;
                 }
+                else if (!string.IsNullOrEmpty(productName))
+                    targetEntry.RawDisplayName = productName;
             }
 
             var comment = verInfo.Comments?.Trim();
