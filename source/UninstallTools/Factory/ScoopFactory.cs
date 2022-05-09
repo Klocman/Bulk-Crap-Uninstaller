@@ -19,6 +19,7 @@ namespace UninstallTools.Factory
         private static string _scoopUserPath;
         private static string _scoopGlobalPath;
         private static string _scriptPath;
+        private static string _powershellPath;
 
         private static bool ScoopIsAvailable
         {
@@ -49,7 +50,8 @@ namespace UninstallTools.Factory
 
                 if (File.Exists(_scriptPath))
                 {
-                    if (!File.Exists(PathTools.GetFullPathOfExecutable("powershell.exe")))
+                    _powershellPath = PathTools.GetFullPathOfExecutable("powershell.exe");
+                    if (!File.Exists(_powershellPath))
                         throw new InvalidOperationException(@"Detected Scoop program installer, but failed to detect PowerShell");
 
                     _scoopIsAvailable = true;
@@ -168,7 +170,7 @@ namespace UninstallTools.Factory
 
         private static ProcessStartCommand MakeScoopCommand(string scoopArgs)
         {
-            return new ProcessStartCommand("powershell.exe", $"-ex unrestricted \"{_scriptPath}\" {scoopArgs}");
+            return new ProcessStartCommand(_powershellPath, $"-ex unrestricted \"{_scriptPath}\" {scoopArgs}");
         }
     }
 }
