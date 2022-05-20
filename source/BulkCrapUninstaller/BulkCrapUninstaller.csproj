@@ -162,10 +162,6 @@
     <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\UpdateSystem\UpdateHelper\bin\Release\UpdateHelper.exe">
-      <Link>UpdateHelper.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\..\Licence.txt">
       <Link>Licence.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
