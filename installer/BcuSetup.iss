@@ -68,6 +68,7 @@ Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
+Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
@@ -105,6 +106,7 @@ nl.MainFiles=Hoofdbestanden
 es.MainFiles=Archivos principales
 bpt.MainFiles=Arquivos principais
 ru.MainFiles=Основные файлы программы
+it.MainFiles=File programma
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -116,3 +118,4 @@ nl.ExtraLanguages=Extra talen
 es.ExtraLanguages=Idiomas adicionales
 bpt.ExtraLanguages=Línguas extras
 ru.ExtraLanguages=Дополнительные языки
+it.ExtraLanguages=Lingue aggiuntive
