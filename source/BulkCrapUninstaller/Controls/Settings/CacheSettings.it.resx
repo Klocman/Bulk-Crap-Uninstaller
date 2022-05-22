@@ -122,13 +122,13 @@
 NOTA: Per attivare queste opzioni potrebbe essere necessario riavviare BCU.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>Risultati del controllo del certificato della cache dell'applicazione</value>
+    <value>Risultati ontrollo certificato della cache applicazione</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
     <value>La cache ha raccolto informazioni mancanti</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Pulisci la cache</value>
+    <value>Svuota cache</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Caching</value>

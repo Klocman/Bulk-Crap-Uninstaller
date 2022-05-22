@@ -124,9 +124,9 @@
     <value>Seleziona qualunque file che fa parte dell'applicazione</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Tutti i files|*.*</value>
+    <value>Tutti i file|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Link o file dell'applicazione</value>
+    <value>Collegamento o file dell'applicazione</value>
   </data>
 </root>
