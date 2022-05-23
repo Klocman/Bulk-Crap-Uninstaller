@@ -121,7 +121,7 @@
     <value>&amp;Dettagli</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copia nella clipboard</value>
+    <value>&amp;Copia nella Appunti</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Apri</value>
@@ -130,16 +130,16 @@
     <value>Rimozione oggetti residui</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista di files e/o chiavi di registro ignorati durante la disinstallazione</value>
+    <value>Elenco di file e/o chiavi di registro ignorati durante la disinstallazione</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
     <value>Il rilevamento degli elementi residui è un processo elaborato che può produrre errori. Per questo motivo a tutti gli oggetti è assegnato un livello di affidabilità e la decisione finale è lasciata all'utente. Gli elementi con un livello di affidabilità alto e molto alto sono normalmente sicuri da rimuovere, ma sarebbe opportuno controllare ancora.</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>Livello di affidabilità</value>
+    <value>Livello affidabilità</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
-    <value>I seguenti elementi sembrano essere stati ignorati dai loro disinstallatori. Alcuni disinstallatori potrebbero aver fallito nella rimozione di parte dell'applicazione, sprecando spazio su disco. In ogni caso buona parte di questi elementi sono spesso le configurazioni dell'applicazione, che occupano poco spazio e non danno problemi.</value>
+    <value>I seguenti elementi sembrano essere stati ignorati dai loro disinstallatori. Alcuni disinstallatori potrebbero aver fallito nella rimozione di parte dell'applicazione, sprecando spazio su disco. In ogni caso buona parte di questi elementi sono spesso le impostazioni dell'applicazione, che occupano poco spazio e non danno problemi.</value>
   </data>
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
     <value>Nome disinstallatore</value>
@@ -157,17 +157,17 @@
     <value>Esporta...</value>
   </data>
   <data name="buttonAccept.Text" xml:space="preserve">
-    <value>Rimuovi selezionato</value>
+    <value>Rimuovi selezionati</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancella</value>
+    <value>Annulla</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Esporta la lista degli oggetti rimanenti</value>
+    <value>Esporta elenco oggetti residui</value>
     <comment>leftover=rimanenti</comment>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Documenti di testo|*.txt</value>
+    <value>File testo|*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
 </root>

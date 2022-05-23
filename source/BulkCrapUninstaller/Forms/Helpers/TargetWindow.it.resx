@@ -118,20 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seleziona utilizzando una finestra</value>
+    <value>Seleziona usando una finestra</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Seleziona utilizzando la cartella di installazione o del programma</value>
+    <value>Seleziona usando la cartella di installazione o del programma</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Cerca e disinstalla una applicazione basata su una dele sue finestre, collegamenti o la sua ubicazione di intallazione o files .exe</value>
+    <value>Cerca e disinstalla una applicazione basata su una delle sue finestre, collegamenti o la sua ubicazione di intallazione o file .exe</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Nota: assicurati che tutti i files selezionati siano presenti nella cartella di installazione dell'applicazione.
+    <value>Nota: assicurati che tutti i file selezionati siano presenti nella cartella di installazione dell'applicazione.
 
-Puoi selezionare una cartella che contenga varie applicazioni per disintallarle tutte.</value>
+Puoi selezionare una cartella che contiene varie applicazioni per disintallarle tutte.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Distruggere una applicazione</value>
+    <value>Obiettivo un'applicazione</value>
   </data>
 </root>

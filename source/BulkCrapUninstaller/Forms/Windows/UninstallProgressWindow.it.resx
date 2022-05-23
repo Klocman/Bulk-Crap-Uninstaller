@@ -121,7 +121,7 @@
     <value>Stato...</value>
   </data>
   <data name="buttonClose.Text" xml:space="preserve">
-    <value>Cancella</value>
+    <value>Annulla</value>
   </data>
   <data name="olvColumnStatus.Text" xml:space="preserve">
     <value>Stato</value>
@@ -137,7 +137,7 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>I disinstallatori selezionati saranno eseguiti uno per volta.
-Se il processo sembra bloccato puoi cliccare su "Salta" per evitare di attendere il suo completamento. Questo accade se il disinstallatore si blocca o avvia un nuovo processo e non si chiude.</value>
+Se il processo sembra bloccato puoi selezionare "Salta" per evitare di attendere il suo completamento. Questo accade se il disinstallatore si blocca o avvia un nuovo processo e non si chiude.</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
     <value>Esegui disinstallatore</value>
@@ -161,15 +161,36 @@ Se il processo sembra bloccato puoi cliccare su "Salta" per evitare di attendere
     <value>Aiuto</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>I contenuti di questa lista saranno disinstallati in ordine dall'alto verso il basso</value>
+    <value>I contenuti di questo elenco saranno disinstallati in ordine dall'alto verso il basso</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lista di disinstallazione</value>
+    <value>Elenco disinstallazione</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Avanzamento disinstallazione</value>
   </data>
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>Disinstallare manualmente</value>
+  </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Salta</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Interrompi</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Esegui dinstallazione ora</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Disinstallazione manuale</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apri cartella installazione</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Ad operazioni completate manda il PC in sleep</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>Riga di comando quando la disinstallazione termina</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Carica automaticamente la lista di disinstallazione "Default.bcul" all'avvio</value>
+    <value>Carica automaticamente all'avvio elenco disinstallazione "Default.bcul"</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Cerca aggiornamenti all'avvio</value>
@@ -133,19 +133,19 @@
     <value>Invia statistiche d'uso anonime</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
-    <value>Abilita le valutazioni utente delle applicazioni</value>
+    <value>Abilita valutazioni utente delle applicazioni</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Ligua dell'applicazione:</value>
+    <value>Ligua applicazione:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>L'applicazione deve essere riavviata per cambiare la lingua</value>
+    <value>Per modificare la lingua l'applicazione deve essere riavviata</value>
   </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>Varie</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Mostra sempre gli scarti con basso livello di affidabilità</value>
+    <value>Visualizza sempre i residui con basso livello di affidabilità</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Chiedi di rimuovere i disinstallatori guidati da una procedura silenziosa</value>
@@ -154,19 +154,19 @@
     <value>Non chiedere mai per aiuto o feedback</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Cerca gli scarti dopo la disinstallazione</value>
+    <value>Dopo la disinstallazione cerca i residui</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Crea un punto di ripristino prima della disinstallazione</value>
+    <value>Prima della disinstallazione crea un punto di ripristino</value>
   </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
-    <value>Message box</value>
+    <value>Riquadro messaggi</value>
   </data>
   <data name="checkBoxEnableExternal.Text" xml:space="preserve">
     <value>Abilita esecuzione di applicazioni esterne</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Puoi specificare comandi che saranno eseguiti prima e dopo la disinstallazione. Una linea corrisponde ad un comando e sarà eseguita come se utilizzassi la finestra "Esegui...".
+    <value>Puoi specificare comandi che saranno eseguiti prima e dopo la disinstallazione. Una linea corrisponde ad un comando e sarà eseguita come se usassi la finestra "Esegui...".
 
 BCU attenderà il completamento del comando in esecuzione prima dell'esecuzione del successivo.</value>
   </data>
@@ -183,14 +183,15 @@ BCU attenderà il completamento del comando in esecuzione prima dell'esecuzione 
     <value>Strumenti esterni</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Puoi specificare cartelle personalizzate in cui installare le tue applicazioni (ad es. D:\Applicazioni). Le cartelle saranno utilizzate da BCU durante la ricerca degli oggetti residui della disinstallazione, applicazioni non registrate e altro. Anche se non necessario, una lista di queste cartelle permetterà a BCU di lavorare meglio.
+    <value>Puoi specificare cartelle personalizzate in cui installare le pplicazioni (ad es. D:\Applicazioni). Le cartelle saranno usate da BCU durante la ricerca degli oggetti residui della disinstallazione, applicazioni non registrate e altro. Anche se non necessario, un elenco di queste cartelle permetterà a BCU di lavorare meglio.
 
-Le cartelle predefinite di WIndows sono sempre controllate, non hai bisogno di includerle nella lista.
+Le cartelle predefinite di WIndows sono sempre controllate, non hai bisogno di includerle nell'elenco.
 
-Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non validi e non esistenti saranno ignorati.</value>
+Usa il percorso completo delle cartelle, un percorso per linea. 
+I percorsi non validi e non esistenti saranno ignorati.</value>
   </data>
   <data name="groupBoxProgramFolders.Text" xml:space="preserve">
-    <value>Cartella di installazione del programma</value>
+    <value>Cartelle installazione programma</value>
   </data>
   <data name="tabPageFolders.Text" xml:space="preserve">
     <value>Cartelle</value>
@@ -199,7 +200,7 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
     <value>Varie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Configurazione di Bulk Crap Uninstaller</value>
+    <value>Impostazioni Bulk Crap Uninstaller</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>
@@ -214,7 +215,7 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
     <value>Crea automaticamente nella cartella:</value>
   </data>
   <data name="groupBoxBackup.Text" xml:space="preserve">
-    <value>Backup prima della rimozione degli scarti</value>
+    <value>Backup prima della rimozione dei residui</value>
   </data>
   <data name="groupBoxLanguage.Text" xml:space="preserve">
     <value>Lingua</value>
@@ -235,25 +236,25 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
     <value>Basato su regole predefinite</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Ricerca applicazioni in...</value>
+    <value>Cerca applicazioni in...</value>
   </data>
   <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Apps di Windows Store</value>
+    <value>App di Windows Store</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Funzionalità di Windows</value>
   </data>
   <data name="labelWinFeatureInfo.Text" xml:space="preserve">
-    <value>Il rilevamento di funzionalità di Windows utilizza WMI, può quindi essere lento o persino fallire su alcuni sistemi (generalmente indica una corruzione del sistema).</value>
+    <value>Il rilevamento di funzionalità di Windows usa WMI, può quindi essere lento o persino fallire in alcuni sistemi (generalmente indica una corruzione del sistema).</value>
   </data>
   <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
     <value>Windows Update</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Il rilevamento di Windows Update utilizza WUA, che è lento. Potrebbe essere completato in alcuni minuti.</value>
+    <value>Il rilevamento di Windows Update usa WUA, che è lento. Potrebbe essere completato in alcuni minuti.</value>
   </data>
   <data name="groupBoxAppStores.Text" xml:space="preserve">
-    <value>Archivi di applicazioni da controllare</value>
+    <value>Archivi applicazioni da scansionare</value>
   </data>
   <data name="tabPageDetection.Text" xml:space="preserve">
     <value>Rilevamento</value>
@@ -275,7 +276,13 @@ Usa il percorso completo delle cartelle, un percorso per linea. I percorsi non v
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
-    <value>Controlla dischi rimovibili</value>
+    <value>Scansiona dischi rimovibili</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Abilita ridimensionamento sperimentale interfaccia sensibile ai DPI</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
   </data>
 </root>
