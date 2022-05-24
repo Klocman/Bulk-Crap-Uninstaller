@@ -145,7 +145,7 @@
     <value>Comando disinstallazione</value>
   </data>
   <data name="olvColumnAbout.Text" xml:space="preserve">
-    <value>URL relativo</value>
+    <value>URL relativa</value>
   </data>
   <data name="olvColumnInstallSource.Text" xml:space="preserve">
     <value>Sorgente installazione</value>
@@ -154,7 +154,7 @@
     <value>Percorso installazione</value>
   </data>
   <data name="olvColumnUninstallerKind.Text" xml:space="preserve">
-    <value>Tipo di disinstallatore</value>
+    <value>Tipo disinstallatore</value>
   </data>
   <data name="olvColumnSystemComponent.Text" xml:space="preserve">
     <value>Componente di sistema</value>
@@ -217,7 +217,7 @@
     <value>Disinstalla &amp;manualmente</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Installa o configura (/I)</value>
+    <value>&amp;Installa o imposta (/I)</value>
   </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Disinstalla (/X)</value>
@@ -457,7 +457,7 @@
     <value>Ripristina impostazioni</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Disisntalla BCUninstaller</value>
+    <value>Disinstalla BCUninstaller</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Info sul programma</value>

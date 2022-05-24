@@ -151,7 +151,7 @@
     <value>Prima della disinstallazione crea un punto di ripristino</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e file. Ti raccomandiamoprima di rimuovere le appliaczioni di creare un punto di ripristino.</value>
+    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e file. Ti raccomandiamo di creare un punto di ripristino prima di rimuovere le applicazioni.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Attenzione: per funzionare il 'Ripristino di sistema' deve essere abilitato!</value>

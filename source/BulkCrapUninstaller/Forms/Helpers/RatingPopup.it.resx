@@ -130,7 +130,7 @@
     <value>Valutazione</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>Scarto | Potenzialmente dannoso</value>
+    <value>Residuo | Potenzialmente dannoso</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Condividi la tua valutazione con altri utenti</value>

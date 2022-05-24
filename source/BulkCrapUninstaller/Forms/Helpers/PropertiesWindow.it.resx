@@ -121,7 +121,7 @@
     <value>Copia negli Appunti</value>
   </data>
   <data name="saveToFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Salva su file...</value>
+    <value>Salva nel file...</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>File testo|*.txt</value>

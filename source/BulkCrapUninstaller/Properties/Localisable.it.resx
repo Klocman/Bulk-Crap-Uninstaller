@@ -121,13 +121,13 @@
     <value>Creazione punto di ripristino...</value>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
-    <value>Ricerca oggetti rimanenti...</value>
+    <value>Ricerca oggetti residui...</value>
   </data>
   <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
     <value>Creazione elenco disinstallazione...</value>
   </data>
   <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
-    <value>Rimozione oggetti rimanenti...</value>
+    <value>Rimozione oggetti residui...</value>
   </data>
   <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
     <value>Ricerca aggiornamenti...</value>
@@ -153,7 +153,7 @@ Editore | Versione | Data | Dimensione | Registro | Tipo di disinstallatore | St
     <value>Dettaglio errori:</value>
   </data>
   <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
-    <value>Rimozione oggetti rimanenti</value>
+    <value>Rimozione oggetti residui</value>
   </data>
   <data name="MessageBoxes_Error_details" xml:space="preserve">
     <value>
@@ -163,7 +163,7 @@ Dettaglio errori:
     <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
-    <value>Prima di continuare vuoi creare un backup del registro?</value>
+    <value>Vuoi creare un backup del registro prima di continuare ?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
     <value>Sarà possibile annullare tutti i cambiamenti facendo clic due volte successivamente.
@@ -219,11 +219,11 @@ Vuoi che siano aggiunte nuove funzionalità o correggere un errore? Puoi inviarc
     <value>Assicurati che BCUninstaller non sia bloccato dal firewall e che la connessione internet sia funzionante.</value>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
-    <value>È disponibile la nuova versione {0}. Vuoi aggiornare ora?</value>
+    <value>È disponibile una nuova versione {0}. Vuoi aggiornare ora?</value>
     <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
-    <value>BCUninstaller scaricherà automaticamente l'aggiornamento e lo installerà al riavvio. Potresti perdere le configurazioni nel corso del processo.
+    <value>BCUninstaller scaricherà automaticamente l'aggiornamento e lo installerà al riavvio. Nel corso del processo potresti perdere le configurazioni .
 
 Novità programma (changelog): 
 - {0}
@@ -299,7 +299,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
     <value>Errore riscontrato durante il salvataggio dei dati esportati</value>
   </data>
   <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
-    <value>Se l'errore persite prova a salvare in una cartella diversa, ad esempio sul desktop.</value>
+    <value>Se l'errore persiste prova a salvare in una cartella diversa, ad esempio sul desktop.</value>
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
     <value>BCUninstaller sta disinstallando {0} applicazione/i</value>
@@ -355,7 +355,7 @@ Attenzione: nel corso dell'aggiornamento la cartella "Update" e il file "Update.
     <value>Sei sicuro di voler disinstallare BCUninstaller?</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
-    <value>Mi dispiace che ci voglia lasciare! Se hai un minuto ti chiedo di scrivere sul sito web (http://klocmansoftware.weebly.com/) per quale motivo disinstalli BCU. Farò il massimo per porre rimedio ad ogni problema.</value>
+    <value>Mi dispiace che ci vuoi lasciare! Se hai un minuto ti chiedo di scrivere sul sito web (http://klocmansoftware.weebly.com/) per quale motivo disinstalli BCU. Farò il massimo per porre rimedio ad ogni problema.</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
     <value>Prima di continuare vuoi creare un punto di ripristino?</value>
@@ -368,7 +368,7 @@ Se qualunque cosa non dovesse funzionare dopo la procedura potrai ripristinare i
     <value>Errore nell'apertura della pagina di ricerca</value>
   </data>
   <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
-    <value>Salva lelenco disinstallazione</value>
+    <value>Salva elenco disinstallazione</value>
   </data>
   <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
     <value>Errore nel salvataggio dell'elenco disinstallazione in un file</value>
@@ -480,7 +480,7 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi? O preferisci sian
     <value>Il file non esiste. </value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
-    <value>Nulla da visualizzare. Questa appicazione si disinstalla con Windows Installer (MsiExec).</value>
+    <value>Nulla da visualizzare. Questa applicazione si disinstalla con Windows Installer (MsiExec).</value>
   </data>
   <data name="PropertiesWindow_Table_Name" xml:space="preserve">
     <value>Nome</value>
@@ -530,7 +530,7 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi? O preferisci sian
     <value>Esecuzione esterna fallita</value>
   </data>
   <data name="DefaultLanguage" xml:space="preserve">
-    <value>Predefinito</value>
+    <value>Predefinita</value>
     <comment>Used in language select box when you want to use the system language</comment>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
@@ -540,7 +540,7 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi? O preferisci sian
     <value>Vuoi riavviare BCU per rendere operative le nuove impostazioni?</value>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
-    <value>Modifica iimpostazioni programma</value>
+    <value>Modifica impostazioni programma</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
     <value>Certificato mancante</value>
@@ -550,7 +550,7 @@ Vuoi utilizzare i disinstallatori guidati per questi elementi? O preferisci sian
     <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>Selezionando "Termina" sarà immediatamente fermato il disinstallatore in esecuzione; e la disinstallazione potrebbe non essere completata. Normalmente è possibile eseguire nuovamente il disinstallatore per completare l'attività.
+    <value>Selezionando "Termina" sarà immediatamente fermato il disinstallatore in esecuzione e la disinstallazione potrebbe non essere completata. Normalmente per completare l'attività è possibile eseguire nuovamente il disinstallatore.
 
 In alternativa puoi saltare l'attesa per questo processo. In questo modo farai in modo che il disinstallatore continuerà a lavorare mentre l'attività passerà all'elemento successivo. Ricorda che alcuni disinstallatori potrebbero non avviarsi fino a quando il processo saltato non verrà completato.</value>
   </data>
@@ -589,7 +589,7 @@ The lists are separated by a single newline.</comment>
     <value>Caricamento funzionalità di Windows...</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
-    <value>Aggiornamento informazioni di avvio...</value>
+    <value>Aggiornamento informazioni avvio automatico...</value>
     <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
@@ -631,8 +631,7 @@ Puoi provare a disabilitare la rilevazione delle collisioni nelle impostazioni, 
     <value>.NET Framework v4.0 non trovato</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
-    <value>.NET Framework v4.0 non trovato.
-Alcune funzioni saranno disabilitate</value>
+    <value>.NET Framework v4.0 non trovato. Alcune funzioni saranno disabilitate</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
     <value>Il framework v4.0 è opzionale, ma raccomandato. Le funzionalità che si basano su framework saranno disabilitate fino quando non sarà installato.</value>
@@ -746,16 +745,16 @@ Alcune funzioni saranno disabilitate</value>
     <value>L'applicazione selezionata non uò essere modificata</value>
   </data>
   <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
-    <value>L'applicazione selezionata non ha comandi di modifica specificati. Per modificare i parametri di installazione potrebbe essere necessario disinstallarla e quindi reinstallarla..</value>
+    <value>L'applicazione selezionata non ha i comandi di modifica specificati. Per modificare i parametri di installazione potrebbe essere necessario disinstallarla e quindi reinstallarla..</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
     <value>Salva elenco disinstallazione</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
-    <value>Vuoi salvare le modifiche all'elenco disinstallazione aperto?</value>
+    <value>Vuoi salvare le modifiche dell'elenco disinstallazione aperto?</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
-    <value>Nell'elenco disinstallazione aperto sono presenti alcune modifiche non salvate  che saranno perse alla chiusura.</value>
+    <value>Nell'elenco disinstallazione aperto sono presenti alcune modifiche non salvate che saranno perse alla chiusura.</value>
   </data>
   <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
     <value>Seleziona la cartella con le applicazioni da disinstallare.</value>
@@ -767,9 +766,9 @@ Alcune funzioni saranno disabilitate</value>
     <value>BCU è stato aggiornato alla versione v{0}!</value>
   </data>
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
-    <value>Benvenuto/a nela versione v{0} di BCU!</value>
+    <value>Benvenuto/a nella versione {0} di BCU!</value>
   </data>
   <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
-    <value>Il PC verrà messo nello stato di stop tra {0}sec. Per annullare deseleziona la casella di controllo 'sleep'.</value>
+    <value>Il PC verrà messo nello stato di sleep tra {0} secondi. Per annullare deseleziona la casella di controllo 'sleep'.</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>L'ordine iniziale dipende dalla configurazione di disinstallazione, ma può essere modificato trascinando gli elementi. Nota: se è abilitata la disinstallazione simultanea BC può cambiare l'ordine di dinstallazione.</value>
+    <value>L'ordine iniziale dipende dalla configurazione di disinstallazione, ma può essere modificato trascinando gli elementi. Nota: se è abilitata la disinstallazione simultanea BC può cambiare l'ordine di disinstallazione.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Questa è una elenco di applicazioni che saranno disinstallate, ordinatamente dall'inizio alla fine. Se deselezioni l'opzione "Disinstalla" l'applicazione non sarà disinstallata. Se la disinstallazione silenziosa non è disponibile per un elemento non potrà essere selezionata.</value>
