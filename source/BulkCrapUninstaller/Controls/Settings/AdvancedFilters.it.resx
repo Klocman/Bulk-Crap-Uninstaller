@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Salva una lista di disinstallazione...</value>
+    <value>Salva elenco disinstallazione...</value>
   </data>
   <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
     <value>Salva come...</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Liste di disinstallazione|*.bcul</value>
+    <value>Elenco disinstallazione|*.bcul</value>
   </data>
   <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
     <value>Apri...</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Apri una lista di disinstallazione...</value>
+    <value>Apri elenco disinstallazione...</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Liste di disinstallazione|*.bcul</value>
+    <value>Elenco disinstallazione|*.bcul</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>Salva come predefinito</value>

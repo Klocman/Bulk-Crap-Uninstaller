@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Evidenza i disinstallatori certificati</value>
+    <value>Evidenza disinstallatori certificati</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Mostra componenti di sistema</value>
+    <value>Visualizza componenti di sistema</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Seleziona con checkbox</value>
+    <value>Seleziona con casella di controllo</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Usa i colori per identificare i disinstallatori certificati. Se il certificato è stato verificato correttamente usa il colore verde, altrimenti usa il colore blu.
@@ -132,27 +132,27 @@
 Attenzione: la verifica potrebbe durare a lungo.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>Mostra gli aggiornamenti</value>
+    <value>Visualizza aggiornamenti</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Mostra elementi protetti</value>
+    <value>Visualizza elementi protetti</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Evidenzia i disinstallatori mancanti</value>
+    <value>Evidenzia disinstallatori mancanti</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Cambia stile di selezione della lista da marcare con checkbox. E' più sicuro perché un click singolo non deseleziona nulla.
+    <value>Modifica stile di selezione dell'elenco da marcare con casella di controllo. È più sicuro perché un clic singolo non deseleziona nulla.
 
 Puoi selezionare più elementi selezionandoli e premendo la barra spazio.</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>Aggiornamento di altre applicazioni. Normalmente sono disinstallate con le applicazioni da cui dipendono, possono quindi essere ignorate.</value>
+    <value>Aggiornamenti di altre applicazioni. Normalmente sono disinstallate con le applicazioni da cui dipendono, possono quindi essere ignorate.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostra applicazioni non registrate</value>
+    <value>Visualizza applicazioni non registrate</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Mostra le app di Windows Store</value>
+    <value>Visualizza app di Windows Store</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Filtra tutto quanto prodotto da Microsoft.</value>
@@ -161,42 +161,41 @@ Puoi selezionare più elementi selezionandoli e premendo la barra spazio.</value
     <value>Usa il colore grigio per identificare i disinstallatori corrotti o mancanti.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
-    <value>Mostra elementi in gruppo</value>
+    <value>Visualizza elementi in gruppo</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Mostra funzionalità di Windows</value>
+    <value>Visualizza funzionalità di Windows</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Alcuni disinstallatori possono essere marcati come "componenti di sistema" per nasconderli nella lista Aggiungi/Rimuovi programmi. I driver sono spesso marcati con questo attributo.</value>
+    <value>Alcuni disinstallatori possono essere marcati come "componenti di sistema" per nasconderli nell'elenco Aggiungi/Rimuovi programmi. I driver sono spesso marcati con questo attributo.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Configurazione della visualizzazione della lista</value>
+    <value>Impostazioni vista elenco</value>
   </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
     <value>Nascondi quelli prodotti da Microsoft</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Mostra le applicazioni che non hanno nessun disinstallatore registrato. Non sono visibili alla maggior parte dei gestori di disinstallazione ma possono ancora occupare spazio. Gli elementi non registrati sono marcati con colore rosso.
+    <value>Visualizza le applicazioni che non hanno nessun disinstallatore registrato. Non sono visibili alla maggior parte dei gestori di disinstallazione ma possono ancora occupare spazio. Gli elementi non registrati sono marcati con colore rosso.
 
 Attenzione: verifica attentamente prima di rimuovere queste applicazioni, potrebbero essere necessarie!</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Raggruppa gli elementi secondo la colonna per cui la lista è stata ordinata. 
-Il raggruppamento della maggior parte delle colonne usa un filtraggio intelligente.</value>
+    <value>Raggruppa gli elementi secondo la colonna per cui la'elenco è stata ordinato. Il raggruppamento della maggior parte delle colonne usa un filtro intelligente.</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Filtraggio</value>
+    <value>Filtro</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Gli elementi protetti sono marcati con l'attributo "NoRemove"; indica che il produttore non vuole che vengano rimossi.</value>
+    <value>Gli elementi protetti sono marcati con l'attributo "NoRemove" che indica che il produttore non vuole che vengano rimossi.</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
-    <value>Mostra i miglioramenti</value>
+    <value>Visualizza trucchi</value>
   </data>
   <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
     <value>Evidenzia disinstallatori speciali</value>
   </data>
   <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
-    <value>Usa i colori per distinguere applicazioni speciali, ad esempio Store Apps e funzionalità di Windows.</value>
+    <value>Usa i colori per distinguere applicazioni speciali, ad esempio App dell Store e funzionalità di Windows.</value>
   </data>
 </root>

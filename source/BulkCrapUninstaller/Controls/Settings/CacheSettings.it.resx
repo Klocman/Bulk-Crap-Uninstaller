@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Il caching può ridurre notevolmente il tempo di ricerca, ma se una applicazione viene modificata BCU potrebbe non accorgersi del cambiamento (ad es. la grandezza)
-NOTA: Per attivare queste opzioni potrebbe essere necessario riavviare BCU.</value>
+    <value>Il caching può ridurre notevolmente il tempo di ricerca, ma se una applicazione viene modificata BCU potrebbe non accorgersi del cambiamento (ad es. la grandezza).
+    NOTA:  per attivare queste opzioni potrebbe essere necessario riavviare BCU.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>Risultati del controllo del certificato della cache dell'applicazione</value>
+    <value>Risultati ontrollo certificato della cache applicazione</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
     <value>La cache ha raccolto informazioni mancanti</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Pulisci la cache</value>
+    <value>Svuota cache</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Caching</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Nome del disinstallatore associato</value>
+    <value>Nome disinstallatore associato</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
     <value>Aggiungi alle operazioni</value>
@@ -127,7 +127,7 @@
     <value>Associato a:</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Questa è una lista di applicazioni che potrebbero essere collegate a quelle che hai selezionato per la disinstallazione. </value>
+    <value>Questo è un elenco di applicazioni che potrebbero essere correlate alle applicazioni selezionate per la disinstallazione. Puoi aggiungere queste applicazioni alla coda di disinstallazione spuntandole.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>Assicurati di non disinstallare programmi importanti di cui necessitino altre applicazioni per funzionare correttamente</value>

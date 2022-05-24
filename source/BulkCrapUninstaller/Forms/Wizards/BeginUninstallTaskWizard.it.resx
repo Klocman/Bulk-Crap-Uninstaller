@@ -121,7 +121,7 @@
     <value>1 / 6</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
-    <value>Cancella</value>
+    <value>Annulla</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Indietro</value>
@@ -136,37 +136,37 @@
     <value>Associato</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Conferma che ogni elemento in basso si può disinstallare con sicurezza</value>
+    <value>Conferma che ogni elemento in basso si può disinstallare in sicurezza</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Conferma</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Potrebbe essere necessario chiudere le applicazioni prima della disinstallazione</value>
+    <value>Prima della disinstallazione potrebbe essere necessario chiudere le applicazioni</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>In esecuzione</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Creare un punto di ripristino prima della disinstallazione</value>
+    <value>Prima della disinstallazione crea un punto di ripristino</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e files. Si raccomanda di creare un punto di ripristino prima di rimuovere.</value>
+    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e file. Ti raccomandiamoprima di rimuovere le appliaczioni di creare un punto di ripristino.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Attenzione: il Ripristino di Sistema deve essere abilitato per funzionare!</value>
+    <value>Attenzione: per funzionare il 'Ripristino di sistema' deve essere abilitato!</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Cambiare configurazioni di disinstallazione</value>
+    <value>Modifica impostazioni disinstallazione</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
-    <value>Configurazioni</value>
+    <value>Impostazioni</value>
   </data>
   <data name="labelOther.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
-    <value>Altro / Varie</value>
+    <value>Altro / varie</value>
   </data>
   <data name="labelConcurrentEnabled.Text" xml:space="preserve">
     <value>l</value>
@@ -184,19 +184,19 @@
     <value>l</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Creare un nuovo punto di ripristino</value>
+    <value>Crea un nuovo punto di ripristino</value>
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>I files sono ancora in uso da processi in esecuzione</value>
+    <value>I file sono ancora in uso da processi in esecuzione</value>
   </data>
   <data name="labelTotalSize.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Grandezza totale stimata</value>
+    <value>Dimensione totale stimata</value>
   </data>
   <data name="labelApps.Text" xml:space="preserve">
     <value>l</value>
@@ -208,7 +208,7 @@
     <value>AVVIO DISINSTALLAZIONE</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Assicurati che le seguenti informazioni siano corrette prima di avviare la disinstallazione. Questa è l'ultima possibilità!</value>
+    <value>Prima di avviare la disinstallazione assicurati che le seguenti informazioni siano corrette. Questa è l'ultima possibilità!</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Finale</value>

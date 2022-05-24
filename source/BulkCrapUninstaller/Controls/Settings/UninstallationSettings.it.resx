@@ -136,22 +136,22 @@
     <value>Previene lo spegnimento/riavvio del sistema</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Ordinamento intelligente del disinstallatore</value>
+    <value>Ordinamento intelligente disinstallatore</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Disabilita protezione</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>Simula la disinstallazione</value>
+    <value>Simula disinstallazione</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Configurazione generale</value>
+    <value>Impostazioni generali</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Termina automaticamente i disinstallatori silenziosi bloccati</value>
+    <value>Termina automaticamente disinstallatori silenziosi bloccati</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Esegui nuovamente i disinstallatori silenziosi non andati a buon fine</value>
+    <value>Esegui nuovamente disinstallatozionisilenziose non andate a buon fine</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
     <value>Genera se possibile disinstallatori silenziosi mancanti</value>
@@ -166,9 +166,9 @@
     <value>Controlla i popup o le fasi di stallo dei disinstallatori "silenziosi" e rendili automatici (esegui demone che automatizza)</value>
   </data>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
-    <value>Creare un punto di ripristino prima della disinstallazione</value>
+    <value>Crea un punto di ripristino prima della disinstallazione</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>Puoi creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e files. Si raccomanda di creare un punto di ripristino prima di rimuovere.</value>
+    <value>È possibiel creare un punto di ripristino del sistema per salvare il registro, alcune configurazioni e file. Ti raccomandiamo prima della rimozione di creare un punto di ripristino.</value>
   </data>
 </root>

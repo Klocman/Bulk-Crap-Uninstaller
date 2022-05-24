@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copia in clipboard</value>
+    <value>Copia negli Appunti</value>
   </data>
   <data name="saveToFileToolStripMenuItem.Text" xml:space="preserve">
     <value>Salva su file...</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>File di testo|*.txt</value>
+    <value>File testo|*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
   <data name="saveFileDialog1.Title" xml:space="preserve">

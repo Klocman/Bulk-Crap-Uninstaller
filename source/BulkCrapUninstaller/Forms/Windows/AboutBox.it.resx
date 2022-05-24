@@ -145,7 +145,7 @@
     <value>DotNetZip</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Icone di Modern UI</value>
+    <value>Icone Modern UI</value>
     <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
@@ -156,19 +156,20 @@
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider</value>
+    <comment>1</comment>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Task Scheduler Managed Wrapper</value>
+    <value>Wrapper gestito dall'utilità di pianificazione</value>
     <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Risorse utilizzate</value>
+    <value>Risorse usate</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Chiuso</value>
+    <value>Chiudi</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>Sito web ufficiale</value>
@@ -180,6 +181,9 @@
     <value>Traduttori</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Su BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>Info su BCUninstaller (Bulk Crap Uninstaller)</value>
+  </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (CLI per Everything)</value>
   </data>
 </root>

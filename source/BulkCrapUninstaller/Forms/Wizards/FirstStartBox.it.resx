@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonExit.Text" xml:space="preserve">
-    <value>Abbandola la procedura guidata</value>
+    <value>Esci dalla procedura guidata</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>Indietro</value>
@@ -127,28 +127,28 @@
     <value>Continua</value>
   </data>
   <data name="buttonMore.Text" xml:space="preserve">
-    <value>Più opzioni</value>
+    <value>Altre opzioni</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
-    <value>Visualizza aiuto</value>
+    <value>Visualizza guida in linea</value>
   </data>
   <data name="buttonFinish.Text" xml:space="preserve">
-    <value>Fine del setup</value>
+    <value>Fine impostazione</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
-    <value>Puoi iniziare ad usare BCUninstaller. Per qualunque domanda o suggerimenti di nuove funzionalità visita i link in basso.</value>
+    <value>Ora puoi iniziare ad usare BCUninstaller. Per qualunque domanda o suggerimenti di nuove funzionalità usa i collegamenti in basso.</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
-    <value>Apri il form di contatto</value>
+    <value>Apri il modulo di contatto</value>
   </data>
   <data name="p5finishHomepage.Text" xml:space="preserve">
-    <value>Puoi leggere il changelog dettagliato e dare uno sguardo ad altre informazioni sul programma in homepage.</value>
+    <value>Nella pagina web puoi leggere il dettaglio delle novità del programma e dare uno sguardo ad altre informazioni.</value>
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
-    <value>Apri la homepage</value>
+    <value>Apri la pagina web del programma</value>
   </data>
   <data name="p5finishTitle.Text" xml:space="preserve">
-    <value>Il setup è terminato</value>
+    <value>Configurazione programma completata</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>Accesso alla rete</value>
@@ -157,28 +157,29 @@
     <value>BCUninstaller cercherà di collegarsi ad internet per i seguenti motivi:</value>
   </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
-    <value>● Cercare aggiornamenti al programma.</value>
+    <value>● Cercare aggiornamenti del programma.</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
     <value>● Inviare segnalazioni di errori</value>
   </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
-    <value>● Inviare statistiche di utilizzo anonime.</value>
+    <value>● Inviare statistiche di uso anonime.</value>
   </data>
   <data name="p4netDesc4.Text" xml:space="preserve">
-    <value>● Recuperare e inviare valutazioni dell'applicazione</value>
+    <value>● Recuperare e inviare valutazioni sull'applicazione</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>Quando c'è un errore ti sarà chiesto se vorrai inviarlo. Puoi controllare che dati vengono inviati nelle segnalazioni di errori e di uso controllando i relativi file XML nella cartella di BCUninstaller. I dati inviati non sono condivisi con nessuno.</value>
+    <value>Quando si verificherà un errore verrà chiesto se segnalarlo. 
+Puoi controllare quali dati vengono inviati nelle segnalazioni di errori e di uso controllando i relativi file XML nella cartella di BCUninstaller. I dati inviati non saranno condivisi con nessuno.</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Controlla la presenza di aggiornamenti all'avvio del programma</value>
+    <value>All'avvio controlla automiticamente la disponibilità di aggiornamenti</value>
   </data>
   <data name="p4netUpdateAdd.Text" xml:space="preserve">
     <value>Puoi cercare manualmente gli aggiornamenti dalla barra dei menù.</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
-    <value>Invia automaticamente statistiche d'utilizzo anonime.</value>
+    <value>Invia automaticamente statistiche d'uso anonime.</value>
   </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
     <value>L'invio delle statistiche contribuirà al miglioramento di BCUninstaller.</value>
@@ -199,23 +200,23 @@
     <value>In alcuni casi i disinstallatori possono corrompersi, rendendo impossibile la disinstallazione. BCUninstaller può facilmente rimuovere queste voci usando l'opzione "Disinstalla manualmente".</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Evidenzia i disinstallatori invalidi</value>
+    <value>Evidenzia disinstallatori non validi</value>
   </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
-    <value>I disinstallatori invalidi sono segnati in grigio.</value>
+    <value>I disinstallatori non validi sono evidenziati in grigio.</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
     <value>Applicazione non registrata</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>A volte intere applicazioni posso restare sul tuo disco persino dopo la disinstallazione. Può accadere se viene rimosso il solo disinstallatore.</value>
+    <value>A volte intere applicazioni posso restare nel disco persino dopo la disinstallazione. Può accadere se viene rimosso il solo disinstallatore.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Mostra le applicazioni non registrate nella lista</value>
+    <value>Visualizza nell'elenco le applicazioni non registrate</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Le applicazioni non registrate sono segnate in rosso. 
-Se il disinstallatore originale non viene rilevato dovrai utilizzare l'opzione "Disinstalla manualmente" per rimuoverle.</value>
+    <value>Le applicazioni non registrate sono evdienziate in rosso. 
+Se il disinstallatore originale non viene rilevato per rimuoverle bisogna usare l'opzione "Disinstalla manualmente".</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
     <value>Utenti avanzati</value>
@@ -227,10 +228,10 @@ Se il disinstallatore originale non viene rilevato dovrai utilizzare l'opzione "
     <value>Componenti di sistema</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Applicazioni segnate come "Componenti di sistema" sono invisibili alla maggior parte dei gestori di disinstallazione standard. Questo attributo NON indica che l'applicazione è parte del sistema operativo.</value>
+    <value>Le applicazioni eviddenziate come "Componenti di sistema" sono invisibili alla maggior parte dei gestori di disinstallazione standard. Questo attributo NON indica che l'applicazione è parte del sistema operativo.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>Mostra disinstallatori segnati come "componenti di sistema"</value>
+    <value>Visualizza disinstallatori evidenziati come "componenti di sistema"</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
     <value>Disinstallatori protetti</value>
@@ -239,19 +240,19 @@ Se il disinstallatore originale non viene rilevato dovrai utilizzare l'opzione "
     <value>Gli elementi protetti sono segnati con l'attributo "NoRemove", che indica che il produttore non vuole che vengano rimossi. Questo attributo è spesso usato da svariati pacchetti software per evitare che vengano disinstallate parti di esso.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>Mostra disinstallatori segnati come "protetti"</value>
+    <value>Visualizza disinstallatori evidenziati come "protetti"</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Disabilita la protezione dei disinstallatori segnati come "protetti"</value>
+    <value>Disabilita la protezione dei disinstallatori evidenziati come "protetti"</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>Questo ti permetterà di disinstallare elementi protetti.</value>
+    <value>Questo permetterà di disinstallare gli elementi protetti.</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
-    <value>Vista della lista del disinstallatore</value>
+    <value>Vista elenco disinstallatore</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Tutti i disinstallatori trovati nel tuo sistema sono visualizzati nella lista principale. Qui ci sono alcune modalità di visualizzazione di queste informazioni:</value>
+    <value>Tutti i disinstallatori trovati nel sistema sono visualizzati nell'elenco principale. Qui ci sono alcune modalità di visualizzazione di queste informazioni:</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Usa i filtri e cerca per parole chiave (in tutte le colonne)</value>
@@ -263,10 +264,10 @@ Se il disinstallatore originale non viene rilevato dovrai utilizzare l'opzione "
     <value>● Raggruppa disinstallatori simili</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
-    <value>Mostra i disinstallatori in gruppi</value>
+    <value>Visualizza disinstallatori in gruppi</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
-    <value>Seleziona tramite checkbox</value>
+    <value>Seleziona tramite riquadri di controllo</value>
   </data>
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
     <value>Disinstallatori certificati</value>
@@ -278,28 +279,28 @@ Se il disinstallatore originale non viene rilevato dovrai utilizzare l'opzione "
     <value>Evidenzia disinstallatori certificati</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
-    <value>I disinstallatori verificati sono segnati in verde, quelli non verificati in blu. Attenzione: la verifica può durare a lungo.</value>
+    <value>I disinstallatori verificati sono evidenziati in verde, quelli non verificati in blu. Attenzione: la verifica può durare a lungo.</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Benvenuto in BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Questa procedura guidata ti mostrerà una breve introduzione e ti aiuterà a configurare l'applicazione.</value>
+    <value>Questa procedura guidata visualizzerà una breve introduzione e aiuterà a configurare l'applicazione.</value>
   </data>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>Lingua selezionata</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>Puoi forzare BCUninstaller ad utilizzare particolari localizzazioni se la lingua di default non è corretta. L'applicazione sarà riavviata per applicare le modifiche.</value>
+    <value>Se la lingua predefinita non è corretta puoi forzare BCUninstaller ad usare un'altra lingua. Per applicare le modifiche sarà necessario riavviare l'applicazione.</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
-    <value>Applicare</value>
+    <value>Applica</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
-    <value>Se sei disposto ad aiutarci nella traduzione di BCUninstaller nella tua lingua clicca sul link in basso per contattarmi. Ogni aiuto è fortemente apprezzato!</value>
+    <value>Se sei disposto ad aiutarci nella traduzione di BCUninstaller nella tua lingua fai clic sul collegamento in basso per contattarmi. Ogni aiuto è fortemente apprezzato!</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
-    <value>Apri il form dei contatti</value>
+    <value>Apri il modulo dei contatti</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>ulk crap
