@@ -124,7 +124,7 @@
     <value>Aiuto</value>
   </data>
   <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Non uscire</value>
+    <value>Unescape</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Risultati</value>
