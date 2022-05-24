@@ -1083,14 +1083,14 @@ namespace BulkCrapUninstaller.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public bool DpiAwareTest {
+        public bool WindowDpiAware {
             get {
-                return ((bool)(this["DpiAwareTest"]));
+                return ((bool)(this["WindowDpiAware"]));
             }
             set {
-                this["DpiAwareTest"] = value;
+                this["WindowDpiAware"] = value;
             }
         }
         

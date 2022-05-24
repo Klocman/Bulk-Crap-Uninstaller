@@ -44,7 +44,7 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxAutoLoad, x => x.MiscAutoLoadDefaultList, this);
             _settings.BindControl(checkBoxRatings, x => x.MiscUserRatings, this);
             _settings.BindControl(checkBoxColorblind, x => x.MiscColorblind, this);
-            _settings.BindControl(checkBoxDpiaware, x => x.DpiAwareTest, this);
+            _settings.BindControl(checkBoxDpiaware, x => x.WindowDpiAware, this);
 
             _settings.BindControl(checkBoxEnableExternal, x => x.ExternalEnable, this);
             _settings.BindControl(textBoxPreUninstall, x => x.ExternalPreCommands, this);

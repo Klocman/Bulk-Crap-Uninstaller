@@ -59,7 +59,7 @@ namespace BulkCrapUninstaller
 
                     SetupDependancies();
 
-                    if(Properties.Settings.Default.DpiAwareTest)
+                    if(Properties.Settings.Default.WindowDpiAware)
                         Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
                     var startupMgr = args.Contains("/startupmanager", StringComparison.OrdinalIgnoreCase) || 
