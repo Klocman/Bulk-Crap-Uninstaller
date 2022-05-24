@@ -80,8 +80,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -96,6 +96,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -282,7 +282,7 @@ BCU будет ждать завершения одной команды для 
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>Эспериментальное масштабирование интерфейса с учётом DPI</value>
+    <value>масштабирование интерфейса с учётом DPI</value>
   </data>
   <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

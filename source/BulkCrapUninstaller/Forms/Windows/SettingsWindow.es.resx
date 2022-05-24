@@ -251,7 +251,7 @@ Utilice rutas de directorio completas, una ruta por línea. Las rutas no válida
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>Habilitar el escalado experimental de la interfaz en función del DPI</value>
+    <value>Habilitar el escalado de la interfaz en función del DPI</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
     <value>Siempre pedir crear</value>

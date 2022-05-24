@@ -131,7 +131,7 @@
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>启用实验性DPI感知界面缩放</value>
+    <value>启用DPI感知界面缩放</value>
   </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>杂项</value>

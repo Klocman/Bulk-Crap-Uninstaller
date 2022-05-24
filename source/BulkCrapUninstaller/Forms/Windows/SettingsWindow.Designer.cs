@@ -40,9 +40,9 @@ namespace BulkCrapUninstaller.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.groupBoxMisc = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
             this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
             this.checkBoxDpiaware = new System.Windows.Forms.CheckBox();
+            this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
             this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
             this.checkBoxSendStats = new System.Windows.Forms.CheckBox();
@@ -104,6 +104,8 @@ namespace BulkCrapUninstaller.Forms
             this.labelProgramFolders = new System.Windows.Forms.Label();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.cacheSettings1 = new BulkCrapUninstaller.Controls.Settings.CacheSettings();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -136,6 +138,8 @@ namespace BulkCrapUninstaller.Forms
             this.tabPageFolders.SuspendLayout();
             this.groupBoxProgramFolders.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -187,16 +191,9 @@ namespace BulkCrapUninstaller.Forms
             // flowLayoutPanel3
             // 
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
-            this.flowLayoutPanel3.Controls.Add(this.checkBoxAutoLoad);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxColorblind);
             this.flowLayoutPanel3.Controls.Add(this.checkBoxDpiaware);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            // 
-            // checkBoxAutoLoad
-            // 
-            resources.ApplyResources(this.checkBoxAutoLoad, "checkBoxAutoLoad");
-            this.checkBoxAutoLoad.Name = "checkBoxAutoLoad";
-            this.checkBoxAutoLoad.UseVisualStyleBackColor = true;
             // 
             // checkBoxColorblind
             // 
@@ -209,6 +206,12 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxDpiaware, "checkBoxDpiaware");
             this.checkBoxDpiaware.Name = "checkBoxDpiaware";
             this.checkBoxDpiaware.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAutoLoad
+            // 
+            resources.ApplyResources(this.checkBoxAutoLoad, "checkBoxAutoLoad");
+            this.checkBoxAutoLoad.Name = "checkBoxAutoLoad";
+            this.checkBoxAutoLoad.UseVisualStyleBackColor = true;
             // 
             // checkBoxRatings
             // 
@@ -454,6 +457,7 @@ namespace BulkCrapUninstaller.Forms
             // tabPageInterface
             // 
             resources.ApplyResources(this.tabPageInterface, "tabPageInterface");
+            this.tabPageInterface.Controls.Add(this.groupBoxMisc);
             this.tabPageInterface.Controls.Add(this.groupBoxMessages);
             this.tabPageInterface.Controls.Add(this.groupBoxLanguage);
             this.tabPageInterface.Name = "tabPageInterface";
@@ -639,7 +643,7 @@ namespace BulkCrapUninstaller.Forms
             // tabPageMisc
             // 
             this.tabPageMisc.Controls.Add(this.cacheSettings1);
-            this.tabPageMisc.Controls.Add(this.groupBoxMisc);
+            this.tabPageMisc.Controls.Add(this.groupBox2);
             this.tabPageMisc.Controls.Add(this.groupBox3);
             resources.ApplyResources(this.tabPageMisc, "tabPageMisc");
             this.tabPageMisc.Name = "tabPageMisc";
@@ -649,6 +653,19 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.cacheSettings1, "cacheSettings1");
             this.cacheSettings1.Name = "cacheSettings1";
+            // 
+            // groupBox2
+            // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.flowLayoutPanel4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // flowLayoutPanel4
+            // 
+            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
+            this.flowLayoutPanel4.Controls.Add(this.checkBoxAutoLoad);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             // 
             // groupBox3
             // 
@@ -740,6 +757,10 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxProgramFolders.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
@@ -826,5 +847,7 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxColorblind;
         private CheckBox checkBoxScoop;
         private CheckBox checkBoxDpiaware;
+        private GroupBox groupBox2;
+        private FlowLayoutPanel flowLayoutPanel4;
     }
 }

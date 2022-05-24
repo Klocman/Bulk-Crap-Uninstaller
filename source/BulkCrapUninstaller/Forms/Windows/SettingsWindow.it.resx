@@ -280,7 +280,7 @@ I percorsi non validi e non esistenti saranno ignorati.</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>Abilita ridimensionamento sperimentale interfaccia sensibile ai DPI</value>
+    <value>Abilita ridimensionamento interfaccia sensibile ai DPI</value>
   </data>
   <data name="checkBoxScoop.Text" xml:space="preserve">
     <value>Scoop</value>
