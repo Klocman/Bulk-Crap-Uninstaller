@@ -579,6 +579,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabelStatus,
             this.toolStripLabelSize,
@@ -666,6 +667,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // uninstallListContextMenuStrip
             // 
+            this.uninstallListContextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.uninstallListContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uninstallContextMenuStripItem,
             this.quietUninstallContextMenuStripItem,
@@ -963,6 +965,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,

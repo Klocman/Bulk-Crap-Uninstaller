@@ -118,7 +118,6 @@ namespace UninstallTools.Controls
             this.Controls.Add(this.textBoxFilterText);
             this.Controls.Add(this.labelText);
             this.Controls.Add(this.searchBox1);
-            this.MinimumSize = new System.Drawing.Size(100, 0);
             this.Name = "FilterEditor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
