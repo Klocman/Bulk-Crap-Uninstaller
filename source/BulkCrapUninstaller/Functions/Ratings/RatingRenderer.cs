@@ -30,7 +30,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             r = ApplyCellPadding(r);
 
             // Convert our aspect to a numeric value
-            var aspect = (RatingEntry) Aspect;
+            var aspect = (RatingEntry) (Aspect ?? false);
 
             if (aspect.Equals(RatingEntry.NotAvailable))
             {
@@ -43,7 +43,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 // Calculate how many images we need to draw to represent our aspect value
                 int numberOfImages;
                 if (aspectValue <= _minimumValue) numberOfImages = 1;
-                else if (aspectValue <= (_maximumValue + _minimumValue)/2) numberOfImages = 2;
+                else if (aspectValue <= (float) (_maximumValue + _minimumValue) / 2) numberOfImages = 2;
                 else if (aspectValue < _maximumValue) numberOfImages = 3;
                 else numberOfImages = _maxNumberImages;
 

@@ -507,7 +507,7 @@ namespace BrightIdeasSoftware
         /// <param name="useLightBox">Should the decoration use a lighbox display style?</param>
         public EditingCellBorderDecoration(bool useLightBox) : this()
         {
-            this.UseLightbox = useLightbox;
+            this.UseLightbox = useLightBox;
         }
 
         #endregion 

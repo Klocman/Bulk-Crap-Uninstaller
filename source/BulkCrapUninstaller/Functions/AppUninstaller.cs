@@ -549,7 +549,7 @@ namespace BulkCrapUninstaller.Functions
                         if (item.UninstallPossible && item.UninstallerKind != UninstallerType.SimpleDelete &&
                             MessageBoxes.UninstallFromDirectoryUninstallerFound(item.DisplayName, item.UninstallString))
                         {
-                            item.RunUninstaller(false, Settings.Default.AdvancedSimulate).WaitForExit(60000);
+                            item?.RunUninstaller(false, Settings.Default.AdvancedSimulate).WaitForExit(60000);
                             items.Remove(item);
                             listRefreshNeeded = true;
                         }

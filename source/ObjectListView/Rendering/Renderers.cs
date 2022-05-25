@@ -585,7 +585,7 @@ namespace BrightIdeasSoftware {
         [Browsable(false),
          DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public OLVListSubItem OLVSubItem {
-            get { return listSubItem as OLVListSubItem; }
+            get { return listSubItem; }
         }
 
         /// <summary>

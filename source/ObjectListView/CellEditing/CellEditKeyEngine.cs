@@ -469,7 +469,7 @@ namespace BrightIdeasSoftware {
         /// <param name="olvi">The row to edit</param>
         /// <param name="subItemIndex">The cell within that row to edit</param>
         protected void StartCellEditIfDifferent(OLVListItem olvi, int subItemIndex) {
-            if (this.ItemBeingEdited == olvi && this.SubItemIndexBeingEdited == subItemIndex)
+            if (olvi == null || (this.ItemBeingEdited == olvi && this.SubItemIndexBeingEdited == subItemIndex))
                 return;
 
             this.ListView.EnsureVisible(olvi.Index);

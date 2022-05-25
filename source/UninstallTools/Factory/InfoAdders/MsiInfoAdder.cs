@@ -80,7 +80,7 @@ namespace UninstallTools.Factory.InfoAdders
             if (!temp.IsNotEmpty()) return;
             try
             {
-                entry.InstallDate = new DateTime(int.Parse(temp.Substring(0, 4)),
+                entry.InstallDate = new DateTime(int.Parse(temp?.Substring(0, 4)),
                     int.Parse(temp.Substring(4, 2)),
                     int.Parse(temp.Substring(6, 2)));
             }

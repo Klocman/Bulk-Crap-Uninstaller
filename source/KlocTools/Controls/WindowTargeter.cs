@@ -48,7 +48,7 @@ namespace Klocman.Controls
         {
             label1.Text = windowHoverEventArgs.TargetWindow.WindowText;
             label2.Text = windowHoverEventArgs.TargetWindow.WindowRect.ToString();
-            label3.Text = windowHoverEventArgs.TargetWindow.GetRunningProcess().MainModule.FileName;
+            label3.Text = windowHoverEventArgs.TargetWindow?.GetRunningProcess().MainModule.FileName;
         }
     }
 }

@@ -154,7 +154,7 @@ namespace BulkCrapUninstaller.Functions
             var targetKey = tag.OpenRegKey();
             var dt = GetCleanDataTable();
 
-            var valueNames = targetKey.GetValueNames();
+            var valueNames = targetKey?.GetValueNames();
             foreach (var valueName in valueNames)
             {
                 dt.Rows.Add(valueName, targetKey.GetValue(valueName));

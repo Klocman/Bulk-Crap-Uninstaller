@@ -45,7 +45,7 @@ namespace UninstallTools.Factory
                 if (string.IsNullOrEmpty(chocoPath)) return;
 
                 var result = StartProcessAndReadOutput(chocoPath, string.Empty);
-                if (result.StartsWith("Chocolatey", StringComparison.Ordinal))
+                if (result != null && result.StartsWith("Chocolatey", StringComparison.Ordinal))
                 {
                     _chocoLocation = chocoPath;
                     _chocoIsAvailable = true;

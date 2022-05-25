@@ -823,26 +823,35 @@ namespace BrightIdeasSoftware
             // Check to see if the mouse is "between" rows.
             // ("between" is somewhat loosely defined)
             if (this.CanDropBetween && this.ListView.GetItemCount() > 0) {
-
-                // If the mouse is over an item, check to see if it is near the top or bottom
-                if (location == DropTargetLocation.Item) {
-                    if (pt.Y - SMALL_VALUE <= info.Item.Bounds.Top)
-                        location = DropTargetLocation.AboveItem;
-                    if (pt.Y + SMALL_VALUE >= info.Item.Bounds.Bottom)
-                        location = DropTargetLocation.BelowItem;
-                } else {
-                    // Is there an item a little below the mouse?
-                    // If so, we say the drop point is above that row
-                    info = this.ListView.OlvHitTest(pt.X, pt.Y + SMALL_VALUE);
-                    if (info.Item != null) {
-                        targetIndex = info.Item.Index;
-                        location = DropTargetLocation.AboveItem;
-                    } else {
-                        // Is there an item a little above the mouse?
-                        info = this.ListView.OlvHitTest(pt.X, pt.Y - SMALL_VALUE);
-                        if (info.Item != null) {
-                            targetIndex = info.Item.Index;
+                if (info.Item != null)
+                {
+                    // If the mouse is over an item, check to see if it is near the top or bottom
+                    if (location == DropTargetLocation.Item)
+                    {
+                        if (pt.Y - SMALL_VALUE <= info.Item.Bounds.Top)
+                            location = DropTargetLocation.AboveItem;
+                        if (pt.Y + SMALL_VALUE >= info.Item.Bounds.Bottom)
                             location = DropTargetLocation.BelowItem;
+                    }
+                    else
+                    {
+                        // Is there an item a little below the mouse?
+                        // If so, we say the drop point is above that row
+                        info = this.ListView.OlvHitTest(pt.X, pt.Y + SMALL_VALUE);
+                        if (info.Item != null)
+                        {
+                            targetIndex = info.Item.Index;
+                            location = DropTargetLocation.AboveItem;
+                        }
+                        else
+                        {
+                            // Is there an item a little above the mouse?
+                            info = this.ListView.OlvHitTest(pt.X, pt.Y - SMALL_VALUE);
+                            if (info.Item != null)
+                            {
+                                targetIndex = info.Item.Index;
+                                location = DropTargetLocation.BelowItem;
+                            }
                         }
                     }
                 }
@@ -984,7 +993,7 @@ namespace BrightIdeasSoftware
                 return;
             Rectangle r = this.CalculateDropTargetRectangle(this.DropTargetItem, this.DropTargetSubItemIndex);
             r.Inflate(1, 1);
-            float diameter = r.Height / 3;
+            float diameter = (float) (r.Height) / 3;
             using (GraphicsPath path = this.GetRoundedRect(r, diameter)) {
                 using (SolidBrush b = new SolidBrush(Color.FromArgb(48, this.FeedbackColor))) {
                     g.FillPath(b, path);

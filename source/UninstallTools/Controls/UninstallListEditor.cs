@@ -193,7 +193,7 @@ namespace UninstallTools.Controls
             var item = listView1.SelectedItems[0];
             var tag = CurrentlySelected;
 
-            item.SubItems[0].Text = tag.Name;
+            item.SubItems[0].Text = tag?.Name;
             item.SubItems[1].Text = Filter.ExcludeToString(tag.Exclude);
             item.SubItems[2].Text = tag.ComparisonEntries.Count.ToString();
             item.EnsureVisible();
@@ -215,7 +215,7 @@ namespace UninstallTools.Controls
         {
             filterEditor.TargetFilterCondition = null;
 
-            CurrentlySelected.ComparisonEntries.Add(new FilterCondition());
+            CurrentlySelected?.ComparisonEntries.Add(new FilterCondition());
 
             PopulateConditions();
             OnFiltersChanged(sender, e);
@@ -226,7 +226,7 @@ namespace UninstallTools.Controls
             if (listBoxConditions.SelectedItem is not FilterCondition item) return;
             filterEditor.TargetFilterCondition = null;
 
-            CurrentlySelected.ComparisonEntries.Remove(item);
+            CurrentlySelected?.ComparisonEntries.Remove(item);
             PopulateConditions();
             OnFiltersChanged(sender, e);
         }

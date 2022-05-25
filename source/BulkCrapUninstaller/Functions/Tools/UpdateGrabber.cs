@@ -116,9 +116,13 @@ namespace BulkCrapUninstaller.Functions.Tools
         {
             // Should result in something like "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v4.1"
             var url = GetFinalRedirect(LatestReleaseUrl);
-            var i = url.LastIndexOf('/');
-            var tag = url.Substring(i).TrimStart('/', 'v');
-            return new Version(tag);
+            if (url != null)
+            {
+                var i = url.LastIndexOf('/');
+                var tag = url.Substring(i).TrimStart('/', 'v');
+                return new Version(tag);
+            }
+            return new Version();
         }
 
         /// <summary>

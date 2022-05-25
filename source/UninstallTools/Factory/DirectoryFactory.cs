@@ -128,7 +128,7 @@ namespace UninstallTools.Factory
             {
                 try
                 {
-                    return x.GetDirectories();
+                    return x?.GetDirectories();
                 }
                 catch (SystemException ex)
                 {

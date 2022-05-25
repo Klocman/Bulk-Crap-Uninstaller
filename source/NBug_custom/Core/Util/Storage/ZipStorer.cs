@@ -513,7 +513,7 @@ namespace NBug.Core.Util.Storage
 
                 for (var i = 0; i < Files.Count; i++)
                 {
-                    var pos = ZipFileStream.Position;
+                    var pos = ZipFileStream?.Position;
                     WriteCentralDirRecord(Files[i]);
                     centralSize += (uint) (ZipFileStream.Position - pos);
                 }
