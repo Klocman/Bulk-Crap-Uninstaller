@@ -172,7 +172,7 @@
     <value>显示Windows功能</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>显示Windwos商店应用</value>
+    <value>显示Windows商店应用</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>筛选器</value>
