@@ -169,11 +169,10 @@
     <value>● Recuperare e inviare valutazioni sull'applicazione</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>Quando si verificherà un errore verrà chiesto se segnalarlo. 
-Puoi controllare quali dati vengono inviati nelle segnalazioni di errori e di uso controllando i relativi file XML nella cartella di BCUninstaller. I dati inviati non saranno condivisi con nessuno.</value>
+    <value>Quando si verificherà un errore verrà chiesto se segnalarlo. Puoi controllare quali dati vengono inviati nelle segnalazioni di errori e di uso controllando i relativi file XML nella cartella di BCUninstaller. I dati inviati non saranno condivisi con nessuno.</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>All'avvio controlla automiticamente la disponibilità di aggiornamenti</value>
+    <value>All'avvio controlla automaticamente la disponibilità di aggiornamenti</value>
   </data>
   <data name="p4netUpdateAdd.Text" xml:space="preserve">
     <value>Puoi cercare manualmente gli aggiornamenti dalla barra dei menù.</value>
@@ -215,7 +214,7 @@ Puoi controllare quali dati vengono inviati nelle segnalazioni di errori e di us
     <value>Visualizza nell'elenco le applicazioni non registrate</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>Le applicazioni non registrate sono evdienziate in rosso. 
+    <value>Le applicazioni non registrate sono evidenziate in rosso. 
 Se il disinstallatore originale non viene rilevato per rimuoverle bisogna usare l'opzione "Disinstalla manualmente".</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
@@ -228,7 +227,7 @@ Se il disinstallatore originale non viene rilevato per rimuoverle bisogna usare 
     <value>Componenti di sistema</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Le applicazioni eviddenziate come "Componenti di sistema" sono invisibili alla maggior parte dei gestori di disinstallazione standard. Questo attributo NON indica che l'applicazione è parte del sistema operativo.</value>
+    <value>Le applicazioni evidenziate come 'Componenti di sistema' sono invisibili alla maggior parte dei gestori di disinstallazione standard. Questo attributo NON indica che l'applicazione è parte del sistema operativo.</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Visualizza disinstallatori evidenziati come "componenti di sistema"</value>
@@ -291,7 +290,7 @@ Se il disinstallatore originale non viene rilevato per rimuoverle bisogna usare 
     <value>Lingua selezionata</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>Se la lingua predefinita non è corretta puoi forzare BCUninstaller ad usare un'altra lingua. Per applicare le modifiche sarà necessario riavviare l'applicazione.</value>
+    <value>Se la lingua predefinita non è corretta puoi forzare BCUninstaller ad usare un'altra lingua. Per usare la nuova lingua sarà necessario riavviare l'applicazione.</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
     <value>Applica</value>

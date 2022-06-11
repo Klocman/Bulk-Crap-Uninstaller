@@ -124,12 +124,12 @@
     <value>Seleziona usando la cartella di installazione o del programma</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Cerca e disinstalla una applicazione basata su una delle sue finestre, collegamenti o la sua ubicazione di intallazione o file .exe</value>
+    <value>Cerca e disinstalla una applicazione basata su una delle sue finestre, collegamenti o la sua ubicazione di installazione o file .exe</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Nota: assicurati che tutti i file selezionati siano presenti nella cartella di installazione dell'applicazione.
 
-Puoi selezionare una cartella che contiene varie applicazioni per disintallarle tutte.</value>
+Puoi selezionare una cartella che contiene varie applicazioni per disinstallarle tutte.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Obiettivo un'applicazione</value>

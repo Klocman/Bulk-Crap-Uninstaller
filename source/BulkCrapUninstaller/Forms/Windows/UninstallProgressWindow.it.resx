@@ -136,8 +136,7 @@
     <value>ID</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>I disinstallatori selezionati saranno eseguiti uno per volta.
-Se il processo sembra bloccato puoi selezionare "Salta" per evitare di attendere il suo completamento. Questo accade se il disinstallatore si blocca o avvia un nuovo processo e non si chiude.</value>
+    <value>I disinstallatori selezionati saranno eseguiti uno per volta. Se il processo sembra bloccato puoi selezionare "Salta" per evitare di attendere il suo completamento. Questo accade se il disinstallatore si blocca o avvia un nuovo processo e non si chiude.</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
     <value>Esegui disinstallatore</value>
@@ -179,7 +178,7 @@ Se il processo sembra bloccato puoi selezionare "Salta" per evitare di attendere
     <value>Interrompi</value>
   </data>
   <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Esegui dinstallazione ora</value>
+    <value>Esegui dinsistallazione ora</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Disinstallazione manuale</value>

@@ -121,7 +121,7 @@
     <value>Grazie per l'uso di BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Se questo programma free ed open-source ti è stato utile ti invito a spendere un minuto per aiutarci! Parlane ai tuoi amici, condividilo sui social media, scrivici le tue impressioni - ogni piccolo contributo è utile!</value>
+    <value>Se questo programma free ed open source ti è stato utile ti invito a spendere un minuto per aiutarci! Parlane ai tuoi amici, condividilo sui social media, scrivici le tue impressioni - ogni piccolo contributo è utile!</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
     <value>Hai avuto problemi o mancano delle funzionalità?</value>
@@ -133,7 +133,7 @@
     <value>Vuoi aiutarci?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Per aiutarci non devi essere un programmatore ! Potresti donare una piccola somma per accelerare lo sviluppo degli aggiornamenti, o tradurre BCU nella tua lingua. Qualunque aiuto, seppur piccolo, sarà molto apprezzato!</value>
+    <value>Per aiutarci non devi essere un programmatore! Potresti donare una piccola somma per accelerare lo sviluppo degli aggiornamenti, o tradurre BCU nella tua lingua. Qualunque aiuto, seppur piccolo, sarà molto apprezzato!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Invia feedback</value>

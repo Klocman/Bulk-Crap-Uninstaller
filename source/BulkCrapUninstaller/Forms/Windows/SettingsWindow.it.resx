@@ -136,10 +136,10 @@
     <value>Abilita valutazioni utente delle applicazioni</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Ligua applicazione:</value>
+    <value>Lingua applicazione:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Per modificare la lingua l'applicazione deve essere riavviata</value>
+    <value>Per applicare le modifiche alla lingua l'applicazione deve essere riavviata</value>
   </data>
   <data name="groupBoxMisc.Text" xml:space="preserve">
     <value>Varie</value>
@@ -183,7 +183,7 @@ BCU attenderà il completamento del comando in esecuzione prima dell'esecuzione 
     <value>Strumenti esterni</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Puoi specificare cartelle personalizzate in cui installare le pplicazioni (ad es. D:\Applicazioni). Le cartelle saranno usate da BCU durante la ricerca degli oggetti residui della disinstallazione, applicazioni non registrate e altro. Anche se non necessario, un elenco di queste cartelle permetterà a BCU di lavorare meglio.
+    <value>Puoi specificare cartelle personalizzate in cui installare le applicazioni (ad es. D:\Applicazioni). Le cartelle saranno usate da BCU durante la ricerca degli oggetti residui della disinstallazione, applicazioni non registrate e altro. Anche se non necessario, un elenco di queste cartelle permetterà a BCU di lavorare meglio.
 
 Le cartelle predefinite di WIndows sono sempre controllate, non hai bisogno di includerle nell'elenco.
 
