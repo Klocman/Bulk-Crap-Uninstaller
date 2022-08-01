@@ -121,7 +121,7 @@
     <value>Verbonden de-installer naam</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>Voeg toe aan taak</value>
+    <value>Aan taak toevoegen</value>
   </data>
   <data name="olvColumnRelatedApps.Text" xml:space="preserve">
     <value>Verbonden met:</value>
