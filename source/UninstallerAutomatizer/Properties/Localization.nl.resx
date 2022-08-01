@@ -121,13 +121,13 @@
     <value>Ongeldig aantal argumenten.</value>
   </data>
   <data name="Error_UnknownUninstallerType" xml:space="preserve">
-    <value>Onbekend uninstaller type: {0}</value>
+    <value>Onbekend de-installer type: {0}</value>
   </data>
   <data name="Error_InvalidPath" xml:space="preserve">
     <value>Ongeldig pad of bestand bestaat niet: {0} </value>
   </data>
   <data name="Error_NotSupported" xml:space="preserve">
-    <value>Automatisering van {0} uninstallers wordt niet ondersteund.</value>
+    <value>Automatisering van {0} de-installers wordt niet ondersteund.</value>
   </data>
   <data name="Message_Starting" xml:space="preserve">
     <value>Automatisch de-installeren "{0}"</value>
