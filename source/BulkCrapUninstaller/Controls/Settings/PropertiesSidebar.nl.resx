@@ -142,7 +142,7 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Updates voor andere programma's. In de regel worden zij tezamen met hun 'ouder' programma gede-installeerd. Daarom kunnen zij worden genegeerd.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>Niet geregistreerde programma's tonen.</value>
+    <value>Niet geregistreerde programma's tonen</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
     <value>Alles verbergen wat door MIcrosoft werd uitgebracht.</value>

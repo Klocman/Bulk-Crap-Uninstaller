@@ -144,7 +144,7 @@
     <value>Vertrouwen</value>
   </data>
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Deïnstaller naam</value>
+    <value>De-installer naam</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
     <value>De volgende onderdelen zijn waarschijnlijk door uw de-installer achter gebleven. Sommige de-installers kunnen falen in het verwijderen van programma onderdelen ten koste van opslag capaciteit. Echter de meeste van deze onderdelen zijn waarschijnlijk programma instellingen, die ongevaarlijk zijn en slechts weinig schijfruimte innemen.</value>

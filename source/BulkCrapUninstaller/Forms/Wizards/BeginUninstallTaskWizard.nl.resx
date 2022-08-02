@@ -124,16 +124,16 @@
     <value>Annuleren</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
-    <value>Terug</value>
+    <value>Vorige</value>
   </data>
   <data name="buttonNext.Text" xml:space="preserve">
-    <value>Doorgaan</value>
+    <value>Volgende</value>
   </data>
   <data name="p1Heading.Text" xml:space="preserve">
-    <value>Verwante programma's die u wilt de-installeren</value>
+    <value>Gerelateerde programma's die u wilt de-installeren</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Verwant</value>
+    <value>Gerelateerd</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Bevestig dat alles hieronder veilig is om te de-installeren</value>
@@ -205,7 +205,7 @@
     <value>START DE-INSTALLATIE</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Wees er van overtuigd dat de volgende informatie juist is, alvorens de de-installatie te starten. Dit is de laatste kans!</value>
+    <value>Wees er van overtuigd dat de volgende informatie juist is, alvorens de de-installatie te starten. Dit is uw laatste kans!</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Finale</value>

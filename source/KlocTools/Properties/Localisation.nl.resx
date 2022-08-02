@@ -193,16 +193,16 @@
     <value>Binnen:</value>
   </data>
   <data name="PremadeDialogs_GenericError_Heading" xml:space="preserve">
-    <value>In de applicatie is een onverwachte fout opgetreden</value>
+    <value>In de applicatie is een onverwachte fout opgetreden.</value>
   </data>
   <data name="PremadeDialogs_GenericError_Title" xml:space="preserve">
-    <value>Onverwachte fout</value>
+    <value>Onverwachte fout!</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Details" xml:space="preserve">
     <value>Alle niet opgeslagen gegevens gaan mogelijk verloren. Om gegevensverlies te voorkomen, sluit u de applicaties handmatig.</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Message" xml:space="preserve">
-    <value>Weet u zeker, dat u alle processen wilt beëindigen?</value>
+    <value>Weet u het zeker, dat u alle processen wilt beëindigen?</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Title" xml:space="preserve">
     <value>Lopende processen beëindigen</value>
@@ -217,7 +217,7 @@
     <value>Het pad mag niet naar een bronsleutel verwijzen</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_RemoveDefault" xml:space="preserve">
-    <value>De standaard waarde mag niet worden verwijderd</value>
+    <value>De standaard waarde mag niet verwijderd worden</value>
   </data>
   <data name="PremadeDialogs_GenericErrorExtendedSafe_Heading" xml:space="preserve">
     <value>Fout details:</value>
@@ -253,7 +253,7 @@
     <value>Beschrijving</value>
   </data>
   <data name="FileInfo_FileVersion" xml:space="preserve">
-    <value>Bestands versie</value>
+    <value>Bestandsversie</value>
   </data>
   <data name="FileInfo_InternalName" xml:space="preserve">
     <value>Interne naam</value>
@@ -262,7 +262,7 @@
     <value>Taal</value>
   </data>
   <data name="FileInfo_LegalCopyright" xml:space="preserve">
-    <value>Copywright</value>
+    <value>Copyright</value>
   </data>
   <data name="FileInfo_LegalTrademarks" xml:space="preserve">
     <value>Handelsmerken</value>
@@ -284,7 +284,7 @@
 
 Foutmelding: {0}
 
-U kunt gedetailliëerde informatie over deze fout kopiëren naar het klembord, met een klik op de knop " Kopiëren". Overweeg a.u.b. om deze informatie naar de ontwikkelaar te sturen.</value>
+U kunt gedetailliëerde informatie over deze fout kopiëren naar het klembord, met een klik op de knop "Kopiëren". Overweeg a.u.b. om deze informatie naar de ontwikkelaar te sturen.</value>
   </data>
   <data name="FileInfo_CreationTime" xml:space="preserve">
     <value>Tijd gemaakt</value>
