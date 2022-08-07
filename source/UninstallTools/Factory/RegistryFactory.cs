@@ -139,8 +139,16 @@ namespace UninstallTools.Factory
 
         private static FileSize GetEstimatedSize(RegistryKey uninstallerKey)
         {
-            var tempSize = (int)uninstallerKey.GetValue(RegistryNameEstimatedSize, 0);
-            return FileSize.FromKilobytes(tempSize);
+            try
+            {
+                // Use Convert.ToInt64 because some applications put a string in here instead of a number
+                var tempSize = Convert.ToInt64(uninstallerKey.GetValue(RegistryNameEstimatedSize, 0));
+                return FileSize.FromKilobytes(tempSize);
+            }
+            catch (SystemException e) when (e is FormatException or InvalidCastException)
+            {
+                return FileSize.Empty;
+            }
         }
 
         private static Guid GetGuid(RegistryKey uninstallerKey)
