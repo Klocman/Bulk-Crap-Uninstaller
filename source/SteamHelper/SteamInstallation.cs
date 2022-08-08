@@ -15,18 +15,20 @@ namespace SteamHelper
     internal class SteamInstallation
     {
         private static SteamInstallation _instance;
+        private IReadOnlyList<string> _steamAppsLocations;
 
         private SteamInstallation()
         {
             InstallationDirectory = FindSteamInstallationLocation();
             MainExecutableFilename = Path.Combine(InstallationDirectory, "Steam.exe");
-            SteamAppsLocations = FindSteamAppsLocations(InstallationDirectory);
         }
 
         public static SteamInstallation Instance => _instance ?? (_instance = new SteamInstallation());
 
         public string InstallationDirectory { get; }
-        public IEnumerable<string> SteamAppsLocations { get; }
+
+        public IReadOnlyList<string> SteamAppsLocations => _steamAppsLocations ??= FindSteamAppsLocations(InstallationDirectory).ToList().AsReadOnly();
+
         public string MainExecutableFilename { get; }
 
         private static IEnumerable<string> FindSteamAppsLocations(string installationDirectory)
@@ -52,7 +54,7 @@ namespace SteamHelper
                 }
             }
 
-            return libraryLocations.Distinct().Where(Directory.Exists);
+            return libraryLocations.Distinct(StringComparer.CurrentCultureIgnoreCase).Where(Directory.Exists);
         }
 
         private static string FindSteamInstallationLocation()
