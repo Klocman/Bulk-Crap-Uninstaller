@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SteamHelper": {
+      "commandName": "Project",
+      "commandLineArgs": "list /info"
+    }
+  }
+}

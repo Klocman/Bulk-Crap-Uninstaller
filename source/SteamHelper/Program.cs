@@ -16,7 +16,7 @@ namespace SteamHelper
     internal static class Program
     {
         private static QueryType _queryType = QueryType.None;
-        private static bool _silent;
+        private static bool _silentSwitch, _infoSwitch;
         private static int _appId;
 
         /// <summary>
@@ -26,9 +26,10 @@ namespace SteamHelper
         /// 1223 - The operation was canceled by the user.
         /// 
         /// Commands
-        /// u[ninstall] [/s[ilent]] AppID     - Uninstall an app
-        /// i[nfo] AppID                      - Show info about an app
-        /// l[ist]                            - List app ID's
+        /// u[ninstall] [/s[ilent]] AppID     - Uninstall a Steam App
+        /// i[nfo] AppID                      - Show information about a Steam App
+        /// l[ist]                            - List all detected Steam App ID's
+        /// l[ist] /i[nfo]                    - List information about all detected Steam Apps
         /// steam                             - Show Steam install location
         /// </summary>                        
         private static int Main(string[] args)
@@ -49,18 +50,34 @@ namespace SteamHelper
                         break;
 
                     case QueryType.Uninstall:
-                        SteamUninstaller.UninstallSteamApp(SteamApplicationInfo.FromAppId(_appId), _silent);
+                        SteamUninstaller.UninstallSteamApp(SteamApplicationInfo.FromAppId(_appId), _silentSwitch);
                         break;
 
                     case QueryType.List:
-                        foreach (var result in SteamInstallation.Instance.SteamAppsLocations
-                            .SelectMany(x => Directory.GetFiles(x, @"appmanifest_*.acf")
-                                .Select(p => Path.GetFileNameWithoutExtension(p).Substring(12)))
-                            .Select(x => int.TryParse(x, out var num) ? num : (int?)null)
-                            .Where(x => x != null)
-                            .Distinct()
-                            .OrderBy(x => x))
-                            Console.WriteLine(result);
+                        if (!_infoSwitch)
+                        {
+                            foreach (var result in SteamInstallation.Instance.SteamAppsLocations
+                                    .SelectMany(x => Directory.GetFiles(x, @"appmanifest_*.acf")
+                                                              .Select(p => Path.GetFileNameWithoutExtension(p).Substring(12)))
+                                    .Select(x => int.TryParse(x, out var num) ? num : (int?)null)
+                                    .Where(x => x != null)
+                                    .Distinct()
+                                    .OrderBy(x => x))
+                                Console.WriteLine(result);
+                        }
+                        else
+                        {
+                            var query = from appsLocStr in SteamInstallation.Instance.SteamAppsLocations
+                                        let appsLocation = new DirectoryInfo(appsLocStr)
+                                        from manifest in appsLocation.GetFiles(@"appmanifest_*.acf")
+                                        let info = SteamApplicationInfo.FromAppManifest(manifest, appsLocation)
+                                        where info != null
+                                        orderby info.AppId
+                                        select info;
+                            foreach (var applicationInfo in query)
+                                Console.WriteLine(HelperTools.ObjectToConsoleOutput(applicationInfo));
+                        }
+
                         break;
 
                     case QueryType.SteamDir:
@@ -103,11 +120,16 @@ namespace SteamHelper
                         _queryType = QueryType.GetInfo;
                         break;
 
+                    case @"/i":
+                    case @"/info":
+                        if (_queryType != QueryType.List) throw new FormatException(@"/info must follow the list command");
+                        _infoSwitch = true;
+                        break;
+
                     case @"/s":
                     case @"/silent":
-                        if (_queryType != QueryType.Uninstall)
-                            throw new FormatException(@"/silent must follow the uninstall command");
-                        _silent = true;
+                        if (_queryType != QueryType.Uninstall) throw new FormatException(@"/silent must follow the uninstall command");
+                        _silentSwitch = true;
                         break;
 
                     case @"l":
