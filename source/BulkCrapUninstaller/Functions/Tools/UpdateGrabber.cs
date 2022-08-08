@@ -22,8 +22,9 @@ namespace BulkCrapUninstaller.Functions.Tools
         public static void LookForUpdates()
         {
             bool? result = null;
+            Version latestVersion = null;
             var error = LoadingDialog.ShowDialog(null, Localisable.LoadingDialogTitleSearchingForUpdates,
-                _ => { result = IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version); });
+                _ => { result = IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version, out latestVersion); });
 
             if (error == null)
             {
@@ -34,7 +35,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                         break;
 
                     case true:
-                        AskAndBeginUpdate();
+                        AskAndBeginUpdate(latestVersion);
                         break;
 
                     case false:
@@ -48,9 +49,9 @@ namespace BulkCrapUninstaller.Functions.Tools
             }
         }
 
-        public static void AskAndBeginUpdate()
+        public static void AskAndBeginUpdate(Version latestVersion)
         {
-            if (MessageBoxes.UpdateAskToDownload())
+            if (MessageBoxes.UpdateAskToDownload(latestVersion))
             {
                 try
                 {
@@ -85,20 +86,20 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         /// <param name="canDisplayMessage">updateFoundCallback will be called after this returns true</param>
         /// <param name="updateFoundCallback">Launched only if a new update was found. It's launched from a background thread.</param>
-        public static void AutoUpdate(Func<bool> canDisplayMessage, Action updateFoundCallback)
+        public static void AutoUpdate(Func<bool> canDisplayMessage, Action<Version> updateFoundCallback)
         {
             if (Settings.Default.MiscCheckForUpdates && WindowsTools.IsNetworkAvailable())
             {
                 new Thread(() =>
                 {
-                    if (IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version) == true)
+                    if (IsUpdateAvailable(Assembly.GetExecutingAssembly().GetName().Version, out var updateVersion) == true)
                     {
                         while (!canDisplayMessage())
                             Thread.Sleep(100);
 
                         try
                         {
-                            updateFoundCallback();
+                            updateFoundCallback(updateVersion);
                         }
                         catch
                         {
@@ -116,21 +117,32 @@ namespace BulkCrapUninstaller.Functions.Tools
         {
             // Should result in something like "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v4.1"
             var url = GetFinalRedirect(LatestReleaseUrl);
-            var i = url.LastIndexOf('/');
-            var tag = url.Substring(i).TrimStart('/', 'v');
-            return new Version(tag);
+            if (url != null)
+            {
+                var i = url.LastIndexOf('/');
+                var tag = url.Substring(i).TrimStart('/', 'v');
+                return new Version(tag);
+            }
+
+            return null;
         }
 
         /// <summary>
         /// Returns null if failed to look for updates, else returns if there is a newer version available
         /// </summary>
-        public static bool? IsUpdateAvailable(Version currentVersion)
+        public static bool? IsUpdateAvailable(Version currentVersion, out Version updateVersion)
         {
+            updateVersion = null;
             try
             {
                 var latestVersion = CheckLatestVersion();
-                if (latestVersion > currentVersion)
+                if (latestVersion == null)
                 {
+                    throw new WebException("Failed to get version from URL");
+                }
+                else if (latestVersion > currentVersion)
+                {
+                    updateVersion = latestVersion;
                     Console.WriteLine("A new version is available: " + latestVersion);
                     return true;
                 }

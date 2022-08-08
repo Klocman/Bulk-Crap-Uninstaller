@@ -522,7 +522,7 @@ namespace BulkCrapUninstaller.Forms
         private void BackgroundSearchForUpdates()
         {
             UpdateGrabber.AutoUpdate(() => _listView.FirstRefreshCompleted,
-                () => this.SafeInvoke(UpdateGrabber.AskAndBeginUpdate));
+                v => this.SafeInvoke(() => UpdateGrabber.AskAndBeginUpdate(v)));
         }
 
         private void basicOperationsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)

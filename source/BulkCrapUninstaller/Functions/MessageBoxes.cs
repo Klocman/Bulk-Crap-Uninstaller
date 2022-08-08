@@ -554,20 +554,14 @@ namespace BulkCrapUninstaller.Functions
                     Localisable.MessageBoxes_ModifyCommandMissing_Details, SystemIcons.Warning, Buttons.ButtonOk));
         }
 
-        internal static bool UpdateAskToDownload()
+        internal static bool UpdateAskToDownload(Version latestVersion)
         {
-            //var changes = UpdateSystem.LatestReply.GetChanges().ToArray();
-            var versionNumber = UpdateGrabber.CheckLatestVersion(); //UpdateSystem.LatestReply.GetUpdateVersion().ToString(3);
-
-            //return CustomMessageBox.ShowDialog(DefaultOwner,
-            //    new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
-            //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
-            //        string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
-            //        SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
+            if (latestVersion == null) throw new ArgumentNullException(nameof(latestVersion));
 
             return CustomMessageBox.ShowDialog(DefaultOwner,
                 new CmbBasicSettings(Localisable.MessageBoxes_Title_Search_for_updates,
-                    string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, versionNumber),
+                    string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Message, latestVersion),
+            //      string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_UpdateAskToDownload_Details, string.Join("\n- ", changes)),
                     string.Format(CultureInfo.CurrentCulture, "Do you want to open the download page to get the latest version of BCUninstaller?"), //todo localize
                     SystemIcons.Information, Buttons.ButtonYes, Buttons.ButtonNo)) == CustomMessageBox.PressedButton.Middle;
         }
