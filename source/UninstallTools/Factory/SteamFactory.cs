@@ -5,9 +5,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using Klocman.Extensions;
 using Klocman.IO;
 using Klocman.Tools;
 using UninstallTools.Properties;
@@ -23,7 +22,7 @@ namespace UninstallTools.Factory
         {
             get
             {
-                if(_steamLocation == null)
+                if (_steamLocation == null)
                     GetSteamInfo();
                 return _steamLocation;
             }
@@ -60,7 +59,7 @@ namespace UninstallTools.Factory
             }
         }
 
-        internal static string SteamHelperPath 
+        internal static string SteamHelperPath
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
@@ -69,40 +68,25 @@ namespace UninstallTools.Factory
             var results = new List<ApplicationUninstallerEntry>();
             if (!SteamHelperIsAvailable) return results;
 
-            var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "list");
+            var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "l /i");
             if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase)) return results;
 
-            foreach (var idString in output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries))
+            foreach (var data in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
-                if (!int.TryParse(idString, out var appId)) continue;
-
-                output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "info " + appId.ToString("G"));
-
-                if (string.IsNullOrEmpty(output)) continue;
-
-                var lines = output.SplitNewlines(StringSplitOptions.RemoveEmptyEntries).Select(x =>
-                {
-                    var o = x.Split(new[] { " - " }, StringSplitOptions.None);
-                    return new KeyValuePair<string, string>(o[0], o[1]);
-                }).ToList();
-                
-                string GetValue(string fieldName)
-                {
-                    return lines.Single(x => x.Key.Equals(fieldName, StringComparison.InvariantCultureIgnoreCase)).Value;
-                }
+                if (!int.TryParse(data["AppId"], out var appId)) continue;
 
                 var entry = new ApplicationUninstallerEntry
                 {
-                    DisplayName = GetValue("Name"),
-                    UninstallString = GetValue("UninstallString"),
-                    InstallLocation = GetValue("InstallDirectory"),
+                    DisplayName = data["Name"],
+                    UninstallString = data["UninstallString"],
+                    InstallLocation = data["InstallDirectory"],
                     UninstallerKind = UninstallerType.Steam,
                     IsValid = true,
                     IsOrphaned = true,
                     RatingId = "Steam App " + appId.ToString("G")
                 };
 
-                if (long.TryParse(GetValue("SizeOnDisk"), out var bytes))
+                if (long.TryParse(data["SizeOnDisk"], out var bytes))
                     entry.EstimatedSize = FileSize.FromBytes(bytes);
 
                 results.Add(entry);
