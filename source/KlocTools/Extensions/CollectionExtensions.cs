@@ -93,16 +93,6 @@ namespace Klocman.Extensions
         }
 
         /// <summary>
-        /// Run distinct on the specified key
-        /// </summary>
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> source,
-            Func<TSource, TKey> keySelector)
-        {
-            var seenKeys = new HashSet<TKey>();
-            return source.Where(element => seenKeys.Add(keySelector(element)));
-        }
-
-        /// <summary>
         /// Run distinct using the specified equality comparator
         /// </summary>
         public static IEnumerable<TSource> Distinct<TSource>(this IEnumerable<TSource> source,
