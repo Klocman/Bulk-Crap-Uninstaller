@@ -4,7 +4,6 @@
 */
 
 using System;
-using Klocman.Extensions;
 
 namespace UninstallTools.Factory.InfoAdders
 {

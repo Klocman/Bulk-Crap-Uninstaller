@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
@@ -27,6 +28,7 @@ namespace Klocman.Extensions
             dictionary.Clear();
             var serializer = new XmlSerializer(typeof(List<Entry>));
             var list = (List<Entry>)serializer.Deserialize(reader);
+            if (list == null) throw new ArgumentException(@"Reader didn't contain valid data", nameof(reader));
 
             foreach (var entry in list)
             {

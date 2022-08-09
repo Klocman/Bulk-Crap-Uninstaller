@@ -16,7 +16,7 @@ namespace Klocman.Collections
     //[Serializable]
     public class ObservedList<T> : IList<T>
     {
-        private readonly List<T> _itemList = new List<T>();
+        private readonly List<T> _itemList = new();
         public virtual int Count => _itemList.Count;
         public virtual bool IsReadOnly => false;
 

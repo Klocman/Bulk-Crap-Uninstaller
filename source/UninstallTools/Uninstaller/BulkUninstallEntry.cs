@@ -41,10 +41,9 @@ namespace UninstallTools.Uninstaller
                 }
             }).Where(x => !string.IsNullOrEmpty(x)).Concat(new[] { "explorer" }).Distinct().ToArray();
 
-        private readonly object _operationLock = new object();
+        private readonly object _operationLock = new();
 
-        private readonly Dictionary<string, PerfCounterEntry> _perfCounterBuffer =
-            new Dictionary<string, PerfCounterEntry>();
+        private readonly Dictionary<string, PerfCounterEntry> _perfCounterBuffer = new();
 
         private bool _canRetry = true;
         private SkipCurrentLevel _skipLevel = SkipCurrentLevel.None;
@@ -547,7 +546,7 @@ namespace UninstallTools.Uninstaller
             {
                 try
                 {
-                    if (process.MainModule.FileName.Contains(
+                    if (process.MainModule!.FileName!.Contains(
                             UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase) ||
                         process.GetCommandLine().Contains(
                             UninstallerEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))

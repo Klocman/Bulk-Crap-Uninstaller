@@ -21,56 +21,56 @@ namespace BulkCrapUninstaller.Functions.Tools
 
         private X509Certificate2 BaseCert { get; }
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Archived))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Archived))]
         public bool Archived => BaseCert.Archived;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Extensions))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Extensions))]
         public string Extensions
-            => string.Join(", ", BaseCert.Extensions.Cast<X509Extension>().Select(x => x.Oid.FriendlyName).ToArray());
+            => string.Join(", ", BaseCert.Extensions.Cast<X509Extension>().Where(x => x.Oid != null).Select(x => x.Oid.FriendlyName).ToArray());
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_FriendlyName))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_FriendlyName))]
         public string FriendlyName => BaseCert.FriendlyName;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_HasPrivateKey))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_HasPrivateKey))]
         public bool HasPrivateKey => BaseCert.HasPrivateKey;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Issuer))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Issuer))]
         public string Issuer => BaseCert.Issuer;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_IssuerName))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_IssuerName))]
         public string IssuerName => BaseCert.IssuerName.Format(false);
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_NotAfter))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_NotAfter))]
         public DateTime NotAfter => BaseCert.NotAfter;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_NotBefore))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_NotBefore))]
         public DateTime NotBefore => BaseCert.NotBefore;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_PrivateKey))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_PrivateKey))]
         public string PrivateKey => BaseCert.PrivateKey?.ToString();
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_PublicKey))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_PublicKey))]
         public string PublicKey => BaseCert.PublicKey.Key.SignatureAlgorithm;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_RawData))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_RawData))]
         public string RawData => BaseCert.RawData.ToHexString();
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_SerialNumber))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_SerialNumber))]
         public string SerialNumber => BaseCert.SerialNumber;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_SignatureAlgorithm))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_SignatureAlgorithm))]
         public string SignatureAlgorithm => BaseCert.SignatureAlgorithm.FriendlyName;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Subject))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Subject))]
         public string Subject => BaseCert.Subject;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_SubjectName))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_SubjectName))]
         public string SubjectName => BaseCert.SubjectName.Format(false);
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Thumbprint))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Thumbprint))]
         public string Thumbprint => BaseCert.Thumbprint;
 
-        [LocalisedName(typeof (Localisable), nameof(Localisable.LocalizedX509Certificate2_Version))]
+        [LocalisedName(typeof(Localisable), nameof(Localisable.LocalizedX509Certificate2_Version))]
         public int Version => BaseCert.Version;
     }
 }

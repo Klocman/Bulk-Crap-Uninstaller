@@ -120,7 +120,7 @@ namespace UninstallTools.Junk.Finders.Registry
                 }
             }
 
-            return output.Concat(ScanRelatedKeys(output)).Cast<IJunkResult>();
+            return output.Concat(ScanRelatedKeys(output));
         }
 
         private IEnumerable<RegistryKeyJunk> FindJunkRecursively(RegistryKey softwareKey, int level = -1)
@@ -161,6 +161,7 @@ namespace UninstallTools.Junk.Finders.Registry
                         using (var subKey = softwareKey.OpenSubKey(subKeyName, false))
                         {
                             if (subKey != null)
+                                // ReSharper disable once PossibleMultipleEnumeration
                                 returnList = returnList.Concat(FindJunkRecursively(subKey, level + 1));
                         }
                     }
@@ -179,6 +180,7 @@ namespace UninstallTools.Junk.Finders.Registry
             {
             }
 
+            // ReSharper disable once PossibleMultipleEnumeration
             return returnList;
         }
 

@@ -42,7 +42,7 @@ namespace BulkCrapUninstaller.Forms
         private string MainTitleBarText { get; }
 
         public static string CertificateCacheFilename { get; } = Path.Combine(Program.AssemblyLocation.FullName, "CertCache.xml");
-        public static CertificateCache CertificateCache { get; } = new CertificateCache(CertificateCacheFilename);
+        public static CertificateCache CertificateCache { get; } = new(CertificateCacheFilename);
 
         private readonly UninstallerListViewUpdater _listView;
         private readonly SettingTools _setMan;
@@ -50,7 +50,7 @@ namespace BulkCrapUninstaller.Forms
         private readonly AppUninstaller _appUninstaller;
         private readonly UninstallerListConfigurator _uninstallerListConfigurator;
 
-        private readonly ListLegendWindow _listLegendWindow = new ListLegendWindow();
+        private readonly ListLegendWindow _listLegendWindow = new();
         private DebugWindow _debugWindow;
 
         private bool _previousListLegendState = true;
@@ -202,8 +202,8 @@ namespace BulkCrapUninstaller.Forms
 
             var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
 
-            this.toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
-            this.toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
+            toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
+            toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
@@ -216,6 +216,7 @@ namespace BulkCrapUninstaller.Forms
                 _listLegendWindow?.Dispose();
                 _uninstallerListConfigurator?.Dispose();
                 _debugWindow?.Dispose();
+                _uninstallerListPostProcesser?.Dispose();
             }
             catch (Exception exception)
             {
@@ -364,7 +365,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void UpdateTreeMap(object sender, EventArgs args)
         {
-            treeMap1.Populate(_listView.FilteredUninstallers.Cast<object>());
+            treeMap1.Populate(_listView.FilteredUninstallers);
         }
 
         private void OnApplicationListVisibleItemsChanged(object sender, EventArgs e)
@@ -1822,7 +1823,7 @@ namespace BulkCrapUninstaller.Forms
             LockApplication(true);
             try
             {
-                SystemRestore.BeginSysRestore(0, false, true, this);
+                SystemRestore.BeginSysRestore(0, false, this);
             }
             catch (Exception exception)
             {

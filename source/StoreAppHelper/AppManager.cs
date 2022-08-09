@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
-using System.Xml.Linq;
 using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Management.Deployment;
@@ -86,16 +85,16 @@ namespace StoreAppHelper
                 xmlDoc.LoadXml(manifestContents);
                 // namespaces are mandatory, even if there's a default namespace
                 XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
-                nsmgr.AddNamespace("ns", xmlDoc.DocumentElement.NamespaceURI);
+                nsmgr.AddNamespace("ns", xmlDoc.DocumentElement!.NamespaceURI);
                 var properties = xmlDoc.DocumentElement.SelectSingleNode("//ns:Properties", nsmgr);
-                var displayName = properties.SelectSingleNode("ns:DisplayName/text()", nsmgr)?.Value;
+                var displayName = properties!.SelectSingleNode("ns:DisplayName/text()", nsmgr)?.Value;
                 var logoPath = properties.SelectSingleNode("ns:Logo/text()", nsmgr)?.Value;
                 var publisherDisplayName = properties.SelectSingleNode("ns:PublisherDisplayName/text()", nsmgr)?.Value;
                 var installPath = package.InstalledLocation.Path;
                 var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
 
                 return new App(package.Id.FullName,
-                    new string[] {  extractedDisplayName, displayName, package.DisplayName, package.Id.Name}
+                    new[] {  extractedDisplayName, displayName, package.DisplayName, package.Id.Name}
                         .FirstOrDefault(s => !(string.IsNullOrEmpty(s) || s.StartsWith("ms-resource:"))) ?? "",
                     ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), 
                     ExtractDisplayIcon(installPath, logoPath), 
@@ -148,8 +147,7 @@ namespace StoreAppHelper
         /// <param name="displayName">Application.VisualElements.DisplayName</param>
         private static string ExtractDisplayName(string appDir, string packageName, string displayName)
         {
-            Uri uri;
-            if (!Uri.TryCreate(displayName, UriKind.Absolute, out uri))
+            if (!Uri.TryCreate(displayName, UriKind.Absolute, out var uri))
                 return displayName;
 
             var priPath = Path.Combine(appDir, "resources.pri");

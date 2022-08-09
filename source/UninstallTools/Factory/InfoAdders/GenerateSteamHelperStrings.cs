@@ -15,8 +15,7 @@ namespace UninstallTools.Factory.InfoAdders
             if (target.UninstallerKind != UninstallerType.Steam || !SteamFactory.SteamHelperIsAvailable) return;
             
             var appId = target.RatingId.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Last();
-            int intAppId;
-            if (!int.TryParse(appId, out intAppId)) return;
+            if (!int.TryParse(appId, out _)) return;
 
             if(!target.UninstallPossible || UninstallToolsGlobalConfig.QuietAutomatization)
                 target.UninstallString = $"\"{SteamFactory.SteamHelperPath}\" uninstall {appId}";

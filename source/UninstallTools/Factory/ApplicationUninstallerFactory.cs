@@ -19,7 +19,7 @@ namespace UninstallTools.Factory
 {
     public static class ApplicationUninstallerFactory
     {
-        private static readonly InfoAdderManager InfoAdder = new InfoAdderManager();
+        private static readonly InfoAdderManager InfoAdder = new();
 
         public static IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback callback)
         {

@@ -76,7 +76,7 @@ namespace NBug.Core.Reporting
 
                 if (file.Contains("*") || file.Contains("?"))
                 {
-                    foreach (var item in Directory.GetFiles(dir, file))
+                    foreach (var item in Directory.GetFiles(dir!, file))
                     {
                         AddToZip(zipStorer, Settings.NBugDirectory, item);
                     }

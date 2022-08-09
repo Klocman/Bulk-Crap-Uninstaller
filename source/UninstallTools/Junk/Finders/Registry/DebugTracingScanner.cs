@@ -33,7 +33,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
             try
             {
-                pathRoot = Path.GetPathRoot(target.InstallLocation);
+                pathRoot = Path.GetPathRoot(target.InstallLocation) ?? throw new ArgumentException("No path root for " + target.InstallLocation);
             }
             catch (SystemException ex)
             {

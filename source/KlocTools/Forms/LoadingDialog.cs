@@ -6,7 +6,6 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using Klocman.Tools;
@@ -171,6 +170,9 @@ namespace Klocman.Forms
                 case ContentAlignment.BottomRight:
                     newPos.Y = Owner.Location.Y + Owner.Size.Height - Size.Height;
                     break;
+
+                default:
+                    break;
             }
             switch (_ownerAlignment)
             {
@@ -183,6 +185,9 @@ namespace Klocman.Forms
                 case ContentAlignment.MiddleRight:
                 case ContentAlignment.BottomRight:
                     newPos.X = Owner.Location.X + Owner.Size.Width - Size.Width;
+                    break;
+
+                default:
                     break;
             }
 

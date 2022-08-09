@@ -48,7 +48,7 @@ namespace BulkCrapUninstaller.Forms
                 var wr = new ComboBoxWrapper<MethodInfo>(x, y =>
                 {
                     var name = y.ToString();
-                    return name.Substring(name.IndexOf(' ') + 1);
+                    return name!.Substring(name.IndexOf(' ') + 1);
                 });
                 comboBoxMessages.Items.Add(wr);
             }
@@ -159,7 +159,7 @@ namespace BulkCrapUninstaller.Forms
         private void TestCrashBackgroundThread(object sender, EventArgs e)
         {
             NBug.Settings.ReleaseMode = false;
-            new Thread(() => { throw new ArgumentException("TestCrashBackgroundThread", new IOException("Inner exception")); }).Start();
+            new Thread(() => throw new ArgumentException("TestCrashBackgroundThread", new IOException("Inner exception"))).Start();
         }
 
         private void TestCrashUiThread(object sender, EventArgs e)

@@ -67,10 +67,10 @@ namespace BulkCrapUninstaller.Functions
                 if (kvp.Value == null)
                     continue;
 
-                if (kvp.Value is Guid && ((Guid)kvp.Value).IsEmpty())
+                if (kvp.Value is Guid guid && guid.IsEmpty())
                     continue;
 
-                if (kvp.Value is DateTime && ((DateTime)kvp.Value).IsDefault())
+                if (kvp.Value is DateTime time && time.IsDefault())
                     continue;
                 
                 if ((kvp.Value as Version)?.IsZeroOrNull() ?? false)
@@ -78,13 +78,12 @@ namespace BulkCrapUninstaller.Functions
 
                 string result;
                 
-                if (kvp.Value is bool)
-                    result = ((bool)kvp.Value).ToYesNo();
-                else if (kvp.Value is Enum)
-                    result = ((Enum)kvp.Value).GetLocalisedName();
-                else if (kvp.Value is ICollection)
-                    result = string.Join(" | ",
-                        ((ICollection)kvp.Value).Cast<object>().Select(x => x.ToString()).ToArray());
+                if (kvp.Value is bool b)
+                    result = b.ToYesNo();
+                else if (kvp.Value is Enum e)
+                    result = e.GetLocalisedName();
+                else if (kvp.Value is ICollection c)
+                    result = string.Join(" | ", c.Cast<object>().Select(x => x.ToString()).ToArray());
                 else
                     result = kvp.Value.ToString();
 

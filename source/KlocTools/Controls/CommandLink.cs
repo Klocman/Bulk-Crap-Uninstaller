@@ -28,7 +28,7 @@ namespace Klocman.Controls
 
         // Prevent FlatStyle from changing
         public new FlatStyle FlatStyle => base.FlatStyle;
-        protected override Size DefaultSize => new Size(180, 60);
+        protected override Size DefaultSize => new(180, 60);
 
         [Category("Command Link"),
          Description("Gets or sets the note text of the command link."),

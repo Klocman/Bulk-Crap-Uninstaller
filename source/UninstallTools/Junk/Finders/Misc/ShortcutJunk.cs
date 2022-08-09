@@ -119,7 +119,7 @@ namespace UninstallTools.Junk.Finders.Misc
                     results.Remove(junkNode);
             }
 
-            return results.Cast<IJunkResult>();
+            return results;
         }
 
         /// <summary>

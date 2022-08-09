@@ -10,7 +10,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
 using Klocman;
 using Klocman.Forms;
@@ -688,7 +687,7 @@ namespace BulkCrapUninstaller.Functions
         {
             try
             {
-                var dialog = new FolderBrowserDialog()
+                var dialog = new FolderBrowserDialog
                 {
                     AutoUpgradeEnabled = true,
                     Description = title,

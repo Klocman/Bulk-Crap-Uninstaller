@@ -114,6 +114,7 @@ namespace Klocman.Tools
             using (var dir = new ManagementObject(objPath))
             {
                 var outParams = dir.InvokeMethod("Compress", null, null);
+                if (outParams == null) throw new ArgumentNullException(nameof(outParams));
                 var ret = (uint)outParams.Properties["ReturnValue"].Value;
                 if (ret != 0)
                     throw new IOException("Win32_Directory.Compress returned " + ret);

@@ -25,7 +25,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public bool HasValue => AverageRating.HasValue || MyRating.HasValue;
         public static RatingEntry Empty { get; } = default(RatingEntry);
 
-        public static RatingEntry NotAvailable { get; } = new RatingEntry
+        public static RatingEntry NotAvailable { get; } = new()
         {
             AverageRating = null,
             MyRating = null,
@@ -40,7 +40,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
-            return obj is RatingEntry && Equals((RatingEntry)obj);
+            return obj is RatingEntry entry && Equals(entry);
         }
 
         public static UninstallerRating ToRating(int value)

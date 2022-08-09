@@ -55,7 +55,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 else
                 {
                     if (_md5 == null) _md5 = System.Security.Cryptography.MD5.Create();
-                    byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(str);
+                    byte[] inputBytes = Encoding.UTF8.GetBytes(str);
                     var hashBytes = _md5.ComputeHash(inputBytes);
                     var stableHash = BitConverter.ToUInt64(hashBytes, 0) ^ BitConverter.ToUInt64(hashBytes, 8);
                     _hashCache.TryAdd(str, stableHash);
@@ -63,11 +63,13 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 }
             }
 
+            // Needed for deserializing incoming data from the server
             public class AverageRatingEntry
             {
                 public int AverageRating { get; set; }
                 public ulong AppId { get; set; }
             }
+            // Needed for deserializing incoming data from the server
             public class UserRatingEntry
             {
                 public ulong UserId { get; set; }

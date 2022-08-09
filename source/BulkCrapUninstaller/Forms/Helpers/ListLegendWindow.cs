@@ -43,13 +43,13 @@ namespace BulkCrapUninstaller.Forms
 
         public ListLegend ListLegend => listLegend1;
 
-        private void ListLegendWindow_VisibleChanged(object sender, System.EventArgs e)
+        private void ListLegendWindow_VisibleChanged(object sender, EventArgs e)
         {
             if (Opacity < .9)
                 opacityResetTimer.Start();
         }
 
-        private void ListLegendWindow_EnabledChanged(object sender, System.EventArgs e)
+        private void ListLegendWindow_EnabledChanged(object sender, EventArgs e)
         {
             if (Opacity < .9)
                 opacityResetTimer.Start();

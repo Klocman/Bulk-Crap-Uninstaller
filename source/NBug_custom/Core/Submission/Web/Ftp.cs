@@ -94,7 +94,7 @@ namespace NBug.Core.Submission.Web
             }
 
             using (var response = (FtpWebResponse) request.GetResponse())
-            using (var reader = new StreamReader(response.GetResponseStream()))
+            using (var reader = new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException("GetResponseStream null")))
             {
                 var responseString = reader.ReadToEnd(); // Null on successful transfer
                 if (!string.IsNullOrEmpty(responseString))

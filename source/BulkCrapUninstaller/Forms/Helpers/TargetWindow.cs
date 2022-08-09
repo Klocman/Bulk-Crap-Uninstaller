@@ -52,7 +52,7 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                var parentDirectory = new FileInfo(e.TargetWindow.GetRunningProcess().MainModule.FileName).Directory;
+                var parentDirectory = new FileInfo(e.TargetWindow.GetRunningProcess().MainModule?.FileName ?? throw new InvalidOperationException("Process has no MainModule")).Directory;
                 OnDirectoriesSelected(new DirectoriesSelectedEventArgs(parentDirectory.ToEnumerable().ToList()));
             }
             catch (Exception exception)
@@ -62,7 +62,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        public new static ICollection<DirectoryInfo> ShowDialog(IWin32Window owner)
+        public static new ICollection<DirectoryInfo> ShowDialog(IWin32Window owner)
         {
             using (var window = new TargetWindow())
             {

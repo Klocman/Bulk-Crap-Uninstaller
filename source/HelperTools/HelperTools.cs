@@ -26,8 +26,7 @@ namespace Klocman
 
         public static int HandleHrefMessage(Exception ex)
         {
-            var errorCode = Regex.Match(ex.Message, @"0x[\d\w]{8}")
-                .Captures.Cast<Capture>().FirstOrDefault()?.Value;
+            var errorCode = Regex.Match(ex.Message, @"0x[\d\w]{8}").Captures.FirstOrDefault()?.Value;
 
             if (string.IsNullOrEmpty(errorCode) || errorCode.Length < 8)
                 return (int) ReturnValue.FunctionFailedCode;

@@ -129,7 +129,7 @@ Return codes:
                     source = source.Substring(0, 40);
                 }
 
-                Console.WriteLine($"{displayName,-40}  {version,-20}  {source,-40}");
+                Console.WriteLine($@"{displayName,-40}  {version,-20}  {source,-40}");
             }
             return 0;
         }
@@ -197,7 +197,7 @@ Return codes:
                 return 0;
             }
 
-            Console.WriteLine("{0} application(s) were matched by the list: {1}", apps.Count,
+            Console.WriteLine(@"{0} application(s) were matched by the list: {1}", apps.Count,
                           string.Join("; ", apps.Select(x => x.DisplayName)));
 
             Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");

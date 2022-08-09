@@ -16,6 +16,9 @@ namespace BulkCrapUninstaller.Functions.Tracking
 
         public SingleEventHook(EventHook parent, EventInfo targetEvent)
         {
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            if (targetEvent == null) throw new ArgumentNullException(nameof(targetEvent));
+
             EventName = targetEvent.Name;
 
             Parent = parent;
@@ -26,7 +29,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
 
             TargetEvent = targetEvent;
 
-            Handler = Delegate.CreateDelegate(targetEvent.EventHandlerType, this, SimpleHandlerInfo);
+            Handler = Delegate.CreateDelegate(targetEvent.EventHandlerType ?? throw new ArgumentException("EventHandlerType is null"), this, SimpleHandlerInfo);
 
             TargetEvent.AddEventHandler(TargetProperty, Handler);
         }

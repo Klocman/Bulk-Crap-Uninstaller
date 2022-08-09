@@ -15,7 +15,7 @@ namespace Klocman.Controls
     public partial class ContentAlignmentBox : UserControl
     {
         private readonly IEnumerable<CheckBox> _checkBoxes;
-        private readonly object _lock = new object();
+        private readonly object _lock = new();
         private bool _suppress;
 
         public ContentAlignmentBox()

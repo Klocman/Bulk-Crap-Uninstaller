@@ -20,7 +20,7 @@ namespace NBug.Core.Util.Web
     public class StreamUpload
     {
         private readonly string boundary = string.Empty;
-        private readonly MemoryStream outputStream = new MemoryStream();
+        private readonly MemoryStream outputStream = new();
         private ICredentials credentials;
         private WebResponse response;
 
@@ -100,12 +100,12 @@ namespace NBug.Core.Util.Web
         {
             return (response == null)
                 ? string.Empty
-                : new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                : new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException("GetResponseStream null"), Encoding.UTF8).ReadToEnd();
         }
 
         public StreamUpload Upload(string url)
         {
-            var request = (HttpWebRequest) WebRequest.Create(url);
+            var request = (HttpWebRequest)WebRequest.Create(url);
             request.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
             request.Method = "POST";
 

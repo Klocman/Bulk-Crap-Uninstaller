@@ -53,7 +53,8 @@ namespace BulkCrapUninstaller
             {
                 if (_assemblyLocation == null)
                 {
-                    var location = Assembly.GetAssembly(typeof(Program)).Location;
+                    var location = Assembly.GetAssembly(typeof(Program))?.Location;
+                    if (location == null) throw new InvalidOperationException("Failed to get entry assembly location");
                     if (location.Substring(location.LastIndexOf('\\')).Contains('.'))
                         location = PathTools.GetDirectory(location);
                     _assemblyLocation = new DirectoryInfo(location);
@@ -269,7 +270,7 @@ namespace BulkCrapUninstaller
         public static HttpClient GetHttpClient()
         {
             var cl = new HttpClient();
-            cl.BaseAddress = Program.ConnectionString;
+            cl.BaseAddress = ConnectionString;
             return cl;
         }
     }

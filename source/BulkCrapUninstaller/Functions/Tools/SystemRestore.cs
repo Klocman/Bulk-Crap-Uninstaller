@@ -25,7 +25,8 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         /// <param name="count">How many items are being uninstalled</param>
         /// <param name="displayMessage">If user should be asked to create the restore point. If false, always create</param>
-        public static bool BeginSysRestore(int count, bool displayMessage = true, bool end = false, Form owner = null)
+        /// <param name="owner">Window to show on top of</param>
+        public static bool BeginSysRestore(int count, bool displayMessage = true, Form owner = null)
         {
             if (SysRestore.SysRestoreAvailable())
             {
@@ -47,6 +48,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                                MessageBoxes.SysRestoreContinueAfterError(error.Message) ==
                                MessageBoxes.PressedButton.Yes;
 
+                    default:
                     case MessageBoxes.PressedButton.Cancel:
                         return false;
                 }

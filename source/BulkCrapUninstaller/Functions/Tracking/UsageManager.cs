@@ -19,9 +19,9 @@ namespace BulkCrapUninstaller.Functions.Tracking
     public static class UsageManager
     {
         private static readonly string StatsFilename = Program.AssemblyLocation + @"\UsageStatistics.xml";
-        internal static List<UsageTracker> Trackers = new List<UsageTracker>();
+        internal static List<UsageTracker> Trackers = new();
         private static XDocument _currentData;
-        private static readonly object OperationLock = new object();
+        private static readonly object OperationLock = new();
 
         public static bool IsCollectingData { get; private set; }
 
@@ -61,8 +61,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
                 {
                     var metadata = CurrentData.Root.GetOrCreateElement("Metadata");
                     var counter = metadata.GetOrCreateElement("LaunchCount");
-                    int launchCount;
-                    int.TryParse(counter.Value, out launchCount);
+                    int.TryParse(counter.Value, out var launchCount);
                     return launchCount;
                 }
             }
@@ -151,7 +150,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
             var tempDoc = new XDocument(new XDeclaration("1.0", "utf-8", null), new XElement("UsageStatistics"));
 
             var metadata = tempDoc.Root.GetOrCreateElement("Metadata");
-            metadata.Add(new XElement("ApplicationVersion", Assembly.GetEntryAssembly().GetName().Version.ToString()));
+            metadata.Add(new XElement("ApplicationVersion", Assembly.GetEntryAssembly()?.GetName().Version?.ToString() ?? "Unknown"));
             metadata.Add(new XElement("SystemVersion", Environment.OSVersion.VersionString));
             metadata.Add(new XElement("Is64Bit", ProcessTools.Is64BitProcess));
             metadata.Add(new XElement("Locale", CultureInfo.InstalledUICulture.ToString()));
@@ -179,8 +178,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
                             continue;
 
                         var element = fieldElement.GetOrCreateElement(singleHook.EventName);
-                        int result;
-                        int.TryParse(element.Value, out result);
+                        int.TryParse(element.Value, out var result);
                         element.SetValue(singleHook.HitCount + result);
                     }
 

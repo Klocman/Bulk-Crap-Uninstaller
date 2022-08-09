@@ -22,7 +22,7 @@ namespace Klocman.Extensions
             if (file == null)
                 throw new ArgumentNullException(nameof(file));
             if (!file.Exists)
-                throw new ArgumentException("Requested file doesn't exist", nameof(file));
+                throw new ArgumentException(@"Requested file doesn't exist", nameof(file));
 
             var lq = from property in typeof (FileInfo).GetProperties()
                 select new KeyValuePair<string, object>(property.Name, property.GetValue(file, new object[] {}));

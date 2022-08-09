@@ -51,8 +51,7 @@ namespace Klocman.Extensions
         public static Process GetParentProcess(IntPtr handle)
         {
             ParentProcessUtilities pbi = new ParentProcessUtilities();
-            int returnLength;
-            int status = NtQueryInformationProcess(handle, 0, ref pbi, Marshal.SizeOf(pbi), out returnLength);
+            int status = NtQueryInformationProcess(handle, 0, ref pbi, Marshal.SizeOf(pbi), out _);
             if (status != 0)
                 throw new Win32Exception(status);
 

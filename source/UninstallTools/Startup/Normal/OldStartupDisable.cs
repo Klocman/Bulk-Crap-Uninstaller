@@ -33,14 +33,14 @@ namespace UninstallTools.Startup.Normal
         /// <summary>
         ///     Registry key used to store information about disabled links
         /// </summary>
-        private static readonly StartupPointData DriveDisabledKey = new StartupPointData(
+        private static readonly StartupPointData DriveDisabledKey = new(
             true, false, false, false, string.Empty,
             @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\MSConfig\startupfolder");
 
         /// <summary>
         ///     Registry key used to store information about disabled registry values
         /// </summary>
-        private static readonly StartupPointData RegistryDisabledKey = new StartupPointData(
+        private static readonly StartupPointData RegistryDisabledKey = new(
             true, true, false, false, string.Empty,
             @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\MSConfig\startupreg");
 

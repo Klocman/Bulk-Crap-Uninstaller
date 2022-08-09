@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Klocman;
 using Klocman.Extensions;
 using Microsoft.Win32;
 
@@ -321,7 +322,7 @@ namespace ScriptHelper
 
         public static IEnumerable<Dictionary<string, string>> GetConsoleOutput()
         {
-            var fileLoc = Path.Combine(Path.GetDirectoryName(typeof(Tweaks).Assembly.Location), "ScriptHelper.exe");
+            var fileLoc = Path.Combine(Path.GetDirectoryName(typeof(Tweaks).Assembly.Location) ?? throw new InvalidOperationException("null Location"), "ScriptHelper.exe");
 
             foreach (var tweakEntry in _tweaks)
             {
@@ -342,6 +343,7 @@ namespace ScriptHelper
                 }
                 catch (Exception ex)
                 {
+                    LogWriter.WriteExceptionToLog(ex);
                     //Console.WriteLine(ex);
                     continue;
                 }

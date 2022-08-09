@@ -34,7 +34,7 @@ namespace Klocman.Tools
 
             if (propertyInfo.CanRead)
             {
-                var getCall = Expression.Call(instanceParam, propertyInfo.GetGetMethod(true));
+                var getCall = Expression.Call(instanceParam, propertyInfo.GetGetMethod(true)!);
                 var convertedGet = Expression.Convert(getCall, typeof(object));
                 var getLambda = Expression.Lambda<Func<TInstance, object>>(convertedGet, instanceParam);
                 CompiledGet = getLambda.Compile();
@@ -44,7 +44,7 @@ namespace Klocman.Tools
             {
                 var valueParam = Expression.Parameter(typeof(object), "value");
                 var convertedValue = Expression.Convert(valueParam, propertyInfo.PropertyType);
-                var setCall = Expression.Call(instanceParam, propertyInfo.GetSetMethod(true), convertedValue);
+                var setCall = Expression.Call(instanceParam, propertyInfo.GetSetMethod(true)!, convertedValue);
                 var setLambda = Expression.Lambda<Action<TInstance, object>>(setCall, instanceParam, valueParam);
                 CompiledSet = setLambda.Compile();
             }

@@ -22,20 +22,20 @@ namespace Klocman.Tools
 {
     public static class WindowsTools
     {
-        public static Version Windows10 => new Version(10, 0);
-        public static Version Windows8P1 => new Version(6, 3);
-        public static Version WindowsServer2012R2 => new Version(6, 3);
-        public static Version Windows8 => new Version(6, 2);
-        public static Version WindowsServer2012 => new Version(6, 2);
-        public static Version Windows7 => new Version(6, 1);
-        public static Version WindowsServer2008R2 => new Version(6, 1);
-        public static Version WindowsServer2008 => new Version(6, 0);
-        public static Version WindowsVista => new Version(6, 0);
-        public static Version WindowsServer2003R2 => new Version(5, 2);
-        public static Version WindowsServer2003 => new Version(5, 2);
-        public static Version WindowsXp64 => new Version(5, 2);
-        public static Version WindowsXp => new Version(5, 1);
-        public static Version Windows2000 => new Version(5, 0);
+        public static Version Windows10 => new(10, 0);
+        public static Version Windows8P1 => new(6, 3);
+        public static Version WindowsServer2012R2 => new(6, 3);
+        public static Version Windows8 => new(6, 2);
+        public static Version WindowsServer2012 => new(6, 2);
+        public static Version Windows7 => new(6, 1);
+        public static Version WindowsServer2008R2 => new(6, 1);
+        public static Version WindowsServer2008 => new(6, 0);
+        public static Version WindowsVista => new(6, 0);
+        public static Version WindowsServer2003R2 => new(5, 2);
+        public static Version WindowsServer2003 => new(5, 2);
+        public static Version WindowsXp64 => new(5, 2);
+        public static Version WindowsXp => new(5, 1);
+        public static Version Windows2000 => new(5, 0);
 
         /// <summary>
         /// Check if .NET Framework v4 is available. Returns null if not installed, or highest installed version.
@@ -60,7 +60,7 @@ namespace Klocman.Tools
 
                     using (var subKey = netKey.OpenSubKey(subKeyName))
                     {
-                        if (subKey == null || subKey.GetValue("Install", "").ToString() != "1") return null;
+                        if (subKey?.GetValue("Install", "")?.ToString() != "1") return null;
 
                         var version = subKey.GetStringSafe("Version");
                         return string.IsNullOrEmpty(version) ? new Version(4, 0, 0) : new Version(version);
@@ -482,9 +482,11 @@ namespace Klocman.Tools
         public static string ResolveShortcut(string filename)
         {
             var link = new NativeMethods.ShellLink();
+            // ReSharper disable once SuspiciousTypeConversion.Global
             ((NativeMethods.IPersistFile)link).Load(filename, NativeMethods.STGM_READ);
             var sb = new StringBuilder(NativeMethods.MAX_PATH);
             var data = new NativeMethods.WIN32_FIND_DATAW();
+            // ReSharper disable once SuspiciousTypeConversion.Global
             ((NativeMethods.IShellLinkW)link).GetPath(sb, sb.Capacity, ref data, 0);
             return sb.ToString();
         }

@@ -32,10 +32,10 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                var container = webBrowser.Document.GetElementById("container");
-                container.InnerHtml = webBrowser.Document.GetElementById("content").InnerHtml;
+                var container = webBrowser.Document!.GetElementById("container");
+                container!.InnerHtml = webBrowser.Document.GetElementById("content")!.InnerHtml;
                 container.Style = "width:422px; margin:10px auto; padding:10px; align:center;";
-                webBrowser.Document.Body.Style = "padding:0px;";
+                webBrowser.Document.Body!.Style = "padding:0px;";
             }
             catch
             {

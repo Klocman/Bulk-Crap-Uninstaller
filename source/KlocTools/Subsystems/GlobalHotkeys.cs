@@ -15,7 +15,7 @@ namespace Klocman.Subsystems
 {
     public sealed class GlobalHotkeys : ReferencedComponent, ICollection<HotkeyEntry>
     {
-        private readonly List<HotkeyEntry> _registeredHotkeys = new List<HotkeyEntry>();
+        private readonly List<HotkeyEntry> _registeredHotkeys = new();
         private Form _parentForm;
 
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace Klocman.Subsystems
                         (StopWhenFormIsDisabled && !ParentForm.Enabled))
                         continue;
 
-                    hotkey.EventHandler(_parentForm, new EventArgs());
+                    hotkey.EventHandler(_parentForm, EventArgs.Empty);
 
                     // Stops default windows "wtfding" sound and prevents event bubbling
                     if (SuppressKeyPresses)

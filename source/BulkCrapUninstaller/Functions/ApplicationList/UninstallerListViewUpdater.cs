@@ -181,7 +181,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 {
                     if (dialog.Error is OperationCanceledException)
                         return;
-                    throw new Exception("Uncaught exception in ListRefreshThread", dialog.Error);
+                    throw new InvalidOperationException("Uncaught exception in ListRefreshThread", dialog.Error);
                 }
 
                 if (CheckIsAppDisposed() || args.CloseReason == CloseReason.WindowsShutDown || 

@@ -54,8 +54,8 @@ namespace Klocman.Extensions
         public static void CenterToForm(this Form thisForm, Form targetForm)
         {
             thisForm.StartPosition = FormStartPosition.Manual;
-            thisForm.Location = new Point(targetForm.Location.X + (targetForm.Width - thisForm.Width)/2,
-                targetForm.Location.Y + (targetForm.Height - thisForm.Height)/2);
+            thisForm.Location = new Point(targetForm.Location.X + (targetForm.Width - thisForm.Width) / 2,
+                targetForm.Location.Y + (targetForm.Height - thisForm.Height) / 2);
         }
 
         /// <summary>
@@ -104,8 +104,8 @@ namespace Klocman.Extensions
             return
                 from field in
                     form.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                where typeof (Component).IsAssignableFrom(field.FieldType)
-                let component = (Component) field.GetValue(form)
+                where typeof(Component).IsAssignableFrom(field.FieldType)
+                let component = (Component)field.GetValue(form)
                 where component != null
                 select component;
         }
@@ -118,19 +118,15 @@ namespace Klocman.Extensions
         /// <param name="parent">Control to check against</param>
         public static bool IsChildOf(this Control c, Control parent)
         {
-            if (parent == null)
-                throw new ArgumentNullException(nameof(parent));
+            if (c == null) throw new NullReferenceException();
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
 
-            if (c == null)
-                throw new NullReferenceException();
-
-            if (c.Parent == null)
-                return false;
-
-            if (c.Parent == parent)
-                return true;
-
-            return c.Parent.IsChildOf(parent);
+            while (true)
+            {
+                if (c.Parent == null) return false;
+                if (c.Parent == parent) return true;
+                c = c.Parent;
+            }
         }
 
         /// <summary>
@@ -196,13 +192,10 @@ namespace Klocman.Extensions
             if (SystemInformation.TerminalServerSession)
                 return;
 
-            var aProp =
-                typeof (Control).GetProperty(
-                    "DoubleBuffered",
-                    BindingFlags.NonPublic |
-                    BindingFlags.Instance);
+            var aProp = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
 
-            aProp.SetValue(c, enabled, null);
+            if (aProp != null)
+                aProp.SetValue(c, enabled, null);
         }
 
         /// <summary>
@@ -269,9 +262,9 @@ namespace Klocman.Extensions
         public static void MoveCloseToCursor(this Form form)
         {
             var screen = Screen.FromPoint(Control.MousePosition).WorkingArea;
-            var x = Math.Max(Math.Min(Control.MousePosition.X - form.Width/2, screen.X + screen.Width - form.Width),
+            var x = Math.Max(Math.Min(Control.MousePosition.X - form.Width / 2, screen.X + screen.Width - form.Width),
                 screen.X);
-            var y = Math.Max(Math.Min(Control.MousePosition.Y - form.Height/2, screen.Y + screen.Height - form.Height),
+            var y = Math.Max(Math.Min(Control.MousePosition.Y - form.Height / 2, screen.Y + screen.Height - form.Height),
                 screen.Y);
             form.Location = new Point(x, y);
         }

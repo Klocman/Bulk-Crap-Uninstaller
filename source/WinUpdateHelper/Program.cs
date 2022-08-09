@@ -43,11 +43,13 @@ namespace WinUpdateHelper
                     case QueryType.List:
                         UpdateManager.WriteUpdateList();
                         break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(_queryType), _queryType, null);
                 }
             }
             catch (OperationCanceledException)
             {
-                return (int) ReturnValue.CancelledByUserCode;
+                return (int)ReturnValue.CancelledByUserCode;
             }
             catch (COMException ex)
             {

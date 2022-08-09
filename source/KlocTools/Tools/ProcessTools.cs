@@ -361,7 +361,8 @@ namespace Klocman.Tools
 
         public static Icon GetIconFromEntryExe()
         {
-            var location = Assembly.GetEntryAssembly().Location;
+            var location = Assembly.GetEntryAssembly()?.Location;
+            if (location == null) throw new ArgumentException("Failed to get location of EntryAssembly");
             if (location.EndsWith(".dll")) location = location.Substring(0, location.Length - 3) + "exe";
             var icon = DrawingTools.ExtractAssociatedIcon(location);
             return icon;

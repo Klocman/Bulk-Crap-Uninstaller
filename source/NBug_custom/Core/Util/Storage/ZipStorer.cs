@@ -192,7 +192,7 @@ namespace NBug.Core.Util.Storage
         /// <summary>
         ///     The files.
         /// </summary>
-        private readonly List<ZipFileEntry> Files = new List<ZipFileEntry>();
+        private readonly List<ZipFileEntry> Files = new();
 
         /// <summary>
         ///     The access.

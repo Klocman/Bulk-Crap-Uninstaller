@@ -80,7 +80,7 @@ namespace UninstallTools.Factory
                 if (!match.Success) break;
                 var end = match.Index + 1;
                 var info = result.Substring(begin, end-begin);
-                int i = info.IndexOf(' '), j = info.IndexOf("\r\n");
+                int i = info.IndexOf(' '), j = info.IndexOf("\r\n", StringComparison.Ordinal);
                 var appName = new { name = info.Substring(0, i), version = info.Substring(i+1, j-i-1) };
 
                 var kvps = ExtractPackageInformation(info);

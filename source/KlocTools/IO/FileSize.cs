@@ -29,7 +29,7 @@ namespace Klocman.IO
             return FromKilobytes(sizes.Sum(x => x.GetKbSize()));
         }
 
-        public static readonly FileSize Empty = new FileSize(0);
+        public static readonly FileSize Empty = new(0);
         private long _sizeInKb;
 
         public FileSize(long kiloBytes)
@@ -209,7 +209,7 @@ namespace Klocman.IO
                     break;
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(range), range, "Unknown range");
+                    throw new ArgumentOutOfRangeException(nameof(range), range, @"Unknown range");
             }
 
             return rangeName;

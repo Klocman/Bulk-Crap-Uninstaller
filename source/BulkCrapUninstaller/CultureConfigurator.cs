@@ -3,7 +3,6 @@ using Klocman.Extensions;
 using Klocman.Tools;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -16,11 +15,9 @@ namespace BulkCrapUninstaller
         private static IEnumerable<CultureInfo> _supportedLanguages;
         private static CultureInfo _enUsCulture;
 
-        private static CultureInfo EnUsCulture =>
-            _enUsCulture ?? (_enUsCulture = CultureInfo.GetCultureInfo("en-US"));
+        private static CultureInfo EnUsCulture => _enUsCulture ??= CultureInfo.GetCultureInfo("en-US");
 
-        public static IEnumerable<CultureInfo> SupportedLanguages =>
-            _supportedLanguages ?? (_supportedLanguages = GetSupportedLanguages());
+        public static IEnumerable<CultureInfo> SupportedLanguages => _supportedLanguages ??= GetSupportedLanguages();
 
         private static IEnumerable<CultureInfo> GetSupportedLanguages()
         {

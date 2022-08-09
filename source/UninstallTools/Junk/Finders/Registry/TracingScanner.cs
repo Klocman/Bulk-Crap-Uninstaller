@@ -52,7 +52,7 @@ namespace UninstallTools.Junk.Finders.Registry
 
             ConfidenceGenerators.TestForSimilarNames(target, _allEntries, results.Select(x => new KeyValuePair<JunkResultBase, string>(x, x.RegKeyName)).ToList());
 
-            return results.Cast<IJunkResult>();
+            return results;
         }
 
         public string CategoryName => Localisation.Junk_Tracing_GroupName;

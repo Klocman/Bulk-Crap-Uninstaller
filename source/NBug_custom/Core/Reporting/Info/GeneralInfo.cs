@@ -6,6 +6,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using NBug.Core.Util.Serialization;
 
@@ -37,7 +38,7 @@ namespace NBug.Core.Reporting.Info
 
             CLRVersion = Environment.Version.ToString();
 
-            DateTime = System.DateTime.UtcNow.ToString();
+            DateTime = System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture);
 
             if (serializableException != null)
             {

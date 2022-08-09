@@ -79,17 +79,17 @@ namespace WinUpdateHelper
 
                 var result = HelperTools.KeyValueListToConsoleOutput(new List<KeyValuePair<string, object>>
                 {
-                    new KeyValuePair<string, object>(nameof(id.UpdateID), id.UpdateID),
-                    new KeyValuePair<string, object>(nameof(id.RevisionNumber), id.RevisionNumber),
+                    new(nameof(id.UpdateID), id.UpdateID),
+                    new(nameof(id.RevisionNumber), id.RevisionNumber),
 
-                    new KeyValuePair<string, object>(nameof(update.Title), update.Title),
-                    new KeyValuePair<string, object>(nameof(update.IsUninstallable), update.IsUninstallable),
+                    new(nameof(update.Title), update.Title),
+                    new(nameof(update.IsUninstallable), update.IsUninstallable),
 
-                    new KeyValuePair<string, object>(nameof(update.SupportUrl), update.SupportUrl),
+                    new(nameof(update.SupportUrl), update.SupportUrl),
 
-                    new KeyValuePair<string, object>(nameof(update.MinDownloadSize), update.MinDownloadSize),
-                    new KeyValuePair<string, object>(nameof(update.MaxDownloadSize), update.MaxDownloadSize),
-                    new KeyValuePair<string, object>(nameof(update.LastDeploymentChangeTime), update.LastDeploymentChangeTime)
+                    new(nameof(update.MinDownloadSize), update.MinDownloadSize),
+                    new(nameof(update.MaxDownloadSize), update.MaxDownloadSize),
+                    new(nameof(update.LastDeploymentChangeTime), update.LastDeploymentChangeTime)
                 });
 
                 Console.WriteLine(result);

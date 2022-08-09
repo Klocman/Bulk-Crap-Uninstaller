@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Tools;
 using Timer = System.Timers.Timer;
@@ -18,7 +17,7 @@ namespace Klocman.Forms
 {
     public partial class ProcessWaiterControl : UserControl
     {
-        private readonly Timer _timer = new Timer(600);
+        private readonly Timer _timer = new(600);
         private static readonly string DefaultImageKey = "Default";
 
         public void Initialize(int[] processIDs, bool processChildren)
@@ -74,7 +73,7 @@ namespace Klocman.Forms
 
                     try
                     {
-                        var ico = DrawingTools.ExtractAssociatedIcon(p.MainModule.FileName);
+                        var ico = DrawingTools.ExtractAssociatedIcon(p.MainModule!.FileName);
                         if (ico != null) il.Images.Add(mainPrName, ico);
                     }
                     catch (Exception ex)

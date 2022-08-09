@@ -18,7 +18,7 @@ namespace UninstallTools.Uninstaller
 {
     public sealed class BulkUninstallTask : IDisposable
     {
-        private readonly object _operationLock = new object();
+        private readonly object _operationLock = new();
         private int _concurrentUninstallerCount = 1;
         private bool _finished;
         private Thread _workerThread;
@@ -143,7 +143,7 @@ namespace UninstallTools.Uninstaller
 
             try
             {
-                StartOfLoop:
+            StartOfLoop:
                 while (AllUninstallersList.Any(x => x.CurrentStatus == UninstallStatus.Waiting || x.IsRunning))
                 {
                     do

@@ -454,6 +454,5 @@ namespace BulkCrapUninstaller.Forms
         private System.Windows.Forms.Label p1Heading;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
     }
 }

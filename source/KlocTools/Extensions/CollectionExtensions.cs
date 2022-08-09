@@ -11,7 +11,7 @@ namespace Klocman.Extensions
 {
     public static class CollectionExtensions
     {
-        private static readonly Random R = new Random();
+        private static readonly Random R = new();
         
         /// <summary>
         /// Wrap this object in an enumerable that returns this object once and finishes.

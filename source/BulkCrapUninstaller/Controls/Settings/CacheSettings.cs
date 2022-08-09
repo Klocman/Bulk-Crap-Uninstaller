@@ -3,12 +3,8 @@
     Apache License Version 2.0
 */
 
-using System;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Forms;
 using Klocman.Binding.Settings;
-using Klocman.Forms.Tools;
-using UninstallTools;
 
 namespace BulkCrapUninstaller.Controls.Settings
 {

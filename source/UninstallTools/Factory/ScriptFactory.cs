@@ -19,7 +19,7 @@ namespace UninstallTools.Factory
     {
         private static readonly string ScriptHelperPath;
         private static readonly PropertyInfo[] EntryProps;
-        private static readonly PropertyInfo[] SystemIconProps;
+        //private static readonly PropertyInfo[] SystemIconProps;
 
         static ScriptFactory()
         {
@@ -33,10 +33,10 @@ namespace UninstallTools.Factory
                 .Where(p => p.CanWrite && p.PropertyType == typeof(string))
                 .ToArray();
 
-            SystemIconProps = typeof(SystemIcons)
-                .GetProperties(BindingFlags.Static | BindingFlags.Public)
-                .Where(p => p.CanRead)
-                .ToArray();
+            // SystemIconProps = typeof(SystemIcons)
+            //     .GetProperties(BindingFlags.Static | BindingFlags.Public)
+            //     .Where(p => p.CanRead)
+            //     .ToArray();
         }
 
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(

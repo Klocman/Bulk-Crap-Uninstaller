@@ -19,14 +19,13 @@ namespace Klocman.Forms.Tools
     public class WindowStyleController
     {
         private readonly Form _reference;
-        private readonly List<Action<bool>> _targets = new List<Action<bool>>();
+        private readonly List<Action<bool>> _targets = new();
 
         public WindowStyleController(Form parentForm)
         {
             _reference = parentForm;
 
-            var children = parentForm.GetAllChildren(CanBeChanged).Cast<Component>()
-                .Concat(parentForm.GetComponents().Where(CanBeChanged));
+            var children = parentForm.GetAllChildren(CanBeChanged).Concat(parentForm.GetComponents().Where(CanBeChanged));
 
             foreach (var item in children)
             {

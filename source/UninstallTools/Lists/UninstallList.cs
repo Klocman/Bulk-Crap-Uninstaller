@@ -22,7 +22,7 @@ namespace UninstallTools.Lists
             AddItems(items);
         }
 
-        public List<Filter> Filters { get; set; } = new List<Filter>();
+        public List<Filter> Filters { get; set; } = new();
 
         /// <summary>
         ///     Test if the input matches this filter. Returns null if it did not hit any filter.
@@ -65,7 +65,7 @@ namespace UninstallTools.Lists
             }
 
             if (!included.HasValue)
-                return excluded.HasValue ? (bool?) true : null;
+                return excluded.HasValue ? true : null;
             return included.Value;
         }
 

@@ -57,8 +57,7 @@ namespace UninstallTools.Factory
                 AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation,
                     StringComparison.InvariantCultureIgnoreCase));
 
-            AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ?
-                baseEntry.Is64Bit == otherEntry.Is64Bit : (bool?)null);
+            AddScore(ref score, -5, 0, 3, baseEntry.Is64Bit != MachineType.Unknown && otherEntry.Is64Bit != MachineType.Unknown ? baseEntry.Is64Bit == otherEntry.Is64Bit : null);
             AddScore(ref score, -3, -1, 5, CompareDates(baseEntry.InstallDate, otherEntry.InstallDate));
 
             AddScore(ref score, -2, 0, 5, CompareStrings(baseEntry.DisplayVersion, otherEntry.DisplayVersion, true));

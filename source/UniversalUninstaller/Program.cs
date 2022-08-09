@@ -110,8 +110,8 @@ namespace UniversalUninstaller
             {
                 ClearReadOnlyFlag(info);
 
-                if (info is DirectoryInfo)
-                    RecursiveDelete(info as DirectoryInfo);
+                if (info is DirectoryInfo dir)
+                    RecursiveDelete(dir);
                 else
                     info.Delete();
             }

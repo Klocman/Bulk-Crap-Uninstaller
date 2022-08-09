@@ -11,7 +11,6 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Threading;
 using Klocman;
-using Klocman.Extensions;
 using Klocman.Tools;
 using Microsoft.Win32;
 using Newtonsoft.Json;

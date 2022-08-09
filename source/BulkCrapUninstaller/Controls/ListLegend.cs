@@ -20,7 +20,7 @@ namespace BulkCrapUninstaller.Controls
             InitializeComponent();
         }
 
-        protected override void OnLoad(System.EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 

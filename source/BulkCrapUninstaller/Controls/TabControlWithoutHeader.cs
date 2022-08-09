@@ -12,12 +12,12 @@ namespace BulkCrapUninstaller.Controls
     {
         public TabControlWithoutHeader()
         {
-            if (!this.DesignMode) this.Multiline = true;
+            if (!DesignMode) Multiline = true;
         }
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == 0x1328 && !this.DesignMode)
+            if (m.Msg == 0x1328 && !DesignMode)
                 m.Result = new IntPtr(1);
             else
                 base.WndProc(ref m);

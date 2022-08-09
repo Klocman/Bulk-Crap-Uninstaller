@@ -13,7 +13,7 @@ namespace Klocman.Localising
 {
     public static class LocalisationExtensions
     {
-        private static readonly Dictionary<Enum, string> LocalisedEnumNameCache = new Dictionary<Enum, string>();
+        private static readonly Dictionary<Enum, string> LocalisedEnumNameCache = new();
 
         /// <summary>
         ///     Get a fancy name of selected property or field
@@ -73,7 +73,7 @@ namespace Klocman.Localising
                 var fields = from object value in Enum.GetValues(type)
                              let flag = Convert.ToInt64(value)
                              where (Convert.ToInt64(enumValue) & flag) == flag
-                             select type.GetField(value.ToString());
+                             select type.GetField(value.ToString()!);
 
                 var names = fields.Select(f => getName(f)).OrderBy(x => x).ToArray();
 

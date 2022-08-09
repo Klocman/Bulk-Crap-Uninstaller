@@ -109,13 +109,13 @@ namespace BulkCrapUninstaller
         {
             try
             {
-                var location = Assembly.GetAssembly(typeof(EntryPoint)).Location;
+                var location = Assembly.GetAssembly(typeof(EntryPoint))!.Location;
                 if (location.EndsWith(".dll")) location = location.Substring(0, location.Length - 3) + "exe";
                 var otherBcu = Process.GetProcesses().FirstOrDefault(x =>
                 {
                     try
                     {
-                        return string.Equals(x.MainModule.FileName, location, StringComparison.OrdinalIgnoreCase);
+                        return string.Equals(x.MainModule!.FileName, location, StringComparison.OrdinalIgnoreCase);
                     }
                     catch
                     {

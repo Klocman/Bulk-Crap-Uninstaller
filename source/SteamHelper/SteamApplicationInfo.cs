@@ -97,7 +97,7 @@ namespace SteamHelper
             var targetLine = manifestStrings
                 .FirstOrDefault(x => x.Contains($"\"{keyName.Trim().Trim('\"')}\"", StringComparison.InvariantCultureIgnoreCase));
 
-            return string.IsNullOrEmpty(targetLine) ? null : targetLine.Split('\"').Select(x => x.Trim()).LastOrDefault(p => !string.IsNullOrEmpty(p?.Trim()));
+            return string.IsNullOrEmpty(targetLine) ? null : targetLine.Split('\"').Select(x => x.Trim()).LastOrDefault(x => x.Length > 0);
         }
 
         public int AppId { get; }

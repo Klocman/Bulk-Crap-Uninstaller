@@ -23,14 +23,14 @@ namespace BulkCrapUninstaller.Functions.Ratings
         private readonly int _maximumValue = 8;
         private readonly int _maxNumberImages = 4;
         private readonly int _minimumValue = -8;
-        
+
         public override void Render(Graphics g, Rectangle r)
         {
             DrawBackground(g, r);
             r = ApplyCellPadding(r);
 
             // Convert our aspect to a numeric value
-            var aspect = (RatingEntry) Aspect;
+            var aspect = (RatingEntry)Aspect;
 
             if (aspect.Equals(RatingEntry.NotAvailable))
             {
@@ -38,12 +38,13 @@ namespace BulkCrapUninstaller.Functions.Ratings
             }
             else if (aspect.AverageRating.HasValue || aspect.MyRating.HasValue)
             {
-                var aspectValue = (float) (aspect.MyRating ?? aspect.AverageRating);
+                var aspectValue = (float)(aspect.MyRating ?? aspect.AverageRating);
 
                 // Calculate how many images we need to draw to represent our aspect value
                 int numberOfImages;
                 if (aspectValue <= _minimumValue) numberOfImages = 1;
-                else if (aspectValue <= (_maximumValue + _minimumValue)/2) numberOfImages = 2;
+                // ReSharper disable once PossibleLossOfFraction
+                else if (aspectValue <= (_maximumValue + _minimumValue) / 2) numberOfImages = 2;
                 else if (aspectValue < _maximumValue) numberOfImages = 3;
                 else numberOfImages = _maxNumberImages;
 
@@ -52,12 +53,12 @@ namespace BulkCrapUninstaller.Functions.Ratings
                 var imageScaledHeight = _baseImage.Height;
                 if (r.Height < _baseImage.Height)
                 {
-                    imageScaledWidth = (int) (_baseImage.Width*(float) r.Height/_baseImage.Height);
+                    imageScaledWidth = (int)(_baseImage.Width * (float)r.Height / _baseImage.Height);
                     imageScaledHeight = r.Height;
                 }
                 // Calculate where the images should be drawn
                 var imageBounds = r;
-                imageBounds.Width = _maxNumberImages*(imageScaledWidth + Spacing) - Spacing;
+                imageBounds.Width = _maxNumberImages * (imageScaledWidth + Spacing) - Spacing;
                 imageBounds.Height = imageScaledHeight;
                 imageBounds = AlignRectangle(r, imageBounds);
 

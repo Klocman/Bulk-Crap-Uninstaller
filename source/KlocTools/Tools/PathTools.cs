@@ -124,7 +124,9 @@ namespace Klocman.Tools
         /// <returns></returns>
         public static string GetFullPathOfExecutable(string filename)
         {
-            var paths = new[] { Environment.CurrentDirectory }.Concat(Environment.GetEnvironmentVariable("PATH").Split(';'));
+            IEnumerable<string> paths = new[] { Environment.CurrentDirectory };
+            var pathVariable = Environment.GetEnvironmentVariable("PATH");
+            if (pathVariable != null) paths = paths.Concat(pathVariable.Split(';'));
             var combinations = paths.Select(x => Path.Combine(x, filename));
             return combinations.FirstOrDefault(File.Exists) ?? GetExecutablePathFromAppPaths(filename);
         }

@@ -6,7 +6,6 @@
 using System;
 using System.Globalization;
 using System.IO;
-using System.Net.Http;
 using System.Windows.Forms;
 using Klocman.Tools;
 using NBug;
@@ -67,7 +66,7 @@ namespace BulkCrapUninstaller
                     var compressed = CompressionTools.BrotliCompress(data);
 
                     using var s = Program.GetHttpClient();
-                    var result = s.PostAsync(new Uri($"SendCrashReport?userId={Properties.Settings.Default.MiscUserId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null).Result;
+                    var result = s.PostAsync(new Uri($"SendCrashReport?userId={Properties.Settings.Default.MiscUserId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null!).Result;
                     result.EnsureSuccessStatusCode();
                 }
                 catch (Exception e)

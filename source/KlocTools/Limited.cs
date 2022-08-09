@@ -36,12 +36,12 @@ namespace Klocman
         {
             if (value.CompareTo(max) > 0)
             {
-                if (throwOutOfRange) throw new ArgumentOutOfRangeException(nameof(value), "New value must be equal to or in between the minimum and maximum values");
+                if (throwOutOfRange) throw new ArgumentOutOfRangeException(nameof(value), @"New value must be equal to or in between the minimum and maximum values");
                 return max;
             }
             else if (value.CompareTo(min) < 0)
             {
-                if (throwOutOfRange) throw new ArgumentOutOfRangeException(nameof(value), "New value must be equal to or in between the minimum and maximum values");
+                if (throwOutOfRange) throw new ArgumentOutOfRangeException(nameof(value), @"New value must be equal to or in between the minimum and maximum values");
                 return min;
             }
             return value;
@@ -57,7 +57,7 @@ namespace Klocman
             set
             {
                 if (value.CompareTo(_maximum) > 0)
-                    throw new ArgumentOutOfRangeException(nameof(value), "Minimum value must be lower than or equal to the maximum value");
+                    throw new ArgumentOutOfRangeException(nameof(value), @"Minimum value must be lower than or equal to the maximum value");
                 _minimum = value;
 
                 if (value.CompareTo(_value) > 0)
@@ -75,7 +75,7 @@ namespace Klocman
             set
             {
                 if (value.CompareTo(_minimum) < 0)
-                    throw new ArgumentOutOfRangeException(nameof(value), "Minimum value must be lower than or equal to the maximum value");
+                    throw new ArgumentOutOfRangeException(nameof(value), @"Minimum value must be lower than or equal to the maximum value");
                 _maximum = value;
 
                 if (value.CompareTo(_value) < 0)

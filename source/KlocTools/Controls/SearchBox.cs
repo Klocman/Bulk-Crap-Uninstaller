@@ -115,6 +115,9 @@ namespace Klocman.Controls
                     e.Handled = true;
                     e.SuppressKeyPress = true;
                     break;
+
+                default:
+                    break;
             }
         }
 

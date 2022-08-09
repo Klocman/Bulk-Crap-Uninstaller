@@ -18,49 +18,49 @@ namespace BulkCrapUninstaller.Controls
             InitializeComponent();
         }
 
-        protected override void OnLoad(System.EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
         
             if (DesignMode) return;
 
-            var settings = Properties.Settings.Default.SettingBinder;
+            var sb = Properties.Settings.Default.SettingBinder;
         
             // Shutdown blocking not available below Windows Vista
             if (Environment.OSVersion.Version < new Version(6, 0))
                 checkBoxShutdown.Enabled = false;
             else
-                settings.BindControl(checkBoxShutdown, settings => settings.UninstallPreventShutdown, this);
+                sb.BindControl(checkBoxShutdown, settings => settings.UninstallPreventShutdown, this);
         
             checkBoxRestorePoint.Enabled = SysRestore.SysRestoreAvailable();
-            settings.BindControl(checkBoxRestorePoint, settings => settings.CreateRestorePoint, this);
+            sb.BindControl(checkBoxRestorePoint, settings => settings.CreateRestorePoint, this);
         
-            settings.BindControl(checkBoxConcurrent, settings => settings.UninstallConcurrency, this);
+            sb.BindControl(checkBoxConcurrent, settings => settings.UninstallConcurrency, this);
         
-            settings.BindControl(checkBoxConcurrentOneLoud, settings => settings.UninstallConcurrentOneLoud, this);
-            settings.BindControl(checkBoxManualNoCollisionProtection, settings => settings.UninstallConcurrentDisableManualCollisionProtection, this);
+            sb.BindControl(checkBoxConcurrentOneLoud, settings => settings.UninstallConcurrentOneLoud, this);
+            sb.BindControl(checkBoxManualNoCollisionProtection, settings => settings.UninstallConcurrentDisableManualCollisionProtection, this);
         
-            settings.Subscribe(OnMaxCountChanged, settings => settings.UninstallConcurrentMaxCount, this);
+            sb.Subscribe(OnMaxCountChanged, settings => settings.UninstallConcurrentMaxCount, this);
             numericUpDownMaxConcurrent.ValueChanged += NumericUpDownMaxConcurrentOnValueChanged;
         
-            settings.BindControl(checkBoxBatchSortQuiet, x => x.AdvancedIntelligentUninstallerSorting, this);
-            settings.BindControl(checkBoxDiisableProtection, x => x.AdvancedDisableProtection, this);
-            settings.BindControl(checkBoxSimulate, x => x.AdvancedSimulate, this);
+            sb.BindControl(checkBoxBatchSortQuiet, x => x.AdvancedIntelligentUninstallerSorting, this);
+            sb.BindControl(checkBoxDiisableProtection, x => x.AdvancedDisableProtection, this);
+            sb.BindControl(checkBoxSimulate, x => x.AdvancedSimulate, this);
         
-            settings.BindControl(checkBoxAutoKillQuiet, x => x.QuietAutoKillStuck, this);
-            settings.BindControl(checkBoxRetryQuiet, x => x.QuietRetryFailedOnce, this);
-            settings.BindControl(checkBoxGenerate, x => x.QuietAutomatization, this);
-            settings.BindControl(checkBoxGenerateStuck, x => x.QuietAutomatizationKillStuck, this);
-            settings.BindControl(checkBoxAutoDaemon, x => x.QuietUseDaemon, this);
+            sb.BindControl(checkBoxAutoKillQuiet, x => x.QuietAutoKillStuck, this);
+            sb.BindControl(checkBoxRetryQuiet, x => x.QuietRetryFailedOnce, this);
+            sb.BindControl(checkBoxGenerate, x => x.QuietAutomatization, this);
+            sb.BindControl(checkBoxGenerateStuck, x => x.QuietAutomatizationKillStuck, this);
+            sb.BindControl(checkBoxAutoDaemon, x => x.QuietUseDaemon, this);
         
-            settings.Subscribe((sender, args) => checkBoxGenerateStuck.Enabled = args.NewValue, settings => settings.QuietAutomatization, this);
+            sb.Subscribe((sender, args) => checkBoxGenerateStuck.Enabled = args.NewValue, settings => settings.QuietAutomatization, this);
         
-            settings.Subscribe(
+            sb.Subscribe(
                 (x, y) => checkBoxSimulate.ForeColor = y.NewValue ? Color.OrangeRed : SystemColors.ControlText,
                 x => x.AdvancedSimulate, this);
         
-            settings.SendUpdates(this);
-            Disposed += (x, y) => settings.RemoveHandlers(this);
+            sb.SendUpdates(this);
+            Disposed += (x, y) => sb.RemoveHandlers(this);
         }
 
         private void NumericUpDownMaxConcurrentOnValueChanged(object sender, EventArgs eventArgs)

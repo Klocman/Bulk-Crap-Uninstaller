@@ -10,7 +10,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Media;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;

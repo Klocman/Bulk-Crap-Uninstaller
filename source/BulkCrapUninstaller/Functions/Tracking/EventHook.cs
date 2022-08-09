@@ -11,7 +11,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
 {
     internal sealed class EventHook : IDisposable
     {
-        private readonly List<SingleEventHook> _hooks = new List<SingleEventHook>();
+        private readonly List<SingleEventHook> _hooks = new();
 
         public EventHook(object target, FieldInfo targetField, IEnumerable<EventInfo> targetEvents)
         {

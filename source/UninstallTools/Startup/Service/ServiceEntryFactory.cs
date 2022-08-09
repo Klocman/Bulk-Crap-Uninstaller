@@ -10,7 +10,6 @@ using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Security;
-using Klocman.Extensions;
 using Klocman.Native;
 using Klocman.Tools;
 

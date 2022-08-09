@@ -15,7 +15,7 @@ namespace UninstallTools.Factory.InfoAdders
 {
     public class UninstallerTypeAdder : IMissingInfoAdder
     {
-        private static readonly Regex InnoSetupFilenameRegex = new Regex(@"unins\d\d\d", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex InnoSetupFilenameRegex = new(@"unins\d\d\d", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public void AddMissingInformation(ApplicationUninstallerEntry target)
         {
@@ -88,7 +88,7 @@ namespace UninstallTools.Factory.InfoAdders
                     }
 
                     // Detect NSIS Nullsoft.NSIS. Slow, but there's no other way than to scan the file
-                    using (var reader = new StreamReader(ps.FileName, Encoding.ASCII))
+                    using (var reader = new StreamReader(ps.FileName!, Encoding.ASCII))
                     {
                         string line;
                         while ((line = reader.ReadLine()) != null)

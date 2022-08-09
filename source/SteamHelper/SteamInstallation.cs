@@ -23,7 +23,7 @@ namespace SteamHelper
             MainExecutableFilename = Path.Combine(InstallationDirectory, "Steam.exe");
         }
 
-        public static SteamInstallation Instance => _instance ?? (_instance = new SteamInstallation());
+        public static SteamInstallation Instance => _instance ??= new SteamInstallation();
 
         public string InstallationDirectory { get; }
 
@@ -43,7 +43,7 @@ namespace SteamHelper
                 foreach (var line in File.ReadAllLines(vdfPath))
                 {
                     // Gather key/value pairs from the file. It seems to be in a proprietary format
-                    var pieces = line.Split('\"').Where(p => !string.IsNullOrWhiteSpace(p?.Trim())).ToList();
+                    var pieces = line.Split('\"').Where(p => !string.IsNullOrWhiteSpace(p.Trim())).ToList();
                     if (pieces.Count != 2) continue;
                     // Only path matters, it specifies absolute path to the library folder
                     if (pieces[0] == "path")

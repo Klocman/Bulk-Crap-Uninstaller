@@ -83,6 +83,9 @@ namespace SteamHelper
                     case QueryType.SteamDir:
                         Console.WriteLine(SteamInstallation.Instance.InstallationDirectory);
                         break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(_queryType), _queryType, null);
                 }
             }
             catch (OperationCanceledException)

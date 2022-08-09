@@ -5,7 +5,6 @@
 
 using System;
 using System.IO;
-using System.Security.Permissions;
 using Klocman.Tools;
 using Microsoft.Win32;
 

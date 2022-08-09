@@ -54,9 +54,9 @@ namespace Klocman.IO
                             yield return result + " Client";
                     }
                 }
-                else if (netKey.GetValue("Install", "").ToString() == "1")
+                else if (netKey.GetValue("Install", "")?.ToString() == "1")
                 {
-                    var versionStr = netKey.GetValue("Version", "").ToString();
+                    var versionStr = netKey.GetValue("Version", "")?.ToString();
                     if (string.IsNullOrEmpty(versionStr))
                         versionStr = netKey.GetKeyName();
                     yield return versionStr;

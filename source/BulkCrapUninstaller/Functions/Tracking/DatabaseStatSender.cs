@@ -4,8 +4,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using Klocman.Tools;
 
 namespace BulkCrapUninstaller.Functions.Tracking
@@ -26,7 +24,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
                 var compressed = CompressionTools.BrotliCompress(value);
 
                 using var s = Program.GetHttpClient();
-                var response = s.PostAsync(new Uri($"SendStats?userId={userId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null).Result;
+                var response = s.PostAsync(new Uri($"SendStats?userId={userId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null!).Result;
                 response.EnsureSuccessStatusCode();
             }
             catch (Exception e)

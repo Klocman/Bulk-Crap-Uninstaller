@@ -309,7 +309,7 @@ namespace UninstallTools.Junk.Finders.Registry
         private sealed class ComEntry
         {
             public readonly string Guid;
-            public readonly List<string> InterfaceNames = new List<string>();
+            public readonly List<string> InterfaceNames = new();
 
             public string FullFilename;
             //https://docs.microsoft.com/en-us/windows/desktop/com/-progid--key

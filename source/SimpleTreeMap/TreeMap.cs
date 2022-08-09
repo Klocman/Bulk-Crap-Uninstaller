@@ -53,8 +53,8 @@ namespace SimpleTreeMap
         private List<SliceRectangle<object>> _rectangles;
         private HashSet<object> _selectedObjects;
         private SliceRectangle<object> _currentHoveredRectangle;
-        private static readonly SolidBrush SelectedRectBrush = new SolidBrush(Color.DodgerBlue);
-        readonly Dictionary<Color, Brush> _brushCache = new Dictionary<Color, Brush>();
+        private static readonly SolidBrush SelectedRectBrush = new(Color.DodgerBlue);
+        readonly Dictionary<Color, Brush> _brushCache = new();
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [ReadOnly(true)]

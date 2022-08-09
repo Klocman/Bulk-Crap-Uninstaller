@@ -17,10 +17,9 @@ namespace UninstallTools.Startup.Normal
         private static IStartupDisable _disableFunctions;
 
         // 6.2 is windows 8 and 2012, they are using a new startup disable scheme
-        internal static IStartupDisable DisableFunctions => _disableFunctions ?? 
-            (_disableFunctions = Environment.OSVersion.Version < WindowsTools.Windows8
-                ? new OldStartupDisable()
-                : (IStartupDisable) new NewStartupDisable());
+        internal static IStartupDisable DisableFunctions => _disableFunctions ??= Environment.OSVersion.Version < WindowsTools.Windows8
+                                                                                  ? new OldStartupDisable()
+                                                                                  : new NewStartupDisable();
 
         /// <summary>
         ///     Delete startup entry data from registry and file system.
@@ -145,7 +144,7 @@ namespace UninstallTools.Startup.Normal
             if (wasDisabled)
                 Disable(startupEntry);
         }
-        
+
         /// <summary>
         ///     Create a registry value for the specified entry. Works for drive links as well.
         /// </summary>

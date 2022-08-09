@@ -51,7 +51,7 @@ namespace UninstallTools.Junk.Finders.Registry
                     var junk = new RegistryKeyJunk(Path.Combine(RegKey, x), target, this);
                     junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
                     return junk;
-                }).Cast<IJunkResult>();
+                });
         }
 
         public string CategoryName => "HeapLeakDetection";

@@ -11,7 +11,7 @@ namespace UninstallTools.Junk.Confidence
 {
     public sealed class ConfidenceCollection : IEnumerable<ConfidenceRecord>
     {
-        private readonly List<ConfidenceRecord> _items = new List<ConfidenceRecord>();
+        private readonly List<ConfidenceRecord> _items = new();
 
         internal ConfidenceCollection()
         {

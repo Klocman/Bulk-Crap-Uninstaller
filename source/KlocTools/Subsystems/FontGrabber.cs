@@ -13,7 +13,7 @@ namespace Klocman.Subsystems
 {
     public sealed class FontGrabber
     {
-        private readonly Dictionary<string, FontFamily> _validFontFamilies = new Dictionary<string, FontFamily>();
+        private readonly Dictionary<string, FontFamily> _validFontFamilies = new();
 
         public FontGrabber()
         {

@@ -17,22 +17,10 @@ namespace UninstallTools.Startup
         {
             Factories = new Dictionary<string, Func<IEnumerable<StartupEntryBase>>>
             {
-                {
-                    Localisation.StartupEntries,
-                    () => StartupEntryFactory.GetStartupItems().Cast<StartupEntryBase>()
-                },
-                {
-                    Localisation.Startup_ShortName_Task,
-                    () => TaskEntryFactory.GetTaskStartupEntries().Cast<StartupEntryBase>()
-                },
-                {
-                    Localisation.Startup_Shortname_BrowserHelper,
-                    () => BrowserEntryFactory.GetBrowserHelpers().Cast<StartupEntryBase>()
-                },
-                {
-                    Localisation.Startup_ShortName_Service,
-                    () => ServiceEntryFactory.GetServiceEntries().Cast<StartupEntryBase>()
-                }
+                { Localisation.StartupEntries, StartupEntryFactory.GetStartupItems },
+                { Localisation.Startup_ShortName_Task, TaskEntryFactory.GetTaskStartupEntries },
+                { Localisation.Startup_Shortname_BrowserHelper, BrowserEntryFactory.GetBrowserHelpers },
+                { Localisation.Startup_ShortName_Service, ServiceEntryFactory.GetServiceEntries }
             };
         }
 

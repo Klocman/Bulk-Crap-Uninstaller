@@ -19,20 +19,20 @@ namespace Klocman.Native
             INSTALLFEATUREATTRIBUTE_FAVORADVERTISE = 1 << 3,
             INSTALLFEATUREATTRIBUTE_DISALLOWADVERTISE = 1 << 4,
             INSTALLFEATUREATTRIBUTE_NOUNSUPPORTEDADVERTISE = 1 << 5
-        };
+        }
 
         public enum INSTALLLEVEL
         {
             INSTALLLEVEL_DEFAULT = 0, // install authored default
             INSTALLLEVEL_MINIMUM = 1, // install only required features
             INSTALLLEVEL_MAXIMUM = 0xFFFF // install all features
-        }; // intermediate levels dependent on authoring
+        } // intermediate levels dependent on authoring
 
         public enum INSTALLLOGATTRIBUTES // flag attributes for MsiEnableLog
         {
             INSTALLLOGATTRIBUTES_APPEND = (1 << 0),
             INSTALLLOGATTRIBUTES_FLUSHEACHLINE = (1 << 1)
-        };
+        }
 
         public enum INSTALLLOGMODE // bit flags for use with MsiEnableLog and MsiSetExternalUI
         {
@@ -52,7 +52,7 @@ namespace Klocman.Native
             INSTALLLOGMODE_INITIALIZE = (1 << (0x0C >> 24)), // external handler only
             INSTALLLOGMODE_TERMINATE = (1 << (0x0D >> 24)), // external handler only
             INSTALLLOGMODE_SHOWDIALOG = (1 << (0x0E >> 24)) // external handler only
-        };
+        }
 
         // Install message type for callback is a combination of the following:
         //  A message box style:      MB_*, where MB_OK is the default
@@ -76,7 +76,7 @@ namespace Klocman.Native
             INSTALLMESSAGE_INITIALIZE = 0x0C000000L, // sent prior to UI initialization, no string data
             INSTALLMESSAGE_TERMINATE = 0x0D000000L, // sent after UI termination, no string data
             INSTALLMESSAGE_SHOWDIALOG = 0x0E000000L // sent prior to display or authored dialog or wizard
-        };
+        }
 
         public enum INSTALLMODE
         {
@@ -84,7 +84,7 @@ namespace Klocman.Native
             INSTALLMODE_NODETECTION = -2, // skip detection
             INSTALLMODE_EXISTING = -1, // provide, if available
             INSTALLMODE_DEFAULT = 0 // install, if absent
-        };
+        }
 
         public enum INSTALLSTATE
         {
@@ -102,13 +102,13 @@ namespace Klocman.Native
             INSTALLSTATE_LOCAL = 3, // installed on local drive
             INSTALLSTATE_SOURCE = 4, // run from source, CD or net
             INSTALLSTATE_DEFAULT = 5 // use default, local or source
-        };
+        }
 
         public enum INSTALLTYPE
         {
             INSTALLTYPE_DEFAULT = 0, // set to indicate default behavior
             INSTALLTYPE_NETWORK_IMAGE = 1 // set to indicate network install
-        };
+        }
 
         public enum INSTALLUILEVEL
         {
@@ -120,13 +120,13 @@ namespace Klocman.Native
             INSTALLUILEVEL_FULL = 5, // authored UI with wizards, progress, errors
             INSTALLUILEVEL_ENDDIALOG = 0x80, // display success/failure dialog at end of install
             INSTALLUILEVEL_PROGRESSONLY = 0x40 // display only progress dialog
-        };
+        }
 
         public enum MSICOLINFO
         {
             MSICOLINFO_NAMES = 0, // return column names
             MSICOLINFO_TYPES = 1 // return column definitions, datatype code followed    by width
-        };
+        }
 
         public enum MSICONDITION
         {
@@ -134,7 +134,7 @@ namespace Klocman.Native
             MSICONDITION_TRUE = 1, // expression evaluates to True
             MSICONDITION_NONE = 2, // no expression present
             MSICONDITION_ERROR = 3 // syntax error in expression
-        };
+        }
 
         public enum MSICOSTTREE
         {
@@ -142,7 +142,7 @@ namespace Klocman.Native
             MSICOSTTREE_CHILDREN = 1,
             MSICOSTTREE_PARENTS = 2,
             MSICOSTTREE_RESERVED = 3 // Reserved for future use
-        };
+        }
 
         // -------------------------------------------------------------------------
         // Functions to query and configure a product as a whole.
@@ -153,7 +153,7 @@ namespace Klocman.Native
             MSIDBSTATE_ERROR = -1, // invalid database handle
             MSIDBSTATE_READ = 0, // database open read-only, no persistent changes
             MSIDBSTATE_WRITE = 1 // database readable and updatable
-        };
+        }
 
         public enum MSIMODIFY
         {
@@ -170,7 +170,7 @@ namespace Klocman.Native
             MSIMODIFY_VALIDATE_NEW = 9, // validate a new record
             MSIMODIFY_VALIDATE_FIELD = 10, // validate field(s) of an incomplete    record
             MSIMODIFY_VALIDATE_DELETE = 11 // validate before deleting record
-        };
+        }
 
         public enum REINSTALLMODE // bit flags
         {
@@ -185,7 +185,7 @@ namespace Klocman.Native
             REINSTALLMODE_USERDATA = 0x00000100, // insure required user reg        entries
             REINSTALLMODE_SHORTCUT = 0x00000200, // validate shortcuts items
             REINSTALLMODE_PACKAGE = 0x00000400 // use re-cache source        install package
-        };
+        }
 
         public enum USERINFOSTATE
         {
@@ -194,7 +194,7 @@ namespace Klocman.Native
             USERINFOSTATE_UNKNOWN = -1, // unrecognized product
             USERINFOSTATE_ABSENT = 0, // user info and PID not initialized
             USERINFOSTATE_PRESENT = 1 // user info and PID initialized
-        };
+        }
 
         public const int MAX_FEATURE_CHARS = 38; // maximum chars in feature name (same as string GUID)
         // MsiOpenDatabase persist predefine values, otherwise output database path is used
@@ -500,28 +500,28 @@ namespace Klocman.Native
         public sealed class INSTALLPROPERTY
         {
             // Product info attributes: advertised information
-            public static INSTALLPROPERTY PACKAGENAME = new INSTALLPROPERTY("PackageName");
-            public static INSTALLPROPERTY TRANSFORMS = new INSTALLPROPERTY("Transforms");
-            public static INSTALLPROPERTY LANGUAGE = new INSTALLPROPERTY("Language");
-            public static INSTALLPROPERTY PRODUCTNAME = new INSTALLPROPERTY("ProductName");
-            public static INSTALLPROPERTY ASSIGNMENTTYPE = new INSTALLPROPERTY("AssignmentType");
-            public static INSTALLPROPERTY PACKAGECODE = new INSTALLPROPERTY("PackageCode");
-            public static INSTALLPROPERTY VERSION = new INSTALLPROPERTY("Version");
-            public static INSTALLPROPERTY PRODUCTICON = new INSTALLPROPERTY("ProductIcon");
+            public static INSTALLPROPERTY PACKAGENAME = new("PackageName");
+            public static INSTALLPROPERTY TRANSFORMS = new("Transforms");
+            public static INSTALLPROPERTY LANGUAGE = new("Language");
+            public static INSTALLPROPERTY PRODUCTNAME = new("ProductName");
+            public static INSTALLPROPERTY ASSIGNMENTTYPE = new("AssignmentType");
+            public static INSTALLPROPERTY PACKAGECODE = new("PackageCode");
+            public static INSTALLPROPERTY VERSION = new("Version");
+            public static INSTALLPROPERTY PRODUCTICON = new("ProductIcon");
             // Product info attributes: installed information
-            public static INSTALLPROPERTY INSTALLEDPRODUCTNAME = new INSTALLPROPERTY("InstalledProductName");
-            public static INSTALLPROPERTY VERSIONSTRING = new INSTALLPROPERTY("VersionString");
-            public static INSTALLPROPERTY HELPLINK = new INSTALLPROPERTY("HelpLink");
-            public static INSTALLPROPERTY HELPTELEPHONE = new INSTALLPROPERTY("HelpTelephone");
-            public static INSTALLPROPERTY INSTALLLOCATION = new INSTALLPROPERTY("InstallLocation");
-            public static INSTALLPROPERTY INSTALLSOURCE = new INSTALLPROPERTY("InstallSource");
-            public static INSTALLPROPERTY INSTALLDATE = new INSTALLPROPERTY("InstallDate");
-            public static INSTALLPROPERTY PUBLISHER = new INSTALLPROPERTY("Publisher");
-            public static INSTALLPROPERTY LOCALPACKAGE = new INSTALLPROPERTY("LocalPackage");
-            public static INSTALLPROPERTY URLINFOABOUT = new INSTALLPROPERTY("URLInfoAbout");
-            public static INSTALLPROPERTY URLUPDATEINFO = new INSTALLPROPERTY("URLUpdateInfo");
-            public static INSTALLPROPERTY VERSIONMINOR = new INSTALLPROPERTY("VersionMinor");
-            public static INSTALLPROPERTY VERSIONMAJOR = new INSTALLPROPERTY("VersionMajor");
+            public static INSTALLPROPERTY INSTALLEDPRODUCTNAME = new("InstalledProductName");
+            public static INSTALLPROPERTY VERSIONSTRING = new("VersionString");
+            public static INSTALLPROPERTY HELPLINK = new("HelpLink");
+            public static INSTALLPROPERTY HELPTELEPHONE = new("HelpTelephone");
+            public static INSTALLPROPERTY INSTALLLOCATION = new("InstallLocation");
+            public static INSTALLPROPERTY INSTALLSOURCE = new("InstallSource");
+            public static INSTALLPROPERTY INSTALLDATE = new("InstallDate");
+            public static INSTALLPROPERTY PUBLISHER = new("Publisher");
+            public static INSTALLPROPERTY LOCALPACKAGE = new("LocalPackage");
+            public static INSTALLPROPERTY URLINFOABOUT = new("URLInfoAbout");
+            public static INSTALLPROPERTY URLUPDATEINFO = new("URLUpdateInfo");
+            public static INSTALLPROPERTY VERSIONMINOR = new("VersionMinor");
+            public static INSTALLPROPERTY VERSIONMAJOR = new("VersionMajor");
 
             private INSTALLPROPERTY(string name)
             {

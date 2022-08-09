@@ -24,10 +24,10 @@ namespace Klocman.Subsystems
             Random
         }
 
-        private readonly List<string> _directoryHistory = new List<string>();
+        private readonly List<string> _directoryHistory = new();
         //private readonly List<string> _fileHistory = new List<string>();
-        private readonly ObservedList<string> _matchedDirectories = new ObservedList<string>();
-        private readonly Random _r = new Random();
+        private readonly ObservedList<string> _matchedDirectories = new();
+        private readonly Random _r = new();
 
         /// <summary>
         ///     Currently selected directory
@@ -179,7 +179,7 @@ namespace Klocman.Subsystems
             }
             catch
             {
-                FilesInCurrentDir = new string[0];
+                FilesInCurrentDir = Array.Empty<string>();
                 CurrentDirectory = null;
                 return false;
             }
@@ -309,7 +309,7 @@ namespace Klocman.Subsystems
             var checkAll = directoriesToRefresh == null || directoriesToRefresh.Length > 0;
             _matchedDirectories.RemoveAll(obj =>
             {
-                if (checkAll || directoriesToRefresh.Any(x => x.Equals(obj)))
+                if (checkAll || directoriesToRefresh!.Any(x => x.Equals(obj)))
                 {
                     if (!Directory.Exists(obj))
                         return true;

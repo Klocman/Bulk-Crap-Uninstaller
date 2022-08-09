@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Tools;
@@ -27,7 +26,8 @@ namespace Klocman.Forms
             Opacity = 0;
 
             Result = PressedButton.None;
-            Font = SystemFonts.MessageBoxFont;
+            if (SystemFonts.MessageBoxFont != null)
+                Font = SystemFonts.MessageBoxFont;
             ForeColor = SystemColors.WindowText;
 
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace Klocman.Forms
                 checkBox1.Visible = false;
             }
 
-            if (!string.IsNullOrEmpty(settings.SmallExplanation))
+            if (!string.IsNullOrEmpty(settings.SmallExplanation) && SystemFonts.MessageBoxFont != null)
             {
                 if (SystemFonts.MessageBoxFont.FontFamily.Name == "Segoe UI"
                     && SystemFonts.MessageBoxFont.FontFamily.IsStyleAvailable(FontStyle.Regular))
@@ -242,12 +242,12 @@ namespace Klocman.Forms
         {
             var result = PressedButton.None;
 
-            void ShowDialog() { result = CustomMessageBox.ShowDialog(owner, settings, null, null); }
+            void ShowDialogLocal() { result = ShowDialog(owner, settings, null, null); }
 
             if (owner != null)
-                owner.SafeInvoke(ShowDialog);
+                owner.SafeInvoke(ShowDialogLocal);
             else
-                ShowDialog();
+                ShowDialogLocal();
 
             return result;
         }

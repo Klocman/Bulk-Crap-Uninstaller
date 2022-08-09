@@ -23,7 +23,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal class UninstallerListConfigurator : IDisposable
     {
-        private readonly FilterCondition _filteringFilterCondition = new FilterCondition { FilterText = string.Empty };
+        private readonly FilterCondition _filteringFilterCondition = new() { FilterText = string.Empty };
         private readonly TypedObjectListView<ApplicationUninstallerEntry> _listView;
         private readonly MainWindow _reference;
 
@@ -188,11 +188,10 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             //_reference.olvColumnInstallDate.AspectName = ApplicationUninstallerEntry.RegistryNameInstallDate;
             _reference.olvColumnInstallDate.AspectToStringConverter = x =>
             {
-                if (!(x is DateTime)) return Localisable.Empty;
-                var entry = (DateTime)x;
+                if (x is not DateTime time) return Localisable.Empty;
                 try
                 {
-                    return entry.IsDefault() ? Localisable.Empty : entry.ToShortDateString();
+                    return time.IsDefault() ? Localisable.Empty : time.ToShortDateString();
                 }
                 catch (SystemException)
                 {
@@ -236,7 +235,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _reference.olvColumnSize.AspectGetter = ListViewDelegates.ColumnSizeAspectGetter;
             _reference.olvColumnSize.AspectToStringConverter = ListViewDelegates.AspectToStringConverter;
             _reference.olvColumnSize.GroupKeyGetter = ListViewDelegates.ColumnSizeGroupKeyGetter;
-            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x is long num && num > 0 ? FileSize.GetUnitName(num) : CommonStrings.Unknown;
+            _reference.olvColumnSize.GroupKeyToTitleConverter = x => x is long num and > 0 ? FileSize.GetUnitName(num) : CommonStrings.Unknown;
 
             _reference.uninstallerObjectListView.PrimarySortColumn = _reference.olvColumnDisplayName;
             _reference.uninstallerObjectListView.SecondarySortColumn = _reference.olvColumnPublisher;

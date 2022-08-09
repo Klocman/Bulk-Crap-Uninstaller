@@ -5,7 +5,6 @@
 
 using System;
 using System.IO;
-using System.Security.Permissions;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Properties;
 using UninstallTools.Startup;
@@ -15,11 +14,9 @@ namespace UninstallTools.Junk.Containers
 {
     public class StartupJunkNode : JunkResultBase
     {
-        public static readonly ConfidenceRecord ConfidenceStartupIsRunOnce =
-            new ConfidenceRecord(-5, Localisation.Confidence_Startup_IsRunOnce);
+        public static readonly ConfidenceRecord ConfidenceStartupIsRunOnce = new(-5, Localisation.Confidence_Startup_IsRunOnce);
 
-        public static readonly ConfidenceRecord ConfidenceStartupMatched =
-            new ConfidenceRecord(6, Localisation.Confidence_Startup_StartupMatched);
+        public static readonly ConfidenceRecord ConfidenceStartupMatched = new(6, Localisation.Confidence_Startup_StartupMatched);
 
         internal StartupEntryBase Entry { get; }
 

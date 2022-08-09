@@ -29,27 +29,30 @@ namespace UninstallTools.Junk.Containers
 
         public override void Backup(string backupDirectory)
         {
-            using (var key = OpenRegKey())
+            using var key = OpenRegKey();
+
+            var valueKind = key.GetValueKind(ValueName);
+            switch (valueKind)
             {
-                switch (key.GetValueKind(ValueName))
-                {
-                    case RegistryValueKind.ExpandString:
-                    case RegistryValueKind.String:
-                        var targetValue = key.GetStringSafe(ValueName);
-                        var dir = CreateBackupDirectory(backupDirectory);
-                        var fileName = PathTools.SanitizeFileName(string.Concat(FullRegKeyPath, " - ", ValueName)
-                                           .TrimStart('\\').Replace('.', '_')) + ".reg";
-                        RegistryTools.ExportRegistryStringValues(Path.Combine(dir, fileName), FullRegKeyPath,
-                            new KeyValuePair<string, string>(ValueName, targetValue));
-                        break;
-                    case RegistryValueKind.MultiString:
-                    case RegistryValueKind.Binary:
-                    case RegistryValueKind.DWord:
-                    case RegistryValueKind.QWord:
-                    case RegistryValueKind.Unknown:
-                        Debug.Fail("Unsupported type " + ValueName);
-                        break;
-                }
+                case RegistryValueKind.ExpandString:
+                case RegistryValueKind.String:
+                    var targetValue = key.GetStringSafe(ValueName);
+                    var dir = CreateBackupDirectory(backupDirectory);
+                    var fileName = PathTools.SanitizeFileName(string.Concat(FullRegKeyPath, " - ", ValueName)
+                                                                    .TrimStart('\\').Replace('.', '_')) + ".reg";
+                    RegistryTools.ExportRegistryStringValues(Path.Combine(dir, fileName), FullRegKeyPath,
+                                                             new KeyValuePair<string, string>(ValueName, targetValue));
+                    break;
+                case RegistryValueKind.MultiString:
+                case RegistryValueKind.Binary:
+                case RegistryValueKind.DWord:
+                case RegistryValueKind.QWord:
+                case RegistryValueKind.Unknown:
+                default:
+                    Debug.Fail($"Unsupported type {valueKind} of value {ValueName}");
+                    break;
+                case RegistryValueKind.None:
+                    break;
             }
         }
 

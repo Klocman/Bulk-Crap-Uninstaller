@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using System.Net.Http;
 
 namespace BulkCrapUninstaller.Functions.Ratings
 {
@@ -63,7 +62,8 @@ namespace BulkCrapUninstaller.Functions.Ratings
 
         public void UploadRatings()
         {
-            if (_ratingsToSend.Count < 1) return;
+            lock (_ratingsToSend)
+                if (_ratingsToSend.Count < 1) return;
 
             using var cl = Program.GetHttpClient();
 
@@ -71,7 +71,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             {
                 foreach (var uninstallerRating in _ratingsToSend)
                 {
-                    var msg = cl.PutAsync(new Uri($@"SetUserRating?userId={UserId}&appId={uninstallerRating.Key}&rating={uninstallerRating.Value}", UriKind.Relative), null).Result;
+                    var msg = cl.PutAsync(new Uri($@"SetUserRating?userId={UserId}&appId={uninstallerRating.Key}&rating={uninstallerRating.Value}", UriKind.Relative), null!).Result;
                     msg.EnsureSuccessStatusCode();
                 }
 
@@ -148,7 +148,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             }
         }
 
-        private void LoadFromFile(string path, Dictionary<ulong, int> target)
+        private static void LoadFromFile(string path, Dictionary<ulong, int> target)
         {
             try
             {

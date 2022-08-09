@@ -5,7 +5,6 @@
 
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -30,9 +29,6 @@ namespace Klocman.Controls
         public DirectorySelectBox()
         {
             InitializeComponent();
-
-            if (CultureInfo.CurrentCulture.Name == "pl-PL")
-                button1.Text = "Przeglądaj...";
 
             var regexSearch = new string(Path.GetInvalidPathChars());
             _r = new Regex(string.Format("[{0}]", Regex.Escape(regexSearch)));

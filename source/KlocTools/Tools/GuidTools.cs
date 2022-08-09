@@ -13,7 +13,7 @@ namespace Klocman.Tools
         private const string GuidMatchPattern =
             "^[A-Fa-f0-9]{32}$|^({|\\()?[A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}(}|\\))?$|^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2}, {0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$";
 
-        private static readonly Regex GuidMatchRegex = new Regex(GuidMatchPattern, RegexOptions.Compiled);
+        private static readonly Regex GuidMatchRegex = new(GuidMatchPattern, RegexOptions.Compiled);
 
         /// <summary>
         /// Extract and parse a guid from the supplied string. Throws if no guid is found.

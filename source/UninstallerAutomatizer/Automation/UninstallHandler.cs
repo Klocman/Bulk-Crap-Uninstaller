@@ -107,7 +107,7 @@ namespace UninstallerAutomatizer
             _automationThread.Start();
         }
 
-        readonly ConcurrentDictionary<int, Task> _runningHooks = new ConcurrentDictionary<int, Task>();
+        readonly ConcurrentDictionary<int, Task> _runningHooks = new();
 
         /// <summary>
         /// Run in background as a daemon. Receive application PIDs to monitor, "stop" to exit.
@@ -176,8 +176,7 @@ namespace UninstallerAutomatizer
                                     }
                                     finally
                                     {
-                                        Task tt;
-                                        _runningHooks.TryRemove(pid, out tt);
+                                        _runningHooks.TryRemove(pid, out _);
                                     }
                                 });
 

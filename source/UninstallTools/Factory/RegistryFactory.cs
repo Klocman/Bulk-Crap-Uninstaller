@@ -132,7 +132,7 @@ namespace UninstallTools.Factory
                 ModifyPath = uninstallerKey.GetStringSafe(RegistryNameModifyPath),
                 InstallLocation = uninstallerKey.GetStringSafe(RegistryNameInstallLocation),
                 InstallSource = uninstallerKey.GetStringSafe(RegistryNameInstallSource),
-                SystemComponent = (int)uninstallerKey.GetValue(RegistryNameSystemComponent, 0) != 0,
+                SystemComponent = Convert.ToInt32(uninstallerKey.GetValue(RegistryNameSystemComponent, 0)) != 0,
                 DisplayIcon = uninstallerKey.GetStringSafe(RegistryNameDisplayIcon)
             };
         }
@@ -235,7 +235,7 @@ namespace UninstallTools.Factory
 
         private static bool GetProtectedFlag(RegistryKey uninstallerKey)
         {
-            return (int)uninstallerKey.GetValue("NoRemove", 0) != 0;
+            return Convert.ToInt32(uninstallerKey.GetValue("NoRemove", 0)) != 0;
         }
 
         private static RegistryKey OpenSubKeySafe(RegistryKey baseKey, string name, bool writable = false)
@@ -276,7 +276,7 @@ namespace UninstallTools.Factory
         private static UninstallerType GetUninstallerType(RegistryKey uninstallerKey)
         {
             // Detect MSI installer based on registry entry (the proper way)
-            if ((int)uninstallerKey.GetValue(RegistryNameWindowsInstaller, 0) != 0)
+            if (Convert.ToInt32(uninstallerKey.GetValue(RegistryNameWindowsInstaller, 0)) != 0)
             {
                 return UninstallerType.Msiexec;
             }

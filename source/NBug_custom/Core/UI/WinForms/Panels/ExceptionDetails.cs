@@ -14,8 +14,7 @@ namespace NBug.Core.UI.WinForms.Panels
 {
     internal partial class ExceptionDetails : UserControl
     {
-        private readonly Dictionary<TreeNode, SerializableException> exceptionDetailsList =
-            new Dictionary<TreeNode, SerializableException>();
+        private readonly Dictionary<TreeNode, SerializableException> exceptionDetailsList = new();
 
         public ExceptionDetails()
         {

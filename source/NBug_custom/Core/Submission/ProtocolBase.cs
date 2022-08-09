@@ -92,8 +92,8 @@ namespace NBug.Core.Submission
 
         internal string GetSettingsPasswordField(string connectionString)
         {
-            return connectionString.Substring(connectionString.ToLower().IndexOf("password=") + 9)
-                .Substring(0, connectionString.Substring(connectionString.ToLower().IndexOf("password=") + 9).Length - 1);
+            return connectionString.Substring(connectionString.ToLower().IndexOf("password=", StringComparison.Ordinal) + 9)
+                .Substring(0, connectionString.Substring(connectionString.ToLower().IndexOf("password=", StringComparison.Ordinal) + 9).Length - 1);
         }
     }
 }

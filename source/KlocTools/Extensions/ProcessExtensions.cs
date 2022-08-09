@@ -71,6 +71,9 @@ namespace Klocman.Extensions
 
         public static string GetCommandLine(this Process process)
         {
+            if (process == null) throw new ArgumentNullException(nameof(process));
+            if (process.MainModule?.FileName == null) throw new ArgumentException("null MainModule");
+
             var commandLine = new StringBuilder(process.MainModule.FileName);
 
             commandLine.Append(' ');

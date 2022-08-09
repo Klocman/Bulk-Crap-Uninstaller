@@ -22,14 +22,14 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _abortPostprocessingThread;
         private Thread _finalizerThread;
-        private readonly Queue<ApplicationUninstallerEntry> _itemsToProcess = new Queue<ApplicationUninstallerEntry>();
-        private readonly List<object> _objectsToUpdate = new List<object>();
+        private readonly Queue<ApplicationUninstallerEntry> _itemsToProcess = new();
+        private readonly List<object> _objectsToUpdate = new();
         private readonly Action<IList> _updateItemsCallback;
 
         /// <summary>
         /// External lock to the uninstall system.
         /// </summary>
-        internal object UninstallerFileLock { get; set; } = new object();
+        internal object UninstallerFileLock { get; set; } = new();
 
         private readonly CertificateCache _certificateCache;
 
@@ -43,8 +43,8 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void AbortPostprocessingThread()
         {
-            _itemsToProcess.Clear();
             _abortPostprocessingThread = true;
+            lock (_itemsToProcess) _itemsToProcess.Clear();
         }
 
         public void StartProcessingThread(IEnumerable<ApplicationUninstallerEntry> itemsToProcess)

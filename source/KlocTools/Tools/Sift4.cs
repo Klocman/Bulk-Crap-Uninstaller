@@ -18,7 +18,7 @@ namespace Klocman.Tools
             if (options.Tokenizer == null)
             {
                 options.Tokenizer = s => s == null
-                    ? new string[0]
+                    ? Array.Empty<string>()
                     : s.ToCharArray().Select(c => c.ToString()).ToArray();
             }
             if (options.TokenMatcher == null)
@@ -179,7 +179,7 @@ namespace Klocman.Tools
 
             while ((c1 < l1) && (c2 < l2))
             {
-                if (s1[c1] == s2[c2])
+                if (s1![c1] == s2![c2])
                 {
                     localCs++;
                     var isTransposition = false;
@@ -284,7 +284,7 @@ namespace Klocman.Tools
 
             while ((c1 < l1) && (c2 < l2))
             {
-                if (s1[c1] == s2[c2])
+                if (s1![c1] == s2![c2])
                 {
                     localCs++;
                 }

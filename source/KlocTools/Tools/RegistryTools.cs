@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -76,7 +77,7 @@ namespace Klocman.Tools
             {
                 var valueData = sourceKey.GetValue(valueName);
                 var valueKind = sourceKey.GetValueKind(valueName);
-                destinationKey.SetValue(valueName, valueData, valueKind);
+                destinationKey.SetValue(valueName, valueData!, valueKind);
             }
 
             foreach (var sourceSubKeyName in sourceKey.GetSubKeyNames())
@@ -221,6 +222,7 @@ namespace Klocman.Tools
             return result;
         }
 
+        [return: NotNull]
         private static RegistryKey GetRootHive(string fullPath)
         {
             RegistryKey rootKey;
@@ -269,7 +271,7 @@ namespace Klocman.Tools
 
             for (var i = 0; i < parts.Length; i++)
             {
-                var newKey = previousKey.CreateSubKey(parts[i]);
+                var newKey = previousKey!.CreateSubKey(parts[i]);
                 // Don't try to close the root key
                 if (i > 0)
                     previousKey.Close();

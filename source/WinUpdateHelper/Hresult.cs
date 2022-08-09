@@ -7,16 +7,15 @@ using System;
 
 namespace WinUpdateHelper
 {
-    /// <summary>
-    /// Parse ms help pages:
-    //// const string path = @"d:\hres";
-    //// var f = File.ReadAllLines(path);
-    //// var i = 0;
-    //// var result = new List<string>();
-    //// while (i < f.Length)
-    ////     result.Add("case " + f[i++] + ": return \"" + f[i++] + " - " + f[i++] + "\";");
-    //// File.WriteAllLines(path + "_out", result);
-    /// </summary>
+    /* Parse ms help pages:
+     * const string path = @"d:\hres";
+     * var f = File.ReadAllLines(path);
+     * var i = 0;
+     * var result = new List<string>();
+     * while (i < f.Length)
+     *     result.Add("case " + f[i++] + ": return \"" + f[i++] + " - " + f[i++] + "\";");
+     * File.WriteAllLines(path + "_out", result);
+     */
     internal static class Hresult
     {
         public static string ConvertHresultToDetails(int errorCode)

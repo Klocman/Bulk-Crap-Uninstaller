@@ -107,9 +107,7 @@ namespace BulkCrapUninstaller.Forms
             UseWaitCursor = true;
             Application.DoEvents();
 
-            dataGridView1.DataSource =
-                Functions.AppPropertiesGatherer.GetInfo(tabControl1.SelectedTab.Tag as ApplicationUninstallerEntry,
-                    CurrentlyVisiblePage);
+            dataGridView1.DataSource = AppPropertiesGatherer.GetInfo(tabControl1.SelectedTab.Tag as ApplicationUninstallerEntry, CurrentlyVisiblePage);
 
             // Make first column shorter, since it contains much less text. Default FillWeight is around 34
             var firstColumn = dataGridView1.Columns.GetFirstColumn(new DataGridViewElementStates());

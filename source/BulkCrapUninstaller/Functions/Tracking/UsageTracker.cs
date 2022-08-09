@@ -15,10 +15,10 @@ namespace BulkCrapUninstaller.Functions.Tracking
     public sealed class UsageTracker : ReferencedComponent
     {
         private static readonly IEnumerable<string> EventFilters = new[] {"Click", "DoubleClick"};
-        private static readonly List<Type> TypeBlacklist = new List<Type>();
+        private static readonly List<Type> TypeBlacklist = new();
         // new[] { typeof(Forms.CustomMessageBox) });
 
-        private readonly List<EventHook> _hooks = new List<EventHook>();
+        private readonly List<EventHook> _hooks = new();
         internal IEnumerable<EventHook> Hooks => _hooks;
 
         public static void AddBlacklistType(Type typeToBlacklist)
