@@ -58,7 +58,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using System.Drawing.Drawing2D;
 using BrightIdeasSoftware.Properties;
-using System.Security.Permissions;
 
 namespace BrightIdeasSoftware {
 
@@ -72,8 +71,8 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <param name="olv"></param>
         public HeaderControl(ObjectListView olv) {
-            this.ListView = olv;
-            this.AssignHandle(NativeMethods.GetHeaderControl(olv));
+            ListView = olv;
+            AssignHandle(NativeMethods.GetHeaderControl(olv));
         }
 
         #region Properties
@@ -85,8 +84,8 @@ namespace BrightIdeasSoftware {
         /// <returns>Index of the column under the cursor, or -1</returns>
         public int ColumnIndexUnderCursor {
             get {
-                Point pt = this.ScrolledCursorPosition;
-                return NativeMethods.GetColumnUnderPoint(this.Handle, pt);
+                Point pt = ScrolledCursorPosition;
+                return NativeMethods.GetColumnUnderPoint(Handle, pt);
             }
         }
 
@@ -101,7 +100,7 @@ namespace BrightIdeasSoftware {
         /// current.
         /// </remarks>
         public new IntPtr Handle {
-            get { return NativeMethods.GetHeaderControl(this.ListView); }
+            get { return NativeMethods.GetHeaderControl(ListView); }
         }
 
         //TODO: The Handle property may no longer be necessary. CHECK! 2008/11/28
@@ -121,10 +120,10 @@ namespace BrightIdeasSoftware {
         /// Gets the index of the column under the cursor if the cursor is over it's checkbox
         /// </summary>
         protected int GetColumnCheckBoxUnderCursor() {
-            Point pt = this.ScrolledCursorPosition;
+            Point pt = ScrolledCursorPosition;
 
-            int columnIndex = NativeMethods.GetColumnUnderPoint(this.Handle, pt);
-            return this.IsPointOverHeaderCheckBox(columnIndex, pt) ? columnIndex : -1;
+            int columnIndex = NativeMethods.GetColumnUnderPoint(Handle, pt);
+            return IsPointOverHeaderCheckBox(columnIndex, pt) ? columnIndex : -1;
         }
 
         /// <summary>
@@ -133,7 +132,7 @@ namespace BrightIdeasSoftware {
         public Rectangle ClientRectangle {
             get {
                 Rectangle r = new Rectangle();
-                NativeMethods.GetClientRect(this.Handle, ref r);
+                NativeMethods.GetClientRect(Handle, ref r);
                 return r;
             }
         }
@@ -145,14 +144,14 @@ namespace BrightIdeasSoftware {
         /// <param name="pt"></param>
         /// <returns></returns>
         protected bool IsPointOverHeaderCheckBox(int columnIndex, Point pt) {
-            if (columnIndex < 0 || columnIndex >= this.ListView.Columns.Count)
+            if (columnIndex < 0 || columnIndex >= ListView.Columns.Count)
                 return false;
 
-            OLVColumn column = this.ListView.GetColumn(columnIndex);
-            if (!this.HasCheckBox(column))
+            OLVColumn column = ListView.GetColumn(columnIndex);
+            if (!HasCheckBox(column))
                 return false;
 
-            Rectangle r = this.GetCheckBoxBounds(column);
+            Rectangle r = GetCheckBoxBounds(column);
             r.Inflate(1, 1); // make the target slightly bigger
             return r.Contains(pt);
         }
@@ -163,10 +162,10 @@ namespace BrightIdeasSoftware {
         /// </summary>
         protected bool IsCursorOverLockedDivider {
             get {
-                Point pt = this.ScrolledCursorPosition;
-                int dividerIndex = NativeMethods.GetDividerUnderPoint(this.Handle, pt);
-                if (dividerIndex >= 0 && dividerIndex < this.ListView.Columns.Count) {
-                    OLVColumn column = this.ListView.GetColumn(dividerIndex);
+                Point pt = ScrolledCursorPosition;
+                int dividerIndex = NativeMethods.GetDividerUnderPoint(Handle, pt);
+                if (dividerIndex >= 0 && dividerIndex < ListView.Columns.Count) {
+                    OLVColumn column = ListView.GetColumn(dividerIndex);
                     return column.IsFixedWidth || column.FillsFreeSpace;
                 } else
                     return false;
@@ -175,8 +174,8 @@ namespace BrightIdeasSoftware {
 
         private Point ScrolledCursorPosition {
             get {
-                Point pt = this.ListView.PointToClient(Cursor.Position);
-                pt.X += this.ListView.LowLevelScrollPosition.X;
+                Point pt = ListView.PointToClient(Cursor.Position);
+                pt.X += ListView.LowLevelScrollPosition.X;
                 return pt;
             }
         }
@@ -185,8 +184,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the listview that this header belongs to
         /// </summary>
         protected ObjectListView ListView {
-            get { return this.listView; }
-            set { this.listView = value; }
+            get { return listView; }
+            set { listView = value; }
         }
 
         private ObjectListView listView;
@@ -196,7 +195,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public int MaximumHeight
         {
-            get { return this.ListView.HeaderMaximumHeight; }
+            get { return ListView.HeaderMaximumHeight; }
         }
 
         /// <summary>
@@ -204,7 +203,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public int MinimumHeight
         {
-            get { return this.ListView.HeaderMinimumHeight; }
+            get { return ListView.HeaderMinimumHeight; }
         }
 
         /// <summary>
@@ -212,12 +211,12 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public ToolTipControl ToolTip {
             get {
-                if (this.toolTip == null) {
-                    this.CreateToolTip();
+                if (toolTip == null) {
+                    CreateToolTip();
                 }
-                return this.toolTip;
+                return toolTip;
             }
-            protected set { this.toolTip = value; }
+            protected set { toolTip = value; }
         }
 
         private ToolTipControl toolTip;
@@ -227,8 +226,8 @@ namespace BrightIdeasSoftware {
         /// wrapped when it is too long to fit within the column
         /// </summary>
         public bool WordWrap {
-            get { return this.wordWrap; }
-            set { this.wordWrap = value; }
+            get { return wordWrap; }
+            set { wordWrap = value; }
         }
 
         private bool wordWrap;
@@ -242,34 +241,34 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <returns>Height in pixels</returns>
         protected int CalculateHeight(Graphics g) {
-            TextFormatFlags flags = this.TextFormatFlags;
-            int columnUnderCursor = this.ColumnIndexUnderCursor;
-            float height = this.MinimumHeight;
-            for (int i = 0; i < this.ListView.Columns.Count; i++) {
-                OLVColumn column = this.ListView.GetColumn(i);
+            TextFormatFlags flags = TextFormatFlags;
+            int columnUnderCursor = ColumnIndexUnderCursor;
+            float height = MinimumHeight;
+            for (int i = 0; i < ListView.Columns.Count; i++) {
+                OLVColumn column = ListView.GetColumn(i);
                 height = Math.Max(height, CalculateColumnHeight(g, column, flags, columnUnderCursor == i, i));
             }
-            return this.MaximumHeight == -1 ? (int) height : Math.Min(this.MaximumHeight, (int) height);
+            return MaximumHeight == -1 ? (int) height : Math.Min(MaximumHeight, (int) height);
         }
 
         private float CalculateColumnHeight(Graphics g, OLVColumn column, TextFormatFlags flags, bool isHot, int i) {
-            Font f = this.CalculateFont(column, isHot, false);
+            Font f = CalculateFont(column, isHot, false);
             if (column.IsHeaderVertical)
                 return TextRenderer.MeasureText(g, column.Text, f, new Size(10000, 10000), flags).Width;
 
             const int fudge = 9; // 9 is a magic constant that makes it perfectly match XP behavior
-            if (!this.WordWrap)
+            if (!WordWrap)
                 return f.Height + fudge;
 
-            Rectangle r = this.GetHeaderDrawRect(i);
-            if (this.HasNonThemedSortIndicator(column))
+            Rectangle r = GetHeaderDrawRect(i);
+            if (HasNonThemedSortIndicator(column))
                 r.Width -= 16;
             if (column.HasHeaderImage)
                 r.Width -= column.ImageList.ImageSize.Width + 3;
-            if (this.HasFilterIndicator(column))
-                r.Width -= this.CalculateFilterIndicatorWidth(r);
-            if (this.HasCheckBox(column))
-                r.Width -= this.CalculateCheckBoxBounds(g, r).Width;
+            if (HasFilterIndicator(column))
+                r.Width -= CalculateFilterIndicatorWidth(r);
+            if (HasCheckBox(column))
+                r.Width -= CalculateCheckBoxBounds(g, r).Width;
             SizeF size = TextRenderer.MeasureText(g, column.Text, f, new Size(r.Width, 100), flags);
             return size.Height + fudge;
         }
@@ -280,10 +279,10 @@ namespace BrightIdeasSoftware {
         /// <param name="column"></param>
         /// <returns></returns>
         public Rectangle GetCheckBoxBounds(OLVColumn column) {
-            Rectangle r = this.GetHeaderDrawRect(column.Index);
+            Rectangle r = GetHeaderDrawRect(column.Index);
 
-            using (Graphics g = this.ListView.CreateGraphics())
-                return this.CalculateCheckBoxBounds(g, r);
+            using (Graphics g = ListView.CreateGraphics())
+                return CalculateCheckBoxBounds(g, r);
         }
 
         /// <summary>
@@ -301,9 +300,9 @@ namespace BrightIdeasSoftware {
         /// <param name="column"></param>
         /// <returns></returns>
         protected bool HasSortIndicator(OLVColumn column) {
-            if (!this.ListView.ShowSortIndicators)
+            if (!ListView.ShowSortIndicators)
                 return false;
-            return column == this.ListView.LastSortColumn && this.ListView.LastSortOrder != SortOrder.None;
+            return column == ListView.LastSortColumn && ListView.LastSortOrder != SortOrder.None;
         }
 
         /// <summary>
@@ -312,7 +311,7 @@ namespace BrightIdeasSoftware {
         /// <param name="column"></param>
         /// <returns></returns>
         protected bool HasFilterIndicator(OLVColumn column) {
-            return (this.ListView.UseFiltering && this.ListView.UseFilterIndicator && column.HasFilterIndicator);
+            return (ListView.UseFiltering && ListView.UseFilterIndicator && column.HasFilterIndicator);
         }
 
         /// <summary>
@@ -321,13 +320,13 @@ namespace BrightIdeasSoftware {
         /// <param name="column"></param>
         /// <returns></returns>
         protected bool HasNonThemedSortIndicator(OLVColumn column) {
-            if (!this.ListView.ShowSortIndicators)
+            if (!ListView.ShowSortIndicators)
                 return false;
             if (VisualStyleRenderer.IsSupported)
                 return !VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.SortArrow.SortedUp) &&
-                    this.HasSortIndicator(column);
+                    HasSortIndicator(column);
             else
-                return this.HasSortIndicator(column);
+                return HasSortIndicator(column);
         }
 
         /// <summary>
@@ -339,7 +338,7 @@ namespace BrightIdeasSoftware {
             const int HDM_FIRST = 0x1200;
             const int HDM_GETITEMRECT = HDM_FIRST + 7;
             NativeMethods.RECT r = new NativeMethods.RECT();
-            NativeMethods.SendMessageRECT(this.Handle, HDM_GETITEMRECT, itemIndex, ref r);
+            NativeMethods.SendMessageRECT(Handle, HDM_GETITEMRECT, itemIndex, ref r);
             return Rectangle.FromLTRB(r.left, r.top, r.right, r.bottom);
         }
 
@@ -349,7 +348,7 @@ namespace BrightIdeasSoftware {
         /// <param name="itemIndex"></param>
         /// <returns></returns>
         public Rectangle GetHeaderDrawRect(int itemIndex) {
-            Rectangle r = this.GetItemRect(itemIndex);
+            Rectangle r = GetItemRect(itemIndex);
 
             // Tweak the text rectangle a little to improve aethestics
             r.Inflate(-3, 0);
@@ -362,14 +361,14 @@ namespace BrightIdeasSoftware {
         /// Force the header to redraw by invalidating it
         /// </summary>
         public void Invalidate() {
-            NativeMethods.InvalidateRect(this.Handle, 0, true);
+            NativeMethods.InvalidateRect(Handle, 0, true);
         }
 
         /// <summary>
         /// Force the header to redraw a single column by invalidating it
         /// </summary>
         public void Invalidate(OLVColumn column) {
-            NativeMethods.InvalidateRect(this.Handle, 0, true); // todo
+            NativeMethods.InvalidateRect(Handle, 0, true); // todo
         }
 
         #endregion
@@ -380,10 +379,10 @@ namespace BrightIdeasSoftware {
         /// Create a native tool tip control for this listview
         /// </summary>
         protected virtual void CreateToolTip() {
-            this.ToolTip = new ToolTipControl();
-            this.ToolTip.Create(this.Handle);
-            this.ToolTip.AddTool(this);
-            this.ToolTip.Showing += new EventHandler<ToolTipShowingEventArgs>(this.ListView.HeaderToolTipShowingCallback);
+            ToolTip = new ToolTipControl();
+            ToolTip.Create(Handle);
+            ToolTip.AddTool(this);
+            ToolTip.Showing += new EventHandler<ToolTipShowingEventArgs>(ListView.HeaderToolTipShowingCallback);
         }
 
         #endregion
@@ -409,42 +408,42 @@ namespace BrightIdeasSoftware {
 
             switch (m.Msg) {
                 case WM_SETCURSOR:
-                    if (!this.HandleSetCursor(ref m))
+                    if (!HandleSetCursor(ref m))
                         return;
                     break;
 
                 case WM_NOTIFY:
-                    if (!this.HandleNotify(ref m))
+                    if (!HandleNotify(ref m))
                         return;
                     break;
 
                 case WM_MOUSEMOVE:
-                    if (!this.HandleMouseMove(ref m))
+                    if (!HandleMouseMove(ref m))
                         return;
                     break;
 
                 case WM_MOUSELEAVE:
-                    if (!this.HandleMouseLeave(ref m))
+                    if (!HandleMouseLeave(ref m))
                         return;
                     break;
 
                 case HDM_LAYOUT:
-                    if (!this.HandleLayout(ref m))
+                    if (!HandleLayout(ref m))
                         return;
                     break;
 
                 case WM_DESTROY:
-                    if (!this.HandleDestroy(ref m))
+                    if (!HandleDestroy(ref m))
                         return;
                     break;
 
                 case WM_LBUTTONDOWN:
-                    if (!this.HandleLButtonDown(ref m))
+                    if (!HandleLButtonDown(ref m))
                         return;
                     break;
 
                 case WM_LBUTTONUP:
-                    if (!this.HandleLButtonUp(ref m))
+                    if (!HandleLButtonUp(ref m))
                         return;
                     break;
             }
@@ -467,12 +466,12 @@ namespace BrightIdeasSoftware {
         protected bool HandleLButtonDown(ref Message m)
         {
             // Was there a header checkbox under the cursor?
-            this.columnIndexCheckBoxMouseDown = this.GetColumnCheckBoxUnderCursor();
-            if (this.columnIndexCheckBoxMouseDown < 0)
+            columnIndexCheckBoxMouseDown = GetColumnCheckBoxUnderCursor();
+            if (columnIndexCheckBoxMouseDown < 0)
                 return true;
 
             // Redraw the header so the checkbox redraws
-            this.Invalidate();
+            Invalidate();
 
             // Force the owning control to ignore this mouse click 
             // We don't want to sort the listview when they click the checkbox
@@ -491,16 +490,16 @@ namespace BrightIdeasSoftware {
             //System.Diagnostics.Debug.WriteLine("WM_LBUTTONUP");
 
             // Was the mouse released over a header checkbox?
-            if (this.columnIndexCheckBoxMouseDown < 0)
+            if (columnIndexCheckBoxMouseDown < 0)
                 return true;
 
             // Was the mouse released over the same checkbox on which it was pressed?
-            if (this.columnIndexCheckBoxMouseDown != this.GetColumnCheckBoxUnderCursor())
+            if (columnIndexCheckBoxMouseDown != GetColumnCheckBoxUnderCursor())
                 return true;
 
             // Toggle the header's checkbox
-            OLVColumn column = this.ListView.GetColumn(this.columnIndexCheckBoxMouseDown);
-            this.ListView.ToggleHeaderCheckBox(column);
+            OLVColumn column = ListView.GetColumn(columnIndexCheckBoxMouseDown);
+            ListView.ToggleHeaderCheckBox(column);
 
             return true;
         }
@@ -511,7 +510,7 @@ namespace BrightIdeasSoftware {
         /// <param name="m"></param>
         /// <returns></returns>
         protected bool HandleSetCursor(ref Message m) {
-            if (this.IsCursorOverLockedDivider) {
+            if (IsCursorOverLockedDivider) {
                 m.Result = (IntPtr) 1; // Don't change the cursor
                 return false;
             }
@@ -526,27 +525,27 @@ namespace BrightIdeasSoftware {
         protected bool HandleMouseMove(ref Message m) {
 
             // Forward the mouse move event to the ListView itself
-            if (this.ListView.TriggerCellOverEventsWhenOverHeader) {
+            if (ListView.TriggerCellOverEventsWhenOverHeader) {
                 int x = m.LParam.ToInt32() & 0xFFFF;
                 int y = (m.LParam.ToInt32() >> 16) & 0xFFFF;
-                this.ListView.HandleMouseMove(new Point(x, y));
+                ListView.HandleMouseMove(new Point(x, y));
             }
 
-            int columnIndex = this.ColumnIndexUnderCursor;
+            int columnIndex = ColumnIndexUnderCursor;
 
             // If the mouse has moved to a different header, pop the current tip (if any)
             // For some reason, references this.ToolTip when in design mode, causes the 
             // columns to not be resizable by dragging the divider in the Designer. No idea why.
-            if (columnIndex != this.columnShowingTip && !this.ListView.IsDesignMode) {
-                this.ToolTip.PopToolTip(this);
-                this.columnShowingTip = columnIndex;
+            if (columnIndex != columnShowingTip && !ListView.IsDesignMode) {
+                ToolTip.PopToolTip(this);
+                columnShowingTip = columnIndex;
             }
 
             // If the mouse has moved onto or away from a checkbox, we need to draw
-            int checkBoxUnderCursor = this.GetColumnCheckBoxUnderCursor();
-            if (checkBoxUnderCursor != this.lastCheckBoxUnderCursor) {
-                this.Invalidate();
-                this.lastCheckBoxUnderCursor = checkBoxUnderCursor;
+            int checkBoxUnderCursor = GetColumnCheckBoxUnderCursor();
+            if (checkBoxUnderCursor != lastCheckBoxUnderCursor) {
+                Invalidate();
+                lastCheckBoxUnderCursor = checkBoxUnderCursor;
             }
 
             return true;
@@ -562,8 +561,8 @@ namespace BrightIdeasSoftware {
         /// <returns></returns>
         protected bool HandleMouseLeave(ref Message m) {
             // Forward the mouse leave event to the ListView itself
-            if (this.ListView.TriggerCellOverEventsWhenOverHeader)
-                this.ListView.HandleMouseMove(new Point(-1, -1));
+            if (ListView.TriggerCellOverEventsWhenOverHeader)
+                ListView.HandleMouseMove(new Point(-1, -1));
 
             return true;
         }
@@ -585,17 +584,17 @@ namespace BrightIdeasSoftware {
                 case ToolTipControl.TTN_SHOW:
                     //System.Diagnostics.Debug.WriteLine("hdr TTN_SHOW");
                     //System.Diagnostics.Trace.Assert(this.ToolTip.Handle == nmhdr.hwndFrom);
-                    return this.ToolTip.HandleShow(ref m);
+                    return ToolTip.HandleShow(ref m);
 
                 case ToolTipControl.TTN_POP:
                     //System.Diagnostics.Debug.WriteLine("hdr TTN_POP");
                     //System.Diagnostics.Trace.Assert(this.ToolTip.Handle == nmhdr.hwndFrom);
-                    return this.ToolTip.HandlePop(ref m);
+                    return ToolTip.HandlePop(ref m);
 
                 case ToolTipControl.TTN_GETDISPINFO:
                     //System.Diagnostics.Debug.WriteLine("hdr TTN_GETDISPINFO");
                     //System.Diagnostics.Trace.Assert(this.ToolTip.Handle == nmhdr.hwndFrom);
-                    return this.ToolTip.HandleGetDispInfo(ref m);
+                    return ToolTip.HandleGetDispInfo(ref m);
             }
 
             return false;
@@ -622,23 +621,23 @@ namespace BrightIdeasSoftware {
             //System.Diagnostics.Debug.WriteLine(String.Format("header cd: {0:x}, {1}, {2:x}", nmcustomdraw.dwDrawStage, nmcustomdraw.dwItemSpec, nmcustomdraw.uItemState));
             switch (nmcustomdraw.dwDrawStage) {
                 case CDDS_PREPAINT:
-                    this.cachedNeedsCustomDraw = this.NeedsCustomDraw();
+                    cachedNeedsCustomDraw = NeedsCustomDraw();
                     m.Result = (IntPtr) CDRF_NOTIFYITEMDRAW;
                     return true;
 
                 case CDDS_ITEMPREPAINT:
                     int columnIndex = nmcustomdraw.dwItemSpec.ToInt32();
-                    OLVColumn column = this.ListView.GetColumn(columnIndex);
+                    OLVColumn column = ListView.GetColumn(columnIndex);
 
                     // These don't work when visual styles are enabled
                     //NativeMethods.SetBkColor(nmcustomdraw.hdc, ColorTranslator.ToWin32(Color.Red));
                     //NativeMethods.SetTextColor(nmcustomdraw.hdc, ColorTranslator.ToWin32(Color.Blue));
                     //m.Result = IntPtr.Zero;
 
-                    if (this.cachedNeedsCustomDraw) {
+                    if (cachedNeedsCustomDraw) {
                         using (Graphics g = Graphics.FromHdc(nmcustomdraw.hdc)) {
                             g.TextRenderingHint = ObjectListView.TextRenderingHint;
-                            this.CustomDrawHeaderCell(g, columnIndex, nmcustomdraw.uItemState);
+                            CustomDrawHeaderCell(g, columnIndex, nmcustomdraw.uItemState);
                         }
                         m.Result = (IntPtr) CDRF_SKIPDEFAULT;
                     } else {
@@ -646,12 +645,12 @@ namespace BrightIdeasSoftware {
                         bool isPressed = ((nmcustomdraw.uItemState & CDIS_SELECTED) == CDIS_SELECTED);
 
                         // We don't need to modify this based on checkboxes, since there can't be checkboxes if we are here
-                        bool isHot = columnIndex == this.ColumnIndexUnderCursor;
+                        bool isHot = columnIndex == ColumnIndexUnderCursor;
 
-                        Font f = this.CalculateFont(column, isHot, isPressed);
+                        Font f = CalculateFont(column, isHot, isPressed);
 
-                        this.fontHandle = f.ToHfont();
-                        NativeMethods.SelectObject(nmcustomdraw.hdc, this.fontHandle);
+                        fontHandle = f.ToHfont();
+                        NativeMethods.SelectObject(nmcustomdraw.hdc, fontHandle);
 
                         m.Result = (IntPtr) (CDRF_NEWFONT | CDRF_NOTIFYPOSTPAINT);
                     }
@@ -659,9 +658,9 @@ namespace BrightIdeasSoftware {
                     return true;
 
                 case CDDS_ITEMPOSTPAINT:
-                    if (this.fontHandle != IntPtr.Zero) {
-                        NativeMethods.DeleteObject(this.fontHandle);
-                        this.fontHandle = IntPtr.Zero;
+                    if (fontHandle != IntPtr.Zero) {
+                        NativeMethods.DeleteObject(fontHandle);
+                        fontHandle = IntPtr.Zero;
                     }
                     break;
             }
@@ -679,17 +678,17 @@ namespace BrightIdeasSoftware {
         /// <param name="m"></param>
         /// <returns></returns>
         protected bool HandleLayout(ref Message m) {
-            if (this.ListView.HeaderStyle == ColumnHeaderStyle.None)
+            if (ListView.HeaderStyle == ColumnHeaderStyle.None)
                 return true;
 
             NativeMethods.HDLAYOUT hdlayout = (NativeMethods.HDLAYOUT) m.GetLParam(typeof (NativeMethods.HDLAYOUT));
             NativeMethods.RECT rect = (NativeMethods.RECT) Marshal.PtrToStructure(hdlayout.prc, typeof (NativeMethods.RECT));
             NativeMethods.WINDOWPOS wpos = (NativeMethods.WINDOWPOS) Marshal.PtrToStructure(hdlayout.pwpos, typeof (NativeMethods.WINDOWPOS));
 
-            using (Graphics g = this.ListView.CreateGraphics()) {
+            using (Graphics g = ListView.CreateGraphics()) {
                 g.TextRenderingHint = ObjectListView.TextRenderingHint;
-                int height = this.CalculateHeight(g);
-                wpos.hwnd = this.Handle;
+                int height = CalculateHeight(g);
+                wpos.hwnd = Handle;
                 wpos.hwndInsertAfter = IntPtr.Zero;
                 wpos.flags = NativeMethods.SWP_FRAMECHANGED;
                 wpos.x = rect.left;
@@ -703,9 +702,9 @@ namespace BrightIdeasSoftware {
                 Marshal.StructureToPtr(wpos, hdlayout.pwpos, false);
             }
 
-            this.ListView.BeginInvoke((MethodInvoker) delegate {
-                this.Invalidate();
-                this.ListView.Invalidate();
+            ListView.BeginInvoke((MethodInvoker) delegate {
+                Invalidate();
+                ListView.Invalidate();
             });
             return false;
         }
@@ -716,8 +715,8 @@ namespace BrightIdeasSoftware {
         /// <param name="m"></param>
         /// <returns></returns>
         protected bool HandleDestroy(ref Message m) {
-            if (this.toolTip != null) {
-                this.toolTip.Showing -= new EventHandler<ToolTipShowingEventArgs>(this.ListView.HeaderToolTipShowingCallback);
+            if (toolTip != null) {
+                toolTip.Showing -= new EventHandler<ToolTipShowingEventArgs>(ListView.HeaderToolTipShowingCallback);
             }
             return false;
         }
@@ -732,24 +731,24 @@ namespace BrightIdeasSoftware {
         /// <remarks>Word wrapping and colored text require custom drawning. Funnily enough, we
         /// can change the font natively.</remarks>
         protected bool NeedsCustomDraw() {
-            if (this.WordWrap)
+            if (WordWrap)
                 return true;
             
-            if (this.ListView.HeaderUsesThemes)
+            if (ListView.HeaderUsesThemes)
                 return false;
 
-            if (this.NeedsCustomDraw(this.ListView.HeaderFormatStyle))
+            if (NeedsCustomDraw(ListView.HeaderFormatStyle))
                 return true;
             
-            foreach (OLVColumn column in this.ListView.Columns) {
+            foreach (OLVColumn column in ListView.Columns) {
                 if (column.HasHeaderImage ||
                     !column.ShowTextInHeader ||
                     column.IsHeaderVertical || 
-                    this.HasFilterIndicator(column) ||
-                    this.HasCheckBox(column) ||
+                    HasFilterIndicator(column) ||
+                    HasCheckBox(column) ||
                     column.TextAlign != column.HeaderTextAlignOrDefault ||
                     (column.Index == 0 && column.HeaderTextAlignOrDefault != HorizontalAlignment.Left) ||
-                    this.NeedsCustomDraw(column.HeaderFormatStyle))
+                    NeedsCustomDraw(column.HeaderFormatStyle))
                     return true;
             }
 
@@ -760,9 +759,9 @@ namespace BrightIdeasSoftware {
             if (style == null)
                 return false;
 
-            return (this.NeedsCustomDraw(style.Normal) || 
-                this.NeedsCustomDraw(style.Hot) ||
-                this.NeedsCustomDraw(style.Pressed));
+            return (NeedsCustomDraw(style.Normal) || 
+                NeedsCustomDraw(style.Hot) ||
+                NeedsCustomDraw(style.Pressed));
         }
 
         private bool NeedsCustomDraw(HeaderStateStyle style) {
@@ -787,12 +786,12 @@ namespace BrightIdeasSoftware {
         /// <param name="columnIndex"></param>
         /// <param name="itemState"></param>
         protected void CustomDrawHeaderCell(Graphics g, int columnIndex, int itemState) {
-            OLVColumn column = this.ListView.GetColumn(columnIndex);
+            OLVColumn column = ListView.GetColumn(columnIndex);
 
-            bool hasCheckBox = this.HasCheckBox(column);
-            bool isMouseOverCheckBox = columnIndex == this.lastCheckBoxUnderCursor;
+            bool hasCheckBox = HasCheckBox(column);
+            bool isMouseOverCheckBox = columnIndex == lastCheckBoxUnderCursor;
             bool isMouseDownOnCheckBox = isMouseOverCheckBox && Control.MouseButtons == MouseButtons.Left;
-            bool isHot = (columnIndex == this.ColumnIndexUnderCursor) && (!(hasCheckBox && isMouseOverCheckBox));
+            bool isHot = (columnIndex == ColumnIndexUnderCursor) && (!(hasCheckBox && isMouseOverCheckBox));
 
             const int CDIS_SELECTED = 1;
             bool isPressed = ((itemState & CDIS_SELECTED) == CDIS_SELECTED);
@@ -800,10 +799,10 @@ namespace BrightIdeasSoftware {
            // System.Diagnostics.Debug.WriteLine(String.Format("{2:hh:mm:ss.ff} - HeaderCustomDraw: {0}, {1}", columnIndex, itemState, DateTime.Now));
 
             // Calculate which style should be used for the header
-            HeaderStateStyle stateStyle = this.CalculateStateStyle(column, isHot, isPressed);
+            HeaderStateStyle stateStyle = CalculateStateStyle(column, isHot, isPressed);
 
             // If there is an owner drawn delegate installed, give it a chance to draw the header
-            Rectangle fullCellBounds = this.GetItemRect(columnIndex);
+            Rectangle fullCellBounds = GetItemRect(columnIndex);
             if (column.HeaderDrawing != null)
             {
                 if (!column.HeaderDrawing(g, fullCellBounds, columnIndex, column, isPressed, stateStyle))
@@ -811,42 +810,42 @@ namespace BrightIdeasSoftware {
             }
 
             // Draw the background
-            if (this.ListView.HeaderUsesThemes &&
+            if (ListView.HeaderUsesThemes &&
                 VisualStyleRenderer.IsSupported &&
                 VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.Item.Normal))
-                this.DrawThemedBackground(g, fullCellBounds, columnIndex, isPressed, isHot);
+                DrawThemedBackground(g, fullCellBounds, columnIndex, isPressed, isHot);
             else
-                this.DrawUnthemedBackground(g, fullCellBounds, columnIndex, isPressed, isHot, stateStyle);
+                DrawUnthemedBackground(g, fullCellBounds, columnIndex, isPressed, isHot, stateStyle);
             
-            Rectangle r = this.GetHeaderDrawRect(columnIndex);
+            Rectangle r = GetHeaderDrawRect(columnIndex);
 
             // Draw the sort indicator if this column has one
-            if (this.HasSortIndicator(column)) {
-                if (this.ListView.HeaderUsesThemes &&
+            if (HasSortIndicator(column)) {
+                if (ListView.HeaderUsesThemes &&
                     VisualStyleRenderer.IsSupported &&
                     VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.SortArrow.SortedUp))
-                    this.DrawThemedSortIndicator(g, r);
+                    DrawThemedSortIndicator(g, r);
                 else
-                    r = this.DrawUnthemedSortIndicator(g, r);
+                    r = DrawUnthemedSortIndicator(g, r);
             }
 
-            if (this.HasFilterIndicator(column))
-                r = this.DrawFilterIndicator(g, r);
+            if (HasFilterIndicator(column))
+                r = DrawFilterIndicator(g, r);
 
             if (hasCheckBox)
-                r = this.DrawCheckBox(g, r, column.HeaderCheckState, column.HeaderCheckBoxDisabled, isMouseOverCheckBox, isMouseDownOnCheckBox);
+                r = DrawCheckBox(g, r, column.HeaderCheckState, column.HeaderCheckBoxDisabled, isMouseOverCheckBox, isMouseDownOnCheckBox);
 
             // Debugging - Where is the text going to be drawn
             //            g.DrawRectangle(Pens.Blue, r);
 
             // Finally draw the text
-            this.DrawHeaderImageAndText(g, r, column, stateStyle);
+            DrawHeaderImageAndText(g, r, column, stateStyle);
         }
 
         private Rectangle DrawCheckBox(Graphics g, Rectangle r, CheckState checkState, bool isDisabled, bool isHot,
             bool isPressed) {
-            CheckBoxState checkBoxState = this.GetCheckBoxState(checkState, isDisabled, isHot, isPressed);
-            Rectangle checkBoxBounds = this.CalculateCheckBoxBounds(g, r);
+            CheckBoxState checkBoxState = GetCheckBoxState(checkState, isDisabled, isHot, isPressed);
+            Rectangle checkBoxBounds = CalculateCheckBoxBounds(g, r);
             CheckBoxRenderer.DrawCheckBox(g, checkBoxBounds.Location, checkBoxState);
 
             // Move the left edge without changing the right edge
@@ -928,7 +927,7 @@ namespace BrightIdeasSoftware {
                 // can draw something more interesting than the dull raised block
                 if (VisualStyleRenderer.IsSupported &&
                     VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.Item.Normal))
-                    this.DrawThemedBackground(g, r, columnIndex, isPressed, isHot);
+                    DrawThemedBackground(g, r, columnIndex, isPressed, isHot);
                 else
                     ControlPaint.DrawBorder3D(g, r, Border3DStyle.RaisedInner);
             else {
@@ -958,7 +957,7 @@ namespace BrightIdeasSoftware {
             if (columnIndex == 0 &&
                 VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.ItemLeft.Normal))
                 part = 2; // left item
-            if (columnIndex == this.ListView.Columns.Count - 1 &&
+            if (columnIndex == ListView.Columns.Count - 1 &&
                 VisualStyleRenderer.IsElementDefined(VisualStyleElement.Header.ItemRight.Normal))
                 part = 3; // right item
 
@@ -979,9 +978,9 @@ namespace BrightIdeasSoftware {
         /// <param name="r"></param>
         protected void DrawThemedSortIndicator(Graphics g, Rectangle r) {
             VisualStyleRenderer renderer2 = null;
-            if (this.ListView.LastSortOrder == SortOrder.Ascending)
+            if (ListView.LastSortOrder == SortOrder.Ascending)
                 renderer2 = new VisualStyleRenderer(VisualStyleElement.Header.SortArrow.SortedUp);
-            if (this.ListView.LastSortOrder == SortOrder.Descending)
+            if (ListView.LastSortOrder == SortOrder.Descending)
                 renderer2 = new VisualStyleRenderer(VisualStyleElement.Header.SortArrow.SortedDown);
             if (renderer2 != null) {
                 Size sz = renderer2.GetPartSize(g, ThemeSizeType.True);
@@ -1012,7 +1011,7 @@ namespace BrightIdeasSoftware {
             Point triangleLocation = new Point(r.Right - triangleWidth - 2, r.Top + (r.Height - triangleHeight)/2);
             Point[] pts = new Point[] {triangleLocation, triangleLocation, triangleLocation};
 
-            if (this.ListView.LastSortOrder == SortOrder.Ascending) {
+            if (ListView.LastSortOrder == SortOrder.Ascending) {
                 pts[0].Offset(midX - deltaX, midY + deltaY);
                 pts[1].Offset(midX, midY - deltaY - 1);
                 pts[2].Offset(midX + deltaX, midY + deltaY);
@@ -1034,7 +1033,7 @@ namespace BrightIdeasSoftware {
         /// <param name="r"></param>
         /// <returns></returns>
         protected Rectangle DrawFilterIndicator(Graphics g, Rectangle r) {
-            int width = this.CalculateFilterIndicatorWidth(r);
+            int width = CalculateFilterIndicatorWidth(r);
             if (width <= 0)
                 return r;
 
@@ -1062,15 +1061,15 @@ namespace BrightIdeasSoftware {
         /// <param name="stateStyle"></param>
         protected void DrawHeaderImageAndText(Graphics g, Rectangle r, OLVColumn column, HeaderStateStyle stateStyle) {
 
-            TextFormatFlags flags = this.TextFormatFlags;
+            TextFormatFlags flags = TextFormatFlags;
             flags |= TextFormatFlags.VerticalCenter;
             if (column.HeaderTextAlignOrDefault == HorizontalAlignment.Center)
                 flags |= TextFormatFlags.HorizontalCenter;
             if (column.HeaderTextAlignOrDefault == HorizontalAlignment.Right)
                 flags |= TextFormatFlags.Right;
 
-            Font f = this.ListView.HeaderUsesThemes ? this.ListView.Font : stateStyle.Font ?? this.ListView.Font;
-            Color color = this.ListView.HeaderUsesThemes ? Color.Black : stateStyle.ForeColor;
+            Font f = ListView.HeaderUsesThemes ? ListView.Font : stateStyle.Font ?? ListView.Font;
+            Color color = ListView.HeaderUsesThemes ? Color.Black : stateStyle.ForeColor;
             if (color.IsEmpty)
                 color = Color.Black;
 
@@ -1112,7 +1111,7 @@ namespace BrightIdeasSoftware {
 
             column.ImageList.Draw(g, imageX, imageY, column.ImageList.Images.IndexOfKey(column.HeaderImageKey));
 
-            this.DrawText(g, textRect, column, flags, f, color);
+            DrawText(g, textRect, column, flags, f, color);
         }
 
         private static void DrawVerticalText(Graphics g, Rectangle r, OLVColumn column, Font f, Color color) {
@@ -1148,7 +1147,7 @@ namespace BrightIdeasSoftware {
         /// <param name="column"></param>
         /// <returns></returns>
         protected HeaderFormatStyle CalculateHeaderStyle(OLVColumn column) {
-            return column.HeaderFormatStyle ?? this.ListView.HeaderFormatStyle ?? new HeaderFormatStyle();
+            return column.HeaderFormatStyle ?? ListView.HeaderFormatStyle ?? new HeaderFormatStyle();
         }
 
         /// <summary>
@@ -1159,8 +1158,8 @@ namespace BrightIdeasSoftware {
         /// <param name="isPressed"></param>
         /// <returns></returns>
         protected HeaderStateStyle CalculateStateStyle(OLVColumn column, bool isHot, bool isPressed) {
-            HeaderFormatStyle headerStyle = this.CalculateHeaderStyle(column);
-            if (this.ListView.IsDesignMode) 
+            HeaderFormatStyle headerStyle = CalculateHeaderStyle(column);
+            if (ListView.IsDesignMode) 
                 return headerStyle.Normal;
             if (isPressed)
                 return headerStyle.Pressed;
@@ -1177,8 +1176,8 @@ namespace BrightIdeasSoftware {
         /// <param name="isPressed"></param>
         /// <returns></returns>
         protected Font CalculateFont(OLVColumn column, bool isHot, bool isPressed) {
-            HeaderStateStyle stateStyle = this.CalculateStateStyle(column, isHot, isPressed);
-            return stateStyle.Font ?? this.ListView.Font;
+            HeaderStateStyle stateStyle = CalculateStateStyle(column, isHot, isPressed);
+            return stateStyle.Font ?? ListView.Font;
         }
 
         /// <summary>
@@ -1190,11 +1189,11 @@ namespace BrightIdeasSoftware {
                     TextFormatFlags.NoPrefix |
                     TextFormatFlags.WordEllipsis | 
                     TextFormatFlags.PreserveGraphicsTranslateTransform;
-                if (this.WordWrap)
+                if (WordWrap)
                     flags |= TextFormatFlags.WordBreak;
                 else
                     flags |= TextFormatFlags.SingleLine;
-                if (this.ListView.RightToLeft == RightToLeft.Yes)
+                if (ListView.RightToLeft == RightToLeft.Yes)
                     flags |= TextFormatFlags.RightToLeft;
 
                 return flags;
@@ -1209,16 +1208,16 @@ namespace BrightIdeasSoftware {
         /// <returns>Null if the given point isn't over the header</returns>
         internal OlvListViewHitTestInfo.HeaderHitTestInfo HitTest(int x, int y)
         {
-            Rectangle r = this.ClientRectangle;
+            Rectangle r = ClientRectangle;
             if (!r.Contains(x, y))
                 return null;
 
-            Point pt = new Point(x + this.ListView.LowLevelScrollPosition.X, y);
+            Point pt = new Point(x + ListView.LowLevelScrollPosition.X, y);
 
             OlvListViewHitTestInfo.HeaderHitTestInfo hti = new OlvListViewHitTestInfo.HeaderHitTestInfo();
-            hti.ColumnIndex = NativeMethods.GetColumnUnderPoint(this.Handle, pt);
-            hti.IsOverCheckBox = this.IsPointOverHeaderCheckBox(hti.ColumnIndex, pt);
-            hti.OverDividerIndex = NativeMethods.GetDividerUnderPoint(this.Handle, pt);
+            hti.ColumnIndex = NativeMethods.GetColumnUnderPoint(Handle, pt);
+            hti.IsOverCheckBox = IsPointOverHeaderCheckBox(hti.ColumnIndex, pt);
+            hti.OverDividerIndex = NativeMethods.GetDividerUnderPoint(Handle, pt);
 
             return hti;
         }

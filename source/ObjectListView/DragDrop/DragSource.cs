@@ -136,7 +136,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="refreshAfterDrop"></param>
         public SimpleDragSource(bool refreshAfterDrop) {
-            this.RefreshAfterDrop = refreshAfterDrop;
+            RefreshAfterDrop = refreshAfterDrop;
         }
 
         #endregion
@@ -170,7 +170,7 @@ namespace BrightIdeasSoftware
             if (button != MouseButtons.Left)
                 return null;
 
-            return this.CreateDataObject(olv);
+            return CreateDataObject(olv);
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace BrightIdeasSoftware
             if (dragObject is not OLVDataObject data)
                 return;
 
-            if (this.RefreshAfterDrop)
+            if (RefreshAfterDrop)
                 data.ListView.RefreshObjects(data.ModelObjects);
         }
 

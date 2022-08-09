@@ -50,24 +50,24 @@ namespace BrightIdeasSoftware {
         public GroupingParameters(ObjectListView olv, OLVColumn groupByColumn, SortOrder groupByOrder,
             OLVColumn column, SortOrder order, OLVColumn secondaryColumn, SortOrder secondaryOrder,
             string titleFormat, string titleSingularFormat, bool sortItemsByPrimaryColumn) {
-            this.ListView = olv;
-            this.GroupByColumn = groupByColumn;
-            this.GroupByOrder = groupByOrder;
-            this.PrimarySort = column;
-            this.PrimarySortOrder = order;
-            this.SecondarySort = secondaryColumn;
-            this.SecondarySortOrder = secondaryOrder;
-            this.SortItemsByPrimaryColumn = sortItemsByPrimaryColumn;
-            this.TitleFormat = titleFormat;
-            this.TitleSingularFormat = titleSingularFormat;
+            ListView = olv;
+            GroupByColumn = groupByColumn;
+            GroupByOrder = groupByOrder;
+            PrimarySort = column;
+            PrimarySortOrder = order;
+            SecondarySort = secondaryColumn;
+            SecondarySortOrder = secondaryOrder;
+            SortItemsByPrimaryColumn = sortItemsByPrimaryColumn;
+            TitleFormat = titleFormat;
+            TitleSingularFormat = titleSingularFormat;
         }
 
         /// <summary>
         /// Gets or sets the ObjectListView being grouped
         /// </summary>
         public ObjectListView ListView {
-            get { return this.listView; }
-            set { this.listView = value; }
+            get { return listView; }
+            set { listView = value; }
         }
         private ObjectListView listView;
 
@@ -75,8 +75,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the column used to create groups
         /// </summary>
         public OLVColumn GroupByColumn {
-            get { return this.groupByColumn; }
-            set { this.groupByColumn = value; }
+            get { return groupByColumn; }
+            set { groupByColumn = value; }
         }
         private OLVColumn groupByColumn;
 
@@ -84,8 +84,8 @@ namespace BrightIdeasSoftware {
         /// In what order will the groups themselves be sorted?
         /// </summary>
         public SortOrder GroupByOrder {
-            get { return this.groupByOrder; }
-            set { this.groupByOrder = value; }
+            get { return groupByOrder; }
+            set { groupByOrder = value; }
         }
         private SortOrder groupByOrder;
 
@@ -93,8 +93,8 @@ namespace BrightIdeasSoftware {
         /// If this is set, this comparer will be used to order the groups
         /// </summary>
         public IComparer<OLVGroup> GroupComparer {
-            get { return this.groupComparer; }
-            set { this.groupComparer = value; }
+            get { return groupComparer; }
+            set { groupComparer = value; }
         }
         private IComparer<OLVGroup> groupComparer;
 
@@ -102,8 +102,8 @@ namespace BrightIdeasSoftware {
         /// If this is set, this comparer will be used to order items within each group
         /// </summary>
         public IComparer<OLVListItem> ItemComparer {
-            get { return this.itemComparer; }
-            set { this.itemComparer = value; }
+            get { return itemComparer; }
+            set { itemComparer = value; }
         }
         private IComparer<OLVListItem> itemComparer;
 
@@ -111,8 +111,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the column that will be the primary sort
         /// </summary>
         public OLVColumn PrimarySort {
-            get { return this.primarySort; }
-            set { this.primarySort = value; }
+            get { return primarySort; }
+            set { primarySort = value; }
         }
         private OLVColumn primarySort;
 
@@ -120,8 +120,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the ordering for the primary sort
         /// </summary>
         public SortOrder PrimarySortOrder {
-            get { return this.primarySortOrder; }
-            set { this.primarySortOrder = value; }
+            get { return primarySortOrder; }
+            set { primarySortOrder = value; }
         }
         private SortOrder primarySortOrder;
 
@@ -129,8 +129,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the column used for secondary sorting
         /// </summary>
         public OLVColumn SecondarySort {
-            get { return this.secondarySort; }
-            set { this.secondarySort = value; }
+            get { return secondarySort; }
+            set { secondarySort = value; }
         }
         private OLVColumn secondarySort;
 
@@ -138,8 +138,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the ordering for the secondary sort
         /// </summary>
         public SortOrder SecondarySortOrder {
-            get { return this.secondarySortOrder; }
-            set { this.secondarySortOrder = value; }
+            get { return secondarySortOrder; }
+            set { secondarySortOrder = value; }
         }
         private SortOrder secondarySortOrder;
 
@@ -147,8 +147,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the title format used for groups with zero or more than one element
         /// </summary>
         public string TitleFormat {
-            get { return this.titleFormat; }
-            set { this.titleFormat = value; }
+            get { return titleFormat; }
+            set { titleFormat = value; }
         }
         private string titleFormat;
 
@@ -156,8 +156,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets the title format used for groups with only one element
         /// </summary>
         public string TitleSingularFormat {
-            get { return this.titleSingularFormat; }
-            set { this.titleSingularFormat = value; }
+            get { return titleSingularFormat; }
+            set { titleSingularFormat = value; }
         }
         private string titleSingularFormat;
 
@@ -165,8 +165,8 @@ namespace BrightIdeasSoftware {
         /// Gets or sets whether the items should be sorted by the primary column
         /// </summary>
         public bool SortItemsByPrimaryColumn {
-            get { return this.sortItemsByPrimaryColumn; }
-            set { this.sortItemsByPrimaryColumn = value; }
+            get { return sortItemsByPrimaryColumn; }
+            set { sortItemsByPrimaryColumn = value; }
         }
         private bool sortItemsByPrimaryColumn;
     }

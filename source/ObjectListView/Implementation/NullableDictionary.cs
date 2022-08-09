@@ -46,28 +46,28 @@ namespace BrightIdeasSoftware {
                 if (key != null) 
                     return base[key];
 
-                if (this.hasNullKey)
-                    return this.nullValue;
+                if (hasNullKey)
+                    return nullValue;
 
                 throw new KeyNotFoundException();
             }
             set {
                 if (key == null) {
-                    this.hasNullKey = true;
-                    this.nullValue = value;
+                    hasNullKey = true;
+                    nullValue = value;
                 } else
                     base[key] = value;
             }
         }
 
         new public bool ContainsKey(TKey key) {
-            return key == null ? this.hasNullKey : base.ContainsKey(key);
+            return key == null ? hasNullKey : base.ContainsKey(key);
         }
 
         new public IList Keys {
             get {
                 ArrayList list = new ArrayList(base.Keys);
-                if (this.hasNullKey)
+                if (hasNullKey)
                     list.Add(null);
                 return list;
             }
@@ -76,8 +76,8 @@ namespace BrightIdeasSoftware {
         new public IList<TValue> Values {
             get {
                 List<TValue> list = new List<TValue>(base.Values);
-                if (this.hasNullKey)
-                    list.Add(this.nullValue);
+                if (hasNullKey)
+                    list.Add(nullValue);
                 return list;
             }
         }

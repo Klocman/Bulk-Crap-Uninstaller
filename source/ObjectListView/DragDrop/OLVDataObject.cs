@@ -59,11 +59,11 @@ namespace BrightIdeasSoftware {
         /// <param name="olv">The source of the data object</param>
         /// <param name="modelObjects">The model objects to be put into the data object</param>
         public OLVDataObject(ObjectListView olv, IList modelObjects) {
-            this.objectListView = olv;
+            objectListView = olv;
             this.modelObjects = modelObjects;
-            this.includeHiddenColumns = olv.IncludeHiddenColumnsInDataTransfer;
-            this.includeColumnHeaders = olv.IncludeColumnHeadersInCopy;
-            this.CreateTextFormats();
+            includeHiddenColumns = olv.IncludeHiddenColumnsInDataTransfer;
+            includeColumnHeaders = olv.IncludeColumnHeadersInCopy;
+            CreateTextFormats();
         }
 
         #endregion
@@ -113,17 +113,17 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public void CreateTextFormats() {
 
-            OLVExporter exporter = this.CreateExporter();
+            OLVExporter exporter = CreateExporter();
 
             // Put both the text and html versions onto the clipboard.
             // For some reason, SetText() with UnicodeText doesn't set the basic CF_TEXT format,
             // but using SetData() does.
             //this.SetText(sbText.ToString(), TextDataFormat.UnicodeText);
-            this.SetData(exporter.ExportTo(OLVExporter.ExportFormat.TabSeparated));
+            SetData(exporter.ExportTo(OLVExporter.ExportFormat.TabSeparated));
             string exportTo = exporter.ExportTo(OLVExporter.ExportFormat.CSV);
             if (!String.IsNullOrEmpty(exportTo))
-                this.SetText(exportTo, TextDataFormat.CommaSeparatedValue);
-            this.SetText(ConvertToHtmlFragment(exporter.ExportTo(OLVExporter.ExportFormat.HTML)), TextDataFormat.Html);
+                SetText(exportTo, TextDataFormat.CommaSeparatedValue);
+            SetText(ConvertToHtmlFragment(exporter.ExportTo(OLVExporter.ExportFormat.HTML)), TextDataFormat.Html);
         }
 
         /// <summary>
@@ -131,10 +131,10 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <returns></returns>
         protected OLVExporter CreateExporter() {
-            OLVExporter exporter = new OLVExporter(this.ListView);
-            exporter.IncludeColumnHeaders = this.IncludeColumnHeaders;
-            exporter.IncludeHiddenColumns = this.IncludeHiddenColumns;
-            exporter.ModelObjects = this.ModelObjects;
+            OLVExporter exporter = new OLVExporter(ListView);
+            exporter.IncludeColumnHeaders = IncludeColumnHeaders;
+            exporter.IncludeHiddenColumns = IncludeHiddenColumns;
+            exporter.ModelObjects = ModelObjects;
             return exporter;
         }
 
@@ -143,7 +143,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         [Obsolete("Use OLVExporter directly instead", false)]
         public string CreateHtml() {
-            OLVExporter exporter = this.CreateExporter();
+            OLVExporter exporter = CreateExporter();
             return exporter.ExportTo(OLVExporter.ExportFormat.HTML);
         }
 

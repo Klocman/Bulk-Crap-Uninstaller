@@ -198,31 +198,31 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public OlvListViewHitTestInfo(OLVListItem olvListItem, OLVListSubItem subItem, int flags, OLVGroup group, int iColumn)
         {
-            this.item = olvListItem;
+            item = olvListItem;
             this.subItem = subItem;
-            this.location = ConvertNativeFlagsToDotNetLocation(olvListItem, flags);
-            this.HitTestLocationEx = (HitTestLocationEx)flags;
-            this.Group = group;
-            this.ColumnIndex = iColumn;
-            this.ListView = olvListItem == null ? null : (ObjectListView)olvListItem.ListView;
+            location = ConvertNativeFlagsToDotNetLocation(olvListItem, flags);
+            HitTestLocationEx = (HitTestLocationEx)flags;
+            Group = group;
+            ColumnIndex = iColumn;
+            ListView = olvListItem == null ? null : (ObjectListView)olvListItem.ListView;
 
             switch (location) {
                 case ListViewHitTestLocations.StateImage:
-                    this.HitTestLocation = HitTestLocation.CheckBox;
+                    HitTestLocation = HitTestLocation.CheckBox;
                     break;
                 case ListViewHitTestLocations.Image:
-                    this.HitTestLocation = HitTestLocation.Image;
+                    HitTestLocation = HitTestLocation.Image;
                     break;
                 case ListViewHitTestLocations.Label:
-                    this.HitTestLocation = HitTestLocation.Text;
+                    HitTestLocation = HitTestLocation.Text;
                     break;
                 default:
-                    if ((this.HitTestLocationEx & HitTestLocationEx.LVHT_EX_GROUP_COLLAPSE) == HitTestLocationEx.LVHT_EX_GROUP_COLLAPSE)
-                        this.HitTestLocation = HitTestLocation.GroupExpander;
-                    else if ((this.HitTestLocationEx & HitTestLocationEx.LVHT_EX_GROUP_MINUS_FOOTER_AND_BKGRD) != 0)
-                        this.HitTestLocation = HitTestLocation.Group;
+                    if ((HitTestLocationEx & HitTestLocationEx.LVHT_EX_GROUP_COLLAPSE) == HitTestLocationEx.LVHT_EX_GROUP_COLLAPSE)
+                        HitTestLocation = HitTestLocation.GroupExpander;
+                    else if ((HitTestLocationEx & HitTestLocationEx.LVHT_EX_GROUP_MINUS_FOOTER_AND_BKGRD) != 0)
+                        HitTestLocation = HitTestLocation.Group;
                     else
-                        this.HitTestLocation = HitTestLocation.Nothing;
+                        HitTestLocation = HitTestLocation.Nothing;
                     break;
             }
         }
@@ -231,10 +231,10 @@ namespace BrightIdeasSoftware {
         /// Create a OlvListViewHitTestInfo when the header was hit
         /// </summary>
         public OlvListViewHitTestInfo(ObjectListView olv, int iColumn, bool isOverCheckBox, int iDivider) {
-            this.ListView = olv;
-            this.ColumnIndex = iColumn;
-            this.HeaderDividerIndex = iDivider;
-            this.HitTestLocation = isOverCheckBox ? HitTestLocation.HeaderCheckBox : (iDivider < 0 ? HitTestLocation.Header : HitTestLocation.HeaderDivider);
+            ListView = olv;
+            ColumnIndex = iColumn;
+            HeaderDividerIndex = iDivider;
+            HitTestLocation = isOverCheckBox ? HitTestLocation.HeaderCheckBox : (iDivider < 0 ? HitTestLocation.Header : HitTestLocation.HeaderDivider);
         }
 
         private static ListViewHitTestLocations ConvertNativeFlagsToDotNetLocation(OLVListItem hitItem, int flags)
@@ -322,7 +322,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public Object RowObject {
             get {
-                return this.Item == null ? null : this.Item.RowObject;
+                return Item == null ? null : Item.RowObject;
             }
         }
 
@@ -330,7 +330,7 @@ namespace BrightIdeasSoftware {
         /// Gets the index of the row under the hit point or -1
         /// </summary>
         public int RowIndex {
-            get { return this.Item == null ? -1 : this.Item.Index; }
+            get { return Item == null ? -1 : Item.Index; }
         }
 
         /// <summary>
@@ -356,8 +356,8 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public OLVColumn Column {
             get {
-                int index = this.ColumnIndex;
-                return index < 0 || this.ListView == null ? null : this.ListView.GetColumn(index);
+                int index = ColumnIndex;
+                return index < 0 || ListView == null ? null : ListView.GetColumn(index);
             }
         }
 
@@ -373,7 +373,7 @@ namespace BrightIdeasSoftware {
         public override string ToString()
         {
             return string.Format("HitTestLocation: {0}, HitTestLocationEx: {1}, Item: {2}, SubItem: {3}, Location: {4}, Group: {5}, ColumnIndex: {6}", 
-                this.HitTestLocation, this.HitTestLocationEx, this.item, this.subItem, this.location, this.Group, this.ColumnIndex);
+                HitTestLocation, HitTestLocationEx, item, subItem, location, Group, ColumnIndex);
         }
 
         internal class HeaderHitTestInfo

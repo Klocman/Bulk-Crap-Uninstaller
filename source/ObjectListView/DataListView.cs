@@ -71,11 +71,11 @@ namespace BrightIdeasSoftware
         /// </summary>
         public DataListView()
         {
-            this.Adapter = new DataSourceAdapter(this);
+            Adapter = new DataSourceAdapter(this);
         }
 
         protected override void Dispose(bool disposing) {
-            this.Adapter.Dispose();
+            Adapter.Dispose();
             base.Dispose(disposing);
         }
 
@@ -92,8 +92,8 @@ namespace BrightIdeasSoftware
          Description("Should the control automatically generate columns from the DataSource"),
          DefaultValue(true)]
         public bool AutoGenerateColumns {
-            get { return this.Adapter.AutoGenerateColumns; }
-            set { this.Adapter.AutoGenerateColumns = value; }
+            get { return Adapter.AutoGenerateColumns; }
+            set { Adapter.AutoGenerateColumns = value; }
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace BrightIdeasSoftware
         TypeConverter("System.Windows.Forms.Design.DataSourceConverter, System.Design")]
         public virtual Object DataSource
         {
-            get { return this.Adapter.DataSource; }
-            set { this.Adapter.DataSource = value; }
+            get { return Adapter.DataSource; }
+            set { Adapter.DataSource = value; }
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace BrightIdeasSoftware
          DefaultValue("")]
         public virtual string DataMember
         {
-            get { return this.Adapter.DataMember; }
-            set { this.Adapter.DataMember = value; }
+            get { return Adapter.DataMember; }
+            set { Adapter.DataMember = value; }
         }
 
         #endregion
@@ -209,8 +209,8 @@ namespace BrightIdeasSoftware
 
             // Copied from base method, but we don't need to BuildList() since we know that our
             // data adaptor is going to do that immediately after this method exits.
-            this.EndUpdate();
-            this.ResizeFreeSpaceFillingColumns();
+            EndUpdate();
+            ResizeFreeSpaceFillingColumns();
            // this.BuildList();
         }
 

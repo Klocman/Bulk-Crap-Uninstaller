@@ -97,8 +97,8 @@ namespace BrightIdeasSoftware
         /// <remarks>If you subclass the standard generator or implement IGenerator yourself, 
         /// you should install an instance of your subclass/implementation here.</remarks>
         public static IGenerator Instance {
-            get { return Generator.instance ?? (Generator.instance = new Generator()); }
-            set { Generator.instance = value; }
+            get { return instance ?? (instance = new Generator()); }
+            set { instance = value; }
         }
         private static IGenerator instance;
 
@@ -110,7 +110,7 @@ namespace BrightIdeasSoftware
         /// <param name="olv">The ObjectListView to modify</param>
         /// <param name="enumerable">The collection whose first element will be used to generate columns.</param>
         static public void GenerateColumns(ObjectListView olv, IEnumerable enumerable) {
-            Generator.GenerateColumns(olv, enumerable, false);
+            GenerateColumns(olv, enumerable, false);
         }
 
         /// <summary>
@@ -125,13 +125,13 @@ namespace BrightIdeasSoftware
             // Generate columns based on the type of the first model in the collection and then quit
             if (enumerable != null) {
                 foreach (object model in enumerable) {
-                    Generator.Instance.GenerateAndReplaceColumns(olv, model.GetType(), allProperties);
+                    Instance.GenerateAndReplaceColumns(olv, model.GetType(), allProperties);
                     return;
                 }
             }
 
             // If we reach here, the collection was empty, so we clear the list
-            Generator.Instance.GenerateAndReplaceColumns(olv, null, allProperties);
+            Instance.GenerateAndReplaceColumns(olv, null, allProperties);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace BrightIdeasSoftware
         /// <param name="olv">The ObjectListView to modify</param>
         /// <param name="type">The model type whose attributes will be considered.</param>
         static public void GenerateColumns(ObjectListView olv, Type type) {
-            Generator.Instance.GenerateAndReplaceColumns(olv, type, false);
+            Instance.GenerateAndReplaceColumns(olv, type, false);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace BrightIdeasSoftware
         /// <param name="type">The model type whose attributes will be considered.</param>
         /// <param name="allProperties">Will columns be generated for properties that are not marked with [OLVColumn].</param>
         static public void GenerateColumns(ObjectListView olv, Type type, bool allProperties) {
-            Generator.Instance.GenerateAndReplaceColumns(olv, type, allProperties);
+            Instance.GenerateAndReplaceColumns(olv, type, allProperties);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace BrightIdeasSoftware
         /// <param name="type"></param>
         /// <returns>A collection of OLVColumns matching the attributes of Type that have OLVColumnAttributes.</returns>
         static public IList<OLVColumn> GenerateColumns(Type type) {
-            return Generator.Instance.GenerateColumns(type, false);
+            return Instance.GenerateColumns(type, false);
         }
 
         #endregion
@@ -177,10 +177,10 @@ namespace BrightIdeasSoftware
         /// <param name="type">The model type whose attributes will be considered.</param>
         /// <param name="allProperties">Will columns be generated for properties that are not marked with [OLVColumn].</param>
         public virtual void GenerateAndReplaceColumns(ObjectListView olv, Type type, bool allProperties) {
-            IList<OLVColumn> columns = this.GenerateColumns(type, allProperties);
+            IList<OLVColumn> columns = GenerateColumns(type, allProperties);
             if (olv is TreeListView tlv)
-                this.TryGenerateChildrenDelegates(tlv, type);
-            this.ReplaceColumns(olv, columns);
+                TryGenerateChildrenDelegates(tlv, type);
+            ReplaceColumns(olv, columns);
         }
 
         /// <summary>
@@ -206,9 +206,9 @@ namespace BrightIdeasSoftware
 
                 if (Attribute.GetCustomAttribute(pinfo, typeof(OLVColumnAttribute)) is not OLVColumnAttribute attr) {
                     if (allProperties)
-                        columns.Add(this.MakeColumnFromPropertyInfo(pinfo));
+                        columns.Add(MakeColumnFromPropertyInfo(pinfo));
                 } else {
-                    columns.Add(this.MakeColumnFromAttribute(pinfo, attr));
+                    columns.Add(MakeColumnFromAttribute(pinfo, attr));
                 }
             }
 
@@ -250,7 +250,7 @@ namespace BrightIdeasSoftware
 
             // Setup the columns
             olv.AllColumns.AddRange(columns);
-            this.PostCreateColumns(olv);
+            PostCreateColumns(olv);
         }
 
         /// <summary>
@@ -306,9 +306,9 @@ namespace BrightIdeasSoftware
         /// <returns></returns>
         protected virtual OLVColumn MakeColumn(string aspectName, string title, bool editable, Type propertyType, OLVColumnAttribute attr) {
 
-            OLVColumn column = this.MakeColumn(aspectName, title, attr);
+            OLVColumn column = MakeColumn(aspectName, title, attr);
             column.Name = (attr == null || String.IsNullOrEmpty(attr.Name)) ? aspectName : attr.Name;
-            this.ConfigurePossibleBooleanColumn(column, propertyType);
+            ConfigurePossibleBooleanColumn(column, propertyType);
 
             if (attr == null) {
                 column.IsEditable = editable;
@@ -393,7 +393,7 @@ namespace BrightIdeasSoftware
         protected virtual void TryGenerateChildrenDelegates(TreeListView tlv, Type type) {
             foreach (PropertyInfo pinfo in type.GetProperties()) {
                 if (Attribute.GetCustomAttribute(pinfo, typeof(OLVChildrenAttribute)) is OLVChildrenAttribute attr) {
-                    this.GenerateChildrenDelegates(tlv, pinfo);
+                    GenerateChildrenDelegates(tlv, pinfo);
                     return;
                 }
             }

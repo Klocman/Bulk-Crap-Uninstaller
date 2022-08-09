@@ -50,7 +50,7 @@ namespace BrightIdeasSoftware {
         /// <param name="model"></param>
         /// <returns></returns>
         public override object GetClusterKey(object model) {
-            return this.Column.GetGroupKey(model);
+            return Column.GetGroupKey(model);
         }
 
         /// <summary>
@@ -59,10 +59,10 @@ namespace BrightIdeasSoftware {
         /// <param name="cluster"></param>
         /// <returns></returns>
         public override string GetClusterDisplayLabel(ICluster cluster) {
-            string s = this.Column.ConvertGroupKeyToTitle(cluster.ClusterKey);
+            string s = Column.ConvertGroupKeyToTitle(cluster.ClusterKey);
             if (String.IsNullOrEmpty(s)) 
                 s = EMPTY_LABEL;
-            return this.ApplyDisplayFormat(cluster, s);
+            return ApplyDisplayFormat(cluster, s);
         }
     }
 }

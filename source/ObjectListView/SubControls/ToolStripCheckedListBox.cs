@@ -40,10 +40,10 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public ToolStripCheckedListBox()
             : base(new CheckedListBox()) {
-            this.CheckedListBoxControl.MaximumSize = new Size(400, 700);
-            this.CheckedListBoxControl.ThreeDCheckBoxes = true;
-            this.CheckedListBoxControl.CheckOnClick = true;
-            this.CheckedListBoxControl.SelectionMode = SelectionMode.One;
+            CheckedListBoxControl.MaximumSize = new Size(400, 700);
+            CheckedListBoxControl.ThreeDCheckBoxes = true;
+            CheckedListBoxControl.CheckOnClick = true;
+            CheckedListBoxControl.SelectionMode = SelectionMode.One;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public CheckedListBox.ObjectCollection Items {
             get {
-                return this.CheckedListBoxControl.Items;
+                return CheckedListBoxControl.Items;
             }
         }
 
@@ -69,10 +69,10 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public bool CheckedOnClick {
             get {
-                return this.CheckedListBoxControl.CheckOnClick;
+                return CheckedListBoxControl.CheckOnClick;
             }
             set {
-                this.CheckedListBoxControl.CheckOnClick = value;
+                CheckedListBoxControl.CheckOnClick = value;
             }
         }
 
@@ -81,7 +81,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         public CheckedListBox.CheckedItemCollection CheckedItems {
             get {
-                return this.CheckedListBoxControl.CheckedItems;
+                return CheckedListBoxControl.CheckedItems;
             }
         }
 
@@ -91,9 +91,9 @@ namespace BrightIdeasSoftware {
         /// <param name="item"></param>
         /// <param name="isChecked"></param>
         public void AddItem(object item, bool isChecked) {
-            this.Items.Add(item);
+            Items.Add(item);
             if (isChecked)
-                this.CheckedListBoxControl.SetItemChecked(this.Items.Count - 1, true);
+                CheckedListBoxControl.SetItemChecked(Items.Count - 1, true);
         }
 
         /// <summary>
@@ -102,8 +102,8 @@ namespace BrightIdeasSoftware {
         /// <param name="item"></param>
         /// <param name="state"></param>
         public void AddItem(object item, CheckState state) {
-            this.Items.Add(item);
-            this.CheckedListBoxControl.SetItemCheckState(this.Items.Count - 1, state);
+            Items.Add(item);
+            CheckedListBoxControl.SetItemCheckState(Items.Count - 1, state);
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace BrightIdeasSoftware {
         /// <param name="i"></param>
         /// <returns></returns>
         public CheckState GetItemCheckState(int i) {
-            return this.CheckedListBoxControl.GetItemCheckState(i);
+            return CheckedListBoxControl.GetItemCheckState(i);
         }
 
         /// <summary>
@@ -121,24 +121,24 @@ namespace BrightIdeasSoftware {
         /// <param name="i"></param>
         /// <param name="checkState"></param>
         public void SetItemState(int i, CheckState checkState) {
-            if (i >= 0 && i < this.Items.Count)
-                this.CheckedListBoxControl.SetItemCheckState(i, checkState);
+            if (i >= 0 && i < Items.Count)
+                CheckedListBoxControl.SetItemCheckState(i, checkState);
         }
 
         /// <summary>
         /// Check all the items in the control
         /// </summary>
         public void CheckAll() {
-            for (int i = 0; i < this.Items.Count; i++)
-                this.CheckedListBoxControl.SetItemChecked(i, true);
+            for (int i = 0; i < Items.Count; i++)
+                CheckedListBoxControl.SetItemChecked(i, true);
         }
 
         /// <summary>
         /// Unchecked all the items in the control
         /// </summary>
         public void UncheckAll() {
-            for (int i = 0; i < this.Items.Count; i++)
-                this.CheckedListBoxControl.SetItemChecked(i, false);
+            for (int i = 0; i < Items.Count; i++)
+                CheckedListBoxControl.SetItemChecked(i, false);
         }
 
         #region Events

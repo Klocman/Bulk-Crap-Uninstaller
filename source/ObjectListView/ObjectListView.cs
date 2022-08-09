@@ -640,7 +640,7 @@ namespace BrightIdeasSoftware
     /// <item><description>System.Windows.Forms (obviously)</description></item>
     /// </list>
     /// </remarks>
-    [Designer(typeof(BrightIdeasSoftware.Design.ObjectListViewDesigner))]
+    [Designer(typeof(Design.ObjectListViewDesigner))]
     public partial class ObjectListView : ListView, ISupportInitialize
     {
 
@@ -707,7 +707,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         public static bool IsLeftMouseDown
         {
-            get { return (Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left; }
+            get { return (MouseButtons & MouseButtons.Left) == MouseButtons.Left; }
         }
 
         /// <summary>
@@ -717,9 +717,9 @@ namespace BrightIdeasSoftware
         {
             get
             {
-                if (!ObjectListView.sIsVistaOrLater.HasValue)
-                    ObjectListView.sIsVistaOrLater = Environment.OSVersion.Version.Major >= 6;
-                return ObjectListView.sIsVistaOrLater.Value;
+                if (!sIsVistaOrLater.HasValue)
+                    sIsVistaOrLater = Environment.OSVersion.Version.Major >= 6;
+                return sIsVistaOrLater.Value;
             }
         }
         private static bool? sIsVistaOrLater;
@@ -731,13 +731,13 @@ namespace BrightIdeasSoftware
         {
             get
             {
-                if (!ObjectListView.sIsWin7OrLater.HasValue)
+                if (!sIsWin7OrLater.HasValue)
                 {
                     // For some reason, Win7 is v6.1, not v7.0
                     Version version = Environment.OSVersion.Version;
-                    ObjectListView.sIsWin7OrLater = version.Major > 6 || (version.Major == 6 && version.Minor > 0);
+                    sIsWin7OrLater = version.Major > 6 || (version.Major == 6 && version.Minor > 0);
                 }
-                return ObjectListView.sIsWin7OrLater.Value;
+                return sIsWin7OrLater.Value;
             }
         }
         private static bool? sIsWin7OrLater;
@@ -747,8 +747,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         public static System.Drawing.Drawing2D.SmoothingMode SmoothingMode
         {
-            get { return ObjectListView.sSmoothingMode; }
-            set { ObjectListView.sSmoothingMode = value; }
+            get { return sSmoothingMode; }
+            set { sSmoothingMode = value; }
         }
         private static System.Drawing.Drawing2D.SmoothingMode sSmoothingMode =
             System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -758,8 +758,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         public static System.Drawing.Text.TextRenderingHint TextRenderingHint
         {
-            get { return ObjectListView.sTextRendereringHint; }
-            set { ObjectListView.sTextRendereringHint = value; }
+            get { return sTextRendereringHint; }
+            set { sTextRendereringHint = value; }
         }
         private static System.Drawing.Text.TextRenderingHint sTextRendereringHint =
             System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -770,8 +770,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         public static string GroupTitleDefault
         {
-            get { return ObjectListView.sGroupTitleDefault; }
-            set { ObjectListView.sGroupTitleDefault = value ?? "{null}"; }
+            get { return sGroupTitleDefault; }
+            set { sGroupTitleDefault = value ?? "{null}"; }
         }
         private static string sGroupTitleDefault = "{null}";
 
@@ -959,7 +959,7 @@ namespace BrightIdeasSoftware
             get { return allColumns; }
             set { allColumns = value ?? new List<OLVColumn>(); }
         }
-        private List<OLVColumn> allColumns = new List<OLVColumn>();
+        private List<OLVColumn> allColumns = new();
 
         /// <summary>
         /// Gets or sets the background color of every second row 
@@ -1377,7 +1377,7 @@ namespace BrightIdeasSoftware
             }
             set
             {
-                CheckedObjects = ObjectListView.EnumerableToArray(value, true);
+                CheckedObjects = EnumerableToArray(value, true);
             }
         }
 
@@ -1386,7 +1386,7 @@ namespace BrightIdeasSoftware
         /// a specialised editor with it.
         /// </summary>
         [Editor("BrightIdeasSoftware.Design.OLVColumnCollectionEditor", "System.Drawing.Design.UITypeEditor")]
-        public new ListView.ColumnHeaderCollection Columns
+        public new ColumnHeaderCollection Columns
         {
             get
             {
@@ -1492,7 +1492,7 @@ namespace BrightIdeasSoftware
         {
             get { return decorations; }
         }
-        private readonly List<IDecoration> decorations = new List<IDecoration>();
+        private readonly List<IDecoration> decorations = new();
 
         /// <summary>
         /// When owner drawing, this renderer will draw columns that do not have specific renderer
@@ -1552,7 +1552,7 @@ namespace BrightIdeasSoftware
                 DisableObjects(value);
             }
         }
-        private readonly Hashtable disabledObjects = new Hashtable();
+        private readonly Hashtable disabledObjects = new();
 
         /// <summary>
         /// Is this given model object disabled?
@@ -1584,7 +1584,7 @@ namespace BrightIdeasSoftware
         {
             if (models == null)
                 return;
-            ArrayList list = ObjectListView.EnumerableToArray(models, false);
+            ArrayList list = EnumerableToArray(models, false);
             foreach (object model in list)
             {
                 if (model == null)
@@ -1616,7 +1616,7 @@ namespace BrightIdeasSoftware
         {
             if (models == null)
                 return;
-            ArrayList list = ObjectListView.EnumerableToArray(models, false);
+            ArrayList list = EnumerableToArray(models, false);
             foreach (object model in list)
             {
                 if (model != null)
@@ -1709,7 +1709,7 @@ namespace BrightIdeasSoftware
         /// <see cref="EditorRegistry"/>
         /// <remarks>All instances of ObjectListView share the same editor registry.</remarks>
 // ReSharper disable FieldCanBeMadeReadOnly.Global
-        public static EditorRegistry EditorRegistry = new EditorRegistry();
+        public static EditorRegistry EditorRegistry = new();
         // ReSharper restore FieldCanBeMadeReadOnly.Global
 
         /// <summary>
@@ -1826,7 +1826,7 @@ namespace BrightIdeasSoftware
             get { return filterMenuBuilder; }
             set { filterMenuBuilder = value; }
         }
-        private FilterMenuBuilder filterMenuBuilder = new FilterMenuBuilder();
+        private FilterMenuBuilder filterMenuBuilder = new();
 
         /// <summary>
         /// Gets or sets the row that has keyboard focus
@@ -2242,7 +2242,7 @@ namespace BrightIdeasSoftware
         DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual HotItemStyle HotItemStyleOrDefault
         {
-            get { return HotItemStyle ?? ObjectListView.DefaultHotItemStyle; }
+            get { return HotItemStyle ?? DefaultHotItemStyle; }
         }
 
         /// <summary>
@@ -2747,7 +2747,7 @@ namespace BrightIdeasSoftware
         {
             get { return overlays; }
         }
-        private readonly List<IOverlay> overlays = new List<IOverlay>();
+        private readonly List<IOverlay> overlays = new();
 
         /// <summary>
         /// Gets or sets whether the ObjectListView will be owner drawn. Defaults to true.
@@ -3064,7 +3064,7 @@ namespace BrightIdeasSoftware
             }
         }
         private OLVColumn selectedColumn;
-        private readonly TintedColumnDecoration selectedColumnDecoration = new TintedColumnDecoration();
+        private readonly TintedColumnDecoration selectedColumnDecoration = new();
 
         /// <summary>
         /// Gets or sets the decoration that will be drawn on all selected rows
@@ -3312,7 +3312,7 @@ namespace BrightIdeasSoftware
         DefaultValue(true)]
         public bool ShowHeaderInAllViews
         {
-            get { return ObjectListView.IsVistaOrLater && showHeaderInAllViews; }
+            get { return IsVistaOrLater && showHeaderInAllViews; }
             set
             {
                 if (showHeaderInAllViews == value)
@@ -4269,7 +4269,7 @@ namespace BrightIdeasSoftware
                 Invoke((MethodInvoker)delegate () { AddObjects(modelObjects); });
                 return;
             }
-            InsertObjects(ObjectListView.EnumerableCount(Objects), modelObjects);
+            InsertObjects(EnumerableCount(Objects), modelObjects);
             Sort(PrimarySortColumn, PrimarySortOrder);
         }
 
@@ -4542,7 +4542,7 @@ namespace BrightIdeasSoftware
                 BuildList(true);
         }
 
-        private readonly Dictionary<object, OLVListItem> _listItemLookup = new Dictionary<object, OLVListItem>();
+        private readonly Dictionary<object, OLVListItem> _listItemLookup = new();
 
         /// <summary>
         /// Build/rebuild all the list view items in the list
@@ -5015,7 +5015,7 @@ namespace BrightIdeasSoftware
                 modelObjects = args.ObjectsToAdd;
 
                 TakeOwnershipOfObjects();
-                ArrayList ourObjects = ObjectListView.EnumerableToArray(Objects, false);
+                ArrayList ourObjects = EnumerableToArray(Objects, false);
 
                 // If we are filtering the list, there is no way to efficiently
                 // insert the objects, so just put them into our collection and rebuild.
@@ -5127,7 +5127,7 @@ namespace BrightIdeasSoftware
             // We are going to remove all the given objects from our list
             // and then insert them at the given location
             TakeOwnershipOfObjects();
-            ArrayList ourObjects = ObjectListView.EnumerableToArray(Objects, false);
+            ArrayList ourObjects = EnumerableToArray(Objects, false);
 
             List<int> indicesToRemove = new List<int>();
             foreach (object modelObject in modelObjects)
@@ -5484,7 +5484,7 @@ namespace BrightIdeasSoftware
                 modelObjects = args.ObjectsToRemove;
 
                 TakeOwnershipOfObjects();
-                ArrayList ourObjects = ObjectListView.EnumerableToArray(Objects, false);
+                ArrayList ourObjects = EnumerableToArray(Objects, false);
                 foreach (object modelObject in modelObjects)
                 {
                     if (modelObject != null)
@@ -5675,7 +5675,7 @@ namespace BrightIdeasSoftware
                 ArrayList objectsToAdd = new ArrayList();
 
                 TakeOwnershipOfObjects();
-                ArrayList ourObjects = ObjectListView.EnumerableToArray(Objects, false);
+                ArrayList ourObjects = EnumerableToArray(Objects, false);
                 foreach (object modelObject in modelObjects)
                 {
                     if (modelObject != null)
@@ -5812,7 +5812,7 @@ namespace BrightIdeasSoftware
             RefreshObject(sender);
         }
 
-        private Hashtable subscribedModels = new Hashtable();
+        private Hashtable subscribedModels = new();
 
         #endregion
 
@@ -5868,7 +5868,9 @@ namespace BrightIdeasSoftware
             {
                 BinaryFormatter serializer = new BinaryFormatter();
                 serializer.AssemblyFormat = FormatterAssemblyStyle.Simple;
+#pragma warning disable SYSLIB0011
                 serializer.Serialize(ms, olvState);
+#pragma warning restore SYSLIB0011
                 return ms.ToArray();
             }
         }
@@ -5887,7 +5889,9 @@ namespace BrightIdeasSoftware
                 ObjectListViewState olvState;
                 try
                 {
+#pragma warning disable SYSLIB0011
                     olvState = deserializer.Deserialize(ms) as ObjectListViewState;
+#pragma warning restore SYSLIB0011
                 }
                 catch (System.Runtime.Serialization.SerializationException)
                 {
@@ -5942,9 +5946,9 @@ namespace BrightIdeasSoftware
             public bool IsShowingGroups;
             public SortOrder LastSortOrder = SortOrder.None;
             // ReSharper disable FieldCanBeMadeReadOnly.Global
-            public ArrayList ColumnIsVisible = new ArrayList();
-            public ArrayList ColumnDisplayIndicies = new ArrayList();
-            public ArrayList ColumnWidths = new ArrayList();
+            public ArrayList ColumnIsVisible = new();
+            public ArrayList ColumnDisplayIndicies = new();
+            public ArrayList ColumnWidths = new();
             // ReSharper restore FieldCanBeMadeReadOnly.Global
         }
 
@@ -6024,7 +6028,7 @@ namespace BrightIdeasSoftware
             // KB 813791, but I couldn't find it anywhere. You can follow this thread to see the discussion
             // http://www.ureader.com/msg/1484143.aspx
 
-            if (!ObjectListView.IsVistaOrLater && ObjectListView.IsLeftMouseDown && GridLines)
+            if (!IsVistaOrLater && IsLeftMouseDown && GridLines)
             {
                 Invalidate();
                 Update();
@@ -6268,7 +6272,7 @@ namespace BrightIdeasSoftware
                 return true;
             }
 
-            if (System.Environment.TickCount < (timeLastCharEvent + MILLISECONDS_BETWEEN_KEYPRESSES))
+            if (Environment.TickCount < (timeLastCharEvent + MILLISECONDS_BETWEEN_KEYPRESSES))
                 lastSearchString += character;
             else
                 lastSearchString = character.ToString(CultureInfo.InvariantCulture);
@@ -6342,7 +6346,7 @@ namespace BrightIdeasSoftware
             }
 
             // When did this event occur?
-            timeLastCharEvent = System.Environment.TickCount;
+            timeLastCharEvent = Environment.TickCount;
             return true;
         }
         private int timeLastCharEvent;
@@ -6380,7 +6384,7 @@ namespace BrightIdeasSoftware
             return HandleHeaderRightClick(columnIndex);
         }
 
-        private readonly IntPtr minusOne = new IntPtr(-1);
+        private readonly IntPtr minusOne = new(-1);
 
         /// <summary>
         /// Handle the Custom draw series of notifications
@@ -6567,7 +6571,7 @@ namespace BrightIdeasSoftware
 
                         // If the event handler wants to do the default processing (i.e. DrawDefault = true), we are stuck.
                         // There is no way we can force the default drawing because of the bug in .NET we are trying to get around.
-                        System.Diagnostics.Trace.Assert(!args.DrawDefault, "Default drawing is impossible in this situation");
+                        Trace.Assert(!args.DrawDefault, "Default drawing is impossible in this situation");
                     }
                     m.Result = (IntPtr)4;
 
@@ -6959,7 +6963,7 @@ namespace BrightIdeasSoftware
                     return true;
             }
 
-            if (ObjectListView.IsVistaOrLater && HasCollapsibleGroups)
+            if (IsVistaOrLater && HasCollapsibleGroups)
                 base.DefWndProc(ref m);
 
             return false;
@@ -7198,7 +7202,7 @@ namespace BrightIdeasSoftware
                             if (isSelected)
                             {
                                 // System.Diagnostics.Debug.WriteLine(String.Format("Selected: {0}", nmlistviewPtr2.iItem));
-                                bool isShiftDown = (Control.ModifierKeys & Keys.Shift) == Keys.Shift;
+                                bool isShiftDown = (ModifierKeys & Keys.Shift) == Keys.Shift;
 
                                 // -1 indicates that all rows are to be selected -- in fact, they already have been.
                                 // We now have to deselect all the disabled objects.
@@ -7211,7 +7215,7 @@ namespace BrightIdeasSoftware
                                         if (modelIndex >= 0)
                                             NativeMethods.DeselectOneItem(this, modelIndex);
                                     }
-                                    System.Diagnostics.Debug.WriteLine(String.Format("PERF - Deselecting took {0}ms / {1} ticks", sw.ElapsedMilliseconds, sw.ElapsedTicks));
+                                    Debug.WriteLine(String.Format("PERF - Deselecting took {0}ms / {1} ticks", sw.ElapsedMilliseconds, sw.ElapsedTicks));
                                 }
                                 else
                                 {
@@ -7727,12 +7731,12 @@ namespace BrightIdeasSoftware
         /// <summary>
         /// Gets or sets the image that will be place next to the Sort Ascending command
         /// </summary>
-        public static Bitmap SortAscendingImage = BrightIdeasSoftware.Properties.Resources.SortAscending;
+        public static Bitmap SortAscendingImage = Properties.Resources.SortAscending;
 
         /// <summary>
         /// Gets or sets the image that will be placed next to the Sort Descending command
         /// </summary>
-        public static Bitmap SortDescendingImage = BrightIdeasSoftware.Properties.Resources.SortDescending;
+        public static Bitmap SortDescendingImage = Properties.Resources.SortDescending;
 
         /// <summary>
         /// Append the column selection menu items to the given menu strip.
@@ -7752,7 +7756,7 @@ namespace BrightIdeasSoftware
             string label = String.Format(MenuLabelSortAscending, column.Text);
             if (column.Sortable && !String.IsNullOrEmpty(label))
             {
-                strip.Items.Add(label, ObjectListView.SortAscendingImage, (EventHandler)delegate (object sender, EventArgs args)
+                strip.Items.Add(label, SortAscendingImage, (EventHandler)delegate (object sender, EventArgs args)
                 {
                     Sort(column, SortOrder.Ascending);
                 });
@@ -7760,7 +7764,7 @@ namespace BrightIdeasSoftware
             label = String.Format(MenuLabelSortDescending, column.Text);
             if (column.Sortable && !String.IsNullOrEmpty(label))
             {
-                strip.Items.Add(label, ObjectListView.SortDescendingImage, (EventHandler)delegate (object sender, EventArgs args)
+                strip.Items.Add(label, SortDescendingImage, (EventHandler)delegate (object sender, EventArgs args)
                 {
                     Sort(column, SortOrder.Descending);
                 });
@@ -7841,7 +7845,7 @@ namespace BrightIdeasSoftware
         public virtual ToolStripDropDown MakeColumnSelectMenu(ToolStripDropDown strip)
         {
 
-            System.Diagnostics.Debug.Assert(SelectColumnsOnRightClickBehaviour != ColumnSelectBehaviour.None);
+            Debug.Assert(SelectColumnsOnRightClickBehaviour != ColumnSelectBehaviour.None);
 
             // Append a separator if the menu isn't empty and the last item isn't already a separator
             if (strip.Items.Count > 0 && (!(strip.Items[strip.Items.Count - 1] is ToolStripSeparator)))
@@ -8636,7 +8640,7 @@ namespace BrightIdeasSoftware
         [Obsolete("Use SelectedObjects property instead of this method")]
         public virtual ArrayList GetSelectedObjects()
         {
-            return ObjectListView.EnumerableToArray(SelectedObjects, false);
+            return EnumerableToArray(SelectedObjects, false);
         }
 
         /// <summary>
@@ -8658,7 +8662,7 @@ namespace BrightIdeasSoftware
         [Obsolete("Use CheckedObjects property instead of this method")]
         public virtual ArrayList GetCheckedObjects()
         {
-            return ObjectListView.EnumerableToArray(CheckedObjects, false);
+            return EnumerableToArray(CheckedObjects, false);
         }
 
         /// <summary>
@@ -8743,7 +8747,7 @@ namespace BrightIdeasSoftware
                 return;
 
             TakeOwnershipOfObjects();
-            ArrayList array = ObjectListView.EnumerableToArray(Objects, false);
+            ArrayList array = EnumerableToArray(Objects, false);
             int i = array.IndexOf(olvi.RowObject);
             if (i >= 0)
                 array[i] = newModel;
@@ -9284,7 +9288,7 @@ namespace BrightIdeasSoftware
             if (!lvi.Enabled)
             {
                 lvi.UseItemStyleForSubItems = false;
-                ApplyRowStyle(lvi, DisabledItemStyle ?? ObjectListView.DefaultDisabledItemStyle);
+                ApplyRowStyle(lvi, DisabledItemStyle ?? DefaultDisabledItemStyle);
             }
 
             // Set the check state of the row, if we are showing check boxes
@@ -9597,7 +9601,7 @@ namespace BrightIdeasSoftware
 
             isOwnerOfObjects = true;
 
-            objects = ObjectListView.EnumerableToArray(objects, true);
+            objects = EnumerableToArray(objects, true);
         }
 
         /// <summary>
@@ -9972,8 +9976,8 @@ namespace BrightIdeasSoftware
             BufferedGraphics buffer = BufferedGraphicsManager.Current.Allocate(e.Graphics, r);
             Graphics g = buffer.Graphics;
 
-            g.TextRenderingHint = ObjectListView.TextRenderingHint;
-            g.SmoothingMode = ObjectListView.SmoothingMode;
+            g.TextRenderingHint = TextRenderingHint;
+            g.SmoothingMode = SmoothingMode;
 
             // Finally, give the renderer a chance to draw something
             e.DrawDefault = !renderer.RenderSubItem(e, g, r, rowObject);
@@ -10135,7 +10139,7 @@ namespace BrightIdeasSoftware
             args.ColumnIndex = e.ColumnIndex;
             args.Column = e.Column;
             args.RowIndex = e.RowIndex;
-            args.ModifierKeys = Control.ModifierKeys;
+            args.ModifierKeys = ModifierKeys;
             args.Url = e.SubItem.Url;
             OnHyperlinkClicked(args);
             if (!args.Handled)
@@ -10205,7 +10209,7 @@ namespace BrightIdeasSoftware
             args.Column = hitTest.Column;
             if (hitTest.Item != null)
                 args.RowIndex = hitTest.Item.Index;
-            args.ModifierKeys = Control.ModifierKeys;
+            args.ModifierKeys = ModifierKeys;
 
             // In non-details view, we want any hit on an item to act as if it was a hit
             // on column 0 -- which, effectively, it was.
@@ -10296,7 +10300,7 @@ namespace BrightIdeasSoftware
             if (e.Button != MouseButtons.Left && e.Button != MouseButtons.Right)
                 return false;
 
-            if ((Control.ModifierKeys & (Keys.Shift | Keys.Control | Keys.Alt)) != 0)
+            if ((ModifierKeys & (Keys.Shift | Keys.Control | Keys.Alt)) != 0)
                 return false;
 
             if (lastMouseDownClickCount == 1 && (
@@ -10712,7 +10716,7 @@ namespace BrightIdeasSoftware
         {
             // Sanity checks
             if (column == null ||
-                View != System.Windows.Forms.View.Details ||
+                View != View.Details ||
                 GetItemCount() == 0 ||
                 !column.IsVisible)
                 return Rectangle.Empty;
@@ -10750,7 +10754,7 @@ namespace BrightIdeasSoftware
 
             // Ask the registry for an instance of the appropriate editor.
             // Use a default editor if the registry can't create one for us.
-            Control editor = ObjectListView.EditorRegistry.GetEditor(item.RowObject, column, value) ??
+            Control editor = EditorRegistry.GetEditor(item.RowObject, column, value) ??
                              MakeDefaultCellEditor(column);
 
             return editor;
@@ -11397,8 +11401,8 @@ namespace BrightIdeasSoftware
         /// <param name="itemsThatWereRedrawn">The items that were redrawn and whose decorations should also be redrawn</param>
         protected virtual void DrawAllDecorations(Graphics g, List<OLVListItem> itemsThatWereRedrawn)
         {
-            g.TextRenderingHint = ObjectListView.TextRenderingHint;
-            g.SmoothingMode = ObjectListView.SmoothingMode;
+            g.TextRenderingHint = TextRenderingHint;
+            g.SmoothingMode = SmoothingMode;
 
             Rectangle contentRectangle = ContentRectangle;
 
@@ -11850,8 +11854,8 @@ namespace BrightIdeasSoftware
         private bool isMarqueSelecting; // Is a marque selection in progress?
         private int suspendSelectionEventCount; // How many unmatched SuspendSelectionEvents() calls have been made?
 
-        private readonly List<GlassPanelForm> glassPanels = new List<GlassPanelForm>(); // The transparent panel that draws overlays
-        private Dictionary<string, bool> visitedUrlMap = new Dictionary<string, bool>(); // Which urls have been visited?
+        private readonly List<GlassPanelForm> glassPanels = new(); // The transparent panel that draws overlays
+        private Dictionary<string, bool> visitedUrlMap = new(); // Which urls have been visited?
 
         // TODO
         //private CheckBoxSettings checkBoxSettings = new CheckBoxSettings();

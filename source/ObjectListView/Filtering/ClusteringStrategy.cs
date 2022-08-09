@@ -82,8 +82,8 @@ namespace BrightIdeasSoftware {
         /// Create a clustering strategy
         /// </summary>
         public ClusteringStrategy() {
-            this.DisplayLabelFormatSingular = DefaultDisplayLabelFormatSingular;
-            this.DisplayLabelFormatPlural = DefaultDisplayLabelFormatPlural;
+            DisplayLabelFormatSingular = DefaultDisplayLabelFormatSingular;
+            DisplayLabelFormatPlural = DefaultDisplayLabelFormatPlural;
         }
 
         #endregion
@@ -137,7 +137,7 @@ namespace BrightIdeasSoftware {
         /// <param name="model"></param>
         /// <returns></returns>
         virtual public object GetClusterKey(object model) {
-            return this.Column.GetValue(model);
+            return Column.GetValue(model);
         }
 
         /// <summary>
@@ -155,10 +155,10 @@ namespace BrightIdeasSoftware {
         /// <param name="cluster"></param>
         /// <returns></returns>
         virtual public string GetClusterDisplayLabel(ICluster cluster) {
-            string s = this.Column.ValueToString(cluster.ClusterKey) ?? NULL_LABEL;
+            string s = Column.ValueToString(cluster.ClusterKey) ?? NULL_LABEL;
             if (String.IsNullOrEmpty(s)) 
                 s = EMPTY_LABEL;
-            return this.ApplyDisplayFormat(cluster, s);
+            return ApplyDisplayFormat(cluster, s);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace BrightIdeasSoftware {
         /// <param name="valuesChosenForFiltering"></param>
         /// <returns></returns>
         virtual public IModelFilter CreateFilter(IList valuesChosenForFiltering) {
-            return new OneOfFilter(this.GetClusterKey, valuesChosenForFiltering);
+            return new OneOfFilter(GetClusterKey, valuesChosenForFiltering);
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace BrightIdeasSoftware {
         /// <param name="s"></param>
         /// <returns></returns>
         virtual protected string ApplyDisplayFormat(ICluster cluster, string s) {
-            string format = (cluster.Count == 1) ? this.DisplayLabelFormatSingular : this.DisplayLabelFormatPlural;
+            string format = (cluster.Count == 1) ? DisplayLabelFormatSingular : DisplayLabelFormatPlural;
             return String.IsNullOrEmpty(format) ? s : String.Format(format, s, cluster.Count);
         }
 

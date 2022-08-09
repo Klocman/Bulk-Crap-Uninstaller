@@ -67,7 +67,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="title">The title of the column</param>
         public OLVColumnAttribute(string title) {
-            this.Title = title;
+            Title = title;
         }
 
         #endregion
@@ -90,7 +90,7 @@ namespace BrightIdeasSoftware
             get { return checkBoxes; }
             set {
                 checkBoxes = value;
-                this.IsCheckBoxesSet = true;
+                IsCheckBoxesSet = true;
             }
         }
         private bool checkBoxes;
@@ -189,7 +189,7 @@ namespace BrightIdeasSoftware
             get { return isEditable; }
             set {
                 isEditable = value;
-                this.IsEditableSet = true;
+                IsEditableSet = true;
             }
         }
         private bool isEditable = true;
@@ -244,9 +244,9 @@ namespace BrightIdeasSoftware
         /// 
         /// </summary>
         public HorizontalAlignment TextAlign {
-            get { return this.textAlign; }
+            get { return textAlign; }
             set {
-                this.textAlign = value;
+                textAlign = value;
                 IsTextAlignSet = true;
             }
         }
@@ -287,7 +287,7 @@ namespace BrightIdeasSoftware
             get { return triStateCheckBoxes; }
             set { 
                 triStateCheckBoxes = value;
-                this.IsTriStateCheckBoxesSet = true;
+                IsTriStateCheckBoxesSet = true;
             }
         }
         private bool triStateCheckBoxes;

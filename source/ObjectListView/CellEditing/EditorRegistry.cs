@@ -59,25 +59,25 @@ namespace BrightIdeasSoftware {
         /// Create an EditorRegistry
         /// </summary>
         public EditorRegistry() {
-            this.InitializeStandardTypes();
+            InitializeStandardTypes();
         }
 
         private void InitializeStandardTypes() {
-            this.Register(typeof(Boolean), typeof(BooleanCellEditor));
-            this.Register(typeof(Int16), typeof(IntUpDown));
-            this.Register(typeof(Int32), typeof(IntUpDown));
-            this.Register(typeof(Int64), typeof(IntUpDown));
-            this.Register(typeof(UInt16), typeof(UintUpDown));
-            this.Register(typeof(UInt32), typeof(UintUpDown));
-            this.Register(typeof(UInt64), typeof(UintUpDown));
-            this.Register(typeof(Single), typeof(FloatCellEditor));
-            this.Register(typeof(Double), typeof(FloatCellEditor));
-            this.Register(typeof(DateTime), delegate(Object model, OLVColumn column, Object value) {
+            Register(typeof(Boolean), typeof(BooleanCellEditor));
+            Register(typeof(Int16), typeof(IntUpDown));
+            Register(typeof(Int32), typeof(IntUpDown));
+            Register(typeof(Int64), typeof(IntUpDown));
+            Register(typeof(UInt16), typeof(UintUpDown));
+            Register(typeof(UInt32), typeof(UintUpDown));
+            Register(typeof(UInt64), typeof(UintUpDown));
+            Register(typeof(Single), typeof(FloatCellEditor));
+            Register(typeof(Double), typeof(FloatCellEditor));
+            Register(typeof(DateTime), delegate(Object model, OLVColumn column, Object value) {
                 DateTimePicker c = new DateTimePicker();
                 c.Format = DateTimePickerFormat.Short;
                 return c;
             });
-            this.Register(typeof(Boolean), delegate(Object model, OLVColumn column, Object value) {
+            Register(typeof(Boolean), delegate(Object model, OLVColumn column, Object value) {
                 CheckBox c = new BooleanCellEditor2();
                 c.ThreeState = column.TriStateCheckBoxes;
                 return c;
@@ -97,7 +97,7 @@ namespace BrightIdeasSoftware {
         /// ObjectListView.EditorRegistry.Register(typeof(Color), typeof(MySpecialColorEditor));
         /// </example>
         public void Register(Type type, Type controlType) {
-            this.Register(type, delegate(Object model, OLVColumn column, Object value) {
+            Register(type, delegate(Object model, OLVColumn column, Object value) {
                 return controlType.InvokeMember("", BindingFlags.CreateInstance, null, null, null) as Control;
             });
         }
@@ -117,7 +117,7 @@ namespace BrightIdeasSoftware {
         /// }
         /// </example>
         public void Register(Type type, EditorCreatorDelegate creator) {
-            this.creatorMap[type] = creator;
+            creatorMap[type] = creator;
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <param name="creator">The delegate that will create a editor for all other types</param>
         public void RegisterDefault(EditorCreatorDelegate creator) {
-            this.defaultCreator = creator;
+            defaultCreator = creator;
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <param name="creator">The delegate that will create a control</param>
         public void RegisterFirstChance(EditorCreatorDelegate creator) {
-            this.firstChanceCreator = creator;
+            firstChanceCreator = creator;
         }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace BrightIdeasSoftware {
         /// <remarks>Does nothing if the given type doesn't exist</remarks>
         /// <param name="type">The type whose registration is to be removed</param>
         public void Unregister(Type type) {
-            if (this.creatorMap.ContainsKey(type))
-                this.creatorMap.Remove(type);
+            if (creatorMap.ContainsKey(type))
+                creatorMap.Remove(type);
         }
 
         #endregion
@@ -166,27 +166,27 @@ namespace BrightIdeasSoftware {
             Control editor;
 
             // Give the first chance delegate a chance to decide
-            if (this.firstChanceCreator != null) {
-                editor = this.firstChanceCreator(model, column, value);
+            if (firstChanceCreator != null) {
+                editor = firstChanceCreator(model, column, value);
                 if (editor != null)
                     return editor;
             }
 
             // Try to find a creator based on the type of the value (or the column)
             Type type = value == null ? column.DataType : value.GetType();
-            if (type != null && this.creatorMap.ContainsKey(type)) {
-                editor = this.creatorMap[type](model, column, value);
+            if (type != null && creatorMap.ContainsKey(type)) {
+                editor = creatorMap[type](model, column, value);
                 if (editor != null)
                     return editor;
             }
 
             // Enums without other processing get a special editor
             if (value != null && value.GetType().IsEnum)
-                return this.CreateEnumEditor(value.GetType());
+                return CreateEnumEditor(value.GetType());
 
             // Give any default creator a final chance
-            if (this.defaultCreator != null)
-                return this.defaultCreator(model, column, value);
+            if (defaultCreator != null)
+                return defaultCreator(model, column, value);
 
             return null;
         }
@@ -205,7 +205,7 @@ namespace BrightIdeasSoftware {
 
         private EditorCreatorDelegate firstChanceCreator;
         private EditorCreatorDelegate defaultCreator;
-        private Dictionary<Type, EditorCreatorDelegate> creatorMap = new Dictionary<Type, EditorCreatorDelegate>();
+        private Dictionary<Type, EditorCreatorDelegate> creatorMap = new();
 
         #endregion
     }

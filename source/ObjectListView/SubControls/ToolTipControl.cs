@@ -40,7 +40,6 @@ using System.Collections;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Security.Permissions;
 
 namespace BrightIdeasSoftware
 {
@@ -164,10 +163,10 @@ namespace BrightIdeasSoftware
         /// </summary>
         internal int WindowStyle {
             get {
-                return (int)NativeMethods.GetWindowLong(this.Handle, GWL_STYLE);
+                return (int)NativeMethods.GetWindowLong(Handle, GWL_STYLE);
             }
             set {
-                NativeMethods.SetWindowLong(this.Handle, GWL_STYLE, value);
+                NativeMethods.SetWindowLong(Handle, GWL_STYLE, value);
             }
         }
 
@@ -176,13 +175,13 @@ namespace BrightIdeasSoftware
         /// </summary>
         public bool IsBalloon {
             get {
-                return (this.WindowStyle & TTS_BALLOON) == TTS_BALLOON;
+                return (WindowStyle & TTS_BALLOON) == TTS_BALLOON;
             }
             set {
-                if (this.IsBalloon == value)
+                if (IsBalloon == value)
                     return;
 
-                int windowStyle = this.WindowStyle;
+                int windowStyle = WindowStyle;
                 if (value) {
                     windowStyle |= (TTS_BALLOON | TTS_USEVISUALSTYLE);
                     // On XP, a border makes the ballon look wrong
@@ -191,13 +190,13 @@ namespace BrightIdeasSoftware
                 } else {
                     windowStyle &= ~(TTS_BALLOON | TTS_USEVISUALSTYLE);
                     if (!ObjectListView.IsVistaOrLater) {
-                        if (this.hasBorder)
+                        if (hasBorder)
                             windowStyle |= WS_BORDER;
                         else
                             windowStyle &= ~WS_BORDER;
                     }
                 }
-                this.WindowStyle = windowStyle;
+                WindowStyle = windowStyle;
             }
         }
 
@@ -206,16 +205,16 @@ namespace BrightIdeasSoftware
         /// </summary>
         public bool HasBorder {
             get {
-                return this.hasBorder;
+                return hasBorder;
             }
             set {
-                if (this.hasBorder == value)
+                if (hasBorder == value)
                     return;
 
                 if (value) {
-                    this.WindowStyle |= WS_BORDER;
+                    WindowStyle |= WS_BORDER;
                 } else {
-                    this.WindowStyle &= ~WS_BORDER;
+                    WindowStyle &= ~WS_BORDER;
                 }
             }
         }
@@ -226,7 +225,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         public Color BackColor {
             get {
-                int color = (int)NativeMethods.SendMessage(this.Handle, TTM_GETTIPBKCOLOR, 0, 0);
+                int color = (int)NativeMethods.SendMessage(Handle, TTM_GETTIPBKCOLOR, 0, 0);
                 return ColorTranslator.FromWin32(color);
             }
             set {
@@ -234,7 +233,7 @@ namespace BrightIdeasSoftware
                 // So we don't even try to set it.
                 if (!ObjectListView.IsVistaOrLater) {
                     int color = ColorTranslator.ToWin32(value);
-                    NativeMethods.SendMessage(this.Handle, TTM_SETTIPBKCOLOR, color, 0);
+                    NativeMethods.SendMessage(Handle, TTM_SETTIPBKCOLOR, color, 0);
                     //int x2 = Marshal.GetLastWin32Error();
                 }
             }
@@ -245,7 +244,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         public Color ForeColor {
             get {
-                int color = (int)NativeMethods.SendMessage(this.Handle, TTM_GETTIPTEXTCOLOR, 0, 0);
+                int color = (int)NativeMethods.SendMessage(Handle, TTM_GETTIPTEXTCOLOR, 0, 0);
                 return ColorTranslator.FromWin32(color);
             }
             set {
@@ -253,7 +252,7 @@ namespace BrightIdeasSoftware
                 // So we don't even try to set it.
                 if (!ObjectListView.IsVistaOrLater) {
                     int color = ColorTranslator.ToWin32(value);
-                    NativeMethods.SendMessage(this.Handle, TTM_SETTIPTEXTCOLOR, color, 0);
+                    NativeMethods.SendMessage(Handle, TTM_SETTIPTEXTCOLOR, color, 0);
                 }
             }
         }
@@ -263,17 +262,17 @@ namespace BrightIdeasSoftware
         /// </summary>
         public string Title {
             get {
-                return this.title;
+                return title;
             }
             set {
                 if (String.IsNullOrEmpty(value))
-                    this.title = String.Empty;
+                    title = String.Empty;
                 else
                     if (value.Length >= 100)
-                        this.title = value.Substring(0, 99);
+                        title = value.Substring(0, 99);
                     else
-                        this.title = value;
-                NativeMethods.SendMessageString(this.Handle, TTM_SETTITLE, (int)this.standardIcon, this.title);
+                        title = value;
+                NativeMethods.SendMessageString(Handle, TTM_SETTITLE, (int)standardIcon, title);
             }
         }
         private string title;
@@ -283,11 +282,11 @@ namespace BrightIdeasSoftware
         /// </summary>
         public StandardIcons StandardIcon {
             get {
-                return this.standardIcon;
+                return standardIcon;
             }
             set {
-                this.standardIcon = value;
-                NativeMethods.SendMessageString(this.Handle, TTM_SETTITLE, (int)this.standardIcon, this.title);
+                standardIcon = value;
+                NativeMethods.SendMessageString(Handle, TTM_SETTITLE, (int)standardIcon, title);
             }
         }
         private StandardIcons standardIcon;
@@ -299,7 +298,7 @@ namespace BrightIdeasSoftware
         /// <remarks>Setting this to null reverts to the default font.</remarks>
         public Font Font {
             get {
-                IntPtr hfont = NativeMethods.SendMessage(this.Handle, WM_GETFONT, 0, 0);
+                IntPtr hfont = NativeMethods.SendMessage(Handle, WM_GETFONT, 0, 0);
                 if (hfont == IntPtr.Zero)
                     return Control.DefaultFont;
                 else
@@ -307,12 +306,12 @@ namespace BrightIdeasSoftware
             }
             set {
                 Font newFont = value ?? Control.DefaultFont;
-                if (newFont == this.font)
+                if (newFont == font)
                     return;
 
-                this.font = newFont;
-                IntPtr hfont = this.font.ToHfont(); // THINK: When should we delete this hfont?
-                NativeMethods.SendMessage(this.Handle, WM_SETFONT, hfont, 0);
+                font = newFont;
+                IntPtr hfont = font.ToHfont(); // THINK: When should we delete this hfont?
+                NativeMethods.SendMessage(Handle, WM_SETFONT, hfont, 0);
             }
         }
         private Font font;
@@ -322,32 +321,32 @@ namespace BrightIdeasSoftware
         /// is still.
         /// </summary>
         public int AutoPopDelay {
-            get { return this.GetDelayTime(TTDT_AUTOPOP); }
-            set { this.SetDelayTime(TTDT_AUTOPOP, value); }
+            get { return GetDelayTime(TTDT_AUTOPOP); }
+            set { SetDelayTime(TTDT_AUTOPOP, value); }
         }
 
         /// <summary>
         /// Gets or sets how many milliseconds the mouse must be still before the tooltip is shown.
         /// </summary>
         public int InitialDelay {
-            get { return this.GetDelayTime(TTDT_INITIAL); }
-            set { this.SetDelayTime(TTDT_INITIAL, value); }
+            get { return GetDelayTime(TTDT_INITIAL); }
+            set { SetDelayTime(TTDT_INITIAL, value); }
         }
 
         /// <summary>
         /// Gets or sets how many milliseconds the mouse must be still before the tooltip is shown again.
         /// </summary>
         public int ReshowDelay {
-            get { return this.GetDelayTime(TTDT_RESHOW); }
-            set { this.SetDelayTime(TTDT_RESHOW, value); }
+            get { return GetDelayTime(TTDT_RESHOW); }
+            set { SetDelayTime(TTDT_RESHOW, value); }
         }
 
         private int GetDelayTime(int which) {
-            return (int)NativeMethods.SendMessage(this.Handle, TTM_GETDELAYTIME, which, 0);
+            return (int)NativeMethods.SendMessage(Handle, TTM_GETDELAYTIME, which, 0);
         }
 
         private void SetDelayTime(int which, int value) {
-            NativeMethods.SendMessage(this.Handle, TTM_SETDELAYTIME, which, value);
+            NativeMethods.SendMessage(Handle, TTM_SETDELAYTIME, which, value);
         }
 
         #endregion
@@ -360,7 +359,7 @@ namespace BrightIdeasSoftware
         /// <param name="parentHandle">The parent of the tooltip</param>
         /// <remarks>This does nothing if the control has already been created</remarks>
         public void Create(IntPtr parentHandle) {
-            if (this.Handle != IntPtr.Zero)
+            if (Handle != IntPtr.Zero)
                 return;
 
             CreateParams cp = new CreateParams();
@@ -368,10 +367,10 @@ namespace BrightIdeasSoftware
             cp.Style = TTS_NOPREFIX;
             cp.ExStyle = WS_EX_TOPMOST;
             cp.Parent = parentHandle;
-            this.CreateHandle(cp);
+            CreateHandle(cp);
             
             // Ensure that multiline tooltips work correctly
-            this.SetMaxWidth();
+            SetMaxWidth();
         }
 
         /// <summary>
@@ -384,19 +383,19 @@ namespace BrightIdeasSoftware
         /// </remarks>
         public void PushSettings() {
             // Ignore any nested calls
-            if (this.settings != null)
+            if (settings != null)
                 return;
-            this.settings = new Hashtable();
-            this.settings["IsBalloon"] = this.IsBalloon;
-            this.settings["HasBorder"] = this.HasBorder;
-            this.settings["BackColor"] = this.BackColor;
-            this.settings["ForeColor"] = this.ForeColor;
-            this.settings["Title"] = this.Title;
-            this.settings["StandardIcon"] = this.StandardIcon;
-            this.settings["AutoPopDelay"] = this.AutoPopDelay;
-            this.settings["InitialDelay"] = this.InitialDelay;
-            this.settings["ReshowDelay"] = this.ReshowDelay;
-            this.settings["Font"] = this.Font;
+            settings = new Hashtable();
+            settings["IsBalloon"] = IsBalloon;
+            settings["HasBorder"] = HasBorder;
+            settings["BackColor"] = BackColor;
+            settings["ForeColor"] = ForeColor;
+            settings["Title"] = Title;
+            settings["StandardIcon"] = StandardIcon;
+            settings["AutoPopDelay"] = AutoPopDelay;
+            settings["InitialDelay"] = InitialDelay;
+            settings["ReshowDelay"] = ReshowDelay;
+            settings["Font"] = Font;
         }
         private Hashtable settings;
 
@@ -405,21 +404,21 @@ namespace BrightIdeasSoftware
         /// was last called.
         /// </summary>
         public void PopSettings() {
-            if (this.settings == null)
+            if (settings == null)
                 return;
 
-            this.IsBalloon = (bool)this.settings["IsBalloon"];
-            this.HasBorder = (bool)this.settings["HasBorder"];
-            this.BackColor = (Color)this.settings["BackColor"];
-            this.ForeColor = (Color)this.settings["ForeColor"];
-            this.Title = (string)this.settings["Title"];
-            this.StandardIcon = (StandardIcons)this.settings["StandardIcon"];
-            this.AutoPopDelay = (int)this.settings["AutoPopDelay"];
-            this.InitialDelay = (int)this.settings["InitialDelay"];
-            this.ReshowDelay = (int)this.settings["ReshowDelay"];
-            this.Font = (Font)this.settings["Font"];
+            IsBalloon = (bool)settings["IsBalloon"];
+            HasBorder = (bool)settings["HasBorder"];
+            BackColor = (Color)settings["BackColor"];
+            ForeColor = (Color)settings["ForeColor"];
+            Title = (string)settings["Title"];
+            StandardIcon = (StandardIcons)settings["StandardIcon"];
+            AutoPopDelay = (int)settings["AutoPopDelay"];
+            InitialDelay = (int)settings["InitialDelay"];
+            ReshowDelay = (int)settings["ReshowDelay"];
+            Font = (Font)settings["Font"];
 
-            this.settings = null;
+            settings = null;
         }
 
         /// <summary>
@@ -427,8 +426,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="window">The window</param>
         public void AddTool(IWin32Window window) {
-            NativeMethods.TOOLINFO lParam = this.MakeToolInfoStruct(window);
-            NativeMethods.SendMessageTOOLINFO(this.Handle, TTM_ADDTOOL, 0, lParam);
+            NativeMethods.TOOLINFO lParam = MakeToolInfoStruct(window);
+            NativeMethods.SendMessageTOOLINFO(Handle, TTM_ADDTOOL, 0, lParam);
         }
 
         /// <summary>
@@ -436,7 +435,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="window"></param>
         public void PopToolTip(IWin32Window window) {
-            NativeMethods.SendMessage(this.Handle, TTM_POP, 0, 0);
+            NativeMethods.SendMessage(Handle, TTM_POP, 0, 0);
         }
 
         //public void Munge() {
@@ -459,15 +458,15 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="window"></param>
         public void RemoveToolTip(IWin32Window window) {
-            NativeMethods.TOOLINFO lParam = this.MakeToolInfoStruct(window);
-            NativeMethods.SendMessageTOOLINFO(this.Handle, TTM_DELTOOL, 0, lParam);
+            NativeMethods.TOOLINFO lParam = MakeToolInfoStruct(window);
+            NativeMethods.SendMessageTOOLINFO(Handle, TTM_DELTOOL, 0, lParam);
         }
 
         /// <summary>
         /// Set the maximum width of a tooltip string.
         /// </summary>
         public void SetMaxWidth() {
-            this.SetMaxWidth(SystemInformation.MaxWindowTrackSize.Width);
+            SetMaxWidth(SystemInformation.MaxWindowTrackSize.Width);
         }
 
         /// <summary>
@@ -475,7 +474,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <remarks>Setting this ensures that line breaks in the tooltip are honoured.</remarks>
         public void SetMaxWidth(int maxWidth) {
-            NativeMethods.SendMessage(this.Handle, TTM_SETMAXTIPWIDTH, 0, maxWidth);
+            NativeMethods.SendMessage(Handle, TTM_SETMAXTIPWIDTH, 0, maxWidth);
         }
 
         #endregion
@@ -524,14 +523,14 @@ namespace BrightIdeasSoftware
         /// <returns>True if the message has been handled</returns>
         public virtual bool HandleGetDispInfo(ref Message msg) {
             //System.Diagnostics.Trace.WriteLine("HandleGetDispInfo");
-            this.SetMaxWidth();
+            SetMaxWidth();
             ToolTipShowingEventArgs args = new ToolTipShowingEventArgs();
             args.ToolTipControl = this;
-            this.OnShowing(args);
+            OnShowing(args);
             if (String.IsNullOrEmpty(args.Text))
                 return false;
 
-            this.ApplyEventFormatting(args);
+            ApplyEventFormatting(args);
 
             NativeMethods.NMTTDISPINFO dispInfo = (NativeMethods.NMTTDISPINFO)msg.GetLParam(typeof(NativeMethods.NMTTDISPINFO));
             dispInfo.lpszText = args.Text;
@@ -553,21 +552,21 @@ namespace BrightIdeasSoftware
                 args.Font == null)
                 return;
 
-            this.PushSettings();
+            PushSettings();
             if (args.IsBalloon.HasValue)
-                this.IsBalloon = args.IsBalloon.Value;
+                IsBalloon = args.IsBalloon.Value;
             if (args.BackColor.HasValue)
-                this.BackColor = args.BackColor.Value;
+                BackColor = args.BackColor.Value;
             if (args.ForeColor.HasValue)
-                this.ForeColor = args.ForeColor.Value;
+                ForeColor = args.ForeColor.Value;
             if (args.StandardIcon.HasValue)
-                this.StandardIcon = args.StandardIcon.Value;
+                StandardIcon = args.StandardIcon.Value;
             if (args.AutoPopDelay.HasValue)
-                this.AutoPopDelay = args.AutoPopDelay.Value;
+                AutoPopDelay = args.AutoPopDelay.Value;
             if (args.Font != null)
-                this.Font = args.Font;
+                Font = args.Font;
             if (args.Title != null)
-                this.Title = args.Title;
+                Title = args.Title;
         }
 
         /// <summary>
@@ -589,7 +588,7 @@ namespace BrightIdeasSoftware
         /// <remarks>This cannot call base.WndProc() since the msg may have come from another control.</remarks>
         public virtual bool HandlePop(ref Message msg) {
             //System.Diagnostics.Trace.WriteLine("HandlePop");
-            this.PopSettings();
+            PopSettings();
             return true;
         }
 
@@ -615,22 +614,22 @@ namespace BrightIdeasSoftware
             switch (nmheader.nhdr.code) {
                 case TTN_SHOW:
                     //System.Diagnostics.Trace.WriteLine("reflect TTN_SHOW");
-                    if (this.HandleShow(ref msg))
+                    if (HandleShow(ref msg))
                         return true;
                     break;
                 case TTN_POP:
                     //System.Diagnostics.Trace.WriteLine("reflect TTN_POP");
-                    if (this.HandlePop(ref msg))
+                    if (HandlePop(ref msg))
                         return true;
                     break;
                 case TTN_LINKCLICK:
                     //System.Diagnostics.Trace.WriteLine("reflect TTN_LINKCLICK");
-                    if (this.HandleLinkClick(ref msg))
+                    if (HandleLinkClick(ref msg))
                         return true;
                     break;
                 case TTN_GETDISPINFO:
                     //System.Diagnostics.Trace.WriteLine("reflect TTN_GETDISPINFO");
-                    if (this.HandleGetDispInfo(ref msg))
+                    if (HandleGetDispInfo(ref msg))
                         return true;
                     break;
             }
@@ -646,12 +645,12 @@ namespace BrightIdeasSoftware
             //System.Diagnostics.Trace.WriteLine(String.Format("xx {0:x}", msg.Msg));
             switch (msg.Msg) {
                 case 0x4E: // WM_NOTIFY
-                    if (!this.HandleNotify(ref msg))
+                    if (!HandleNotify(ref msg))
                         return;
                     break;
 
                 case 0x204E: // WM_REFLECT_NOTIFY
-                    if (!this.HandleReflectNotify(ref msg))
+                    if (!HandleReflectNotify(ref msg))
                         return;
                     break;
             }
@@ -678,8 +677,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnShowing(ToolTipShowingEventArgs e) {
-            if (this.Showing != null)
-                this.Showing(this, e);
+            if (Showing != null)
+                Showing(this, e);
         }
 
         /// <summary>
@@ -687,8 +686,8 @@ namespace BrightIdeasSoftware
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnPop(EventArgs e) {
-            if (this.Pop != null)
-                this.Pop(this, e);
+            if (Pop != null)
+                Pop(this, e);
         }
 
         #endregion

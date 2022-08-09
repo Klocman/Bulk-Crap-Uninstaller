@@ -80,18 +80,18 @@ namespace BrightIdeasSoftware.Design
                                                   "Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
             if (tListViewDesigner == null) throw new ArgumentException("Could not load ListViewDesigner");
 
-            this.listViewDesigner = (ControlDesigner)Activator.CreateInstance(tListViewDesigner, BindingFlags.Instance | BindingFlags.Public, null, null, null);
-            this.designerFilter = this.listViewDesigner;
+            listViewDesigner = (ControlDesigner)Activator.CreateInstance(tListViewDesigner, BindingFlags.Instance | BindingFlags.Public, null, null, null);
+            designerFilter = listViewDesigner;
 
             // Fetch the methods from the ListViewDesigner that we know we want to use
-            this.listViewDesignGetHitTest = tListViewDesigner.GetMethod("GetHitTest", BindingFlags.Instance | BindingFlags.NonPublic);
-            this.listViewDesignWndProc = tListViewDesigner.GetMethod("WndProc", BindingFlags.Instance | BindingFlags.NonPublic);
+            listViewDesignGetHitTest = tListViewDesigner.GetMethod("GetHitTest", BindingFlags.Instance | BindingFlags.NonPublic);
+            listViewDesignWndProc = tListViewDesigner.GetMethod("WndProc", BindingFlags.Instance | BindingFlags.NonPublic);
 
-            Debug.Assert(this.listViewDesignGetHitTest != null, "Required method (GetHitTest) not found on ListViewDesigner");
-            Debug.Assert(this.listViewDesignWndProc != null, "Required method (WndProc) not found on ListViewDesigner");
+            Debug.Assert(listViewDesignGetHitTest != null, "Required method (GetHitTest) not found on ListViewDesigner");
+            Debug.Assert(listViewDesignWndProc != null, "Required method (WndProc) not found on ListViewDesigner");
 
             // Tell the Designer to use properties of default designer as well as the properties of this class (do before base.Initialize)
-            TypeDescriptor.CreateAssociation(component, this.listViewDesigner);
+            TypeDescriptor.CreateAssociation(component, listViewDesigner);
 
             IServiceContainer site = (IServiceContainer)component.Site;
             if (site != null && GetService(typeof(DesignerCommandSet)) == null) {
@@ -100,7 +100,7 @@ namespace BrightIdeasSoftware.Design
                 Debug.Fail("site != null && GetService(typeof (DesignerCommandSet)) == null");
             }
 
-            this.listViewDesigner.Initialize(component);
+            listViewDesigner.Initialize(component);
             base.Initialize(component);
 
             RemoveDuplicateDockingActionList();
@@ -113,7 +113,7 @@ namespace BrightIdeasSoftware.Design
         public override void InitializeNewComponent(IDictionary defaultValues) {
             // Debug.WriteLine("ObjectListViewDesigner.InitializeNewComponent");
             base.InitializeNewComponent(defaultValues);
-            this.listViewDesigner.InitializeNewComponent(defaultValues);
+            listViewDesigner.InitializeNewComponent(defaultValues);
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace BrightIdeasSoftware.Design
         protected override void Dispose(bool disposing) {
             // Debug.WriteLine("ObjectListViewDesigner.Dispose");
             if (disposing) {
-                if (this.listViewDesigner != null) {
-                    this.listViewDesigner.Dispose();
+                if (listViewDesigner != null) {
+                    listViewDesigner.Dispose();
                     // Normally we would now null out the designer, but this designer
                     // still has methods called AFTER it is disposed.
                 }
@@ -152,7 +152,7 @@ namespace BrightIdeasSoftware.Design
                 if (dockingAction != null) {
                     DesignerActionService service = (DesignerActionService)GetService(typeof(DesignerActionService));
                     if (service != null) {
-                        service.Remove(this.Control, dockingAction);
+                        service.Remove(Control, dockingAction);
                     }
                 }
             }
@@ -175,7 +175,7 @@ namespace BrightIdeasSoftware.Design
 
             // Give the listviewdesigner a chance to filter the properties
             // (though we already know it's not going to do anything)
-            this.designerFilter.PreFilterProperties(properties);
+            designerFilter.PreFilterProperties(properties);
 
             // I'd like to just remove the redundant properties, but that would
             // break backward compatibility. The deserialiser that handles the XXX.Designer.cs file
@@ -198,7 +198,7 @@ namespace BrightIdeasSoftware.Design
 
             // If we are looking at a TreeListView, remove group related properties
             // since TreeListViews can't show groups
-            if (this.Control is TreeListView) {
+            if (Control is TreeListView) {
                 unwantedProperties.AddRange(new string[] {
                     "GroupImageList", "GroupWithItemCountFormat", "GroupWithItemCountSingularFormat", "HasCollapsibleGroups", 
                     "SpaceBetweenGroups", "ShowGroups", "SortGroupItemsByPrimaryColumn", "ShowItemCountOnGroups"
@@ -223,7 +223,7 @@ namespace BrightIdeasSoftware.Design
         protected override void PreFilterEvents(IDictionary events) {
             // Debug.WriteLine("ObjectListViewDesigner.PreFilterEvents");
             base.PreFilterEvents(events);
-            this.designerFilter.PreFilterEvents(events);
+            designerFilter.PreFilterEvents(events);
 
             // Remove the events that don't make sense for an ObjectListView.
             // See PreFilterProperties() for why we do this dance rather than just remove the event.
@@ -240,7 +240,7 @@ namespace BrightIdeasSoftware.Design
 
             // If we are looking at a TreeListView, remove group related events
             // since TreeListViews can't show groups
-            if (this.Control is TreeListView) {
+            if (Control is TreeListView) {
                 unwanted.AddRange(new string[] {
                     "AboutToCreateGroups",
                     "AfterCreatingGroups",
@@ -266,7 +266,7 @@ namespace BrightIdeasSoftware.Design
         /// <param name="attributes">The attributes for the class of the component. </param>
         protected override void PostFilterAttributes(IDictionary attributes) {
             // Debug.WriteLine("ObjectListViewDesigner.PostFilterAttributes");
-            this.designerFilter.PostFilterAttributes(attributes);
+            designerFilter.PostFilterAttributes(attributes);
             base.PostFilterAttributes(attributes);
         }
 
@@ -276,7 +276,7 @@ namespace BrightIdeasSoftware.Design
         /// <param name="events">The events for the class of the component. </param>
         protected override void PostFilterEvents(IDictionary events) {
             // Debug.WriteLine("ObjectListViewDesigner.PostFilterEvents");
-            this.designerFilter.PostFilterEvents(events);
+            designerFilter.PostFilterEvents(events);
             base.PostFilterEvents(events);
         }
 
@@ -293,7 +293,7 @@ namespace BrightIdeasSoftware.Design
         public override DesignerActionListCollection ActionLists {
             get {
                 // We want to change the first action list so it only has the commands we want
-                DesignerActionListCollection actionLists = this.listViewDesigner.ActionLists;
+                DesignerActionListCollection actionLists = listViewDesigner.ActionLists;
                 if (actionLists.Count > 0 && !(actionLists[0] is ListViewActionListAdapter)) {
                     actionLists[0] = new ListViewActionListAdapter(this, actionLists[0]);
                 }
@@ -310,7 +310,7 @@ namespace BrightIdeasSoftware.Design
         public override ICollection AssociatedComponents {
             get {
                 ArrayList components = new ArrayList(base.AssociatedComponents);
-                components.AddRange(this.listViewDesigner.AssociatedComponents);
+                components.AddRange(listViewDesigner.AssociatedComponents);
                 return components;
             }
         }
@@ -324,7 +324,7 @@ namespace BrightIdeasSoftware.Design
         /// <param name="point">A <see cref="T:System.Drawing.Point"/> indicating the position at which the mouse was clicked, in screen coordinates. </param>
         protected override bool GetHitTest(Point point) {
             // The ListViewDesigner wants to allow column dividers to be resized
-            return (bool)this.listViewDesignGetHitTest.Invoke(listViewDesigner, new object[] { point });
+            return (bool)listViewDesignGetHitTest.Invoke(listViewDesigner, new object[] { point });
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace BrightIdeasSoftware.Design
                 case 0x4e:
                 case 0x204e:
                     // The listview designer is interested in HDN_ENDTRACK notifications
-                    this.listViewDesignWndProc.Invoke(listViewDesigner, new object[] { m });
+                    listViewDesignWndProc.Invoke(listViewDesigner, new object[] { m });
                     break;
                 default:
                     base.WndProc(ref m);
@@ -396,7 +396,7 @@ namespace BrightIdeasSoftware.Design
             }
 
             public void InvokeColumnsDialog() {
-                EditValue(this.designer, base.Component, "Columns");
+                EditValue(designer, Component, "Columns");
             }
 
             // Don't need these since we removed their corresponding actions from the list.
@@ -411,18 +411,18 @@ namespace BrightIdeasSoftware.Design
             //}
 
             public ImageList LargeImageList {
-                get { return ((ListView)base.Component).LargeImageList; }
-                set { SetValue(base.Component, "LargeImageList", value); }
+                get { return ((ListView)Component).LargeImageList; }
+                set { SetValue(Component, "LargeImageList", value); }
             }
 
             public ImageList SmallImageList {
-                get { return ((ListView)base.Component).SmallImageList; }
-                set { SetValue(base.Component, "SmallImageList", value); }
+                get { return ((ListView)Component).SmallImageList; }
+                set { SetValue(Component, "SmallImageList", value); }
             }
 
             public View View {
-                get { return ((ListView)base.Component).View; }
-                set { SetValue(base.Component, "View", value); }
+                get { return ((ListView)Component).View; }
+                set { SetValue(Component, "View", value); }
             }
 
             ObjectListViewDesigner designer;
@@ -463,7 +463,7 @@ namespace BrightIdeasSoftware.Design
     /// This class works in conjunction with the OLVColumns property to allow OLVColumns
     /// to be added to the ObjectListView.
     /// </summary>
-    public class OLVColumnCollectionEditor : System.ComponentModel.Design.CollectionEditor
+    public class OLVColumnCollectionEditor : CollectionEditor
     {
         /// <summary>
         /// Create a OLVColumnCollectionEditor

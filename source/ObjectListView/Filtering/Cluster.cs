@@ -41,8 +41,8 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <param name="key">The key for the cluster</param>
         public Cluster(object key) {
-            this.Count = 1;
-            this.ClusterKey = key;
+            Count = 1;
+            ClusterKey = key;
         }
 
         #endregion
@@ -54,7 +54,7 @@ namespace BrightIdeasSoftware {
         /// </summary>
         /// <returns></returns>
         public override string ToString() {
-            return this.DisplayLabel ?? "[empty]";
+            return DisplayLabel ?? "[empty]";
         }
 
         #endregion
@@ -100,16 +100,16 @@ namespace BrightIdeasSoftware {
         /// <param name="other"></param>
         /// <returns></returns>
         public int CompareTo(object other) {
-            if (other == null || other == System.DBNull.Value)
+            if (other == null || other == DBNull.Value)
                 return 1;
 
             if (other is not ICluster otherCluster)
                 return 1;
 
-            if (this.ClusterKey is string keyAsString)
+            if (ClusterKey is string keyAsString)
                 return String.Compare(keyAsString, otherCluster.ClusterKey as string, StringComparison.CurrentCultureIgnoreCase);
 
-            if (this.ClusterKey is IComparable keyAsComparable)
+            if (ClusterKey is IComparable keyAsComparable)
                 return keyAsComparable.CompareTo(otherCluster.ClusterKey);
 
             return -1;

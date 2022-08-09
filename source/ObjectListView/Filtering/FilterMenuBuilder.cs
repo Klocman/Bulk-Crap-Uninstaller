@@ -82,12 +82,12 @@ namespace BrightIdeasSoftware {
         /// <summary>
         /// Gets or sets the image that will be placed next to the Clear Filtering menu item
         /// </summary>
-        static public Bitmap ClearFilteringImage = BrightIdeasSoftware.Properties.Resources.ClearFiltering;
+        static public Bitmap ClearFilteringImage = Properties.Resources.ClearFiltering;
 
         /// <summary>
         /// Gets or sets the image that will be placed next to all "Apply" menu items on the filtering menu
         /// </summary>
-        static public Bitmap FilteringImage = BrightIdeasSoftware.Properties.Resources.Filtering;
+        static public Bitmap FilteringImage = Properties.Resources.Filtering;
 
         #endregion
 
@@ -135,10 +135,10 @@ namespace BrightIdeasSoftware {
             if (!column.UseFiltering || column.ClusteringStrategy == null || listView.Objects == null)
                 return strip;
 
-            List<ICluster> clusters = this.Cluster(column.ClusteringStrategy, listView, column);
+            List<ICluster> clusters = Cluster(column.ClusteringStrategy, listView, column);
             if (clusters.Count > 0) {
-                this.SortClusters(column.ClusteringStrategy, clusters);
-                strip.Items.Add(this.CreateFilteringMenuItem(column, clusters));
+                SortClusters(column.ClusteringStrategy, clusters);
+                strip.Items.Add(CreateFilteringMenuItem(column, clusters));
             }
 
             return strip;
@@ -156,9 +156,9 @@ namespace BrightIdeasSoftware {
             NullableDictionary<object, ICluster> map = new NullableDictionary<object, ICluster>();
             int count = 0;
             foreach (object model in listView.ObjectsForClustering) {
-                this.ClusterOneModel(strategy, map, model);
+                ClusterOneModel(strategy, map, model);
 
-                if (count++ > this.MaxObjectsToConsider)
+                if (count++ > MaxObjectsToConsider)
                     break;
             }
 
@@ -179,8 +179,8 @@ namespace BrightIdeasSoftware {
             // Deal with nulls and DBNulls
             ArrayList nullCorrected = new ArrayList();
             foreach (object key in keyEnumerable) {
-                if (key == null || key == System.DBNull.Value) {
-                    if (this.TreatNullAsDataValue)
+                if (key == null || key == DBNull.Value) {
+                    if (TreatNullAsDataValue)
                         nullCorrected.Add(null);
                 } else nullCorrected.Add(key);
             }
@@ -224,10 +224,10 @@ namespace BrightIdeasSoftware {
             checkedList.ItemCheck += new ItemCheckEventHandler(HandleItemCheckedWrapped);
 
             ToolStripMenuItem clearAll = new ToolStripMenuItem(CLEAR_ALL_FILTERS_LABEL, ClearFilteringImage, delegate(object sender, EventArgs args) {
-                this.ClearAllFilters(column);
+                ClearAllFilters(column);
             });
             ToolStripMenuItem apply = new ToolStripMenuItem(APPLY_LABEL, FilteringImage, delegate(object sender, EventArgs args) {
-                this.EnactFilter(checkedList, column);
+                EnactFilter(checkedList, column);
             });
             ToolStripMenuItem subMenu = new ToolStripMenuItem(FILTERING_LABEL, null, new ToolStripItem[] { 
                 clearAll, new ToolStripSeparator(), checkedList, apply });
@@ -248,7 +248,7 @@ namespace BrightIdeasSoftware {
 
             try {
                 alreadyInHandleItemChecked = true;
-                this.HandleItemChecked(sender, e);
+                HandleItemChecked(sender, e);
             }
             finally {
                 alreadyInHandleItemChecked = false;

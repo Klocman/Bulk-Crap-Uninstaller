@@ -51,9 +51,9 @@ namespace BrightIdeasSoftware
     {
         protected override void Dispose(bool disposing)
         {
-            if (this.adapter != null) {
-                this.adapter.Dispose();
-                this.adapter = null;
+            if (adapter != null) {
+                adapter.Dispose();
+                adapter = null;
             }
 
             base.Dispose(disposing);
@@ -71,8 +71,8 @@ namespace BrightIdeasSoftware
          DefaultValue(true)]
         public bool AutoGenerateColumns
         {
-            get { return this.Adapter.AutoGenerateColumns; }
-            set { this.Adapter.AutoGenerateColumns = value; }
+            get { return Adapter.AutoGenerateColumns; }
+            set { Adapter.AutoGenerateColumns = value; }
         }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace BrightIdeasSoftware
         [Category("Data"),
         TypeConverter("System.Windows.Forms.Design.DataSourceConverter, System.Design")]
         public virtual Object DataSource {
-            get { return this.Adapter.DataSource; }
-            set { this.Adapter.DataSource = value; }
+            get { return Adapter.DataSource; }
+            set { Adapter.DataSource = value; }
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace BrightIdeasSoftware
          Editor("System.Windows.Forms.Design.DataMemberListEditor, System.Design", typeof(UITypeEditor)),
          DefaultValue("")]
         public virtual string DataMember {
-            get { return this.Adapter.DataMember; }
-            set { this.Adapter.DataMember = value; }
+            get { return Adapter.DataMember; }
+            set { Adapter.DataMember = value; }
         }
 
         #endregion
@@ -125,7 +125,7 @@ namespace BrightIdeasSoftware
         protected DataSourceAdapter Adapter {
             get {
                 if (adapter == null)
-                    adapter = this.CreateDataSourceAdapter();
+                    adapter = CreateDataSourceAdapter();
                 return adapter;
             }
             set { adapter = value; }
@@ -154,8 +154,8 @@ namespace BrightIdeasSoftware
 
             // Copied from base method, but we don't need to BuildList() since we know that our
             // data adaptor is going to do that immediately after this method exits.
-            this.EndUpdate();
-            this.ResizeFreeSpaceFillingColumns();
+            EndUpdate();
+            ResizeFreeSpaceFillingColumns();
             // this.BuildList();
         }
 

@@ -326,10 +326,10 @@ namespace BrightIdeasSoftware
         /// <param name="n"></param>
         /// <returns></returns>
         public override object GetNthObject(int n) {
-            if (this.RowGetter == null)
+            if (RowGetter == null)
                 return null;
             else
-                return this.RowGetter(n);
+                return RowGetter(n);
         }
 
         /// <summary>

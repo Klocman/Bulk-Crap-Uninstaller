@@ -89,7 +89,7 @@ namespace BrightIdeasSoftware
         /// If zero rows are checked, or more than one row, null is returned.
         /// </summary>
         public virtual T CheckedObject {
-            get { return (T)this.olv.CheckedObject; }
+            get { return (T)olv.CheckedObject; }
         }
 
         /// <summary>
@@ -97,14 +97,14 @@ namespace BrightIdeasSoftware
         /// </summary>
         public virtual IList<T> CheckedObjects {
             get {
-                IList checkedObjects = this.olv.CheckedObjects;
+                IList checkedObjects = olv.CheckedObjects;
                 List<T> objects = new List<T>(checkedObjects.Count);
                 foreach (object x in checkedObjects)
                     objects.Add((T)x);
 
                 return objects;
             }
-            set { this.olv.CheckedObjects = (IList)value; }
+            set { olv.CheckedObjects = (IList)value; }
         }
 
         /// <summary>
@@ -121,13 +121,13 @@ namespace BrightIdeasSoftware
         /// </summary>
         public virtual IList<T> Objects {
             get {
-                List<T> objects = new List<T>(this.olv.GetItemCount());
-                for (int i = 0; i < this.olv.GetItemCount(); i++)
-                    objects.Add(this.GetModelObject(i));
+                List<T> objects = new List<T>(olv.GetItemCount());
+                for (int i = 0; i < olv.GetItemCount(); i++)
+                    objects.Add(GetModelObject(i));
 
                 return objects;
             }
-            set { this.olv.SetObjects(value); }
+            set { olv.SetObjects(value); }
         }
 
         /// <summary>
@@ -135,8 +135,8 @@ namespace BrightIdeasSoftware
         /// If zero rows are selected, or more than one row, null is returned.
         /// </summary>
         public virtual T SelectedObject {
-            get { return (T)this.olv.SelectedObject; }
-            set { this.olv.SelectedObject = value; }
+            get { return (T)olv.SelectedObject; }
+            set { olv.SelectedObject = value; }
         }
 
         /// <summary>
@@ -144,13 +144,13 @@ namespace BrightIdeasSoftware
         /// </summary>
         public virtual IList<T> SelectedObjects {
             get {
-                List<T> objects = new List<T>(this.olv.SelectedIndices.Count);
-                foreach (int index in this.olv.SelectedIndices)
-                    objects.Add((T)this.olv.GetModelObject(index));
+                List<T> objects = new List<T>(olv.SelectedIndices.Count);
+                foreach (int index in olv.SelectedIndices)
+                    objects.Add((T)olv.GetModelObject(index));
 
                 return objects;
             }
-            set { this.olv.SelectedObjects = (IList)value; }
+            set { olv.SelectedObjects = (IList)value; }
         }
 
         //--------------------------------------------------------------------------------------
@@ -162,7 +162,7 @@ namespace BrightIdeasSoftware
         /// <param name="i">The index of the column</param>
         /// <returns>A typed column or null</returns>
         public virtual TypedColumn<T> GetColumn(int i) {
-            return new TypedColumn<T>(this.olv.GetColumn(i));
+            return new TypedColumn<T>(olv.GetColumn(i));
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace BrightIdeasSoftware
         /// <param name="name">The name of the column</param>
         /// <returns>A typed column or null</returns>
         public virtual TypedColumn<T> GetColumn(string name) {
-            return new TypedColumn<T>(this.olv.GetColumn(name));
+            return new TypedColumn<T>(olv.GetColumn(name));
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace BrightIdeasSoftware
         /// <param name="index">The index of the model object</param>
         /// <returns>The model object or null</returns>
         public virtual T GetModelObject(int index) {
-            return (T)this.olv.GetModelObject(index);
+            return (T)olv.GetModelObject(index);
         }
 
         //--------------------------------------------------------------------------------------
@@ -199,12 +199,12 @@ namespace BrightIdeasSoftware
         public virtual TypedCheckStateGetterDelegate CheckStateGetter {
             get { return checkStateGetter; }
             set {
-                this.checkStateGetter = value;
+                checkStateGetter = value;
                 if (value == null)
-                    this.olv.CheckStateGetter = null;
+                    olv.CheckStateGetter = null;
                 else
-                    this.olv.CheckStateGetter = delegate(object x) {
-                        return this.checkStateGetter((T)x);
+                    olv.CheckStateGetter = delegate(object x) {
+                        return checkStateGetter((T)x);
                     };
             }
         }
@@ -223,9 +223,9 @@ namespace BrightIdeasSoftware
         public virtual TypedBooleanCheckStateGetterDelegate BooleanCheckStateGetter {
             set {
                 if (value == null)
-                    this.olv.BooleanCheckStateGetter = null;
+                    olv.BooleanCheckStateGetter = null;
                 else
-                    this.olv.BooleanCheckStateGetter = delegate(object x) {
+                    olv.BooleanCheckStateGetter = delegate(object x) {
                         return value((T)x);
                     };
             }
@@ -245,12 +245,12 @@ namespace BrightIdeasSoftware
         public virtual TypedCheckStatePutterDelegate CheckStatePutter {
             get { return checkStatePutter; }
             set {
-                this.checkStatePutter = value;
+                checkStatePutter = value;
                 if (value == null)
-                    this.olv.CheckStatePutter = null;
+                    olv.CheckStatePutter = null;
                 else
-                    this.olv.CheckStatePutter = delegate(object x, CheckState newValue) {
-                        return this.checkStatePutter((T)x, newValue);
+                    olv.CheckStatePutter = delegate(object x, CheckState newValue) {
+                        return checkStatePutter((T)x, newValue);
                     };
             }
         }
@@ -270,9 +270,9 @@ namespace BrightIdeasSoftware
         public virtual TypedBooleanCheckStatePutterDelegate BooleanCheckStatePutter {
             set {
                 if (value == null)
-                    this.olv.BooleanCheckStatePutter = null;
+                    olv.BooleanCheckStatePutter = null;
                 else
-                    this.olv.BooleanCheckStatePutter = delegate(object x, bool newValue) {
+                    olv.BooleanCheckStatePutter = delegate(object x, bool newValue) {
                         return value((T)x, newValue);
                     };
             }
@@ -292,9 +292,9 @@ namespace BrightIdeasSoftware
         public virtual TypedCellToolTipGetterDelegate CellToolTipGetter {
             set {
                 if (value == null)
-                    this.olv.CellToolTipGetter = null;
+                    olv.CellToolTipGetter = null;
                 else
-                    this.olv.CellToolTipGetter = delegate(OLVColumn col, Object x) {
+                    olv.CellToolTipGetter = delegate(OLVColumn col, Object x) {
                         return value(col, (T)x);
                     };
             }
@@ -304,8 +304,8 @@ namespace BrightIdeasSoftware
         /// Gets or sets the header tool tip getter
         /// </summary>
         public virtual HeaderToolTipGetterDelegate HeaderToolTipGetter {
-            get { return this.olv.HeaderToolTipGetter; }
-            set { this.olv.HeaderToolTipGetter = value; }
+            get { return olv.HeaderToolTipGetter; }
+            set { olv.HeaderToolTipGetter = value; }
         }
 
         //--------------------------------------------------------------------------------------
@@ -315,8 +315,8 @@ namespace BrightIdeasSoftware
         /// This method will generate AspectGetters for any column that has an AspectName.
         /// </summary>
         public virtual void GenerateAspectGetters() {
-            for (int i = 0; i < this.ListView.Columns.Count; i++)
-                this.GetColumn(i).GenerateAspectGetter();
+            for (int i = 0; i < ListView.Columns.Count; i++)
+                GetColumn(i).GenerateAspectGetter();
         }
     }
 
@@ -367,14 +367,14 @@ namespace BrightIdeasSoftware
         /// 
         /// </summary>
         public TypedAspectGetterDelegate AspectGetter {
-            get { return this.aspectGetter; }
+            get { return aspectGetter; }
             set {
-                this.aspectGetter = value;
+                aspectGetter = value;
                 if (value == null)
-                    this.column.AspectGetter = null;
+                    column.AspectGetter = null;
                 else
-                    this.column.AspectGetter = delegate(object x) {
-                        return x == null ? null : this.aspectGetter((T)x);
+                    column.AspectGetter = delegate(object x) {
+                        return x == null ? null : aspectGetter((T)x);
                     };
             }
         }
@@ -386,12 +386,12 @@ namespace BrightIdeasSoftware
         public TypedAspectPutterDelegate AspectPutter {
             get { return aspectPutter; }
             set {
-                this.aspectPutter = value;
+                aspectPutter = value;
                 if (value == null)
-                    this.column.AspectPutter = null;
+                    column.AspectPutter = null;
                 else
-                    this.column.AspectPutter = delegate(object x, object newValue) {
-                        this.aspectPutter((T)x, newValue);
+                    column.AspectPutter = delegate(object x, object newValue) {
+                        aspectPutter((T)x, newValue);
                     };
             }
         }
@@ -403,12 +403,12 @@ namespace BrightIdeasSoftware
         public TypedImageGetterDelegate ImageGetter {
             get { return imageGetter; }
             set {
-                this.imageGetter = value;
+                imageGetter = value;
                 if (value == null)
-                    this.column.ImageGetter = null;
+                    column.ImageGetter = null;
                 else
-                    this.column.ImageGetter = delegate(object x) {
-                        return this.imageGetter((T)x);
+                    column.ImageGetter = delegate(object x) {
+                        return imageGetter((T)x);
                     };
             }
         }
@@ -420,12 +420,12 @@ namespace BrightIdeasSoftware
         public TypedGroupKeyGetterDelegate GroupKeyGetter {
             get { return groupKeyGetter; }
             set {
-                this.groupKeyGetter = value;
+                groupKeyGetter = value;
                 if (value == null)
-                    this.column.GroupKeyGetter = null;
+                    column.GroupKeyGetter = null;
                 else
-                    this.column.GroupKeyGetter = delegate(object x) {
-                        return this.groupKeyGetter((T)x);
+                    column.GroupKeyGetter = delegate(object x) {
+                        return groupKeyGetter((T)x);
                     };
             }
         }
@@ -451,8 +451,8 @@ namespace BrightIdeasSoftware
         /// </para>
         /// </remarks>
         public void GenerateAspectGetter() {
-            if (!String.IsNullOrEmpty(this.column.AspectName))
-                this.AspectGetter = this.GenerateAspectGetter(typeof(T), this.column.AspectName);
+            if (!String.IsNullOrEmpty(column.AspectName))
+                AspectGetter = GenerateAspectGetter(typeof(T), column.AspectName);
         }
 
         /// <summary>
@@ -466,7 +466,7 @@ namespace BrightIdeasSoftware
         private TypedAspectGetterDelegate GenerateAspectGetter(Type type, string path) {
             DynamicMethod getter = new DynamicMethod(String.Empty,
                 typeof(Object), new Type[] { type }, type, true);
-            this.GenerateIL(type, path, getter.GetILGenerator());
+            GenerateIL(type, path, getter.GetILGenerator());
             return (TypedAspectGetterDelegate)getter.CreateDelegate(typeof(TypedAspectGetterDelegate));
         }
 
@@ -483,7 +483,7 @@ namespace BrightIdeasSoftware
             // Generate the IL to access each part of the dotted chain
             string[] parts = path.Split('.');
             for (int i = 0; i < parts.Length; i++) {
-                type = this.GeneratePart(il, type, parts[i], (i == parts.Length - 1));
+                type = GeneratePart(il, type, parts[i], (i == parts.Length - 1));
                 if (type == null)
                     break;
             }
