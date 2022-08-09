@@ -44,7 +44,7 @@ namespace UninstallTools.Junk.Containers
 
         public override string GetDisplayName()
         {
-            return _junkName;
+            return $"{_junkName} ({ProcessToStart})";
         }
 
         public override void Open()
