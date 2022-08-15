@@ -45,8 +45,8 @@ LZMANumBlockThreads=8
 
 PrivilegesRequired=admin
 ;x86 x64 ia64
-ArchitecturesAllowed=x86 x64
-ArchitecturesInstallIn64BitMode=x64 ia64
+ArchitecturesAllowed=x86 x64 arm64
+ArchitecturesInstallIn64BitMode=x64 ia64 arm64
 
 VersionInfoCompany={#MyAppPublisher}
 ;VersionInfoDescription=desc
