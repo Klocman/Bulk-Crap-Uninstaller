@@ -184,7 +184,7 @@ namespace UninstallTools.Factory
             [property: JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] Bin,
             string[][] Shortcuts,
-            Dictionary<string, AppManifestArchitecture> Architecture);
+            IDictionary<string, AppManifestArchitecture> Architecture);
         private record class AppManifestArchitecture(
             [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] EnvAddPath,
