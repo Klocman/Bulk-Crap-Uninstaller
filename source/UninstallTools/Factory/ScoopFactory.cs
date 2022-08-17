@@ -179,13 +179,17 @@ namespace UninstallTools.Factory
 
         private record class AppManifest(
             string Homepage,
-            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))] string[] EnvAddPath,
-            [property: JsonConverter(typeof(DynamicStringArrayConverter))] string[] Bin,
+            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
+            string[] EnvAddPath,
+            [property: JsonConverter(typeof(DynamicStringArrayConverter))]
+            string[] Bin,
             string[][] Shortcuts,
             Dictionary<string, AppManifestArchitecture> Architecture);
         private record class AppManifestArchitecture(
-            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))] string[] EnvAddPath,
-            [property: JsonConverter(typeof(DynamicStringArrayConverter))] string[] Bin,
+            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
+            string[] EnvAddPath,
+            [property: JsonConverter(typeof(DynamicStringArrayConverter))]
+            string[] Bin,
             string[][] Shortcuts);
         private record class AppInstall(
             string Bucket,
