@@ -75,15 +75,15 @@ namespace UninstallTools.Factory
             }
         }
 
-        private record class ExportInfo(
+        private sealed record class ExportInfo(
             //ExportBucketEntry[] Buckets,
             ExportAppEntry[] Apps);
-        //private record class ExportBucketEntry(
+        //private sealed record class ExportBucketEntry(
         //    string Name,
         //    string Source,
         //    DateTimeOffset Updated,
         //    ulong Manifests);
-        private record class ExportAppEntry(
+        private sealed record class ExportAppEntry(
             string Name,
             string Version,
             string Source,
@@ -177,7 +177,7 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        private record class AppManifest(
+        private sealed record class AppManifest(
             string Homepage,
             [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] EnvAddPath,
@@ -185,13 +185,13 @@ namespace UninstallTools.Factory
             string[] Bin,
             string[][] Shortcuts,
             IDictionary<string, AppManifestArchitecture> Architecture);
-        private record class AppManifestArchitecture(
+        private sealed record class AppManifestArchitecture(
             [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] EnvAddPath,
             [property: JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] Bin,
             string[][] Shortcuts);
-        private record class AppInstall(
+        private sealed record class AppInstall(
             string Bucket,
             string Architecture);
 
@@ -312,7 +312,7 @@ namespace UninstallTools.Factory
         [JsonSerializable(typeof(ExportInfo))]
         [JsonSerializable(typeof(AppInstall))]
         [JsonSerializable(typeof(AppManifest))]
-        private partial class JsonContext : JsonSerializerContext
+        private sealed partial class JsonContext : JsonSerializerContext
         { }
     }
 }
