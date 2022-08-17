@@ -49,7 +49,7 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        public static void GenerateMisingInformation(IList<ApplicationUninstallerEntry> entries, 
+        public static void GenerateMissingInformation(IList<ApplicationUninstallerEntry> entries, 
             InfoAdderManager infoAdder, IList<Guid> msiProducts, bool skipRunLast, 
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {

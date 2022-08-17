@@ -67,7 +67,7 @@ namespace UninstallTools.Factory
                     var installLocAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GatherUninstallerInfo);
                     callback(installLocAddProgress);
 
-                    FactoryThreadedHelpers.GenerateMisingInformation(registryResults, InfoAdder, null, true, report =>
+                    FactoryThreadedHelpers.GenerateMissingInformation(registryResults, InfoAdder, null, true, report =>
                     {
                         installLocAddProgress.Inner = report;
                         callback(installLocAddProgress);
@@ -132,7 +132,7 @@ namespace UninstallTools.Factory
 
                 var infoAddProgress = new ListGenerationProgress(currentStep++, totalStepCount, Localisation.Progress_GeneratingInfo);
                 callback(infoAddProgress);
-                FactoryThreadedHelpers.GenerateMisingInformation(mergedResults, InfoAdder, msiProducts, false, report =>
+                FactoryThreadedHelpers.GenerateMissingInformation(mergedResults, InfoAdder, msiProducts, false, report =>
                 {
                     infoAddProgress.Inner = report;
                     callback(infoAddProgress);
