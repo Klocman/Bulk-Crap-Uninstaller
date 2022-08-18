@@ -261,6 +261,8 @@ namespace UninstallTools.Factory
                 { }
                 catch (UnauthorizedAccessException)
                 { }
+                catch (JsonException)
+                { }
 
                 if (executables.Any())
                 {
