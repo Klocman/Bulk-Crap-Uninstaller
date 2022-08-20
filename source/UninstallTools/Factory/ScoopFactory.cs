@@ -177,6 +177,9 @@ namespace UninstallTools.Factory
             return results;
         }
 
+        private sealed record class AppInstall(
+            string Bucket,
+            string Architecture);
         private sealed record class AppManifest(
             string Homepage,
             [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
@@ -191,9 +194,6 @@ namespace UninstallTools.Factory
             [property: JsonConverter(typeof(DynamicStringArrayConverter))]
             string[] Bin,
             string[][] Shortcuts);
-        private sealed record class AppInstall(
-            string Bucket,
-            string Architecture);
 
         public static ApplicationUninstallerEntry CreateUninstallerEntry(
             string name,
