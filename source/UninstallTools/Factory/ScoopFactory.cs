@@ -75,21 +75,26 @@ namespace UninstallTools.Factory
             }
         }
 
-        private sealed record class ExportInfo(
-            //ExportBucketEntry[] Buckets,
-            ExportAppEntry[] Apps);
-        //private sealed record class ExportBucketEntry(
-        //    string Name,
-        //    string Source,
-        //    DateTimeOffset Updated,
-        //    ulong Manifests);
-        private sealed record class ExportAppEntry(
-            string Name,
-            string Version,
-            string Source,
-            DateTimeOffset Updated,
-            string Info)
+        private sealed class ExportInfo
         {
+            //public ExportBucketEntry[] Buckets { get; set; }
+            public ExportAppEntry[] Apps { get; set; }
+        }
+        //private sealed class ExportBucketEntry
+        //{
+        //    public string Name { get; set; }
+        //    public string Source { get; set; }
+        //    public DateTimeOffset Updated { get; set; }
+        //    public ulong Manifests { get; set; }
+        //}
+        private sealed class ExportAppEntry
+        {
+            public string Name { get; set; }
+            public string Version { get; set; }
+            public string Source { get; set; }
+            public DateTimeOffset Updated { get; set; }
+            public string Info { get; set; }
+
             [JsonIgnore] public bool IsPublic => Info?.Contains("Global install", StringComparison.InvariantCultureIgnoreCase) == true;
         }
 
@@ -177,23 +182,28 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        private sealed record class AppInstall(
-            string Bucket,
-            string Architecture);
-        private sealed record class AppManifest(
-            string Homepage,
-            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
-            string[] EnvAddPath,
-            [property: JsonConverter(typeof(DynamicStringArrayConverter))]
-            string[] Bin,
-            string[][] Shortcuts,
-            IDictionary<string, AppManifestArchitecture> Architecture);
-        private sealed record class AppManifestArchitecture(
-            [property: JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
-            string[] EnvAddPath,
-            [property: JsonConverter(typeof(DynamicStringArrayConverter))]
-            string[] Bin,
-            string[][] Shortcuts);
+        private sealed class AppInstall
+        {
+            public string Bucket { get; set; }
+            public string Architecture { get; set; }
+        }
+        private sealed class AppManifest
+        {
+            public string Homepage { get; set; }
+            [JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] EnvAddPath { get; set; }
+            [JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] Bin { get; set; }
+            public string[][] Shortcuts { get; set; }
+            public IDictionary<string, AppManifestArchitecture> Architecture { get; set; }
+        }
+        private sealed class AppManifestArchitecture
+        {
+            public string[] EnvAddPath { get; set; }
+            [JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] Bin { get; set; }
+            public string[][] Shortcuts { get; set; }
+        }
 
         public static ApplicationUninstallerEntry CreateUninstallerEntry(
             string name,
