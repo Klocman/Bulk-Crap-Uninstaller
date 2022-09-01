@@ -276,7 +276,11 @@ namespace UninstallTools.Factory
 
                 if (executables.Any())
                 {
-                    entry.SortedExecutables = executables.Distinct().ToArray();
+                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(
+                            executables.Distinct().Select(x => new FileInfo(x)),
+                            entry.DisplayNameTrimmed)
+                        .Select(x => x.FullName)
+                        .ToArray();
                 }
                 else
                 {
