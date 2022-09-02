@@ -1,25 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Klocman.Native;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
+using UninstallTools.Factory.Json;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public sealed class ScoopFactory : IIndependantUninstallerFactory
+    public sealed partial class ScoopFactory : IIndependantUninstallerFactory
     {
         private static bool? _scoopIsAvailable;
         private static string _scoopUserPath;
         private static string _scoopGlobalPath;
         private static string _scriptPath;
         private static string _powershellPath;
+        private static readonly JsonContext _jsonContext;
+
+        static ScoopFactory()
+        {
+            JsonSerializerOptions jsonOptions = new(JsonSerializerDefaults.Web); // ignore property name case
+            jsonOptions.Converters.Add(new PowerShellDateTimeOffsetConverter());
+            _jsonContext = new JsonContext(jsonOptions);
+        }
 
         private static bool ScoopIsAvailable
         {
@@ -63,7 +75,29 @@ namespace UninstallTools.Factory
             }
         }
 
-        // TODO read the app manifests for more info, requires json parsing - var manifest = Path.Combine(installDir, "current\\manifest.json");
+        private sealed class ExportInfo
+        {
+            //public ExportBucketEntry[] Buckets { get; set; }
+            public ExportAppEntry[] Apps { get; set; }
+        }
+        //private sealed class ExportBucketEntry
+        //{
+        //    public string Name { get; set; }
+        //    public string Source { get; set; }
+        //    public DateTimeOffset Updated { get; set; }
+        //    public ulong Manifests { get; set; }
+        //}
+        private sealed class ExportAppEntry
+        {
+            public string Name { get; set; }
+            public string Version { get; set; }
+            public string Source { get; set; }
+            public DateTimeOffset Updated { get; set; }
+            public string Info { get; set; }
+
+            [JsonIgnore] public bool IsPublic => Info?.Contains("Global install", StringComparison.InvariantCultureIgnoreCase) == true;
+        }
+
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
@@ -74,7 +108,7 @@ namespace UninstallTools.Factory
             {
                 RawDisplayName = "Scoop",
                 Comment = "Automated program installer",
-                AboutUrl = "https://github.com/lukesampson/scoop",
+                AboutUrl = "https://github.com/ScoopInstaller/Scoop",
                 InstallLocation = _scoopUserPath
             };
 
@@ -92,59 +126,176 @@ namespace UninstallTools.Factory
             var result = RunScoopCommand("export");
             if (string.IsNullOrEmpty(result)) return results;
 
-            var appEntries = result.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
             var exeSearcher = new AppExecutablesSearcher();
-            foreach (var str in appEntries)
+
+            // JSON export format since July 2022
+            try
             {
-                // Format should be "$app (v:$ver) $global_display $bucket $arch"
-                // app has no spaces, $global_display is *global*, bucket is inside [] brackets like [main]
-                // version should always be there but the check errored out for some users, everything after version is optional
-                string name;
-                string version = null;
-                bool isGlobal = false;
-                var spaceIndex = str.IndexOf(" ", StringComparison.Ordinal);
-                if (spaceIndex > 0)
+                var export = JsonSerializer.Deserialize(result, _jsonContext.ExportInfo);
+                foreach (var app in export.Apps)
                 {
-                    name = str.Substring(0, spaceIndex);
+                    var entry = CreateUninstallerEntry(
+                        app.Name, app.Version, app.IsPublic, exeSearcher);
 
-                    var startIndex = str.IndexOf("(v:", StringComparison.Ordinal);
-                    if (startIndex > 0)
+                    entry.InstallDate = app.Updated.LocalDateTime;
+
+                    results.Add(entry);
+                }
+            }
+            // Fallback to plain text export format
+            catch (JsonException)
+            {
+                var appEntries = result.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+                foreach (var str in appEntries)
+                {
+                    // Format should be "$app (v:$ver) $global_display $bucket $arch"
+                    // app has no spaces, $global_display is *global*, bucket is inside [] brackets like [main]
+                    // version should always be there but the check errored out for some users, everything after version is optional
+                    string name;
+                    string version = null;
+                    bool isGlobal = false;
+                    var spaceIndex = str.IndexOf(" ", StringComparison.Ordinal);
+                    if (spaceIndex > 0)
                     {
-                        var verEndIndex = str.IndexOf(')', startIndex);
-                        version = str.Substring(Math.Min(startIndex + 3, str.Length - 1), Math.Max(verEndIndex - startIndex - 3, 0));
-                        if (version.Length == 0) version = null;
+                        name = str.Substring(0, spaceIndex);
+
+                        var startIndex = str.IndexOf("(v:", StringComparison.Ordinal);
+                        if (startIndex > 0)
+                        {
+                            var verEndIndex = str.IndexOf(')', startIndex);
+                            version = str.Substring(Math.Min(startIndex + 3, str.Length - 1), Math.Max(verEndIndex - startIndex - 3, 0));
+                            if (version.Length == 0) version = null;
+                        }
+                        isGlobal = str.Substring(spaceIndex).Contains("*global*");
                     }
-                    isGlobal = str.Substring(spaceIndex).Contains("*global*");
+                    else
+                    {
+                        name = str;
+                    }
+
+                    var entry = CreateUninstallerEntry(name, version, isGlobal, exeSearcher);
+
+                    results.Add(entry);
                 }
-                else
-                {
-                    name = str;
-                }
-
-                var entry = new ApplicationUninstallerEntry
-                {
-                    RawDisplayName = name,
-                    DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(version),
-                    RatingId = "Scoop " + name
-                };
-
-                var installDir = Path.Combine(isGlobal ? _scoopGlobalPath : _scoopUserPath, "apps\\" + name);
-                if (Directory.Exists(installDir))
-                {
-                    // Avoid looking for executables in old versions
-                    entry.InstallLocation = Path.Combine(installDir, "current");
-                    exeSearcher.AddMissingInformation(entry);
-
-                    entry.InstallLocation = installDir;
-                }
-
-                entry.UninstallerKind = UninstallerType.PowerShell;
-                entry.UninstallString = MakeScoopCommand("uninstall " + name + (isGlobal ? " --global" : "")).ToString();
-
-                results.Add(entry);
             }
 
             return results;
+        }
+
+        private sealed class AppInstall
+        {
+            public string Bucket { get; set; }
+            public string Architecture { get; set; }
+        }
+        private sealed class AppManifest
+        {
+            public string Homepage { get; set; }
+            [JsonPropertyName("env_add_path"), JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] EnvAddPath { get; set; }
+            [JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] Bin { get; set; }
+            public string[][] Shortcuts { get; set; }
+            public IDictionary<string, AppManifestArchitecture> Architecture { get; set; }
+        }
+        private sealed class AppManifestArchitecture
+        {
+            public string[] EnvAddPath { get; set; }
+            [JsonConverter(typeof(DynamicStringArrayConverter))]
+            public string[] Bin { get; set; }
+            public string[][] Shortcuts { get; set; }
+        }
+
+        public static ApplicationUninstallerEntry CreateUninstallerEntry(
+            string name,
+            string version,
+            bool isGlobal,
+            AppExecutablesSearcher searcher)
+        {
+            var entry = new ApplicationUninstallerEntry
+            {
+                RawDisplayName = name,
+                DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(version),
+                RatingId = "Scoop " + name
+            };
+
+            var installDir = Path.Combine(isGlobal ? _scoopGlobalPath : _scoopUserPath, "apps\\" + name);
+            if (Directory.Exists(installDir))
+            {
+                List<string> executables = new();
+                var currentDir = Path.Combine(installDir, "current");
+
+                try
+                {
+                    var install = JsonSerializer.Deserialize(
+                        File.ReadAllText(Path.Combine(currentDir, "install.json")),
+                        _jsonContext.AppInstall);
+
+                    var manifest = JsonSerializer.Deserialize(
+                        File.ReadAllText(Path.Combine(currentDir, "manifest.json")),
+                        _jsonContext.AppManifest);
+
+                    entry.AboutUrl = manifest.Homepage;
+
+                    var shortcuts = manifest.Architecture?[install.Architecture]?.Shortcuts ?? manifest.Shortcuts;
+                    if (shortcuts != null)
+                    {
+                        executables.AddRange(
+                            shortcuts.Select(x => Path.Combine(currentDir, x[0])));
+
+                        var icons = shortcuts
+                            .Where(x => x.Length >= 4 && x[3].EndsWith(".ico"))
+                            .Select(x => Path.Combine(currentDir, x[3]));
+                        if (icons.Any())
+                        {
+                            try
+                            {
+                                entry.IconBitmap = new Icon(icons.First());
+                            }
+                            catch { }
+                        }
+                    }
+
+                    var bin = manifest.Architecture?[install.Architecture]?.Bin ?? manifest.Bin;
+                    if (bin != null)
+                    {
+                        executables.AddRange(bin.Select(x => Path.Combine(installDir, "current", x)));
+                    }
+
+                    var env = manifest.Architecture?[install.Architecture]?.EnvAddPath ?? manifest.EnvAddPath;
+                    if (env != null)
+                    {
+                        currentDir = Path.Combine(currentDir, env[0]);
+                    }
+                }
+                catch (IOException)
+                { }
+                catch (UnauthorizedAccessException)
+                { }
+                catch (JsonException)
+                { }
+
+                if (executables.Any())
+                {
+                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(
+                            executables.Distinct().Select(x => new FileInfo(x)),
+                            entry.DisplayNameTrimmed)
+                        .Select(x => x.FullName)
+                        .ToArray();
+                }
+                else
+                {
+                    // Avoid looking for executables in old versions
+                    entry.InstallLocation = currentDir;
+                    searcher.AddMissingInformation(entry);
+                }
+
+                entry.InstallLocation = installDir;
+            }
+
+            entry.UninstallerKind = UninstallerType.PowerShell;
+            entry.UninstallString = MakeScoopCommand("uninstall " + name + (isGlobal ? " --global" : "")).ToString();
+
+            return entry;
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanScoop;
@@ -172,5 +323,12 @@ namespace UninstallTools.Factory
         {
             return new ProcessStartCommand(_powershellPath, $"-ex unrestricted \"{_scriptPath}\" {scoopArgs}");
         }
+
+
+        [JsonSerializable(typeof(ExportInfo))]
+        [JsonSerializable(typeof(AppInstall))]
+        [JsonSerializable(typeof(AppManifest))]
+        private sealed partial class JsonContext : JsonSerializerContext
+        { }
     }
 }
