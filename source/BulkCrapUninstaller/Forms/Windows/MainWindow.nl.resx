@@ -178,7 +178,7 @@
     <value>Selecteer alles</value>
   </data>
   <data name="toolStripButtonSelNone.Text" xml:space="preserve">
-    <value>De-selecteer alles</value>
+    <value>Deselecteer alles</value>
   </data>
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Omkeren selectie</value>
@@ -208,7 +208,7 @@
     <value>Zoeken</value>
   </data>
   <data name="uninstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;De-ïnstalleer</value>
+    <value>&amp;De-installeer</value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;De-installeer 'stil'</value>
@@ -247,7 +247,7 @@
     <value>Volledig register pad</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Deïnstallatie string</value>
+    <value>De-installatie string</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Kopiëren naar klembord</value>
@@ -367,7 +367,7 @@
     <value>&amp;Installatie locatie</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>&amp;De-ïnstallatie locatie</value>
+    <value>&amp;De-installatie locatie</value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
     <value>&amp;Bron locatie</value>
@@ -403,7 +403,7 @@
     <value>&amp;Installeren of configureren (/l)</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>&amp;Deïnstalleren (/X)</value>
+    <value>&amp;De-installeren (/X)</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>&amp;Stille de-installatie (/X /qb)</value>
@@ -430,13 +430,13 @@
     <value>&amp;Geavanceerde bewerkingen</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Opruimen "Programma bestanden"mappen...</value>
+    <value>&amp;Opruimen "Programma bestanden" mappen...</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Opstartmanager openen</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>De-ïnstalleer uit de map...</value>
+    <value>De-installeer uit de map...</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Instellingen</value>
@@ -481,7 +481,7 @@
     <value>"&amp;Programma's en onderdelen" openen</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
-    <value>"Systeemherstel"  openen</value>
+    <value>"Systeemherstel" openen</value>
   </data>
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Help openen</value>
@@ -520,14 +520,13 @@
     <value>Bekijk ongeregistreerd</value>
   </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bekijk WIndows onderdelen</value>
+    <value>Bekijk Windows onderdelen</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>Wijzigen</value>
   </data>
   <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uitsluiten
-</value>
+    <value>Uitsluiten</value>
   </data>
   <data name="includeToolStripMenuItem.Text" xml:space="preserve">
     <value>Inbegrepen</value>
@@ -569,7 +568,7 @@
     <value>Foutopsporing de-installatie problemen</value>
   </data>
   <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start  schijfopruiming</value>
+    <value>Start schijfopruiming</value>
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Installeer .NET v3.5 (toevoeg functie)</value>
