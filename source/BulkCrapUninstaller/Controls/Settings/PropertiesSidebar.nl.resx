@@ -124,7 +124,7 @@
     <value>Keuze met checkboxen</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Kleuren gebruiken om gecertificeerde de-installer te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in blauw gekleurd.
+    <value>Kleuren gebruiken om gecertificeerde de-installer te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in het blauw gekleurd.
 Let op: De verificatie kan enige tijd duren.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
@@ -145,16 +145,16 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Niet geregistreerde programma's tonen</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Alles verbergen wat door MIcrosoft werd uitgebracht.</value>
+    <value>Alles verbergen wat door Microsoft werd uitgebracht.</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>De kleur grijs kenmerkt beschadigde of ontbrekende uninstallers.</value>
+    <value>De grijze kleur betekende beschadigde of ontbrekende uninstallers.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Toon onderdelen in groepen</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Enkele de-installers kunnen als 'systeem componenten zijn aangeduid, om deze te verbergen in de Toevoegen/Verwijderen software lijst.
+    <value>Enkele de-installers kunnen als systeem componenten zijn aangeduid, om deze te verbergen in de Toevoegen/Verwijderen software lijst.
 Stuurprogramma's zijn vaak gemarkeerd met dit label.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
@@ -181,16 +181,16 @@ Stuurprogramma's zijn vaak gemarkeerd met dit label.</value>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Weergave van programma's, die geen enkele gecertificeerde de-installer hebben. Deze blijven in de meeste de-installer programma's verborgen, maar nemen evenwel schijfruimte in. Niet geregistreerde onderdelen worden rood weergegeven.
 
-Waarschuwing: Controleer alvorens deze programma's te verwijderen of deze niet nodig zijn!</value>
+Waarschuwing: controleer alvorens deze programma's te verwijderen of deze niet nodig zijn!</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
     <value>Windows Store apps tonen</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>Toon Windows onderdelen</value>
+    <value>Windows onderdelen tonen</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
-    <value>Tweakes tonen</value>
+    <value>Tweaks tonen</value>
   </data>
   <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
     <value>Markeer speciale de-installers </value>
