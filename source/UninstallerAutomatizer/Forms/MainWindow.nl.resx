@@ -133,7 +133,7 @@
     <value>Afbreken</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Uninstaller automatisering</value>
+    <value>De-installer automatisering</value>
   </data>
   <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
     <value>De-installer zichtbaar</value>
