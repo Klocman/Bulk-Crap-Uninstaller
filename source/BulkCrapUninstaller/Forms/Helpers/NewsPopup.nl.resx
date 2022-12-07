@@ -142,8 +142,7 @@
     <value>Doneer (PayPal, Bitcoin, Steam giften)</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>(Klik ergens om dit dialoogvenster te sluiten)
-</value>
+    <value>(Klik ergens om dit dialoogvenster te sluiten)</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Toon dit venster nooit meer</value>
