@@ -140,7 +140,7 @@
 Uitgever | Versie | Datum | Grootte | Registry | De-installatie type | De-installatie string | De-installatie string (stil) | Commentaar</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value>Portabel</value>
+    <value> Portabel</value>
     <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
