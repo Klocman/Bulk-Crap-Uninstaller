@@ -125,7 +125,7 @@
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Kleuren gebruiken om gecertificeerde de-installer te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in het blauw gekleurd.
-Let op: De verificatie kan enige tijd duren.</value>
+Let op: de verificatie kan enige tijd duren.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Updates tonen</value>
