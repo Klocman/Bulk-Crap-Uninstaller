@@ -157,7 +157,7 @@
     <value>Opdracht</value>
   </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>EXE-opslag locatie o&amp;penen</value>
+    <value>EXE-opslag locatie openen</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Link opslag locatie openen</value>

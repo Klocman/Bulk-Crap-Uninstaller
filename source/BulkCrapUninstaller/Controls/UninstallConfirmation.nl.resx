@@ -136,6 +136,6 @@
     <value>Dit is een lijst met programma's die zullen worden gede-installeerd, volgordelijk van boven naar beneden. Wanneer u het "De-installeer" veld deselecteerd, wordt het programma niet gede-installeerd. Als stille de-installatie niet beschikbaar is voor een onderdeel, kan dit niet worden aangevinkt.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>De initiële volgorde hangt af van uw de-installatie instellingen, maar dit kan worden gewijzigd door de onderdelen te verslepen. Opm: BCU kan de volgorde wijzigen als gelijktijdige de-installatie is ingeschakeld.</value>
+    <value>De initiële volgorde hangt af van uw de-installatie instellingen, maar dit kan worden gewijzigd door de onderdelen te verslepen. Opm.: BCU kan de volgorde wijzigen als gelijktijdige de-installatie is ingeschakeld.</value>
   </data>
 </root>

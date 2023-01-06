@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Deze tool de-installeert automatisch programma's die geen 'stille' installer hebben, door te klikken op de knoppen van de uninstaller in plaats van door de gebruiker.</value>
+    <value>Deze tool de-installeert automatisch programma's die geen 'stille' installer hebben, door te klikken op de knoppen van de de-installer in plaats van door de gebruiker.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Status</value>
@@ -133,7 +133,7 @@
     <value>Afbreken</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Uninstaller automatisering</value>
+    <value>De-installer automatisering</value>
   </data>
   <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
     <value>De-installer zichtbaar</value>

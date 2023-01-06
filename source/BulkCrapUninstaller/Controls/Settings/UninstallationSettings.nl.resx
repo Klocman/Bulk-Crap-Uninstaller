@@ -169,6 +169,6 @@
     <value>Maak een herstelpunt alvorens te de-installeren</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>U kunt een systeem herstelpunt maken voor een back-up van het register, sommige instellingen en bestanden. Het wordt aanbevolen om een herstelpunt te maken voor het verwijderen van stuurprogramma's en belangrijke systeem programma's.</value>
+    <value>Het is mogelijk om een systeem herstelpunt maken voor een back-up van het register, sommige instellingen en bestanden. Het wordt aanbevolen om een herstelpunt te maken voor het verwijderen van stuurprogramma's en belangrijke systeem programma's.</value>
   </data>
 </root>

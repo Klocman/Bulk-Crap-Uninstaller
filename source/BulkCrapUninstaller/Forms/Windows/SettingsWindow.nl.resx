@@ -142,7 +142,7 @@
     <value>Bericht vensters</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>Rommel die u niet vertrouwt altijd weergeven</value>
+    <value>Rommel dat u niet vertrouwt altijd weergeven</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
     <value>Vragen, of normale de-installers uit de lijst met stille deïnstallers moet worden verwijderd</value>
@@ -163,7 +163,7 @@
     <value>Uitvoeren van externe programma's toestaan</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>S&amp;luiten</value>
+    <value>Sluiten</value>
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Algemeen</value>
@@ -181,7 +181,7 @@
     <value>De detectie van Windows onderdelen gebruikt WMI en kan traag zijn of zelfs mislukken op sommige systemen (meestal een gevolg van systeem corruptie).</value>
   </data>
   <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
-    <value>Windows Update</value>
+    <value>Windows update</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
     <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot voltooiïng.</value>
@@ -208,10 +208,10 @@
     <value>Bulk Crap Uninstaller instellingen</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Opdrachtregel voordat de deïnstallatie start</value>
+    <value>Opdrachtregel voordat de de-installatie start</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Opdrachtregel nadat de deïnstallatie is voltooid</value>
+    <value>Opdrachtregel nadat de de-installatie is voltooid</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>U kunt opdrachten opgeven die voor en/of na de de-installatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.
@@ -219,7 +219,7 @@
 BCU wacht tot de momenteel uitgevoerde opdracht is voltooïd, voordat de volgende wordt uitgevoerd.</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>U kunt aangepaste mappen opgeven, waarin u uw programma's heeft geïnstalleerd (bijv. D:\Programmas). Deze mappen worden door BCU gebruikt om te zoeken naar deïnstallatie van restanten, ongeregistreerde programma's en andere zaken.
+    <value>U kunt aangepaste mappen opgeven, waarin u uw programma's heeft geïnstalleerd (bijv. D:\Programmas). Deze mappen worden door BCU gebruikt om te zoeken naar de-installatie van restanten, ongeregistreerde programma's en andere zaken.
 Ofschoon niet noodzakelijk, laat een lijst met dergelijke mappen BCU beter functioneren.
 
 De standaard Windows mappen worden altijd gescand, deze hoeven niet opgenomen te worden in genoemde lijst.
