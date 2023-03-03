@@ -68,7 +68,7 @@ namespace UninstallTools.Factory
             if (!SteamHelperIsAvailable) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "l /i");
-            if (string.IsNullOrEmpty(output) || output.Contains("error", StringComparison.InvariantCultureIgnoreCase)) return results;
+            if (string.IsNullOrEmpty(output)) return results;
 
             foreach (var data in FactoryTools.ExtractAppDataSetsFromHelperOutput(output))
             {
