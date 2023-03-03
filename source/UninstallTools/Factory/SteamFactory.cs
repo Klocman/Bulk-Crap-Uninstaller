@@ -5,14 +5,20 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Security;
 using Klocman.IO;
 using Klocman.Tools;
+using UninstallTools.Junk;
+using UninstallTools.Junk.Confidence;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
-    public class SteamFactory : IIndependantUninstallerFactory
+    public class SteamFactory : IIndependantUninstallerFactory, IJunkCreator
     {
         private static bool? _steamHelperIsAvailable;
         private static string _steamLocation;
@@ -61,6 +67,8 @@ namespace UninstallTools.Factory
         internal static string SteamHelperPath
             => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
+        #region IIndependantUninstallerFactory
+
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
@@ -96,5 +104,59 @@ namespace UninstallTools.Factory
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanSteam;
         public string DisplayName => Localisation.Progress_AppStores_Steam;
+
+        #endregion
+
+        #region IJunkCreator
+
+        private static readonly string[] TempFolderNames = { "downloading", "shadercache", "temp" };
+        public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers) { }
+        public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
+        {
+            if (target.UninstallerKind != UninstallerType.Steam)
+                return Enumerable.Empty<IJunkResult>();
+
+            var results = new List<IJunkResult>();
+            try
+            {
+                // Look for this appID in steam library's temporary folders (game is inside "common" folder, temp folders are next to that)
+                var d = new DirectoryInfo(target.InstallLocation);
+                if (d.Parent?.Name == "common" && d.Parent.Parent != null)
+                {
+                    var libraryDir = d.Parent.Parent.FullName;
+                    Debug.Assert(target.RatingId.StartsWith("Steam App "));
+                    var appIdStr = target.RatingId.Substring("Steam App ".Length);
+                    foreach (var cacheFolderName in TempFolderNames)
+                    {
+                        var subpath = Path.Combine(libraryDir, cacheFolderName, appIdStr);
+                        if (Directory.Exists(subpath))
+                        {
+                            var junk = new FileSystemJunk(new DirectoryInfo(subpath), target, this);
+                            junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
+                            junk.Confidence.Add(4);
+                            results.Add(junk);
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Fail(target.InstallLocation + " does not point inside of a steam library's common folder");
+                }
+
+            }
+            catch (SecurityException e)
+            {
+                Console.WriteLine(e);
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e);
+            }
+            return results;
+        }
+
+        public string CategoryName { get; } = Localisation.UninstallerType_Steam;
+
+        #endregion
     }
 }
