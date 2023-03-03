@@ -192,7 +192,7 @@ namespace UninstallTools.Factory.InfoAdders
 
             // Make sure that all uninstaller-related properties are only copied when necessary, and that UninstallerKind 
             // always changes together with the uninstall strings or we will get bugs elsewhere if there is a mismatch
-            if (baseEntry.UninstallerKind == UninstallerType.Unknown || 
+            if (baseEntry.UninstallerKind == UninstallerType.Unknown && entryToMerge.UninstallerKind != UninstallerType.Unknown || 
                 baseEntry.UninstallerKind == UninstallerType.SimpleDelete && entryToMerge.UninstallPossible || 
                 !baseEntry.UninstallPossible || 
                 entryToMerge.UninstallerKind == UninstallerType.PowerShell)
