@@ -81,7 +81,7 @@ BEGIN
             VALUE "FileDescription", "BCUninstaller launcher"
             VALUE "FileVersion", "1.1.0.0"
             VALUE "InternalName", "BCUninstaller.exe"
-            VALUE "LegalCopyright", "Copyright (C) 2021"
+            VALUE "LegalCopyright", "Copyright (C) 2022"
             VALUE "OriginalFilename", "BCUninstaller.exe"
             VALUE "ProductName", "BCUninstaller launcher"
             VALUE "ProductVersion", "1.1.0.0"
