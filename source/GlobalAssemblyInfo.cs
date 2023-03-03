@@ -15,7 +15,7 @@ using System.Resources;
 // associated with an assembly.
 
 [assembly: AssemblyCompany("Marcin Szeniak")]
-[assembly: AssemblyCopyright("Copyright © 2021")]
+[assembly: AssemblyCopyright("Copyright © 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
