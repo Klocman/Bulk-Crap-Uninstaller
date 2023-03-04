@@ -1007,13 +1007,14 @@ namespace BulkCrapUninstaller.Forms
 
         private void RenameEntries(object sender, EventArgs eventArgs)
         {
-            if (_listView.SelectedUninstallerCount != 1)
+            var selectedUninstallers = _listView.SelectedUninstallers.ToList();
+            if (selectedUninstallers.Count != 1)
             {
                 MessageBoxes.CanSelectOnlyOneItemInfo();
                 return;
             }
 
-            var selected = _listView.SelectedUninstallers.First();
+            var selected = selectedUninstallers[0];
 
             if (!_setMan.Selected.Settings.AdvancedDisableProtection && selected.IsProtected)
             {
