@@ -16,24 +16,13 @@ namespace UninstallTools.Factory
 {
     public class WindowsUpdateFactory : IIndependantUninstallerFactory
     {
-        private static bool? _helperIsAvailable;
-
-        private static bool HelperIsAvailable
-        {
-            get
-            {
-                if (!_helperIsAvailable.HasValue)
-                    _helperIsAvailable = File.Exists(HelperPath) && WindowsTools.CheckNetFramework4Installed(true) != null;
-                return _helperIsAvailable.Value;
-            }
-        }
-
-        private static string HelperPath => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"WinUpdateHelper.exe");
+        private static string HelperPath { get; } = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"WinUpdateHelper.exe");
+        private static bool IsHelperAvailable() => File.Exists(HelperPath);
 
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
-            if (!HelperIsAvailable) return results;
+            if (!IsHelperAvailable()) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "list");
             if (string.IsNullOrEmpty(output) || output.Trim().StartsWith("Error", StringComparison.OrdinalIgnoreCase)) return results;

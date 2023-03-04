@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Security;
 using Klocman.IO;
-using Klocman.Tools;
 using UninstallTools.Junk;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
@@ -20,52 +19,26 @@ namespace UninstallTools.Factory
 {
     public class SteamFactory : IIndependantUninstallerFactory, IJunkCreator
     {
-        private static bool? _steamHelperIsAvailable;
-        private static string _steamLocation;
-
-        internal static string SteamLocation
+        private static bool GetSteamInfo(out string steamLocation)
         {
-            get
-            {
-                if (_steamLocation == null)
-                    GetSteamInfo();
-                return _steamLocation;
-            }
-            private set { _steamLocation = value; }
-        }
+            steamLocation = null;
 
-        internal static bool SteamHelperIsAvailable
-        {
-            get
-            {
-                if (!_steamHelperIsAvailable.HasValue)
-                {
-                    _steamHelperIsAvailable = false;
-                    GetSteamInfo();
-                }
-                return _steamHelperIsAvailable.Value;
-            }
-        }
-
-        private static void GetSteamInfo()
-        {
-            _steamHelperIsAvailable = false;
-
-            if (File.Exists(SteamHelperPath) && WindowsTools.CheckNetFramework4Installed(true) != null)
+            if (File.Exists(SteamHelperPath))
             {
                 var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "steam");
                 if (!string.IsNullOrEmpty(output)
                     && !output.Contains("error", StringComparison.InvariantCultureIgnoreCase)
                     && Directory.Exists(output = output.Trim().TrimEnd('\\', '/')))
                 {
-                    _steamHelperIsAvailable = true;
-                    SteamLocation = output;
+                    steamLocation = output;
+                    return true;
                 }
             }
+
+            return false;
         }
 
-        internal static string SteamHelperPath
-            => Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
+        internal static string SteamHelperPath { get; } = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"SteamHelper.exe");
 
         #region IIndependantUninstallerFactory
 
@@ -73,7 +46,7 @@ namespace UninstallTools.Factory
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
-            if (!SteamHelperIsAvailable) return results;
+            if (!GetSteamInfo(out var steamLocation)) return results;
 
             var output = FactoryTools.StartHelperAndReadOutput(SteamHelperPath, "l /i");
             if (string.IsNullOrEmpty(output)) return results;
@@ -98,6 +71,22 @@ namespace UninstallTools.Factory
 
                 results.Add(entry);
             }
+
+            results.Add(new ApplicationUninstallerEntry
+            {
+                AboutUrl = @"http://store.steampowered.com/about/",
+                InstallLocation = steamLocation,
+                DisplayIcon = Path.Combine(steamLocation, "Steam.exe"),
+                DisplayName = "Steam",
+                UninstallerKind = UninstallerType.Nsis,
+                UninstallString = Path.Combine(steamLocation, "uninstall.exe"),
+                IsOrphaned = true,
+                IsValid = File.Exists(Path.Combine(steamLocation, "uninstall.exe")),
+                InstallDate = Directory.GetCreationTime(steamLocation),
+                Publisher = "Valve Corporation",
+                // Prevent very long size scan in case of many games, the install itself is about 600-800MB
+                EstimatedSize = FileSize.FromKilobytes(1024 * 700)
+            });
 
             return results;
         }

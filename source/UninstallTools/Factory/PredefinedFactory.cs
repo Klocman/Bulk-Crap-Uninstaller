@@ -19,33 +19,7 @@ namespace UninstallTools.Factory
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var items = new List<ApplicationUninstallerEntry>();
-
-            var s = GetSteamUninstallerEntry();
-            if (s != null)
-                items.Add(s);
-
             return items;
-        }
-
-        private static ApplicationUninstallerEntry GetSteamUninstallerEntry()
-        {
-            if (string.IsNullOrEmpty(SteamFactory.SteamLocation)) return null;
-
-            return new ApplicationUninstallerEntry
-            {
-                AboutUrl = @"http://store.steampowered.com/about/",
-                InstallLocation = SteamFactory.SteamLocation,
-                DisplayIcon = Path.Combine(SteamFactory.SteamLocation, "Steam.exe"),
-                DisplayName = "Steam",
-                UninstallerKind = UninstallerType.Nsis,
-                UninstallString = Path.Combine(SteamFactory.SteamLocation, "uninstall.exe"),
-                IsOrphaned = true,
-                IsValid = File.Exists(Path.Combine(SteamFactory.SteamLocation, "uninstall.exe")),
-                InstallDate = Directory.GetCreationTime(SteamFactory.SteamLocation),
-                Publisher = "Valve Corporation",
-                // Prevent very long size scan in case of many games, the install itself is about 600-800MB
-                EstimatedSize = FileSize.FromKilobytes(1024 * 700)
-            };
         }
 
         public bool IsEnabled() => UninstallToolsGlobalConfig.ScanPreDefined;

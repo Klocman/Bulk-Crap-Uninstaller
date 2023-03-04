@@ -17,12 +17,8 @@ namespace UninstallTools.Factory
 {
     public class StoreAppFactory : IIndependantUninstallerFactory
     {
-        static StoreAppFactory()
-        {
-            var storeAppHelperPath = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
-            if (WindowsTools.CheckNetFramework4Installed(true) != null && File.Exists(storeAppHelperPath))
-                StoreAppHelperPath = storeAppHelperPath;
-        }
+        private static string HelperPath { get; } = Path.Combine(UninstallToolsGlobalConfig.AssemblyLocation, @"StoreAppHelper.exe");
+        private static bool IsHelperAvailable() => File.Exists(HelperPath);
 
         public static string GetPowerShellRemoveCommand(string fullName)
         {
@@ -39,15 +35,13 @@ namespace UninstallTools.Factory
                 .ToArray();
         }
 
-        private static string StoreAppHelperPath { get; }
-
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(
             ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
-            if (StoreAppHelperPath == null) return results;
+            if (!IsHelperAvailable()) return results;
 
-            var output = FactoryTools.StartHelperAndReadOutput(StoreAppHelperPath, "/query");
+            var output = FactoryTools.StartHelperAndReadOutput(HelperPath, "/query");
             if (string.IsNullOrEmpty(output)) return results;
 
             var windowsPath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
@@ -57,7 +51,7 @@ namespace UninstallTools.Factory
                 if (!data.ContainsKey("InstalledLocation") || !Directory.Exists(data["InstalledLocation"])) continue;
 
                 var fullName = data["FullName"];
-                var uninstallStr = $"\"{StoreAppHelperPath}\" /uninstall \"{fullName}\"";
+                var uninstallStr = $"\"{HelperPath}\" /uninstall \"{fullName}\"";
                 var isProtected = data.ContainsKey("IsProtected") && Convert.ToBoolean(data["IsProtected"], CultureInfo.InvariantCulture);
                 var result = new ApplicationUninstallerEntry
                 {

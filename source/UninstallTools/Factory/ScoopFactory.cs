@@ -19,7 +19,6 @@ namespace UninstallTools.Factory
 {
     public sealed partial class ScoopFactory : IIndependantUninstallerFactory
     {
-        private static bool? _scoopIsAvailable;
         private static string _scoopUserPath;
         private static string _scoopGlobalPath;
         private static string _scriptPath;
@@ -33,20 +32,7 @@ namespace UninstallTools.Factory
             _jsonContext = new JsonContext(jsonOptions);
         }
 
-        private static bool ScoopIsAvailable
-        {
-            get
-            {
-                if (!_scoopIsAvailable.HasValue)
-                {
-                    _scoopIsAvailable = false;
-                    GetScoopInfo();
-                }
-                return _scoopIsAvailable.Value;
-            }
-        }
-
-        private static void GetScoopInfo()
+        private static bool GetScoopInfo()
         {
             try
             {
@@ -66,13 +52,15 @@ namespace UninstallTools.Factory
                     if (!File.Exists(_powershellPath))
                         throw new InvalidOperationException(@"Detected Scoop program installer, but failed to detect PowerShell");
 
-                    _scoopIsAvailable = true;
+                    return true;
                 }
             }
             catch (SystemException ex)
             {
                 Trace.WriteLine("Failed to get Scoop info: " + ex);
             }
+
+            return false;
         }
 
         private sealed class ExportInfo
@@ -101,7 +89,7 @@ namespace UninstallTools.Factory
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
-            if (!ScoopIsAvailable) return results;
+            if (!GetScoopInfo()) return results;
 
             // Make uninstaller for scoop itself
             var scoopEntry = new ApplicationUninstallerEntry
