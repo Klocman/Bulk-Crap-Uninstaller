@@ -169,6 +169,8 @@ namespace BulkCrapUninstaller.Forms
 
             //Console.WriteLine(string.Format("{0,5}{1,5}{2,5}", currentXPos, change, resultXPos));
 
+            resultXPos = Math.Clamp(resultXPos, scrollPanel.HorizontalScroll.Minimum, scrollPanel.HorizontalScroll.Maximum);
+
             // Double assign is needed because of a bug in the control
             scrollPanel.HorizontalScroll.Value = resultXPos;
             scrollPanel.HorizontalScroll.Value = resultXPos;
