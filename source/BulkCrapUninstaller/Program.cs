@@ -145,8 +145,20 @@ namespace BulkCrapUninstaller
         {
             // Get an ID that is unlikely to be duplicate but that should always return the same on current pc
             var windowsIdentity = WindowsIdentity.GetCurrent();
-            var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-            var idStr = windowsIdentity.User?.Value + string.Join("", windowsIdentity.Claims.Select(x => x.Value).Concat(networkInterfaces.Select(x => x.GetPhysicalAddress().ToString())));
+
+            string networkIdentity;
+            try
+            {
+                var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+                networkIdentity = string.Join("", networkInterfaces.Select(x => x.GetPhysicalAddress().ToString()));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                networkIdentity = e.ToString();
+            }
+
+            var idStr = windowsIdentity.User?.Value + string.Join("", windowsIdentity.Claims.Select(x => x.Value)) + networkIdentity;
             return UninstallerRatingManager.Utils.StableHash(idStr);
         }
 
