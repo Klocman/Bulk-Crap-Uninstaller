@@ -3,10 +3,10 @@
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "https://github.com/Klocman/Bulk-Crap-Uninstaller"
 #define MyAppExeName "BCUninstaller.exe"
-#define MyAppCopyright "Copyright 2018 Marcin Szeniak"
+#define MyAppCopyright "Copyright 2023 Marcin Szeniak"
 
-#define MyAppVersion "5.4.0.0"
-#define MyAppVersionShort "5.4"
+#define MyAppVersion "5.5.0.0"
+#define MyAppVersionShort "5.5"
 
 #define InputDir "..\bin\publish"
 
