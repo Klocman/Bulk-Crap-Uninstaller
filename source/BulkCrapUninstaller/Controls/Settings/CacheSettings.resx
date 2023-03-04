@@ -57,13 +57,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -77,10 +77,10 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 6</value>
+    <value>0, 0, 0, 4</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>665, 66</value>
+    <value>552, 49</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -102,7 +102,7 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>0</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 66</value>
+    <value>0, 49</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -129,13 +129,13 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>True</value>
   </data>
   <data name="checkBoxCerts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 71</value>
+    <value>4, 53</value>
   </data>
   <data name="checkBoxCerts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxCerts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 24</value>
+    <value>240, 19</value>
   </data>
   <data name="checkBoxCerts.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -159,13 +159,13 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>True</value>
   </data>
   <data name="checkBoxInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 105</value>
+    <value>4, 80</value>
   </data>
   <data name="checkBoxInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="checkBoxInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 24</value>
+    <value>220, 19</value>
   </data>
   <data name="checkBoxInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -186,13 +186,13 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>3</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 139</value>
+    <value>4, 107</value>
   </data>
   <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 46</value>
+    <value>144, 34</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -212,23 +212,17 @@ NOTE: To take effect these settings might require BCU to restart.</value>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <data name="flowLayoutPanel1.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 25</value>
+    <value>6, 16</value>
   </data>
   <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 10</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>686, 200</value>
+    <value>602, 145</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -251,6 +245,9 @@ NOTE: To take effect these settings might require BCU to restart.</value>
   <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -258,13 +255,13 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>0, 0</value>
   </data>
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 5, 7, 8</value>
+    <value>6, 4, 6, 0</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 213</value>
+    <value>612, 181</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -288,13 +285,13 @@ NOTE: To take effect these settings might require BCU to restart.</value>
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 362</value>
+    <value>612, 272</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CacheSettings</value>
