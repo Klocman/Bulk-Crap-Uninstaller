@@ -36,12 +36,8 @@ namespace UninstallTools.Junk.Finders.Registry
             if (string.IsNullOrEmpty(target.InstallLocation))
                 yield break;
 
-            try
-            {
-                if (UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
-                    yield break;
-            }
-            catch (ArgumentException ex) { Trace.WriteLine(ex); }
+            if (UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
+                yield break;
 
             foreach (var comEntry in _comEntries.Where(x => PathTools.SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename, true)))
             {

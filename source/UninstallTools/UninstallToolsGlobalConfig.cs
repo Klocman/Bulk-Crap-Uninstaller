@@ -255,7 +255,24 @@ namespace UninstallTools
         /// </summary>
         public static bool IsSystemDirectory(string installLocation)
         {
-            return IsSystemDirectory(new DirectoryInfo(installLocation));
+            if (string.IsNullOrEmpty(installLocation)) return false;
+
+            try
+            {
+                return IsSystemDirectory(new DirectoryInfo(installLocation));
+            }
+            catch (ArgumentException ex)
+            {
+                Trace.WriteLine(ex);
+                // Treat this as a no-touch directory just to be safe
+                return true;
+            }
+            catch (IOException ex)
+            {
+                Trace.WriteLine(ex);
+                // Treat this as a no-touch directory just to be safe
+                return true;
+            }
         }
 
         /// <summary>
