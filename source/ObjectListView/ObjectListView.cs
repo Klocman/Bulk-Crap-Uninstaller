@@ -11836,8 +11836,13 @@ namespace BrightIdeasSoftware
 
             Font = new Font(Font.FontFamily, MathF.Round(origFontSize * scalingRatio, 1));
 
-            foreach (OLVListItem listViewItem in Items)
+            // Can't use foreach since it can throw an InvalidOperationException when the ListView is in virtual mode
+            for (var i = 0; i < Items.Count; i++)
+            {
+                var listViewItem = (OLVListItem)Items[i];
                 RefreshItem(listViewItem);
+            }
+
             AutoResizeColumns();
 
             EndUpdate();
