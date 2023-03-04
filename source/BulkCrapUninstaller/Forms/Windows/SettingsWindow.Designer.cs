@@ -42,6 +42,9 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxColorblind = new System.Windows.Forms.CheckBox();
             this.checkBoxDpiaware = new System.Windows.Forms.CheckBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBoxDoubleClick = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAutoLoad = new System.Windows.Forms.CheckBox();
             this.checkBoxRatings = new System.Windows.Forms.CheckBox();
             this.checkBoxUpdateSearch = new System.Windows.Forms.CheckBox();
@@ -116,6 +119,7 @@ namespace BulkCrapUninstaller.Forms
             this.splitContainer1.SuspendLayout();
             this.groupBoxMisc.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBoxMessages.SuspendLayout();
             this.groupBoxBackup.SuspendLayout();
@@ -185,6 +189,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(this.groupBoxMisc, "groupBoxMisc");
             this.groupBoxMisc.Controls.Add(this.flowLayoutPanel3);
+            this.groupBoxMisc.Controls.Add(this.panel5);
             this.groupBoxMisc.Name = "groupBoxMisc";
             this.groupBoxMisc.TabStop = false;
             // 
@@ -206,6 +211,26 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(this.checkBoxDpiaware, "checkBoxDpiaware");
             this.checkBoxDpiaware.Name = "checkBoxDpiaware";
             this.checkBoxDpiaware.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Controls.Add(this.comboBoxDoubleClick);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Name = "panel5";
+            // 
+            // comboBoxDoubleClick
+            // 
+            resources.ApplyResources(this.comboBoxDoubleClick, "comboBoxDoubleClick");
+            this.comboBoxDoubleClick.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDoubleClick.FormattingEnabled = true;
+            this.comboBoxDoubleClick.Name = "comboBoxDoubleClick";
+            this.comboBoxDoubleClick.SelectedIndexChanged += new System.EventHandler(this.comboBoxDoubleClick_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // checkBoxAutoLoad
             // 
@@ -714,6 +739,8 @@ namespace BulkCrapUninstaller.Forms
             this.groupBoxMisc.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBoxMessages.ResumeLayout(false);
@@ -849,5 +876,8 @@ namespace BulkCrapUninstaller.Forms
         private CheckBox checkBoxDpiaware;
         private GroupBox groupBox2;
         private FlowLayoutPanel flowLayoutPanel4;
+        private Panel panel5;
+        private ComboBox comboBoxDoubleClick;
+        private Label label3;
     }
 }

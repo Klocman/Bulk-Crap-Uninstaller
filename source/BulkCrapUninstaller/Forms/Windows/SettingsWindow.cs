@@ -73,15 +73,21 @@ namespace BulkCrapUninstaller.Forms
                 comboBoxJunk.Items.Add(wrapper);
                 comboBoxRestore.Items.Add(wrapper);
             }
+            _settings.Subscribe(JunkSettingChanged, x => x.MessagesRemoveJunk, this);
+            _settings.Subscribe(RestoreSettingChanged, x => x.MessagesRestorePoints, this);
+
+            foreach (UninstallerListDoubleClickAction value in Enum.GetValues(typeof(UninstallerListDoubleClickAction)))
+            {
+                var wrapper = new LocalisedEnumWrapper(value);
+                comboBoxDoubleClick.Items.Add(wrapper);
+            }
+            _settings.Subscribe(DoubleClickSettingChanged, x => x.UninstallerListDoubleClickAction, this);
 
             comboBoxLanguage.Items.Add(Localisable.DefaultLanguage);
             foreach (var languageCode in CultureConfigurator.SupportedLanguages.OrderBy(x => x.DisplayName))
             {
                 comboBoxLanguage.Items.Add(new ComboBoxWrapper<CultureInfo>(languageCode, x => x.DisplayName));
             }
-
-            _settings.Subscribe(JunkSettingChanged, x => x.MessagesRemoveJunk, this);
-            _settings.Subscribe(RestoreSettingChanged, x => x.MessagesRestorePoints, this);
             _settings.Subscribe(LanguageSettingChanged, x => x.Language, this);
 
             _settings.Subscribe(BackupSettingChanged, x => x.BackupLeftovers, this);
@@ -219,6 +225,23 @@ namespace BulkCrapUninstaller.Forms
                 default:
                     throw new ArgumentOutOfRangeException(nameof(args), args.NewValue, "Unknown value");
             }
+        }
+
+        private void comboBoxDoubleClick_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDoubleClick.SelectedItem is LocalisedEnumWrapper wrapper)
+            {
+                _settings.Settings.UninstallerListDoubleClickAction = (UninstallerListDoubleClickAction)wrapper.TargetEnum;
+            }
+        }
+
+        private void DoubleClickSettingChanged(object sender, SettingChangedEventArgs<UninstallerListDoubleClickAction> args)
+        {
+            var newSelection = comboBoxDoubleClick.Items.Cast<LocalisedEnumWrapper>().FirstOrDefault(x => x.TargetEnum.Equals(args.NewValue));
+            if (newSelection == null || newSelection.Equals(comboBoxDoubleClick.SelectedItem))
+                return;
+
+            comboBoxDoubleClick.SelectedItem = newSelection;
         }
     }
 }

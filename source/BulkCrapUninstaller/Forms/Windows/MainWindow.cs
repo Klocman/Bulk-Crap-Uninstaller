@@ -1202,7 +1202,19 @@ namespace BulkCrapUninstaller.Forms
                 uninstallerObjectListView.CheckObject(e.RowObject);
             }
 
-            OpenProperties(sender, e);
+            switch (Settings.Default.UninstallerListDoubleClickAction)
+            {
+                case UninstallerListDoubleClickAction.DoNothing:
+                    break;
+                case UninstallerListDoubleClickAction.OpenProperties:
+                    OpenProperties(sender, e);
+                    break;
+                case UninstallerListDoubleClickAction.Uninstall:
+                    RunLoudUninstall(sender, e);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(UninstallerListDoubleClickAction), Settings.Default.UninstallerListDoubleClickAction, "Unhandled value");
+            }
 
             //uninstallerObjectListView.CancelCellEdit();
         }

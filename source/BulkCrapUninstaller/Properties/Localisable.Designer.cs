@@ -19,7 +19,7 @@ namespace BulkCrapUninstaller.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localisable {
@@ -1613,24 +1613,6 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No valid files or directories were selected. Make sure you have access to them, and they aren&apos;t marked as system files..
-        /// </summary>
-        internal static string TargetWindow_NoFilesSelected_Message {
-            get {
-                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Message", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Look for application.
-        /// </summary>
-        internal static string TargetWindow_NoFilesSelected_Title {
-            get {
-                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Finishing up....
         /// </summary>
         internal static string Progress_Finishing {
@@ -1794,6 +1776,24 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No valid files or directories were selected. Make sure you have access to them, and they aren&apos;t marked as system files..
+        /// </summary>
+        internal static string TargetWindow_NoFilesSelected_Message {
+            get {
+                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Look for application.
+        /// </summary>
+        internal static string TargetWindow_NoFilesSelected_Title {
+            get {
+                return ResourceManager.GetString("TargetWindow_NoFilesSelected_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to find any applications inside {0}.
         /// </summary>
         internal static string Uninstaller_GetApplicationsFromDirectories_NothingFound_Message {
@@ -1808,6 +1808,33 @@ namespace BulkCrapUninstaller.Properties {
         internal static string Uninstaller_GetApplicationsFromDirectories_NothingFound_Title {
             get {
                 return ResourceManager.GetString("Uninstaller_GetApplicationsFromDirectories_NothingFound_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does nothing.
+        /// </summary>
+        internal static string UninstallerListDoubleClickAction_DoNothing {
+            get {
+                return ResourceManager.GetString("UninstallerListDoubleClickAction_DoNothing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opens properties.
+        /// </summary>
+        internal static string UninstallerListDoubleClickAction_Properties {
+            get {
+                return ResourceManager.GetString("UninstallerListDoubleClickAction_Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstalls.
+        /// </summary>
+        internal static string UninstallerListDoubleClickAction_Uninstall {
+            get {
+                return ResourceManager.GetString("UninstallerListDoubleClickAction_Uninstall", resourceCulture);
             }
         }
         

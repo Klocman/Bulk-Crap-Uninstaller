@@ -1,64 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
+﻿<root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -127,11 +67,11 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 191</value>
+    <value>7, 145</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
@@ -140,16 +80,16 @@
     <value>Fill</value>
   </data>
   <data name="textBoxPreUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+    <value>0, 21</value>
   </data>
   <data name="textBoxPreUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxPreUninstall.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxPreUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 140</value>
+    <value>412, 109</value>
   </data>
   <data name="textBoxPreUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -179,13 +119,13 @@
     <value>0, 0</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 4, 5, 4</value>
+    <value>1, 3, 4, 3</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 28</value>
+    <value>234, 21</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -221,16 +161,16 @@
     <value>Fill</value>
   </data>
   <data name="textBoxPostUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+    <value>0, 21</value>
   </data>
   <data name="textBoxPostUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxPostUninstall.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxPostUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 139</value>
+    <value>412, 111</value>
   </data>
   <data name="textBoxPostUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -260,13 +200,13 @@
     <value>0, 0</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 4, 5, 4</value>
+    <value>1, 3, 4, 3</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 28</value>
+    <value>221, 21</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -299,13 +239,13 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 350</value>
+    <value>416, 275</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>172</value>
+    <value>134</value>
   </data>
   <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -335,20 +275,19 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxColorblind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
+    <value>6, 3</value>
   </data>
   <data name="checkBoxColorblind.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxColorblind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 24</value>
+    <value>121, 19</value>
   </data>
   <data name="checkBoxColorblind.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="checkBoxColorblind.Text" xml:space="preserve">
     <value>Color-blind mode</value>
-    <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="&gt;&gt;checkBoxColorblind.Name" xml:space="preserve">
     <value>checkBoxColorblind</value>
@@ -366,13 +305,10 @@
     <value>True</value>
   </data>
   <data name="checkBoxDpiaware.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 36</value>
-  </data>
-  <data name="checkBoxDpiaware.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>5, 28</value>
   </data>
   <data name="checkBoxDpiaware.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 24</value>
+    <value>207, 19</value>
   </data>
   <data name="checkBoxDpiaware.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -399,16 +335,16 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 46</value>
   </data>
   <data name="flowLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 3</value>
+    <value>2, 0, 2, 2</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 67</value>
+    <value>405, 52</value>
   </data>
   <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -425,20 +361,122 @@
   <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panel5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxDoubleClick.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="comboBoxDoubleClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 0</value>
+  </data>
+  <data name="comboBoxDoubleClick.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="comboBoxDoubleClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 23</value>
+  </data>
+  <data name="comboBoxDoubleClick.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDoubleClick.Name" xml:space="preserve">
+    <value>comboBoxDoubleClick</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDoubleClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDoubleClick.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDoubleClick.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 0</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 18</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Double clicking in application list</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 19</value>
+  </data>
+  <data name="panel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="panel5.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
+  </data>
+  <data name="panel5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 27</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>groupBoxMisc</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="groupBoxMisc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="groupBoxMisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 488</value>
+    <value>4, 374</value>
   </data>
   <data name="groupBoxMisc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxMisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>471, 95</value>
+    <value>413, 101</value>
   </data>
   <data name="groupBoxMisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -465,13 +503,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxAutoLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="checkBoxAutoLoad.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxAutoLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 24</value>
+    <value>356, 19</value>
   </data>
   <data name="checkBoxAutoLoad.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -498,13 +536,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxRatings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 68</value>
+    <value>4, 53</value>
   </data>
   <data name="checkBoxRatings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxRatings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 24</value>
+    <value>206, 19</value>
   </data>
   <data name="checkBoxRatings.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -531,13 +569,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxUpdateSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="checkBoxUpdateSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxUpdateSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 24</value>
+    <value>181, 19</value>
   </data>
   <data name="checkBoxUpdateSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -564,13 +602,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxSendStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 36</value>
+    <value>4, 28</value>
   </data>
   <data name="checkBoxSendStats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxSendStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 24</value>
+    <value>200, 19</value>
   </data>
   <data name="checkBoxSendStats.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -597,13 +635,13 @@
     <value>Fill</value>
   </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 0</value>
+    <value>136, 0</value>
   </data>
   <data name="comboBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 28</value>
+    <value>263, 23</value>
   </data>
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -630,16 +668,16 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 0</value>
+    <value>6, 0</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 4, 8, 0</value>
+    <value>0, 3, 7, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 24</value>
+    <value>130, 18</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -663,19 +701,19 @@
     <value>Top</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 74</value>
+    <value>4, 56</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="panel3.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>134, 36</value>
+    <value>117, 27</value>
   </data>
   <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 0, 7, 0</value>
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 36</value>
+    <value>405, 27</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -702,19 +740,19 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label10.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>480, 0</value>
+    <value>420, 0</value>
   </data>
   <data name="label10.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 7</value>
+    <value>0, 2, 0, 5</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 50</value>
+    <value>393, 37</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -744,22 +782,22 @@
     <value>Top</value>
   </data>
   <data name="directorySelectBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 120</value>
+    <value>4, 94</value>
   </data>
   <data name="directorySelectBoxBackup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="directorySelectBoxBackup.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>133334, 33</value>
+    <value>116667, 25</value>
   </data>
   <data name="directorySelectBoxBackup.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>14, 33</value>
+    <value>12, 25</value>
   </data>
   <data name="directorySelectBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>26, 0, 7, 0</value>
+    <value>23, 0, 6, 0</value>
   </data>
   <data name="directorySelectBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 33</value>
+    <value>397, 25</value>
   </data>
   <data name="directorySelectBoxBackup.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -789,13 +827,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonBackupAsk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="radioButtonBackupAsk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="radioButtonBackupAsk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 24</value>
+    <value>131, 19</value>
   </data>
   <data name="radioButtonBackupAsk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -822,13 +860,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonBackupNever.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 36</value>
+    <value>4, 28</value>
   </data>
   <data name="radioButtonBackupNever.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="radioButtonBackupNever.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 24</value>
+    <value>125, 19</value>
   </data>
   <data name="radioButtonBackupNever.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -855,13 +893,13 @@
     <value>NoControl</value>
   </data>
   <data name="radioButtonBackupAuto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 68</value>
+    <value>4, 53</value>
   </data>
   <data name="radioButtonBackupAuto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="radioButtonBackupAuto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 24</value>
+    <value>200, 19</value>
   </data>
   <data name="radioButtonBackupAuto.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -885,13 +923,13 @@
     <value>Top</value>
   </data>
   <data name="flowLayoutPanel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="flowLayoutPanel9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 96</value>
+    <value>397, 75</value>
   </data>
   <data name="flowLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -912,16 +950,16 @@
     <value>Top</value>
   </data>
   <data name="groupBoxBackup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 195</value>
+    <value>4, 150</value>
   </data>
   <data name="groupBoxBackup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxBackup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 11</value>
+    <value>4, 3, 4, 8</value>
   </data>
   <data name="groupBoxBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 164</value>
+    <value>405, 127</value>
   </data>
   <data name="groupBoxBackup.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -954,13 +992,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
+    <value>6, 3</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 24</value>
+    <value>230, 19</value>
   </data>
   <data name="checkBoxShowAllBadJunk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -987,13 +1025,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxLoud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 36</value>
+    <value>6, 28</value>
   </data>
   <data name="checkBoxLoud.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxLoud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 24</value>
+    <value>284, 19</value>
   </data>
   <data name="checkBoxLoud.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1020,13 +1058,13 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxNeverFeedback.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 68</value>
+    <value>6, 53</value>
   </data>
   <data name="checkBoxNeverFeedback.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxNeverFeedback.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 24</value>
+    <value>186, 19</value>
   </data>
   <data name="checkBoxNeverFeedback.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1053,16 +1091,16 @@
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 96</value>
+    <value>4, 73</value>
   </data>
   <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 3</value>
+    <value>2, 0, 2, 2</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 99</value>
+    <value>405, 77</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1089,13 +1127,13 @@
     <value>Right</value>
   </data>
   <data name="comboBoxJunk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 0</value>
+    <value>318, 0</value>
   </data>
   <data name="comboBoxJunk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="comboBoxJunk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 28</value>
+    <value>81, 23</value>
   </data>
   <data name="comboBoxJunk.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1122,16 +1160,16 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 0</value>
+    <value>6, 0</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 4, 0, 0</value>
+    <value>0, 3, 0, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 24</value>
+    <value>178, 18</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1155,19 +1193,19 @@
     <value>Top</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 60</value>
+    <value>4, 46</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="panel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>134, 36</value>
+    <value>117, 27</value>
   </data>
   <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 0, 7, 0</value>
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 36</value>
+    <value>405, 27</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1191,13 +1229,13 @@
     <value>Right</value>
   </data>
   <data name="comboBoxRestore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 0</value>
+    <value>318, 0</value>
   </data>
   <data name="comboBoxRestore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="comboBoxRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 28</value>
+    <value>81, 23</value>
   </data>
   <data name="comboBoxRestore.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1224,16 +1262,16 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 0</value>
+    <value>6, 0</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 4, 0, 0</value>
+    <value>0, 3, 0, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 24</value>
+    <value>213, 18</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1257,19 +1295,19 @@
     <value>Top</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="panel2.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>134, 36</value>
+    <value>117, 27</value>
   </data>
   <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 0, 7, 0</value>
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 36</value>
+    <value>405, 27</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1290,16 +1328,16 @@
     <value>Top</value>
   </data>
   <data name="groupBoxMessages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 125</value>
+    <value>4, 94</value>
   </data>
   <data name="groupBoxMessages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxMessages.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>471, 363</value>
+    <value>413, 280</value>
   </data>
   <data name="groupBoxMessages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1332,16 +1370,16 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxEnableExternal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
+    <value>7, 121</value>
   </data>
   <data name="checkBoxEnableExternal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxEnableExternal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 7</value>
+    <value>2, 0, 0, 5</value>
   </data>
   <data name="checkBoxEnableExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 31</value>
+    <value>416, 24</value>
   </data>
   <data name="checkBoxEnableExternal.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1380,10 +1418,10 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 12</value>
+    <value>0, 0, 0, 9</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 132</value>
+    <value>411, 99</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1412,13 +1450,13 @@ BCU will wait until the currently running command completes before executing the
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 28</value>
+    <value>7, 22</value>
   </data>
   <data name="flowLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 132</value>
+    <value>416, 99</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1439,16 +1477,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Fill</value>
   </data>
   <data name="groupBoxExternal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="groupBoxExternal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxExternal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 9</value>
+    <value>7, 6, 7, 7</value>
   </data>
   <data name="groupBoxExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 550</value>
+    <value>430, 427</value>
   </data>
   <data name="groupBoxExternal.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1475,13 +1513,13 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 16</value>
+    <value>349, 12</value>
   </data>
   <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 36</value>
+    <value>88, 27</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1511,16 +1549,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Fill</value>
   </data>
   <data name="propertiesSidebar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="propertiesSidebar1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="propertiesSidebar1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>226, 261</value>
+    <value>198, 196</value>
   </data>
   <data name="propertiesSidebar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 550</value>
+    <value>430, 407</value>
   </data>
   <data name="propertiesSidebar1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1538,16 +1576,16 @@ BCU will wait until the currently running command completes before executing the
     <value>0</value>
   </data>
   <data name="tabPageGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 44</value>
   </data>
   <data name="tabPageGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 413</value>
   </data>
   <data name="tabPageGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1577,16 +1615,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Top</value>
   </data>
   <data name="groupBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="groupBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 11</value>
+    <value>4, 3, 4, 8</value>
   </data>
   <data name="groupBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>471, 121</value>
+    <value>413, 91</value>
   </data>
   <data name="groupBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1607,16 +1645,16 @@ BCU will wait until the currently running command completes before executing the
     <value>2</value>
   </data>
   <data name="tabPageInterface.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 44</value>
   </data>
   <data name="tabPageInterface.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageInterface.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageInterface.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 413</value>
   </data>
   <data name="tabPageInterface.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1649,13 +1687,13 @@ BCU will wait until the currently running command completes before executing the
     <value>Fill</value>
   </data>
   <data name="uninstallationSettings1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="uninstallationSettings1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="uninstallationSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 550</value>
+    <value>430, 427</value>
   </data>
   <data name="uninstallationSettings1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1673,16 +1711,16 @@ BCU will wait until the currently running command completes before executing the
     <value>0</value>
   </data>
   <data name="tabPageUninstallation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 24</value>
   </data>
   <data name="tabPageUninstallation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageUninstallation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageUninstallation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 433</value>
   </data>
   <data name="tabPageUninstallation.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1721,19 +1759,19 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="labelWinUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 263</value>
+    <value>4, 206</value>
   </data>
   <data name="labelWinUpdateInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelWinUpdateInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>480, 0</value>
+    <value>420, 0</value>
   </data>
   <data name="labelWinUpdateInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>21, 0, 0, 9</value>
+    <value>18, 0, 0, 7</value>
   </data>
   <data name="labelWinUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>469, 43</value>
+    <value>411, 33</value>
   </data>
   <data name="labelWinUpdateInfo.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1763,16 +1801,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanWinUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 235</value>
+    <value>4, 184</value>
   </data>
   <data name="checkBoxScanWinUpdates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanWinUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxScanWinUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxScanWinUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1805,19 +1843,19 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="labelWinFeatureInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 192</value>
+    <value>4, 151</value>
   </data>
   <data name="labelWinFeatureInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelWinFeatureInfo.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>480, 0</value>
+    <value>420, 0</value>
   </data>
   <data name="labelWinFeatureInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>21, 0, 0, 9</value>
+    <value>18, 0, 0, 7</value>
   </data>
   <data name="labelWinFeatureInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>478, 43</value>
+    <value>410, 33</value>
   </data>
   <data name="labelWinFeatureInfo.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1847,16 +1885,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanWinFeatures.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 164</value>
+    <value>4, 129</value>
   </data>
   <data name="checkBoxScanWinFeatures.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanWinFeatures.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxScanWinFeatures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxScanWinFeatures.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1886,16 +1924,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanStoreApps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 136</value>
+    <value>4, 107</value>
   </data>
   <data name="checkBoxScanStoreApps.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanStoreApps.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxScanStoreApps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxScanStoreApps.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1925,16 +1963,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 108</value>
+    <value>4, 85</value>
   </data>
   <data name="checkBoxScanSteam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanSteam.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxScanSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxScanSteam.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1964,16 +2002,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScoop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 80</value>
+    <value>4, 63</value>
   </data>
   <data name="checkBoxScoop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScoop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxScoop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxScoop.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2003,16 +2041,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxOculus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 52</value>
+    <value>4, 41</value>
   </data>
   <data name="checkBoxOculus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxOculus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxOculus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxOculus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2042,16 +2080,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxChoco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="checkBoxChoco.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxChoco.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 4</value>
+    <value>4, 0, 4, 3</value>
   </data>
   <data name="checkBoxChoco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 28</value>
+    <value>422, 22</value>
   </data>
   <data name="checkBoxChoco.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2075,16 +2113,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Top</value>
   </data>
   <data name="groupBoxAppStores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 128</value>
+    <value>4, 100</value>
   </data>
   <data name="groupBoxAppStores.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxAppStores.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxAppStores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 310</value>
+    <value>430, 242</value>
   </data>
   <data name="groupBoxAppStores.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2123,13 +2161,13 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanRegistry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="checkBoxScanRegistry.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanRegistry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 24</value>
+    <value>246, 19</value>
   </data>
   <data name="checkBoxScanRegistry.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2156,13 +2194,13 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxScanDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 36</value>
+    <value>4, 28</value>
   </data>
   <data name="checkBoxScanDrives.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxScanDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 24</value>
+    <value>204, 19</value>
   </data>
   <data name="checkBoxScanDrives.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2189,13 +2227,13 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxPreDefined.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 68</value>
+    <value>4, 53</value>
   </data>
   <data name="checkBoxPreDefined.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxPreDefined.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+    <value>167, 19</value>
   </data>
   <data name="checkBoxPreDefined.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2219,13 +2257,13 @@ BCU will wait until the currently running command completes before executing the
     <value>Top</value>
   </data>
   <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="flowLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 96</value>
+    <value>422, 75</value>
   </data>
   <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2246,16 +2284,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Top</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 124</value>
+    <value>430, 97</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2276,16 +2314,16 @@ BCU will wait until the currently running command completes before executing the
     <value>1</value>
   </data>
   <data name="tabPageDetection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 24</value>
   </data>
   <data name="tabPageDetection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageDetection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageDetection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 433</value>
   </data>
   <data name="tabPageDetection.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2306,16 +2344,16 @@ BCU will wait until the currently running command completes before executing the
     <value>3</value>
   </data>
   <data name="tabPageExternal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 24</value>
   </data>
   <data name="tabPageExternal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageExternal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageExternal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 433</value>
   </data>
   <data name="tabPageExternal.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2342,16 +2380,16 @@ BCU will wait until the currently running command completes before executing the
     <value>Fill</value>
   </data>
   <data name="textBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 319</value>
+    <value>7, 227</value>
   </data>
   <data name="textBoxProgramFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxProgramFolders.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 222</value>
+    <value>416, 193</value>
   </data>
   <data name="textBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2378,23 +2416,22 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxRemovable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 287</value>
+    <value>7, 202</value>
   </data>
   <data name="checkBoxRemovable.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxRemovable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>21, 4, 5, 4</value>
+    <value>18, 3, 4, 3</value>
   </data>
   <data name="checkBoxRemovable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 32</value>
+    <value>416, 25</value>
   </data>
   <data name="checkBoxRemovable.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
     <value>Scan removable drives</value>
-    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="&gt;&gt;checkBoxRemovable.Name" xml:space="preserve">
     <value>checkBoxRemovable</value>
@@ -2418,16 +2455,16 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 255</value>
+    <value>7, 177</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 32</value>
+    <value>416, 25</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2457,19 +2494,19 @@ BCU will wait until the currently running command completes before executing the
     <value>NoControl</value>
   </data>
   <data name="labelProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 28</value>
+    <value>7, 22</value>
   </data>
   <data name="labelProgramFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="labelProgramFolders.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>480, 0</value>
+    <value>420, 0</value>
   </data>
   <data name="labelProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 7</value>
+    <value>0, 0, 0, 5</value>
   </data>
   <data name="labelProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 227</value>
+    <value>420, 155</value>
   </data>
   <data name="labelProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2497,16 +2534,16 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Fill</value>
   </data>
   <data name="groupBoxProgramFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="groupBoxProgramFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBoxProgramFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 9</value>
+    <value>7, 6, 7, 7</value>
   </data>
   <data name="groupBoxProgramFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 550</value>
+    <value>430, 427</value>
   </data>
   <data name="groupBoxProgramFolders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2527,16 +2564,16 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>0</value>
   </data>
   <data name="tabPageFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 24</value>
   </data>
   <data name="tabPageFolders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageFolders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 433</value>
   </data>
   <data name="tabPageFolders.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2566,13 +2603,13 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Top</value>
   </data>
   <data name="cacheSettings1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 186</value>
+    <value>4, 145</value>
   </data>
   <data name="cacheSettings1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="cacheSettings1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 203</value>
+    <value>430, 211</value>
   </data>
   <data name="cacheSettings1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2605,10 +2642,13 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
+    <value>3, 18</value>
+  </data>
+  <data name="flowLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 32</value>
+    <value>424, 25</value>
   </data>
   <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2629,10 +2669,16 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Top</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 128</value>
+    <value>4, 100</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 58</value>
+    <value>430, 45</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2671,13 +2717,13 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>TopDown</value>
   </data>
   <data name="flowLayoutPanel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 19</value>
   </data>
   <data name="flowLayoutPanel10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="flowLayoutPanel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 96</value>
+    <value>422, 75</value>
   </data>
   <data name="flowLayoutPanel10.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2701,16 +2747,16 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Top</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+    <value>4, 3</value>
   </data>
   <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 124</value>
+    <value>430, 97</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2731,16 +2777,16 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>2</value>
   </data>
   <data name="tabPageMisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 54</value>
+    <value>4, 44</value>
   </data>
   <data name="tabPageMisc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageMisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 558</value>
+    <value>438, 413</value>
   </data>
   <data name="tabPageMisc.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2764,13 +2810,13 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Fill</value>
   </data>
   <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 9</value>
+    <value>7, 7</value>
   </data>
   <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 616</value>
+    <value>446, 461</value>
   </data>
   <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2791,13 +2837,13 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
     <value>Bottom</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 625</value>
+    <value>7, 468</value>
   </data>
   <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 61</value>
+    <value>446, 46</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2814,17 +2860,23 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>526, 695</value>
+    <value>460, 521</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 9, 8, 9</value>
+    <value>7, 7, 7, 7</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -2844,10 +2896,4 @@ Use full directory paths, one path per line. Invalid paths and non-existing dire
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="usageTracker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
