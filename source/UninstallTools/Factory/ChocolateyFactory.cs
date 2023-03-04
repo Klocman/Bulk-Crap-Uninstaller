@@ -11,50 +11,26 @@ namespace UninstallTools.Factory
 {
     public sealed class ChocolateyFactory : IIndependantUninstallerFactory
     {
-        private static bool? _chocoIsAvailable;
-        private static string _chocoLocation;
-
-        private static string ChocoFullFilename
+        private static bool GetChocoInfo(out string chocoLocation)
         {
-            get
-            {
-                if (_chocoLocation == null)
-                    GetChocoInfo();
-                return _chocoLocation;
-            }
-        }
-
-        private static bool ChocoIsAvailable
-        {
-            get
-            {
-                if (!_chocoIsAvailable.HasValue)
-                {
-                    _chocoIsAvailable = false;
-                    GetChocoInfo();
-                }
-                return _chocoIsAvailable.Value;
-            }
-        }
-
-        private static void GetChocoInfo()
-        {
+            chocoLocation = null;
             try
             {
                 var chocoPath = PathTools.GetFullPathOfExecutable("choco.exe");
-                if (string.IsNullOrEmpty(chocoPath)) return;
+                if (string.IsNullOrEmpty(chocoPath)) return false;
 
                 var result = StartProcessAndReadOutput(chocoPath, string.Empty);
                 if (result.StartsWith("Chocolatey", StringComparison.Ordinal))
                 {
-                    _chocoLocation = chocoPath;
-                    _chocoIsAvailable = true;
+                    chocoLocation = chocoPath;
+                    return true;
                 }
             }
             catch (SystemException ex)
             {
                 Trace.WriteLine("Failed to get Choco info: " + ex);
             }
+            return false;
         }
 
         private static readonly string[] NewlineSeparators = StringTools.NewLineChars.ToArray();
@@ -63,9 +39,10 @@ namespace UninstallTools.Factory
         {
             var results = new List<ApplicationUninstallerEntry>();
 
-            if (!ChocoIsAvailable) return results;
+            // Check on every reload in case Chocolatey was uninstalled since last reload
+            if (!GetChocoInfo(out var chocoFullFilename)) return results;
 
-            var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -lo -nocolor --detail");
+            var result = StartProcessAndReadOutput(chocoFullFilename, @"list -lo -nocolor --detail");
 
             if (string.IsNullOrEmpty(result)) return results;
 
@@ -74,14 +51,14 @@ namespace UninstallTools.Factory
             if (!match.Success) return results;
             var begin = match.Index + 1;
 
-            while(true)
+            while (true)
             {
                 match = match.NextMatch();
                 if (!match.Success) break;
                 var end = match.Index + 1;
-                var info = result.Substring(begin, end-begin);
+                var info = result.Substring(begin, end - begin);
                 int i = info.IndexOf(' '), j = info.IndexOf("\r\n", StringComparison.Ordinal);
-                var appName = new { name = info.Substring(0, i), version = info.Substring(i+1, j-i-1) };
+                var appName = new { name = info.Substring(0, i), version = info.Substring(i + 1, j - i - 1) };
 
                 var kvps = ExtractPackageInformation(info);
                 if (kvps.Count == 0) continue;
@@ -110,12 +87,12 @@ namespace UninstallTools.Factory
                         AddInfo(entry, kvps, "Chocolatey Package Source", (e, s) => e.AboutUrl = s);
                 }
 
-                var psc = new ProcessStartCommand(ChocoFullFilename, $"uninstall {appName.name} -y -r");
+                var psc = new ProcessStartCommand(chocoFullFilename, $"uninstall {appName.name} -y -r");
 
                 entry.UninstallString = psc.ToString();
 
                 if (entry.RawDisplayName == "Chocolatey")
-                    entry.InstallLocation = GetChocoInstallLocation();
+                    entry.InstallLocation = GetChocoInstallLocation(chocoFullFilename);
 
                 // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
                 psc.Arguments += " -n --skipautouninstaller";
@@ -131,10 +108,10 @@ namespace UninstallTools.Factory
             return results;
         }
 
-        private static string GetChocoInstallLocation()
+        private static string GetChocoInstallLocation(string chocoFullFilename)
         {
             // The path is C:\ProgramData\chocolatey\bin\choco.exe OR C:\ProgramData\chocolatey\choco.exe
-            var chocoLocation = Path.GetDirectoryName(ChocoFullFilename);
+            var chocoLocation = Path.GetDirectoryName(chocoFullFilename);
             if (chocoLocation != null && chocoLocation.EndsWith(@"\bin", StringComparison.OrdinalIgnoreCase))
                 return chocoLocation.Substring(0, chocoLocation.Length - 4);
             return chocoLocation;
