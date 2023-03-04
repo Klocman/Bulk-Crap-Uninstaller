@@ -1,0 +1,20 @@
+name: Publish to WinGet
+on:
+  release:
+    types: [released]
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: Get version
+        id: get-version
+        run: |
+          # Finding the version from release name
+          $VERSION = '${{ github.event.release.name }}'.Replace('v', $Null) + '.0.0'
+          echo "::set-output name=version::$VERSION"
+        shell: pwsh
+      - uses: vedantmgoyal2009/winget-releaser@v2
+        with:
+          identifier: Klocman.BulkCrapUninstaller
+          version: ${{ steps.get-version.outputs.version }}
+          token: ${{ secrets.WINGET_TOKEN }}
