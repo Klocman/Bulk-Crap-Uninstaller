@@ -71,14 +71,15 @@ namespace BulkCrapUninstaller.Forms
 
             toolStrip1.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable());
 
+            var windowHandle = Handle;
             // Shutdown blocking not available below Windows Vista
             if (Environment.OSVersion.Version >= new Version(6, 0))
             {
                 _settings.Subscribe((sender, args) =>
                 {
                     if (args.NewValue)
-                        SleepControls.PreventSleepOrShutdown(Handle, "Bulk uninstallation is in progress.");
-                    else SleepControls.AllowSleepOrShutdown(Handle);
+                        SleepControls.PreventSleepOrShutdown(windowHandle, "Bulk uninstallation is in progress.");
+                    else SleepControls.AllowSleepOrShutdown(windowHandle);
                 }, settings => settings.UninstallPreventShutdown, this);
             }
 
@@ -94,7 +95,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 _settings.RemoveHandlers(this);
 
-                SleepControls.AllowSleepOrShutdown(Handle);
+                SleepControls.AllowSleepOrShutdown(windowHandle);
 
                 _walkAwayBox?.Dispose();
             };
@@ -136,7 +137,7 @@ namespace BulkCrapUninstaller.Forms
                         checkBoxFinishSleep.Checked = false;
                         checkBoxFinishSleep.Enabled = false;
 
-                        SleepControls.AllowSleepOrShutdown(Handle);
+                        SleepControls.AllowSleepOrShutdown(windowHandle);
                         SleepControls.PutToSleep();
                     }
                 }
