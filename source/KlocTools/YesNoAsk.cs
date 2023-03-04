@@ -10,8 +10,8 @@ namespace Klocman
 {
     public enum YesNoAsk
     {
-        [LocalisedName(typeof (Localisation), "Enums_YesNoAsk_Ask")] Ask = 0,
-        [LocalisedName(typeof (Localisation), "Yes")] Yes,
-        [LocalisedName(typeof (Localisation), "No")] No
+        [LocalisedName(typeof (Localisation), nameof(Localisation.Enums_YesNoAsk_Ask))] Ask = 0,
+        [LocalisedName(typeof (Localisation), nameof(Localisation.Yes))] Yes,
+        [LocalisedName(typeof (Localisation), nameof(Localisation.No))] No
     }
 }
