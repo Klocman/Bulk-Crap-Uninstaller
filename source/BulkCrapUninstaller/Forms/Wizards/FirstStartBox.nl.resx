@@ -133,7 +133,7 @@
     <value>Help tonen</value>
   </data>
   <data name="buttonFinish.Text" xml:space="preserve">
-    <value>Setup voltooiïen</value>
+    <value>Setup voltooien</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
     <value>U kunt de BCUninstaller nu starten.
@@ -143,7 +143,7 @@ Als u vragen hebt of een nieuwe functie wilt voorstellen, gelieve onderstaande l
     <value>Contactformulier openen</value>
   </data>
   <data name="p5finishHomepage.Text" xml:space="preserve">
-    <value>Gedetaillieerde verslagen van programma wijzigingen en mijn andere software vindt u op mijn homepagina.</value>
+    <value>Gedetailleerde verslagen van programma wijzigingen en mijn andere software vindt u op mijn homepagina.</value>
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>Homepagina openen</value>
@@ -193,7 +193,7 @@ Controleer daarvoor de betreffende XML-bestanden in de BCUinstaller map.</value>
     <value>Beschadigde de-installer</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
-    <value>Van tijd tot tijd kan het voorkomen, dat een programma weigert te de-installeren of eenvoudig weg uit de meeste  de-installer programma's verdwijnt.</value>
+    <value>Van tijd tot tijd kan het voorkomen, dat een programma weigert te de-installeren of eenvoudigweg uit de meeste de-installer programma's verdwijnt.</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
     <value>Beschadigde of ontbrekende de-installer(s)</value>
@@ -212,7 +212,7 @@ BCUninstaller kan deze registraties met de optie "Handmatig de-installeren" verw
     <value>Niet geregistreerde toepassing</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>Soms kunnen volledige programma's na deïnstallatie op de harde schijf achterblijven. Dit kan ook gebeuren, als de de-installer zelf werd verwijderd.</value>
+    <value>Soms kunnen volledige programma's na de-installatie op de harde schijf achterblijven. Dit kan ook gebeuren als de de-installer zelf werd verwijderd.</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
     <value>Niet geregistreerde toepassingen in de lijst tonen</value>
@@ -231,7 +231,7 @@ Ontbreekt de originele de-installer, dan kunt u de optie "Handmatig de-instalere
     <value>Systeem componenten</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>Programma's die als 'systeem component(en)' zijn aangeduid, worden door de meeste deïnstallers verborgen. Deze aanduiding betekent NIET, dat het programma tot het besturingssysteem behoort. </value>
+    <value>Programma's die als 'systeem component(en)' zijn aangeduid, worden door de meeste de-installers verborgen. Deze aanduiding betekent NIET, dat het programma tot het besturingssysteem behoort. </value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>Als 'systeem componenten' aangeduide de-installers tonen</value>
@@ -240,7 +240,7 @@ Ontbreekt de originele de-installer, dan kunt u de optie "Handmatig de-instalere
     <value>Beveiligde de-installers</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Beveiligde onderdelen worden met het "Niet Verwijderen" label aangeduid hetgeen betekent, dat de uitgever niet wil dat u deze verwijderd. Deze aanduiding wordt vaak bij softwarepakketten gebruikt, om te voorkomen dat u daarvan onderdelen deïnstalleert.</value>
+    <value>Beveiligde onderdelen worden met het "Niet Verwijderen" label aangeduid hetgeen betekent, dat de uitgever niet wil dat u deze verwijderd. Deze aanduiding wordt vaak bij softwarepakketten gebruikt, om te voorkomen dat u daarvan onderdelen de-installeert.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>"Beveiligde" de-installers tonen</value>
@@ -249,13 +249,13 @@ Ontbreekt de originele de-installer, dan kunt u de optie "Handmatig de-instalere
     <value>De beveiliging van "beveiligde" de-installers uitschakelen</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>Hier door kunt u beveiligde onderdelen deïnstalleren</value>
+    <value>Hierdoor kunt u beveiligde onderdelen de-installeren</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
     <value>De-installer lijst</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>Alle op uw systeem gevonden de-installers bevinden zich in de hoofdlijst. Enkele mogelijkheden, om deze gegevens te doorzoeken:</value>
+    <value>Alle op uw systeem gevonden de-installers bevinden zich in de hoofdlijst. Enkele mogelijkheden om deze gegevens te doorzoeken:</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
     <value>● Filters gebruiken en naar sleutelwoorden zoeken (in alle kolommen)</value>
@@ -277,7 +277,7 @@ U kunt alle kolommen opnieuw ordenen.</value>
     <value>Gecertificeerde de-installers</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
-    <value>deïnstallers kunnen ondertekend zijn met certificaten van erkende autoriteiten. Werd het certificsaat succesvol gevalideerd, dan is het softwarepakket onveranderd en deugdelijk.</value>
+    <value>De-installers kunnen ondertekend zijn met certificaten van erkende autoriteiten. Werd het certificaat succesvol gevalideerd, dan is het softwarepakket onveranderd en deugdelijk.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
     <value>Geverifieërde de-installers accentueren</value>
@@ -303,7 +303,7 @@ Na een herstart wordt de gekozen taal overgenomen.</value>
     <value>Toepassen</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
-    <value>Als u wilt helpen met de vertaling van BCUninstaller in uw taal, klik dan op de link hier onder om contact met mij op te nemen. Alle hulp is welkom!</value>
+    <value>Als u wilt helpen met de vertaling van BCUninstaller in uw taal, klik dan op de link hieronder om contact met mij op te nemen. Alle hulp is welkom!</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
     <value>Contactformulier openen</value>
