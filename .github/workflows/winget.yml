@@ -10,7 +10,7 @@ jobs:
         id: get-version
         run: |
           # Finding the version from release name
-          $VERSION = '${{ github.event.release.name }}'.Replace('v', $Null) + '.0.0'
+          $VERSION = '${{ github.event.release.tag_name }}'.Replace('v', $Null) + '.0.0'
           echo "::set-output name=version::$VERSION"
         shell: pwsh
       - uses: vedantmgoyal2009/winget-releaser@v2
