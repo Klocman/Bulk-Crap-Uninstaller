@@ -182,7 +182,7 @@
     <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
-    <value>Wachten op NSIS uninstaller om uit te pakken...</value>
+    <value>Wachten op NSIS de-installer om uit te pakken...</value>
   </data>
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
     <value>Start van process mislukte.</value>
