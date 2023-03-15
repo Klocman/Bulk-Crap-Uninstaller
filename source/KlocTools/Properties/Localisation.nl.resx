@@ -287,7 +287,7 @@ Foutmelding: {0}
 U kunt gedetailliëerde informatie over deze fout kopiëren naar het klembord, met een klik op de knop "Kopiëren". Overweeg a.u.b. om deze informatie naar de ontwikkelaar te sturen.</value>
   </data>
   <data name="FileInfo_CreationTime" xml:space="preserve">
-    <value>Tijd gemaakt</value>
+    <value>Tijd aangemaakt</value>
   </data>
   <data name="FileInfo_LastAccessTime" xml:space="preserve">
     <value>Tijd laatst gebruikt</value>
