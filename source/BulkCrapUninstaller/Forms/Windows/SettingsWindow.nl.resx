@@ -184,7 +184,7 @@
     <value>Windows update</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot voltooiïng.</value>
+    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot voltooiing.</value>
   </data>
   <data name="groupBoxAppStores.Text" xml:space="preserve">
     <value>Programma opslaan om te scannen</value>
@@ -214,9 +214,9 @@
     <value>Opdrachtregel nadat de de-installatie is voltooid</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>U kunt opdrachten opgeven die voor en/of na de de-installatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd als of u de dialoog "Uitvoeren..." zou gebruiken.
+    <value>U kunt opdrachten opgeven die voor en/of na de de-installatie worden uitgevoerd. Op elke regel één opdracht en deze wordt dan uitgevoerd alsof u de dialoog "Uitvoeren..." zou gebruiken.
 
-BCU wacht tot de momenteel uitgevoerde opdracht is voltooïd, voordat de volgende wordt uitgevoerd.</value>
+BCU wacht tot de momenteel uitgevoerde opdracht is voltooid, voordat de volgende wordt uitgevoerd.</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
     <value>U kunt aangepaste mappen opgeven, waarin u uw programma's heeft geïnstalleerd (bijv. D:\Programmas). Deze mappen worden door BCU gebruikt om te zoeken naar de-installatie van restanten, ongeregistreerde programma's en andere zaken.
@@ -239,7 +239,7 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
     <value>Zoeken naar programma's in...</value>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>Proberen aangepaste installatie mappen te detecteren</value>
+    <value>Proberen aangepaste installatiemappen te detecteren</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
     <value>Altijd vragen om te maken</value>
