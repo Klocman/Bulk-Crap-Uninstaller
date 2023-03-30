@@ -133,8 +133,7 @@
     <value>Heeft u problemen met BCU of suggesties voor nieuwe mogelijkheden, controleer dan deze links:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Aanmelden op GitHub
-(Acccount vereist)</value>
+    <value>Aanmelden op GitHub (Acccount vereist)</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>Feedback sturen</value>

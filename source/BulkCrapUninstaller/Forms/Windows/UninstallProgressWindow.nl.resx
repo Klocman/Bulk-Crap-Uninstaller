@@ -138,7 +138,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Geselecteerde de-installers worden achtereen volgens uitgevoerd.
 Als het proces onverhoopt vastloopt, klikt u op de knop "Overslaan", om te voorkomen dat u bij het afsluiten van de uitvoering moet wachten.
-Dit kan gebeuren als de de-installer 'crasht'of een nieuw proces start en deze niet afsluit.</value>
+Dit kan gebeuren als de de-installer 'crasht' of een nieuw proces start en deze niet afsluit.</value>
   </data>
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
     <value>Overslaan</value>
@@ -159,7 +159,7 @@ Dit kan gebeuren als de de-installer 'crasht'of een nieuw proces start en deze n
     <value>Help</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>De inhoud van deze lijst wordt van boven naar beneden gedeïnstalleerd.</value>
+    <value>De inhoud van deze lijst wordt van boven naar beneden gede-installeerd.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>De-installer lijst</value>

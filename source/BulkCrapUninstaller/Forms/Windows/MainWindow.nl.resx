@@ -5,7 +5,7 @@
     
     Version 2.0
     
-    The primary goals of this format is to allow a simple XML format 
+    The primary goals of this format is to allow a simple XML format
     that is mostly human readable. The generation and parsing of the 
     various data types are done through the TypeConverter classes 
     associated with the data types.
@@ -271,7 +271,7 @@
     <value>Openen in &amp;verkenner</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Website oproepen</value>
+    <value>&amp;Website openen</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>
@@ -292,10 +292,10 @@
     <value>XML bestanden|*.xml</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Exporteer geselecteerde uninstaller eigenschappen</value>
+    <value>Exporteer geselecteerde de-installer eigenschappen</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
-    <value>De-installers o&amp;pnieuw laden</value>
+    <value>De-installers &amp;opnieuw laden</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>De-installatie lijst(en) &amp;openen</value>
@@ -304,7 +304,7 @@
     <value>&amp;Exporteren selectie...</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>A&amp;fsluiten</value>
+    <value>&amp;Afsluiten</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Bestand</value>
@@ -316,7 +316,7 @@
     <value>&amp;Werkbalk tonen</value>
   </data>
   <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Status&amp;balk tonen</value>
+    <value>Statusbalk &amp;tonen</value>
   </data>
   <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Instellingen &amp;zijbalk tonen</value>

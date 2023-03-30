@@ -142,7 +142,7 @@
     <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>Het programma is gecrashed en wordt nu beëindigd. Als u op "Afsluiten" klikt, wordt het programma meteen gesloten. Indien u op "Versturen en afsluiten"  klikt, wordt vervolgens een foutenbericht naar de ontwikkelaar gestuurd en wordt het programma aansluitend afgesloten. </value>
+    <value>Het programma is gecrashed en wordt nu beëindigd. Als u op "Afsluiten" klikt, wordt het programma meteen gesloten. Indien u op "Versturen en afsluiten" klikt, wordt vervolgens een foutenbericht naar de ontwikkelaar gestuurd en wordt het programma daarna afgesloten. </value>
     <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
@@ -175,7 +175,7 @@ A bug report has been sent to the developers. We apologize for the inconvenience
     <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Er trad een onbehandelde uitzondering op. Als u op " Doorgaan" klikt wordt de fout genegeerd en probeert het programma te vervolgen. Als u op "Afsluiten"  klikt, wordt het programma onmiddellijk gesloten. </value>
+    <value>Er trad een onbehandelde uitzondering op. Als u op "Doorgaan" klikt wordt de fout genegeerd en probeert het programma te vervolgen. Als u op "Afsluiten" klikt, wordt het programma onmiddellijk gesloten. </value>
     <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">

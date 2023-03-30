@@ -127,7 +127,7 @@
     <value>Verbonden met:</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Dit is een lijst met toepassingen die mogelijk verbonden zijn met toepassingen, die u selecteerde om te deinstalleren. U kunt deze toepassingen toevoegen aan de de-installer wachtrij door deze aan te vinken.</value>
+    <value>Dit is een lijst met toepassingen die mogelijk verbonden zijn met toepassingen, die u selecteerde om te de-installeren. U kunt deze toepassingen toevoegen aan de de-installer wachtrij door deze aan te vinken.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>Overtuig u zelf ervan dat u geen belangrijke software de-installeert, die andere toepassingen nog nodig hebben om goed te werken.</value>

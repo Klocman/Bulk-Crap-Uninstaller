@@ -139,7 +139,7 @@
     <value>Max. aantal lopende de-installers</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Gelijktijdige deinstallatie</value>
+    <value>Gelijktijdige de-installatie</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
     <value>Voorkom afsluiten/herstarten van het systeem</value>

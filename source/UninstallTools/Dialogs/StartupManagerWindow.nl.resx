@@ -133,7 +133,7 @@
     <value>Services weergeven</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Actualiseren</value>
+    <value>Verversen</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Sluiten</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Caching kan zoektijden aanzienlijk reduceren, maar als een programma is gewijzigd, heeft BCU de wijziging(en) mogelijk niet opgemerkt (bijv. de omvang).
+    <value>Caching kan zoektijden aanzienlijk reduceren, maar als een programma is gewijzigd, heeft BCU de wijziging(en) mogelijk niet opgemerkt (bijv. de grootte).
 Opm.: voordat deze instellingen effect hebben, moet BCU mogelijk herstart worden.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">

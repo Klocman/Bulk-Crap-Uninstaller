@@ -124,6 +124,6 @@
     <value>Kopieer alles</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kopieer informatie naar klembord</value>
+    <value>Kopieer informatie naar het klembord</value>
   </data>
 </root>

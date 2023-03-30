@@ -124,7 +124,7 @@
     <value>Keuze met checkboxen</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Kleuren gebruiken om gecertificeerde de-installer te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, anders in het blauw gekleurd.
+    <value>Kleuren gebruiken om gecertificeerde de-installer te identificeren. Succesvol gecontroleerde certificaten verschijnen in het groen, andere in het blauw gekleurd.
 Let op: de verificatie kan enige tijd duren.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
@@ -148,7 +148,7 @@ U kunt meerdere onderdelen activeren, wanneer u deze markeert en op de spatiebal
     <value>Alles verbergen wat door Microsoft werd uitgebracht.</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>De grijze kleur betekende beschadigde of ontbrekende uninstallers.</value>
+    <value>De grijze kleur betekende beschadigde of ontbrekende de-installers.</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
     <value>Toon onderdelen in groepen</value>
