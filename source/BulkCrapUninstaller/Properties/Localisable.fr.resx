@@ -768,4 +768,19 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>Bienvenue à BCU version {0}!</value>
   </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Mise en veille du PC dans {0}s. Décocher la case veille pour annuler.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Ne fait rien</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Ouvre les propriétés</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Déinstalle</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>

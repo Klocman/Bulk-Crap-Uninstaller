@@ -406,7 +406,7 @@
     <value>Version</value>
   </data>
   <data name="toolStripButton7.Text" xml:space="preserve">
-    <value>Charger une ou des listes existantes...</value>
+    <value>Réglages</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Sélectionner tous les éléments</value>
@@ -578,5 +578,14 @@
   </data>
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer un nouveau point de restauration</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Devenir propriétaire</value>
   </data>
 </root>

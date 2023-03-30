@@ -279,4 +279,16 @@ Utilisez des chemins complets de dossiers, un chemin par ligne. Les chemins inva
     <value>Mode daltonien</value>
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Activer la mise à l'échelle de l'interface compatible DPI</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Double-cliquer dans la liste d'applications</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Démarrage</value>
+  </data>
 </root>

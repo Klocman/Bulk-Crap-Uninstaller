@@ -144,6 +144,7 @@
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider par CodeChimp</value>
+    <comment>1</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Eléments actifs utilisés</value>
@@ -181,5 +182,8 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+  </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (CLI for Everything)</value>
   </data>
 </root>

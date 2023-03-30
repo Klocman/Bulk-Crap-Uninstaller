@@ -574,4 +574,14 @@
   <data name="UninstallerType_PowerShell" xml:space="preserve">
     <value>Script PowerShell</value>
   </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Configuration du débogage de Traçage/Journalisation </value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Recherche de paquets Scoop</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Peut appartenir à une autre app avec un nom similaire</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
 </root>

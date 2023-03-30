@@ -172,4 +172,25 @@ Si le processus semble bloqué, vous pouvez cliquer sur le bouton "Passer" pour 
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>Désinstaller manuellement</value>
   </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Passer</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mettre fin</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lancer le désinstalleur maintenant </value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Désinstaller manuellement</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir le dossier d'installation</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Propriétés</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Mettre le PC en veille lorsque c'est fait</value>
+  </data>
 </root>
