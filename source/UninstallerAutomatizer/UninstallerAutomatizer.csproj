@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FlaUI.Adapter.White" Version="0.1.0" />
-    <PackageReference Include="FlaUI.UIA3" Version="3.2.0" />
+    <PackageReference Include="FlaUI.UIA3" Version="4.0.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
