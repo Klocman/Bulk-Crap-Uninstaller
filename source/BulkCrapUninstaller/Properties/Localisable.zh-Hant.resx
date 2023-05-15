@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>建立新的還原點...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>搜尋剩餘檔案...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>正在填充應用程式清單...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>刪除剩餘檔案...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>搜尋更新...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>沒有與你的搜尋件相同的項目。</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>BCUninstaller匯出
+發布者 | 版本 | 日期 | 大小 | 註册表 | 移除程式類型 | 移除字串 | 最小化移除字串 | 建議</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value>免安裝</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>呼叫API失敗</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>註冊表備份失敗， 還要繼續嗎？</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>錯誤詳細訊息:</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>移除剩餘檔案</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+
+錯誤詳細資訊：
+</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>要在繼續之前建立註冊表備份嗎？</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>你可以在之後雙擊它來取消所有更改。
+
+檔案和目錄將會被移動到資源回收桶，你可以從那裡還原它們。</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>操作失敗</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>你只需要為此操作選擇一個項目</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>從列表中止選擇一個移除程式。如果你正在使用複選框，請確保選中他們。</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>搜尋更新</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>開啟線上內容</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>無法連接到網路，沒有可用的連線。</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>確定網路已連結。如果你使用Wi-Fi，請確保訊號良
+好。</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>傳送回饋</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>你想傳送有關BCU的回饋嗎？</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>這只花費你不到一分鐘，但大大有助於開發！感謝所有回饋，無論是錯誤報告、功能請求還是簡單的感謝！
+
+你可以稍後從頂部選單列(關於-&gt;提交回饋)傳送。</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>目前版本為最新版</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>目前未找到更新，你用的是最版本。
+
+想要添加一些功能或者修復一個BUG嗎？請使用關於-&gt;提交回饋"選單將你的回饋傳送給我。</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>檢查更新時遇到錯誤</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>確保BCUninstaller沒有在防火牆鐘被阻擋連接，且網路連接正常。</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>新版本{0}可用,現在更新嗎?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller將自動下載更新並在重新啟動後應用它。請注意，在此過程中你可能會丢失設定。
+
+更新日誌：
+- {0}
+
+警告:在更新過程中，BCU目錄中的資料夾"update"和檔案"update.zip"將被删除。</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>使用MSI移除</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>無法使用MSIExec安裝程式移除所選項目</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>選中的移除程式沒有用於MSIExec的有效GUID。</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>停止目前移除任務</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>確定要停止目前正在執行的任務嗎？</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>提早停止任務不會還原任何變更。目前正在運行的移除任務不會停止，任務將等待其完成。</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>建立還原點</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>無法建立新的還原點</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value>x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value>偵錯</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>移除進度</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>你現在可以離開電腦</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>其餘的移除程式應該能夠在沒有任何使用者干預的情況下完成，你仍應該不時檢查，以防其中一個移除程式當機。</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>垃圾/剩餘檔案刪除</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>確定要修改低信任度項目？</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>刪除信任度標記為低於好的項目可能是非常危險的！建議確認每個項目都可以安全刪除。</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>從註冊表刪除鍵</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>確定要刪除選定的移除程式項目嗎？</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>下列項目將從註冊表中刪除，並將從移除程式表中消失，但不會移除。
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>匯出失敗</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>儲存匯出的資料時遇到錯誤</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>如果錯誤仍然存在，請嘗試保存到其他目錄，例如桌面。</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller正在移除{0}個應用程式</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>重新命名移除程式</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>提供的名稱為空或包含無效符號</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>確認未包含以下任何符號：
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>是否要尋找已執行移除的剩餘檔案內容？</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>請注意，此功能僅使適用於了解其工作原理的進階使用者。不需要刪除這些文件，它們不會以任何有意義的方式影響系統效能。</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>沒有找到剩餘檔案</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>沒有發現剩餘檔案。可能還有一些檔案殘留，所以可以執行一個臨時資料清理程式，如BleachBit。</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>沒有可複製到剪貼簿的內容。沒有選定的移除程式包含此訊息，或者你沒有選擇任何內容。</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>複製到剪貼簿</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>開啟目錄</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>此操作將立即開啟{0}個目錄，確定要繼續嗎？</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>線上尋找</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>沒有可尋找的</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>移除BCUninstaller</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>你確定要移除BCUninstaller嗎？</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>很遺憾看到你離開！如果你有一兩分鐘的時間，請至我的網站上說明你為什麼移除BCU(http://klocmansoftware.weebly.com/)。我會盡力解決任何合理的問題。</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>要在繼續之前建立還原點嗎？</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>如果你不確定要移除的應用程式對系統穩定性是否重要或必需，建議建立還原點。
+如果於此過程之後出現任何中斷，則可以使用系統還原回復更改。</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>開啟搜尋頁面時遇到錯誤</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>儲存移除清單</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>儲存清單到檔案失敗</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>確定要重置所有應用程式設定？</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>有些應用程式無法最小化移除</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>某些項目受保護，無法修改</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>所選項目受保護，無法修改</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>開啟網址時遇到錯誤</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>是否保存目前選擇？</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>開啟目錄時遇到錯誤</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>無法載入選中的檔案</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>沒有選擇移除程式，沒有要移除的內容</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>執行移除程式</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>未找到.NET Framework V4.0，某些功能將禁用。</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>V4.0Framework是可選擇的，但推薦。依賴Framework的功能將被禁止，直到你安裝它。</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>部分應用程式失敗</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>交互移除失敗後你想嘗試執行最小化移除嗎？</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>以下移除程式將充新啟動為交互式：</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>掃描特定目錄...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>選擇要刪除的應用程式目錄。</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>從目錄移除</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>在指定的目錄中找不到任何應用程式</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>確定你選擇了正確的目錄，並且仍然存在應用程式的可執行文件。</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>找到了{0}個移除程式</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>你想執行這個移除程示嗎？</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>主題</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>壓縮</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>擴充元件</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>好記的名稱</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Issuer名稱</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>不晚於</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>不早於</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>私有金鑰</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>有私有金鑰</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>公開金鑰</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>原始資料</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>主題名稱</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>簽名算法</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>憑證指紋</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>儲存設定失敗</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>完成中...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>載入圖示</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>尋找應用程式</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>尋找應用程式</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>修改應用程式</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>無法修改選中的應用程式</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>儲存移除清單</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>要移除應用程式，必須先從列表中選擇它們。如果要使用複選框，請確保選中它們。</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>如果選擇保留目前選擇，它們將與開啟的列表合併</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>此操作將一次打開{0}個網址，確定要繼續嗎？</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>開啟網址</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>沒有網址可開啟</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>修改受保護項目</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>受影響的項目：
+{0}
+
+要修改這些項目，你需要從設定側邊列中禁用移除程式保護。你可以從任務中刪除它們，如果需要可以繼續學則其他項目。</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>受保護的項目：{0}
+
+要修改此項目，你需要從設定面板中禁用移除程式保護。</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>以下項目缺少最小化移除程式：
+{0}
+你是否想要為這些項目使用交互移除程式，或者從任務中刪除它們？</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>最小化移除</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>還原預設設定</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>你的所有設定將永久遺失。BCUninstaller必須重新啟動以完成此操作。</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>開啟移除清單</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>還原點未建立，你將無法還原變更！繼續移除嗎？</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>重新命名"0"</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>重新命名選中項目</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>任務完成</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>移除</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>記住選擇</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>檔案不存在。</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>無內容顯示。使用Windows Installer(MSIexec)移除此應用程式。</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>空</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>找到GUID</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>GUID遺失</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>選擇至...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>檔案未找到。</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>執行移除後指令...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>執行移除前指令</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>準備</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>已選取{0}個移除程式</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>共{0}移除程式，{1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>以下指令無法執行：
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>外部執行失敗</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>預設</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>在重新啟動應用程式之前，某些設定不會生效。</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>重新啟動BCU以應用新設定？</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>更改應用程式設定</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>證書遺失</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>正在處理檢測到的應用程式，剩下{0}個...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>選擇"中止"將立即關閉執行的移除程式，並且可能導致移除不完全。通常可以再次執行移除程式以完成移除。
+
+或者，你可以略過等待此過程。略過將讓移除程式繼續工作，而任務移動到下一個項目。請記住，在略過的過程完成之前，一些移除程式無法執行。</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>略過等待目前執行的移除程式？</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>跳過目前執行任務</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>另一個移除任務已在執行。請等待它完成，然後再試一次。</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>評分：{0}
+
+積極：
+{1}
+
+消極：
+{2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>評分詳細訊息</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>此應用程式沒有有效的註冊表項目</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>此應用程式沒有有效的移除程式</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>載入Windows功能...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>重整開機啟動項資訊</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>沒有目錄可以開啟</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>不可用</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>評分不可用</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>你必須先從設定啟用評分</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>你不能給未正確安裝的應用程式評分</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0}應用程式</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>平均評分:{0};我的評分:{1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>在移除程式執行失敗後，可能是因為衝突。請等待其他移除程式完成後再試一次。
+{0}
+
+你可以嘗試在設定中禁用衝突檢測，但不建議使用。</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>強制移除</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>部分移除程式無法執行</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>未找到.NET Framework V4.0</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>未選擇有效的檔案或目錄。確定你有權限訪問它們，並且它們沒有被標記為系統檔案。</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>在{0}內找不到任何應用程式</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>所選應用程式未指定修改指令。可能需要移除，然後重新安裝來更改安裝設定。</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>儲存變更到開啟的移除列表？</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>開啟的移除列表中有未儲存的變更，關閉該列表將遺失這些變更。</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>選擇要移除的應用程式目錄。</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>選擇儲存備份的位置。將建立一個新目錄。</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU已更新到v{0}！</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>歡迎使用BCU版本{0}！</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>PC{0}秒後進入睡眠狀態。取消選擇睡眠複選框來取消。</value>
+  </data>
+</root>

@@ -142,7 +142,10 @@ namespace BulkCrapUninstaller
                 "tr-TR",
 
                 // Simplified Chinese
-                "zh-Hans"
+                "zh-Hans",
+
+                // Traditional Chinese
+                "zh-Hant"
             }.Attempt(CultureInfo.GetCultureInfo).ToList();
 
             supportedCultures.Add(EnUsCulture);
