@@ -209,8 +209,12 @@ namespace UninstallTools
             if (includeUserDirectories && CustomProgramFiles != null)
                 pfDirectories.AddRange(CustomProgramFiles.Where(x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y))));
 
-            var output = new List<DirectoryInfo>();
-            foreach (var directory in pfDirectories.ToList())
+            pfDirectories.Add(Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_APPDATA), "Programs"));
+            pfDirectories.Add(Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA), "Programs"));
+            pfDirectories.Add(Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA), "Programs"));
+
+            var output = new List<DirectoryInfo>(pfDirectories.Count);
+            foreach (var directory in pfDirectories)
             {
                 // Ignore missing or inaccessible directories
                 try
