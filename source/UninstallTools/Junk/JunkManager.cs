@@ -33,12 +33,14 @@ namespace UninstallTools.Junk
         {
             if (x is FileSystemJunk fileSystemJunk)
             {
-                return !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
+                return fileSystemJunk.Path == null || 
+                       !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             if (x is StartupJunkNode startupJunk)
             {
-                return !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
+                return startupJunk.Entry?.CommandFilePath == null || 
+                       !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             return true;
