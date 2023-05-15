@@ -200,10 +200,19 @@ namespace BulkCrapUninstaller.Forms
         {
             base.OnDpiChanged(e);
 
-            var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
+            try
+            {
+                var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
 
-            toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
-            toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
+                if (toolStripLabelSize != null) 
+                    toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
+                if (toolStripLabelTotal != null) 
+                    toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
+            }
+            catch (SystemException exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
