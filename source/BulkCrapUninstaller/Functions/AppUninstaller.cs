@@ -606,8 +606,12 @@ namespace BulkCrapUninstaller.Functions
 
                 try
                 {
-                    Process.Start("unins000.exe");
-                    Environment.Exit(0);
+                    var fullPath = MessageBoxes.GetBundledFilePath("unins000.exe");
+                    if (fullPath != null)
+                    {
+                        Process.Start(fullPath);
+                        Environment.Exit(0);
+                    }
                 }
                 catch (Exception ex)
                 {

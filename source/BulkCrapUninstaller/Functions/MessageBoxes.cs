@@ -620,7 +620,7 @@ namespace BulkCrapUninstaller.Functions
             if (path != null) PremadeDialogs.StartProcessSafely(path);
         }
 
-        private static string GetBundledFilePath(string filename)
+        public static string GetBundledFilePath(string filename)
         {
             var path = Path.Combine(Program.AssemblyLocation.FullName, filename);
             if (!File.Exists(path))
