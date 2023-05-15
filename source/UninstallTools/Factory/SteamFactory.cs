@@ -102,7 +102,7 @@ namespace UninstallTools.Factory
         public void Setup(ICollection<ApplicationUninstallerEntry> allUninstallers) { }
         public IEnumerable<IJunkResult> FindJunk(ApplicationUninstallerEntry target)
         {
-            if (target.UninstallerKind != UninstallerType.Steam)
+            if (target.UninstallerKind != UninstallerType.Steam || string.IsNullOrEmpty(target.InstallLocation))
                 return Enumerable.Empty<IJunkResult>();
 
             var results = new List<IJunkResult>();
@@ -110,7 +110,7 @@ namespace UninstallTools.Factory
             {
                 // Look for this appID in steam library's temporary folders (game is inside "common" folder, temp folders are next to that)
                 var d = new DirectoryInfo(target.InstallLocation);
-                if (d.Parent?.Name == "common" && d.Parent.Parent != null)
+                if (d.Exists && d.Parent?.Name == "common" && d.Parent.Parent != null)
                 {
                     var libraryDir = d.Parent.Parent.FullName;
                     Debug.Assert(target.RatingId.StartsWith("Steam App "));
@@ -133,11 +133,7 @@ namespace UninstallTools.Factory
                 }
 
             }
-            catch (SecurityException e)
-            {
-                Console.WriteLine(e);
-            }
-            catch (IOException e)
+            catch (SystemException e)
             {
                 Console.WriteLine(e);
             }
