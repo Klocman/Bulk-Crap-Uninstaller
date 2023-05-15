@@ -1226,7 +1226,7 @@ namespace BulkCrapUninstaller.Forms
 
             if (uninstallerObjectListView.CheckBoxes && !uninstallerObjectListView.IsChecked(e.Model))
             {
-                uninstallerObjectListView.UncheckAll();
+                //uninstallerObjectListView.UncheckAll();
                 uninstallerObjectListView.CheckObject(e.Model);
             }
         }
