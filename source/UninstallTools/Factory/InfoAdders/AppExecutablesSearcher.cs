@@ -114,6 +114,9 @@ namespace UninstallTools.Factory.InfoAdders
             if (results.Count == 0 && binSubdirs.Count == 0)
                 otherSubdirs.AddRange(maybeSubdirs);
 
+            // 7-Zip console application. Sometimes causes bad display data if it's picked as the most likely executable. No effect on real 7-Zip entries.
+            results.RemoveAll(x => string.Equals(x.Name, "7z.exe", StringComparison.OrdinalIgnoreCase));
+
             return new ScanDirectoryResult(results, binSubdirs, otherSubdirs);
         }
 
