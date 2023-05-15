@@ -62,7 +62,7 @@
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.GridLines = true;
-            this.objectListView1.MultiSelect = false;
+            this.objectListView1.MultiSelect = true;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
             this.objectListView1.ShowItemToolTips = true;
