@@ -461,6 +461,7 @@ namespace BulkCrapUninstaller.Functions
                 else
                     ShowJunkWindow(junk);
             }
+            catch (ObjectDisposedException) { }
             finally
             {
                 ReleaseUninstallLock();
