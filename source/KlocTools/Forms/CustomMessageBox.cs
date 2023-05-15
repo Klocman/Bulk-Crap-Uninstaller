@@ -101,8 +101,15 @@ namespace Klocman.Forms
 
             if (settings.IconSet != null)
             {
-                pictureBox1.Image = settings.IconSet.ToBitmap();
-                settings.IconSet.PlayCorrespondingSystemSound();
+                try
+                {
+                    pictureBox1.Image = settings.IconSet.ToBitmap();
+                    settings.IconSet.PlayCorrespondingSystemSound();
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
 
             TopMost = settings.AlwaysOnTop;
