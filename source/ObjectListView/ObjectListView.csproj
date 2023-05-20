@@ -12,7 +12,8 @@
     <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\bin\Debug\</OutputPath>
+	  <RuntimeIdentifier></RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Debug\AnyCPU\</OutputPath>
     <WarningLevel>1</WarningLevel>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
@@ -29,7 +30,8 @@
     <DocumentationFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\bin\Release\</OutputPath>
+	  <RuntimeIdentifier></RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Release\AnyCPU\</OutputPath>
     <WarningLevel>1</WarningLevel>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
