@@ -74,13 +74,14 @@ namespace UninstallTools.Factory
 
             results.Add(new ApplicationUninstallerEntry
             {
-                AboutUrl = @"http://store.steampowered.com/about/",
+                AboutUrl = @"http://steampowered.com/",
                 InstallLocation = steamLocation,
                 DisplayIcon = Path.Combine(steamLocation, "Steam.exe"),
                 DisplayName = "Steam",
                 UninstallerKind = UninstallerType.Nsis,
                 UninstallString = Path.Combine(steamLocation, "uninstall.exe"),
-                IsOrphaned = true,
+                IsOrphaned = false,
+                RatingId = "Steam",
                 IsValid = File.Exists(Path.Combine(steamLocation, "uninstall.exe")),
                 InstallDate = Directory.GetCreationTime(steamLocation),
                 Publisher = "Valve Corporation",
