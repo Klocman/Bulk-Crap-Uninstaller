@@ -198,9 +198,23 @@ namespace UninstallTools.Factory
             {
                 try
                 {
+                    // Likely to be in YYYYMMDD format
                     return new DateTime(int.Parse(dateString.Substring(0, 4)),
-                        int.Parse(dateString.Substring(4, 2)),
-                        int.Parse(dateString.Substring(6, 2)));
+                                    int.Parse(dateString.Substring(4, 2)),
+                                    int.Parse(dateString.Substring(6, 2)));
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    try
+                    {
+                        // YYYYDDMM format instead of standard YYYYMMDD?
+                        return new DateTime(int.Parse(dateString.Substring(0, 4)),
+                                            int.Parse(dateString.Substring(6, 2)),
+                                            int.Parse(dateString.Substring(4, 2)));
+                    }
+                    catch (SystemException)
+                    {
+                    }
                 }
                 catch (FormatException)
                 {
