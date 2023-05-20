@@ -31,9 +31,6 @@ namespace UninstallTools.Factory
         /// </summary>
         public static int AreEntriesRelated(ApplicationUninstallerEntry baseEntry, ApplicationUninstallerEntry otherEntry)
         {
-            //Debug.Assert(!(otherEntry.DisplayName.Contains("Steam", StringComparison.OrdinalIgnoreCase) && 
-            //    baseEntry.DisplayName.Contains("Steam", StringComparison.OrdinalIgnoreCase)));
-
             if (PathTools.PathsEqual(baseEntry.InstallLocation, otherEntry.InstallLocation))
                 return 100;
 
@@ -54,6 +51,9 @@ namespace UninstallTools.Factory
                 return 100;
             
             var score = 0;
+
+            if(!string.IsNullOrEmpty(baseEntry.RatingId) && !string.IsNullOrEmpty(otherEntry.RatingId))
+                AddScore(ref score, -5, 0, 10, baseEntry.RatingId == otherEntry.RatingId);
 
             if (!string.IsNullOrEmpty(baseEntry.InstallLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation))
                 AddScore(ref score, -8, 0, -3, baseEntry.InstallLocation.Contains(otherEntry.InstallLocation,
