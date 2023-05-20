@@ -163,6 +163,11 @@ namespace UninstallTools.Factory
                         name = str;
                     }
 
+                    // Make sure that this isn't just a corrupted json export
+                    if (string.Equals(name, "\"apps\":", StringComparison.Ordinal) ||
+                        string.Equals(name, "\"buckets\":", StringComparison.Ordinal))
+                        throw;
+
                     var entry = CreateUninstallerEntry(name, version, isGlobal, exeSearcher);
 
                     results.Add(entry);
