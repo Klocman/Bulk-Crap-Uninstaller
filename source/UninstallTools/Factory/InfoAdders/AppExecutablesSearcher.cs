@@ -122,15 +122,22 @@ namespace UninstallTools.Factory.InfoAdders
 
         internal static IEnumerable<FileInfo> SortListExecutables(IEnumerable<FileInfo> targets, string targetString)
         {
+            var reportInName = targetString.Contains("report", StringComparison.OrdinalIgnoreCase);
+            var crashInName = targetString.Contains("crash", StringComparison.OrdinalIgnoreCase);
             int GetPenaltyPoints(FileInfo fileInfo)
             {
-                if (fileInfo.Name.Equals("uninstaller.exe", StringComparison.OrdinalIgnoreCase)
-                    || fileInfo.Name.Equals("uninstall.exe", StringComparison.OrdinalIgnoreCase)
-                    || fileInfo.Name.Contains("unins00", StringComparison.OrdinalIgnoreCase))
+                var fileName = fileInfo.Name;
+                if (fileName.Equals("uninstaller.exe", StringComparison.OrdinalIgnoreCase)
+                    || fileName.Equals("uninstall.exe", StringComparison.OrdinalIgnoreCase)
+                    || fileName.Contains("unins00", StringComparison.OrdinalIgnoreCase))
                     return 20;
-                if (fileInfo.Name.Contains("uninsta", StringComparison.OrdinalIgnoreCase))
+                if(!reportInName && fileName.Contains("report", StringComparison.OrdinalIgnoreCase))
+                    return 10;
+                if(!crashInName && fileName.Contains("crash", StringComparison.OrdinalIgnoreCase))
+                    return 10;
+                if (fileName.Contains("uninsta", StringComparison.OrdinalIgnoreCase))
                     return 4;
-                if (fileInfo.Name.Contains("unins", StringComparison.OrdinalIgnoreCase))
+                if (fileName.Contains("unins", StringComparison.OrdinalIgnoreCase))
                     return 2;
                 return 0;
             }
