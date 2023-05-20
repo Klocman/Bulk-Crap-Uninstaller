@@ -97,7 +97,9 @@ namespace UninstallTools.Factory
                 RawDisplayName = "Scoop",
                 Comment = "Automated program installer",
                 AboutUrl = "https://github.com/ScoopInstaller/Scoop",
-                InstallLocation = _scoopUserPath
+                InstallLocation = _scoopUserPath,
+                IsOrphaned = false,
+                RatingId = "Scoop"
             };
 
             // Make sure the global directory gets removed as well
