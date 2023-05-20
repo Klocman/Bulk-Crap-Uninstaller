@@ -42,12 +42,14 @@ namespace UninstallTools.Factory
                 if (PathTools.PathsEqual(baseEntry.UninstallString, otherEntry.UninstallString))
                     return 100;
 
-                if (!string.IsNullOrEmpty(otherEntry.InstallLocation) 
+                if (otherEntry.IsOrphaned 
+                    && !string.IsNullOrEmpty(otherEntry.InstallLocation) 
                     && baseEntry.UninstallString.Contains(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                     return 100;
             }
 
-            if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
+            if (otherEntry.IsOrphaned 
+                && !string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
                 && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
                 return 100;
             
