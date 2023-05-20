@@ -4,7 +4,9 @@
 */
 
 using System;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Properties;
@@ -33,18 +35,24 @@ namespace BulkCrapUninstaller.Functions.Tools
 #endif
             if (Selected.Settings.MiscFirstRun) return;
 
-            if (!Selected.Settings.WindowSize.IsEmpty && !Selected.Settings.WindowPosition.IsEmpty)
+            if (Selected.Settings.WindowSize.Width >= _mainWindow.MinimumSize.Width &&
+                Selected.Settings.WindowSize.Height >= _mainWindow.MinimumSize.Height &&
+                !Selected.Settings.WindowPosition.IsEmpty)
             {
-                _mainWindow.Size = Selected.Settings.WindowSize;
-                _mainWindow.Location = Selected.Settings.WindowPosition;
+                var targetRect = new Rectangle(Selected.Settings.WindowPosition, Selected.Settings.WindowSize);
+                if (Screen.AllScreens.Any(s => s.WorkingArea.IntersectsWith(targetRect)))
+                {
+                    _mainWindow.Size = Selected.Settings.WindowSize;
+                    _mainWindow.Location = Selected.Settings.WindowPosition;
 
-                _mainWindow.StartPosition = FormStartPosition.Manual;
+                    _mainWindow.StartPosition = FormStartPosition.Manual;
 
-                if (Selected.Settings.WindowState != FormWindowState.Minimized)
-                    _mainWindow.WindowState = Selected.Settings.WindowState;
+                    if (Selected.Settings.WindowState != FormWindowState.Minimized)
+                        _mainWindow.WindowState = Selected.Settings.WindowState;
+                }
             }
 
-            if(!string.IsNullOrEmpty(Selected.Settings.UninstallerListViewState))
+            if (!string.IsNullOrEmpty(Selected.Settings.UninstallerListViewState))
                 _mainWindow.uninstallerObjectListView.RestoreState(
                     Convert.FromBase64String(Selected.Settings.UninstallerListViewState));
         }
