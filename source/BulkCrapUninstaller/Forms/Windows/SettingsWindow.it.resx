@@ -285,4 +285,7 @@ I percorsi non validi e non esistenti saranno ignorati.</value>
   <data name="checkBoxScoop.Text" xml:space="preserve">
     <value>Scoop</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Avvio</value>
+  </data>
 </root>
