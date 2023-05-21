@@ -771,4 +771,16 @@ Puoi provare a disabilitare la rilevazione delle collisioni nelle impostazioni, 
   <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
     <value>Il PC verrà messo nello stato di sleep tra {0} secondi. Per annullare deseleziona la casella di controllo 'sleep'.</value>
   </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Non fare nulla</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Apri proprietà</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Disinstalla</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>
