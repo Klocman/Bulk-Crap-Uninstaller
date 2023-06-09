@@ -319,7 +319,7 @@
     <value>XML文件|*.xml</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>匯出選重的移除程式屬性</value>
+    <value>匯出選中的移除程式屬性</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
     <value>重新載入移除程式</value>
