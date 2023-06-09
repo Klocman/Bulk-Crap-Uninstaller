@@ -154,7 +154,7 @@
     <value>屬性</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>選重的移除程式現在將一次執行一個。
+    <value>選中的移除程式現在將一次執行一個。
 如果過程似乎被卡住了，你可以點擊"略過"按鈕，以避免等待它完成。如果移除程式當機或啟動新程序但未關閉它，則可能發生這種情況。</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
