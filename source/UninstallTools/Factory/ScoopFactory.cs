@@ -234,19 +234,19 @@ namespace UninstallTools.Factory
                     var shortcuts = manifest.Architecture?[install.Architecture]?.Shortcuts ?? manifest.Shortcuts;
                     if (shortcuts != null)
                     {
-                        executables.AddRange(
-                            shortcuts.Select(x => Path.Combine(currentDir, x[0])));
+                        executables.AddRange(shortcuts.Select(x => Path.Combine(currentDir, x[0])));
 
-                        var icons = shortcuts
-                            .Where(x => x.Length >= 4 && x[3].EndsWith(".ico"))
-                            .Select(x => Path.Combine(currentDir, x[3]));
-                        if (icons.Any())
+                        try
                         {
-                            try
-                            {
-                                entry.IconBitmap = new Icon(icons.First());
-                            }
-                            catch { }
+                            var icon = shortcuts.Where(x => x.Length >= 4 && x[3].EndsWith(".ico"))
+                                                .Select(x => Path.Combine(currentDir, x[3]))
+                                                .FirstOrDefault(File.Exists);
+                            if (icon != null)
+                                entry.IconBitmap = new Icon(icon);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($@"Failed to get icon for {name} - {ex}");
                         }
                     }
 
@@ -271,11 +271,12 @@ namespace UninstallTools.Factory
 
                 if (executables.Any())
                 {
-                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(
-                            executables.Distinct().Select(x => new FileInfo(x)),
-                            entry.DisplayNameTrimmed)
-                        .Select(x => x.FullName)
-                        .ToArray();
+                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(executables.Distinct()
+                                                                                                    .Where(File.Exists)
+                                                                                                    .Select(x => new FileInfo(x)),
+                                                                                         entry.DisplayNameTrimmed)
+                                                                    .Select(x => x.FullName)
+                                                                    .ToArray();
                 }
                 else
                 {
