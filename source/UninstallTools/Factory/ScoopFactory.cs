@@ -316,7 +316,7 @@ namespace UninstallTools.Factory
 
         private static ProcessStartCommand MakeScoopCommand(string scoopArgs)
         {
-            return new ProcessStartCommand(_powershellPath, $"-ex unrestricted \"{_scriptPath}\" {scoopArgs}");
+            return new ProcessStartCommand(_powershellPath, $"-NoProfile -ex unrestricted \"{_scriptPath}\" {scoopArgs}");
         }
 
 
