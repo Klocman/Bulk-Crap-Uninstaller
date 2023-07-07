@@ -117,74 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
-    <value>&amp;終了する</value>
-    <comment>&amp;Quit</comment>
+  <data name="labelName.Text" xml:space="preserve">
+    <value>BCUninstaller (バルク・クラップ・アンインストーラ)</value>
   </data>
-  <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
-    <value>&amp;送信して終了</value>
-    <comment>&amp;Send and Quit</comment>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>バージョン</value>
   </data>
-  <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
-    <value>&amp;終了</value>
-    <comment>&amp;Quit</comment>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>著作権</value>
   </data>
-  <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>処理されない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>作成者</value>
   </data>
-  <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="labelis64.Text" xml:space="preserve">
+    <value>64ビット版：</value>
   </data>
-  <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="labelPortable.Text" xml:space="preserve">
+    <value>インストール済み：</value>
   </data>
-  <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
-    <value>例外</value>
-    <comment>Exception</comment>
+  <data name="labelArchitecture.Text" xml:space="preserve">
+    <value>構成</value>
   </data>
-  <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
-    <value>一般</value>
-    <comment>General</comment>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>プログラムのバージョン</value>
   </data>
-  <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>エラーを再現するための簡単な説明を追加してください：</value>
-    <comment>Please add a brief description of how we can reproduce the error:</comment>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>DotNetZip</value>
+    <comment>jp translator: what's this?</comment>
   </data>
-  <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしたので、これから終了します。終了をクリックすると、アプリケーションはすぐに終了します。「送信して終了」をクリックすると、アプリケーションは終了し、バグレポートが送信されます。</value>
-    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (あらゆるもののためのCLI)</value>
   </data>
-  <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>報告内容</value>
-    <comment>Report Contents</comment>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>モダンUIアイコン</value>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
   </data>
-  <data name="UI_Dialog_Full_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>オブジェクトリストビュー</value>
   </data>
-  <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしましたので、終了します。
-開発者にバグレポートを送信しました。ご迷惑をおかけして申し訳ございません。</value>
-    <comment>The application has crashed and it will now be dismissed.
-A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Nバグ</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
-  <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>ポータブル設定プロバイダ</value>
+    <comment>1</comment>
   </data>
-  <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;続ける</value>
-    <comment>&amp;Continue</comment>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>スケジュールタスク管理パック</value>
+    <comment>?? If translation wanted: "Pacote de Gestão de Tarefas Agendadas"</comment>
   </data>
-  <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>アプリケーションで未処理の例外が発生しました。Continueをクリックすると、アプリケーションはこのエラーを無視して続行しようとします。終了をクリックすると、アプリケーションは直ちに終了します。</value>
-    <comment>.</comment>
+  <data name="linkLabel8.Text" xml:space="preserve">
+    <value>TestStack.White（テストスタック・ホワイト）</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
-  <data name="UI_Dialog_Normal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>使用アセット</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>公式ホームページ</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>開発者情報</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>翻訳者</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>BCUninstaller (Bulk Crap Uninstaller)について</value>
   </data>
 </root>

@@ -117,74 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
-    <value>&amp;終了する</value>
-    <comment>&amp;Quit</comment>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>未登録のアプリケーションを表示する</value>
   </data>
-  <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
-    <value>&amp;送信して終了</value>
-    <comment>&amp;Send and Quit</comment>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>アンインストーラが登録されていないアプリケーションを表示します。ほとんどのアンインストールマネージャーでは表示されませんが、それでもスペースを取っています。未登録のものは、赤色で表示されます。
+
+警告： これらのアプリケーションを削除する前に、再度確認してください！</value>
   </data>
-  <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
-    <value>&amp;終了</value>
-    <comment>&amp;Quit</comment>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>不足しているアンインストーラーを強調表示する</value>
   </data>
-  <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>処理されない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
+    <value>破損しているアンインストーラーや不足しているアンインストーラーをグレーで識別します。</value>
   </data>
-  <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>認証済みアンインストーラーを強調表示する</value>
   </data>
-  <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
+  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
+    <value>認証されたアンインストーラーを識別するために色を使用します。
+証明書が正常に検証された場合は緑色を使用し、そうでない場合は青色を使用します。
+
+警告：検証が完了するまでには長い時間がかかることがあります。</value>
   </data>
-  <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
-    <value>例外</value>
-    <comment>Exception</comment>
+  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
+    <value>マイクロソフト社発行されたものを非表示</value>
   </data>
-  <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
-    <value>一般</value>
-    <comment>General</comment>
+  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
+    <value>マイクロソフトが発行したものをすべてフィルタリングします。それはとてもシンプルです。</value>
   </data>
-  <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>エラーを再現するための簡単な説明を追加してください：</value>
-    <comment>Please add a brief description of how we can reproduce the error:</comment>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>システムコンポーネントを表示する</value>
   </data>
-  <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしたので、これから終了します。終了をクリックすると、アプリケーションはすぐに終了します。「送信して終了」をクリックすると、アプリケーションは終了し、バグレポートが送信されます。</value>
-    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
+  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
+    <value>一部のアンインストーラは、「システムコンポーネント」としてマークされ、ソフトウェアの追加と削除のリストから非表示にすることができます。
+ドライバはこのタグでマークされることが多いです。</value>
   </data>
-  <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>報告内容</value>
-    <comment>Report Contents</comment>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>保護された項目を表示する</value>
   </data>
-  <data name="UI_Dialog_Full_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
+    <value>保護されたアイテムには"NoRemove"タグが付けられており、これは出版社が削除することを望んでいないことを意味します。</value>
   </data>
-  <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしましたので、終了します。
-開発者にバグレポートを送信しました。ご迷惑をおかけして申し訳ございません。</value>
-    <comment>The application has crashed and it will now be dismissed.
-A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>tweaksを表示する</value>
   </data>
-  <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
+    <value>アップデートを表示する</value>
   </data>
-  <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;続ける</value>
-    <comment>&amp;Continue</comment>
+  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
+    <value>他のアプリケーションのアップデートです。通常、親アプリケーションと一緒にアンインストールされるため、無視しても問題ありません。</value>
   </data>
-  <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>アプリケーションで未処理の例外が発生しました。Continueをクリックすると、アプリケーションはこのエラーを無視して続行しようとします。終了をクリックすると、アプリケーションは直ちに終了します。</value>
-    <comment>.</comment>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>Windows機能を表示する</value>
   </data>
-  <data name="UI_Dialog_Normal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>Windowsストアアプリを表示する</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>フィルタリング</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
+    <value>選択にチェックボックスを使う</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
+    <value>リストの選択スタイルをチェックボックスに変更します。1回のクリックですべての選択を解除できないので、より安全です。
+
+複数の項目をハイライトしてスペースキーを押すことで、複数の項目をチェックすることができます。</value>
+  </data>
+  <data name="checkBoxViewGroups.Text" xml:space="preserve">
+    <value>グループで項目を表示する</value>
+  </data>
+  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
+    <value>並べ替えられた列に従って、リストの項目をグループ化します。
+ほとんどのカラムのグループ化は、スマートフィルタリングを使用します。</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>特殊なアンインストーラーを強調表示する</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>ストアアプリやWindows機能など、特殊なアプリケーションを区別するために色を使用します。</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>リスト表示設定</value>
   </data>
 </root>

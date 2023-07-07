@@ -120,6 +120,9 @@ namespace BulkCrapUninstaller
                 "it-IT",
                 "it-CH",
 
+                // ja - Japanese
+                "ja-JP",
+
                 // nl - Dutch
                 "nl-NL",
                 "nl-BE",

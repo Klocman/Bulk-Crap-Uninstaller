@@ -117,74 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
-    <value>&amp;終了する</value>
-    <comment>&amp;Quit</comment>
+  <data name="filteringTextBox.Text" xml:space="preserve">
+    <value>検索する</value>
   </data>
-  <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
-    <value>&amp;送信して終了</value>
-    <comment>&amp;Send and Quit</comment>
+  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
+    <value>検索ボックス</value>
   </data>
-  <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">
-    <value>&amp;終了</value>
-    <comment>&amp;Quit</comment>
-  </data>
-  <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>処理されない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
-  </data>
-  <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
-  </data>
-  <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
-    <comment>Unhandled exception occurred. Closing application.</comment>
-  </data>
-  <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
-    <value>例外</value>
-    <comment>Exception</comment>
-  </data>
-  <data name="UI_Dialog_Full_General_Tab" xml:space="preserve">
-    <value>一般</value>
-    <comment>General</comment>
-  </data>
-  <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>エラーを再現するための簡単な説明を追加してください：</value>
-    <comment>Please add a brief description of how we can reproduce the error:</comment>
-  </data>
-  <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしたので、これから終了します。終了をクリックすると、アプリケーションはすぐに終了します。「送信して終了」をクリックすると、アプリケーションは終了し、バグレポートが送信されます。</value>
-    <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
-  </data>
-  <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>報告内容</value>
-    <comment>Report Contents</comment>
-  </data>
-  <data name="UI_Dialog_Full_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
-  </data>
-  <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしましたので、終了します。
-開発者にバグレポートを送信しました。ご迷惑をおかけして申し訳ございません。</value>
-    <comment>The application has crashed and it will now be dismissed.
-A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
-  </data>
-  <data name="UI_Dialog_Minimal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
-  </data>
-  <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;続ける</value>
-    <comment>&amp;Continue</comment>
-  </data>
-  <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>アプリケーションで未処理の例外が発生しました。Continueをクリックすると、アプリケーションはこのエラーを無視して続行しようとします。終了をクリックすると、アプリケーションは直ちに終了します。</value>
-    <comment>.</comment>
-  </data>
-  <data name="UI_Dialog_Normal_Title" xml:space="preserve">
-    <value>エラー</value>
-    <comment>Error</comment>
+  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
+    <value>検索ボックス</value>
   </data>
 </root>

@@ -53,6 +53,9 @@ namespace BulkCrapUninstaller.Forms
 
                 // it - Italian
                 new {culture =  CultureInfo.GetCultureInfo("it"), translator = "Luca Carrabba (luca.carrabba@yahoo.com)"},
+                
+                // ja - Japanese
+                new {culture =  CultureInfo.GetCultureInfo("ja"), translator = "KKbion"},
 
                 // nl - Dutch
                 new {culture =  CultureInfo.GetCultureInfo("nl"), translator = "Jaap Kramer"},
