@@ -234,26 +234,41 @@ namespace UninstallTools.Factory
                     var shortcuts = manifest.Architecture?[install.Architecture]?.Shortcuts ?? manifest.Shortcuts;
                     if (shortcuts != null)
                     {
-                        executables.AddRange(shortcuts.Select(x => Path.Combine(currentDir, x[0])));
+                        var files = shortcuts.Select(x => Path.Combine(currentDir, x[0]))
+                                             .Where(File.Exists)
+                                             .Select(Path.GetFullPath)
+                                             .Distinct(StringComparer.OrdinalIgnoreCase)
+                                             .ToList();
 
-                        try
+                        executables.AddRange(files.Where(x => x.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)).Concat(files.Where(x => x.EndsWith(".cmd", StringComparison.OrdinalIgnoreCase))));
+
+                        var potentialIcons = files.Where(x => x.EndsWith(".ico", StringComparison.OrdinalIgnoreCase)).Concat(files.Where(x => x.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))).ToList();
+                        foreach (var potentialIcon in potentialIcons)
                         {
-                            var icon = shortcuts.Where(x => x.Length >= 4 && x[3].EndsWith(".ico"))
-                                                .Select(x => Path.Combine(currentDir, x[3]))
-                                                .FirstOrDefault(File.Exists);
-                            if (icon != null)
-                                entry.IconBitmap = new Icon(icon);
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($@"Failed to get icon for {name} - {ex}");
+                            try
+                            {
+                                var icon = potentialIcon.EndsWith(".ico", StringComparison.OrdinalIgnoreCase) ? new Icon(potentialIcon) : Icon.ExtractAssociatedIcon(potentialIcon);
+                                if (icon == null || icon.Size == Size.Empty) continue;
+                                entry.IconBitmap = icon;
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($@"Failed to get icon for [{name}] from [{potentialIcon}] - {ex}");
+                            }
                         }
                     }
 
                     var bin = manifest.Architecture?[install.Architecture]?.Bin ?? manifest.Bin;
                     if (bin != null)
                     {
-                        executables.AddRange(bin.Select(x => Path.Combine(installDir, "current", x)));
+                        var filteredBins = bin.Select(x => Path.Combine(installDir, "current", x))
+                                              .Where(File.Exists)
+                                              .Select(Path.GetFullPath)
+                                              .Except(executables, StringComparer.OrdinalIgnoreCase)
+                                              .Where(x => x.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || x.EndsWith(".cmd", StringComparison.OrdinalIgnoreCase))
+                                              .ToList();
+                        executables.AddRange(filteredBins);
                     }
 
                     var env = manifest.Architecture?[install.Architecture]?.EnvAddPath ?? manifest.EnvAddPath;
@@ -271,12 +286,8 @@ namespace UninstallTools.Factory
 
                 if (executables.Any())
                 {
-                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(executables.Distinct()
-                                                                                                    .Where(File.Exists)
-                                                                                                    .Select(x => new FileInfo(x)),
-                                                                                         entry.DisplayNameTrimmed)
-                                                                    .Select(x => x.FullName)
-                                                                    .ToArray();
+                    // No need to sort, safe to assume the manifest has the most important executables in first positions
+                    entry.SortedExecutables = executables.ToArray();
                 }
                 else
                 {
