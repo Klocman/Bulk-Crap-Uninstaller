@@ -20,7 +20,7 @@ Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can 
 ## Download
 [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
-[Download from OSDN](https://osdn.net/projects/bulk-crap-uninstaller/releases/latest-release)
+[Download from SourceForge](https://sourceforge.net/projects/bulk-crap-uninstaller/)
 
 ## How can I help?
 Please check the [contribution](CONTRIBUTING.md) notes!
