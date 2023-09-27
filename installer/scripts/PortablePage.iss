@@ -13,7 +13,7 @@ nl.InstallPortableTitle =Portabele installatie
 es.InstallPortableTitle =Instalación portable
 bpt.InstallPortableTitle =Instalação Portátil
 ru.InstallPortableTitle =Переносимая установка
-itInstallPortableTitle =Instalalzione portatile
+it.InstallPortableTitle =Installazione portatile
 
 InstallTypeChoiceTitle =Installation type
 pl.InstallTypeChoiceTitle =Typ instalacji
@@ -25,7 +25,7 @@ nl.InstallTypeChoiceTitle =Installatie type
 es.InstallTypeChoiceTitle =Tipo de instalación
 bpt.InstallTypeChoiceTitle =Tipo Instalação
 ru.InstallTypeChoiceTitle =Тип установки
-it.InstallTypeChoiceTitle =Tipo installazione
+it.InstallTypeChoiceTitle =Tipo di installazione
 
 InstallStandardTitle =Standard Installation
 pl.InstallStandardTitle =Instalacja standardowa
@@ -49,7 +49,7 @@ nl.InstallPortableInfo =Portabele installatie registreert zich zelf niet in het 
 es.InstallPortableInfo =La instalación portable no se registrará en el sistema, sólo extrae los archivos al directorio especificado. Puede colocarlo en cualquier sitio, por ejemplo en una unidad USB. Podrá moverlo libremente ya que la aplicación está dentro del directorio.
 bpt.InstallPortableInfo =A instalação portátil não se registrará no sistema, ela só extrairá arquivos para o diretório especificado. Você pode configurar o diretório para qualquer coisa que você gostaria, por exemplo, para uma unidade USB. Você poderá mover este diretório livremente, já que todo o aplicativo está dentro dele.
 ru.InstallPortableInfo =Переносимая установка не регистрируется в системе, она только извлекает файлы в указанный каталог. Вы можете выбрать любой каталог, например, на USB-накопителе. Вы сможете свободно перемещать этот каталог, поскольку все приложение находится внутри него.
-it.InstallPortableInfo =L'installazione portatile non si registrerà nel sistema, estrarrà solo i file nella cartella specificata. Puoi impostare la cartella in qualsiasi percorso, ad esempio inu un'unità USB. Sarai in grado di spostare questa cartella liberamente poiché l'intera app è al suo interno.
+it.InstallPortableInfo =L'installazione portatile non si registrerà nel sistema, estrarrà solo i file nella cartella specificata. Puoi impostare la cartella in qualsiasi percorso, ad esempio in un'unità USB. Sarai in grado di spostare questa cartella liberamente poiché l'intera app è al suo interno.
 
 InstallStandardInfo =This option will install BCUninstaller on your computer as a normal application. Standard uninstaller will be created and it will be visible under "Programs and Features" as well as in other third-party uninstallers.
 pl.InstallStandardInfo =Ta aplikacja zostanie zainstalowana i zarejestrowana w tym systemie. Zostanie stworzony deinstalator i będzie on widoczny w panelu sterowania i innych deinstalatorach.
