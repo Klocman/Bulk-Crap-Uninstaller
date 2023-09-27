@@ -115,6 +115,9 @@ int main()
 		return 2;
 	}
 
+	// Required on some systems or CreateProcess fails
+	p = L"\"" + p + L"\"";
+
 	auto cl = p.c_str();
 	size_t pSizeTerminated = p.size() + 1;
 	wchar_t* cla = new wchar_t[pSizeTerminated];
