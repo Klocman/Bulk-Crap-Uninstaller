@@ -87,7 +87,7 @@ namespace UninstallTools.Startup.Service
             inParams["StartMode"] = newState ? "Automatic" : "Disabled";
 
             // Execute the method and obtain the return values.
-            var outParams = classInstance.InvokeMethod("ChangeStartMode", inParams, null);
+            var outParams = classInstance.InvokeMethod("ChangeStartMode", inParams, new InvokeMethodOptions { Timeout = TimeSpan.FromMinutes(1) });
             CheckReturnValue(outParams);
         }
 
@@ -106,7 +106,7 @@ namespace UninstallTools.Startup.Service
             var classInstance = GetServiceObject(serviceName);
 
             // Execute the method and obtain the return values.
-            var outParams = classInstance.InvokeMethod("Delete", null, null);
+            var outParams = classInstance.InvokeMethod("Delete", null, new InvokeMethodOptions { Timeout = TimeSpan.FromMinutes(1) });
             CheckReturnValue(outParams, 16); // 16 - Service Marked For Deletion
         }
 
@@ -127,7 +127,7 @@ namespace UninstallTools.Startup.Service
         private static ManagementObject GetServiceObject(string serviceName)
         {
             return new ManagementObject("root\\CIMV2",
-                $"Win32_Service.Name='{serviceName}'", null);
+                $"Win32_Service.Name='{serviceName}'", new ObjectGetOptions { Timeout = TimeSpan.FromMinutes(1) });
         }
     }
 }
