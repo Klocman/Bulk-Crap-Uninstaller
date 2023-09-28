@@ -154,7 +154,7 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                FilesystemTools.CompressDirectory(dir);
+                FilesystemTools.CompressDirectory(dir, TimeSpan.FromMinutes(2));
             }
             catch
             {

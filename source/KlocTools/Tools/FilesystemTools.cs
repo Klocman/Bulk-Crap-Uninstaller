@@ -108,12 +108,13 @@ namespace Klocman.Tools
             }
         }
 
-        public static void CompressDirectory(string dirFullName)
+        public static void CompressDirectory(string dirFullName) => CompressDirectory(dirFullName, ManagementOptions.InfiniteTimeout);
+        public static void CompressDirectory(string dirFullName, TimeSpan timeout)
         {
             var objPath = "Win32_Directory.Name=" + "\"" + dirFullName.Replace(@"\", @"\\") + "\"";
             using (var dir = new ManagementObject(objPath))
             {
-                var outParams = dir.InvokeMethod("Compress", null, null);
+                var outParams = dir.InvokeMethod("Compress", null, new InvokeMethodOptions { Timeout = timeout });
                 if (outParams == null) throw new ArgumentNullException(nameof(outParams));
                 var ret = (uint)outParams.Properties["ReturnValue"].Value;
                 if (ret != 0)
