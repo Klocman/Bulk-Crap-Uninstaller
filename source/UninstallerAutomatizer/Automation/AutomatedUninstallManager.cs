@@ -19,6 +19,9 @@ using FlaUI.Core.WindowsAPI;
 using FlaUI.UIA3;
 using Klocman.Extensions;
 using Klocman.Tools;
+using TestStack.White.UIItems;
+using TestStack.White.UIItems.Finders;
+using TestStack.White.WindowsAPI;
 using UninstallerAutomatizer.Properties;
 using Application = FlaUI.Core.Application;
 using Button = FlaUI.Core.AutomationElements.Button;
@@ -340,7 +343,7 @@ namespace UninstallerAutomatizer
                 //nextButton.RaiseClickEvent();
                 target.Focus();
                 nextButton.Focus();
-                nextButton.KeyIn(VirtualKeyShort.RETURN);
+                nextButton.KeyIn(KeyboardInput.SpecialKeys.RETURN);
             }
         }
 
