@@ -172,7 +172,7 @@
     <value>Steam</value>
   </data>
   <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Windows Store Apps</value>
+    <value>Windows Store apps</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Windows onderdelen</value>
@@ -184,7 +184,7 @@
     <value>Windows update</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot voltooiing.</value>
+    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot het is afgerond.</value>
   </data>
   <data name="groupBoxAppStores.Text" xml:space="preserve">
     <value>Programma opslaan om te scannen</value>
