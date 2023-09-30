@@ -579,4 +579,7 @@
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Maak een nieuw herstelpunt</value>
   </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neem eigenaarschap op</value>
+  </data>
 </root>
