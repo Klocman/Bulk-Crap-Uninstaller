@@ -772,4 +772,16 @@ Het kan noodzakelijk zijn om te de-installeren en het dan opnieuw te installeren
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>Welkom bij BCU versie {0}!</value>
   </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Niets</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Eigenschappen openen</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>De-installeert</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>
