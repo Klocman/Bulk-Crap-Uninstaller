@@ -145,7 +145,7 @@
     <value>Rommel dat u niet vertrouwt altijd weergeven</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Vragen, of normale de-installers uit de lijst met stille deïnstallers moet worden verwijderd</value>
+    <value>Vragen, of normale de-installers uit de lijst met stille de-installers moet worden verwijderd</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Vraag nooit om feedback of hulp</value>
