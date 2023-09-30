@@ -282,4 +282,7 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
     <value>Scan verwijderbare schijven</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>DPI-bewuste interface-schaling inschakelen</value>
+  </data>
 </root>
