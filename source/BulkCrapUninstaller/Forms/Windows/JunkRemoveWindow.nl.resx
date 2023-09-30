@@ -153,10 +153,10 @@
     <value>Vertrouwens waardering</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Het detecteren van deze restanten is een complex proces dat tot vergissingen kan leiden. Daarom is er voor elk onderdeel een vertrouwens waardering, waarbij de gebruiker de eindbeslissing heeft. Onderdelen met een (zeer) hoge graad van vertrouwen kunnen  zonder gevaar worden verwijderd. Desalniettemin moet u alles alvorens te verwijderen zorgvuldig controleren. Waarderings details kunt u na een dubbelklik op het onderdeel weergeven.</value>
+    <value>Het detecteren van deze restanten is een complex proces dat tot vergissingen kan leiden. Daarom is er voor elk onderdeel een vertrouwens waardering, waarbij de gebruiker de eindbeslissing heeft. Onderdelen met een (zeer) hoge graad van vertrouwen kunnen zonder gevaar worden verwijderd. Desalniettemin moet u alles alvorens te verwijderen zorgvuldig controleren. Waarderings details kunt u na een dubbelklik op het onderdeel weergeven.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Lijst met bestanden en/of registersleutels, die na deïnstallatie zijn achtergebleven.</value>
+    <value>Lijst met bestanden en/of registersleutels, die na de-installatie zijn achtergebleven.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Achtergebleven bestanden verwijderen</value>
