@@ -505,7 +505,7 @@ Mist u functionaliteiten of wilt u een oplossing voor een fout? Stuur mij dan uw
     <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende de-installer en kan er in resulteren dat de de-installatie niet wordt afgesloten. In de regel kunt u de de-installer opnieuw uitvoeren om de de-installatie af te sluiten.
 
 Als alternatief kunt u de wachttijd voor dit proces overslaan. Hierdoor werkt de de-installer door, terwijl de taak naar het volgende onderdeel springt.
-Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
+Denk er aan, dat enkele de-installers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>Waardering details</value>
