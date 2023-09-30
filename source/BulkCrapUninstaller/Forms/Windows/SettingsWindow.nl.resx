@@ -207,6 +207,9 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller instellingen</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Dubbelklikken in applicatielijst</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Opdrachtregel voordat de de-installatie start</value>
   </data>
