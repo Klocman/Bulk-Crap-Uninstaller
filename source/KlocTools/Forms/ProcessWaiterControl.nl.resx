@@ -130,7 +130,7 @@
     <value>Annuleren</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>De volgende processen gebruiken mogelijk bestanden, die nu gedeïnstalleerd moeten worden.
+    <value>De volgende processen gebruiken mogelijk bestanden, die nu gede-installeerd moeten worden.
 Sluit deze eerst voordat u verder gaat. Als u ervoor kiest deze niet te sluiten, kan de de-installatie mislukken of problemen veroorzaken. Daardoor verliest u ook alle niet opgeslagen gegevens, die door deze toepasssing(en) geopend zijn.</value>
   </data>
 </root>
