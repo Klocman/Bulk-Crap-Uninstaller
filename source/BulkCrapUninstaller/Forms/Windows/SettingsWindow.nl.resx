@@ -285,4 +285,7 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
     <value>DPI-bewuste interface-schaling inschakelen</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Opstart</value>
+  </data>
 </root>
