@@ -130,7 +130,7 @@
     <value>Schakel conflict preventie uit als de-installers handmatig worden uitgevoerd</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Slechts één de-installetie per keer</value>
+    <value>Slechts één de-installatie per keer</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Automatisch gelijktijdig uitvoeren van de-installers (indien mogelijk)</value>
