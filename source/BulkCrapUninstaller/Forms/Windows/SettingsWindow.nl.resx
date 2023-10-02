@@ -136,7 +136,7 @@
     <value>Taal:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Het programma moet opnieuw worden gestart, om de taal wijziging te effectueren. </value>
+    <value>Het programma moet opnieuw worden gestart, om de taal wijziging te gebruiken. </value>
   </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
     <value>Bericht vensters</value>
@@ -287,5 +287,8 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Opstart</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
   </data>
 </root>
