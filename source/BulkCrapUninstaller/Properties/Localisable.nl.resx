@@ -594,7 +594,8 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Deze bewerking opent {0} mappen tegelijk. Weet u zeker dat u verder wilt gaan?</value>
-    <comment>0 is number of directories to open</comment>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
     <value>Stille de-installatie</value>
@@ -783,5 +784,8 @@ Het kan noodzakelijk zijn om te de-installeren en het dan opnieuw te installeren
   <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
     <value>De-installeert</value>
     <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>PC in slaapstand zetten in {0}s. Verwijder het vinkje uit het slaapvakje om te annuleren.</value>
   </data>
 </root>
