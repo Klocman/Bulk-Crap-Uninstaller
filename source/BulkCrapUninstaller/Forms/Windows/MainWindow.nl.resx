@@ -5,7 +5,7 @@
     
     Version 2.0
     
-    The primary goals of this format is to allow a simple XML format
+    The primary goals of this format is to allow a simple XML format 
     that is mostly human readable. The generation and parsing of the 
     various data types are done through the TypeConverter classes 
     associated with the data types.
@@ -328,7 +328,7 @@
     <value>Bekijk updates</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bekijk Windows Store Apps</value>
+    <value>Bekijk Windows Store apps</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Zoeken...</value>
@@ -578,5 +578,14 @@
   </data>
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Maak een nieuw herstelpunt</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neem eigenaarschap op</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
   </data>
 </root>

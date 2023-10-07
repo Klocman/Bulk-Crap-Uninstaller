@@ -255,10 +255,10 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waaruit u deze kun
     <value>Bestand niet gevonden</value>
   </data>
   <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
-    <value>Uitvoeren van NA-de-installatie opdrachten...</value>
+    <value>Uitvoeren van NA de-installatie opdrachten...</value>
   </data>
   <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
-    <value>Uitvoeren van VOOR-de-installatie opdrachten...</value>
+    <value>Uitvoeren van VOOR de-installatie opdrachten...</value>
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Voltooid</value>
@@ -269,7 +269,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waaruit u deze kun
     <comment>{0} is a number of selected uninstallers</comment>
   </data>
   <data name="MainWindow_Statusbar_Total" xml:space="preserve">
-    <value>{0} De-installer(s) in totaal, {1}</value>
+    <value>{0} de-installer(s) in totaal, {1}</value>
     <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
@@ -307,7 +307,7 @@ Bestanden en mappen worden verplaatst naar de prullenbak, van waaruit u deze kun
     <value>Actueel uitgevoerde taken overslaan</value>
   </data>
   <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
-    <value>Er wordt al een andere de-installatie taak uitgevoerd. Wacht a.u.b. tot deze is voltooid en probeer het opnieuw.</value>
+    <value>Er wordt al een andere de-installatie taak uitgevoerd. Even geduld tot deze is voltooid en probeer het daarna opnieuw.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
     <value>Waardering: {0}
@@ -505,7 +505,7 @@ Mist u functionaliteiten of wilt u een oplossing voor een fout? Stuur mij dan uw
     <value>De keuze 'Beëindigen" sluit onmiddellijk de lopende de-installer en kan er in resulteren dat de de-installatie niet wordt afgesloten. In de regel kunt u de de-installer opnieuw uitvoeren om de de-installatie af te sluiten.
 
 Als alternatief kunt u de wachttijd voor dit proces overslaan. Hierdoor werkt de de-installer door, terwijl de taak naar het volgende onderdeel springt.
-Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
+Denk er aan, dat enkele de-installers niet kunnen worden uitgevoerd, voor dat het overgeslagen proces is afgesloten.</value>
   </data>
   <data name="JunkRemove_Details_Title" xml:space="preserve">
     <value>Waardering details</value>
@@ -520,7 +520,7 @@ Denk er aan, dat enkele deïnstallers niet kunnen worden uitgevoerd, voor dat he
 U kunt proberen de detectie van conflicten in de instellingen uit te schakelen, maar dit wordt niet aanbevolen.</value>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
-    <value>BCUninstaller download automatisch de update en zal dit na een herstart gebruiken. Houd er rekening mee dat uw instellingen tijdens dit proces verloren kunnen gaan.
+    <value>BCUninstaller zal automatisch de update downloaden en zal dit na een herstart gebruiken. Houd er rekening mee dat uw instellingen tijdens dit proces verloren kunnen gaan.
 
 Wijzigingen log:
 - {0}
@@ -584,7 +584,7 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
     <value>Wilt na uitvoering van de-installatie(s) zoeken naar restanten?</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
-    <value>Er was niets om te kopieëren naar het klembord. Of u heeft niets geselecteerd of de informatie is afkomstig van de deïnstaller.</value>
+    <value>Er was niets om te kopieëren naar het klembord. Of u heeft niets geselecteerd of de informatie is afkomstig van de de-installer.</value>
   </data>
   <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
     <value>Kopiëren naar het klembord</value>
@@ -594,7 +594,8 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
     <value>Deze bewerking opent {0} mappen tegelijk. Weet u zeker dat u verder wilt gaan?</value>
-    <comment>0 is number of directories to open</comment>
+    <comment>0 is number of directories to open
+</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
     <value>Stille de-installatie</value>
@@ -603,7 +604,7 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
     <value>Standaard instellingen herstellen</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
-    <value>Alle instellingen gaan blijvend verloren. BCUinstaller moet worden herstart om deze bewerking te voltooien. </value>
+    <value>Alle instellingen gaan blijvend verloren. BCUninstaller moet worden herstart om deze bewerking te voltooien. </value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
     <value>De-installatie lijst openen</value>
@@ -638,7 +639,7 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
     <value>Niets om weer te geven. Dit programmma wordt m.b.v. de Windows Installer (MsiExec) gede-installeerd.</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
-    <value>Jammer dat u ons gaat verlaten! Als u enkele minuten heeft, laat mij dan met een kort bericht op mijn website (http://klocmansoftware.weebly.com/) weten waarom u BCU deïnstalleerde. Ik zal mijn best doen om gemelde problemen op te lossen.</value>
+    <value>Jammer dat u ons gaat verlaten! Als u enkele minuten heeft, laat mij dan met een kort bericht op mijn website (http://klocmansoftware.weebly.com/) weten waarom u BCU de-installeerde. Ik zal mijn best doen om gemelde problemen op te lossen.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
     <value>Bij het openen van de pagina "Zoeken" trad een fout op</value>
@@ -689,7 +690,7 @@ Van tijd tot tijd zou u moeten controleren of een van de de-installers niet is g
     <value>Beveiligd onderdeel wijzigen</value>
   </data>
   <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
-    <value>De-installatie met Msi</value>
+    <value>De-installatie met MSI</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
     <value>Het voortijdig beëindigen van de taak, maakt dat terugzetten niet mogelijk is.
@@ -710,8 +711,7 @@ Mocht er onverhoopt iets misgaan, dan kunt u met systeemherstel de wijziging(en)
   </data>
   <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
     <value>
-Getroffen registraties:
-{0}
+Getroffen registraties: {0}
 
 Om deze registraties te wijzigen, moet u uit de instellingen in de zijbalk lijst de beveiliging van de de-installer uitschakelen. U kunt deze uit de taak verwijderen en met de andere onderdelen doorgaan.</value>
     <comment>0 names of protected uninstallers</comment>
@@ -725,8 +725,7 @@ Om deze registratie te wijzigen, moet u de beveiliging van de de-installer in he
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
     <value>
-De volgende onderdelen hebben geen onzichtbare de-installer(s):
-{0}
+De volgende onderdelen hebben geen onzichtbare de-installer(s): {0}
 
 Wilt u voor deze onderdelen de standaard de-installer gebruiken of moeten de registraties uit de taak worden verwijderd?</value>
     <comment>0 is names of non-quiet uninstallers</comment>
@@ -766,12 +765,27 @@ Het kan noodzakelijk zijn om te de-installeren en het dan opnieuw te installeren
     <value>Selecteer de map met de programma's om te de-installeren.</value>
   </data>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
-    <value>Selecteer waar de back-up opgeslagen moet worden. Een nieuwe map zal worden gemaakt.</value>
+    <value>Selecteer waar de back-up opgeslagen moet worden. Er zal een nieuwe map gemaakt worden.</value>
   </data>
   <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
-    <value>BCU is geüpdatet naar v{0}!</value>
+    <value>BCU is bijgewerkt naar v{0}!</value>
   </data>
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>Welkom bij BCU versie {0}!</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Niets</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Eigenschappen openen</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>De-installeert</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>PC in slaapstand zetten in {0}s. Verwijder het vinkje uit het slaapvakje om te annuleren.</value>
   </data>
 </root>

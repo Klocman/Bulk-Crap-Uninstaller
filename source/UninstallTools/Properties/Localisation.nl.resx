@@ -578,4 +578,11 @@
     <value>Debug tracing/Loggging
 Configuratie</value>
   </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Zoeken naar Scoop pakketten</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Kan bij een andere app horen met een vergelijkbare naam</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
 </root>

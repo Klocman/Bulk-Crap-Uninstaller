@@ -136,7 +136,7 @@
     <value>Taal:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Het programma moet opnieuw worden gestart, om de taal wijziging te effectueren. </value>
+    <value>Het programma moet opnieuw worden gestart, om de taal wijziging te gebruiken. </value>
   </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
     <value>Bericht vensters</value>
@@ -145,7 +145,8 @@
     <value>Rommel dat u niet vertrouwt altijd weergeven</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Vragen, of normale de-installers uit de lijst met stille deïnstallers moet worden verwijderd</value>
+    <value>Vragen of normale de-installers uit de lijst
+ met stille de-installers moet worden verwijderd</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Vraag nooit om feedback of hulp</value>
@@ -172,7 +173,7 @@
     <value>Steam</value>
   </data>
   <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
-    <value>Windows Store Apps</value>
+    <value>Windows Store apps</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Windows onderdelen</value>
@@ -184,7 +185,7 @@
     <value>Windows update</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot voltooiing.</value>
+    <value>Detectie van Windows updates gebruikt WUA, wat traag verloopt. Dit kan enkele minuten duren tot het is afgerond.</value>
   </data>
   <data name="groupBoxAppStores.Text" xml:space="preserve">
     <value>Programma opslaan om te scannen</value>
@@ -206,6 +207,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller instellingen</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Dubbelklikken in applicatielijst</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Opdrachtregel voordat de de-installatie start</value>
@@ -278,5 +282,14 @@ Gebruik volledige map paden, één pad per regel. Ongeldige paden en niet bestaa
   <data name="checkBoxRemovable.Text" xml:space="preserve">
     <value>Scan verwijderbare schijven</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>DPI-bewuste interface-schaling inschakelen</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Opstart</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
   </data>
 </root>

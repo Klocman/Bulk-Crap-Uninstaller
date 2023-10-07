@@ -130,7 +130,7 @@
     <value>Schakel conflict preventie uit als de-installers handmatig worden uitgevoerd</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Slechts één de-installer per keer</value>
+    <value>Slechts één de-installatie per keer</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Automatisch gelijktijdig uitvoeren van de-installers (indien mogelijk)</value>
@@ -157,13 +157,15 @@
     <value>Genereer ontbrekende stille de-installers, indien mogelijk</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Automatisch beëindigen, als een vastgelopen de-installer wacht op gebruikers invoer</value>
+    <value>Automatisch beëindigen, als een vastgelopen
+ de-installer wacht op gebruikers invoer</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Onzichtbare de-installatie</value>
   </data>
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
-    <value>Monitor "stille" de-installers voor popups of andere vertragingen en automatiseer deze (start automatiseer daemon)</value>
+    <value>Monitor "stille" de-installers voor pop-ups of andere vertragingen
+ en automatiseer deze (start automatiseer daemon)</value>
   </data>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Maak een herstelpunt alvorens te de-installeren</value>

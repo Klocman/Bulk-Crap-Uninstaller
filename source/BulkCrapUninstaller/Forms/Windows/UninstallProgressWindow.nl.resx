@@ -136,7 +136,7 @@
     <value>Id</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Geselecteerde de-installers worden achtereen volgens uitgevoerd.
+    <value>Geselecteerde de-installers worden achtereen volgens uitgevoerd. 
 Als het proces onverhoopt vastloopt, klikt u op de knop "Overslaan", om te voorkomen dat u bij het afsluiten van de uitvoering moet wachten.
 Dit kan gebeuren als de de-installer 'crasht' of een nieuw proces start en deze niet afsluit.</value>
   </data>
@@ -172,5 +172,26 @@ Dit kan gebeuren als de de-installer 'crasht' of een nieuw proces start en deze 
   </data>
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>De-installeer handmatig</value>
+  </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Overslaan</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beëindigen</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>De-installatie nu uitvoeren</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manuale de-installatie</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open installatie map</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eigenschappen</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Plaats computer in slaapstand bij voltooiing</value>
   </data>
 </root>
