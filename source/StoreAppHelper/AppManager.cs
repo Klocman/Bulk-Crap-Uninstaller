@@ -68,7 +68,7 @@ namespace StoreAppHelper
                 if ( /*package.IsFramework || package.IsResourcePackage ||*/
                     package.Status.Disabled || package.Status.NotAvailable)
                     continue;
-                
+
                 var result = TryCreateAppFromPackage(package);
                 if (result != null)
                     yield return result;
@@ -81,31 +81,46 @@ namespace StoreAppHelper
             if (manifestContents == null) return null;
             try
             {
+                var installPath = package.InstalledLocation.Path;
+                var externalPath = package.EffectiveLocation.Path.Equals(installPath, StringComparison.OrdinalIgnoreCase) ? null : package.EffectiveLocation.Path;
+
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(manifestContents);
                 // namespaces are mandatory, even if there's a default namespace
-                XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
+                var nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
                 nsmgr.AddNamespace("ns", xmlDoc.DocumentElement!.NamespaceURI);
                 var properties = xmlDoc.DocumentElement.SelectSingleNode("//ns:Properties", nsmgr);
-                var displayName = properties!.SelectSingleNode("ns:DisplayName/text()", nsmgr)?.Value;
-                var logoPath = properties.SelectSingleNode("ns:Logo/text()", nsmgr)?.Value;
-                var publisherDisplayName = properties.SelectSingleNode("ns:PublisherDisplayName/text()", nsmgr)?.Value;
-                var installPath = package.InstalledLocation.Path;
-                var extractedDisplayName = ExtractDisplayName(installPath, package.Id.Name, displayName);
 
-                return new App(package.Id.FullName,
-                    new[] {  extractedDisplayName, displayName, package.DisplayName, package.Id.Name}
-                        .FirstOrDefault(s => !(string.IsNullOrEmpty(s) || s.StartsWith("ms-resource:"))) ?? "",
-                    ExtractDisplayName(installPath, package.Id.Name, publisherDisplayName), 
-                    ExtractDisplayIcon(installPath, logoPath), 
-                    installPath,
-                    package.SignatureKind == PackageSignatureKind.System);
+                var displayNameRes = properties!.SelectSingleNode("ns:DisplayName/text()", nsmgr)?.Value;
+                var displayNameExtracted = ExtractDisplayName(installPath, package.Id.Name, displayNameRes)
+                                           ?? (externalPath != null ? ExtractDisplayName(externalPath, package.Id.Name, displayNameRes) : null);
+
+                var logoPathRes = properties.SelectSingleNode("ns:Logo/text()", nsmgr)?.Value;
+                var logoPathExtracted = ExtractDisplayIcon(installPath, logoPathRes)
+                                         ?? (externalPath != null ? ExtractDisplayIcon(externalPath, logoPathRes) : null);
+
+                var publisherDisplayNameRes = properties.SelectSingleNode("ns:PublisherDisplayName/text()", nsmgr)?.Value;
+                var publisherDisplayNameExtracted = ExtractDisplayName(installPath, package.Id.Name, publisherDisplayNameRes)
+                                           ?? (externalPath != null ? ExtractDisplayName(externalPath, package.Id.Name, publisherDisplayNameRes) : null);
+
+                return new App(
+                    fullName: package.Id.FullName,
+                    displayName: FirstValidName(displayNameExtracted, displayNameRes, package.DisplayName) ?? package.InstalledLocation.DisplayName,
+                    publisherDisplayName: FirstValidName(publisherDisplayNameExtracted, package.PublisherDisplayName) ?? "",
+                    logo: logoPathExtracted,
+                    installedLocation: installPath,
+                    isProtected: package.SignatureKind == PackageSignatureKind.System);
             }
             catch (SystemException exception)
             {
                 LogWriter.WriteExceptionToLog(exception);
                 return null;
             }
+        }
+
+        private static string FirstValidName(params string[] names)
+        {
+            return names.FirstOrDefault(s => !string.IsNullOrEmpty(s) && !s.StartsWith("ms-resource:"));
         }
 
         private static string TryGetAppManifest(Package package)
@@ -152,13 +167,21 @@ namespace StoreAppHelper
 
             var priPath = Path.Combine(appDir, "resources.pri");
             var resource = $"ms-resource://{packageName}/resources/{uri.Segments.Last()}";
-            var name = NativeMethods.ExtractStringFromPriFile(priPath, resource);
-            if (!string.IsNullOrEmpty(name.Trim()))
+            var name = NativeMethods.ExtractStringFromPriFile(priPath, resource)?.Trim();
+            if (!string.IsNullOrEmpty(name))
                 return name;
 
             var res = string.Concat(uri.Segments.Skip(1));
             resource = $"ms-resource://{packageName}/{res}";
-            return NativeMethods.ExtractStringFromPriFile(priPath, resource);
+            name = NativeMethods.ExtractStringFromPriFile(priPath, resource)?.Trim();
+            if (!string.IsNullOrEmpty(name))
+                return name;
+
+            name = NativeMethods.ExtractStringFromPriFile(priPath, displayName)?.Trim();
+            if (!string.IsNullOrEmpty(name))
+                return name;
+
+            return null;
         }
 
         private static class NativeMethods
