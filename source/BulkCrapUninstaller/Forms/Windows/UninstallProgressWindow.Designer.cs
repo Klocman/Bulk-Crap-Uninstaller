@@ -41,7 +41,7 @@ namespace BulkCrapUninstaller.Forms
             this.olvColumnStatus = new BrightIdeasSoftware.OLVColumn();
             this.olvColumnIsSilent = new BrightIdeasSoftware.OLVColumn();
             this.olvColumnName = new BrightIdeasSoftware.OLVColumn();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnId = new BrightIdeasSoftware.OLVColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.skipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +75,7 @@ namespace BulkCrapUninstaller.Forms
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxFinishSleep = new System.Windows.Forms.CheckBox();
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -118,29 +118,29 @@ namespace BulkCrapUninstaller.Forms
             this.olvColumnName.FillsFreeSpace = true;
             resources.ApplyResources(this.olvColumnName, "olvColumnName");
             // 
-            // objectListView1
+            // uninstallerObjectListView
             // 
-            this.objectListView1.AllColumns.Add(this.olvColumnId);
-            this.objectListView1.AllColumns.Add(this.olvColumnStatus);
-            this.objectListView1.AllColumns.Add(this.olvColumnIsSilent);
-            this.objectListView1.AllColumns.Add(this.olvColumnName);
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnId);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnStatus);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnIsSilent);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnName);
+            this.uninstallerObjectListView.CellEditUseWholeCell = false;
+            this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnId,
             this.olvColumnStatus,
             this.olvColumnIsSilent,
             this.olvColumnName});
-            this.objectListView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.objectListView1, "objectListView1");
-            this.objectListView1.FullRowSelect = true;
-            this.objectListView1.HideSelection = false;
-            this.objectListView1.MultiSelect = false;
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowItemToolTips = true;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
-            this.objectListView1.SelectedIndexChanged += new System.EventHandler(this.objectListView1_SelectedIndexChanged);
+            this.uninstallerObjectListView.ContextMenuStrip = this.contextMenuStrip1;
+            this.uninstallerObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.uninstallerObjectListView, "uninstallerObjectListView");
+            this.uninstallerObjectListView.FullRowSelect = true;
+            this.uninstallerObjectListView.HideSelection = false;
+            this.uninstallerObjectListView.MultiSelect = false;
+            this.uninstallerObjectListView.Name = "uninstallerObjectListView";
+            this.uninstallerObjectListView.ShowItemToolTips = true;
+            this.uninstallerObjectListView.UseCompatibleStateImageBehavior = false;
+            this.uninstallerObjectListView.View = System.Windows.Forms.View.Details;
+            this.uninstallerObjectListView.SelectedIndexChanged += new System.EventHandler(this.uninstallerObjectListView_SelectedIndexChanged);
             // 
             // olvColumnId
             // 
@@ -214,7 +214,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.objectListView1);
+            this.groupBox1.Controls.Add(this.uninstallerObjectListView);
             this.groupBox1.Controls.Add(this.toolStrip1);
             this.groupBox1.Controls.Add(this.label2);
             resources.ApplyResources(this.groupBox1, "groupBox1");
@@ -373,7 +373,7 @@ namespace BulkCrapUninstaller.Forms
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UninstallProgressWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UninstallProgressWindow_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -399,7 +399,7 @@ namespace BulkCrapUninstaller.Forms
         private OLVColumn olvColumnStatus;
         private OLVColumn olvColumnIsSilent;
         private OLVColumn olvColumnName;
-        private ObjectListView objectListView1;
+        private ObjectListView uninstallerObjectListView;
         private GroupBox groupBox1;
         private Label label2;
         private Label label3;

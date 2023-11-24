@@ -109,8 +109,8 @@ namespace BulkCrapUninstaller.Forms
             olvColumnName.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.UninstallerEntry.DisplayName.SafeNormalize().FirstOrDefault();
             olvColumnId.GroupKeyGetter = rowObject => (rowObject as BulkUninstallEntry)?.Id / 10;
 
-            objectListView1.PrimarySortColumn = olvColumnStatus;
-            objectListView1.SecondarySortColumn = olvColumnId;
+            uninstallerObjectListView.PrimarySortColumn = olvColumnStatus;
+            uninstallerObjectListView.SecondarySortColumn = olvColumnId;
 
             forceUpdateTimer.Tick += (o, args) =>
             {
@@ -151,7 +151,7 @@ namespace BulkCrapUninstaller.Forms
         }
 
         private IEnumerable<BulkUninstallEntry> SelectedTaskEntries
-            => objectListView1.SelectedObjects.Cast<BulkUninstallEntry>();
+            => uninstallerObjectListView.SelectedObjects.Cast<BulkUninstallEntry>();
 
         private IEnumerable<ApplicationUninstallerEntry> SelectedUninstallerEntries
             => SelectedTaskEntries.Select(x => x.UninstallerEntry);
@@ -162,7 +162,7 @@ namespace BulkCrapUninstaller.Forms
 
             progressBar1.Maximum = _currentTargetStatus.AllUninstallersList.Count;
 
-            objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList);
+            uninstallerObjectListView.SetObjects(_currentTargetStatus.AllUninstallersList);
             _currentTargetStatus.OnStatusChanged += currentTargetStatus_OnCurrentTaskChanged;
             currentTargetStatus_OnCurrentTaskChanged(this, EventArgs.Empty);
         }
@@ -178,9 +178,9 @@ namespace BulkCrapUninstaller.Forms
             forceUpdateTimer.Stop();
 
             // Needed to call from another thread to avoid blocking the calling thread and deadlocking
-            new Thread(() => objectListView1.SafeInvoke(() =>
+            new Thread(() => uninstallerObjectListView.SafeInvoke(() =>
             {
-                objectListView1.SetObjects(_currentTargetStatus.AllUninstallersList, true);
+                uninstallerObjectListView.SetObjects(_currentTargetStatus.AllUninstallersList, true);
 
                 if (_currentTargetStatus.Finished)
                     OnTaskFinished();
@@ -209,8 +209,8 @@ namespace BulkCrapUninstaller.Forms
                         uninstallEntry.Reset();
                         uninstallEntry.IsSilentPossible = false;
                     }
-                    objectListView1.UpdateObjects(failedSilent);
-                    objectListView1.BuildGroups();
+                    uninstallerObjectListView.UpdateObjects(failedSilent);
+                    uninstallerObjectListView.BuildGroups();
                     _currentTargetStatus.Start();
                     return;
                 }
@@ -358,7 +358,7 @@ namespace BulkCrapUninstaller.Forms
                 _currentTargetStatus.Start();
         }
 
-        private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void uninstallerObjectListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             var ste = SelectedTaskEntries.ToList();
 
@@ -423,7 +423,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (objectListView1.SelectedObjects.Count == 0)
+            if (uninstallerObjectListView.SelectedObjects.Count == 0)
                 e.Cancel = true;
         }
     }

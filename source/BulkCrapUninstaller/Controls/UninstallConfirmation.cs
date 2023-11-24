@@ -28,26 +28,26 @@ namespace BulkCrapUninstaller.Forms
                 rowObject => ((ConfirmationEntry) rowObject).Entry.UninstallerEntry.InstallLocation;
             olvColumnName.AspectGetter = rowObject => ((ConfirmationEntry) rowObject).Entry.UninstallerEntry.DisplayName;
 
-            objectListView1.DragSource = new SimpleDragSource();
+            uninstallerObjectListView.DragSource = new SimpleDragSource();
             var rearrangingDropSink = new RearrangingDropSink(false);
-            objectListView1.DropSink = rearrangingDropSink;
+            uninstallerObjectListView.DropSink = rearrangingDropSink;
             rearrangingDropSink.Dropped += (sender, args) =>
             {
-                objectListView1.PrimarySortColumn = null;
-                objectListView1.Sort();
+                uninstallerObjectListView.PrimarySortColumn = null;
+                uninstallerObjectListView.Sort();
             };
 
             // Bug - sorting by column doesn't change the actual order, and disabling sorting doesn't do anything 
-            objectListView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            uninstallerObjectListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
         }
 
-        private IEnumerable<ConfirmationEntry> Entries => (objectListView1.Objects ?? Enumerable.Empty<ConfirmationEntry>()).Cast<ConfirmationEntry>();
+        private IEnumerable<ConfirmationEntry> Entries => (uninstallerObjectListView.Objects ?? Enumerable.Empty<ConfirmationEntry>()).Cast<ConfirmationEntry>();
 
         private void buttonSort_Click(object sender, EventArgs e)
         {
-            objectListView1.PrimarySortColumn = null;
+            uninstallerObjectListView.PrimarySortColumn = null;
             var results = AppUninstaller.SortIntelligently(Entries, entry => entry.Entry);
-            objectListView1.SetObjects(results.ToList());
+            uninstallerObjectListView.SetObjects(results.ToList());
         }
 
         public IEnumerable<BulkUninstallEntry> GetResults()
@@ -59,7 +59,7 @@ namespace BulkCrapUninstaller.Forms
         {
             var entries = items.Select(x => new ConfirmationEntry(x));
 
-            objectListView1.SetObjects(entries.ToList());
+            uninstallerObjectListView.SetObjects(entries.ToList());
         }
 
         private sealed class ConfirmationEntry

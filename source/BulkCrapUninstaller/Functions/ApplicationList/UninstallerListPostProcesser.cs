@@ -92,14 +92,14 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 }
 
                 var sendTag = true;
-                if (_settings.Settings.AdvancedTestCertificates)
+                /*if (_settings.Settings.AdvancedTestCertificates)
                 {
                     lock (UninstallerFileLock)
                     {
                         var cert = GetCert(target);
                         sendTag = cert != null;
                     }
-                }
+                }*/
 
                 var countingUpdateEventArgs = new CountingUpdateEventArgs(0, count, 0);
                 if (sendTag) countingUpdateEventArgs.Tag = target;

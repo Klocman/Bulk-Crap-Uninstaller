@@ -224,9 +224,6 @@ namespace Klocman.Tools
 
                     endIndex = dash;
                 }
-
-                // old
-                //pathEnd = fullCommand.IndexOfAny(" ,:;?-=", fullCommand.LastIndexOf('.'));
             }
 
             return SeparateCommand(fullCommand, pathEnd);

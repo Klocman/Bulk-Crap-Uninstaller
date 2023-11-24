@@ -469,7 +469,7 @@ namespace BulkCrapUninstaller.Forms
             // propertiesSidebar1
             // 
             resources.ApplyResources(this.propertiesSidebar1, "propertiesSidebar1");
-            this.propertiesSidebar1.InvalidEnabled = true;
+            //this.propertiesSidebar1.InvalidEnabled = true;
             this.propertiesSidebar1.Name = "propertiesSidebar1";
             this.propertiesSidebar1.OrphansEnabled = true;
             this.propertiesSidebar1.ProtectedEnabled = true;

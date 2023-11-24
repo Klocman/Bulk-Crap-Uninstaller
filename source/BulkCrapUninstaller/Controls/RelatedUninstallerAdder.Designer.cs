@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatedUninstallerAdder));
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnEnabled = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnRelatedApps = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -37,31 +37,31 @@
             this.labelInfo = new System.Windows.Forms.Label();
             this.labelInfo2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // objectListView1
+            // uninstallerObjectListView
             // 
-            this.objectListView1.AllColumns.Add(this.olvColumnName);
-            this.objectListView1.AllColumns.Add(this.olvColumnEnabled);
-            this.objectListView1.AllColumns.Add(this.olvColumnRelatedApps);
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnName);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnEnabled);
+            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnRelatedApps);
+            this.uninstallerObjectListView.CellEditUseWholeCell = false;
+            this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnName,
             this.olvColumnEnabled,
             this.olvColumnRelatedApps});
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.objectListView1, "objectListView1");
-            this.objectListView1.FullRowSelect = true;
-            this.objectListView1.GridLines = true;
-            this.objectListView1.MultiSelect = false;
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.ShowGroups = false;
-            this.objectListView1.ShowItemToolTips = true;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.uninstallerObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.uninstallerObjectListView, "uninstallerObjectListView");
+            this.uninstallerObjectListView.FullRowSelect = true;
+            this.uninstallerObjectListView.GridLines = true;
+            this.uninstallerObjectListView.MultiSelect = false;
+            this.uninstallerObjectListView.Name = "uninstallerObjectListView";
+            this.uninstallerObjectListView.ShowGroups = false;
+            this.uninstallerObjectListView.ShowItemToolTips = true;
+            this.uninstallerObjectListView.UseCompatibleStateImageBehavior = false;
+            this.uninstallerObjectListView.View = System.Windows.Forms.View.Details;
             // 
             // olvColumnName
             // 
@@ -107,10 +107,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.objectListView1);
+            this.Controls.Add(this.uninstallerObjectListView);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "RelatedUninstallerAdder";
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.ObjectListView uninstallerObjectListView;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label labelInfo;
         private BrightIdeasSoftware.OLVColumn olvColumnEnabled;

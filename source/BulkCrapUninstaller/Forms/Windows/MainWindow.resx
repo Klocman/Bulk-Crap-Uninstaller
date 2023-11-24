@@ -1,4 +1,64 @@
-﻿<root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -139,12 +199,6 @@
   <data name="olvColumnPublisher.Width" type="System.Int32, mscorlib">
     <value>160</value>
   </data>
-  <data name="olvColumnRating.Text" xml:space="preserve">
-    <value>User rating</value>
-  </data>
-  <data name="olvColumnRating.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
   <data name="olvColumnDisplayVersion.Text" xml:space="preserve">
     <value>Version</value>
   </data>
@@ -160,30 +214,6 @@
   <data name="olvColumnSize.Width" type="System.Int32, mscorlib">
     <value>65</value>
   </data>
-  <data name="olvColumnStartup.Text" xml:space="preserve">
-    <value>Startup</value>
-  </data>
-  <data name="olvColumnStartup.Width" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="olvColumnIs64.Text" xml:space="preserve">
-    <value>64bit</value>
-  </data>
-  <data name="olvColumnIs64.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="olvColumnUninstallString.Text" xml:space="preserve">
-    <value>Uninstall command</value>
-  </data>
-  <data name="olvColumnUninstallString.Width" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="olvColumnAbout.Text" xml:space="preserve">
-    <value>About URL</value>
-  </data>
-  <data name="olvColumnAbout.Width" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
   <data name="olvColumnInstallSource.Text" xml:space="preserve">
     <value>Install Source</value>
   </data>
@@ -196,39 +226,6 @@
   <data name="olvColumnInstallLocation.Width" type="System.Int32, mscorlib">
     <value>160</value>
   </data>
-  <data name="olvColumnUninstallerKind.Text" xml:space="preserve">
-    <value>Uninstaller Kind</value>
-  </data>
-  <data name="olvColumnSystemComponent.Text" xml:space="preserve">
-    <value>System Component</value>
-  </data>
-  <data name="olvColumnSystemComponent.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="olvColumnProtected.Text" xml:space="preserve">
-    <value>Protected</value>
-  </data>
-  <data name="olvColumnProtected.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="olvColumnRegistryKeyName.Text" xml:space="preserve">
-    <value>Registry key</value>
-  </data>
-  <data name="olvColumnRegistryKeyName.Width" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="olvColumnGuid.Text" xml:space="preserve">
-    <value>Product code</value>
-  </data>
-  <data name="olvColumnGuid.Width" type="System.Int32, mscorlib">
-    <value>260</value>
-  </data>
-  <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
-    <value>Quiet uninstall command</value>
-  </data>
-  <data name="olvColumnQuietUninstallString.Width" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
   <data name="uninstallerObjectListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -239,7 +236,7 @@
     <value>5, 4, 5, 4</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 692</value>
+    <value>491, 651</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -266,7 +263,7 @@
     <value>5, 4, 5, 4</value>
   </data>
   <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 694</value>
+    <value>493, 653</value>
   </data>
   <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -305,7 +302,7 @@
     <value>6, 4, 6, 4</value>
   </data>
   <data name="treeMap1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 49</value>
+    <value>493, 112</value>
   </data>
   <data name="treeMap1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -335,10 +332,10 @@
     <value>1</value>
   </data>
   <data name="splitContainerListAndMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 750</value>
+    <value>493, 772</value>
   </data>
   <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, mscorlib">
-    <value>694</value>
+    <value>653</value>
   </data>
   <data name="splitContainerListAndMap.SplitterWidth" type="System.Int32, mscorlib">
     <value>7</value>
@@ -364,59 +361,8 @@
   <data name="toolStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALhSURBVGhD7ZlPhFZRGMa/T5EkzSKSpChGEmkRLUpajhYt
-        iqLFGIZK2yiSlAzTLlpFi5hNtGiRFEWLDLNNtJo2ERkzUZLkq99T93Kd7517zz3n3Jm53IefM6753nOf
-        e8/7nj+316lTp1ZqFDb9/7PdOgNvoPVmZOQPrLqZDbAPTsI4TMBZOAFboUq5kZU3MxgMttNchzn4CfmN
-        WLyHaZBZS0UjYkXMKDFn4DcUO/flGRyFolwj4iKkF29gI81dqHr6vjyCfNhZRi5Bcu2Ad+B2Fss8HIDm
-        jfAmDtF8BrejVCzClHNNJDWifFgAt5Miv+AVKPHHMH6Y9hichsvwBL6B9dsy0hjhhjbTfACrE/EDlDPb
-        oFRZfl2Br2DFskj2Ru6D1YFQOdXYriuZfg1WTJd4I9nwsIKL2Bqv3yqGFbtIkjeiWm8Ffws+JjSMvpSg
-        BLfiF4k2sh+swN9hD/hKM7kVx5doI7fBCqzErqsYM9FGlMhuUC1HdkOIQs1EGdEq1gqq5IzRHdADqsM5
-        CNYRGDLS7/dv0rZKe0GzsUudJO/UaY1Iw9YazjuhPcoKyVCBybYPwVLJs0phGVpcroNQaQvgGtEuVFNB
-        sDQJuUF9eAi1zfDUdYBh7f31gKIUakSEmLkFViytBqIUY0TUMbMLtBAdihObH5KPkSWwluY52n9XSeP/
-        JVjxn0O0fIzEbqxk4ilYsfU2tKmLlu/QmoWQZYvmBm3OrJjiASRRnRxRiVRSVh4+oBG4AWU7w4+g/0si
-        y8jAuFZE5VPD7SqcyhJVu8wxmITHUHV6ouOig5BMlhGdV31yrqVkMUWVcmUZ0XGm8qGpI1MdAibXckYk
-        Vap7UDXUfFAMJfYWaEQa026nuZFcOpiL+azwIlWJLZNV410j/8TNaJ10DZToVZ8aVJF0CrPch55G5Jox
-        jThaD6pU+tx2AfSR5jwcB5/y3JiKZnyMrGnlZlpvRJKZ0IO5Tp06rZp6vb/qRp+fJ/k5hwAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Reload uninstallers</value>
-  </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
-  </data>
-  <data name="toolStripButtonSelAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHrSURBVGhD7ZahSgVREIYXDCZBEBHxAcRiMBiMNpvFF7DZ
-        RDD4ACJYfACjQTAIRoNBm0Uf4QaDzaIYDKv/r3vkMMzu3fXMmOaDj13O3Ts/s3vvnK2CIAiCIAiCoSzA
-        xZ9TGz7/0RNY1XU9hcMjfMb5Ctcs0AI9vIATcBLeNmv0Ba7DYvIwL28gG2Aj581a7iucg0XIotY+wGlI
-        jqB2zR4sRits5Qj/gXkcyS7UrjmFJmjFrdmCNZQ5d5A/ORNkcWrJGnyHMmMEZ6AZMoBawX2CU0nW5597
-        CZoiQ6iEj593dgjc8J6grM2f2AY0RwbRHDZxBT/gJhfGkW14Wm2TCaWhhSVSE2mdd3MbdsHvXMO8XtJs
-        QmlogYlLKD9jMztQo23Do98TCk9rFkcXtNAE7742Nuk+lLRteGlC8WndQxe04JyuZg5hgk9JuyafUGeQ
-        ay7IYC2oq5lj2LbhcS1NqAOY1l3Ig7uCupppM00oTrv8uy7kweOChjTzPaHw517G4a1ZS7qQB/QJ6tNM
-        /g6lbYouyJA+QV3NyHco7RoX/hqkNaO9Q+WfJ10oCcqb4VF7h5K1qQulQamZtneo0vq9KQ7CZFptTjWK
-        6/fFO8i7/i9akLcuaEHeuqAFeeuCFuStC1qQt0EQBEEQDKOqvgAXhV7oKQ97YAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripButtonSelAll.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonSelAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
-  </data>
-  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
-    <value>Select all</value>
   </data>
   <data name="toolStripButtonSelNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -435,32 +381,6 @@
   <data name="toolStripButtonSelNone.Text" xml:space="preserve">
     <value>Deselect all</value>
   </data>
-  <data name="toolStripButtonSelInv.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKSSURBVGhD7Zk/aBRBGMUPFEREEMRKAnZWNqLWYiFomTpV
-        CFYpbAQVEWwVFG0trWwEEYsUKULqkCIgEuwUBIukiIWInL53uS+8GWd2Zu9mLqvsD37sZWfv++axf26W
-        DHp6/j/mxtsq/K7oEM5Dcg3+gLdHf1UgNIFS3oLkAtyFtv85PAKLoo1L+gCSs/Az9McfwaJo8aIMh8OT
-        2GxC7UG/QQYsijYoyTG4ArU+/YmAV7AtjjYpyUuotc0FWAVtUoqHUOuaT2E1tJEDLoGL2KzC06MdeSxC
-        rWmyzlFYDW12wDjEDuT+LZhzc96Ev6DWpNvwFKyKNhzhhTA5maYwl+B3qN+he/A8rI42Nd5A3W9+gaFJ
-        nYNfoX88f9lvwJmgjY0TcA3qmMkw/KU2eP98gKFj78GZoY2VpjA748uPvxWxY15BwktuJmhzn8YwkE+i
-        0NgGgh6HZ/CZZ3BaluA6/ASfsDZ3+ugEQjSFCcmJ86GgZ2tSWOM19HuwLufloAfEyA2jy49n0PZPAkO8
-        hVpf5XwcdLCJnDC6/ND9bUmFMB2iAwGawvjLDx1ry3XIR7fWCOkQHYgQCvMe+ssPHc+FZ8LgUicVxiE6
-        0ICGiS0/2ta1mo9Hf+2TCuMQHUjAxu9gbPnRpq5/lnPDOEQHpiS3buhSpTlhHKIDU5JTNxbCTIVx0IFa
-        hkiFMGNheG86+F+soU9uCNMP8xH+9UoR+mJplbYhTA2jj+lDYdIQ5n146EwbIvZSN1P6ELAPUYo+BOxD
-        lKIPAfsQpeAr7j8fwrgDQ5NM2akQRtswnQxh5IbpXAjeH3f3Px6QCtPJM3EVcnL60kNiYTp7Ob2ANslU
-        mE7fE/5/qWJhOh3iMtQQph9mGVYIMRj8AeHfJWi9bK+YAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButtonSelInv.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonSelInv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
-  </data>
-  <data name="toolStripButtonSelInv.Text" xml:space="preserve">
-    <value>Invert selection</value>
-  </data>
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
@@ -472,9 +392,6 @@
   </data>
   <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Uninstall by window, directory, or file...</value>
-  </data>
-  <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 29</value>
   </data>
   <data name="toolStripButtonUninstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -522,38 +439,11 @@
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Uninstall quietly</value>
   </data>
-  <data name="toolStripButtonModify.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonModify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
-  </data>
-  <data name="toolStripButtonModify.Text" xml:space="preserve">
-    <value>Modify</value>
-  </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
   </data>
-  <data name="toolStripButtonProperties.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 26</value>
-  </data>
-  <data name="toolStripButtonProperties.Text" xml:space="preserve">
-    <value>Properties</value>
-  </data>
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 29</value>
-  </data>
-  <data name="toolStripButton7.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
-  </data>
-  <data name="toolStripButton7.Text" xml:space="preserve">
-    <value>Settings</value>
   </data>
   <data name="toolStripButton8.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -587,63 +477,6 @@
   </data>
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <data name="toolStripLabelStatus.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 16</value>
-  </data>
-  <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="toolStripLabelSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripLabelSize.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="toolStripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 16</value>
-  </data>
-  <data name="toolStripLabelSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="toolStripLabelTotal.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripLabelTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 16</value>
-  </data>
-  <data name="toolStripLabelTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 780</value>
-  </data>
-  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 18, 0</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 22</value>
-  </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -681,6 +514,69 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="olvColumnRating.Text" xml:space="preserve">
+    <value>User rating</value>
+  </data>
+  <data name="olvColumnRating.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="olvColumnStartup.Text" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="olvColumnStartup.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="olvColumnIs64.Text" xml:space="preserve">
+    <value>64bit</value>
+  </data>
+  <data name="olvColumnIs64.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="olvColumnUninstallString.Text" xml:space="preserve">
+    <value>Uninstall command</value>
+  </data>
+  <data name="olvColumnUninstallString.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="olvColumnAbout.Text" xml:space="preserve">
+    <value>About URL</value>
+  </data>
+  <data name="olvColumnAbout.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="olvColumnUninstallerKind.Text" xml:space="preserve">
+    <value>Uninstaller Kind</value>
+  </data>
+  <data name="olvColumnSystemComponent.Text" xml:space="preserve">
+    <value>System Component</value>
+  </data>
+  <data name="olvColumnSystemComponent.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="olvColumnProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="olvColumnProtected.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="olvColumnRegistryKeyName.Text" xml:space="preserve">
+    <value>Registry key</value>
+  </data>
+  <data name="olvColumnRegistryKeyName.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="olvColumnGuid.Text" xml:space="preserve">
+    <value>Product code</value>
+  </data>
+  <data name="olvColumnGuid.Width" type="System.Int32, mscorlib">
+    <value>260</value>
+  </data>
+  <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
+    <value>Quiet uninstall command</value>
+  </data>
+  <data name="olvColumnQuietUninstallString.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
   <data name="settingsSidebarPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -703,7 +599,7 @@
     <value>134, 153</value>
   </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 502</value>
+    <value>243, 400</value>
   </data>
   <data name="propertiesSidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2123,12 +2019,6 @@
   <data name="&gt;&gt;olvColumnPublisher.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;olvColumnRating.Name" xml:space="preserve">
-    <value>olvColumnRating</value>
-  </data>
-  <data name="&gt;&gt;olvColumnRating.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;olvColumnDisplayVersion.Name" xml:space="preserve">
     <value>olvColumnDisplayVersion</value>
   </data>
@@ -2145,6 +2035,78 @@
     <value>olvColumnSize</value>
   </data>
   <data name="&gt;&gt;olvColumnSize.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;olvColumnInstallSource.Name" xml:space="preserve">
+    <value>olvColumnInstallSource</value>
+  </data>
+  <data name="&gt;&gt;olvColumnInstallSource.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;olvColumnInstallLocation.Name" xml:space="preserve">
+    <value>olvColumnInstallLocation</value>
+  </data>
+  <data name="&gt;&gt;olvColumnInstallLocation.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
+    <value>toolStripSeparator22</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSelNone.Name" xml:space="preserve">
+    <value>toolStripButtonSelNone</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSelNone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
+    <value>toolStripSeparator23</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonTarget.Name" xml:space="preserve">
+    <value>toolStripButtonTarget</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonTarget.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonUninstall.Name" xml:space="preserve">
+    <value>toolStripButtonUninstall</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
+    <value>toolStripButton2</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
+    <value>toolStripSeparator24</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Name" xml:space="preserve">
+    <value>toolStripButton8</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;olvColumnRating.Name" xml:space="preserve">
+    <value>olvColumnRating</value>
+  </data>
+  <data name="&gt;&gt;olvColumnRating.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;olvColumnStartup.Name" xml:space="preserve">
@@ -2169,18 +2131,6 @@
     <value>olvColumnAbout</value>
   </data>
   <data name="&gt;&gt;olvColumnAbout.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;olvColumnInstallSource.Name" xml:space="preserve">
-    <value>olvColumnInstallSource</value>
-  </data>
-  <data name="&gt;&gt;olvColumnInstallSource.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;olvColumnInstallLocation.Name" xml:space="preserve">
-    <value>olvColumnInstallLocation</value>
-  </data>
-  <data name="&gt;&gt;olvColumnInstallLocation.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;olvColumnUninstallerKind.Name" xml:space="preserve">
@@ -2218,120 +2168,6 @@
   </data>
   <data name="&gt;&gt;olvColumnQuietUninstallString.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
-    <value>toolStripSeparator22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelAll.Name" xml:space="preserve">
-    <value>toolStripButtonSelAll</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelNone.Name" xml:space="preserve">
-    <value>toolStripButtonSelNone</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelNone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelInv.Name" xml:space="preserve">
-    <value>toolStripButtonSelInv</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSelInv.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
-    <value>toolStripSeparator23</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonTarget.Name" xml:space="preserve">
-    <value>toolStripButtonTarget</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonTarget.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
-    <value>toolStripSeparator21</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonUninstall.Name" xml:space="preserve">
-    <value>toolStripButtonUninstall</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonUninstall.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
-    <value>toolStripButton2</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonModify.Name" xml:space="preserve">
-    <value>toolStripButtonModify</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonModify.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonProperties.Name" xml:space="preserve">
-    <value>toolStripButtonProperties</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
-    <value>toolStripSeparator24</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Name" xml:space="preserve">
-    <value>toolStripButton7</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton8.Name" xml:space="preserve">
-    <value>toolStripButton8</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelStatus.Name" xml:space="preserve">
-    <value>toolStripLabelStatus</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelSize.Name" xml:space="preserve">
-    <value>toolStripLabelSize</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelTotal.Name" xml:space="preserve">
-    <value>toolStripLabelTotal</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabelTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;uninstallContextMenuStripItem.Name" xml:space="preserve">
     <value>uninstallContextMenuStripItem</value>
@@ -3251,6 +3087,24 @@
   <data name="&gt;&gt;usageTracker.Type" xml:space="preserve">
     <value>BulkCrapUninstaller.Functions.Tracking.UsageTracker, BCUninstaller, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;toolStripLabelStatus.Name" xml:space="preserve">
+    <value>toolStripLabelStatus</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelSize.Name" xml:space="preserve">
+    <value>toolStripLabelSize</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelTotal.Name" xml:space="preserve">
+    <value>toolStripLabelTotal</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
   </data>
@@ -3263,4 +3117,76 @@
   <metadata name="usageTracker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 60</value>
   </metadata>
+  <metadata name="miniToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 60</value>
+  </metadata>
+  <data name="miniToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 778</value>
+  </data>
+  <data name="miniToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 18, 0</value>
+  </data>
+  <data name="miniToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>493, 24</value>
+  </data>
+  <data name="miniToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;miniToolStrip.Name" xml:space="preserve">
+    <value>miniToolStrip</value>
+  </data>
+  <data name="&gt;&gt;miniToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripLabelStatus.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 18</value>
+  </data>
+  <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="toolStripLabelSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripLabelSize.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="toolStripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 18</value>
+  </data>
+  <data name="toolStripLabelSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="toolStripLabelTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripLabelTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 18</value>
+  </data>
+  <data name="toolStripLabelTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 778</value>
+  </data>
+  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 18, 0</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>493, 24</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

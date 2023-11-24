@@ -223,31 +223,31 @@
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="objectListView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="uninstallerObjectListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="objectListView1.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+  <data name="uninstallerObjectListView.Location" type="System.Drawing.Point, System.Drawing.Primitives">
     <value>9, 72</value>
   </data>
-  <data name="objectListView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
+  <data name="uninstallerObjectListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms.Primitives">
     <value>4, 3, 4, 3</value>
   </data>
-  <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+  <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>470, 187</value>
   </data>
-  <data name="objectListView1.TabIndex" type="System.Int32, System.Private.CoreLib">
+  <data name="uninstallerObjectListView.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Name" xml:space="preserve">
-    <value>objectListView1</value>
+  <data name="&gt;&gt;uninstallerObjectListView.Name" xml:space="preserve">
+    <value>uninstallerObjectListView</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.10.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, System.Private.CoreLib">

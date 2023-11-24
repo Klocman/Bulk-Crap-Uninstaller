@@ -143,29 +143,29 @@
   <data name="olvColumnInstallLocation.Width" type="System.Int32, mscorlib">
     <value>246</value>
   </data>
-  <data name="objectListView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="uninstallerObjectListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="objectListView1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="uninstallerObjectListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 68</value>
   </data>
-  <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>619, 189</value>
   </data>
-  <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Name" xml:space="preserve">
-    <value>objectListView1</value>
+  <data name="&gt;&gt;uninstallerObjectListView.Name" xml:space="preserve">
+    <value>uninstallerObjectListView</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.275, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
-  <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;uninstallerObjectListView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;buttonSmartSort.Name" xml:space="preserve">

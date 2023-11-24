@@ -25,7 +25,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnName.AspectGetter = rowObject => ((RelatedApplicationEntry)rowObject).Entry.DisplayName;
         }
 
-        private IEnumerable<RelatedApplicationEntry> Entries => (objectListView1.Objects ?? Enumerable.Empty<RelatedApplicationEntry>()).Cast<RelatedApplicationEntry>();
+        private IEnumerable<RelatedApplicationEntry> Entries => (uninstallerObjectListView.Objects ?? Enumerable.Empty<RelatedApplicationEntry>()).Cast<RelatedApplicationEntry>();
 
         public IEnumerable<ApplicationUninstallerEntry> GetResults()
         {
@@ -34,7 +34,7 @@ namespace BulkCrapUninstaller.Forms
 
         public void SetRelatedApps(IEnumerable<RelatedApplicationEntry> items)
         {
-            objectListView1.SetObjects(items
+            uninstallerObjectListView.SetObjects(items
                 .OrderBy(x => x.RelatedEntries.FirstOrDefault()?.DisplayName ?? string.Empty)
                 .ThenBy(x => x.Entry.DisplayName).ToList());
         }

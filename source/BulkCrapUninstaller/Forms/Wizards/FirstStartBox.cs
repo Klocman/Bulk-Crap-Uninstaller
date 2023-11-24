@@ -46,7 +46,7 @@ namespace BulkCrapUninstaller.Forms
             // List view
             _settings.BindControl(checkBoxCheckboxes, x => x.UninstallerListUseCheckboxes, this);
             _settings.BindControl(checkBoxGroups, x => x.UninstallerListUseGroups, this);
-            _settings.BindControl(checkBoxCertTest, x => x.AdvancedTestCertificates, this);
+            //_settings.BindControl(checkBoxCertTest, x => x.AdvancedTestCertificates, this);
 
             // Advanced
             _settings.BindControl(checkBoxDiisableProtection, x => x.AdvancedDisableProtection, this);
@@ -54,7 +54,7 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxListSysComp, x => x.FilterShowSystemComponents, this);
 
             // Corrupted
-            _settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);
+            //_settings.BindControl(checkBoxInvalidTest, x => x.AdvancedTestInvalid, this);
             _settings.BindControl(checkBoxOrphans, x => x.AdvancedDisplayOrphans, this);
 
             // Network

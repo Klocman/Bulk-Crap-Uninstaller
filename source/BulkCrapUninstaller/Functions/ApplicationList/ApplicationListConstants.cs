@@ -15,7 +15,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public static Color GetApplicationBackColor(ApplicationUninstallerEntry entry)
         {
-            if (Settings.Default.AdvancedHighlightSpecial)
+            /*if (Settings.Default.AdvancedHighlightSpecial)
             {
                 if (entry.UninstallerKind == UninstallerType.WindowsFeature)
                     return Colors.WindowsFeatureColor;
@@ -25,19 +25,19 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
                 if (entry.IsOrphaned)
                     return Colors.UnregisteredColor;
-            }
+            }*/
 
-            if (!entry.IsValid && Settings.Default.AdvancedTestInvalid)
-                return Colors.InvalidColor;
+            /*if (!entry.IsValid && Settings.Default.AdvancedTestInvalid)
+                return Colors.InvalidColor;*/
 
-            if (Settings.Default.AdvancedTestCertificates)
+            /*if (Settings.Default.AdvancedTestCertificates)
             {
                 var result = entry.IsCertificateValid(true);
                 if (result.HasValue)
                     return result.Value
                         ? Colors.VerifiedColor
                         : Colors.UnverifiedColor;
-            }
+            }*/
 
             return Color.Empty;
         }
@@ -56,14 +56,14 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             if (!entry.IsValid)
                 return Colors.InvalidColor;
 
-            if (Settings.Default.AdvancedTestCertificates)
+            /*if (Settings.Default.AdvancedTestCertificates)
             {
                 var result = entry.IsCertificateValid(true);
                 if (result.HasValue)
                     return result.Value
                         ? Colors.VerifiedColor
                         : Colors.UnverifiedColor;
-            }
+            }*/
 
             return Color.White;
         }
