@@ -184,7 +184,7 @@
     <value>产品代码</value>
   </data>
   <data name="olvColumnQuietUninstallString.Text" xml:space="preserve">
-    <value>静默安装命令</value>
+    <value>静默卸载命令</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>重新加载卸载程序</value>
