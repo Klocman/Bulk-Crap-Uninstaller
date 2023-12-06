@@ -127,7 +127,7 @@
     <value>Relacionado com:</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Esta é a lista de aplicativos que podem estar relacionados com os aplicativos que selecionou para desinstalar. Pode adicionaá-los à lista de desinstalação, procedendo à sua verificação.</value>
+    <value>Esta é a lista de aplicativos que podem estar relacionados com os aplicativos que selecionou para desinstalar. Pode adicioná-los à lista de desinstalação, procedendo à sua verificação.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
     <value>Certifique-se de que não desinstala software importante que ainda é necessário para que outras aplicações funcionem correctamente.</value>
