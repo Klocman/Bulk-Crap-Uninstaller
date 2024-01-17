@@ -66,7 +66,7 @@
       <Value Profile="(Default)">Ask</Value>
     </Setting>
     <Setting Name="MiscCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="BackupLeftovers" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="Klocman.YesNoAsk" Scope="User">
       <Value Profile="(Default)">Ask</Value>
@@ -78,7 +78,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MiscSendStatistics" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ExternalPreCommands" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -123,7 +123,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MiscUserRatings" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MiscRatingCacheDate" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">1990-01-01</Value>
