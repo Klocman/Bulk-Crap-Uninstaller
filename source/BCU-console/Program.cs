@@ -43,9 +43,9 @@ Switches:
  /U             - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER
                   THOROUGH TESTING. UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID
                   FALSE POSITIVES. THERE ARE NO WARRANTIES, USE WITH CAUTION.
- /J <Level>     - Attempt to clean up leftover ""junk"" (Registry entries and files/folders) after uninstall.
-                  If no level is passed then defaults to ""VeryGood"". ***WARNING***: USE EXTREME
-                  CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES, USE WITH CAUTION.
+ /J <Level>     - Attempt to clean up leftover ""junk"" (Registry entries and files/folders) after
+                  uninstall. If no level is passed then defaults to ""VeryGood"". ***WARNING***: USE
+                  EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
 
