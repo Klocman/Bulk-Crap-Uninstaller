@@ -184,10 +184,11 @@ Return codes:
             var isVerbose = args.Any(x => x.Equals("/V", StringComparison.OrdinalIgnoreCase));
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
-            int junkIndex = Array.IndexOf(args, "/J");
+
+            int junkArgumentIndex = Array.FindIndex(args, a => a.Equals("/J", StringComparison.OrdinalIgnoreCase));
             ConfidenceLevel? junkConfidenceLevel = null;
-            if (junkIndex > -1) {
-                string junkConfidenceLevelString = args.ElementAtOrDefault(junkIndex + 1) ?? "VeryGood";
+            if (junkArgumentIndex > -1) {
+                string junkConfidenceLevelString = args.ElementAtOrDefault(junkArgumentIndex + 1) ?? "VeryGood";
                 if (!Enum.TryParse(junkConfidenceLevelString, out ConfidenceLevel parsedJunkConfidenceLevel)) {
                     if (junkConfidenceLevelString.StartsWith('/')) {
                         parsedJunkConfidenceLevel = ConfidenceLevel.VeryGood;
