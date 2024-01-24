@@ -277,8 +277,8 @@ Return codes:
                     return 0;
                 }
 
-                Console.WriteLine("The following junk items will be permenantly deleted:");
-                remainingJunk.ForEach(j => Console.WriteLine(j));
+                Console.WriteLine("The following junk items will be permanently deleted:");
+                remainingJunk.ForEach(Console.WriteLine);
                 if (!isUnattended) {
                     Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                     if (Console.ReadKey(true).Key != ConsoleKey.Y)
