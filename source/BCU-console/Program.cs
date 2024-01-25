@@ -267,8 +267,7 @@ Return codes:
 
             if (junkConfidenceLevel is not null) {
                 Console.WriteLine($"Starting junk cleanup with a minimum confidence level of {junkConfidenceLevel}");
-                List<ApplicationUninstallerEntry> allUninstallers = apps.Where(a => a.RegKeyStillExists()).ToList();
-                List<IJunkResult> remainingJunk = JunkManager.FindJunk(apps, allUninstallers, _ => { })
+                List<IJunkResult> remainingJunk = JunkManager.FindJunk(apps, apps, _ => { })
                     .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
                     .ToList();
 
