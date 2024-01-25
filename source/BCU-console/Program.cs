@@ -286,7 +286,8 @@ Return codes:
                 }
 
                 foreach (ApplicationUninstallerEntry entry in apps) {
-                    List<IJunkResult> appJunk = remainingJunk.Where(j => j.Application.InstallLocation == entry.InstallLocation).ToList();
+                    // ApplicationUninstallerEntry doesn't currently implement an equality operator so ToLongString() will do as an object "hash".
+                    List<IJunkResult> appJunk = remainingJunk.Where(j => j.Application.ToLongString().Equals(entry.ToLongString())).ToList();
                     Console.WriteLine($"{entry.DisplayName} Junk - {appJunk.Count} Entries Found");
                     appJunk.ForEach(j => j.Delete());
                 }
