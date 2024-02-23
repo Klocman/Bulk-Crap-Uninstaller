@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -28,6 +29,13 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applicat
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
+
+BCU-console uninstall [drive:][path]filename /P [/Q] [/U] [/V] - Uninstall single application by executable path. Accepts multiple applications.
+ [drive:][path]	– Specifies drive and directory of the executable file.
+ filename       – Specifies filename of executable file of the application to uninstall.
+
+BCU-console uninstall appName /N [/Q] [/U] [/V] - Uninstall single application by name.
+ appName        – Specifies the display name of the application to remove.
 
 BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed application data to xml file.
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
@@ -161,30 +169,43 @@ Return codes:
             if (!File.Exists(args[0]))
                 return ShowInvalidSyntaxError("Invalid path or missing list file");
 
-            UninstallList list;
-            try
-            {
-                list = UninstallList.ReadFromFile(args[0]);
-                if (list == null || list.Filters.Count == 0)
-                    throw new IOException("List is empty");
-            }
-            catch (SystemException ex)
-            {
-                return ShowInvalidSyntaxError(
-                    $"Invalid or damaged uninstall list file - \"{args[0]}\"\nError: {ex.Message}\n");
-            }
-
             var isVerbose = args.Any(x => x.Equals("/V", StringComparison.OrdinalIgnoreCase));
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
+            var uninstallByPath = args.Any(x => x.Equals("/P", StringComparison.OrdinalIgnoreCase));
+            var uninstallByName = args.Any(x => x.Equals("/N", StringComparison.OrdinalIgnoreCase));
 
             if (isUnattended)
                 Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
-            return RunUninstall(list, isQuiet, isUnattended, isVerbose);
+            UninstallList list;
+
+            if (uninstallByPath)
+            {
+                return RunUninstallByPathCommand(args.Where(x => !x.StartsWith('/') && File.Exists(x)), isQuiet, isUnattended, isVerbose);
+            }
+            else if (uninstallByName)
+            {
+                return RunUninstallByNameCommand(args[0], isQuiet, isUnattended, isVerbose);
+            }
+            else // Uninstall with list
+            {
+                try
+                {
+                    list = UninstallList.ReadFromFile(args[0]);
+                    if (list == null || list.Filters.Count == 0)
+                        throw new IOException("List is empty");
+                }
+                catch (SystemException ex)
+                {
+                    return ShowInvalidSyntaxError(
+                        $"Invalid or damaged uninstall list file - \"{args[0]}\"\nError: {ex.Message}\n");
+                }
+                return RunUninstallListCommand(list, isQuiet, isUnattended, isVerbose);
+            }
         }
 
-        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose)
+        private static int RunUninstallListCommand(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose)
         {
             Console.WriteLine(@"Starting bulk uninstall...");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
@@ -206,12 +227,139 @@ Return codes:
             {
                 Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                 if (Console.ReadKey(true).Key != ConsoleKey.Y)
-                    return CancelledByUser();
+                    return CanceledByUser();
             }
 
             Console.WriteLine(@"Setting-up for the uninstall task...");
             var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting))
                 .ToList();
+            var task = UninstallManager.CreateBulkUninstallTask(targets,
+                new BulkUninstallConfiguration(false, isQuiet, false, true, true));
+            var isDone = false;
+            task.OnStatusChanged += (sender, args) =>
+            {
+                ClearCurrentConsoleLine();
+
+                var running = task.AllUninstallersList.Count(x => x.IsRunning);
+                var waiting = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Waiting);
+                var finished = task.AllUninstallersList.Count(x => x.Finished);
+                var errors = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Failed ||
+                    x.CurrentStatus == UninstallStatus.Invalid);
+                Console.Write("Running: {0}, Waiting: {1}, Finished: {2}, Failed: {3}",
+                    running, waiting, finished, errors);
+
+                if (task.Finished)
+                {
+                    isDone = true;
+                    Console.WriteLine();
+                    Console.WriteLine(@"Uninstall task Finished.");
+
+                    foreach (var error in task.AllUninstallersList.Where(x =>
+                        x.CurrentStatus != UninstallStatus.Completed && x.CurrentError != null))
+                        Console.WriteLine($@"Error: {error.UninstallerEntry.DisplayName} - {error.CurrentError.Message}");
+                }
+            };
+            task.Start();
+
+            while (!isDone)
+                Thread.Sleep(250);
+
+            return 0;
+        }
+
+        private static int RunUninstallByPathCommand(IEnumerable<string> paths, bool isQuiet, bool isUnattended, bool isVerbose)
+        {
+            Console.WriteLine(@"Starting uninstall...");
+
+            var queryResult = QueryApps(isQuiet, isUnattended, isVerbose);
+            var apps = new List<ApplicationUninstallerEntry>(10);
+            apps.AddRange(from executablePath in paths
+                          let target = queryResult.FirstOrDefault(a => NameMatches(a.DisplayName, FileVersionInfo.GetVersionInfo(executablePath).ProductName))
+                          where target != default
+                          select target);
+
+            if (apps.Count == 0)
+            {
+                Console.WriteLine(@"No uninstallers found with the given applications.");
+                return 0;
+            }
+
+            Console.WriteLine("{0} application(s) were matched: {1}", apps.Count,
+                          string.Join("; ", apps.Select(x => x.DisplayName)));
+
+            Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
+
+            // TODO: Below lines are (almost) the same with RunUninstallListCommand method.
+            // It is hard to extract method as is. It needs improvement.
+            if (!isUnattended)
+            {
+                Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
+                if (Console.ReadKey(true).Key != ConsoleKey.Y)
+                    return CanceledByUser();
+            }
+
+            Console.WriteLine(@"Setting-up for the uninstall task...");
+            var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting)).ToList();
+            var task = UninstallManager.CreateBulkUninstallTask(targets,
+                new BulkUninstallConfiguration(false, isQuiet, false, true, true));
+            var isDone = false;
+            task.OnStatusChanged += (sender, args) =>
+            {
+                ClearCurrentConsoleLine();
+
+                var running = task.AllUninstallersList.Count(x => x.IsRunning);
+                var waiting = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Waiting);
+                var finished = task.AllUninstallersList.Count(x => x.Finished);
+                var errors = task.AllUninstallersList.Count(x => x.CurrentStatus == UninstallStatus.Failed ||
+                    x.CurrentStatus == UninstallStatus.Invalid);
+                Console.Write("Running: {0}, Waiting: {1}, Finished: {2}, Failed: {3}",
+                    running, waiting, finished, errors);
+
+                if (task.Finished)
+                {
+                    isDone = true;
+                    Console.WriteLine();
+                    Console.WriteLine(@"Uninstall task Finished.");
+
+                    foreach (var error in task.AllUninstallersList.Where(x =>
+                        x.CurrentStatus != UninstallStatus.Completed && x.CurrentError != null))
+                        Console.WriteLine($@"Error: {error.UninstallerEntry.DisplayName} - {error.CurrentError.Message}");
+                }
+            };
+            task.Start();
+
+            while (!isDone)
+                Thread.Sleep(250);
+
+            return 0;
+        }
+
+        private static int RunUninstallByNameCommand(string appName, bool isQuiet, bool isUnattended, bool isVerbose)
+        {
+            Console.WriteLine(@"Starting uninstall...");
+            var queryResult = QueryApps(isQuiet, isUnattended, isVerbose);
+            var target = queryResult.FirstOrDefault(a => NameMatches(a.DisplayName, appName));
+
+            if (target == default)
+            {
+                Console.WriteLine(@"No uninstallers found with the given name.");
+                return 0;
+            }
+
+            Console.WriteLine(@$"The application will now be uninstalled PERMANENTLY: {target.DisplayName}");
+
+            // TODO: Below lines are (almost) the same with RunUninstallListCommand method.
+            // It is hard to extract method as is. It needs improvement.
+            if (!isUnattended)
+            {
+                Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
+                if (Console.ReadKey(true).Key != ConsoleKey.Y)
+                    return CanceledByUser();
+            }
+
+            Console.WriteLine(@"Setting-up for the uninstall task...");
+            var apps = new List<ApplicationUninstallerEntry>(1) { target };
+            var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting)).ToList();
             var task = UninstallManager.CreateBulkUninstallTask(targets,
                 new BulkUninstallConfiguration(false, isQuiet, false, true, true));
             var isDone = false;
@@ -254,9 +402,9 @@ Return codes:
             Console.SetCursorPosition(0, currentLineCursor);
         }
 
-        private static int CancelledByUser()
+        private static int CanceledByUser()
         {
-            Console.WriteLine(@"Operation cancelled by the user.");
+            Console.WriteLine(@"Operation canceled by the user.");
             return 1223;
         }
 
@@ -275,27 +423,32 @@ Return codes:
             else
             {
                 result = ApplicationUninstallerFactory.GetUninstallerEntries(report =>
-                            {
-                                if (previousMain != report.Message)
-                                {
-                                    previousMain = report.Message;
-                                    Console.WriteLine(report.Message);
-                                }
-                                if (isVerbose)
-                                {
-                                    if (!string.IsNullOrEmpty(report.Inner?.Message))
-                                    {
-                                        Console.Write("-> ");
-                                        Console.WriteLine(report.Inner.Message);
-                                    }
-                                }
-                            });
+                {
+                    if (previousMain != report.Message)
+                    {
+                        previousMain = report.Message;
+                        Console.WriteLine(report.Message);
+                    }
+                    if (isVerbose)
+                    {
+                        if (!string.IsNullOrEmpty(report.Inner?.Message))
+                        {
+                            Console.Write("-> ");
+                            Console.WriteLine(report.Inner.Message);
+                        }
+                    }
+                });
             }
 
             Console.WriteLine("Found {0} applications.", result.Count);
             return result;
         }
 
+        private static bool NameMatches(string left, string right)
+        {
+            var distance = Klocman.Tools.Sift4.SimplestDistance(left, right, 3);
+            return distance == 0 || distance < left.Length / 6;
+        }
         private static void ConfigureUninstallTools()
         {
             UninstallToolsGlobalConfig.ScanWinUpdates = false;

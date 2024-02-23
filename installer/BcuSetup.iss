@@ -13,6 +13,7 @@
 #include "Scripts\PortablePage.iss"
 #include "Scripts\PortableIcons.iss"
 #include "Scripts\Ngen.iss"
+#include "Scripts\ShellExtension.iss"
 
 [Setup]
 AppId={{f4fef76c-1aa9-441c-af7e-d27f58d898d1}

@@ -1,0 +1,49 @@
+    <Project Sdk="Microsoft.NET.Sdk">
+      <PropertyGroup>
+            <TargetFramework>net48</TargetFramework>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <OutputType>Library</OutputType>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+        <Platforms>AnyCPU;x64;x86</Platforms>
+        <targetplatformversion>8.0</targetplatformversion>
+      </PropertyGroup>
+		<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+			<OutputPath>..\..\bin\Debug\</OutputPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+			<RuntimeIdentifier>win-x86</RuntimeIdentifier>
+			<OutputPath>..\..\bin\Debug\</OutputPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+			<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+			<OutputPath>..\..\bin\Debug\</OutputPath>
+		</PropertyGroup>
+		<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+			<OutputPath>..\..\bin\Release\</OutputPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+			<RuntimeIdentifier>win-x86</RuntimeIdentifier>
+			<OutputPath>..\..\bin\Release\</OutputPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+			<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+			<OutputPath>..\..\bin\Release\</OutputPath>
+		</PropertyGroup>
+        <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+      </PropertyGroup>
+      <PropertyGroup>
+        <DelaySign>false</DelaySign>
+      </PropertyGroup>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>CodeSigningKey.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+      <ItemGroup>
+        <None Include="CodeSigningKey.snk" />
+      </ItemGroup>
+      <ItemGroup>
+        <PackageReference Include="SharpShell" Version="2.7.2" />
+      </ItemGroup>
+    </Project>
