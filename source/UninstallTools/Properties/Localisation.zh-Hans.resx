@@ -217,7 +217,7 @@
     <value>没有有效的方法卸载此条目</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
-    <value>写在应用程序返回错误代码:</value>
+    <value>卸载应用程序返回错误代码:</value>
   </data>
   <data name="Confidence_Bad" xml:space="preserve">
     <value>坏</value>
