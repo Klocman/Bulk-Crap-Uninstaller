@@ -284,4 +284,10 @@ BCU将等待当前运行的命令完成后再执行下一个命令。</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller设置</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>在应用程序列表双击</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>启动</value>
+  </data>
 </root>
