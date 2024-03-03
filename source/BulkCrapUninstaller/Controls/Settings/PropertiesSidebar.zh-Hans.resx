@@ -144,7 +144,7 @@
     <value>隐藏由Microsoft发布的内容</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>筛选出Microsoft发布的所有内容。就这么简单。</value>
+    <value>筛选掉Microsoft发布的所有内容。就这么简单。</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
     <value>显示系统组件</value>
