@@ -124,7 +124,7 @@
     <value>Uporabna | Dobra kakovost</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Vprašljiva |  Slaba kakovost</value>
+    <value>Vprašljiva | Slaba kakovost</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ocena</value>

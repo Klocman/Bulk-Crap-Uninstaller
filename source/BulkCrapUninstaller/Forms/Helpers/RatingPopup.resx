@@ -151,7 +151,7 @@
     <value>1</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Questionable |  Bad quality</value>
+    <value>Questionable | Bad quality</value>
   </data>
   <data name="&gt;&gt;buttonGood.Parent" xml:space="preserve">
     <value>groupBox1</value>
