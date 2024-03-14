@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Dòng lệnh trước khi gỡ cài đặt</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Dòng lệnh sau khi gỡ cài đặt</value>
+  </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Chế độ mù màu</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Kích hoạt tính năng điều chỉnh giao diện theo DPI</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Nhấp đúp vào danh sách ứng dụng</value>
+  </data>
+  <data name="groupBoxMisc.Text" xml:space="preserve">
+    <value>Lặt vặt</value>
+  </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>Tự động nạp Danh sách gỡ cài đặt có tên "Default.bcul" khi khởi động</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Hiển thị xếp hạng người dùng cho ứng dụng</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm thông tin cập nhật khi khởi động</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Gửi số liệu thống kê sử dụng ẩn danh</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Ngôn ngữ ứng dụng:</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Ứng dụng phải được khởi động lại để thay đổi ngôn ngữ có hiệu lực.</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Luôn yêu cầu tạo</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Không bao giờ yêu cầu tạo</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Tự động tạo trong thư mục:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Sao lưu trước khi xóa phần còn sót lại</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>Luôn hiển thị nội dung rác với độ tin cậy thấp</value>
+  </data>
+  <data name="checkBoxLoud.Text" xml:space="preserve">
+    <value>Yêu cầu xóa Trình gỡ cài đặt ồn ào khỏi tác vụ âm thầm</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>Không bao giờ yêu cầu phản hồi hoặc trợ giúp</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tìm kiếm rác sau khi gỡ cài đặt</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tạo điểm khôi phục trước khi gỡ cài đặt</value>
+  </data>
+  <data name="groupBoxMessages.Text" xml:space="preserve">
+    <value>Hộp tin nhắn</value>
+  </data>
+  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
+    <value>Cho phép thực thi các ứng dụng bên ngoài</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Bạn có thể chỉ định các lệnh sẽ chạy trước và sau khi gỡ cài đặt. Mỗi dòng tương ứng với một lệnh và được thực thi như thể sử dụng hộp thoại "Run...".
+
+BCU sẽ đợi cho đến khi lệnh hiện đang thực thi hoàn tất trước khi thực thi lệnh tiếp theo.</value>
+  </data>
+  <data name="groupBoxExternal.Text" xml:space="preserve">
+    <value>Ứng dụng bên ngoài</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>&amp;Đóng</value>
+  </data>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>Chung</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Giao diện</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Gỡ cài đặt</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>Phát hiện Windows Updates sử dụng WUA, vốn khá chậm. Quá trình này có thể mất vài phút để hoàn tất.</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>Phát hiện Windows Features sử dụng WMI và trên một số hệ thống quá trình này có thể chậm hoặc thậm chí thất bại (thường là dấu hiệu cho thấy hệ thống bị lỗi).</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Windows Features</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Windows Store App</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>Oculus Store</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Kho ứng dụng để quét</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Thanh ghi (khuyến khích để bật)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Ổ đĩa (phát hiện các ứng dụng chưa đăng ký)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Dựa trên các quy tắc được xác định trước</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Tìm kiếm ứng dụng trong...</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Phát hiện</value>
+  </data>
+  <data name="tabPageExternal.Text" xml:space="preserve">
+    <value>Công cụ bên ngoài</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Quét ổ đĩa di động</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Cố gắng tự động phát hiện các thư mục cài đặt tùy chỉnh</value>
+  </data>
+  <data name="labelProgramFolders.Text" xml:space="preserve">
+    <value>Bạn có thể chỉ định các thư mục tùy chỉnh mà bạn cài đặt ứng dụng của mình vào (ví dụ: D:\Applications). Những thư mục đó sẽ được BCU sử dụng để tìm kiếm phần còn sót lại của quá trình gỡ cài đặt, các ứng dụng chưa đăng ký và một vài thứ khác. Mặc dù không cần thiết nhưng danh sách các thư mục này sẽ giúp BCU hoạt động tốt hơn.
+
+Các thư mục mặc định của Windows luôn được quét, bạn không cần đưa chúng vào danh sách này.
+
+Sử dụng đường dẫn thư mục đầy đủ, một đường dẫn trên mỗi dòng. Đường dẫn không hợp lệ và thư mục không tồn tại sẽ bị bỏ qua.</value>
+  </data>
+  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
+    <value>Thư mục cài đặt ứng dụng</value>
+  </data>
+  <data name="tabPageFolders.Text" xml:space="preserve">
+    <value>Thư mục</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Khởi động</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Mạng</value>
+  </data>
+  <data name="tabPageMisc.Text" xml:space="preserve">
+    <value>Lặt vặt</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Cài đặt Bulk Crap Uninstaller</value>
+  </data>
+</root>
