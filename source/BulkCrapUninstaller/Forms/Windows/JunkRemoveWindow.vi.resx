@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="detailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Chi tiết</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Sao chép vào bảng nhớ tạm</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Mở</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Loại bỏ phần còn sót lại</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Danh sách các tập tin và/hoặc mục thanh ghi còn lại sau khi gỡ cài đặt</value>
+  </data>
+  <data name="headerConfInfo.Text" xml:space="preserve">
+    <value>Việc phát hiện những phần còn sót lại này là một quá trình phức tạp và có thể xảy ra sai sót. Do đó, tất cả các mục đều được xếp hạng độ tin cậy và quyết định cuối cùng thuộc về người dùng. Những mục có độ tin cậy tốt và rất tốt thường có thể tháo ra một cách an toàn, nhưng bạn vẫn nên kiểm tra lại chúng.</value>
+  </data>
+  <data name="headerConfTitle.Text" xml:space="preserve">
+    <value>Mức độ tin cậy</value>
+  </data>
+  <data name="headerIntro.Text" xml:space="preserve">
+    <value>Các mục sau đây dường như bị trình gỡ cài đặt của chúng bỏ lại. Một số trình gỡ cài đặt có thể không xóa được một số mục, điều này có thể chiếm dung lượng ổ đĩa. Tuy nhiên, hầu hết các mục này có thể là cài đặt ứng dụng, không chiếm dung lượng và vô hại.</value>
+  </data>
+  <data name="olvColumnUninstallerName.Text" xml:space="preserve">
+    <value>Tên Trình gỡ cài đặt</value>
+  </data>
+  <data name="olvColumnSafety.Text" xml:space="preserve">
+    <value>Độ tin cậy</value>
+  </data>
+  <data name="olvColumnPath.Text" xml:space="preserve">
+    <value>Đường dẫn mục</value>
+  </data>
+  <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
+    <value>Ẩn các mục có độ tin cậy thấp</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Xuất...</value>
+  </data>
+  <data name="buttonAccept.Text" xml:space="preserve">
+    <value>Xóa các mục đã chọn</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Huỷ</value>
+  </data>
+  <data name="exportDialog.Title" xml:space="preserve">
+    <value>Xuất danh sách các mục còn sót lại</value>
+    <comment>leftover=rimanenti</comment>
+  </data>
+  <data name="exportDialog.Filter" xml:space="preserve">
+    <value>Tệp văn bản|*.txt</value>
+    <comment>keep the |*.txt</comment>
+  </data>
+</root>
