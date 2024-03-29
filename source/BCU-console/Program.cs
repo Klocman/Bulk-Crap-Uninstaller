@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using Klocman.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -27,7 +28,7 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J <Level>] - Uninstall applications.
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Uninstall applications.
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
@@ -43,7 +44,7 @@ Switches:
  /U             - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER
                   THOROUGH TESTING. UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID
                   FALSE POSITIVES. THERE ARE NO WARRANTIES, USE WITH CAUTION.
- /J <Level>     - Attempt to clean up leftover ""junk"" (Registry entries and files/folders) after
+ /J=<Level>     - Attempt to clean up leftover ""junk"" (Registry entries and files/folders) after
                   uninstall. If no level is passed then defaults to ""VeryGood"". ***WARNING***: USE
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
@@ -186,19 +187,19 @@ Return codes:
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
             int junkArgumentIndex = Array.FindIndex(args, a => a.Equals("/J", StringComparison.OrdinalIgnoreCase));
+            string junkArg = args.Where(a => a.Equals("/J", StringComparison.OrdinalIgnoreCase) || a.StartsWith("/J=", StringComparison.OrdinalIgnoreCase)).FirstOrDefault() ?? string.Empty;
             ConfidenceLevel? junkConfidenceLevel = null;
-            if (junkArgumentIndex > -1) {
-                string junkConfidenceLevelString = args.ElementAtOrDefault(junkArgumentIndex + 1) ?? "VeryGood";
-                if (!Enum.TryParse(junkConfidenceLevelString, out ConfidenceLevel parsedJunkConfidenceLevel)) {
-                    if (junkConfidenceLevelString.StartsWith('/')) {
-                        parsedJunkConfidenceLevel = ConfidenceLevel.VeryGood;
-                    } else {
-                        Console.WriteLine($"An invalid junk confidence level was passed: {junkConfidenceLevelString}");
+            if(junkArg.IsNotEmpty()) {
+                string[] junkSplit = junkArg.Split('=', 2);
+                junkConfidenceLevel = ConfidenceLevel.VeryGood;
+                if (junkSplit.Length == 2) {
+                    if (!Enum.TryParse(junkSplit[1], out ConfidenceLevel parsedJunkConfidenceLevel)) {
+                        Console.WriteLine($"An invalid junk confidence level was passed: {junkSplit[1]}");
                         ShowHelp();
                         return 1;
                     }
+                    junkConfidenceLevel = parsedJunkConfidenceLevel;
                 }
-                junkConfidenceLevel = parsedJunkConfidenceLevel;
             }
             if (isUnattended)
                 Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
