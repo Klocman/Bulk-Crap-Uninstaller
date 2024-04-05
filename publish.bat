@@ -1,3 +1,4 @@
+
 rem Release Debug
 set config=Release
 
