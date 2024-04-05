@@ -1,4 +1,3 @@
-@echo off
 rem Release Debug
 set config=Release
 
