@@ -4,15 +4,16 @@
 */
 
 using BulkCrapUninstaller.Controls;
+using BulkCrapUninstaller.Properties;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
+using Klocman.Tools;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Properties;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -50,7 +51,7 @@ namespace BulkCrapUninstaller.Forms
             Close();
             DirectoriesSelected?.Invoke(this, e);
         }
-        
+
         private void WindowTargeter1OnPickingStarted(object sender, EventArgs e)
         {
             _setMainWindowVisible(false);
@@ -62,7 +63,18 @@ namespace BulkCrapUninstaller.Forms
 
             try
             {
-                var parentDirectory = new FileInfo(e.TargetWindow.GetRunningProcess().MainModule?.FileName ?? throw new InvalidOperationException("Process has no MainModule")).Directory;
+                var fileName = e.TargetWindow.GetRunningProcess().MainModule?.FileName;
+                if (fileName == null)
+                    throw new InvalidOperationException("Process has no MainModule");
+
+                var parentDirectory = new FileInfo(fileName).Directory;
+                if (parentDirectory == null)
+                    throw new InvalidOperationException("Failed to get MainModule Directory");
+
+                // Ignore targeting BCU itself
+                if (PathTools.SubPathIsInsideBasePath(Program.AssemblyLocation.FullName, fileName, true))
+                    return;
+
                 OnDirectoriesSelected(new DirectoriesSelectedEventArgs(parentDirectory.ToEnumerable().ToList()));
             }
             catch (Exception exception)
