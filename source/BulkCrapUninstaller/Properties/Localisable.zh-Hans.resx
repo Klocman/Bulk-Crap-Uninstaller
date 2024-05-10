@@ -769,4 +769,16 @@ The lists are separated by a single newline.</comment>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>选择保存备份的位置。将创建一个新目录。</value>
   </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>无</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>打开属性</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>卸载</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>
