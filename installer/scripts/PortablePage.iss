@@ -14,6 +14,7 @@ es.InstallPortableTitle =Instalación portable
 bpt.InstallPortableTitle =Instalação Portátil
 ru.InstallPortableTitle =Переносимая установка
 it.InstallPortableTitle =Installazione portatile
+vi.InstallPortableTitle =Cài đặt di động
 
 InstallTypeChoiceTitle =Installation type
 pl.InstallTypeChoiceTitle =Typ instalacji
@@ -26,6 +27,7 @@ es.InstallTypeChoiceTitle =Tipo de instalación
 bpt.InstallTypeChoiceTitle =Tipo Instalação
 ru.InstallTypeChoiceTitle =Тип установки
 it.InstallTypeChoiceTitle =Tipo di installazione
+vi.InstallTypeChoiceTitle =Loại cài đặt
 
 InstallStandardTitle =Standard Installation
 pl.InstallStandardTitle =Instalacja standardowa
@@ -38,6 +40,7 @@ es.InstallStandardTitle =Instalación estándar
 bpt.InstallStandardTitle =Instalação Padrão
 ru.InstallStandardTitle =Стандартная установка
 it.InstallStandardTitle =Installazione standard
+vi.InstallStandardTitle =Cài đặt chuẩn
 
 InstallPortableInfo =Portable installation will not register itself in the system, it will only extract files to the specified directory. You can set the directory to anything you''d like, for example to a USB drive. You will be able to move this directory freely since the whole app is inside of it.
 pl.InstallPortableInfo =Instalacja przenośna nie zostanie zarejestrowana w systemie, zostaną tylko wypakowane pliki. Pliki mogą zostać wypakowane do dowolnego folderu i mogą być bez problemu przenoszone. Wszystkie pliki używane przez tą aplikację będą przechowywane w wybranym folderze.

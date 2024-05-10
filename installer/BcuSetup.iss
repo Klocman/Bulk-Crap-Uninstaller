@@ -62,13 +62,14 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
-Name: "hu"; MessagesFile: "Hungarian.isl"
 Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "hu"; MessagesFile: "lang\Hungarian.isl"
+Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
@@ -107,6 +108,7 @@ es.MainFiles=Archivos principales
 bpt.MainFiles=Arquivos principais
 ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
+vi.MainFiles=Các tập tin chương trình chính
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -119,3 +121,4 @@ es.ExtraLanguages=Idiomas adicionales
 bpt.ExtraLanguages=Línguas extras
 ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
+vi.ExtraLanguages=Ngôn ngữ bổ sung
