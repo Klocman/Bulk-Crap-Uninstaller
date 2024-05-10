@@ -18,6 +18,8 @@ namespace BulkCrapUninstaller.Forms
 {
     public partial class TargetWindow : Form
     {
+        private Action<bool> _setMainWindowVisible;
+
         public event EventHandler<DirectoriesSelectedEventArgs> DirectoriesSelected;
 
         public TargetWindow()
@@ -25,6 +27,7 @@ namespace BulkCrapUninstaller.Forms
             InitializeComponent();
 
             fileTargeter1.DirectoriesSelected += DirectoryTargeterDirectoriesSelected;
+            windowTargeter1.PickingStarted += WindowTargeter1OnPickingStarted;
             windowTargeter1.WindowSelected += WindowTargeterWindowSelected;
         }
 
@@ -47,9 +50,16 @@ namespace BulkCrapUninstaller.Forms
             Close();
             DirectoriesSelected?.Invoke(this, e);
         }
+        
+        private void WindowTargeter1OnPickingStarted(object sender, EventArgs e)
+        {
+            _setMainWindowVisible(false);
+        }
 
         private void WindowTargeterWindowSelected(object sender, Klocman.Subsystems.WindowHoverEventArgs e)
         {
+            _setMainWindowVisible(true);
+
             try
             {
                 var parentDirectory = new FileInfo(e.TargetWindow.GetRunningProcess().MainModule?.FileName ?? throw new InvalidOperationException("Process has no MainModule")).Directory;
@@ -62,10 +72,12 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        public static new ICollection<DirectoryInfo> ShowDialog(IWin32Window owner)
+        public static new ICollection<DirectoryInfo> ShowDialog(IWin32Window owner, Action<bool> setMainWindowVisible)
         {
             using (var window = new TargetWindow())
             {
+                window._setMainWindowVisible = setMainWindowVisible ?? throw new ArgumentNullException(nameof(setMainWindowVisible));
+
                 window.StartPosition = FormStartPosition.Manual;
                 var targeterHalf = window.windowTargeter1.Height / 2;
                 var offsetx = targeterHalf + 10;
