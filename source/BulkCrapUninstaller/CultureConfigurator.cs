@@ -144,6 +144,9 @@ namespace BulkCrapUninstaller
                 "tr-CY",
                 "tr-TR",
 
+                // Vietnamese
+                "vi-VN",
+
                 // Simplified Chinese
                 "zh-Hans",
 
