@@ -3,6 +3,7 @@
     Apache License Version 2.0
 */
 
+using Klocman.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -13,6 +14,9 @@ using System.Text;
 using System.Threading;
 using UninstallTools;
 using UninstallTools.Factory;
+using UninstallTools.Junk;
+using UninstallTools.Junk.Confidence;
+using UninstallTools.Junk.Containers;
 using UninstallTools.Lists;
 using UninstallTools.Uninstaller;
 
@@ -24,7 +28,7 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] - Uninstall applications.
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Uninstall applications.
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
@@ -40,6 +44,10 @@ Switches:
  /U             - Unattended mode (do not ask user for confirmation). WARNING: ONLY USE AFTER
                   THOROUGH TESTING. UNINSTALL LISTS SHOULD BE AS SPECIFIC AS POSSIBLE TO AVOID
                   FALSE POSITIVES. THERE ARE NO WARRANTIES, USE WITH CAUTION.
+ /J=<Level>     - Attempt to clean up leftover ""junk"" (Registry entries and files/folders) after
+                  uninstall. If no level is passed then defaults to ""VeryGood"". ***WARNING***: USE
+                  EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
+                  Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
 
 Return codes:
@@ -178,13 +186,28 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
+            int junkArgumentIndex = Array.FindIndex(args, a => a.Equals("/J", StringComparison.OrdinalIgnoreCase));
+            string junkArg = args.Where(a => a.Equals("/J", StringComparison.OrdinalIgnoreCase) || a.StartsWith("/J=", StringComparison.OrdinalIgnoreCase)).FirstOrDefault() ?? string.Empty;
+            ConfidenceLevel? junkConfidenceLevel = null;
+            if(junkArg.IsNotEmpty()) {
+                string[] junkSplit = junkArg.Split('=', 2);
+                junkConfidenceLevel = ConfidenceLevel.VeryGood;
+                if (junkSplit.Length == 2) {
+                    if (!Enum.TryParse(junkSplit[1], out ConfidenceLevel parsedJunkConfidenceLevel)) {
+                        Console.WriteLine($"An invalid junk confidence level was passed: {junkSplit[1]}");
+                        ShowHelp();
+                        return 1;
+                    }
+                    junkConfidenceLevel = parsedJunkConfidenceLevel;
+                }
+            }
             if (isUnattended)
                 Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
-            return RunUninstall(list, isQuiet, isUnattended, isVerbose);
+            return RunUninstall(list, isQuiet, isUnattended, isVerbose, junkConfidenceLevel);
         }
 
-        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose)
+        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose, ConfidenceLevel? junkConfidenceLevel = null)
         {
             Console.WriteLine(@"Starting bulk uninstall...");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
@@ -243,6 +266,32 @@ Return codes:
             while (!isDone)
                 Thread.Sleep(250);
 
+            if (junkConfidenceLevel is not null) {
+                Console.WriteLine($"Starting junk cleanup with a minimum confidence level of {junkConfidenceLevel}");
+                List<IJunkResult> remainingJunk = JunkManager.FindJunk(apps, apps, _ => { })
+                    .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
+                    .ToList();
+
+                if (!remainingJunk.Any()) {
+                    Console.WriteLine($"No remaining junk found for any target applications.");
+                    return 0;
+                }
+
+                Console.WriteLine("The following junk items will be permanently deleted:");
+                remainingJunk.ForEach(Console.WriteLine);
+                if (!isUnattended) {
+                    Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
+                    if (Console.ReadKey(true).Key != ConsoleKey.Y)
+                        return CancelledByUser();
+                }
+
+                foreach (ApplicationUninstallerEntry entry in apps) {
+                    // ApplicationUninstallerEntry doesn't currently implement an equality operator so ToLongString() will do as an object "hash".
+                    List<IJunkResult> appJunk = remainingJunk.Where(j => j.Application.ToLongString().Equals(entry.ToLongString())).ToList();
+                    Console.WriteLine($"{entry.DisplayName} Junk - {appJunk.Count} Entries Found");
+                    appJunk.ForEach(j => j.Delete());
+                }
+            }
             return 0;
         }
 
