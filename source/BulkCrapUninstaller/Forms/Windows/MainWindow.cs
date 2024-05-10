@@ -1522,7 +1522,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenTargetWindow(object sender, EventArgs e)
         {
-            var results = TargetWindow.ShowDialog(this);
+            var results = TargetWindow.ShowDialog(this, SetVisible);
 
             if (results == null) return;
 

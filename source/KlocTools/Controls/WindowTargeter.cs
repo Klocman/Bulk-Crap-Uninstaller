@@ -26,6 +26,12 @@ namespace Klocman.Controls
             _searcher.WindowSelected += SearcherOnWindowSelected;
         }
 
+        public event EventHandler PickingStarted
+        {
+            add => _searcher.PickingStarted += value;
+            remove => _searcher.PickingStarted -= value;
+        }
+
         public event EventHandler<WindowHoverEventArgs> HoveredWindowChanged
         {
             add { _searcher.HoveredWindowChanged += value; }

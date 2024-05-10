@@ -23,7 +23,7 @@ namespace Klocman.Subsystems
         private readonly Control _mouseTarget;
         private WindowInfo _curWindow;
         private WindowInfo _lastWindow;
-        
+
         public WindowHoverSearcher(Control mouseTarget)
         {
             _mouseTarget = mouseTarget;
@@ -51,14 +51,17 @@ namespace Klocman.Subsystems
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
 
+        public event EventHandler PickingStarted;
         public event EventHandler<WindowHoverEventArgs> HoveredWindowChanged;
         public event EventHandler<WindowHoverEventArgs> WindowSelected;
 
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
-
+            
             _mouseTarget.Cursor = Cursors.Cross;
+
+            PickingStarted?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnMouseMove(object sender, MouseEventArgs e)
