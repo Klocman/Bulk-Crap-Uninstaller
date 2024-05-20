@@ -182,4 +182,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>BCUninstaller Hakkında (Toplu Düzeltme Kaldırıcı)</value>
   </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (Her şey için komut satırı)</value>
+  </data>
 </root>

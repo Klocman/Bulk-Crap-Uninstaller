@@ -579,4 +579,13 @@
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Yeni bir geri yükleme noktası oluştur</value>
   </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sahipliği alın</value>
+  </data>
 </root>
