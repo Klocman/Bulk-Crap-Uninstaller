@@ -22,6 +22,7 @@ copy bin\launcher\BCU-launcher.exe %publish%\BCUninstaller.exe
 copy "%target%\BCU_manual.html" "%publish%\BCU_manual.html"
 copy "%target%\Licence.txt" "%publish%\Licence.txt"
 copy "%target%\PrivacyPolicy.txt" "%publish%\PrivacyPolicy.txt"
+copy "%target%\NOTICE" "%publish%\NOTICE"
 
 rmdir /q /s bin\launcher
 
