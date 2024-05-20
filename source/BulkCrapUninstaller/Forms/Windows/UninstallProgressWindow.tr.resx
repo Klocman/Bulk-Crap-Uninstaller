@@ -172,4 +172,25 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Kaldırma ilerlemesi</value>
   </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Atla</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sonlandır</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kaldırıcıyı şimdi çalıştırın</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manuel kaldırma</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Yükleme dizinini açın</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Özellikler</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Bittiğinde bilgisayar uyku moduna geçsin</value>
+  </data>
 </root>

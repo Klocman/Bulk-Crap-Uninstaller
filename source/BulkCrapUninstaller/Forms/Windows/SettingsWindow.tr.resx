@@ -152,7 +152,7 @@
     <value>Mesaj kutusu</value>
   </data>
   <data name="groupBoxBackup.Text" xml:space="preserve">
-    <value>Kalan kaldırma işleminden önce yedekleme</value>
+    <value>Arta kalan kaldırma işleminden önce yedekleme</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
     <value>Oluşturmak için her zaman sor</value>
@@ -273,5 +273,17 @@ BCU, o sırada çalışan komutun bir sonraki çalıştırılmadan önce tamamla
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Toplu Düzeltme Kaldırıcı Ayarları</value>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>DPI farkındalı arayüz ölçeklendirmeyi etkinleştirin</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Uygulama listesinde çift tıklama</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Kazıma</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Başlangıç</value>
   </data>
 </root>
