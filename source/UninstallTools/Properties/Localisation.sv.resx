@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>Webbsida</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>Produktkod</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Visningsnamn</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>Kort visningsnamn</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>Uppskattad storlek</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>Installationsdatum</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>Installationsplats</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>Installationskälla</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>Är en 64-bitars app</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>Är skyddad</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>Är en uppdatering</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>Är giltig</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>Ändra sökväg</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Utgivarens namn</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>Kort förlagsnamn</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>Tyst avinstallation möjlig</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>Tyst avinstallations-sträng</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>Registernyckel</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>Register sökväg</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>Är en systemkomponent</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>Avinstallation filnamn</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>Avinstallationstyp</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>Avinstallation möjlig</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>Avinstallations-sträng</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>Visad ikon</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Ogiltig sökväg</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>Tillförlitlighet</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>Avinstallationsarbetaren stoppades i förtid</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>Överhoppad av användaren</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>Avinstallationsplats</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>Det finns inget giltigt sätt att avinstallera denna post</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>Avinstallationsprogrammet returnerade felkod:</value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>Dålig</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>God</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>Tveksam</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>Okänd</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>Väldigt god</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>Förälder avinstallationsprogram</value>
+    <comment>Most of the time used to show parent application of an update</comment>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>Företagsnamn matchade inte</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>Företagsnamn matchade</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>Katalogen används av andra installerade appar</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>Objektet är uttryckligen nämnt i avinstallationsprogrammet</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>Registerpost för avinstallationsprogrammet</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>Objektet verkar vara en hel förlagskategori</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>Produktnamnet matchade inte så bra</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>Produktnamnet matchade perfekt</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>Katalognamnet är tveksamt</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>Okänd</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>Windows Installer</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Setup</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft Scriptable Install System </value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>Slutförd</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>Misslyckad</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>Ogiltig</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>Skyddad</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>Överhoppad</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>Avinstallerar</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>Väntar</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>Appen är registrerad</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>Ogiltigt filter</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>Nytt filter</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>Inga matchningar</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>Innehåller</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>Slutar med</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>Är lika med</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>Börjar med</value>
+  </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>Windowsfunktion</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>Innehåller något av</value>
+    <comment>As in "matches any word from this string"</comment>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>Startkommandon</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>De kommer inte längre att öppnas under uppstart. Se till att de valda objekten inte krävs innan du tar bort dem.</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>Ta bort valda program från uppstarten?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>Uppstartshanterare</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>Laddar...</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>Tom mapp</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>Exekverbara filer finns tillgängliga.</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>Filer finns</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>Många filer finns</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>Programnamnet är känt.</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>Inga underkataloger.</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>Utgivaren är identifierad.</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>Posten kommer endast att köras en gång.</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>Posten är kopplad till applikationen.</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Filer och mappar</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>Programfiler utan överordnad.</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>Uppstart</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>Det gick inte att aktivera denna post, följande fil hittades inte:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>Avinstallationsprogrammet svarade inte.</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>Uppgift</value>
+    <comment>Fom Task Scheduler</comment>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>Webbläsarhjälpobjekt</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>Värde kan inte vara null eller tomt</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>Värde kan inte innehålla radbrytningar</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Ogiltig eller okänd uppstarts-registernyckel</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Windows Store App</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Ny villkor</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Är oregistrerad</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Borttagning av Store App data är problematiskt</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Enkel Radering</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Mappen är, eller blir tom efter borttagning av skräp.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Tjänst</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Alla egenskaper</value>
+    <comment>Used in the search box to specify what's being compared</comment>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Scannar installerade MSI produkter...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Hittade {0} app GUIDs</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Scanna registret efter avinstallationsprogram...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Samlar registernycklar</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Bearbetar {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Genererar saknad avinstallations-info</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Scannar enheter efter appar...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Samlar kataloger</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Scannar app-stores</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Söker efter applikationsmallar.</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Söker efter Steam Appar</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Söker efter Windows Store Apps</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Söker efter Windows-funktioner</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Sammanfogar upptäckta appar…</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Sammanfogar appar från Stores</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Sammanfogar appar från enheter</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Generar saknad information...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Söker efter Windows Updates</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Brandväggsregel</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Användar-assistans</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Windows felrapporterings-rapporter</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Konfigurerar skräp-skannrar…</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Avslutar…</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>App kompatibilitet</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID klasser</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Referens för avinstallationsprogrammet</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Plats för avinstallationsprogrammet</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Genväg</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Ljudpolicy konfiguration</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Händelseloggar</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Spårnings-information</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Installationsmapp-lista</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Pausad</value>
+  </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Söker efter Chocolatey paket</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Avinstallera i Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Kan starta automatiskt</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Söker efter uppstarts-poster</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Söker efter Oculus Apps</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Är en webbläsare</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell script</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Debug Spårning/Loggning Konfiguration</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Söker efter Scoop paket</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Kanske tillhör en annan app med liknande namn</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
+</root>
