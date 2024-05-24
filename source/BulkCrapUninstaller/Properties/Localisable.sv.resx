@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>Skapar en återställningspunkt</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>Sök efter rester...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>Fyller listan med avinstallationsprogram...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>Tar bort rester...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>Söker efter uppdateringar...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>Inga poster matchar dina sökkriterier.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>BCUninstaller export
+Utgivare | Version | Datum | Storlek | Register | Avinstallations typ | Avinstallationssträng | Tyst avinstallationssträng | Kommentarer</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value> Portable</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>Misslyckades att anropa API:en</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>Säkerhetskopiering av registret misslyckades, vill du fortsätta ändå?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>Feluppgifter:</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>Restborttagning</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+
+Feldetaljer:
+</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>Vill du skapa en säkerhetskopia av registret innan du fortsätter?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>Du kommer att kunna ångra alla ändringar genom att dubbelklicka på den efteråt.
+
+Filer och kataloger kommer att flyttas till papperskorgen, du kan återställa dem därifrån.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>Åtgärd misslyckades</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>Du kan bara välja en post för denna åtgärd</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>Välj exakt en enstaka avinstallation från listan. Om du använder kryssrutor, se till att kontrollera dem.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>Sök efter uppdateringar</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>Öppna online-innehåll</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>Kan inte ansluta till internet, det finns inga tillgängliga nätverk.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>Se till att din nätverkskabel är ansluten. Om du använder Wi-Fi, se till att du har bra signalstyrka.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>Skicka feedback</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>Vill du skicka feedback angående BCU?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>Detta tar mindre än en minut och hjälper utvecklingen enormt! All feedback uppskattas, vare sig det är en buggrapport, en funktionsförfrågan eller ett enkelt tack!
+
+Du kan skicka det senare från toppmenyn (Hjälp-&gt;Skicka feedback).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>Du har den senaste versionen</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Inga uppdateringar hittades för tillfället, du har den senaste versionen.
+
+Vill du ha någon funktionalitet tillagd eller en bugg fixad? Skicka gärna din feedback via menyn "Hjälp-&gt;Skicka feedback".</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Ett fel uppstod vid kontroll av uppdateringar</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Se till att BCUninstaller inte är blockerad i din brandvägg och att du har en fungerande internetanslutning.</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Ny version {0} är tillgänglig, vill du uppgradera nu?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller kommer automatiskt att hämta uppdateringen och tillämpa den efter en omstart. Observera att du kanske förlorar dina inställningar i processen.
+
+Ändringslogg:
+- {0}
+
+Varning: Under uppdateringen kommer mappen "Update" och filen "Update.zip" inuti BCU-mappen att tas bort.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Avinstallera med Msi</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>Den valda posten kan inte avinstalleras med MsiExec-installeraren</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>Den valda avinstallationen har inte en giltig GUID för användning med MsiExec.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Stoppa pågående avinstallationsjobb</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Är du säker på att du vill stoppa den pågående uppgiften?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>Att stoppa processen i förtid kommer inte att ångra några ändringar. Den körande avinstallationen kommer inte att stoppas, uppgiften kommer att vänta på att den ska slutföras.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Skapa återställningspunkt</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Det gick inte att skapa en ny återställningspunkt</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value> x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value> DEBUG</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Avinstallationsförlopp</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Nu kan du låta datorn jobba</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>Återstående avinstallationer borde kunna slutföras av sig själv. Du bör ändå kontrollera med jämna mellanrum ifall någon avinstallation kraschar.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Borttagning av skräp/efterlämnade filer</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Vill du verkligen ändra lågtillförlitliga objekt?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>Att ta bort objekt markerade med en tillförlitlighetsgrad lägre än Bra kan vara mycket farligt! Det rekommenderas att du verifierar att varje enskilt objekt är säkert att ta bort.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Ta bort nycklar från registret</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Är du säker på att du vill ta bort valda avinstallationsposter?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>Följande poster kommer att tas bort från registret och försvinna från avinstallationslistan, men kommer inte att avinstalleras.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>Export misslyckades</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Ett fel inträffade när datan skulle exporteras</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Om felet kvarstår, försök spara till en annan plats, till exempel till skrivbordet.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller avinstallerar {0} app(ar)</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Döp om avinstallationsprogram</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>Namnet är tomt eller innehåller ogiltiga tecken</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Kontrollera att du inte har inkluderat något av följande tecken:
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Vill du leta efter kvarlämnade filer från utförda avinstallation(er)?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Den här funktionen är avsedd endast för avancerade användare som förstår hur den fungerar. Det är inte nödvändigt att ta bort dessa filer och de kommer inte att påverka systemets prestanda på något meningsfullt sätt.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Inga rester hittades</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Inga rester hittades. Det kan dock fortfarande finnas några rester kvar så du kan köra en filrensare som BleachBit.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Det fanns inget att kopiera till urklipp. Antingen har ingen vald avinstallationsprogram denna information eller så valde du ingenting.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Kopiera till Urklipp</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Öppna mappar</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Denna åtgärd kommer att öppna {0} kataloger samtidigt, är du säker på att du vill fortsätta?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Sök online</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Inget att söka efter</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>Avinstallera BCUninstaller</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>Är du säker på att du vill avinstallera BCUninstaller?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Tråkigt att du lämnar! Om du har en minut eller två, vänligen lämna några ord om varför du avinstallerade BCU på min webbplats (http://klocmansoftware.weebly.com/). Jag kommer att göra mitt bästa för att åtgärda eventuella legitima problem.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Vill du skapa en återställningspunkt innan du fortsätter?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>Om du är osäker på om de appar du avinstallerar är viktiga eller nödvändiga för systemets stabilitet, rekommenderas det att skapa en återställningspunkt. Om något går fel efter proceduren, kan du sedan använda Systemåterställning för att ångra ändringarna.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Ett fel uppstod när söksidan skulle öppnas.</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Spara avinstallations-lista</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Misslyckades att spara listan till filen</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Är du säker på att du vill återställa alla appinställningar?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Vissa appar kan inte installeras tyst</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Vissa poster är skyddade och kan inte ändras.</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>Den valda posten är skyddad och kan inte ändras.</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>Ett fel uppstod vid öppnandet av webbadressen.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Vill du behålla nuvarande urval?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Ett fel inträffade när katalogen öppnades</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Misslyckades att ladda valda filer</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Inga avinstallerare valdes, det finns inget att avinstallera</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Kör avinstallationer</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>För att avinstallera appar måste du först välja dem från listvyn. Om du använder kryssrutor, se till att de är förbockade.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Om du väljer att behålla nuvarande urval, kommer det att sammanfogas med de öppnade listorna.</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Detta öppnar {0} webbadresser samtidigt. Vill du vill fortsätta?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>Öppna webbadresser</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Inga webbadresser att öppna</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Modifiera skyddat objekt</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Påverkade poster:
+{0}
+
+För att ändra dessa poster behöver du inaktivera avinstalleringsskyddet från inställningssidofältet. Du kan ta bort dem från uppgiften och fortsätta med andra objekt om du vill.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Skyddad post: {0}
+
+För att ändra denna post behöver du inaktivera avinstalleringsskyddet från inställningspanelen.</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>Följande objekt saknar tysta avinstallationsprogram:
+{0}
+
+Vill du använda synliga avinstallationsprogram för dessa objekt, eller ska de tas bort från uppgiften?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Tyst avinstallation</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Återställ standardinställningar</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Alla dina inställningar kommer att gå förlorade permanent. BCUninstaller måste startas om för att slutföra denna åtgärd.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Öppna avinstallationslistan</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>Återställningspunkten SKAPADES INTE, du kommer inte att kunna återställa ändringarna! Vill du fortsätta med avinstallationen ändå?”</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>Döper om "{0}"</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Döp om vald post</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>Uppgiften avslutad</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Avinstallerar</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Kom ihåg val</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>Filen finns inte.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Inget att visa. Denna appen avinstalleras med Windows Installer (MsiExec).</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Värde</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Tomt</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>GUID hittad</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>GUID saknas</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Välj ner till…</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Fil ej funnen.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Kör efter-avinstallationskommandon…</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Kör före-avinstallationskommandon…</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Klar</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0} avinstallerare valda</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>{0} avinstallerare totalt, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>Följande kommando misslyckades med att utföras:
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>Extern åtgärd misslyckades</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Vissa inställningar kommer inte att träda i kraft förrän appen har startats om.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Vill du starta om BCU för att tillämpa nya inställningar?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Ändra appinställningar</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>Certifikat saknas</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Bearbetar upptäckta appar, {0} kvar...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>Att välja "Avsluta" kommer omedelbart att stänga den pågående avinstallationen och kan resultera i att avinstallationen inte slutförs. Vanligtvis är det möjligt att köra avinstallationsprogrammet igen för att slutföra avinstallationen.
+
+Alternativt kan du hoppa över att vänta på denna process. Att hoppa över kommer att låta avinstallationen fortsätta arbeta medan uppgiften går vidare till nästa objekt. Tänk på att vissa avinstallationer kan misslyckas med att köras tills den hoppade över processen är färdig.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Vill du hoppa över att vänta på det nuvarande körande avinstallationsprogrammet?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Hoppa över pågående uppgift</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>En annan avinstallation är redan igång. Vänligen vänta tills den är klar och försök sedan igen.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Betyg: {0}
+
+Positiva:
+{1}
+
+Negativa:
+{2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Betygdetaljer</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Denna app har inte ett giltigt registerinlägg.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Denna app har inte ett giltigt avinstallationsprogram.</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Laddar Windows Funktioner...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>Uppdaterar startinformation…</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Inga kataloger att öppna</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Inte tillgängligt</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Betyg är inte tillgängligt</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Du måste aktivera betyg i inställningarna först.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Du kan inte betygsätta appar som inte installerats korrekt.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} appar</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Medelbetyg: {0}; Mitt betyg: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Följande avinstallationer misslyckades att köras, troligen på grund av en kollision. Vänligen vänta tills andra avinstallationsprogram har slutförts och försök igen.
+{0}
+
+Du kan försöka inaktivera kollisionsdetektering i inställningarna, men det rekommenderas inte.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Tvinga avinstallation</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Misslyckades med att köra några av avinstallationsprogrammen.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework 4.0 hittades inte.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework 4.0 hittades inte, vissa funktioner kommer att inaktiveras.</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>.NET Framework 4.0 är valfritt, men rekommenderas. De funktioner som är beroende av ramverket kommer att vara inaktiverade tills du installerar det.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Några av avinstallationsprogrammen misslyckades.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Vill du försöka köra de tysta avinstallationsprogrammen som misslyckades som synliga?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Följande avinstallationsprogram kommer att startas om högljutt:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Skannar angiven katalog...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Välj katalog med appar som du vill ta bort.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Avinstallera från katalog.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Inga appar hittades i den angivna katalogen.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Se till att du har valt rätt katalog och att programmets körbara filer fortfarande finns kvar.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Hittade ett avinstallationsprogram för {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Vill du köra detta avinstallationsprogram?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Utfärdare</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Ämne</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Arkiverad</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Tillägg</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Vänligt namn</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Utfärdarnamn</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Inte efter</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Inte före</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Privat nyckel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Har privat nyckel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Offentlig nyckel</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Rådata</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Serienummer</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Ämnesnamn</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Signatur algoritm</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Avtryck</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Misslyckades med att spara inställningar</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Avslutar...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Laddar ikoner</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Letar efter app</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Inga giltiga filer eller kataloger valdes. Kontrollera att du har åtkomst till dem och att de inte är markerade som systemfiler.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Leta efter appar</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Misslyckades med att hitta några appar inuti {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modifiera app</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Vald app kan inte modifieras</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Den valda applikationen har inget ändringskommando angivet. Det kan vara nödvändigt att avinstallera och sedan installera om den för att ändra installationsinställningarna.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Spara avinstallationslista</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Spara ändringar i den öppnade avinstallationslistan?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Det finns osparade ändringar i den öppnade avinstallationslistan som kommer att gå förlorade vid stängning.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Välj katalogen med apparna som ska avinstalleras.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Välj var säkerhetskopian ska sparas. En ny mapp kommer att skapas.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU har uppdaterats till v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Välkommen till BCU version {0}!</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Ställer datorn i viloläge om {0}s. Avmarkera kryssrutan för viloläge för att avbryta.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Gör ingenting</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Öppnar egenskaper</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Avinstallationer</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+</root>

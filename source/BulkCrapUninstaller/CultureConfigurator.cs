@@ -140,6 +140,11 @@ namespace BulkCrapUninstaller
                 // Slovenian
                 "sl-SI",
 
+                // Swedish
+                "sv-AX",
+                "sv-FI",
+                "sv-SE",
+
                 // Turkish
                 "tr-CY",
                 "tr-TR",
