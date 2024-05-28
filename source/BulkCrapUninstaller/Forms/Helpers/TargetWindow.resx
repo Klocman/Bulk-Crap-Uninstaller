@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -398,9 +398,6 @@ You can select a directory that contains multiple applications to uninstall them
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -428,4 +425,7 @@ You can select a directory that contains multiple applications to uninstall them
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

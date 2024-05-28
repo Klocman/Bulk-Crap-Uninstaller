@@ -121,13 +121,13 @@
     <value>¡Gracias por utilizar BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Si has encontrado útil esta herramienta gratuita de código abierto, ¡por favor considera dedicar un minuto a ayudar! Díselo a tus amigos, compártela en las redes sociales, envía comentarios - ¡cualquier cosa pequeña cuenta!</value>
+    <value>Si has encontrado útil esta herramienta gratuita de código abierto, ¡por favor considera dedicar un minuto a ayudar! Cuentale a tus amigos, compártela en redes sociales, envía comentarios - ¡Cualquier cosa pequeña cuenta!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Enviar comentario</value>
   </data>
   <data name="buttonRate.Text" xml:space="preserve">
-    <value>Tarifa (parte inferior de la página)</value>
+    <value>Tarifa (al final de la página)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Compartir en Twitter</value>
@@ -139,7 +139,7 @@
     <value>Si tuviste algún problema con BCU, o si quieres sugerir una nueva característica, consulte estos enlaces:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Enviar a GitHub (Necesita una cuenta)</value>
+    <value>Enviar en GitHub (Cuenta Necesaria)</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>Enviar comentario</value>
@@ -148,7 +148,7 @@
     <value>¿Quieres ayudar?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>¡No tienes que ser un programador para ayudar! Puedes donar para acelerar las actualizaciones o traducir BCU en tu lengua materna. Toda ayuda es muy apreciada ¡no importa si es pequeña!</value>
+    <value>¡No tienes que ser un programador para ayudar! Puedes donar para acelerar las actualizaciones o traducir BCU a tu lengua materna. Toda ayuda es muy apreciada ¡No importa cuan pequeña!</value>
   </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
     <value>Traducir BCU</value>

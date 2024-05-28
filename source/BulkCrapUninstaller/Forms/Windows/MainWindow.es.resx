@@ -139,13 +139,13 @@
     <value>Inicio</value>
   </data>
   <data name="olvColumnIs64.Text" xml:space="preserve">
-    <value>64 bits</value>
+    <value>64bit</value>
   </data>
   <data name="olvColumnUninstallString.Text" xml:space="preserve">
     <value>Comando de desinstalación</value>
   </data>
   <data name="olvColumnAbout.Text" xml:space="preserve">
-    <value>Acerca de URL</value>
+    <value>URL de Información</value>
   </data>
   <data name="olvColumnInstallSource.Text" xml:space="preserve">
     <value>Fuente de la instalación</value>
@@ -163,7 +163,7 @@
     <value>Protegido</value>
   </data>
   <data name="olvColumnRegistryKeyName.Text" xml:space="preserve">
-    <value>Clave de registro</value>
+    <value>Llave de registro</value>
   </data>
   <data name="olvColumnGuid.Text" xml:space="preserve">
     <value>Código del producto</value>
@@ -244,13 +244,13 @@
     <value>Ruta completa del registro</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Desinstalar cadena</value>
+    <value>Desinstalar línea</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Copiar al portapapeles</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Eliminar entrada del registro</value>
+    <value>&amp;Eliminar línea de registro</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Renombrar...</value>
@@ -265,7 +265,7 @@
     <value>&amp;Ubicación de la fuente</value>
   </data>
   <data name="openInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>Abrir en el &amp;explorador...</value>
+    <value>Abrir en &amp;explorador...</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
     <value>Abrir &amp;página web</value>
@@ -286,13 +286,13 @@
     <value>Exportar propiedades de los desinstaladores seleccionados</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Actualizar desinstaladores</value>
+    <value>&amp;Refrescar desinstaladores</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Abrir lista de desinstalación....</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Exportar selección...</value>
+    <value>&amp;Exportar datos de desinstaladores seleccionados...</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>S&amp;alir</value>
@@ -316,13 +316,13 @@
     <value>&amp;Usar tema del sistema</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apps de Windows Store</value>
+    <value>Ver Apps de Windows Store</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Buscar...</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mostrar</value>
+    <value>&amp;Ver</value>
   </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Desinstalar</value>
@@ -466,10 +466,10 @@
     <value>Google</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>AlternativeTo</value>
+    <value>AlternativeTo.net</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar actualizaciones</value>
+    <value>Ver actualizaciones</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
@@ -562,7 +562,7 @@
     <value>&amp;Todo</value>
   </data>
   <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Solo las que inician automáticamente</value>
+    <value>Solo iniciadas automáticamente</value>
   </data>
   <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Solo navegadores web</value>

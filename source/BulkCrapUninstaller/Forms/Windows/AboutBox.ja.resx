@@ -150,7 +150,7 @@
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>モダンUIアイコン</value>
-    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interfaz de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>オブジェクトリストビュー</value>

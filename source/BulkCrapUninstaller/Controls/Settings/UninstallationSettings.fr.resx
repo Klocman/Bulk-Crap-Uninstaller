@@ -165,16 +165,16 @@
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
     <value>Surveiller les popups des désinstalleurs "silencieux" et autres attentes et les automatiser (lancer un démon automatiseur)</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Créer un point de restauration avant désinstallation</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Vous pouvez créer un point de restauration système pour sauvegarder le registre, certains paramètres et fichiers. Il est recommandé de créer un point de restauration avant de supprimer des pilotes et des applications système importantes.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
 </root>
