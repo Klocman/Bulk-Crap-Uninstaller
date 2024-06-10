@@ -124,25 +124,25 @@
     <value>Darowizna (PayPal, Bitcoin, prezenty Steam)</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Wyslij Feedback / Kontakt z deweloperem</value>
+    <value>Wyślij Feedback / Kontakt z deweloperem</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>Przeczytaj plik pomocy</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Przeczytaj polityke prywatnosci</value>
+    <value>Przeczytaj politykę prywatności</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Przeczytaj licencje</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Sprawdź kod zródlowy</value>
+    <value>Sprawdź kod źródłowy</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>Zobacz informacje o wersji i dziennik zmian</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Darowizny pomagaja mnie zainteresowac tym projektem, a takze placic za certyfikaty podpisywania kodu, hosting i inne potrzebne rzeczy.</value>
+    <value>Darowizny pomagają mi zainteresować się tym projektem, a także płacić za certyfikaty podpisywania kodu, hosting i inne potrzebne rzeczy.</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Nigdy nie pokazuj ponownie tego okna</value>

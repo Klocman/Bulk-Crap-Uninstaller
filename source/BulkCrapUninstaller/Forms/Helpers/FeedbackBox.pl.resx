@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>Dziekujemy za korzystanie z BCUninstaller!</value>
+    <value>Dziękujemy za korzystanie z BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
     <value>Jeśli to darmowe i otwarte narzędzie było tobie przydatne, pomyśl o pomocy temu projektowi! Powiedz znajomym o BCU, podziel się nim w portalach społecznościowych, zostaw opinię - wszystko się liczy!</value>
@@ -142,7 +142,7 @@
     <value>Pomóż na GitHub</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
-    <value>Wyślij opinię</value>
+    <value>Prześlij opinię</value>
   </data>
   <data name="p1HelpHeading.Text" xml:space="preserve">
     <value>Chcesz pomóc?</value>
