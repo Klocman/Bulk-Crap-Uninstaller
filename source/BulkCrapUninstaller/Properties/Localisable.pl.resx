@@ -768,4 +768,19 @@ Można spróbować wyłączyć wykrywanie kolizji w ustawieniach, ale nie jest t
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>Witamy w wersji BCU v{0}!</value>
   </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Uśpienie komputera za {0} sekund. Jeśli chcesz przerwać tę operację, odznacz pole wyboru. </value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Nic nie robi.</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Otwiera ustawienia. </value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Odinstalowuje.</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>

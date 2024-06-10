@@ -196,7 +196,7 @@
     <value>Aplikacja napotkała nieoczekiwany błąd</value>
   </data>
   <data name="PremadeDialogs_GenericError_InnerExceptionTitle" xml:space="preserve">
-    <value>Wywnętrzny: </value>
+    <value>Wewnętrzny: </value>
   </data>
   <data name="PremadeDialogs_GenericError_Title" xml:space="preserve">
     <value>Nieoczekiwany błąd</value>
