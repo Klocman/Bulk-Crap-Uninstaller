@@ -143,16 +143,18 @@
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
+    <comment>jp translator: what's this?</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Icone Modern UI</value>
-    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interface de Usuario"</comment>
+    <comment>Si "Modern UI Icons" significa "Iconos de Interfaz de Usuario Moderno" la traducción será "Iconos Modernos de Interfaz de Usuario"</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>ObjectList View</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>Nbug</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider</value>
@@ -164,6 +166,7 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Risorse usate</value>

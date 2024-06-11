@@ -121,7 +121,7 @@
     <value>Buscar y desinstalar una aplicación basada en una de sus ventanas, accesos directos, o su ubicación de instalación o archivos .exe.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Destruir una aplicación</value>
+    <value>Apuntar a una aplicación</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Seleccionar usando una ventana</value>

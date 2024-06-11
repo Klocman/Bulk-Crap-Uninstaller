@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Controls;
@@ -19,7 +20,9 @@ namespace BulkCrapUninstaller.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private System.Windows.Forms.Button hunterModeButton;
+
+private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
@@ -1771,12 +1774,34 @@ namespace BulkCrapUninstaller.Forms
             this.uninstallListContextMenuStrip.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            
+    this.hunterModeButton = new System.Windows.Forms.Button();
+    this.SuspendLayout();
+    // 
+    // hunterModeButton
+    // 
+    this.hunterModeButton.Location = new System.Drawing.Point(13, 13);
+    this.hunterModeButton.Name = "hunterModeButton";
+    this.hunterModeButton.Size = new System.Drawing.Size(100, 23);
+    this.hunterModeButton.TabIndex = 0;
+    this.hunterModeButton.Text = "Hunter Mode";
+    this.hunterModeButton.UseVisualStyleBackColor = true;
+    this.hunterModeButton.Click += new System.EventHandler(this.hunterModeButton_Click);
+    // Add the button to the form
+    this.Controls.Add(this.hunterModeButton);
+    
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void hunterModeButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
+
 
         private SplitContainer splitContainer1;
         internal ObjectListView uninstallerObjectListView;

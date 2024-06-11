@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>(Clic en cualquier lugar para cerrar este cuadro de diálogo)</value>
+    <value>(Click en cualquier lugar para cerrar este cuadro)</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
-    <value>Donar en (PayPal, Bitcoin, Steam gifts)</value>
+    <value>Donar (PayPal, Bitcoin, regalos en Steam)</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
-    <value>Enviar comentarios/contactar al desarrollador</value>
+    <value>Enviar comentarios / Contactar al desarrollador</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>Leer el archivo de ayuda</value>

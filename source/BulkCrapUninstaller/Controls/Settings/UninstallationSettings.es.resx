@@ -121,10 +121,10 @@
     <value>Desactivar la prevención de colisiones cuando se ejecutan desinstaladores manualmente</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Sólo un desinstalador fuerte a la vez</value>
+    <value>Sólo un desinstalador completo a la vez</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>Ejecutar desinstaladores simultáneamente (si es posible)</value>
+    <value>Ejecutar desinstaladores simultáneamente de forma automática (si es posible)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Número máximo de desinstaladores en ejecución:</value>
@@ -148,16 +148,16 @@
     <value>Configuración general</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Eliminar automáticamente los desinstaladores bloqueados</value>
+    <value>Cerrar automáticamente desinstaladores silenciosos atascados</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
     <value>Reintentar los desinstaladores silenciosos fallidos una vez</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Generar posibles desinstaladores silenciosos si es posible</value>
+    <value>Generar desinstaladores silenciosos si es posible</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Matar si está atascado esperando la entrada del usuario</value>
+    <value>Cerrar automáticamente si se encuentra atascado esperando acción al usuario</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desinstalación silenciosa</value>

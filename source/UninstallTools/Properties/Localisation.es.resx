@@ -121,13 +121,13 @@
     <value>Página web</value>
   </data>
   <data name="BundleProviderKey" xml:space="preserve">
-    <value>Código del producto</value>
+    <value>Código de producto</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Nombre para mostrar</value>
+    <value>Nombre de muestra</value>
   </data>
   <data name="DisplayNameTrimmed" xml:space="preserve">
-    <value>Nombre corto para mostrar</value>
+    <value>Nombre de muestra acortado</value>
   </data>
   <data name="DisplayVersion" xml:space="preserve">
     <value>Versión</value>
@@ -136,7 +136,7 @@
     <value>Tamaño estimado</value>
   </data>
   <data name="InstallDate" xml:space="preserve">
-    <value>Fecha de la instalación</value>
+    <value>Fecha de instalación</value>
   </data>
   <data name="InstallLocation" xml:space="preserve">
     <value>Ubicación de la instalación</value>
@@ -145,13 +145,13 @@
     <value>Origen de la instalación</value>
   </data>
   <data name="Is64Bit" xml:space="preserve">
-    <value>Es una aplicación de 64 bits</value>
+    <value>Es una aplicación de 64bits</value>
   </data>
   <data name="IsProtected" xml:space="preserve">
     <value>Está protegida</value>
   </data>
   <data name="IsUpdate" xml:space="preserve">
-    <value>Está actualizada</value>
+    <value>Es una actualización</value>
   </data>
   <data name="IsValid" xml:space="preserve">
     <value>Es válida</value>
@@ -163,13 +163,13 @@
     <value>Nombre del editor</value>
   </data>
   <data name="PublisherTrimmed" xml:space="preserve">
-    <value>Nombre corto del editor</value>
+    <value>Nombre del editor acortado</value>
   </data>
   <data name="QuietUninstallPossible" xml:space="preserve">
-    <value>Es posible la desinstalación silenciosa</value>
+    <value>Desinstalación silenciosa es posible</value>
   </data>
   <data name="QuietUninstallString" xml:space="preserve">
-    <value>Cadena de desinstalación silenciosa</value>
+    <value>Línea de desinstalación silenciosa</value>
   </data>
   <data name="RegistryKeyName" xml:space="preserve">
     <value>Nombre de la clave de registro</value>
@@ -190,7 +190,7 @@
     <value>La desinstalación es posible</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
-    <value>Cuerda de desinstalación</value>
+    <value>Línea de desinstalación</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Comentario</value>
@@ -227,10 +227,10 @@
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
-    <value>El nombre de la empresa no coincide</value>
+    <value>Nombre de la empresa no coincidió</value>
   </data>
   <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
-    <value>El nombre de la empresa coincide</value>
+    <value>Nombre de la empresa coincide</value>
   </data>
   <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
     <value>El directorio está siendo usado por otras aplicaciones instaladas</value>
@@ -353,7 +353,7 @@
     <value>Nueva condición</value>
   </data>
   <data name="ManagerError_Skipped" xml:space="preserve">
-    <value>Omitido por el usuario</value>
+    <value>Omitido por usuario</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
     <value>No hay un modo válido de desinstalar esta entrada</value>

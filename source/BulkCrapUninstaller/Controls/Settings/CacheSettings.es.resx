@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>El almacenamiento en caché puede reducir en gran medida los tiempos de búsqueda, pero si una aplicación se modifica, BCU podría no notar los cambios. (ej. el tamaño)
-NOTA: Para que estos ajustes surtan efecto puede ser necesario reiniciar BCU.</value>
+    <value>El almacenamiento en caché puede reducir en gran medida los tiempos de búsqueda, pero si una aplicación se modifica, BCU podría no notar los cambios. (ej. tamaño)
+NOTA: Para que estos ajustes surtan efecto puede requerir reiniciar BCU.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
     <value>Almacenar en caché los resultados del escaneo de certificados de aplicación</value>
@@ -131,6 +131,6 @@ NOTA: Para que estos ajustes surtan efecto puede ser necesario reiniciar BCU.</v
     <value>Limpiar cachés</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Almacenamiento en la caché</value>
+    <value>Almacenamiento en caché</value>
   </data>
 </root>

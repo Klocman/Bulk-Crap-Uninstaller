@@ -121,18 +121,18 @@
     <value>Mostrar aplicaciones no registradas</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>Mostrar aplicaciones sin ningún desinstalador registrado. No son visibles en la mayoría de desinstaladores, pero aún ocupan espacio. Los no registrados aparecen de color rojo. 
+    <value>Mostrar aplicaciones sin ningún desinstalador registrado. No son visibles en la mayoría de desinstaladores, pero aún ocupan espacio. Elementos no registrados son marcados con color rojo.
 
-ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones, puede que aún sean necesarias!</value>
+ADVERTENCIA: Asegúrese antes de eliminar estas aplicaciones ¡Puede que aún sean necesarias!</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>Resaltar los desinstaladores que faltan</value>
+    <value>Destacar los desinstaladores que faltan</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>Utilizar el color gris para identificar desinstaladores ausentes o dañados.</value>
+    <value>Utilizar el color gris para identificar desinstaladores corruptos o perdidos.</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>Resaltar desinstaladores certificados</value>
+    <value>Destacar desinstaladores certificados</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>Utilizar colores para identificar desinstaladores certificados.
@@ -150,14 +150,14 @@ Advertencia: La verificación puede tardar mucho tiempo.</value>
     <value>Mostrar componentes del sistema</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>Algunos desinstaladores pueden marcarse como "componentes del sistema" para ocultarlos de la opción Agregar/Quitar lista de software.
-Los drivers son a menudo marcados con esta etiqueta.</value>
+    <value>Algunos desinstaladores pueden marcarse como "componentes del sistema" para ocultarlos de la opción Agregar/Quitar lista del software.
+Los drivers están a menudo marcados con esta etiqueta.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Mostrar elementos protegidos</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>Los elementos protegidos están marcados con la etiqueta "No Eliminar", lo que significa que el editor no quiere que los elimine.</value>
+    <value>Los elementos protegidos están marcados con la etiqueta "No Eliminar", lo que significa que el editor no quiere que los elimines.</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
     <value>Mostrar actualizaciones</value>
@@ -169,16 +169,16 @@ Los drivers son a menudo marcados con esta etiqueta.</value>
     <value>Mostrar características de Windows</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Mostrar apps de Windows Store</value>
+    <value>Mostrar apps de la Tienda de Windows</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Filtrado</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>Seleccionar usando checkboxes</value>
+    <value>Seleccionar usando casillas</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>Cambia el estilo de selección de la lista a casillas de verificación. Son más seguros porque un solo click no puede anular la selección de todo.
+    <value>Cambia el estilo de selección de la lista a casillas. Son más seguras porque un solo click no puede anular toda la selección.
 
 Puede comprobar varios elementos resaltándolos y presionando la barra espaciadora.</value>
   </data>
@@ -186,19 +186,19 @@ Puede comprobar varios elementos resaltándolos y presionando la barra espaciado
     <value>Mostrar elementos en grupos</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>Agrupar elementos por la columna de la lista por la que está ordenada. 
-Agrupar la mayoría de las columnas usa filtrado inteligente.</value>
+    <value>Agrupar elementos acuerdo a la columna de la lista por la que está ordenada
+La agrupación de la mayoría de las columnas usa filtrado inteligente.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Configuración de la vista de lista</value>
+    <value>Configuración de visión de la lista</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
     <value>Mostrar retoques</value>
   </data>
   <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
-    <value>Destacar los desinstaladores especiales</value>
+    <value>Destacar desinstaladores especiales</value>
   </data>
   <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
-    <value>Utilizar colores para diferencias las aplicaciones especiales, por ejemplo, Aplicaciones de la Tienda y Características de Windows.</value>
+    <value>Utilizar colores para diferenciar las aplicaciones especiales, por ejemplo, Aplicaciones de la Tienda y Características de Windows.</value>
   </data>
 </root>
