@@ -127,7 +127,7 @@
     <value>Đường dẫn không hợp lệ hoặc tệp không tồn tại: {0}</value>
   </data>
   <data name="Error_NotSupported" xml:space="preserve">
-    <value>Tự động gỡ cài đặt cho {0} không được hỗ trợ.</value>
+    <value>Tự động hoá trình gỡ cài đặt cho {0} không được hỗ trợ.</value>
   </data>
   <data name="Message_Starting" xml:space="preserve">
     <value>Tự động gỡ cài đặt "{0}"</value>
@@ -142,21 +142,21 @@
     <value>Tự động gỡ cài đặt không thành công. Lý do: {0}</value>
   </data>
   <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
-    <value>Chọn nút radio không nằm trong danh sách đen: {0}</value>
+    <value>Tích nút radio không nằm trong danh sách đen: {0}</value>
   </data>
   <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
-    <value>Chọn nút radio được biết là tốt</value>
+    <value>Tích nút radio được biết là tốt: {0}</value>
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
     <value>Đã tìm thấy {0} nút radio.</value>
     <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
-    <value>Nhấp vào nút radio "{0}".</value>
+    <value>Nhấp chuột vào nút "{0}".</value>
     <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
-    <value>Cửa sổ bật lên đã đóng.</value>
+    <value>Đã đóng cửa sổ bật lên.</value>
   </data>
   <data name="Message_Automation_PopupFound" xml:space="preserve">
     <value>Đã tìm thấy một cửa sổ bật lên - "{0}".</value>
@@ -175,14 +175,14 @@
     <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
-    <value>Đang tìm kiếm cửa sổ...</value>
+    <value>Đang kiểm tra cửa sổ...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
     <value>Đã đính kèm với "{0}".</value>
     <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
-    <value>Đang chờ trình gỡ cài đặt NSIS triển khai...</value>
+    <value>Đang chờ trình gỡ cài đặt NSIS...</value>
   </data>
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
     <value>Khởi động quá trình không thành công.</value>

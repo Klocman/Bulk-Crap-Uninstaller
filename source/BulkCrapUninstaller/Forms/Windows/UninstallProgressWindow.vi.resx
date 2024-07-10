@@ -127,7 +127,7 @@
     <value>Trạng thái</value>
   </data>
   <data name="olvColumnIsSilent.Text" xml:space="preserve">
-    <value>Âm thầm</value>
+    <value>Gỡ âm thầm</value>
   </data>
   <data name="olvColumnName.Text" xml:space="preserve">
     <value>Tên</value>
@@ -142,7 +142,7 @@
     <value>Chấm dứt</value>
   </data>
   <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Khởi chạy trình gỡ cài đặt ngay bây giờ</value>
+    <value>Khởi chạy ngay bây giờ</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Gỡ cài đặt thủ công</value>
@@ -155,7 +155,7 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Các trình gỡ cài đặt đã chọn sẽ được chạy lần lượt.
-Nếu một quá trình có vẻ bị kẹt, bạn có thể nhấp vào nút "Bỏ qua" để tránh các tác vụ bị kẹt. Quá trình gỡ cài đặt bị kẹt có thể xảy ra khi trình gỡ cài đặt gặp sự cố, bắt đầu một quy trình mới hoặc không đóng quy trình đó.</value>
+Nếu quá trình dường như bị kẹt, bạn có thể nhấp vào nút "Bỏ qua" để tránh phải đợi nó hoàn thành. Điều này có thể xảy ra nếu trình gỡ cài đặt bị lỗi hoặc khởi chạy một tiến trình mới và không đóng nó lại.</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
     <value>Khởi chạy trình gỡ cài đặt</value>
@@ -170,7 +170,7 @@ Nếu một quá trình có vẻ bị kẹt, bạn có thể nhấp vào nút "B
     <value>Gỡ cài đặt thủ công</value>
   </data>
   <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>Mở vị trí cài đặt</value>
+    <value>Mở thư mục cài đặt</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Thuộc tính</value>
@@ -188,7 +188,7 @@ Nếu một quá trình có vẻ bị kẹt, bạn có thể nhấp vào nút "B
     <value>Danh sách trình gỡ cài đặt</value>
   </data>
   <data name="checkBoxFinishSleep.Text" xml:space="preserve">
-    <value>Đặt PC của bạn vào chế độ ngủ khi hoàn tất</value>
+    <value>Thiết lập PC của bạn vào chế độ ngủ khi hoàn tất</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tiến trình gỡ cài đặt</value>

@@ -122,10 +122,10 @@
 Lưu ý: Bạn có thể cần phải khởi động lại BCU để các cài đặt này có hiệu lực.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>Kết quả quét chứng chỉ của ứng dụng lưu trong bộ nhớ đệm</value>
+    <value>Lưu trữ tạm thời các kết quả quét chứng chỉ ứng dụng</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
-    <value>Bộ nhớ đệm đã thu thập được thông tin bị thiếu</value>
+    <value>Lưu trữ tạm thời thông tin bị thiếu được thu thập</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Xoá bộ nhớ đệm</value>

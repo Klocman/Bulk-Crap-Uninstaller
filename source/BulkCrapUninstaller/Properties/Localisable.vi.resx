@@ -121,33 +121,33 @@
     <value>Đang tạo một điểm khôi phục mới...</value>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
-    <value>Đang tìm kiếm các phần còn sót lại...</value>
+    <value>Đang kiểm tra các phần còn sót lại...</value>
   </data>
   <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
-    <value>Đang cập nhật danh sách các trình gỡ cài đặt</value>
+    <value>Đang cập nhật danh sách các trình gỡ cài đặt...</value>
   </data>
   <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
     <value>Đang loại bỏ các phần còn sót lại...</value>
   </data>
   <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
-    <value>Đang tìm kiếm bản cập nhật...</value>
+    <value>Đang kiểm tra các bản cập nhật...</value>
   </data>
   <data name="SearchNothingFoundMessage" xml:space="preserve">
     <value>Không có mục nào phù hợp với tiêu chí tìm kiếm của bạn.</value>
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>Xuất BCUninstaller
-Nhà xuất bản | Phiên bản | Ngày | Kích thước | Thanh ghi | Loại trình gỡ cài đặt | Lệnh gỡ cài đặt | Lệnh gỡ cài đặt âm thầm | Chú thích</value>
+Nhà phát hành | Phiên bản | Ngày | Kích thước | Regsitry | Loại trình gỡ cài đặt | Câu lệnh gỡ cài đặt | Câu lệnh gỡ cài đặt âm thầm | Chú thích</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
-    <value>Phiên bản di động</value>
+    <value> Portable</value>
     <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
     <value>Gọi API không thành công</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
-    <value>Sao lưu thanh ghi không thành công, bạn có muốn tiếp tục không?</value>
+    <value>Sao lưu registry không thành công, bạn có muốn tiếp tục chứ?</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>Chi tiết lỗi: </value>
@@ -163,12 +163,12 @@ Chi tiết lỗi:
     <comment>Add space or newline afterwards and two newlines before</comment>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
-    <value>Bạn có muốn sao lưu thanh ghi trước khi tiếp tục không?</value>
+    <value>Bạn có muốn sao lưu registry trước khi tiếp tục không?</value>
   </data>
   <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
-    <value>Bạn sẽ có thể khôi phục tất cả các thay đổi bằng cách nhấp đúp vào nó sau đó.
+    <value>Bạn có thể hoàn tác mọi thay đổi bằng cách nhấp đúp vào nó sau này.
 
-Các tập tin và thư mục sẽ được chuyển vào Thùng rác, nơi chúng có thể được khôi phục.</value>
+Các tệp và thư mục sẽ được chuyển vào thùng rác, bạn có thể khôi phục chúng từ đó.</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
     <value>Thao tác thất bại</value>
@@ -177,10 +177,10 @@ Các tập tin và thư mục sẽ được chuyển vào Thùng rác, nơi chú
     <value>Thao tác này chỉ yêu cầu một mục được chọn.</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
-    <value>Chọn chính xác một trình gỡ cài đặt từ danh sách. Nếu bạn đang sử dụng các hộp kiểm, hãy nhớ chọn chúng.</value>
+    <value>Chọn chính xác một trình gỡ cài đặt từ danh sách. Nếu có các hộp kiểm, hãy nhớ tích vào chúng.</value>
   </data>
   <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
-    <value>Tìm kiếm bản cập nhật</value>
+    <value>Kiểm tra các bản cập nhật</value>
   </data>
   <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
     <value>Mở nội dung trực tuyến</value>
@@ -189,7 +189,7 @@ Các tập tin và thư mục sẽ được chuyển vào Thùng rác, nơi chú
     <value>Không thể kết nối Internet hoặc không có mạng.</value>
   </data>
   <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
-    <value>Đảm bảo rằng cáp mạng của bạn đã được cắm. Nếu bạn đang sử dụng Wi-Fi, hãy đảm bảo rằng bạn có cường độ tín hiệu tốt.</value>
+    <value>Đảm bảo rằng cáp mạng của bạn đã được cắm. Và nếu bạn đang sử dụng Wi-Fi, hãy đảm bảo rằng bạn có cường độ tín hiệu tốt.</value>
   </data>
   <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
     <value>Gửi phản hồi</value>
@@ -198,7 +198,7 @@ Các tập tin và thư mục sẽ được chuyển vào Thùng rác, nơi chú
     <value>Bạn có muốn gửi phản hồi liên quan về BCU không?</value>
   </data>
   <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
-    <value>Nhiệm vụ này chỉ mất chưa đầy một phút nhưng nó sẽ góp phần rất lớn vào sự phát triển của bạn! Mọi phản hồi đều được đánh giá cao, cho dù đó là báo cáo lỗi, yêu cầu tính năng hay chỉ là một lời cảm ơn đơn giản!
+    <value>Sẽ chỉ mất của bạn chưa đến một phút nhưng lại giúp ích rất nhiều cho việc phát triển! Mọi phản hồi đều được ghi nhận, cho dù đó là báo lỗi, yêu cầu tính năng mới hay chỉ đơn giản là lời cảm ơn!
 
 Bạn có thể gửi nó sau từ thanh menu trên cùng (Trợ giúp -&gt; Gửi phản hồi).</value>
   </data>
@@ -206,22 +206,22 @@ Bạn có thể gửi nó sau từ thanh menu trên cùng (Trợ giúp -&gt; G�
     <value>Phiên bản hiện tại là phiên bản mới nhất</value>
   </data>
   <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
-    <value>Không có bản cập nhật nào được tìm thấy vào thời điểm này, vì vậy đây là phiên bản mới nhất.
+    <value>Hiện tại không tìm thấy bản cập nhật nào, bạn đang dùng phiên bản mới nhất.
 
-Bạn muốn thêm một số chức năng hoặc sửa lỗi? Vui lòng gửi cho tôi phản hồi của bạn bằng cách sử dụng menu "Trợ giúp-&gt;Gửi phản hồi".</value>
+Bạn có muốn đề xuất thêm tính năng hoặc báo cáo lỗi không? Vui lòng gửi cho tôi phản hồi của bạn bằng cách sử dụng menu "Trợ giúp-&gt;Gửi phản hồi".</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
-    <value>Đã xảy ra lỗi khi kiểm tra cập nhật</value>
+    <value>Đã xảy ra lỗi khi kiểm tra các bản cập nhật</value>
   </data>
   <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
     <value>Hãy đảm bảo rằng BCUninstaller không bị chặn bởi tường lửa và bạn đã kết nối Internet.</value>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
-    <value>Đã có phiên bản mới {0}, bạn có muốn nâng cấp ngay bây giờ không?</value>
+    <value>Đã có phiên bản mới {0}, bạn có muốn nâng cấp ngay không?</value>
     <comment>0 is version number</comment>
   </data>
   <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
-    <value>BCUninstaller sẽ tự động tải xuống các bản cập nhật và áp dụng chúng sau khi khởi động lại. Xin lưu ý rằng cài đặt của bạn có thể bị mất trong trường hợp này.
+    <value>BCUninstaller sẽ tự động tải xuống bản các cập nhật và áp dụng chúng sau khi khởi động lại. Xin lưu ý rằng bạn có thể mất cài đặt trong quá trình này.
 
 Nhật ký thay đổi:
 - {0}
@@ -242,10 +242,10 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Dừng tác vụ gỡ cài đặt hiện tại</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
-    <value>Bạn có chắc là muốn dừng tác vụ hiện đang chạy không?</value>
+    <value>Bạn có chắc là muốn dừng tác vụ hiện đang thực thi chứ?</value>
   </data>
   <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
-    <value>Nếu bạn dừng tác vụ giữa chừng thì những thay đổi sẽ không được hoàn tác. Trình gỡ cài đặt hiện đang chạy sẽ không dừng và sẽ đợi tác vụ hoàn tất.</value>
+    <value>Dừng tác vụ trước khi hoàn thành sẽ không hoàn tác bất kỳ thay đổi nào đã thực hiện. Trình gỡ cài đặt đang thực thi sẽ không bị dừng lại, tác vụ sẽ đợi nó hoàn tất.</value>
   </data>
   <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
     <value>Tạo điểm khôi phục</value>
@@ -265,28 +265,28 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Tiến trình gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
-    <value>Bây giờ bạn có thể rời khỏi máy tính của mình</value>
+    <value>Bạn có thể rời khỏi máy tính của mình ngay bây giờ</value>
   </data>
   <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
-    <value>Phần còn lại của trình gỡ cài đặt có thể được hoàn thành mà không cần sự can thiệp của người dùng. Bạn nên kiểm tra thường xuyên đề phòng trường hợp trình gỡ cài đặt gặp sự cố.</value>
+    <value>Các trình gỡ cài đặt còn lại có thể hoàn thành mà không cần sự can thiệp của người dùng. Tuy nhiên, bạn vẫn nên kiểm tra định kỳ đề phòng trường hợp một trong số các trình gỡ cài đặt bị lỗi.</value>
   </data>
   <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
     <value>Loại bỏ rác/phần còn sót lại</value>
   </data>
   <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
-    <value>Bạn có thực sự muốn sửa các mục có độ tin cậy thấp không?</value>
+    <value>Bạn có thực sự muốn thay đổi các mục có độ tin cậy thấp chứ?</value>
   </data>
   <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
     <value>Việc xóa các mục được đánh dấu có độ tin cậy thấp có thể rất nguy hiểm! Bạn nên xác minh rằng mọi mục đều an toàn để xóa.</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
-    <value>Xoá các khoá khỏi thanh ghi</value>
+    <value>Xoá các khoá khỏi registry</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
-    <value>Bạn có chắc là muốn xóa mục trình gỡ cài đặt đã chọn không?</value>
+    <value>Bạn có chắc là muốn xóa mục trình gỡ cài đặt đã chọn chứ?</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
-    <value>Các mục sau sẽ bị xóa khỏi sổ đăng ký và sẽ biến mất khỏi danh sách của trình gỡ cài đặt nhưng sẽ không được gỡ cài đặt.
+    <value>Các mục sau sẽ bị xóa khỏi registry và sẽ biến mất khỏi danh sách của trình gỡ cài đặt nhưng sẽ không được nó gỡ cài đặt.
 
 {0}</value>
   </data>
@@ -300,7 +300,7 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Nếu lỗi vẫn còn, hãy thử lưu vào một thư mục khác, chẳng hạn như "Desktop".</value>
   </data>
   <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
-    <value>BCUninstaller đang gỡ cài đặt (các) ứng dụng {0}</value>
+    <value>BCUninstaller đang gỡ cài đặt {0} ứng dụng</value>
     <comment>0 is the uninstaller count</comment>
   </data>
   <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
@@ -315,10 +315,10 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
-    <value>Bạn muốn tìm phần còn sót lại của (các) lần gỡ cài đặt mà bạn đã thực hiện?</value>
+    <value>Bạn muốn kiểm tra các phần còn sót lại của (các) lần gỡ cài đặt mà bạn đã thực hiện chứ?</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
-    <value>Xin lưu ý rằng tính năng này chỉ dành cho những người dùng thành thạo hiểu cách hoạt động của nó. Không cần thiết phải xóa các tệp này và chúng sẽ không ảnh hưởng đến hiệu suất hệ thống theo bất kỳ cách nào.</value>
+    <value>Cần lưu ý rằng tính năng này chỉ dành cho người dùng chuyên sâu, hiểu rõ cách hoạt động của nó. Không cần thiết phải xóa các tệp này và chúng không ảnh hưởng đáng kể đến hiệu suất hệ thống.</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
     <value>Không tìm thấy bất kỳ phần còn sót lại nào</value>
@@ -336,7 +336,7 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Mở thư mục</value>
   </data>
   <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
-    <value>Thao tác này sẽ mở {0} thư mục cùng một lúc, bạn có chăc là muốn tiếp tục không?</value>
+    <value>Thao tác này sẽ mở {0} thư mục cùng một lúc, bạn có chắc là muốn tiếp tục chứ?</value>
     <comment>0 is number of directories to open
 </comment>
   </data>
@@ -350,28 +350,29 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Gỡ cài đặt BCUninstaller</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
-    <value>Bạn có chắc là muốn gỡ cài đặt BCUninstaller không?</value>
+    <value>Bạn có chắc là muốn gỡ cài đặt BCUninstaller chứ?</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
-    <value>Tôi rất tiếc khi bạn rời đi! Nếu bạn có một hoặc hai phút, vui lòng cho biết lý do tại sao bạn gỡ cài đặt BCU trên trang web của tôi (http://klocmansoftware.weebly.com/). Tôi sẽ cố gắng hết sức để khắc phục mọi vấn đề những vấn đề chính đáng.</value>
+    <value>Tôi rất tiếc vì bạn đã gỡ bỏ BCU! Nếu bạn có một vài phút, hãy cho tôi biết lý do tại sao bạn gỡ cài đặt BCU trên trang web của tôi (http://klocmansoftware.weebly.com/). Tôi sẽ cố gắng hết sức để khắc phục bất kỳ sự cố chính đáng nào.</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
-    <value>Bạn có muốn tạo điểm khôi phục trước khi tiếp tục không?</value>
+    <value>Bạn có muốn tạo điểm khôi phục trước khi tiếp tục chứ?</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
-    <value>Nếu bạn không chắc chắn liệu ứng dụng bạn muốn gỡ cài đặt có quan trọng hay cần thiết cho sự ổn định của hệ thống hay không, chúng tôi khuyên bạn nên tạo điểm khôi phục. Nếu có sự cố xảy ra sau quy trình, bạn có thể sử dụng Khôi phục Hệ thống để khôi phục các thay đổi của mình.</value>
+    <value>Nếu bạn không chắc chắn rằng các ứng dụng bạn đang gỡ cài đặt có quan trọng hoặc cần thiết cho sự ổn định của hệ thống hay không, thì việc tạo điểm khôi phục hệ thống là điều được khuyến khích.
+Nếu bất kỳ vấn đề gì xảy ra sau quá trình gỡ cài đặt, bạn có thể sử dụng tính năng Khôi phục Hệ thống để hoàn tác các thay đổi.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
     <value>Đã xảy ra lỗi khi mở trang tìm kiếm.</value>
   </data>
   <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
-    <value>Lưu Danh sách Gỡ cài đặt</value>
+    <value>Lưu danh sách bộ lọc gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
     <value>Lưu danh sách vào tệp không thành công</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
-    <value>Bạn có chắc là muốn đặt lại tất cả cài đặt ứng dụng không?</value>
+    <value>Bạn có chắc là muốn khôi phục lại tất cả cài đặt ứng dụng chứ?</value>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
     <value>Một số ứng dụng không thể được gỡ cài đặt âm thầm.</value>
@@ -386,22 +387,22 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Đã xảy ra lỗi khi mở URL</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
-    <value>Bạn có muốn giữ lại lựa chọn hiện tại không?</value>
+    <value>Bạn có muốn giữ lại lựa chọn hiện tại chứ?</value>
   </data>
   <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
     <value>Đã xảy ra lỗi khi mở thư mục</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
-    <value>Nạp các tập tin đã chọn không thành công</value>
+    <value>Xử lý các tập tin đã chọn không thành công</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
     <value>Không có gì để gỡ cài đặt vì không có trình gỡ cài đặt nào được chọn.</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
-    <value>Chạy trình gỡ cài đặt</value>
+    <value>Khởi chạy trình gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
-    <value>Để gỡ cài đặt ứng dụng, trước tiên bạn phải chọn ứng dụng đó từ chế độ xem danh sách. Nếu bạn đang sử dụng hộp kiểm, hãy đảm bảo chúng được chọn.</value>
+    <value>Để gỡ cài đặt ứng dụng, trước tiên bạn phải chọn ứng dụng đó từ chế độ xem danh sách. Nếu có các hộp kiểm, hãy nhớ tích vào chúng.</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
     <value>Nếu bạn chọn giữ lựa chọn hiện tại, nó sẽ được hợp nhất vào (các) danh sách đã mở.</value>
@@ -422,7 +423,7 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Các mục bị ảnh hưởng:
 {0}
 
-Để thay đổi các mục này, bạn phải tắt bảo vệ trình gỡ cài đặt từ cài đặt ở thanh bên. Nếu muốn, bạn có thể xóa những mục này khỏi tác vụ và tiếp tục với các mục khác.</value>
+Để thay đổi các mục này, bạn phải tắt bảo vệ trình gỡ cài đặt từ cài đặt ở thanh bên. Bạn có thể xóa những mục này khỏi tác vụ và tiếp tục với các mục khác nếu muốn.</value>
     <comment>0 names of protected uninstallers</comment>
   </data>
   <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
@@ -435,23 +436,23 @@ Cảnh báo: Trong quá trình cập nhật, thư mục "Update" và tệp "Upda
     <value>Trình gỡ cài đặt âm thầm bị thiếu các mục sau:
 {0}
 
-Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mục này, hay bạn muốn loại bỏ chúng khỏi tác vụ?</value>
+Bạn có muốn sử dụng trình gỡ cài đặt gốc cho những mục này, hay bạn muốn loại bỏ chúng khỏi tác vụ?</value>
     <comment>0 is names of non-quiet uninstallers</comment>
   </data>
   <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
     <value>Gỡ cài đặt âm thầm</value>
   </data>
   <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
-    <value>Khôi phục các cài đặt mặc định</value>
+    <value>Khôi phục các cài đặt gốc</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
-    <value>Tất cả cài đặt sẽ bị mất vĩnh viễn. BCUninstaller phải được khởi động lại để hoàn thành thao tác này.</value>
+    <value>Tất cả các cài đặt của bạn sẽ bị mất vĩnh viễn. BCUninstaller cần phải khởi động lại để hoàn thành hành động này.</value>
   </data>
   <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
-    <value>Mở Danh sách Gỡ cài đặt</value>
+    <value>Mở danh sách gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
-    <value>KHÔNG CÓ ĐIỂM KHÔI PHỤC NÀO ĐƯỢC TẠO nên không thể khôi phục các thay đổi! Bạn vẫn muốn tiếp tục gỡ cài đặt không?</value>
+    <value>KHÔNG CÓ ĐIỂM KHÔI PHỤC NÀO ĐƯỢC TẠO, nên không thể hoàn tác các thay đổi! Bạn vẫn muốn tiếp tục gỡ cài đặt chứ?</value>
   </data>
   <data name="MainWindow_Rename_Description" xml:space="preserve">
     <value>Đang đổi tên "{0}"</value>
@@ -474,7 +475,7 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
     <value>Lỗi</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
-    <value>Tập tin không tồn tại.</value>
+    <value>Tệp tin không tồn tại.</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
     <value>Không có gì được hiển thị. Ứng dụng này được gỡ cài đặt bằng Trình gỡ cài đặt Windows (MsiExec).</value>
@@ -495,16 +496,16 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
     <value>Thiếu GUID</value>
   </data>
   <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
-    <value>Chọn các mục bên dưới...</value>
+    <value>Lựa chọn...</value>
   </data>
   <data name="Error_FileNotFound" xml:space="preserve">
-    <value>Không tìm thấy tập tin.</value>
+    <value>Không tìm thấy tệp tin.</value>
   </data>
   <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
-    <value>Đang các chạy lệnh sau khi gỡ cài đặt...</value>
+    <value>Đang các thực thi các câu lệnh sau khi gỡ cài đặt (post-uninstall)...</value>
   </data>
   <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
-    <value>Đang chạy lệnh trước khi gỡ cài đặt...</value>
+    <value>Đang thực thi các câu lệnh trước khi gỡ cài đặt (pre-uninstall)...</value>
   </data>
   <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
     <value>Sẵn sàng</value>
@@ -519,7 +520,7 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
     <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
-    <value>Không thực hiện được lệnh sau:
+    <value>Không thực hiện được câu lệnh sau:
 {0}</value>
     <comment>{0} is a command line (c:\example.exe /help)</comment>
   </data>
@@ -534,7 +535,7 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
     <value>Một số cài đặt không có hiệu lực cho đến khi bạn khởi động lại ứng dụng.</value>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
-    <value>Bạn có muốn khởi động lại BCU để áp dụng các cài đặt mới không?</value>
+    <value>Bạn có muốn khởi động lại BCU để áp dụng các cài đặt mới chứ?</value>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
     <value>Thay đổi cài đặt ứng dụng</value>
@@ -543,7 +544,7 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
     <value>Không có chứng chỉ</value>
   </data>
   <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
-    <value>Đang xử lý các ứng dụng được phát hiện, còn lại {0}...</value>
+    <value>Đang xử lý các ứng dụng được phát hiện, còn lại {0} ứng dụng...</value>
     <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
@@ -552,13 +553,13 @@ Bạn có muốn sử dụng trình gỡ cài đặt "ồn ào" cho những mụ
 Ngoài ra, bạn có thể bỏ qua việc chờ quá trình này. Việc bỏ qua sẽ cho phép trình gỡ cài đặt tiếp tục hoạt động trong khi tác vụ chuyển sang mục tiếp theo. Hãy nhớ rằng một số trình gỡ cài đặt có thể không chạy cho đến khi quá trình bị bỏ qua kết thúc.</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
-    <value>Bạn muốn bỏ qua trạng thái chờ của trình gỡ cài đặt hiện đang chạy không?</value>
+    <value>Bạn muốn bỏ qua trạng thái chờ của trình gỡ cài đặt hiện đang thực thi chứ?</value>
   </data>
   <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
-    <value>Bỏ qua tác vụ hiện đang chạy</value>
+    <value>Bỏ qua tác vụ hiện đang thực thi</value>
   </data>
   <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
-    <value>Một tác vụ gỡ cài đặt khác đang chạy sẽ bỏ qua tác vụ hiện đang chạy. Vui lòng đợi cho đến khi nó hoàn tất và thử lại.</value>
+    <value>Một tác vụ gỡ cài đặt khác đang thực thi. Vui lòng đợi cho đến khi nó hoàn tất và thử lại.</value>
   </data>
   <data name="JunkRemove_Details_Message" xml:space="preserve">
     <value>Đánh giá: {0}
@@ -577,16 +578,16 @@ The lists are separated by a single newline.</comment>
     <value>Chi tiết đánh giá</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
-    <value>Ứng dụng này không có bất kỳ mục thanh ghi hợp lệ nào.</value>
+    <value>Ứng dụng này không có bất kỳ mục registry hợp lệ nào.</value>
   </data>
   <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
-    <value>Ứng dụng này không có trình gỡ cài đặt hợp lệ.</value>
+    <value>Ứng dụng này không có trình gỡ cài đặt hợp lệ nào.</value>
   </data>
   <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
     <value>Đang nạp Windows Features...</value>
   </data>
   <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
-    <value>Đang làm mới thông tin khởi động...</value>
+    <value>Đang làm mới thông tin khởi động cùng hệ thống...</value>
     <comment>Shown when refreshing autostart information of the uninstallers</comment>
   </data>
   <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
@@ -600,7 +601,7 @@ The lists are separated by a single newline.</comment>
     <value>Đánh giá không có sẵn</value>
   </data>
   <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
-    <value>Trước tiên, bạn cần bật đánh giá từ cài đặt.</value>
+    <value>Trước tiên, bạn cần bật tính năng đánh giá từ cài đặt.</value>
   </data>
   <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
     <value>Bạn không thể đánh giá các ứng dụng không được cài đặt đúngc cách.</value>
@@ -622,7 +623,7 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Buộc gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
-    <value>Một số trình gỡ cài đặt không chạy được.</value>
+    <value>Một số trình gỡ cài đặt không thực thi được.</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
     <value>Không tìm thấy .NET Framework v4.0</value>
@@ -631,16 +632,16 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Một số tính năng sẽ bị tắt do không tìm thấy .NET Framework v4.0.</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
-    <value>v4.0 Framework là tùy chọn nhưng được khuyến nghị. Các tính năng phụ thuộc vào framework sẽ bị tắt cho đến khi bạn cài đặt chúng.</value>
+    <value>.NET framework v4.0 là tùy chọn nhưng được khuyến nghị. Các tính năng phụ thuộc vào framework sẽ bị tắt cho đến khi bạn cài đặt chúng.</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
     <value>Một số trình gỡ cài đặt không thành công</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Trình gỡ cài đặt ồn ào không thành công, tại sao bạn không thử chạy trình gỡ cài đặt âm thầm?</value>
+    <value>Trình gỡ cài đặt không thành công, tại sao bạn không thử chạy trình gỡ cài đặt âm thầm?</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
-    <value>Trình gỡ cài đặt bên dưới sẽ khởi động lại theo chế độ ồn ào: </value>
+    <value>Trình gỡ cài đặt bên dưới sẽ khởi động lại trình gỡ cài đặt gốc: </value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
     <value>Đang quét thư mục được chỉ định...</value>
@@ -655,13 +656,13 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Không tìm thấy ứng dụng nào trong thư mục được chỉ định</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
-    <value>Hãy chắc rằng thư mục đã chọn có chính xác không và tệp thực thi của ứng dụng vẫn còn.</value>
+    <value>Hãy chắc rằng thư mục đã chọn có chính xác và tệp thực thi của ứng dụng vẫn còn.</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
     <value>Đã tìm thấy trình gỡ cài đặt cho {0}</value>
   </data>
   <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
-    <value>Bạn có muốn chạy trình gỡ cài đặt này không?</value>
+    <value>Bạn có muốn chạy trình gỡ cài đặt này chứ?</value>
   </data>
   <data name="Error_SaveSettingsFailed" xml:space="preserve">
     <value>Lưu cài đặt không thành công</value>
@@ -673,10 +674,10 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Đang nạp biểu tượng</value>
   </data>
   <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
-    <value>Tìm kiếm một ứng dụng</value>
+    <value>Tìm kiếm ứng dụng</value>
   </data>
   <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
-    <value>Không có tập tin hoặc thư mục hợp lệ nào được chọn. Đảm bảo rằng bạn có quyền làm như vậy và nó không bị đánh dấu là tệp hệ thống.</value>
+    <value>Không có tệp tin hoặc thư mục hợp lệ nào được chọn. Đảm bảo rằng bạn có quyền truy cập và nó không bị đánh dấu là tệp hệ thống.</value>
   </data>
   <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
     <value>Tìm kiếm ứng dụng</value>
@@ -691,13 +692,13 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Không thể thay đổi ứng dụng đã chọn</value>
   </data>
   <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
-    <value>Không có lệnh sửa đổi nào được chỉ định cho ứng dụng đã chọn. Bạn có thể cần phải gỡ cài đặt và cài đặt lại để thay đổi cài đặt cài đặt.</value>
+    <value>Không có câu lệnh sửa đổi nào được chỉ định cho ứng dụng đã chọn. Bạn có thể cần phải gỡ cài đặt và cài đặt lại để thay đổi cài đặt cài đặt.</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
     <value>Lưu danh sách gỡ cài đặt</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
-    <value>Bạn có muốn lưu các thay đổi vào danh sách gỡ cài đặt đang mở không?</value>
+    <value>Bạn có muốn lưu các thay đổi vào danh sách gỡ cài đặt đang mở chứ?</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
     <value>Có những thay đổi chưa được lưu trong danh sách gỡ cài đặt đang mở và sẽ bị mất khi đóng.</value>
@@ -706,7 +707,7 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Chọn thư mục chứa ứng dụng mà bạn muốn gỡ cài đặt.</value>
   </data>
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
-    <value>Chọn một vị trí để lưu bản sao lưu. Một thư mục mới sẽ được tạo.</value>
+    <value>Chọn nơi để lưu bản sao lưu. Một thư mục mới sẽ được tạo.</value>
   </data>
   <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
     <value>BCU đã được cập nhật lên v{0}!</value>
@@ -715,7 +716,7 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Chào mừng bạn đến với phiên bản {0} của BCU!</value>
   </data>
   <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
-    <value>Đặt PC ở chế độ ngủ trong {0} giây. Bỏ chọn hộp kiểm để hủy.</value>
+    <value>Thiếp lập PC ở chế độ ngủ trong {0} giây. Tích vào hộp kiểm để hủy.</value>
   </data>
   <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
     <value>Không làm gì cả</value>
@@ -742,10 +743,10 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Phần mở rộng</value>
   </data>
   <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
-    <value>Tên Dễ hiểu</value>
+    <value>Tên dễ hiểu</value>
   </data>
   <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
-    <value>Tên của Thực thể chứng thực</value>
+    <value>Tên của thực thể chứng thực</value>
   </data>
   <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
     <value>Không sau ngày</value>
@@ -766,7 +767,7 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Dữ liệu thô</value>
   </data>
   <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
-    <value>Số Serial</value>
+    <value>Số Sêri</value>
   </data>
   <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
     <value>Tên chủ thể</value>
@@ -775,9 +776,9 @@ Bạn có thể thử tắt tính năng phát hiện xung đột trong cài đ�
     <value>Phiên bản</value>
   </data>
   <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
-    <value>Thumbprint</value>
+    <value>Vân tay khoá công khai</value>
   </data>
   <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
-    <value>Thuật toán Chữ ký</value>
+    <value>Thuật toán chữ ký</value>
   </data>
 </root>

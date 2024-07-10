@@ -121,7 +121,7 @@
     <value>Số lượng đối số không hợp lệ. Chuyển đường dẫn đầy đủ của thư mục cần xóa làm đối số và tùy chọn /q cho chế độ âm thầm.</value>
   </data>
   <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
-    <value>Trình gỡ cài đặt Chung chung</value>
+    <value>Trình gỡ cài đặt đa năng</value>
   </data>
   <data name="UninstallSelection_DeleteProgress_Title" xml:space="preserve">
     <value>Đang xoá các mục</value>

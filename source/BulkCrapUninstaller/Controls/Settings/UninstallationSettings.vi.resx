@@ -118,16 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Tắt tính năng chống xung đột khi chạy trình gỡ cài đặt theo cách thủ công</value>
+    <value>Tắt tính năng chống xung đột khi chạy trình gỡ
+cài đặt theo cách thủ công</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Mỗi lần chỉ có thể chạy một trình gỡ cài đặt "ồn ào"</value>
+    <value>Mỗi lần chỉ chạy một trình gỡ cài đặt</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Tự động chạy đồng thời các trình gỡ cài đặt (nếu có thể)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Số lượng tối da trình gỡ cài đặt thực thi: </value>
+    <value>Số trình gỡ cài đặt tối đa chạy đồng thời:</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Gỡ cài đặt đồng thời</value>
@@ -139,10 +140,10 @@
     <value>Tạo điểm khôi phục trước khi gỡ cài đặt</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>Bạn có thể sao lưu thanh ghi, một số cài đặt và tệp bằng cách tạo điểm khôi phục hệ thống. Bạn nên tạo điểm khôi phục trước khi xóa trình điều khiển và các ứng dụng hệ thống quan trọng.</value>
+    <value>Bạn có thể sao lưu registry, một số cài đặt và tệp bằng cách tạo điểm khôi phục hệ thống. Bạn nên tạo điểm khôi phục trước khi xóa driver và các ứng dụng hệ thống quan trọng.</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>Phân loại trình gỡ cài đặt một cách thông minh</value>
+    <value>Sắp xếp trình gỡ cài đặt một cách thông minh</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
     <value>Vô hiệu hóa bảo vệ</value>
@@ -154,7 +155,7 @@
     <value>Cài đặt chung</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Tự động kết thúc các trình gỡ cài đặt "âm thầm" bị kẹt</value>
+    <value>Tự động huỷ các trình gỡ cài đặt âm thầm bị lỗi</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
     <value>Thử lại các trình gỡ cài đặt âm thầm không thành công một lần nữa</value>
@@ -163,10 +164,12 @@
     <value>Tạo trình gỡ cài đặt âm thầm bị thiếu nếu có thể</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Tự động kết thúc một chương trình nếu nó bị kẹt trong quá trình chờ đợi người dùng nhập liệu</value>
+    <value>Tự động huỷ trình gỡ cài đặt nếu nó bị kẹt khi chờ thao tác của người dùng</value>
   </data>
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
-    <value>Giám sát các trình gỡ cài đặt "âm thầm" để tìm cửa sổ bật lên hoặc các sự cố khác và tự động hóa chúng (chạy chương trình tự động chạy nền)</value>
+    <value>Giám sát các trình gỡ cài đặt "im lặng" bật lên cửa sổ
+không mong muốn hoặc treo máy, và tự động hóa chúng
+(chạy trình nền tự động)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Gỡ cài đặt âm thầm</value>

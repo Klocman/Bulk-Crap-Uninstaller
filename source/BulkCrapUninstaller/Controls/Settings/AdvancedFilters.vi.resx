@@ -130,21 +130,21 @@
     <value>Lưu thành...</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Lưu mặc định</value>
+    <value>Lưu làm mặc định</value>
   </data>
   <data name="toolStripButtonDelete.Text" xml:space="preserve">
-    <value>Xoá mặc định</value>
+    <value>Xoá danh sách mặc định</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>Danh sách gỡ cài đặt|*.bcul</value>
+    <value>Danh sách bộ lọc gỡ cài đặt|*.bcul</value>
   </data>
   <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>Lưu Danh sách Gỡ cài đặt...</value>
+    <value>Lưu danh sách bộ lọc gỡ cài đặt...</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>Danh sách gỡ cài đặt|*.bcul</value>
+    <value>Danh sách bộ lọc gỡ cài đặt|*.bcul</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>Mở Danh sách Gỡ cài đặt...</value>
+    <value>Mở danh sách bộ lọc gỡ cài đặt...</value>
   </data>
 </root>

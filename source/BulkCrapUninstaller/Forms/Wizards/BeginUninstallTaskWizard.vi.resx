@@ -130,7 +130,7 @@
     <value>Tiếp tục</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Liên quan</value>
+    <value>Có liên quan đến</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Xác nhận</value>
@@ -169,7 +169,7 @@
     <value>l</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Đang được dùng bởi tiến trình khác</value>
+    <value>Đang được sử dụng bởi tiến trình khác</value>
   </data>
   <data name="labelTotalSize.Text" xml:space="preserve">
     <value>l</value>
@@ -181,30 +181,30 @@
     <value>l</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Các ứng dụng để gỡ cài đặt</value>
+    <value>Các ứng dụng cần gỡ cài đặt</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>KHỞI ĐỘNG QUÁ TRÌNH GỠ CÀI ĐẶT</value>
+    <value>BẮT ĐẦU QUÁ TRÌNH GỠ CÀI ĐẶT</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
-    <value>Hoàn thành</value>
+    <value>Phần cuối</value>
   </data>
   <data name="p1Heading.Text" xml:space="preserve">
-    <value>Các ứng dụng liên quan cần gỡ cài đặt</value>
+    <value>Các ứng dụng có liên quan mà bạn có thể muốn gỡ cài đặt</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Xác nhận rằng những mục dưới đây không có vấn đề gì khi gỡ cài đặt</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Một số ứng dụng cần phải đóng trước khi gỡ cài đặt.</value>
+    <value>Một số ứng dụng có thể cần được đóng lại trước khi gỡ cài đặt</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Thay đổi cài đặt của quá trình gỡ cài đặt</value>
+    <value>Thay đổi cài đặt mặc định của bạn</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Vui lòng xác nhận rằng thông tin sau là chính xác trước khi bắt đầu gỡ cài đặt. Đây là cơ hội cuối cùng của bạn!</value>
+    <value>Vui lòng xác nhận rằng tất cả thông tin dưới đây là chính xác trước khi bắt đầu gỡ cài đặt. Đây là lần cơ hội cuối cùng của bạn!</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Khởi động tác vụ gỡ cài đặt mới</value>
+    <value>Bắt đầu quá trình gỡ cài đặt mới</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>Hiển thị tất cả</value>
   </data>
   <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>Hiển thị các mục khởi động</value>
+    <value>Hiển thị các mục khởi động cùng hệ thống</value>
   </data>
   <data name="comboBoxFilter.Items2" xml:space="preserve">
     <value>Hiển thị các tác vụ</value>
@@ -142,19 +142,19 @@
     <value>Xuất...</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Tên ứng dụng</value>
+    <value>Tên chường trình</value>
   </data>
   <data name="columnHeader5.Text" xml:space="preserve">
     <value>Đã kích hoạt</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Nhà xuất bản</value>
+    <value>Nhà phát hành</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>Vị trí</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Lệnh</value>
+    <value>Câu lệnh</value>
   </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Mở vị trí tệp thực thi</value>
@@ -163,7 +163,7 @@
     <value>Mở liên kết</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Thực thi lệnh</value>
+    <value>&amp;Thực thi câu lệnh</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Sao chép vào bảng nhớ tạm</value>
@@ -172,7 +172,7 @@
     <value>Tạo &amp;bản sao lưu</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Di chuyển đến thanh ghi</value>
+    <value>Di chuyển đến registry</value>
   </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Chạy cho tất cả người dùng</value>
@@ -184,18 +184,18 @@
     <value>&amp;Xoá</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Danh sách các lệnh có thể chạy tự động mà không cần sự tương tác của người dùng</value>
+    <value>Danh sách các câu lệnh có thể được thực thi tự động mà không cần sự can thiệp của người dùng</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Tệp văn bản|*.txt</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Xuất các mục khởi động...</value>
+    <value>Xuất các mục khởi động cùng hệ thống...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Chọn một thư mục trống để sao lưu.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Trình quản lý Khởi động</value>
+    <value>Trình quản lý Khởi động cùng hệ thống</value>
   </data>
 </root>

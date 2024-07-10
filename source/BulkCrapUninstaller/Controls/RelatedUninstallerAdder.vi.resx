@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="olvColumnName.Text" xml:space="preserve">
-    <value>Tên trình gỡ cài đặt liên quan</value>
+    <value>Tên trình gỡ cài có đặt liên quan</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
     <value>Thêm vào danh sách tác vụ</value>
@@ -127,9 +127,9 @@
     <value>Liên quan đến: </value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Đây là danh sách các ứng dụng có thể liên quan đến ứng dụng bạn đã chọn để gỡ cài đặt. Bằng cách kiểm tra các ứng dụng này, bạn có thể thêm chúng vào hàng đợi gỡ cài đặt.</value>
+    <value>Đây là danh sách các ứng dụng có thể liên quan đến ứng các dụng bạn đã chọn để gỡ cài đặt. Bằng cách kiểm tra các ứng dụng này, bạn có thể thêm chúng vào hàng đợi gỡ cài đặt.</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Hãy cẩn thận để không gỡ cài đặt phần mềm quan trọng mà các ứng dụng khác yêu cầu để hoạt động bình thường.</value>
+    <value>Hãy cẩn thận để không gỡ cài đặt phần mềm quan trọng mà các ứng dụng khác có thể cần để hoạt động bình thường.</value>
   </data>
 </root>
