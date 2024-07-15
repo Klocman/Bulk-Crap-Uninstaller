@@ -27,6 +27,7 @@ BCUninstaller can detect, manage and uninstall applications from the following s
 * Windows Features
 * Windows Store apps (Universal Windows Platform apps)
 * Windows Updates
+
 Applications from all of these sources are treated the same - you can filter, export and automatically uninstall them in the same way.
 
 ![Advanced filtering](assets/3.png)
