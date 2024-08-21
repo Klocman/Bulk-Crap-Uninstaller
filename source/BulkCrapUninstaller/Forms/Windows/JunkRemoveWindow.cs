@@ -148,6 +148,10 @@ namespace BulkCrapUninstaller.Forms
             }
             catch (Exception ex)
             {
+                // https://github.com/dotnet/runtime/issues/24783
+                if (ex is FileNotFoundException)
+                    ex = new UnauthorizedAccessException("You do not have access to this path, choose a different path. If you use controlled folders, try turning them off or adding BCU to exclusions.", ex);
+
                 PremadeDialogs.GenericError(ex);
                 throw new OperationCanceledException();
             }
