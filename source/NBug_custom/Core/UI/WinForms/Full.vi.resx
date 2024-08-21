@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="warningLabel.Text" xml:space="preserve">
-    <value>Ứng dụng đã gặp sự cố và bây giờ nó sẽ bị đóng. Nếu bạn nhấp vào "Thoát", ứng dụng sẽ đóng ngay lập tức. Nếu bạn nhấp vào "Gửi và Thoát", ứng dụng sẽ đóng và một báo cáo lỗi sẽ được gửi.</value>
+    <value>Ứng dụng đã gặp sự cố và sẽ tự động đóng. Nếu bạn nhấp chuột vào nút "Thoát", ứng dụng sẽ đóng ngay lập tức. Nếu bạn nhấp chuột vào nút "Gửi và Thoát", ứng dụng sẽ đóng và đồng thời gửi một báo cáo lỗi về sự cố này.</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>Tên</value>
   </data>
   <data name="olvColumnPublisher.Text" xml:space="preserve">
-    <value>Nhà xuất bản</value>
+    <value>Nhà phát hành</value>
   </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
     <value>Đánh giá của người dùng</value>
@@ -136,7 +136,7 @@
     <value>Kích thước</value>
   </data>
   <data name="olvColumnStartup.Text" xml:space="preserve">
-    <value>Đang khởi động</value>
+    <value>Khởi động cùng hệ thống</value>
   </data>
   <data name="olvColumnIs64.Text" xml:space="preserve">
     <value>64bit</value>
@@ -145,7 +145,7 @@
     <value>Câu lệnh gỡ cài đặt</value>
   </data>
   <data name="olvColumnAbout.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>URL giới thiệu</value>
   </data>
   <data name="olvColumnInstallSource.Text" xml:space="preserve">
     <value>Nguồn cài đặt</value>
@@ -157,13 +157,13 @@
     <value>Loại trình gỡ cài đặt</value>
   </data>
   <data name="olvColumnSystemComponent.Text" xml:space="preserve">
-    <value>Thành phần Hệ thống</value>
+    <value>Thành phần hệ thống</value>
   </data>
   <data name="olvColumnProtected.Text" xml:space="preserve">
     <value>Được bảo vệ</value>
   </data>
   <data name="olvColumnRegistryKeyName.Text" xml:space="preserve">
-    <value>Khoá thanh ghi</value>
+    <value>Khoá registry</value>
   </data>
   <data name="olvColumnGuid.Text" xml:space="preserve">
     <value>Mã sản phẩm</value>
@@ -172,7 +172,7 @@
     <value>Câu lệnh gỡ cài đặt âm thầm</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Nạp lại trình gỡ cài đặt</value>
+    <value>Làm mới danh sách trình gỡ cài đặt</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Chọn tất cả</value>
@@ -184,7 +184,7 @@
     <value>Đảo ngược lựa chọn</value>
   </data>
   <data name="toolStripButtonTarget.Text" xml:space="preserve">
-    <value>Gỡ cài đặt theo cửa sổ, thư mục hoặc tệp...</value>
+    <value>Gỡ cài đặt dựa vào cửa sổ, thư mục hoặc tệp...</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Gỡ cài đặt</value>
@@ -193,7 +193,7 @@
     <value>Gỡ cài đặt âm thầm</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
-    <value>Điều chỉnh</value>
+    <value>Sửa đổi</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Thuộc tính</value>
@@ -217,19 +217,19 @@
     <value>&amp;Gỡ cài đặt</value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>Gỡ cài đặt &amp;âm thầm</value>
+    <value>Gỡ cài đặt âm &amp;thầm</value>
   </data>
   <data name="manualUninstallToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Gỡ cài đặt &amp;thủ công</value>
+    <value>Gỡ cài đặt thủ &amp;công</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Cài dặt hoặc cấu hình (/I)</value>
+    <value>&amp;Cài đặt hoặc cấu hình (/I)</value>
   </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Gỡ cài đặt (/X)</value>
   </data>
   <data name="msiQuietUninstallContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Gỡ cài đặt âm thầm (/X /qb)</value>
+    <value>Gỡ cài đặt âm &amp;thầm (/X /qb)</value>
   </data>
   <data name="uninstallUsingMsiExecContextMenuStripItem.Text" xml:space="preserve">
     <value>Gỡ cài đặt bằng &amp;MsiExec...</value>
@@ -241,7 +241,7 @@
     <value>Bao gồm</value>
   </data>
   <data name="runToolStripMenuItem.Text" xml:space="preserve">
-    <value>Chạy...</value>
+    <value>Khởi chạy...</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Nâng cao...</value>
@@ -256,34 +256,34 @@
     <value>Mã sản phẩm / GUID</value>
   </data>
   <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Đường dẫn đầy đủ đến thanh ghi</value>
+    <value>Đường dẫn đầy đủ đến registry</value>
   </data>
   <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Lệnh gỡ cài đặt</value>
+    <value>Câu lệnh gỡ cài đặt</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Sao chép vào Bảng nhớ tạm...</value>
+    <value>&amp;Sao chép vào bảng nhớ tạm...</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Xoá mục thanh ghi</value>
+    <value>&amp;Xoá mục registry</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Đổi tên...</value>
+    <value>Đổi &amp;tên...</value>
   </data>
   <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Vị trí cài đặt</value>
+    <value>Vị trí &amp;cài đặt</value>
   </data>
   <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Vị trí Trình gỡ cài đặt</value>
+    <value>Vị trí &amp;trình gỡ cài đặt</value>
   </data>
   <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Vị trí Nguồn</value>
+    <value>Vị trí &amp;nguồn</value>
   </data>
   <data name="openInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Mở trong &amp;Explorer...</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
-    <value>Mở &amp;Trang web</value>
+    <value>Mở Trang &amp;web</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>
@@ -307,7 +307,7 @@
     <value>FileHippo.com</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Tìm kiếm trực tuyến</value>
+    <value>Tìm &amp;kiếm trực tuyến</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>Đánh giá...</value>
@@ -322,10 +322,10 @@
     <value>Xuất các thuộc tính của trình gỡ cài đặt đã chọn</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Nạp lại trình gỡ cài đặt</value>
+    <value>&amp;Làm mới danh sách trình gỡ cài đặt</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mở Danh sách Gỡ cài đặt...</value>
+    <value>&amp;Mở danh sách bộ lọc gỡ cài đặt...</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Xuất dữ liệu của các trình gỡ cài đặt đã chọn...</value>
@@ -355,7 +355,7 @@
     <value>Hiển thị &amp;cài đặt ở cạnh bên</value>
   </data>
   <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hiển thị &amp;thanh trạng thái</value>
+    <value>Hiển thị th&amp;anh trạng thái</value>
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Sử dụng chủ đề hệ thống</value>
@@ -367,28 +367,28 @@
     <value>&amp;Bộ lọc mặc định</value>
   </data>
   <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Chỉ những &amp;ứng dụng cơ bản</value>
+    <value>Chỉ mình ứng &amp;dụng cơ bản</value>
   </data>
   <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Chỉ những thành phần hệ thống</value>
+    <value>Chỉ mình thành phần hệ thống</value>
   </data>
   <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Tất cả mọi thứ</value>
   </data>
   <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Chỉ những úng dụng tự động khởi chạy</value>
+    <value>Chỉ mình úng dụng tự động khởi chạy</value>
   </data>
   <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Chỉ những trình duyệt</value>
+    <value>Chỉ mình trình duyệt</value>
   </data>
   <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xem tinh chỉnh hệ thống</value>
+    <value>Xem các tinh chỉnh</value>
   </data>
   <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
     <value>Xem các mục chưa đăng ký</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xem các mục cập nhật</value>
+    <value>Xem các ứng dụng cập nhật</value>
   </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Xem Windows Features</value>
@@ -400,52 +400,52 @@
     <value>Tìm kiếm...</value>
   </data>
   <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bộ lọc nhanh</value>
+    <value>&amp;Bộ lọc</value>
   </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Gỡ cài đặt</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gỡ cài đặt &amp;âm thầm</value>
+    <value>Gỡ cài đặt âm &amp;thầm</value>
   </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Điều chỉnh</value>
+    <value>Sửa đổi</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nâng cao...</value>
+    <value>&amp;Nâng cao...</value>
   </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Thông tin đầy đủ</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
-    <value>Tên ứng dụng</value>
+    <value>Tên chương trình</value>
   </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
     <value>Mã sản phẩm / GUID</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
-    <value>Đường dẫn đầy đủ đến thanh ghi</value>
+    <value>Đường dẫn đầy đủ đến registry</value>
   </data>
   <data name="toolStripMenuItem13.Text" xml:space="preserve">
-    <value>Lệnh gỡ cài đặt</value>
+    <value>Câu lệnh gỡ cài đặt</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
-    <value>&amp;Sao chép vào Bảng nhớ tạm...</value>
+    <value>&amp;Sao chép vào bảng nhớ tạm...</value>
   </data>
   <data name="toolStripMenuItem5.Text" xml:space="preserve">
-    <value>&amp;Vị trí cài đặt</value>
+    <value>Vị trí &amp;cài đặt</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>&amp;Vị trí Trình gỡ cài đặt</value>
+    <value>Vị trí &amp;trình gỡ cài đặt</value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
-    <value>&amp;Vị trí nguồn</value>
+    <value>Vị trí &amp;nguồn</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Mở trong &amp;Explorer...</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
-    <value>Mở &amp;Trang web</value>
+    <value>Mở trang &amp;web</value>
   </data>
   <data name="googleToolStripMenuItem.Text" xml:space="preserve">
     <value>Google</value>
@@ -469,7 +469,7 @@
     <value>FileHippo.com</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Tìm kiếm trực tuyến</value>
+    <value>Tìm &amp;kiếm trực tuyến</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Đánh giá...</value>
@@ -478,10 +478,10 @@
     <value>Hiển thị &amp;thuộc tính</value>
   </data>
   <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Thao tác cơ bản</value>
+    <value>Tính năng &amp;cơ bản</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gỡ cài đặt &amp;thủ công</value>
+    <value>Gỡ cài đặt thủ &amp;công</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>&amp;Cài đặt hoặc cấu hình (/I)</value>
@@ -493,16 +493,16 @@
     <value>&amp;Gỡ cài đặt âm thầm (/X /qb)</value>
   </data>
   <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Gỡ cài đặt bằng MsiExec</value>
+    <value>Gỡ cài đặt bằng &amp;MsiExec</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Đổi tên...</value>
+    <value>Đổi &amp;tên...</value>
   </data>
   <data name="disableAutostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Tắt tính năng tự khởi động</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Xóa khóa thanh ghi</value>
+    <value>&amp;Xóa khóa registry</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Tạo &amp;bản sao lưu...</value>
@@ -514,16 +514,16 @@
     <value>Lấy quyền sở hữu</value>
   </data>
   <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Thao tác nâng cao</value>
+    <value>Tính năng &amp;nâng cao</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mở Trình quản lý Khởi động</value>
+    <value>Mở Trình quản lý Khởi động cùng hệ thống</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Dọn dẹp thư mục "Program Files"...</value>
   </data>
   <data name="targetMenuItem.Text" xml:space="preserve">
-    <value>Gỡ cài đặt theo cửa sổ, thư mục hoặc tệp...</value>
+    <value>Gỡ cài đặt dựa vào cửa sổ, thư mục hoặc tệp...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Gỡ cài đặt từ thư mục...</value>
@@ -532,10 +532,10 @@
     <value>Giải quyết vấn đề gỡ cài đặt...</value>
   </data>
   <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Khởi chạy Dọn dẹp Đĩa</value>
+    <value>Khởi chạy dọn dẹp đĩa</value>
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cài đặt .NET v3.5 (và các chức năng đi kèm)</value>
+    <value>Cài đặt .NET v3.5 (và các tính năng đi kèm)</value>
   </data>
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Tạo một điểm khôi phục mới</value>
@@ -556,10 +556,10 @@
     <value>Mở &amp;trợ giúp</value>
   </data>
   <data name="startSetupWizardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Khởi chạy Trợ lý Thiết lập</value>
+    <value>Khởi chạy trợ lý thiết lập</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kiểm tra bản cập nhật</value>
+    <value>Kiểm tra các bản cập nhật</value>
   </data>
   <data name="submitFeedbackToolStripMenuItem.Text" xml:space="preserve">
     <value>Gửi phản hồi...</value>
@@ -571,16 +571,16 @@
     <value>Gỡ cài đặt BCUninstaller</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Về</value>
+    <value>&amp;Giới thiệu</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Trợ giúp</value>
+    <value>Trợ &amp;giúp</value>
   </data>
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mở &amp;cửa sổ gỡ lỗi</value>
+    <value>&amp;Mở cửa sổ gỡ lỗi</value>
   </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
-    <value>Tệp thanh ghi|*.reg</value>
+    <value>Tệp registry|*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>Tạo bản sao thanh ghi</value>

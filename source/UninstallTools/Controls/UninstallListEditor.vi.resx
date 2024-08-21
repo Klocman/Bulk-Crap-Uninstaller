@@ -166,9 +166,9 @@
     <value>Trình chỉnh sửa điều kiện</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Danh sách gỡ cài đặt (*.bcul)|*.bcul|Tất cả tệp|*.*</value>
+    <value>Danh sách bộ lọc gỡ cài đặt (*.bcul)|*.bcul|Tất cả tệp|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Nạp Danh sách Gỡ cài đặt</value>
+    <value>Làm mới danh sách bộ lọc gỡ cài đặt</value>
   </data>
 </root>

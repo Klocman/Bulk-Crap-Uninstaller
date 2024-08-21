@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label3.Text" xml:space="preserve">
-    <value>Các khoản quyên góp giúp tôi luôn quan tâm đến dự án này, cũng như trả tiền cho chứng chỉ ký mã, lưu trữ và các chi phí cần thiết khác.</value>
+    <value>Các khoản tài trợ giúp tôi duy trì sự hứng thú với dự án này, đồng thời cũng để thanh toán chi phí cho chứng chỉ ký code, lưu trữ và các nhu cầu cần thiết khác.</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>Xem các bản ghi chú phát hành và nhật ký thay đổi</value>
@@ -133,7 +133,7 @@
     <value>Đọc chính sách bảo mật</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Đọc tập tin trợ giúp</value>
+    <value>Đọc tệp tin trợ giúp</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>Gửi phản hồi / Liên hệ với nhà phát triển</value>
@@ -142,7 +142,7 @@
     <value>Quyên góp (PayPal, Bitcoin, Steam gifts)</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>(Nhấp vào bất cứ đâu để đóng hộp thoại này)</value>
+    <value>(Nhấp chuột vào bất cứ đâu để đóng hộp thoại này)</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Không bao giờ hiển thị lại cửa sổ này nữa</value>

@@ -127,28 +127,28 @@
     <value>&amp;Mở</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Loại bỏ phần còn sót lại</value>
+    <value>Dọn dẹp những thứ còn sót lại</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Danh sách các tập tin và/hoặc mục thanh ghi còn lại sau khi gỡ cài đặt</value>
+    <value>Danh sách các tệp tin và/hoặc mã registry còn lại sau khi gỡ cài đặt</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Việc phát hiện những phần còn sót lại này là một quá trình phức tạp và có thể xảy ra sai sót. Do đó, tất cả các mục đều được xếp hạng độ tin cậy và quyết định cuối cùng thuộc về người dùng. Những mục có độ tin cậy tốt và rất tốt thường có thể tháo ra một cách an toàn, nhưng bạn vẫn nên kiểm tra lại chúng.</value>
+    <value>Việc phát hiện những mục dư thừa này là một quá trình phức tạp và có thể mắc sai sót. Do đó, tất cả các mục đều được đánh giá mức độ tin cậy và quyết định cuối cùng thuộc về bạn. Những mục có mức độ tin cậy tốt và rất tốt thường an toàn để xóa, nhưng bạn vẫn nên kiểm tra lại chúng.</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Mức độ tin cậy</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
-    <value>Các mục sau đây dường như bị trình gỡ cài đặt của chúng bỏ lại. Một số trình gỡ cài đặt có thể không xóa được một số mục, điều này có thể chiếm dung lượng ổ đĩa. Tuy nhiên, hầu hết các mục này có thể là cài đặt ứng dụng, không chiếm dung lượng và vô hại.</value>
+    <value>Các mục sau đây dường như bị trình gỡ cài đặt của chúng bỏ lại. Một số trình gỡ cài đặt có thể không xóa được một số mục, và có thể dẫn đến chiếm dung lượng ổ đĩa. Tuy nhiên, hầu hết các mục này có thể là cài đặt của ứng dụng, thường chiếm rất ít dung lượng và vô hại.</value>
   </data>
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
-    <value>Tên Trình gỡ cài đặt</value>
+    <value>Tên trình gỡ cài đặt</value>
   </data>
   <data name="olvColumnSafety.Text" xml:space="preserve">
     <value>Độ tin cậy</value>
   </data>
   <data name="olvColumnPath.Text" xml:space="preserve">
-    <value>Đường dẫn mục</value>
+    <value>Đường dẫn</value>
   </data>
   <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
     <value>Ẩn các mục có độ tin cậy thấp</value>

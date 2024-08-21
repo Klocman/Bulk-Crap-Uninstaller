@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>Thứ tự ban đầu tùy thuộc vào tuỳ chọn gỡ cài đặt của bạn nhưng có thể thay đổi bằng cách kéo các mục. Lưu ý: BCU có thể thay đổi thứ tự nếu bật tính năng gỡ cài đặt đồng thời.</value>
+    <value>Thứ tự sắp xếp ban đầu tùy thuộc vào tuỳ chọn gỡ cài đặt của bạn nhưng có thể thay đổi bằng cách kéo các mục. Lưu ý: BCU có thể thay đổi thứ tự nếu bật tính năng gỡ cài đặt đồng thời.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Đây là danh sách các ứng dụng sẽ được gỡ cài đặt, theo thứ tự từ trên xuống dưới. Nếu bạn bỏ chọn trường "Gỡ cài đặt", ứng dụng sẽ không được gỡ cài đặt. Nếu tính năng "Gỡ cài đặt âm thầm" không có sẵn cho một mục thì không thể kiểm tra mục đó.</value>
+    <value>Đây là danh sách các ứng dụng sẽ được gỡ cài đặt, theo thứ tự từ trên xuống dưới. Nếu bạn bỏ tích trường "Gỡ cài đặt", ứng dụng sẽ không được gỡ cài đặt. Nếu tính năng "Gỡ cài đặt âm thầm" không khả dụng cho một ứng dụng thì bạn không thể tích vào trường này.</value>
     <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
@@ -131,7 +131,7 @@
     <value>Vị trí cài đặt</value>
   </data>
   <data name="olvColumnQuiet.Text" xml:space="preserve">
-    <value>Âm thầm</value>
+    <value>Gỡ cài đặt âm thầm</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
     <value>Gỡ cài đặt</value>

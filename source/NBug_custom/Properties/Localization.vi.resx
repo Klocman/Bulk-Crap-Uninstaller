@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>Một ngoại lệ không thể giải quyết đã xãy ra. Đang đóng ứng dụng.</value>
+    <value>Lỗi ngoại lệ chưa được xử lý. Đang đóng ứng dụng.</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>Một ngoại lệ không thể giải quyết đã xãy ra. Đang đóng ứng dụng.</value>
+    <value>Lỗi ngoại lệ chưa được xử lý. Đang đóng ứng dụng.</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>Một ngoại lệ không thể giải quyết đã xãy ra. Đang đóng ứng dụng.</value>
+    <value>Lỗi ngoại lệ chưa được xử lý. Đang đóng ứng dụng.</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
@@ -138,11 +138,11 @@
     <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>Vui lòng thêm một mô tả ngắn gọn để tái hiện lỗi: </value>
+    <value>Vui lòng cung cấp một mô tả ngắn gọn đề tái hiện lỗi: </value>
     <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>Ứng dụng đã gặp sự cố và bây giờ nó sẽ bị đóng. Nếu bạn nhấp vào "Thoát", ứng dụng sẽ đóng ngay lập tức. Nếu bạn nhấp vào "Gửi và Thoát", ứng dụng sẽ đóng và một báo cáo lỗi sẽ được gửi.</value>
+    <value>Ứng dụng đã gặp sự cố và sẽ tự động đóng. Nếu bạn nhấp chuột vào nút "Thoát", ứng dụng sẽ đóng ngay lập tức. Nếu bạn nhấp chuột vào nút "Gửi và Thoát", ứng dụng sẽ đóng và đồng thời gửi một báo cáo lỗi về sự cố này.</value>
     <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
@@ -162,7 +162,8 @@
     <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>Ứng dụng đã gặp sự cố và bây giờ nó sẽ bị đóng. Đã gửi báo cáo lỗi cho nhà phát triển. Chúng tôi xin lỗi vì sự bất tiện này.</value>
+    <value>Ứng dụng đã gặp sự cố và sẽ bị đóng lại.
+Một báo cáo lỗi đã được gửi đến nhà phát triển. Chúng tôi chân thành xin lỗi vì sự bất tiện này.</value>
     <comment>The application has crashed and it will now be dismissed.
 A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
@@ -171,11 +172,11 @@ A bug report has been sent to the developers. We apologize for the inconvenience
     <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;Tiếp tục</value>
+    <value>Tiế&amp;p tục</value>
     <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Một ngoại lệ chưa được xử lý đã xảy ra trong ứng dụng của bạn. Nếu bạn bấm vào "Tiếp tục", ứng dụng sẽ cố gắng bỏ qua lỗi này và tiếp tục. Nếu bạn nhấp vào "Thoát", ứng dụng sẽ đóng ngay lập tức.</value>
+    <value>Đã xảy ra một lỗi ngoại lệ chưa được xử lý trong ứng dụng. Nếu bạn chọn "Tiếp tục", ứng dụng sẽ bỏ qua lỗi này và cố gắng tiếp tục chạy. Nếu bạn chọn "Thoát", ứng dụng sẽ đóng ngay lập tức.</value>
     <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">

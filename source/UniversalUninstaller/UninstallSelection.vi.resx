@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelMessage.Text" xml:space="preserve">
-    <value>Vui lòng chọn những tệp cần xóa. Bạn có thể nhấp đúp vào bất kỳ mục nào để xem mục đó trong Explorer. Để xem đường dẫn đầy đủ, hãy di chuột qua bất kỳ mục nào.
-Cảnh báo: Chỉ xóa những tệp mà bạn biết là không cần thiết.</value>
+    <value>Vui lòng chọn các tệp tin bạn muốn xóa. Bạn có thể nhấp đúp vào bất kỳ mục nào để xem chúng trong File Explorer. Để xem đường dẫn đầy đủ, hãy di chuột qua bất kỳ mục nào.
+Cảnh báo: Chỉ xóa những tệp mà bạn cho là không cần thiết.</value>
   </data>
 </root>

@@ -127,6 +127,6 @@
     <value>Tất cả tệp|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Liên kết hoặc tập tin cho ứng dụng...</value>
+    <value>Đường dẫn hoặc tệp tin ứng dụng...</value>
   </data>
 </root>

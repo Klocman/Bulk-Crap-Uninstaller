@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Một công cụ tự động gỡ cài đặt các ứng dụng không có trình gỡ cài đặt âm thầm sẽ thay mặt người dùng nhấp vào nút trình gỡ cài đặt.</value>
+    <value>Công cụ này tự động gỡ cài đặt các ứng dụng không có trình gỡ cài đặt âm thầm bằng cách nhấp chuột vào các nút của trình gỡ cài đặt thay cho người dùng.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Trạng thái</value>
@@ -127,13 +127,13 @@
     <value>Tiếp tục</value>
   </data>
   <data name="buttonPause.Text" xml:space="preserve">
-    <value>Tạm ngưng</value>
+    <value>Tạm dừng</value>
   </data>
   <data name="buttonAbort.Text" xml:space="preserve">
     <value>Huỷ bỏ</value>
   </data>
   <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
-    <value>Trình gỡ cài đặt có thể nhìn thấy</value>
+    <value>Hiển thị trình gỡ cài đặt</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tự động hoá việc gỡ cài đặt</value>

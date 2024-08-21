@@ -151,7 +151,7 @@
     <value>Được bảo vệ</value>
   </data>
   <data name="IsUpdate" xml:space="preserve">
-    <value>Một bản cập nhật</value>
+    <value>Một ứng dụng cập nhật</value>
   </data>
   <data name="IsValid" xml:space="preserve">
     <value>Hợp lệ</value>
@@ -160,22 +160,22 @@
     <value>Sửa đổi đường dẫn</value>
   </data>
   <data name="Publisher" xml:space="preserve">
-    <value>Tên nhà xuất bản</value>
+    <value>Tên nhà phát hành</value>
   </data>
   <data name="PublisherTrimmed" xml:space="preserve">
-    <value>Tên rút gọn của nhà xuất bản</value>
+    <value>Tên rút gọn của nhà phát hành</value>
   </data>
   <data name="QuietUninstallPossible" xml:space="preserve">
-    <value>Có thể được gỡ cài đặt âm thầm</value>
+    <value>Có thể gỡ cài đặt âm thầm</value>
   </data>
   <data name="QuietUninstallString" xml:space="preserve">
-    <value>Lệnh gỡ cài đặt âm thầm</value>
+    <value>Câu lệnh gỡ cài đặt âm thầm</value>
   </data>
   <data name="RegistryKeyName" xml:space="preserve">
-    <value>Tên khoá thanh ghi</value>
+    <value>Tên khoá registry</value>
   </data>
   <data name="RegistryPath" xml:space="preserve">
-    <value>Đường dẫn thanh ghi</value>
+    <value>Đường dẫn registry</value>
   </data>
   <data name="SystemComponent" xml:space="preserve">
     <value>Một thành phần hệ thống</value>
@@ -187,10 +187,10 @@
     <value>Loại trình gỡ cài đặt</value>
   </data>
   <data name="UninstallPossible" xml:space="preserve">
-    <value>Có thể được gỡ cài đặt</value>
+    <value>Có thể gỡ cài đặt</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
-    <value>Lệnh gỡ cài đặt</value>
+    <value>Câu lệnh gỡ cài đặt</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Chú thích</value>
@@ -245,13 +245,13 @@
     <value>Tên công ty trùng khớp</value>
   </data>
   <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
-    <value>Thư mục đang được sử dụng bởi một ứng dụng đã cài đặt khác</value>
+    <value>Thư mục đang được sử dụng bởi một ứng dụng khác</value>
   </data>
   <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
     <value>Mục được đề cập rõ ràng trong trình gỡ cài đặt</value>
   </data>
   <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
-    <value>Mục thanh ghi của trình gỡ cài đặt</value>
+    <value>Mục registry của trình gỡ cài đặt</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
     <value>Mục này dường như là toàn bộ danh mục của nhà xuất bản</value>
@@ -260,7 +260,7 @@
     <value>Tên sản phẩm không khớp lắm</value>
   </data>
   <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
-    <value>Tên sản phẩm trùng khớp chính xác</value>
+    <value>Tên sản phẩm trùng khớp hoàn toàn</value>
   </data>
   <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
     <value>Tên thư mục rất đáng ngờ</value>
@@ -308,7 +308,7 @@
     <value>Đang chờ</value>
   </data>
   <data name="IsRegistered" xml:space="preserve">
-    <value>Ứng dụng đã được đăng ký</value>
+    <value>Ứng dụng đã đăng ký</value>
   </data>
   <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
     <value>Bộ lọc không hợp lệ</value>
@@ -317,7 +317,7 @@
     <value>Bộ lọc mới</value>
   </data>
   <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
-    <value>Không khớp</value>
+    <value>Không trùng khớp</value>
   </data>
   <data name="FilterComparisonMethod_Contains" xml:space="preserve">
     <value>Chứa tất cả ký tự</value>
@@ -343,16 +343,16 @@
     <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
-    <value>Lệnh khởi động</value>
+    <value>Câu lệnh khởi động cùng hệ thống</value>
   </data>
   <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
-    <value>Chúng sẽ không còn được mở trong khi khởi động. Hãy đảm bảo rằng các mục đã chọn không cần thiết trước khi gỡ bỏ chúng.</value>
+    <value>Các mục đã chọn sẽ không còn được mở tự động trong quá trình khởi động. Hãy đảm bảo các mục này không cần thiết trước khi xóa chúng.</value>
   </data>
   <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
-    <value>Xoá các ứng dụng đã chọn khỏi quá trình khởi động?</value>
+    <value>Loại bỏ các chương trình đã chọn khỏi quá trình khởi động cùng hệ thống?</value>
   </data>
   <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
-    <value>Trình quản lý Khởi động</value>
+    <value>Trình quản lý Khởi động cùng hệ thống</value>
   </data>
   <data name="StartupManager_Loading" xml:space="preserve">
     <value>Đang nạp...</value>
@@ -370,13 +370,13 @@
     <value>Rất nhiều tệp tin hiện có</value>
   </data>
   <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
-    <value>Tên ứng dụng được công nhận</value>
+    <value>Tên chương trình được công nhận</value>
   </data>
   <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
     <value>Không có thư mục con</value>
   </data>
   <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
-    <value>Nhà xuất bản được công nhận</value>
+    <value>Nhà phát hành được công nhận</value>
   </data>
   <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
     <value>Mục nhập chỉ được thực thi một lần</value>
@@ -388,13 +388,13 @@
     <value>Các tệp và thư mục</value>
   </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
-    <value>Các tệp ứng dụng mồ côi</value>
+    <value>Các tệp chương trình mồ côi</value>
   </data>
   <data name="Junk_Registry_GroupName" xml:space="preserve">
-    <value>Thanh ghi</value>
+    <value>Registry</value>
   </data>
   <data name="Junk_Startup_GroupName" xml:space="preserve">
-    <value>Khởi động</value>
+    <value>Khởi động cùng hệ thống</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
     <value>Không thể kích hoạt mục này, các tệp sau không được tìm thấy:</value>
@@ -416,7 +416,7 @@
     <value>Giá trị không thể chứa ký tự thoát dòng mới (\n)</value>
   </data>
   <data name="Error_InvalidRegKeys" xml:space="preserve">
-    <value>(Các) khóa thanh ghi khởi động không hợp lệ hoặc không xác định: </value>
+    <value>(Các) khóa registry khởi động cùng hệ thống không hợp lệ hoặc không xác định: </value>
   </data>
   <data name="UninstallerType_StoreApp" xml:space="preserve">
     <value>Windows Store App</value>
@@ -425,17 +425,17 @@
     <value>Điều kiện mới</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <value>Chưa được đăng ký</value>
+    <value>Chưa đăng ký</value>
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
     <value>Việc xóa dữ liệu Store App có vấn đề</value>
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
-    <value>Xoá Đơn giản</value>
+    <value>Xoá đơn giản</value>
   </data>
   <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
-    <value>Thư mục trống hoặc vẫn trống ngay cả sau khi xóa rác.</value>
+    <value>Thư mục trống hoặc vẫn trống ngay cả sau khi loại bỏ rác.</value>
   </data>
   <data name="Startup_ShortName_Service" xml:space="preserve">
     <value>Dịch vụ</value>
@@ -451,46 +451,46 @@
     <value>Đã tìm thấy {0} GUID ứng dụng</value>
   </data>
   <data name="Progress_Registry" xml:space="preserve">
-    <value>Đang quét thanh ghi để tìm trình gỡ cài đặt...</value>
+    <value>Đang quét registry để tìm các trình gỡ cài đặt...</value>
   </data>
   <data name="Progress_Registry_Gathering" xml:space="preserve">
-    <value>Đang thu thập các khoá thanh ghi...</value>
+    <value>Đang thu thập các khoá registry...</value>
   </data>
   <data name="Progress_Registry_Processing" xml:space="preserve">
-    <value>Đang xử lý {0}</value>
+    <value>Đang quét {0}</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
     <value>Đang tạo thông tin trình gỡ cài đặt bị thiếu...</value>
   </data>
   <data name="Progress_DriveScan" xml:space="preserve">
-    <value>Đang quét ổ đĩa để tìm ứng dụng...</value>
+    <value>Đang quét ổ đĩa để tìm các ứng dụng...</value>
   </data>
   <data name="Progress_DriveScan_Gathering" xml:space="preserve">
     <value>Đang thu thập thư mục...</value>
   </data>
   <data name="Progress_AppStores" xml:space="preserve">
-    <value>Đang quét kho ứng dụng...</value>
+    <value>Đang quét các kho ứng dụng...</value>
   </data>
   <data name="Progress_AppStores_Templates" xml:space="preserve">
-    <value>Đang tìm kiếm mẫu ứng dụng...</value>
+    <value>Đang tìm kiếm các mẫu ứng dụng...</value>
   </data>
   <data name="Progress_AppStores_Steam" xml:space="preserve">
-    <value>Đang tìm kiếm Steam App</value>
+    <value>Đang kiểm tra Steam App...</value>
   </data>
   <data name="Progress_AppStores_WinStore" xml:space="preserve">
-    <value>Đang tìm kiếm Windows Store App</value>
+    <value>Đang kiểm tra Windows Store App...</value>
   </data>
   <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
-    <value>Đang tìm kiếm Windows Features</value>
+    <value>Đang kiểm tra Windows Features...</value>
   </data>
   <data name="Progress_Merging" xml:space="preserve">
     <value>Đang hợp nhất các ứng dụng được phát hiện...</value>
   </data>
   <data name="Progress_Merging_Stores" xml:space="preserve">
-    <value>Đang hợp nhất các ứng dụng từ các kho ứng dụng</value>
+    <value>Đang hợp nhất các ứng dụng từ các kho ứng dụng...</value>
   </data>
   <data name="Progress_Merging_Drives" xml:space="preserve">
-    <value>Đang hợp nhất các ứng dụng từ các ổ đĩa</value>
+    <value>Đang hợp nhất các ứng dụng từ các ổ đĩa...</value>
   </data>
   <data name="Progress_GeneratingInfo" xml:space="preserve">
     <value>Đang tạo thông tin còn thiếu...</value>
@@ -499,7 +499,7 @@
     <value>Windows Update</value>
   </data>
   <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
-    <value>Đang tìm kiếm các bản cập nhật Windows</value>
+    <value>Đang kiểm tra Windows Update...</value>
   </data>
   <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
     <value>Quy tắc tường lửa</value>
@@ -547,10 +547,10 @@
     <value>Chocolatey</value>
   </data>
   <data name="UninstallStatus_Paused" xml:space="preserve">
-    <value>Tạm ngưng</value>
+    <value>Tạm dừng</value>
   </data>
   <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
-    <value>Tìm kiếm các gói Chocolatey</value>
+    <value>Tìm kiểm tra các gói Chocolatey...</value>
   </data>
   <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
     <value>Gỡ cài đặt bằng Chocolatey</value>
@@ -560,10 +560,10 @@
     <value>Có thể tự động khởi động</value>
   </data>
   <data name="Progress_Startup" xml:space="preserve">
-    <value>Tìm kiếm các mục khởi động</value>
+    <value>Đang kiểm tra các mục khởi động cùng hệ thống...</value>
   </data>
   <data name="Progress_AppStores_Oculus" xml:space="preserve">
-    <value>Tìm kiếm Oculus App</value>
+    <value>Đang kiểm tra Oculus App...</value>
   </data>
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
@@ -575,7 +575,7 @@
     <value>Tập lệnh PowerShell</value>
   </data>
   <data name="Progress_AppStores_Scoop" xml:space="preserve">
-    <value>Tìm kiếm các gói Scoop</value>
+    <value>Đang kiểm tra các gói Scoop...</value>
   </data>
   <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
     <value>Cấu hình theo dõi/ghi nhật ký gỡ lỗi</value>

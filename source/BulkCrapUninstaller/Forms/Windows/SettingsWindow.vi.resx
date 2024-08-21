@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label5.Text" xml:space="preserve">
-    <value>Dòng lệnh trước khi gỡ cài đặt</value>
+    <value>Câu lệnh trước khi bắt đầu gỡ cài đặt</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Dòng lệnh sau khi gỡ cài đặt</value>
+    <value>Câu lệnh sau khi gỡ cài đặt kết thúc</value>
   </data>
   <data name="checkBoxColorblind.Text" xml:space="preserve">
     <value>Chế độ mù màu</value>
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>Kích hoạt tính năng điều chỉnh giao diện theo DPI</value>
+    <value>Bật tính năng tỷ lệ giao diện hỗ trợ DPI</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Nhấp đúp vào danh sách ứng dụng</value>
@@ -137,13 +137,13 @@
     <value>Lặt vặt</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
-    <value>Tự động nạp Danh sách gỡ cài đặt có tên "Default.bcul" khi khởi động</value>
+    <value>Tự động nạp danh sách bộ lọc gỡ cài đặt có tên "Default.bcul" khi khởi động</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>Hiển thị xếp hạng người dùng cho ứng dụng</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>Tìm kiếm thông tin cập nhật khi khởi động</value>
+    <value>Kiểm tra các bản cập nhật khi khởi động</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
     <value>Gửi số liệu thống kê sử dụng ẩn danh</value>
@@ -170,7 +170,7 @@
     <value>Luôn hiển thị nội dung rác với độ tin cậy thấp</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Yêu cầu xóa Trình gỡ cài đặt ồn ào khỏi tác vụ âm thầm</value>
+    <value>Yêu cầu xóa trình gỡ cài đặt gốc khỏi tác vụ âm thầm</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>Không bao giờ yêu cầu phản hồi hoặc trợ giúp</value>
@@ -188,7 +188,7 @@
     <value>Cho phép thực thi các ứng dụng bên ngoài</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Bạn có thể chỉ định các lệnh sẽ chạy trước và sau khi gỡ cài đặt. Mỗi dòng tương ứng với một lệnh và được thực thi như thể sử dụng hộp thoại "Run...".
+    <value>Bạn có thể chỉ định các câu lệnh sẽ thực thi trước và sau khi gỡ cài đặt. Mỗi dòng tương ứng với một lệnh và được thực thi như thể sử dụng hộp thoại "Khởi chạy...".
 
 BCU sẽ đợi cho đến khi lệnh hiện đang thực thi hoàn tất trước khi thực thi lệnh tiếp theo.</value>
   </data>
@@ -196,7 +196,7 @@ BCU sẽ đợi cho đến khi lệnh hiện đang thực thi hoàn tất trư�
     <value>Ứng dụng bên ngoài</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>&amp;Đóng</value>
+    <value>Đó&amp;ng</value>
   </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Chung</value>
@@ -241,7 +241,7 @@ BCU sẽ đợi cho đến khi lệnh hiện đang thực thi hoàn tất trư�
     <value>Kho ứng dụng để quét</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
-    <value>Thanh ghi (khuyến khích để bật)</value>
+    <value>Registry (khuyến khích bật)</value>
   </data>
   <data name="checkBoxScanDrives.Text" xml:space="preserve">
     <value>Ổ đĩa (phát hiện các ứng dụng chưa đăng ký)</value>
@@ -259,18 +259,18 @@ BCU sẽ đợi cho đến khi lệnh hiện đang thực thi hoàn tất trư�
     <value>Công cụ bên ngoài</value>
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
-    <value>Quét ổ đĩa di động</value>
+    <value>Quét các ổ đĩa di động</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
     <value>Cố gắng tự động phát hiện các thư mục cài đặt tùy chỉnh</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>Bạn có thể chỉ định các thư mục tùy chỉnh mà bạn cài đặt ứng dụng của mình vào (ví dụ: D:\Applications). Những thư mục đó sẽ được BCU sử dụng để tìm kiếm phần còn sót lại của quá trình gỡ cài đặt, các ứng dụng chưa đăng ký và một vài thứ khác. Mặc dù không cần thiết nhưng danh sách các thư mục này sẽ giúp BCU hoạt động tốt hơn.
+    <value>Bạn có thể thiết lập các thư mục cài đặt ứng dụng tùy chỉnh (ví dụ: D:\Applications). Những thư mục đó sẽ được BCU sẽ sử dụng các thư mục này để tìm kiếm các tệp sót lại sau khi gỡ cài đặt, các ứng dụng chưa đăng ký và một vài thứ khác. Mặc dù không bắt buộc, nhưng việc cung cấp danh sách các thư mục này sẽ giúp BCU hoạt động hiệu quả hơn.
 
 Các thư mục mặc định của Windows luôn được quét, bạn không cần đưa chúng vào danh sách này.
 
-Sử dụng đường dẫn thư mục đầy đủ, một đường dẫn trên mỗi dòng. Đường dẫn không hợp lệ và thư mục không tồn tại sẽ bị bỏ qua.</value>
+Hãy sử dụng đường dẫn thư mục đầy đủ, một dòng một đường dân. Đường dẫn không hợp lệ và thư mục không tồn tại sẽ bị bỏ qua.</value>
   </data>
   <data name="groupBoxProgramFolders.Text" xml:space="preserve">
     <value>Thư mục cài đặt ứng dụng</value>
@@ -279,7 +279,7 @@ Sử dụng đường dẫn thư mục đầy đủ, một đường dẫn trên
     <value>Thư mục</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Khởi động</value>
+    <value>Khởi động cùng hệ thống</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Mạng</value>

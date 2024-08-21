@@ -172,7 +172,7 @@
     <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Tài nguyên được sử dụng</value>
+    <value>Thành phần được sử dụng</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Đóng</value>
@@ -187,6 +187,6 @@
     <value>Các dịch giả</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Về BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>Giới thiệu về BCUninstaller (Bulk Crap Uninstaller)</value>
   </data>
 </root>
