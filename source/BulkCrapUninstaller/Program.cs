@@ -116,7 +116,7 @@ namespace BulkCrapUninstaller
                 if (dir.Name.StartsWith("win-x") && dir.Parent != null) dir = dir.Parent;
                 var settingsDir = dir.FullName;
                 PortableSettingsProvider.PortableSettingsProvider.AppSettingsPathOverride = settingsDir;
-                ConfigFileFullname = Path.Combine(settingsDir, @"BCUninstaller.settings");
+                ConfigFileFullname = Path.Combine(settingsDir, "BCUninstaller.settings");
 
                 var settingsXmlDocument = XDocument.Parse(File.ReadAllText(ConfigFileFullname));
                 if (settingsXmlDocument.Root == null)
@@ -127,13 +127,21 @@ namespace BulkCrapUninstaller
 
                 if (!string.IsNullOrWhiteSpace(result.Value) && new Version(result.Value) < AssemblyVersion)
                     IsAfterUpgrade = true;
+
+                // One extra check to make sure loading and using the settings doesn't throw
+                // Initializes the Default settings object (unless it has been accessed before, which it shouldn't have)
+                Settings.Default.Reload();
+                Settings.Default.AdvancedSimulate = Settings.Default.AdvancedSimulate;
             }
-            catch
+            catch (Exception ex)
             {
-                DeleteConfigFile();
+                Console.WriteLine("Failed to load settings from the config file: " + ex);
+
+                File.Delete(ConfigFileFullname);
+                Settings.Default.Reload();
             }
 
-            // Initializes the settings object (unless it has been accessed before, which it shouldnt have)
+            // Ensure the user ID is valid
             if (Settings.Default.MiscUserId == 0)
                 Settings.Default.MiscUserId = GetUniqueUserId();
 
@@ -141,9 +149,11 @@ namespace BulkCrapUninstaller
                 ClearCaches(false);
         }
 
+        /// <summary>
+        /// Get an ID that is unlikely to be duplicate but that should always return the same on current pc
+        /// </summary>
         private static ulong GetUniqueUserId()
         {
-            // Get an ID that is unlikely to be duplicate but that should always return the same on current pc
             var windowsIdentity = WindowsIdentity.GetCurrent();
 
             string networkIdentity;
@@ -160,11 +170,6 @@ namespace BulkCrapUninstaller
 
             var idStr = windowsIdentity.User?.Value + string.Join("", windowsIdentity.Claims.Select(x => x.Value)) + networkIdentity;
             return UninstallerRatingManager.Utils.StableHash(idStr);
-        }
-
-        private static void DeleteConfigFile()
-        {
-            File.Delete(ConfigFileFullname);
         }
 
         /// <summary>
