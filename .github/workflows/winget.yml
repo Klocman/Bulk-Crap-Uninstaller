@@ -4,16 +4,15 @@ on:
     types: [released]
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get version
         id: get-version
         run: |
-          # Finding the version from release name
-          $VERSION = '${{ github.event.release.tag_name }}'.Replace('v', $Null) + '.0.0'
-          echo "::set-output name=version::$VERSION"
-        shell: pwsh
-      - uses: vedantmgoyal2009/winget-releaser@v2
+          # Find the version from tag name and pad to 4 components
+          version=$(echo "${{ github.event.release.tag_name }}" | awk -F. '{printf "%d.%d.%d.%d\n", substr($1, 2), $2, $3, $4}')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - uses: vedantmgoyal9/winget-releaser@main
         with:
           identifier: Klocman.BulkCrapUninstaller
           version: ${{ steps.get-version.outputs.version }}
