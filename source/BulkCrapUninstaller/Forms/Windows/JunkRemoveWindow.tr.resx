@@ -127,13 +127,13 @@
     <value>&amp;Aç</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kalan kaldırma</value>
+    <value>Arta kalan kaldırma</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Kaldırma işleminden sonra kalan dosya ve / veya kayıt defteri listesi</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>Bu artıkların tespiti, hata yapabilen karmaşık bir süreçtir. Bu nedenle, tüm öğelere bir güven derecesi verilir ve nihai karar kullanıcıya bırakılır. İyi ve çok iyi güveni olan öğelerin genellikle kaldırılması güvenlidir, ancak yine de bunları iki kez kontrol etmelisiniz.</value>
+    <value>Bu arta kaların tespiti, hata yapabilen karmaşık bir süreçtir. Bu nedenle, tüm öğelere bir güven derecesi verilir ve nihai karar kullanıcıya bırakılır. İyi ve çok iyi güveni olan öğelerin genellikle kaldırılması güvenlidir, ancak yine de bunları iki kez kontrol etmelisiniz.</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
     <value>Güven derecesi</value>
@@ -163,7 +163,7 @@
     <value>Vazgeç</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Artık listeyi dışa aktar</value>
+    <value>Arta kalan listesini dışa aktar</value>
     <comment>leftover=rimanenti</comment>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">

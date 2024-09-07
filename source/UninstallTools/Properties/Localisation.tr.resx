@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutUrl" xml:space="preserve">
-    <value>Websitesi</value>
+    <value>İnternet sayfası</value>
   </data>
   <data name="BundleProviderKey" xml:space="preserve">
     <value>Ürün kodu</value>
@@ -573,5 +573,15 @@
   </data>
   <data name="UninstallerType_PowerShell" xml:space="preserve">
     <value>PowerShell betiği</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Hata Ayıklama İzleme/Günlüğe Kaydetme Yapılandırması</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Scoop paketleri aranıyor</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Benzer isimli farklı bir uygulamaya ait olabilir</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
 </root>

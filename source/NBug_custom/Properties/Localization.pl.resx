@@ -176,7 +176,7 @@ A bug report has been sent to the developers. We apologize for the inconvenience
     <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>Wystąpił nieobsłużony wyjątek w aplikacji. Jeśli klikniesz przycisk Kontynuuj, aplikacja zignoruje błąd i spróbuje kontynuować. Jeśli klikniesz zamknij, aplikacja zostanie natychmiast zamknięta.</value>
+    <value>Wystąpił nieobsługiwany wyjątek w aplikacji. Jeśli klikniesz przycisk Kontynuuj, aplikacja zignoruje błąd i spróbuje kontynuować. Jeśli klikniesz zamknij, aplikacja zostanie natychmiast zamknięta.</value>
     <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Quit_Button" xml:space="preserve">

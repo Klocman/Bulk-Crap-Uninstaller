@@ -158,9 +158,11 @@ namespace BulkCrapUninstaller.Forms
             toolStripLabelStatus_TextChanged(this, EventArgs.Empty);
 
             // Debug stuff
-            debugToolStripMenuItem.Enabled = Program.EnableDebug;
-            debugToolStripMenuItem.Visible = Program.EnableDebug;
-            _setMan.Selected.Settings.AdvancedSimulate = Program.EnableDebug;
+            var isDebug = Program.EnableDebug;
+            debugToolStripMenuItem.Enabled = isDebug;
+            debugToolStripMenuItem.Visible = isDebug;
+            if (isDebug)
+                _setMan.Selected.Settings.AdvancedSimulate = true;
 
             // Tracking
             UsageManager.DataSender = new DatabaseStatSender(Settings.Default.MiscUserId);
@@ -204,9 +206,9 @@ namespace BulkCrapUninstaller.Forms
             {
                 var scaleChange = e.DeviceDpiNew / (double)e.DeviceDpiOld;
 
-                if (toolStripLabelSize != null) 
+                if (toolStripLabelSize != null)
                     toolStripLabelSize.Width = (int)Math.Round(toolStripLabelSize.Width * scaleChange);
-                if (toolStripLabelTotal != null) 
+                if (toolStripLabelTotal != null)
                     toolStripLabelTotal.Width = (int)Math.Round(toolStripLabelTotal.Width * scaleChange);
             }
             catch (SystemException exception)
@@ -1522,7 +1524,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void OpenTargetWindow(object sender, EventArgs e)
         {
-            var results = TargetWindow.ShowDialog(this);
+            var results = TargetWindow.ShowDialog(this, SetVisible);
 
             if (results == null) return;
 

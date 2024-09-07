@@ -574,4 +574,11 @@
   <data name="UninstallerType_PowerShell" xml:space="preserve">
     <value>Skrypt PowerShell</value>
   </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Szukanie paczek Scoop</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Może należeć do innej aplikacji o podobnej nazwie</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
 </root>

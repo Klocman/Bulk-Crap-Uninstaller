@@ -130,7 +130,7 @@
     <value>Bazı öğeler silinemedi</value>
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
-    <value>"{0}" ifadesini sil</value>
+    <value>"{0}" uygulamasını veya dosyasını sil</value>
     <comment>{0} is the name of application/folder to delete</comment>
   </data>
 </root>

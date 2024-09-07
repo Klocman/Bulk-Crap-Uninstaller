@@ -121,7 +121,7 @@
     <value>Bir geri yükleme noktası oluşturuluyor ...</value>
   </data>
   <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
-    <value>Artıklar aranıyor ...</value>
+    <value>Arta kalanlar aranıyor ...</value>
   </data>
   <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
     <value>Kaldırma listesini kaldırılıyor ...</value>
@@ -152,7 +152,7 @@
     <value>Hata detayları:</value>
   </data>
   <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
-    <value>Kalan kaldırma</value>
+    <value>Arta kalan kaldırma</value>
   </data>
   <data name="MessageBoxes_Error_details" xml:space="preserve">
     <value>Hata detayları:</value>
@@ -263,7 +263,7 @@ Uyarı: Güncelleme sırasında "Update" klasörü ve BCU dizininin içindeki "U
     <value>Kalan kaldırıcılar herhangi bir kullanıcı müdahalesi olmadan tamamlayabilmelidir. Kaldırma araçlarından birinin çökmesi durumunda zaman zaman kontrol etmelisiniz.</value>
   </data>
   <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
-    <value>Önemsiz / Artık Kaldırma</value>
+    <value>Önemsiz / arta kalan Kaldırma</value>
   </data>
   <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
     <value>Düşük güvenli ürünleri gerçekten değiştirmek istiyor musunuz?</value>
@@ -307,16 +307,16 @@ Uyarı: Güncelleme sırasında "Update" klasörü ve BCU dizininin içindeki "U
     <comment>0 is list of characters separated by spaces</comment>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
-    <value>Kalan kaldırma işlemlerinden kalanları aramak ister misiniz?</value>
+    <value>Arta kalan kaldırma işlemlerinden kalanları aramak ister misiniz?</value>
   </data>
   <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
     <value>Lütfen bu özelliğin yalnızca nasıl çalıştığını anlayan deneyimli kullanıcıları için olduğunu unutmayın. Bu dosyaları kaldırmak gerekli değildir ve sistem performansını anlamlı bir şekilde etkilemeyecektir.</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
-    <value>Artık kalıntı bulunamadı</value>
+    <value>Arta kalan kalıntı bulunamadı</value>
   </data>
   <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
-    <value>Artık kalıntı bulunamadı. BleachBit gibi geçici bir dosya temizleyici çalıştırabilmeniz için hala bir miktar kalıntı kalmış olabilir.</value>
+    <value>Arta kalan kalıntı bulunamadı. BleachBit gibi geçici bir dosya temizleyici çalıştırabilmeniz için hala bir miktar kalıntı kalmış olabilir.</value>
   </data>
   <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
     <value>Panoya kopyalamak için hiçbir şey yoktu. Ya seçilen kaldırıcıyı bu bilgi biti yok ya da hiçbir şey seçmediniz.</value>
@@ -756,5 +756,20 @@ Ayarlarda çarpışma algılamayı devre dışı bırakmayı deneyebilirsiniz, a
   </data>
   <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
     <value>BCU {0} sürümüne hoş geldiniz!</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Bilgisayarı {0} saniye içinde uyku moduna geçirir. İptal etmek için uyku onay kutusunun işaretini kaldırın.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Bir şey yapmaz</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Özellikleri açar</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Yüklemeleri kaldırır</value>
+    <comment>Option for "Double clicking in application list..."</comment>
   </data>
 </root>

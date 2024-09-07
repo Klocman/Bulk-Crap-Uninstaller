@@ -130,6 +130,6 @@
     <value>Anuluj</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Następujące procesy mogą używać niektórych plików które zostaną teraz odinstalowane, i powinny zostać zamknięte przed  kontynuowaniem. Jeżeli nie zostaną zamknięte, dezinstalacja niektórych elementów może się nie powieść lub może sprawić problemy. Mogą także zostać stracone niezapisane dane otwarte w tych aplikacjach.</value>
+    <value>Następujące procesy mogą używać niektórych plików które zostaną teraz odinstalowane, i powinny zostać zamknięte przed  kontynuacją. Jeżeli nie zostaną zamknięte, dezinstalacja niektórych elementów może się nie powieść lub może sprawić problemy. Mogą także zostać utracone niezapisane dane otwarte w tych aplikacjach.</value>
   </data>
 </root>
