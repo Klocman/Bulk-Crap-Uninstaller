@@ -1,4 +1,4 @@
-﻿#define MyAppName "BCUninstaller"
+#define MyAppName "BCUninstaller"
 #define MyAppNameShort "BCUninstaller"
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "https://github.com/Klocman/Bulk-Crap-Uninstaller"
@@ -70,6 +70,7 @@ Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "hu"; MessagesFile: "lang\Hungarian.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
+Name: "tr"; MessagesFile: "lang\Turkish.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
@@ -109,6 +110,7 @@ bpt.MainFiles=Arquivos principais
 ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
+tr.MainFiles=Ana Dosyalar
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -122,3 +124,4 @@ bpt.ExtraLanguages=Línguas extras
 ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
+tr.ExtraLanguages=İlave Diller
