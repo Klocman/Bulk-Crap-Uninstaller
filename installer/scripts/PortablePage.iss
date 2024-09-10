@@ -1,4 +1,4 @@
-﻿[Setup]
+[Setup]
 Uninstallable=not IsPortable()
 DisableProgramGroupPage=no
 
@@ -15,6 +15,7 @@ bpt.InstallPortableTitle =Instalação Portátil
 ru.InstallPortableTitle =Переносимая установка
 it.InstallPortableTitle =Installazione portatile
 vi.InstallPortableTitle =Cài đặt di động
+tr.InstallPortableTitle =Taşınabilir Kurulum
 
 InstallTypeChoiceTitle =Installation type
 pl.InstallTypeChoiceTitle =Typ instalacji
@@ -28,6 +29,7 @@ bpt.InstallTypeChoiceTitle =Tipo Instalação
 ru.InstallTypeChoiceTitle =Тип установки
 it.InstallTypeChoiceTitle =Tipo di installazione
 vi.InstallTypeChoiceTitle =Loại cài đặt
+tr.InstallTypeChoiceTitle =Kurulum tipi
 
 InstallStandardTitle =Standard Installation
 pl.InstallStandardTitle =Instalacja standardowa
@@ -41,6 +43,7 @@ bpt.InstallStandardTitle =Instalação Padrão
 ru.InstallStandardTitle =Стандартная установка
 it.InstallStandardTitle =Installazione standard
 vi.InstallStandardTitle =Cài đặt chuẩn
+tr.InstallStandardTitle =Standart Kurulum
 
 InstallPortableInfo =Portable installation will not register itself in the system, it will only extract files to the specified directory. You can set the directory to anything you''d like, for example to a USB drive. You will be able to move this directory freely since the whole app is inside of it.
 pl.InstallPortableInfo =Instalacja przenośna nie zostanie zarejestrowana w systemie, zostaną tylko wypakowane pliki. Pliki mogą zostać wypakowane do dowolnego folderu i mogą być bez problemu przenoszone. Wszystkie pliki używane przez tą aplikację będą przechowywane w wybranym folderze.
@@ -53,6 +56,7 @@ es.InstallPortableInfo =La instalación portable no se registrará en el sistema
 bpt.InstallPortableInfo =A instalação portátil não se registrará no sistema, ela só extrairá arquivos para o diretório especificado. Você pode configurar o diretório para qualquer coisa que você gostaria, por exemplo, para uma unidade USB. Você poderá mover este diretório livremente, já que todo o aplicativo está dentro dele.
 ru.InstallPortableInfo =Переносимая установка не регистрируется в системе, она только извлекает файлы в указанный каталог. Вы можете выбрать любой каталог, например, на USB-накопителе. Вы сможете свободно перемещать этот каталог, поскольку все приложение находится внутри него.
 it.InstallPortableInfo =L'installazione portatile non si registrerà nel sistema, estrarrà solo i file nella cartella specificata. Puoi impostare la cartella in qualsiasi percorso, ad esempio in un'unità USB. Sarai in grado di spostare questa cartella liberamente poiché l'intera app è al suo interno.
+tr.InstallPortableInfo =Taşınabilir kurulumda dosyaları sisteme kaydetmez, sadece dosyaları belirtilen dizine çıkarır. Yazılımı istediğiniz herhangi bir yer yapabilirsiniz, örneğin bir USB sürücüsüne ayarlayabilirsiniz. Tüm yazılım, tek bir dosyanın içinde olduğu için bu yazılımı serbestçe taşıyabileceksiniz.
 
 InstallStandardInfo =This option will install BCUninstaller on your computer as a normal application. Standard uninstaller will be created and it will be visible under "Programs and Features" as well as in other third-party uninstallers.
 pl.InstallStandardInfo =Ta aplikacja zostanie zainstalowana i zarejestrowana w tym systemie. Zostanie stworzony deinstalator i będzie on widoczny w panelu sterowania i innych deinstalatorach.
@@ -65,6 +69,7 @@ es.InstallStandardInfo =Esta opción instalará BCUninstaller en su equipo como 
 bpt.InstallStandardInfo =Esta opção irá instalar o BCUninstaller em seu computador como um aplicativo normal. O desinstalador padrão será criado e estará visível em "Programas e recursos", bem como em outros desinstaladores de terceiros.
 ru.InstallStandardInfo =Эта опция установит BCUninstaller на ваш компьютер как обычное приложение. Будет создана стандартная программа удаления, которая будет видна в разделе «Программы и компоненты», а также в других сторонних программах удаления.
 it.InstallStandardInfo =Questa opzione abiliterà l'installazione di BCUninstaller nel computer come una normale applicazione. Verrà creato il programma di disinstallazione standard e sarà visibile in "Programmi e funzionalità" così come in altri programmi di disinstallazione di terze parti.
+tr.InstallStandardInfo =Bu seçenek BCUninstaller'ı bilgisayarınıza normal bir yazılım olarak yükleyecektir. Standart kaldırıcı oluşturulacak ve diğer üçüncü taraf kaldırıcıların yanı sıra “Program ekle ve kaldır” altında da görülebilecektir.
 
 [Code]
 var
