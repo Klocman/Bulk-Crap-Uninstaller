@@ -109,6 +109,7 @@ bpt.MainFiles=Arquivos principais
 ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
+zh.MainFiles=主文件
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -122,3 +123,4 @@ bpt.ExtraLanguages=Línguas extras
 ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
+zh.ExtraLanguages=其他语言
