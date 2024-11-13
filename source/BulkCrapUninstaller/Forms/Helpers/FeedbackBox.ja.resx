@@ -118,14 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>BCUninstallerをご利用いただきありがとうございます！
-
-</value>
+    <value>BCUninstallerをご利用いただきありがとうございます！</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>この無料のオープンソースツールが役立った場合は、ぜひ1分だけお手伝いをお願いいたします！友人に教えたり、SNSで共有したり、フィードバックを送ったり、どんな小さなことでも大歓迎です！
-
-</value>
+    <value>この無料のオープンソースツールが役立った場合は、ぜひ1分だけお手伝いをお願いいたします！友人に教えたり、SNSで共有したり、フィードバックを送ったり、どんな小さなことでも大歓迎です！</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>フィードバックを送る</value>
@@ -137,14 +133,10 @@
     <value>Twitterで共有</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>問題や不足している機能はありますか？
-
-</value>
+    <value>問題や不足している機能はありますか？</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>BCUに関して問題があった場合や、新しい機能を提案したい場合は、これらのリンクをご確認ください：
-
-</value>
+    <value>BCUに関して問題があった場合や、新しい機能を提案したい場合は、これらのリンクをご確認ください：</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
     <value>GitHubで提出する（アカウントが必要です）</value>

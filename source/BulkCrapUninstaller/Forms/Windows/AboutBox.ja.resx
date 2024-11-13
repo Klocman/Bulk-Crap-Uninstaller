@@ -172,9 +172,7 @@
     <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>使用されているアセット
-
-</value>
+    <value>使用されているアセット</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>閉じる</value>

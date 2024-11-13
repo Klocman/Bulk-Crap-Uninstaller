@@ -169,12 +169,6 @@
     <value>アンインストールリスト (*.bcul)|*.bcul|All files|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>アンインストールリストを読み込む...
-
-
-
-
-
-</value>
+    <value>アンインストールリストを読み込む...</value>
   </data>
 </root>

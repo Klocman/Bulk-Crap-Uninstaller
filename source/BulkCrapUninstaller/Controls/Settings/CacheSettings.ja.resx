@@ -125,14 +125,10 @@
     <value>アプリケーション証明書のスキャン結果をキャッシュする</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
-    <value>収集された不足情報をキャッシュする
-
-</value>
+    <value>収集された不足情報をキャッシュする</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>キャッシュをクリア
-
-</value>
+    <value>キャッシュをクリア</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>キャッシュ</value>

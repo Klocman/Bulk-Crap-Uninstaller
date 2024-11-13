@@ -118,9 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>未登録のアプリを表示
-
-</value>
+    <value>未登録のアプリを表示</value>
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>登録されたアンインストーラーがないアプリケーションを表示します。これらは多くのアンインストールマネージャーで表示されませんが、依然としてディスク容量を使用しています。未登録のアイテムはレッドで表示されます。
@@ -130,22 +128,13 @@
 </value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>欠落しているアンインストーラーを強調表示
-
-</value>
+    <value>欠落しているアンインストーラーを強調表示</value>
   </data>
   <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
     <value>破損または欠落しているアンインストーラーをグレーで表示します。</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>認証済みのアンインストーラーを強調表示
-
-
-
-
-
-
-</value>
+    <value>認証済みのアンインストーラーを強調表示</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
     <value>認証済みのアンインストーラーを色で識別します。証明書が正常に確認された場合はグリーン、確認に失敗した場合はブルーで表示します。
@@ -155,19 +144,13 @@
 </value>
   </data>
   <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>Microsoft社製のものを非表示
-
-</value>
+    <value>Microsoft社製のものを非表示</value>
   </data>
   <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>Microsoft社が公開したすべてのアイテムをフィルタリングして非表示にします。非常にシンプルです。
-
-</value>
+    <value>Microsoft社が公開したすべてのアイテムをフィルタリングして非表示にします。非常にシンプルです。</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>システムコンポーネントを表示
-
-</value>
+    <value>システムコンポーネントを表示</value>
   </data>
   <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
     <value>一部のアンインストーラーは「システムコンポーネント」としてマークされ、ソフトウェアの追加/削除リストから隠されます。ドライバーにはこのタグが付けられることが多いです。</value>
@@ -176,22 +159,16 @@
     <value>保護されたアイテムを表示</value>
   </data>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>「NoRemove」タグが付けられた保護されたアイテムは、パブリッシャーが削除を推奨していないことを示しています。
-
-</value>
+    <value>「NoRemove」タグが付けられた保護されたアイテムは、パブリッシャーが削除を推奨していないことを示しています。</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
     <value>tweaksを表示する</value>
   </data>
   <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>アップデートを表示
-
-</value>
+    <value>アップデートを表示</value>
   </data>
   <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>他のアプリケーションの更新プログラムです。通常、親アプリケーションと一緒にアンインストールされるため、無視しても問題ありません。
-
-</value>
+    <value>他のアプリケーションの更新プログラムです。通常、親アプリケーションと一緒にアンインストールされるため、無視しても問題ありません。</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Windows機能を表示</value>
@@ -203,9 +180,7 @@
     <value>フィルタリング</value>
   </data>
   <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>チェックボックスで選択
-
-</value>
+    <value>チェックボックスで選択</value>
   </data>
   <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
     <value>リストの選択スタイルをチェックボックスに変更します。これにより、1回のクリックで全ての選択を解除できなくなるため、安全性が向上します。
@@ -213,31 +188,18 @@
 複数のアイテムをハイライトして、スペースキーを押すことで選択が可能です。</value>
   </data>
   <data name="checkBoxViewGroups.Text" xml:space="preserve">
-    <value>アイテムをグループで表示
-
-</value>
+    <value>アイテムをグループで表示</value>
   </data>
   <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>リストの並べ替え基準に基づいてアイテムをグループ化します。多くの列でのグループ化はスマートフィルタリングを使用します。
-
-</value>
+    <value>リストの並べ替え基準に基づいてアイテムをグループ化します。多くの列でのグループ化はスマートフィルタリングを使用します。</value>
   </data>
   <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
     <value>特別なアンインストーラーを強調表示</value>
   </data>
   <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
-    <value>WindowsストアアプリやWindows機能などの特別なアプリケーションを色分けして区別します。
-
-</value>
+    <value>WindowsストアアプリやWindows機能などの特別なアプリケーションを色分けして区別します。</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>リストビューの設定
-
-
-
-
-
-
-</value>
+    <value>リストビューの設定</value>
   </data>
 </root>
