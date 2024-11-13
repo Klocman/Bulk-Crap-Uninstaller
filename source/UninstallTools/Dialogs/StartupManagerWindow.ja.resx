@@ -148,8 +148,7 @@
     <value>発行者</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>位置
-</value>
+    <value>位置</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>コマンド</value>
