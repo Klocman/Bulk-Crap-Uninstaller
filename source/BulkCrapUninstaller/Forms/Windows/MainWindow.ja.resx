@@ -269,9 +269,7 @@
 </value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;レジストリエントリを削除
-
-</value>
+    <value>&amp;レジストリエントリを削除</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;名前を変更...
