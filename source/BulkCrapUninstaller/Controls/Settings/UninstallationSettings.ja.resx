@@ -118,58 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>実行時の破損防止を無効にする 
-アンインストーラーを手動で実行する場合</value>
+    <value>手動でアンインストーラーを実行する際の衝突防止を無効化</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>一度に1つの大きなアンインストーラのみ</value>
+    <value>騒音アンインストーラーは1度に1つだけ</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
-    <value>アンインストーラを自動的に同時実行する（可能な場合のみ）</value>
+    <value>可能であればアンインストーラーを自動的に並行実行</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>実行中のアンインストーラの最大数：</value>
+    <value>同時に実行できるアンインストーラーの最大数：</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>同時アンインストール</value>
+    <value>並行アンインストール</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>システムのシャットダウン/リスタートを防止する</value>
+    <value>システムのシャットダウン/再起動を防止</value>
   </data>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
-    <value>アンインストール前に復元ポイントを作成する</value>
+    <value>アンインストール前に復元ポイントを作成</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>システムの復元ポイントを作成することで、レジストリ、一部の設定、ファイルをバックアップすることができます。ドライバーや重要なシステムアプリケーションを削除する前に、復元ポイントを作成することをお勧めします。</value>
+    <value>レジストリ、一部の設定やファイルをバックアップするためにシステム復元ポイントを作成できます。ドライバや重要なシステムアプリケーションを削除する前に、復元ポイントを作成することを推奨します。</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
-    <value>インテリジェントなアンインストーラの振り分け</value>
+    <value>アンインストーラーを賢く並べ替え</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>保護機能を無効にする</value>
+    <value>保護を無効化</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
-    <value>アンインストールをシミュレーションする</value>
+    <value>アンインストールをシミュレーション</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>一般設定</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>動かなくなったサイレントアンインストーラを自動的に終了させる</value>
+    <value>フリーズした無音アンインストーラーを自動的に強制終了</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>失敗したサイレントアンインストーラを 1 回だけ再試行する</value>
+    <value>失敗した無音アンインストーラーを1度再試行</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>可能であれば、見つからないサイレントアンインストーラを生成する</value>
+    <value>可能であれば不足している無音アンインストーラーを生成</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>ユーザー入力待ちで行き詰まった場合、自動的に強制終了する</value>
+    <value>ユーザー入力待機でフリーズした場合、自動的に強制終了</value>
   </data>
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
-    <value>ユーザー入力待ちで行き詰まった場合、自動的に強制終了する</value>
+    <value>ポップアップやその他の停止状態を監視し、それらを自動化する（自動化デーモンを実行）</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>サイレントアンインストール</value>
+    <value>無音アンインストール</value>
   </data>
 </root>

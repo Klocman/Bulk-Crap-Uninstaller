@@ -121,18 +121,18 @@
     <value>キャンセル</value>
   </data>
   <data name="buttonGood.Text" xml:space="preserve">
-    <value>役に立つ｜品質が良い</value>
+    <value>役立つ | 良質</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>評価できない｜品質が悪い</value>
+    <value>微妙 | 悪質</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>評価</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>不要品｜危険な可能性がある</value>
+    <value>ゴミ | 潜在的に危険</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>他のユーザーと評価を共有する</value>
+    <value>他のユーザーと評価を共有</value>
   </data>
 </root>

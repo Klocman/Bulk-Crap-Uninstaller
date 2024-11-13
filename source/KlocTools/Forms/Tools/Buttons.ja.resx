@@ -145,7 +145,7 @@
     <value>作成しない</value>
   </data>
   <data name="ButtonKeep" xml:space="preserve">
-    <value>維持する</value>
+    <value>保持</value>
   </data>
   <data name="ButtonNo" xml:space="preserve">
     <value>いいえ</value>
@@ -154,10 +154,10 @@
     <value>はい</value>
   </data>
   <data name="ButtonOverwrite" xml:space="preserve">
-    <value>上書きする</value>
+    <value>上書き</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
-    <value>取り除く</value>
+    <value>削除</value>
   </data>
   <data name="ButtonReset" xml:space="preserve">
     <value>リセット</value>
@@ -180,7 +180,7 @@
     <value>アンインストール</value>
   </data>
   <data name="ButtonUseLoud" xml:space="preserve">
-    <value>大音量を使う</value>
+    <value>騒音アンインストーラーを使う</value>
   </data>
   <data name="ButtonYes" xml:space="preserve">
     <value>はい</value>

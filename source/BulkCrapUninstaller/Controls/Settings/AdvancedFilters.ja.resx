@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="toolStripButtonToBasicFilters.Text" xml:space="preserve">
-    <value>標準フィルター</value>
+    <value>基本フィルタ</value>
   </data>
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>選択したアプリケーションをフィルターとして追加する</value>
+    <value>選択したアプリケーションをフィルタとして追加</value>
   </data>
   <data name="toolStripButtonOpenUl.Text" xml:space="preserve">
-    <value>開く</value>
+    <value>開く...</value>
   </data>
   <data name="toolStripButtonSaveUl.Text" xml:space="preserve">
-    <value>名前をつけて保存</value>
+    <value>名前を付けて保存...</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
     <value>デフォルトとして保存</value>
@@ -136,15 +136,15 @@
     <value>デフォルトを削除</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>アンインストール |*.bcul</value>
+    <value>アンインストールリスト |*.bcul</value>
   </data>
   <data name="saveUlDialog.Title" xml:space="preserve">
-    <value>アンインストールリストを保存</value>
+    <value>アンインストールリスト</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>アンインストール |*.bcul</value>
+    <value>アンインストールリスト |*.bcul</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
-    <value>アンインストールリストを開く</value>
+    <value>アンインストールリストを保存...</value>
   </data>
 </root>

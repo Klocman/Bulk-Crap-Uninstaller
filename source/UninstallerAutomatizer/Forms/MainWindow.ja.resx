@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>サイレントアンインストーラを持たないアプリケーションを、ユーザーの代わりにアンインストーラのボタンをクリックすることで自動的にアンインストールするツールです。</value>
+    <value>このツールは、ユーザーの代わりにアンインストーラーのボタンをクリックして、サイレントアンインストーラーを持たないアプリケーションを自動的にアンインストールします。</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>ステータス</value>

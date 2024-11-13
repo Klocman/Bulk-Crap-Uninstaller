@@ -148,63 +148,63 @@
     <value>戻る</value>
   </data>
   <data name="buttonNext.Text" xml:space="preserve">
-    <value>続き</value>
+    <value>続ける</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>関連</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>確認事項</value>
+    <value>確認</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
-    <value>アプリを起動する</value>
+    <value>実行中のアプリ</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
-    <value>設定方法</value>
+    <value>設定</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
-    <value>その他 / その他</value>
+    <value>その他</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>同時アンインストールを有効にする</value>
+    <value>同時アンインストールが有効になっています</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>アンインストールはサイレントで行われます</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>新しい復元ポイントを作成する</value>
+    <value>新しい復元ポイントを作成</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>実行中のプロセスによってファイルがまだ使用されている</value>
+    <value>ファイルが実行中のプロセスによってまだ使用されています</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>推定サイズの合計</value>
+    <value>推定合計サイズ</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>アンインストールするアプリケーション</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>アンインストールを開始する</value>
+    <value>アンインストールを開始</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
-    <value>最終</value>
+    <value>最終確認</value>
   </data>
   <data name="p1Heading.Text" xml:space="preserve">
-    <value>アンインストールする関連アプリケーション</value>
+    <value>アンインストールしたい関連アプリケーション</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>アンインストールしても問題がないことを確認する</value>
+    <value>以下のすべてが安全にアンインストールできることを確認してください</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>アプリケーションによっては、アンインストール前に終了する必要がある場合があります。</value>
+    <value>一部のアプリケーションはアンインストール前に閉じる必要があります</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>アンインストールの設定を変更する</value>
+    <value>アンインストール設定を変更</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>アンインストールを開始する前に、以下の内容に間違いがないことを確認してください。これが最後のチャンスです！</value>
+    <value>アンインストールを開始する前に、以下の情報が正しいことを確認してください。これが最後のチャンスです！</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>新しいアンインストールタスクを開始する</value>
+    <value>新しいアンインストールタスクを開始</value>
   </data>
 </root>
