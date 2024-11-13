@@ -264,9 +264,7 @@
     <value>アンインストール文字列</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;クリップボードにコピー...
-
-</value>
+    <value>&amp;クリップボードにコピー...</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;レジストリエントリを削除</value>
