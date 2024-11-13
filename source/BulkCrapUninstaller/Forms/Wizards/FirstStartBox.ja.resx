@@ -318,12 +318,6 @@ BCUninstallerは「手動でアンインストール」オプションを使用�
     <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstallerへようこそ
-
-
-
-
-
-</value>
+    <value>BCUninstallerへようこそ</value>
   </data>
 </root>
