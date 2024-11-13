@@ -152,6 +152,8 @@ namespace BulkCrapUninstaller.Forms
                 .AppendIf(Program.EnableDebug, " ", Localisable.StrDebug);
             Text = MainTitleBarText;
 
+            Console.WriteLine(MainTitleBarText);
+
             _styleController = new WindowStyleController(this);
 
             // Initialize the status bar
