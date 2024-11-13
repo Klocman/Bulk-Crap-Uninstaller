@@ -1,4 +1,4 @@
-; *** Inno Setup version 5.5.3+ (downgraded from 6.1.0+) Turkish messages ***
+; *** Inno Setup version 6.1.0+ (edited to support 5.5.3+) Turkish messages ***
 ; Language	"Turkce" Turkish Translate by "Ceviren"	Kaya Zeren translator@zeron.net
 ; To download user-contributed translations of this file, go to:
 ;   https://jrsoftware.org/files/istrans/
@@ -7,9 +7,6 @@
 ; messages that didn't have them already, because on those messages Inno
 ; Setup adds the periods automatically (appending a period would result in
 ; two periods being displayed).
-;
-;
-;
 
 [LangOptions]
 ; The following three entries are very important. Be sure to read and 
@@ -45,6 +42,7 @@ ErrorTitle=Hata
 SetupLdrStartupMessage=%1 uygulamasý kurulacak. Ýlerlemek istiyor musunuz?
 LdrCannotCreateTemp=Geçici dosya oluþturulamadýðýndan kurulum iptal edildi
 LdrCannotExecTemp=Geçici klasördeki dosya çalýþtýrýlamadýðýndan kurulum iptal edildi
+HelpTextNote=
 
 ; *** Baþlangýç hata iletileri
 LastErrorMessage=%1.%n%nHata %2: %3
@@ -65,6 +63,16 @@ AdminPrivilegesRequired=Bu uygulamayý kurmak için Yönetici yetkileri olan bir ku
 PowerUserPrivilegesRequired=Bu uygulamayý kurarken, Yönetici ya da Güçlü Kullanýcýlar grubundaki bir kullanýcý ile oturum açýlmýþ olmasý gereklidir.
 SetupAppRunningError=Kurulum yardýmcýsý %1 uygulamasýnýn çalýþmakta olduðunu algýladý.%n%nLütfen uygulamanýn çalýþan tüm kopyalarýný kapatýp, ilerlemek için Tamam, kurulum yardýmcýsýndan çýkmak için Ýptal üzerine týklayýn.
 UninstallAppRunningError=Kaldýrma yardýmcýsý, %1 uygulamasýnýn çalýþmakta olduðunu algýladý.%n%nLütfen uygulamanýn çalýþan tüm kopyalarýný kapatýp, ilerlemek için Tamam ya da kaldýrma yardýmcýsýndan çýkmak için Ýptal üzerine týklayýn.
+
+; *** Baþlangýç sorularý
+PrivilegesRequiredOverrideTitle=Kurulum kipini seçin
+PrivilegesRequiredOverrideInstruction=Kurulum kipini seçin
+PrivilegesRequiredOverrideText1=%1 tüm kullanýcýlar için (yönetici izinleri gerekir) ya da yalnýzca sizin hesabýnýz için kurulabilir.
+PrivilegesRequiredOverrideText2=%1 yalnýzca sizin hesabýnýz için ya da tüm kullanýcýlar için (yönetici izinleri gerekir) kurulabilir.
+PrivilegesRequiredOverrideAllUsers=&Tüm kullanýcýlar için kurulsun
+PrivilegesRequiredOverrideAllUsersRecommended=&Tüm kullanýcýlar için kurulsun (önerilir)
+PrivilegesRequiredOverrideCurrentUser=&Yalnýzca geçerli kullanýcý için kurulsun
+PrivilegesRequiredOverrideCurrentUserRecommended=&Yalnýzca geçerli kullanýcý için kurulsun (önerilir)
 
 ; *** Çeþitli hata metinleri
 ErrorCreatingDir=Kurulum yardýmcýsý "%1" klasörünü oluþturamadý.
@@ -144,6 +152,7 @@ WizardSelectDir=Kurulum konumunu seçin
 SelectDirDesc=[name] nereye kurulsun?
 SelectDirLabel3=[name] uygulamasý þu klasöre kurulacak.
 SelectDirBrowseLabel=Ýlerlemek icin Sonraki üzerine týklayýn. Farklý bir klasör seçmek için Göz at üzerine týklayýn.
+DiskSpaceGBLabel=En az [gb] GB boþ disk alaný gereklidir.
 DiskSpaceMBLabel=En az [mb] MB boþ disk alaný gereklidir.
 CannotInstallToNetworkDrive=Uygulama bir að sürücüsü üzerine kurulamaz.
 CannotInstallToUNCPath=Uygulama bir UNC yolu üzerine (\\yol gibi) kurulamaz.
@@ -171,6 +180,7 @@ NoUninstallWarningTitle=Bileþenler zaten var
 NoUninstallWarning=Þu bileþenlerin bilgisayarýnýzda zaten kurulu olduðu algýlandý:%n%n%1%n%n Bu bileþenlerin iþaretlerinin kaldýrýlmasý bileþenleri kaldýrmaz.%n%nGene de ilerlemek istiyor musunuz?
 ComponentSize1=%1 KB
 ComponentSize2=%1 MB
+ComponentsDiskSpaceGBLabel=Seçilmiþ bileþenler için diskte en az [gb] GB boþ alan bulunmasý gerekli.
 ComponentsDiskSpaceMBLabel=Seçilmiþ bileþenler için diskte en az [mb] MB boþ alan bulunmasý gerekli.
 
 ; *** "Ek iþlemleri seçin" sayfasý
@@ -201,6 +211,18 @@ ReadyMemoComponents=Seçilmiþ bileþenler:
 ReadyMemoGroup=Baþlat menüsü klasörü:
 ReadyMemoTasks=Ek iþlemler:
 
+; *** TDownloadWizardPage wizard page and DownloadTemporaryFile
+DownloadingLabel=Ek dosyalar indiriliyor...
+ButtonStopDownload=Ýndirmeyi &durdur
+StopDownload=Ýndirmeyi durdurmak istediðinize emin misiniz?
+ErrorDownloadAborted=Ýndirme durduruldu
+ErrorDownloadFailed=Ýndirilemedi: %1 %2
+ErrorDownloadSizeFailed=Boyut alýnamadý: %1 %2
+ErrorFileHash1=Dosya karmasý doðrulanamadý: %1
+ErrorFileHash2=Dosya karmasý geçersiz: %1 olmasý gerekirken %2
+ErrorProgress=Adým geçersiz: %1 / %2
+ErrorFileSize=Dosya boyutu geçersiz: %1 olmasý gerekirken %2
+
 ; *** "Kuruluma hazýrlanýlýyor" sayfasý
 WizardPreparing=Kuruluma hazýrlanýlýyor
 PreparingDesc=[name] bilgisayarýnýza kurulmaya hazýrlanýyor.
@@ -211,6 +233,7 @@ ApplicationsFound2=Kurulum yardýmcýsý tarafýndan güncellenmesi gereken dosyalar,
 CloseApplications=&Uygulamalar kapatýlsýn
 DontCloseApplications=Uygulamalar &kapatýlmasýn
 ErrorCloseApplications=Kurulum yardýmcýsý uygulamalarý kapatamadý. Kurulum yardýmcýsý tarafýndan güncellenmesi gereken dosyalarý kullanan uygulamalarý el ile kapatmanýz önerilir.
+PrepareToInstallNeedsRestart=Kurulum için bilgisayarýn yeniden baþlatýlmasý gerekiyor. Bilgisayarý yeniden baþlattýktan sonra [name] kurulumunu tamamlamak için kurulum yardýmcýsýný yeniden çalýþtýrýn.%n%nBilgisayarý þimdi yeniden baþlatmak ister misiniz?
 
 ; *** "Kuruluyor" sayfasý
 WizardInstalling=Kuruluyor
@@ -241,6 +264,10 @@ SelectDirectoryLabel=Lütfen sonraki diskin konumunu belirtin.
 ; *** Kurulum aþamasý iletileri
 SetupAborted=Kurulum tamamlanamadý.%n%nLütfen sorunu düzelterek kurulum yardýmcýsýný yeniden çalýþtýrýn.
 EntryAbortRetryIgnore=Çýkýþ: iptal et, Tekrar: tekrarla, Sonraki: devam et
+AbortRetryIgnoreSelectAction=Yapýlacak iþlemi seçin
+AbortRetryIgnoreRetry=&Yeniden denensin
+AbortRetryIgnoreIgnore=&Sorun yok sayýlýp ilerlensin
+AbortRetryIgnoreCancel=Kurulum iptal edilsin
 
 ; *** Kurulum durumu iletileri
 StatusClosingApplications=Uygulamalar kapatýlýyor...
@@ -273,12 +300,28 @@ ErrorIniEntry="%1" dosyasýna INI kaydý eklenirken bir sorun çýktý.
 ; *** Dosya kopyalama hatalarý
 FileAbortRetryIgnore=&Bu dosya atlansýn (önerilmez)
 FileAbortRetryIgnore2=&Sorun yok sayýlýp ilerlensin (önerilmez)
+FileAbortRetryIgnoreSkipNotRecommended=&Bu dosya atlansýn (önerilmez)
+FileAbortRetryIgnoreIgnoreNotRecommended=&Sorun yok sayýlýp ilerlensin (önerilmez)
 SourceIsCorrupted=Kaynak dosya bozulmuþ
 SourceDoesntExist="%1" kaynak dosyasý bulunamadý
 ExistingFileReadOnly=Var olan dosya salt okunabilir olarak iþaretlenmiþ olduðundan üzerine yazýlamadý.
+ExistingFileReadOnly2=Var olan dosya salt okunabilir olarak iþaretlenmiþ olduðundan üzerine yazýlamadý.
+ExistingFileReadOnlyRetry=&Salt okunur iþareti kaldýrýlýp yeniden denensin
+ExistingFileReadOnlyKeepExisting=&Var olan dosya korunsun
 ErrorReadingExistingDest=Var olan dosya okunmaya çalýþýlýrken bir sorun çýktý.
 FileExists=Dosya zaten mevcut.%n%nüzerine yazmak ister misiniz?
 ExistingFileNewer=Mevcut dosya, kurulmakta olan dosyadan daha yenidir. Mevcut dosyayý saklamanýz önerilir.%n%nMevcut dosyayý saklamak istiyor musunuz?
+
+FileExistsSelectAction=Yapýlacak iþlemi seçin
+FileExists2=Dosya zaten var.
+FileExistsOverwriteExisting=&Var olan dosyanýn üzerine yazýlsýn
+FileExistsKeepExisting=Var &olan dosya korunsun
+FileExistsOverwriteOrKeepAll=&Sonraki çakýþmalarda da bu iþlem yapýlsýn
+ExistingFileNewerSelectAction=Yapýlacak iþlemi seçin
+ExistingFileNewer2=Var olan dosya, kurulum yardýmcýsý tarafýndan yazýlmaya çalýþýlandan daha yeni.
+ExistingFileNewerOverwriteExisting=&Var olan dosyanýn üzerine yazýlsýn
+ExistingFileNewerKeepExisting=Var &olan dosya korunsun (önerilir)
+ExistingFileNewerOverwriteOrKeepAll=&Sonraki çakýþmalarda bu iþlem yapýlsýn
 ErrorChangingAttr=Var olan dosyanýn öznitelikleri deðiþtirilirken bir sorun çýktý:
 ErrorCreatingTemp=Kurulum klasöründe bir dosya oluþturulurken sorun çýktý:
 ErrorReadingSource=Kaynak dosya okunurken sorun çýktý:
@@ -289,6 +332,16 @@ ErrorRenamingTemp=Kurulum klasöründeki bir dosyanýn adý deðiþtirilirken sorun çý
 ErrorRegisterServer=DLL/OCX kayýt edilemedi: %1
 ErrorRegSvr32Failed=RegSvr32 iþlemi þu kod ile tamamlanamadý: %1
 ErrorRegisterTypeLib=Tür kitaplýðý kayýt defterine eklenemedi: %1
+
+; *** Kaldýrma sýrasýnda görüntülenecek ad iþaretleri
+; used for example as 'My Program (32-bit)'
+UninstallDisplayNameMark=%1 (%2)
+; used for example as 'My Program (32-bit, All users)'
+UninstallDisplayNameMarks=%1 (%2, %3)
+UninstallDisplayNameMark32Bit=32 bit
+UninstallDisplayNameMark64Bit=64 bit
+UninstallDisplayNameMarkAllUsers=Tüm kullanýcýlar
+UninstallDisplayNameMarkCurrentUser=Geçerli kullanýcý
 
 ; *** Kurulum sonrasý hatalarý
 ErrorOpeningReadme=README dosyasý açýlýrken sorun çýktý.

@@ -1,4 +1,4 @@
-#define MyAppName "BCUninstaller"
+﻿#define MyAppName "BCUninstaller"
 #define MyAppNameShort "BCUninstaller"
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "https://github.com/Klocman/Bulk-Crap-Uninstaller"

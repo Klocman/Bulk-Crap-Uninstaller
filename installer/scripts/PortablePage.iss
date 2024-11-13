@@ -1,4 +1,4 @@
-[Setup]
+﻿[Setup]
 Uninstallable=not IsPortable()
 DisableProgramGroupPage=no
 
