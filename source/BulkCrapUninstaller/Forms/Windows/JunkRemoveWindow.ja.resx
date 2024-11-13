@@ -121,30 +121,25 @@
     <value>&amp;詳細</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;クリップボードにコピーする
-</value>
+    <value>&amp;クリップボードにコピー</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;開く</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>残留物除去</value>
+    <value>残存物の削除</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>アンインストール後に残されたファイルやレジストリキーのリスト</value>
+    <value>アンインストール後に残ったファイルおよび/またはレジストリキーのリスト</value>
   </data>
   <data name="headerConfInfo.Text" xml:space="preserve">
-    <value>これらの残留物の検出は複雑なプロセスであり、エラーを起こす可能性があります。
-このため、すべての項目には信頼度が付けられており、最終的な判断はユーザーに委ねられています。
-信頼度が良い項目と非常に良い項目は、通常、削除しても安全ですが、それでもダブルチェックする必要があります。</value>
+    <value>これらの残存物の検出は複雑なプロセスであり、誤りが生じることがあります。そのため、すべての項目に信頼度評価が付けられ、最終的な判断はユーザーに委ねられます。信頼度が良好または非常に良好な項目は通常、安全に削除できますが、再度確認することをお勧めします。</value>
   </data>
   <data name="headerConfTitle.Text" xml:space="preserve">
-    <value>信頼度</value>
+    <value>信頼度評価</value>
   </data>
   <data name="headerIntro.Text" xml:space="preserve">
-    <value>アンインストーラーによって、以下の項目が残されているようです。
-アンインストーラーによっては、アプリケーションの一部を削除できず、ドライブ容量がかさむことがあります。
-しかし、これらの項目のほとんどは、アプリケーションの設定である可能性が高く、容量を取らず、無害なものです。</value>
+    <value>以下の項目は、アンインストーラーによって残された可能性があります。一部のアンインストーラーはアプリケーションの一部を削除できないことがあり、これによりドライブの容量が無駄になる可能性があります。ただし、これらの項目のほとんどはアプリケーションの設定であり、容量をほとんど消費せず、無害です。</value>
   </data>
   <data name="olvColumnUninstallerName.Text" xml:space="preserve">
     <value>アンインストーラー名</value>
@@ -156,23 +151,23 @@
     <value>項目パス</value>
   </data>
   <data name="checkBoxHideLowConfidence.Text" xml:space="preserve">
-    <value>信頼度の低い項目を非表示にする</value>
+    <value>信頼度が低い項目を非表示にする</value>
   </data>
   <data name="buttonExport.Text" xml:space="preserve">
-    <value>エクスポート</value>
+    <value>エクスポート...</value>
   </data>
   <data name="buttonAccept.Text" xml:space="preserve">
-    <value>選択した項目を削除する</value>
+    <value>選択した項目を削除</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>残留物リストをエクスポートする</value>
+    <value>残存物リストのエクスポート</value>
     <comment>leftover=rimanenti</comment>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>テキスト files|*.txt</value>
+    <value>テキストファイル|*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
 </root>

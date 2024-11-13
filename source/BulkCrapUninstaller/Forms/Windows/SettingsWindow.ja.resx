@@ -124,11 +124,12 @@
     <value>アンインストール終了後のコマンドライン</value>
   </data>
   <data name="checkBoxColorblind.Text" xml:space="preserve">
-    <value>カラーブラインドモード</value>
+    <value>バリアフリーカラーモード
+(色盲の方に配慮した色に切り替えます)</value>
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
   <data name="checkBoxDpiaware.Text" xml:space="preserve">
-    <value>DPIを考慮したインターフェイスのスケーリングを有効にする</value>
+    <value>DPI対応インターフェーススケーリングを有効にする</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>アプリケーションリストでのダブルクリック</value>
@@ -143,43 +144,43 @@
     <value>アプリケーションのユーザー評価を有効にする</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>起動時にアップデートを検索する</value>
+    <value>起動時にアップデートを確認</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
-    <value>匿名での使用統計の送信</value>
+    <value>匿名の使用統計を送信</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>アプリケーションの言語：</value>
+    <value>アプリケーション言語:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>言語の変更を有効にするには、アプリケーションを再起動する必要があります。</value>
+    <value>言語変更を反映させるには、アプリケーションを再起動する必要があります。</value>
   </data>
   <data name="radioButtonBackupAsk.Text" xml:space="preserve">
-    <value>常に作成依頼をする</value>
+    <value>作成時、常に確認</value>
   </data>
   <data name="radioButtonBackupNever.Text" xml:space="preserve">
-    <value>作成しない</value>
+    <value>作成時、確認しない</value>
   </data>
   <data name="radioButtonBackupAuto.Text" xml:space="preserve">
-    <value>ディレクトリに自動的に作成します：</value>
+    <value>自動的にディレクトリに作成:</value>
   </data>
   <data name="groupBoxBackup.Text" xml:space="preserve">
-    <value>残留物除去の前にバックアップを取る</value>
+    <value>残留物を削除する前にバックアップ</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
-    <value>常に信頼度の低いジャンクを表示する</value>
+    <value>信頼度の低いジャンクを常に表示</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>サイレントタスクからラウドアンインストーラを削除するように頼む</value>
+    <value>静かなタスクから騒音アンインストーラーを削除するか確認</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
     <value>フィードバックやヘルプを求めない</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>アンインストール後にジャンクを検索する</value>
+    <value>アンインストール後にジャンクを検索</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>アンインストール前に復元ポイントを作成する</value>
+    <value>アンインストール前に復元ポイントを作成</value>
   </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
     <value>メッセージボックス</value>
@@ -188,9 +189,9 @@
     <value>外部アプリケーションの実行を有効にする</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>アンインストールの前後に実行するコマンドを指定できます。1行が1つのコマンドに相当し、「実行」ダイアログを使用した場合と同様に実行されます。
+    <value>アンインストールの前後に実行するコマンドを指定できます。1行が1コマンドに相当し、「実行...」ダイアログを使用したかのように実行されます。
 
-BCUは、現在実行中のコマンドが完了するまで待ってから、次のコマンドを実行します。</value>
+現在実行中のコマンドが完了するまでBCUは次のコマンドの実行を待ちます。</value>
   </data>
   <data name="groupBoxExternal.Text" xml:space="preserve">
     <value>外部アプリケーション</value>
@@ -211,13 +212,13 @@ BCUは、現在実行中のコマンドが完了するまで待ってから、�
     <value>アンインストール</value>
   </data>
   <data name="labelWinUpdateInfo.Text" xml:space="preserve">
-    <value>Windows Updateの検出にはWUAを使用しており、動作が遅いです。完了までに2～3分かかることもあります。</value>
+    <value>Windowsアップデートの検出にはWUAを使用しており、これが遅い場合があります。完了するまでに数分かかることがあります。</value>
   </data>
   <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
     <value>Windowsアップデート</value>
   </data>
   <data name="labelWinFeatureInfo.Text" xml:space="preserve">
-    <value>Windowsの機能の検出にはWMIを使用し、時間がかかるか、システムによっては失敗することがあります（通常はシステムの破損を示します）。</value>
+    <value>Windows機能の検出にはWMIを使用しており、一部のシステムでは遅くなったり、失敗したりすることがあります（通常はシステムの破損を示しています）。</value>
   </data>
   <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
     <value>Windowsの機能</value>
@@ -229,7 +230,7 @@ BCUは、現在実行中のコマンドが完了するまで待ってから、�
     <value>Steam</value>
   </data>
   <data name="checkBoxScoop.Text" xml:space="preserve">
-    <value>スコープ</value>
+    <value>Scoop</value>
   </data>
   <data name="checkBoxOculus.Text" xml:space="preserve">
     <value>Oculusストア</value>
@@ -241,39 +242,39 @@ BCUは、現在実行中のコマンドが完了するまで待ってから、�
     <value>スキャンするアプリケーションストア</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
-    <value>レジストリ（有効にしておくことをお勧めします）</value>
+    <value>レジストリ（有効のままにすることを推奨）</value>
   </data>
   <data name="checkBoxScanDrives.Text" xml:space="preserve">
-    <value>ドライブ（未登録のアプリを検出します）</value>
+    <value>ドライブ（登録されていないアプリを検出）</value>
   </data>
   <data name="checkBoxPreDefined.Text" xml:space="preserve">
-    <value>事前に定義されたルールに基づく</value>
+    <value>定義済みのルールに基づく</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>アプリケーションの検索</value>
+    <value>...でアプリケーションを検索</value>
   </data>
   <data name="tabPageDetection.Text" xml:space="preserve">
     <value>検出</value>
   </data>
   <data name="tabPageExternal.Text" xml:space="preserve">
-    <value>外付けツール</value>
+    <value>外部ツール</value>
   </data>
   <data name="checkBoxRemovable.Text" xml:space="preserve">
-    <value>リムーバブルドライブのスキャン</value>
+    <value>リムーバブルドライブをスキャン</value>
     <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
   </data>
   <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
-    <value>カスタムインストールフォルダーを自動的に検出しようとする</value>
+    <value>カスタムインストールフォルダーを自動的に検出しようとします。</value>
   </data>
   <data name="labelProgramFolders.Text" xml:space="preserve">
-    <value>アプリケーションをインストールするカスタムフォルダを指定することができます（例：D:\Applications）。これらのフォルダは、BCUがアンインストールの残骸や未登録のアプリケーション、その他のいくつかのものを検索するために使用されます。必要ではありませんが、これらのフォルダのリストがあると、BCUがよりよく動作します。
+    <value>アプリケーションをインストールするカスタムフォルダー（例：D:\Applications）を指定できます。これらのフォルダーは、BCUがアンインストールの残骸や未登録アプリケーション、その他のいくつかの項目を検索する際に使用されます。必須ではありませんが、これらのフォルダーのリストを提供することで、BCUの機能が向上します。
 
-Windowsのデフォルトフォルダは常にスキャンされるため、このリストに含める必要はありません。
+デフォルトのWindowsフォルダーは常にスキャンされるため、このリストに含める必要はありません。
 
-フルディレクトリパスを使用し、1行に1つのパスを指定します。無効なパスや存在しないディレクトリは無視されます。</value>
+完全なディレクトリパスを使用し、1行につき1つのパスを指定してください。無効なパスや存在しないディレクトリは無視されます。</value>
   </data>
   <data name="groupBoxProgramFolders.Text" xml:space="preserve">
-    <value>プログラムのインストールフォルダ</value>
+    <value>プログラムインストールフォルダー</value>
   </data>
   <data name="tabPageFolders.Text" xml:space="preserve">
     <value>フォルダー</value>
@@ -288,6 +289,6 @@ Windowsのデフォルトフォルダは常にスキャンされるため、こ�
     <value>その他</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>バルククラップアンインストーラの設定</value>
+    <value>Bulk Crap Uninstaller 設定</value>
   </data>
 </root>
