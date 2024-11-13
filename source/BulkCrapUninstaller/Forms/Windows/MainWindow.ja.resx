@@ -270,9 +270,7 @@
     <value>&amp;レジストリエントリを削除</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;名前を変更...
-
-</value>
+    <value>&amp;名前を変更...</value>
   </data>
   <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;インストール場所</value>
