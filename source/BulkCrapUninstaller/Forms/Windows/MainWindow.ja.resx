@@ -284,9 +284,7 @@
 </value>
   </data>
   <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;アンインストーラーの場所
-
-</value>
+    <value>&amp;アンインストーラーの場所</value>
   </data>
   <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;ソースの場所</value>
