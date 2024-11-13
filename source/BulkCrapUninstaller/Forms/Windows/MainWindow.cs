@@ -1858,5 +1858,10 @@ namespace BulkCrapUninstaller.Forms
                 LockApplication(false);
             }
         }
+
+        private void autosizeAllColumnsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uninstallerObjectListView.AutoResizeColumns();
+        }
     }
 }

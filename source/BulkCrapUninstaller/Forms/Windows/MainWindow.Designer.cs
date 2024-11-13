@@ -12,7 +12,7 @@ namespace BulkCrapUninstaller.Forms
         /// Required designer variable.
         /// </summary>
         private IContainer components = null;
-        
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -21,1759 +21,1578 @@ namespace BulkCrapUninstaller.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.advancedFilters1 = new BulkCrapUninstaller.Controls.AdvancedFilters();
-            this.splitContainerListAndMap = new System.Windows.Forms.SplitContainer();
-            this.listViewPanel = new System.Windows.Forms.Panel();
-            this.uninstallerObjectListView = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnDisplayName = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnPublisher = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnRating = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnDisplayVersion = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnInstallDate = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnSize = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnStartup = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnIs64 = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnUninstallString = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnAbout = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnInstallSource = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnInstallLocation = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnUninstallerKind = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnSystemComponent = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnProtected = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnRegistryKeyName = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnGuid = new BrightIdeasSoftware.OLVColumn();
-            this.olvColumnQuietUninstallString = new BrightIdeasSoftware.OLVColumn();
-            this.treeMap1 = new SimpleTreeMap.TreeMap();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonSelAll = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSelNone = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSelInv = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonTarget = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonUninstall = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonModify = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonProperties = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
-            this.settingsSidebarPanel = new System.Windows.Forms.Panel();
-            this.propertiesSidebar = new BulkCrapUninstaller.Controls.PropertiesSidebar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonAdvFiltering = new System.Windows.Forms.Button();
-            this.filterEditor1 = new UninstallTools.Controls.FilterEditor();
-            this.uninstallListContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.uninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quietUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualUninstallToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallUsingMsiExecContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msiInstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msiUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msiQuietUninstallContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.excludeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.includeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorFiltering = new System.Windows.Forms.ToolStripSeparator();
-            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.copyToClipboardContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.fullInformationCopyContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programNameCopyContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUIDProductCodeCopyContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fullRegistryPathCopyContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallStringCopyContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteRegistryEntryContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.openInExplorerContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.installLocationOpenInExplorerContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallerLocationOpenInExplorerContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sourceLocationOpenInExplorerContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openWebPageContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lookUpOnlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
-            this.slantcoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.fossHubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sourceForgecomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gitHubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileHippocomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.propertiesContextMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadUninstallersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.loadUninstallerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
-            this.exportSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToABatchUninstallScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showColorLegendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayToolbarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTreemapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displaySettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayStatusbarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.useSystemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filteringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.basicApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.systemComponentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.everythingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.automaticallyStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlyWebBrowsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
-            this.viewTweaksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewUnregisteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewWindowsFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewWindowsStoreAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.basicOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quietUninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedClipCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.copyFullInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlineSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.googleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alternativeToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.slantcoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-            this.rateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualUninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msiUninstalltoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disableAutostartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.createBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openKeyInRegeditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
-            this.takeOwnershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openStartupManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-            this.cleanUpProgramFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.targetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallFromDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.troubleshootUninstallProblemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startDiskCleanupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tryToInstallNETV35ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createRestorePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
-            this.openProgramsAndFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openSystemRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startSetupWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.submitFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-            this.resetSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninstallBCUninstallToolstripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createBackupFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
-            this.splashScreen1 = new Klocman.Forms.SplashScreen();
-            this.usageTracker = new BulkCrapUninstaller.Functions.Tracking.UsageTracker();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerListAndMap)).BeginInit();
-            this.splitContainerListAndMap.Panel1.SuspendLayout();
-            this.splitContainerListAndMap.Panel2.SuspendLayout();
-            this.splitContainerListAndMap.SuspendLayout();
-            this.listViewPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).BeginInit();
-            this.toolStrip.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.settingsSidebarPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.uninstallListContextMenuStrip.SuspendLayout();
-            this.menuStrip.SuspendLayout();
-            this.SuspendLayout();
+            components = new Container();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainWindow));
+            splitContainer1 = new SplitContainer();
+            advancedFilters1 = new AdvancedFilters();
+            splitContainerListAndMap = new SplitContainer();
+            listViewPanel = new Panel();
+            uninstallerObjectListView = new ObjectListView();
+            olvColumnDisplayName = new OLVColumn();
+            olvColumnPublisher = new OLVColumn();
+            olvColumnRating = new OLVColumn();
+            olvColumnDisplayVersion = new OLVColumn();
+            olvColumnInstallDate = new OLVColumn();
+            olvColumnSize = new OLVColumn();
+            olvColumnStartup = new OLVColumn();
+            olvColumnIs64 = new OLVColumn();
+            olvColumnUninstallString = new OLVColumn();
+            olvColumnAbout = new OLVColumn();
+            olvColumnInstallSource = new OLVColumn();
+            olvColumnInstallLocation = new OLVColumn();
+            olvColumnUninstallerKind = new OLVColumn();
+            olvColumnSystemComponent = new OLVColumn();
+            olvColumnProtected = new OLVColumn();
+            olvColumnRegistryKeyName = new OLVColumn();
+            olvColumnGuid = new OLVColumn();
+            olvColumnQuietUninstallString = new OLVColumn();
+            treeMap1 = new SimpleTreeMap.TreeMap();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripSeparator22 = new ToolStripSeparator();
+            toolStripButtonSelAll = new ToolStripButton();
+            toolStripButtonSelNone = new ToolStripButton();
+            toolStripButtonSelInv = new ToolStripButton();
+            toolStripSeparator23 = new ToolStripSeparator();
+            toolStripButtonTarget = new ToolStripButton();
+            toolStripSeparator21 = new ToolStripSeparator();
+            toolStripButtonUninstall = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripButtonModify = new ToolStripButton();
+            toolStripSeparator4 = new ToolStripSeparator();
+            toolStripButtonProperties = new ToolStripButton();
+            toolStripSeparator24 = new ToolStripSeparator();
+            toolStripButton7 = new ToolStripButton();
+            toolStripButton8 = new ToolStripButton();
+            statusStrip1 = new StatusStrip();
+            toolStripLabelStatus = new ToolStripStatusLabel();
+            toolStripLabelSize = new ToolStripStatusLabel();
+            toolStripLabelTotal = new ToolStripStatusLabel();
+            settingsSidebarPanel = new Panel();
+            propertiesSidebar = new PropertiesSidebar();
+            label1 = new Label();
+            groupBox1 = new GroupBox();
+            buttonAdvFiltering = new Button();
+            filterEditor1 = new UninstallTools.Controls.FilterEditor();
+            uninstallListContextMenuStrip = new ContextMenuStrip(components);
+            uninstallContextMenuStripItem = new ToolStripMenuItem();
+            quietUninstallContextMenuStripItem = new ToolStripMenuItem();
+            manualUninstallToolStripMenuItem1 = new ToolStripMenuItem();
+            uninstallUsingMsiExecContextMenuStripItem = new ToolStripMenuItem();
+            msiInstallContextMenuStripItem = new ToolStripMenuItem();
+            msiUninstallContextMenuStripItem = new ToolStripMenuItem();
+            msiQuietUninstallContextMenuStripItem = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
+            excludeToolStripMenuItem = new ToolStripMenuItem();
+            includeToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparatorFiltering = new ToolStripSeparator();
+            runToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator8 = new ToolStripSeparator();
+            copyToClipboardContextMenuStripItem = new ToolStripMenuItem();
+            toolStripMenuItem9 = new ToolStripMenuItem();
+            toolStripSeparator9 = new ToolStripSeparator();
+            fullInformationCopyContextMenuStripItem = new ToolStripMenuItem();
+            programNameCopyContextMenuStripItem = new ToolStripMenuItem();
+            gUIDProductCodeCopyContextMenuStripItem = new ToolStripMenuItem();
+            fullRegistryPathCopyContextMenuStripItem = new ToolStripMenuItem();
+            uninstallStringCopyContextMenuStripItem = new ToolStripMenuItem();
+            deleteRegistryEntryContextMenuStripItem = new ToolStripMenuItem();
+            renameContextMenuStripItem = new ToolStripMenuItem();
+            toolStripSeparator6 = new ToolStripSeparator();
+            openInExplorerContextMenuStripItem = new ToolStripMenuItem();
+            installLocationOpenInExplorerContextMenuStripItem = new ToolStripMenuItem();
+            uninstallerLocationOpenInExplorerContextMenuStripItem = new ToolStripMenuItem();
+            sourceLocationOpenInExplorerContextMenuStripItem = new ToolStripMenuItem();
+            openWebPageContextMenuStripItem = new ToolStripMenuItem();
+            lookUpOnlineToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem15 = new ToolStripMenuItem();
+            toolStripMenuItem16 = new ToolStripMenuItem();
+            slantcoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator26 = new ToolStripSeparator();
+            fossHubcomToolStripMenuItem = new ToolStripMenuItem();
+            sourceForgecomToolStripMenuItem = new ToolStripMenuItem();
+            gitHubcomToolStripMenuItem = new ToolStripMenuItem();
+            fileHippocomToolStripMenuItem = new ToolStripMenuItem();
+            rateToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator7 = new ToolStripSeparator();
+            propertiesContextMenuStripItem = new ToolStripMenuItem();
+            exportDialog = new SaveFileDialog();
+            menuStrip = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            reloadUninstallersToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            loadUninstallerListToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator30 = new ToolStripSeparator();
+            exportSelectedToolStripMenuItem = new ToolStripMenuItem();
+            exportToABatchUninstallScriptToolStripMenuItem = new ToolStripMenuItem();
+            exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator10 = new ToolStripSeparator();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            showColorLegendToolStripMenuItem = new ToolStripMenuItem();
+            displayToolbarToolStripMenuItem = new ToolStripMenuItem();
+            showTreemapToolStripMenuItem = new ToolStripMenuItem();
+            displaySettingsToolStripMenuItem = new ToolStripMenuItem();
+            displayStatusbarToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator12 = new ToolStripSeparator();
+            useSystemThemeToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator33 = new ToolStripSeparator();
+            autosizeAllColumnsToolStripMenuItem = new ToolStripMenuItem();
+            filteringToolStripMenuItem = new ToolStripMenuItem();
+            advancedApplicationsToolStripMenuItem = new ToolStripMenuItem();
+            basicApplicationsToolStripMenuItem = new ToolStripMenuItem();
+            systemComponentsToolStripMenuItem = new ToolStripMenuItem();
+            everythingToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator20 = new ToolStripSeparator();
+            automaticallyStartedToolStripMenuItem = new ToolStripMenuItem();
+            onlyWebBrowsersToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator31 = new ToolStripSeparator();
+            viewTweaksToolStripMenuItem = new ToolStripMenuItem();
+            viewUnregisteredToolStripMenuItem = new ToolStripMenuItem();
+            viewUpdatesToolStripMenuItem = new ToolStripMenuItem();
+            viewWindowsFeaturesToolStripMenuItem = new ToolStripMenuItem();
+            viewWindowsStoreAppsToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator28 = new ToolStripSeparator();
+            searchToolStripMenuItem = new ToolStripMenuItem();
+            basicOperationsToolStripMenuItem = new ToolStripMenuItem();
+            uninstallToolStripMenuItem = new ToolStripMenuItem();
+            quietUninstallToolStripMenuItem = new ToolStripMenuItem();
+            modifyToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            toolStripMenuItem8 = new ToolStripMenuItem();
+            advancedClipCopyToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator11 = new ToolStripSeparator();
+            copyFullInformationToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem10 = new ToolStripMenuItem();
+            toolStripMenuItem11 = new ToolStripMenuItem();
+            toolStripMenuItem12 = new ToolStripMenuItem();
+            toolStripMenuItem13 = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripMenuItem();
+            toolStripMenuItem6 = new ToolStripMenuItem();
+            toolStripMenuItem7 = new ToolStripMenuItem();
+            toolStripMenuItem14 = new ToolStripMenuItem();
+            onlineSearchToolStripMenuItem = new ToolStripMenuItem();
+            googleToolStripMenuItem = new ToolStripMenuItem();
+            alternativeToToolStripMenuItem = new ToolStripMenuItem();
+            slantcoToolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripSeparator27 = new ToolStripSeparator();
+            toolStripMenuItem17 = new ToolStripMenuItem();
+            toolStripMenuItem18 = new ToolStripMenuItem();
+            toolStripMenuItem20 = new ToolStripMenuItem();
+            toolStripMenuItem19 = new ToolStripMenuItem();
+            rateToolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripSeparator15 = new ToolStripSeparator();
+            propertiesToolStripMenuItem = new ToolStripMenuItem();
+            advancedOperationsToolStripMenuItem = new ToolStripMenuItem();
+            manualUninstallToolStripMenuItem = new ToolStripMenuItem();
+            msiUninstalltoolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripMenuItem();
+            toolStripSeparator14 = new ToolStripSeparator();
+            renameToolStripMenuItem = new ToolStripMenuItem();
+            disableAutostartToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator5 = new ToolStripSeparator();
+            createBackupToolStripMenuItem = new ToolStripMenuItem();
+            openKeyInRegeditToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator32 = new ToolStripSeparator();
+            takeOwnershipToolStripMenuItem = new ToolStripMenuItem();
+            toolsToolStripMenuItem = new ToolStripMenuItem();
+            openStartupManagerToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator25 = new ToolStripSeparator();
+            cleanUpProgramFilesToolStripMenuItem = new ToolStripMenuItem();
+            targetMenuItem = new ToolStripMenuItem();
+            uninstallFromDirectoryToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator13 = new ToolStripSeparator();
+            troubleshootUninstallProblemsToolStripMenuItem = new ToolStripMenuItem();
+            startDiskCleanupToolStripMenuItem = new ToolStripMenuItem();
+            tryToInstallNETV35ToolStripMenuItem = new ToolStripMenuItem();
+            createRestorePointToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator29 = new ToolStripSeparator();
+            openProgramsAndFeaturesToolStripMenuItem = new ToolStripMenuItem();
+            openSystemRestoreToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator19 = new ToolStripSeparator();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            openHelpToolStripMenuItem = new ToolStripMenuItem();
+            startSetupWizardToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator16 = new ToolStripSeparator();
+            checkForUpdatesToolStripMenuItem = new ToolStripMenuItem();
+            submitFeedbackToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator18 = new ToolStripSeparator();
+            resetSettingsToolStripMenuItem = new ToolStripMenuItem();
+            uninstallBCUninstallToolstripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator17 = new ToolStripSeparator();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            debugToolStripMenuItem = new ToolStripMenuItem();
+            createBackupFileDialog = new SaveFileDialog();
+            globalHotkeys1 = new Klocman.Subsystems.GlobalHotkeys();
+            splashScreen1 = new Klocman.Forms.SplashScreen();
+            usageTracker = new UsageTracker();
+            ((ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((ISupportInitialize)splitContainerListAndMap).BeginInit();
+            splitContainerListAndMap.Panel1.SuspendLayout();
+            splitContainerListAndMap.Panel2.SuspendLayout();
+            splitContainerListAndMap.SuspendLayout();
+            listViewPanel.SuspendLayout();
+            ((ISupportInitialize)uninstallerObjectListView).BeginInit();
+            toolStrip.SuspendLayout();
+            statusStrip1.SuspendLayout();
+            settingsSidebarPanel.SuspendLayout();
+            groupBox1.SuspendLayout();
+            uninstallListContextMenuStrip.SuspendLayout();
+            menuStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Name = "splitContainer1";
+            resources.ApplyResources(splitContainer1, "splitContainer1");
+            splitContainer1.FixedPanel = FixedPanel.Panel1;
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.advancedFilters1);
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
+            splitContainer1.Panel1.Controls.Add(advancedFilters1);
+            resources.ApplyResources(splitContainer1.Panel1, "splitContainer1.Panel1");
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainerListAndMap);
-            this.splitContainer1.Panel2.Controls.Add(this.toolStrip);
-            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            splitContainer1.Panel2.Controls.Add(splitContainerListAndMap);
+            splitContainer1.Panel2.Controls.Add(toolStrip);
+            splitContainer1.Panel2.Controls.Add(statusStrip1);
             // 
             // advancedFilters1
             // 
-            resources.ApplyResources(this.advancedFilters1, "advancedFilters1");
-            this.advancedFilters1.Name = "advancedFilters1";
-            this.advancedFilters1.SelectedEntryGetter = null;
+            resources.ApplyResources(advancedFilters1, "advancedFilters1");
+            advancedFilters1.Name = "advancedFilters1";
+            advancedFilters1.SelectedEntryGetter = null;
             // 
             // splitContainerListAndMap
             // 
-            resources.ApplyResources(this.splitContainerListAndMap, "splitContainerListAndMap");
-            this.splitContainerListAndMap.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainerListAndMap.Name = "splitContainerListAndMap";
+            resources.ApplyResources(splitContainerListAndMap, "splitContainerListAndMap");
+            splitContainerListAndMap.FixedPanel = FixedPanel.Panel2;
+            splitContainerListAndMap.Name = "splitContainerListAndMap";
             // 
             // splitContainerListAndMap.Panel1
             // 
-            this.splitContainerListAndMap.Panel1.Controls.Add(this.listViewPanel);
+            splitContainerListAndMap.Panel1.Controls.Add(listViewPanel);
             // 
             // splitContainerListAndMap.Panel2
             // 
-            this.splitContainerListAndMap.Panel2.Controls.Add(this.treeMap1);
+            splitContainerListAndMap.Panel2.Controls.Add(treeMap1);
             // 
             // listViewPanel
             // 
-            this.listViewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listViewPanel.Controls.Add(this.uninstallerObjectListView);
-            resources.ApplyResources(this.listViewPanel, "listViewPanel");
-            this.listViewPanel.Name = "listViewPanel";
+            listViewPanel.BorderStyle = BorderStyle.FixedSingle;
+            listViewPanel.Controls.Add(uninstallerObjectListView);
+            resources.ApplyResources(listViewPanel, "listViewPanel");
+            listViewPanel.Name = "listViewPanel";
             // 
             // uninstallerObjectListView
             // 
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnDisplayName);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnPublisher);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnRating);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnDisplayVersion);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnInstallDate);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnSize);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnStartup);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnIs64);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnUninstallString);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnAbout);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnInstallSource);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnInstallLocation);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnUninstallerKind);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnSystemComponent);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnProtected);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnRegistryKeyName);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnGuid);
-            this.uninstallerObjectListView.AllColumns.Add(this.olvColumnQuietUninstallString);
-            this.uninstallerObjectListView.AllowColumnReorder = true;
-            this.uninstallerObjectListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.uninstallerObjectListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.uninstallerObjectListView.CellEditUseWholeCell = false;
-            this.uninstallerObjectListView.CheckBoxes = true;
-            this.uninstallerObjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumnDisplayName,
-            this.olvColumnPublisher,
-            this.olvColumnRating,
-            this.olvColumnDisplayVersion,
-            this.olvColumnInstallDate,
-            this.olvColumnSize,
-            this.olvColumnStartup,
-            this.olvColumnIs64,
-            this.olvColumnUninstallString,
-            this.olvColumnAbout,
-            this.olvColumnInstallSource,
-            this.olvColumnInstallLocation,
-            this.olvColumnUninstallerKind,
-            this.olvColumnSystemComponent,
-            this.olvColumnProtected,
-            this.olvColumnRegistryKeyName,
-            this.olvColumnGuid,
-            this.olvColumnQuietUninstallString});
-            this.uninstallerObjectListView.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.uninstallerObjectListView, "uninstallerObjectListView");
-            this.uninstallerObjectListView.FullRowSelect = true;
-            this.uninstallerObjectListView.GridLines = true;
-            this.uninstallerObjectListView.HideSelection = false;
-            this.uninstallerObjectListView.Name = "uninstallerObjectListView";
-            this.uninstallerObjectListView.ShowGroups = false;
-            this.uninstallerObjectListView.ShowImagesOnSubItems = true;
-            this.uninstallerObjectListView.ShowItemToolTips = true;
-            this.uninstallerObjectListView.SortGroupItemsByPrimaryColumn = false;
-            this.uninstallerObjectListView.UseCompatibleStateImageBehavior = false;
-            this.uninstallerObjectListView.UseFilterIndicator = true;
-            this.uninstallerObjectListView.UseHyperlinks = true;
-            this.uninstallerObjectListView.View = System.Windows.Forms.View.Details;
-            this.uninstallerObjectListView.VirtualMode = true;
-            this.uninstallerObjectListView.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.uninstallerObjectListView_CellEditStarting);
-            this.uninstallerObjectListView.CellRightClick += new System.EventHandler<BrightIdeasSoftware.CellRightClickEventArgs>(this.uninstallerObjectListView_CellRightClick);
-            this.uninstallerObjectListView.ItemsChanged += new System.EventHandler<BrightIdeasSoftware.ItemsChangedEventArgs>(this.RefreshStatusbarTotalLabel);
-            this.uninstallerObjectListView.SelectionChanged += new System.EventHandler(this.uninstallerObjectListView_SelectedChanged);
-            this.uninstallerObjectListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.uninstallerObjectListView_SelectedChanged);
-            this.uninstallerObjectListView.Click += new System.EventHandler(this.uninstallerObjectListView_Click);
-            this.uninstallerObjectListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uninstallerObjectListView_KeyDown);
-            this.uninstallerObjectListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.HandleListViewMenuKeystroke);
+            uninstallerObjectListView.AllColumns.Add(olvColumnDisplayName);
+            uninstallerObjectListView.AllColumns.Add(olvColumnPublisher);
+            uninstallerObjectListView.AllColumns.Add(olvColumnRating);
+            uninstallerObjectListView.AllColumns.Add(olvColumnDisplayVersion);
+            uninstallerObjectListView.AllColumns.Add(olvColumnInstallDate);
+            uninstallerObjectListView.AllColumns.Add(olvColumnSize);
+            uninstallerObjectListView.AllColumns.Add(olvColumnStartup);
+            uninstallerObjectListView.AllColumns.Add(olvColumnIs64);
+            uninstallerObjectListView.AllColumns.Add(olvColumnUninstallString);
+            uninstallerObjectListView.AllColumns.Add(olvColumnAbout);
+            uninstallerObjectListView.AllColumns.Add(olvColumnInstallSource);
+            uninstallerObjectListView.AllColumns.Add(olvColumnInstallLocation);
+            uninstallerObjectListView.AllColumns.Add(olvColumnUninstallerKind);
+            uninstallerObjectListView.AllColumns.Add(olvColumnSystemComponent);
+            uninstallerObjectListView.AllColumns.Add(olvColumnProtected);
+            uninstallerObjectListView.AllColumns.Add(olvColumnRegistryKeyName);
+            uninstallerObjectListView.AllColumns.Add(olvColumnGuid);
+            uninstallerObjectListView.AllColumns.Add(olvColumnQuietUninstallString);
+            uninstallerObjectListView.AllowColumnReorder = true;
+            uninstallerObjectListView.BorderStyle = BorderStyle.None;
+            uninstallerObjectListView.CellEditActivation = ObjectListView.CellEditActivateMode.DoubleClick;
+            uninstallerObjectListView.CellEditUseWholeCell = false;
+            uninstallerObjectListView.CheckBoxes = true;
+            uninstallerObjectListView.Columns.AddRange(new ColumnHeader[] { olvColumnDisplayName, olvColumnPublisher, olvColumnRating, olvColumnDisplayVersion, olvColumnInstallDate, olvColumnSize, olvColumnStartup, olvColumnIs64, olvColumnUninstallString, olvColumnAbout, olvColumnInstallSource, olvColumnInstallLocation, olvColumnUninstallerKind, olvColumnSystemComponent, olvColumnProtected, olvColumnRegistryKeyName, olvColumnGuid, olvColumnQuietUninstallString });
+            resources.ApplyResources(uninstallerObjectListView, "uninstallerObjectListView");
+            uninstallerObjectListView.FullRowSelect = true;
+            uninstallerObjectListView.GridLines = true;
+            uninstallerObjectListView.Name = "uninstallerObjectListView";
+            uninstallerObjectListView.ShowGroups = false;
+            uninstallerObjectListView.ShowImagesOnSubItems = true;
+            uninstallerObjectListView.ShowItemToolTips = true;
+            uninstallerObjectListView.SortGroupItemsByPrimaryColumn = false;
+            uninstallerObjectListView.UseCompatibleStateImageBehavior = false;
+            uninstallerObjectListView.UseFilterIndicator = true;
+            uninstallerObjectListView.UseHyperlinks = true;
+            uninstallerObjectListView.View = View.Details;
+            uninstallerObjectListView.VirtualMode = true;
+            uninstallerObjectListView.CellEditStarting += uninstallerObjectListView_CellEditStarting;
+            uninstallerObjectListView.CellRightClick += uninstallerObjectListView_CellRightClick;
+            uninstallerObjectListView.ItemsChanged += RefreshStatusbarTotalLabel;
+            uninstallerObjectListView.SelectionChanged += uninstallerObjectListView_SelectedChanged;
+            uninstallerObjectListView.ItemChecked += uninstallerObjectListView_SelectedChanged;
+            uninstallerObjectListView.Click += uninstallerObjectListView_Click;
+            uninstallerObjectListView.KeyDown += uninstallerObjectListView_KeyDown;
+            uninstallerObjectListView.KeyUp += HandleListViewMenuKeystroke;
             // 
             // olvColumnDisplayName
             // 
-            this.olvColumnDisplayName.Hideable = false;
-            resources.ApplyResources(this.olvColumnDisplayName, "olvColumnDisplayName");
+            olvColumnDisplayName.Hideable = false;
+            resources.ApplyResources(olvColumnDisplayName, "olvColumnDisplayName");
             // 
             // olvColumnPublisher
             // 
-            resources.ApplyResources(this.olvColumnPublisher, "olvColumnPublisher");
+            resources.ApplyResources(olvColumnPublisher, "olvColumnPublisher");
             // 
             // olvColumnRating
             // 
-            this.olvColumnRating.IsEditable = false;
-            this.olvColumnRating.MaximumWidth = 160;
-            this.olvColumnRating.MinimumWidth = 80;
-            this.olvColumnRating.Searchable = false;
-            resources.ApplyResources(this.olvColumnRating, "olvColumnRating");
-            this.olvColumnRating.UseFiltering = false;
+            olvColumnRating.IsEditable = false;
+            olvColumnRating.MaximumWidth = 160;
+            olvColumnRating.MinimumWidth = 80;
+            olvColumnRating.Searchable = false;
+            resources.ApplyResources(olvColumnRating, "olvColumnRating");
+            olvColumnRating.UseFiltering = false;
             // 
             // olvColumnDisplayVersion
             // 
-            resources.ApplyResources(this.olvColumnDisplayVersion, "olvColumnDisplayVersion");
+            resources.ApplyResources(olvColumnDisplayVersion, "olvColumnDisplayVersion");
             // 
             // olvColumnInstallDate
             // 
-            this.olvColumnInstallDate.IsEditable = false;
-            resources.ApplyResources(this.olvColumnInstallDate, "olvColumnInstallDate");
+            olvColumnInstallDate.IsEditable = false;
+            resources.ApplyResources(olvColumnInstallDate, "olvColumnInstallDate");
             // 
             // olvColumnSize
             // 
-            this.olvColumnSize.Searchable = false;
-            resources.ApplyResources(this.olvColumnSize, "olvColumnSize");
+            olvColumnSize.Searchable = false;
+            resources.ApplyResources(olvColumnSize, "olvColumnSize");
             // 
             // olvColumnStartup
             // 
-            this.olvColumnStartup.AspectName = "";
-            resources.ApplyResources(this.olvColumnStartup, "olvColumnStartup");
+            olvColumnStartup.AspectName = "";
+            resources.ApplyResources(olvColumnStartup, "olvColumnStartup");
             // 
             // olvColumnIs64
             // 
-            this.olvColumnIs64.AspectName = "Is64Bit";
-            resources.ApplyResources(this.olvColumnIs64, "olvColumnIs64");
+            olvColumnIs64.AspectName = "Is64Bit";
+            resources.ApplyResources(olvColumnIs64, "olvColumnIs64");
             // 
             // olvColumnUninstallString
             // 
-            resources.ApplyResources(this.olvColumnUninstallString, "olvColumnUninstallString");
+            resources.ApplyResources(olvColumnUninstallString, "olvColumnUninstallString");
             // 
             // olvColumnAbout
             // 
-            this.olvColumnAbout.Hyperlink = true;
-            this.olvColumnAbout.IsEditable = false;
-            resources.ApplyResources(this.olvColumnAbout, "olvColumnAbout");
+            olvColumnAbout.Hyperlink = true;
+            olvColumnAbout.IsEditable = false;
+            resources.ApplyResources(olvColumnAbout, "olvColumnAbout");
             // 
             // olvColumnInstallSource
             // 
-            resources.ApplyResources(this.olvColumnInstallSource, "olvColumnInstallSource");
+            resources.ApplyResources(olvColumnInstallSource, "olvColumnInstallSource");
             // 
             // olvColumnInstallLocation
             // 
-            resources.ApplyResources(this.olvColumnInstallLocation, "olvColumnInstallLocation");
+            resources.ApplyResources(olvColumnInstallLocation, "olvColumnInstallLocation");
             // 
             // olvColumnUninstallerKind
             // 
-            resources.ApplyResources(this.olvColumnUninstallerKind, "olvColumnUninstallerKind");
+            resources.ApplyResources(olvColumnUninstallerKind, "olvColumnUninstallerKind");
             // 
             // olvColumnSystemComponent
             // 
-            resources.ApplyResources(this.olvColumnSystemComponent, "olvColumnSystemComponent");
+            resources.ApplyResources(olvColumnSystemComponent, "olvColumnSystemComponent");
             // 
             // olvColumnProtected
             // 
-            this.olvColumnProtected.AspectName = "IsProtected";
-            resources.ApplyResources(this.olvColumnProtected, "olvColumnProtected");
+            olvColumnProtected.AspectName = "IsProtected";
+            resources.ApplyResources(olvColumnProtected, "olvColumnProtected");
             // 
             // olvColumnRegistryKeyName
             // 
-            resources.ApplyResources(this.olvColumnRegistryKeyName, "olvColumnRegistryKeyName");
+            resources.ApplyResources(olvColumnRegistryKeyName, "olvColumnRegistryKeyName");
             // 
             // olvColumnGuid
             // 
-            resources.ApplyResources(this.olvColumnGuid, "olvColumnGuid");
+            resources.ApplyResources(olvColumnGuid, "olvColumnGuid");
             // 
             // olvColumnQuietUninstallString
             // 
-            resources.ApplyResources(this.olvColumnQuietUninstallString, "olvColumnQuietUninstallString");
+            resources.ApplyResources(olvColumnQuietUninstallString, "olvColumnQuietUninstallString");
             // 
             // treeMap1
             // 
-            resources.ApplyResources(this.treeMap1, "treeMap1");
-            this.treeMap1.Name = "treeMap1";
-            this.treeMap1.ShowToolTip = false;
-            this.treeMap1.UseLogValueScaling = false;
+            resources.ApplyResources(treeMap1, "treeMap1");
+            treeMap1.Name = "treeMap1";
+            treeMap1.ShowToolTip = false;
+            treeMap1.UseLogValueScaling = false;
             // 
             // toolStrip
             // 
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(22, 22);
-            resources.ApplyResources(this.toolStrip, "toolStrip");
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripSeparator22,
-            this.toolStripButtonSelAll,
-            this.toolStripButtonSelNone,
-            this.toolStripButtonSelInv,
-            this.toolStripSeparator23,
-            this.toolStripButtonTarget,
-            this.toolStripSeparator21,
-            this.toolStripButtonUninstall,
-            this.toolStripButton2,
-            this.toolStripButtonModify,
-            this.toolStripSeparator4,
-            this.toolStripButtonProperties,
-            this.toolStripSeparator24,
-            this.toolStripButton7,
-            this.toolStripButton8});
-            this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.TabStop = true;
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.ImageScalingSize = new System.Drawing.Size(22, 22);
+            resources.ApplyResources(toolStrip, "toolStrip");
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripSeparator22, toolStripButtonSelAll, toolStripButtonSelNone, toolStripButtonSelInv, toolStripSeparator23, toolStripButtonTarget, toolStripSeparator21, toolStripButtonUninstall, toolStripButton2, toolStripButtonModify, toolStripSeparator4, toolStripButtonProperties, toolStripSeparator24, toolStripButton7, toolStripButton8 });
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            toolStrip.Name = "toolStrip";
+            toolStrip.TabStop = true;
             // 
             // toolStripButton1
             // 
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.ReloadUninstallers);
+            resources.ApplyResources(toolStripButton1, "toolStripButton1");
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Click += ReloadUninstallers;
             // 
             // toolStripSeparator22
             // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+            toolStripSeparator22.Name = "toolStripSeparator22";
+            resources.ApplyResources(toolStripSeparator22, "toolStripSeparator22");
             // 
             // toolStripButtonSelAll
             // 
-            this.toolStripButtonSelAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButtonSelAll, "toolStripButtonSelAll");
-            this.toolStripButtonSelAll.Name = "toolStripButtonSelAll";
+            toolStripButtonSelAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(toolStripButtonSelAll, "toolStripButtonSelAll");
+            toolStripButtonSelAll.Name = "toolStripButtonSelAll";
             // 
             // toolStripButtonSelNone
             // 
-            this.toolStripButtonSelNone.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButtonSelNone, "toolStripButtonSelNone");
-            this.toolStripButtonSelNone.Name = "toolStripButtonSelNone";
+            toolStripButtonSelNone.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(toolStripButtonSelNone, "toolStripButtonSelNone");
+            toolStripButtonSelNone.Name = "toolStripButtonSelNone";
             // 
             // toolStripButtonSelInv
             // 
-            this.toolStripButtonSelInv.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButtonSelInv, "toolStripButtonSelInv");
-            this.toolStripButtonSelInv.Name = "toolStripButtonSelInv";
+            toolStripButtonSelInv.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(toolStripButtonSelInv, "toolStripButtonSelInv");
+            toolStripButtonSelInv.Name = "toolStripButtonSelInv";
             // 
             // toolStripSeparator23
             // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+            toolStripSeparator23.Name = "toolStripSeparator23";
+            resources.ApplyResources(toolStripSeparator23, "toolStripSeparator23");
             // 
             // toolStripButtonTarget
             // 
-            this.toolStripButtonTarget.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonTarget.Image = global::BulkCrapUninstaller.Properties.Resources.target;
-            resources.ApplyResources(this.toolStripButtonTarget, "toolStripButtonTarget");
-            this.toolStripButtonTarget.Name = "toolStripButtonTarget";
-            this.toolStripButtonTarget.Click += new System.EventHandler(this.OpenTargetWindow);
+            toolStripButtonTarget.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonTarget.Image = Properties.Resources.target;
+            resources.ApplyResources(toolStripButtonTarget, "toolStripButtonTarget");
+            toolStripButtonTarget.Name = "toolStripButtonTarget";
+            toolStripButtonTarget.Click += OpenTargetWindow;
             // 
             // toolStripSeparator21
             // 
-            this.toolStripSeparator21.Name = "toolStripSeparator21";
-            resources.ApplyResources(this.toolStripSeparator21, "toolStripSeparator21");
+            toolStripSeparator21.Name = "toolStripSeparator21";
+            resources.ApplyResources(toolStripSeparator21, "toolStripSeparator21");
             // 
             // toolStripButtonUninstall
             // 
-            resources.ApplyResources(this.toolStripButtonUninstall, "toolStripButtonUninstall");
-            this.toolStripButtonUninstall.Name = "toolStripButtonUninstall";
-            this.toolStripButtonUninstall.Click += new System.EventHandler(this.RunLoudUninstall);
+            resources.ApplyResources(toolStripButtonUninstall, "toolStripButtonUninstall");
+            toolStripButtonUninstall.Name = "toolStripButtonUninstall";
+            toolStripButtonUninstall.Click += RunLoudUninstall;
             // 
             // toolStripButton2
             // 
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.RunQuietUninstall);
+            resources.ApplyResources(toolStripButton2, "toolStripButton2");
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Click += RunQuietUninstall;
             // 
             // toolStripButtonModify
             // 
-            this.toolStripButtonModify.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonModify.Image = global::BulkCrapUninstaller.Properties.Resources.edit_box;
-            resources.ApplyResources(this.toolStripButtonModify, "toolStripButtonModify");
-            this.toolStripButtonModify.Name = "toolStripButtonModify";
-            this.toolStripButtonModify.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
+            toolStripButtonModify.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonModify.Image = Properties.Resources.edit_box;
+            resources.ApplyResources(toolStripButtonModify, "toolStripButtonModify");
+            toolStripButtonModify.Name = "toolStripButtonModify";
+            toolStripButtonModify.Click += modifyToolStripMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(toolStripSeparator4, "toolStripSeparator4");
             // 
             // toolStripButtonProperties
             // 
-            this.toolStripButtonProperties.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
-            resources.ApplyResources(this.toolStripButtonProperties, "toolStripButtonProperties");
-            this.toolStripButtonProperties.Name = "toolStripButtonProperties";
-            this.toolStripButtonProperties.Click += new System.EventHandler(this.OpenProperties);
+            toolStripButtonProperties.Image = Properties.Resources.properties;
+            resources.ApplyResources(toolStripButtonProperties, "toolStripButtonProperties");
+            toolStripButtonProperties.Name = "toolStripButtonProperties";
+            toolStripButtonProperties.Click += OpenProperties;
             // 
             // toolStripSeparator24
             // 
-            this.toolStripSeparator24.Name = "toolStripSeparator24";
-            resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
+            toolStripSeparator24.Name = "toolStripSeparator24";
+            resources.ApplyResources(toolStripSeparator24, "toolStripSeparator24");
             // 
             // toolStripButton7
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::BulkCrapUninstaller.Properties.Resources.settings;
-            resources.ApplyResources(this.toolStripButton7, "toolStripButton7");
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton7.Image = Properties.Resources.settings;
+            resources.ApplyResources(toolStripButton7, "toolStripButton7");
+            toolStripButton7.Name = "toolStripButton7";
+            toolStripButton7.Click += settingsToolStripMenuItem_Click;
             // 
             // toolStripButton8
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::BulkCrapUninstaller.Properties.Resources.information_circle;
-            resources.ApplyResources(this.toolStripButton8, "toolStripButton8");
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Click += new System.EventHandler(this.openHelpToolStripMenuItem_Click);
+            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton8.Image = Properties.Resources.information_circle;
+            resources.ApplyResources(toolStripButton8, "toolStripButton8");
+            toolStripButton8.Name = "toolStripButton8";
+            toolStripButton8.Click += openHelpToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabelStatus,
-            this.toolStripLabelSize,
-            this.toolStripLabelTotal});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripLabelStatus, toolStripLabelSize, toolStripLabelTotal });
+            resources.ApplyResources(statusStrip1, "statusStrip1");
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;
             // 
             // toolStripLabelStatus
             // 
-            this.toolStripLabelStatus.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripLabelStatus.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
-            this.toolStripLabelStatus.Name = "toolStripLabelStatus";
-            resources.ApplyResources(this.toolStripLabelStatus, "toolStripLabelStatus");
-            this.toolStripLabelStatus.Spring = true;
-            this.toolStripLabelStatus.TextChanged += new System.EventHandler(this.toolStripLabelStatus_TextChanged);
+            toolStripLabelStatus.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Top | ToolStripStatusLabelBorderSides.Right | ToolStripStatusLabelBorderSides.Bottom;
+            toolStripLabelStatus.BorderStyle = Border3DStyle.Sunken;
+            toolStripLabelStatus.Name = "toolStripLabelStatus";
+            resources.ApplyResources(toolStripLabelStatus, "toolStripLabelStatus");
+            toolStripLabelStatus.Spring = true;
+            toolStripLabelStatus.TextChanged += toolStripLabelStatus_TextChanged;
             // 
             // toolStripLabelSize
             // 
-            resources.ApplyResources(this.toolStripLabelSize, "toolStripLabelSize");
-            this.toolStripLabelSize.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripLabelSize.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
-            this.toolStripLabelSize.Name = "toolStripLabelSize";
+            resources.ApplyResources(toolStripLabelSize, "toolStripLabelSize");
+            toolStripLabelSize.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Top | ToolStripStatusLabelBorderSides.Right | ToolStripStatusLabelBorderSides.Bottom;
+            toolStripLabelSize.BorderStyle = Border3DStyle.Sunken;
+            toolStripLabelSize.Name = "toolStripLabelSize";
             // 
             // toolStripLabelTotal
             // 
-            resources.ApplyResources(this.toolStripLabelTotal, "toolStripLabelTotal");
-            this.toolStripLabelTotal.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripLabelTotal.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken;
-            this.toolStripLabelTotal.Name = "toolStripLabelTotal";
+            resources.ApplyResources(toolStripLabelTotal, "toolStripLabelTotal");
+            toolStripLabelTotal.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Top | ToolStripStatusLabelBorderSides.Right | ToolStripStatusLabelBorderSides.Bottom;
+            toolStripLabelTotal.BorderStyle = Border3DStyle.Sunken;
+            toolStripLabelTotal.Name = "toolStripLabelTotal";
             // 
             // settingsSidebarPanel
             // 
-            resources.ApplyResources(this.settingsSidebarPanel, "settingsSidebarPanel");
-            this.settingsSidebarPanel.Controls.Add(this.propertiesSidebar);
-            this.settingsSidebarPanel.Controls.Add(this.label1);
-            this.settingsSidebarPanel.Controls.Add(this.groupBox1);
-            this.settingsSidebarPanel.Name = "settingsSidebarPanel";
+            resources.ApplyResources(settingsSidebarPanel, "settingsSidebarPanel");
+            settingsSidebarPanel.Controls.Add(propertiesSidebar);
+            settingsSidebarPanel.Controls.Add(label1);
+            settingsSidebarPanel.Controls.Add(groupBox1);
+            settingsSidebarPanel.Name = "settingsSidebarPanel";
             // 
             // propertiesSidebar
             // 
-            resources.ApplyResources(this.propertiesSidebar, "propertiesSidebar");
-            this.propertiesSidebar.InvalidEnabled = true;
-            this.propertiesSidebar.Name = "propertiesSidebar";
-            this.propertiesSidebar.OrphansEnabled = true;
-            this.propertiesSidebar.ProtectedEnabled = true;
-            this.propertiesSidebar.ShowTweaksEnabled = true;
-            this.propertiesSidebar.StoreAppsEnabled = true;
-            this.propertiesSidebar.SysCompEnabled = true;
-            this.propertiesSidebar.UpdatesEnabled = true;
-            this.propertiesSidebar.WinFeaturesEnabled = true;
+            resources.ApplyResources(propertiesSidebar, "propertiesSidebar");
+            propertiesSidebar.InvalidEnabled = true;
+            propertiesSidebar.Name = "propertiesSidebar";
+            propertiesSidebar.OrphansEnabled = true;
+            propertiesSidebar.ProtectedEnabled = true;
+            propertiesSidebar.ShowTweaksEnabled = true;
+            propertiesSidebar.StoreAppsEnabled = true;
+            propertiesSidebar.SysCompEnabled = true;
+            propertiesSidebar.UpdatesEnabled = true;
+            propertiesSidebar.WinFeaturesEnabled = true;
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.buttonAdvFiltering);
-            this.groupBox1.Controls.Add(this.filterEditor1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(buttonAdvFiltering);
+            groupBox1.Controls.Add(filterEditor1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
             // 
             // buttonAdvFiltering
             // 
-            resources.ApplyResources(this.buttonAdvFiltering, "buttonAdvFiltering");
-            this.buttonAdvFiltering.Name = "buttonAdvFiltering";
-            this.buttonAdvFiltering.UseVisualStyleBackColor = true;
-            this.buttonAdvFiltering.Click += new System.EventHandler(this.buttonAdvFiltering_Click);
+            resources.ApplyResources(buttonAdvFiltering, "buttonAdvFiltering");
+            buttonAdvFiltering.Name = "buttonAdvFiltering";
+            buttonAdvFiltering.UseVisualStyleBackColor = true;
+            buttonAdvFiltering.Click += buttonAdvFiltering_Click;
             // 
             // filterEditor1
             // 
-            resources.ApplyResources(this.filterEditor1, "filterEditor1");
-            this.filterEditor1.Name = "filterEditor1";
-            this.filterEditor1.ShowAsSearch = true;
-            this.filterEditor1.FocusSearchTarget += new System.EventHandler(this.filterEditor1_FocusSearchTarget);
+            resources.ApplyResources(filterEditor1, "filterEditor1");
+            filterEditor1.Name = "filterEditor1";
+            filterEditor1.ShowAsSearch = true;
+            filterEditor1.FocusSearchTarget += filterEditor1_FocusSearchTarget;
             // 
             // uninstallListContextMenuStrip
             // 
-            this.uninstallListContextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.uninstallListContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uninstallContextMenuStripItem,
-            this.quietUninstallContextMenuStripItem,
-            this.manualUninstallToolStripMenuItem1,
-            this.uninstallUsingMsiExecContextMenuStripItem,
-            this.toolStripSeparator3,
-            this.excludeToolStripMenuItem,
-            this.includeToolStripMenuItem,
-            this.toolStripSeparatorFiltering,
-            this.runToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.copyToClipboardContextMenuStripItem,
-            this.deleteRegistryEntryContextMenuStripItem,
-            this.renameContextMenuStripItem,
-            this.toolStripSeparator6,
-            this.openInExplorerContextMenuStripItem,
-            this.openWebPageContextMenuStripItem,
-            this.lookUpOnlineToolStripMenuItem,
-            this.rateToolStripMenuItem,
-            this.toolStripSeparator7,
-            this.propertiesContextMenuStripItem});
-            this.uninstallListContextMenuStrip.Name = "uninstallListContextMenuStrip";
-            resources.ApplyResources(this.uninstallListContextMenuStrip, "uninstallListContextMenuStrip");
-            this.uninstallListContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.UpdateUninstallListContextMenuStrip);
+            uninstallListContextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            uninstallListContextMenuStrip.Items.AddRange(new ToolStripItem[] { uninstallContextMenuStripItem, quietUninstallContextMenuStripItem, manualUninstallToolStripMenuItem1, uninstallUsingMsiExecContextMenuStripItem, toolStripSeparator3, excludeToolStripMenuItem, includeToolStripMenuItem, toolStripSeparatorFiltering, runToolStripMenuItem, toolStripSeparator8, copyToClipboardContextMenuStripItem, deleteRegistryEntryContextMenuStripItem, renameContextMenuStripItem, toolStripSeparator6, openInExplorerContextMenuStripItem, openWebPageContextMenuStripItem, lookUpOnlineToolStripMenuItem, rateToolStripMenuItem, toolStripSeparator7, propertiesContextMenuStripItem });
+            uninstallListContextMenuStrip.Name = "uninstallListContextMenuStrip";
+            resources.ApplyResources(uninstallListContextMenuStrip, "uninstallListContextMenuStrip");
+            uninstallListContextMenuStrip.Opening += UpdateUninstallListContextMenuStrip;
             // 
             // uninstallContextMenuStripItem
             // 
-            resources.ApplyResources(this.uninstallContextMenuStripItem, "uninstallContextMenuStripItem");
-            this.uninstallContextMenuStripItem.Name = "uninstallContextMenuStripItem";
-            this.uninstallContextMenuStripItem.Click += new System.EventHandler(this.RunLoudUninstall);
+            resources.ApplyResources(uninstallContextMenuStripItem, "uninstallContextMenuStripItem");
+            uninstallContextMenuStripItem.Name = "uninstallContextMenuStripItem";
+            uninstallContextMenuStripItem.Click += RunLoudUninstall;
             // 
             // quietUninstallContextMenuStripItem
             // 
-            resources.ApplyResources(this.quietUninstallContextMenuStripItem, "quietUninstallContextMenuStripItem");
-            this.quietUninstallContextMenuStripItem.Name = "quietUninstallContextMenuStripItem";
-            this.quietUninstallContextMenuStripItem.Click += new System.EventHandler(this.RunQuietUninstall);
+            resources.ApplyResources(quietUninstallContextMenuStripItem, "quietUninstallContextMenuStripItem");
+            quietUninstallContextMenuStripItem.Name = "quietUninstallContextMenuStripItem";
+            quietUninstallContextMenuStripItem.Click += RunQuietUninstall;
             // 
             // manualUninstallToolStripMenuItem1
             // 
-            this.manualUninstallToolStripMenuItem1.Name = "manualUninstallToolStripMenuItem1";
-            resources.ApplyResources(this.manualUninstallToolStripMenuItem1, "manualUninstallToolStripMenuItem1");
-            this.manualUninstallToolStripMenuItem1.Click += new System.EventHandler(this.RunAdvancedUninstall);
+            manualUninstallToolStripMenuItem1.Name = "manualUninstallToolStripMenuItem1";
+            resources.ApplyResources(manualUninstallToolStripMenuItem1, "manualUninstallToolStripMenuItem1");
+            manualUninstallToolStripMenuItem1.Click += RunAdvancedUninstall;
             // 
             // uninstallUsingMsiExecContextMenuStripItem
             // 
-            this.uninstallUsingMsiExecContextMenuStripItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msiInstallContextMenuStripItem,
-            this.msiUninstallContextMenuStripItem,
-            this.msiQuietUninstallContextMenuStripItem});
-            this.uninstallUsingMsiExecContextMenuStripItem.Name = "uninstallUsingMsiExecContextMenuStripItem";
-            resources.ApplyResources(this.uninstallUsingMsiExecContextMenuStripItem, "uninstallUsingMsiExecContextMenuStripItem");
+            uninstallUsingMsiExecContextMenuStripItem.DropDownItems.AddRange(new ToolStripItem[] { msiInstallContextMenuStripItem, msiUninstallContextMenuStripItem, msiQuietUninstallContextMenuStripItem });
+            uninstallUsingMsiExecContextMenuStripItem.Name = "uninstallUsingMsiExecContextMenuStripItem";
+            resources.ApplyResources(uninstallUsingMsiExecContextMenuStripItem, "uninstallUsingMsiExecContextMenuStripItem");
             // 
             // msiInstallContextMenuStripItem
             // 
-            this.msiInstallContextMenuStripItem.Name = "msiInstallContextMenuStripItem";
-            resources.ApplyResources(this.msiInstallContextMenuStripItem, "msiInstallContextMenuStripItem");
-            this.msiInstallContextMenuStripItem.Click += new System.EventHandler(this.msiInstallContextMenuStripItem_Click);
+            msiInstallContextMenuStripItem.Name = "msiInstallContextMenuStripItem";
+            resources.ApplyResources(msiInstallContextMenuStripItem, "msiInstallContextMenuStripItem");
+            msiInstallContextMenuStripItem.Click += msiInstallContextMenuStripItem_Click;
             // 
             // msiUninstallContextMenuStripItem
             // 
-            this.msiUninstallContextMenuStripItem.Name = "msiUninstallContextMenuStripItem";
-            resources.ApplyResources(this.msiUninstallContextMenuStripItem, "msiUninstallContextMenuStripItem");
-            this.msiUninstallContextMenuStripItem.Click += new System.EventHandler(this.msiUninstallContextMenuStripItem_Click);
+            msiUninstallContextMenuStripItem.Name = "msiUninstallContextMenuStripItem";
+            resources.ApplyResources(msiUninstallContextMenuStripItem, "msiUninstallContextMenuStripItem");
+            msiUninstallContextMenuStripItem.Click += msiUninstallContextMenuStripItem_Click;
             // 
             // msiQuietUninstallContextMenuStripItem
             // 
-            this.msiQuietUninstallContextMenuStripItem.Name = "msiQuietUninstallContextMenuStripItem";
-            resources.ApplyResources(this.msiQuietUninstallContextMenuStripItem, "msiQuietUninstallContextMenuStripItem");
-            this.msiQuietUninstallContextMenuStripItem.Click += new System.EventHandler(this.msiQuietUninstallContextMenuStripItem_Click);
+            msiQuietUninstallContextMenuStripItem.Name = "msiQuietUninstallContextMenuStripItem";
+            resources.ApplyResources(msiQuietUninstallContextMenuStripItem, "msiQuietUninstallContextMenuStripItem");
+            msiQuietUninstallContextMenuStripItem.Click += msiQuietUninstallContextMenuStripItem_Click;
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(toolStripSeparator3, "toolStripSeparator3");
             // 
             // excludeToolStripMenuItem
             // 
-            this.excludeToolStripMenuItem.Name = "excludeToolStripMenuItem";
-            resources.ApplyResources(this.excludeToolStripMenuItem, "excludeToolStripMenuItem");
-            this.excludeToolStripMenuItem.Click += new System.EventHandler(this.excludeToolStripMenuItem_Click);
+            excludeToolStripMenuItem.Name = "excludeToolStripMenuItem";
+            resources.ApplyResources(excludeToolStripMenuItem, "excludeToolStripMenuItem");
+            excludeToolStripMenuItem.Click += excludeToolStripMenuItem_Click;
             // 
             // includeToolStripMenuItem
             // 
-            this.includeToolStripMenuItem.Name = "includeToolStripMenuItem";
-            resources.ApplyResources(this.includeToolStripMenuItem, "includeToolStripMenuItem");
-            this.includeToolStripMenuItem.Click += new System.EventHandler(this.includeToolStripMenuItem_Click);
+            includeToolStripMenuItem.Name = "includeToolStripMenuItem";
+            resources.ApplyResources(includeToolStripMenuItem, "includeToolStripMenuItem");
+            includeToolStripMenuItem.Click += includeToolStripMenuItem_Click;
             // 
             // toolStripSeparatorFiltering
             // 
-            this.toolStripSeparatorFiltering.Name = "toolStripSeparatorFiltering";
-            resources.ApplyResources(this.toolStripSeparatorFiltering, "toolStripSeparatorFiltering");
+            toolStripSeparatorFiltering.Name = "toolStripSeparatorFiltering";
+            resources.ApplyResources(toolStripSeparatorFiltering, "toolStripSeparatorFiltering");
             // 
             // runToolStripMenuItem
             // 
-            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            resources.ApplyResources(this.runToolStripMenuItem, "runToolStripMenuItem");
-            this.runToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.runToolStripMenuItem_DropDownItemClicked);
+            runToolStripMenuItem.Name = "runToolStripMenuItem";
+            resources.ApplyResources(runToolStripMenuItem, "runToolStripMenuItem");
+            runToolStripMenuItem.DropDownItemClicked += runToolStripMenuItem_DropDownItemClicked;
             // 
             // toolStripSeparator8
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+            toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(toolStripSeparator8, "toolStripSeparator8");
             // 
             // copyToClipboardContextMenuStripItem
             // 
-            this.copyToClipboardContextMenuStripItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem9,
-            this.toolStripSeparator9,
-            this.fullInformationCopyContextMenuStripItem,
-            this.programNameCopyContextMenuStripItem,
-            this.gUIDProductCodeCopyContextMenuStripItem,
-            this.fullRegistryPathCopyContextMenuStripItem,
-            this.uninstallStringCopyContextMenuStripItem});
-            resources.ApplyResources(this.copyToClipboardContextMenuStripItem, "copyToClipboardContextMenuStripItem");
-            this.copyToClipboardContextMenuStripItem.Name = "copyToClipboardContextMenuStripItem";
+            copyToClipboardContextMenuStripItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem9, toolStripSeparator9, fullInformationCopyContextMenuStripItem, programNameCopyContextMenuStripItem, gUIDProductCodeCopyContextMenuStripItem, fullRegistryPathCopyContextMenuStripItem, uninstallStringCopyContextMenuStripItem });
+            resources.ApplyResources(copyToClipboardContextMenuStripItem, "copyToClipboardContextMenuStripItem");
+            copyToClipboardContextMenuStripItem.Name = "copyToClipboardContextMenuStripItem";
             // 
             // toolStripMenuItem9
             // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
-            this.toolStripMenuItem9.Click += new System.EventHandler(this.OpenAdvancedClipboardCopy);
+            toolStripMenuItem9.Name = "toolStripMenuItem9";
+            resources.ApplyResources(toolStripMenuItem9, "toolStripMenuItem9");
+            toolStripMenuItem9.Click += OpenAdvancedClipboardCopy;
             // 
             // toolStripSeparator9
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(toolStripSeparator9, "toolStripSeparator9");
             // 
             // fullInformationCopyContextMenuStripItem
             // 
-            this.fullInformationCopyContextMenuStripItem.Name = "fullInformationCopyContextMenuStripItem";
-            resources.ApplyResources(this.fullInformationCopyContextMenuStripItem, "fullInformationCopyContextMenuStripItem");
-            this.fullInformationCopyContextMenuStripItem.Click += new System.EventHandler(this.ClipboardCopyFullInformation);
+            fullInformationCopyContextMenuStripItem.Name = "fullInformationCopyContextMenuStripItem";
+            resources.ApplyResources(fullInformationCopyContextMenuStripItem, "fullInformationCopyContextMenuStripItem");
+            fullInformationCopyContextMenuStripItem.Click += ClipboardCopyFullInformation;
             // 
             // programNameCopyContextMenuStripItem
             // 
-            this.programNameCopyContextMenuStripItem.Name = "programNameCopyContextMenuStripItem";
-            resources.ApplyResources(this.programNameCopyContextMenuStripItem, "programNameCopyContextMenuStripItem");
-            this.programNameCopyContextMenuStripItem.Click += new System.EventHandler(this.ClipboardCopyProgramName);
+            programNameCopyContextMenuStripItem.Name = "programNameCopyContextMenuStripItem";
+            resources.ApplyResources(programNameCopyContextMenuStripItem, "programNameCopyContextMenuStripItem");
+            programNameCopyContextMenuStripItem.Click += ClipboardCopyProgramName;
             // 
             // gUIDProductCodeCopyContextMenuStripItem
             // 
-            this.gUIDProductCodeCopyContextMenuStripItem.Name = "gUIDProductCodeCopyContextMenuStripItem";
-            resources.ApplyResources(this.gUIDProductCodeCopyContextMenuStripItem, "gUIDProductCodeCopyContextMenuStripItem");
-            this.gUIDProductCodeCopyContextMenuStripItem.Click += new System.EventHandler(this.ClipboardCopyGuids);
+            gUIDProductCodeCopyContextMenuStripItem.Name = "gUIDProductCodeCopyContextMenuStripItem";
+            resources.ApplyResources(gUIDProductCodeCopyContextMenuStripItem, "gUIDProductCodeCopyContextMenuStripItem");
+            gUIDProductCodeCopyContextMenuStripItem.Click += ClipboardCopyGuids;
             // 
             // fullRegistryPathCopyContextMenuStripItem
             // 
-            this.fullRegistryPathCopyContextMenuStripItem.Name = "fullRegistryPathCopyContextMenuStripItem";
-            resources.ApplyResources(this.fullRegistryPathCopyContextMenuStripItem, "fullRegistryPathCopyContextMenuStripItem");
-            this.fullRegistryPathCopyContextMenuStripItem.Click += new System.EventHandler(this.ClipboardCopyRegistryPath);
+            fullRegistryPathCopyContextMenuStripItem.Name = "fullRegistryPathCopyContextMenuStripItem";
+            resources.ApplyResources(fullRegistryPathCopyContextMenuStripItem, "fullRegistryPathCopyContextMenuStripItem");
+            fullRegistryPathCopyContextMenuStripItem.Click += ClipboardCopyRegistryPath;
             // 
             // uninstallStringCopyContextMenuStripItem
             // 
-            this.uninstallStringCopyContextMenuStripItem.Name = "uninstallStringCopyContextMenuStripItem";
-            resources.ApplyResources(this.uninstallStringCopyContextMenuStripItem, "uninstallStringCopyContextMenuStripItem");
-            this.uninstallStringCopyContextMenuStripItem.Click += new System.EventHandler(this.ClipboardCopyUninstallString);
+            uninstallStringCopyContextMenuStripItem.Name = "uninstallStringCopyContextMenuStripItem";
+            resources.ApplyResources(uninstallStringCopyContextMenuStripItem, "uninstallStringCopyContextMenuStripItem");
+            uninstallStringCopyContextMenuStripItem.Click += ClipboardCopyUninstallString;
             // 
             // deleteRegistryEntryContextMenuStripItem
             // 
-            this.deleteRegistryEntryContextMenuStripItem.Name = "deleteRegistryEntryContextMenuStripItem";
-            resources.ApplyResources(this.deleteRegistryEntryContextMenuStripItem, "deleteRegistryEntryContextMenuStripItem");
-            this.deleteRegistryEntryContextMenuStripItem.Click += new System.EventHandler(this.DeleteRegistryEntries);
+            deleteRegistryEntryContextMenuStripItem.Name = "deleteRegistryEntryContextMenuStripItem";
+            resources.ApplyResources(deleteRegistryEntryContextMenuStripItem, "deleteRegistryEntryContextMenuStripItem");
+            deleteRegistryEntryContextMenuStripItem.Click += DeleteRegistryEntries;
             // 
             // renameContextMenuStripItem
             // 
-            this.renameContextMenuStripItem.Name = "renameContextMenuStripItem";
-            resources.ApplyResources(this.renameContextMenuStripItem, "renameContextMenuStripItem");
-            this.renameContextMenuStripItem.Click += new System.EventHandler(this.RenameEntries);
+            renameContextMenuStripItem.Name = "renameContextMenuStripItem";
+            resources.ApplyResources(renameContextMenuStripItem, "renameContextMenuStripItem");
+            renameContextMenuStripItem.Click += RenameEntries;
             // 
             // toolStripSeparator6
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(toolStripSeparator6, "toolStripSeparator6");
             // 
             // openInExplorerContextMenuStripItem
             // 
-            this.openInExplorerContextMenuStripItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.installLocationOpenInExplorerContextMenuStripItem,
-            this.uninstallerLocationOpenInExplorerContextMenuStripItem,
-            this.sourceLocationOpenInExplorerContextMenuStripItem});
-            resources.ApplyResources(this.openInExplorerContextMenuStripItem, "openInExplorerContextMenuStripItem");
-            this.openInExplorerContextMenuStripItem.Name = "openInExplorerContextMenuStripItem";
+            openInExplorerContextMenuStripItem.DropDownItems.AddRange(new ToolStripItem[] { installLocationOpenInExplorerContextMenuStripItem, uninstallerLocationOpenInExplorerContextMenuStripItem, sourceLocationOpenInExplorerContextMenuStripItem });
+            resources.ApplyResources(openInExplorerContextMenuStripItem, "openInExplorerContextMenuStripItem");
+            openInExplorerContextMenuStripItem.Name = "openInExplorerContextMenuStripItem";
             // 
             // installLocationOpenInExplorerContextMenuStripItem
             // 
-            this.installLocationOpenInExplorerContextMenuStripItem.Name = "installLocationOpenInExplorerContextMenuStripItem";
-            resources.ApplyResources(this.installLocationOpenInExplorerContextMenuStripItem, "installLocationOpenInExplorerContextMenuStripItem");
-            this.installLocationOpenInExplorerContextMenuStripItem.Click += new System.EventHandler(this.OpenInstallLocation);
+            installLocationOpenInExplorerContextMenuStripItem.Name = "installLocationOpenInExplorerContextMenuStripItem";
+            resources.ApplyResources(installLocationOpenInExplorerContextMenuStripItem, "installLocationOpenInExplorerContextMenuStripItem");
+            installLocationOpenInExplorerContextMenuStripItem.Click += OpenInstallLocation;
             // 
             // uninstallerLocationOpenInExplorerContextMenuStripItem
             // 
-            this.uninstallerLocationOpenInExplorerContextMenuStripItem.Name = "uninstallerLocationOpenInExplorerContextMenuStripItem";
-            resources.ApplyResources(this.uninstallerLocationOpenInExplorerContextMenuStripItem, "uninstallerLocationOpenInExplorerContextMenuStripItem");
-            this.uninstallerLocationOpenInExplorerContextMenuStripItem.Click += new System.EventHandler(this.OpenUninstallerLocation);
+            uninstallerLocationOpenInExplorerContextMenuStripItem.Name = "uninstallerLocationOpenInExplorerContextMenuStripItem";
+            resources.ApplyResources(uninstallerLocationOpenInExplorerContextMenuStripItem, "uninstallerLocationOpenInExplorerContextMenuStripItem");
+            uninstallerLocationOpenInExplorerContextMenuStripItem.Click += OpenUninstallerLocation;
             // 
             // sourceLocationOpenInExplorerContextMenuStripItem
             // 
-            this.sourceLocationOpenInExplorerContextMenuStripItem.Name = "sourceLocationOpenInExplorerContextMenuStripItem";
-            resources.ApplyResources(this.sourceLocationOpenInExplorerContextMenuStripItem, "sourceLocationOpenInExplorerContextMenuStripItem");
-            this.sourceLocationOpenInExplorerContextMenuStripItem.Click += new System.EventHandler(this.OpenInstallationSource);
+            sourceLocationOpenInExplorerContextMenuStripItem.Name = "sourceLocationOpenInExplorerContextMenuStripItem";
+            resources.ApplyResources(sourceLocationOpenInExplorerContextMenuStripItem, "sourceLocationOpenInExplorerContextMenuStripItem");
+            sourceLocationOpenInExplorerContextMenuStripItem.Click += OpenInstallationSource;
             // 
             // openWebPageContextMenuStripItem
             // 
-            this.openWebPageContextMenuStripItem.Name = "openWebPageContextMenuStripItem";
-            resources.ApplyResources(this.openWebPageContextMenuStripItem, "openWebPageContextMenuStripItem");
-            this.openWebPageContextMenuStripItem.Click += new System.EventHandler(this.OpenAssociatedWebPage);
+            openWebPageContextMenuStripItem.Name = "openWebPageContextMenuStripItem";
+            resources.ApplyResources(openWebPageContextMenuStripItem, "openWebPageContextMenuStripItem");
+            openWebPageContextMenuStripItem.Click += OpenAssociatedWebPage;
             // 
             // lookUpOnlineToolStripMenuItem
             // 
-            this.lookUpOnlineToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem15,
-            this.toolStripMenuItem16,
-            this.slantcoToolStripMenuItem,
-            this.toolStripSeparator26,
-            this.fossHubcomToolStripMenuItem,
-            this.sourceForgecomToolStripMenuItem,
-            this.gitHubcomToolStripMenuItem,
-            this.fileHippocomToolStripMenuItem});
-            resources.ApplyResources(this.lookUpOnlineToolStripMenuItem, "lookUpOnlineToolStripMenuItem");
-            this.lookUpOnlineToolStripMenuItem.Name = "lookUpOnlineToolStripMenuItem";
+            lookUpOnlineToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem15, toolStripMenuItem16, slantcoToolStripMenuItem, toolStripSeparator26, fossHubcomToolStripMenuItem, sourceForgecomToolStripMenuItem, gitHubcomToolStripMenuItem, fileHippocomToolStripMenuItem });
+            resources.ApplyResources(lookUpOnlineToolStripMenuItem, "lookUpOnlineToolStripMenuItem");
+            lookUpOnlineToolStripMenuItem.Name = "lookUpOnlineToolStripMenuItem";
             // 
             // toolStripMenuItem15
             // 
-            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
-            this.toolStripMenuItem15.Click += new System.EventHandler(this.googleToolStripMenuItem_Click);
+            toolStripMenuItem15.Name = "toolStripMenuItem15";
+            resources.ApplyResources(toolStripMenuItem15, "toolStripMenuItem15");
+            toolStripMenuItem15.Click += googleToolStripMenuItem_Click;
             // 
             // toolStripMenuItem16
             // 
-            this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            resources.ApplyResources(this.toolStripMenuItem16, "toolStripMenuItem16");
-            this.toolStripMenuItem16.Click += new System.EventHandler(this.alternativeToToolStripMenuItem_Click);
+            toolStripMenuItem16.Name = "toolStripMenuItem16";
+            resources.ApplyResources(toolStripMenuItem16, "toolStripMenuItem16");
+            toolStripMenuItem16.Click += alternativeToToolStripMenuItem_Click;
             // 
             // slantcoToolStripMenuItem
             // 
-            this.slantcoToolStripMenuItem.Name = "slantcoToolStripMenuItem";
-            resources.ApplyResources(this.slantcoToolStripMenuItem, "slantcoToolStripMenuItem");
-            this.slantcoToolStripMenuItem.Click += new System.EventHandler(this.slantcoToolStripMenuItem_Click);
+            slantcoToolStripMenuItem.Name = "slantcoToolStripMenuItem";
+            resources.ApplyResources(slantcoToolStripMenuItem, "slantcoToolStripMenuItem");
+            slantcoToolStripMenuItem.Click += slantcoToolStripMenuItem_Click;
             // 
             // toolStripSeparator26
             // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+            toolStripSeparator26.Name = "toolStripSeparator26";
+            resources.ApplyResources(toolStripSeparator26, "toolStripSeparator26");
             // 
             // fossHubcomToolStripMenuItem
             // 
-            this.fossHubcomToolStripMenuItem.Name = "fossHubcomToolStripMenuItem";
-            resources.ApplyResources(this.fossHubcomToolStripMenuItem, "fossHubcomToolStripMenuItem");
-            this.fossHubcomToolStripMenuItem.Click += new System.EventHandler(this.fossHubcomToolStripMenuItem_Click);
+            fossHubcomToolStripMenuItem.Name = "fossHubcomToolStripMenuItem";
+            resources.ApplyResources(fossHubcomToolStripMenuItem, "fossHubcomToolStripMenuItem");
+            fossHubcomToolStripMenuItem.Click += fossHubcomToolStripMenuItem_Click;
             // 
             // sourceForgecomToolStripMenuItem
             // 
-            this.sourceForgecomToolStripMenuItem.Name = "sourceForgecomToolStripMenuItem";
-            resources.ApplyResources(this.sourceForgecomToolStripMenuItem, "sourceForgecomToolStripMenuItem");
-            this.sourceForgecomToolStripMenuItem.Click += new System.EventHandler(this.sourceForgecomToolStripMenuItem_Click);
+            sourceForgecomToolStripMenuItem.Name = "sourceForgecomToolStripMenuItem";
+            resources.ApplyResources(sourceForgecomToolStripMenuItem, "sourceForgecomToolStripMenuItem");
+            sourceForgecomToolStripMenuItem.Click += sourceForgecomToolStripMenuItem_Click;
             // 
             // gitHubcomToolStripMenuItem
             // 
-            this.gitHubcomToolStripMenuItem.Name = "gitHubcomToolStripMenuItem";
-            resources.ApplyResources(this.gitHubcomToolStripMenuItem, "gitHubcomToolStripMenuItem");
-            this.gitHubcomToolStripMenuItem.Click += new System.EventHandler(this.gitHubcomToolStripMenuItem_Click);
+            gitHubcomToolStripMenuItem.Name = "gitHubcomToolStripMenuItem";
+            resources.ApplyResources(gitHubcomToolStripMenuItem, "gitHubcomToolStripMenuItem");
+            gitHubcomToolStripMenuItem.Click += gitHubcomToolStripMenuItem_Click;
             // 
             // fileHippocomToolStripMenuItem
             // 
-            this.fileHippocomToolStripMenuItem.Name = "fileHippocomToolStripMenuItem";
-            resources.ApplyResources(this.fileHippocomToolStripMenuItem, "fileHippocomToolStripMenuItem");
-            this.fileHippocomToolStripMenuItem.Click += new System.EventHandler(this.fileHippocomToolStripMenuItem_Click);
+            fileHippocomToolStripMenuItem.Name = "fileHippocomToolStripMenuItem";
+            resources.ApplyResources(fileHippocomToolStripMenuItem, "fileHippocomToolStripMenuItem");
+            fileHippocomToolStripMenuItem.Click += fileHippocomToolStripMenuItem_Click;
             // 
             // rateToolStripMenuItem
             // 
-            this.rateToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.star;
-            this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            resources.ApplyResources(this.rateToolStripMenuItem, "rateToolStripMenuItem");
-            this.rateToolStripMenuItem.Click += new System.EventHandler(this.rateToolStripMenuItem_Click);
+            rateToolStripMenuItem.Image = Properties.Resources.star;
+            rateToolStripMenuItem.Name = "rateToolStripMenuItem";
+            resources.ApplyResources(rateToolStripMenuItem, "rateToolStripMenuItem");
+            rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
             // toolStripSeparator7
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+            toolStripSeparator7.Name = "toolStripSeparator7";
+            resources.ApplyResources(toolStripSeparator7, "toolStripSeparator7");
             // 
             // propertiesContextMenuStripItem
             // 
-            resources.ApplyResources(this.propertiesContextMenuStripItem, "propertiesContextMenuStripItem");
-            this.propertiesContextMenuStripItem.Image = global::BulkCrapUninstaller.Properties.Resources.magnifybrowse;
-            this.propertiesContextMenuStripItem.Name = "propertiesContextMenuStripItem";
-            this.propertiesContextMenuStripItem.Click += new System.EventHandler(this.OpenProperties);
+            resources.ApplyResources(propertiesContextMenuStripItem, "propertiesContextMenuStripItem");
+            propertiesContextMenuStripItem.Image = Properties.Resources.magnifybrowse;
+            propertiesContextMenuStripItem.Name = "propertiesContextMenuStripItem";
+            propertiesContextMenuStripItem.Click += OpenProperties;
             // 
             // exportDialog
             // 
-            this.exportDialog.DefaultExt = "txt";
-            this.exportDialog.FileName = "New BCUninstaller Export";
-            resources.ApplyResources(this.exportDialog, "exportDialog");
-            this.exportDialog.RestoreDirectory = true;
-            this.exportDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportDialog_FileOk);
+            exportDialog.DefaultExt = "txt";
+            exportDialog.FileName = "New BCUninstaller Export";
+            resources.ApplyResources(exportDialog, "exportDialog");
+            exportDialog.RestoreDirectory = true;
+            exportDialog.FileOk += exportDialog_FileOk;
             // 
             // menuStrip
             // 
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.filteringToolStripMenuItem,
-            this.basicOperationsToolStripMenuItem,
-            this.advancedOperationsToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.debugToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
-            this.menuStrip.Name = "menuStrip";
+            menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, filteringToolStripMenuItem, basicOperationsToolStripMenuItem, advancedOperationsToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem, debugToolStripMenuItem });
+            resources.ApplyResources(menuStrip, "menuStrip");
+            menuStrip.Name = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reloadUninstallersToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.loadUninstallerListToolStripMenuItem,
-            this.toolStripSeparator30,
-            this.exportSelectedToolStripMenuItem,
-            this.exportToABatchUninstallScriptToolStripMenuItem,
-            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem,
-            this.toolStripSeparator10,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
-            this.fileToolStripMenuItem.DropDownOpening += new System.EventHandler(this.fileToolStripMenuItem_DropDownOpening);
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reloadUninstallersToolStripMenuItem, toolStripSeparator1, loadUninstallerListToolStripMenuItem, toolStripSeparator30, exportSelectedToolStripMenuItem, exportToABatchUninstallScriptToolStripMenuItem, exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem, toolStripSeparator10, exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(fileToolStripMenuItem, "fileToolStripMenuItem");
+            fileToolStripMenuItem.DropDownOpening += fileToolStripMenuItem_DropDownOpening;
             // 
             // reloadUninstallersToolStripMenuItem
             // 
-            resources.ApplyResources(this.reloadUninstallersToolStripMenuItem, "reloadUninstallersToolStripMenuItem");
-            this.reloadUninstallersToolStripMenuItem.Name = "reloadUninstallersToolStripMenuItem";
-            this.reloadUninstallersToolStripMenuItem.Click += new System.EventHandler(this.ReloadUninstallers);
+            resources.ApplyResources(reloadUninstallersToolStripMenuItem, "reloadUninstallersToolStripMenuItem");
+            reloadUninstallersToolStripMenuItem.Name = "reloadUninstallersToolStripMenuItem";
+            reloadUninstallersToolStripMenuItem.Click += ReloadUninstallers;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
             // 
             // loadUninstallerListToolStripMenuItem
             // 
-            resources.ApplyResources(this.loadUninstallerListToolStripMenuItem, "loadUninstallerListToolStripMenuItem");
-            this.loadUninstallerListToolStripMenuItem.Name = "loadUninstallerListToolStripMenuItem";
-            this.loadUninstallerListToolStripMenuItem.Click += new System.EventHandler(this.OpenUninstallLists);
+            resources.ApplyResources(loadUninstallerListToolStripMenuItem, "loadUninstallerListToolStripMenuItem");
+            loadUninstallerListToolStripMenuItem.Name = "loadUninstallerListToolStripMenuItem";
+            loadUninstallerListToolStripMenuItem.Click += OpenUninstallLists;
             // 
             // toolStripSeparator30
             // 
-            this.toolStripSeparator30.Name = "toolStripSeparator30";
-            resources.ApplyResources(this.toolStripSeparator30, "toolStripSeparator30");
+            toolStripSeparator30.Name = "toolStripSeparator30";
+            resources.ApplyResources(toolStripSeparator30, "toolStripSeparator30");
             // 
             // exportSelectedToolStripMenuItem
             // 
-            this.exportSelectedToolStripMenuItem.Name = "exportSelectedToolStripMenuItem";
-            resources.ApplyResources(this.exportSelectedToolStripMenuItem, "exportSelectedToolStripMenuItem");
-            this.exportSelectedToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedToolStripMenuItem_Click);
+            exportSelectedToolStripMenuItem.Name = "exportSelectedToolStripMenuItem";
+            resources.ApplyResources(exportSelectedToolStripMenuItem, "exportSelectedToolStripMenuItem");
+            exportSelectedToolStripMenuItem.Click += exportSelectedToolStripMenuItem_Click;
             // 
             // exportToABatchUninstallScriptToolStripMenuItem
             // 
-            this.exportToABatchUninstallScriptToolStripMenuItem.Name = "exportToABatchUninstallScriptToolStripMenuItem";
-            resources.ApplyResources(this.exportToABatchUninstallScriptToolStripMenuItem, "exportToABatchUninstallScriptToolStripMenuItem");
-            this.exportToABatchUninstallScriptToolStripMenuItem.Click += new System.EventHandler(this.exportToABatchUninstallScriptToolStripMenuItem_Click);
+            exportToABatchUninstallScriptToolStripMenuItem.Name = "exportToABatchUninstallScriptToolStripMenuItem";
+            resources.ApplyResources(exportToABatchUninstallScriptToolStripMenuItem, "exportToABatchUninstallScriptToolStripMenuItem");
+            exportToABatchUninstallScriptToolStripMenuItem.Click += exportToABatchUninstallScriptToolStripMenuItem_Click;
             // 
             // exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem
             // 
-            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Name = "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem";
-            resources.ApplyResources(this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem, "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem");
-            this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Click += new System.EventHandler(this.exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem_Click);
+            exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Name = "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem";
+            resources.ApplyResources(exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem, "exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem");
+            exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Click += exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem_Click;
             // 
             // toolStripSeparator10
             // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+            toolStripSeparator10.Name = "toolStripSeparator10";
+            resources.ApplyResources(toolStripSeparator10, "toolStripSeparator10");
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(exitToolStripMenuItem, "exitToolStripMenuItem");
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // viewToolStripMenuItem
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showColorLegendToolStripMenuItem,
-            this.displayToolbarToolStripMenuItem,
-            this.showTreemapToolStripMenuItem,
-            this.displaySettingsToolStripMenuItem,
-            this.displayStatusbarToolStripMenuItem,
-            this.toolStripSeparator12,
-            this.useSystemThemeToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
-            this.viewToolStripMenuItem.DropDownOpening += new System.EventHandler(this.viewToolStripMenuItem_DropDownOpening);
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showColorLegendToolStripMenuItem, displayToolbarToolStripMenuItem, showTreemapToolStripMenuItem, displaySettingsToolStripMenuItem, displayStatusbarToolStripMenuItem, toolStripSeparator12, useSystemThemeToolStripMenuItem, toolStripSeparator33, autosizeAllColumnsToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            resources.ApplyResources(viewToolStripMenuItem, "viewToolStripMenuItem");
+            viewToolStripMenuItem.DropDownOpening += viewToolStripMenuItem_DropDownOpening;
             // 
             // showColorLegendToolStripMenuItem
             // 
-            this.showColorLegendToolStripMenuItem.Name = "showColorLegendToolStripMenuItem";
-            resources.ApplyResources(this.showColorLegendToolStripMenuItem, "showColorLegendToolStripMenuItem");
+            showColorLegendToolStripMenuItem.Name = "showColorLegendToolStripMenuItem";
+            resources.ApplyResources(showColorLegendToolStripMenuItem, "showColorLegendToolStripMenuItem");
             // 
             // displayToolbarToolStripMenuItem
             // 
-            this.displayToolbarToolStripMenuItem.Checked = true;
-            this.displayToolbarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.displayToolbarToolStripMenuItem.Name = "displayToolbarToolStripMenuItem";
-            resources.ApplyResources(this.displayToolbarToolStripMenuItem, "displayToolbarToolStripMenuItem");
+            displayToolbarToolStripMenuItem.Checked = true;
+            displayToolbarToolStripMenuItem.CheckState = CheckState.Checked;
+            displayToolbarToolStripMenuItem.Name = "displayToolbarToolStripMenuItem";
+            resources.ApplyResources(displayToolbarToolStripMenuItem, "displayToolbarToolStripMenuItem");
             // 
             // showTreemapToolStripMenuItem
             // 
-            this.showTreemapToolStripMenuItem.Name = "showTreemapToolStripMenuItem";
-            resources.ApplyResources(this.showTreemapToolStripMenuItem, "showTreemapToolStripMenuItem");
+            showTreemapToolStripMenuItem.Name = "showTreemapToolStripMenuItem";
+            resources.ApplyResources(showTreemapToolStripMenuItem, "showTreemapToolStripMenuItem");
             // 
             // displaySettingsToolStripMenuItem
             // 
-            this.displaySettingsToolStripMenuItem.Checked = true;
-            this.displaySettingsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.displaySettingsToolStripMenuItem.Name = "displaySettingsToolStripMenuItem";
-            resources.ApplyResources(this.displaySettingsToolStripMenuItem, "displaySettingsToolStripMenuItem");
+            displaySettingsToolStripMenuItem.Checked = true;
+            displaySettingsToolStripMenuItem.CheckState = CheckState.Checked;
+            displaySettingsToolStripMenuItem.Name = "displaySettingsToolStripMenuItem";
+            resources.ApplyResources(displaySettingsToolStripMenuItem, "displaySettingsToolStripMenuItem");
             // 
             // displayStatusbarToolStripMenuItem
             // 
-            this.displayStatusbarToolStripMenuItem.Checked = true;
-            this.displayStatusbarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.displayStatusbarToolStripMenuItem.Name = "displayStatusbarToolStripMenuItem";
-            resources.ApplyResources(this.displayStatusbarToolStripMenuItem, "displayStatusbarToolStripMenuItem");
+            displayStatusbarToolStripMenuItem.Checked = true;
+            displayStatusbarToolStripMenuItem.CheckState = CheckState.Checked;
+            displayStatusbarToolStripMenuItem.Name = "displayStatusbarToolStripMenuItem";
+            resources.ApplyResources(displayStatusbarToolStripMenuItem, "displayStatusbarToolStripMenuItem");
             // 
             // toolStripSeparator12
             // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+            toolStripSeparator12.Name = "toolStripSeparator12";
+            resources.ApplyResources(toolStripSeparator12, "toolStripSeparator12");
             // 
             // useSystemThemeToolStripMenuItem
             // 
-            this.useSystemThemeToolStripMenuItem.Checked = true;
-            this.useSystemThemeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.useSystemThemeToolStripMenuItem.Name = "useSystemThemeToolStripMenuItem";
-            resources.ApplyResources(this.useSystemThemeToolStripMenuItem, "useSystemThemeToolStripMenuItem");
+            useSystemThemeToolStripMenuItem.Checked = true;
+            useSystemThemeToolStripMenuItem.CheckState = CheckState.Checked;
+            useSystemThemeToolStripMenuItem.Name = "useSystemThemeToolStripMenuItem";
+            resources.ApplyResources(useSystemThemeToolStripMenuItem, "useSystemThemeToolStripMenuItem");
+            // 
+            // toolStripSeparator33
+            // 
+            toolStripSeparator33.Name = "toolStripSeparator33";
+            resources.ApplyResources(toolStripSeparator33, "toolStripSeparator33");
+            // 
+            // autosizeAllColumnsToolStripMenuItem
+            // 
+            autosizeAllColumnsToolStripMenuItem.Name = "autosizeAllColumnsToolStripMenuItem";
+            resources.ApplyResources(autosizeAllColumnsToolStripMenuItem, "autosizeAllColumnsToolStripMenuItem");
+            autosizeAllColumnsToolStripMenuItem.Click += autosizeAllColumnsToolStripMenuItem_Click;
             // 
             // filteringToolStripMenuItem
             // 
-            this.filteringToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedApplicationsToolStripMenuItem,
-            this.basicApplicationsToolStripMenuItem,
-            this.systemComponentsToolStripMenuItem,
-            this.everythingToolStripMenuItem,
-            this.toolStripSeparator20,
-            this.automaticallyStartedToolStripMenuItem,
-            this.onlyWebBrowsersToolStripMenuItem,
-            this.toolStripSeparator31,
-            this.viewTweaksToolStripMenuItem,
-            this.viewUnregisteredToolStripMenuItem,
-            this.viewUpdatesToolStripMenuItem,
-            this.viewWindowsFeaturesToolStripMenuItem,
-            this.viewWindowsStoreAppsToolStripMenuItem,
-            this.toolStripSeparator28,
-            this.searchToolStripMenuItem});
-            this.filteringToolStripMenuItem.Name = "filteringToolStripMenuItem";
-            resources.ApplyResources(this.filteringToolStripMenuItem, "filteringToolStripMenuItem");
-            this.filteringToolStripMenuItem.DropDownOpening += new System.EventHandler(this.filteringToolStripMenuItem_DropDownOpening);
+            filteringToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { advancedApplicationsToolStripMenuItem, basicApplicationsToolStripMenuItem, systemComponentsToolStripMenuItem, everythingToolStripMenuItem, toolStripSeparator20, automaticallyStartedToolStripMenuItem, onlyWebBrowsersToolStripMenuItem, toolStripSeparator31, viewTweaksToolStripMenuItem, viewUnregisteredToolStripMenuItem, viewUpdatesToolStripMenuItem, viewWindowsFeaturesToolStripMenuItem, viewWindowsStoreAppsToolStripMenuItem, toolStripSeparator28, searchToolStripMenuItem });
+            filteringToolStripMenuItem.Name = "filteringToolStripMenuItem";
+            resources.ApplyResources(filteringToolStripMenuItem, "filteringToolStripMenuItem");
+            filteringToolStripMenuItem.DropDownOpening += filteringToolStripMenuItem_DropDownOpening;
             // 
             // advancedApplicationsToolStripMenuItem
             // 
-            this.advancedApplicationsToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.filter;
-            this.advancedApplicationsToolStripMenuItem.Name = "advancedApplicationsToolStripMenuItem";
-            resources.ApplyResources(this.advancedApplicationsToolStripMenuItem, "advancedApplicationsToolStripMenuItem");
-            this.advancedApplicationsToolStripMenuItem.Click += new System.EventHandler(this.advancedApplicationsToolStripMenuItem_Click);
+            advancedApplicationsToolStripMenuItem.Image = Properties.Resources.filter;
+            advancedApplicationsToolStripMenuItem.Name = "advancedApplicationsToolStripMenuItem";
+            resources.ApplyResources(advancedApplicationsToolStripMenuItem, "advancedApplicationsToolStripMenuItem");
+            advancedApplicationsToolStripMenuItem.Click += advancedApplicationsToolStripMenuItem_Click;
             // 
             // basicApplicationsToolStripMenuItem
             // 
-            this.basicApplicationsToolStripMenuItem.Name = "basicApplicationsToolStripMenuItem";
-            resources.ApplyResources(this.basicApplicationsToolStripMenuItem, "basicApplicationsToolStripMenuItem");
-            this.basicApplicationsToolStripMenuItem.Click += new System.EventHandler(this.basicApplicationsToolStripMenuItem_Click);
+            basicApplicationsToolStripMenuItem.Name = "basicApplicationsToolStripMenuItem";
+            resources.ApplyResources(basicApplicationsToolStripMenuItem, "basicApplicationsToolStripMenuItem");
+            basicApplicationsToolStripMenuItem.Click += basicApplicationsToolStripMenuItem_Click;
             // 
             // systemComponentsToolStripMenuItem
             // 
-            this.systemComponentsToolStripMenuItem.Name = "systemComponentsToolStripMenuItem";
-            resources.ApplyResources(this.systemComponentsToolStripMenuItem, "systemComponentsToolStripMenuItem");
-            this.systemComponentsToolStripMenuItem.Click += new System.EventHandler(this.systemComponentsToolStripMenuItem_Click);
+            systemComponentsToolStripMenuItem.Name = "systemComponentsToolStripMenuItem";
+            resources.ApplyResources(systemComponentsToolStripMenuItem, "systemComponentsToolStripMenuItem");
+            systemComponentsToolStripMenuItem.Click += systemComponentsToolStripMenuItem_Click;
             // 
             // everythingToolStripMenuItem
             // 
-            this.everythingToolStripMenuItem.Name = "everythingToolStripMenuItem";
-            resources.ApplyResources(this.everythingToolStripMenuItem, "everythingToolStripMenuItem");
-            this.everythingToolStripMenuItem.Click += new System.EventHandler(this.everythingToolStripMenuItem_Click);
+            everythingToolStripMenuItem.Name = "everythingToolStripMenuItem";
+            resources.ApplyResources(everythingToolStripMenuItem, "everythingToolStripMenuItem");
+            everythingToolStripMenuItem.Click += everythingToolStripMenuItem_Click;
             // 
             // toolStripSeparator20
             // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
+            toolStripSeparator20.Name = "toolStripSeparator20";
+            resources.ApplyResources(toolStripSeparator20, "toolStripSeparator20");
             // 
             // automaticallyStartedToolStripMenuItem
             // 
-            this.automaticallyStartedToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.timer;
-            this.automaticallyStartedToolStripMenuItem.Name = "automaticallyStartedToolStripMenuItem";
-            resources.ApplyResources(this.automaticallyStartedToolStripMenuItem, "automaticallyStartedToolStripMenuItem");
-            this.automaticallyStartedToolStripMenuItem.Click += new System.EventHandler(this.automaticallyStartedToolStripMenuItem_Click);
+            automaticallyStartedToolStripMenuItem.Image = Properties.Resources.timer;
+            automaticallyStartedToolStripMenuItem.Name = "automaticallyStartedToolStripMenuItem";
+            resources.ApplyResources(automaticallyStartedToolStripMenuItem, "automaticallyStartedToolStripMenuItem");
+            automaticallyStartedToolStripMenuItem.Click += automaticallyStartedToolStripMenuItem_Click;
             // 
             // onlyWebBrowsersToolStripMenuItem
             // 
-            this.onlyWebBrowsersToolStripMenuItem.Name = "onlyWebBrowsersToolStripMenuItem";
-            resources.ApplyResources(this.onlyWebBrowsersToolStripMenuItem, "onlyWebBrowsersToolStripMenuItem");
-            this.onlyWebBrowsersToolStripMenuItem.Click += new System.EventHandler(this.onlyWebBrowsersToolStripMenuItem_Click);
+            onlyWebBrowsersToolStripMenuItem.Name = "onlyWebBrowsersToolStripMenuItem";
+            resources.ApplyResources(onlyWebBrowsersToolStripMenuItem, "onlyWebBrowsersToolStripMenuItem");
+            onlyWebBrowsersToolStripMenuItem.Click += onlyWebBrowsersToolStripMenuItem_Click;
             // 
             // toolStripSeparator31
             // 
-            this.toolStripSeparator31.Name = "toolStripSeparator31";
-            resources.ApplyResources(this.toolStripSeparator31, "toolStripSeparator31");
+            toolStripSeparator31.Name = "toolStripSeparator31";
+            resources.ApplyResources(toolStripSeparator31, "toolStripSeparator31");
             // 
             // viewTweaksToolStripMenuItem
             // 
-            this.viewTweaksToolStripMenuItem.Name = "viewTweaksToolStripMenuItem";
-            resources.ApplyResources(this.viewTweaksToolStripMenuItem, "viewTweaksToolStripMenuItem");
-            this.viewTweaksToolStripMenuItem.Click += new System.EventHandler(this.viewTweaksToolStripMenuItem_Click);
+            viewTweaksToolStripMenuItem.Name = "viewTweaksToolStripMenuItem";
+            resources.ApplyResources(viewTweaksToolStripMenuItem, "viewTweaksToolStripMenuItem");
+            viewTweaksToolStripMenuItem.Click += viewTweaksToolStripMenuItem_Click;
             // 
             // viewUnregisteredToolStripMenuItem
             // 
-            this.viewUnregisteredToolStripMenuItem.Name = "viewUnregisteredToolStripMenuItem";
-            resources.ApplyResources(this.viewUnregisteredToolStripMenuItem, "viewUnregisteredToolStripMenuItem");
-            this.viewUnregisteredToolStripMenuItem.Click += new System.EventHandler(this.viewUnregisteredToolStripMenuItem_Click);
+            viewUnregisteredToolStripMenuItem.Name = "viewUnregisteredToolStripMenuItem";
+            resources.ApplyResources(viewUnregisteredToolStripMenuItem, "viewUnregisteredToolStripMenuItem");
+            viewUnregisteredToolStripMenuItem.Click += viewUnregisteredToolStripMenuItem_Click;
             // 
             // viewUpdatesToolStripMenuItem
             // 
-            this.viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
-            resources.ApplyResources(this.viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
-            this.viewUpdatesToolStripMenuItem.Click += new System.EventHandler(this.viewUpdatesToolStripMenuItem_Click);
+            viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
+            resources.ApplyResources(viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
+            viewUpdatesToolStripMenuItem.Click += viewUpdatesToolStripMenuItem_Click;
             // 
             // viewWindowsFeaturesToolStripMenuItem
             // 
-            this.viewWindowsFeaturesToolStripMenuItem.Name = "viewWindowsFeaturesToolStripMenuItem";
-            resources.ApplyResources(this.viewWindowsFeaturesToolStripMenuItem, "viewWindowsFeaturesToolStripMenuItem");
-            this.viewWindowsFeaturesToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsFeaturesToolStripMenuItem_Click);
+            viewWindowsFeaturesToolStripMenuItem.Name = "viewWindowsFeaturesToolStripMenuItem";
+            resources.ApplyResources(viewWindowsFeaturesToolStripMenuItem, "viewWindowsFeaturesToolStripMenuItem");
+            viewWindowsFeaturesToolStripMenuItem.Click += viewWindowsFeaturesToolStripMenuItem_Click;
             // 
             // viewWindowsStoreAppsToolStripMenuItem
             // 
-            this.viewWindowsStoreAppsToolStripMenuItem.Name = "viewWindowsStoreAppsToolStripMenuItem";
-            resources.ApplyResources(this.viewWindowsStoreAppsToolStripMenuItem, "viewWindowsStoreAppsToolStripMenuItem");
-            this.viewWindowsStoreAppsToolStripMenuItem.Click += new System.EventHandler(this.viewWindowsStoreAppsToolStripMenuItem_Click);
+            viewWindowsStoreAppsToolStripMenuItem.Name = "viewWindowsStoreAppsToolStripMenuItem";
+            resources.ApplyResources(viewWindowsStoreAppsToolStripMenuItem, "viewWindowsStoreAppsToolStripMenuItem");
+            viewWindowsStoreAppsToolStripMenuItem.Click += viewWindowsStoreAppsToolStripMenuItem_Click;
             // 
             // toolStripSeparator28
             // 
-            this.toolStripSeparator28.Name = "toolStripSeparator28";
-            resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
+            toolStripSeparator28.Name = "toolStripSeparator28";
+            resources.ApplyResources(toolStripSeparator28, "toolStripSeparator28");
             // 
             // searchToolStripMenuItem
             // 
-            resources.ApplyResources(this.searchToolStripMenuItem, "searchToolStripMenuItem");
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            resources.ApplyResources(searchToolStripMenuItem, "searchToolStripMenuItem");
+            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            searchToolStripMenuItem.Click += searchToolStripMenuItem_Click;
             // 
             // basicOperationsToolStripMenuItem
             // 
-            this.basicOperationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uninstallToolStripMenuItem,
-            this.quietUninstallToolStripMenuItem,
-            this.modifyToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.toolStripMenuItem8,
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem14,
-            this.onlineSearchToolStripMenuItem,
-            this.rateToolStripMenuItem1,
-            this.toolStripSeparator15,
-            this.propertiesToolStripMenuItem});
-            resources.ApplyResources(this.basicOperationsToolStripMenuItem, "basicOperationsToolStripMenuItem");
-            this.basicOperationsToolStripMenuItem.Name = "basicOperationsToolStripMenuItem";
-            this.basicOperationsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.basicOperationsToolStripMenuItem_DropDownOpening);
+            basicOperationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { uninstallToolStripMenuItem, quietUninstallToolStripMenuItem, modifyToolStripMenuItem, toolStripSeparator2, toolStripMenuItem8, toolStripMenuItem1, toolStripMenuItem14, onlineSearchToolStripMenuItem, rateToolStripMenuItem1, toolStripSeparator15, propertiesToolStripMenuItem });
+            resources.ApplyResources(basicOperationsToolStripMenuItem, "basicOperationsToolStripMenuItem");
+            basicOperationsToolStripMenuItem.Name = "basicOperationsToolStripMenuItem";
+            basicOperationsToolStripMenuItem.DropDownOpening += basicOperationsToolStripMenuItem_DropDownOpening;
             // 
             // uninstallToolStripMenuItem
             // 
-            resources.ApplyResources(this.uninstallToolStripMenuItem, "uninstallToolStripMenuItem");
-            this.uninstallToolStripMenuItem.Name = "uninstallToolStripMenuItem";
-            this.uninstallToolStripMenuItem.Click += new System.EventHandler(this.RunLoudUninstall);
+            resources.ApplyResources(uninstallToolStripMenuItem, "uninstallToolStripMenuItem");
+            uninstallToolStripMenuItem.Name = "uninstallToolStripMenuItem";
+            uninstallToolStripMenuItem.Click += RunLoudUninstall;
             // 
             // quietUninstallToolStripMenuItem
             // 
-            resources.ApplyResources(this.quietUninstallToolStripMenuItem, "quietUninstallToolStripMenuItem");
-            this.quietUninstallToolStripMenuItem.Name = "quietUninstallToolStripMenuItem";
-            this.quietUninstallToolStripMenuItem.Click += new System.EventHandler(this.RunQuietUninstall);
+            resources.ApplyResources(quietUninstallToolStripMenuItem, "quietUninstallToolStripMenuItem");
+            quietUninstallToolStripMenuItem.Name = "quietUninstallToolStripMenuItem";
+            quietUninstallToolStripMenuItem.Click += RunQuietUninstall;
             // 
             // modifyToolStripMenuItem
             // 
-            this.modifyToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.edit_box;
-            this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            resources.ApplyResources(this.modifyToolStripMenuItem, "modifyToolStripMenuItem");
-            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
+            modifyToolStripMenuItem.Image = Properties.Resources.edit_box;
+            modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
+            resources.ApplyResources(modifyToolStripMenuItem, "modifyToolStripMenuItem");
+            modifyToolStripMenuItem.Click += modifyToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(toolStripSeparator2, "toolStripSeparator2");
             // 
             // toolStripMenuItem8
             // 
-            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedClipCopyToolStripMenuItem,
-            this.toolStripSeparator11,
-            this.copyFullInformationToolStripMenuItem,
-            this.toolStripMenuItem10,
-            this.toolStripMenuItem11,
-            this.toolStripMenuItem12,
-            this.toolStripMenuItem13});
-            resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            toolStripMenuItem8.DropDownItems.AddRange(new ToolStripItem[] { advancedClipCopyToolStripMenuItem, toolStripSeparator11, copyFullInformationToolStripMenuItem, toolStripMenuItem10, toolStripMenuItem11, toolStripMenuItem12, toolStripMenuItem13 });
+            resources.ApplyResources(toolStripMenuItem8, "toolStripMenuItem8");
+            toolStripMenuItem8.Name = "toolStripMenuItem8";
             // 
             // advancedClipCopyToolStripMenuItem
             // 
-            this.advancedClipCopyToolStripMenuItem.Name = "advancedClipCopyToolStripMenuItem";
-            resources.ApplyResources(this.advancedClipCopyToolStripMenuItem, "advancedClipCopyToolStripMenuItem");
-            this.advancedClipCopyToolStripMenuItem.Click += new System.EventHandler(this.OpenAdvancedClipboardCopy);
+            advancedClipCopyToolStripMenuItem.Name = "advancedClipCopyToolStripMenuItem";
+            resources.ApplyResources(advancedClipCopyToolStripMenuItem, "advancedClipCopyToolStripMenuItem");
+            advancedClipCopyToolStripMenuItem.Click += OpenAdvancedClipboardCopy;
             // 
             // toolStripSeparator11
             // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+            toolStripSeparator11.Name = "toolStripSeparator11";
+            resources.ApplyResources(toolStripSeparator11, "toolStripSeparator11");
             // 
             // copyFullInformationToolStripMenuItem
             // 
-            this.copyFullInformationToolStripMenuItem.Name = "copyFullInformationToolStripMenuItem";
-            resources.ApplyResources(this.copyFullInformationToolStripMenuItem, "copyFullInformationToolStripMenuItem");
-            this.copyFullInformationToolStripMenuItem.Click += new System.EventHandler(this.ClipboardCopyFullInformation);
+            copyFullInformationToolStripMenuItem.Name = "copyFullInformationToolStripMenuItem";
+            resources.ApplyResources(copyFullInformationToolStripMenuItem, "copyFullInformationToolStripMenuItem");
+            copyFullInformationToolStripMenuItem.Click += ClipboardCopyFullInformation;
             // 
             // toolStripMenuItem10
             // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
-            this.toolStripMenuItem10.Click += new System.EventHandler(this.ClipboardCopyProgramName);
+            toolStripMenuItem10.Name = "toolStripMenuItem10";
+            resources.ApplyResources(toolStripMenuItem10, "toolStripMenuItem10");
+            toolStripMenuItem10.Click += ClipboardCopyProgramName;
             // 
             // toolStripMenuItem11
             // 
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
-            this.toolStripMenuItem11.Click += new System.EventHandler(this.ClipboardCopyGuids);
+            toolStripMenuItem11.Name = "toolStripMenuItem11";
+            resources.ApplyResources(toolStripMenuItem11, "toolStripMenuItem11");
+            toolStripMenuItem11.Click += ClipboardCopyGuids;
             // 
             // toolStripMenuItem12
             // 
-            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
-            this.toolStripMenuItem12.Click += new System.EventHandler(this.ClipboardCopyRegistryPath);
+            toolStripMenuItem12.Name = "toolStripMenuItem12";
+            resources.ApplyResources(toolStripMenuItem12, "toolStripMenuItem12");
+            toolStripMenuItem12.Click += ClipboardCopyRegistryPath;
             // 
             // toolStripMenuItem13
             // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
-            this.toolStripMenuItem13.Click += new System.EventHandler(this.ClipboardCopyUninstallString);
+            toolStripMenuItem13.Name = "toolStripMenuItem13";
+            resources.ApplyResources(toolStripMenuItem13, "toolStripMenuItem13");
+            toolStripMenuItem13.Click += ClipboardCopyUninstallString;
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6,
-            this.toolStripMenuItem7});
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem5, toolStripMenuItem6, toolStripMenuItem7 });
+            resources.ApplyResources(toolStripMenuItem1, "toolStripMenuItem1");
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.OpenInstallLocation);
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(toolStripMenuItem5, "toolStripMenuItem5");
+            toolStripMenuItem5.Click += OpenInstallLocation;
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.OpenUninstallerLocation);
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            resources.ApplyResources(toolStripMenuItem6, "toolStripMenuItem6");
+            toolStripMenuItem6.Click += OpenUninstallerLocation;
             // 
             // toolStripMenuItem7
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.OpenInstallationSource);
+            toolStripMenuItem7.Name = "toolStripMenuItem7";
+            resources.ApplyResources(toolStripMenuItem7, "toolStripMenuItem7");
+            toolStripMenuItem7.Click += OpenInstallationSource;
             // 
             // toolStripMenuItem14
             // 
-            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
-            this.toolStripMenuItem14.Click += new System.EventHandler(this.OpenAssociatedWebPage);
+            toolStripMenuItem14.Name = "toolStripMenuItem14";
+            resources.ApplyResources(toolStripMenuItem14, "toolStripMenuItem14");
+            toolStripMenuItem14.Click += OpenAssociatedWebPage;
             // 
             // onlineSearchToolStripMenuItem
             // 
-            this.onlineSearchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.googleToolStripMenuItem,
-            this.alternativeToToolStripMenuItem,
-            this.slantcoToolStripMenuItem1,
-            this.toolStripSeparator27,
-            this.toolStripMenuItem17,
-            this.toolStripMenuItem18,
-            this.toolStripMenuItem20,
-            this.toolStripMenuItem19});
-            resources.ApplyResources(this.onlineSearchToolStripMenuItem, "onlineSearchToolStripMenuItem");
-            this.onlineSearchToolStripMenuItem.Name = "onlineSearchToolStripMenuItem";
+            onlineSearchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { googleToolStripMenuItem, alternativeToToolStripMenuItem, slantcoToolStripMenuItem1, toolStripSeparator27, toolStripMenuItem17, toolStripMenuItem18, toolStripMenuItem20, toolStripMenuItem19 });
+            resources.ApplyResources(onlineSearchToolStripMenuItem, "onlineSearchToolStripMenuItem");
+            onlineSearchToolStripMenuItem.Name = "onlineSearchToolStripMenuItem";
             // 
             // googleToolStripMenuItem
             // 
-            this.googleToolStripMenuItem.Name = "googleToolStripMenuItem";
-            resources.ApplyResources(this.googleToolStripMenuItem, "googleToolStripMenuItem");
-            this.googleToolStripMenuItem.Click += new System.EventHandler(this.googleToolStripMenuItem_Click);
+            googleToolStripMenuItem.Name = "googleToolStripMenuItem";
+            resources.ApplyResources(googleToolStripMenuItem, "googleToolStripMenuItem");
+            googleToolStripMenuItem.Click += googleToolStripMenuItem_Click;
             // 
             // alternativeToToolStripMenuItem
             // 
-            this.alternativeToToolStripMenuItem.Name = "alternativeToToolStripMenuItem";
-            resources.ApplyResources(this.alternativeToToolStripMenuItem, "alternativeToToolStripMenuItem");
-            this.alternativeToToolStripMenuItem.Click += new System.EventHandler(this.alternativeToToolStripMenuItem_Click);
+            alternativeToToolStripMenuItem.Name = "alternativeToToolStripMenuItem";
+            resources.ApplyResources(alternativeToToolStripMenuItem, "alternativeToToolStripMenuItem");
+            alternativeToToolStripMenuItem.Click += alternativeToToolStripMenuItem_Click;
             // 
             // slantcoToolStripMenuItem1
             // 
-            this.slantcoToolStripMenuItem1.Name = "slantcoToolStripMenuItem1";
-            resources.ApplyResources(this.slantcoToolStripMenuItem1, "slantcoToolStripMenuItem1");
-            this.slantcoToolStripMenuItem1.Click += new System.EventHandler(this.slantcoToolStripMenuItem_Click);
+            slantcoToolStripMenuItem1.Name = "slantcoToolStripMenuItem1";
+            resources.ApplyResources(slantcoToolStripMenuItem1, "slantcoToolStripMenuItem1");
+            slantcoToolStripMenuItem1.Click += slantcoToolStripMenuItem_Click;
             // 
             // toolStripSeparator27
             // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
+            toolStripSeparator27.Name = "toolStripSeparator27";
+            resources.ApplyResources(toolStripSeparator27, "toolStripSeparator27");
             // 
             // toolStripMenuItem17
             // 
-            this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            resources.ApplyResources(this.toolStripMenuItem17, "toolStripMenuItem17");
-            this.toolStripMenuItem17.Click += new System.EventHandler(this.fossHubcomToolStripMenuItem_Click);
+            toolStripMenuItem17.Name = "toolStripMenuItem17";
+            resources.ApplyResources(toolStripMenuItem17, "toolStripMenuItem17");
+            toolStripMenuItem17.Click += fossHubcomToolStripMenuItem_Click;
             // 
             // toolStripMenuItem18
             // 
-            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            resources.ApplyResources(this.toolStripMenuItem18, "toolStripMenuItem18");
-            this.toolStripMenuItem18.Click += new System.EventHandler(this.sourceForgecomToolStripMenuItem_Click);
+            toolStripMenuItem18.Name = "toolStripMenuItem18";
+            resources.ApplyResources(toolStripMenuItem18, "toolStripMenuItem18");
+            toolStripMenuItem18.Click += sourceForgecomToolStripMenuItem_Click;
             // 
             // toolStripMenuItem20
             // 
-            this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            resources.ApplyResources(this.toolStripMenuItem20, "toolStripMenuItem20");
-            this.toolStripMenuItem20.Click += new System.EventHandler(this.gitHubcomToolStripMenuItem_Click);
+            toolStripMenuItem20.Name = "toolStripMenuItem20";
+            resources.ApplyResources(toolStripMenuItem20, "toolStripMenuItem20");
+            toolStripMenuItem20.Click += gitHubcomToolStripMenuItem_Click;
             // 
             // toolStripMenuItem19
             // 
-            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            resources.ApplyResources(this.toolStripMenuItem19, "toolStripMenuItem19");
-            this.toolStripMenuItem19.Click += new System.EventHandler(this.gitHubcomToolStripMenuItem_Click);
+            toolStripMenuItem19.Name = "toolStripMenuItem19";
+            resources.ApplyResources(toolStripMenuItem19, "toolStripMenuItem19");
+            toolStripMenuItem19.Click += gitHubcomToolStripMenuItem_Click;
             // 
             // rateToolStripMenuItem1
             // 
-            this.rateToolStripMenuItem1.Image = global::BulkCrapUninstaller.Properties.Resources.star;
-            this.rateToolStripMenuItem1.Name = "rateToolStripMenuItem1";
-            resources.ApplyResources(this.rateToolStripMenuItem1, "rateToolStripMenuItem1");
-            this.rateToolStripMenuItem1.Click += new System.EventHandler(this.rateToolStripMenuItem_Click);
+            rateToolStripMenuItem1.Image = Properties.Resources.star;
+            rateToolStripMenuItem1.Name = "rateToolStripMenuItem1";
+            resources.ApplyResources(rateToolStripMenuItem1, "rateToolStripMenuItem1");
+            rateToolStripMenuItem1.Click += rateToolStripMenuItem_Click;
             // 
             // toolStripSeparator15
             // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+            toolStripSeparator15.Name = "toolStripSeparator15";
+            resources.ApplyResources(toolStripSeparator15, "toolStripSeparator15");
             // 
             // propertiesToolStripMenuItem
             // 
-            this.propertiesToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.properties;
-            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            resources.ApplyResources(this.propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
-            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.OpenProperties);
+            propertiesToolStripMenuItem.Image = Properties.Resources.properties;
+            propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            resources.ApplyResources(propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
+            propertiesToolStripMenuItem.Click += OpenProperties;
             // 
             // advancedOperationsToolStripMenuItem
             // 
-            this.advancedOperationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manualUninstallToolStripMenuItem,
-            this.msiUninstalltoolStripMenuItem,
-            this.toolStripSeparator14,
-            this.renameToolStripMenuItem,
-            this.disableAutostartToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.createBackupToolStripMenuItem,
-            this.openKeyInRegeditToolStripMenuItem,
-            this.toolStripSeparator32,
-            this.takeOwnershipToolStripMenuItem});
-            resources.ApplyResources(this.advancedOperationsToolStripMenuItem, "advancedOperationsToolStripMenuItem");
-            this.advancedOperationsToolStripMenuItem.Name = "advancedOperationsToolStripMenuItem";
-            this.advancedOperationsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.advancedOperationsToolStripMenuItem_DropDownOpening);
+            advancedOperationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualUninstallToolStripMenuItem, msiUninstalltoolStripMenuItem, toolStripSeparator14, renameToolStripMenuItem, disableAutostartToolStripMenuItem, deleteToolStripMenuItem, toolStripSeparator5, createBackupToolStripMenuItem, openKeyInRegeditToolStripMenuItem, toolStripSeparator32, takeOwnershipToolStripMenuItem });
+            resources.ApplyResources(advancedOperationsToolStripMenuItem, "advancedOperationsToolStripMenuItem");
+            advancedOperationsToolStripMenuItem.Name = "advancedOperationsToolStripMenuItem";
+            advancedOperationsToolStripMenuItem.DropDownOpening += advancedOperationsToolStripMenuItem_DropDownOpening;
             // 
             // manualUninstallToolStripMenuItem
             // 
-            this.manualUninstallToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.list;
-            this.manualUninstallToolStripMenuItem.Name = "manualUninstallToolStripMenuItem";
-            resources.ApplyResources(this.manualUninstallToolStripMenuItem, "manualUninstallToolStripMenuItem");
-            this.manualUninstallToolStripMenuItem.Click += new System.EventHandler(this.RunAdvancedUninstall);
+            manualUninstallToolStripMenuItem.Image = Properties.Resources.list;
+            manualUninstallToolStripMenuItem.Name = "manualUninstallToolStripMenuItem";
+            resources.ApplyResources(manualUninstallToolStripMenuItem, "manualUninstallToolStripMenuItem");
+            manualUninstallToolStripMenuItem.Click += RunAdvancedUninstall;
             // 
             // msiUninstalltoolStripMenuItem
             // 
-            this.msiUninstalltoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
-            this.msiUninstalltoolStripMenuItem.Name = "msiUninstalltoolStripMenuItem";
-            resources.ApplyResources(this.msiUninstalltoolStripMenuItem, "msiUninstalltoolStripMenuItem");
+            msiUninstalltoolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4 });
+            msiUninstalltoolStripMenuItem.Name = "msiUninstalltoolStripMenuItem";
+            resources.ApplyResources(msiUninstalltoolStripMenuItem, "msiUninstalltoolStripMenuItem");
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.msiInstallContextMenuStripItem_Click);
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(toolStripMenuItem2, "toolStripMenuItem2");
+            toolStripMenuItem2.Click += msiInstallContextMenuStripItem_Click;
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.msiUninstallContextMenuStripItem_Click);
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(toolStripMenuItem3, "toolStripMenuItem3");
+            toolStripMenuItem3.Click += msiUninstallContextMenuStripItem_Click;
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.msiQuietUninstallContextMenuStripItem_Click);
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(toolStripMenuItem4, "toolStripMenuItem4");
+            toolStripMenuItem4.Click += msiQuietUninstallContextMenuStripItem_Click;
             // 
             // toolStripSeparator14
             // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
+            toolStripSeparator14.Name = "toolStripSeparator14";
+            resources.ApplyResources(toolStripSeparator14, "toolStripSeparator14");
             // 
             // renameToolStripMenuItem
             // 
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            resources.ApplyResources(this.renameToolStripMenuItem, "renameToolStripMenuItem");
-            this.renameToolStripMenuItem.Click += new System.EventHandler(this.RenameEntries);
+            renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            resources.ApplyResources(renameToolStripMenuItem, "renameToolStripMenuItem");
+            renameToolStripMenuItem.Click += RenameEntries;
             // 
             // disableAutostartToolStripMenuItem
             // 
-            this.disableAutostartToolStripMenuItem.Name = "disableAutostartToolStripMenuItem";
-            resources.ApplyResources(this.disableAutostartToolStripMenuItem, "disableAutostartToolStripMenuItem");
-            this.disableAutostartToolStripMenuItem.Click += new System.EventHandler(this.disableAutostartToolStripMenuItem_Click);
+            disableAutostartToolStripMenuItem.Name = "disableAutostartToolStripMenuItem";
+            resources.ApplyResources(disableAutostartToolStripMenuItem, "disableAutostartToolStripMenuItem");
+            disableAutostartToolStripMenuItem.Click += disableAutostartToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteRegistryEntries);
+            resources.ApplyResources(deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Click += DeleteRegistryEntries;
             // 
             // toolStripSeparator5
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(toolStripSeparator5, "toolStripSeparator5");
             // 
             // createBackupToolStripMenuItem
             // 
-            this.createBackupToolStripMenuItem.Name = "createBackupToolStripMenuItem";
-            resources.ApplyResources(this.createBackupToolStripMenuItem, "createBackupToolStripMenuItem");
-            this.createBackupToolStripMenuItem.Click += new System.EventHandler(this.CreateRegistryBackup);
+            createBackupToolStripMenuItem.Name = "createBackupToolStripMenuItem";
+            resources.ApplyResources(createBackupToolStripMenuItem, "createBackupToolStripMenuItem");
+            createBackupToolStripMenuItem.Click += CreateRegistryBackup;
             // 
             // openKeyInRegeditToolStripMenuItem
             // 
-            this.openKeyInRegeditToolStripMenuItem.Name = "openKeyInRegeditToolStripMenuItem";
-            resources.ApplyResources(this.openKeyInRegeditToolStripMenuItem, "openKeyInRegeditToolStripMenuItem");
-            this.openKeyInRegeditToolStripMenuItem.Click += new System.EventHandler(this.OpenInRegedit);
+            openKeyInRegeditToolStripMenuItem.Name = "openKeyInRegeditToolStripMenuItem";
+            resources.ApplyResources(openKeyInRegeditToolStripMenuItem, "openKeyInRegeditToolStripMenuItem");
+            openKeyInRegeditToolStripMenuItem.Click += OpenInRegedit;
             // 
             // toolStripSeparator32
             // 
-            this.toolStripSeparator32.Name = "toolStripSeparator32";
-            resources.ApplyResources(this.toolStripSeparator32, "toolStripSeparator32");
+            toolStripSeparator32.Name = "toolStripSeparator32";
+            resources.ApplyResources(toolStripSeparator32, "toolStripSeparator32");
             // 
             // takeOwnershipToolStripMenuItem
             // 
-            this.takeOwnershipToolStripMenuItem.Name = "takeOwnershipToolStripMenuItem";
-            resources.ApplyResources(this.takeOwnershipToolStripMenuItem, "takeOwnershipToolStripMenuItem");
+            takeOwnershipToolStripMenuItem.Name = "takeOwnershipToolStripMenuItem";
+            resources.ApplyResources(takeOwnershipToolStripMenuItem, "takeOwnershipToolStripMenuItem");
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openStartupManagerToolStripMenuItem,
-            this.toolStripSeparator25,
-            this.cleanUpProgramFilesToolStripMenuItem,
-            this.targetMenuItem,
-            this.uninstallFromDirectoryToolStripMenuItem,
-            this.toolStripSeparator13,
-            this.troubleshootUninstallProblemsToolStripMenuItem,
-            this.startDiskCleanupToolStripMenuItem,
-            this.tryToInstallNETV35ToolStripMenuItem,
-            this.createRestorePointToolStripMenuItem,
-            this.toolStripSeparator29,
-            this.openProgramsAndFeaturesToolStripMenuItem,
-            this.openSystemRestoreToolStripMenuItem,
-            this.toolStripSeparator19,
-            this.settingsToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
-            this.toolsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.toolsToolStripMenuItem_DropDownOpening);
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openStartupManagerToolStripMenuItem, toolStripSeparator25, cleanUpProgramFilesToolStripMenuItem, targetMenuItem, uninstallFromDirectoryToolStripMenuItem, toolStripSeparator13, troubleshootUninstallProblemsToolStripMenuItem, startDiskCleanupToolStripMenuItem, tryToInstallNETV35ToolStripMenuItem, createRestorePointToolStripMenuItem, toolStripSeparator29, openProgramsAndFeaturesToolStripMenuItem, openSystemRestoreToolStripMenuItem, toolStripSeparator19, settingsToolStripMenuItem });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            resources.ApplyResources(toolsToolStripMenuItem, "toolsToolStripMenuItem");
+            toolsToolStripMenuItem.DropDownOpening += toolsToolStripMenuItem_DropDownOpening;
             // 
             // openStartupManagerToolStripMenuItem
             // 
-            resources.ApplyResources(this.openStartupManagerToolStripMenuItem, "openStartupManagerToolStripMenuItem");
-            this.openStartupManagerToolStripMenuItem.Name = "openStartupManagerToolStripMenuItem";
-            this.openStartupManagerToolStripMenuItem.Click += new System.EventHandler(this.openStartupManagerToolStripMenuItem_Click);
+            resources.ApplyResources(openStartupManagerToolStripMenuItem, "openStartupManagerToolStripMenuItem");
+            openStartupManagerToolStripMenuItem.Name = "openStartupManagerToolStripMenuItem";
+            openStartupManagerToolStripMenuItem.Click += openStartupManagerToolStripMenuItem_Click;
             // 
             // toolStripSeparator25
             // 
-            this.toolStripSeparator25.Name = "toolStripSeparator25";
-            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
+            toolStripSeparator25.Name = "toolStripSeparator25";
+            resources.ApplyResources(toolStripSeparator25, "toolStripSeparator25");
             // 
             // cleanUpProgramFilesToolStripMenuItem
             // 
-            resources.ApplyResources(this.cleanUpProgramFilesToolStripMenuItem, "cleanUpProgramFilesToolStripMenuItem");
-            this.cleanUpProgramFilesToolStripMenuItem.Name = "cleanUpProgramFilesToolStripMenuItem";
-            this.cleanUpProgramFilesToolStripMenuItem.Click += new System.EventHandler(this.cleanUpProgramFilesToolStripMenuItem_Click);
+            resources.ApplyResources(cleanUpProgramFilesToolStripMenuItem, "cleanUpProgramFilesToolStripMenuItem");
+            cleanUpProgramFilesToolStripMenuItem.Name = "cleanUpProgramFilesToolStripMenuItem";
+            cleanUpProgramFilesToolStripMenuItem.Click += cleanUpProgramFilesToolStripMenuItem_Click;
             // 
             // targetMenuItem
             // 
-            this.targetMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.target;
-            resources.ApplyResources(this.targetMenuItem, "targetMenuItem");
-            this.targetMenuItem.Name = "targetMenuItem";
-            this.targetMenuItem.Click += new System.EventHandler(this.OpenTargetWindow);
+            targetMenuItem.Image = Properties.Resources.target;
+            resources.ApplyResources(targetMenuItem, "targetMenuItem");
+            targetMenuItem.Name = "targetMenuItem";
+            targetMenuItem.Click += OpenTargetWindow;
             // 
             // uninstallFromDirectoryToolStripMenuItem
             // 
-            this.uninstallFromDirectoryToolStripMenuItem.Name = "uninstallFromDirectoryToolStripMenuItem";
-            resources.ApplyResources(this.uninstallFromDirectoryToolStripMenuItem, "uninstallFromDirectoryToolStripMenuItem");
-            this.uninstallFromDirectoryToolStripMenuItem.Click += new System.EventHandler(this.uninstallFromDirectoryToolStripMenuItem_Click);
+            uninstallFromDirectoryToolStripMenuItem.Name = "uninstallFromDirectoryToolStripMenuItem";
+            resources.ApplyResources(uninstallFromDirectoryToolStripMenuItem, "uninstallFromDirectoryToolStripMenuItem");
+            uninstallFromDirectoryToolStripMenuItem.Click += uninstallFromDirectoryToolStripMenuItem_Click;
             // 
             // toolStripSeparator13
             // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+            toolStripSeparator13.Name = "toolStripSeparator13";
+            resources.ApplyResources(toolStripSeparator13, "toolStripSeparator13");
             // 
             // troubleshootUninstallProblemsToolStripMenuItem
             // 
-            this.troubleshootUninstallProblemsToolStripMenuItem.Name = "troubleshootUninstallProblemsToolStripMenuItem";
-            resources.ApplyResources(this.troubleshootUninstallProblemsToolStripMenuItem, "troubleshootUninstallProblemsToolStripMenuItem");
-            this.troubleshootUninstallProblemsToolStripMenuItem.Click += new System.EventHandler(this.troubleshootUninstallProblemsToolStripMenuItem_Click);
+            troubleshootUninstallProblemsToolStripMenuItem.Name = "troubleshootUninstallProblemsToolStripMenuItem";
+            resources.ApplyResources(troubleshootUninstallProblemsToolStripMenuItem, "troubleshootUninstallProblemsToolStripMenuItem");
+            troubleshootUninstallProblemsToolStripMenuItem.Click += troubleshootUninstallProblemsToolStripMenuItem_Click;
             // 
             // startDiskCleanupToolStripMenuItem
             // 
-            this.startDiskCleanupToolStripMenuItem.Name = "startDiskCleanupToolStripMenuItem";
-            resources.ApplyResources(this.startDiskCleanupToolStripMenuItem, "startDiskCleanupToolStripMenuItem");
-            this.startDiskCleanupToolStripMenuItem.Click += new System.EventHandler(this.startDiskCleanupToolStripMenuItem_Click);
+            startDiskCleanupToolStripMenuItem.Name = "startDiskCleanupToolStripMenuItem";
+            resources.ApplyResources(startDiskCleanupToolStripMenuItem, "startDiskCleanupToolStripMenuItem");
+            startDiskCleanupToolStripMenuItem.Click += startDiskCleanupToolStripMenuItem_Click;
             // 
             // tryToInstallNETV35ToolStripMenuItem
             // 
-            this.tryToInstallNETV35ToolStripMenuItem.Name = "tryToInstallNETV35ToolStripMenuItem";
-            resources.ApplyResources(this.tryToInstallNETV35ToolStripMenuItem, "tryToInstallNETV35ToolStripMenuItem");
-            this.tryToInstallNETV35ToolStripMenuItem.Click += new System.EventHandler(this.tryToInstallNETV35ToolStripMenuItem_Click);
+            tryToInstallNETV35ToolStripMenuItem.Name = "tryToInstallNETV35ToolStripMenuItem";
+            resources.ApplyResources(tryToInstallNETV35ToolStripMenuItem, "tryToInstallNETV35ToolStripMenuItem");
+            tryToInstallNETV35ToolStripMenuItem.Click += tryToInstallNETV35ToolStripMenuItem_Click;
             // 
             // createRestorePointToolStripMenuItem
             // 
-            this.createRestorePointToolStripMenuItem.Name = "createRestorePointToolStripMenuItem";
-            resources.ApplyResources(this.createRestorePointToolStripMenuItem, "createRestorePointToolStripMenuItem");
-            this.createRestorePointToolStripMenuItem.Click += new System.EventHandler(this.createRestorePointToolStripMenuItem_Click);
+            createRestorePointToolStripMenuItem.Name = "createRestorePointToolStripMenuItem";
+            resources.ApplyResources(createRestorePointToolStripMenuItem, "createRestorePointToolStripMenuItem");
+            createRestorePointToolStripMenuItem.Click += createRestorePointToolStripMenuItem_Click;
             // 
             // toolStripSeparator29
             // 
-            this.toolStripSeparator29.Name = "toolStripSeparator29";
-            resources.ApplyResources(this.toolStripSeparator29, "toolStripSeparator29");
+            toolStripSeparator29.Name = "toolStripSeparator29";
+            resources.ApplyResources(toolStripSeparator29, "toolStripSeparator29");
             // 
             // openProgramsAndFeaturesToolStripMenuItem
             // 
-            this.openProgramsAndFeaturesToolStripMenuItem.Name = "openProgramsAndFeaturesToolStripMenuItem";
-            resources.ApplyResources(this.openProgramsAndFeaturesToolStripMenuItem, "openProgramsAndFeaturesToolStripMenuItem");
-            this.openProgramsAndFeaturesToolStripMenuItem.Click += new System.EventHandler(this.openProgramsAndFeaturesToolStripMenuItem_Click);
+            openProgramsAndFeaturesToolStripMenuItem.Name = "openProgramsAndFeaturesToolStripMenuItem";
+            resources.ApplyResources(openProgramsAndFeaturesToolStripMenuItem, "openProgramsAndFeaturesToolStripMenuItem");
+            openProgramsAndFeaturesToolStripMenuItem.Click += openProgramsAndFeaturesToolStripMenuItem_Click;
             // 
             // openSystemRestoreToolStripMenuItem
             // 
-            this.openSystemRestoreToolStripMenuItem.Name = "openSystemRestoreToolStripMenuItem";
-            resources.ApplyResources(this.openSystemRestoreToolStripMenuItem, "openSystemRestoreToolStripMenuItem");
-            this.openSystemRestoreToolStripMenuItem.Click += new System.EventHandler(this.openSystemRestoreToolStripMenuItem_Click);
+            openSystemRestoreToolStripMenuItem.Name = "openSystemRestoreToolStripMenuItem";
+            resources.ApplyResources(openSystemRestoreToolStripMenuItem, "openSystemRestoreToolStripMenuItem");
+            openSystemRestoreToolStripMenuItem.Click += openSystemRestoreToolStripMenuItem_Click;
             // 
             // toolStripSeparator19
             // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+            toolStripSeparator19.Name = "toolStripSeparator19";
+            resources.ApplyResources(toolStripSeparator19, "toolStripSeparator19");
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openHelpToolStripMenuItem,
-            this.startSetupWizardToolStripMenuItem,
-            this.toolStripSeparator16,
-            this.checkForUpdatesToolStripMenuItem,
-            this.submitFeedbackToolStripMenuItem,
-            this.toolStripSeparator18,
-            this.resetSettingsToolStripMenuItem,
-            this.uninstallBCUninstallToolstripMenuItem,
-            this.toolStripSeparator17,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            this.helpToolStripMenuItem.DropDownOpening += new System.EventHandler(this.helpToolStripMenuItem_DropDownOpening);
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openHelpToolStripMenuItem, startSetupWizardToolStripMenuItem, toolStripSeparator16, checkForUpdatesToolStripMenuItem, submitFeedbackToolStripMenuItem, toolStripSeparator18, resetSettingsToolStripMenuItem, uninstallBCUninstallToolstripMenuItem, toolStripSeparator17, aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(helpToolStripMenuItem, "helpToolStripMenuItem");
+            helpToolStripMenuItem.DropDownOpening += helpToolStripMenuItem_DropDownOpening;
             // 
             // openHelpToolStripMenuItem
             // 
-            this.openHelpToolStripMenuItem.Image = global::BulkCrapUninstaller.Properties.Resources.information_circle;
-            this.openHelpToolStripMenuItem.Name = "openHelpToolStripMenuItem";
-            resources.ApplyResources(this.openHelpToolStripMenuItem, "openHelpToolStripMenuItem");
-            this.openHelpToolStripMenuItem.Click += new System.EventHandler(this.openHelpToolStripMenuItem_Click);
+            openHelpToolStripMenuItem.Image = Properties.Resources.information_circle;
+            openHelpToolStripMenuItem.Name = "openHelpToolStripMenuItem";
+            resources.ApplyResources(openHelpToolStripMenuItem, "openHelpToolStripMenuItem");
+            openHelpToolStripMenuItem.Click += openHelpToolStripMenuItem_Click;
             // 
             // startSetupWizardToolStripMenuItem
             // 
-            this.startSetupWizardToolStripMenuItem.Name = "startSetupWizardToolStripMenuItem";
-            resources.ApplyResources(this.startSetupWizardToolStripMenuItem, "startSetupWizardToolStripMenuItem");
-            this.startSetupWizardToolStripMenuItem.Click += new System.EventHandler(this.OnClickStartSetupWizard);
+            startSetupWizardToolStripMenuItem.Name = "startSetupWizardToolStripMenuItem";
+            resources.ApplyResources(startSetupWizardToolStripMenuItem, "startSetupWizardToolStripMenuItem");
+            startSetupWizardToolStripMenuItem.Click += OnClickStartSetupWizard;
             // 
             // toolStripSeparator16
             // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+            toolStripSeparator16.Name = "toolStripSeparator16";
+            resources.ApplyResources(toolStripSeparator16, "toolStripSeparator16");
             // 
             // checkForUpdatesToolStripMenuItem
             // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            resources.ApplyResources(this.checkForUpdatesToolStripMenuItem, "checkForUpdatesToolStripMenuItem");
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            resources.ApplyResources(checkForUpdatesToolStripMenuItem, "checkForUpdatesToolStripMenuItem");
+            checkForUpdatesToolStripMenuItem.Click += checkForUpdatesToolStripMenuItem_Click;
             // 
             // submitFeedbackToolStripMenuItem
             // 
-            resources.ApplyResources(this.submitFeedbackToolStripMenuItem, "submitFeedbackToolStripMenuItem");
-            this.submitFeedbackToolStripMenuItem.Name = "submitFeedbackToolStripMenuItem";
-            this.submitFeedbackToolStripMenuItem.Click += new System.EventHandler(this.OpenSubmitFeedbackWindow);
+            resources.ApplyResources(submitFeedbackToolStripMenuItem, "submitFeedbackToolStripMenuItem");
+            submitFeedbackToolStripMenuItem.Name = "submitFeedbackToolStripMenuItem";
+            submitFeedbackToolStripMenuItem.Click += OpenSubmitFeedbackWindow;
             // 
             // toolStripSeparator18
             // 
-            this.toolStripSeparator18.Name = "toolStripSeparator18";
-            resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+            toolStripSeparator18.Name = "toolStripSeparator18";
+            resources.ApplyResources(toolStripSeparator18, "toolStripSeparator18");
             // 
             // resetSettingsToolStripMenuItem
             // 
-            this.resetSettingsToolStripMenuItem.Name = "resetSettingsToolStripMenuItem";
-            resources.ApplyResources(this.resetSettingsToolStripMenuItem, "resetSettingsToolStripMenuItem");
-            this.resetSettingsToolStripMenuItem.Click += new System.EventHandler(this.ResetSettingsDialog);
+            resetSettingsToolStripMenuItem.Name = "resetSettingsToolStripMenuItem";
+            resources.ApplyResources(resetSettingsToolStripMenuItem, "resetSettingsToolStripMenuItem");
+            resetSettingsToolStripMenuItem.Click += ResetSettingsDialog;
             // 
             // uninstallBCUninstallToolstripMenuItem
             // 
-            this.uninstallBCUninstallToolstripMenuItem.Name = "uninstallBCUninstallToolstripMenuItem";
-            resources.ApplyResources(this.uninstallBCUninstallToolstripMenuItem, "uninstallBCUninstallToolstripMenuItem");
-            this.uninstallBCUninstallToolstripMenuItem.Click += new System.EventHandler(this.uninstallBCUninstallToolstripMenuItem_Click);
+            uninstallBCUninstallToolstripMenuItem.Name = "uninstallBCUninstallToolstripMenuItem";
+            resources.ApplyResources(uninstallBCUninstallToolstripMenuItem, "uninstallBCUninstallToolstripMenuItem");
+            uninstallBCUninstallToolstripMenuItem.Click += uninstallBCUninstallToolstripMenuItem_Click;
             // 
             // toolStripSeparator17
             // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
+            toolStripSeparator17.Name = "toolStripSeparator17";
+            resources.ApplyResources(toolStripSeparator17, "toolStripSeparator17");
             // 
             // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // debugToolStripMenuItem
             // 
-            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
-            this.debugToolStripMenuItem.Click += new System.EventHandler(this.OpenDebugWindow);
+            debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            resources.ApplyResources(debugToolStripMenuItem, "debugToolStripMenuItem");
+            debugToolStripMenuItem.Click += OpenDebugWindow;
             // 
             // createBackupFileDialog
             // 
-            this.createBackupFileDialog.DefaultExt = "reg";
-            this.createBackupFileDialog.FileName = "New Uninstaller Backup";
-            resources.ApplyResources(this.createBackupFileDialog, "createBackupFileDialog");
-            this.createBackupFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.createBackupFileDialog_FileOk);
+            createBackupFileDialog.DefaultExt = "reg";
+            createBackupFileDialog.FileName = "New Uninstaller Backup";
+            resources.ApplyResources(createBackupFileDialog, "createBackupFileDialog");
+            createBackupFileDialog.FileOk += createBackupFileDialog_FileOk;
             // 
             // globalHotkeys1
             // 
-            this.globalHotkeys1.ContainerControl = this;
-            this.globalHotkeys1.StopWhenFormIsDisabled = true;
-            this.globalHotkeys1.SuppressKeyPresses = true;
+            globalHotkeys1.ContainerControl = this;
+            globalHotkeys1.StopWhenFormIsDisabled = true;
+            globalHotkeys1.SuppressKeyPresses = true;
             // 
             // splashScreen1
             // 
-            this.splashScreen1.AutomaticallyClose = false;
-            this.splashScreen1.ContainerControl = this;
-            this.splashScreen1.SplashScreenImage = global::BulkCrapUninstaller.Properties.Resources._bcu_logo;
+            splashScreen1.AutomaticallyClose = false;
+            splashScreen1.ContainerControl = this;
+            splashScreen1.SplashScreenImage = Properties.Resources._bcu_logo;
             // 
             // usageTracker
             // 
-            this.usageTracker.ContainerControl = this;
+            usageTracker.ContainerControl = this;
             // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.settingsSidebarPanel);
-            this.Controls.Add(this.menuStrip);
-            this.KeyPreview = true;
-            this.Name = "MainWindow";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
-            this.Shown += new System.EventHandler(this.MainWindow_Shown);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainerListAndMap.Panel1.ResumeLayout(false);
-            this.splitContainerListAndMap.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerListAndMap)).EndInit();
-            this.splitContainerListAndMap.ResumeLayout(false);
-            this.listViewPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uninstallerObjectListView)).EndInit();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.settingsSidebarPanel.ResumeLayout(false);
-            this.settingsSidebarPanel.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.uninstallListContextMenuStrip.ResumeLayout(false);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(splitContainer1);
+            Controls.Add(settingsSidebarPanel);
+            Controls.Add(menuStrip);
+            KeyPreview = true;
+            Name = "MainWindow";
+            FormClosing += MainWindow_FormClosing;
+            FormClosed += MainWindow_FormClosed;
+            Shown += MainWindow_Shown;
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            splitContainerListAndMap.Panel1.ResumeLayout(false);
+            splitContainerListAndMap.Panel2.ResumeLayout(false);
+            ((ISupportInitialize)splitContainerListAndMap).EndInit();
+            splitContainerListAndMap.ResumeLayout(false);
+            listViewPanel.ResumeLayout(false);
+            ((ISupportInitialize)uninstallerObjectListView).EndInit();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            settingsSidebarPanel.ResumeLayout(false);
+            settingsSidebarPanel.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            uninstallListContextMenuStrip.ResumeLayout(false);
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1984,6 +1803,8 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripMenuItem slantcoToolStripMenuItem;
         private ToolStripMenuItem slantcoToolStripMenuItem1;
         private ToolStripMenuItem createRestorePointToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator33;
+        private ToolStripMenuItem autosizeAllColumnsToolStripMenuItem;
     }
 }
 
