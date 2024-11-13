@@ -247,9 +247,7 @@
     <value>詳細...</value>
   </data>
   <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;すべての情報
-
-</value>
+    <value>&amp;すべての情報</value>
   </data>
   <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
     <value>プログラム名</value>
@@ -309,9 +307,7 @@
     <value>FileHippo.com</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;オンラインで検索
-
-</value>
+    <value>&amp;オンラインで検索</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>評価する</value>
@@ -326,32 +322,22 @@
     <value>選択したアンインストーラーのプロパティをエクスポート</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;アンインストーラーを再読み込み
-
-</value>
+    <value>&amp;アンインストーラーを再読み込み</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;アンインストールリストを開く...
-
-</value>
+    <value>&amp;アンインストールリストを開く...</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;選択したアンインストーラーのデータをエクスポート...
-
-</value>
+    <value>&amp;選択したアンインストーラーのデータをエクスポート...</value>
   </data>
   <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
-    <value>バッチアンインストールスクリプトにエクスポート...
-
-</value>
+    <value>バッチアンインストールスクリプトにエクスポート...</value>
   </data>
   <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
     <value>ストアアプリ用のPowerShell削除スクリプトを作成...</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;終了
-
-</value>
+    <value>&amp;終了</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;ファイル</value>
@@ -378,9 +364,7 @@
     <value>&amp;表示</value>
   </data>
   <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;デフォルトフィルター
-
-</value>
+    <value>&amp;デフォルトフィルター</value>
   </data>
   <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
     <value>基本的なアプリケーションのみ</value>
@@ -416,14 +400,10 @@
     <value>検索...</value>
   </data>
   <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
-    <value>クイックフィルター
-
-</value>
+    <value>クイックフィルター</value>
   </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;アンインストール
-
-</value>
+    <value>&amp;アンインストール</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>静かにアンインストール</value>
@@ -435,9 +415,7 @@
     <value>詳細...</value>
   </data>
   <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;すべての情報
-
-</value>
+    <value>&amp;すべての情報</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>プログラム名</value>
