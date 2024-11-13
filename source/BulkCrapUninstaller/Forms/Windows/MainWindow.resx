@@ -1,4 +1,64 @@
-﻿<root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -63,11 +123,11 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 30</value>
+    <value>228, 24</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="advancedFilters1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -76,10 +136,10 @@
     <value>0, 0</value>
   </data>
   <data name="advancedFilters1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="advancedFilters1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 799</value>
+    <value>417, 598</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="advancedFilters1.TabIndex" type="System.Int32, mscorlib">
@@ -98,7 +158,7 @@
     <value>0</value>
   </data>
   <data name="splitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 3</value>
+    <value>0, 0, 0, 2</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -122,10 +182,217 @@
     <value>0, 30</value>
   </data>
   <data name="splitContainerListAndMap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="splitContainerListAndMap.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
+  </data>
+  <data name="&gt;&gt;uninstallerObjectListView.Name" xml:space="preserve">
+    <value>uninstallerObjectListView</value>
+  </data>
+  <data name="&gt;&gt;uninstallerObjectListView.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uninstallerObjectListView.Parent" xml:space="preserve">
+    <value>listViewPanel</value>
+  </data>
+  <data name="&gt;&gt;uninstallerObjectListView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listViewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listViewPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="listViewPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 489</value>
+  </data>
+  <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;listViewPanel.Name" xml:space="preserve">
+    <value>listViewPanel</value>
+  </data>
+  <data name="&gt;&gt;listViewPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewPanel.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel1</value>
+  </data>
+  <data name="&gt;&gt;listViewPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Name" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="treeMap1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="treeMap1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="treeMap1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="treeMap1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 54</value>
+  </data>
+  <data name="treeMap1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;treeMap1.Name" xml:space="preserve">
+    <value>treeMap1</value>
+  </data>
+  <data name="&gt;&gt;treeMap1.Type" xml:space="preserve">
+    <value>SimpleTreeMap.TreeMap, SimpleTreeMap, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;treeMap1.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel2</value>
+  </data>
+  <data name="&gt;&gt;treeMap1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Name" xml:space="preserve">
+    <value>splitContainerListAndMap.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainerListAndMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 548</value>
+  </data>
+  <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, mscorlib">
+    <value>489</value>
+  </data>
+  <data name="splitContainerListAndMap.SplitterWidth" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="splitContainerListAndMap.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Name" xml:space="preserve">
+    <value>splitContainerListAndMap</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerListAndMap.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="toolStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 1</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 30</value>
+  </data>
+  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
+    <value>toolStrip</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 578</value>
+  </data>
+  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 16, 0</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>803, 600</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>417</value>
+  </data>
+  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="olvColumnDisplayName.Text" xml:space="preserve">
     <value>Name</value>
@@ -236,10 +503,10 @@
     <value>0, 0</value>
   </data>
   <data name="uninstallerObjectListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="uninstallerObjectListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 692</value>
+    <value>377, 487</value>
   </data>
   <data name="uninstallerObjectListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -256,118 +523,10 @@
   <data name="&gt;&gt;uninstallerObjectListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="listViewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listViewPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="listViewPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
-  </data>
-  <data name="listViewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 694</value>
-  </data>
-  <data name="listViewPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;listViewPanel.Name" xml:space="preserve">
-    <value>listViewPanel</value>
-  </data>
-  <data name="&gt;&gt;listViewPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listViewPanel.Parent" xml:space="preserve">
-    <value>splitContainerListAndMap.Panel1</value>
-  </data>
-  <data name="&gt;&gt;listViewPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Name" xml:space="preserve">
-    <value>splitContainerListAndMap.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel1.Parent" xml:space="preserve">
-    <value>splitContainerListAndMap</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="treeMap1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="treeMap1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="treeMap1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
-  </data>
-  <data name="treeMap1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 49</value>
-  </data>
-  <data name="treeMap1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;treeMap1.Name" xml:space="preserve">
-    <value>treeMap1</value>
-  </data>
-  <data name="&gt;&gt;treeMap1.Type" xml:space="preserve">
-    <value>SimpleTreeMap.TreeMap, SimpleTreeMap, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;treeMap1.Parent" xml:space="preserve">
-    <value>splitContainerListAndMap.Panel2</value>
-  </data>
-  <data name="&gt;&gt;treeMap1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Name" xml:space="preserve">
-    <value>splitContainerListAndMap.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel2.Parent" xml:space="preserve">
-    <value>splitContainerListAndMap</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="splitContainerListAndMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 750</value>
-  </data>
-  <data name="splitContainerListAndMap.SplitterDistance" type="System.Int32, mscorlib">
-    <value>694</value>
-  </data>
-  <data name="splitContainerListAndMap.SplitterWidth" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="splitContainerListAndMap.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Name" xml:space="preserve">
-    <value>splitContainerListAndMap</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainerListAndMap.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="toolStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALhSURBVGhD7ZlPhFZRGMa/T5EkzSKSpChGEmkRLUpajhYt
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVGhD7ZlPhFZRGMa/T5EkzSKSpChGEmkRLUpajhYt
         iqLFGIZK2yiSlAzTLlpFi5hNtGiRFEWLDLNNtJo2ERkzUZLkq99T93Kd7517zz3n3Jm53IefM6753nOf
         e8/7nj+316lTp1ZqFDb9/7PdOgNvoPVmZOQPrLqZDbAPTsI4TMBZOAFboUq5kZU3MxgMttNchzn4CfmN
         WLyHaZBZS0UjYkXMKDFn4DcUO/flGRyFolwj4iKkF29gI81dqHr6vjyCfNhZRi5Bcu2Ad+B2Fss8HIDm
@@ -387,7 +546,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
+    <value>132, 26</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Reload uninstallers</value>
@@ -398,7 +557,7 @@
   <data name="toolStripButtonSelAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHrSURBVGhD7ZahSgVREIYXDCZBEBHxAcRiMBiMNpvFF7DZ
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVGhD7ZahSgVREIYXDCZBEBHxAcRiMBiMNpvFF7DZ
         RDD4ACJYfACjQTAIRoNBm0Uf4QaDzaIYDKv/r3vkMMzu3fXMmOaDj13O3Ts/s3vvnK2CIAiCIAiCoSzA
         xZ9TGz7/0RNY1XU9hcMjfMb5Ctcs0AI9vIATcBLeNmv0Ba7DYvIwL28gG2Aj581a7iucg0XIotY+wGlI
         jqB2zR4sRits5Qj/gXkcyS7UrjmFJmjFrdmCNZQ5d5A/ORNkcWrJGnyHMmMEZ6AZMoBawX2CU0nW5597
@@ -413,7 +572,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonSelAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButtonSelAll.Text" xml:space="preserve">
     <value>Select all</value>
@@ -421,7 +580,7 @@
   <data name="toolStripButtonSelNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACBSURBVGhD7c2xDcAwAMOw/P90+oBHgx1iAZp51lprrfVo
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7c2xDcAwAMOw/P90+oBHgx1iAZp51lprrfVo
         96frJURcLyHiegkR10uIuJ5AhEEQYRBEGAQRBkGEQRBhEEQYBBEGQYRBEGEQRBgEEQZBhEEQYRBEGAQR
         BkGEQRBhEEQYBBFGRMT1EiKulxBxvYSI6yVEvNZaa63HOucDln3yHBqFG0wAAAAASUVORK5CYII=
 </value>
@@ -430,7 +589,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonSelNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButtonSelNone.Text" xml:space="preserve">
     <value>Deselect all</value>
@@ -438,7 +597,7 @@
   <data name="toolStripButtonSelInv.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKSSURBVGhD7Zk/aBRBGMUPFEREEMRKAnZWNqLWYiFomTpV
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKSSURBVGhD7Zk/aBRBGMUPFEREEMRKAnZWNqLWYiFomTpV
         CFYpbAQVEWwVFG0trWwEEYsUKULqkCIgEuwUBIukiIWInL53uS+8GWd2Zu9mLqvsD37sZWfv++axf26W
         DHp6/j/mxtsq/K7oEM5Dcg3+gLdHf1UgNIFS3oLkAtyFtv85PAKLoo1L+gCSs/Az9McfwaJo8aIMh8OT
         2GxC7UG/QQYsijYoyTG4ArU+/YmAV7AtjjYpyUuotc0FWAVtUoqHUOuaT2E1tJEDLoGL2KzC06MdeSxC
@@ -456,7 +615,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonSelInv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButtonSelInv.Text" xml:space="preserve">
     <value>Invert selection</value>
@@ -468,7 +627,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonTarget.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButtonTarget.Text" xml:space="preserve">
     <value>Uninstall by window, directory, or file...</value>
@@ -479,7 +638,7 @@
   <data name="toolStripButtonUninstall.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFKSURBVGhD7dfBrcIwEEXRdMCSBqiBIqiFLtjBmjVV0AT1
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFKSURBVGhD7dfBrcIwEEXRdMCSBqiBIqiFLtjBmjVV0AT1
         sESBiUQi84iNx56MbTRXekJC+uDzI4joLMuyrLG+77f0cKXdaLvhuaZyAE9YG6AAAFcniAHA1QHKAODK
         gAQBOB3QggDcMiBFAE4GVBCAywLtaXMvWnJnGr9/uSJTzX9GsOa/tbAFQToATBBUBLB6P05lgHyAr/cQ
         yznsg3ahbWgfMUA+wJp2ot1pslcpcLgUUAwg9m/iYvx3Y0ApAFwaiAEZ5wXNxAGMU7sy40IgfQCWCSoP
@@ -492,7 +651,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 26</value>
+    <value>79, 26</value>
   </data>
   <data name="toolStripButtonUninstall.Text" xml:space="preserve">
     <value>Uninstall</value>
@@ -500,7 +659,7 @@
   <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIySURBVGhD7ZcxLwRBGIYvUSgUCoVChIRERCMKiUKi9lv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVGhD7ZcxLwRBGIYvUSgUCoVChIRERCMKiUKi9lv8
         BJ1SrRatTkThLyj8AIVKKSiUsrzv2e/y+W5mbnZvdmdP9kmeDG72Zh97u7c76Onp6ekRiqLYx3AHH+Ax
         /zZTqIBv42wEBQKs3QyqEGDtRtAUAdY8QQkDrO0ENRhgbSaoxQBrmqCMAdapgk6g601zegGr81+OyIiZ
         P0csM3/VsjQY1E6AJWFQloDFchwxRZAvYGyNZKid/YKXcBP+oUKQL2AZnsNPmPYoBXauTlBMQOw2caid
@@ -517,7 +676,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 26</value>
+    <value>118, 26</value>
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Uninstall quietly</value>
@@ -526,7 +685,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonModify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButtonModify.Text" xml:space="preserve">
     <value>Modify</value>
@@ -538,7 +697,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 26</value>
+    <value>86, 26</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>Properties</value>
@@ -550,7 +709,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButton7.Text" xml:space="preserve">
     <value>Settings</value>
@@ -559,43 +718,16 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 26</value>
+    <value>26, 26</value>
   </data>
   <data name="toolStripButton8.Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 1</value>
-  </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 30</value>
-  </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
   <data name="toolStripLabelStatus.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="toolStripLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 16</value>
+    <value>62, 17</value>
   </data>
   <data name="toolStripLabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -607,7 +739,7 @@
     <value>No</value>
   </data>
   <data name="toolStripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 16</value>
+    <value>70, 17</value>
   </data>
   <data name="toolStripLabelSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -616,73 +748,79 @@
     <value>False</value>
   </data>
   <data name="toolStripLabelTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 16</value>
+    <value>230, 17</value>
   </data>
   <data name="toolStripLabelTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 780</value>
-  </data>
-  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 18, 0</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 22</value>
-  </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 802</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>417</value>
-  </data>
-  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="settingsSidebarPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar.Name" xml:space="preserve">
+    <value>propertiesSidebar</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar.Type" xml:space="preserve">
+    <value>BulkCrapUninstaller.Controls.PropertiesSidebar, BCUninstaller, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar.Parent" xml:space="preserve">
+    <value>settingsSidebarPanel</value>
+  </data>
+  <data name="&gt;&gt;propertiesSidebar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>settingsSidebarPanel</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>settingsSidebarPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="settingsSidebarPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="settingsSidebarPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 24</value>
+  </data>
+  <data name="settingsSidebarPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="settingsSidebarPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>7, 2, 6, 7</value>
+  </data>
+  <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 600</value>
+  </data>
+  <data name="settingsSidebarPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;settingsSidebarPanel.Name" xml:space="preserve">
+    <value>settingsSidebarPanel</value>
+  </data>
+  <data name="&gt;&gt;settingsSidebarPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsSidebarPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;settingsSidebarPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="propertiesSidebar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -694,16 +832,16 @@
     <value>Top</value>
   </data>
   <data name="propertiesSidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 249</value>
+    <value>7, 193</value>
   </data>
   <data name="propertiesSidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 4, 6, 4</value>
+    <value>5, 3, 5, 3</value>
   </data>
   <data name="propertiesSidebar.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>134, 153</value>
+    <value>117, 115</value>
   </data>
   <data name="propertiesSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 502</value>
+    <value>213, 369</value>
   </data>
   <data name="propertiesSidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -736,13 +874,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 762</value>
+    <value>7, 568</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 31</value>
+    <value>143, 25</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -768,6 +906,63 @@
   <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="&gt;&gt;buttonAdvFiltering.Name" xml:space="preserve">
+    <value>buttonAdvFiltering</value>
+  </data>
+  <data name="&gt;&gt;buttonAdvFiltering.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAdvFiltering.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;buttonAdvFiltering.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;filterEditor1.Name" xml:space="preserve">
+    <value>filterEditor1</value>
+  </data>
+  <data name="&gt;&gt;filterEditor1.Type" xml:space="preserve">
+    <value>UninstallTools.Controls.FilterEditor, UninstallTools, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;filterEditor1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;filterEditor1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 2</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 5, 9, 9</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 191</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>settingsSidebarPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="buttonAdvFiltering.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -775,13 +970,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonAdvFiltering.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 198</value>
+    <value>9, 155</value>
   </data>
   <data name="buttonAdvFiltering.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonAdvFiltering.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 36</value>
+    <value>195, 27</value>
   </data>
   <data name="buttonAdvFiltering.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -811,16 +1006,16 @@
     <value>Top</value>
   </data>
   <data name="filterEditor1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 27</value>
+    <value>9, 21</value>
   </data>
   <data name="filterEditor1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="filterEditor1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>134, 0</value>
+    <value>117, 0</value>
   </data>
   <data name="filterEditor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 171</value>
+    <value>195, 134</value>
   </data>
   <data name="filterEditor1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -837,72 +1032,18 @@
   <data name="&gt;&gt;filterEditor1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
-  </data>
-  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 7, 10, 12</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 246</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>settingsSidebarPanel</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="settingsSidebarPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="settingsSidebarPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 30</value>
-  </data>
-  <data name="settingsSidebarPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
-  </data>
-  <data name="settingsSidebarPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 3, 7, 9</value>
-  </data>
-  <data name="settingsSidebarPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 802</value>
-  </data>
-  <data name="settingsSidebarPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;settingsSidebarPanel.Name" xml:space="preserve">
-    <value>settingsSidebarPanel</value>
-  </data>
-  <data name="&gt;&gt;settingsSidebarPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsSidebarPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;settingsSidebarPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="uninstallListContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>269, 17</value>
   </metadata>
+  <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 424</value>
+  </data>
+  <data name="&gt;&gt;uninstallListContextMenuStrip.Name" xml:space="preserve">
+    <value>uninstallListContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;uninstallListContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="uninstallContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -917,7 +1058,7 @@
 </value>
   </data>
   <data name="uninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="uninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Uninstall</value>
@@ -941,106 +1082,67 @@
 </value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="quietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>Uninstall &amp;quietly</value>
   </data>
   <data name="manualUninstallToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="manualUninstallToolStripMenuItem1.Text" xml:space="preserve">
     <value>Uninstall &amp;manually</value>
   </data>
+  <data name="uninstallUsingMsiExecContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 26</value>
+  </data>
+  <data name="uninstallUsingMsiExecContextMenuStripItem.Text" xml:space="preserve">
+    <value>Uninstall using &amp;MsiExec...</value>
+  </data>
   <data name="msiInstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="msiInstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Install or configure (/I)</value>
   </data>
   <data name="msiUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="msiUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Uninstall (/X)</value>
   </data>
   <data name="msiQuietUninstallContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="msiQuietUninstallContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Quiet uninstall (/X /qb)</value>
   </data>
-  <data name="uninstallUsingMsiExecContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
-  </data>
-  <data name="uninstallUsingMsiExecContextMenuStripItem.Text" xml:space="preserve">
-    <value>Uninstall using &amp;MsiExec...</value>
-  </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
+    <value>208, 6</value>
   </data>
   <data name="excludeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
     <value>Exclude</value>
   </data>
   <data name="includeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="includeToolStripMenuItem.Text" xml:space="preserve">
     <value>Include</value>
   </data>
   <data name="toolStripSeparatorFiltering.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
+    <value>208, 6</value>
   </data>
   <data name="runToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="runToolStripMenuItem.Text" xml:space="preserve">
     <value>Run...</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Advanced...</value>
-  </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 6</value>
-  </data>
-  <data name="fullInformationCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Full information</value>
-  </data>
-  <data name="programNameCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Program name</value>
-  </data>
-  <data name="gUIDProductCodeCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="gUIDProductCodeCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Product code / GUID</value>
-  </data>
-  <data name="fullRegistryPathCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Full registry path</value>
-  </data>
-  <data name="uninstallStringCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
-    <value>Uninstall string</value>
+    <value>208, 6</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1057,43 +1159,64 @@
 </value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="copyToClipboardContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Copy to Clipboard...</value>
   </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Advanced...</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 6</value>
+  </data>
+  <data name="fullInformationCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="fullInformationCopyContextMenuStripItem.Text" xml:space="preserve">
+    <value>&amp;Full information</value>
+  </data>
+  <data name="programNameCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="programNameCopyContextMenuStripItem.Text" xml:space="preserve">
+    <value>Program name</value>
+  </data>
+  <data name="gUIDProductCodeCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="gUIDProductCodeCopyContextMenuStripItem.Text" xml:space="preserve">
+    <value>Product code / GUID</value>
+  </data>
+  <data name="fullRegistryPathCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="fullRegistryPathCopyContextMenuStripItem.Text" xml:space="preserve">
+    <value>Full registry path</value>
+  </data>
+  <data name="uninstallStringCopyContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="uninstallStringCopyContextMenuStripItem.Text" xml:space="preserve">
+    <value>Uninstall string</value>
+  </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="deleteRegistryEntryContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Delete registry entry</value>
   </data>
   <data name="renameContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="renameContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Rename...</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="installLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
-  </data>
-  <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Install location</value>
-  </data>
-  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
-  </data>
-  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Uninstaller location</value>
-  </data>
-  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
-  </data>
-  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
-    <value>&amp;Source location</value>
+    <value>208, 6</value>
   </data>
   <data name="openInExplorerContextMenuStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1111,61 +1234,34 @@
 </value>
   </data>
   <data name="openInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="openInExplorerContextMenuStripItem.Text" xml:space="preserve">
     <value>Open in &amp;explorer...</value>
   </data>
+  <data name="installLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="installLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
+    <value>&amp;Install location</value>
+  </data>
+  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="uninstallerLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
+    <value>&amp;Uninstaller location</value>
+  </data>
+  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="sourceLocationOpenInExplorerContextMenuStripItem.Text" xml:space="preserve">
+    <value>&amp;Source location</value>
+  </data>
   <data name="openWebPageContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="openWebPageContextMenuStripItem.Text" xml:space="preserve">
     <value>Open &amp;Web Page</value>
-  </data>
-  <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="toolStripMenuItem15.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
-  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>AlternativeTo.net</value>
-  </data>
-  <data name="slantcoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Slant.co</value>
-  </data>
-  <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 6</value>
-  </data>
-  <data name="fossHubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
-    <value>FossHub.com</value>
-  </data>
-  <data name="sourceForgecomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="sourceForgecomToolStripMenuItem.Text" xml:space="preserve">
-    <value>SourceForge.net</value>
-  </data>
-  <data name="gitHubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="gitHubcomToolStripMenuItem.Text" xml:space="preserve">
-    <value>GitHub.com</value>
-  </data>
-  <data name="fileHippocomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 26</value>
-  </data>
-  <data name="fileHippocomToolStripMenuItem.Text" xml:space="preserve">
-    <value>FileHippo.com</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1187,37 +1283,73 @@
 </value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="lookUpOnlineToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Search online</value>
   </data>
+  <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>AlternativeTo.net</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 6</value>
+  </data>
+  <data name="fossHubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="sourceForgecomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="sourceForgecomToolStripMenuItem.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="gitHubcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="gitHubcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="fileHippocomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="fileHippocomToolStripMenuItem.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
   <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rate...</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
+    <value>208, 6</value>
   </data>
   <data name="propertiesContextMenuStripItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
   </data>
   <data name="propertiesContextMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>211, 26</value>
   </data>
   <data name="propertiesContextMenuStripItem.Text" xml:space="preserve">
     <value>&amp;Properties</value>
-  </data>
-  <data name="uninstallListContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 424</value>
-  </data>
-  <data name="&gt;&gt;uninstallListContextMenuStrip.Name" xml:space="preserve">
-    <value>uninstallListContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;uninstallListContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>530, 17</value>
@@ -1231,6 +1363,132 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>675, 17</value>
   </metadata>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="showColorLegendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="showColorLegendToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show color legend</value>
+  </data>
+  <data name="displayToolbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show &amp;toolbar</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show tree&amp;map</value>
+  </data>
+  <data name="displaySettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show &amp;settings sidebar</value>
+  </data>
+  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show status &amp;bar</value>
+  </data>
+  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 6</value>
+  </data>
+  <data name="useSystemThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Use system theme</value>
+  </data>
+  <data name="toolStripSeparator33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 6</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Auto-resize all columns</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Quick filters</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 20</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Basic operations</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Advanced operations</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 20</value>
+  </data>
+  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open &amp;debug window</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="menuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 2</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1029, 24</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="reloadUninstallersToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1253,13 +1511,13 @@
 </value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="reloadUninstallersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Reload uninstallers</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>411, 6</value>
+    <value>328, 6</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1277,166 +1535,115 @@
 </value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="loadUninstallerListToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Open Uninstall List...</value>
   </data>
   <data name="toolStripSeparator30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>411, 6</value>
+    <value>328, 6</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="exportSelectedToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Export data of selected uninstallers...</value>
   </data>
   <data name="exportToABatchUninstallScriptToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
     <value>Export to a batch uninstall script...</value>
   </data>
   <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
     <value>Create PowerShell remove script for Store Apps...</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>411, 6</value>
+    <value>328, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 26</value>
+    <value>331, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>E&amp;xit</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="showColorLegendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="showColorLegendToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show color legend</value>
-  </data>
-  <data name="displayToolbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="displayToolbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show &amp;toolbar</value>
-  </data>
-  <data name="showTreemapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show tree&amp;map</value>
-  </data>
-  <data name="displaySettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="displaySettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show &amp;settings sidebar</value>
-  </data>
-  <data name="displayStatusbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="displayStatusbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show status &amp;bar</value>
-  </data>
-  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 6</value>
-  </data>
-  <data name="useSystemThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 26</value>
-  </data>
-  <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Use system theme</value>
-  </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;View</value>
-  </data>
   <data name="advancedApplicationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Default filters</value>
   </data>
   <data name="basicApplicationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
     <value>Only &amp;basic applications</value>
   </data>
   <data name="systemComponentsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
     <value>Only system components</value>
   </data>
   <data name="everythingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Everything</value>
   </data>
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 6</value>
+    <value>210, 6</value>
   </data>
   <data name="automaticallyStartedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
     <value>Only started automatically</value>
   </data>
   <data name="onlyWebBrowsersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Only web browsers</value>
   </data>
   <data name="toolStripSeparator31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 6</value>
+    <value>210, 6</value>
   </data>
   <data name="viewTweaksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
     <value>View Tweaks</value>
   </data>
   <data name="viewUnregisteredToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
     <value>View Unregistered</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>View Updates</value>
   </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>View Windows Features</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>View Windows Store Apps</value>
   </data>
   <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 6</value>
+    <value>210, 6</value>
   </data>
   <data name="searchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1456,16 +1663,10 @@
 </value>
   </data>
   <data name="searchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 26</value>
+    <value>213, 22</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Search...</value>
-  </data>
-  <data name="filteringToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 24</value>
-  </data>
-  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Quick filters</value>
   </data>
   <data name="uninstallToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1481,7 +1682,7 @@
 </value>
   </data>
   <data name="uninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="uninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Uninstall</value>
@@ -1505,58 +1706,19 @@
 </value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="quietUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Uninstall &amp;quietly</value>
   </data>
   <data name="modifyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Modify</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
-  </data>
-  <data name="advancedClipCopyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Advanced...</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 6</value>
-  </data>
-  <data name="copyFullInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Full information</value>
-  </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="toolStripMenuItem10.Text" xml:space="preserve">
-    <value>Program name</value>
-  </data>
-  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="toolStripMenuItem11.Text" xml:space="preserve">
-    <value>Product code / GUID</value>
-  </data>
-  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="toolStripMenuItem12.Text" xml:space="preserve">
-    <value>Full registry path</value>
-  </data>
-  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
-  </data>
-  <data name="toolStripMenuItem13.Text" xml:space="preserve">
-    <value>Uninstall string</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItem8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1573,28 +1735,49 @@
 </value>
   </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>&amp;Copy to Clipboard...</value>
   </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
+  <data name="advancedClipCopyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
   </data>
-  <data name="toolStripMenuItem5.Text" xml:space="preserve">
-    <value>&amp;Install location</value>
+  <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Advanced...</value>
   </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 6</value>
   </data>
-  <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>&amp;Uninstaller location</value>
+  <data name="copyFullInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
   </data>
-  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 26</value>
+  <data name="copyFullInformationToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Full information</value>
   </data>
-  <data name="toolStripMenuItem7.Text" xml:space="preserve">
-    <value>&amp;Source location</value>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Program name</value>
+  </data>
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Product code / GUID</value>
+  </data>
+  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Full registry path</value>
+  </data>
+  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>Uninstall string</value>
   </data>
   <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1612,61 +1795,34 @@
 </value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Open in &amp;explorer...</value>
   </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>&amp;Install location</value>
+  </data>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>&amp;Uninstaller location</value>
+  </data>
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>&amp;Source location</value>
+  </data>
   <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
     <value>Open &amp;Web Page</value>
-  </data>
-  <data name="googleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
-  <data name="alternativeToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
-    <value>AlternativeTo</value>
-  </data>
-  <data name="slantcoToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Slant.co</value>
-  </data>
-  <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
-  </data>
-  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="toolStripMenuItem17.Text" xml:space="preserve">
-    <value>FossHub.com</value>
-  </data>
-  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="toolStripMenuItem18.Text" xml:space="preserve">
-    <value>SourceForge.net</value>
-  </data>
-  <data name="toolStripMenuItem20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="toolStripMenuItem20.Text" xml:space="preserve">
-    <value>GitHub.com</value>
-  </data>
-  <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 26</value>
-  </data>
-  <data name="toolStripMenuItem19.Text" xml:space="preserve">
-    <value>FileHippo.com</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1688,76 +1844,112 @@
 </value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="onlineSearchToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Search online</value>
   </data>
+  <data name="googleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="googleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="alternativeToToolStripMenuItem.Text" xml:space="preserve">
+    <value>AlternativeTo</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 6</value>
+  </data>
+  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="toolStripMenuItem17.Text" xml:space="preserve">
+    <value>FossHub.com</value>
+  </data>
+  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>SourceForge.net</value>
+  </data>
+  <data name="toolStripMenuItem20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>GitHub.com</value>
+  </data>
+  <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="toolStripMenuItem19.Text" xml:space="preserve">
+    <value>FileHippo.com</value>
+  </data>
   <data name="rateToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="rateToolStripMenuItem1.Text" xml:space="preserve">
     <value>Rate...</value>
   </data>
   <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>180, 22</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>Show &amp;properties</value>
   </data>
-  <data name="basicOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 24</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Basic operations</value>
-  </data>
   <data name="manualUninstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Uninstall &amp;manually</value>
   </data>
+  <data name="msiUninstalltoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Uninstall using MsiExec</value>
+  </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>&amp;Install or configure (/I)</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
     <value>&amp;Uninstall (/X)</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 26</value>
+    <value>196, 22</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>&amp;Quiet uninstall (/X /qb)</value>
   </data>
-  <data name="msiUninstalltoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
-  </data>
-  <data name="msiUninstalltoolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Uninstall using MsiExec</value>
-  </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>195, 6</value>
   </data>
   <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Rename...</value>
   </data>
   <data name="disableAutostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="disableAutostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Disable autostart</value>
@@ -1774,43 +1966,34 @@
 </value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Delete registry key</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>195, 6</value>
   </data>
   <data name="createBackupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
     <value>Create &amp;backup...</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="openKeyInRegeditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Open key in Regedit</value>
   </data>
   <data name="toolStripSeparator32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>195, 6</value>
   </data>
   <data name="takeOwnershipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 26</value>
+    <value>198, 22</value>
   </data>
   <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
     <value>Take ownership</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 24</value>
-  </data>
-  <data name="advancedOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Advanced operations</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1839,13 +2022,13 @@
 </value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Open Startup Manager</value>
   </data>
   <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1866,7 +2049,7 @@
 </value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Clean up "Program Files" folders...</value>
@@ -1875,61 +2058,61 @@
     <value>Magenta</value>
   </data>
   <data name="targetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="targetMenuItem.Text" xml:space="preserve">
     <value>Uninstall by window, directory, or file...</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="uninstallFromDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Uninstall from directory...</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="troubleshootUninstallProblemsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
     <value>Troubleshoot uninstallation problems...</value>
   </data>
   <data name="startDiskCleanupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
     <value>Start Disk Cleanup</value>
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
     <value>Install .NET v3.5 (add feature)</value>
   </data>
   <data name="createRestorePointToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Create a new restore point</value>
   </data>
   <data name="toolStripSeparator29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Open "&amp;Programs and Features"</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Open "System Recovery"</value>
   </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="settingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1954,34 +2137,28 @@
 </value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 26</value>
+    <value>280, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Settings</value>
   </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Tools</value>
-  </data>
   <data name="openHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="openHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Open &amp;help</value>
   </data>
   <data name="startSetupWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="startSetupWizardToolStripMenuItem.Text" xml:space="preserve">
     <value>Start setup wizard</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>191, 6</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Check for updates</value>
@@ -2001,28 +2178,28 @@
 </value>
   </data>
   <data name="submitFeedbackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="submitFeedbackToolStripMenuItem.Text" xml:space="preserve">
     <value>Submit feedback...</value>
   </data>
   <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>191, 6</value>
   </data>
   <data name="resetSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="resetSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Reset settings</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
     <value>Uninstall BCUninstaller</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>191, 6</value>
   </data>
   <data name="aboutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2037,46 +2214,10 @@
 </value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
+    <value>194, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;About</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
-  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 24</value>
-  </data>
-  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open &amp;debug window</value>
-  </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="menuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 30</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <metadata name="createBackupFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>802, 17</value>
@@ -2094,16 +2235,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1178, 832</value>
+    <value>1031, 624</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>594, 438</value>
+    <value>522, 338</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 0, 0</value>
@@ -2691,6 +2832,18 @@
     <value>useSystemThemeToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;useSystemThemeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator33.Name" xml:space="preserve">
+    <value>toolStripSeparator33</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;autosizeAllColumnsToolStripMenuItem.Name" xml:space="preserve">
+    <value>autosizeAllColumnsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;autosizeAllColumnsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;filteringToolStripMenuItem.Name" xml:space="preserve">
