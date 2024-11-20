@@ -118,6 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="warningLabel.Text" xml:space="preserve">
-    <value>アプリケーションがクラッシュしたため、これから終了します。終了をクリックすると、アプリケーションはすぐに終了します。「送信して終了」をクリックすると、アプリケーションは終了し、バグレポートが送信されます。</value>
+    <value>アプリケーションがクラッシュし、これから終了します。
+
+「終了」をクリックすると、アプリケーションは即座に閉じます。
+
+「送信して終了」をクリックすると、アプリケーションは閉じ、バグレポートが送信されます。
+</value>
   </data>
 </root>

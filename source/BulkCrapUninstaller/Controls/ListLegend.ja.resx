@@ -121,10 +121,10 @@
     <value>Windowsの機能</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>登録されていないアプリケーション</value>
+    <value>未登録のアプリケーション</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
-    <value>アンインストーラの欠如</value>
+    <value>アンインストーラーが見つかりません</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
     <value>未認証の証明書</value>
@@ -133,7 +133,7 @@
     <value>検証済み証明書</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
-    <value>色凡例/カラーレジェンド</value>
+    <value>色の説明</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Windowsストアアプリ</value>

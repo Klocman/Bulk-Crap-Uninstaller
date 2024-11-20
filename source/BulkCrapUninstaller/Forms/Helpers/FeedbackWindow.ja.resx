@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="loadingLabel.Text" xml:space="preserve">
-    <value>読み込んでいます、少々お待ちください…</value>
+    <value>読み込み中です。しばらくお待ちください…</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>フィードバックを送信する</value>
+    <value>フィードバックを送信</value>
   </data>
 </root>

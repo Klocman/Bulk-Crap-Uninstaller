@@ -121,13 +121,13 @@
     <value>ウェブページ</value>
   </data>
   <data name="BundleProviderKey" xml:space="preserve">
-    <value>商品コード</value>
+    <value>製品コード</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
     <value>表示名</value>
   </data>
   <data name="DisplayNameTrimmed" xml:space="preserve">
-    <value>トリミング表示名</value>
+    <value>トリムされた表示名</value>
   </data>
   <data name="DisplayVersion" xml:space="preserve">
     <value>バージョン</value>
@@ -139,37 +139,37 @@
     <value>インストール日</value>
   </data>
   <data name="InstallLocation" xml:space="preserve">
-    <value>インストール先</value>
+    <value>インストール場所</value>
   </data>
   <data name="InstallSource" xml:space="preserve">
-    <value>インストール元</value>
+    <value>インストールソース</value>
   </data>
   <data name="Is64Bit" xml:space="preserve">
-    <value>64bitアプリケーションである</value>
+    <value>64ビットアプリケーションかどうか</value>
   </data>
   <data name="IsProtected" xml:space="preserve">
-    <value>保護されている</value>
+    <value>保護されているか</value>
   </data>
   <data name="IsUpdate" xml:space="preserve">
-    <value>アップデート版である</value>
+    <value>アップデートかどうか</value>
   </data>
   <data name="IsValid" xml:space="preserve">
     <value>有効かどうか</value>
   </data>
   <data name="ModifyPath" xml:space="preserve">
-    <value>パスの変更</value>
+    <value>パスを修正する</value>
   </data>
   <data name="Publisher" xml:space="preserve">
-    <value>パブリッシャー名</value>
+    <value>発行者名</value>
   </data>
   <data name="PublisherTrimmed" xml:space="preserve">
-    <value>パブリッシャー名をトリミングした</value>
+    <value>トリムされた発行者名</value>
   </data>
   <data name="QuietUninstallPossible" xml:space="preserve">
-    <value>サイレントアンインストールが可能</value>
+    <value>静かなアンインストールが可能です</value>
   </data>
   <data name="QuietUninstallString" xml:space="preserve">
-    <value>サイレントアンインストール文字列</value>
+    <value>静かなアンインストール文字列</value>
   </data>
   <data name="RegistryKeyName" xml:space="preserve">
     <value>レジストリキー名</value>
@@ -178,16 +178,16 @@
     <value>レジストリパス</value>
   </data>
   <data name="SystemComponent" xml:space="preserve">
-    <value>システムコンポーネントである</value>
+    <value>システムコンポーネントかどうか</value>
   </data>
   <data name="UninstallerFullFilename" xml:space="preserve">
-    <value>アンインストーラのファイル名</value>
+    <value>アンインストーラーファイル名</value>
   </data>
   <data name="UninstallerKind" xml:space="preserve">
-    <value>アンインストーラの種類</value>
+    <value>アンインストーラータイプ</value>
   </data>
   <data name="UninstallPossible" xml:space="preserve">
-    <value>アンインストールが可能です</value>
+    <value>アンインストールが可能</value>
   </data>
   <data name="UninstallString" xml:space="preserve">
     <value>アンインストール文字列</value>
@@ -196,89 +196,89 @@
     <value>コメント</value>
   </data>
   <data name="DisplayIcon" xml:space="preserve">
-    <value>表示されるアイコン</value>
+    <value>表示されたアイコン</value>
   </data>
   <data name="Error_InvalidPath" xml:space="preserve">
     <value>無効なパス</value>
   </data>
   <data name="JunkRemover_Confidence" xml:space="preserve">
-    <value>信頼性</value>
+    <value>確信度</value>
   </data>
   <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
-    <value>アンインストールワーカーが早期に停止した</value>
+    <value>アンインストールが手動で停止しました</value>
   </data>
   <data name="ManagerError_Skipped" xml:space="preserve">
-    <value>ユーザーによってスキップされた</value>
+    <value>ユーザーによってスキップされました</value>
   </data>
   <data name="UninstallerLocation" xml:space="preserve">
-    <value>アンインストーラの場所</value>
+    <value>アンインストーラーの場所</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
-    <value>このエントリをアンインストールする有効な方法はありません。</value>
+    <value>このエントリをアンインストールする有効な方法はありません</value>
   </data>
   <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
-    <value>アンインストーラがエラーコードを返しました：</value>
+    <value>アンインストーラーはエラーコードを返しました:</value>
   </data>
   <data name="Confidence_Bad" xml:space="preserve">
     <value>悪い</value>
   </data>
   <data name="Confidence_Good" xml:space="preserve">
-    <value>良い</value>
+    <value>良好</value>
   </data>
   <data name="Confidence_Questionable" xml:space="preserve">
-    <value>疑問がある</value>
+    <value>疑わしい</value>
   </data>
   <data name="Confidence_Unknown" xml:space="preserve">
     <value>不明</value>
   </data>
   <data name="Confidence_VeryGood" xml:space="preserve">
-    <value>非常に良い</value>
+    <value>非常に良好</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
     <value>親アンインストーラー</value>
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
-    <value>社名が一致しない</value>
+    <value>会社名が一致しませんでした</value>
   </data>
   <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
-    <value>会社名が一致した</value>
+    <value>会社名が一致しました</value>
   </data>
   <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
-    <value>ディレクトリが他のインストールされたアプリケーションで使用されている</value>
+    <value>ディレクトリは他のインストールされたアプリケーションによって使用されています</value>
   </data>
   <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
-    <value>アンインストーラに明示的に記載されている項目がある</value>
+    <value>アイテムはアンインストーラーに明示的に記載されています</value>
   </data>
   <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
-    <value>アンインストーラのレジストリエントリ</value>
+    <value>アンインストーラーのレジストリエントリ</value>
   </data>
   <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
-    <value>項目が出版社全体のカテゴリであるようだ</value>
+    <value>アイテムは全体のパブリッシャーカテゴリに属しているようです</value>
   </data>
   <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
-    <value>製品名があまり一致しない</value>
+    <value>製品名があまり一致していません</value>
   </data>
   <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
-    <value>製品名が完全に一致した</value>
+    <value>製品名が完全に一致</value>
   </data>
   <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
-    <value>ディレクトリ名に疑問がある</value>
+    <value>ディレクトリ名は疑わしいです</value>
   </data>
   <data name="UninstallerType_Unknown" xml:space="preserve">
-    <value>不明な点</value>
+    <value>不明</value>
   </data>
   <data name="UninstallerType_Msiexec" xml:space="preserve">
     <value>Windowsインストーラー</value>
   </data>
   <data name="UninstallerType_InnoSetup" xml:space="preserve">
-    <value>イノセントセットアップ</value>
+    <value>Inno Setup</value>
   </data>
   <data name="UninstallerType_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="UninstallerType_NSIS" xml:space="preserve">
-    <value>Nullsoft スクリプト可能なインストールシステム</value>
+    <value>Nullsoftスクリプタブルインストールシステム</value>
   </data>
   <data name="UninstallerType_InstallShield" xml:space="preserve">
     <value>InstallShield</value>
@@ -290,16 +290,16 @@
     <value>完了</value>
   </data>
   <data name="UninstallStatus_Failed" xml:space="preserve">
-    <value>失敗した</value>
+    <value>失敗</value>
   </data>
   <data name="UninstallStatus_Invalid" xml:space="preserve">
     <value>無効</value>
   </data>
   <data name="UninstallStatus_Protected" xml:space="preserve">
-    <value>保護された</value>
+    <value>保護されている</value>
   </data>
   <data name="UninstallStatus_Skipped" xml:space="preserve">
-    <value>スキップ</value>
+    <value>スキップされました</value>
   </data>
   <data name="UninstallStatus_Uninstalling" xml:space="preserve">
     <value>アンインストール中</value>
@@ -308,7 +308,7 @@
     <value>待機中</value>
   </data>
   <data name="IsRegistered" xml:space="preserve">
-    <value>アプリケーションは登録されています</value>
+    <value>アプリケーションが登録されています</value>
   </data>
   <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
     <value>無効なフィルター</value>
@@ -317,10 +317,10 @@
     <value>新しいフィルター</value>
   </data>
   <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
-    <value>一致しない</value>
+    <value>一致するものはありません</value>
   </data>
   <data name="FilterComparisonMethod_Contains" xml:space="preserve">
-    <value>含まれるもの</value>
+    <value>含む</value>
   </data>
   <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
     <value>で終わる</value>
@@ -329,66 +329,66 @@
     <value>等しい</value>
   </data>
   <data name="FilterComparisonMethod_Regex" xml:space="preserve">
-    <value>Regex</value>
+    <value>正規表現</value>
   </data>
   <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
     <value>で始まる</value>
   </data>
   <data name="UninstallerType_WindowsFeature" xml:space="preserve">
-    <value>Windowsの特徴</value>
+    <value>Windowsの機能</value>
     <comment>Used to mark windows features on the uninstaller list</comment>
   </data>
   <data name="FilterComparisonMethod_Any" xml:space="preserve">
-    <value>任意の</value>
+    <value>いずれかを含む</value>
     <comment>As in "matches any word from this string"</comment>
   </data>
   <data name="StartupEntries" xml:space="preserve">
     <value>スタートアップコマンド</value>
   </data>
   <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
-    <value>起動時に開かれなくなります。選択した項目が不要であることを確認してから削除してください。</value>
+    <value>起動時にこれらは開かれなくなります。削除する前に、選択したアイテムが必要ないことを確認してください。</value>
   </data>
   <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
     <value>選択したプログラムをスタートアップから削除しますか？</value>
   </data>
   <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
-    <value>スタートアップ・マネージャー</value>
+    <value>スタートアップマネージャー</value>
   </data>
   <data name="StartupManager_Loading" xml:space="preserve">
-    <value>ロード中...</value>
+    <value>読み込み中...</value>
   </data>
   <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
     <value>空のフォルダー</value>
   </data>
   <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
-    <value>実行可能なファイルがある</value>
+    <value>実行可能ファイルが存在します</value>
   </data>
   <data name="Confidence_PF_FilesPresent" xml:space="preserve">
-    <value>ファイルがある</value>
+    <value>ファイルが存在します</value>
   </data>
   <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
-    <value>多くのファイルが存在する</value>
+    <value>多くのファイルが存在します</value>
   </data>
   <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
-    <value>プログラム名が認識できる</value>
+    <value>プログラム名が認識されています</value>
   </data>
   <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
-    <value>サブディレクトリがない</value>
+    <value>サブディレクトリはありません</value>
   </data>
   <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
-    <value>発行元がわかる</value>
+    <value>パブリッシャーが認識されています</value>
   </data>
   <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
-    <value>エントリーは一度だけ実行される</value>
+    <value>エントリーは一度だけ実行されます</value>
   </data>
   <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
-    <value>エントリーがアプリケーションにマッチしている</value>
+    <value>エントリーはアプリケーションに一致しています</value>
   </data>
   <data name="Junk_Drive_GroupName" xml:space="preserve">
-    <value>ファイルおよびディレクトリ</value>
+    <value>ファイルとディレクトリ</value>
   </data>
   <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
-    <value>プログラムファイル孤児</value>
+    <value>プログラムファイルの孤立</value>
   </data>
   <data name="Junk_Registry_GroupName" xml:space="preserve">
     <value>レジストリ</value>
@@ -397,136 +397,136 @@
     <value>スタートアップ</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
-    <value>このエントリを有効にするために失敗しました、次のファイルが見つかりませんでした：</value>
+    <value>このエントリを有効にできませんでした。次のファイルが見つかりませんでした:</value>
   </data>
   <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
-    <value>アンインストーラがタイムアウトしました</value>
+    <value>アンインストーラーのタイムアウト</value>
   </data>
   <data name="Startup_ShortName_Task" xml:space="preserve">
     <value>タスク</value>
     <comment>Fom Task Scheduler</comment>
   </data>
   <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
-    <value>ブラウザーヘルパーオブジェクト</value>
+    <value>ブラウザヘルパーオブジェクト</value>
   </data>
   <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
-    <value>値には、NULLまたは空は使用できません。</value>
+    <value>値は null または空であってはなりません</value>
   </data>
   <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
-    <value>値に改行を含めることはできません</value>
+    <value>値には改行を含めることはできません</value>
   </data>
   <data name="Error_InvalidRegKeys" xml:space="preserve">
-    <value>起動レジストリキーが無効か不明です：</value>
+    <value>無効または不明なスタートアップレジストリキー：</value>
   </data>
   <data name="UninstallerType_StoreApp" xml:space="preserve">
-    <value>Windowsストアアプリ</value>
+    <value>Windows ストアアプリ</value>
   </data>
   <data name="UninstallListEditor_NewCondition" xml:space="preserve">
-    <value>新しい状態</value>
+    <value>新しい条件</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
-    <value>登録されていない</value>
+    <value>未登録かどうか</value>
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
-    <value>ストアアプリのデータの削除に問題がある</value>
+    <value>ストアアプリのデータ削除に問題があります</value>
   </data>
   <data name="UninstallerType_SimpleDelete" xml:space="preserve">
-    <value>単純な削除</value>
+    <value>シンプルな削除</value>
   </data>
   <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
-    <value>ディレクトリが空である、またはジャンクを削除しても空になる。</value>
+    <value>ディレクトリは、またはジャンクを削除した後に空になります。</value>
   </data>
   <data name="Startup_ShortName_Service" xml:space="preserve">
     <value>サービス</value>
   </data>
   <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
-    <value>すべてのプロパティ</value>
+    <value>プロパティ</value>
     <comment>Used in the search box to specify what's being compared</comment>
   </data>
   <data name="Progress_MSI" xml:space="preserve">
-    <value>インストールされたMSI製品をスキャンしています...</value>
+    <value>インストールされたMSI製品をスキャン中...</value>
   </data>
   <data name="Progress_MSI_sub" xml:space="preserve">
-    <value>アプリケーションGUIDが{0}個見つかりました。</value>
+    <value>{0} のアプリケーション GUID が見つかりました</value>
   </data>
   <data name="Progress_Registry" xml:space="preserve">
-    <value>アンインストーラのレジストリをスキャンしています...</value>
+    <value>アンインストーラーのためにレジストリをスキャン中...</value>
   </data>
   <data name="Progress_Registry_Gathering" xml:space="preserve">
-    <value>レジストリキーを収集する</value>
+    <value>レジストリキーを収集中</value>
   </data>
   <data name="Progress_Registry_Processing" xml:space="preserve">
     <value>{0} を処理中</value>
   </data>
   <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
-    <value>不足しているアンインストーラ情報を生成する</value>
+    <value>不足しているアンインストーラー情報を生成中...</value>
   </data>
   <data name="Progress_DriveScan" xml:space="preserve">
-    <value>アプリケーションのドライブをスキャンします</value>
+    <value>アプリケーションのためにドライブをスキャン中...</value>
   </data>
   <data name="Progress_DriveScan_Gathering" xml:space="preserve">
-    <value>ディレクトリを収集する</value>
+    <value>ディレクトリを収集中</value>
   </data>
   <data name="Progress_AppStores" xml:space="preserve">
-    <value>アプリケーションストアをスキャンする...</value>
+    <value>アプリケーションストアをスキャン中...</value>
   </data>
   <data name="Progress_AppStores_Templates" xml:space="preserve">
-    <value>アプリケーションのテンプレートを検索する</value>
+    <value>アプリケーションテンプレートを検索中</value>
   </data>
   <data name="Progress_AppStores_Steam" xml:space="preserve">
-    <value>Steamアプリの検索</value>
+    <value>Steam アプリを検索中</value>
   </data>
   <data name="Progress_AppStores_WinStore" xml:space="preserve">
-    <value>Windowsストアアプリを検索する</value>
+    <value>Windows ストアアプリを検索中</value>
   </data>
   <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
-    <value>Windowsの機能を検索する</value>
+    <value>Windows 機能を検索中</value>
   </data>
   <data name="Progress_Merging" xml:space="preserve">
-    <value>発見されたアプリケーションをマージする</value>
+    <value>発見されたアプリケーションをマージ中...</value>
   </data>
   <data name="Progress_Merging_Stores" xml:space="preserve">
-    <value>ストアからアプリケーションをマージする</value>
+    <value>ストアからアプリケーションをマージ中</value>
   </data>
   <data name="Progress_Merging_Drives" xml:space="preserve">
-    <value>ドライブからアプリケーションをマージする</value>
+    <value>ドライブからアプリケーションをマージ中</value>
   </data>
   <data name="Progress_GeneratingInfo" xml:space="preserve">
-    <value>不足している情報を生成する</value>
+    <value>不足している情報を生成中...</value>
   </data>
   <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
-    <value>Windows Update</value>
+    <value>Windows アップデート</value>
   </data>
   <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
-    <value>Windows Updateの検索</value>
+    <value>Windows アップデートを検索中</value>
   </data>
   <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
     <value>ファイアウォールルール</value>
   </data>
   <data name="Junk_UserAssist_GroupName" xml:space="preserve">
-    <value>ユーザー補助</value>
+    <value>ユーザー支援</value>
   </data>
   <data name="Junk_WerReports_GroupName" xml:space="preserve">
-    <value>Windows Error Reportingレポート</value>
+    <value>Windows エラー報告レポート</value>
   </data>
   <data name="Junk_Progress_Startup" xml:space="preserve">
-    <value>ジャンクスキャナの設定</value>
+    <value>ジャンクスキャナーを設定中...</value>
   </data>
   <data name="Junk_Progress_Finishing" xml:space="preserve">
-    <value>最後に</value>
+    <value>終了中...</value>
   </data>
   <data name="Junk_AppCompat_GroupName" xml:space="preserve">
     <value>アプリケーションの互換性</value>
   </data>
   <data name="Junk_Clsid_GroupName" xml:space="preserve">
-    <value>CLSIDクラス</value>
+    <value>CLSID クラス</value>
   </data>
   <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
-    <value>アンインストーラの参照</value>
+    <value>アンインストーラーの参照</value>
   </data>
   <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
-    <value>アンインストーラの場所</value>
+    <value>アンインストーラーの場所</value>
   </data>
   <data name="Junk_Shortcut_GroupName" xml:space="preserve">
     <value>ショートカット</value>
@@ -535,53 +535,53 @@
     <value>オーディオポリシー設定</value>
   </data>
   <data name="Junk_EventLog_GroupName" xml:space="preserve">
-    <value>イベントログログ</value>
+    <value>イベントログ</value>
   </data>
   <data name="Junk_Tracing_GroupName" xml:space="preserve">
     <value>トレース情報</value>
   </data>
   <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
-    <value>インストールフォルダ一覧</value>
+    <value>インストールされたフォルダーのリスト</value>
   </data>
   <data name="UninstallStatus_Paused" xml:space="preserve">
-    <value>一時停止中</value>
+    <value>一時停止</value>
   </data>
   <data name="UninstallerType_Chocolatey" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
   <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
-    <value>Chocolateyのパッケージを検索する</value>
+    <value>Chocolatey パッケージを検索中</value>
   </data>
   <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
-    <value>Chocolateyでアンインストール</value>
+    <value>Chocolatey でアンインストール</value>
     <comment>Shown in junk results window</comment>
   </data>
   <data name="HasStartupEntries" xml:space="preserve">
-    <value>自動起動が可能</value>
+    <value>自動的に起動できる</value>
   </data>
   <data name="Progress_Startup" xml:space="preserve">
-    <value>スタートアップエントリーを検索する</value>
+    <value>スタートアップエントリを検索中</value>
   </data>
   <data name="Progress_AppStores_Oculus" xml:space="preserve">
-    <value>Oculus Appsを検索する</value>
+    <value>Oculus アプリを検索中</value>
   </data>
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
   <data name="IsWebBrowser" xml:space="preserve">
-    <value>ウェブブラウザである</value>
+    <value>ウェブブラウザかどうか</value>
   </data>
   <data name="UninstallerType_PowerShell" xml:space="preserve">
-    <value>PowerShellスクリプト</value>
+    <value>PowerShell スクリプト</value>
   </data>
   <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
     <value>デバッグトレース/ロギング設定</value>
   </data>
   <data name="Progress_AppStores_Scoop" xml:space="preserve">
-    <value>Scoop パッケージを検索する</value>
+    <value>Scoop パッケージを検索中</value>
   </data>
   <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
-    <value>似たような名前の別のアプリに属している可能性がある</value>
+    <value>類似の名前を持つ別のアプリに属している可能性があります。</value>
     <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
 </root>

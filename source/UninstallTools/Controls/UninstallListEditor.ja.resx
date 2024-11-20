@@ -133,7 +133,7 @@
     <value>削除</value>
   </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
-    <value>リストから追加</value>
+    <value>リストから追加...</value>
   </data>
   <data name="groupBoxFilterList.Text" xml:space="preserve">
     <value>フィルターリスト</value>
@@ -148,10 +148,10 @@
     <value>除外する</value>
   </data>
   <data name="labelFilterName.Text" xml:space="preserve">
-    <value>名前：</value>
+    <value>名前:</value>
   </data>
   <data name="groupBoxFilterSettings.Text" xml:space="preserve">
-    <value>名前を指定します：</value>
+    <value>フィルター設定</value>
   </data>
   <data name="toolStripButtonAddCondition.Text" xml:space="preserve">
     <value>追加</value>
@@ -163,12 +163,12 @@
     <value>フィルター条件</value>
   </data>
   <data name="groupBoxConditionEditor.Text" xml:space="preserve">
-    <value>条件編集</value>
+    <value>条件エディタ</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>アンインストールリスト (*.bcul)|*.bcul|All files|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>アンインストールリストの読み込み</value>
+    <value>アンインストールリストを読み込む...</value>
   </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelText.Text" xml:space="preserve">
-    <value>テキストをフィルタリングする</value>
+    <value>テキストをフィルタリング</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>比較方法</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>対象特性</value>
+    <value>対象プロパティ</value>
   </data>
   <data name="checkBoxInvert.Text" xml:space="preserve">
     <value>結果を反転させる</value>
