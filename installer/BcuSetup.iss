@@ -111,6 +111,7 @@ ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
 tr.MainFiles=Ana Dosyalar
+zh.MainFiles=主文件
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -125,3 +126,4 @@ ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
 tr.ExtraLanguages=İlave Diller
+zh.ExtraLanguages=其他语言
