@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelProgress.Text" xml:space="preserve">
-    <value>1 / 6</value>
+    <value>1月6日</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
-    <value>ウィザードを終了する</value>
+    <value>ウィザードを終了</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
     <value>戻る</value>
@@ -130,186 +130,194 @@
     <value>続ける</value>
   </data>
   <data name="buttonMore.Text" xml:space="preserve">
-    <value>その他の設定</value>
+    <value>さらなる設定</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>ヘルプを見る</value>
   </data>
   <data name="buttonFinish.Text" xml:space="preserve">
-    <value>セットアップを終了する</value>
+    <value>セットアップを完了</value>
   </data>
   <data name="p5finishContact.Text" xml:space="preserve">
-    <value>これで BCUninstaller を使い始めることができます。ご質問や新機能のご提案がありましたら、以下のリンクからご連絡ください。</value>
+    <value>これでBCUninstallerを使用開始できます。質問がある場合や新機能を提案したい場合は、以下のリンクを参照ください。</value>
   </data>
   <data name="p5LinkContact.Text" xml:space="preserve">
     <value>お問い合わせフォームを開く</value>
   </data>
   <data name="p5finishHomepage.Text" xml:space="preserve">
-    <value>ホームページでは、詳細な変更履歴や、私のソフトウェアの詳細を確認することができます。</value>
+    <value>詳細な変更履歴を読み、ホームページで他のソフトウェアを確認できます。</value>
   </data>
   <data name="p5LinkHomepage.Text" xml:space="preserve">
     <value>ホームページを開く</value>
   </data>
   <data name="p5finishTitle.Text" xml:space="preserve">
-    <value>セットアップが完了しました。</value>
+    <value>セットアップが完了しました</value>
   </data>
   <data name="p4netTitle.Text" xml:space="preserve">
     <value>ネットワークアクセス</value>
   </data>
   <data name="p4netDesc.Text" xml:space="preserve">
-    <value>BCUninstallerは、以下の理由でインターネットへの接続を試みることができます：</value>
+    <value>BCUninstallerは以下の理由でインターネットに接続を試みることがあります:</value>
   </data>
   <data name="p4netDesc1.Text" xml:space="preserve">
-    <value>● プログラムのアップデートを検索するため。</value>
+    <value>● プログラムの更新を検索するため。</value>
   </data>
   <data name="p4netDesc2.Text" xml:space="preserve">
-    <value>● エラーレポートをアップロードする。</value>
+    <value>● エラーレポートをアップロードするため。</value>
   </data>
   <data name="p4netDesc3.Text" xml:space="preserve">
-    <value>● 匿名での使用統計を送信するため。</value>
+    <value>● 匿名の使用統計を送信するため。</value>
   </data>
   <data name="p4netDesc4.Text" xml:space="preserve">
-    <value>● アプリケーションの評価を取得し、アップロードするため。</value>
+    <value>● アプリケーションの評価を取得しアップロードするため。</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>エラーが発生するたびに、送信するかどうか尋ねられます。エラーレポートと使用状況レポートでどのようなデータが送信されているかは、BCUninstaller のディレクトリにあるそれぞれの XML ファイルを確認することで確認できます。送信されたデータは、第三者と共有されることはありません。</value>
+    <value>エラーが発生するたびに送信するかどうか尋ねられます。
+BCUninstallerのディレクトリ内のそれぞれのXMLファイルを調べることで、エラーと使用報告に送信されるデータを確認できます。
+
+送信されたデータは第三者と共有されることはありません。</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
-    <value>アプリケーションの起動時に自動的にアップデートを検索する</value>
+    <value>アプリケーション起動時に自動的に更新を探す</value>
   </data>
   <data name="p4netUpdateAdd.Text" xml:space="preserve">
-    <value>メニューバーから手動でアップデートを検索することができます。</value>
+    <value>メニューバーから手動で更新を検索できます。</value>
   </data>
   <data name="checkBoxSendStats.Text" xml:space="preserve">
-    <value>匿名の使用統計情報を自動的に送信する</value>
+    <value>匿名の使用統計を自動的に送信する</value>
   </data>
   <data name="p4netUsageAdd.Text" xml:space="preserve">
-    <value>これらの統計情報を送信することで、BCUninstaller の改善に役立てることができます。</value>
+    <value>これらの統計を送信することで、BCUninstallerの改善に役立ちます。</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>アプリケーションのユーザー評価を有効にする</value>
   </data>
   <data name="pCorTitle.Text" xml:space="preserve">
-    <value>破損したアンインストーラ</value>
+    <value>壊れたアンインストーラー</value>
   </data>
   <data name="pCorDesc.Text" xml:space="preserve">
-    <value>時間の経過とともに、一部のアプリケーションがアンインストールを拒否したり、ほとんどのアンインストールマネージャから消えてしまうことに気づくかもしれません。</value>
+    <value>時間が経つにつれ、いくつかのアプリケーションがアンインストールを拒否したり、ほとんどのアンインストールマネージャーから消えてしまうことがあります。</value>
   </data>
   <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
-    <value>アンインストーラが壊れている、または見つからない</value>
+    <value>壊れたまたは存在しないアンインストーラー</value>
   </data>
   <data name="pCorViewInvalid.Text" xml:space="preserve">
-    <value>アンインストーラが破損して、アンインストールが不可能になる場合があります。BCUninstaller では、[手動でアンインストール] オプションを使用して、これらのエントリを簡単に削除できます。</value>
+    <value>場合によっては、アンインストーラーが壊れ、アンインストールできなくなることがあります。
+BCUninstallerは「手動でアンインストール」オプションを使用してこれらのエントリを簡単に削除できます。</value>
   </data>
   <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>無効なアンインストーラを強調表示する</value>
+    <value>無効なアンインストーラーを強調表示</value>
   </data>
   <data name="pCorViewinvalidComment.Text" xml:space="preserve">
-    <value>無効なアンインストーラは、グレーで表示されます。</value>
+    <value>無効なアンインストーラーは灰色で表示されます。</value>
   </data>
   <data name="pCorOrphansTitle.Text" xml:space="preserve">
-    <value>未登録のアプリケーション</value>
+    <value>登録されていないアプリケーション</value>
   </data>
   <data name="pCorOrphansMessage.Text" xml:space="preserve">
-    <value>アンインストールしても、アプリケーション全体がドライブに残ってしまうことがあります。これは、アンインストーラだけを削除した場合にも発生します。</value>
+    <value>時には、アンインストールされた後でも、ドライブにアプリケーション全体が残ることがあります。これは、アンインストーラーだけが削除された場合にも起こります。</value>
   </data>
   <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>未登録のアプリケーションをリストに表示する</value>
+    <value>リストに登録されていないアプリケーションを表示</value>
   </data>
   <data name="pCorOrphansComment.Text" xml:space="preserve">
-    <value>未登録のアプリケーションは、赤色で表示されます。
-オリジナルのアンインストーラーが見つからない場合は、「手動でアンインストールする」オプションを使用して削除する必要があります。</value>
+    <value>登録されていないアプリケーションは赤で表示されます。
+元のアンインストーラーが見つからない場合は、「手動でアンインストール」オプションを使用して削除する必要があります。</value>
   </data>
   <data name="p3advTitle.Text" xml:space="preserve">
-    <value>上級者向け</value>
+    <value>上級者</value>
   </data>
   <data name="p3advDesc.Text" xml:space="preserve">
-    <value>BCUninstallerは基本的なアンインストーラとして使用できますが、その機能のほとんどはパワーユーザーを対象としています。注意しながら進めてください！</value>
+    <value>BCUninstallerは基本的なアンインストーラーとして使用できますが、そのほとんどの機能は上級ユーザー向けです。慎重に進めてください！</value>
   </data>
   <data name="p3advSyscompTitle.Text" xml:space="preserve">
     <value>システムコンポーネント</value>
   </data>
   <data name="p3advSyscomp.Text" xml:space="preserve">
-    <value>システムコンポーネント "とマークされたアプリケーションは、基本的なアンインストールマネージャのほとんどから隠されています。このタグは、そのアプリケーションがオペレーティングシステムの一部であることを意味するものではありません。</value>
+    <value>「システムコンポーネント」としてマークされたアプリケーションは、ほとんどの基本的なアンインストールマネージャーから隠されています。
+このタグは、アプリケーションがオペレーティングシステムの一部であることを意味するものではありません。</value>
   </data>
   <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>"システムコンポーネント" としてマークされたアンインストーラを表示する</value>
+    <value>「システムコンポーネント」としてマークされたアンインストーラーを表示</value>
   </data>
   <data name="p3advProtectTitle.Text" xml:space="preserve">
-    <value>保護されたアンインストーラ</value>
+    <value>保護されたアンインストーラー</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>保護されたアイテムには、"NoRemove" タグが表示されます。このタグは、大規模なソフトウェアパッケージで、個々のパーツのアンインストールを防ぐためによく使用されます。</value>
+    <value>保護されたアイテムは「NoRemove」タグでマークされており、発行者がそれらを削除させたくないことを意味します。
+このタグは、大規模なソフトウェアパッケージによって、個々の部分をアンインストールさせないように使用されることがよくあります。</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>"保護 "とマークされたアンインストーラを表示する</value>
+    <value>「保護された」とマークされたアンインストーラーを表示</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>"保護されている "とマークされたアンインストーラの保護を無効にする</value>
+    <value>「保護された」とマークされたアンインストーラーの保護を無効にする</value>
   </data>
   <data name="p3advProtectAdd.Text" xml:space="preserve">
-    <value>これにより、保護されているものをアンインストールすることができます。</value>
+    <value>これにより、保護されたアイテムをアンインストールできるようになります。</value>
   </data>
   <data name="p2viewTitle.Text" xml:space="preserve">
-    <value>アンインストーラーリスト表示</value>
+    <value>アンインストーラーリストビュー</value>
   </data>
   <data name="p2viewDetail.Text" xml:space="preserve">
-    <value>システムで見つかったすべてのアンインストーラが、メインのリストビューに表示されます。ここでは、このデータを閲覧する方法をいくつか紹介します：</value>
+    <value>システム内で見つかったすべてのアンインストーラーは、メインリストビューにあります。以下はこのデータをブラウズする方法です：</value>
   </data>
   <data name="p2viewDetail1.Text" xml:space="preserve">
-    <value>● フィルターを使って、キーワードを検索することができます。</value>
+    <value>● フィルターを使用し、キーワードを検索（すべての列で）</value>
   </data>
   <data name="p2viewDetail2.Text" xml:space="preserve">
-    <value>● アンインストーラーを任意の列で並べ替えることができます。列の並び替えも自由自在です。</value>
+    <value>● 任意の列でアンインストーラーをソートします。列を自由に並べ替えます。</value>
   </data>
   <data name="p2viewDetail3.Text" xml:space="preserve">
-    <value>● 類似のアンインストーラーをグループ化する</value>
+    <value>● 類似のアンインストーラーをグループ化</value>
   </data>
   <data name="checkBoxGroups.Text" xml:space="preserve">
-    <value>アンインストーラーをグループ化して表示する</value>
+    <value>グループ内にアンインストーラーを表示</value>
   </data>
   <data name="checkBoxCheckboxes.Text" xml:space="preserve">
-    <value>チェックボックスで選択</value>
+    <value>チェックボックスを使用して選択</value>
   </data>
   <data name="p2viewCertsTitle.Text" xml:space="preserve">
-    <value>認証済みアンインストーラー</value>
+    <value>認定アンインストーラー</value>
   </data>
   <data name="p2viewCerts.Text" xml:space="preserve">
-    <value>アンインストーラは、関連当局が発行した証明書で署名することができます。証明書の検証に合格した場合、ソフトウェアパッケージは変更されておらず、信頼できるものです。</value>
+    <value>アンインストーラーは、関連当局から発行された証明書で署名されることがあります。
+証明書が検証に合格した場合、そのソフトウェアパッケージは変更されておらず、信頼性があります。</value>
   </data>
   <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>認証済みアンインストーラを強調表示する</value>
+    <value>認定アンインストーラーを強調表示</value>
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
-    <value>認証されたアンインストーラは緑色、認証されていないアンインストーラは青色で表示されます。
-警告：検証には長い時間がかかることがあります。</value>
+    <value>検証済みのアンインストーラーはグリーンで、未検証のものはブルーで表示されます。
+警告：検証には時間がかかることがあります。</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>BCUninstaller へようこそ！</value>
+    <value>BCUninstallerへようこそ！</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>このウィザードは、クイックツアーを行い、アプリケーションの設定を支援します。</value>
+    <value>このウィザードでは、簡単なツアーを行い、アプリケーションの設定を手伝います。</value>
   </data>
   <data name="p1languageHeading.Text" xml:space="preserve">
     <value>選択された言語</value>
   </data>
   <data name="p1languageDesc.Text" xml:space="preserve">
-    <value>デフォルトの言語が正しくない場合、BCUninstaller に特定のローカライズを使用するように強制することができます。新しい言語を適用するために、再起動が実行されます。</value>
+    <value>デフォルトの言語が正しくない場合、BCUninstallerに特定のローカリゼーションを強制することができます。新しい言語を適用するために再起動が行われます。</value>
   </data>
   <data name="buttonLanguageApply.Text" xml:space="preserve">
-    <value>適用する</value>
+    <value>適用</value>
   </data>
   <data name="p1languageExtradetails.Text" xml:space="preserve">
-    <value>BCUninstaller の言語への翻訳を手伝っていただける場合は、以下のリンクをクリックしてご連絡ください。すべての協力は非常にありがたいものです！</value>
+    <value>BCUninstallerをあなたの言語に翻訳するのを手伝っていただける場合は、以下のリンクをクリックして私に連絡してください。
+どんな助けでも歓迎します！</value>
   </data>
   <data name="p1linkLabelContact.Text" xml:space="preserve">
-    <value>コンタクトフォームを開く</value>
+    <value>お問い合わせフォームを開く</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>バルク・クラップ・アンインストーラー</value>
+    <value>バルク･クラップ･アンインストーラー</value>
     <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstaller へようこそ</value>
+    <value>BCUninstallerへようこそ</value>
   </data>
 </root>

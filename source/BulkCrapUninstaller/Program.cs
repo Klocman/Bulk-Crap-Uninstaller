@@ -135,7 +135,10 @@ namespace BulkCrapUninstaller
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Failed to load settings from the config file: " + ex);
+                if(ex is FileNotFoundException)
+                    Console.WriteLine("Settings file not found, creating new one.");
+                else
+                    Console.WriteLine("Failed to load settings from the config file: " + ex);
 
                 File.Delete(ConfigFileFullname);
                 Settings.Default.Reload();

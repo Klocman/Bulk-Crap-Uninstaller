@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
-    <value>BCUninstallerをご利用いただき、ありがとうございます！</value>
+    <value>BCUninstallerをご利用いただきありがとうございます！</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>この無料のオープンソースツールが便利だとお感じになられたなら、ぜひご協力ください！お友達に教えてあげたり、ソーシャルメディアでシェアしたり、フィードバックをしたり - 小さなことでもとても助かります！</value>
+    <value>この無料のオープンソースツールが役立った場合は、ぜひ1分だけお手伝いをお願いいたします！友人に教えたり、SNSで共有したり、フィードバックを送ったり、どんな小さなことでも大歓迎です！</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>フィードバックを送る</value>
@@ -130,31 +130,31 @@
     <value>評価する（ページの一番下にあります）</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
-    <value>Twitterで共有する</value>
+    <value>Twitterで共有</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>何か問題や不足している機能はありますか？</value>
+    <value>問題や不足している機能はありますか？</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>BCUで何か問題があった場合、または新しい機能を提案したい場合は、以下のリンクをチェックしてください：</value>
+    <value>BCUに関して問題があった場合や、新しい機能を提案したい場合は、これらのリンクをご確認ください：</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>GitHubで投稿する(アカウントが必要です)</value>
+    <value>GitHubで提出する（アカウントが必要です）</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
-    <value>フィードバックを送信する</value>
+    <value>フィードバックを送信</value>
   </data>
   <data name="p1HelpHeading.Text" xml:space="preserve">
-    <value>お手伝いしたいですか？</value>
+    <value>お手伝いをしていただけますか？</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>プログラマーである必要はありません！アップデートのスピードアップのために寄付をしたり、BCUをあなたの母国語に翻訳したりすることができます。どんな小さなことでも、すべての協力はとてもありがたいものです！</value>
+    <value>プログラマーでなくてもお手伝いいただけます！更新を早めるために寄付することや、BCUを母国語に翻訳することができます。どんな小さなお手伝いも大変感謝いたします！</value>
   </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
-    <value>BCUを翻訳する</value>
+    <value>BCUを翻訳</value>
   </data>
   <data name="buttonIssues.Text" xml:space="preserve">
-    <value>GitHub上の問題</value>
+    <value>GitHubの問題</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>このウィンドウを二度と表示しない</value>
@@ -163,6 +163,6 @@
     <value>閉じる</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>フィードバックを送信する</value>
+    <value>フィードバックを送信</value>
   </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label3.Text" xml:space="preserve">
-    <value>寄付は、このプロジェクトに対する人々の関心を維持し、コードサイニング証明書、ホスティング、その他の必要経費を支払うのに役立ちます。</value>
+    <value>寄付はこのプロジェクトへの関心を保ち、コード署名証明書、ホスティング、その他の必要経費を賄うのに役立ちます。</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>リリースノートと変更履歴を見る</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
-    <value>ソースコードを見る、または貢献する</value>
+    <value>ソースコードを閲覧または貢献する</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>ライセンスを読む</value>
@@ -136,13 +136,13 @@
     <value>ヘルプファイルを読む</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
-    <value>フィードバックを送る / 開発者に連絡する</value>
+    <value>フィードバックを送信 / 開発者に連絡</value>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>寄付する（PayPal、Bitcoin、Steamギフト）</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>(このダイアログを閉じるには、任意の場所をクリックしてください)</value>
+    <value>（このダイアログを閉じるには、画面のどこかをクリックしてください）</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>このウィンドウを二度と表示しない</value>

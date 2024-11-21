@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
-    <value>&amp;終了する</value>
+    <value>&amp;終了</value>
     <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">
@@ -130,15 +130,15 @@
     <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>処理されない例外が発生しました。アプリケーションを終了します。</value>
+    <value>未処理の例外が発生しました。アプリケーションを閉じます。</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
+    <value>未処理の例外が発生しました。アプリケーションを閉じます。</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Normal_Message" xml:space="preserve">
-    <value>ハンドリングされていない例外が発生しました。アプリケーションを終了します。</value>
+    <value>未処理の例外が発生しました。アプリケーションを閉じます。</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Dialog_Full_Exception_Tab" xml:space="preserve">
@@ -150,15 +150,20 @@
     <comment>General</comment>
   </data>
   <data name="UI_Dialog_Full_How_to_Reproduce_the_Error_Notification" xml:space="preserve">
-    <value>エラーを再現するための簡単な説明を追加してください：</value>
+    <value>エラーを再現する方法についての簡単な説明を追加してください：</value>
     <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしたので、これから終了します。終了をクリックすると、アプリケーションはすぐに終了します。「送信して終了」をクリックすると、アプリケーションは終了し、バグレポートが送信されます。</value>
+    <value>アプリケーションがクラッシュし、これから終了します。
+
+「終了」をクリックすると、アプリケーションは即座に閉じます。
+
+「送信して終了」をクリックすると、アプリケーションは閉じ、バグレポートが送信されます。
+</value>
     <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>報告内容</value>
+    <value>レポート内容</value>
     <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Title" xml:space="preserve">
@@ -166,8 +171,10 @@
     <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Minimal_Message" xml:space="preserve">
-    <value>アプリケーションがクラッシュしましたので、終了します。
-開発者にバグレポートを送信しました。ご迷惑をおかけして申し訳ございません。</value>
+    <value>アプリケーションがクラッシュし、これから終了します。
+
+バグレポートが開発者に送信されました。ご不便をおかけして申し訳ありません。
+</value>
     <comment>The application has crashed and it will now be dismissed.
 A bug report has been sent to the developers. We apologize for the inconvenience.</comment>
   </data>
@@ -176,11 +183,16 @@ A bug report has been sent to the developers. We apologize for the inconvenience
     <comment>Error</comment>
   </data>
   <data name="UI_Dialog_Normal_Continue_Button" xml:space="preserve">
-    <value>&amp;続ける</value>
+    <value>&amp;続行</value>
     <comment>&amp;Continue</comment>
   </data>
   <data name="UI_Dialog_Normal_Message" xml:space="preserve">
-    <value>アプリケーションで未処理の例外が発生しました。Continueをクリックすると、アプリケーションはこのエラーを無視して続行しようとします。終了をクリックすると、アプリケーションは直ちに終了します。</value>
+    <value>アプリケーションで未処理の例外が発生しました。
+
+「続行」をクリックすると、アプリケーションはこのエラーを無視して続行しようとします。
+
+「終了」をクリックすると、アプリケーションは即座に閉じます。
+</value>
     <comment>.</comment>
   </data>
   <data name="UI_Dialog_Normal_Title" xml:space="preserve">

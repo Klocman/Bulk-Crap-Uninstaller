@@ -121,12 +121,12 @@
     <value>インストールディレクトリ</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>アプリケーションに関連する任意のファイルを選択する</value>
+    <value>アプリケーションに属するファイルを選択する</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>全てのファイル |*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>リンクまたはアプリケーション用ファイル</value>
+    <value>リンクまたはアプリケーションのファイル</value>
   </data>
 </root>

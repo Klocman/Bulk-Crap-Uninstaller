@@ -152,6 +152,8 @@ namespace BulkCrapUninstaller.Forms
                 .AppendIf(Program.EnableDebug, " ", Localisable.StrDebug);
             Text = MainTitleBarText;
 
+            Console.WriteLine(MainTitleBarText);
+
             _styleController = new WindowStyleController(this);
 
             // Initialize the status bar
@@ -1857,6 +1859,11 @@ namespace BulkCrapUninstaller.Forms
             {
                 LockApplication(false);
             }
+        }
+
+        private void autosizeAllColumnsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uninstallerObjectListView.AutoResizeColumns();
         }
     }
 }
