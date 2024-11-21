@@ -70,6 +70,7 @@ Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "hu"; MessagesFile: "lang\Hungarian.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
+Name: "zh-cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
