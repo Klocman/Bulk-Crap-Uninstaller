@@ -71,6 +71,7 @@ Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "hu"; MessagesFile: "lang\Hungarian.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
 Name: "tr"; MessagesFile: "lang\Turkish.isl"
+Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
@@ -111,6 +112,7 @@ ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
 tr.MainFiles=Ana Dosyalar
+zh_cn.MainFiles=主文件
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -125,3 +127,4 @@ ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
 tr.ExtraLanguages=İlave Diller
+zh_cn.ExtraLanguages=其他语言

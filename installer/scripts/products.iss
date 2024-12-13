@@ -13,6 +13,7 @@ nl.depdownload_msg=De volgende programma's zijn vereist, alvorens de setup kan v
 es.depdownload_msg=Las siguientes aplicaciones son necesarias antes de continuar con la instalación:%n%n%1%n¿Deseas descargar e instalar ahora?
 bpt.depdownload_msg=São necessários os estes aplicativos antes que a instalação continue:%n%n%1%nBaixar e instalar agora?
 ru.depdownload_msg=Для продолжения установки необходимы следующие приложения:%n%n%1%nЗагрузить и установить их сейчас?
+zh_cn.depdownload_msg=在继续设置之前，需要安装以下应用程序：%n%n%1%n 立即下载并安装？
 
 depdownload_memo_title=Download dependencies
 pl.depdownload_memo_title=Pobierz zależności
@@ -24,6 +25,7 @@ nl.depdownload_memo_title=Downloaden afhankelijkheden
 es.depdownload_memo_title=Descargar dependencias
 bpt.depdownload_memo_title=Baixar dependencias
 ru.depdownload_memo_title=Загрузка зависимостей
+zh_cn.depdownload_memo_title=下载依赖项
 
 depinstall_memo_title=Install dependencies 
 pl.depinstall_memo_title=Zainstaluj zależności
@@ -35,6 +37,7 @@ nl.depinstall_memo_title=Installeren afhankelijkheden
 es.depinstall_memo_title=Instalar dependencias
 bpt.depinstall_memo_title=Instalar dependencias
 ru.depinstall_memo_title=Установка зависимостей
+zh_cn.depinstall_memo_title=安装依赖项
 
 depinstall_title=Installing dependencies
 pl.depinstall_title=Instalacja zależności
@@ -46,6 +49,7 @@ nl.depinstall_title=Installeren afhankelijkheden
 es.depinstall_title=Instalando dependencias
 bpt.depinstall_title=Instalando dependencias
 ru.depinstall_title=Устанавливаются зависимости
+zh_cn.depinstall_title=正在安装依赖项
 
 depinstall_description=Please wait while Setup installs dependencies on your computer.
 pl.depinstall_description=Poczekaj aż instalator instaluje zależności na twoim komputerze.
@@ -57,6 +61,7 @@ nl.depinstall_description=Even wachten a.u.b. Setup installeerd de afhankelijkhe
 es.depinstall_description=Espere mientras el programa de instalación instala las dependencias en su equipo.
 bpt.depinstall_description=Aguarde enquanto Setup instala dependências no seu computador.
 ru.depinstall_description=Подождите, пока программа установки установит зависимости на ваш компьютер.
+zh_cn.depinstall_description=请稍候，安装程序将在您的计算机上安装依赖项。
 
 depinstall_status=Installing %1...
 pl.depinstall_status=Instalacja %1...
@@ -68,6 +73,7 @@ nl.depinstall_status=Installeren %1...
 es.depinstall_status=Instalando %1...
 bpt.depinstall_status=Instalando %1...
 ru.depinstall_status=Устанавливается %1...
+zh_cn.depinstall_status=安装 %1 中...
 
 depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.
 pl.depinstall_missing=%1 musi być zainstalowany zanim instalacja może być kontynuowana. Zainstaluj %1 i ponownie uruchom program instalacyjny.
@@ -79,6 +85,7 @@ nl.depinstall_missing=%1 moet worden geïnstalleerd voor dat setup verder kan ga
 es.depinstall_missing=%1 debe ser instalado antes de que la instalación pueda continuar. Instalar %1 y vuelva a ejecutar el programa de instalación.
 bpt.depinstall_missing=%1 deve ser instalado antes que o setup continue. Instale %1 e rode o Setup de novo.
 ru.depinstall_missing=%1 должен быть установлен перед продолжением установки. Пожалуйста, установите %1 и запустите программу установки снова.
+zh_cn.depinstall_missing=在继续安装之前，必须安装 %1。请安装 %1 并再次运行安装程序。
 
 depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n
 pl.depinstall_error=Wystąpił błąd podczas instalowania zależności. Uruchom ponownie komputer i ponownie uruchom instalację lub ręcznie zainstaluj następujące zależności:%n
@@ -90,6 +97,7 @@ nl.depinstall_error=Er trad een fout op tijdens het installeren van de afhankeli
 es.depinstall_error=Error al instalar las dependencias. Reinicie el equipo y vuelva a ejecutar el programa de instalación o instale las siguientes dependencias manualmente:%n
 bpt.depinstall_error=Ocorreu um erro ao instalar as dependências. Reinicie o computador e execute o Setup novamente ou instale as seguintes dependências manualmente:%n
 ru.depinstall_error=Произошла ошибка при установке зависимостей. Перезагрузите компьютер и снова запустите установку программы, или установите следующие зависимости вручную:%n
+zh_cn.depinstall_error=安装依赖项时出现错误。请重启计算机并再次运行安装程序，或手动安装以下依赖项：%n
 
 isxdl_langfile=
 
