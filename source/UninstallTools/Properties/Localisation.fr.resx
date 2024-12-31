@@ -236,10 +236,10 @@
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
-    <value>Le nom de compagnie ne correspondait pas</value>
+    <value>Le nom de l'entreprise ne correspondait pas</value>
   </data>
   <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
-    <value>Le nom de compagnie correspondait</value>
+    <value>Le nom de l'entreprise correspondait</value>
   </data>
   <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
     <value>Le dossier est utilisé par d'autres applications installées</value>
@@ -394,7 +394,7 @@
     <value>Démarrage</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
-    <value>Echec en activation de cette entrée, le fichier suivant est introuvable :</value>
+    <value>Echec de l'activation de cette entrée, le fichier suivant est introuvable:</value>
   </data>
   <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
     <value>Le désinstalleur a dépassé le temps</value>
