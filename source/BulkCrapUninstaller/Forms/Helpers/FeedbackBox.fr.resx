@@ -127,13 +127,13 @@
     <value>Envoyer vos impressions</value>
   </data>
   <data name="buttonRate.Text" xml:space="preserve">
-    <value>Taux (en bas de la page)</value>
+    <value>Avis (en bas de la page)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Partager sur Twitter</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Des problèmes ou des fonctions manquantes ?</value>
+    <value>Des problèmes ou des fonctionnalités manquantes ?</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
     <value>Si vous avez des problèmes avec BCU ou si vous souhaitez suggérer une nouvelle fonction, voyez ces liens:</value>
