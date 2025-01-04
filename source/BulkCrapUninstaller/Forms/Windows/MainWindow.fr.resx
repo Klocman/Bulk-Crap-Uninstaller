@@ -588,4 +588,7 @@
   <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
     <value>Devenir propriétaire</value>
   </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Redimensionner automatiquement toutes les colonnes</value>
+  </data>
 </root>

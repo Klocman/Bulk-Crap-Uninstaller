@@ -173,6 +173,27 @@ Dies kann passieren, wenn der Uninstaller abstürzt oder einen neuen Prozess sta
   <data name="toolStripButtonHelp.Text" xml:space="preserve">
     <value>Hilfe</value>
   </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Überspringen</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beenden Sie</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deinstallationsprogramm jetzt ausführen</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manuelle Deinstallation</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Installationsverzeichnis öffnen</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>PC in den Ruhezustand versetzen, wenn er fertig ist</value>
+  </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>fr</value>
   </metadata>

@@ -147,6 +147,7 @@
   </data>
   <data name="linkLabel9.Text" xml:space="preserve">
     <value>es.exe (CLI for Everything)</value>
+    <comment>Almost all the translations here were in English</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Moderna UI Ikoner</value>

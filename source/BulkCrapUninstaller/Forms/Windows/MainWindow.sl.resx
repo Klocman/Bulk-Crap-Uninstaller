@@ -574,6 +574,9 @@
   <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
     <value>Odpravljanje težav pri odstranjevanju...</value>
   </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ustvari novo obnovitveno točko</value>
+  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>
   </metadata>
@@ -604,7 +607,4 @@
   <metadata name="globalHotkeys1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 56</value>
   </metadata>
-  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ustvari novo obnovitveno točko</value>
-  </data>
 </root>

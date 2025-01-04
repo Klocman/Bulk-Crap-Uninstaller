@@ -288,4 +288,7 @@ I percorsi non validi e non esistenti saranno ignorati.</value>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Avvio</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Doppio clic nell'elenco delle applicazioni</value>
+  </data>
 </root>

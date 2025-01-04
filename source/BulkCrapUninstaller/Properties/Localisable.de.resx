@@ -768,4 +768,19 @@ Möglicherweise muss eine Deinstallation durchgeführt werden und eine Neuinstal
   <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
     <value>BCU wurde Upgedated auf v{0}!</value>
   </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Einschlafen des PCs in {0}s. Deaktivieren Sie das Kontrollkästchen für den Ruhezustand, um abzubrechen.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Macht nichts</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Öffnet Eigenschaften</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Deinstalliert</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>
