@@ -122,6 +122,7 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>这是将卸载的应用程序列表，从上到下。如果取消选择“卸载”字段，则不会卸载应用程序。如果某个项目不能静默卸载，则不能选择</value>
+    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>智能排序</value>

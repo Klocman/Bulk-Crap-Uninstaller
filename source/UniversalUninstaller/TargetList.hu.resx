@@ -117,88 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBoxOrphans.Text" xml:space="preserve">
-    <value>显示未注册的应用程序</value>
+  <data name="toolStripButtonSelAll.Text" xml:space="preserve">
+    <value>Összes kijelölése</value>
   </data>
-  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
-    <value>显示没有任何已注册卸载程序的应用程序。它们在大多数卸载管理器中不可见，但仍会占用空间。未注册的项目用红色标记。
-
-警告：在删除这些应用程序之前，请仔细检查，它们可能仍然是必需的！</value>
+  <data name="toolStripButtonExpand.Text" xml:space="preserve">
+    <value>Összes kibontása</value>
   </data>
-  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
-    <value>突出显示丢失的卸载程序</value>
+  <data name="toolStripButtonCollapse.Text" xml:space="preserve">
+    <value>Összes bezárása</value>
   </data>
-  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
-    <value>使用灰色标记已损坏或丢失的卸载程序。</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Név</value>
   </data>
-  <data name="checkBoxCertTest.Text" xml:space="preserve">
-    <value>突出显示已认证卸载程序</value>
-  </data>
-  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>使用颜色标识已认证的卸载程序。
-如果证书验证成功，使用绿色，否则使用蓝色。
-
-警告：验证可能需要很长时间才能完成。</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
-    <value>隐藏由Microsoft发布的内容</value>
-  </data>
-  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
-    <value>筛选掉Microsoft发布的所有内容。就这么简单。</value>
-  </data>
-  <data name="checkBoxListSysComp.Text" xml:space="preserve">
-    <value>显示系统组件</value>
-  </data>
-  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
-    <value>一些卸载程序可能被标记为"系统组件"，以从添加/删除软件列表中隐藏它们。
-驱动程序经常被标上这个标签。</value>
-  </data>
-  <data name="checkBoxListProtected.Text" xml:space="preserve">
-    <value>显示受保护项目</value>
-  </data>
-  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
-    <value>受保护项目被标记为"不要删除"标签，表示发布者不希望你删除它们。</value>
-  </data>
-  <data name="checkBoxTweaks.Text" xml:space="preserve">
-    <value>显示调整</value>
-  </data>
-  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
-    <value>显示更新</value>
-  </data>
-  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
-    <value>其他应用程序的更新。通常它们与父应用程序一起卸载，因此可以忽略它们。</value>
-  </data>
-  <data name="checkBoxWinFeature.Text" xml:space="preserve">
-    <value>显示Windows功能</value>
-  </data>
-  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>显示Windows商店应用</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>筛选器</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
-    <value>使用复选框选择</value>
-  </data>
-  <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
-    <value>将列表的选择样式更改为复选框。这样更安全，因为单击不能取消选择所有内容。
-
-你可以通过突出显示多个项目并按空格键来选中它们。</value>
-  </data>
-  <data name="checkBoxViewGroups.Text" xml:space="preserve">
-    <value>按组显示项目</value>
-  </data>
-  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
-    <value>根据列表排序的列对项目进行分组。
-大多数列的分组使用智能筛选。</value>
-  </data>
-  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
-    <value>突出显示特殊的卸载程序</value>
-  </data>
-  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
-    <value>使用颜色区分特殊应用程序，例如商店应用程序和Windows功能。</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>列表视图设置</value>
+  <data name="olvColumnSize.Text" xml:space="preserve">
+    <value>Méret</value>
   </data>
 </root>

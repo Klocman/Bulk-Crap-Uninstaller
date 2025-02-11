@@ -142,7 +142,7 @@
     <value>Alap szűrés</value>
   </data>
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Szuroként adja hozzá a kiválasztott alkalmazásokat</value>
+    <value>Szűrőként adja hozzá a kiválasztott alkalmazásokat</value>
   </data>
   <data name="toolStripButtonDelete.Text" xml:space="preserve">
     <value>Alapértelmezett törlés</value>

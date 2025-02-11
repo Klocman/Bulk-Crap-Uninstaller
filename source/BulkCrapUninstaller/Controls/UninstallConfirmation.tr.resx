@@ -122,6 +122,7 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Bu, yukarıdan aşağıya doğru sırayla kaldırılacak uygulamaların bir listesidir. "Kaldır" alanının seçimini kaldırırsanız, uygulama kaldırılmayacaktır. Bir öğe için sessiz kaldırma mevcut değilse, kontrol edilemez</value>
+    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Akıllı sıralama</value>

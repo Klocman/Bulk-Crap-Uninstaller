@@ -122,6 +122,7 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Esta é uma lista de aplicativos que serão desinstalados, do princípio ao fim. Se desmarcar o campo "Desinstalar", o aplicativo não será desinstalado. Se a desinstalação em segundo plano não estiver disponível para um item, não poderá ser verificada</value>
+    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Classificação inteligente</value>

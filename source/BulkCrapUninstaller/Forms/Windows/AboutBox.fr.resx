@@ -137,6 +137,7 @@
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>NBug par Teoman Soygul</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Icônes Modern UI</value>
@@ -169,6 +170,7 @@
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
+    <comment>jp translator: what's this?</comment>
   </data>
   <data name="labelName.Text" xml:space="preserve">
     <value>BCUninstaller (Bulk Crap Uninstaller)</value>
@@ -182,6 +184,7 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel9.Text" xml:space="preserve">
     <value>es.exe (CLI for Everything)</value>

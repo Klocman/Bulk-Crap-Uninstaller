@@ -507,4 +507,56 @@
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
   </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Windows frissítések keresése</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Tűzfal szabály</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Felhasználósegéd</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Windows hibajelentések</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Befejezés...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Alkalmazáskompatibilitás</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID osztályok</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Parancsikon</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Eltávolító helye</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Eseménynaplók</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Szüneteltetve</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Chocolatey csomagok keresése</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Eltávolítás a Chocolatey-vel</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus alkalmazások keresése</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Böngésző e</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>PowerShell szkript</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Scoop csomagok keresése</value>
+  </data>
 </root>

@@ -119,6 +119,7 @@
   </resheader>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>這是將移除的應用程式列表，從上到下。如果取消選擇"移除"字段，則不會移除應用程式。如果某個項目不能最小化移除，則不能選擇</value>
+    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>智慧排序</value>

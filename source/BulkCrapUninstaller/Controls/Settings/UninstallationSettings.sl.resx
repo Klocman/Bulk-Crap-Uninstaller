@@ -165,16 +165,16 @@
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
     <value>Nadziraj pojavna okna "tihih" odstranjevalcev ali druge stojnice in jih avtomatiziraj (zaženi demona za avtomatizacijo)</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Preden odstranite program, ustvarite obnovitveno točko</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Ustvarite lahko obnovitveno točko sistema za varnostni kopirni register, nekatere nastavitve in datoteke. Pred odstranjevanjem gonilnikov in pomembnih sistemskih aplikacij priporočamo, da ustvarite obnovitveno točko.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
 </root>
