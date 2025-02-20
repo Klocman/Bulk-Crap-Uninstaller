@@ -136,7 +136,7 @@
     <value>Créer</value>
   </data>
   <data name="ButtonDontCreate" xml:space="preserve">
-    <value>Non</value>
+    <value>Ne pas créer</value>
   </data>
   <data name="ButtonKeep" xml:space="preserve">
     <value>Garder</value>
@@ -148,7 +148,7 @@
     <value>OK</value>
   </data>
   <data name="ButtonOverwrite" xml:space="preserve">
-    <value>Ecraser</value>
+    <value>Écraser</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
     <value>Supprimer</value>
@@ -174,7 +174,7 @@
     <value>Désinstaller</value>
   </data>
   <data name="ButtonUseLoud" xml:space="preserve">
-    <value>Utiliser fort</value>
+    <value>Utiliser causant</value>
   </data>
   <data name="ButtonYes" xml:space="preserve">
     <value>Oui</value>

@@ -145,7 +145,7 @@
     <value>Exclure</value>
   </data>
   <data name="groupBoxConditionEditor.Text" xml:space="preserve">
-    <value>Editeur de condition</value>
+    <value>Éditeur de condition</value>
   </data>
   <data name="comboBoxFilterType.Items" xml:space="preserve">
     <value>Inclure</value>
