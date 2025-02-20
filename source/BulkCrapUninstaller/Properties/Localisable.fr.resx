@@ -137,17 +137,17 @@
   </data>
   <data name="StrExportHeader" xml:space="preserve">
     <value>Exportation BCUninstaller 
-Editeur | Version | Date | Taille | Registre | Type de désinstalleur | Chaîne de désinstallation | Chaîne de désinstallation silencieuse | Commentaires</value>
+Éditeur | Version | Date | Taille | Registre | Type de désinstalleur | Chaîne de désinstallation | Chaîne de désinstallation silencieuse | Commentaires</value>
   </data>
   <data name="StrIsPortable" xml:space="preserve">
     <value> Portable</value>
     <comment>keep space in front</comment>
   </data>
   <data name="SysRestoreGenericError" xml:space="preserve">
-    <value>Echec en appelant l'API</value>
+    <value>Échec en appelant l'API</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
-    <value>Echec en sauvegardant le registre, voulez-vous continuer tout de même ?</value>
+    <value>Échec en sauvegardant le registre, voulez-vous continuer tout de même ?</value>
   </data>
   <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
     <value>Détails de l'erreur : </value>
@@ -171,7 +171,7 @@ Détails de l'erreur :
 Fichiers et dossiers seront déplacés dans la corbeille, vous pouvez les restaurer à partir d'ici.</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
-    <value>Echec de l'action</value>
+    <value>Échec de l'action</value>
   </data>
   <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
     <value>Vous devez ne sélectionner qu'une entrée pour cette action</value>
@@ -253,7 +253,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Créer un point de restauration</value>
   </data>
   <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
-    <value>Echec en créant un nouveau point de restauration</value>
+    <value>Échec en créant un nouveau point de restauration</value>
   </data>
   <data name="Str64Bit" xml:space="preserve">
     <value> x64</value>
@@ -285,7 +285,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Supprimer les clés du registre</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer les entrées du désinstalleur sélectionné ?</value>
+    <value>Êtes-vous sûr de vouloir supprimer les entrées du désinstalleur sélectionné ?</value>
   </data>
   <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
     <value>Les élements suivants seront supprimés du registre et disparaîtront de la liste du désinstalleur, mais ne seront pas désinstallés.
@@ -293,7 +293,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
 {0}</value>
   </data>
   <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
-    <value>Echec en exportant</value>
+    <value>Échec en exportant</value>
   </data>
   <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
     <value>Erreur rencontrée pendant l'enregistrement des données exportées</value>
@@ -352,7 +352,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Désinstaller BCUninstaller</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
-    <value>Etes-vous sur de vouloir désinstaller BCUninstaller ?</value>
+    <value>Êtes-vous sur de vouloir désinstaller BCUninstaller ?</value>
   </data>
   <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
     <value>Je suis désolé de vous voir partir ! Si vous avez une minute ou deux merci de laisser un mot sur mon site web (http://klocmansoftware.weebly.com/)  pour dire pourquoi vous désinstallez BCU. Je ferai de mon mieux pour réparer tout problème légitime.</value>
@@ -361,7 +361,7 @@ Attention : pendant la mise à jour le dossier "Update" et le fichier "Update.zi
     <value>Voulez-vous créer un point de restauration avant de continuer ?</value>
   </data>
   <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
-    <value>Si vous n'êtes pas sûr que les applications que vous désinstallez sont importantes ou nécesaires à la stabilité du système, il est recommandé de créer un point de restauration. 
+    <value>Si vous n'êtes pas sûr que les applications que vous désinstallez sont importantes ou nécessaires à la stabilité du système, il est recommandé de créer un point de restauration. 
 Si quelque chose est rompu après la procédure vous pouvez alors utiliser la Restauration du système pour revenir sur les changements.</value>
   </data>
   <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
@@ -371,10 +371,10 @@ Si quelque chose est rompu après la procédure vous pouvez alors utiliser la Re
     <value>Sauvegarder la liste de désinstallation</value>
   </data>
   <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
-    <value>Echec en sauvegardant la liste dans un fichier</value>
+    <value>Échec en sauvegardant la liste dans un fichier</value>
   </data>
   <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir réinitialiser tous les réglages de l'application ?</value>
+    <value>Êtes-vous sûr de vouloir réinitialiser tous les réglages de l'application ?</value>
   </data>
   <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
     <value>Quelques applications ne peuvent être désinstallées silencieusement</value>
@@ -395,7 +395,7 @@ Si quelque chose est rompu après la procédure vous pouvez alors utiliser la Re
     <value>Une erreur a été rencontrée en ouvrant le dossier</value>
   </data>
   <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
-    <value>Echec en chargeant les fichiers sélectionnés</value>
+    <value>Échec en chargeant les fichiers sélectionnés</value>
   </data>
   <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
     <value>Aucun désinstalleur sélectionné, rien à désinstaller</value>
@@ -531,7 +531,7 @@ Voulez-vous utiliser les désinstalleurs "causants" pour ces éléments, ou doiv
     <value>Lancement de commandes pré-désinstallation...</value>
   </data>
   <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
-    <value>Echec d'exécution externe</value>
+    <value>Échec d'exécution externe</value>
   </data>
   <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
     <value>Certains paramètres ne prendront effet jusqu'à ce que l'application soit relancée.</value>
@@ -550,7 +550,7 @@ Voulez-vous utiliser les désinstalleurs "causants" pour ces éléments, ou doiv
     <comment>{1} = how many application uninstallers still need to be processed</comment>
   </data>
   <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
-    <value>Sélectionner "Terminer" fermera immédiatement le désinstalleur en cours et pourraient aboutir à une désinstallation incomplète. D'ordinaire, il est possible de relancer le désinstalleur pour finir la désinstallation.
+    <value>Sélectionner "Terminer" fermera immédiatement le désinstalleur en cours et pourrait aboutir à une désinstallation incomplète. D'ordinaire, il est possible de relancer le désinstalleur pour finir la désinstallation.
 
 Alternativement, vous pouvez passer l'attente de ce processus. Passer laissera le désinstalleur continuer à travailler pendant que la tâche passera à l'élément suivant. Gardez à l'esprit que quelques désinstalleurs peuvent échouer à se lancer jusqu'à ce que le processus passé se termine.</value>
   </data>
@@ -625,7 +625,7 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <value>Forcer la désinstallation</value>
   </data>
   <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
-    <value>Echec au lancement de certains des désinstalleurs</value>
+    <value>Échec au lancement de certains des désinstalleurs</value>
   </data>
   <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
     <value>Framework .NET 4.0 introuvable</value>
@@ -640,10 +640,10 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <value>Quelques désinstalleurs ont échoué</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
-    <value>Voulez-vous tenter de lancer des désinstalleurs silencieux qui ont échoué en normal?</value>
+    <value>Voulez-vous tenter de lancer des désinstalleurs silencieux qui ont échoué en normal ?</value>
   </data>
   <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
-    <value>Les désinstalleurs suivants seront redemarrés normalement:</value>
+    <value>Les désinstalleurs suivants seront redemarrés normalement :</value>
   </data>
   <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
     <value>Balayage du dossier spécifié...</value>
@@ -667,7 +667,7 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <value>Voulez-vous lancer ce désinstalleur?</value>
   </data>
   <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
-    <value>Emetteur</value>
+    <value>Émetteur</value>
   </data>
   <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
     <value>Sujet</value>
@@ -718,7 +718,7 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <value>Empreinte</value>
   </data>
   <data name="Error_SaveSettingsFailed" xml:space="preserve">
-    <value>Echec à l'enregistrement des paramètres</value>
+    <value>Échec à l'enregistrement des paramètres</value>
   </data>
   <data name="Progress_Finishing" xml:space="preserve">
     <value>En train de finir...</value>
@@ -751,7 +751,7 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <value>Sauver la liste de désinstallation</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
-    <value>Sauver les changements de la liste de désinstallation ouverte?</value>
+    <value>Sauver les changements de la liste de désinstallation ouverte ?</value>
   </data>
   <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
     <value>Il y a des changements non sauvés dans la liste de désinstallation ouverte qui seront perdus en la fermant.</value>
@@ -780,7 +780,7 @@ Vous pouver tenter de désactiver la prévention de collision dans les réglages
     <comment>Option for "Double clicking in application list..."</comment>
   </data>
   <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
-    <value>Déinstalle</value>
+    <value>Désinstalle</value>
     <comment>Option for "Double clicking in application list..."</comment>
   </data>
 </root>

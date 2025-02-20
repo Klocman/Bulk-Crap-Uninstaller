@@ -166,8 +166,7 @@
     <value>Il y a une heure</value>
   </data>
   <data name="ToFuzzyTimeSinceString_JustNow" xml:space="preserve">
-    <value>
-Juste maintenant</value>
+    <value>Juste maintenant</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Minutes_Single" xml:space="preserve">
     <value>Il y a une minute</value>
@@ -206,7 +205,7 @@ Juste maintenant</value>
     <value>Vous pourriez perdre toute donnée non sauvegardée. Pour éviter une perte de donnée, fermez manuellement les applications.</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Message" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir arrêter tous les processus ?</value>
+    <value>Êtes-vous sûr de vouloir arrêter tous les processus ?</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Title" xml:space="preserve">
     <value>Arrêter les processus en cours</value>
@@ -218,7 +217,7 @@ Juste maintenant</value>
     <value>Le chemin ne peut pas être vide ou nul</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_PointsAtRoot" xml:space="preserve">
-    <value>Le chemin ne peut pas pointer  sur une clé racine</value>
+    <value>Le chemin ne peut pas pointer sur une clé racine</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_RemoveDefault" xml:space="preserve">
     <value>Impossible de supprimer la valeur par défaut</value>

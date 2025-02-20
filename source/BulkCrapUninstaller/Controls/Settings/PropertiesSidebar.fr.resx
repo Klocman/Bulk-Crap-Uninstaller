@@ -122,7 +122,7 @@
   </data>
   <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
     <value>Afficher les applications n'ayant pas de désinstalleur enregistré.
-Elles sont invisibles dans la plupart des gestionnaires de désinstallation, mais prennent quand même de la place. Les éléments non enregistré sont marqués avec une couleur rouge.
+Elles sont invisibles dans la plupart des gestionnaires de désinstallation, mais prennent quand même de la place. Les éléments non enregistrés sont marqués avec une couleur rouge.
 
 Attention : vérifiez à deux fois avant de supprimer ces applications, elles pourraient être encore nécessaires !</value>
   </data>
@@ -136,7 +136,7 @@ Attention : vérifiez à deux fois avant de supprimer ces applications, elles po
     <value>Surligner les désinstalleurs certifiés</value>
   </data>
   <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
-    <value>Utiliser des couleurs pour identifier les désinstalleurs certifiés. Si le certificat a été vérifié avec succès, utilise la couleur grise, autrement utilise la couleur bleue.
+    <value>Utiliser des couleurs pour identifier les désinstalleurs certifiés. Si le certificat a été vérifié avec succès, il utilise la couleur grise, autrement il utilise la couleur bleue.
 
 Attention : la vérification peut mettre longtemps à se terminer.</value>
   </data>
@@ -188,7 +188,7 @@ Le groupage de la plupart des colonnes utilise un tri intelligent.</value>
     <value>Réglages de la vue liste</value>
   </data>
   <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
-    <value>Montrer les apps du Windows Store</value>
+    <value>Montrer les applis du Windows Store</value>
   </data>
   <data name="checkBoxWinFeature.Text" xml:space="preserve">
     <value>Montrer les fonctionalités Windows</value>
@@ -197,7 +197,7 @@ Le groupage de la plupart des colonnes utilise un tri intelligent.</value>
     <value>Surligner les désinstalleurs spéciaux</value>
   </data>
   <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
-    <value>Utiliser des couleurs pour différencier les applications spéciales, par exemple les apps du store et les Fonctionnalités Windows</value>
+    <value>Utiliser des couleurs pour différencier les applications spéciales, par exemple les applis du store et les Fonctionnalités Windows</value>
   </data>
   <data name="checkBoxTweaks.Text" xml:space="preserve">
     <value>Montrer les perfectionnements</value>
