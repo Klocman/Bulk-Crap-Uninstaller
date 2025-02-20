@@ -140,7 +140,6 @@
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>NBug przez Teoman Soygul</value>
-    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Modern UI Icons</value>
@@ -148,7 +147,6 @@
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider przez CodeChimp</value>
-    <comment>1</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Użyte elementy</value>
@@ -173,7 +171,6 @@
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
-    <comment>jp translator: what's this?</comment>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>ObjectListView</value>
@@ -184,6 +181,5 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
-    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
 </root>
