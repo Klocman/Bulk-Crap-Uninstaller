@@ -122,7 +122,6 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>To je seznam aplikacij, ki bodo odstranjene, v zaporedju od zgoraj navzdol. Če počistite polje »Odstrani«, aplikacija ne bo odstranjena. Če za vnos ni na voljo tiho odstranjevanje, ga ni mogoče vklopiti</value>
-    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Inteligentno razvrsti</value>

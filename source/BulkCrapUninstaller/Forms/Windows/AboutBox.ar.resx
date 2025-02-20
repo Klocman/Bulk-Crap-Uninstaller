@@ -143,7 +143,6 @@
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
-    <comment>jp translator: what's this?</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>ايقونات واجهه المستخدم الحديثة</value>
@@ -154,11 +153,9 @@
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>NBug</value>
-    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>مزود الاعدادات المحمولة</value>
-    <comment>1</comment>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>برنامج التضمين المدار لبرنامج جدوله المهام</value>
@@ -166,7 +163,6 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>الاختبار الابيض</value>
-    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>الاصول المستخدمة</value>

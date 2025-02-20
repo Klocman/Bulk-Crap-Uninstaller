@@ -122,7 +122,6 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>Seznam aplikací, které budou odinstalovány, a to shora dolů. Pokud zrušíte výběr "Odinstalovat", aplikace nebude odinstalována. Není-li k dispozici tichá odinstalace pro položku, nelze ji zkontrolovat</value>
-    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Inteligentní třídění</value>

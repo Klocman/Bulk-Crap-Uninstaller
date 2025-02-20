@@ -126,7 +126,6 @@
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
     <value>This is a list of applications that will be uninstalled, in order from top to bottom. If you deselect the "Uninstall" field, the application will not be uninstalled. If quiet uninstallation is not available for an item, it can't be checked on</value>
-    <comment>jp translator: I don't know the difference between Quiet Uninstall and Silent Uninstall. Can I translate them to mean the same meaning? At this stage, we are trying to separate the two, but Quiet Uninstall is not very familiar to Japanese people.</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="olvColumnEnabled.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
