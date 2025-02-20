@@ -53,8 +53,17 @@ namespace BulkCrapUninstaller.Functions.Tools
             }
 
             if (!string.IsNullOrEmpty(Selected.Settings.UninstallerListViewState))
-                _mainWindow.uninstallerObjectListView.RestoreState(
-                    Convert.FromBase64String(Selected.Settings.UninstallerListViewState));
+            {
+                try
+                {
+                    _mainWindow.uninstallerObjectListView.RestoreState(
+                        Convert.FromBase64String(Selected.Settings.UninstallerListViewState));
+                }
+                catch (Exception)
+                {
+                    // Failed to load listview state, likely old version that used binaryformatter
+                }
+            }
         }
 
         public void LoadSorting()
