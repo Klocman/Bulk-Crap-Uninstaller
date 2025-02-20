@@ -5935,7 +5935,7 @@ namespace BrightIdeasSoftware
         /// Instances of this class are used to store the state of an ObjectListView.
         /// </summary>
         [Serializable]
-        internal class ObjectListViewState
+        public class ObjectListViewState
         {
             // ReSharper disable NotAccessedField.Global
             public int VersionNumber = 1;
