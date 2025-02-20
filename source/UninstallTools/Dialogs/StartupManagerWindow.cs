@@ -31,19 +31,18 @@ namespace UninstallTools.Dialogs
             InitializeComponent();
 
             comboBoxFilter.SelectedIndex = 0;
+
+            columnHeader5.AspectToStringConverter = x => (!(bool)x).ToYesNo();
+            listView1.FormatRow += (sender, args) =>
+            {
+                if (args.Model is StartupEntryBase seb)
+                    args.Item.ForeColor = seb.Disabled ? SystemColors.GrayText : SystemColors.ControlText;
+            };
         }
 
         private List<StartupEntryBase> AllItems { get; set; }
 
-        private IEnumerable<StartupEntryBase> Selection
-        {
-            get { return listView1.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as StartupEntryBase); }
-        }
-
-        /*private IEnumerable<StartupEntryBase> VisibleItems
-        {
-            get { return listView1.Items.Cast<ListViewItem>().Select(x => x.Tag as StartupEntryBase); }
-        }*/
+        private IEnumerable<StartupEntryBase> Selection => listView1.SelectedObjects.Cast<StartupEntryBase>();
 
         /// <summary>
         ///     Show startup manager dialog. Returns latest startup entry list.
@@ -221,7 +220,7 @@ namespace UninstallTools.Dialogs
             Cursor = Cursors.WaitCursor;
             if (listView1.Items.Count < 1)
             {
-                listView1.Items.Add(Localisation.StartupManager_Loading);
+                listView1.EmptyListMsg = Localisation.StartupManager_Loading;
                 listView1.Update();
             }
 
@@ -250,6 +249,7 @@ namespace UninstallTools.Dialogs
 
             listView1.EndUpdate();
             Cursor = Cursors.Default;
+            listView1.EmptyListMsg = null;
         }
 
         private void UpdateList(bool pauseLvUpdates = true)
@@ -260,6 +260,10 @@ namespace UninstallTools.Dialogs
                 listView1.BeginUpdate();
             }
 
+            listView1.ClearObjects();
+
+            listView1.Sort(columnHeader1, SortOrder.Ascending);
+
             var query = from item in AllItems
                         where comboBoxFilter.SelectedIndex == 0 ||
                               comboBoxFilter.SelectedIndex == 1 && item is StartupEntry ||
@@ -267,23 +271,10 @@ namespace UninstallTools.Dialogs
                               comboBoxFilter.SelectedIndex == 3 && item is BrowserHelperEntry ||
                               comboBoxFilter.SelectedIndex == 4 && item is ServiceEntry
                         orderby item.ProgramName ascending
-                        select new ListViewItem(new[]
-                        {
-                    item.ProgramName,
-                    (!item.Disabled).ToYesNo(),
-                    item.Company,
-                    item.ParentShortName,
-                    item.Command
-                })
-                        {
-                            Tag = item,
-                            ForeColor = item.Disabled ? SystemColors.GrayText : SystemColors.ControlText,
-                            ImageIndex = Math.Max(listView1.SmallImageList.Images.IndexOfKey(item.ProgramName), 0)
-                        };
+                        select item;
 
             // Populate list items
-            listView1.Items.Clear();
-            listView1.Items.AddRange(query.ToArray());
+            listView1.SetObjects(query);
 
             if (pauseLvUpdates)
             {
