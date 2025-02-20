@@ -579,4 +579,16 @@
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Einen neuen Wiederherstellungspunkt setzen</value>
   </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatische Größenänderung aller Spalten</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verantwortung übernehmen</value>
+  </data>
 </root>
