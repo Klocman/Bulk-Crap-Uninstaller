@@ -143,6 +143,7 @@
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
+    <comment>jp translator: what's this?</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Modern UI ikonok</value>
@@ -153,9 +154,11 @@
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
     <value>NBug by Teoman Soygul</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>PortableSettingsProvider by CodeChimp</value>
+    <comment>1</comment>
   </data>
   <data name="linkLabel7.Text" xml:space="preserve">
     <value>Task Scheduler Managed Wrapper</value>
@@ -163,6 +166,7 @@
   </data>
   <data name="linkLabel8.Text" xml:space="preserve">
     <value>TestStack.White</value>
+    <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Használt eszközök</value>
@@ -181,5 +185,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>A BCUninstaller (Bulk Crap Uninstaller) névjegye</value>
+  </data>
+  <data name="linkLabel9.Text" xml:space="preserve">
+    <value>es.exe (CLI Everything-hez)</value>
   </data>
 </root>

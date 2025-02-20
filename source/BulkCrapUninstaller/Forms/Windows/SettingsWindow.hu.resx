@@ -210,4 +210,84 @@ Soronként egy teljes elérési útvonalat adjon meg. Az érvénytelen útvonala
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Színvak mód</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Felhasználó felület DPI-méretezésének engedélyezése</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Dupla kattintás az alkalmazáslistán</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>Mindig kérdezze</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>Soha ne kérdezze</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>Automatikusan ebbe a mappába:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>Biztonsági mentés a maradványok eltávolítása előtt</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>Felület</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>A Windows-frissítések keresése a WUA-t használja, ami lassú. Több percig is eltarthat, mire befejeződik.</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>A Windows-szolgáltatások keresése a WMI-t használja, ami lassú. Egyes rendszereken ez a folyamat akár meg is hiúsulhat (ami általában a rendszer sérülését jelzi).</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>Windows-szolgáltatások</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>Microsoft Store alkalmazások</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>Alkalmazásforrások az ellenőrzéshez</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>Beállításjegyzékben (ajánlott)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>Meghajtókban (nem regisztrált alkalmazásokat észlel)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>Előre meghatározott szabályok alapján</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Alkalmazások keresése...</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>Ellenőrzés</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Cserélhető meghajtók ellenőrzése</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>Egyéni telepítési mappák automatikus felismerése</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Inditás</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Hálózat</value>
+  </data>
 </root>

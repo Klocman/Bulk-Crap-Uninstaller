@@ -169,4 +169,28 @@ Ha úgy tűnik, hogy egy folyamat beragadt kattintson a "Kihagyás" gombra, hogy
   <data name="$this.Text" xml:space="preserve">
     <value>Eltávolítási folyamat</value>
   </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kihagyás</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Leállítás</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eltávolító futtatása most</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kézi eltávolítás</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Telepítési hely megnyitása</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tulajdonságok</value>
+  </data>
+  <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
+    <value>Kézi eltávolítás</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Számítógép alvó üzemmódba helyezése ha készen van</value>
+  </data>
 </root>

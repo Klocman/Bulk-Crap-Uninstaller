@@ -193,4 +193,13 @@ A leggyakrabban használt oszlopok csoportosítása intelligens szűréssel.</va
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Védett elemek, amelyek "NoRemove" címkével vannak ellátva. Ebben az esetben a kiadó nem akarja, hogy eltávolítsa ezeket.</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Javítások mutatása</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Különleges eltávolítók kiemelése</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Színek alkalmazása a speciális alkalmazások (Store alkalmazások, Windows szolgáltatások) megkülönböztetésére.</value>
+  </data>
 </root>
