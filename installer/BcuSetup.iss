@@ -1,14 +1,20 @@
-﻿#define MyAppName "BCUninstaller"
-#define MyAppNameShort "BCUninstaller"
-#define MyAppPublisher "Marcin Szeniak"
-#define MyAppURL "https://github.com/Klocman/Bulk-Crap-Uninstaller"
-#define MyAppExeName "BCUninstaller.exe"
-#define MyAppCopyright "Copyright 2024 Marcin Szeniak"
+﻿#define MyAppName          "BCUninstaller"
+#define MyAppNameShort     "BCUninstaller"
+#define MyAppPublisher     "Marcin Szeniak"
+#define MyAppURL           "https://github.com/Klocman/Bulk-Crap-Uninstaller"
+#define MyAppExeName       "BCUninstaller.exe"
+#define CurrentYear        GetDateTimeString('yyyy','','')
+#define MyAppCopyright     "Copyright " + CurrentYear + " " + MyAppPublisher
 
-#define MyAppVersion "5.8.3.0"
-#define MyAppVersionShort "5.8.3"
+#define InputDir           "..\bin\publish"
 
-#define InputDir "..\bin\publish"
+#define                    MajorVersion    
+#define                    MinorVersion    
+#define                    RevisionVersion    
+#define                    BuildVersion    
+#define TempVersion        ParseVersion(InputDir+'\win-x86\'+MyAppExeName, MajorVersion, MinorVersion, RevisionVersion, BuildVersion)
+#define MyAppVersion       str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion) + "." + str(BuildVersion)
+#define MyAppVersionShort  str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion)
 
 #include "Scripts\PortablePage.iss"
 #include "Scripts\PortableIcons.iss"
@@ -18,11 +24,14 @@
 AppId={{f4fef76c-1aa9-441c-af7e-d27f58d898d1}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName={#MyAppName}
+AppVerName={#MyAppName} {#MyAppVersion}
+
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
+
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
+
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
