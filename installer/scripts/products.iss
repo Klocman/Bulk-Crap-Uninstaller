@@ -14,6 +14,7 @@ es.depdownload_msg=Las siguientes aplicaciones son necesarias antes de continuar
 bpt.depdownload_msg=São necessários os estes aplicativos antes que a instalação continue:%n%n%1%nBaixar e instalar agora?
 ru.depdownload_msg=Для продолжения установки необходимы следующие приложения:%n%n%1%nЗагрузить и установить их сейчас?
 zh_cn.depdownload_msg=在继续设置之前，需要安装以下应用程序：%n%n%1%n 立即下载并安装？
+hi.depdownload_msg=सेटअप जारी रखने से पहले निम्नलिखित एप्लिकेशन आवश्यक हैं:%n%n%1%nक्या अभी डाउनलोड और इंस्टॉल करना चाहते हैं?
 
 depdownload_memo_title=Download dependencies
 pl.depdownload_memo_title=Pobierz zależności
@@ -26,6 +27,7 @@ es.depdownload_memo_title=Descargar dependencias
 bpt.depdownload_memo_title=Baixar dependencias
 ru.depdownload_memo_title=Загрузка зависимостей
 zh_cn.depdownload_memo_title=下载依赖项
+hi.depdownload_memo_title=निर्भरता डाउनलोड करें
 
 depinstall_memo_title=Install dependencies 
 pl.depinstall_memo_title=Zainstaluj zależności
@@ -38,6 +40,7 @@ es.depinstall_memo_title=Instalar dependencias
 bpt.depinstall_memo_title=Instalar dependencias
 ru.depinstall_memo_title=Установка зависимостей
 zh_cn.depinstall_memo_title=安装依赖项
+hi.depinstall_memo_title=निर्भरता स्थापित करें
 
 depinstall_title=Installing dependencies
 pl.depinstall_title=Instalacja zależności
@@ -50,6 +53,7 @@ es.depinstall_title=Instalando dependencias
 bpt.depinstall_title=Instalando dependencias
 ru.depinstall_title=Устанавливаются зависимости
 zh_cn.depinstall_title=正在安装依赖项
+hi.depinstall_title=निर्भरता स्थापित की जा रही हैं
 
 depinstall_description=Please wait while Setup installs dependencies on your computer.
 pl.depinstall_description=Poczekaj aż instalator instaluje zależności na twoim komputerze.
@@ -62,6 +66,7 @@ es.depinstall_description=Espere mientras el programa de instalación instala la
 bpt.depinstall_description=Aguarde enquanto Setup instala dependências no seu computador.
 ru.depinstall_description=Подождите, пока программа установки установит зависимости на ваш компьютер.
 zh_cn.depinstall_description=请稍候，安装程序将在您的计算机上安装依赖项。
+hi.depinstall_description=कृपया प्रतीक्षा करें जबकि सेटअप आपके कंप्यूटर पर निर्भरता स्थापित कर रहा है।
 
 depinstall_status=Installing %1...
 pl.depinstall_status=Instalacja %1...
@@ -74,6 +79,7 @@ es.depinstall_status=Instalando %1...
 bpt.depinstall_status=Instalando %1...
 ru.depinstall_status=Устанавливается %1...
 zh_cn.depinstall_status=安装 %1 中...
+hi.depinstall_status=%1 स्थापित किया जा रहा है...
 
 depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.
 pl.depinstall_missing=%1 musi być zainstalowany zanim instalacja może być kontynuowana. Zainstaluj %1 i ponownie uruchom program instalacyjny.
@@ -85,7 +91,8 @@ nl.depinstall_missing=%1 moet worden geïnstalleerd voor dat setup verder kan ga
 es.depinstall_missing=%1 debe ser instalado antes de que la instalación pueda continuar. Instalar %1 y vuelva a ejecutar el programa de instalación.
 bpt.depinstall_missing=%1 deve ser instalado antes que o setup continue. Instale %1 e rode o Setup de novo.
 ru.depinstall_missing=%1 должен быть установлен перед продолжением установки. Пожалуйста, установите %1 и запустите программу установки снова.
-zh_cn.depinstall_missing=在继续安装之前，必须安装 %1。请安装 %1 并再次运行安装程序。
+zh_cn.depinstall_missing=在继续安装之前，必须安装 %1。请安装 %1 并再次运行安装程序.
+hi.depinstall_missing=%1 को सेटअप जारी रखने से पहले स्थापित किया जाना चाहिए। कृपया %1 को स्थापित करें और फिर से सेटअप चलाएं।
 
 depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n
 pl.depinstall_error=Wystąpił błąd podczas instalowania zależności. Uruchom ponownie komputer i ponownie uruchom instalację lub ręcznie zainstaluj następujące zależności:%n
@@ -98,9 +105,9 @@ es.depinstall_error=Error al instalar las dependencias. Reinicie el equipo y vue
 bpt.depinstall_error=Ocorreu um erro ao instalar as dependências. Reinicie o computador e execute o Setup novamente ou instale as seguintes dependências manualmente:%n
 ru.depinstall_error=Произошла ошибка при установке зависимостей. Перезагрузите компьютер и снова запустите установку программы, или установите следующие зависимости вручную:%n
 zh_cn.depinstall_error=安装依赖项时出现错误。请重启计算机并再次运行安装程序，或手动安装以下依赖项：%n
+hi.depinstall_error=निर्भरता स्थापित करते समय एक त्रुटि हुई। कृपया कंप्यूटर को पुनः आरंभ करें और सेटअप फिर से चलाएं या निम्नलिखित निर्भरताओं को मैन्युअल रूप से स्थापित करें:%n
 
 isxdl_langfile=
-
 
 [Files]
 Source: "scripts\isxdl\english.ini"; Flags: dontcopy; Languages: en 
@@ -109,6 +116,7 @@ Source: "scripts\isxdl\german2.ini"; Flags: dontcopy; Languages: de
 Source: "scripts\isxdl\french2.ini"; Flags: dontcopy; Languages: fr
 Source: "scripts\isxdl\spanish.ini"; Flags: dontcopy; Languages: es
 Source: "scripts\isxdl\russian.ini"; Flags: dontcopy; Languages: ru
+Source: "scripts\isxdl\Hindi.ini"; Flags: dontcopy; Languages: hi
 
 [Code]
 type
@@ -128,24 +136,19 @@ var
 	delayedReboot: boolean;
 	DependencyPage: TOutputProgressWizardPage;
 
-
 procedure AddProduct(FileName, Parameters, Title, Size, URL: string; InstallClean : boolean; MustRebootAfter : boolean);
 var
 	path: string;
 	i: Integer;
 begin
 	installMemo := installMemo + '%1' + Title + #13;
-
 	path := ExpandConstant('{src}{\}') + CustomMessage('DependenciesDir') + '\' + FileName;
 	if not FileExists(path) then begin
 		path := ExpandConstant('{tmp}{\}') + FileName;
-
 		isxdl_AddFile(URL, path);
-
 		downloadMemo := downloadMemo + '%1' + Title + #13;
 		downloadMessage := downloadMessage + '	' + Title + ' (' + Size + ')' + #13;
 	end;
-
 	i := GetArrayLength(products);
 	SetArrayLength(products, i + 1);
 	products[i].File := path;
@@ -182,25 +185,18 @@ var
 begin
 	Result := InstallSuccessful;
 	productCount := GetArrayLength(products);
-
 	if productCount > 0 then begin
 		DependencyPage := CreateOutputProgressPage(CustomMessage('depinstall_title'), CustomMessage('depinstall_description'));
 		DependencyPage.Show;
-
 		for i := 0 to productCount - 1 do begin
 			if (products[i].InstallClean and (delayedReboot or PendingReboot())) then begin
 				Result := InstallRebootRequired;
 				break;
 			end;
-
 			DependencyPage.SetText(FmtMessage(CustomMessage('depinstall_status'), [products[i].Title]), '');
 			DependencyPage.SetProgress(i, productCount);
-
 			if SmartExec(products[i], ResultCode) then begin
-				//setup executed; ResultCode contains the exit code
-				//MsgBox(products[i].Title + ' install executed. Result Code: ' + IntToStr(ResultCode), mbInformation, MB_OK);
 				if (products[i].MustRebootAfter) then begin
-					//delay reboot after install if we installed the last dependency anyways
 					if (i = productCount - 1) then begin
 						delayedReboot := true;
 					end else begin
@@ -210,7 +206,6 @@ begin
 				end else if (ResultCode = 0) then begin
 					finishCount := finishCount + 1;
 				end else if (ResultCode = 3010) then begin
-					//ResultCode 3010: A restart is required to complete the installation. This message indicates success.
 					delayedReboot := true;
 					finishCount := finishCount + 1;
 				end else begin
@@ -218,18 +213,14 @@ begin
 					break;
 				end;
 			end else begin
-				//MsgBox(products[i].Title + ' install failed. Result Code: ' + IntToStr(ResultCode), mbInformation, MB_OK);
 				Result := InstallError;
 				break;
 			end;
 		end;
-
-		//only leave not installed products for error message
 		for i := 0 to productCount - finishCount - 1 do begin
 			products[i] := products[i+finishCount];
 		end;
 		SetArrayLength(products, productCount - finishCount);
-
 		DependencyPage.Hide;
 	end;
 end;
@@ -240,24 +231,19 @@ var
 	s: string;
 begin
 	delayedReboot := false;
-
 	case InstallProducts() of
 		InstallError: begin
 			s := CustomMessage('depinstall_error');
-
 			for i := 0 to GetArrayLength(products) - 1 do begin
 				s := s + #13 + '	' + products[i].Title;
 			end;
-
 			Result := s;
-			end;
+		end;
 		InstallRebootRequired: begin
 			Result := products[0].Title;
 			NeedsRestart := true;
-
-			//write into the registry that the installer needs to be executed again after restart
 			RegWriteStringValue(HKEY_CURRENT_USER, 'SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', 'InstallBootstrap', ExpandConstant('{srcexe}'));
-			end;
+		end;
 	end;
 end;
 
@@ -275,28 +261,21 @@ begin
 		s := s + CustomMessage('depdownload_memo_title') + ':' + NewLine + FmtMessage(downloadMemo, [Space]) + NewLine;
 	if installMemo <> '' then
 		s := s + CustomMessage('depinstall_memo_title') + ':' + NewLine + FmtMessage(installMemo, [Space]) + NewLine;
-
-	s := s + MemoDirInfo + NewLine + NewLine + MemoGroupInfo
-
+	s := s + MemoDirInfo + NewLine + NewLine + MemoGroupInfo;
 	if MemoTasksInfo <> '' then
 		s := s + NewLine + NewLine + MemoTasksInfo;
-
 	Result := s
 end;
 
 function NextButtonClick(CurPageID: Integer): boolean;
 begin
 	Result := true;
-
 	if CurPageID = wpReady then begin
 		if downloadMemo <> '' then begin
-			//change isxdl language only if it is not english because isxdl default language is already english
 			if (ActiveLanguage() <> 'en') then begin
 				ExtractTemporaryFile(CustomMessage('isxdl_langfile'));
 				isxdl_SetOption('language', ExpandConstant('{tmp}{\}') + CustomMessage('isxdl_langfile'));
 			end;
-			//isxdl_SetOption('title', FmtMessage(SetupMessage(msgSetupWindowTitle), [CustomMessage('appname')]));
-
 			if SuppressibleMsgBox(FmtMessage(CustomMessage('depdownload_msg'), [downloadMessage]), mbConfirmation, MB_YESNO, IDYES) = IDNO then
 				Result := false
 			else if isxdl_DownloadFiles(StrToInt(ExpandConstant('{wizardhwnd}'))) = 0 then
