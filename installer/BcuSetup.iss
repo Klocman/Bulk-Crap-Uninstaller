@@ -71,6 +71,7 @@ Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "hu"; MessagesFile: "lang\Hungarian.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
 Name: "tr"; MessagesFile: "lang\Turkish.isl"
+Name: "hi"; MessagesFile: "lang\Hindi.isl"
 Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
 [Components]
@@ -113,6 +114,7 @@ it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
 tr.MainFiles=Ana Dosyalar
 zh_cn.MainFiles=主文件
+hi.MainFiles=मुख्य फ़ाइलें
 
 en.ExtraLanguages=Extra Languages
 pl.ExtraLanguages=Dodatkowe języki
@@ -128,3 +130,4 @@ it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
 tr.ExtraLanguages=İlave Diller
 zh_cn.ExtraLanguages=其他语言
+hi.ExtraLanguages=अतिरिक्त भाषाएँ

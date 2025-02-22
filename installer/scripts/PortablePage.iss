@@ -17,6 +17,7 @@ it.InstallPortableTitle =Installazione portatile
 vi.InstallPortableTitle =Cài đặt di động
 tr.InstallPortableTitle =Taşınabilir Kurulum
 zh_cn.InstallPortableTitle =便携式安装
+hi.InstallPortableTitle=पोर्टेबल स्थापना
 
 InstallTypeChoiceTitle =Installation type
 pl.InstallTypeChoiceTitle =Typ instalacji
@@ -32,6 +33,7 @@ it.InstallTypeChoiceTitle =Tipo di installazione
 vi.InstallTypeChoiceTitle =Loại cài đặt
 tr.InstallTypeChoiceTitle =Kurulum tipi
 zh_cn.InstallTypeChoiceTitle =安装方式
+hi.InstallTypeChoiceTitle=स्थापना प्रकार
 
 InstallStandardTitle =Standard Installation
 pl.InstallStandardTitle =Instalacja standardowa
@@ -47,6 +49,7 @@ it.InstallStandardTitle =Installazione standard
 vi.InstallStandardTitle =Cài đặt chuẩn
 tr.InstallStandardTitle =Standart Kurulum
 zh_cn.InstallStandardTitle =标准安装
+hi.InstallStandardTitle=मानक स्थापना
 
 InstallPortableInfo =Portable installation will not register itself in the system, it will only extract files to the specified directory. You can set the directory to anything you''d like, for example to a USB drive. You will be able to move this directory freely since the whole app is inside of it.
 pl.InstallPortableInfo =Instalacja przenośna nie zostanie zarejestrowana w systemie, zostaną tylko wypakowane pliki. Pliki mogą zostać wypakowane do dowolnego folderu i mogą być bez problemu przenoszone. Wszystkie pliki używane przez tą aplikację będą przechowywane w wybranym folderze.
@@ -61,6 +64,7 @@ ru.InstallPortableInfo =Переносимая установка не реги�
 it.InstallPortableInfo =L'installazione portatile non si registrerà nel sistema, estrarrà solo i file nella cartella specificata. Puoi impostare la cartella in qualsiasi percorso, ad esempio in un'unità USB. Sarai in grado di spostare questa cartella liberamente poiché l'intera app è al suo interno.
 tr.InstallPortableInfo =Taşınabilir kurulumda dosyaları sisteme kaydetmez, sadece dosyaları belirtilen dizine çıkarır. Yazılımı istediğiniz herhangi bir yer yapabilirsiniz, örneğin bir USB sürücüsüne ayarlayabilirsiniz. Tüm yazılım, tek bir dosyanın içinde olduğu için bu yazılımı serbestçe taşıyabileceksiniz.
 zh_cn.InstallPortableInfo =便携式安装不会在系统中注册，只会将文件解压缩到指定目录。您可以将目录设置为任何您想要的位置，例如 USB 驱动器。您可以自由移动该目录，因为整个程序都在其中。
+hi.InstallPortableInfo=पोर्टेबल स्थापना अपने आप सिस्टम में रजिस्टर नहीं होगी, बल्कि केवल निर्दिष्ट निर्देशिका में फाइलें एक्सट्रैक्ट करेगी। आप इस निर्देशिका को किसी भी स्थान पर सेट कर सकते हैं, उदाहरण के लिए USB ड्राइव पर। चूंकि सम्पूर्ण ऐप उसी निर्देशिका में है, आप इसे स्वतंत्र रूप से स्थानांतरित कर सकेंगे।
 
 InstallStandardInfo =This option will install BCUninstaller on your computer as a normal application. Standard uninstaller will be created and it will be visible under "Programs and Features" as well as in other third-party uninstallers.
 pl.InstallStandardInfo =Ta aplikacja zostanie zainstalowana i zarejestrowana w tym systemie. Zostanie stworzony deinstalator i będzie on widoczny w panelu sterowania i innych deinstalatorach.
@@ -75,6 +79,8 @@ ru.InstallStandardInfo =Эта опция установит BCUninstaller на 
 it.InstallStandardInfo =Questa opzione abiliterà l'installazione di BCUninstaller nel computer come una normale applicazione. Verrà creato il programma di disinstallazione standard e sarà visibile in "Programmi e funzionalità" così come in altri programmi di disinstallazione di terze parti.
 tr.InstallStandardInfo =Bu seçenek BCUninstaller'ı bilgisayarınıza normal bir yazılım olarak yükleyecektir. Standart kaldırıcı oluşturulacak ve diğer üçüncü taraf kaldırıcıların yanı sıra “Program ekle ve kaldır” altında da görülebilecektir.
 zh_cn.InstallStandardInfo =此选项会将 BCUninstaller 作为普通应用程序安装到电脑上。标准卸载程序将被创建，并在 “程序和功能 ”以及其他第三方卸载程序中可见。
+hi.InstallStandardInfo=यह विकल्प BCUninstaller को आपके कंप्यूटर पर सामान्य ऐप्लिकेशन के रूप में इंस्टॉल करेगा। एक मानक अनइंस्टॉलर बनाया जाएगा और यह 'प्रोग्राम्स और फीचर्स' के अंतर्गत तथा अन्य थर्ड-पार्टी अनइंस्टॉलर में दिखाई देगा.
+
 
 [Code]
 var
