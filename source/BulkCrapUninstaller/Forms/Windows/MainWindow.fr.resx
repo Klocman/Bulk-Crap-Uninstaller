@@ -121,7 +121,7 @@
     <value>Nom</value>
   </data>
   <data name="olvColumnPublisher.Text" xml:space="preserve">
-    <value>Editeur</value>
+    <value>Éditeur</value>
   </data>
   <data name="olvColumnInstallDate.Text" xml:space="preserve">
     <value>Date d'installation</value>
@@ -388,7 +388,7 @@
     <value>Désinstaller BCUninstaller</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>A &amp;propos</value>
+    <value>À &amp;propos</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Ai&amp;de</value>
@@ -454,7 +454,7 @@
     <value>Avancé...</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir les Apps Windows Store</value>
+    <value>Voir les Applis Windows Store</value>
   </data>
   <data name="advancedClipCopyToolStripMenuItem.Text" xml:space="preserve">
     <value>Avancé...</value>

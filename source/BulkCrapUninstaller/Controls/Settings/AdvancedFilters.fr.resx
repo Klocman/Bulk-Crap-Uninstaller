@@ -142,7 +142,7 @@
     <value>Filtrage basique</value>
   </data>
   <data name="toolStripButtonAddSelectedAsFilters.Text" xml:space="preserve">
-    <value>Ajouter apps sélectionnées comme filtres</value>
+    <value>Ajouter applis sélectionnées comme filtres</value>
   </data>
   <data name="toolStripButtonDelete.Text" xml:space="preserve">
     <value>Supprimer le défaut</value>

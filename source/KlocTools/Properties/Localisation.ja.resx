@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_SeparateArgsFromCommand_NoDot" xml:space="preserve">
-    <value>ファイル名には、ドットで区切られた拡張子が必要です。</value>
+    <value>ファイル名にはドットで区切られた拡張子が必要です。</value>
   </data>
   <data name="Enums_YesNoAsk_Ask" xml:space="preserve">
-    <value>尋ねる</value>
+    <value>聞く</value>
   </data>
   <data name="Error_SeparateArgsFromCommand_Empty" xml:space="preserve">
-    <value>ファイル名を空にすることはできません。</value>
+    <value>ファイル名は空にできません。</value>
   </data>
   <data name="Error_SeparateArgsFromCommand_MissingQuotationMark" xml:space="preserve">
-    <value>末尾のクォーテーションマークがありません。</value>
+    <value>終了引用符が欠けています。</value>
   </data>
   <data name="FileSize_GB_Long" xml:space="preserve">
     <value>ギガバイト</value>
@@ -160,13 +160,13 @@
     <value>はい</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Days_Since" xml:space="preserve">
-    <value>{0} 日前</value>
+    <value>{0}日前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Days_Single" xml:space="preserve">
     <value>昨日</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Hours_Since" xml:space="preserve">
-    <value>{0} 時間前</value>
+    <value>{0}時間前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Hours_Single" xml:space="preserve">
     <value>1時間前</value>
@@ -175,71 +175,75 @@
     <value>たった今</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Minutes_Since" xml:space="preserve">
-    <value>{0} 分前</value>
+    <value>{0}分前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Minutes_Single" xml:space="preserve">
     <value>1分前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Months_Since" xml:space="preserve">
-    <value>{0} 月前</value>
+    <value>{0}ヶ月前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Months_Single" xml:space="preserve">
     <value>1ヶ月前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Years_Since" xml:space="preserve">
-    <value>{0} 年前</value>
+    <value>{0}年前</value>
   </data>
   <data name="ToFuzzyTimeSinceString_Years_Single" xml:space="preserve">
     <value>1年前</value>
   </data>
   <data name="PremadeDialogs_GenericError_InnerExceptionTitle" xml:space="preserve">
-    <value>Inner:</value>
+    <value>内部:</value>
   </data>
   <data name="PremadeDialogs_GenericError_Heading" xml:space="preserve">
-    <value>アプリケーションが予期せぬエラーに遭遇しました</value>
+    <value>アプリケーションが予期しないエラーに遭遇しました</value>
   </data>
   <data name="PremadeDialogs_GenericError_Title" xml:space="preserve">
-    <value>予期せぬエラー</value>
+    <value>予期しないエラー</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Details" xml:space="preserve">
-    <value>保存していないデータが失われる可能性があります。データの消失を防ぐため、アプリケーションを手動で終了させてください。</value>
+    <value>保存されていないデータが失われる可能性があります。データ損失を防ぐために、アプリケーションを手動で閉じてください。</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Message" xml:space="preserve">
-    <value>本当にすべてのプロセスを終了させますか？</value>
+    <value>すべてのプロセスを終了してもよろしいですか？</value>
   </data>
   <data name="PremadeDialogs_KillRunningProcessesQuestion_Title" xml:space="preserve">
-    <value>実行中のプロセスを終了する</value>
+    <value>実行中のプロセスを終了</value>
   </data>
   <data name="RegistryTools_AddRegToRegistry_FileNotExist" xml:space="preserve">
-    <value>パスが有効な .reg ファイルを指していません。</value>
+    <value>パスが有効な .reg ファイルを指していません</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_PathEmptyNull" xml:space="preserve">
-    <value>パスは空またはNULLではありません。</value>
+    <value>パスは空またはヌルにできません</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_PointsAtRoot" xml:space="preserve">
-    <value>パスはルートキーを指すことができません</value>
+    <value>パスはルートキーを指すことはできません</value>
   </data>
   <data name="RegistryTools_RemoveRegistryKey_RemoveDefault" xml:space="preserve">
     <value>デフォルト値を削除できません</value>
   </data>
   <data name="PremadeDialogs_GenericErrorExtendedSafe_Heading" xml:space="preserve">
-    <value>エラーの詳細</value>
+    <value>エラーの詳細:</value>
   </data>
   <data name="PremadeDialogs_GenericError_Details" xml:space="preserve">
-    <value>このエラーはアプリケーションをシャットダウンする必要はありませんが、一部の機能が動作しなくなる可能性があります。ファイルシステムに関連するほとんどのエラーは、安全に無視することができます。
+    <value>このエラーはアプリケーションを終了する必要はありませんが、一部の機能が停止する可能性があります。
 
+ファイルシステムに関連するほとんどのエラーは無視しても問題ありません。
 エラーメッセージ: {0}
 
-"コピー"ボタンをクリックすると、このエラーに関する詳細情報をクリップボードにコピーすることができます。このエラー情報を開発者に送信することを検討してください。</value>
+"コピー"ボタンをクリックすることで、このエラーに関する詳細情報をクリップボードにコピーできます。
+
+このエラー情報を開発者に送信することを検討してください。
+</value>
   </data>
   <data name="FileInfo_CreationTime" xml:space="preserve">
-    <value>作成時間</value>
+    <value>作成日時</value>
   </data>
   <data name="FileInfo_LastAccessTime" xml:space="preserve">
-    <value>最終アクセス時刻</value>
+    <value>最終アクセス日時</value>
   </data>
   <data name="FileInfo_LastWriteTime" xml:space="preserve">
-    <value>最終書き込み時間</value>
+    <value>最終書き込み日時</value>
   </data>
   <data name="FileInfo_Attributes" xml:space="preserve">
     <value>属性</value>
@@ -260,7 +264,7 @@
     <value>ディレクトリ</value>
   </data>
   <data name="FileInfo_Exists" xml:space="preserve">
-    <value>ドライブに存在する</value>
+    <value>ドライブに存在</value>
   </data>
   <data name="FileInfo_Comments" xml:space="preserve">
     <value>コメント</value>
@@ -269,25 +273,25 @@
     <value>会社名</value>
   </data>
   <data name="FileInfo_FileDescription" xml:space="preserve">
-    <value>ファイル名</value>
+    <value>説明</value>
   </data>
   <data name="FileInfo_FileVersion" xml:space="preserve">
     <value>ファイルバージョン</value>
   </data>
   <data name="FileInfo_InternalName" xml:space="preserve">
-    <value>内部名称</value>
+    <value>内部名</value>
   </data>
   <data name="FileInfo_Language" xml:space="preserve">
     <value>言語</value>
   </data>
   <data name="FileInfo_LegalCopyright" xml:space="preserve">
-    <value>著作権について</value>
+    <value>著作権</value>
   </data>
   <data name="FileInfo_LegalTrademarks" xml:space="preserve">
-    <value>商標について</value>
+    <value>商標</value>
   </data>
   <data name="FileInfo_OriginalFilename" xml:space="preserve">
-    <value>オリジナルファイル名</value>
+    <value>元のファイル名</value>
   </data>
   <data name="FileInfo_ProductName" xml:space="preserve">
     <value>製品名</value>

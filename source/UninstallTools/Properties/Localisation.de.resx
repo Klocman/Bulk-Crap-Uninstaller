@@ -574,4 +574,14 @@
   <data name="Progress_AppStores" xml:space="preserve">
     <value>Überprüfe Anwendungs Store</value>
   </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Debug-Tracing/Protokollierung Konfiguration</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Auf der Suche nach Scoop-Paketen</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Könnte zu einer anderen Anwendung mit einem ähnlichen Namen gehören</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
 </root>

@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelMessage.Text" xml:space="preserve">
-    <value>削除するファイルを選択してください。どの項目もダブルクリックするとエクスプローラーで見ることができます。完全なパスを表示するには、項目の上にカーソルを置いてください。
-警告：不要だとわかっているファイルだけを削除してください。</value>
+    <value>削除するファイルを選択してください。
+
+アイテムをダブルクリックすると、エクスプローラーで表示できます。
+
+フルパスを確認するには、アイテムにカーソルを合わせてください。
+
+警告: 必要ないことがわかっているファイルのみを削除してください。
+</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
-    <value>Nombre d'arguments invalide. Passer le chemin complet du dossier pour supprimer comme un argument, et en option /q pour le mode silencieux.</value>
+    <value>Nombre d'arguments invalide. Passer le chemin complet du dossier à supprimer comme un argument, et en option /q pour le mode silencieux.</value>
   </data>
   <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
     <value>Désinstalleur Universel</value>
@@ -127,7 +127,7 @@
     <value>Suppression d'éléments</value>
   </data>
   <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
-    <value>Echec à la suppression de quelques éléments</value>
+    <value>Échec à la suppression de quelques éléments</value>
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
     <value>Supprimer "{0}"</value>

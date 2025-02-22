@@ -279,4 +279,13 @@ Verwenden Sie vollständige Verzeichnispfade, ein Pfad pro Zeile. Ungültige Pfa
     <value>Farbblinden Einstellung</value>
     <comment>Switches colors to be better for color-blind people</comment>
   </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Aktivieren der DPI-kompatiblen Skalierung der Oberfläche</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Doppelklick in der Anwendungsliste</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
 </root>

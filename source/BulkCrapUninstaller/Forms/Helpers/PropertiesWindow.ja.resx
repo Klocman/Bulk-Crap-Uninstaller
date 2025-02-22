@@ -121,14 +121,14 @@
     <value>クリップボードにコピー</value>
   </data>
   <data name="saveToFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>ファイルを保存する</value>
+    <value>ファイルに保存...</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>テキストファイル |*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
   <data name="saveFileDialog1.Title" xml:space="preserve">
-    <value>データをファイルに保存する</value>
+    <value>データをファイルに保存</value>
   </data>
   <data name="tabPageOverview.Text" xml:space="preserve">
     <value>概要</value>

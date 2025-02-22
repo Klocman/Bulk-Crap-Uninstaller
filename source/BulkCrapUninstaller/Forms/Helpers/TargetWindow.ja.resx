@@ -118,17 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>ウィンドウで選択する</value>
+    <value>ウィンドウを使って選択</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>インストールフォルダーやプログラムファイルを使って選択する</value>
+    <value>インストールフォルダーまたはプログラムファイルを使って選択</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>ウィンドウ、ショートカット、インストール先、.exeファイルのいずれかに基づいて、アプリケーションを検索してアンインストールします。</value>
+    <value>ウィンドウ、ショートカット、またはインストール場所や.exeファイルのいずれかに基づいてアプリケーションを見つけてアンインストールします。</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>注意：選択したファイルが、アプリケーションのインストール先ディレクトリ内にあることを確認してください。
-複数のアプリケーションを含むディレクトリを選択して、すべてのアプリケーションをアンインストールすることができます。</value>
+    <value>注意: 選択するファイルがアプリケーションのインストールディレクトリ内にあることを確認してください。
+
+複数のアプリケーションをアンインストールするために、複数のアプリケーションを含むディレクトリを選択することができます。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>アプリケーションを対象にする</value>

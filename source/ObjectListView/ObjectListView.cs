@@ -586,6 +586,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Runtime.Serialization.Formatters;
 using System.Threading;
+using System.Xml.Serialization;
 
 namespace BrightIdeasSoftware
 {
@@ -5866,8 +5867,7 @@ namespace BrightIdeasSoftware
             // Now that we have stored our state, convert it to a byte array
             using (MemoryStream ms = new MemoryStream())
             {
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.AssemblyFormat = FormatterAssemblyStyle.Simple;
+                var serializer = new XmlSerializer(typeof(ObjectListViewState));
 #pragma warning disable SYSLIB0011
                 serializer.Serialize(ms, olvState);
 #pragma warning restore SYSLIB0011
@@ -5885,7 +5885,7 @@ namespace BrightIdeasSoftware
         {
             using (MemoryStream ms = new MemoryStream(state))
             {
-                BinaryFormatter deserializer = new BinaryFormatter();
+                var deserializer = new XmlSerializer(typeof(ObjectListViewState));
                 ObjectListViewState olvState;
                 try
                 {
@@ -5935,7 +5935,7 @@ namespace BrightIdeasSoftware
         /// Instances of this class are used to store the state of an ObjectListView.
         /// </summary>
         [Serializable]
-        internal class ObjectListViewState
+        public class ObjectListViewState
         {
             // ReSharper disable NotAccessedField.Global
             public int VersionNumber = 1;

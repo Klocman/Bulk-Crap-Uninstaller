@@ -118,19 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="olvColumnName.Text" xml:space="preserve">
-    <value>関連アンインストーラー名</value>
+    <value>関連するアンインストーラー名</value>
   </data>
   <data name="olvColumnEnabled.Text" xml:space="preserve">
-    <value>タスクを追加</value>
+    <value>タスクに追加</value>
   </data>
   <data name="olvColumnRelatedApps.Text" xml:space="preserve">
-    <value>に関連した</value>
+    <value>関連アプリ：</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>これは、あなたがアンインストールするアプリケーションを選んだ場合に、それに関連する可能性のあるアプリケーションのリストです。
-これらのアプリケーションにチェックを入れることで、アンインストールキューに追加することができます。</value>
+    <value>これは、アンインストールすることに選択したアプリケーションに関連している可能性があるアプリケーションのリストです。これらのアプリケーションをアンインストールキューに追加するには、チェックを入れてください。</value>
   </data>
   <data name="labelInfo2.Text" xml:space="preserve">
-    <value>他のアプリケーションが正常に動作するために必要な重要なソフトウェアをアンインストールしないように注意してください。</value>
+    <value>他のアプリケーションが正常に動作するために必要な重要なソフトウェアをアンインストールしないようにしてください。</value>
   </data>
 </root>

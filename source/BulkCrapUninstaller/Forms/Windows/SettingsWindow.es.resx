@@ -284,4 +284,7 @@ Utilice rutas de directorio completas, una ruta por línea. Las rutas no válida
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Red</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Doble clic en la lista de aplicaciones</value>
+  </data>
 </root>

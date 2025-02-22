@@ -118,84 +118,85 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="comboBoxFilter.Items" xml:space="preserve">
-    <value>すべてを表示する</value>
+    <value>すべてを表示</value>
   </data>
   <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>スタートアップエントリーを表示する</value>
+    <value>スタートアップエントリーを表示</value>
   </data>
   <data name="comboBoxFilter.Items2" xml:space="preserve">
     <value>タスクの表示</value>
   </data>
   <data name="comboBoxFilter.Items3" xml:space="preserve">
-    <value>ブラウザの拡張機能を表示する</value>
+    <value>ブラウザ拡張機能を表示</value>
   </data>
   <data name="comboBoxFilter.Items4" xml:space="preserve">
-    <value>サービスを表示する</value>
-  </data>
-  <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>リフレッシュ</value>
+    <value>サービスを表示</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
   <data name="buttonExport.Text" xml:space="preserve">
-    <value>エクスポート</value>
+    <value>エクスポート...</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>プログラム名</value>
   </data>
   <data name="columnHeader5.Text" xml:space="preserve">
-    <value>有効期限</value>
+    <value>有効</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
-    <value>出版社</value>
+    <value>発行者</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>位置情報</value>
+    <value>位置</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>コマンド</value>
   </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;実行ファイルの場所を開く</value>
+    <value>&amp;実行可能ファイルの場所を開く</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>リンク先を開く</value>
+    <value>リンクの場所を開く</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;コマンドを実行する</value>
+    <value>&amp;コマンドを実行</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;クリップボードにコピーする</value>
+    <value>&amp;クリップボードにコピー</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>作成 &amp;バックアップ</value>
+    <value>&amp;バックアップを作成...</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
-    <value>レジストリに移動する</value>
+    <value>レジストリに移動</value>
   </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
-    <value>すべてのユーザーに対して実行する</value>
+    <value>すべてのユーザーのために実行</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;有効化</value>
+    <value>&amp;有効</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;削除</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>ユーザーの操作なしで自動的に実行できるコマンドのリスト</value>
+    <value>ユーザーの介入なしに自動的に実行できるコマンドのリスト</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>テキスト ファイル |*.txt</value>
+    <value>テキストファイル|*.txt</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>スタートアップエントリーのエクスポート</value>
+    <value>スタートアップエントリをエクスポート...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>バックアップのための空のディレクトリを選択します。</value>
+    <value>バックアップ用の空のディレクトリを選択してください。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>スタートアップマネージャー</value>
+  </data>
+  <data name="buttonRefresh.Text" xml:space="preserve">
+    <value>更新</value>
+    <comment>更新</comment>
   </data>
 </root>

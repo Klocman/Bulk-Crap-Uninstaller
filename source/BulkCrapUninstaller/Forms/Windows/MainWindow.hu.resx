@@ -325,7 +325,7 @@
     <value>Ren&amp;dszertéma használata</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Windows Áruházbeli alkalmazások megtekintése</value>
+    <value>Microsoft Store alkalmazások mutatása</value>
   </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>Keresés...</value>
@@ -427,7 +427,7 @@
     <value>&amp;Speciális műveletek</value>
   </data>
   <data name="cleanUpProgramFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>"Program Files" ma&amp;appák kitakarítása...</value>
+    <value>"Program Files" mappák &amp;kitakarítása...</value>
   </data>
   <data name="openStartupManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Indítópult kezelő megnyitása</value>
@@ -484,7 +484,7 @@
     <value>Bulk Crap Uninstaller</value>
   </data>
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Frissítések megtekintése</value>
+    <value>Frissítések mutatása</value>
   </data>
   <data name="fossHubcomToolStripMenuItem.Text" xml:space="preserve">
     <value>FossHub.com</value>
@@ -509,5 +509,86 @@
   </data>
   <data name="toolStripMenuItem19.Text" xml:space="preserve">
     <value>FileHippo.com</value>
+  </data>
+  <data name="toolStripButtonTarget.Text" xml:space="preserve">
+    <value>Eltávolítás ablak, mappa vagy fájl segítségével...</value>
+  </data>
+  <data name="toolStripButtonModify.Text" xml:space="preserve">
+    <value>Módosítás</value>
+  </data>
+  <data name="excludeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ne tartalmazza</value>
+  </data>
+  <data name="includeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tartalmazza</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="showTreemapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mappafa&amp;térkép mutatása</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Összes oszlop automatikus méretezése</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Gyorsszűrők</value>
+  </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportálás egy kötegelt eltávolítási szkriptbe...</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>PowerShell eltávolító szkript létrehozása a Microsoft Store alkalmazásokhoz...</value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alapértelmezett szűrők</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csak sima alkalmazások</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csak rendszerösszetevők</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Minden</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csak automatikusan indulók</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csak böngészők</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Javítások mutatása</value>
+  </data>
+  <data name="viewUnregisteredToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nem regisztráltak mutatása</value>
+  </data>
+  <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Windows-szolgáltatások mutatása</value>
+  </data>
+  <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Módosítás</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tulajdonba vétel</value>
+  </data>
+  <data name="targetMenuItem.Text" xml:space="preserve">
+    <value>Eltávolítás ablak, mappa vagy fájl segítségével...</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eltávolítási problémák hibaelhárítása...</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lemezkarbantartó indítása</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>.NET v3.5 telepítése (funkcíó hozzádása)</value>
+  </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Új visszaállítási pont létrehozása</value>
   </data>
 </root>

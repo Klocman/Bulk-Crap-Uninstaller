@@ -771,4 +771,16 @@ Para modificar esta entrada tiene que desactivar la protecci√≥n de desinstalaci√
     <value>Poniendo la PC en reposo en {0}s.
 Desmarque la casilla de reposo para cancelar.</value>
   </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>No hace nada</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Abre las propiedades</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Desinstala</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>

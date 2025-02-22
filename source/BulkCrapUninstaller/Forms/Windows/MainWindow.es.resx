@@ -588,4 +588,7 @@
   <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
     <value>Solucionar problemas de desinstalación...</value>
   </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Redimensionar automáticamente todas las columnas</value>
+  </data>
 </root>

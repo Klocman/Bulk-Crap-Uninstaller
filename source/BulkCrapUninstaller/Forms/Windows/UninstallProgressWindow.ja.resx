@@ -139,13 +139,13 @@
     <value>スキップ</value>
   </data>
   <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
-    <value>終了する</value>
+    <value>終了</value>
   </data>
   <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
-    <value>今すぐアンインストーラを実行する</value>
+    <value>今すぐアンインストーラーを実行</value>
   </data>
   <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
-    <value>手動でアンインストールする</value>
+    <value>手動アンインストール</value>
   </data>
   <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>インストールディレクトリを開く</value>
@@ -154,23 +154,23 @@
     <value>プロパティ</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>選択されたアンインストーラは、一度に1つずつ実行されます。
-プロセスが止まっているように見える場合は、「スキップ」ボタンをクリックして、スタックしたタスクを避けることができます。アンインストールのスタックは、アンインストーラがクラッシュしたり、新しいプロセスを開始したり、それを閉じない時に発生することがあります。</value>
+    <value>選択したアンインストーラーは、1つずつ実行されます。
+プロセスがハングしているように見える場合は、「スキップ」ボタンをクリックして完了を待たずに進むことができます。これは、アンインストーラーがクラッシュしたり、新しいプロセスを開始して閉じない場合に発生することがあります。</value>
   </data>
   <data name="toolStripButtonRun.Text" xml:space="preserve">
-    <value>アンインストーラを実行する</value>
+    <value>アンインストーラーを実行</value>
   </data>
   <data name="toolStripButtonSkip.Text" xml:space="preserve">
-    <value>スキップする</value>
+    <value>スキップ</value>
   </data>
   <data name="toolStripButtonTerminate.Text" xml:space="preserve">
-    <value>終了する</value>
+    <value>終了</value>
   </data>
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
-    <value>手動でアンインストールする</value>
+    <value>手動でアンインストール</value>
   </data>
   <data name="toolStripButtonFolderOpen.Text" xml:space="preserve">
-    <value>インストール先を開く</value>
+    <value>インストール場所を開く</value>
   </data>
   <data name="toolStripButtonProperties.Text" xml:space="preserve">
     <value>プロパティ</value>
@@ -182,15 +182,15 @@
     <value>ヘルプ</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>上から順番にアンインストールされます。</value>
+    <value>このリストの内容は、上から下へ順にアンインストールされます。</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>アンインストーラーリスト</value>
   </data>
   <data name="checkBoxFinishSleep.Text" xml:space="preserve">
-    <value>完了したらPCをスリープさせる</value>
+    <value>完了後にPCをスリープ状態にする</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>アンインストールの進捗状況</value>
+    <value>アンインストール進行状況</value>
   </data>
 </root>

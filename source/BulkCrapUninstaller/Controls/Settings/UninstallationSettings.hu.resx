@@ -163,4 +163,13 @@ kézzel indítja az eltávolítót</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Csendes eltávolítás</value>
   </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Visszaállítási pont létrehozása az eltávolítás előtt</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Létrehozhat egy rendszer-visszaállítási pontot a beállításjegyzék, egyes beállítások és fájlok biztonsági mentéséhez. Ajánlott visszaállítási pontot létrehozni az illesztőprogramok és fontos rendszeralkalmazások eltávolítása előtt.</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>„Csendes” eltávolítók figyelése és automatizálása felugró ablakok vagy egyéb akadozások esetén (automatizáló szolgáltatás futtatása)</value>
+  </data>
 </root>

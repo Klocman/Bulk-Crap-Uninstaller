@@ -272,7 +272,7 @@
     <value>Terminé</value>
   </data>
   <data name="UninstallStatus_Failed" xml:space="preserve">
-    <value>Echec</value>
+    <value>Échec</value>
   </data>
   <data name="UninstallStatus_Invalid" xml:space="preserve">
     <value>Invalide</value>
@@ -326,7 +326,7 @@
     <value>Finit par</value>
   </data>
   <data name="FilterComparisonMethod_Equals" xml:space="preserve">
-    <value>Egal</value>
+    <value>Égal</value>
   </data>
   <data name="FilterComparisonMethod_Regex" xml:space="preserve">
     <value>Regex</value>
@@ -394,7 +394,7 @@
     <value>Démarrage</value>
   </data>
   <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
-    <value>Echec en activation de cette entrée, le fichier suivant est introuvable :</value>
+    <value>Échec en activation de cette entrée, le fichier suivant est introuvable :</value>
   </data>
   <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
     <value>Le désinstalleur a dépassé le temps</value>
@@ -420,7 +420,7 @@
     <comment>Present on the HDD but is not properly reported anywhere</comment>
   </data>
   <data name="UninstallerType_StoreApp" xml:space="preserve">
-    <value>App Windows Store</value>
+    <value>Appli Windows Store</value>
   </data>
   <data name="UninstallListEditor_NewCondition" xml:space="preserve">
     <value>Nouvelle condition</value>
@@ -475,10 +475,10 @@
     <value>Recherche des modèles d'applications</value>
   </data>
   <data name="Progress_AppStores_Steam" xml:space="preserve">
-    <value>Recherche des Apps Steam</value>
+    <value>Recherche des Applis Steam</value>
   </data>
   <data name="Progress_AppStores_WinStore" xml:space="preserve">
-    <value>Recherche des Apps du Windows Store</value>
+    <value>Recherche des Applis du Windows Store</value>
   </data>
   <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
     <value>Recherche des Fonctionnalités Windows</value>
@@ -566,7 +566,7 @@
     <value>Peut démarrer automatiquement</value>
   </data>
   <data name="Progress_AppStores_Oculus" xml:space="preserve">
-    <value>Oculus Apps</value>
+    <value>Recherche des Applis Oculus</value>
   </data>
   <data name="IsWebBrowser" xml:space="preserve">
     <value>Est un navigateur web</value>
@@ -581,7 +581,7 @@
     <value>Recherche de paquets Scoop</value>
   </data>
   <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
-    <value>Peut appartenir à une autre app avec un nom similaire</value>
+    <value>Peut appartenir à une autre appli avec un nom similaire</value>
     <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
 </root>
