@@ -41,9 +41,28 @@ namespace UninstallTools.Factory
 
             // Check on every reload in case Chocolatey was uninstalled since last reload
             if (!GetChocoInfo(out var chocoFullFilename)) return results;
+            var versionResult = StartProcessAndReadOutput(chocoFullFilename, "--version");
+            if (string.IsNullOrEmpty(versionResult)) return results;
 
-            var result = StartProcessAndReadOutput(chocoFullFilename, @"list -lo -nocolor --detail");
-
+            var versionString = versionResult.Trim();
+            string result;
+            if (Version.TryParse(versionString, out var version))
+            {
+                if (version >= new Version(2, 0, 0))
+                {
+                    result = StartProcessAndReadOutput(chocoFullFilename, @"list -nocolor --detail");
+                }
+                else
+                {
+                    result = StartProcessAndReadOutput(chocoFullFilename, @"list -lo -nocolor --detail");
+                }
+            }
+            else
+            {
+                Trace.WriteLine("Failed to parse Chocolatey version: " + versionString);
+                return results;
+            }
+            
             if (string.IsNullOrEmpty(result)) return results;
 
             var re = new System.Text.RegularExpressions.Regex(@"\n\w.+\r\n Title:");
