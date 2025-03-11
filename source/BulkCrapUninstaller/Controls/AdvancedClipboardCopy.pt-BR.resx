@@ -124,12 +124,12 @@
     <value>Ajuda</value>
   </data>
   <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Desfazer Escape</value>
+    <value>Cancelar saída</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Resultados</value>
   </data>
   <data name="comboBoxInsert.Items" xml:space="preserve">
-    <value>Inserir..</value>
+    <value>Inserir...</value>
   </data>
 </root>

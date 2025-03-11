@@ -127,19 +127,19 @@
     <value>Enviar comentários</value>
   </data>
   <data name="buttonRate.Text" xml:space="preserve">
-    <value>Taxa (na parte inferior)</value>
+    <value>Avaliar (na parte inferior)</value>
   </data>
   <data name="buttonTwitter.Text" xml:space="preserve">
     <value>Compartilhe no Twitter</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Algum problema ou características faltantes?</value>
+    <value>Algum problema ou recursos faltando?</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
     <value>Se você teve algum problema com o BCU, ou se quiser sugerir um novo recurso, verifique esses links:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
-    <value>Submeter no GitHub (Precisa de uma conta)</value>
+    <value>Envie para GitHub (Necessita de uma conta)</value>
   </data>
   <data name="buttonSendFeedback.Text" xml:space="preserve">
     <value>Enviar comentário.</value>

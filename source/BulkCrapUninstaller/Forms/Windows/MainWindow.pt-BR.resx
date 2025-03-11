@@ -490,7 +490,7 @@
     <value>Desinstalar do diretório...</value>
   </data>
   <data name="openProgramsAndFeaturesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir "&amp;Programas e recursos"</value>
+    <value>Abrir "&amp;Programas e Recursos"</value>
   </data>
   <data name="openSystemRestoreToolStripMenuItem.Text" xml:space="preserve">
     <value>Abrir "Recuperação do Sistema"</value>
@@ -536,5 +536,59 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bulk Crap Uninstaller</value>
+  </data>
+  <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Redimensionar automaticamente todas as colunas</value>
+  </data>
+  <data name="filteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filtros rápidos</value>
+  </data>
+  <data name="exportToABatchUninstallScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportar para um script de desinstalação em lote...</value>
+  </data>
+  <data name="exportStoreAppsToPowerShellRemoveScriptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Criar um script Powershell para remover Store Apps..</value>
+  </data>
+  <data name="advancedApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Filtros padrão</value>
+  </data>
+  <data name="basicApplicationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apenas aplicações &amp;básicas</value>
+  </data>
+  <data name="systemComponentsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apenas componentes do sistema</value>
+  </data>
+  <data name="everythingToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tudo</value>
+  </data>
+  <data name="automaticallyStartedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apenas inicialização automática</value>
+  </data>
+  <data name="onlyWebBrowsersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apenas navegadores</value>
+  </data>
+  <data name="viewTweaksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ver mudanças</value>
+  </data>
+  <data name="slantcoToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Slant.co</value>
+  </data>
+  <data name="takeOwnershipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Assumir a propriedade</value>
+  </data>
+  <data name="troubleshootUninstallProblemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Solução de problemas de desinstalação..</value>
+  </data>
+  <data name="startDiskCleanupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Iniciar Limpeza de Disco</value>
+  </data>
+  <data name="tryToInstallNETV35ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instalar .NET v3.5 (add recurso)</value>
+  </data>
+  <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Criar um novo ponto de restauração</value>
   </data>
 </root>

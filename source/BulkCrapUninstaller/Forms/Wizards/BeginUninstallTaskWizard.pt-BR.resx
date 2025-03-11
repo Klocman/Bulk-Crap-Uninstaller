@@ -117,13 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filteringTextBox.Text" xml:space="preserve">
-    <value>Pesquisa...</value>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
   </data>
-  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Relacionado</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Aplicativos em execução</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="labelOther.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Outros / Misc</value>
+  </data>
+  <data name="labelConcurrentEnabled.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Desinstalação simultâmea ativada</value>
+  </data>
+  <data name="labelWillBeSilent.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Desinstalação será silenciosa</value>
+  </data>
+  <data name="labelRestorePointCreated.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Criar novo ponto de restauração</value>
+  </data>
+  <data name="labelFilesStillUsed.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Arquivos em uso por processos em execução</value>
+  </data>
+  <data name="labelTotalSize.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Tamanho total estimado</value>
+  </data>
+  <data name="labelApps.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Aplicações para desinstalar</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>COMEÇAR DESINSTALAÇÃO</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="p1Heading.Text" xml:space="preserve">
+    <value>Aplicações relacionadas que talvez queira desinstalar</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Confirme que tudo abaixo é seguro para desinstalar</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Pode ser necessário fechar algumas aplicações antes de desinstalar</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Mudar configuração de desinstalação</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Por favor tenha certeza que as informações estão corretas antes de começar a desinstalação. Essa é a última chance!</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Iniciar uma nova tarefa de desinstalação</value>
   </data>
 </root>

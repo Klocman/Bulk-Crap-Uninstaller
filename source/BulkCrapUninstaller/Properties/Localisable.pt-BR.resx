@@ -157,6 +157,7 @@ Editora | Versão | Data | Tamanho | Registro | Tipo de desinstalador | Cadeia d
   </data>
   <data name="MessageBoxes_Error_details" xml:space="preserve">
     <value>
+
 Detalhes do erro:
 </value>
     <comment>Add space or newline afterwards and two newlines before</comment>
@@ -195,5 +196,589 @@ Arquivos e diretórios serão movidos para a lixeira, você pode restaurá-los a
   </data>
   <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
     <value>Gostaria de enviar comentários sobre o BCU?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>Isso vai levar menos de um minuto mas irá ajudar o desenvolvimento imensamente! Todo feedback é apreciado, seja um bug report, solicitação de recursos ou apenas um obrigado!
+
+Você pode mandar depois pelo menu superior
+(Ajuda &gt; Enviar comentário...).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>A versão atual está atualizada</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Nenhuma atualização encontrada, você possui a última versão.
+
+Quer algum recurso ou bug arrumado? Envie por favor seu feedback usando o menu "Ajuda -&gt; Enviar comentários...".</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Aconteceu um erro ao buscar por atualizações</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Verifique se o BCUninstaller não está bloqueado pelo seu firewall e que sua conexão com a internet está funcionando.</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Nova versão {0} disponível, deseja atualizar agora?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller irá baixar automaticamente a atualização e instalar após um reinício. Você irá perder dados não salvos.
+
+Changelog:
+- {0}
+
+Atenção: Durante a atualização a pasta "Update" e o arquivo "Update.zip" dentro da pasta do BCU serão removidos.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Desinstalar usando o MSI</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>A entrada selecionada não pode ser desinstalada usando o instalador MsiExec</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>Desinstalador selecionado não possui um GUID válido para uso com o MsiExec</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Para tarefa de desinstalação atual</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Você tem certeza que deseja parar a tarefa de desinstalação em uso?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>Interromper a tarefa prematuramente não reverterá nenhuma alteração. O desinstalador em execução não será interrompido e a tarefa aguardará até que ele finalize.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Criar um ponto de restauração</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Falha ao criar ponto de restauração</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value> x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value> DEBUG</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Progresso de desinstalação</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Você pode ir tomar um café</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>Os desinstaladores restantes devem ser capazes de concluir sem intervenção do usuário. Ainda assim, você deve verificar de vez em quando, caso um dos desinstaladores trave.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Remoção de lixo/sobras</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Você realmente deseja modificar itens de baixa confiabilidade?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>Remover itens marcados com confiança menor que Boa pode ser muito perigoso! É recomendado que você verifique se cada item é seguro para excluir.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Remover chaves do registro</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Tem certeza que deseja remover as entradas de desinstalador selecionadas?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>Os seguintes itens serão removidos do registro e desaparecerão da lista de desinstaladores, mas não serão desinstalados.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>A exportação falhou</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Um erro foi encontrado ao salvar dados exportados</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Se o erro persiste tente salvar em um local diferente, por exemplo a Área de trabalho.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller está desinstalando {0} aplicação(ões)</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Renomear desinstalador</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>O nome fornecido está vazio ou contém caracteres inválidos.</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Certifique-se de não ter incluído nenhum dos seguintes caracteres: 
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Você quer procurar resíduos das desinstalações realizadas?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Entenda que este recurso é destinado apenas a usuários avançados que entendem como funciona. Não é necessário remover esses arquivos, e eles não afetarão o desempenho do sistema de forma significativa.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Nenhum resíduo foi encontrado</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Sem resíduos encontrados. Podem existir alguns resíduos ainda, você pode usar um limpador de arquivos temporários como o BleachBit.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Não foi encontrado nada para copiar para a área de transferência. Nenhum desinstalador selecionado possui essa informação ou você não selecionou algo.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Copiar para a Área de Transferência</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Abrir diretórios</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Esta ação irá abrir {0} diretórios de uma vez. Tem certeza que deseja continuar?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Procurar online</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Nada para procurar</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>Desinstalar o BCUninstaller</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>Tem certeza que deseja desinstalar o BCUninstaller?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Lamento em vê-lo partir! Se tiver um minuto ou dois, por favor, deixe um comentário sobre o motivo de ter desinstalado o BCU no meu site (http://klocmansoftware.weebly.com/). Farei o meu melhor para corrigir qualquer problema legítimo.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Você quer criar um ponto de restauração antes de continuar?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>Se você não tem certeza que os aplicativos que está desinstalando são importantes ou necessários para a estabilidade do sistema, é recomendável criar um ponto de restauração.
+ Se algo der errado após o procedimento, você pode usar a Restauração do Sistema para reverter as alterações.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Um erro ocorreu ao abrir a página de pesquisa.</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Salvar lista de Desinstalação</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Falhar ao salvar a lista em um arquivo</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Tem certeza que deseja resetar todas as configurações do aplicativo?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Algumas aplicaçoes não podem ser desinstaladas silenciosamente</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Algumas entradas sao protegiddas e não podem ser modificadas</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>Entrada selecioanda é protegida e não pode ser modificada</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>Ocorreu um erro ao abrir a URL</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Quer manter a seleçao atual?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Ocorreu um erro ao abrir a pasta</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Falha ao carregar os arquivos selecionados</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Nenhum desinstalador foi selecionado, nada para desinstalar</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Executar desinstaladores</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>Para desinstalar aplicativos, você deve primeiro selecioná-los na visualização da lista. Se estiver usando caixas de seleção, certifique-se de que elas estejam marcadas.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Se você manter a seleção atual, ela será mesclada com a(s) lista(s) aberta(s).</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Esta ação abrirá {0} URLs de uma vez, você tem certeza de que deseja continuar?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>Abrir URLs</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Não há URLs para abrir</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Modificar item protegido</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Entradas afetadas:
+{0}
+
+Para modificar essas entradas, você precisa desabilitar a proteção do desinstalador na barra lateral de configurações. Se quiser, pode removê-las e continuar com os outros itens.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Entrada protegida: {0}
+
+Para modificar esta entrada, você precisa desabilitar a proteção do desinstalador no painel de configurações.</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>Os seguintes itens estão sem desinstaladores silenciosos:
+{0}
+
+Você quer usar desinstaladores "em primeiro plano" para esses itens, ou prefere removê-los da tarefa?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Desinstalação silenciosa</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Restaurar configurações de fábrica</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Todas as suas configurações serão perdidas permanentemente. O BCUninstaller precisará reiniciar para concluir esta ação.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Abrir lista de desinstalaçao</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>Renomeando "{0}</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Renomear entrada selecionada</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>Tarefa encerrada</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Desinstalando</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Lembrar-se</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>Arquivo não existe.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Nada para exibir. Este aplicativo é desinstalado usando o Windows Installer (MsiExec).</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Vazio</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>GUID encontrado</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>GUID em falta</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Selecioanr até...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Arquivo não encontrado</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Executando comandos pós-desinstalação...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Executando comandos pre-desinstalação...</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Pronto</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0} desinstaladores selecionados</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>{0} desinstaladores no total, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>O seguinte comanddo falhou ao executar: {0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>Falha de execução externa</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Padrão</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Algumas configurações só surtirão efeito após a reiniciação da aplicação.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Deseja reiniciar o BCU para aplicar as novas configurações?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Alterar configurações do aplicativo</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>Certificado em falta</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Processando aplicativos detectados, {0} restantes...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>Selecionar "Terminar" fechará imediatamente o desinstalador em execução e pode resultar em uma desinstalação incompleta. Normalmente, é possível executar o desinstalador novamente para concluir a desinstalação.
+
+Como alternativa, você pode pular a espera por esse processo. Pular permitirá que o desinstalador continue funcionando enquanto a tarefa avança para o próximo item. Lembre-se de que alguns desinstaladores podem falhar em ser executados até que o processo pulado seja concluído.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Deseja pular a espera pelo desinstalador em execução no momento?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Pular a tarefa em execução no momento</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>Outra tarefa de desinstalação já está em execução. Por favor, aguarde ela terminar e tente novamente.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Avaliação: {0}
+
+Positivos:
+{1}
+
+Negativos:
+{2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Info. Avaliações</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Essa aplicação nao tem uma entrada de registro válida</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Essa aplicação não tem um desinstalador válido</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Carregando funcionalidades do Windows...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>Atualizando informações de inicialização...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Sem diretórios para abrir</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Indisponível</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Avaliações indisponíveis</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Você precisa habilitar as avaliações nas configurações antes.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Você não pode avaliar aplicações que não estao instaladas corretamente.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} aplicações</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Média da avaliação: {0}; Minha avaliação: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Os seguintes desinstaladores falharam ao ser executados, provavelmente devido a um conflito. Por favor, aguarde os outros desinstaladores terminarem e tente novamente.
+{0}
+
+Você pode tentar desabilitar a detecção de conflitos nas configurações, mas isso não é recomendado.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Forçar desinstalação</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Falha para executar alguns dos desinstaladores</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0 não encontrado</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0 não foi encontrado, alguns recursos serão desabilitados</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>O framework v4.0 é opcional, mas recomendado. As funcionalidades que dependem do framework serão desativadas até que você o instale.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Alguns dos desinstaladores falharam</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Deseja tentar executar os desinstaladores silenciosos que falharam em primeiro plano?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Os seguintes desinstaladores serão executados em primeiro plano:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Escaneando o diretório especificado...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Selecione diretórios com aplicações que você deseja remover.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Desinstalar do diretório</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Não foram encontrado aplicações no diretório especificado</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Certifique-se de que selecionou o diretório correto e que os executáveis do aplicativo ainda estão presentes.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Encontrado um desinstaladdor para {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Quer executar esse desinstalador?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Arquivado</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Extensões</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Nome comum</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Nome do Editor</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Não depois de</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Não antes de</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Chave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Tem chave privada</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Chave pública</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Dados não processados</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Número de Série</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>Nome do Assunto</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritmo de assinatura</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Impressão digital</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Erro ao guardar as configurações </value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Finalizando...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Carregando os ícones</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Buscar aplicação</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Nenhum arquivo ou diretório válido foi selecionado. Certifique-se de que você tenha acesso a eles e que não estejam marcados como arquivos do sistema.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Buscar por aplicativos</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Falha ao encontrar quaisquer aplicativos dentro de {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Modificar aplicação</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Aplicação selecionada não pode ser modificada</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>O aplicativo selecionado não possui um comando de modificação especificado. Pode ser necessário desinstalá-lo e, em seguida, reinstalá-lo para alterar as configurações de instalação.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Salvar lista de desinstalação</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Salvar as alterações na lista de desinstalação aberta?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Existem alterações não salvas na lista de desinstalação aberta que serão perdidas ao fechá-la.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Selecione o diretório com os aplicativos a serem desinstalados.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Selecione onde salvar o backup. Um novo diretório será criado.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>O BCU foi atualizado para v{0}!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Bem-vindo ao BCU versão {0}!</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Colocando o PC em modo de descanso em {0} segundos. Desmarque a caixa de seleção de descanso para cancelar.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Fazer nada</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Abrir propriedade</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Desinstala</value>
+    <comment>Option for "Double clicking in application list..."</comment>
   </data>
 </root>
