@@ -1,4 +1,4 @@
-; *** Inno Setup version 5.5.3+ Hindi messages ***
+﻿; *** Inno Setup version 5.5.3+ Hindi messages ***
 ;
 ; To download user-contributed translations of this file, go to:
 ;   http://www.jrsoftware.org/files/istrans/

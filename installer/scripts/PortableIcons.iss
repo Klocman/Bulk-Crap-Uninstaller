@@ -1,4 +1,4 @@
-[Tasks]
+﻿[Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 

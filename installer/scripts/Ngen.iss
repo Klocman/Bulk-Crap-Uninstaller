@@ -1,4 +1,4 @@
-[Run]
+﻿[Run]
 Filename: {code:GetV4NetDir}ngen.exe; Parameters: "install ""{app}\{#MyAppExeName}"""; StatusMsg: {cm:NgenOptimizing}; Flags: runhidden; Check: InstallCheckV4NetExists; 
 
 [UninstallRun]
