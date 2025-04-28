@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
-    <value>Número inválido de argumentos. Passe o caminho completo do diretório que quer remover como argumento e, opcionalmente, / q para o modo silencioso.</value>
+    <value>Número inválido de argumentos. Passe o caminho completo do diretório que quer remover como argumento e, opcionalmente, /q para o modo silencioso.</value>
   </data>
   <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
     <value>Desinstalador universal</value>

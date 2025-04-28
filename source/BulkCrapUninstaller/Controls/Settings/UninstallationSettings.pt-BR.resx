@@ -121,7 +121,7 @@
     <value>Desativar a prevenção de colisão ao executar desinstaladores manualmente</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Apenas um desinstalador forte por vez</value>
+    <value>Só um desinstalador de primeiro plano por vez</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Execute automaticamente os desinstaladores de forma simultânea (se possível)</value>
@@ -161,5 +161,14 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desinstalação silenciosa</value>
+  </data>
+  <data name="checkBoxRestorePoint.Text" xml:space="preserve">
+    <value>Criar um ponto de restauração antes de desinstalar</value>
+  </data>
+  <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
+    <value>Você pode criar  um ponto de restaução do sistema para o backup do registro, algumas configurações e arquivos. É recomendado criar um ponto de restauração antes de remover drivers e aplicações de sistema importantes.</value>
+  </data>
+  <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
+    <value>Monitorar desinstaladores "silenciosos" para popups e outros travamentos e automatizá-los (Executar daemon de automatização)</value>
   </data>
 </root>

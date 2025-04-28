@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filteringTextBox.Text" xml:space="preserve">
-    <value>Pesquisa...</value>
+  <data name="olvColumnName.Text" xml:space="preserve">
+    <value>Nome do desinstalador relacionado</value>
   </data>
-  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="olvColumnEnabled.Text" xml:space="preserve">
+    <value>Adicionar a tarefa</value>
   </data>
-  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="olvColumnRelatedApps.Text" xml:space="preserve">
+    <value>Relacionado com:</value>
+  </data>
+  <data name="labelInfo.Text" xml:space="preserve">
+    <value>Isso é uma lista de aplicações que podem ser relacionadas às aplicações que você selecionou. Você pode adicionar essas aplicações à fila de desinstalação selecionando-as.</value>
+  </data>
+  <data name="labelInfo2.Text" xml:space="preserve">
+    <value>Certifique-se de não desinstalar softwares que podem ser necessários para outras aplicações.</value>
   </data>
 </root>

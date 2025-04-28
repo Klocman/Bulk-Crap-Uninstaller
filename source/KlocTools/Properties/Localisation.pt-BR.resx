@@ -245,7 +245,7 @@ Você pode copiar informações detalhadas sobre esse erro para a área de trans
     <value>Atributos</value>
   </data>
   <data name="FileInfo_IsReadOnly" xml:space="preserve">
-    <value>É apenas leitura</value>
+    <value>Apenas leitura</value>
   </data>
   <data name="FileInfo_FullName" xml:space="preserve">
     <value>Nome Completo</value>

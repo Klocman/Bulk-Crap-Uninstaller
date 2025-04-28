@@ -146,7 +146,7 @@ Se o processo parecer travado, você pode clicar no botão "Ignorar" para evitar
     <value>Ignorar</value>
   </data>
   <data name="toolStripButtonTerminate.Text" xml:space="preserve">
-    <value>Terminar</value>
+    <value>Finalizar</value>
   </data>
   <data name="toolStripButtonManualUninstall.Text" xml:space="preserve">
     <value>Desinstalar manualmente</value>
@@ -171,5 +171,26 @@ Se o processo parecer travado, você pode clicar no botão "Ignorar" para evitar
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Progresso da desinstalação</value>
+  </data>
+  <data name="skipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ignorar</value>
+  </data>
+  <data name="terminateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="runNowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Executar desinstalador agora</value>
+  </data>
+  <data name="manualUninstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Desinstalação manual</value>
+  </data>
+  <data name="openInstallDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir diretório de instalação</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Propriedades</value>
+  </data>
+  <data name="checkBoxFinishSleep.Text" xml:space="preserve">
+    <value>Hibernar computador ao finalizar</value>
   </data>
 </root>

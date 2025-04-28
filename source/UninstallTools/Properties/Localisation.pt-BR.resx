@@ -139,7 +139,7 @@
     <value>Data da instalação</value>
   </data>
   <data name="InstallLocation" xml:space="preserve">
-    <value>Localização da instalação</value>
+    <value>Local da instalação</value>
   </data>
   <data name="InstallSource" xml:space="preserve">
     <value>Origem da instalação</value>
@@ -211,7 +211,7 @@
     <value>Ignorado pelo usuário</value>
   </data>
   <data name="UninstallerLocation" xml:space="preserve">
-    <value>Localização do desinstalador</value>
+    <value>Local do desinstalador</value>
   </data>
   <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
     <value>Não existe uma maneira válida de desinstalar esta entrada</value>
@@ -235,7 +235,7 @@
     <value>Muito bom</value>
   </data>
   <data name="ParentKeyName" xml:space="preserve">
-    <value>Desinstalador de pais</value>
+    <value>Desinstalador de origem</value>
     <comment>Most of the time used to show parent application of an update</comment>
   </data>
   <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
@@ -484,13 +484,13 @@
     <value>Procurando por Recurss do Windows</value>
   </data>
   <data name="Progress_Merging" xml:space="preserve">
-    <value>Combinando aplicativos descobertos...</value>
+    <value>Combinando aplicações descobertas...</value>
   </data>
   <data name="Progress_Merging_Stores" xml:space="preserve">
     <value>Mesclando aplicações de lojas</value>
   </data>
   <data name="Progress_Merging_Drives" xml:space="preserve">
-    <value>Mescland aplicativos das unidades</value>
+    <value>Mesclando aplicações das unidades</value>
   </data>
   <data name="Progress_GeneratingInfo" xml:space="preserve">
     <value>Gerando informações em falta...</value>
@@ -520,7 +520,7 @@
     <value>Compatibilidade de aplicativos</value>
   </data>
   <data name="Junk_Clsid_GroupName" xml:space="preserve">
-    <value>classes CLSID</value>
+    <value>Classes CLSID</value>
   </data>
   <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
     <value>Referência do desinstalador</value>
@@ -551,5 +551,37 @@
   </data>
   <data name="UninstallerType_Oculus" xml:space="preserve">
     <value>Oculus</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Procurando por pacotes Chocolatey</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Desinstalar pelo Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Pode iniciar automaticamente</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Procurando por entradas de inicialização</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Procurando por Apps Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>É um navegador</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>Powershell script</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Configuração de Rastreio/Registro de Depuração</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Procurando por pacotes Scoop</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Pode pertencer a um app diferente com nome parecido</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
 </root>

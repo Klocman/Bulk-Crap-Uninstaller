@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UI_Console_Full_Message" xml:space="preserve">
-    <value>Uma exceção não tratada ocorreu. Encerrando a aplicação. </value>
+    <value>Uma exceção não tratada ocorreu. Encerrando a aplicação.</value>
     <comment>Unhandled exception occurred. Closing application.</comment>
   </data>
   <data name="UI_Console_Minimal_Message" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Please add a brief description of how we can reproduce the error:</comment>
   </data>
   <data name="UI_Dialog_Full_Message" xml:space="preserve">
-    <value>A aplicação deixou de funcionar e agora vai ser encerrada. Se você clicar em sair, o aplicativo será fechado imediatamente. Se você clicar em Enviar e Sair, o aplicativo será fechado e um relatório de erro será enviado.</value>
+    <value>A aplicação encontrou um erro e será encerrada agora. Se você clicar em "Sair", o aplicativo será fechado imediatamente. Se você clicar em "Enviar e Sair", o aplicativo será fechado e um relatório de erro será enviado.</value>
     <comment>The application has crashed and it will now be dismissed. If you click Quit, the application will close immediately. If you click Send and Quit, the application will close and a bug report will be send.</comment>
   </data>
   <data name="UI_Dialog_Full_Quit_Button" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>&amp;Quit</comment>
   </data>
   <data name="UI_Dialog_Full_Report_Contents_Tab" xml:space="preserve">
-    <value>Conteudo do Relatorio</value>
+    <value>Conteudo do Relatório</value>
     <comment>Report Contents</comment>
   </data>
   <data name="UI_Dialog_Full_Send_and_Quit_Button" xml:space="preserve">

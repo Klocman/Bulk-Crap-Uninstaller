@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filteringTextBox.Text" xml:space="preserve">
-    <value>Pesquisa...</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Esta ferramenta desinstala automaticamente aplicativos que não possuem um desinstalador silencioso, clicando nos botões do desinstalador em vez do usuário.</value>
   </data>
-  <data name="filteringTextBox.AccessibleName" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
-  <data name="filteringTextBox.AccessibleDescription" xml:space="preserve">
-    <value>Caixa de pesquisa</value>
+  <data name="buttonResume.Text" xml:space="preserve">
+    <value>Retomar</value>
+  </data>
+  <data name="buttonPause.Text" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <data name="buttonAbort.Text" xml:space="preserve">
+    <value>Abortar</value>
+  </data>
+  <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
+    <value>Desinstalador invisível</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Automação do desinstalador</value>
   </data>
 </root>

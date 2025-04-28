@@ -121,7 +121,7 @@
     <value>A ordem inicial depende das configurações de desinstalação, mas pode ser alterada arrastando os itens. Nota: O BCU pode alterar a ordem se a desinstalação simultânea estiver ativada.</value>
   </data>
   <data name="labelInfo.Text" xml:space="preserve">
-    <value>Esta é uma lista de aplicativos que serão desinstalados, ordenados do princípio ao fim. Se o campo "Desinstalar" for desmarcado, o aplicativo não será desinstalado. Se a desinstalação em segundo plano não estiver disponível para um item, ela não poderá ser verificada.</value>
+    <value>Esta é uma lista de aplicativos que serão desinstalados, ordenados do início ao fim. Se o campo "Desinstalar" for desmarcado, o aplicativo não será desinstalado. Se a desinstalação silenciosa não estiver disponível para um item, ela não poderá ser selecionada</value>
   </data>
   <data name="buttonSmartSort.Text" xml:space="preserve">
     <value>Classificação inteligente</value>

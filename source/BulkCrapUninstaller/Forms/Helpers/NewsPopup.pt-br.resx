@@ -120,4 +120,31 @@
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Nunca mais mostrar esta janela.</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Doações me ajudam a manter interesse nesse projeto e também por assinatura de certificados para o código, hospedagem e outras necessidades.</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Ver notas de lançamento e registro de alterações</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Ver o código-fonte ou contribuir</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Ler a licença</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Ler política de privacidade</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Ler arquivo de ajuda</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Enviar feedback / Contatar o desenvolvedor</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Doar (Paypal, Bitcoin, Steam gifts)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Clique em qualquer lugar para fechar o diálogo)</value>
+  </data>
 </root>

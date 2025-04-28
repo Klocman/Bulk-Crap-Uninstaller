@@ -124,7 +124,7 @@
     <value>Sair do assistente</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
-    <value>Anterior</value>
+    <value>Voltar</value>
   </data>
   <data name="buttonNext.Text" xml:space="preserve">
     <value>Continuar</value>
@@ -151,7 +151,7 @@
     <value>● Para obter e fazer upload de classificações de aplicativos</value>
   </data>
   <data name="p4netErrors.Text" xml:space="preserve">
-    <value>Toda vez que ocorrer um erro, lhe será perguntado se deseja enviá-lo. Você pode verificar quais dados estão sendo enviados com os relatórios de erros e de uso, inspecionando seus respectivos arquivos XML no diretório do BCUninstaller. Os dados enviados não são compartilhados com terceiros.</value>
+    <value>Toda vez que ocorrer um erro, será perguntado se deseja enviá-lo. Você pode verificar quais dados estão sendo enviados com os relatórios de erros e de uso, inspecionando seus respectivos arquivos XML no diretório do BCUninstaller. Os dados enviados não são compartilhados com terceiros.</value>
   </data>
   <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
     <value>Procurar automaticamente atualizações ao iniciar o aplicativo</value>
@@ -218,7 +218,7 @@ Se o desinstalador original não for encontrado, você terá que usar a opção 
     <value>Desinstaladores protegidos</value>
   </data>
   <data name="p3advProtect.Text" xml:space="preserve">
-    <value>Os itens protegidos são marcados com a tag "NoRemove", o que significa que o editor não deseja que você os remova. Esta etiqueta é freqüentemente usada por grandes pacotes de software para evitar que você desinstale suas partes individuais.</value>
+    <value>Os itens protegidos são marcados com a tag "NoRemove", o que significa que o editor não deseja que você os remova. Esta etiqueta é frequentemente usada por grandes pacotes de software para evitar que você desinstale suas partes individuais.</value>
   </data>
   <data name="checkBoxListProtected.Text" xml:space="preserve">
     <value>Mostrar desinstaladores marcados como "protegidos"</value>
@@ -261,7 +261,7 @@ Se o desinstalador original não for encontrado, você terá que usar a opção 
   </data>
   <data name="p2viewAdd.Text" xml:space="preserve">
     <value>Os desinstaladores verificados são marcados em verde, não verificados estão em azul.
-Aviso: a verificação pode demorar muito.</value>
+Atenção: a verificação pode demorar muito.</value>
   </data>
   <data name="p1welcomeHeading.Text" xml:space="preserve">
     <value>Bem-vindo ao BCUninstaller!</value>
@@ -308,7 +308,6 @@ Aviso: a verificação pode demorar muito.</value>
   <data name="label2.Text" xml:space="preserve">
     <value>ulk crap
 uninstaller</value>
-    <comment>The missing B is in an image next to the text</comment>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bem-vindo ao BCUninstaller</value>

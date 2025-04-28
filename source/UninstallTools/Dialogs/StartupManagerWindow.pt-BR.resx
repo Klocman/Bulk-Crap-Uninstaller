@@ -118,22 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="comboBoxFilter.Items" xml:space="preserve">
-    <value>Exibir tudo</value>
+    <value>Mostrar tudo</value>
   </data>
   <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>Mostrar as entradas de inicialização</value>
+    <value>Mostrar entradas de inicialização</value>
   </data>
   <data name="comboBoxFilter.Items2" xml:space="preserve">
-    <value>Mostrar as tarefas</value>
+    <value>Mostrar tarefas</value>
   </data>
   <data name="comboBoxFilter.Items3" xml:space="preserve">
-    <value>Mostrar as extensões do navegador</value>
+    <value>Mostrar extensões de navegador</value>
   </data>
   <data name="comboBoxFilter.Items4" xml:space="preserve">
     <value>Mostrar serviços</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
+    <comment>更新</comment>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Fechar</value>
@@ -151,16 +152,16 @@
     <value>Editor</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Localização</value>
+    <value>Local</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>Comando</value>
   </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir l&amp;ocalização do executável</value>
+    <value>&amp;Abrir local do executável</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir a localização do link</value>
+    <value>Abrir a local do link</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Executar o comando</value>

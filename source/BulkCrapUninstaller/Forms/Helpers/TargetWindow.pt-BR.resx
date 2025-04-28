@@ -121,7 +121,7 @@
     <value>Selecione usando uma janela</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Selecione usando a pasta de instalação ou os arquivos de programa</value>
+    <value>Pasta de instalação ou arquivos</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Encontre e desinstale um aplicativo com base em uma das suas janelas, atalhos, seu local instalação ou arquivos .exe.</value>
@@ -132,6 +132,6 @@
 Você pode selecionar um diretório que contenha vários aplicativos para desinstalá-los todos de uma vez.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Destruir um aplicativo</value>
+    <value>Caçar aplicação</value>
   </data>
 </root>

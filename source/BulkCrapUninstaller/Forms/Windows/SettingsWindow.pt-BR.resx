@@ -198,7 +198,7 @@ O BCU aguardará até que o comando em execução seja finalizado antes de execu
     <value>Interface</value>
   </data>
   <data name="tabPageUninstallation.Text" xml:space="preserve">
-    <value>Desintalação</value>
+    <value>Desinstalação</value>
   </data>
   <data name="checkBoxScanRegistry.Text" xml:space="preserve">
     <value>Registro (recomendado deixar ativado)</value>
@@ -266,5 +266,28 @@ Use caminhos de diretório completo, um caminho por linha. Caminhos inválidos e
   </data>
   <data name="checkBoxChoco.Text" xml:space="preserve">
     <value>Chocolatey</value>
+  </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>Modo para daltônicos</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>Habilitar escalonamento de interface com DPI</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Clique duplo na lista de aplicação</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>Escanear armazenamentos externos</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Inicializar</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Rede</value>
   </data>
 </root>

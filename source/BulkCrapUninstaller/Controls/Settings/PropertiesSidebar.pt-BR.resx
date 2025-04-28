@@ -192,4 +192,13 @@ O agrupamento da maioria das colunas usa filtragem inteligente.</value>
   <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
     <value>Os itens protegidos são marcados com a tag "NoRemove", o que significa que o editor não deseja que você os remova.</value>
   </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>Mostrar modificações</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>Destacar desinstaladores especiais</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>Usa cores para diferenciar aplicações especiais, como por exemplo Window Store e Recursos do Windows</value>
+  </data>
 </root>
