@@ -139,6 +139,12 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
         private void CreateBackup(string backupPath)
         {
             var dir = Path.Combine(backupPath, GetUniqueBackupName());

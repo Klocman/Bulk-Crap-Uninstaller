@@ -78,6 +78,7 @@ namespace BulkCrapUninstaller.Forms
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonAccept
             // 
