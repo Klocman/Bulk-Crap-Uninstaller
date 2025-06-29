@@ -233,9 +233,6 @@
     <Setting Name="WindowDpiAware" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CreateRestorePoint" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="UninstallerListDoubleClickAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="BulkCrapUninstaller.Forms.UninstallerListDoubleClickAction" Scope="User">
       <Value Profile="(Default)">OpenProperties</Value>
     </Setting>
