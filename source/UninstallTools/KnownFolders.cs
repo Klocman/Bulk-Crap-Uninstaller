@@ -5,6 +5,9 @@ namespace UninstallTools;
 
 internal static class KnownFolders
 {
+    /// <summary>
+    /// GUIDs can be found here: https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid
+    /// </summary>
     public static string GetKnownFolderPath(Guid rfid)
     {
         IntPtr pPath;

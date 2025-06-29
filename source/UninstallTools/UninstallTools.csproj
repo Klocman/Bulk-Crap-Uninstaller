@@ -45,6 +45,11 @@
 		<Compile Update="Controls\UninstallListEditor.cs">
 			<SubType>UserControl</SubType>
 		</Compile>
+		<Compile Update="Properties\Localisation.Designer.cs">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Localisation.resx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="..\Licence.licenseheader">
@@ -70,5 +75,11 @@
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 		<PackageReference Include="System.Management" Version="8.0.0" />
 		<PackageReference Include="TaskScheduler" Version="2.11.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Localisation.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Localisation.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 </Project>

@@ -584,4 +584,7 @@
     <value>Might belong to a different app with a similar name</value>
     <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
   </data>
+  <data name="Confidence_DirectlyInsideKnownFolder" xml:space="preserve">
+    <value>Located directly inside a Known Folder</value>
+  </data>
 </root>
