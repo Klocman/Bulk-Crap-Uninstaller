@@ -5,8 +5,10 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
+using Klocman;
 using Klocman.Extensions;
 using Klocman.IO;
+using Klocman.Localising;
 using UninstallTools;
 using UninstallTools.Factory;
 using UninstallTools.Uninstaller;
@@ -187,7 +189,7 @@ namespace BulkCrapUninstaller.Forms
 
                         labelConcurrentEnabled.Text = Settings.Default.UninstallConcurrency.ToYesNo();
                         labelFilesStillUsed.Text = processWaiterControl1.ProcessesStillRunning.ToYesNo();
-                        labelRestorePointCreated.Text = (Settings.Default.CreateRestorePoint && SysRestore.SysRestoreAvailable()).ToYesNo();
+                        labelRestorePointCreated.Text = (SysRestore.SysRestoreAvailable() ? Settings.Default.MessagesRestorePoints : YesNoAsk.No).GetLocalisedName();
                         labelWillBeSilent.Text = _quiet.ToYesNo();
 
                         labelOther.Text = Settings.Default.AdvancedSimulate ? "Simulating" : "-";
@@ -206,7 +208,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void BeginUninstallTaskWizard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(DialogResult != DialogResult.OK)
+            if (DialogResult != DialogResult.OK)
                 SystemRestore.CancelSysRestore();
         }
     }

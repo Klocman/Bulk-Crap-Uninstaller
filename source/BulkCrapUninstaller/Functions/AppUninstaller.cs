@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
 using BulkCrapUninstaller.Functions.Tools;
 using BulkCrapUninstaller.Properties;
+using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms;
 using Klocman.Forms.Tools;
@@ -219,11 +220,11 @@ namespace BulkCrapUninstaller.Functions
                     // No turning back at this point (kind of)
                     listRefreshNeeded = true;
 
-                    if (_settings.CreateRestorePoint)
+                    if (_settings.MessagesRestorePoints != YesNoAsk.No)
                     {
                         try
                         {
-                            SystemRestore.BeginSysRestore(taskEntries.Length, false);
+                            SystemRestore.BeginSysRestore(taskEntries.Length, true);
                         }
                         catch (Exception exception)
                         {
