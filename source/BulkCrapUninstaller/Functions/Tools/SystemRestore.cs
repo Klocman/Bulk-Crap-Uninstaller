@@ -51,6 +51,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                            MessageBoxes.PressedButton.Yes;
 
                 default:
+                case MessageBoxes.PressedButton.No:
                 case MessageBoxes.PressedButton.Cancel:
                     return false;
             }
