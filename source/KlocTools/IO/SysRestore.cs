@@ -4,17 +4,15 @@
 */
 
 using System;
-using System.Diagnostics;
+using System.Management;
 using System.Runtime.InteropServices;
-using System.Text;
-using Klocman.Extensions;
-using Klocman.Tools;
 using Microsoft.Win32;
 
 namespace Klocman.IO
 {
     /// <summary>
-    ///     Code from http://www.codeproject.com/Articles/38205/Creating-System-Restore-Points-using-PInvoke
+    ///     Based on http://www.codeproject.com/Articles/38205/Creating-System-Restore-Points-using-PInvoke
+    ///     Updated for new Windows versions
     /// </summary>
     public static class SysRestore
     {
@@ -48,42 +46,33 @@ namespace Klocman.IO
         private const short WindowsShutdown = 8; /* not implemented */
 
         /// <summary>
-        ///     Cancels restore call
+        ///     Attempts to cancel the creation of a restore point. 
+        ///     Note: Due to Windows API limitations, the restore point will still appear in the restore point list,
+        ///     but will be marked as canceled for the application. It is not deleted.
         /// </summary>
         /// <param name="lSeqNum">The restore sequence number</param>
-        /// <returns>The status of call</returns>
+        /// <returns>The status of the call</returns>
         public static int CancelRestore(long lSeqNum)
         {
-            var rpInfo = new RestorePointInfo();
-            STATEMGRSTATUS rpStatus;
-
-            if (!SysRestoreAvailable())
-                return -1;
-
-            try
-            {
-                rpInfo.dwEventType = EndSystemChange;
-                rpInfo.dwRestorePtType = (int)RestoreType.CancelledOperation;
-                rpInfo.llSequenceNumber = lSeqNum;
-
-                SRSetRestorePointW(ref rpInfo, out rpStatus);
-            }
-            catch (DllNotFoundException)
-            {
-                return -1;
-            }
-
-            return rpStatus.nStatus;
+            return EndOrCancelRestore(lSeqNum, RestoreType.CancelledOperation);
         }
 
         /// <summary>
         ///     Ends system restore call
         /// </summary>
-        /// <param name="lSeqNum">The restore sequence number</param>
-        /// <returns>The status of call</returns>
         public static int EndRestore(long lSeqNum)
         {
-            var rpInfo = new RestorePointInfo();
+            return EndOrCancelRestore(lSeqNum, RestoreType.ApplicationUninstall);
+        }
+
+        private static int EndOrCancelRestore(long lSeqNum, RestoreType cancelType)
+        {
+            var rpInfo = new RestorePointInfo
+            {
+                dwEventType = EndSystemChange,
+                dwRestorePtType = (int)cancelType,
+                llSequenceNumber = lSeqNum
+            };
             STATEMGRSTATUS rpStatus;
 
             if (!SysRestoreAvailable())
@@ -91,13 +80,16 @@ namespace Klocman.IO
 
             try
             {
-                rpInfo.dwEventType = EndSystemChange;
-                rpInfo.llSequenceNumber = lSeqNum;
-
-                SRSetRestorePointW(ref rpInfo, out rpStatus);
+                var result = SRSetRestorePointW(ref rpInfo, out rpStatus);
+                if (!result)
+                {
+                    var error = Marshal.GetLastWin32Error();
+                    throw new Exception($"SRSetRestorePointW failed with error code: {error}");
+                }
             }
-            catch (DllNotFoundException)
+            catch (Exception ex)
             {
+                LogError("EndOrCancelRestore failed", ex);
                 return -1;
             }
 
@@ -108,7 +100,6 @@ namespace Klocman.IO
         ///     Starts system restore
         /// </summary>
         /// <param name="strDescription">The description of the restore</param>
-        /// <param name="rt">The type of restore point</param>
         /// <param name="lSeqNum">Returns the sequence number</param>
         /// <param name="creationFrequency">
         ///     Under Win 8 or newer - Minimal amount of minutes since last restore point for this point to be created. 
@@ -118,45 +109,58 @@ namespace Klocman.IO
         /// <seealso>
         ///     <cref>Use EndRestore() or CancelRestore() to end the system restore</cref>
         /// </seealso>
-        public static int StartRestore(string strDescription, RestoreType rt, out long lSeqNum, int creationFrequency = -1)
+        public static int StartRestore(string strDescription, out long lSeqNum, int creationFrequency = -1)
         {
-            var rpInfo = new RestorePointInfo();
-            STATEMGRSTATUS rpStatus;
+            if (strDescription == null) throw new ArgumentNullException(nameof(strDescription));
 
+            lSeqNum = 0;
             if (!SysRestoreAvailable())
-            {
-                lSeqNum = 0;
                 return -1;
-            }
 
             if (creationFrequency >= 0)
             {
-                using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true))
+                try
                 {
-                    Debug.Assert(key != null, "SystemRestore key must exist after SysRestoreAvailable");
+                    using var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", true);
+                    if (key == null)
+                        throw new InvalidOperationException("SystemRestore registry key not found.");
                     key.SetValue("SystemRestorePointCreationFrequency", creationFrequency, RegistryValueKind.DWord);
+                }
+                catch (Exception ex)
+                {
+                    LogError("Failed to set SystemRestorePointCreationFrequency", ex);
                 }
             }
 
+            // Ensure description is under the max character limit
+            if (strDescription.Length > MaxDescW)
+                strDescription = strDescription.Substring(0, MaxDescW);
+
+            var rpInfo = new RestorePointInfo
+            {
+                dwEventType = BeginSystemChange,
+                dwRestorePtType = (int)RestoreType.ApplicationUninstall,
+                llSequenceNumber = 0,
+                szDescription = strDescription
+            };
+            STATEMGRSTATUS rpStatus;
+
             try
             {
-                // Prepare Restore Point
-                rpInfo.dwEventType = BeginSystemChange;
-                // By default we create a verification system
-                rpInfo.dwRestorePtType = (int)rt;
-                rpInfo.llSequenceNumber = 0;
-                rpInfo.szDescription = strDescription;
-
-                SRSetRestorePointW(ref rpInfo, out rpStatus);
+                bool result = SRSetRestorePointW(ref rpInfo, out rpStatus);
+                if (!result)
+                {
+                    var error = Marshal.GetLastWin32Error();
+                    throw new Exception($"SRSetRestorePointW failed with error code: {error}");
+                }
             }
-            catch (DllNotFoundException)
+            catch (Exception ex)
             {
-                lSeqNum = 0;
+                LogError("StartRestore failed", ex);
                 return -1;
             }
 
             lSeqNum = rpStatus.llSequenceNumber;
-
             return rpStatus.nStatus;
         }
 
@@ -167,52 +171,26 @@ namespace Klocman.IO
         {
             try
             {
-                // See if sys restore is enabled
-                using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", false))
+                // Check if System Protection is enabled for the system drive (usually C:)
+                using var searcher = new ManagementObjectSearcher("root\\default", "SELECT * FROM SystemRestore");
+                using var results = searcher.Get();
+                foreach (ManagementObject _ in results)
                 {
-                    if (key == null) return false;
-                    if (key.GetStringSafe("SRInitDone") != "1" && key.GetStringSafe("RPSessionInterval") != "1") return false;
-                }
-
-                // See if DLL exists
-                var sbPath = new StringBuilder(260);
-                if (SearchPath(null, "srclient.dll", null, 260, sbPath, null) != 0)
+                    // If we can enumerate, System Restore is available
                     return true;
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                LogError("System Restore check failed", ex);
             }
-
-            // Fall back to checking by system version
-            var majorVersion = Environment.OSVersion.Version.Major;
-            var minorVersion = Environment.OSVersion.Version.Minor;
-
-            // Windows ME
-            if (majorVersion == 4 && minorVersion == 90) return true;
-
-            // Windows XP
-            if (majorVersion == 5 && minorVersion == 1) return true;
-
-            // Windows Vista
-            if (majorVersion == 6 && minorVersion == 0) return true;
-
-            // Windows Se7en
-            if (majorVersion == 6 && minorVersion == 1) return true;
-
-            if (Environment.OSVersion.Version >= WindowsTools.Windows8) return true;
-
-            // All others : Win 95, 98, 2000, Server
             return false;
         }
 
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        private static extern uint SearchPath(string lpPath,
-            string lpFileName,
-            string lpExtension,
-            int nBufferLength,
-            [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpBuffer,
-            string lpFilePart);
+        private static void LogError(string message, Exception ex = null)
+        {
+            Console.WriteLine($@"{message}{(ex != null ? ": " + ex : string.Empty)}");
+        }
 
         [DllImport("srclient.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]

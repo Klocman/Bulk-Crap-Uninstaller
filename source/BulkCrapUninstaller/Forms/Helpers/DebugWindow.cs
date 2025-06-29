@@ -15,6 +15,7 @@ using BulkCrapUninstaller.Functions.Tracking;
 using BulkCrapUninstaller.Properties;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
+using Klocman.IO;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -54,6 +55,7 @@ namespace BulkCrapUninstaller.Forms
             }
 
             checkBox2.Checked = Program.IsInstalled;
+            checkBoxSysRestoreAvail.Checked = SysRestore.SysRestoreAvailable();
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -200,6 +202,22 @@ namespace BulkCrapUninstaller.Forms
         private void button14_Click(object sender, EventArgs e)
         {
             FeedbackBox.ShowFeedbackBox(this, true);
+        }
+
+        private static long _currentRestoreId;
+        private void button15_Click(object sender, EventArgs e)
+        {
+            SysRestore.StartRestore("BCU RESTORE POINT TEST " + DateTime.Now.ToShortTimeString(), out _currentRestoreId);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            SysRestore.EndRestore(_currentRestoreId);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            SysRestore.CancelRestore(_currentRestoreId);
         }
     }
 }
