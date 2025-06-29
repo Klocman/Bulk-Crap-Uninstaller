@@ -50,7 +50,7 @@ namespace UninstallTools.Junk
 
                 foreach (var subDirectory in subDirectories)
                 {
-                    if (UninstallToolsGlobalConfig.IsSystemDirectory(subDirectory))
+                    if (UninstallToolsGlobalConfig.IsSystemDirectory(subDirectory) || UninstallToolsGlobalConfig.IsKnownFolder(subDirectory))
                         continue;
 
                     if (subDirectory.FullName.ContainsAny(_otherInstallLocations, StringComparison.CurrentCultureIgnoreCase))

@@ -47,6 +47,9 @@ namespace UninstallTools.Junk.Confidence
                     .Contains(PathTools.GetName(itemParentPath).Replace('_', ' ').ToLowerInvariant()))
                     yield return ConfidenceRecords.CompanyNameMatch;
             }
+
+            if (UninstallToolsGlobalConfig.IsKnownFolder(itemParentPath))
+                yield return ConfidenceRecords.DirectlyInsideKnownFolder;
         }
 
         /// <summary>

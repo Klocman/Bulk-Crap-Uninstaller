@@ -111,7 +111,7 @@ namespace BulkCrapUninstaller.Controls
                 }
             }).Where(x => x != null);
 
-            var results = folderInfos.Where(x => !UninstallToolsGlobalConfig.IsSystemDirectory(x)).ToList();
+            var results = folderInfos.Where(x => !UninstallToolsGlobalConfig.IsSystemDirectory(x) && !UninstallToolsGlobalConfig.IsKnownFolder(x)).ToList();
 
             DirectoriesSelected?.Invoke(this, new DirectoriesSelectedEventArgs(results));
         }

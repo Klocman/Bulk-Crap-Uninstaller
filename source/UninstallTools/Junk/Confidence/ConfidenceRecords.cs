@@ -49,5 +49,7 @@ namespace UninstallTools.Junk.Confidence
         public static readonly ConfidenceRecord PublisherIsStillUsed = new(-4, Localisation.Confidence_PF_PublisherIsUsed);
 
         public static readonly ConfidenceRecord UsedBySimilarNamedApp = new(-2, Localisation.Confidence_UsedBySimilarNamedApp);
+
+        public static readonly ConfidenceRecord DirectlyInsideKnownFolder = new(-1, Localisation.Confidence_DirectlyInsideKnownFolder);
     }
 }

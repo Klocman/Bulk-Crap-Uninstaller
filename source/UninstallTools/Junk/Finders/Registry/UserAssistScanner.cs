@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Klocman.Tools;
 using UninstallTools.Junk.Confidence;
 using UninstallTools.Junk.Containers;
@@ -52,7 +51,7 @@ namespace UninstallTools.Junk.Finders.Registry
                         var guidEnd = convertedName.IndexOf('}') + 1;
                         Guid g;
                         if (guidEnd > 0 && GuidTools.GuidTryParse(convertedName.Substring(0, guidEnd), out g))
-                            convertedName = NativeMethods.GetKnownFolderPath(g) + convertedName.Substring(guidEnd);
+                            convertedName = KnownFolders.GetKnownFolderPath(g) + convertedName.Substring(guidEnd);
 
                         // Check for matches
                         if (convertedName.StartsWith(target.InstallLocation,
@@ -78,23 +77,6 @@ namespace UninstallTools.Junk.Finders.Registry
                 : (x >= 'A' && x <= 'Z'
                     ? (char)((x - 'A' + 13) % 26 + 'A')
                     : x)).ToArray());
-        }
-
-        private static class NativeMethods
-        {
-            public static string GetKnownFolderPath(Guid rfid)
-            {
-                IntPtr pPath;
-                SHGetKnownFolderPath(rfid, 0, IntPtr.Zero, out pPath);
-
-                var path = Marshal.PtrToStringUni(pPath);
-                Marshal.FreeCoTaskMem(pPath);
-                return path;
-            }
-
-            [DllImport("shell32.dll")]
-            private static extern int SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid,
-                uint dwFlags, IntPtr hToken, out IntPtr pszPath);
         }
     }
 }

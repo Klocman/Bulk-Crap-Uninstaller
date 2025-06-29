@@ -31,15 +31,27 @@ namespace UninstallTools
             QuestionableDirectoryNames = new[]
             {
                 "install", "settings", "config", "configuration", "users", "data"
-            }.AsEnumerable();
+            };
 
-            DirectoryBlacklist = new[]
+            var allKnownFolders = Enum.GetValues<CSIDL>().Attempt(WindowsTools.GetEnvironmentPath)
+                                      .Where(x => !string.IsNullOrWhiteSpace(x)).Attempt(Path.GetFullPath)
+                                      .Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+            _downloadsDir = KnownFolders.GetKnownFolderPath(new Guid("374DE290-123F-4565-9164-39C4925E467B"));
+            if (!string.IsNullOrWhiteSpace(_downloadsDir))
             {
-                "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients",
+                _downloadsDir = Path.GetFullPath(_downloadsDir);
+                allKnownFolders.Add(_downloadsDir);
+            }
+            else _downloadsDir = null;
+            KnownFolderList = allKnownFolders;
+
+            DirectoryNameBlacklist = new[]
+            {
+                "Microsoft", "Microsoft Games", "Temp", "Programs", "Common", "Common Files", "Clients", "Downloads",
                 "Desktop", "Internet Explorer", "Windows", "Windows NT", "Windows Photo Viewer", "Windows Mail",
                 "Windows Defender", "Windows Media Player", "Uninstall Information", "Reference Assemblies",
                 "InstallShield Installation Information", "Installer", "winsxs", "WindowsApps", "DirectX", "DirectXRedist"
-            }.AsEnumerable();
+            };
 
             WindowsDirectory = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_WINDOWS);
 
@@ -47,7 +59,7 @@ namespace UninstallTools
             {
                 WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROGRAM_FILES),
                 WindowsTools.GetProgramFilesX86Path()
-            }.Distinct().ToList().AsEnumerable();
+            }.Distinct().ToList();
 
             // JunkSearchDirs --------------
             var localData = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_LOCAL_APPDATA);
@@ -73,7 +85,7 @@ namespace UninstallTools
             if (Directory.Exists(vsPath))
                 paths.AddRange(Directory.GetDirectories(vsPath));
 
-            JunkSearchDirs = paths.Distinct().ToList().AsEnumerable();
+            JunkSearchDirs = paths.Distinct().ToList();
 
             AppInfoCachePath = Path.Combine(AssemblyLocation, "InfoCache.xml");
 
@@ -137,7 +149,9 @@ namespace UninstallTools
         /// <summary>
         ///     Directory names that should be ignored for safety.
         /// </summary>
-        internal static IEnumerable<string> DirectoryBlacklist { get; }
+        internal static IEnumerable<string> DirectoryNameBlacklist { get; }
+
+        internal static IEnumerable<string> KnownFolderList { get; }
 
         internal static string WindowsDirectory { get; }
 
@@ -193,6 +207,7 @@ namespace UninstallTools
         }
 
         private static readonly string _pf64, _pf32;
+        private static readonly string _downloadsDir;
 
         /// <summary>
         ///     Get a list of directiories containing programs. Optionally user-defined directories are added.
@@ -244,6 +259,9 @@ namespace UninstallTools
             return MachineType.Unknown;
         }
 
+        public static bool IsKnownFolder(string itemParentPath) => KnownFolderList.Any(y => PathTools.PathsEqual(y, itemParentPath));
+        public static bool IsKnownFolder(DirectoryInfo dir) => KnownFolderList.Any(y => PathTools.PathsEqual(y, dir.FullName));
+
         /// <summary>
         ///     Check if dir is a system directory and should be left alone.
         /// </summary>
@@ -251,7 +269,8 @@ namespace UninstallTools
         {
             return (dir.Attributes & FileAttributes.System) == FileAttributes.System
                    || dir.FullName.StartsWith(WindowsDirectory, StringComparison.OrdinalIgnoreCase)
-                   || DirectoryBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase));
+                   || _downloadsDir != null && dir.FullName.StartsWith(_downloadsDir, StringComparison.OrdinalIgnoreCase)
+                   || DirectoryNameBlacklist.Any(y => y.Equals(dir.Name, StringComparison.InvariantCultureIgnoreCase));
         }
 
         /// <summary>

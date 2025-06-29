@@ -54,18 +54,21 @@ namespace UninstallTools.Junk.Finders.Drive
                     if (UninstallToolsGlobalConfig.IsSystemDirectory(dir))
                         continue;
 
-                    var generatedConfidence = GenerateConfidence(dir.GetNameWithoutExtension(), directory.FullName, uninstaller, level).ToList();
-
                     FileSystemJunk newNode = null;
-                    if (generatedConfidence.Any())
+                    if (!UninstallToolsGlobalConfig.IsKnownFolder(dir))
                     {
-                        newNode = new FileSystemJunk(dir, uninstaller, this);
-                        newNode.Confidence.AddRange(generatedConfidence);
+                        var generatedConfidence = GenerateConfidence(dir.GetNameWithoutExtension(), directory.FullName, uninstaller, level).ToList();
 
-                        if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(uninstaller)))
-                            newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
+                        if (generatedConfidence.Any())
+                        {
+                            newNode = new FileSystemJunk(dir, uninstaller, this);
+                            newNode.Confidence.AddRange(generatedConfidence);
 
-                        added.Add(newNode);
+                            if (CheckIfDirIsStillUsed(dir.FullName, GetOtherInstallLocations(uninstaller)))
+                                newNode.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
+
+                            added.Add(newNode);
+                        }
                     }
 
                     if (level > 1) continue;
