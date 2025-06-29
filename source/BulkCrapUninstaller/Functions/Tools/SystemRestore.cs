@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using BulkCrapUninstaller.Properties;
 using Klocman.Forms;
 using Klocman.IO;
+using Microsoft.UI.Xaml;
 
 namespace BulkCrapUninstaller.Functions.Tools
 {
@@ -17,7 +18,7 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// <summary>
         /// Currently running system restore number
         /// </summary>
-        private static long _currentRestoreId;
+        private static long _currentRestoreId = long.MinValue;
 
         /// <summary>
         ///     Ask the user to begin system restore and do so if he accepts. Returns false if user decides to cancel the
@@ -35,11 +36,9 @@ namespace BulkCrapUninstaller.Functions.Tools
                     case MessageBoxes.PressedButton.Yes:
                         var error = LoadingDialog.ShowDialog(owner, Localisable.LoadingDialogTitleCreatingRestorePoint, x =>
                         {
-                            //if (_currentRestoreId > 0)
                             EndSysRestore();
 
-                            var result = SysRestore.StartRestore(MessageBoxes.GetSystemRestoreDescription(count),
-                                SysRestore.RestoreType.ApplicationUninstall, out _currentRestoreId, 3);
+                            var result = SysRestore.StartRestore(MessageBoxes.GetSystemRestoreDescription(count), out _currentRestoreId, 3);
                             if (result < 0)
                                 throw new IOException(Localisable.SysRestoreGenericError);
                         });
@@ -61,14 +60,24 @@ namespace BulkCrapUninstaller.Functions.Tools
         /// </summary>
         public static void CancelSysRestore()
         {
-            try { SysRestore.CancelRestore(_currentRestoreId); }
+            try
+            {
+                if (_currentRestoreId != long.MinValue)
+                    SysRestore.CancelRestore(_currentRestoreId);
+            }
             catch (Exception ex) { Console.WriteLine(ex); }
+            finally { _currentRestoreId = long.MinValue; }
         }
 
         public static void EndSysRestore()
         {
-            try { SysRestore.EndRestore(_currentRestoreId); }
+            try
+            {
+                if (_currentRestoreId != long.MinValue)
+                    SysRestore.EndRestore(_currentRestoreId);
+            }
             catch (Exception ex) { Console.WriteLine(ex); }
+            finally { _currentRestoreId = long.MinValue; }
         }
     }
 }
