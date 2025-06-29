@@ -36,26 +36,6 @@ namespace UninstallTools.Factory
             var itemsToScan = GetDirectoriesToScan(existingUninstallers, pfDirs, dirsToSkip).ToList();
             return FactoryThreadedHelpers.DriveApplicationScan(progressCallback, dirsToSkip, itemsToScan);
         }
-        
-        public static IEnumerable<ApplicationUninstallerEntry> TryGetApplicationsFromDirectories(
-            ICollection<DirectoryInfo> directoriesToScan, IEnumerable<ApplicationUninstallerEntry> existingUninstallers)
-        {
-            var pfDirs = UninstallToolsGlobalConfig.GetProgramFilesDirectories(true);
-            var dirsToSkip = GetDirectoriesToSkip(existingUninstallers, pfDirs).ToList();
-
-            var results = new List<ApplicationUninstallerEntry>();
-            foreach (var directory in directoriesToScan)
-            {
-                if (UninstallToolsGlobalConfig.IsSystemDirectory(directory) ||
-                    directory.Name.StartsWith("Windows", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
-
-                var detectedEntries = TryCreateFromDirectory(directory, dirsToSkip);
-
-                results.AddRange(detectedEntries);
-            }
-            return results;
-        }
 
         /// <summary>
         /// Get directories to scan for applications
@@ -238,7 +218,7 @@ namespace UninstallTools.Factory
                 return;
 
             var anyFiles = result.ExecutableFiles.Any();
-            if (!anyFiles && !result.BinSubdirs.Any())
+            if (UninstallToolsGlobalConfig.IsKnownFolder(directory) || !anyFiles && !result.BinSubdirs.Any())
             {
                 foreach (var dir in result.OtherSubdirs)
                     CreateFromDirectoryHelper(results, dir, level + 1, dirsToSkip);
