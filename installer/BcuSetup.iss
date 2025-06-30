@@ -16,9 +16,7 @@
 #define MyAppVersion       str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion) + "." + str(BuildVersion)
 #define MyAppVersionShort  str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion)
 
-#include "Scripts\PortablePage.iss"
-#include "Scripts\PortableIcons.iss"
-#include "Scripts\Ngen.iss"
+#include "PortablePage.iss"
 
 [Setup]
 AppId={{f4fef76c-1aa9-441c-af7e-d27f58d898d1}
@@ -36,9 +34,9 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
-WizardImageFile=bigImage.bmp
-WizardSmallImageFile=smallImage.bmp
-SetupIconFile=logo.ico
+WizardImageFile=assets\bigImage.bmp
+WizardSmallImageFile=assets\smallImage.bmp
+SetupIconFile=assets\logo.ico
 
 AllowNoIcons=yes
 DisableDirPage=no
@@ -55,15 +53,13 @@ LZMANumBlockThreads=8
 PrivilegesRequired=admin
 ;x86 x64 ia64
 ArchitecturesAllowed=x86 x64 arm64
-ArchitecturesInstallIn64BitMode=x64 ia64 arm64
+ArchitecturesInstallIn64BitMode=x64 arm64
 
 VersionInfoCompany={#MyAppPublisher}
 ;VersionInfoDescription=desc
 VersionInfoCopyright={#MyAppCopyright}
 VersionInfoProductName={#MyAppName}
-VersionInfoProductVersion={#MyAppVersion}
 VersionInfoProductTextVersion={#MyAppVersion}
-VersionInfoVersion={#MyAppVersion}
 VersionInfoTextVersion={#MyAppVersion}
 
 [Languages]
@@ -87,6 +83,9 @@ Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
 Name: "lang"; Description: "{cm:ExtraLanguages}"; Types: full
 
+// TODO either check if net6 is installed and ship anycpu OR installer only comes with anycpu + auto install net6
+// update innosetup?
+
 [Files]
 Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
 Source: "{#InputDir}\BCU_manual.html";          DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme; Check: IsPortable or not IsPortable
@@ -107,6 +106,16 @@ Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Compon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
+
+[Tasks]
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
+Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+
+[Icons]
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Check: IsNotPortable;
+Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Check: IsNotPortable;
+Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon; Check: IsNotPortable;
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon; Check: IsNotPortable;
 
 [CustomMessages] 
 en.MainFiles=Main Files
