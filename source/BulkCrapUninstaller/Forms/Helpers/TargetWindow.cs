@@ -72,7 +72,7 @@ namespace BulkCrapUninstaller.Forms
                     throw new InvalidOperationException("Failed to get MainModule Directory");
 
                 // Ignore targeting BCU itself
-                if (PathTools.SubPathIsInsideBasePath(Program.AssemblyLocation.FullName, fileName, true))
+                if (PathTools.SubPathIsInsideBasePath(Program.AssemblyLocation.FullName, fileName, true, true))
                     return;
 
                 OnDirectoriesSelected(new DirectoriesSelectedEventArgs(parentDirectory.ToEnumerable().ToList()));

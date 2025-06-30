@@ -38,13 +38,13 @@ namespace UninstallTools.Junk.Finders.Registry
                     using (var subkey = key.OpenSubKey(result))
                     {
                         var exePath = subkey?.GetStringSafe("EventMessageFile");
-                        if (string.IsNullOrEmpty(exePath) || !PathTools.SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(exePath), true)) continue;
+                        if (string.IsNullOrEmpty(exePath) || !PathTools.SubPathIsInsideBasePath(target.InstallLocation, Path.GetDirectoryName(exePath), true, false)) continue;
 
                         var node = new RegistryKeyJunk(subkey.Name, target, this);
                         // Already matched names above
                         node.Confidence.Add(ConfidenceRecords.ProductNamePerfectMatch);
 
-                        if (otherUninstallers.Any(x => PathTools.SubPathIsInsideBasePath(x.InstallLocation, Path.GetDirectoryName(exePath), true)))
+                        if (otherUninstallers.Any(x => PathTools.SubPathIsInsideBasePath(x.InstallLocation, Path.GetDirectoryName(exePath), true, false)))
                             node.Confidence.Add(ConfidenceRecords.DirectoryStillUsed);
 
                         yield return node;

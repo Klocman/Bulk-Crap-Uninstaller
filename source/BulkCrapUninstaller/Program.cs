@@ -199,7 +199,7 @@ namespace BulkCrapUninstaller
                             var installLocation = subKey?.GetStringSafe(RegistryFactory.RegistryNameInstallLocation);
                             if (string.IsNullOrEmpty(installLocation)) continue;
 
-                            if (PathTools.SubPathIsInsideBasePath(installLocation, AssemblyLocation.FullName, true))
+                            if (PathTools.SubPathIsInsideBasePath(installLocation, AssemblyLocation.FullName, true, true))
                             {
                                 // We are installed!
                                 _installedRegistryKeyName = keyName;
