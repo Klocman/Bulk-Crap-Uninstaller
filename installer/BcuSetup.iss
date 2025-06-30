@@ -17,6 +17,8 @@
 #ifdef Light
 #define InputDir           "..\bin\publish-AnyCPU-net6.0"
 #define MainExePath        InputDir+'\'+MyAppExeName
+; Downloading net6 is only necessary in light mode
+#include "CodeDependencies.iss"
 #else
 #define InputDir           "..\bin\publish"
 #define MainExePath        InputDir+'\win-x86\'+MyAppExeName
@@ -129,7 +131,7 @@ Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Compon
 #endif
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Check: IsNotPortable;
@@ -148,6 +150,12 @@ end;
 function IsNotPortable(): Boolean;
 begin
   Result := True
+end;
+
+function InitializeSetup: Boolean;
+begin
+  Dependency_AddDotNet60Desktop;
+  Result := True;
 end;
 #endif
 
