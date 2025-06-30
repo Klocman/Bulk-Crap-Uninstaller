@@ -1,4 +1,6 @@
-﻿#define MyAppName          "BCUninstaller"
+﻿; Tested with innosetup-6.4.3
+
+#define MyAppName          "BCUninstaller"
 #define MyAppNameShort     "BCUninstaller"
 #define MyAppPublisher     "Marcin Szeniak"
 #define MyAppURL           "https://github.com/Klocman/Bulk-Crap-Uninstaller"
@@ -30,7 +32,7 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
@@ -51,9 +53,8 @@ LZMANumFastBytes=273
 LZMANumBlockThreads=8
 
 PrivilegesRequired=admin
-;x86 x64 ia64
-ArchitecturesAllowed=x86 x64 arm64
-ArchitecturesInstallIn64BitMode=x64 arm64
+ArchitecturesAllowed=x86compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 
 VersionInfoCompany={#MyAppPublisher}
 ;VersionInfoDescription=desc
@@ -73,18 +74,15 @@ Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
-Name: "hu"; MessagesFile: "lang\Hungarian.isl"
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "tr"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
-Name: "tr"; MessagesFile: "lang\Turkish.isl"
 Name: "hi"; MessagesFile: "lang\Hindi.isl"
 Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
 [Components]
 Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: fixed
 Name: "lang"; Description: "{cm:ExtraLanguages}"; Types: full
-
-// TODO either check if net6 is installed and ship anycpu OR installer only comes with anycpu + auto install net6
-// update innosetup?
 
 [Files]
 Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
@@ -104,18 +102,16 @@ Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86"; Compon
 Source: "{#InputDir}\win-x64\CleanLogs.bat";    DestDir: "{app}\win-x64"; Components: main; Flags: ignoreversion; Check: IsPortable
 Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Components: main; Flags: ignoreversion; Check: IsPortable
 
-[Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
-
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
-Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Check: IsNotPortable;
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Check: IsNotPortable;
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon; Check: IsNotPortable;
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon; Check: IsNotPortable;
+
+[Run]
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
 
 [CustomMessages] 
 en.MainFiles=Main Files
