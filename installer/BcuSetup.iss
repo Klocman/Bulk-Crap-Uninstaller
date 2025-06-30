@@ -1,5 +1,11 @@
 ﻿; Tested with innosetup-6.4.3
 
+; Normal: include self-contained binaries for both x86 and x64
+; Light: include only AnyCPU binaries and automatically download net6 if needed
+#define Light
+
+; =============================================================================
+
 #define MyAppName          "BCUninstaller"
 #define MyAppNameShort     "BCUninstaller"
 #define MyAppPublisher     "Marcin Szeniak"
@@ -8,17 +14,24 @@
 #define CurrentYear        GetDateTimeString('yyyy','','')
 #define MyAppCopyright     "Copyright " + CurrentYear + " " + MyAppPublisher
 
+#ifdef Light
+#define InputDir           "..\bin\publish-AnyCPU-net6.0"
+#define MainExePath        InputDir+'\'+MyAppExeName
+#else
 #define InputDir           "..\bin\publish"
+#define MainExePath        InputDir+'\win-x86\'+MyAppExeName
+; Portable page only works in normal mode
+#include "PortablePage.iss"
+#endif
 
 #define                    MajorVersion    
 #define                    MinorVersion    
 #define                    RevisionVersion    
 #define                    BuildVersion    
-#define TempVersion        ParseVersion(InputDir+'\win-x86\'+MyAppExeName, MajorVersion, MinorVersion, RevisionVersion, BuildVersion)
+#define TempVersion        ParseVersion(MainExePath, MajorVersion, MinorVersion, RevisionVersion, BuildVersion)
 #define MyAppVersion       str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion) + "." + str(BuildVersion)
 #define MyAppVersionShort  str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion)
 
-#include "PortablePage.iss"
 
 [Setup]
 AppId={{f4fef76c-1aa9-441c-af7e-d27f58d898d1}
@@ -85,6 +98,17 @@ Name: "main"; Description: "{cm:MainFiles}"; Types: full compact custom; Flags: 
 Name: "lang"; Description: "{cm:ExtraLanguages}"; Types: full
 
 [Files]
+#ifdef Light
+
+; Need to do this to separate the language resource folders from main app files
+Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; 
+Source: "{#InputDir}\Resources\*";      DestDir: "{app}\Resources"; Components: main; Flags: ignoreversion recursesubdirs;
+
+; If installing languages, copy everything
+Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat";
+
+#else 
+
 Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
 Source: "{#InputDir}\BCU_manual.html";          DestDir: "{app}"; Components: main; Flags: ignoreversion isreadme; Check: IsPortable or not IsPortable
 
@@ -102,6 +126,8 @@ Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86"; Compon
 Source: "{#InputDir}\win-x64\CleanLogs.bat";    DestDir: "{app}\win-x64"; Components: main; Flags: ignoreversion; Check: IsPortable
 Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Components: main; Flags: ignoreversion; Check: IsPortable
 
+#endif
+
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
 
@@ -112,6 +138,18 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
+
+#ifdef Light
+[Code]
+function IsPortable(): Boolean;
+begin
+  Result := False
+end;
+function IsNotPortable(): Boolean;
+begin
+  Result := True
+end;
+#endif
 
 [CustomMessages] 
 en.MainFiles=Main Files
