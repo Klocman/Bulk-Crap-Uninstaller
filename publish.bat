@@ -37,6 +37,7 @@ if errorlevel 1 (pause)
 
 %msbuild% "source\BulkCrapUninstaller.sln" /m /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform="Any CPU" /p:TargetFrameworks=net6.0-windows10.0.18362.0 /p:PublishDir="%target%"  /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
 
+IF %config%==Release (del /f /s /q "%target%\*.pdb")
 
 pause
 exit
