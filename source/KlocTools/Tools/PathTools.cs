@@ -350,7 +350,7 @@ namespace Klocman.Tools
         /// Check if subPath is a sub path inside basePath.
         /// If isFilesystemPath is true then attempt to normalize the path to its absolute form on the filesystem. Set to false for registry and other paths.
         /// </summary>
-        public static bool SubPathIsInsideBasePath(string basePath, string subPath, bool normalizeFilesystemPath)
+        public static bool SubPathIsInsideBasePath(string basePath, string subPath, bool normalizeFilesystemPath, bool includeExactMatch)
         {
             if (basePath == null) return false;
             basePath = NormalizePath(basePath).Replace('\\', '/');
@@ -370,7 +370,7 @@ namespace Klocman.Tools
                 catch (SystemException) { }
             }
 
-            return subPath.StartsWith(basePath + '/', StringComparison.InvariantCultureIgnoreCase);
+            return subPath.StartsWith(basePath + '/', StringComparison.InvariantCultureIgnoreCase) || includeExactMatch && subPath.Equals(basePath, StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

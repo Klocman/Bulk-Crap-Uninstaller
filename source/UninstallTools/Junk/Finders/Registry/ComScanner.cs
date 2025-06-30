@@ -39,7 +39,7 @@ namespace UninstallTools.Junk.Finders.Registry
             if (UninstallToolsGlobalConfig.IsSystemDirectory(target.InstallLocation))
                 yield break;
 
-            foreach (var comEntry in _comEntries.Where(x => PathTools.SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename, true)))
+            foreach (var comEntry in _comEntries.Where(x => PathTools.SubPathIsInsideBasePath(target.InstallLocation, x.FullFilename, true, true)))
             {
                 foreach (var interfacePath in comEntry.InterfaceNames)
                 {
