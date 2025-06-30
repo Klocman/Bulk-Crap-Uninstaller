@@ -26,7 +26,8 @@ Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can 
 Please check the [contribution](CONTRIBUTING.md) notes!
 
 ## Compiling
-Any modern version of Visual Studio should work. You might need to download [this](https://github.com/Klocman/UpdateSystem) and [this ](https://sourceforge.net/p/kloctoolslibrary/) library separately. If you don't want to make any changes in them you can point the projects to .dll files from the latest release of BCU instead.
+Development is done on Visual Studio 2022. The solution should just load and build without doing anything extra, provided necessary VS features are installed.
+The installer is compiled with InnoSetup v6.4. To make a release you have to first run the `publish.bat` script.
 
 ## Screenshots
 ![preview](../gh-pages/assets/1.png)
