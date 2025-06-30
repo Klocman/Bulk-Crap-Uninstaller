@@ -1,4 +1,6 @@
-﻿#define MyAppName          "BCUninstaller"
+﻿; Tested with innosetup-6.4.3
+
+#define MyAppName          "BCUninstaller"
 #define MyAppNameShort     "BCUninstaller"
 #define MyAppPublisher     "Marcin Szeniak"
 #define MyAppURL           "https://github.com/Klocman/Bulk-Crap-Uninstaller"
@@ -16,9 +18,7 @@
 #define MyAppVersion       str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion) + "." + str(BuildVersion)
 #define MyAppVersionShort  str(MajorVersion) + "." + str(MinorVersion) + "." + str(RevisionVersion)
 
-#include "Scripts\PortablePage.iss"
-#include "Scripts\PortableIcons.iss"
-#include "Scripts\Ngen.iss"
+#include "PortablePage.iss"
 
 [Setup]
 AppId={{f4fef76c-1aa9-441c-af7e-d27f58d898d1}
@@ -32,13 +32,13 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
-WizardImageFile=bigImage.bmp
-WizardSmallImageFile=smallImage.bmp
-SetupIconFile=logo.ico
+WizardImageFile=assets\bigImage.bmp
+WizardSmallImageFile=assets\smallImage.bmp
+SetupIconFile=assets\logo.ico
 
 AllowNoIcons=yes
 DisableDirPage=no
@@ -53,17 +53,14 @@ LZMANumFastBytes=273
 LZMANumBlockThreads=8
 
 PrivilegesRequired=admin
-;x86 x64 ia64
-ArchitecturesAllowed=x86 x64 arm64
-ArchitecturesInstallIn64BitMode=x64 ia64 arm64
+ArchitecturesAllowed=x86compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 
 VersionInfoCompany={#MyAppPublisher}
 ;VersionInfoDescription=desc
 VersionInfoCopyright={#MyAppCopyright}
 VersionInfoProductName={#MyAppName}
-VersionInfoProductVersion={#MyAppVersion}
 VersionInfoProductTextVersion={#MyAppVersion}
-VersionInfoVersion={#MyAppVersion}
 VersionInfoTextVersion={#MyAppVersion}
 
 [Languages]
@@ -77,9 +74,9 @@ Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "bpt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
-Name: "hu"; MessagesFile: "lang\Hungarian.isl"
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "tr"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
-Name: "tr"; MessagesFile: "lang\Turkish.isl"
 Name: "hi"; MessagesFile: "lang\Hindi.isl"
 Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
@@ -104,6 +101,14 @@ Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86"; Compon
 ; Only copy the cleaning script if installing as portable
 Source: "{#InputDir}\win-x64\CleanLogs.bat";    DestDir: "{app}\win-x64"; Components: main; Flags: ignoreversion; Check: IsPortable
 Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Components: main; Flags: ignoreversion; Check: IsPortable
+
+[Tasks]
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; Check: IsNotPortable; GroupDescription: "{cm:AdditionalIcons}"
+
+[Icons]
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Check: IsNotPortable;
+Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Check: IsNotPortable;
+Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon; Check: IsNotPortable;
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec

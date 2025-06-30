@@ -1,9 +1,7 @@
-; *** Inno Setup version 5.5.3+ Vietnamese messages ***
-;Transtator: Duy Quang Le (Hanoi, Vietnam)
-;Email: leduyquang753@gmail.com
-;
+﻿; *** Inno Setup version 6.1.0+ Vietnamese messages ***
+; Translated by Vu Khac Hiep (email: vukhachiep@gmail.com)
 ; To download user-contributed translations of this file, go to:
-;   http://www.jrsoftware.org/files/istrans/
+;   https://jrsoftware.org/files/istrans/
 ;
 ; Note: When translating this text, do not add periods (.) to the end of
 ; messages that didn't have them already, because on those messages Inno
@@ -13,7 +11,7 @@
 [LangOptions]
 ; The following three entries are very important. Be sure to read and 
 ; understand the '[LangOptions] section' topic in the help file.
-LanguageName=Vietnamese (Tieng Viet)
+LanguageName=Vietnamese
 LanguageID=$042A
 LanguageCodePage=0
 ; If the language you are translating to requires special font faces or
@@ -30,305 +28,357 @@ LanguageCodePage=0
 [Messages]
 
 ; *** Application titles
-SetupAppTitle=Cai dat
-SetupWindowTitle=Cai dat - %1
-UninstallAppTitle=Go cai dat
-UninstallAppFullTitle=Go cai dat %1
+SetupAppTitle=Cài đặt
+SetupWindowTitle=Cài đặt - %1
+UninstallAppTitle=Gỡ cài đặt
+UninstallAppFullTitle=Gỡ cài đặt - %1
 
 ; *** Misc. common
-InformationTitle=Thong tin
-ConfirmTitle=Chung nhan
-ErrorTitle=Loi
+InformationTitle=Thông tin
+ConfirmTitle=Xác nhận
+ErrorTitle=Lỗi
 
 ; *** SetupLdr messages
-SetupLdrStartupMessage=Chuong trinh nay se cai dat %1. Ban co muon tiep tuc?
-LdrCannotCreateTemp=Khong the tao tep tam thoi. Cai dat bi huy bo
-LdrCannotExecTemp=Khong the chay tep trong thu muc tam thoi. Cai dat bi huy bo
+SetupLdrStartupMessage=Chương trình này sẽ cài đặt %1. Bạn có muốn tiếp tục không?
+LdrCannotCreateTemp=Không thể tạo tệp tạm thời. Cài đặt bị hủy bỏ
+LdrCannotExecTemp=Không thể chạy tệp trong thư mục tạm thời. Cài đặt bị hủy bỏ
+HelpTextNote=
+
 ; *** Startup error messages
-LastErrorMessage=%1.%n%nLoi %2: %3
-SetupFileMissing=Tep %1 khong duoc tim thay trong thu muc cai dat. Hay sua loi hoac tim ban khac cua chuong trinh.
-SetupFileCorrupt=Tep cai dat co hong hoc. Hay tim ban khac cua chuong trinh.
-SetupFileCorruptOrWrongVer=Tep cai dat co hong hoc, hoac khong tuong thich voi phien ban cai dat nay. Hay sua loi hoac tim ban khac cua chuong trinh.
-InvalidParameter=Mot con tro khong hop le da di qua tren dong lenh:%n%n%1
-SetupAlreadyRunning=Cai dat hien dang chay.
-WindowsVersionNotSupported=Chuong trinh nay khong ho tro cho phien ban Windows ma ban dang chay.
-WindowsServicePackRequired=Chuong trinh nay yeu cau %1 Goi An ninh %2 hoac moi hon.
-NotOnThisPlatform=Chuong trinh nay se khong chay tren %1.
-OnlyOnThisPlatform=Chuong trinh nay phai chay tren %1.
-OnlyOnTheseArchitectures=Chuong trinh nay chi co the cai dat tren nhung phien ban cua Windows duoc thiet ke cho nhung bo vi xu ly sau:%n%n%1
-MissingWOW64APIs=Phien ban Windows ban dang chay khong bao gom cac kha nangduoc yeu cau boi cai dat de thuc hien mot su cai dat chuong trinh 64-bit. De sua loi nay, please install Service Hay cai dat Goi An ninh%1.
-WinVersionTooLowError=Chuong trinh nay yeu cau %1 phien ban %2 hoac moi hon.
-WinVersionTooHighError=Chuong trinh nay khong the duoc cai dat tren %1 phien ban %2 hoac moi hon.
-AdminPrivilegesRequired=Ban phai la Adminstrator de cai dat chuong trinh nay.
-PowerUserPrivilegesRequired=Ban phai la Adminstrator hoac mot thanh vien cua nhom nguoi dung quyen luc de cai dat chuong trinh nay.
-SetupAppRunningError=Viec cai dat bi gian doan vi %1 dang chay.%n%nHay dong chung lai, roi click OK de tiep tuc, hoac Huy de thoat.
-UninstallAppRunningError=Viec go cai dat bi gian doan vi %1 dang chay.%n%nHay dong chung lai, roi click OK de tiep tuc, hoac Huy de thoat.
+LastErrorMessage=%1.%n%nLỗi %2: %3
+SetupFileMissing=Tệp %1 bị thiếu trong thư mục cài đặt. Hãy sửa lỗi hoặc lấy một bản sao mới của chương trình.
+SetupFileCorrupt=Các tệp cài đặt đã bị hỏng. Hãy sửa lỗi hoặc lấy một bản sao của chương trình.
+SetupFileCorruptOrWrongVer=Các tệp cài đặt bị hỏng, hoặc không tương thích với bản cài đặt này. Hãy sửa lỗi hoặc lấy một bản sao mới của chương trình.
+InvalidParameter=Một thông số không hợp lệ đã được đưa vào dòng lệnh:%n%n%1
+SetupAlreadyRunning=Cài đặt này đang chạy.
+WindowsVersionNotSupported=Chương trình này không tương thích với phiên bản Windows bạn đang chạy.
+WindowsServicePackRequired=Chương trình này yêu cầu %1 Service Pack %2 hoặc mới hơn.
+NotOnThisPlatform=Chương trình này sẽ không chạy trên %1.
+OnlyOnThisPlatform=Chương trình này phải chạy trên %1.
+OnlyOnTheseArchitectures=Chương trình này chỉ có thể được cài đặt trên phiên bản Windows được thiết kế cho các hệ vi xử lí:%n%n%1
+WinVersionTooLowError=Chương trình này yêu cầu %1 phiên bản %2 hoặc mới hơn.
+WinVersionTooHighError=Chương trình này không thể được cài đặt trên %1 phiên bản %2 hoặc mới hơn.
+AdminPrivilegesRequired=Bạn phải được đăng nhập như người quản trị khi cài đặt chương trình này.
+PowerUserPrivilegesRequired=Bạn phải được đăng nhập như người quản trị hoặc thành viên trong nhóm Người dùng mạnh khi cài đặt chương trình này.
+SetupAppRunningError=Cài đặt phát hiện %1 đang chạy.%n%nHãy đóng tất cả các tiến trình của nó ngay, rồi click OK để tiếp tục, hoặc Hủy để thoát.
+UninstallAppRunningError=Gỡ cài đặt phát hiện %1 đang chạy.%n%nHãy đóng tất cả các tiến trình của nó ngay, rồi click OK để tiếp tục, hoặc Hủy để thoát.
+
+; *** Startup questions
+PrivilegesRequiredOverrideTitle=Select Setup Install Mode
+PrivilegesRequiredOverrideInstruction=Select install mode
+PrivilegesRequiredOverrideText1=%1 can be installed for all users (requires administrative privileges), or for you only.
+PrivilegesRequiredOverrideText2=%1 can be installed for you only, or for all users (requires administrative privileges).
+PrivilegesRequiredOverrideAllUsers=Install for &all users
+PrivilegesRequiredOverrideAllUsersRecommended=Install for &all users (recommended)
+PrivilegesRequiredOverrideCurrentUser=Install for &me only
+PrivilegesRequiredOverrideCurrentUserRecommended=Install for &me only (recommended)
+
 ; *** Misc. errors
-ErrorCreatingDir=Cai dat khong the tao thu muc "%1"
-ErrorTooManyFilesInDir=Khong the tao tep trong thu muc "%1" vi no chua qua nhieu tep
+ErrorCreatingDir=Cài đặt không thể tạo ra thư mục "%1"
+ErrorTooManyFilesInDir=Không thể tạo một tệp trong thư mục "%1" vì nó chứa quá nhiều tệp
+
 ; *** Setup common messages
-ExitSetupTitle=Thoat cai dat
-ExitSetupMessage=Viec cai dat chua hoan thanh. Neu ban thoat bay gio, chuong trinh se khong duoc cai dat.%n%nBan co the phai chay Cai dat mot lan khac de hoan thanh cai dat.%n%nThoat cai dat?
-AboutSetupMenuItem=&Ve cai dat...
-AboutSetupTitle=Ve cai dat
-AboutSetupMessage=%1 phien ban %2%n%3%n%n%1 trang chu:%n%4
-AboutSetupNote=Phien ban ngon ngu goc: Tieng Anh
-TranslatorNote=Nguoi dich: Le Duy Quang
+ExitSetupTitle=Thoát cài đặt
+ExitSetupMessage=Cài đặt chưa hoàn thành. Nếu bạn thoát bây giờ, chương trình sẽ không được cài đặt.%n%nBạn có thể chạy lại Cài đặt một lần khác để hoàn thành cài đặt.%n%nThoát ngay?
+AboutSetupMenuItem=&Về trình cài đặt...
+AboutSetupTitle=Về trình cài đặt
+AboutSetupMessage=%1 phiên bản %2%n%3%n%n%1 trang chủ:%n%4
+AboutSetupNote=
+TranslatorNote=Giao diện người dùng tiếng Việt bởi: Vũ Khắc Hiệp
 
 ; *** Buttons
-ButtonBack=< &Truoc
-ButtonNext=T&iep >
-ButtonInstall=&Cai dat
+ButtonBack=< &Trước
+ButtonNext=T&iếp >
+ButtonInstall=&Cài đặt
 ButtonOK=OK
-ButtonCancel=Huy
-ButtonYes=C&o
-ButtonYesToAll=Co c&ho tat ca
-ButtonNo=&Khong
-ButtonNoToAll=Kho&ng cho tat ca
-ButtonFinish=Ho&an thanh
-ButtonBrowse=Ti&m...
-ButtonWizardBrowse=Tim&...
-ButtonNewFolder=Tao th&u muc moi
+ButtonCancel=Hủy
+ButtonYes=&Có
+ButtonYesToAll=Có c&ho tất cả
+ButtonNo=&Không
+ButtonNoToAll=Khô&ng cho tất cả
+ButtonFinish=&Hoàn thành
+ButtonBrowse=&Duyệt...
+ButtonWizardBrowse=D&uyệt...
+ButtonNewFolder=Tạ&o thư mục mới
 
 ; *** "Select Language" dialog messages
-SelectLanguageTitle=Lua chon ngon ngu cai dat
-SelectLanguageLabel=Lua chon ngon ngu de hien thi khi cai dat:
+SelectLanguageTitle=Chọn ngôn ngữ cài đặt
+SelectLanguageLabel=Chọn ngôn ngữ để sử dụng khi cài đặt:
 
 ; *** Common wizard text
-ClickNext=Click Tiep de tiep tuc, hoac Huy de thoat cai dat.
+ClickNext=Nhấn Tiếp để tiếp tục, hoặc Hủy để thoát cài đặt
 BeveledLabel=
-BrowseDialogTitle=Tim thu muc
-BrowseDialogLabel=Chon mot thu muc trong danh sach duoi day, roi click OK.
-NewFolderName=Thu muc moi
+BrowseDialogTitle=Tìm thư mục
+BrowseDialogLabel=Chọn một thư mục trong danh sách sau rồi ấn OK.
+NewFolderName=Tạo thư mục mới
 
 ; *** "Welcome" wizard page
-WelcomeLabel1=Chao mung toi trinh cai dat [name]
-WelcomeLabel2=No se cai dat [name/ver] tren may tinh cua ban.%n%nBan can phai dong tat ca chuong trinh co lien quan truoc khi tiep tuc.
+WelcomeLabel1=Chào mừng tới trình cài đặt [name]
+WelcomeLabel2=Chương trình này sẽ cài [name/ver] trên máy tính của bạn.%n%nChúng tôi khuyên bạn đóng mọi chương trình khác lại trước khi cài đặt.
 
 ; *** "Password" wizard page
-WizardPassword=Mat khau
-PasswordLabel1=Viec cai dat duoc bao ve bang mat khau.
-PasswordLabel3=Hay nhap mat khau, roi click Tiep de tiep tuc. Can nhap chinh xac 100% (phan biet chu hoa va chu thuong).
-PasswordEditLabel=&Mat khau:
-IncorrectPassword=Mat khau ban vua nhap vao khong dung. Hay thu lai.
+WizardPassword=Mật khẩu
+PasswordLabel1=Việc cài đặt được bảo vệ bằng mật khẩu.
+PasswordLabel3=Hãy nhập mật khẩu, rồi nhấn Tiếp để tiếp tục. Mật khẩu phân biệt chữ hoa/thường.
+PasswordEditLabel=&Mật khẩu:
+IncorrectPassword=Mật khẩu bạn đã nhập không đúng. Hãy thử lại.
 
 ; *** "License Agreement" wizard page
-WizardLicense=Hop dong Chuyen giao
-LicenseLabel=Hay doc nhung thong tin quan trong sau truoc khi tiep tuc.
-LicenseLabel3=Hay doc hop dong Chuyen giao sau day. Ban PHAI chap nhan cac dieu khoan truoc khi tiep tuc.
-LicenseAccepted=Toi &chap nhan cac dieu khoan
-LicenseNotAccepted=Toi k&hong chap nhan cac dieu khoan
+WizardLicense=Thỏa thuận cấp phép
+LicenseLabel=Hãy đọc những thông tin quan trọng sau trước khi tiếp tục.
+LicenseLabel3=Hãy đọc Thỏa thuận cấp phép sau. Bạn phải chấp nhận các điều khoản của cài đặt này trước khi tiếp tục.
+LicenseAccepted=Tô&i chấp nhận thỏa thuận
+LicenseNotAccepted=Tôi khôn&g chấp nhận thỏa thuận
 
 ; *** "Information" wizard pages
-WizardInfoBefore=Thong tin
-InfoBeforeLabel=Hay doc nhung thong tin quan trong sau truoc khi tiep tuc.
-InfoBeforeClickLabel=Khi ban da san sang tiep tuc voi Cai dat, click Tiep.
-WizardInfoAfter=Thong tin
-InfoAfterLabel=Hay doc nhung thong tin quan trong sau truoc khi tiep tuc.
-InfoAfterClickLabel=Khi ban da san sang tiep tuc voi Cai dat, click Tiep.
+WizardInfoBefore=Thông tin
+InfoBeforeLabel=Hãy đọc những thông tin quan trọng sau trước khi tiếp tục.
+InfoBeforeClickLabel=Khi bạn đã sẵn sàng cài đặt tiếp, click Tiếp.
+WizardInfoAfter=Thông tin
+InfoAfterLabel=Hãy đọc những thông tin quan trọng sau trước khi tiếp tục.
+InfoAfterClickLabel=Khi bạn đã sẵn sàng cài đặt tiếp, click Tiếp.
 
 ; *** "User Information" wizard page
-WizardUserInfo=Thong tin nguoi dung
-UserInfoDesc=Hay nhap thong tin cua ban.
-UserInfoName=T&en nguoi dung:
-UserInfoOrg=T&o chuc:
-UserInfoSerial=&Serial:
-UserInfoNameRequired=Ban phai dien vao mot ten.
+WizardUserInfo=Thông tin người dùng
+UserInfoDesc=Hãy nhập thông tin của bạn.
+UserInfoName=Tên n&gười dùng:
+UserInfoOrg=Tổ c&hức:
+UserInfoSerial=&Số serial:
+UserInfoNameRequired=Bạn phải nhập một tên.
 
 ; *** "Select Destination Location" wizard page
-WizardSelectDir=Lua chon thu muc dich
-SelectDirDesc=[name] nen duoc cai dat o dau?
-SelectDirLabel3=Cai dat se cai [name] vao thu muc sau.
-SelectDirBrowseLabel=De tiep tuc, click Tiep. Neu ban muon chon thu muc khac, click Tim.
-DiskSpaceMBLabel=It nhat [mb] MB o dia trong duoc yeu cau.
-CannotInstallToNetworkDrive=Cai dat khong the cai vao mang luoi.
-CannotInstallToUNCPath=Cai dat khong the cai vao dia chi UNC.
-InvalidPath=Ban phai nhap duong dan day du voi chu cai cua o dia; vi du:%n%nC:\APP%n%nhoac mot duong dan UNC theo mau:%n%n\\server\share
-InvalidDrive=O dia hoac UNC share ban da chon khong ton tai hoac khong the truy cap. Hay chon khac.
-DiskSpaceWarningTitle=Khong du dung luong dia trong
-DiskSpaceWarning=Cai dat can it nhat %1 KB o dia trong de cai dat, nhung o dia da chon chi co %2 KB.%n%nBan co muon tiep tuc?
-DirNameTooLong=Ten thu muc hoac duong dan qua dai.
-InvalidDirName=Ten thu muc khong hop le.
-BadDirName32=Ten thu muc khong duoc co cac ki tu sau:%n%n%1
-DirExistsTitle=Thu muc da ton tai
-DirExists=Thu muc:%n%n%1%n%nda ton tai. Ban co muon cai thu muc nay?
-DirDoesntExistTitle=Thu muc khong ton tai
-DirDoesntExist=Thu muc:%n%n%1%n%nkhong ton tai. Ban co muon tao thu muc nay?
+WizardSelectDir=Chọn vị trí cài đặt
+SelectDirDesc=[name] nên được cài đặt ở đâu?
+SelectDirLabel3=[name] sẽ được cài đặt vào thư mục sau:
+SelectDirBrowseLabel=Để tiếp tục. nhấn Tiếp. Nếu bạn muốn chọn một thư mục khác, nhấn Duyệt.
+DiskSpaceGBLabel=Cần có ít nhất [gb] GB ổ đĩa trống.
+DiskSpaceMBLabel=Cần có ít nhất [mb] MB ổ đĩa trống.
+CannotInstallToNetworkDrive=Cài đặt không thể cài vào một ổ đĩa mạng.
+CannotInstallToUNCPath=Cài đặt không thể cài vào đường dẫn UNC.
+InvalidPath=Bạn phải nhập đường dẫn đầy đủ với chữ cái ổ đĩa, ví dụ:%n%nC:\APP%n%nhoặc một đường dẫn UNC theo mẫu:%n%n\\server\share
+InvalidDrive=Ổ đĩa hoặc chia sẻ UNC bạn đã chọn không tồn tại hoặc không truy cập được. Hãy chọn cái khác.
+DiskSpaceWarningTitle=Không đủ dung lượng đĩa
+DiskSpaceWarning=Cài đặt yêu cầu ít nhất %1 KB dung lượng trống để cài đặt, nhưng ổ đĩa đã chọn chỉ còn %2KB.%n%nBạn muốn tiếp tục bằng mọi giá?
+DirNameTooLong=Tên thư mục hoặc đường dẫn quá dài.
+InvalidDirName=Tên thư mục không hợp lệ.
+BadDirName32=Tên thư mục không được chứa các kí tự sau:%n%n%1
+DirExistsTitle=Thư mục đã tồn tại
+DirExists=Thư mục:%n%n%1%n%nđã tồn tại. Bạn có muốn cài đặt vào thư mục đó bằng mọi giá?
+DirDoesntExistTitle=Thư mục không tồn tại
+DirDoesntExist=Thư mục:%n%n%1%n%nkhông tồn tại. Bạn có muốn tạo thư mục không?
 
 ; *** "Select Components" wizard page
-WizardSelectComponents=Lua chon phan phu tro
-SelectComponentsDesc=Nhung phan phu tro nao nen duoc cai dat?
-SelectComponentsLabel2=Lua chon nhung phan phu tro ban muon cai dat; xoa nhung cai ban khong muon. Click Tiep khi ban da san sang tiep tuc.
-FullInstallation=Cai dat day du
+WizardSelectComponents=Chọn các thành phần
+SelectComponentsDesc=Những thành phần nào nên được cài đặt?
+SelectComponentsLabel2=Chọn các thành phần bạn muốn cài đặt, bỏ chọn các thành phần bạn không muốn. Click Tiếp khi bạn đã sẵn sàng để tiếp tục.
+FullInstallation=Cài đặt đầy đủ
 ; if possible don't translate 'Compact' as 'Minimal' (I mean 'Minimal' in your language)
-CompactInstallation=Cai dat co ban
-CustomInstallation=Cai dat theo y thich
-NoUninstallWarningTitle=Phan phu tro da ton tai
-NoUninstallWarning=Cai dat bi gian doan vi nhung thanh phan phu tro sau da duoc cai dat vao may tinh cua ban:%n%n%1%n%nBo chon nhung cai nay se khong cai dat chung.%n%nBan co muon tiep tuc?
+CompactInstallation=Cài đặt rút gọn
+CustomInstallation=Cài đặt tủy chỉnh
+NoUninstallWarningTitle=Thành phần đã tồn tại
+NoUninstallWarning=Cài đặt phát hiện các thành phần sau đã được cài đặt trên máy tính của bạn:%n%n%1%n%nBỏ chọn những thành phần này sẽ không cài đặt chúng.%n%nBạn có muốn tiếp tục bằng mọi giá?
 ComponentSize1=%1 KB
 ComponentSize2=%1 MB
-ComponentsDiskSpaceMBLabel=Lua chon nay can it nhat [mb] MB o dia trong.
+ComponentsDiskSpaceGBLabel=Lựa chọn này yêu cầu ít nhất [gb] GB không gian đĩa.
+ComponentsDiskSpaceMBLabel=Lựa chọn này yêu cầu ít nhất [mb] MB không gian đĩa.
 
 ; *** "Select Additional Tasks" wizard page
-WizardSelectTasks=Lua chon hanh dong bo sung
-SelectTasksDesc=Nhung hanh dong nao can duoc bo sung?
-SelectTasksLabel2=Lua chon nhung hanh dong ma ban muon Cai dat bo sung khi cai dat [name], sau do click Tiep.
+WizardSelectTasks=Chọn các tác vụ bổ sung
+SelectTasksDesc=Các tác vụ bổ sung nào nên được thực hiện?
+SelectTasksLabel2=Chọn các tác vụ bổ sung mà bạn muốn cài đặt thực hiện khi cài đặt [name], rồi nhấn Tiếp.
 
 ; *** "Select Start Menu Folder" wizard page
-WizardSelectProgramGroup=ua chon thu muc trong menu Start
-SelectStartMenuFolderDesc=Loi tat cua chuong trinh nen duoc dat o dau trong menu Start?
-SelectStartMenuFolderLabel3=Cai dat se tao loi tat cua chuong trinh trong thu muc sau cua menu Start.
-SelectStartMenuFolderBrowseLabel=De tiep tuc, click Tiep. Neu ban muon chon thu muc khac, click Tim.
-MustEnterGroupName=Ban phai nhap ten mot thu muc.
-GroupNameTooLong=Ten thu muc hoac duong dan qua dai.
-InvalidGroupName=Ten thu muc khong hop le.
-BadGroupName=Ten thu muc khong duoc chua cac ki tu sau:%n%n%1
-NoProgramGroupCheck2=&Khong tao mot thu muc trong menu Start
+WizardSelectProgramGroup=Chọn thư mục bắt đầu
+SelectStartMenuFolderDesc=Các lối tắt đến chương trình nên được đặt ở đâu?
+SelectStartMenuFolderLabel3=Cài đặt sẽ tạo các lối tắt đến chương trình trong thư mục bắt đầu sau.
+SelectStartMenuFolderBrowseLabel=Để tiếp tục, click Tiếp. Nếu bạn muốn chọn thư mục khác, click Duyệt.
+MustEnterGroupName=Bạn phải nhập tên một thư mục.
+GroupNameTooLong=Tên thư mục hoặc đường dẫn quá dài.
+InvalidGroupName=Tên thư mục không hợp lệ.
+BadGroupName=Tên thư mục không được chứa các kí tự sau:%n%n%1
+NoProgramGroupCheck2=&Không tạo thư mục bắt đầu
 
 ; *** "Ready to Install" wizard page
-WizardReady=San sang cai dat
-ReadyLabel1=Cai dat da san sang cai [name] tren may tinh cua ban.
-ReadyLabel2a=Click Cai dat de tiep tuc cai dat, hoac click Truoc neu ban muon xem lai hoac thay doi mot so cai dat.
-ReadyLabel2b=Click Cai dat de tiep tuc cai dat.
-ReadyMemoUserInfo=Thong tin nguoi dung:
-ReadyMemoDir=Thu muc dich:
-ReadyMemoType=Kieu cai dat:
-ReadyMemoComponents=Nhung thanh phan phu tro da chon:
-ReadyMemoGroup=Thu muc trong menu Start:
-ReadyMemoTasks=Nhung hanh dong bo sung:
+WizardReady=Sẵn sàng cài đặt
+ReadyLabel1=[name] đã sẵn sàng để dược cài đặt trên máy tính của bạn.
+ReadyLabel2a=Click Cài đặt để tiếp tục, hoặc click Trước nếu bạn muốn xem lại/thay đổi bất kì cài đặt nào.
+ReadyLabel2b=Click Cài đặt để tiếp tục cài đặt.
+ReadyMemoUserInfo=Thông tin người dùng:
+ReadyMemoDir=Vị trí đích:
+ReadyMemoType=Kiểu cài đặt:
+ReadyMemoComponents=Các thành phần được chọn:
+ReadyMemoGroup=Thư mục bắt đầu:
+ReadyMemoTasks=Các tác vụ bổ sung:
+
+; *** TDownloadWizardPage wizard page and DownloadTemporaryFile
+DownloadingLabel=Đang tải các tập tin bổ sung...
+ButtonStopDownload=&Dừng tải xuống
+StopDownload=Bạn có chắc chắn muốn dừng tải xuống không?
+ErrorDownloadAborted=Tải xuống bị hủy bỏ
+ErrorDownloadFailed=Tải xuống không thành công: %1 %2
+ErrorDownloadSizeFailed=Getting size failed: %1 %2
+ErrorFileHash1=File hash failed: %1
+ErrorFileHash2=Invalid file hash: expected %1, found %2
+ErrorProgress=Invalid progress: %1 of %2
+ErrorFileSize=Invalid file size: expected %1, found %2
 
 ; *** "Preparing to Install" wizard page
-WizardPreparing=Chuan bi cai dat
-PreparingDesc=Cai dat dang chuan bi cai [name] tren may tinh cua ban.
-PreviousInstallNotCompleted=Viec (go) cai dat chuong trinh cu khong hoan thanh. Ban se can phai khoi dong lai may tinh de hoan thanh cai dat.%n%nSau khi khoi dong lai, hay chay Cai dat mot lan nua de hoan thanh cai dat [name].
-CannotContinue=Cai dat khong the tiep tuc. Click Huy de thoat.
-ApplicationsFound=Nhung chuong trinh sau su dung cac tep can duoc cap nhat boi Cai dat. Dieu can thiet la ban phai chap nhan Cai dat dong cac chuong trinh nay.
-ApplicationsFound2=Nhung chuong trinh sau su dung cac tep can duoc cap nhat boi Cai dat. Dieu can thiet la ban phai chap nhan Cai dat dong cac chuong trinh nay. Sau khi cai dat hoan thanh, Cai dat se co mo lai chung.
-CloseApplications=T&u dong dong nhung chuong trinh nay
-DontCloseApplications=&Khong dong nhung chuong trinh nay
-ErrorCloseApplications=Cai dat khong the dong tat ca cac chuong trinh. Dieu can thiet la ban phai dong cac chuong trinh su dung tep can duoc cap nhat boi Cai dat truoc khi tiep tuc.
+WizardPreparing=Chuẩn bị cài đặt
+PreparingDesc=[name] đang chuẩn bị được cài đặt trên máy tính của bạn.
+PreviousInstallNotCompleted=Việc cài đặt/gỡ bỏ một chương trình chưa được hoàn tất trước đó. Bạn sẽ phải khởi động lại máy tính để hoàn tất cài đặt đó.%n%nSau khi chởi động lại, chạy Cài đặt một lần nữa để hoàn tất cài đặt [name].
+CannotContinue=Cài đặt không thể tiếp tục. Nhấn Hủy để thoát.
+ApplicationsFound=Những chương trình sau đang sử dụng các tệp cần được cập nhật bởi trình cài đặt. Chúng tôi khuyên bạn cho phép Cài đặt đóng các chương trình này.
+ApplicationsFound2=Những chương trình sau đang sử dụng các tệp cần được cập nhật bởi trình cài đặt. Chúng tôi khuyên bạn cho phép Cài đặt đóng các chương trình này. Sau khi hoàn thành cài đặt, chúng tôi sẽ thử khởi động lại các chương trình này.
+CloseApplications=Tự độn&g đóng các chương trình này
+DontCloseApplications=Không đóng các chương t&rình này
+ErrorCloseApplications=Cài đặt không thể đóng mọi chương trình. Chúng tôi khuyên bạn đóng các chương trình đang sử dụng các tệp cần được cập nhật bởi Cài đặt một cách thủ công trước khi tiếp tục.
+PrepareToInstallNeedsRestart=Setup must restart your computer. After restarting your computer, run Setup again to complete the installation of [name].%n%nWould you like to restart now?
 
 ; *** "Installing" wizard page
-WizardInstalling=Dang cai dat
-InstallingLabel=Hay doi khi Cai dat dang cai [name] tren may tinh cua ban.
+WizardInstalling=Đang cài đặt
+InstallingLabel=Hãy đợi khi [name] đang được cài đặt trên máy tính của bạn.
 
 ; *** "Setup Completed" wizard page
-FinishedHeadingLabel=Hoan thanh cai dat [name]
-FinishedLabelNoIcons=Da cai dat thanh cong [name] tren may tinh cua ban.
-FinishedLabel=Da cai dat thanh cong [name] tren may tinh cua ban. No co the duoc chay bang cach click vao bieu tuong cua no.
-ClickFinish=Click Hoan thnah de thoat Cai dat.
-FinishedRestartLabel=De hoan thanh cai dat [name], may tinh cua ban phai duoc khoi dong lai. Ban co muon khoi dong lai khong?
-FinishedRestartMessage=De hoan thanh cai dat [name], may tinh cua ban phai duoc khoi dong lai.%n%nBan co muon khoi dong lai khong?
-ShowReadmeCheck=Co, to muon xem tep README
-YesRadio=&Co, khoi dong lai may tinh ngay bay gio
-NoRadio=&Khong, toi se khoi dong lai may tinh sau
+FinishedHeadingLabel=Hoàn thành cài đặt [name]
+FinishedLabelNoIcons=[name] đã được cài đặt xong trên máy tính của bạn.
+FinishedLabel=[name] đã được cài đặt xong trên máy tính của bạn. Chương trình có thể được khởi động bằng cách click vào lối tắt đến chương trình.
+ClickFinish=Click Hoàn thành để thoát Cài đặt.
+FinishedRestartLabel=Để hoàn thành cài đặt [name], máy tính của bạn cần đươc khởi động lại. Bạn có muốn khởi động lại ngay?
+FinishedRestartMessage=Để hoàn thành cài đặt [name], máy tính của bạn cần đươc khởi động lại.%n%nBạn có muốn khởi động lại ngay?
+ShowReadmeCheck=Có, tôi muốn xem tệp README
+YesRadio=&Có, khởi động lại máy tính ngay
+NoRadio=&Không, tôi sẽ khởi động lại máy tính sau
 ; used for example as 'Run MyProg.exe'
-RunEntryExec=Chay %1
+RunEntryExec=Chạy %1
 ; used for example as 'View Readme.txt'
-RunEntryShellExec=Hien thi %1
+RunEntryShellExec=Xem %1
 
 ; *** "Setup Needs the Next Disk" stuff
-ChangeDiskTitle=Cai dat can dia tiep theo
-SelectDiskLabel2=Hay chen dia %1 va click OK.%n%nNeu nhung tep tren dia do co the tim o noi khac voi duoc hien thi duoi day, nhap duong dan dung hoac click Tim.
-PathLabel=&Path:
-FileNotInDir2=Tep "%1" khong duoc dat trong "%2". Hay chen dia dung hoac chon thu muc khac.
-SelectDirectoryLabel=Hay xac dinh vi tri cua dia tiep theo.
+ChangeDiskTitle=Cài đặt cần đĩa tiếp theo
+SelectDiskLabel2=Hãy chèn đĩa %1 và click OK.%n%nNếu các tệp trên đĩa này có thể được tìm thấy trên một thư mục khác với được hiển thị dưới đây, nhập đường dẫn hoặc click Duyệt.
+PathLabel=Đườ&ng dẫn:
+FileNotInDir2=Tệp "%1" không thể được xác định trong "%2". Hãy chọn đia xđúng hoặc chọn thư mục khác.
+SelectDirectoryLabel=Hãy chọn vị trí của đĩa tiếp theo.
 
 ; *** Installation phase messages
-SetupAborted=Cai dat khong duoc hoan thanh.%n%nHay sua loi va chay Cai dat lai.
-EntryAbortRetryIgnore=Click Thu lai de thu lai, Bo qua de tiep tuc (nhay qua loi), hoac Tu choi de huy cai dat.
+SetupAborted=Cài đặt không được hoàn thành.%n%nHãy sửa lỗi và chạy Cài đặt lại.
+AbortRetryIgnoreSelectAction=Chọn hành động
+AbortRetryIgnoreRetry=&Thử lại
+AbortRetryIgnoreIgnore=&Bỏ qua lỗi và tiếp tục
+AbortRetryIgnoreCancel=Hủy
 
 ; *** Installation status messages
-StatusClosingApplications=Dang dong cac chuong trinh...
-StatusCreateDirs=Dang tao thu muc...
-StatusExtractFiles=Dang giai nen cac tep...
-StatusCreateIcons=Dang tao loi tat...
-StatusCreateIniEntries=Dang tao dau vao INI...
-StatusCreateRegistryEntries=Dang tao dau vao Registry...
-StatusRegisterFiles=Dang xac minh cac tep...
-StatusSavingUninstall=Dang luu thong tin go cai dat...
-StatusRunProgram=Dang hoan thanh cai dat...
-StatusRestartingApplications=Dang khoi dong lai cac chuong trinh...
-StatusRollback=Dang reset lai cac thay doi...
+StatusClosingApplications=Đang đóng các chương trình...
+StatusCreateDirs=Đang tạo các thư mục...
+StatusExtractFiles=Đang giải nén các tệp...
+StatusCreateIcons=Đang tạo các lối tắt...
+StatusCreateIniEntries=Đang tạo các đầu vào INI...
+StatusCreateRegistryEntries=Đang tạo các đầu vào registry...
+StatusRegisterFiles=Đang đăng kí các tệp...
+StatusSavingUninstall=Đang lưu thông tin gỡ cài đặt...
+StatusRunProgram=Đang hoàn thành cài đặt...
+StatusRestartingApplications=Đang khởi động lại các chương trình...
+StatusRollback=Đang hoàn lại các thay đổi...
 
 ; *** Misc. errors
-ErrorInternal2=Loi: %1
-ErrorFunctionFailedNoCode=%1 that bai
-ErrorFunctionFailed=%1 that bai; ma %2
-ErrorFunctionFailedWithMessage=%1 that bai; ma %2.%n%3
-ErrorExecutingProgram=hong the giai nen tep:%n%1
+ErrorInternal2=Lỗi nội bộ: %1
+ErrorFunctionFailedNoCode=%1 thất bại
+ErrorFunctionFailed=%1 thất bại với mã lỗi %2
+ErrorFunctionFailedWithMessage=%1 thất bại với mã lỗi %2.%n%3
+ErrorExecutingProgram=Không thể chạy tệp:%n%1
 
 ; *** Registry errors
-ErrorRegOpenKey=Loi mo chia khoa xac thuc:%n%1\%2
-ErrorRegCreateKey=Loi tao chia khoa xac thuc:%n%1\%2
-ErrorRegWriteKey=Loi viet chia khoa xac thuc:%n%1\%2
+ErrorRegOpenKey=Lỗi khi mở registry:%n%1\%2
+ErrorRegCreateKey=Lỗi khi tạo registry:%n%1\%2
+ErrorRegWriteKey=Lỗi khi viết registry:%n%1\%2
 
 ; *** INI errors
-ErrorIniEntry=Loi tao dau vao INI trong tep "%1".
+ErrorIniEntry=Lỗi tạo đầu vào INI cho tệp "%1".
 
 ; *** File copying errors
-FileAbortRetryIgnore=Click thu lai de thu lai, Bo qua de bo qua tep nay (khong khuyen nghi), hoac Tu choi de huy cai dat.
-FileAbortRetryIgnore2=Click thu lai de thu lai, Bo qua de bo qua loi (khong khuyen nghi), hoac Tu choi de huy cai dat.
-SourceIsCorrupted=Tep nguon bi hu hong
-SourceDoesntExist=Tep nguon "%1" khong ton tai
-ExistingFileReadOnly=Tep nay da duoc danh dau Chi doc.%n%nClick Thu lai de bo danh dau Chi doc va thu lai, Bo qua de bo qua tep nay, hoac Tu choi de huy cai dat.
-ErrorReadingExistingDest=Co loi khi doc tep:
-FileExists=Tep da ton tai.%n%nBan co muon thay the?
-ExistingFileNewer=Tep nay moi hon tep ma Cai dat muon cai vao. Dieu can thiet la ban giu lai tep nay.%n%nBan co muon giu lai?
-ErrorChangingAttr=Co van de khi thay doi thuoc tinh tep:
-ErrorCreatingTemp=Co van de khi tao tep trong thu muc dich:
-ErrorReadingSource=Co van de khi doc tep nguon:
-ErrorCopying=Co van de khi co copy tep:
-ErrorReplacingExistingFile=Co van de khi co thay the tep:
-ErrorRestartReplace=Thay the khoi dong lai that bai:
-ErrorRenamingTemp=Co van de khi co doi ten tep trong thu muc dich:
-ErrorRegisterServer=Khong the xac thuc DLL/OCX: %1
-ErrorRegSvr32Failed=RegSvr32 that bai voi ma thoat %1
-ErrorRegisterTypeLib=Khong the xac thuc thu vien kieu: %1
+FileAbortRetryIgnoreSkipNotRecommended=&Bỏ qua tệp này (không khuyến nghị)
+FileAbortRetryIgnoreIgnoreNotRecommended=&Bỏ qua để tiếp tục bằng mọi giá (không khuyến nghị)
+SourceIsCorrupted=Tệp nguồn bị hỏng
+SourceDoesntExist=Tệp nguồn "%1" không tồn tại
+ExistingFileReadOnly2=Tệp đã tồn tại với đánh dấu chỉ đọc.
+ExistingFileReadOnlyRetry=&Xóa thuộc tính chỉ đọc và thử lại
+ExistingFileReadOnlyKeepExisting=&Giữ tập tin hiện có
+ErrorReadingExistingDest=Một lỗi đã xảy ra khi đọc tệp:
+FileExistsSelectAction=Select action
+FileExists2=Tệp đã tồn tại.
+FileExistsOverwriteExisting=G&hi đè tệp hiện có
+FileExistsKeepExisting=&Giữ tệp hiện có
+FileExistsOverwriteOrKeepAll=&Do this for the next conflicts
+ExistingFileNewerSelectAction=Select action
+ExistingFileNewer2=Tệp hiện có mới hơn tệp mà Thiết lập đang cố gắng cài đặt.
+ExistingFileNewerOverwriteExisting=&Ghi đè tệp hiện có
+ExistingFileNewerKeepExisting=&Giữ tệp hiện có (khuyến nghị)
+ExistingFileNewerOverwriteOrKeepAll=&Do this for the next conflicts
+ErrorChangingAttr=Một lỗi đã xảy ra khi thay đổi thuộc tính của tệp sau:
+ErrorCreatingTemp=Một lỗi đã xảy ra khi tạo một tệp trong thư mục đích:
+ErrorReadingSource=Một lỗi đã xảy ra khi đọc tệp nguồn:
+ErrorCopying=Một lỗi đã xảy ra khi sao chép tệp:
+ErrorReplacingExistingFile=Một lỗi đã xảy ra khi thay thế tệp:
+ErrorRestartReplace=Khởi động lại & Thay thế (RestartReplace) thất bại:
+ErrorRenamingTemp=Một lỗi đã xảy ra khi đổi tên tệp trong thư mục đích:
+ErrorRegisterServer=Không thể đăng kí DLL/OCX: %1
+ErrorRegSvr32Failed=RegSvr32 thất bại với mã thoát %1
+ErrorRegisterTypeLib=Không thể đăng kí thư viện kiểu: %1
+
+; *** Uninstall display name markings
+; used for example as 'My Program (32-bit)'
+UninstallDisplayNameMark=%1 (%2)
+; used for example as 'My Program (32-bit, All users)'
+UninstallDisplayNameMarks=%1 (%2, %3)
+UninstallDisplayNameMark32Bit=32-bit
+UninstallDisplayNameMark64Bit=64-bit
+UninstallDisplayNameMarkAllUsers=All users
+UninstallDisplayNameMarkCurrentUser=Current user
 
 ; *** Post-installation errors
-ErrorOpeningReadme=Co van de khi co mo tep README.
-ErrorRestartingComputer=Cai dat khong the khoi dong lai may tinh. Hay lam thu cong.
+ErrorOpeningReadme=Một lỗi đã xảy ra khi mở tệp README.
+ErrorRestartingComputer=Cài đặt không thể khởi động lại máy tính. Hãy làm việc này một cách thủ công.
 
 ; *** Uninstaller messages
-UninstallNotFound=Tep "%1" hong ton tai. Khong the go cai dat
-UninstallOpenError=Khong the mo tep "%1". Khong the go cai dat
-UninstallUnsupportedVer=Tep dang nhap go cai dat "%1" thuoc kieu tep khong duoc ho tro. Khong the go cai dat
-UninstallUnknownEntry=Mot dau vao khong ro rang (%1) duoc ke den trong dang nhap go cai dat
-ConfirmUninstall=Ban co thuc su muon go %1 va toan bo thanh phan lien quan?
-UninstallOnlyOnWin64=Viec cai dat nay chi co the go tren phien ban Windows 64-bit.
-OnlyAdminCanUninstall=Viec cai dat nay chi co the go khi ban la Adminstrator.
-UninstallStatusLabel=Hay doi khi %1 duoc go khoi may tinh cua ban.
-UninstalledAll=%1 da duoc go thanh cong khoi may tinh cua ban.
-UninstalledMost=Go cai dat %1 hoan thanh.%n%nMot so thanh phan khong the go. Chung co the duoc go thu cong.
-UninstalledAndNeedsRestart=De hoan thanh go cai dat %1, phai khoi dong lai may tinh.%n%nBan co muon khoi dong lai?
-UninstallDataCorrupted=Tep "%1" bi hu hong. Khong the go cai dat
+UninstallNotFound=Tệp "%1" không tồn tại. Không thể gỡ cài đặt.
+UninstallOpenError=Tệp "%1" không thể được mở. Không thể gỡ cài đặt
+UninstallUnsupportedVer=Tệp nhật kí gỡ cài đặt "%1" có định dạng không thể được xác định bởi phiên bản gỡ cài đặt này. Không thể gỡ cài đặt
+UninstallUnknownEntry=Một đầu vào không xác định (%1) đã bị phát hiện trong nhật kí gỡ cài đặt
+ConfirmUninstall=Bạn có muốn dỡ bỏ hoàn toàn %1 và mọi thành phần của nó?
+UninstallOnlyOnWin64=Cài đặt này chỉ có thể được gỡ bỏ trên Windows 64 bit.
+OnlyAdminCanUninstall=Cài đặt này chỉ có thể được gỡ bỏ bằng một người dùng có quyền người quản trị.
+UninstallStatusLabel=Hãy đợi khi %1 được gỡ khỏi máy tính của bạn.
+UninstalledAll=%1 đã được gỡ bỏ thành công khỏi máy tính của bạn.
+UninstalledMost=%1 đã được gỡ bỏ thành công.%n%nMột số thành phần không thể được gỡ bỏ. Hãy làm việc này một cách thủ công.
+UninstalledAndNeedsRestart=Để hoàn thành việc gỡ cài đặt %1, bạn phải khởi động lại máy tính.%n%nBạn có muốn khởi động lại ngay?
+UninstallDataCorrupted=Tệp "%1" bị hỏng. Không thể gỡ cài đặt
+
 ; *** Uninstallation phase messages
-ConfirmDeleteSharedFileTitle=Go tep da chia se?
-ConfirmDeleteSharedFile2=He thong da chi ra tep da chia se sau khong duoc dung boi bat cu chuong trinh nao khac. Ban co muon go chung?%n%nNeu mot so chuong trinh van con dung tep nay ma no da bi go, chung co the khong hoat dong tot. Neu ban khong hai long, chon Khong. Go bo chung tren he thong cua ban se khong gay ra bat cu thiet hai nao.
-SharedFileNameLabel=Ten tep:
-SharedFileLocationLabel=Vi tri:
-WizardUninstalling=Tinh trang go
-StatusUninstalling=Dang go cai dat %1...
+ConfirmDeleteSharedFileTitle=Gỡ bỏ tệp được chia sẻ?
+ConfirmDeleteSharedFile2=Hệ thống chỉ ra các tệp được chia sẻ sau không được sử dụng bởi chương trình nào. Bạn có muốn gỡ bỏ tệp này?%n%nNếu có một chương trình vẫn sử dụng tệp này mà tệp bị gỡ bỏ, chúng có thể không chạy tốt. Nếu bạn không chắc chắn, chọn Không. Để lại tệp trên hệ thống của bạn sẽ không gây ra tổn hại.
+SharedFileNameLabel=Tên tệp:
+SharedFileLocationLabel=Vị trí:
+WizardUninstalling=Trạng thái gỡ cài đặt
+StatusUninstalling=Đang gỡ cài đặt %1...
 
 ; *** Shutdown block reasons
-ShutdownBlockReasonInstallingApp=Dang cai dat %1.
-ShutdownBlockReasonUninstallingApp=Dang go cai dat %1.
+ShutdownBlockReasonInstallingApp=Đang cài đặt %1.
+ShutdownBlockReasonUninstallingApp=Đang gỡ cài đặt %1.
 
 ; The custom messages below aren't used by Setup itself, but if you make
 ; use of them in your scripts, you'll want to translate them.
 
 [CustomMessages]
 
-NameAndVersion=%1 phien ban %2
-AdditionalIcons=Nhung loi tat bo sung:
-CreateDesktopIcon=Tao mot loi tat &Desktop
-CreateQuickLaunchIcon=Tao mot loi tat Khoi dong nh&anh
-ProgramOnTheWeb=%1 tren Web
-UninstallProgram=Go cai dat %1
-LaunchProgram=Khoi chay %1
-AssocFileExtension=&Gan ket %1 voi su mo rong tep cua %2
-AssocingFileExtension=Dang gan ket %1 voi su mo rong tep cua %2...
-AutoStartProgramGroupDescription=Khoi dong:
-AutoStartProgram=Tu dong khoi dong %1
-AddonHostProgramNotFound=%1 khong the duoc dat vao thu muc ban da chon.%n%nBan co muon tiep tuc?
+NameAndVersion=%1 phiên bản %2
+AdditionalIcons=Các lối tắt bổ sung:
+CreateDesktopIcon=Tạo một &lối tắt trên Desktop
+CreateQuickLaunchIcon=Tạo một lối tắt &Khởi động nhanh
+ProgramOnTheWeb=%1 trên Web
+UninstallProgram=Gỡ cài đặt %1
+LaunchProgram=Khởi động %1
+AssocFileExtension=&Gán %1 với đuôi tệp %2
+AssocingFileExtension=Đang gán %1 với đuôi tệp %2...
+AutoStartProgramGroupDescription=Khởi động:
+AutoStartProgram=Tự động khởi động %1
+AddonHostProgramNotFound=%1 không thể được xác định trong thư mục bạn đã chọn.%n%nBạn có muốn tiếp tục bằng mọi giá?
