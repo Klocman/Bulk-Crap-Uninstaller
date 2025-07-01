@@ -166,6 +166,6 @@
     <value>Exportar lista de sobras</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Arquivos texto |*.txt</value>
+    <value>Arquivos texto|*.txt</value>
   </data>
 </root>

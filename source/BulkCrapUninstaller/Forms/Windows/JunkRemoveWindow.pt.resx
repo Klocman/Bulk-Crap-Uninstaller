@@ -168,7 +168,7 @@
     <comment>leftover=rimanenti</comment>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>Ficheiros de texto |*.txt</value>
+    <value>Ficheiros de texto|*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
   <metadata name="exportDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

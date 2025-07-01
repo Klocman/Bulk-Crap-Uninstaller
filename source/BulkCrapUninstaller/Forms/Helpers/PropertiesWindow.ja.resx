@@ -124,7 +124,7 @@
     <value>ファイルに保存...</value>
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>テキストファイル |*.txt</value>
+    <value>テキストファイル|*.txt</value>
     <comment>keep the |*.txt</comment>
   </data>
   <data name="saveFileDialog1.Title" xml:space="preserve">

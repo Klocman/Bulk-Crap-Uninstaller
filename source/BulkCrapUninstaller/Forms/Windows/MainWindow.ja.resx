@@ -316,7 +316,7 @@
     <value>&amp;プロパティ</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
-    <value>XMLファイル |*.xml</value>
+    <value>XMLファイル|*.xml</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
     <value>選択したアンインストーラーのプロパティをエクスポート</value>
@@ -577,7 +577,7 @@
     <value>&amp;デバッグウィンドウを開く</value>
   </data>
   <data name="createBackupFileDialog.Filter" xml:space="preserve">
-    <value>レジストリファイル |*.reg</value>
+    <value>レジストリファイル|*.reg</value>
   </data>
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>レジストリバックアップを作成</value>

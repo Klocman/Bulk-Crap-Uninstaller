@@ -124,7 +124,7 @@
     <value>選擇屬於應用程式的所有文件</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>所有檔案</value>
+    <value>所有檔案|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>連結應用程式檔案</value>

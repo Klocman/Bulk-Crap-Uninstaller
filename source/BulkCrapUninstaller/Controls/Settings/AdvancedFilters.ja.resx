@@ -136,13 +136,13 @@
     <value>デフォルトを削除</value>
   </data>
   <data name="saveUlDialog.Filter" xml:space="preserve">
-    <value>アンインストールリスト |*.bcul</value>
+    <value>アンインストールリスト|*.bcul</value>
   </data>
   <data name="saveUlDialog.Title" xml:space="preserve">
     <value>アンインストールリスト</value>
   </data>
   <data name="openUlDialog.Filter" xml:space="preserve">
-    <value>アンインストールリスト |*.bcul</value>
+    <value>アンインストールリスト|*.bcul</value>
   </data>
   <data name="openUlDialog.Title" xml:space="preserve">
     <value>アンインストールリストを保存...</value>
