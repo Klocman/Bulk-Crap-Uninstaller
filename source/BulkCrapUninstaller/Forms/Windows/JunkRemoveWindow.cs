@@ -142,6 +142,11 @@ namespace BulkCrapUninstaller.Forms
         private void CreateBackup(string backupPath)
         {
             var dir = Path.Combine(backupPath, GetUniqueBackupName());
+            if (string.IsNullOrEmpty(backupPath) || !Directory.Exists(backupPath))
+            {
+                PremadeDialogs.GenericError($"The parent directory does not exist:\n{backupPath}\n\nPlease choose a different backup location.");
+                throw new OperationCanceledException();
+            }
             try
             {
                 Directory.CreateDirectory(dir);
@@ -367,7 +372,7 @@ namespace BulkCrapUninstaller.Forms
             if (failed.Any())
             {
                 failed.Sort();
-                
+
                 // Prevent the dialog from getting too large
                 if (failed.Count > 6) failed = failed.Take(5).Concat(new[] { "... (check log for the full list)" }).ToList();
 
