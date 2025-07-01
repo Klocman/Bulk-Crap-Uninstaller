@@ -43,6 +43,16 @@ namespace BulkCrapUninstaller.Functions.Ratings
             return obj is RatingEntry entry && Equals(entry);
         }
 
+        public static bool operator ==(RatingEntry left, RatingEntry right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(RatingEntry left, RatingEntry right)
+        {
+            return !left.Equals(right);
+        }
+
         public static UninstallerRating ToRating(int value)
         {
             if (value <= ((int)UninstallerRating.Bad + (int)UninstallerRating.Neutral) / 2)
