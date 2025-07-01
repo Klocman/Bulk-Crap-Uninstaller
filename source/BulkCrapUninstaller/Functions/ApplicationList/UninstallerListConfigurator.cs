@@ -60,7 +60,6 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         public void Dispose()
         {
-            RatingManagerWrapper.Dispose();
             _updateThrottleTimer.Dispose();
         }
 

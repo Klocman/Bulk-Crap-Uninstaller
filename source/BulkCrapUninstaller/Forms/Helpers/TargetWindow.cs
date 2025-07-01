@@ -84,7 +84,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        public static new ICollection<DirectoryInfo> ShowDialog(IWin32Window owner, Action<bool> setMainWindowVisible)
+        public static ICollection<DirectoryInfo> ShowDialog(IWin32Window owner, Action<bool> setMainWindowVisible)
         {
             using (var window = new TargetWindow())
             {

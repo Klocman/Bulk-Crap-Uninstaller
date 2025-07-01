@@ -15,6 +15,7 @@ namespace Klocman
     {
         public static void WriteExceptionToLog(Exception ex)
         {
+            if (ex == null) throw new ArgumentNullException(nameof(ex));
             var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
 
             using (var writer = new StreamWriter(location, true))

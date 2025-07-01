@@ -48,7 +48,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void FeedbackWindow_Shown(object sender, EventArgs e)
         {
-            webBrowser.Navigate(@"http://klocmansoftware.weebly.com/feedback--contact.html");
+            webBrowser.Navigate(new Uri(@"http://klocmansoftware.weebly.com/feedback--contact.html"));
         }
     }
 }

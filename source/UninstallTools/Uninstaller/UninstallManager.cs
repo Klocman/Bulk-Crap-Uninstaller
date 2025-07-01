@@ -41,7 +41,7 @@ namespace UninstallTools.Uninstaller
         /// </summary>
         /// <param name="targets">Uninstallers to run.</param>
         /// <param name="configuration">How the uninstallers should be ran.</param>
-        public static BulkUninstallTask CreateBulkUninstallTask(IList<BulkUninstallEntry> targets,
+        public static BulkUninstallTask CreateBulkUninstallTask(IReadOnlyList<BulkUninstallEntry> targets,
             BulkUninstallConfiguration configuration)
         {
             return new BulkUninstallTask(targets, configuration);

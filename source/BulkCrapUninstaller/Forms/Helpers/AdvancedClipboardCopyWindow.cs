@@ -21,6 +21,8 @@ namespace BulkCrapUninstaller.Forms
 
         public static void ShowDialog(Form parent, IEnumerable<ApplicationUninstallerEntry> targets)
         {
+            if (parent == null) throw new ArgumentNullException(nameof(parent));
+            if (targets == null) throw new ArgumentNullException(nameof(targets));
             using (var window = new AdvancedClipboardCopyWindow())
             {
                 window.advancedClipboardCopy1.Targets = targets;

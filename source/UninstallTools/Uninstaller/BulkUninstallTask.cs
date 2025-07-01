@@ -28,7 +28,7 @@ namespace UninstallTools.Uninstaller
         ///     The number of elements in <paramref name="taskList" /> is larger than
         ///     <see cref="F:System.Int32.MaxValue" />.
         /// </exception>
-        internal BulkUninstallTask(IList<BulkUninstallEntry> taskList, BulkUninstallConfiguration configuration)
+        internal BulkUninstallTask(IReadOnlyList<BulkUninstallEntry> taskList, BulkUninstallConfiguration configuration)
         {
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 

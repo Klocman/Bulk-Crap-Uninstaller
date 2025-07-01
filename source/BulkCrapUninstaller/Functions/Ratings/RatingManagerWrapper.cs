@@ -20,18 +20,13 @@ using UninstallTools;
 
 namespace BulkCrapUninstaller.Functions.Ratings
 {
-    internal class RatingManagerWrapper : IDisposable
+    internal class RatingManagerWrapper
     {
         private readonly UninstallerRatingManager _ratingManager = new(Settings.Default.MiscUserId);
 
 
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
-
-        public void Dispose()
-        {
-            _ratingManager.Dispose();
-        }
-
+        
         /// <summary>
         /// Upload or discard user ratings based on current settings.
         /// </summary>
@@ -57,7 +52,6 @@ namespace BulkCrapUninstaller.Functions.Ratings
                     {
                         FlushRatings();
                     }
-                    _ratingManager.Dispose();
                 })
                 { IsBackground = false, Name = "ProcessRatingDispose_Thread" }.Start();
             }
