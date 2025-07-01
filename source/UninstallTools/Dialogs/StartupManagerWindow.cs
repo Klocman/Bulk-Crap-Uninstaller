@@ -133,8 +133,27 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "copying to clipboard");
                 }
+            }
+        }
+
+        private void ShowSecurityOrGenericError(Exception ex, string context, string extraInfo = null)
+        {
+            if (ex is System.Security.SecurityException || ex is UnauthorizedAccessException)
+            {
+                PremadeDialogs.GenericError(
+                    $"Access denied while {context}." + (string.IsNullOrWhiteSpace(extraInfo) ? "" : $" {extraInfo}") +
+                    $"\nError: {ex.Message}\n\n" +
+                    "You may not have sufficient permissions to perform this operation. Here are some possible causes:\n" +
+                    "1.\tService/File Permissions: The user (even admin) may lack permissions on the specific item. Security descriptors can restrict who can modify or delete a service/file.\n" +
+                    "2.\tWMI Namespace Permissions: The user may lack permissions on the root\\CIMV2 namespace.\n" +
+                    "3.\tService/File in Use: Some system services cannot be deleted or modified, even by administrators.\n" +
+                    "4.\tAnti-malware/AV: Security software may block service modifications.");
+            }
+            else
+            {
+                PremadeDialogs.GenericError(ex);
             }
         }
 
@@ -150,12 +169,19 @@ namespace UninstallTools.Dialogs
                 {
                     foreach (var item in Selection)
                     {
-                        item.Delete();
+                        try
+                        {
+                            item.Delete();
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowSecurityOrGenericError(ex, "deleting service", $"Service name: {item.ProgramName}");
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "deleting service");
                 }
             }
         }
@@ -198,7 +224,7 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "opening file location", $"Path: {item.CommandFilePath}");
                 }
             }
         }
@@ -211,7 +237,7 @@ namespace UninstallTools.Dialogs
             }
             catch (Exception ex)
             {
-                PremadeDialogs.GenericError(ex);
+                ShowSecurityOrGenericError(ex, "opening link location");
             }
         }
 
@@ -303,7 +329,7 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "saving file", $"File: {exportDialog.FileName}");
                     e.Cancel = true;
                 }
             }
@@ -335,7 +361,7 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "enabling/disabling entry", $"Entry: {item.ProgramName}");
                 }
             }
 
@@ -357,7 +383,7 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "setting run for all users", $"Entry: {item.ProgramName}");
                 }
             }
 
@@ -374,7 +400,7 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "moving to registry", $"Entry: {item.ProgramName}");
                 }
             }
 
@@ -394,11 +420,18 @@ namespace UninstallTools.Dialogs
                 }
                 catch (Exception ex)
                 {
-                    PremadeDialogs.GenericError(ex);
+                    ShowSecurityOrGenericError(ex, "creating backup", $"Entry: {item.ProgramName}");
                 }
             }
 
-            Process.Start(new ProcessStartInfo(folderBrowserDialog.SelectedPath) { UseShellExecute = true });
+            try
+            {
+                Process.Start(new ProcessStartInfo(folderBrowserDialog.SelectedPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                ShowSecurityOrGenericError(ex, "opening backup folder", $"Path: {folderBrowserDialog.SelectedPath}");
+            }
 
             UpdateList();
         }
