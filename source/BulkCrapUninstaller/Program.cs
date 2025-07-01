@@ -135,7 +135,7 @@ namespace BulkCrapUninstaller
             }
             catch (Exception ex)
             {
-                if(ex is FileNotFoundException)
+                if (ex is FileNotFoundException)
                     Console.WriteLine("Settings file not found, creating new one.");
                 else
                     Console.WriteLine("Failed to load settings from the config file: " + ex);
@@ -287,11 +287,14 @@ namespace BulkCrapUninstaller
             }
         }
 
-        public static HttpClient GetHttpClient()
+        public static HttpClient HomeServerClient
         {
-            var cl = new HttpClient();
-            cl.BaseAddress = ConnectionString;
-            return cl;
+            get
+            {
+                var cl = new HttpClient();
+                cl.BaseAddress = ConnectionString;
+                return cl;
+            }
         }
     }
 }

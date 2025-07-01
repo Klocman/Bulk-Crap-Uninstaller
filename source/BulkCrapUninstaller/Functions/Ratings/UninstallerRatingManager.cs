@@ -10,12 +10,11 @@ using System.Text.Json;
 
 namespace BulkCrapUninstaller.Functions.Ratings
 {
-    public partial class UninstallerRatingManager : IDisposable
+    public partial class UninstallerRatingManager
     {
         private readonly Dictionary<ulong, int> _ratingsToSend = new();
         private readonly Dictionary<ulong, int> _avgRatings = new();
         private readonly Dictionary<ulong, int> _myRatings = new();
-
 
         public UninstallerRatingManager(ulong userId)
         {
@@ -28,16 +27,10 @@ namespace BulkCrapUninstaller.Functions.Ratings
         public int RemoteRatingCount => _avgRatings.Count;
 
         public int UserRatingCount => _myRatings.Count;
-
-        public void Dispose()
-        {
-            //lock (_ratingsToSend)
-            //    _ratingsToSend.Clear();
-        }
-
+        
         public void FetchRatings()
         {
-            using var cl = Program.GetHttpClient();
+            using var cl = Program.HomeServerClient;
 
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
@@ -65,7 +58,7 @@ namespace BulkCrapUninstaller.Functions.Ratings
             lock (_ratingsToSend)
                 if (_ratingsToSend.Count < 1) return;
 
-            using var cl = Program.GetHttpClient();
+            using var cl = Program.HomeServerClient;
 
             lock (_ratingsToSend)
             {

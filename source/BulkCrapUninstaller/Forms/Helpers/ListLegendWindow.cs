@@ -34,6 +34,7 @@ namespace BulkCrapUninstaller.Forms
 
         public void UpdatePosition(Control owner)
         {
+            if (owner == null) throw new ArgumentNullException(nameof(owner));
             if (!owner.Visible || owner.IsDisposed || owner.Disposing) return;
 
             var local = new Point(owner.Width - Width - 30, owner.Height - Height - 30);

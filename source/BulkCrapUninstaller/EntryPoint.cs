@@ -127,7 +127,7 @@ namespace BulkCrapUninstaller
                 {
                     try
                     {
-                        SetForegroundWindow(otherBcu.MainWindowHandle.ToInt32());
+                        NativeMethods.SetForegroundWindow(otherBcu.MainWindowHandle.ToInt32());
                     }
                     catch (Exception ex)
                     {
@@ -145,8 +145,11 @@ namespace BulkCrapUninstaller
             }
         }
 
-        [DllImport("user32.dll")]
-        private static extern int SetForegroundWindow(int hwnd);
+        private static class NativeMethods
+        {
+            [DllImport("user32.dll")]
+            public static extern int SetForegroundWindow(int hwnd);
+        }
 
         private static void SetupDependancies()
         {

@@ -18,7 +18,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         [XmlIgnore]
         public X509Certificate2 Cert { get; set; }
-        public byte[] CertData
+        public ReadOnlySpan<byte> CertData
         {
             get => Cert?.RawData;
             set => Cert = value == null ? null : new X509Certificate2(value);

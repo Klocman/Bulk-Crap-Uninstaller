@@ -202,14 +202,14 @@ namespace BulkCrapUninstaller.Functions
                 {
                     _lockApplication(true);
 
-                    BulkUninstallEntry[] taskEntries;
+                    IReadOnlyList<BulkUninstallEntry> taskEntries;
 
                     using (var wizard = new BeginUninstallTaskWizard())
                     {
                         wizard.Initialize(targetList, allUninstallerList.ToList(), quiet);
 
                         wizard.StartPosition = FormStartPosition.CenterParent;
-                        if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK || wizard.Results.Length == 0)
+                        if (wizard.ShowDialog(MessageBoxes.DefaultOwner) != DialogResult.OK || wizard.Results.Count == 0)
                             return;
 
                         taskEntries = wizard.Results;
@@ -224,7 +224,7 @@ namespace BulkCrapUninstaller.Functions
                     {
                         try
                         {
-                            SystemRestore.BeginSysRestore(taskEntries.Length, true);
+                            SystemRestore.BeginSysRestore(taskEntries.Count, true);
                         }
                         catch (Exception exception)
                         {

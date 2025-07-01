@@ -23,7 +23,7 @@ namespace BulkCrapUninstaller.Functions.Tracking
             {
                 var compressed = CompressionTools.BrotliCompress(value);
 
-                using var s = Program.GetHttpClient();
+                using var s = Program.HomeServerClient;
                 var response = s.PostAsync(new Uri($"SendStats?userId={userId}&data={Convert.ToBase64String(compressed)}", UriKind.Relative), null!).Result;
                 response.EnsureSuccessStatusCode();
             }

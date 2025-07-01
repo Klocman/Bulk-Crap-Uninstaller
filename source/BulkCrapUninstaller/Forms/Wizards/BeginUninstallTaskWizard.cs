@@ -43,7 +43,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        public BulkUninstallEntry[] Results { get; private set; }
+        public IReadOnlyList<BulkUninstallEntry> Results { get; private set; }
 
         private void button2_Click(object sender, EventArgs e)
         {

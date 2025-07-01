@@ -68,7 +68,7 @@ namespace BulkCrapUninstaller.Controls
 
             uninstallListEditor1.CurrentListChanged += OnCurrentListChanged;
             uninstallListEditor1.FiltersChanged += OnFiltersChanged;
-            
+
             toolStripButtonDelete.Enabled = File.Exists(DefaultUninstallListPath);
         }
 
@@ -116,7 +116,7 @@ namespace BulkCrapUninstaller.Controls
             }
             catch (Exception ex)
             {
-                PremadeDialogs.GenericError("File is not an uninstall list or it can't be opened", 
+                PremadeDialogs.GenericError("File is not an uninstall list or it can't be opened",
                     "Please note that uninstall lists are saved in the \"Advanced filtering\" view, not by exporting. Lists should have the .bcul extension.\n\nError message: " + ex.Message);
             }
         }
@@ -227,8 +227,8 @@ namespace BulkCrapUninstaller.Controls
 
         private void toolStripButtonAddSelectedAsFilters_Click(object sender, EventArgs e)
         {
-            if (SelectedEntryGetter == null) throw new ArgumentNullException(nameof(SelectedEntryGetter));
-            if (CurrentList == null) throw new ArgumentNullException(nameof(CurrentList));
+            if (SelectedEntryGetter == null) throw new InvalidOperationException(nameof(SelectedEntryGetter) + " is null");
+            if (CurrentList == null) throw new InvalidOperationException(nameof(CurrentList) + " is null");
 
             var entries = SelectedEntryGetter();
             var filters = entries.Select(x => new Filter(x.DisplayName, false,
