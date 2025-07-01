@@ -9,13 +9,16 @@ Bulk Crap Uninstaller (or BCUninstaller) is a free (as in speech) program uninst
 
 BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has special support for many uninstalling systems (NSIS, InnoSetup, Msiexec, and many other). Check below for a full list of functions.
 
-Since BCUninstaller 5.0 you need Windows 7 or newer to run it (if you get an error on startup then try running Windows Update). If you want to use BCUninstaller on Vista or older, check the [legacy 4.x branch](https://github.com/Klocman/Bulk-Crap-Uninstaller/tree/legacy-4.x) or download the latest available 4.x release.
-
 Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
 
 [Visit the official homepage](https://www.bcuninstaller.com/) to see the full list of quirks and features!
 
 [Read the online documentation](https://htmlpreview.github.io/?https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/doc/BCU_manual.html) if you have any questions or issues (the help file included with all releases). If you didn't find an answer to your question, feel free to [open a new issue](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new).
+
+## System requirements
+Starting with BCUninstaller v5+ at least Windows 7 SP1 with all Platform Updates (KB2670838, KB2533623, etc.) and .NET6 desktop runtime are required. If you get a DLL error on startup then try running Windows Update. If you get a framework error, install .NET6 either manually or through Windows Update.
+
+If you want to use BCUninstaller on Vista or older, compile the [legacy 4.x branch](https://github.com/Klocman/Bulk-Crap-Uninstaller/tree/legacy-4.x) or download the [latest available 4.x release](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v4.16). Make sure you have .Net Framework 4.5 installed with all available updates for your system (it is not installed on XP by default).
 
 ## Download
 You can get the latest version from the releases page. Alternatively you can download it from one of these hosts:
