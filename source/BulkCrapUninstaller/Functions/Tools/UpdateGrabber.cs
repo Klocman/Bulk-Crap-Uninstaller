@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading;
 using BulkCrapUninstaller.Properties;
@@ -110,7 +111,7 @@ namespace BulkCrapUninstaller.Functions.Tools
                 { Name = "UpdateCheck_Thread", IsBackground = true }.Start();
             }
         }
-        
+
         public static string LatestReleaseUrl = "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/latest";
 
         public static Version CheckLatestVersion()
@@ -159,69 +160,29 @@ namespace BulkCrapUninstaller.Functions.Tools
             }
         }
 
-        // https://stackoverflow.com/a/28424940
         private static string GetFinalRedirect(string url)
         {
-            if (string.IsNullOrEmpty(url))
-                return url;
+            if (string.IsNullOrWhiteSpace(url))
+                return null;
 
-            if (ServicePointManager.SecurityProtocol < SecurityProtocolType.Tls12)
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
-            int maxRedirCount = 8; // prevent infinite loops
-            string newUrl = url;
-            do
+            try
             {
-                HttpWebResponse resp = null;
-                try
+                // https://stackoverflow.com/a/79339216
+                using (var client = new HttpClient(new HttpClientHandler { AllowAutoRedirect = true }))
                 {
-                    var req = WebRequest.CreateHttp(new Uri(url));
-                    req.Method = "HEAD";
-                    req.AllowAutoRedirect = false;
-                    resp = (HttpWebResponse)req.GetResponse();
-                    switch (resp.StatusCode)
+                    client.Timeout = new TimeSpan(0, 0, 10);
+                    using (var response = client.SendAsync(new HttpRequestMessage(HttpMethod.Head, url)))
                     {
-                        case HttpStatusCode.OK:
-                            return newUrl;
-                        case HttpStatusCode.Redirect:
-                        case HttpStatusCode.MovedPermanently:
-                        case HttpStatusCode.RedirectKeepVerb:
-                        case HttpStatusCode.RedirectMethod:
-                            newUrl = resp.Headers["Location"];
-                            if (newUrl == null)
-                                return url;
-
-                            if (!newUrl.Contains("://"))
-                            {
-                                // Doesn't have a URL Schema, meaning it's a relative or absolute URL
-                                Uri u = new Uri(new Uri(url), newUrl);
-                                newUrl = u.ToString();
-                            }
-
-                            break;
-                        default:
-                            return newUrl;
+                        var result = response.Result.RequestMessage?.RequestUri;
+                        return result?.ToString();
                     }
-                    url = newUrl;
                 }
-                catch (WebException)
-                {
-                    // Return the last known good URL
-                    return newUrl;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                    return null;
-                }
-                finally
-                {
-                    if (resp != null)
-                        resp.Close();
-                }
-            } while (maxRedirCount-- > 0);
-
-            return newUrl;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"GetFinalRedirect failed for url=[{url}] with exception: {ex}");
+                return null;
+            }
         }
     }
 }
