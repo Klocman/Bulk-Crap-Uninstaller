@@ -102,10 +102,8 @@ Name: "lang"; Description: "{cm:ExtraLanguages}"; Types: full
 [Files]
 #ifdef Light
 
-; Need to do this to separate the language resource folders from main app files
-Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: main; Flags: ignoreversion; Excludes: "CleanLogs.bat"; 
-Source: "{#InputDir}\Resources\*";      DestDir: "{app}\Resources"; Components: main; Flags: ignoreversion recursesubdirs;
-
+; Need to do this to separate the language resource folders from main app file
+Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: main; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat,\??\*,\??-??\*,\??-????\*";
 ; If installing languages, copy everything
 Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat";
 
