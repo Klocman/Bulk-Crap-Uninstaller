@@ -53,7 +53,8 @@ namespace BulkCrapUninstaller.Forms
 
             SetTargetStatus(_status);
 
-            Location = new Point(Screen.FromControl(this).WorkingArea.Right - Size.Width - 5, 10);
+            var workingArea = Screen.FromControl(this).WorkingArea;
+            Location = new Point(workingArea.Right - Size.Width - 5, workingArea.Top + 10);
 
             Refresh();
             Opacity = 1;
