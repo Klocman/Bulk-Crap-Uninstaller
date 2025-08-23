@@ -9,7 +9,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-    <Platforms>AnyCPU;x64;x86</Platforms>
+    <Platforms>AnyCPU;x64;x86;ARM64</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	  <RuntimeIdentifier></RuntimeIdentifier>
@@ -29,6 +29,12 @@
     <WarningLevel>1</WarningLevel>
     <DocumentationFile />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 	  <RuntimeIdentifier></RuntimeIdentifier>
 	  <OutputPath>..\..\bin\Release\AnyCPU\</OutputPath>
@@ -44,6 +50,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
        <OutputPath>..\..\bin\Release\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <WarningLevel>1</WarningLevel>
     <DocumentationFile />
   </PropertyGroup>

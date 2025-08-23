@@ -7,7 +7,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-		<Platforms>AnyCPU;x64;x86</Platforms>
+		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 	</PropertyGroup>
 	<PropertyGroup>
 		<ApplicationIcon>logo.ico</ApplicationIcon>
@@ -39,6 +39,11 @@
 		<OutputPath>..\..\bin\Release\</OutputPath>
 		<DebugSymbols>true</DebugSymbols>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Release\</OutputPath>
+	  <DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
 		<RuntimeIdentifier></RuntimeIdentifier>
 		<OutputPath>..\..\bin\Debug\AnyCPU\</OutputPath>
@@ -56,6 +61,12 @@
 		<OutputPath>..\..\bin\Debug\</OutputPath>
 		<CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Debug\</OutputPath>
+	  <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+	  <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 	<PropertyGroup>
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
