@@ -29,8 +29,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlocTools", "KlocTools\KlocTools.csproj", "{4F843421-01D4-48E8-B88B-CDF30DD671A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkCrapUninstallerTests", "BulkCrapUninstallerTests\BulkCrapUninstallerTests.csproj", "{C631EFBE-0463-417D-AEBE-A4BE3E660C43}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreAppHelper", "StoreAppHelper\StoreAppHelper.csproj", "{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UninstallerAutomatizer", "UninstallerAutomatizer\UninstallerAutomatizer.csproj", "{9C818D14-22AE-46DB-B179-119069AE6116}"
@@ -124,12 +122,6 @@ Global
 		{4F843421-01D4-48E8-B88B-CDF30DD671A4}.Release|x64.Build.0 = Release|x64
 		{4F843421-01D4-48E8-B88B-CDF30DD671A4}.Release|x86.ActiveCfg = Release|x86
 		{4F843421-01D4-48E8-B88B-CDF30DD671A4}.Release|x86.Build.0 = Release|x86
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x64.ActiveCfg = Release|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x86.ActiveCfg = Release|Any CPU
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|x64.ActiveCfg = Debug|x64

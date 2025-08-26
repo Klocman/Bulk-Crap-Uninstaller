@@ -145,7 +145,7 @@ namespace Klocman.Forms.Tools
                 var asyName = entryAsy.GetName();
                 var bits = ProcessTools.Is64BitProcess ? "64bit" : "32bit";
                 additionalInfo =
-                    $"{asyName.FullName} | {asyName.ProcessorArchitecture} | {Environment.OSVersion} | {bits}\n{additionalInfo}";
+                    $"{asyName.FullName} | {Environment.OSVersion} | {bits}\n{additionalInfo}";
             }
 
             if (DefaultOwner != null)
