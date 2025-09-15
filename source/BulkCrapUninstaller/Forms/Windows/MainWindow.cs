@@ -1143,7 +1143,8 @@ namespace BulkCrapUninstaller.Forms
             globalHotkeys1.Add(new HotkeyEntry(Keys.F3, searchToolStripMenuItem));
 
             // Basic operations
-            globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, uninstallToolStripMenuItem));
+            globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, uninstallToolStripMenuItem,
+                () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.Delete, false, false, true, quietUninstallToolStripMenuItem,
                 () => !_listView.CheckIsAppDisposed() && uninstallerObjectListView.ContainsFocus));
             globalHotkeys1.Add(new HotkeyEntry(Keys.C, false, true, false, copyFullInformationToolStripMenuItem,
