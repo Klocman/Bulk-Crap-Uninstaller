@@ -3,16 +3,17 @@
     Apache License Version 2.0
 */
 
-using System;
-using System.Globalization;
-using System.Linq;
-using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
 using Klocman;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
 using Klocman.Localising;
+using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -21,6 +22,7 @@ namespace BulkCrapUninstaller.Forms
         private readonly SettingBinder<Settings> _settings = Settings.Default.SettingBinder;
         private bool _restartNeeded;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] 
         public int OpenedTab { get { return tabControl.SelectedIndex; } set { tabControl.SelectedIndex = value; } }
 
         public SettingsWindow()

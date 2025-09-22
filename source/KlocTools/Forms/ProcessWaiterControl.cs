@@ -3,14 +3,15 @@
     Apache License Version 2.0
 */
 
+using Klocman.Forms.Tools;
+using Klocman.Tools;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Klocman.Forms.Tools;
-using Klocman.Tools;
 using Timer = System.Timers.Timer;
 
 namespace Klocman.Forms
@@ -120,6 +121,7 @@ namespace Klocman.Forms
             treeView1.Nodes.AddRange(results.ToArray());
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ShowIgnoreAndCancel
         {
             get

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+		<TargetFramework>net10.0-windows10.0.18362</TargetFramework>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputType>Exe</OutputType>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -44,8 +44,8 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.0-rc.1.25451.107" />
 	</ItemGroup>
 	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>

@@ -78,6 +78,7 @@ namespace Klocman.Forms
             set { label2.Text = value; }
         }*/
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         internal bool SubProgressVisible
         {
             get { return progressBar2.Visible; }
@@ -127,6 +128,7 @@ namespace Klocman.Forms
                 StartWork();
         }
 
+        [Obsolete]
         protected override void OnClosing(CancelEventArgs e)
         {
             if (Owner != null)

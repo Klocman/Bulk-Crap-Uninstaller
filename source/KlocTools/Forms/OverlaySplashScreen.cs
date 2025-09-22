@@ -43,6 +43,7 @@ namespace Klocman.Forms
             timerFadeout.Start();
         }
 
+        [Obsolete]
         protected override void OnClosed(EventArgs e)
         {
             _owner.Move -= OnOwnerMove;

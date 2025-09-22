@@ -1227,6 +1227,7 @@ namespace BrightIdeasSoftware
         /// <summary>
         /// Should this list show checkboxes?
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new bool CheckBoxes
         {
             get { return base.CheckBoxes; }
@@ -3352,6 +3353,7 @@ namespace BrightIdeasSoftware
         /// as this will work:
         /// <code>listView1.SmallImageList = listView1.SmallImageList;</code></para>
         /// </remarks>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new ImageList SmallImageList
         {
             get { return shadowedImageList; }
@@ -4248,7 +4250,7 @@ namespace BrightIdeasSoftware
         public virtual void AddObject(object modelObject)
         {
             if (InvokeRequired)
-                Invoke((MethodInvoker)delegate () { AddObject(modelObject); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { AddObject(modelObject); });
             else
                 AddObjects(new object[] { modelObject });
         }
@@ -4267,7 +4269,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate () { AddObjects(modelObjects); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { AddObjects(modelObjects); });
                 return;
             }
             InsertObjects(EnumerableCount(Objects), modelObjects);
@@ -4538,7 +4540,7 @@ namespace BrightIdeasSoftware
         public virtual void BuildList()
         {
             if (InvokeRequired)
-                Invoke(new MethodInvoker(BuildList));
+                Invoke(new System.Windows.Forms.MethodInvoker(BuildList));
             else
                 BuildList(true);
         }
@@ -4754,7 +4756,7 @@ namespace BrightIdeasSoftware
         public virtual void ClearObjects()
         {
             if (InvokeRequired)
-                Invoke(new MethodInvoker(ClearObjects));
+                Invoke(new System.Windows.Forms.MethodInvoker(ClearObjects));
             else
                 SetObjects(null);
         }
@@ -4996,7 +4998,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate ()
+                Invoke((System.Windows.Forms.MethodInvoker)delegate ()
                 {
                     InsertObjects(index, modelObjects);
                 });
@@ -5451,7 +5453,7 @@ namespace BrightIdeasSoftware
         public virtual void RemoveObject(object modelObject)
         {
             if (InvokeRequired)
-                Invoke((MethodInvoker)delegate () { RemoveObject(modelObject); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { RemoveObject(modelObject); });
             else
                 RemoveObjects(new object[] { modelObject });
         }
@@ -5468,7 +5470,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate () { RemoveObjects(modelObjects); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { RemoveObjects(modelObjects); });
                 return;
             }
             if (modelObjects == null)
@@ -5605,7 +5607,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate { SetObjects(collection, preserveState); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { SetObjects(collection, preserveState); });
                 return;
             }
 
@@ -5642,7 +5644,7 @@ namespace BrightIdeasSoftware
         public virtual void UpdateObject(object modelObject)
         {
             if (InvokeRequired)
-                Invoke((MethodInvoker)delegate () { UpdateObject(modelObject); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { UpdateObject(modelObject); });
             else
                 UpdateObjects(new object[] { modelObject });
         }
@@ -5662,7 +5664,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate () { UpdateObjects(modelObjects); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate () { UpdateObjects(modelObjects); });
                 return;
             }
             if (modelObjects == null || modelObjects.Count == 0)
@@ -6623,7 +6625,7 @@ namespace BrightIdeasSoftware
             if (cellToolTip != null)
             {
                 cellToolTip.PushSettings();
-                BeginInvoke((MethodInvoker)delegate
+                BeginInvoke((System.Windows.Forms.MethodInvoker)delegate
                 {
                     UpdateCellToolTipHandle();
                     cellToolTip.PopSettings();
@@ -7916,7 +7918,7 @@ namespace BrightIdeasSoftware
             menuItemClicked.Checked = !menuItemClicked.Checked;
             col.IsVisible = menuItemClicked.Checked;
             contextMenuStaysOpen = SelectColumnsMenuStaysOpen;
-            BeginInvoke(new MethodInvoker(RebuildColumns));
+            BeginInvoke(new System.Windows.Forms.MethodInvoker(RebuildColumns));
         }
         private bool contextMenuStaysOpen;
 
@@ -7957,7 +7959,7 @@ namespace BrightIdeasSoftware
             // at this point, the DisplayIndex's of the columns are not yet as they are
             // going to be. So we have to invoke a method to run later that will remember
             // what the real DisplayIndex's are.
-            BeginInvoke(new MethodInvoker(RememberDisplayIndicies));
+            BeginInvoke(new System.Windows.Forms.MethodInvoker(RememberDisplayIndicies));
         }
 
         private void RememberDisplayIndicies()
@@ -8727,7 +8729,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate { RefreshObjects(modelObjects); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { RefreshObjects(modelObjects); });
                 return;
             }
             foreach (object modelObject in modelObjects)
@@ -8991,7 +8993,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate { Sort(columnToSort); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { Sort(columnToSort); });
             }
             else
             {
@@ -9013,7 +9015,7 @@ namespace BrightIdeasSoftware
         {
             if (InvokeRequired)
             {
-                Invoke((MethodInvoker)delegate { Sort(columnToSort, order); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { Sort(columnToSort, order); });
             }
             else
             {
@@ -10099,7 +10101,7 @@ namespace BrightIdeasSoftware
             {
                 // We have to delay the running of this process otherwise we can generate
                 // a series of MouseUp events (don't ask me why)
-                BeginInvoke((MethodInvoker)delegate { ProcessHyperlinkClicked(args); });
+                BeginInvoke((System.Windows.Forms.MethodInvoker)delegate { ProcessHyperlinkClicked(args); });
             }
 
             // No one handled it so check to see if we should start editing.
@@ -10253,7 +10255,7 @@ namespace BrightIdeasSoftware
             //Debug.WriteLine("OnHandleCreated");
             base.OnHandleCreated(e);
 
-            Invoke((MethodInvoker)OnControlCreated);
+            Invoke((System.Windows.Forms.MethodInvoker)OnControlCreated);
         }
 
         /// <summary>
@@ -10552,7 +10554,7 @@ namespace BrightIdeasSoftware
                 if (cb.Created)
                     cb.SelectedValue = value;
                 else
-                    BeginInvoke(new MethodInvoker(delegate
+                    BeginInvoke(new System.Windows.Forms.MethodInvoker(delegate
                     {
                         cb.SelectedValue = value;
                     }));

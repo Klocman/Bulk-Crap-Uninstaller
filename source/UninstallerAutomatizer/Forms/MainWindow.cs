@@ -89,6 +89,7 @@ namespace UninstallerAutomatizer
             timerClose.Start();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool IsRunning
         {
             get { return buttonPause.Visible; }

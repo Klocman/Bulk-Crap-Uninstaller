@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+		<TargetFramework>net10.0-windows10.0.18362</TargetFramework>
 		<OutputType>Library</OutputType>
 		<RootNamespace>Klocman</RootNamespace>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -102,7 +102,7 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="System.Management" Version="8.0.0" />
+		<PackageReference Include="System.Management" Version="10.0.0-rc.1.25451.107" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="Sorters\ColumnSorter.cs" />

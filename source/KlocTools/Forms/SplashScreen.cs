@@ -18,7 +18,7 @@ namespace Klocman.Forms
     {
         private OverlaySplashScreen _splash;
 
-        public Image SplashScreenImage { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] public Image SplashScreenImage { get; set; }
 
         [DefaultValue(true)]
         public bool AutomaticallyClose { get; set; } = true;

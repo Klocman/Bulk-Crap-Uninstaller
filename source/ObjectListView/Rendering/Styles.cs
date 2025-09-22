@@ -221,6 +221,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should hyperlinks be drawn")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public CellStyle Normal {
             get { return normalStyle; }
             set { normalStyle = value; }
@@ -232,6 +233,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should hyperlinks be drawn when the mouse is over them?")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public CellStyle Over {
             get { return overStyle; }
             set { overStyle = value; }
@@ -243,6 +245,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should hyperlinks be drawn after they have been clicked")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public CellStyle Visited {
             get { return visitedStyle; }
             set { visitedStyle = value; }
@@ -254,6 +257,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("What cursor should be shown when the mouse is over a link?")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Cursor OverCursor {
             get { return overCursor; }
             set { overCursor = value; }
@@ -338,6 +342,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should the header be drawn when the mouse is over it?")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public HeaderStateStyle Hot {
             get { return hotStyle; }
             set { hotStyle = value; }
@@ -349,6 +354,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should a column header normally be drawn")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public HeaderStateStyle Normal {
             get { return normalStyle; }
             set { normalStyle = value; }
@@ -360,6 +366,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         [Category("Appearance"),
          Description("How should a column header be drawn when it is pressed")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public HeaderStateStyle Pressed {
             get { return pressedStyle; }
             set { pressedStyle = value; }

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+		<TargetFramework>net10.0-windows10.0.18362</TargetFramework>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputType>Library</OutputType>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -72,9 +72,8 @@
 		</COMReference>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
-		<PackageReference Include="System.Management" Version="8.0.0" />
-		<PackageReference Include="TaskScheduler" Version="2.11.0" />
+		<PackageReference Include="System.Management" Version="10.0.0-rc.1.25451.107" />
+		<PackageReference Include="TaskScheduler" Version="2.12.2" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Update="Properties\Localisation.resx">

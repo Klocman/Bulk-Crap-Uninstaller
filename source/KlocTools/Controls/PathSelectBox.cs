@@ -29,7 +29,8 @@ namespace Klocman.Controls
         }
         
         public event EventHandler FileNameChanged;
-        
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string FileName
         {
             get { return textBox1.Text; }

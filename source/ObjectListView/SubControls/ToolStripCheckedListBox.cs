@@ -25,8 +25,9 @@
  * If you wish to use this code in a closed source application, please contact phillip.piper@gmail.com.
  */
 
-using System.Windows.Forms;
+using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace BrightIdeasSoftware {
 
@@ -67,6 +68,8 @@ namespace BrightIdeasSoftware {
         /// <summary>
         /// Gets or sets whether an item should be checked when it is clicked
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        
         public bool CheckedOnClick {
             get {
                 return CheckedListBoxControl.CheckOnClick;

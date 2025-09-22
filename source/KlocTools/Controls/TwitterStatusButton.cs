@@ -3,9 +3,10 @@
     Apache License Version 2.0
 */
 
-using System;
-using System.Windows.Forms;
 using Klocman.Forms.Tools;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Klocman.Controls
 {
@@ -24,8 +25,10 @@ namespace Klocman.Controls
         /// <summary>
         ///     Overwrite default message text. If set ignores TargetSite.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] 
         public string MessageText { get; set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] 
         public string TargetSite { get; set; }
 
         private void FacebookStatusButton_Click(object sender, EventArgs e)

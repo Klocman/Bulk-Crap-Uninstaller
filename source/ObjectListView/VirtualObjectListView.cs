@@ -242,6 +242,7 @@ namespace BrightIdeasSoftware
         /// <remarks>
         /// This property is an implementation detail and should not be altered.
         /// </remarks>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         protected internal bool CheckedObjectsMustStillExistInList {
             get { return checkedObjectsMustStillExistInList; }
             set { checkedObjectsMustStillExistInList = value; }
@@ -498,7 +499,7 @@ namespace BrightIdeasSoftware
         /// <remark>This method can safely be called from background threads.</remark>
         public override void ClearObjects() {
             if (InvokeRequired)
-                Invoke(new MethodInvoker(ClearObjects));
+                Invoke(new System.Windows.Forms.MethodInvoker(ClearObjects));
             else {
                 CheckStateMap.Clear();
                 SetObjects(new ArrayList());
@@ -576,7 +577,7 @@ namespace BrightIdeasSoftware
         /// <remarks>This method does not resort the items.</remarks>
         public override void RefreshObjects(IList modelObjects) {
             if (InvokeRequired) {
-                Invoke((MethodInvoker)delegate { RefreshObjects(modelObjects); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { RefreshObjects(modelObjects); });
                 return;
             }
 
@@ -698,7 +699,7 @@ namespace BrightIdeasSoftware
         /// <param name="preserveState">Should the state of the list be preserved as far as is possible.</param>
         public override void SetObjects(IEnumerable collection, bool preserveState) {
             if (InvokeRequired) {
-                Invoke((MethodInvoker)delegate { SetObjects(collection, preserveState); });
+                Invoke((System.Windows.Forms.MethodInvoker)delegate { SetObjects(collection, preserveState); });
                 return;
             }
 

@@ -39,6 +39,7 @@ namespace BulkCrapUninstaller.Controls
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool InvalidEnabled
         {
             get { return flowLayoutPanellabelInvalid.Visible; }
@@ -46,6 +47,7 @@ namespace BulkCrapUninstaller.Controls
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool WinFeatureEnabled
         {
             get { return flowLayoutPanellabelWinFeature.Visible; }
@@ -53,6 +55,7 @@ namespace BulkCrapUninstaller.Controls
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool CertificatesEnabled
         {
             get { return flowLayoutPanellabelVerified.Visible; }
@@ -60,6 +63,7 @@ namespace BulkCrapUninstaller.Controls
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool OrphanedEnabled
         {
             get { return flowLayoutPanellabelOrphaned.Visible; }
@@ -67,6 +71,7 @@ namespace BulkCrapUninstaller.Controls
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool StoreAppEnabled
         {
             get { return flowLayoutPanellabelStoreApp.Visible; }

@@ -3,18 +3,20 @@
     Apache License Version 2.0
 */
 
+using BulkCrapUninstaller.Functions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using BulkCrapUninstaller.Functions;
 using UninstallTools;
 
 namespace BulkCrapUninstaller.Controls
 {
     public partial class AdvancedClipboardCopy : UserControl
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public IEnumerable<ApplicationUninstallerEntry> Targets { get; set; }
 
         public AdvancedClipboardCopy()
@@ -25,6 +27,7 @@ namespace BulkCrapUninstaller.Controls
             comboBoxInsert.SelectedIndex = 0;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string PatternText
         {
             get { return textBoxPatternInput.Text; }
