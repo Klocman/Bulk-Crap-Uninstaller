@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label5.Text" xml:space="preserve">
-    <value>Az eltávolítás elindítása előtt végrehajtandó parancssor</value>
+    <value>Az eltávolítás elindítása előtt végrehajtandó parancsok</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Az eltávolítás befejeződése után végrehajtandó parancssor</value>
+    <value>Az eltávolítás befejeződése után végrehajtandó parancsok</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Indításkor automatikusan töltse be a "Default.bcul" eltávolítási listát</value>
@@ -148,10 +148,10 @@
     <value>Mindig mutatja, ha egy program kevésbé megbízható</value>
   </data>
   <data name="checkBoxLoud.Text" xml:space="preserve">
-    <value>Kérdezzen rá, hogy egy csendes feladatot normál végezzen-e el</value>
+    <value>Kérdezzen rá a normál eltávolítók eltávolítására egy csendes feladatból</value>
   </data>
   <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
-    <value>Ne kérdezzen rá a visszajelzésre, vagy a segítségre</value>
+    <value>Ne kérjen visszajelzést vagy segítséget</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Maradványok keresése az eltávolítást követően</value>

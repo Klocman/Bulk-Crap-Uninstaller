@@ -120,4 +120,31 @@
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
     <value>Ne jelenjen meg ez az oldal többé</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Adományok segítségével tudom fenntartani érdeklődésemet a projekt iránt, valamint fedezni tudom a kódaláírási tanúsítványokat, a tárhelyszolgáltatásokat és egyéb szükséges költségeket.</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Kiadási megjegyzések és változásnapló megtekintése</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Forráskód megtekintése és közreműködés</value>
+  </data>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Licensz elolvasása</value>
+  </data>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Adatvédelmi nyilatkozat elolvasása</value>
+  </data>
+  <data name="linkLabel5.Text" xml:space="preserve">
+    <value>Sugófájl elolvasása</value>
+  </data>
+  <data name="linkLabel6.Text" xml:space="preserve">
+    <value>Visszajelzés küldése / Kapcsolatfelvétel a fejlesztővel</value>
+  </data>
+  <data name="linkLabel7.Text" xml:space="preserve">
+    <value>Adományozás (PayPal, Bitcoin, Steam Ajándékkártyák)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>(Kattintson bárhová az ablak bezárásához)</value>
+  </data>
 </root>
