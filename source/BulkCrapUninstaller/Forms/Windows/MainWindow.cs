@@ -3,16 +3,6 @@
     Apache License Version 2.0
 */
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows.Forms;
 using BrightIdeasSoftware;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Functions.ApplicationList;
@@ -29,6 +19,17 @@ using Klocman.Native;
 using Klocman.Subsystems;
 using Klocman.Tools;
 using SimpleTreeMap;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Windows.Forms;
 using UninstallTools;
 using UninstallTools.Dialogs;
 using UninstallTools.Factory;
@@ -146,9 +147,22 @@ namespace BulkCrapUninstaller.Forms
 
             // Setup the main window
             Icon = Resources.Icon_Logo;
+            // This is a duplicate of the about window logic-it doesn't have overhead but should probably be refactored.
+            Assembly.GetExecutingAssembly().Modules.First().GetPEKind(out var pekind, out var ifmachine);
+            bool isProbablyARM64;
+            if (Enum.IsDefined<ImageFileMachine>(ifmachine))
+            {
+                isProbablyARM64 = false;
+            }
+            else // Work around .NET 6 not having WoA64 definitions in GetPEKind
+
+            {
+                isProbablyARM64 = true;
+            }
             MainTitleBarText = Text.Append(" v", Program.AssemblyVersion.ToString(Program.AssemblyVersion.Build != 0 ? 3 : 2))
                 .AppendIf(!Program.IsInstalled, " ", Localisable.StrIsPortable)
                 .AppendIf(ProcessTools.Is64BitProcess, " ", Localisable.Str64Bit)
+                .AppendIf(isProbablyARM64, " ", "ARM")
                 .AppendIf(Program.EnableDebug, " ", Localisable.StrDebug);
             Text = MainTitleBarText;
 

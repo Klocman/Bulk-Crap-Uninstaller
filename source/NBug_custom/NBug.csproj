@@ -7,7 +7,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-		<Platforms>AnyCPU;x64;x86</Platforms>
+		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<RuntimeIdentifier></RuntimeIdentifier>
@@ -36,6 +36,15 @@
 		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
 		<DocumentationFile />
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Debug\</OutputPath>
+	  <WarningLevel>1</WarningLevel>
+	  <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+	  <RunCodeAnalysis>false</RunCodeAnalysis>
+	  <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+	  <DocumentationFile />
+	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<RuntimeIdentifier></RuntimeIdentifier>
 		<OutputPath>..\..\bin\Release\AnyCPU\</OutputPath>
@@ -56,6 +65,13 @@
 		<WarningLevel>1</WarningLevel>
 		<DocumentationFile />
 		<CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Release\</OutputPath>
+	  <WarningLevel>1</WarningLevel>
+	  <DocumentationFile />
+	  <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Update="Core\UI\WinForms\Panels\ExceptionDetails.cs">

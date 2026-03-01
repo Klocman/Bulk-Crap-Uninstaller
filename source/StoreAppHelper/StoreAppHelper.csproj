@@ -4,7 +4,7 @@
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputType>Exe</OutputType>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<Platforms>AnyCPU;x64;x86</Platforms>
+		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<RuntimeIdentifier></RuntimeIdentifier>
@@ -17,6 +17,10 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputPath>..\..\bin\Release\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Release\</OutputPath>
 	</PropertyGroup>
 	<PropertyGroup>
 		<targetplatformversion>8.0</targetplatformversion>
@@ -41,6 +45,11 @@
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputPath>..\..\bin\Debug\</OutputPath>
 		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+	  <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	  <OutputPath>..\..\bin\Debug\</OutputPath>
+	  <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 	<PropertyGroup>
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
