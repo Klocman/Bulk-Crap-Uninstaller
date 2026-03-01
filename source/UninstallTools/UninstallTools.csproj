@@ -1,61 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<OutputType>Library</OutputType>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<UseWindowsForms>true</UseWindowsForms>
-		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-		<Platforms>AnyCPU;x64;x86</Platforms>
+
+		<Product>UninstallTools</Product>
+		<AssemblyTitle>Core application discovery and uninstallation code</AssemblyTitle>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<RuntimeIdentifier></RuntimeIdentifier>
-		<OutputPath>..\..\bin\Debug\AnyCPU\</OutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-		<RuntimeIdentifier>win-x86</RuntimeIdentifier>
-		<OutputPath>..\..\bin\Debug\</OutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-		<OutputPath>..\..\bin\Debug\</OutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<RuntimeIdentifier></RuntimeIdentifier>
-		<OutputPath>..\..\bin\Release\AnyCPU\</OutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-		<RuntimeIdentifier>win-x86</RuntimeIdentifier>
-		<OutputPath>..\..\bin\Release\</OutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-		<OutputPath>..\..\bin\Release\</OutputPath>
-	</PropertyGroup>
-	<ItemGroup>
-		<Compile Include="..\GlobalAssemblyInfo.cs">
-			<Link>Properties\GlobalAssemblyInfo.cs</Link>
-		</Compile>
-		<Compile Update="Controls\UninstallerIconGetter.cs">
-			<SubType>Component</SubType>
-		</Compile>
-		<Compile Update="Controls\FilterEditor.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Update="Controls\UninstallListEditor.cs">
-			<SubType>UserControl</SubType>
-		</Compile>
-		<Compile Update="Properties\Localisation.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>Localisation.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="..\Licence.licenseheader">
-			<Link>Licence.licenseheader</Link>
-		</None>
-	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 		<ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
@@ -75,11 +24,5 @@
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 		<PackageReference Include="System.Management" Version="8.0.0" />
 		<PackageReference Include="TaskScheduler" Version="2.11.0" />
-	</ItemGroup>
-	<ItemGroup>
-	  <EmbeddedResource Update="Properties\Localisation.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>Localisation.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
 	</ItemGroup>
 </Project>
