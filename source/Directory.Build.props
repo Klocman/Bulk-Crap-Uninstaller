@@ -7,11 +7,9 @@
 		<Product>Bulk Crap Uninstaller</Product>
 		<AssemblyTitle>Remove large amounts of unwanted applications quickly</AssemblyTitle>
 
-		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<Platforms>AnyCPU;x64;x86</Platforms>
-
-		<targetplatformversion>8.0</targetplatformversion>
+		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+		<TargetPlatformVersion>8.0</TargetPlatformVersion>
 
 		<OutputPath>..\..\bin\$(Configuration)\$(Platform)\</OutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -28,6 +26,16 @@
 
 		<DebugSymbols>true</DebugSymbols>
 		<FileAlignment>512</FileAlignment>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+		<RuntimeIdentifier></RuntimeIdentifier>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Platform)'=='x86'">
+		<RuntimeIdentifier>win-x86</RuntimeIdentifier>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Platform)'=='x64'">
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
