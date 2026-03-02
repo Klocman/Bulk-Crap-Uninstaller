@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UninstallTools", "Uninstall
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF548671-BB38-48B1-9664-C737E971FC07}"
 	ProjectSection(SolutionItems) = preProject
+		app.manifest = app.manifest
+		Directory.Build.props = Directory.Build.props
 		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 		Licence.licenseheader = Licence.licenseheader
 	EndProjectSection
@@ -140,12 +142,15 @@ Global
 		{4F843421-01D4-48E8-B88B-CDF30DD671A4}.Release|x86.Build.0 = Release|x86
 		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|ARM64.Build.0 = Debug|ARM64
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x64.ActiveCfg = Debug|x64
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x64.Build.0 = Debug|x64
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x86.ActiveCfg = Debug|x86
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Debug|x86.Build.0 = Debug|x86
 		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|ARM64.ActiveCfg = Release|ARM64
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x64.ActiveCfg = Release|Any CPU
-		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x86.ActiveCfg = Release|Any CPU
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x64.ActiveCfg = Release|x64
+		{C631EFBE-0463-417D-AEBE-A4BE3E660C43}.Release|x86.ActiveCfg = Release|x86
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA3F6AD-0A1A-4E14-894A-114CC9B3B3E5}.Debug|ARM64.ActiveCfg = Debug|ARM64
@@ -276,12 +281,15 @@ Global
 		{52FCBDB1-48D8-448D-B8CA-07F10AB3CA25}.Release|x86.Build.0 = Release|x86
 		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|ARM64.Build.0 = Debug|ARM64
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x64.ActiveCfg = Debug|x64
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x64.Build.0 = Debug|x64
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x86.ActiveCfg = Debug|x86
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Debug|x86.Build.0 = Debug|x86
 		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|ARM64.ActiveCfg = Release|ARM64
-		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x64.ActiveCfg = Release|Any CPU
-		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x64.ActiveCfg = Release|x64
+		{3F3D249F-885B-4AF5-B760-3900D077D66B}.Release|x86.ActiveCfg = Release|x86
 		{2E8CECA3-4872-439E-9A47-5304FB4BF705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E8CECA3-4872-439E-9A47-5304FB4BF705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8CECA3-4872-439E-9A47-5304FB4BF705}.Debug|ARM64.ActiveCfg = Debug|ARM64
@@ -364,14 +372,16 @@ Global
 		{B5F0E648-A6E8-4D63-842C-90562148A930}.Release|x86.Build.0 = Release|x86
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|ARM64.Build.0 = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|x64.ActiveCfg = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|x64.Build.0 = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|x86.ActiveCfg = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Debug|x86.Build.0 = Debug|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|Any CPU.ActiveCfg = Release|Win32
-		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|Any CPU.Build.0 = Release|Win32
-		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|ARM64.ActiveCfg = Release|x64
-		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|x64.ActiveCfg = Release|x64
+		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|ARM64.ActiveCfg = Release|Win32
+		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|ARM64.Build.0 = Release|Win32
+		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|x64.ActiveCfg = Release|Win32
+		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|x64.Build.0 = Release|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|x86.ActiveCfg = Release|Win32
 		{C54B5AFD-C079-4852-960E-906B8CEE0E07}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
@@ -382,12 +392,23 @@ Global
 		SolutionGuid = {6E45D37F-C2A8-4E8E-B8FE-19F1D8A5B010}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		HelperTools\HelperTools.projitems*{129cbf33-9e19-4d26-a601-5e8394907ae1}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{18feda0c-d147-4286-b39a-01204808106a}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{2e8ceca3-4872-439e-9a47-5304fb4bf705}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{319c4596-0ee6-4392-9d7b-f937794133c7}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{3f3d249f-885b-4af5-b760-3900d077d66b}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{43022440-594d-437c-96c8-6aa24f6cee63}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{495a9ea6-b13c-48f9-a2e2-6667cecebfde}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{4f843421-01d4-48e8-b88b-cdf30dd671a4}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{5086cdde-5b1d-485b-aabc-a63c633579b6}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{5247bd39-5deb-4f14-af4b-9598a8544d06}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{52fcbdb1-48d8-448d-b8ca-07f10ab3ca25}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{73a9796d-334c-400c-87ac-1dfdd613266e}*SharedItemsImports = 13
+		HelperTools\HelperTools.projitems*{87091c84-b671-4269-abe4-d0f818ab201c}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{9c818d14-22ae-46db-b179-119069ae6116}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{b5f0e648-a6e8-4d63-842c-90562148a930}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{c28a3493-8fca-4571-8f9e-27b8420c0720}*SharedItemsImports = 5
+		HelperTools\HelperTools.projitems*{c631efbe-0463-417d-aebe-a4be3e660c43}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{dca3f6ad-0a1a-4e14-894a-114cc9b3b3e5}*SharedItemsImports = 5
 		HelperTools\HelperTools.projitems*{fa4f2993-a7f5-4738-9fe1-81f34db032a7}*SharedItemsImports = 5
 	EndGlobalSection
