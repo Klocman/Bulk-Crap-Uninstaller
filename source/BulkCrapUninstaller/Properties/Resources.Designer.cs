@@ -161,7 +161,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/feedback--contact.html.
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/discussions.
         /// </summary>
         internal static string ContactUrl {
             get {
@@ -580,7 +580,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.fosshub.com/Bulk-Crap-Uninstaller.html.
+        ///   Looks up a localized string similar to https://dappcdn.com/download/utilities/bulk-crap-uninstaller.
         /// </summary>
         internal static string ReviewLink {
             get {
@@ -629,7 +629,7 @@ namespace BulkCrapUninstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/feedback--contact.html.
+        ///   Looks up a localized string similar to https://github.com/Klocman/Bulk-Crap-Uninstaller/discussions.
         /// </summary>
         internal static string SubmitFeedbackLink {
             get {
