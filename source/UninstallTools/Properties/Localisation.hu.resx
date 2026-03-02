@@ -559,4 +559,22 @@
   <data name="Progress_AppStores_Scoop" xml:space="preserve">
     <value>Scoop csomagok keresése</value>
   </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Szemétkeresők beállítása...</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Eltávolító hivatkozása</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Hangházirend konfiguráció</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Nyomkövetési információ</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Telepített mappa lista</value>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Automatikusan indítható</value>
+  </data>
 </root>
