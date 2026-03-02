@@ -3,6 +3,7 @@
 		<OutputType>Library</OutputType>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
 	</ItemGroup>

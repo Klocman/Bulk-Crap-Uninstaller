@@ -3,12 +3,13 @@
 		<OutputType>Exe</OutputType>
 
 		<AssemblyTitle>Utility for discovering and uninstalling games and apps installed through Oculus Store</AssemblyTitle>
+
+		<StartupObject>OculusHelper.Program</StartupObject>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

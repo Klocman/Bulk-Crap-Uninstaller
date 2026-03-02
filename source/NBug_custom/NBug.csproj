@@ -6,9 +6,11 @@
 		<WarningLevel>1</WarningLevel>
 		<DocumentationFile />
 	</PropertyGroup>
+
 	<ItemGroup>
 		<Compile Remove="Core\Submission\Protocols.cs" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<None Update="NBug_LICENSE.md">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

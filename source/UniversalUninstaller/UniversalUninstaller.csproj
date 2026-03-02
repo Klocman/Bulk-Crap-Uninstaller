@@ -5,13 +5,14 @@
 		<AssemblyTitle>Utility used by BCU in place of missing/broken uninstallers to remove applications</AssemblyTitle>
 
 		<ApplicationIcon>UniversalUninstaller.ico</ApplicationIcon>
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+		<StartupObject>UniversalUninstaller.Program</StartupObject>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 		<ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<COMReference Include="Scripting">
 			<Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
@@ -22,8 +23,5 @@
 			<Isolated>False</Isolated>
 			<EmbedInteropTypes>false</EmbedInteropTypes>
 		</COMReference>
-	</ItemGroup>
-	<ItemGroup>
-		<Content Include="UniversalUninstaller.ico" />
 	</ItemGroup>
 </Project>

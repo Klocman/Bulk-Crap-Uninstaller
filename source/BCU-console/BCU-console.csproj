@@ -3,11 +3,13 @@
 		<OutputType>Exe</OutputType>
 		<RootNamespace>BCU_console</RootNamespace>
 
-		<Product>BCU-console</Product>
+		<Product>Command Line Interface for Bulk Crap Uninstaller</Product>
 		<AssemblyTitle>Command line utility that offers some of BCU's functionality for scripting</AssemblyTitle>
-
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+		
+		<ApplicationIcon>..\BulkCrapUninstaller\Resources\logo.ico</ApplicationIcon>
+		<StartupObject>BCU_console.Program</StartupObject>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
 	</ItemGroup>

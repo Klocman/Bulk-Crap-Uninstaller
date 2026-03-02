@@ -8,6 +8,7 @@
     <WarningLevel>1</WarningLevel>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Implementation\DragSource.cs" />
     <Compile Remove="Implementation\DropSink.cs" />

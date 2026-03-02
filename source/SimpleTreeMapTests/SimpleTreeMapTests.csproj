@@ -3,6 +3,7 @@
     <OutputType>WinExe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj" />
   </ItemGroup>

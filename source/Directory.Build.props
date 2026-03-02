@@ -22,11 +22,16 @@
 		<GenerateManifests>false</GenerateManifests>
 		<SignManifests>false</SignManifests>
 
+		<ApplicationManifest>..\app.manifest</ApplicationManifest>
+
 		<DebugSymbols>true</DebugSymbols>
 		<FileAlignment>512</FileAlignment>
-
+		
+		<UseAppHost>true</UseAppHost>
 		<SelfContained>false</SelfContained>
 	</PropertyGroup>
+	
+	<Import Project="HelperTools\HelperTools.projitems" Label="Shared" />
 
 	<PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
 		<RuntimeIdentifier></RuntimeIdentifier>
@@ -53,11 +58,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<Compile Include="..\GlobalAssemblyInfo.cs">
-			<Link>Properties\GlobalAssemblyInfo.cs</Link>
-		</Compile>
-		<None Include="..\Licence.licenseheader">
-			<Link>Licence.licenseheader</Link>
-		</None>
+		<Compile Include="..\GlobalAssemblyInfo.cs"/>
+		<None Include="..\Licence.licenseheader"/>
 	</ItemGroup>
 </Project>

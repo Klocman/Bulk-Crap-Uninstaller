@@ -4,13 +4,7 @@
 
 		<AssemblyTitle>Utility for discovering and uninstalling Windows Store apps (including pre-installed apps)</AssemblyTitle>
 
-		<StartupObject>StoreAppHelper.Program</StartupObject>
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-
 		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<StartupObject>StoreAppHelper.Program</StartupObject>
 	</PropertyGroup>
-	<ItemGroup>
-		<Content Include="icon.ico" />
-	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>

@@ -4,10 +4,18 @@
 
 		<AssemblyTitle>Core application discovery and uninstallation code</AssemblyTitle>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 		<ProjectReference Include="..\ObjectListView\ObjectListView.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+		<PackageReference Include="TaskScheduler" Version="2.11.0" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<COMReference Include="Scripting">
 			<Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
@@ -18,10 +26,5 @@
 			<Isolated>False</Isolated>
 			<EmbedInteropTypes>false</EmbedInteropTypes>
 		</COMReference>
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
-		<PackageReference Include="System.Management" Version="8.0.0" />
-		<PackageReference Include="TaskScheduler" Version="2.11.0" />
 	</ItemGroup>
 </Project>

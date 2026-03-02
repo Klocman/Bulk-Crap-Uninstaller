@@ -4,11 +4,10 @@
 
 		<AssemblyTitle>Provides various registry tweaks and scripts to BCU</AssemblyTitle>
 
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 		<StartupObject>ScriptHelper.Program</StartupObject>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>

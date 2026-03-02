@@ -6,8 +6,8 @@
 
 		<ApplicationIcon>icon.ico</ApplicationIcon>
 		<StartupObject>WinUpdateHelper.Program</StartupObject>
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<COMReference Include="WUApiLib">
 			<Guid>{B596CC9F-56E5-419E-A622-E01BB457431E}</Guid>
@@ -19,8 +19,4 @@
 			<EmbedInteropTypes>False</EmbedInteropTypes>
 		</COMReference>
 	</ItemGroup>
-	<ItemGroup>
-		<Content Include="icon.ico" />
-	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>

@@ -6,40 +6,38 @@
 		<Product>Bulk Crap Uninstaller</Product>
 		<AssemblyTitle>Remove large amounts of unwanted applications quickly</AssemblyTitle>
 
-		<ApplicationIcon>logo.ico</ApplicationIcon>
+		<ApplicationIcon>Resources\logo.ico</ApplicationIcon>
 		<StartupObject>BulkCrapUninstaller.EntryPoint</StartupObject>
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 	</PropertyGroup>
+
 	<ItemGroup>
 		<Content Include="..\..\NOTICE">
 			<Link>NOTICE</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="..\..\PrivacyPolicy.txt">
 			<Link>PrivacyPolicy.txt</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="..\..\Licence.txt">
 			<Link>Licence.txt</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="..\..\doc\BCU_manual.html">
 			<Link>BCU_manual.html</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 
 		<Content Include="..\es.exe">
 			<Link>es.exe</Link>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="CleanLogs.bat">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<None Update="Resources\MicrosoftProgram_Install_and_Uninstall.meta.diagcab">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-
-		<Content Include="logo.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -51,7 +49,6 @@
 		<ProjectReference Include="..\SimpleTreeMap\SimpleTreeMap.csproj" />
 		<ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
 	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />

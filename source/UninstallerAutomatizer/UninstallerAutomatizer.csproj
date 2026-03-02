@@ -6,18 +6,13 @@
 
 		<ApplicationIcon>icon.ico</ApplicationIcon>
 		<StartupObject>UninstallerAutomatizer.Program</StartupObject>
-		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Content Include="icon.ico" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 		<ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
 	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
+
 
 	<ItemGroup>
 		<PackageReference Include="FlaUI.Adapter.White" Version="0.2.1" />

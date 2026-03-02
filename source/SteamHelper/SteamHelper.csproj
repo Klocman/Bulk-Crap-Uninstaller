@@ -7,11 +7,8 @@
 		<ApplicationIcon>steam.ico</ApplicationIcon>
 		<StartupObject>SteamHelper.Program</StartupObject>
 	</PropertyGroup>
-	<ItemGroup>
-		<Content Include="steam.ico" />
-	</ItemGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\KlocTools\KlocTools.csproj" />
 	</ItemGroup>
-	<Import Project="..\HelperTools\HelperTools.projitems" Label="Shared" />
 </Project>
