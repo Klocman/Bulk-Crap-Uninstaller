@@ -26,6 +26,8 @@
 
 		<DebugSymbols>true</DebugSymbols>
 		<FileAlignment>512</FileAlignment>
+
+		<SelfContained>false</SelfContained>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
