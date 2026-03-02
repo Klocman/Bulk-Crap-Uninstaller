@@ -18,4 +18,21 @@
 		<PackageReference Include="FlaUI.Adapter.White" Version="0.2.1" />
 		<PackageReference Include="FlaUI.UIA3" Version="4.0.0" />
 	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Update="Properties\Localization.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Localization.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Localization.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
 </Project>
