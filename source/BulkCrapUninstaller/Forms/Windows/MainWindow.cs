@@ -1050,11 +1050,14 @@ namespace BulkCrapUninstaller.Forms
             }
 
             if (!selected.IsRegistered)
+            {
+                MessageBoxes.CantRenameUninstallerKind(selected.DisplayName, selected.UninstallerKind);
                 return;
+            }
 
             if (StringEditBox.ShowDialog(string.Format(CultureInfo.InvariantCulture, Localisable.MainWindow_Rename_Description, selected.DisplayName),
-                Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
-                out var output))
+                                         Localisable.MainWindow_Rename_Title, selected.DisplayName, Buttons.ButtonOk, Buttons.ButtonCancel,
+                                         out var output))
             {
                 try
                 {
