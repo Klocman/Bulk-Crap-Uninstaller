@@ -59,6 +59,8 @@
 	
 	<ItemGroup>
 		<Compile Include="..\GlobalAssemblyInfo.cs"/>
-		<None Include="..\Licence.licenseheader"/>
+		<None Include="..\Licence.licenseheader">
+			<Visible>False</Visible>
+		</None>
 	</ItemGroup>
 </Project>
