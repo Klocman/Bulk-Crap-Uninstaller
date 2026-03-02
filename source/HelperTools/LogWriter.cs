@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Klocman
 {
-    public sealed class LogWriter : StreamWriter
+    internal sealed class LogWriter(string path) : StreamWriter(path, true, Encoding.UTF8)
     {
         private static LogWriter _currentLogger;
 
@@ -61,10 +61,6 @@ namespace Klocman
             return location;
         }
 
-        public LogWriter(string path) : base(path, true, Encoding.UTF8)
-        {
-        }
-
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -81,7 +77,7 @@ namespace Klocman
         /// </summary>
         public static LogWriter StartLogging()
         {
-            if (_currentLogger != null) _currentLogger.Dispose();
+            _currentLogger?.Dispose();
 
             var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
             return _currentLogger = StartLogging(location);

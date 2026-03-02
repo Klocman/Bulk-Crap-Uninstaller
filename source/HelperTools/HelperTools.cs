@@ -9,9 +9,8 @@ using System.Text.RegularExpressions;
 
 namespace Klocman
 {
-    public static class HelperTools
+    internal static partial class HelperTools
     {
-
         public static void SetupEncoding()
         {
             try
@@ -24,15 +23,16 @@ namespace Klocman
             }
         }
 
+        [GeneratedRegex(@"0x[\d\w]{8}")] private static partial Regex HrefRegex();
         public static int HandleHrefMessage(Exception ex)
         {
             if (ex == null) throw new ArgumentNullException(nameof(ex));
-            var errorCode = Regex.Match(ex.Message, @"0x[\d\w]{8}").Captures.FirstOrDefault()?.Value;
+            var errorCode = HrefRegex().Match(ex.Message).Captures.FirstOrDefault()?.Value;
 
             if (string.IsNullOrEmpty(errorCode) || errorCode.Length < 8)
                 return (int) ReturnValue.FunctionFailedCode;
 
-            int.TryParse(errorCode.Substring(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture,
+            int.TryParse(errorCode[2..], NumberStyles.HexNumber, CultureInfo.InvariantCulture,
                 out var errorNumber);
 
             return errorNumber > 0 ? errorNumber : (int)ReturnValue.FunctionFailedCode;
@@ -48,7 +48,7 @@ namespace Klocman
         public static string ObjectToConsoleOutput(object obj, IFormatProvider provider = null)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
-            if (provider == null) provider = CultureInfo.InvariantCulture;
+            provider ??= CultureInfo.InvariantCulture;
 
             var propInfos = obj.GetType()
                 .GetProperties(BindingFlags.Instance | BindingFlags.Public)
@@ -61,7 +61,7 @@ namespace Klocman
             IFormatProvider provider = null)
         {
             if (propertyKeyValues == null) throw new ArgumentNullException(nameof(propertyKeyValues));
-            if (provider == null) provider = CultureInfo.InvariantCulture;
+            provider ??= CultureInfo.InvariantCulture;
 
             var maxLen = propertyKeyValues.Max(x => x.Key.Length) + 2;
 

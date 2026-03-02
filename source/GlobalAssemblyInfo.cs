@@ -9,4 +9,6 @@ using System.Resources;
 [assembly: SuppressMessage("Style", "IDE0090:Use 'new(...)'", Justification = "Keep code portable")]
 [assembly: SuppressMessage("Style", "IDE0066:Convert switch statement to expression", Justification = "Keep code portable")]
 
+[assembly: SuppressMessage("Performance", "CA1510:Use throw helper methods", Justification = "Keep code consistent with existing patterns")]
+
 [assembly: NeutralResourcesLanguage("en")]

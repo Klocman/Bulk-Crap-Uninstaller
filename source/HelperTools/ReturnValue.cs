@@ -1,6 +1,6 @@
 ﻿namespace Klocman
 {
-    public enum ReturnValue
+    internal enum ReturnValue
     {
         OkCode = 0,
         FunctionFailedCode = 1627,
