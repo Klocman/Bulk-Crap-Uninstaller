@@ -2,10 +2,8 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 
-		<Product>ScriptHelper</Product>
-		<AssemblyTitle>Provides some pre-defined rules and scripts to BCU</AssemblyTitle>
+		<AssemblyTitle>Provides various registry tweaks and scripts to BCU</AssemblyTitle>
 
-		<ApplicationIcon />
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 		<StartupObject>ScriptHelper.Program</StartupObject>
 	</PropertyGroup>

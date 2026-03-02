@@ -2,8 +2,7 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 
-		<Product>StoreAppHelper</Product>
-		<AssemblyTitle>Allows BCU to discover and uninstall applications installed through Windows Store (includes many pre-installed Windows apps)</AssemblyTitle>
+		<AssemblyTitle>Utility for discovering and uninstalling Windows Store apps (including pre-installed apps)</AssemblyTitle>
 
 		<StartupObject>StoreAppHelper.Program</StartupObject>
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>

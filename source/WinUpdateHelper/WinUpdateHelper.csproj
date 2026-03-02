@@ -2,8 +2,7 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 
-		<Product>WinUpdateHelper</Product>
-		<AssemblyTitle>Helps BCU with discovering and uninstalling Windows Updates</AssemblyTitle>
+		<AssemblyTitle>Utility for discovering and uninstalling Windows Updates</AssemblyTitle>
 
 		<ApplicationIcon>icon.ico</ApplicationIcon>
 		<StartupObject>WinUpdateHelper.Program</StartupObject>

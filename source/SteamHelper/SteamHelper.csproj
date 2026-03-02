@@ -2,8 +2,7 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 
-		<Product>SteamHelper</Product>
-		<AssemblyTitle>Allows BCU to discover and uninstall games installed through Steam</AssemblyTitle>
+		<AssemblyTitle>Utility for discovering and uninstalling games and apps installed through Steam</AssemblyTitle>
 
 		<ApplicationIcon>steam.ico</ApplicationIcon>
 		<StartupObject>SteamHelper.Program</StartupObject>

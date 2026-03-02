@@ -2,6 +2,9 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<AssemblyName>BCUninstaller</AssemblyName>
+		
+		<Product>Bulk Crap Uninstaller</Product>
+		<AssemblyTitle>Remove large amounts of unwanted applications quickly</AssemblyTitle>
 
 		<ApplicationIcon>logo.ico</ApplicationIcon>
 		<StartupObject>BulkCrapUninstaller.EntryPoint</StartupObject>

@@ -2,8 +2,7 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 
-		<Product>UninstallerAutomatizer</Product>
-		<AssemblyTitle>Utility that allows BCU to quietly uninstall some uninstallers that do not have any built-in unattended mode by simulating button presses</AssemblyTitle>
+		<AssemblyTitle>Utility for automating uninstallers by simulating button presses</AssemblyTitle>
 
 		<ApplicationIcon>icon.ico</ApplicationIcon>
 		<StartupObject>UninstallerAutomatizer.Program</StartupObject>

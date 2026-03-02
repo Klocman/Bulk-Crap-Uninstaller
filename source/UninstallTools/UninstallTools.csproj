@@ -2,7 +2,6 @@
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 
-		<Product>UninstallTools</Product>
 		<AssemblyTitle>Core application discovery and uninstallation code</AssemblyTitle>
 	</PropertyGroup>
 	<ItemGroup>

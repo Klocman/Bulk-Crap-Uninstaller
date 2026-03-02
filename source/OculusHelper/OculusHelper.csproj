@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<Product>OculusHelper</Product>
-		<AssemblyTitle>Manages applications installed through the Oculus store</AssemblyTitle>
+
+		<AssemblyTitle>Utility for discovering and uninstalling games and apps installed through Oculus Store</AssemblyTitle>
 	</PropertyGroup>
 
 	<ItemGroup>

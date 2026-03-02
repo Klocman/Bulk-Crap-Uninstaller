@@ -2,8 +2,7 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 
-		<Product>UniversalUninstaller</Product>
-		<AssemblyTitle>Helper app used by BCU in place of missing/broken uninstallers to remove applications</AssemblyTitle>
+		<AssemblyTitle>Utility used by BCU in place of missing/broken uninstallers to remove applications</AssemblyTitle>
 
 		<ApplicationIcon>UniversalUninstaller.ico</ApplicationIcon>
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>

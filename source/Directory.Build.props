@@ -4,8 +4,6 @@
 
 		<Authors>https://github.com/Klocman/Bulk-Crap-Uninstaller</Authors>
 		<Copyright>Copyright Apache-2.0 © 2026</Copyright>
-		<Product>Bulk Crap Uninstaller</Product>
-		<AssemblyTitle>Remove large amounts of unwanted applications quickly</AssemblyTitle>
 
 		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 		<TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
