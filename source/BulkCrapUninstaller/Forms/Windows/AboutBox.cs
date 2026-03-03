@@ -30,7 +30,7 @@ namespace BulkCrapUninstaller.Forms
             if (Enum.IsDefined<ImageFileMachine>(ifmachine))
             {
                 machine = Enum.GetName<ImageFileMachine>(ifmachine);
-            } else // Work around .NET 6 not having WoA64 definitions in GetPEKind
+            } else // Work around ImageFileMachine.cs not having WoA64 definitions in GetPEKind
 
             {
                 machine = "ARM64";

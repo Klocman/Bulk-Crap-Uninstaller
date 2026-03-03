@@ -154,7 +154,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 isProbablyARM64 = false;
             }
-            else // Work around .NET 6 not having WoA64 definitions in GetPEKind
+            else // Work around ImageFileMachine.cs not having WoA64 definitions in GetPEKind
 
             {
                 isProbablyARM64 = true;
