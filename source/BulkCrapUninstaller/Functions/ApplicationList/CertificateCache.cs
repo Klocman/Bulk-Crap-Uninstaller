@@ -27,53 +27,60 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
     internal class CertificateCache
     {
-        public string CacheFilename { get; set; }
+        public string CacheFilename { get; }
         private IDictionary<string, CertCacheEntry> _dictionaryCache;
+        private readonly object _cacheLock = new object();
 
         public CertificateCache(string cacheFilename)
         {
-            CacheFilename = cacheFilename;
+            CacheFilename = cacheFilename ?? throw new ArgumentNullException(nameof(cacheFilename));
         }
 
         public void LoadCertificateCache()
         {
-            _dictionaryCache = new Dictionary<string, CertCacheEntry>();
-
-            if (!File.Exists(CacheFilename)) return;
-
-            try
+            lock (_cacheLock)
             {
-                _dictionaryCache = SerializationTools.DeserializeDictionary<string, CertCacheEntry>(CacheFilename);
-            }
-            catch (SystemException e)
-            {
-                Console.WriteLine(e);
-                File.Delete(CacheFilename);
+                _dictionaryCache = null;
+                try
+                {
+                    if (File.Exists(CacheFilename))
+                        _dictionaryCache = SerializationTools.DeserializeDictionary<string, CertCacheEntry>(CacheFilename);
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(e);
+                    ClearChache();
+                }
             }
         }
 
         public void SaveCertificateCache()
         {
-            if (_dictionaryCache == null)
+            lock (_cacheLock)
             {
-                File.Delete(CacheFilename);
-                return;
-            }
+                if (_dictionaryCache == null || _dictionaryCache.Count == 0)
+                {
+                    ClearChache();
+                    return;
+                }
 
-            try
-            {
-                SerializationTools.SerializeDictionary(_dictionaryCache, CacheFilename);
-            }
-            catch (SystemException e)
-            {
-                File.Delete(CacheFilename);
-                Console.WriteLine(e);
+                try
+                {
+                    SerializationTools.SerializeDictionary(_dictionaryCache, CacheFilename);
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(e);
+                    ClearChache();
+                }
             }
         }
 
         public void ClearChache()
         {
-            _dictionaryCache = null;
+            lock (_cacheLock)
+            {
+                _dictionaryCache = null;
                 try
                 {
                     File.Delete(CacheFilename);
@@ -81,24 +88,31 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 catch
                 {
                     System.Threading.Thread.Sleep(50);
-            File.Delete(CacheFilename);
-        }
+                    File.Delete(CacheFilename);
+                }
             }
+        }
 
         public void AddItem(string id, X509Certificate2 cert, bool verified)
         {
-            if (_dictionaryCache != null && id != null)
-                _dictionaryCache[id] = new CertCacheEntry { Cert = cert, Valid = verified };
+            lock (_cacheLock)
+            {
+                if (_dictionaryCache == null) _dictionaryCache = new Dictionary<string, CertCacheEntry>();
+
+                if (id != null) _dictionaryCache[id] = new CertCacheEntry { Cert = cert, Valid = verified };
+            }
         }
 
         public bool ContainsKey(string id)
         {
-            return _dictionaryCache != null && !string.IsNullOrEmpty(id) && _dictionaryCache.ContainsKey(id);
+            lock (_cacheLock)
+                return _dictionaryCache != null && !string.IsNullOrEmpty(id) && _dictionaryCache.ContainsKey(id);
         }
 
         public CertCacheEntry GetCachedItem(string id)
         {
-            return _dictionaryCache[id];
+            lock (_cacheLock)
+                return _dictionaryCache[id];
         }
     }
 }
