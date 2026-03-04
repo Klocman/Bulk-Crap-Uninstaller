@@ -26,6 +26,9 @@ You can get the latest version from the releases page. Alternatively you can dow
 - Portable - Self-contained version that does not require the .NET runtime to run. It includes a runtime which is why the file size is so large.
 - net - Stand-alone portable version that requires the .NET runtime to be installed. Much smaller file size than the full Portable version.
 
+#### Nightly builds
+If you want to get the latest features and fixes as soon as they are available, you can download a nightly build from the [actions page](https://github.com/Klocman/Bulk-Crap-Uninstaller/actions/workflows/ci.yaml).
+
 ## System requirements
 #### BCUninstaller v6
 - Earliest supported OS: Windows 10 (with most system updates installed)
