@@ -12,10 +12,14 @@ namespace UninstallTools.Factory.Json
             {
                 var value = reader.GetString();
                 // Windows PowerShell: /Date(1640995200000)/
-                if (value.StartsWith("/", StringComparison.Ordinal))
+                if (TryParseWindowsPowerShellDate(value, out var windowsPowerShellDate))
                 {
-                    var timestamp = long.Parse(value.Substring(6, value.Length - 8));
-                    return DateTimeOffset.FromUnixTimeMilliseconds(timestamp);
+                    return windowsPowerShellDate;
+                }
+                if (value != null && value.StartsWith("/", StringComparison.Ordinal))
+                {
+                    // Keep malformed /Date(...)/ values on a controlled JsonException path.
+                    throw new JsonException();
                 }
                 // PowerShell Core: 2022-01-01T00:00:00.0000000+00:00
                 else
@@ -34,8 +38,10 @@ namespace UninstallTools.Factory.Json
                     {
                         _ = clone.Read();
                         var value = clone.GetString();
-                        var timestamp = long.Parse(value.Substring(6, value.Length - 8));
-                        return DateTimeOffset.FromUnixTimeMilliseconds(timestamp);
+                        if (TryParseWindowsPowerShellDate(value, out var windowsPowerShellDate))
+                            return windowsPowerShellDate;
+
+                        throw new JsonException();
                     }
                 }
             }
@@ -46,6 +52,35 @@ namespace UninstallTools.Factory.Json
         public override void Write(Utf8JsonWriter writer, DateTimeOffset value, JsonSerializerOptions options)
         {
             throw new NotImplementedException();
+        }
+
+        private static bool TryParseWindowsPowerShellDate(string value, out DateTimeOffset date)
+        {
+            date = default;
+
+            const string prefix = "/Date(";
+            const string suffix = ")/";
+
+            if (string.IsNullOrEmpty(value) ||
+                !value.StartsWith(prefix, StringComparison.Ordinal) ||
+                !value.EndsWith(suffix, StringComparison.Ordinal))
+            {
+                return false;
+            }
+
+            var timestampText = value.Substring(prefix.Length, value.Length - prefix.Length - suffix.Length);
+            if (!long.TryParse(timestampText, out var timestamp))
+                return false;
+
+            try
+            {
+                date = DateTimeOffset.FromUnixTimeMilliseconds(timestamp);
+                return true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return false;
+            }
         }
     }
 }
