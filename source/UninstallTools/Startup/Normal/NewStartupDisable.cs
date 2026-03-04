@@ -63,7 +63,8 @@ namespace UninstallTools.Startup.Normal
             if (startupEntry.IsRegKey)
             {
                 using (var key = RegistryTools.OpenRegistryKey(startupEntry.ParentLongName))
-                    return !string.IsNullOrEmpty(key.GetStringSafe(startupEntry.EntryLongName));
+                    // OpenRegistryKey may return null when the parent key does not exist.
+                    return key != null && !string.IsNullOrEmpty(key.GetStringSafe(startupEntry.EntryLongName));
             }
 
             return File.Exists(startupEntry.FullLongName);
