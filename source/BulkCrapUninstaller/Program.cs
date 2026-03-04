@@ -40,7 +40,6 @@ namespace BulkCrapUninstaller
                 {
                     var location = Assembly.GetAssembly(typeof(Program))?.Location;
                     if (location == null) throw new InvalidOperationException("Failed to get entry assembly location");
-                    // Avoid manual slicing: LastIndexOf can be -1 for unexpected location formats.
                     if (Path.HasExtension(location))
                         location = PathTools.GetDirectory(location);
                     _assemblyLocation = new DirectoryInfo(location);
