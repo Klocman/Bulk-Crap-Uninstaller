@@ -19,3 +19,10 @@ enable_semantic_files_types = true
 
 [config]
 verbosity_level = 1
+
+# GitHub App
+[github_app]
+pr_commands = [
+  "/agentic_describe",
+  "/agentic_review"
+]
