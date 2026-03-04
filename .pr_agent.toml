@@ -1,6 +1,13 @@
 [pr_reviewer]
 extra_instructions = """
-Read AGENTS.md for repository-specific review guidelines and fork-related requirements.
+## Code Review Instructions
+- All PRs maintain clear documentation about fork-specific changes
+- Changes are well-documented for upstream compatibility
+
+## Custom Review Criteria
+- Check for proper attribution of original work
+- Verify that fork-specific modifications are clearly marked
+- Ensure documentation reflects the fork's purpose and differences from upstream
 """
 require_all_thresholds_for_incremental_review = false
 
