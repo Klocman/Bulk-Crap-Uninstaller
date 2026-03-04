@@ -3,7 +3,7 @@ name: CI
 on: 
   push:
     branches:
-    - main
+    - master
   pull_request:
 
 jobs:
@@ -15,10 +15,14 @@ jobs:
     - uses: actions/checkout@v4
     
     - uses: microsoft/setup-msbuild@v2
+
+    - name: Restore
+      run: msbuild source\BulkCrapUninstaller.sln /m /t:Restore /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
     
-    - run: msbuild source\BulkCrapUninstaller.sln /m /p:filealignment=512 /t:Restore;Rebuild /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=True /p:PublishProtocol=FileSystem /p:Configuration=Release /p:Platform="Any CPU" /p:PublishDir="bin\publish" /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
-    
-    - run: msbuild source\BulkCrapUninstaller.sln /m /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishProtocol=FileSystem /p:Configuration=Release /p:Platform="Any CPU" /p:PublishDir="bin\publish" /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
+    - name: Publish
+      run: msbuild source\BulkCrapUninstaller.sln /m /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal |
+           /p:filealignment=512 /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishReadyToRun=false /p:PublishTrimmed=False |
+           /p:PublishProtocol=FileSystem /p:PublishDir="bin\publish"
     
     - uses: actions/upload-artifact@v4
       with:
