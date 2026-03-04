@@ -74,8 +74,16 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         public void ClearChache()
         {
             _dictionaryCache = null;
+                try
+                {
+                    File.Delete(CacheFilename);
+                }
+                catch
+                {
+                    System.Threading.Thread.Sleep(50);
             File.Delete(CacheFilename);
         }
+            }
 
         public void AddItem(string id, X509Certificate2 cert, bool verified)
         {

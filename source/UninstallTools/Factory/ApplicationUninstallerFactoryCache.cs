@@ -67,7 +67,7 @@ namespace UninstallTools.Factory
             try
             {
                 var result = SerializationTools.DeserializeFromXml<List<CacheEntry>>(Filename);
-                
+
                 Cache.Clear();
 
                 // Ignore entries if more than 1 have the same cache id
@@ -117,8 +117,17 @@ namespace UninstallTools.Factory
 
         public void Delete()
         {
-            File.Delete(Filename);
             Cache.Clear();
+
+            try
+            {
+                File.Delete(Filename);
+            }
+            catch
+            {
+                System.Threading.Thread.Sleep(50);
+                File.Delete(Filename);
+            }
         }
     }
 }
