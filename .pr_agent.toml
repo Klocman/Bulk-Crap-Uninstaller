@@ -1,8 +1,6 @@
 [pr_reviewer]
 extra_instructions = """
-1. Read AGENTS.md for repository-specific review guidelines
-2. This repository is a fork – verify proper attribution and documentation
-3. Check that fork-specific changes are clearly marked and explained
+Read AGENTS.md for repository-specific review guidelines and fork-related requirements.
 """
 require_all_thresholds_for_incremental_review = false
 
