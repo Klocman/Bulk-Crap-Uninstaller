@@ -29,7 +29,6 @@ namespace Klocman.Extensions
             if (obj == null)
                 throw new NullReferenceException();
 
-            // Enumerate subkey names here; using value names cannot return actual subkeys.
             return obj.GetSubKeyNames().Select(x => obj.OpenSubKey(x, writable));
         }
         
