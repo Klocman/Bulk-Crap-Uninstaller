@@ -27,7 +27,9 @@ namespace UninstallTools.Factory.Json
                     {
                         var clone = reader;
                         _ = clone.Read();
-                        results.Add(clone.GetString()); // take first value of nested array only               
+                        // Nested arrays can be empty or non-string; only read the first item when it is a string.
+                        if (clone.TokenType == JsonTokenType.String)
+                            results.Add(clone.GetString()); // take first value of nested array only
                         reader.Skip();
                     }
                     // normal
