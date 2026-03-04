@@ -53,7 +53,11 @@ namespace Klocman.Extensions
         {
             if (string.IsNullOrEmpty(xml)) return null;
 
-            var settings = new XmlReaderSettings();
+            var settings = new XmlReaderSettings
+            {
+                DtdProcessing = DtdProcessing.Prohibit,
+                XmlResolver = null
+            };
 
             using (var textReader = new StringReader(xml))
             {

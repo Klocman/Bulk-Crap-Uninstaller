@@ -84,7 +84,7 @@ namespace StoreAppHelper
                 var installPath = package.InstalledLocation.Path;
                 var externalPath = package.EffectiveLocation.Path.Equals(installPath, StringComparison.OrdinalIgnoreCase) ? null : package.EffectiveLocation.Path;
 
-                var xmlDoc = new XmlDocument();
+                var xmlDoc = new XmlDocument { XmlResolver = null };
                 xmlDoc.LoadXml(manifestContents);
                 // namespaces are mandatory, even if there's a default namespace
                 var nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);

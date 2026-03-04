@@ -47,7 +47,7 @@ namespace PortableSettingsProvider
                 //If it doesnt exist then create a new one ready.
                 if (_settingsXml == null)
                 {
-                    _settingsXml = new XmlDocument();
+                    _settingsXml = new XmlDocument { XmlResolver = null };
 
                     try
                     {
