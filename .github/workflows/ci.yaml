@@ -19,10 +19,10 @@ jobs:
     - name: Restore
       run: msbuild source\BulkCrapUninstaller.sln /m /t:Restore /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
     
-    - name: Publish
-      run: msbuild source\BulkCrapUninstaller.sln /m /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal |
-           /p:filealignment=512 /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishReadyToRun=false /p:PublishTrimmed=False |
-           /p:PublishProtocol=FileSystem /p:PublishDir="bin\publish"
+    - name: Build
+      run: msbuild source\BulkCrapUninstaller.sln /m /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
+           | /p:filealignment=512 /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishReadyToRun=false /p:PublishTrimmed=False
+           | /p:PublishProtocol=FileSystem /p:PublishDir="bin\publish"
     
     - uses: actions/upload-artifact@v4
       with:
