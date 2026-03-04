@@ -112,7 +112,13 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         public CertCacheEntry GetCachedItem(string id)
         {
             lock (_cacheLock)
-                return _dictionaryCache[id];
+            {
+                // Keep retrieval safe if cache was cleared between ContainsKey and GetCachedItem calls.
+                if (_dictionaryCache == null || string.IsNullOrEmpty(id))
+                    return null;
+
+                return _dictionaryCache.TryGetValue(id, out var entry) ? entry : null;
+            }
         }
     }
 }
