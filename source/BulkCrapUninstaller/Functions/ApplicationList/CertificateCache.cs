@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 using Klocman.Tools;
@@ -44,7 +45,11 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                 try
                 {
                     if (File.Exists(CacheFilename))
+                    {
                         _dictionaryCache = SerializationTools.DeserializeDictionary<string, CertCacheEntry>(CacheFilename);
+                        // Remove invalid entries in case the xml is corrupted
+                        _dictionaryCache?.Where(x => x.Value == null).ToList().ForEach(pair => _dictionaryCache.Remove(pair.Key));
+                    }
                 }
                 catch (SystemException e)
                 {
@@ -93,26 +98,31 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             }
         }
 
-        public void AddItem(string id, X509Certificate2 cert, bool verified)
+        public void SetItem(string id, X509Certificate2 cert, bool verified)
         {
             lock (_cacheLock)
             {
-                if (_dictionaryCache == null) _dictionaryCache = new Dictionary<string, CertCacheEntry>();
+                if (!string.IsNullOrEmpty(id))
+                {
+                    if (_dictionaryCache == null) _dictionaryCache = new Dictionary<string, CertCacheEntry>();
 
-                if (id != null) _dictionaryCache[id] = new CertCacheEntry { Cert = cert, Valid = verified };
+                    _dictionaryCache[id] = new CertCacheEntry { Cert = cert, Valid = verified };
+                }
             }
         }
 
-        public bool ContainsKey(string id)
+        public bool TryGetCachedItem(string id, out CertCacheEntry entry)
         {
             lock (_cacheLock)
-                return _dictionaryCache != null && !string.IsNullOrEmpty(id) && _dictionaryCache.ContainsKey(id);
-        }
+            {
+                if (_dictionaryCache == null || string.IsNullOrEmpty(id))
+                {
+                    entry = null;
+                    return false;
+                }
 
-        public CertCacheEntry GetCachedItem(string id)
-        {
-            lock (_cacheLock)
-                return _dictionaryCache[id];
+                return _dictionaryCache.TryGetValue(id, out entry);
+            }
         }
     }
 }
