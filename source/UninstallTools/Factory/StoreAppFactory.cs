@@ -58,7 +58,6 @@ namespace UninstallTools.Factory
                 {
                     Comment = fullName,
                     CacheIdOverride = fullName,
-                    // Fallback to full name if helper output has no package-family separator.
                     RatingId = separatorIndex >= 0 ? fullName.Substring(0, separatorIndex) : fullName,
                     UninstallString = uninstallStr,
                     QuietUninstallString = uninstallStr,
