@@ -18,7 +18,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 
         [XmlIgnore]
         public X509Certificate2 Cert { get; set; }
-        public ReadOnlySpan<byte> CertData
+        public byte[] CertData // ReadOnlySpan<byte> crashes XML serializer in new versions of .NET
         {
             get => Cert?.RawData;
             set => Cert = value == null ? null : new X509Certificate2(value);
