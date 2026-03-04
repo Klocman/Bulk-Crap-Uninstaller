@@ -40,7 +40,7 @@ namespace BulkCrapUninstaller
                 {
                     var location = Assembly.GetAssembly(typeof(Program))?.Location;
                     if (location == null) throw new InvalidOperationException("Failed to get entry assembly location");
-                    if (location.Substring(location.LastIndexOf('\\')).Contains('.'))
+                    if (Path.HasExtension(location))
                         location = PathTools.GetDirectory(location);
                     _assemblyLocation = new DirectoryInfo(location);
                 }
