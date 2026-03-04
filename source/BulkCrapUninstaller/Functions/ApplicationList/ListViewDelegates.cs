@@ -166,7 +166,6 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             {
                 var trimmed = uninstallString.Substring(UninstallStringTrimString.Length);
                 var closingQuote = trimmed.IndexOf('"');
-                // Handle quotes at index 0 as well as later positions.
                 if (closingQuote >= 0)
                 {
                     trimmed = trimmed.Remove(closingQuote, 1);
