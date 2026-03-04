@@ -1,3 +1,6 @@
+@echo off
+cls
+
 rem Release Debug
 set config=Release
 
@@ -38,7 +41,9 @@ set target=%CD%\bin\publish-AnyCPU-%netVer%
 rmdir /q /s "%target%"
 if errorlevel 1 (pause)
 
-%msbuild% "source\BulkCrapUninstaller.sln" /m /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform="Any CPU" /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%"  /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
+echo ====== Building AnyCPU ======
+
+%msbuild% "source\BulkCrapUninstaller.sln" /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform="Any CPU" /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%"  /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
 
 IF %config%==Release (del /f /s /q "%target%\*.pdb")
 
@@ -53,9 +58,11 @@ rem -------------------------------------------------------------
 set identifier=win-%platform%
 set target=%CD%\bin\publish\%identifier%
 
-%msbuild% "source\BulkCrapUninstaller.sln" /m /p:filealignment=512 /t:Restore;Rebuild /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=True /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform=%platform% /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%" /p:RuntimeIdentifier=%identifier% /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
+echo ====== Building %identifier% ======
 
-%msbuild% "source\BulkCrapUninstaller.sln" /m /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=True /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform=%platform% /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%" /p:RuntimeIdentifier=%identifier% /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
+%msbuild% "source\BulkCrapUninstaller.sln" /p:filealignment=512 /t:Restore;Rebuild /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=True /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform=%platform% /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%" /p:RuntimeIdentifier=%identifier% /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
+
+%msbuild% "source\BulkCrapUninstaller.sln" /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=True /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform=%platform% /p:TargetFrameworks=%netVerFull% /p:PublishDir="%target%" /p:RuntimeIdentifier=%identifier% /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
 
 goto :eof
 
