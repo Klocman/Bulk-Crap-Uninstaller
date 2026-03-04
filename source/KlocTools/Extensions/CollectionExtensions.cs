@@ -144,7 +144,6 @@ namespace Klocman.Extensions
         {
             for (var i = 0; i < array.Length; i++)
             {
-                // Null-safe and comparer-aware equality avoids NRE for null reference-type entries.
                 if (EqualityComparer<T>.Default.Equals(array[i], element))
                     return i;
             }
