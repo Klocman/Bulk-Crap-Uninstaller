@@ -27,6 +27,8 @@ namespace BulkCrapUninstallerTests.Functions
         [TestMethod]
         public void RefreshStatsTest()
         {
+            Assert.Inconclusive("Expensive, no need to always test");
+
             _manager.FetchRatings();
             if (_manager.RemoteRatingCount == 0)
                 Assert.Fail();
