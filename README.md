@@ -31,7 +31,7 @@ If you want to get the latest features and fixes as soon as they are available, 
 
 ## System requirements
 #### BCUninstaller v6
-- Earliest supported OS: Windows 10 (with most system updates installed)
+- Earliest supported OS: Windows 10 (may work on Windows 7)
 - Requirements: .NET 8 desktop runtime (not needed for portable)
 
 To get this version download the latest release from the links below.
