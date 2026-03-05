@@ -96,7 +96,7 @@ namespace UninstallTools.Factory.InfoAdders
                 }
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(entry.InstallLocation) || entry.SortedExecutables == null)
             {
                 var paths = MsiTools.GetInstalledComponentPaths(guid);
@@ -106,9 +106,7 @@ namespace UninstallTools.Factory.InfoAdders
                 var executables = paths.Filenames.Where(x => x.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)).ToArray();
                 if (executables.Length > 0)
                 {
-                    if (entry.SortedExecutables == null)
-                        entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(executables.Select(x => new FileInfo(x)), entry.DisplayName).Select(x => x.FullName).ToArray();
-
+                    var addedInstallLocation = false;
                     if (string.IsNullOrWhiteSpace(entry.InstallLocation))
                     {
                         var bestGuess = executables.GroupBy(Path.GetDirectoryName, StringComparer.OrdinalIgnoreCase)
@@ -118,8 +116,21 @@ namespace UninstallTools.Factory.InfoAdders
                                                    .FirstOrDefault();
 
                         if (!string.IsNullOrEmpty(bestGuess?.Key))
+                        {
                             entry.InstallLocation = bestGuess.Key;
+                            addedInstallLocation = true;
+                        }
                     }
+
+                    // Update executable list based on new information. Keep existing executables if they exist, as they may be more accurate than the MSI component paths
+                    var executablesToSort = executables.Select(x => new FileInfo(x));
+
+                    if (entry.SortedExecutables != null) executablesToSort = executablesToSort.Concat(entry.SortedExecutables.Select(x => new FileInfo(x)));
+
+                    if (addedInstallLocation) executablesToSort = executablesToSort.Concat(AppExecutablesSearcher.ScanDirectory(new DirectoryInfo(entry.InstallLocation)).ExecutableFiles);
+                    
+                    entry.SortedExecutables = AppExecutablesSearcher.SortListExecutables(executablesToSort.DistinctBy(x => x.FullName, StringComparer.OrdinalIgnoreCase), entry.DisplayName)
+                                                                    .Select(x => x.FullName).ToArray();
                 }
 
                 // If the exe search failed, pick the folder with the most files in it instead (needed with e.g. Net Framework reference assemblies)
