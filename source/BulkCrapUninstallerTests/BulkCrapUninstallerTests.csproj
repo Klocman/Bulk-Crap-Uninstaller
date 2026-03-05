@@ -13,6 +13,7 @@
   </Choose>
   <ItemGroup>
     <ProjectReference Include="..\BulkCrapUninstaller\BulkCrapUninstaller.csproj" />
+    <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="SelfUpdaterTests.cs" />
