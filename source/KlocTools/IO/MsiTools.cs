@@ -109,10 +109,10 @@ namespace Klocman.IO
         /// <returns>The installation path of the component if found; otherwise, null.</returns>
         public static string GetInstalledComponentPathRaw(string component)
         {
-            InitLookups();
-
-            if (_componentPathLookup.TryGetValue(component, out var value))
+            if (ComponentPathLookup.TryGetValue(component, out var value))
                 return value;
+            
+            InitLookups();
 
             _reverseComponentLookup.TryGetValue(component, out var product);
             if (!string.IsNullOrEmpty(product))
@@ -123,12 +123,12 @@ namespace Klocman.IO
                 if (state == MsiWrapper.INSTALLSTATE.INSTALLSTATE_LOCAL) // TODO also include source?
                 {
                     value = lpPathBuf.ToString();
-                    _componentPathLookup[component] = value;
+                    ComponentPathLookup[component] = value;
                     return value;
                 }
             }
 
-            _componentPathLookup[component] = null;
+            ComponentPathLookup[component] = null;
             return null;
         }
 
@@ -194,8 +194,8 @@ namespace Klocman.IO
 
         private static ILookup<string, string> _componentLookup;
         private static Dictionary<string, string> _reverseComponentLookup;
-        private static readonly ConcurrentDictionary<string, string> _componentPathLookup = new();
-        private static void InitLookups()
+        private static readonly ConcurrentDictionary<string, string> ComponentPathLookup = new();
+        public static void InitLookups()
         {
             lock (GuidRegistryFormatPattern)
             {
