@@ -203,8 +203,11 @@ namespace Klocman.IO
 
                 var sw = Stopwatch.StartNew();
 
-                // TODO This is slow, on the order of ~8 seconds. It could use some caching, including for _componentPathLookup
-                _componentLookup = GetAllComponents().ToLookup(GetProductCode, StringComparer.OrdinalIgnoreCase);
+                // TODO This is slow, on the order of ~8 seconds (4 with AsParallel) on an SSD. It could use caching of GetProductCode and _componentPathLookup
+                // 20% of time is spent in GetAllComponents, 80% in GetProductCode
+                _componentLookup = GetAllComponents()
+                                   .ToList().AsParallel() // Cuts total time by about 45%, ToList is critical
+                                   .ToLookup(GetProductCode, StringComparer.OrdinalIgnoreCase);
 
                 _reverseComponentLookup = _componentLookup
                                           .Where(x => !string.IsNullOrEmpty(x.Key))
