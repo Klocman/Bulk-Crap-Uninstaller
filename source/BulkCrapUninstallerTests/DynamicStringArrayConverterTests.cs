@@ -169,17 +169,15 @@ namespace BulkCrapUninstallerTests
         // --- Invalid root token ---
 
         [TestMethod]
-        [ExpectedException(typeof(JsonException))]
         public void InvalidRootToken_ThrowsJsonException()
         {
-            Deserialize("42");
+            Assert.Throws<JsonException>(() => Deserialize("42"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(JsonException))]
         public void RootObject_ThrowsJsonException()
         {
-            Deserialize("{\"x\":1}");
+            Assert.Throws<JsonException>(() => Deserialize("{\"x\":1}"));
         }
 
         [TestMethod]

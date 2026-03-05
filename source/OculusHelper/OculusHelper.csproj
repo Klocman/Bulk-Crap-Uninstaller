@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.3" />
 	</ItemGroup>
 </Project>
