@@ -162,13 +162,13 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desinstalação em segundo plano</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Criar um ponto de restauro antes de desinstalar</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Pode criar um ponto de restauro do sistema para o registo de backup, de algumas configurações e de arquivos. Recomenda-se criar um ponto de restauro antes de remover drivers e aplicativos importantes do sistema.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

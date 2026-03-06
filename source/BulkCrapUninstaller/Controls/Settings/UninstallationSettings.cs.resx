@@ -163,16 +163,16 @@ Odinstalovat ručně</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Tichá odinstalace</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Před odinstalováním vytvořte bod obnovení</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Můžete vytvořit bod obnovení systému, zálohu registru, některá nastavení a soubory. Doporučujeme vytvořit bod obnovení před odebráním ovladačů a důležitých systémových aplikací.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
 </root>

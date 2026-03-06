@@ -165,16 +165,16 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Stille Deinstallation</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
     <value>Wiederherstellungspunkt vor dem Deinstallieren erzeugen</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
     <value>Sie können einen Systemwiederherstellungspunkt für die Backup-Registrierung, einigen Einstellungen und Dateien erstellen. Es wird empfohlen, vor dem Entfernen von Treibern und wichtigen Systemanwendungen einen Wiederherstellungspunkt zu erstellen.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
 </root>
