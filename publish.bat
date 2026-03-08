@@ -12,7 +12,7 @@ if not exist %msbuild% (
 	exit /b 1
 )
 
-set solutionDir=%CD%\source\
+set solutionDir=%CD%\source
 set publish=%CD%\bin\publish
 
 set netVer=net8.0
@@ -120,7 +120,7 @@ goto :eof
 rem -------------------------------------------------------------
 
 :buildLauncher
-%msbuild% "source\BCU-launcher\BCU-launcher.vcxproj" /m /p:Configuration=%config% /p:Platform=x64 /p:SolutionDir="%solutionDir%" /verbosity:minimal
+%msbuild% "source\BCU-launcher\BCU-launcher.vcxproj" /m /p:Configuration=%config% /p:Platform=x64 "/p:SolutionDir=%solutionDir%\\" /verbosity:minimal
 
 goto :eof
 
