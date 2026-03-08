@@ -1,8 +1,9 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-using BrightIdeasSoftware;
+﻿using BrightIdeasSoftware;
 using BulkCrapUninstaller.Controls;
 using BulkCrapUninstaller.Functions.Tracking;
+using System.ComponentModel;
+using System.Windows.Forms;
+using UninstallTools;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -46,6 +47,7 @@ namespace BulkCrapUninstaller.Forms
             olvColumnRegistryKeyName = new OLVColumn();
             olvColumnGuid = new OLVColumn();
             olvColumnQuietUninstallString = new OLVColumn();
+            olvColumnCertificate = new OLVColumn();
             treeMap1 = new SimpleTreeMap.TreeMap();
             toolStrip = new ToolStrip();
             toolStripButton1 = new ToolStripButton();
@@ -312,12 +314,13 @@ namespace BulkCrapUninstaller.Forms
             uninstallerObjectListView.AllColumns.Add(olvColumnRegistryKeyName);
             uninstallerObjectListView.AllColumns.Add(olvColumnGuid);
             uninstallerObjectListView.AllColumns.Add(olvColumnQuietUninstallString);
+            uninstallerObjectListView.AllColumns.Add(olvColumnCertificate);
             uninstallerObjectListView.AllowColumnReorder = true;
             uninstallerObjectListView.BorderStyle = BorderStyle.None;
             uninstallerObjectListView.CellEditActivation = ObjectListView.CellEditActivateMode.DoubleClick;
             uninstallerObjectListView.CellEditUseWholeCell = false;
             uninstallerObjectListView.CheckBoxes = true;
-            uninstallerObjectListView.Columns.AddRange(new ColumnHeader[] { olvColumnDisplayName, olvColumnPublisher, olvColumnRating, olvColumnDisplayVersion, olvColumnInstallDate, olvColumnSize, olvColumnStartup, olvColumnIs64, olvColumnUninstallString, olvColumnAbout, olvColumnInstallSource, olvColumnInstallLocation, olvColumnUninstallerKind, olvColumnSystemComponent, olvColumnProtected, olvColumnRegistryKeyName, olvColumnGuid, olvColumnQuietUninstallString });
+            uninstallerObjectListView.Columns.AddRange(new ColumnHeader[] { olvColumnDisplayName, olvColumnPublisher, olvColumnCertificate, olvColumnRating, olvColumnDisplayVersion, olvColumnInstallDate, olvColumnSize, olvColumnStartup, olvColumnIs64, olvColumnUninstallString, olvColumnAbout, olvColumnInstallSource, olvColumnInstallLocation, olvColumnUninstallerKind, olvColumnSystemComponent, olvColumnProtected, olvColumnRegistryKeyName, olvColumnGuid, olvColumnQuietUninstallString });
             resources.ApplyResources(uninstallerObjectListView, "uninstallerObjectListView");
             uninstallerObjectListView.FullRowSelect = true;
             uninstallerObjectListView.GridLines = true;
@@ -424,6 +427,10 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnQuietUninstallString
             // 
             resources.ApplyResources(olvColumnQuietUninstallString, "olvColumnQuietUninstallString");
+            // 
+            // olvColumnCertificate
+            // 
+            resources.ApplyResources(olvColumnCertificate, "olvColumnCertificate");
             // 
             // treeMap1
             // 
@@ -1606,6 +1613,7 @@ namespace BulkCrapUninstaller.Forms
         internal OLVColumn olvColumnSystemComponent;
         internal OLVColumn olvColumnQuietUninstallString;
         internal OLVColumn olvColumnProtected;
+        internal OLVColumn olvColumnCertificate;
         private SaveFileDialog exportDialog;
         private ContextMenuStrip uninstallListContextMenuStrip;
         private ToolStripMenuItem uninstallContextMenuStripItem;

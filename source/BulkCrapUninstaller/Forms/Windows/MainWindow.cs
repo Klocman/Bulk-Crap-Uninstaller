@@ -212,6 +212,22 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
 
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
+
+            this.olvColumnCertificate.AspectGetter = delegate (object x)
+            {
+                var entry = x as ApplicationUninstallerEntry;
+                if (entry == null) return string.Empty;
+
+                // Check special application types first
+                if (entry.UninstallerKind == UninstallerType.StoreApp) return "Windows Store App";
+                if (entry.UninstallerKind == UninstallerType.WindowsFeature) return "Windows Feature";
+                if (!entry.IsRegistered) return "Unregistered";
+
+                // Check certificate validity
+                var certValid = entry.IsCertificateValid(false);
+                if (certValid == null) return "Unverified";
+                return certValid.Value ? "Verified" : "Invalid";
+            };
         }
 
         protected override void OnDpiChanged(DpiChangedEventArgs e)
