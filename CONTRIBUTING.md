@@ -30,6 +30,9 @@ The best way is to push any changes you wish to make to your fork of this reposi
 
 Try to limit the contents of your PRs to a single bug fix or a single feature (it's best to create a new branch for each bugfix or feature). This makes it much easier to review and verify, and makes merging easier.
 
+### Automated Code Review
+This project utilizes AI-assisted code review tools to help maintain code quality and consistency. To ensure your contribution meets the project standards, please refer to **[AGENTS.md](AGENTS.md)** for specific guidelines and review criteria used by our automated systems.
+
 ### How to set up your environment
 Visual Studio 2019 or 2022 is recommended to edit and compile the source. You need the `.NET desktop development` and `Desktop development with C++` workloads. Optionally get the `Class Designer` component if you wish to view/edit the included class diagrams.
 

@@ -1,0 +1,28 @@
+[pr_reviewer]
+extra_instructions = """
+## Code Review Instructions
+- All PRs maintain clear documentation about fork-specific changes
+- Changes are well-documented for upstream compatibility
+
+## Custom Review Criteria
+- Check for proper attribution of original work
+- Verify that fork-specific modifications are clearly marked
+- Ensure documentation reflects the fork's purpose and differences from upstream
+"""
+require_all_thresholds_for_incremental_review = false
+
+[pr_code_suggestions]
+num_code_suggestions = 4
+
+[pr_description]
+enable_semantic_files_types = true
+
+[config]
+verbosity_level = 1
+
+# GitHub App
+[github_app]
+pr_commands = [
+  "/agentic_describe",
+  "/agentic_review"
+]
