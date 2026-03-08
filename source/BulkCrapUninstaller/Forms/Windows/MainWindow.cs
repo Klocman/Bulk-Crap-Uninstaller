@@ -218,15 +218,12 @@ namespace BulkCrapUninstaller.Forms
                 var entry = x as ApplicationUninstallerEntry;
                 if (entry == null) return string.Empty;
 
-                // Check special application types first
-                if (entry.UninstallerKind == UninstallerType.StoreApp) return "Windows Store App";
-                if (entry.UninstallerKind == UninstallerType.WindowsFeature) return "Windows Feature";
-                if (!entry.IsRegistered) return "Unregistered";
-
-                // Check certificate validity
+                if (entry.UninstallerKind == UninstallerType.StoreApp || entry.UninstallerKind == UninstallerType.WindowsFeature || !entry.IsRegistered)
+                    return "---";
+                
                 var certValid = entry.IsCertificateValid(false);
-                if (certValid == null) return "Unverified";
-                return certValid.Value ? "Verified" : "Invalid";
+                if (certValid == null) return "No";
+                return certValid.Value ? "Yes" : "Invalid";
             };
         }
 
