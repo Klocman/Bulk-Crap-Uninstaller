@@ -577,4 +577,14 @@
   <data name="HasStartupEntries" xml:space="preserve">
     <value>Automatikusan indítható</value>
   </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>Hibakeresés követés/Naplózás beállítása</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Lehetséges hogy egy hasonló nevű alkalmazáshoz tartozik</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
+  <data name="Confidence_DirectlyInsideKnownFolder" xml:space="preserve">
+    <value>Egy ismert mappában található</value>
+  </data>
 </root>

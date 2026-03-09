@@ -129,4 +129,13 @@
   <data name="buttonAbort.Text" xml:space="preserve">
     <value>Megszakítás</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ez az eszköz automatikusan eltávolít olyan alkalmazásokat, amiknek nincs csendes eltávolítójuk. Ez a felhasználó helyett nyomja meg az eltávolító ablak gombjait.</value>
+  </data>
+  <data name="checkBoxUninstallerVisible.Text" xml:space="preserve">
+    <value>Látható eltávolítás</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Automatikus eltávolítás</value>
+  </data>
 </root>

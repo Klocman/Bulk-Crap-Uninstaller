@@ -768,4 +768,19 @@ A beállításoknál megpróbálhatja letiltani az összeütközések észlelés
   <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
     <value>Válassza ki, hová szeretné menteni a biztonsági másolatot. Egy új könyvtár jön létre.</value>
   </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>A kijelölt alkalmazáshoz nincs beállítva módosító parancs. Szükséges lehet eltávolítani, majd újra telepíteni az alkalmazást a telepítési beállítások módosításához.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Nem csinál semmit</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Megnyitja a tulajdonságokat</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Eltávolít</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
 </root>
