@@ -92,25 +92,21 @@ goto :eof
 rem -------------------------------------------------------------
 
 :publishProjects
-call :publishProject "source\BulkCrapUninstaller\BulkCrapUninstaller.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\BCU-console\BCU-console.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\OculusHelper\OculusHelper.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\ScriptHelper\ScriptHelper.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\StoreAppHelper\StoreAppHelper.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\SteamHelper\SteamHelper.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\WinUpdateHelper\WinUpdateHelper.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\UniversalUninstaller\UniversalUninstaller.csproj"
-if errorlevel 1 goto :eof
-call :publishProject "source\UninstallerAutomatizer\UninstallerAutomatizer.csproj"
+for /r "%solutionDir%" %%F in (*.csproj) do (
+	call :publishProjectIfEligible "%%~fF"
+	if errorlevel 1 goto :eof
+)
 
-goto :eof
+exit /b 0
+
+:publishProjectIfEligible
+findstr /i /c:"exe</OutputType>" "%~1" >nul
+if errorlevel 1 exit /b 0
+
+call :publishProject "%~1"
+if errorlevel 1 exit /b 1
+
+exit /b 0
 
 :publishProject
 %msbuild% "%~1" /restore /m /p:filealignment=512 /t:Publish /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=%selfContained% /p:PublishProtocol=FileSystem /p:Configuration=%config% /p:Platform="%platform%" /p:TargetFramework=%netVerFull% /p:PublishDir="%target%" %runtime% /p:PublishReadyToRun=false /p:PublishTrimmed=False /verbosity:minimal
@@ -120,7 +116,8 @@ goto :eof
 rem -------------------------------------------------------------
 
 :buildLauncher
-%msbuild% "source\BCU-launcher\BCU-launcher.vcxproj" /m /p:Configuration=%config% /p:Platform=x64 "/p:SolutionDir=%solutionDir%\\" /verbosity:minimal
+rem Build via solution so platform mapping is respected automatically.
+%msbuild% "source\BulkCrapUninstaller.sln" /t:BCU-launcher /m /p:Configuration=%config% /p:Platform=%platform% "/p:SolutionDir=%solutionDir%\\" /verbosity:minimal
 
 goto :eof
 
