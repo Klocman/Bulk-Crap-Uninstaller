@@ -5,12 +5,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using UninstallTools.Properties;
 
 namespace UninstallTools.Factory
 {
     public sealed class ChocolateyFactory : IIndependantUninstallerFactory
     {
+        private static readonly TimeSpan ChocolateyCommandTimeout = TimeSpan.FromSeconds(45);
+
         private static bool GetChocoInfo(out string chocoLocation)
         {
             chocoLocation = null;
@@ -77,6 +80,12 @@ namespace UninstallTools.Factory
                 var end = match.Index + 1;
                 var info = result.Substring(begin, end - begin);
                 int i = info.IndexOf(' '), j = info.IndexOf("\r\n", StringComparison.Ordinal);
+                if (i <= 0 || j <= i + 1)
+                {
+                    Trace.WriteLine("Failed to parse Chocolatey entry block: " + info);
+                    begin = end;
+                    continue;
+                }
                 var appName = new { name = info.Substring(0, i), version = info.Substring(i + 1, j - i - 1) };
 
                 var kvps = ExtractPackageInformation(info);
@@ -170,7 +179,7 @@ namespace UninstallTools.Factory
                 var val = line.Substring(i + 2);
                 if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(val)) continue;
 
-                kvps.Add(key, val);
+                kvps[key] = val;
             }
 
             return kvps;
@@ -185,14 +194,59 @@ namespace UninstallTools.Factory
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
-                RedirectStandardError = false,
+                RedirectStandardError = true,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Default
             }))
             {
+                if (process == null)
+                {
+                    Trace.WriteLine($"[Factory] Failed to start command {filename} {args}");
+                    return null;
+                }
+
                 var sw = Stopwatch.StartNew();
-                var output = process?.StandardOutput.ReadToEnd();
+                var outputTask = process.StandardOutput.ReadToEndAsync();
+                var errorTask = process.StandardError.ReadToEndAsync();
+
+                if (!process.WaitForExit((int)ChocolateyCommandTimeout.TotalMilliseconds))
+                {
+                    try
+                    {
+                        process.Kill(true);
+                    }
+                    catch
+                    {
+                        // Best effort only.
+                    }
+
+                    Trace.WriteLine($"[Factory] Chocolatey command timed out after {ChocolateyCommandTimeout.TotalSeconds:F0}s: {filename} {args}");
+                    return null;
+                }
+
+                try
+                {
+                    Task.WaitAll(new[] { outputTask, errorTask }, ChocolateyCommandTimeout);
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine($"[Factory] Failed to read Chocolatey output for {filename} {args} - {ex}");
+                    return null;
+                }
+
+                var output = outputTask.Result;
+                var error = errorTask.Result;
                 Trace.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
+
+                if (process.ExitCode != 0)
+                {
+                    Trace.WriteLine($"[Factory] Chocolatey command exited with code {process.ExitCode}. stderr={error}");
+                    return null;
+                }
+
+                if (!string.IsNullOrWhiteSpace(error))
+                    Trace.WriteLine($"[Factory] Chocolatey command produced stderr output: {error}");
+
                 return output;
             }
         }

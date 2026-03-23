@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 
@@ -17,6 +18,8 @@ namespace UninstallTools.Factory
 {
     internal static class FactoryTools
     {
+        private static readonly TimeSpan HelperTimeout = TimeSpan.FromSeconds(45);
+
         /// <summary>
         /// Warning: only use with helpers that output unicode and use 0 as success return code.
         /// </summary>
@@ -24,25 +27,67 @@ namespace UninstallTools.Factory
         {
             if (!File.Exists(filename)) return null;
 
+            var sw = Stopwatch.StartNew();
             using (var process = Process.Start(new ProcessStartInfo(filename, args)
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
-                RedirectStandardError = false,
+                RedirectStandardError = true,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.Unicode
             }))
             {
                 try
                 {
-                    var sw = Stopwatch.StartNew();
-                    var output = process?.StandardOutput.ReadToEnd();
+                    if (process == null)
+                    {
+                        Trace.WriteLine($"[Factory] Failed to start helper process {filename} {args}");
+                        return null;
+                    }
+
+                    var outputTask = process.StandardOutput.ReadToEndAsync();
+                    var errorTask = process.StandardError.ReadToEndAsync();
+
+                    if (!process.WaitForExit((int)HelperTimeout.TotalMilliseconds))
+                    {
+                        try
+                        {
+                            process.Kill(true);
+                        }
+                        catch
+                        {
+                            // Best effort only.
+                        }
+
+                        Trace.WriteLine($"[Factory] Helper {filename} timed out after {HelperTimeout.TotalSeconds:F0}s ({args})");
+                        return null;
+                    }
+
+                    Task.WaitAll(new[] { outputTask, errorTask }, HelperTimeout);
+
+                    var output = outputTask.Result;
+                    var error = errorTask.Result;
                     Trace.WriteLine($"[Performance] Running command {filename} {args} took {sw.ElapsedMilliseconds}ms");
-                    return process?.ExitCode == 0 ? output : null;
+
+                    if (process.ExitCode != 0)
+                    {
+                        Trace.WriteLine($"[Factory] Helper {filename} exited with code {process.ExitCode}. stderr={error}");
+                        return null;
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(error))
+                        Trace.WriteLine($"[Factory] Helper {filename} produced stderr output: {error}");
+
+                    return output;
                 }
                 catch (Win32Exception ex)
                 {
                     PremadeDialogs.GenericError(ex);
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine($"[Factory] Failed while running helper {filename} {args} - {ex}");
                     return null;
                 }
             }
@@ -59,9 +104,24 @@ namespace UninstallTools.Factory
                 if (!singleAppParts.Any())
                     continue;
 
-                yield return singleAppParts.Where(x => x.Contains(':')).ToDictionary(
-                    x => x.Substring(0, x.IndexOf(":", StringComparison.Ordinal)).Trim(),
-                    x => x.Substring(x.IndexOf(":", StringComparison.Ordinal) + 1).Trim());
+                var values = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                foreach (var part in singleAppParts)
+                {
+                    var separatorIndex = part.IndexOf(':');
+                    if (separatorIndex <= 0)
+                        continue;
+
+                    var key = part.Substring(0, separatorIndex).Trim();
+                    if (string.IsNullOrEmpty(key))
+                        continue;
+
+                    // Some helper outputs may contain duplicate labels. Keep the latest value.
+                    var value = part.Substring(separatorIndex + 1).Trim();
+                    values[key] = value;
+                }
+
+                if (values.Count > 0)
+                    yield return values;
             }
         }
 
