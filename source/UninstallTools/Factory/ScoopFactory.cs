@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using Klocman.Native;
 using Klocman.Tools;
 using UninstallTools.Factory.InfoAdders;
@@ -19,6 +20,7 @@ namespace UninstallTools.Factory
 {
     public sealed partial class ScoopFactory : IIndependantUninstallerFactory
     {
+        private static readonly TimeSpan ScoopCommandTimeout = TimeSpan.FromSeconds(45);
         private static string _scoopUserPath;
         private static string _scoopGlobalPath;
         private static string _scriptPath;
@@ -122,8 +124,14 @@ namespace UninstallTools.Factory
             try
             {
                 var export = JsonSerializer.Deserialize(result, _jsonContext.ExportInfo);
+                if (export?.Apps == null)
+                    throw new JsonException("Scoop export did not contain an apps list.");
+
                 foreach (var app in export.Apps)
                 {
+                    if (string.IsNullOrWhiteSpace(app?.Name))
+                        continue;
+
                     var entry = CreateUninstallerEntry(
                         app.Name, app.Version, app.IsPublic, exeSearcher);
 
@@ -313,15 +321,60 @@ namespace UninstallTools.Factory
             var startInfo = MakeScoopCommand(scoopArgs).ToProcessStartInfo();
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
-            startInfo.RedirectStandardError = false;
+            startInfo.RedirectStandardError = true;
             startInfo.CreateNoWindow = true;
             startInfo.StandardOutputEncoding = Encoding.Default;
 
             using (var process = Process.Start(startInfo))
             {
+                if (process == null)
+                {
+                    Trace.WriteLine($"[Factory] Failed to start Scoop process: {startInfo.FileName} {startInfo.Arguments}");
+                    return null;
+                }
+
                 var sw = Stopwatch.StartNew();
-                var output = process?.StandardOutput.ReadToEnd();
+                var outputTask = process.StandardOutput.ReadToEndAsync();
+                var errorTask = process.StandardError.ReadToEndAsync();
+
+                if (!process.WaitForExit((int)ScoopCommandTimeout.TotalMilliseconds))
+                {
+                    try
+                    {
+                        process.Kill(true);
+                    }
+                    catch
+                    {
+                        // Best effort only.
+                    }
+
+                    Trace.WriteLine($"[Factory] Scoop command timed out after {ScoopCommandTimeout.TotalSeconds:F0}s: {startInfo.FileName} {startInfo.Arguments}");
+                    return null;
+                }
+
+                try
+                {
+                    Task.WaitAll(new[] { outputTask, errorTask }, ScoopCommandTimeout);
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine($"[Factory] Failed to read Scoop output: {ex}");
+                    return null;
+                }
+
+                var output = outputTask.Result;
+                var error = errorTask.Result;
                 Trace.WriteLine($"[Performance] Running command {startInfo.FileName} {startInfo.Arguments} took {sw.ElapsedMilliseconds}ms");
+
+                if (process.ExitCode != 0)
+                {
+                    Trace.WriteLine($"[Factory] Scoop command failed with code {process.ExitCode}. stderr={error}");
+                    return null;
+                }
+
+                if (!string.IsNullOrWhiteSpace(error))
+                    Trace.WriteLine($"[Factory] Scoop command produced stderr output: {error}");
+
                 return output;
             }
         }
