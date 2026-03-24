@@ -36,15 +36,20 @@ namespace UninstallTools.Factory
         {
             try
             {
+                var userProfilePath = WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROFILE);
                 _scoopUserPath = Environment.GetEnvironmentVariable("SCOOP");
                 if (string.IsNullOrEmpty(_scoopUserPath))
-                    _scoopUserPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_PROFILE), "scoop");
+                    _scoopUserPath = Path.Combine(userProfilePath, "scoop");
 
                 _scoopGlobalPath = Environment.GetEnvironmentVariable("SCOOP_GLOBAL");
                 if (string.IsNullOrEmpty(_scoopGlobalPath))
                     _scoopGlobalPath = Path.Combine(WindowsTools.GetEnvironmentPath(CSIDL.CSIDL_COMMON_APPDATA), "scoop");
 
-                _scriptPath = Path.Combine(_scoopUserPath, "shims\\scoop.ps1");
+                if (TrySetScoopRootFromShim())
+                    Trace.WriteLine($"[Factory] Detected Scoop shim under {_scoopUserPath}");
+
+                TryApplyScoopConfigOverrides(userProfilePath);
+                UpdateScoopScriptPath();
 
                 if (File.Exists(_scriptPath))
                 {
@@ -63,10 +68,90 @@ namespace UninstallTools.Factory
             return false;
         }
 
+        private static void UpdateScoopScriptPath()
+        {
+            _scriptPath = string.IsNullOrWhiteSpace(_scoopUserPath)
+                ? null
+                : Path.Combine(_scoopUserPath, "shims\\scoop.ps1");
+        }
+
+        private static bool TrySetScoopRootFromShim()
+        {
+            foreach (var executableName in new[] { "scoop.cmd", "scoop.ps1" })
+            {
+                var commandPath = PathTools.GetFullPathOfExecutable(executableName);
+                if (string.IsNullOrWhiteSpace(commandPath))
+                    continue;
+
+                var shimsDirectory = Path.GetDirectoryName(commandPath);
+                if (string.IsNullOrWhiteSpace(shimsDirectory))
+                    continue;
+
+                var rootDirectory = Path.GetDirectoryName(shimsDirectory);
+                if (string.IsNullOrWhiteSpace(rootDirectory))
+                    continue;
+
+                var scriptPath = executableName.EndsWith(".ps1", StringComparison.OrdinalIgnoreCase)
+                    ? commandPath
+                    : Path.Combine(rootDirectory, "shims\\scoop.ps1");
+
+                if (!File.Exists(scriptPath))
+                    continue;
+
+                _scoopUserPath = rootDirectory;
+                _scriptPath = scriptPath;
+                return true;
+            }
+
+            return false;
+        }
+
+        private static void TryApplyScoopConfigOverrides(string userProfilePath)
+        {
+            foreach (var configPath in GetScoopConfigCandidates(userProfilePath).Distinct(StringComparer.OrdinalIgnoreCase))
+            {
+                if (!File.Exists(configPath))
+                    continue;
+
+                try
+                {
+                    var config = JsonSerializer.Deserialize<ScoopConfig>(File.ReadAllText(configPath));
+                    if (!string.IsNullOrWhiteSpace(config?.RootPath))
+                        _scoopUserPath = Path.GetFullPath(Environment.ExpandEnvironmentVariables(config.RootPath));
+                    if (!string.IsNullOrWhiteSpace(config?.GlobalPath))
+                        _scoopGlobalPath = Path.GetFullPath(Environment.ExpandEnvironmentVariables(config.GlobalPath));
+
+                    Trace.WriteLine($"[Factory] Loaded Scoop config overrides from {configPath}");
+                    return;
+                }
+                catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or JsonException or NotSupportedException)
+                {
+                    Trace.WriteLine($"[Factory] Failed to parse Scoop config {configPath}: {ex.Message}");
+                }
+            }
+        }
+
+        private static IEnumerable<string> GetScoopConfigCandidates(string userProfilePath)
+        {
+            if (!string.IsNullOrWhiteSpace(_scoopUserPath))
+                yield return Path.Combine(_scoopUserPath, "config.json");
+
+            if (!string.IsNullOrWhiteSpace(userProfilePath))
+                yield return Path.Combine(userProfilePath, ".config\\scoop\\config.json");
+        }
+
         private sealed class ExportInfo
         {
             //public ExportBucketEntry[] Buckets { get; set; }
             public ExportAppEntry[] Apps { get; set; }
+        }
+        private sealed class ScoopConfig
+        {
+            [JsonPropertyName("root_path")]
+            public string RootPath { get; set; }
+
+            [JsonPropertyName("global_path")]
+            public string GlobalPath { get; set; }
         }
         //private sealed class ExportBucketEntry
         //{
