@@ -3,15 +3,50 @@
     Apache License Version 2.0
 */
 
+using System;
+using System.ComponentModel;
 using System.Drawing;
+using BulkCrapUninstaller.Controls;
 using BulkCrapUninstaller.Properties;
 using UninstallTools;
+using UninstallToolsLocalisation = UninstallTools.Properties.Localisation;
 
 namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal static class ApplicationListConstants
     {
+        private static readonly ComponentResourceManager ListLegendResources = new(typeof(ListLegend));
+
         public static ApplicationListColors Colors => Settings.Default.MiscColorblind ? ApplicationListColors.ColorBlind : ApplicationListColors.Normal;
+
+        public static string GetApplicationStatusText(ApplicationUninstallerEntry entry)
+        {
+            if (entry == null) return Localisable.Empty;
+
+            if (Settings.Default.AdvancedHighlightSpecial)
+            {
+                if (entry.UninstallerKind == UninstallerType.WindowsFeature)
+                    return entry.UninstallerKind.GetLocalisedName();
+
+                if (entry.UninstallerKind == UninstallerType.StoreApp)
+                    return entry.UninstallerKind.GetLocalisedName();
+
+                if (entry.IsOrphaned)
+                    return UninstallToolsLocalisation.IsOrphaned;
+            }
+
+            if (!entry.IsValid && Settings.Default.AdvancedTestInvalid)
+                return UninstallToolsLocalisation.UninstallStatus_Invalid;
+
+            if (Settings.Default.AdvancedTestCertificates)
+            {
+                var result = entry.IsCertificateValid(true);
+                if (result.HasValue)
+                    return result.Value ? GetListLegendText("labelVerified.Text", "Verified certificate") : GetListLegendText("labelUnverified.Text", "Unverified certificate");
+            }
+
+            return Localisable.Empty;
+        }
 
         public static Color GetApplicationBackColor(ApplicationUninstallerEntry entry)
         {
@@ -66,6 +101,11 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             }
 
             return Color.White;
+        }
+
+        private static string GetListLegendText(string resourceName, string fallback)
+        {
+            return ListLegendResources.GetString(resourceName) ?? fallback;
         }
     }
 }

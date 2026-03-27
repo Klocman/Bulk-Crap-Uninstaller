@@ -265,6 +265,12 @@
   <data name="olvColumnSystemComponent.Width" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
+  <data name="olvColumnStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="olvColumnStatus.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
   <data name="olvColumnProtected.Text" xml:space="preserve">
     <value>Protected</value>
   </data>
@@ -2262,6 +2268,12 @@
     <value>olvColumnSystemComponent</value>
   </data>
   <data name="&gt;&gt;olvColumnSystemComponent.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;olvColumnStatus.Name" xml:space="preserve">
+    <value>olvColumnStatus</value>
+  </data>
+  <data name="&gt;&gt;olvColumnStatus.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;olvColumnProtected.Name" xml:space="preserve">
