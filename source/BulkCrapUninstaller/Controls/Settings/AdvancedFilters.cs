@@ -116,8 +116,8 @@ namespace BulkCrapUninstaller.Controls
             }
             catch (Exception ex)
             {
-                PremadeDialogs.GenericError("File is not an uninstall list or it can't be opened",
-                    "Please note that uninstall lists are saved in the \"Advanced filtering\" view, not by exporting. Lists should have the .bcul extension.\n\nError message: " + ex.Message);
+                MessageBoxes.OpenUninstallListError(
+                    Localisable.MessageBoxes_Error_details + ex.Message);
             }
         }
 

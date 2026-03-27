@@ -3,7 +3,9 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -13,6 +15,14 @@ namespace UninstallTools.Lists
 {
     public class UninstallList : ITestEntry
     {
+        private static readonly XmlReaderSettings ReaderSettings = new()
+        {
+            CloseInput = false,
+            DtdProcessing = DtdProcessing.Prohibit,
+            IgnoreComments = true,
+            IgnoreWhitespace = true
+        };
+
         public UninstallList()
         {
         }
@@ -73,10 +83,40 @@ namespace UninstallTools.Lists
 
         public static UninstallList ReadFromFile(string fileName)
         {
+            if (string.IsNullOrWhiteSpace(fileName))
+                throw new ArgumentException("File name cannot be empty.", nameof(fileName));
+
             var serializer = new XmlSerializer(typeof (UninstallList));
-            using (var reader = new XmlTextReader(fileName))
+            using (var stream = File.OpenRead(fileName))
             {
-                return serializer.Deserialize(reader) as UninstallList;
+                if (stream.Length == 0)
+                    throw new InvalidDataException("The uninstall list file is empty.");
+
+                try
+                {
+                    return Deserialize(serializer, XmlReader.Create(stream, ReaderSettings));
+                }
+                catch (Exception ex) when (ex is InvalidOperationException or XmlException)
+                {
+                    if (!stream.CanSeek)
+                        throw CreateInvalidDataException(ex);
+
+                    stream.Position = 0;
+                    using var textReader = new StreamReader(stream, Encoding.UTF8, true, 1024, true);
+                    var trimmedContents = textReader.ReadToEnd().TrimStart('\uFEFF', '\u200B', ' ', '\t', '\r', '\n');
+                    if (trimmedContents.Length == 0)
+                        throw CreateInvalidDataException(ex);
+
+                    using var stringReader = new StringReader(trimmedContents);
+                    try
+                    {
+                        return Deserialize(serializer, XmlReader.Create(stringReader, ReaderSettings));
+                    }
+                    catch (Exception retryEx) when (retryEx is InvalidOperationException or XmlException)
+                    {
+                        throw CreateInvalidDataException(retryEx);
+                    }
+                }
             }
         }
 
@@ -109,6 +149,40 @@ namespace UninstallTools.Lists
         {
             if (Filters.Contains(item))
                 Filters.Remove(item);
+        }
+
+        private static UninstallList Deserialize(XmlSerializer serializer, XmlReader reader)
+        {
+            using (reader)
+            {
+                reader.MoveToContent();
+                if (reader.NodeType != XmlNodeType.Element ||
+                    !string.Equals(reader.LocalName, nameof(UninstallList), StringComparison.Ordinal))
+                {
+                    throw new InvalidDataException(
+                        $"The file does not contain an uninstall list. Expected root element '{nameof(UninstallList)}' but found '{reader.LocalName}'.");
+                }
+
+                var result = serializer.Deserialize(reader) as UninstallList;
+                if (result == null)
+                    throw new InvalidDataException("The uninstall list file could not be deserialized.");
+
+                result.Filters ??= new List<Filter>();
+                return result;
+            }
+        }
+
+        private static InvalidDataException CreateInvalidDataException(Exception ex)
+        {
+            var xmlException = ex as XmlException ?? ex.InnerException as XmlException;
+            if (xmlException != null)
+            {
+                return new InvalidDataException(
+                    $"The uninstall list XML is invalid at line {xmlException.LineNumber}, position {xmlException.LinePosition}: {xmlException.Message}",
+                    ex);
+            }
+
+            return new InvalidDataException("The uninstall list file is not valid XML.", ex);
         }
     }
 }
