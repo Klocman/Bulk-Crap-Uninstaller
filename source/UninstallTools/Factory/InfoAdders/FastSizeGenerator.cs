@@ -38,7 +38,7 @@ namespace UninstallTools.Factory.InfoAdders
 
                 _everythingAvailable = true;
             }
-            catch (SystemException ex)
+            catch (Exception ex)
             {
                 _everythingAvailable = false;
                 Trace.WriteLine(@"FastSizeGenerator: Everything search engine is not available - " + ex.Message);
@@ -103,7 +103,7 @@ namespace UninstallTools.Factory.InfoAdders
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
-                RedirectStandardError = false,
+                RedirectStandardError = true,
                 CreateNoWindow = true,
                 StandardOutputEncoding = Encoding.UTF8
             }))
@@ -112,6 +112,7 @@ namespace UninstallTools.Factory.InfoAdders
 
                 var timeoutTask = Task.Delay(TimeSpan.FromSeconds(40));
                 var readOutputTask = process.StandardOutput.ReadToEndAsync();
+                var readErrorTask = process.StandardError.ReadToEndAsync();
 
                 await Task.WhenAny(readOutputTask, timeoutTask);
 
@@ -128,8 +129,16 @@ namespace UninstallTools.Factory.InfoAdders
                     throw new TimeoutException("es.exe appears to have hung");
                 }
 
-                if (process.ExitCode == 0) return await readOutputTask;
-                throw new IOException("es.exe failed to connect to Everything", process.ExitCode);
+                var output = await readOutputTask;
+                var errorOutput = await readErrorTask;
+                process.WaitForExit();
+
+                if (process.ExitCode == 0) return output;
+
+                var message = string.IsNullOrWhiteSpace(errorOutput)
+                    ? "es.exe failed to connect to Everything"
+                    : "es.exe failed to connect to Everything: " + errorOutput.Trim();
+                throw new IOException(message, process.ExitCode);
             }
         }
 
