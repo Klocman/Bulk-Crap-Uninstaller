@@ -181,6 +181,11 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), nameof(Localisation.IsUpdate))]
         public bool IsUpdate { get; set; }
 
+        [XmlIgnore]
+        [ComparisonTarget]
+        public bool IsScriptTweak => !string.IsNullOrEmpty(RatingId) &&
+                                     RatingId.StartsWith("Tweak-", StringComparison.OrdinalIgnoreCase);
+
         /// <summary>
         ///     True if the application can be uninstalled. False if the uninstaller is missing or is otherwise invalid.
         /// </summary>
