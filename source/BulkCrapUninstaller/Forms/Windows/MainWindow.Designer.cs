@@ -405,17 +405,17 @@ namespace BulkCrapUninstaller.Forms
             // olvColumnUninstallerKind
             // 
             resources.ApplyResources(olvColumnUninstallerKind, "olvColumnUninstallerKind");
-            // 
+            //
             // olvColumnSystemComponent
-            // 
+            //
             resources.ApplyResources(olvColumnSystemComponent, "olvColumnSystemComponent");
-            // 
+            //
             // olvColumnStatus
-            // 
+            //
             resources.ApplyResources(olvColumnStatus, "olvColumnStatus");
-            // 
+            //
             // olvColumnProtected
-            // 
+            //
             olvColumnProtected.AspectName = "IsProtected";
             resources.ApplyResources(olvColumnProtected, "olvColumnProtected");
             // 
