@@ -1419,7 +1419,7 @@ namespace BulkCrapUninstaller.Forms
             _anySysComponents = _listView.AllUninstallers.Any(x => x.SystemComponent);
             _anyUpdates = _listView.AllUninstallers.Any(x => x.IsUpdate);
             _anyInvalid = _listView.AllUninstallers.Any(x => !x.IsValid);
-            _anyTweaks = _listView.AllUninstallers.Any(x => x.RatingId != null && x.RatingId.StartsWith("tweak", StringComparison.OrdinalIgnoreCase));
+            _anyTweaks = _listView.AllUninstallers.Any(x => x.IsScriptTweak);
 
             propertiesSidebar.StoreAppsEnabled = _anyStoreApps;
             propertiesSidebar.WinFeaturesEnabled = _anyWinFeatures;
@@ -1859,7 +1859,7 @@ namespace BulkCrapUninstaller.Forms
         private void viewTweaksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             everythingToolStripMenuItem_Click(sender, e);
-            filterEditor1.Search(@"\Resources\Scripts\Tweak", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallString));
+            filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsScriptTweak));
         }
 
         private void createRestorePointToolStripMenuItem_Click(object sender, EventArgs e)
