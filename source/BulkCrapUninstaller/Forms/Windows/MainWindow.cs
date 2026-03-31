@@ -1684,6 +1684,7 @@ namespace BulkCrapUninstaller.Forms
 
         private void viewUnregisteredToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            everythingToolStripMenuItem_Click(sender, e);
             _setMan.Selected.Settings.AdvancedDisplayOrphans = true;
             filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned));
         }
