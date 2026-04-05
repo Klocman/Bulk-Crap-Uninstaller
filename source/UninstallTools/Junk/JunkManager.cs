@@ -23,27 +23,47 @@ namespace UninstallTools.Junk
 
             return RemoveDuplicates(input)
                 .Where(x => JunkDoesNotPointToDirectories(x, prohibitedLocations))
-                .Where(JunkDoesNotPointToSelf);
+                .Where(ShouldKeepSelfJunkResult);
         }
 
         /// <summary>
         /// Make sure that the junk result doesn't point to this application.
         /// </summary>
-        private static bool JunkDoesNotPointToSelf(IJunkResult x)
+        internal static bool ShouldKeepSelfJunkResult(IJunkResult x)
         {
+            if (IsCurrentApplicationInstallation(x?.Application))
+                return true;
+
             if (x is FileSystemJunk fileSystemJunk)
             {
-                return fileSystemJunk.Path == null || 
+                return fileSystemJunk.Path == null ||
                        !fileSystemJunk.Path.FullName.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             if (x is StartupJunkNode startupJunk)
             {
-                return startupJunk.Entry?.CommandFilePath == null || 
+                return startupJunk.Entry?.CommandFilePath == null ||
                        !startupJunk.Entry.CommandFilePath.StartsWith(UninstallToolsGlobalConfig.AppLocation, StringComparison.OrdinalIgnoreCase);
             }
 
             return true;
+        }
+
+        internal static bool IsCurrentApplicationInstallation(ApplicationUninstallerEntry application)
+        {
+            if (application == null)
+                return false;
+
+            return PathPointsToCurrentApplication(application.InstallLocation)
+                   || PathPointsToCurrentApplication(application.UninstallerLocation)
+                   || PathPointsToCurrentApplication(application.UninstallerFullFilename);
+        }
+
+        private static bool PathPointsToCurrentApplication(string path)
+        {
+            return path.IsNotEmpty()
+                   && (PathTools.SubPathIsInsideBasePath(path, UninstallToolsGlobalConfig.AppLocation, true, true)
+                       || PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AppLocation, path, true, true));
         }
 
         /// <summary>

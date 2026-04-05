@@ -59,8 +59,7 @@ namespace UninstallTools.Junk.Finders.Misc
                     var target = WindowsTools.ResolveShortcut(linkFilename);
 
                     if (string.IsNullOrEmpty(target) ||
-                        PathTools.SubPathIsInsideBasePath(syspath, target, true, true) ||
-                        PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AppLocation, target, true, true))
+                        PathTools.SubPathIsInsideBasePath(syspath, target, true, true))
                         continue;
 
                     results.Add(new Shortcut(linkFilename, target));
@@ -135,6 +134,9 @@ namespace UninstallTools.Junk.Finders.Misc
             {
                 foreach (var source in _links)
                 {
+                    if (!ShouldKeepShortcutTarget(source.LinkTarget, target))
+                        continue;
+
                     if (source.LinkTarget.Contains(appId, StringComparison.Ordinal)
                         && source.LinkTarget.Contains("steam", StringComparison.OrdinalIgnoreCase))
                     {
@@ -164,6 +166,9 @@ namespace UninstallTools.Junk.Finders.Misc
 
             foreach (var source in _links)
             {
+                if (!ShouldKeepShortcutTarget(source.LinkTarget, entry))
+                    continue;
+
                 if (source.LinkTarget.Contains(target, StringComparison.InvariantCultureIgnoreCase))
                 {
                     var result = CreateJunkNode(source, entry);
@@ -189,6 +194,12 @@ namespace UninstallTools.Junk.Finders.Misc
             {
                 return LinkTarget;
             }
+        }
+
+        internal static bool ShouldKeepShortcutTarget(string shortcutTarget, ApplicationUninstallerEntry target)
+        {
+            return !PathTools.SubPathIsInsideBasePath(UninstallToolsGlobalConfig.AppLocation, shortcutTarget, true, true)
+                   || JunkManager.IsCurrentApplicationInstallation(target);
         }
     }
 }
