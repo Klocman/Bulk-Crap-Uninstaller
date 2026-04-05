@@ -51,9 +51,30 @@ namespace Klocman.Tools
                 var index = 0;
                 var handle = SafeNativeMethods.ExtractAssociatedIcon(new HandleRef(null, IntPtr.Zero), iconPath, ref index);
                 if (handle != IntPtr.Zero)
-                    return Icon.FromHandle(handle);
+                    return CreateOwnedIconFromHandle(handle);
             }
             return null;
+        }
+
+        /// <summary>
+        /// Clone an icon handle into a managed icon instance and release the original native handle.
+        /// </summary>
+        public static Icon CreateOwnedIconFromHandle(IntPtr handle)
+        {
+            if (handle == IntPtr.Zero)
+                throw new ArgumentException("Icon handle must not be zero", nameof(handle));
+
+            try
+            {
+                using (var temporaryIcon = Icon.FromHandle(handle))
+                {
+                    return (Icon)temporaryIcon.Clone();
+                }
+            }
+            finally
+            {
+                SafeNativeMethods.DestroyIcon(handle);
+            }
         }
 
 
@@ -69,6 +90,10 @@ namespace Klocman.Tools
         {
             [DllImport("shell32.dll", EntryPoint = "ExtractAssociatedIcon", CharSet = CharSet.Auto)]
             internal static extern IntPtr ExtractAssociatedIcon(HandleRef hInst, StringBuilder iconPath, ref int index);
+
+            [DllImport("user32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            internal static extern bool DestroyIcon(IntPtr hIcon);
         }
 
         public static Color ColorLerp(Color from, Color to, float ratio)

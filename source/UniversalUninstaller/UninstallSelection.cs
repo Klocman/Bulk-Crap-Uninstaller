@@ -24,7 +24,7 @@ namespace UniversalUninstaller
             {
                 /* Fall back to a low quality icon */
                 var handle = Resources.icon.GetHicon();
-                Icon = Icon.FromHandle(handle);
+                Icon = DrawingTools.CreateOwnedIconFromHandle(handle);
 
                 Console.WriteLine(ex);
                 Klocman.LogWriter.WriteMessageToLog(ex.ToString());
