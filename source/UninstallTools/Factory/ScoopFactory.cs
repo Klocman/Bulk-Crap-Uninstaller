@@ -247,7 +247,7 @@ namespace UninstallTools.Factory
                         {
                             try
                             {
-                                var icon = potentialIcon.EndsWith(".ico", StringComparison.OrdinalIgnoreCase) ? new Icon(potentialIcon) : Icon.ExtractAssociatedIcon(potentialIcon);
+                                var icon = potentialIcon.EndsWith(".ico", StringComparison.OrdinalIgnoreCase) ? new Icon(potentialIcon) : DrawingTools.ExtractAssociatedIcon(potentialIcon);
                                 if (icon == null || icon.Size == Size.Empty) continue;
                                 entry.IconBitmap = icon;
                                 break;
