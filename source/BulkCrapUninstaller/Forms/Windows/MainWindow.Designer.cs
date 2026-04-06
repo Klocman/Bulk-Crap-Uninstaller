@@ -150,6 +150,7 @@ namespace BulkCrapUninstaller.Forms
             viewTweaksToolStripMenuItem = new ToolStripMenuItem();
             viewUnregisteredToolStripMenuItem = new ToolStripMenuItem();
             viewUpdatesToolStripMenuItem = new ToolStripMenuItem();
+            viewInvalidToolStripMenuItem = new ToolStripMenuItem();
             viewWindowsFeaturesToolStripMenuItem = new ToolStripMenuItem();
             viewWindowsStoreAppsToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator28 = new ToolStripSeparator();
@@ -998,7 +999,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             // filteringToolStripMenuItem
             // 
-            filteringToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { advancedApplicationsToolStripMenuItem, basicApplicationsToolStripMenuItem, systemComponentsToolStripMenuItem, everythingToolStripMenuItem, toolStripSeparator20, automaticallyStartedToolStripMenuItem, onlyWebBrowsersToolStripMenuItem, toolStripSeparator31, viewTweaksToolStripMenuItem, viewUnregisteredToolStripMenuItem, viewUpdatesToolStripMenuItem, viewWindowsFeaturesToolStripMenuItem, viewWindowsStoreAppsToolStripMenuItem, toolStripSeparator28, searchToolStripMenuItem });
+            filteringToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { advancedApplicationsToolStripMenuItem, basicApplicationsToolStripMenuItem, systemComponentsToolStripMenuItem, everythingToolStripMenuItem, toolStripSeparator20, automaticallyStartedToolStripMenuItem, onlyWebBrowsersToolStripMenuItem, toolStripSeparator31, viewTweaksToolStripMenuItem, viewUnregisteredToolStripMenuItem, viewUpdatesToolStripMenuItem, viewInvalidToolStripMenuItem, viewWindowsFeaturesToolStripMenuItem, viewWindowsStoreAppsToolStripMenuItem, toolStripSeparator28, searchToolStripMenuItem });
             filteringToolStripMenuItem.Name = "filteringToolStripMenuItem";
             resources.ApplyResources(filteringToolStripMenuItem, "filteringToolStripMenuItem");
             filteringToolStripMenuItem.DropDownOpening += filteringToolStripMenuItem_DropDownOpening;
@@ -1062,15 +1063,21 @@ namespace BulkCrapUninstaller.Forms
             viewUnregisteredToolStripMenuItem.Name = "viewUnregisteredToolStripMenuItem";
             resources.ApplyResources(viewUnregisteredToolStripMenuItem, "viewUnregisteredToolStripMenuItem");
             viewUnregisteredToolStripMenuItem.Click += viewUnregisteredToolStripMenuItem_Click;
-            // 
+            //
             // viewUpdatesToolStripMenuItem
-            // 
+            //
             viewUpdatesToolStripMenuItem.Name = "viewUpdatesToolStripMenuItem";
             resources.ApplyResources(viewUpdatesToolStripMenuItem, "viewUpdatesToolStripMenuItem");
             viewUpdatesToolStripMenuItem.Click += viewUpdatesToolStripMenuItem_Click;
-            // 
+            //
+            // viewInvalidToolStripMenuItem
+            //
+            viewInvalidToolStripMenuItem.Name = "viewInvalidToolStripMenuItem";
+            resources.ApplyResources(viewInvalidToolStripMenuItem, "viewInvalidToolStripMenuItem");
+            viewInvalidToolStripMenuItem.Click += viewInvalidToolStripMenuItem_Click;
+            //
             // viewWindowsFeaturesToolStripMenuItem
-            // 
+            //
             viewWindowsFeaturesToolStripMenuItem.Name = "viewWindowsFeaturesToolStripMenuItem";
             resources.ApplyResources(viewWindowsFeaturesToolStripMenuItem, "viewWindowsFeaturesToolStripMenuItem");
             viewWindowsFeaturesToolStripMenuItem.Click += viewWindowsFeaturesToolStripMenuItem_Click;
@@ -1751,6 +1758,7 @@ namespace BulkCrapUninstaller.Forms
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem runToolStripMenuItem;
         private ToolStripMenuItem viewUpdatesToolStripMenuItem;
+        private ToolStripMenuItem viewInvalidToolStripMenuItem;
         private ToolStripMenuItem targetMenuItem;
         private ToolStripSeparator toolStripSeparator25;
         private ToolStripSeparator toolStripSeparator26;

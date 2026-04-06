@@ -1614,6 +1614,13 @@ namespace BulkCrapUninstaller.Forms
             filterEditor1.Search(true.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate));
         }
 
+        private void viewInvalidToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            everythingToolStripMenuItem_Click(sender, e);
+            _setMan.Selected.Settings.AdvancedTestInvalid = true;
+            filterEditor1.Search(false.ToString(), ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsValid));
+        }
+
         private void filterEditor1_FocusSearchTarget(object sender, EventArgs e)
         {
             uninstallerObjectListView.Focus();
@@ -1768,6 +1775,7 @@ namespace BulkCrapUninstaller.Forms
 
             viewUnregisteredToolStripMenuItem.Enabled = isSimpleFiltering;
             viewUpdatesToolStripMenuItem.Enabled = isSimpleFiltering;
+            viewInvalidToolStripMenuItem.Enabled = isSimpleFiltering;
             viewWindowsStoreAppsToolStripMenuItem.Enabled = isSimpleFiltering;
             viewWindowsFeaturesToolStripMenuItem.Enabled = isSimpleFiltering;
         }

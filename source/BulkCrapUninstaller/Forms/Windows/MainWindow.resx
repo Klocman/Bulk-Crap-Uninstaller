@@ -1492,6 +1492,12 @@
   <data name="viewUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>View Updates</value>
   </data>
+  <data name="viewInvalidToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="viewInvalidToolStripMenuItem.Text" xml:space="preserve">
+    <value>View Invalid</value>
+  </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 22</value>
   </data>
@@ -2844,6 +2850,12 @@
     <value>viewUpdatesToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;viewUpdatesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewInvalidToolStripMenuItem.Name" xml:space="preserve">
+    <value>viewInvalidToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;viewInvalidToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;viewWindowsFeaturesToolStripMenuItem.Name" xml:space="preserve">
