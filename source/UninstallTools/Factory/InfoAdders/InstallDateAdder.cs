@@ -17,7 +17,7 @@ namespace UninstallTools.Factory.InfoAdders
                 if (File.Exists(target.UninstallerFullFilename))
                     target.InstallDate = File.GetCreationTime(target.UninstallerFullFilename);
                 else if (Directory.Exists(target.InstallLocation))
-                    target.InstallDate = Directory.GetCreationTime(target.InstallLocation);
+                    target.InstallDate = Directory.GetLastWriteTime(target.InstallLocation);
             }
             catch
             {
