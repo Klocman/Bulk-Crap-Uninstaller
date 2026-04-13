@@ -224,7 +224,7 @@ namespace UninstallTools.Factory
                 }
             }
 
-            return uninstallerKey.GetLastWriteTime();
+            return DateTime.MinValue;
         }
 
         private static bool GetIsUpdate(RegistryKey uninstallerKey)
