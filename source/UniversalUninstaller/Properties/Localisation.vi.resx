@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Program_ShowInvalidArgsBox_Message" xml:space="preserve">
-    <value>Số lượng đối số không hợp lệ. Chuyển đường dẫn đầy đủ của thư mục cần xóa làm đối số và tùy chọn /q cho chế độ âm thầm.</value>
+    <value>Số lượng đối số không hợp lệ. Hãy truyền đường dẫn đầy đủ đến thư mục cần xóa làm đối số, và tùy chọn thêm /q để bật chế độ yên lặng (Quiet).</value>
   </data>
   <data name="Program_ShowInvalidArgsBox_Title" xml:space="preserve">
     <value>Trình gỡ cài đặt đa năng</value>
@@ -127,7 +127,7 @@
     <value>Đang xoá các mục</value>
   </data>
   <data name="UninstallSelection_DeleteProgress_FailedTitle" xml:space="preserve">
-    <value>Xoá một số mục không thành công</value>
+    <value>Thất bại khi xoá một số mục</value>
   </data>
   <data name="UninstallSelection_Title" xml:space="preserve">
     <value>Xoá "{0}"</value>

@@ -119,15 +119,16 @@
   </resheader>
   <data name="comboBoxInsert.Items" xml:space="preserve">
     <value>Chèn...</value>
+    <comment>...</comment>
   </data>
   <data name="checkBoxUnescape.Text" xml:space="preserve">
-    <value>Cho phép ký tự thoát</value>
+    <value>Cho phép ký tự thoát (Unescape)</value>
   </data>
   <data name="buttonHelp.Text" xml:space="preserve">
     <value>Trợ giúp</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Định dạng</value>
+    <value>Chuỗi regex</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Kết quả</value>

@@ -121,12 +121,12 @@
     <value>Thư mục cài đặt...</value>
   </data>
   <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Chọn bất kỳ tệp nào liên quan đến ứng dụng</value>
+    <value>Chọn bất kỳ tệp tin nào thuộc về ứng dụng</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Tất cả tệp|*.*</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Đường dẫn hoặc tệp tin ứng dụng...</value>
+    <value>Đường dẫn hoặc tệp tin của ứng dụng...</value>
   </data>
 </root>

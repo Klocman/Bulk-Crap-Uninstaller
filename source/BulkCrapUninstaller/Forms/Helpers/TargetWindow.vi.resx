@@ -118,20 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Chọn một cửa sổ</value>
+    <value>Chọn bằng cửa sổ ứng dụng</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Chọn thư mục cài đặt hoặc tệp tin ứng dụng</value>
+    <value>Chọn bằng thư mục cài đặt hoặc tệp tin chương trình</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Tìm và gỡ cài đặt một ứng dụng dựa vào một trong các thông tin sau: cửa sổ, lối tắt hoặc vị trí cài đặt hoặc tệp .exe của ứng dụng đó.</value>
+    <value>Tìm và gỡ cài đặt một ứng dụng dựa trên: cửa sổ, lối tắt (shortcut), vị trí cài đặt hoặc tệp tin ".exe".</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Lưu ý: Hãy đảm bảo bất kỳ tệp bạn chọn phải nằm trong thư mục cài đặt ứng dụng.
+    <value>Hãy đảm bảo rằng bất kỳ tệp tin nào bạn chọn phải nằm bên trong thư mục cài đặt của ứng dụng.
 
 Bạn có thể chọn một thư mục chứa nhiều ứng dụng để gỡ cài đặt tất cả chúng cùng một lúc.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nhắm mục tiêu ứng dụng</value>
+    <value>Định vị ứng dụng</value>
   </data>
 </root>

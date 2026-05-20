@@ -130,13 +130,13 @@
     <value>Tác giả</value>
   </data>
   <data name="labelis64.Text" xml:space="preserve">
-    <value>Phiên bản 64bit: </value>
+    <value>Bản 64bit: </value>
   </data>
   <data name="labelPortable.Text" xml:space="preserve">
-    <value>Được cài bằng trình cài đặt: </value>
+    <value>Trạng thái cài đặt:</value>
   </data>
   <data name="labelArchitecture.Text" xml:space="preserve">
-    <value>Cấu trúc: </value>
+    <value>Kiến trúc phần cứng:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Phiên bản ứng dụng</value>
@@ -147,6 +147,7 @@
   </data>
   <data name="linkLabel9.Text" xml:space="preserve">
     <value>es.exe (CLI for Everything)</value>
+    <comment>Almost all the translations here were in English</comment>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
     <value>Modern UI Icons</value>
@@ -172,7 +173,7 @@
     <comment>I have translated it directly in Japanese, but it may not convey the meaning very well.</comment>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Thành phần được sử dụng</value>
+    <value>Thư viện và tài nguyên sử dụng</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Đóng</value>

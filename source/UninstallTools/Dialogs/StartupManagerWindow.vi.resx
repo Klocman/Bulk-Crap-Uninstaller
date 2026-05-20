@@ -118,22 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="comboBoxFilter.Items" xml:space="preserve">
-    <value>Hiển thị tất cả</value>
+    <value>Hiển thị tất cả mọi thứ</value>
   </data>
   <data name="comboBoxFilter.Items1" xml:space="preserve">
-    <value>Hiển thị các mục khởi động cùng hệ thống</value>
+    <value>Hiển thị các mục khởi động cùng hệ thống (Startup)</value>
   </data>
   <data name="comboBoxFilter.Items2" xml:space="preserve">
-    <value>Hiển thị các tác vụ</value>
+    <value>Hiển thị các tác vụ lịch trình (Tasks)</value>
   </data>
   <data name="comboBoxFilter.Items3" xml:space="preserve">
-    <value>Hiển thị các các tiện ích mở rộng của trình duyệt</value>
+    <value>Hiển thị các tiện ích mở rộng trình duyệt (Extensions)</value>
   </data>
   <data name="comboBoxFilter.Items4" xml:space="preserve">
-    <value>Hiển thị các dịch vụ</value>
+    <value>Hiển thị các dịch vụ hệ thống (Services)</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Làm mới</value>
+    <value>Tải lại</value>
+    <comment>更新</comment>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Đóng</value>
@@ -142,10 +143,10 @@
     <value>Xuất...</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Tên chường trình</value>
+    <value>Tên chương trình</value>
   </data>
   <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Đã kích hoạt</value>
+    <value>Đang bật</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>Nhà phát hành</value>
@@ -154,48 +155,48 @@
     <value>Vị trí</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
-    <value>Câu lệnh</value>
+    <value>Lệnh thực thi</value>
   </data>
   <data name="openFileLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Mở vị trí tệp thực thi</value>
+    <value>Mở vị trí tệp thực thi (&amp;O)</value>
   </data>
   <data name="openLinkLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mở liên kết</value>
+    <value>Mở vị trí liên kết (Shortcut)</value>
   </data>
   <data name="runCommandToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Thực thi câu lệnh</value>
+    <value>Chạy lệnh này (&amp;R)</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Sao chép vào bảng nhớ tạm</value>
+    <value>Sao chép vào bảng nhớ tạm (&amp;C)</value>
   </data>
   <data name="createBackupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tạo &amp;bản sao lưu</value>
+    <value>Tạo bản sao lưu (&amp;B)</value>
   </data>
   <data name="moveToRegistryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Di chuyển đến registry</value>
+    <value>Chuyển vào Registry</value>
   </data>
   <data name="runForAllUsersToolStripMenuItem.Text" xml:space="preserve">
     <value>Chạy cho tất cả người dùng</value>
   </data>
   <data name="enableToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Kích hoạt</value>
+    <value>Kích hoạt (&amp;E)</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Xoá</value>
+    <value>Xoá (&amp;D)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Danh sách các câu lệnh có thể được thực thi tự động mà không cần sự can thiệp của người dùng</value>
+    <value>Danh sách các lệnh có thể tự động thực thi mà không cần sự can thiệp của người dùng</value>
   </data>
   <data name="exportDialog.Filter" xml:space="preserve">
     <value>Tệp văn bản|*.txt</value>
   </data>
   <data name="exportDialog.Title" xml:space="preserve">
-    <value>Xuất các mục khởi động cùng hệ thống...</value>
+    <value>Xuất các mục khởi động...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Chọn một thư mục trống để sao lưu.</value>
+    <value>Vui lòng chọn một thư mục trống để lưu bản sao lưu.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Trình quản lý Khởi động cùng hệ thống</value>
+    <value>Trình quản lý khởi động (Startup Manager)</value>
   </data>
 </root>

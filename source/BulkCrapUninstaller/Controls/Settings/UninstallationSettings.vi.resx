@@ -118,35 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxManualNoCollisionProtection.Text" xml:space="preserve">
-    <value>Tắt tính năng chống xung đột khi chạy trình gỡ
-cài đặt theo cách thủ công</value>
+    <value>Tắt tính năng chống xung đột khi chạy trình
+gỡ cài đặt theo cách thủ công</value>
   </data>
   <data name="checkBoxConcurrentOneLoud.Text" xml:space="preserve">
-    <value>Mỗi lần chỉ chạy một trình gỡ cài đặt</value>
+    <value>Mỗi lần chỉ chạy một trình gỡ cài đặt có giao diện (Loud)</value>
   </data>
   <data name="checkBoxConcurrent.Text" xml:space="preserve">
     <value>Tự động chạy đồng thời các trình gỡ cài đặt (nếu có thể)</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Số trình gỡ cài đặt tối đa chạy đồng thời:</value>
+    <value>Số trình gỡ cài đặt tối đa được chạy cùng lúc:</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Gỡ cài đặt đồng thời</value>
   </data>
   <data name="checkBoxShutdown.Text" xml:space="preserve">
-    <value>Ngăn chặn việc tắt/khởi động lại hệ thống</value>
+    <value>Ngăn hệ thống tắt nguồn/khởi động lại</value>
   </data>
   <data name="checkBoxRestorePoint.Text" xml:space="preserve">
-    <value>Tạo điểm khôi phục trước khi gỡ cài đặt</value>
+    <value>Tạo điểm khôi phục (Restore Point) trước khi gỡ cài đặt</value>
   </data>
   <data name="checkBoxRestorePoint.ToolTip" xml:space="preserve">
-    <value>Bạn có thể sao lưu registry, một số cài đặt và tệp bằng cách tạo điểm khôi phục hệ thống. Bạn nên tạo điểm khôi phục trước khi xóa driver và các ứng dụng hệ thống quan trọng.</value>
+    <value>Bạn có thể tạo một điểm khôi phục hệ thống để sao lưu registry, một số cài đặt và các tệp tin.
+Khuyến nghị nên tạo điểm khôi phục trước khi gỡ bỏ các trình điều khiển (Driver) và các ứng dụng hệ thống quan trọng.
+
+Nếu cài đặt này bị mờ đi thì tức là tính năng Điểm khôi phục (Restore Points) trên Windows đã bị tắt hoặc không khả dụng. Trong trường hợp đó, không có điểm khôi phục nào được tạo!</value>
   </data>
   <data name="checkBoxBatchSortQuiet.Text" xml:space="preserve">
     <value>Sắp xếp trình gỡ cài đặt một cách thông minh</value>
   </data>
   <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
-    <value>Vô hiệu hóa bảo vệ</value>
+    <value>Tắt tính năng bảo vệ</value>
   </data>
   <data name="checkBoxSimulate.Text" xml:space="preserve">
     <value>Mô phỏng quá trình gỡ cài đặt</value>
@@ -155,23 +158,23 @@ cài đặt theo cách thủ công</value>
     <value>Cài đặt chung</value>
   </data>
   <data name="checkBoxAutoKillQuiet.Text" xml:space="preserve">
-    <value>Tự động huỷ các trình gỡ cài đặt âm thầm bị lỗi</value>
+    <value>Tự động dừng các trình gỡ cài đặt yên lặng (Quiet) bị treo</value>
   </data>
   <data name="checkBoxRetryQuiet.Text" xml:space="preserve">
-    <value>Thử lại các trình gỡ cài đặt âm thầm không thành công một lần nữa</value>
+    <value>Thử lại một lần nếu bộ gỡ cài đặt yên lặng (Quiet) bị lỗi</value>
   </data>
   <data name="checkBoxGenerate.Text" xml:space="preserve">
-    <value>Tạo trình gỡ cài đặt âm thầm bị thiếu nếu có thể</value>
+    <value>Tự động tạo lệnh gỡ cài đặt yên lặng (Quiet) nếu có thể</value>
   </data>
   <data name="checkBoxGenerateStuck.Text" xml:space="preserve">
-    <value>Tự động huỷ trình gỡ cài đặt nếu nó bị kẹt khi chờ thao tác của người dùng</value>
+    <value>Tự động dừng nếu trình gỡ cài đặt bị treo khi chờ người dùng nhập liệu</value>
   </data>
   <data name="checkBoxAutoDaemon.Text" xml:space="preserve">
-    <value>Giám sát các trình gỡ cài đặt "im lặng" bật lên cửa sổ
-không mong muốn hoặc treo máy, và tự động hóa chúng
-(chạy trình nền tự động)</value>
+    <value>Giám sát các trình gỡ cài đặt "im lặng" (Silent) để phát
+hiện cửa sổ bật lên (popup) hoặc lỗi trì hoãn và tự động
+xử lý chúng</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Gỡ cài đặt âm thầm</value>
+    <value>Gỡ cài đặt yên lặng (Quiet)</value>
   </data>
 </root>

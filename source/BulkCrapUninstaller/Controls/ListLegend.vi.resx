@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWinFeature.Text" xml:space="preserve">
-    <value>Windows Feature</value>
+    <value>Tính năng Windows (Windows Features)</value>
   </data>
   <data name="labelOrphaned.Text" xml:space="preserve">
-    <value>Ứng dụng chưa đăng ký</value>
+    <value>Không có thông tin đăng ký</value>
   </data>
   <data name="labelInvalid.Text" xml:space="preserve">
     <value>Thiếu trình gỡ cài đặt</value>
   </data>
   <data name="labelUnverified.Text" xml:space="preserve">
-    <value>Chứng chỉ chưa được xác minh</value>
+    <value>Chứng chỉ chưa xác minh</value>
   </data>
   <data name="labelVerified.Text" xml:space="preserve">
-    <value>Chứng chỉ đã được xác minh</value>
+    <value>Chứng chỉ đã xác minh</value>
   </data>
   <data name="labelLegend.Text" xml:space="preserve">
-    <value>Chú thích màu</value>
+    <value>Đánh dấu bằng màu sắc</value>
   </data>
   <data name="labelStoreApp.Text" xml:space="preserve">
     <value>Ứng dụng từ Windows Store</value>
