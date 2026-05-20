@@ -121,7 +121,7 @@
     <value>Cảm ơn bạn đã sử dụng BCUninstaller!</value>
   </data>
   <data name="p1welcomeSubheading.Text" xml:space="preserve">
-    <value>Bạn đã thấy công cụ mã nguồn mở miễn phí này hữu ích chứ? Nếu có, hãy dành một phút để giúp chúng tôi nhé! Hãy giới thiệu nó với bạn bè của bạn, chia sẻ nó lên mạng xã hội, hay cung cấp phản hồi - mọi đóng góp nhỏ đều có giá trị!</value>
+    <value>Bạn đã thấy công cụ mã nguồn mở miễn phí này hữu ích chưa? Nếu có, hãy dành một phút để giúp chúng tôi nhé! Hãy giới thiệu nó với bạn bè của bạn, chia sẻ nó lên mạng xã hội, hay cung cấp phản hồi - mọi đóng góp nhỏ đều có giá trị!</value>
   </data>
   <data name="buttonSendFeedback2.Text" xml:space="preserve">
     <value>Gửi phản hồi</value>
@@ -133,10 +133,10 @@
     <value>Chia sẻ lên Twitter</value>
   </data>
   <data name="p1FeedbackHeading.Text" xml:space="preserve">
-    <value>Có bất kỳ trục trặc gì hay thiếu tính năng nào không?</value>
+    <value>Có trục trặc hay là thiếu tính năng?</value>
   </data>
   <data name="p1FeedbackDesc.Text" xml:space="preserve">
-    <value>Nếu bạn gặp phải bất kỳ sự cố nào với BCU hoặc muốn đề xuất tính năng mới, vui lòng kiểm tra các liên kết này:</value>
+    <value>Nếu bạn gặp phải bất kỳ sự cố nào với BCU hoặc muốn đề xuất tính năng mới, vui lòng truy cập các liên kết này:</value>
   </data>
   <data name="buttonSubmitGithub.Text" xml:space="preserve">
     <value>Gửi lên GitHub (Cần có tài khoản)</value>
@@ -145,19 +145,19 @@
     <value>Gửi phản hồi</value>
   </data>
   <data name="p1HelpHeading.Text" xml:space="preserve">
-    <value>Bạn có muốn góp sức không?</value>
+    <value>Bạn có muốn góp chút công không?</value>
   </data>
   <data name="p1HelpDesc.Text" xml:space="preserve">
-    <value>Bạn không cần phải là lập trình viên để góp sức! Bạn có thể quyên góp để đẩy nhanh quá trình cập nhật hoặc dịch BCU sang tiếng mẹ đẻ của bạn. Mọi sự giúp đỡ đều được trân trọng, dù là nhỏ nhất!</value>
+    <value>Bạn không cần phải là một lập trình viên thì mới có thể giúp đỡ! Bạn có thể quyên góp (donate) để tiến độ cập nhật nhanh hơn, hoặc dịch BCU sang ngôn ngữ mẹ đẻ của mình. Mọi sự giúp đỡ đều rất đáng trân quý, bất kể lớn nhỏ!</value>
   </data>
   <data name="buttonTranslate.Text" xml:space="preserve">
-    <value>Dịch BCU</value>
+    <value>Đóng góp dịch thuật</value>
   </data>
   <data name="buttonIssues.Text" xml:space="preserve">
     <value>Báo cáo lỗi trên GitHub</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>Không bao giờ hiển thị lại cửa sổ này nữa</value>
+    <value>Không hiện lại cửa sổ này nữa</value>
   </data>
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Đóng</value>

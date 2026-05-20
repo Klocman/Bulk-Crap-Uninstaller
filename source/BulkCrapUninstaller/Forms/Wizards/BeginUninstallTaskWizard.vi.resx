@@ -124,10 +124,10 @@
     <value>Huỷ</value>
   </data>
   <data name="buttonPrev.Text" xml:space="preserve">
-    <value>Trờ về</value>
+    <value>Quay lại</value>
   </data>
   <data name="buttonNext.Text" xml:space="preserve">
-    <value>Tiếp tục</value>
+    <value>Kế tiếp</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Có liên quan đến</value>
@@ -136,7 +136,7 @@
     <value>Xác nhận</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
-    <value>Các ứng dụng đang khởi chạy</value>
+    <value>Ứng dụng đang chạy</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Cài đặt</value>
@@ -151,60 +151,60 @@
     <value>l</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Cho phép gỡ cài đặt đồng thời</value>
+    <value>Tính năng gỡ cài đặt đồng thời đang được bật</value>
   </data>
   <data name="labelWillBeSilent.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Gỡ cài đặt âm thầm</value>
+    <value>Quá trình gỡ cài đặt sẽ chạy ở chế độ im lặng (Silent)</value>
   </data>
   <data name="labelRestorePointCreated.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Tạo một điểm khôi phục mới</value>
+    <value>Tạo một điểm khôi phục (Restore point) mới</value>
   </data>
   <data name="labelFilesStillUsed.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Đang được sử dụng bởi tiến trình khác</value>
+    <value>Các tệp tin vẫn đang được sử dụng bởi các tiến trình khác</value>
   </data>
   <data name="labelTotalSize.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Ước tính kích thước tổng</value>
+    <value>Tổng dung lượng ước tính</value>
   </data>
   <data name="labelApps.Text" xml:space="preserve">
     <value>l</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Các ứng dụng cần gỡ cài đặt</value>
+    <value>Các ứng dụng sẽ gỡ cài đặt</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>BẮT ĐẦU QUÁ TRÌNH GỠ CÀI ĐẶT</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
-    <value>Phần cuối</value>
+    <value>Xác nhận cuối cùng</value>
   </data>
   <data name="p1Heading.Text" xml:space="preserve">
-    <value>Các ứng dụng có liên quan mà bạn có thể muốn gỡ cài đặt</value>
+    <value>Các ứng dụng liên quan có thể bạn muốn gỡ cài đặt</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Xác nhận rằng những mục dưới đây không có vấn đề gì khi gỡ cài đặt</value>
+    <value>Xác nhận rằng tất cả các mục dưới đây đều an toàn để gỡ cài đặt</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Một số ứng dụng có thể cần được đóng lại trước khi gỡ cài đặt</value>
+    <value>Một số ứng dụng có thể cần phải đóng lại trước khi tiến hành gỡ cài đặt</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Thay đổi cài đặt mặc định của bạn</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Vui lòng xác nhận rằng tất cả thông tin dưới đây là chính xác trước khi bắt đầu gỡ cài đặt. Đây là lần cơ hội cuối cùng của bạn!</value>
+    <value>Vui lòng đảm bảo các thông tin sau đây đã chính xác trước khi bắt đầu. Đây là cơ hội cuối cùng của bạn!</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bắt đầu quá trình gỡ cài đặt mới</value>
+    <value>Bắt đầu tác vụ gỡ cài đặt mới</value>
   </data>
 </root>

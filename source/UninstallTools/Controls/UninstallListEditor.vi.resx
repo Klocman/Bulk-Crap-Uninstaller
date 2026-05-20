@@ -121,16 +121,16 @@
     <value>Tên bộ lọc</value>
   </data>
   <data name="columnHeaderType.Text" xml:space="preserve">
-    <value>Kiểu</value>
+    <value>Loại bộ lọc</value>
   </data>
   <data name="columnHeaderConditions.Text" xml:space="preserve">
-    <value>Điều kiện</value>
+    <value>Các điều kiện lọc</value>
   </data>
   <data name="toolStripButtonAddFilter.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
   <data name="toolStripButtonRemoveFilter.Text" xml:space="preserve">
-    <value>Loại bỏ</value>
+    <value>Xoá</value>
   </data>
   <data name="toolStripButtonAddFiltersFromList.Text" xml:space="preserve">
     <value>Thêm từ danh sách...</value>
@@ -139,13 +139,13 @@
     <value>Danh sách bộ lọc</value>
   </data>
   <data name="labelFilterType.Text" xml:space="preserve">
-    <value>Kiểu: </value>
+    <value>Loại:</value>
   </data>
   <data name="comboBoxFilterType.Items" xml:space="preserve">
-    <value>Bao gôm</value>
+    <value>Bao gồm</value>
   </data>
   <data name="comboBoxFilterType.Items1" xml:space="preserve">
-    <value>Ngoại trừ</value>
+    <value>Loại trừ</value>
   </data>
   <data name="labelFilterName.Text" xml:space="preserve">
     <value>Tên: </value>
@@ -157,18 +157,18 @@
     <value>Thêm</value>
   </data>
   <data name="toolStripButtonRemoveCondition.Text" xml:space="preserve">
-    <value>Loại bỏ</value>
+    <value>Xoá</value>
   </data>
   <data name="groupBoxConditions.Text" xml:space="preserve">
-    <value>Điều kiện bộ lọc</value>
+    <value>Các điều kiện lọc</value>
   </data>
   <data name="groupBoxConditionEditor.Text" xml:space="preserve">
     <value>Trình chỉnh sửa điều kiện</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Danh sách bộ lọc gỡ cài đặt (*.bcul)|*.bcul|Tất cả tệp|*.*</value>
+    <value>Danh sách bộ lọc gỡ cài đặt (*.bcul)|*.bcul|Tất cả các tệp|*.*</value>
   </data>
   <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Làm mới danh sách bộ lọc gỡ cài đặt</value>
+    <value>Mở danh sách bộ lọc gỡ cài đặt</value>
   </data>
 </root>

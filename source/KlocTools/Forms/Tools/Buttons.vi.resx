@@ -160,7 +160,7 @@
     <value>Loại bỏ</value>
   </data>
   <data name="ButtonReset" xml:space="preserve">
-    <value>Cài lại</value>
+    <value>Đặt lại</value>
   </data>
   <data name="ButtonSkip" xml:space="preserve">
     <value>Bỏ qua</value>
@@ -180,10 +180,10 @@
     <value>Gỡ cài đặt</value>
   </data>
   <data name="ButtonUseLoud" xml:space="preserve">
-    <value>Dùng chế độ ồn ào</value>
+    <value>Dùng chế độ thường (Loud)</value>
   </data>
   <data name="ButtonYes" xml:space="preserve">
-    <value>Đúng</value>
+    <value>Có</value>
   </data>
   <data name="ButtonDetails" xml:space="preserve">
     <value>Chi tiết</value>

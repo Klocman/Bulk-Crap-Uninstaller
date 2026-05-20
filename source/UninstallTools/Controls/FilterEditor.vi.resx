@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelText.Text" xml:space="preserve">
-    <value>Văn bản lọc</value>
+    <value>Từ khoá lọc</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Phương thức so sánh</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Thuộc tính mục tiêu</value>
+    <value>Thuộc tính áp dụng</value>
   </data>
   <data name="checkBoxInvert.Text" xml:space="preserve">
-    <value>Đảo ngược kết quả</value>
+    <value>Đảo ngược kết quả lọc</value>
   </data>
 </root>

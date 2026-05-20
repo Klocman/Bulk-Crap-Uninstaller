@@ -124,12 +124,12 @@
     <value>Buộc dừng tất cả</value>
   </data>
   <data name="buttonIgnore.Text" xml:space="preserve">
-    <value>Phớt lờ</value>
+    <value>Bỏ qua</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Huỷ</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Các quy trình sau đây có thể đang sử dụng các tệp sẽ được gỡ cài đặt, vui lòng đóng chúng trước khi tiếp tục. Nếu bạn quyết định không đóng chúng, việc gỡ cài đặt một số mục có thể không thành công hoặc gây ra sự cố. Bạn cũng có thể mất mọi dữ liệu chưa lưu được mở trong các ứng dụng đó.</value>
+    <value>Các tiến trình sau đây có thể đang sử dụng những tệp tin chuẩn bị bị gỡ cài đặt, vui lòng đóng chúng lại trước khi tiếp tục. Nếu bạn quyết định không đóng, việc gỡ cài đặt một số mục có thể thất bại hoặc gây ra lỗi hệ thống. Bạn cũng có thể bị mất bất kỳ dữ liệu nào chưa kịp lưu trong các ứng dụng đó.</value>
   </data>
 </root>

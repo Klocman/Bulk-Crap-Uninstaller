@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Bộ nhớ đệm có thể giảm đáng kể thời gian tìm kiếm nhưng BCU có thể không biết những thay đổi đối với ứng dụng của bạn.
-Lưu ý: Bạn có thể cần phải khởi động lại BCU để các cài đặt này có hiệu lực.</value>
+    <value>Việc lưu bộ nhớ đệm có thể giảm đáng kể thời gian tìm kiếm nhưng nếu một ứng dụng có sự thay đổi thì BCU có thể sẽ không nhận biết được.
+LƯU Ý: Bạn có thể cần phải khởi động lại BCU để các cài đặt này có hiệu lực.</value>
   </data>
   <data name="checkBoxCerts.Text" xml:space="preserve">
-    <value>Lưu trữ tạm thời các kết quả quét chứng chỉ ứng dụng</value>
+    <value>Lưu bộ nhớ đệm kết quả quét chứng chỉ ứng dụng</value>
   </data>
   <data name="checkBoxInfo.Text" xml:space="preserve">
-    <value>Lưu trữ tạm thời thông tin bị thiếu được thu thập</value>
+    <value>Lưu bộ nhớ đệm các thông tin còn thiếu đã thu thập được</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Xoá bộ nhớ đệm</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Bộ nhớ đệm</value>
+    <value>Bộ nhớ đệm (Cache)</value>
   </data>
 </root>

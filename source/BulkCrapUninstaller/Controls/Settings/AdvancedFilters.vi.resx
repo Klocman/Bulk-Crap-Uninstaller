@@ -130,7 +130,7 @@
     <value>Lưu thành...</value>
   </data>
   <data name="toolStripButtonSaveUlDef.Text" xml:space="preserve">
-    <value>Lưu làm mặc định</value>
+    <value>Lưu thành mặc định</value>
   </data>
   <data name="toolStripButtonDelete.Text" xml:space="preserve">
     <value>Xoá danh sách mặc định</value>

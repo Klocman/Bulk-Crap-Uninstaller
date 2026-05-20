@@ -124,13 +124,13 @@
     <value>Hữu ích | Chất lượng tốt</value>
   </data>
   <data name="buttonNormal.Text" xml:space="preserve">
-    <value>Có vấn đề | Chất lượng kém</value>
+    <value>Đáng ngờ | Chất lượng kém</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Đánh giá</value>
   </data>
   <data name="buttonBad.Text" xml:space="preserve">
-    <value>Rác | Nguy hiểm tiềm tàng</value>
+    <value>Rác rưởi | Nguy hiểm tiềm tàng</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Chia sẻ đánh giá của bạn với người dùng khác</value>

@@ -130,6 +130,6 @@
     <value>Tên</value>
   </data>
   <data name="olvColumnSize.Text" xml:space="preserve">
-    <value>Kich thước</value>
+    <value>Dung lượng</value>
   </data>
 </root>

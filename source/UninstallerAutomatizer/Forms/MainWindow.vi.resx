@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Công cụ này tự động gỡ cài đặt các ứng dụng không có trình gỡ cài đặt âm thầm bằng cách nhấp chuột vào các nút của trình gỡ cài đặt thay cho người dùng.</value>
+    <value>Công cụ này tự động gỡ cài đặt các ứng dụng không hỗ trợ chế độ gỡ cài đặt yên lặng (Quiet) bằng cách tự động nhấp vào các nút bấm của bộ gỡ cài đặt thay cho người dùng.</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Trạng thái</value>

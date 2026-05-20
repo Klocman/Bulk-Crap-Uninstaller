@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label3.Text" xml:space="preserve">
-    <value>Các khoản tài trợ giúp tôi duy trì sự hứng thú với dự án này, đồng thời cũng để thanh toán chi phí cho chứng chỉ ký code, lưu trữ và các nhu cầu cần thiết khác.</value>
+    <value>Các khoản quyên góp giúp tôi duy trì niềm đam mê với dự án này, cũng như có chi phí để chi trả cho chứng chỉ ký mã nguồn (code signing certificate), dịch vụ lưu trữ (hosting) và các nhu cầu thiết yếu khác.</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Xem các bản ghi chú phát hành và nhật ký thay đổi</value>
+    <value>Xem ghi chú phát hành và nhật ký thay đổi (changelog)</value>
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Xem mã nguồn hoặc đóng góp</value>
+    <value>Xem mã nguồn hoặc đóng góp cho dự án</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Đọc giấy phép</value>
+    <value>Đọc điều khoản giấy phép</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>Đọc chính sách bảo mật</value>
   </data>
   <data name="linkLabel5.Text" xml:space="preserve">
-    <value>Đọc tệp tin trợ giúp</value>
+    <value>Đọc tài liệu hướng dẫn</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>Gửi phản hồi / Liên hệ với nhà phát triển</value>
@@ -142,9 +142,9 @@
     <value>Quyên góp (PayPal, Bitcoin, Steam gifts)</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>(Nhấp chuột vào bất cứ đâu để đóng hộp thoại này)</value>
+    <value>(Nhấp vào bất kỳ đâu để đóng hộp thoại này)</value>
   </data>
   <data name="checkBoxNeverShow.Text" xml:space="preserve">
-    <value>Không bao giờ hiển thị lại cửa sổ này nữa</value>
+    <value>Không hiện lại cửa sổ này nữa</value>
   </data>
 </root>

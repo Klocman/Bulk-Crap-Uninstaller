@@ -124,13 +124,13 @@
     <value>Loại trình gỡ cài đặt không xác định: {0}</value>
   </data>
   <data name="Error_InvalidPath" xml:space="preserve">
-    <value>Đường dẫn không hợp lệ hoặc tệp không tồn tại: {0}</value>
+    <value>Đường dẫn không hợp lệ hoặc tệp tin không tồn tại: {0}</value>
   </data>
   <data name="Error_NotSupported" xml:space="preserve">
-    <value>Tự động hoá trình gỡ cài đặt cho {0} không được hỗ trợ.</value>
+    <value>Không được hỗ trợ tự động hoá cho trình gỡ cài đặt {0}.</value>
   </data>
   <data name="Message_Starting" xml:space="preserve">
-    <value>Tự động gỡ cài đặt "{0}"</value>
+    <value>Đang tự động gỡ cài đặt "{0}"</value>
   </data>
   <data name="Message_UserCancelled" xml:space="preserve">
     <value>Người dùng đã hủy thao tác</value>
@@ -139,33 +139,33 @@
     <value>Tự động hóa thành công!</value>
   </data>
   <data name="Message_UninstallFailed" xml:space="preserve">
-    <value>Tự động gỡ cài đặt không thành công. Lý do: {0}</value>
+    <value>Quá trình tự động gỡ cài đặt không thành công. Lý do: {0}</value>
   </data>
   <data name="Message_Automation_SelectingNotBadButton" xml:space="preserve">
-    <value>Tích nút radio không nằm trong danh sách đen: {0}</value>
+    <value>Đang chọn tùy chọn radio không nằm trong danh sách đen: {0}</value>
   </data>
   <data name="Message_Automation_SelectingGoodButton" xml:space="preserve">
-    <value>Tích nút radio được biết là tốt: {0}</value>
+    <value>Đang chọn tùy chọn radio được xác nhận là an toàn: {0}</value>
   </data>
   <data name="Message_Automation_FoundButtons" xml:space="preserve">
-    <value>Đã tìm thấy {0} nút radio.</value>
+    <value>Tìm thấy {0} nút tùy chọn radio.</value>
     <comment>{0} is number of buttons</comment>
   </data>
   <data name="Message_Automation_ClickingButton" xml:space="preserve">
-    <value>Nhấp chuột vào nút "{0}".</value>
+    <value>Đang nhấp vào nút "{0}".</value>
     <comment>{0} is button name</comment>
   </data>
   <data name="Message_Automation_PopupClosed" xml:space="preserve">
-    <value>Đã đóng cửa sổ bật lên.</value>
+    <value>Đã đóng cửa sổ bật lên (Pop-up).</value>
   </data>
   <data name="Message_Automation_PopupFound" xml:space="preserve">
-    <value>Đã tìm thấy một cửa sổ bật lên - "{0}".</value>
+    <value>Phát hiện cửa sổ bật lên (Pop-up) - "{0}".</value>
   </data>
   <data name="Message_Automation_PopupRecurringFound" xml:space="preserve">
-    <value>Đã phát hiện thấy một cửa sổ bật lên liên tục!</value>
+    <value>Phát hiện cửa sổ bật lên xuất hiện lặp đi lặp lại!</value>
   </data>
   <data name="Message_Automation_Failed" xml:space="preserve">
-    <value>Tự động gỡ cài đặt không thành công.</value>
+    <value>Quá trình tự động gỡ cài đặt thất bại.</value>
   </data>
   <data name="Message_Automation_WindowClosed" xml:space="preserve">
     <value>Đã đóng cửa sổ.</value>
@@ -175,41 +175,41 @@
     <comment>"{0}" is window name</comment>
   </data>
   <data name="Message_Automation_WindowSearching" xml:space="preserve">
-    <value>Đang kiểm tra cửa sổ...</value>
+    <value>Đang tìm kiếm các cửa sổ...</value>
   </data>
   <data name="Message_Automation_AppAttached" xml:space="preserve">
-    <value>Đã đính kèm với "{0}".</value>
+    <value>Đã liên kết với tiến trình "{0}"</value>
     <comment>0 is application name</comment>
   </data>
   <data name="Message_Automation_WaitingForNsisExtraction" xml:space="preserve">
-    <value>Đang chờ trình gỡ cài đặt NSIS...</value>
+    <value>Đang chờ bộ trình cài đặt NSIS giải nén...</value>
   </data>
   <data name="Message_Automation_ProcessFailedToStart" xml:space="preserve">
-    <value>Khởi động quá trình không thành công.</value>
+    <value>Không thể khởi động tiến trình.</value>
   </data>
   <data name="UninstallHandler_StartDaemon" xml:space="preserve">
-    <value>Khởi động trình tự động hóa dưới dạng tiến trình nền/dịch vụ.</value>
+    <value>Đang khởi chạy trình tự động hóa dưới dạng dịch vụ chạy ngầm (Daemon).</value>
   </data>
   <data name="UninstallHandler_DaemonStoppedReason" xml:space="preserve">
-    <value>Tiến trình nền đã dừng vì những lý do sau: </value>
+    <value>Dịch vụ chạy ngầm dừng hoạt động do:</value>
     <comment>This is followed by error/info message</comment>
   </data>
   <data name="UninstallHandler_InvalidProcessNumber" xml:space="preserve">
-    <value>{0} không phải là số hợp lệ</value>
+    <value>Mã số tiến trình {0} không hợp lệ</value>
   </data>
   <data name="Auto_BadButtons" xml:space="preserve">
-    <value>Không | Từ chối</value>
+    <value>No | Decline | Không | Từ chối</value>
     <comment>Used to select buttons to automatically press when silently uninstallng some programs.
 These are texts displayed on buttons that you most likely do not you want to press. Separated by |</comment>
   </data>
   <data name="Auto_CancelButtons" xml:space="preserve">
-    <value>Huỷ | Trở về</value>
+    <value>Cancel | Abort | Back | Huỷ | Huỷ bỏ | Quay lại</value>
     <comment>Used to select buttons to automatically press when silently uninstallng some programs.
 These are texts displayed on buttons that you never want to press.
 Separated by |</comment>
   </data>
   <data name="Auto_GoodButtons" xml:space="preserve">
-    <value>Gỡ cài đặt | OK | Chấp nhận | Áp dụng | Đóng | Đúng | Xoá | Loại bỏ | Dọn dẹp</value>
+    <value>Uninstall | OK | Accept | Apply | Close | Yes | Delete | Remove | Clean | Gỡ cài đặt | Đồng ý | Chấp nhận | Áp dụng | Đóng | Có | Xóa | Gỡ bỏ | Dọn dẹp</value>
     <comment>Used to select buttons to automatically press when silently uninstallng some programs.
 These are texts displayed on buttons that you most likely  want to press to progress the uninstallation.
 Separated by |</comment>
