@@ -182,12 +182,9 @@ namespace Klocman.Forms
             ApplyDialogColors(this, controlBackground, textPrimary, border, accent,
                 buttonBackground, buttonForeground);
 
-            // Themed heading: use the palette text on dark backgrounds, otherwise keep the
-            // legacy dark-blue heading that was designed for light backgrounds.
-            if (windowBackground.GetBrightness() < 0.5f)
-                label1.ForeColor = textPrimary;
-            else
-                label1.ForeColor = Color.FromArgb(0, 51, 153);
+            // Themed heading: always use the palette-provided text color so dark, light,
+            // and High Contrast (SystemThemePalette) modes stay consistent.
+            label1.ForeColor = textPrimary;
         }
 
         private static void ApplyDialogColors(Control parent, Color controlBackground, Color textPrimary,

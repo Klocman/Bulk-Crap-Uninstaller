@@ -235,9 +235,7 @@ namespace BulkCrapUninstaller.Forms
             // 
             resources.ApplyResources(labelTheme, "labelTheme");
             labelTheme.AutoSize = true;
-            labelTheme.Location = new System.Drawing.Point(0, 0);
             labelTheme.Name = "labelTheme";
-            labelTheme.Size = new System.Drawing.Size(43, 15);
             if (string.IsNullOrEmpty(labelTheme.Text)) labelTheme.Text = "Theme";
             // 
             // comboBoxTheme
