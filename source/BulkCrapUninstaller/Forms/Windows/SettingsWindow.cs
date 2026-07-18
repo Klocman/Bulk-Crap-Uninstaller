@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions;
 using BulkCrapUninstaller.Properties;
+using BulkCrapUninstaller.Themes;
 using Klocman;
 using Klocman.Binding.Settings;
 using Klocman.Forms.Tools;
@@ -47,6 +48,16 @@ namespace BulkCrapUninstaller.Forms
             _settings.BindControl(checkBoxRatings, x => x.MiscUserRatings, this);
             _settings.BindControl(checkBoxColorblind, x => x.MiscColorblind, this);
             _settings.BindControl(checkBoxDpiaware, x => x.WindowDpiAware, this);
+
+            foreach (var value in Enum.GetNames(typeof(AppTheme)))
+            {
+                comboBoxTheme.Items.Add(value);
+            }
+            _settings.BindProperty(comboBoxTheme, 
+                box => box.Text, 
+                nameof(comboBoxTheme.SelectedIndexChanged),
+                settings => settings.MiscTheme, this);
+            _settings.Subscribe(ThemeSettingChanged, x => x.MiscTheme, this);
 
             _settings.BindControl(checkBoxEnableExternal, x => x.ExternalEnable, this);
             _settings.BindControl(textBoxPreUninstall, x => x.ExternalPreCommands, this);
@@ -114,9 +125,15 @@ namespace BulkCrapUninstaller.Forms
 
         private void checkBoxEnableExternal_CheckedChanged(object sender, EventArgs e)
         {
-            splitContainer1.Enabled = checkBoxEnableExternal.Checked;
-            //textBoxPreUninstall.Enabled = checkBoxEnableExternal.Checked;
-            //textBoxPostUninstall.Enabled = checkBoxEnableExternal.Checked;
+            bool isChecked = checkBoxEnableExternal.Checked;
+            textBoxPreUninstall.ReadOnly = !isChecked;
+            textBoxPostUninstall.ReadOnly = !isChecked;
+
+            var palette = ThemeManager.CurrentPalette ?? new LightThemePalette();
+            label5.ForeColor = isChecked ? palette.TextPrimary : palette.DisabledText;
+            label6.ForeColor = isChecked ? palette.TextPrimary : palette.DisabledText;
+
+            ThemeManager.UpdateForm(this);
         }
 
         private void comboBoxJunk_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,6 +261,18 @@ namespace BulkCrapUninstaller.Forms
                 return;
 
             comboBoxDoubleClick.SelectedItem = newSelection;
+        }
+        private void ThemeSettingChanged(object sender, SettingChangedEventArgs<string> args)
+        {
+            if (string.IsNullOrEmpty(args.NewValue)) return;
+
+            if (!args.NewValue.Equals(comboBoxTheme.SelectedItem))
+            {
+                comboBoxTheme.SelectedItem = args.NewValue;
+            }
+
+            ThemeManager.ApplyTheme(args.NewValue);
+            _restartNeeded = true;
         }
     }
 }

@@ -31,16 +31,54 @@ namespace BulkCrapUninstaller.Functions
 
         public static Form DefaultOwner { get; set; }
 
+        /// <summary>
+        ///     Themed replacement for the native MessageBox, which always renders in light mode.
+        /// </summary>
+        public static DialogResult ShowMessageBox(Form owner, string text, string caption,
+            MessageBoxButtons buttons, MessageBoxIcon icon)
+        {
+            Icon sysIcon = icon switch
+            {
+                MessageBoxIcon.Error => SystemIcons.Error,
+                MessageBoxIcon.Warning => SystemIcons.Warning,
+                MessageBoxIcon.Question => SystemIcons.Question,
+                MessageBoxIcon.Information => SystemIcons.Information,
+                _ => SystemIcons.Information
+            };
+
+            switch (buttons)
+            {
+                case MessageBoxButtons.OK:
+                {
+                    var r = CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
+                        new CmbBasicSettings(caption, text, null, sysIcon, Buttons.ButtonOk));
+                    return r == CustomMessageBox.PressedButton.None ? DialogResult.Cancel : DialogResult.OK;
+                }
+                case MessageBoxButtons.OKCancel:
+                {
+                    var r = CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
+                        new CmbBasicSettings(caption, text, null, sysIcon, Buttons.ButtonOk, Buttons.ButtonCancel));
+                    return r == CustomMessageBox.PressedButton.Middle ? DialogResult.OK : DialogResult.Cancel;
+                }
+                default:
+                {
+                    var r = CustomMessageBox.ShowDialog(owner ?? DefaultOwner,
+                        new CmbBasicSettings(caption, text, null, sysIcon, Buttons.ButtonYes, Buttons.ButtonNo));
+                    return r == CustomMessageBox.PressedButton.Middle ? DialogResult.Yes : DialogResult.No;
+                }
+            }
+        }
+
         public static void RatingsDisabled()
         {
-            MessageBox.Show(DefaultOwner,
+            ShowMessageBox(DefaultOwner,
                 Localisable.MessageBoxes_RatingsDisabled_Message,
                 Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public static void RatingUnavailable()
         {
-            MessageBox.Show(DefaultOwner,
+            ShowMessageBox(DefaultOwner,
                 Localisable.MessageBoxes_RatingUnavailable_Message,
                 Localisable.MessageBoxes_RatingErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -216,7 +254,7 @@ namespace BulkCrapUninstaller.Functions
 
         internal static void NothingToCopy()
         {
-            MessageBox.Show(
+            ShowMessageBox(DefaultOwner,
                 Localisable.MessageBoxes_NothingToCopy_Message,
                 Localisable.MessageBoxes_Title_Copy_to_clipboard, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -234,14 +272,14 @@ namespace BulkCrapUninstaller.Functions
         {
             if (sourceDirCount <= 0)
             {
-                MessageBox.Show(Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen,
+                ShowMessageBox(DefaultOwner, Localisable.MessageBoxes_OpenDirectories_NoDirsToOpen,
                     Localisable.MessageBoxes_Title_Open_directories,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return false;
             }
 
-            return (sourceDirCount == 1) || (MessageBox.Show(
+            return (sourceDirCount == 1) || (ShowMessageBox(DefaultOwner,
                 string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple, sourceDirCount),
                 Localisable.MessageBoxes_Title_Open_directories, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.Cancel);
         }
@@ -291,13 +329,13 @@ namespace BulkCrapUninstaller.Functions
         {
             if (sourceDirCount <= 0)
             {
-                MessageBox.Show(Localisable.MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title,
+                ShowMessageBox(DefaultOwner, Localisable.MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title,
                     Localisable.MessageBoxes_Title_Open_urls, MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return false;
             }
 
-            return (sourceDirCount == 1) || (MessageBox.Show(
+            return (sourceDirCount == 1) || (ShowMessageBox(DefaultOwner,
                 string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message, sourceDirCount),
                 Localisable.MessageBoxes_Title_Open_urls, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.Cancel);
         }
@@ -415,7 +453,7 @@ namespace BulkCrapUninstaller.Functions
         {
             if (sourceDirCount <= 0)
             {
-                MessageBox.Show(Localisable.MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message,
+                ShowMessageBox(DefaultOwner, Localisable.MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message,
                     Localisable.MessageBoxes_Title_Search_online, MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return PressedButton.Cancel;
@@ -424,7 +462,7 @@ namespace BulkCrapUninstaller.Functions
             if (sourceDirCount == 1)
                 return PressedButton.Yes;
 
-            switch (MessageBox.Show(
+            switch (ShowMessageBox(DefaultOwner,
                 string.Format(CultureInfo.CurrentCulture, Localisable.MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple,
                     sourceDirCount),
                 Localisable.MessageBoxes_Title_Open_directories, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
@@ -630,7 +668,8 @@ namespace BulkCrapUninstaller.Functions
                 path = Path.Combine(Program.AssemblyLocation.FullName, "..", filename);
                 if (!File.Exists(path))
                 {
-                    MessageBox.Show("Could not find file " + filename);
+                    ShowMessageBox(DefaultOwner, "Could not find file " + filename,
+                        Localisable.MessageBoxes_Title_Search_for_updates, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     path = null;
                 }
             }

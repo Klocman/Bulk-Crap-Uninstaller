@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -35,6 +35,8 @@ using UninstallTools.Dialogs;
 using UninstallTools.Factory;
 using UninstallTools.Lists;
 using UninstallTools.Uninstaller;
+
+using BulkCrapUninstaller.Themes;
 
 namespace BulkCrapUninstaller.Forms
 {
@@ -86,10 +88,13 @@ namespace BulkCrapUninstaller.Forms
 
             // Finish up setting controls and window, suspend after settings have loaded
             SuspendLayout();
-            ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable())
+            if (ThemeManager.CurrentPalette == null)
             {
-                RoundedEdges = true
-            };
+                ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new StandardSystemColorTable())
+                {
+                    RoundedEdges = true
+                };
+            }
 
             // Disable until the first list refresh finishes
             LockApplication(true);

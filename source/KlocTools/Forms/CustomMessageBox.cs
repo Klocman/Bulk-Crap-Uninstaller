@@ -17,6 +17,12 @@ namespace Klocman.Forms
             Left
         }
 
+        /// <summary>
+        ///     Optional theming hook set by the host application (e.g. BCU) so the dialog can
+        ///     adopt the active colour palette. Avoids a hard dependency from this library.
+        /// </summary>
+        public static Action<CustomMessageBox> ApplyThemeCallback { get; set; }
+
         private readonly CmbCheckboxSettings _checkboxSettings;
         private readonly Icon _overrideIcon;
         private int _topWidth, _topHeigth;
@@ -65,6 +71,8 @@ namespace Klocman.Forms
                         FontStyle.Bold, GraphicsUnit.Point);
                 }
             }
+
+            ApplyThemeCallback?.Invoke(this);
 
             Text = settings.Title;
             label1.Text = settings.LargeHeading;
@@ -154,6 +162,45 @@ namespace Klocman.Forms
                 if (_checkboxSettings.DisableLeftButton)
                     buttonLeft.Enabled = enable;
             }
+        }
+
+        /// <summary>
+        ///     Apply the supplied colours to the dialog. Called by the host via <see cref="ApplyThemeCallback"/>.
+        /// </summary>
+        public void ThemeDialog(Color windowBackground, Color controlBackground, Color textPrimary,
+            Color textSecondary, Color border, Color accent, Color buttonBackground, Color buttonForeground,
+            Color disabledText)
+        {
+            BackColor = windowBackground;
+            ForeColor = textPrimary;
+
+            label1.ForeColor = textPrimary;
+            label2.ForeColor = textSecondary;
+            checkBox1.ForeColor = textPrimary;
+
+            foreach (Control control in Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderColor = border;
+                    btn.FlatAppearance.MouseDownBackColor = accent;
+                    btn.FlatAppearance.MouseOverBackColor = ControlPaint.Light(accent);
+                    btn.BackColor = buttonBackground;
+                    btn.ForeColor = buttonForeground;
+                }
+                else if (control is Panel || control is FlowLayoutPanel)
+                {
+                    control.BackColor = controlBackground;
+                    control.ForeColor = textPrimary;
+                }
+            }
+
+            // Themed heading (override the legacy hardcoded blue when a dark palette is active)
+            if (textPrimary.GetBrightness() > 0.5f)
+                label1.ForeColor = Color.FromArgb(0, 51, 153);
+            else
+                label1.ForeColor = textPrimary;
         }
 
         private void CustomMessageBox_SizeChanged(object sender, EventArgs e)

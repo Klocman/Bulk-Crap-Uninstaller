@@ -3707,7 +3707,13 @@ namespace BrightIdeasSoftware
             {
                 useExplorerTheme = value;
                 if (Created)
-                    NativeMethods.SetWindowTheme(Handle, value ? "explorer" : "", null);
+                {
+                    string themeName = value ? "explorer" : "";
+                    if (value && BackColor.R < 100 && BackColor.G < 100 && BackColor.B < 100)
+                        themeName = "DarkMode_Explorer";
+                        
+                    NativeMethods.SetWindowTheme(Handle, themeName, null);
+                }
 
                 OwnerDraw = !value;
             }

@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -272,7 +272,7 @@ namespace BulkCrapUninstaller.Forms
                     negatives = string.Join("\n", items);
             }
 
-            MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Localisable.JunkRemove_Details_Message,
+            MessageBoxes.ShowMessageBox(null, string.Format(CultureInfo.CurrentCulture, Localisable.JunkRemove_Details_Message,
                 item.Confidence.GetRawConfidence(), positives, negatives), Localisable.JunkRemove_Details_Title,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
