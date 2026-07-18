@@ -178,7 +178,22 @@ namespace Klocman.Forms
             label2.ForeColor = textSecondary;
             checkBox1.ForeColor = textPrimary;
 
-            foreach (Control control in Controls)
+            // Visit every descendant (buttons live inside panelButtons/panelLeft/panelMiddle)
+            ApplyDialogColors(this, controlBackground, textPrimary, border, accent,
+                buttonBackground, buttonForeground);
+
+            // Themed heading: use the palette text on dark backgrounds, otherwise keep the
+            // legacy dark-blue heading that was designed for light backgrounds.
+            if (windowBackground.GetBrightness() < 0.5f)
+                label1.ForeColor = textPrimary;
+            else
+                label1.ForeColor = Color.FromArgb(0, 51, 153);
+        }
+
+        private static void ApplyDialogColors(Control parent, Color controlBackground, Color textPrimary,
+            Color border, Color accent, Color buttonBackground, Color buttonForeground)
+        {
+            foreach (Control control in parent.Controls)
             {
                 if (control is Button btn)
                 {
@@ -194,13 +209,11 @@ namespace Klocman.Forms
                     control.BackColor = controlBackground;
                     control.ForeColor = textPrimary;
                 }
-            }
 
-            // Themed heading (override the legacy hardcoded blue when a dark palette is active)
-            if (textPrimary.GetBrightness() > 0.5f)
-                label1.ForeColor = Color.FromArgb(0, 51, 153);
-            else
-                label1.ForeColor = textPrimary;
+                if (control.HasChildren)
+                    ApplyDialogColors(control, controlBackground, textPrimary, border, accent,
+                        buttonBackground, buttonForeground);
+            }
         }
 
         private void CustomMessageBox_SizeChanged(object sender, EventArgs e)

@@ -233,14 +233,16 @@ namespace BulkCrapUninstaller.Forms
             // 
             // labelTheme
             // 
+            resources.ApplyResources(labelTheme, "labelTheme");
             labelTheme.AutoSize = true;
             labelTheme.Location = new System.Drawing.Point(0, 0);
             labelTheme.Name = "labelTheme";
             labelTheme.Size = new System.Drawing.Size(43, 15);
-            labelTheme.Text = "Theme";
+            if (string.IsNullOrEmpty(labelTheme.Text)) labelTheme.Text = "Theme";
             // 
             // comboBoxTheme
             // 
+            resources.ApplyResources(comboBoxTheme, "comboBoxTheme");
             comboBoxTheme.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTheme.FormattingEnabled = true;
             comboBoxTheme.Location = new System.Drawing.Point(0, 16);

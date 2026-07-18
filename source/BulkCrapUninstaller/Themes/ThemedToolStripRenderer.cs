@@ -13,10 +13,10 @@ namespace BulkCrapUninstaller.Themes
             RoundedEdges = false;
         }
 
-        // Force all ToolStrip item text to use palette TextPrimary (fixes C1/H2)
+        // Force all ToolStrip item text to use palette TextPrimary, or DisabledText when greyed out
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
-            e.TextColor = _palette.TextPrimary;
+            e.TextColor = e.Item.Enabled ? _palette.TextPrimary : _palette.DisabledText;
             base.OnRenderItemText(e);
         }
 

@@ -36,6 +36,48 @@ namespace BulkCrapUninstaller.Themes
 
         public static void ApplyTheme(AppTheme theme)
         {
+            // Respect OS High Contrast: don't override the accessibility theme with custom painting.
+            if (SystemInformation.HighContrast)
+            {
+                CurrentPalette = new SystemThemePalette();
+
+                try
+                {
+                    CustomMessageBox.ApplyThemeCallback = d => d.ThemeDialog(
+                        CurrentPalette.WindowBackground,
+                        CurrentPalette.ControlBackground,
+                        CurrentPalette.TextPrimary,
+                        CurrentPalette.TextSecondary,
+                        CurrentPalette.Border,
+                        CurrentPalette.Accent,
+                        CurrentPalette.ButtonBackground,
+                        CurrentPalette.ButtonForeground,
+                        CurrentPalette.DisabledText);
+                }
+                catch
+                {
+                    // KlocTools types not available in every build configuration
+                }
+
+                ToolStripManager.Renderer = new ThemedToolStripRenderer(CurrentPalette);
+                ThemedForms.Clear();
+                if (!_globalThemingHooked)
+                {
+                    Application.Idle += ThemeManager_Idle;
+                    _globalThemingHooked = true;
+                }
+
+                foreach (Form form in Application.OpenForms)
+                {
+                    UpdateForm(form);
+                    ThemedForms.Add(form);
+                    form.FormClosed -= Form_FormClosed;
+                    form.FormClosed += Form_FormClosed;
+                }
+
+                return;
+            }
+
             bool isDark = false;
             
             if (theme == AppTheme.Dark)
@@ -282,12 +324,9 @@ namespace BulkCrapUninstaller.Themes
                 nud.ForeColor = CurrentPalette.TextPrimary;
                 nud.BorderStyle = BorderStyle.FixedSingle;
             }
-            else if (c is ListBox || c is ListControl)
-            {
-                c.BackColor = CurrentPalette.ControlBackground;
-                c.ForeColor = CurrentPalette.TextPrimary;
-            }
-            // ComboBox (Needs OwnerDraw for Dropdown)
+            // ComboBox (Needs OwnerDraw for Dropdown) - must come before ListControl
+            // because ComboBox derives from ListControl and would otherwise be consumed
+            // by the generic ListControl branch below.
             else if (c is ComboBox combo)
             {
                 combo.BackColor = CurrentPalette.ControlBackground;
@@ -297,6 +336,11 @@ namespace BulkCrapUninstaller.Themes
                 combo.DrawMode = DrawMode.OwnerDrawFixed;
                 combo.DrawItem -= ComboBox_DrawItem;
                 combo.DrawItem += ComboBox_DrawItem;
+            }
+            else if (c is ListBox || c is ListControl)
+            {
+                c.BackColor = CurrentPalette.ControlBackground;
+                c.ForeColor = CurrentPalette.TextPrimary;
             }
             // LinkLabel - default blue links are unreadable on dark backgrounds
             else if (c is LinkLabel link)

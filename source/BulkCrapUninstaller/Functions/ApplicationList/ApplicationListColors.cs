@@ -31,12 +31,12 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             Color.FromArgb(unchecked((int)0xff1A2F2F))); // StoreApp (Cyanish) - Darker and desaturated
 
         public static ApplicationListColors DarkColorBlind = new(
-            Color.FromArgb(unchecked((int)0xff241616)), // Verified (Muted Red)
-            Color.FromArgb(unchecked((int)0xff241C16)), // Unverified (Muted Orange)
-            Color.FromArgb(unchecked((int)0xff161C24)), // Invalid (Muted Blue)
-            Color.FromArgb(unchecked((int)0xff162424)), // Unregistered (Muted Cyan)
-            Color.FromArgb(unchecked((int)0xff242416)), // WindowsFeature (Muted Yellow)
-            Color.FromArgb(unchecked((int)0xff1E1624))); // StoreApp (Muted Purple)
+            Color.FromArgb(unchecked((int)0xff2E1414)), // Verified (Muted Red)
+            Color.FromArgb(unchecked((int)0xff2E2410)), // Unverified (Muted Amber) - distinct hue/luminance from Verified
+            Color.FromArgb(unchecked((int)0xff141E2A)), // Invalid (Muted Blue)
+            Color.FromArgb(unchecked((int)0xff10262A)), // Unregistered (Muted Teal)
+            Color.FromArgb(unchecked((int)0xff26280F)), // WindowsFeature (Muted Olive)
+            Color.FromArgb(unchecked((int)0xff241028))); // StoreApp (Muted Purple)
 
         public ApplicationListColors(Color verifiedColor, Color unverifiedColor, Color invalidColor,
             Color unregisteredColor, Color windowsFeatureColor, Color windowsStoreAppColor)

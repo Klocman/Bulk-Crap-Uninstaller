@@ -70,7 +70,13 @@ namespace Klocman.Tools
                 var dir = new DirectoryInfo(path);
                 if (!dir.Exists) return 0;
                 
-                var options = new System.IO.EnumerationOptions { IgnoreInaccessible = true, RecurseSubdirectories = true, AttributesToSkip = 0 };
+                var options = new System.IO.EnumerationOptions
+                {
+                    IgnoreInaccessible = true,
+                    RecurseSubdirectories = true,
+                    // Don't follow junctions or symbolic links to avoid loops and double-counting
+                    AttributesToSkip = FileAttributes.ReparsePoint
+                };
                 foreach (var file in dir.EnumerateFiles("*", options))
                 {
                     size += file.Length;

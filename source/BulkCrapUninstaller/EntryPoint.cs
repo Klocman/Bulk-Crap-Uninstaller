@@ -113,6 +113,9 @@ namespace BulkCrapUninstaller
         {
             try
             {
+                // Ensure the shared CustomMessageBox is themed even for the second-instance dialog
+                ThemeManager.ApplyTheme(Properties.Settings.Default.MiscTheme);
+
                 var location = Assembly.GetAssembly(typeof(EntryPoint))!.Location;
                 if (location.EndsWith(".dll")) location = location.Substring(0, location.Length - 3) + "exe";
                 var otherBcu = Process.GetProcesses().FirstOrDefault(x =>
