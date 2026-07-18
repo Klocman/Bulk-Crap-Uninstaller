@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -60,6 +60,24 @@ namespace Klocman.Tools
             }
 
             return MachineType.Unknown;
+        }
+
+        public static long GetDirectorySize(string path)
+        {
+            long size = 0;
+            try
+            {
+                var dir = new DirectoryInfo(path);
+                if (!dir.Exists) return 0;
+                
+                var options = new System.IO.EnumerationOptions { IgnoreInaccessible = true, RecurseSubdirectories = true, AttributesToSkip = 0 };
+                foreach (var file in dir.EnumerateFiles("*", options))
+                {
+                    size += file.Length;
+                }
+            }
+            catch { }
+            return size;
         }
 
         public static void CopyRecursive(string sourcePath, string targetPath)

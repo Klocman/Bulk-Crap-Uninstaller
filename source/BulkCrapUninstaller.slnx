@@ -1,0 +1,39 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="app.manifest" />
+    <File Path="Directory.Build.props" />
+    <File Path="GlobalAssemblyInfo.cs" />
+    <File Path="Licence.licenseheader" />
+    <File Path="../publish.bat" />
+    <File Path="../README.md" />
+  </Folder>
+  <Project Path="BCU-console/BCU-console.csproj" />
+  <Project Path="BCU-launcher/BCU-launcher.vcxproj" Id="c54b5afd-c079-4852-960e-906b8cee0e07">
+    <Configuration Solution="Debug|Any CPU" Project="Debug|Win32" />
+    <Configuration Solution="Release|Any CPU" Project="Release|Win32" />
+    <Configuration Solution="Debug|ARM64" Project="Debug|Win32" />
+    <Configuration Solution="Release|ARM64" Project="Release|Win32" />
+    <Configuration Solution="Debug|x64" Project="Debug|x64" />
+    <Configuration Solution="Release|x64" Project="Release|x64" />
+    <Configuration Solution="Debug|x86" Project="Debug|Win32" />
+    <Configuration Solution="Release|x86" Project="Release|Win32" />
+  </Project>
+  <Project Path="BulkCrapUninstaller/BulkCrapUninstaller.csproj" />
+  <Project Path="BulkCrapUninstallerTests/BulkCrapUninstallerTests.csproj" />
+  <Project Path="HelperTools/HelperTools.shproj" />
+  <Project Path="KlocTools/KlocTools.csproj" />
+  <Project Path="NBug_custom/NBug.csproj" />
+  <Project Path="NetSettingBinder/NetSettingBinder.csproj" />
+  <Project Path="ObjectListView/ObjectListView.csproj" />
+  <Project Path="OculusHelper/OculusHelper.csproj" />
+  <Project Path="PortableSettingsProvider/PortableSettingsProvider.csproj" />
+  <Project Path="ScriptHelper/ScriptHelper.csproj" />
+  <Project Path="SimpleTreeMap/SimpleTreeMap.csproj" />
+  <Project Path="SimpleTreeMapTests/SimpleTreeMapTestApp.csproj" />
+  <Project Path="SteamHelper/SteamHelper.csproj" />
+  <Project Path="StoreAppHelper/StoreAppHelper.csproj" />
+  <Project Path="UninstallTools/UninstallTools.csproj" />
+  <Project Path="UninstallerAutomatizer/UninstallerAutomatizer.csproj" />
+  <Project Path="UniversalUninstaller/UniversalUninstaller.csproj" />
+  <Project Path="WinUpdateHelper/WinUpdateHelper.csproj" />
+</Solution>

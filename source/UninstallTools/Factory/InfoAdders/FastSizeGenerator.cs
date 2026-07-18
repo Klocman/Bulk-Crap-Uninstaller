@@ -10,27 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Klocman.Extensions;
 using Klocman.IO;
-using Scripting;
+using Klocman.Tools;
 using File = System.IO.File;
 
 namespace UninstallTools.Factory.InfoAdders
 {
     public class FastSizeGenerator : IMissingInfoAdder
     {
-        private static readonly FileSystemObjectClass _fileSystemObject;
         private static bool _everythingAvailable;
 
         static FastSizeGenerator()
         {
-            try
-            {
-                _fileSystemObject = new FileSystemObjectClass();
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(@"FastSizeGenerator: Scripting.FileSystemObjectClass is not available - " + ex.Message);
-            }
-
             try
             {
                 if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetKbSize() == 0)
@@ -64,18 +54,15 @@ namespace UninstallTools.Factory.InfoAdders
                 }
             }
 
-            if (_fileSystemObject != null)
+            try
             {
-                try
-                {
-                    var folder = _fileSystemObject.GetFolder(target.InstallLocation);
-                    var size = new FileSize(Convert.ToInt64(folder.Size) / 1024);
-                    target.EstimatedSize = size;
-                }
-                catch (Exception ex)
-                {
-                    Trace.WriteLine(ex);
-                }
+                var size = FilesystemTools.GetDirectorySize(target.InstallLocation);
+                if (size > 0)
+                    target.EstimatedSize = FileSize.FromBytes(size);
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex);
             }
         }
 

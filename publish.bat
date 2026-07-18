@@ -5,7 +5,7 @@ rem Release Debug
 set config=Release
 
 set msbuild="D:\Applications\VS2022\MSBuild\Current\Bin\amd64\MSBuild.exe"
-if not exist %msbuild% call :findMsbuild
+call :findMsbuild
 if not exist %msbuild% (
 	echo Failed to locate MSBuild.exe. Update publish.bat.
 	pause
@@ -15,8 +15,8 @@ if not exist %msbuild% (
 set solutionDir=%CD%\source
 set publish=%CD%\bin\publish
 
-set netVer=net8.0
-set netVerFull=net8.0-windows10.0.18362.0
+set netVer=net10.0
+set netVerFull=net10.0-windows10.0.18362.0
 
 if exist "%publish%" (
 	rmdir /q /s "%publish%"
@@ -32,7 +32,7 @@ set platform=x64
 call :publish
 if errorlevel 1 (pause & exit /b 1)
 
-rem Since BCU is now on .NET8, realistically only Arm64 and x64 Windows systems are supported now, so there's no point in building x86
+rem Since BCU is now on .NET10, realistically only Arm64 and x64 Windows systems are supported now, so there's no point in building x86
 rem set platform=x86
 rem call :publish
 
@@ -128,6 +128,10 @@ rem -------------------------------------------------------------
 set vswhere=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe
 
 if exist "%vswhere%" (
+	for /f "delims=" %%I in ('"%vswhere%" -latest -products * -requires Microsoft.VisualStudio.Component.VC.v145.x86.x64 -find MSBuild\**\Bin\amd64\MSBuild.exe') do (
+		set msbuild="%%~fI"
+		goto :eof
+	)
 	for /f "delims=" %%I in ('"%vswhere%" -latest -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\amd64\MSBuild.exe') do (
 		set msbuild="%%~fI"
 		goto :eof
