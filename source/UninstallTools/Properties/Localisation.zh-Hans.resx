@@ -422,7 +422,7 @@
     <value>Windows商店应用</value>
   </data>
   <data name="UninstallListEditor_NewCondition" xml:space="preserve">
-    <value>New condition</value>
+    <value>新建条件</value>
   </data>
   <data name="IsOrphaned" xml:space="preserve">
     <value>未注册</value>
@@ -583,5 +583,11 @@
   <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
     <value>可能属于名称相似的其他应用程序</value>
     <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
+  <data name="Confidence_DirectlyInsideKnownFolder" xml:space="preserve">
+    <value>直接位于已知文件夹中</value>
+  </data>
+  <data name="CustomNote" xml:space="preserve">
+    <value>自定义备注</value>
   </data>
 </root>
