@@ -73,7 +73,6 @@ Return codes:
                     x.Equals("/?", StringComparison.OrdinalIgnoreCase)))
             {
                 ShowHelp();
-                Console.ReadKey();
                 return 0;
             }
 
