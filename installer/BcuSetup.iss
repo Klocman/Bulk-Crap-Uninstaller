@@ -107,6 +107,25 @@ Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: 
 ; If installing languages, copy everything
 Source: "{#InputDir}\*";                DestDir: "{app}\";          Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat";
 
+; Always install the translation matching the language chosen during setup, even when the
+; "Extra Languages" component is deselected. The compiler deduplicates identical source
+; files, so these entries do not increase the installer size.
+Source: "{#InputDir}\fr\*";      DestDir: "{app}\fr";      Components: not lang; Languages: fr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\pl\*";      DestDir: "{app}\pl";      Components: not lang; Languages: pl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\de\*";      DestDir: "{app}\de";      Components: not lang; Languages: de;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\sl\*";      DestDir: "{app}\sl";      Components: not lang; Languages: sl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\nl\*";      DestDir: "{app}\nl";      Components: not lang; Languages: nl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\es\*";      DestDir: "{app}\es";      Components: not lang; Languages: es;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\pt\*";      DestDir: "{app}\pt";      Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\pt-BR\*";   DestDir: "{app}\pt-BR";   Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\ru\*";      DestDir: "{app}\ru";      Components: not lang; Languages: ru;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\it\*";      DestDir: "{app}\it";      Components: not lang; Languages: it;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\hu\*";      DestDir: "{app}\hu";      Components: not lang; Languages: hu;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\tr\*";      DestDir: "{app}\tr";      Components: not lang; Languages: tr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\vi\*";      DestDir: "{app}\vi";      Components: not lang; Languages: vi;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\zh-Hans\*"; DestDir: "{app}\zh-Hans"; Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: "{#InputDir}\zh-CN\*";   DestDir: "{app}\zh-CN";   Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+
 #else 
 
 Source: "{#InputDir}\*";                        DestDir: "{app}"; Components: main; Flags: ignoreversion; Check: IsPortable or not IsPortable
@@ -121,6 +140,40 @@ Source: "{#InputDir}\win-x86\Resources\*";      DestDir: "{app}\win-x86\Resource
 ; If installing languages, copy everything
 Source: "{#InputDir}\win-x64\*";                DestDir: "{app}\win-x64"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"; Check: Is64BitInstallMode or IsPortable
 Source: "{#InputDir}\win-x86\*";                DestDir: "{app}\win-x86"; Components: lang; Flags: ignoreversion recursesubdirs; Excludes: "CleanLogs.bat"; Check: not Is64BitInstallMode or IsPortable
+
+; Always install the translation matching the language chosen during setup, even when the
+; "Extra Languages" component is deselected. The compiler deduplicates identical source
+; files, so these entries do not increase the installer size.
+Source: "{#InputDir}\win-x64\fr\*";      DestDir: "{app}\win-x64\fr";      Components: not lang; Languages: fr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\pl\*";      DestDir: "{app}\win-x64\pl";      Components: not lang; Languages: pl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\de\*";      DestDir: "{app}\win-x64\de";      Components: not lang; Languages: de;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\sl\*";      DestDir: "{app}\win-x64\sl";      Components: not lang; Languages: sl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\nl\*";      DestDir: "{app}\win-x64\nl";      Components: not lang; Languages: nl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\es\*";      DestDir: "{app}\win-x64\es";      Components: not lang; Languages: es;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\pt\*";      DestDir: "{app}\win-x64\pt";      Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\pt-BR\*";   DestDir: "{app}\win-x64\pt-BR";   Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\ru\*";      DestDir: "{app}\win-x64\ru";      Components: not lang; Languages: ru;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\it\*";      DestDir: "{app}\win-x64\it";      Components: not lang; Languages: it;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\hu\*";      DestDir: "{app}\win-x64\hu";      Components: not lang; Languages: hu;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\tr\*";      DestDir: "{app}\win-x64\tr";      Components: not lang; Languages: tr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\vi\*";      DestDir: "{app}\win-x64\vi";      Components: not lang; Languages: vi;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\zh-Hans\*"; DestDir: "{app}\win-x64\zh-Hans"; Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x64\zh-CN\*";   DestDir: "{app}\win-x64\zh-CN";   Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\fr\*";      DestDir: "{app}\win-x86\fr";      Components: not lang; Languages: fr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\pl\*";      DestDir: "{app}\win-x86\pl";      Components: not lang; Languages: pl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\de\*";      DestDir: "{app}\win-x86\de";      Components: not lang; Languages: de;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\sl\*";      DestDir: "{app}\win-x86\sl";      Components: not lang; Languages: sl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\nl\*";      DestDir: "{app}\win-x86\nl";      Components: not lang; Languages: nl;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\es\*";      DestDir: "{app}\win-x86\es";      Components: not lang; Languages: es;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\pt\*";      DestDir: "{app}\win-x86\pt";      Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\pt-BR\*";   DestDir: "{app}\win-x86\pt-BR";   Components: not lang; Languages: bpt;   Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\ru\*";      DestDir: "{app}\win-x86\ru";      Components: not lang; Languages: ru;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\it\*";      DestDir: "{app}\win-x86\it";      Components: not lang; Languages: it;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\hu\*";      DestDir: "{app}\win-x86\hu";      Components: not lang; Languages: hu;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\tr\*";      DestDir: "{app}\win-x86\tr";      Components: not lang; Languages: tr;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\vi\*";      DestDir: "{app}\win-x86\vi";      Components: not lang; Languages: vi;    Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\zh-Hans\*"; DestDir: "{app}\win-x86\zh-Hans"; Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
+Source: "{#InputDir}\win-x86\zh-CN\*";   DestDir: "{app}\win-x86\zh-CN";   Components: not lang; Languages: zh_cn; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Check: not Is64BitInstallMode or IsPortable
 
 ; Only copy the cleaning script if installing as portable
 Source: "{#InputDir}\win-x64\CleanLogs.bat";    DestDir: "{app}\win-x64"; Components: main; Flags: ignoreversion; Check: IsPortable
