@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using UninstallTools;
@@ -56,6 +57,45 @@ Return codes:
  1223	- The operation was canceled by the user.");
         }
 
+        /// <summary>
+        /// Holds the console window open after printing help, but only when doing so is both safe and useful:
+        /// skipped when input is redirected (a pipe, file, Task Scheduler or CI - where ReadKey would throw),
+        /// and only used when this process owns its console (a double-click) so it isn't shown to shell users.
+        /// </summary>
+        private static void WaitForKeyIfStandalone()
+        {
+            if (Console.IsInputRedirected || !LaunchedStandalone())
+                return;
+
+            Console.WriteLine();
+            Console.WriteLine(@"Press any key to exit...");
+            Console.ReadKey(true);
+        }
+
+        private static bool LaunchedStandalone()
+        {
+            // When double-clicked the process gets its own console, so it is the only one attached (count 1).
+            // When launched from a shell the console is shared, so more than one process is attached.
+            try
+            {
+                var processIds = new uint[2];
+                var count = GetConsoleProcessList(processIds, (uint)processIds.Length);
+                // count 0 means the call failed (e.g. no console); don't pause in that case.
+                return count == 1;
+            }
+            catch (DllNotFoundException)
+            {
+                return false;
+            }
+            catch (EntryPointNotFoundException)
+            {
+                return false;
+            }
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern uint GetConsoleProcessList(uint[] lpdwProcessList, uint dwProcessCount);
+
         private static int Main(string[] args)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
@@ -73,6 +113,7 @@ Return codes:
                     x.Equals("/?", StringComparison.OrdinalIgnoreCase)))
             {
                 ShowHelp();
+                WaitForKeyIfStandalone();
                 return 0;
             }
 
