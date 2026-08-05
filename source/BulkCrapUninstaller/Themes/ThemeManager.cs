@@ -232,6 +232,11 @@ namespace BulkCrapUninstaller.Themes
                 f.ForeColor = CurrentPalette.TextPrimary;
             }
 
+            else if (c is BulkCrapUninstaller.Controls.ListLegend legend)
+            {
+                legend.UpdateColors();
+                return;
+            }
             // UserControl (Sidebars, Filters, etc.) - Use ControlBackground to distinguish from Window
             else if (c is UserControl uc)
             {
@@ -351,7 +356,19 @@ namespace BulkCrapUninstaller.Themes
                 link.ActiveLinkColor = CurrentPalette.LinkColor;
             }
             // Labels and Checkboxes
-            else if (c is Label || c is CheckBox || c is RadioButton)
+            else if (c is Label label)
+            {
+                if (label.Name == "label1" && label.Text == "BCUninstaller")
+                {
+                    label.Enabled = true;
+                    label.ForeColor = CurrentPalette.TextSecondary;
+                }
+                else
+                {
+                    label.ForeColor = CurrentPalette.TextPrimary;
+                }
+            }
+            else if (c is CheckBox || c is RadioButton)
             {
                 c.ForeColor = CurrentPalette.TextPrimary;
                 // Transparent background is usually best for these controls
