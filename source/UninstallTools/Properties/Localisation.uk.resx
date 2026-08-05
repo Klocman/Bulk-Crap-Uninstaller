@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>Веб-сторінка</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>Код продукту</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>Скорочена назва</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>Версія</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>Приблизний розмір</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>Дата встановлення</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>Місце встановлення</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>Джерело встановлення</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>Це 64-бітна програма</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>Захищено</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>Це оновлення</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>Дійсний</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>Шлях зміни</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>Ім'я видавця</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>Скорочене ім'я видавця</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>Можливе тихе видалення</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>Команда тихого видалення</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>Назва ключа реєстру</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>Шлях реєстру</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>Це системний компонент</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>Ім'я файлу деінсталятора</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>Тип деінсталятора</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>Видалення можливе</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>Команда видалення</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Коментар</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>Відображувана піктограма</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Недійсний шлях</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>Впевненість</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>Процес видалення завершився передчасно</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>Пропущено користувачем</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>Розташування деінсталятора</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>Немає дійсного способу видалити цей запис</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>Деінсталятор повернув код помилки: </value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>Погано</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>Добре</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>Сумнівно</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>Невідомо</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>Дуже добре</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>Батьківський деінсталятор</value>
+    <comment>Most of the time used to show parent application of an update</comment>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>Назва компанії не збігається</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>Назва компанії збігається</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>Тека використовується іншими встановленими програмами</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>Елемент прямо згадується в деінсталяторі</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>Запис реєстру деінсталятора</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>Схоже, елемент є цілою категорією видавця</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>Назва продукту збігається не дуже добре</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>Назва продукту збігається ідеально</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>Назва теки викликає сумніви</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>Невідомо</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>Windows Installer</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Setup</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft Scriptable Install System </value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>Не вдалося</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>Недійсний</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>Захищено</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>Пропущено</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>Видалення</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>Очікування</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>Програма зареєстрована</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>Недійсний фільтр</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>Новий фільтр</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>Немає збігів</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>Містить</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>Закінчується на</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>Дорівнює</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>Регулярний вираз</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>Починається з</value>
+  </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>Компонент Windows</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>Містить будь-що з</value>
+    <comment>As in "matches any word from this string"</comment>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>Команди автозапуску</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>Вони більше не будуть запускатися під час завантаження системи. Перш ніж видаляти вибрані елементи, переконайтеся, що вони не є обов'язковими.</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>Вилучити вибрані програми з автозапуску?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>Менеджер автозапуску</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>Завантаження...</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>Порожня тека</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>Наявні виконувані файли</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>Наявні файли</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>Наявна велика кількість файлів</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>Назву програми розпізнано</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>Немає вкладених тек</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>Видавця розпізнано</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>Запис буде запущено лише один раз</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>Запис відповідає програмі</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>Залишки в Program Files</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>Реєстр</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>Автозапуск</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>Не вдалося увімкнути цей запис, оскільки не знайдено такий файл:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>Перевищено час очікування деінсталятора</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>Завдання</value>
+    <comment>Fom Task Scheduler</comment>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>Об'єкт допомоги браузера</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>Значення не може бути порожнім</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>Значення не може містити символів нового рядка</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>Недійсний або невідомий ключ(і) реєстру автозапуску:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>Програма Windows Store</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>Нова умова</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>Незареєстровано</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>Видалення даних програми зі Store є проблематичним</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>Просте видалення</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>Усі властивості</value>
+    <comment>Used in the search box to specify what's being compared</comment>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>Файли та теки</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>Тека є або стане порожньою після видалення сміття.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>Служба</value>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>Сканування встановлених продуктів MSI...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>Знайдено {0} GUID програм</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>Сканування реєстру на наявність деінсталяторів...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>Збір ключів реєстру</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>Обробка {0}</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>Створення відсутньої інформації про деінсталятор...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>Сканування дисків на наявність програм...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>Збір тек</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>Сканування магазинів програм...</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>Пошук шаблонів програм</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>Пошук програм Steam</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>Пошук програм Windows Store</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>Пошук компонентів Windows</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>Об'єднання виявлених програм...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>Об'єднання програм з магазинів</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>Об'єднання програм з дисків</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>Створення відсутньої інформації...</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>Пошук оновлень Windows</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>Правило брандмауера</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>Допомога користувачу</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>Звіти Windows Error Reporting</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>Налаштування сканерів сміття...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>Завершення...</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>Сумісність програм</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>Класи CLSID</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>Посилання на деінсталятор</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>Розташування деінсталятора</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>Ярлик</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>Конфігурація аудіополітики</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>Журнали подій</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>Інформація трасування</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>Список встановлених тек</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>Призупинено</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>Пошук записів автозапуску</value>
+  </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Пошук пакетів Chocolatey</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Видалити в Chocolatey</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>Може запускатися автоматично</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Пошук програм Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>Це веб-браузер</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>Скрипт PowerShell</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Пошук пакетів Scoop</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>Може належати іншій програмі зі схожою назвою</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
+</root>

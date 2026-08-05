@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Вийти з майстра</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Далі</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>Більше налаштувань</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Переглянути довідку</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Завершити налаштування</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>Тепер ви можете почати користуватися BCUninstaller. Якщо у вас виникли запитання або ви хочете запропонувати нову функцію, перейдіть за посиланням нижче.</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Відкрити форму зв'язку</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>На домашній сторінці ви можете переглянути детальні журнали змін та інші мої програми.</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Відкрити домашню сторінку</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>Налаштування завершено</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>Доступ до мережі</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>BCUninstaller може намагатися підключитися до інтернету з таких причин:</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>● Для пошуку оновлень програми.</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>● Для надсилання звітів про помилки.</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>● Для надсилання анонімної статистики використання.</value>
+  </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Для отримання та надсилання оцінок програм</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>Щоразу, коли виникає помилка, вас запитають, чи хочете ви надіслати звіт про неї. Ви можете перевірити, які дані надсилаються у звітах про помилки та використання, переглянувши відповідні XML-файли в каталозі BCUninstaller. Надіслані дані не передаються третім особам.</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Автоматично шукати оновлення під час запуску програми</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>Ви можете шукати оновлення вручну через рядок меню.</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Автоматично надсилати анонімну статистику використання</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>Надсилання цієї статистики допоможе покращити BCUninstaller.</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Увімкнути користувацькі оцінки програм</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>Пошкоджені деінсталятори</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>Згодом ви можете виявити, що деякі програми відмовляються видалятися або просто зникають із більшості менеджерів видалення.</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>Пошкоджені або відсутні деінсталятори</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>У деяких випадках деінсталятори можуть бути пошкоджені, що робить видалення неможливим. BCUninstaller може легко видалити такі записи за допомогою параметра "Видалити вручну".</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Підсвічувати недійсні деінсталятори</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>Недійсні деінсталятори позначені сірим кольором.</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>Незареєстровані програми</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>Іноді цілі програми можуть залишатися на диску навіть після видалення. Це також може статися, якщо було видалено лише деінсталятор.</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Показувати незареєстровані програми у списку</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>Незареєстровані програми позначені червоним кольором.
+Якщо оригінальний деінсталятор не знайдено, для їх видалення потрібно скористатися параметром "Видалити вручну".</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>Досвідчені користувачі</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>Хоча BCUninstaller можна використовувати як звичайний деінсталятор, більшість його функцій розраховані на досвідчених користувачів. Дійте обережно!</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>Системні компоненти</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>Програми, позначені як "системні компоненти", приховані від більшості звичайних менеджерів видалення. Цей тег НЕ означає, що програма є частиною операційної системи.</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Показувати деінсталятори, позначені як "системні компоненти"</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>Захищені деінсталятори</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>Захищені елементи позначені тегом "NoRemove", що означає, що видавець не бажає, щоб їх видаляли. Цей тег часто використовується великими програмними пакетами, щоб перешкодити видаленню їхніх окремих частин.</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Показувати деінсталятори, позначені як "захищені"</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>Вимкнути захист деінсталяторів, позначених як
+"захищені"</value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>Це дозволить вам видаляти захищені елементи.</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>Перегляд списку деінсталяторів</value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>Усі деінсталятори, знайдені у вашій системі, відображаються в головному списку. Ось кілька способів переглядати ці дані:</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>● Використовуйте фільтри та пошук за ключовими словами (у всіх стовпцях)</value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>● Сортуйте деінсталятори за будь-яким стовпцем. Стовпці можна вільно переставляти.</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>● Групуйте схожі деінсталятори</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>Показувати деінсталятори групами</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>Вибирати за допомогою прапорців</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>Сертифіковані деінсталятори</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>Деінсталятори можуть бути підписані сертифікатами, виданими відповідними центрами. Якщо сертифікат проходить перевірку, це означає, що програмний пакет не було змінено і йому можна довіряти.</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Підсвічувати сертифіковані деінсталятори</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>Перевірені деінсталятори позначені зеленим кольором, неперевірені — синім.
+Попередження: перевірка може тривати досить довго.</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Ласкаво просимо до BCUninstaller!</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Цей майстер проведе короткий огляд і допоможе налаштувати програму.</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>Обрана мова</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>Ви можете примусово встановити для BCUninstaller певну локалізацію, якщо мова за замовчуванням визначена неправильно. Для застосування нової мови програму буде перезапущено.</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>Якщо ви готові допомогти з перекладом BCUninstaller вашою мовою, натисніть посилання нижче, щоб зв'язатися зі мною. Будь-яка допомога буде щиро прийнята з вдячністю!</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>Відкрити форму зв'язку</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ласкаво просимо до BCUninstaller</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ulk crap
+uninstaller</value>
+    <comment>The missing B is in an image next to the text</comment>
+  </data>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
+</root>

@@ -92,6 +92,7 @@ Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "tr"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "vi"; MessagesFile: "lang\Vietnamese.isl"
+Name: "uk"; MessagesFile: "lang\Ukrainian.isl"
 Name: "hi"; MessagesFile: "lang\Hindi.isl"
 Name: "zh_cn"; MessagesFile: "lang\ChineseSimplified.isl"
 
@@ -294,6 +295,7 @@ bpt.MainFiles=Arquivos principais
 ru.MainFiles=Основные файлы программы
 it.MainFiles=File programma
 vi.MainFiles=Các tập tin chương trình chính
+uk.MainFiles=Основні файли
 tr.MainFiles=Ana Dosyalar
 zh_cn.MainFiles=主文件
 hi.MainFiles=मुख्य फ़ाइलें
@@ -310,6 +312,7 @@ bpt.ExtraLanguages=Línguas extras
 ru.ExtraLanguages=Дополнительные языки
 it.ExtraLanguages=Lingue aggiuntive
 vi.ExtraLanguages=Ngôn ngữ bổ sung
+uk.ExtraLanguages=Додаткові мови
 tr.ExtraLanguages=İlave Diller
 zh_cn.ExtraLanguages=其他语言
 hi.ExtraLanguages=अतिरिक्त भाषाएँ
