@@ -588,4 +588,16 @@
   <data name="createBackupFileDialog.Title" xml:space="preserve">
     <value>创建注册表备份</value>
   </data>
+  <data name="olvColumnCertificate.Text" xml:space="preserve">
+    <value>证书</value>
+  </data>
+  <data name="olvColumnIntegrity.Text" xml:space="preserve">
+    <value>完整性</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>自动调整所有列宽</value>
+  </data>
+  <data name="viewInvalidToolStripMenuItem.Text" xml:space="preserve">
+    <value>查看无效项</value>
+  </data>
 </root>
