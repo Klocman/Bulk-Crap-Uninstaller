@@ -48,7 +48,7 @@ namespace UninstallTools.Factory.InfoAdders
             {
                 try
                 {
-                    return new X509Certificate2(candidate);
+                    return X509CertificateLoader.LoadCertificateFromFile(candidate);
                 }
                 catch
                 {

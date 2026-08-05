@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -128,7 +128,7 @@ namespace Klocman.Forms
                 StartWork();
         }
 
-        protected override void OnClosing(CancelEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (Owner != null)
             {
@@ -136,7 +136,7 @@ namespace Klocman.Forms
                 Owner.Resize -= OwnerOnMove;
             }
 
-            base.OnClosing(e);
+            base.OnFormClosing(e);
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)

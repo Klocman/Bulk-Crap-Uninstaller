@@ -22,7 +22,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
         public byte[] CertData // ReadOnlySpan<byte> crashes XML serializer in new versions of .NET
         {
             get => Cert?.RawData;
-            set => Cert = value == null ? null : new X509Certificate2(value);
+            set => Cert = value == null ? null : X509CertificateLoader.LoadCertificate(value);
         }
     }
 

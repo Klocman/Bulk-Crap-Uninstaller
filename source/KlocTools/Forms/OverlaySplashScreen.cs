@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -43,8 +43,9 @@ namespace Klocman.Forms
             timerFadeout.Start();
         }
 
-        protected override void OnClosed(EventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
+            base.OnFormClosed(e);
             _owner.Move -= OnOwnerMove;
             _owner.Resize -= OnOwnerResize;
             _owner.FormClosed -= OnOwnerClosed;
