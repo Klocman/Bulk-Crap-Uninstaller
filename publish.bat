@@ -36,14 +36,16 @@ rem Since BCU is now on .NET10, realistically only Arm64 and x64 Windows systems
 rem set platform=x86
 rem call :publish
 
-copy bin\launcher\BCU-launcher.exe "%publish%\BCUninstaller.exe"
-if errorlevel 1 (echo Failed to copy BCU-launcher.exe & pause & exit /b 1)
+if exist source\bin\launcher\BCU-launcher.exe copy source\bin\launcher\BCU-launcher.exe "%publish%\BCUninstaller.exe"
+if exist bin\launcher\BCU-launcher.exe copy bin\launcher\BCU-launcher.exe "%publish%\BCUninstaller.exe"
+if not exist "%publish%\BCUninstaller.exe" (echo Failed to copy BCU-launcher.exe & pause & exit /b 1)
 copy "%target%\BCU_manual.html" "%publish%\BCU_manual.html"
 copy "%target%\Licence.txt" "%publish%\Licence.txt"
 copy "%target%\PrivacyPolicy.txt" "%publish%\PrivacyPolicy.txt"
 copy "%target%\NOTICE" "%publish%\NOTICE"
 
 if exist bin\launcher rmdir /q /s bin\launcher
+if exist source\bin\launcher rmdir /q /s source\bin\launcher
 
 IF %config%==Release (del /f /s /q "%publish%\*.pdb")
 
@@ -117,8 +119,8 @@ goto :eof
 rem -------------------------------------------------------------
 
 :buildLauncher
-rem Build via solution so platform mapping is respected automatically.
-%msbuild% "source\BulkCrapUninstaller.sln" /t:BCU-launcher /m /p:Configuration=%config% /p:Platform=%platform% "/p:SolutionDir=%solutionDir%\\" /verbosity:minimal
+rem Build launcher project directly.
+%msbuild% "source\BCU-launcher\BCU-launcher.vcxproj" /p:Configuration=%config% /p:Platform=%platform% "/p:SolutionDir=%solutionDir%\\" /verbosity:minimal
 
 goto :eof
 

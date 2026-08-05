@@ -6,21 +6,31 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Klocman.Extensions;
 using Klocman.IO;
-using Klocman.Tools;
 using File = System.IO.File;
 
 namespace UninstallTools.Factory.InfoAdders
 {
     public class FastSizeGenerator : IMissingInfoAdder
     {
+        private static readonly NativeMethods.IFileSystem3 _fileSystemObject;
         private static bool _everythingAvailable;
 
         static FastSizeGenerator()
         {
+            try
+            {
+                _fileSystemObject = (NativeMethods.IFileSystem3)new NativeMethods.FileSystemObject();
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(@"FastSizeGenerator: Scripting.FileSystemObjectClass is not available - " + ex.Message);
+            }
+
             try
             {
                 if (EvGetSize(UninstallToolsGlobalConfig.AssemblyLocation).GetKbSize() == 0)
@@ -54,15 +64,18 @@ namespace UninstallTools.Factory.InfoAdders
                 }
             }
 
-            try
+            if (_fileSystemObject != null)
             {
-                var size = FilesystemTools.GetDirectorySize(target.InstallLocation);
-                if (size > 0)
-                    target.EstimatedSize = FileSize.FromBytes(size);
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex);
+                try
+                {
+                    var folder = _fileSystemObject.GetFolder(target.InstallLocation);
+                    var size = new FileSize(Convert.ToInt64(folder.Size) / 1024);
+                    target.EstimatedSize = size;
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex);
+                }
             }
         }
 
@@ -134,5 +147,31 @@ namespace UninstallTools.Factory.InfoAdders
         public bool AlwaysRun { get; } = false;
         public string[] CanProduceValueNames { get; } = { nameof(ApplicationUninstallerEntry.EstimatedSize) };
         public InfoAdderPriority Priority { get; } = InfoAdderPriority.RunLast;
+
+        private static class NativeMethods
+        {
+            [ComImport]
+            [Guid("0D43FE01-F093-11CF-8940-00A0C9054228")]
+            internal class FileSystemObject { }
+
+            [ComImport]
+            [Guid("C7C3F5A4-88A3-11D0-ABCB-00A0C90FFFC0")]
+            [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+            internal interface IFileSystem3
+            {
+                [DispId(0x00004e2c)]
+                IFolder GetFolder(string folderPath);
+            }
+
+            [ComImport]
+            [Guid("C7C3F5A2-88A3-11D0-ABCB-00A0C90FFFC0")]
+            [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+            internal interface IFolder
+            {
+                [DispId(0x00004e24)]
+                object Size { get; }
+            }
+        }
     }
 }
+
