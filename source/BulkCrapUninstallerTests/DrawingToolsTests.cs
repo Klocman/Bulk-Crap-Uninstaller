@@ -12,7 +12,7 @@ namespace BulkCrapUninstallerTests
         public void CreateOwnedIconFromHandle_ReturnsUsableClone()
         {
             using var sourceIcon = SystemIcons.Application;
-            var handle = sourceIcon.GetHicon();
+            var handle = sourceIcon.Handle;
 
             using var ownedIcon = DrawingTools.CreateOwnedIconFromHandle(handle);
             using var stream = new MemoryStream();

@@ -16,7 +16,7 @@ namespace BulkCrapUninstallerTests
             {
                 File.WriteAllText(path, string.Empty);
 
-                var ex = Assert.ThrowsException<InvalidDataException>(() => UninstallList.ReadFromFile(path));
+                var ex = Assert.ThrowsExactly<InvalidDataException>(() => UninstallList.ReadFromFile(path));
 
                 StringAssert.Contains(ex.Message, "empty");
             }

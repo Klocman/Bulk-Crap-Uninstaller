@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<OutputPath>bin</OutputPath>
+    <NoWarn>$(NoWarn);CS0436</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\BulkCrapUninstaller\BulkCrapUninstaller.csproj" />
