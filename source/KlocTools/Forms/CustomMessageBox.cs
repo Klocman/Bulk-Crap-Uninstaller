@@ -17,6 +17,12 @@ namespace Klocman.Forms
             Left
         }
 
+        /// <summary>
+        ///     Optional theming hook set by the host application (e.g. BCU) so the dialog can
+        ///     adopt the active colour palette. Avoids a hard dependency from this library.
+        /// </summary>
+        public static Action<CustomMessageBox> ApplyThemeCallback { get; set; }
+
         private readonly CmbCheckboxSettings _checkboxSettings;
         private readonly Icon _overrideIcon;
         private int _topWidth, _topHeigth;
@@ -65,6 +71,8 @@ namespace Klocman.Forms
                         FontStyle.Bold, GraphicsUnit.Point);
                 }
             }
+
+            ApplyThemeCallback?.Invoke(this);
 
             Text = settings.Title;
             label1.Text = settings.LargeHeading;
@@ -153,6 +161,55 @@ namespace Klocman.Forms
 
                 if (_checkboxSettings.DisableLeftButton)
                     buttonLeft.Enabled = enable;
+            }
+        }
+
+        /// <summary>
+        ///     Apply the supplied colours to the dialog. Called by the host via <see cref="ApplyThemeCallback"/>.
+        /// </summary>
+        public void ThemeDialog(Color windowBackground, Color controlBackground, Color textPrimary,
+            Color textSecondary, Color border, Color accent, Color buttonBackground, Color buttonForeground,
+            Color disabledText)
+        {
+            BackColor = windowBackground;
+            ForeColor = textPrimary;
+
+            label1.ForeColor = textPrimary;
+            label2.ForeColor = textSecondary;
+            checkBox1.ForeColor = textPrimary;
+
+            // Visit every descendant (buttons live inside panelButtons/panelLeft/panelMiddle)
+            ApplyDialogColors(this, controlBackground, textPrimary, border, accent,
+                buttonBackground, buttonForeground);
+
+            // Themed heading: always use the palette-provided text color so dark, light,
+            // and High Contrast (SystemThemePalette) modes stay consistent.
+            label1.ForeColor = textPrimary;
+        }
+
+        private static void ApplyDialogColors(Control parent, Color controlBackground, Color textPrimary,
+            Color border, Color accent, Color buttonBackground, Color buttonForeground)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderColor = border;
+                    btn.FlatAppearance.MouseDownBackColor = accent;
+                    btn.FlatAppearance.MouseOverBackColor = ControlPaint.Light(accent);
+                    btn.BackColor = buttonBackground;
+                    btn.ForeColor = buttonForeground;
+                }
+                else if (control is Panel || control is FlowLayoutPanel)
+                {
+                    control.BackColor = controlBackground;
+                    control.ForeColor = textPrimary;
+                }
+
+                if (control.HasChildren)
+                    ApplyDialogColors(control, controlBackground, textPrimary, border, accent,
+                        buttonBackground, buttonForeground);
             }
         }
 

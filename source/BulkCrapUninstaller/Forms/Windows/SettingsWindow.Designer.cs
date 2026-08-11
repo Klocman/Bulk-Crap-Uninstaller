@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions.Tracking;
 
@@ -45,6 +45,9 @@ namespace BulkCrapUninstaller.Forms
             panel5 = new Panel();
             comboBoxDoubleClick = new ComboBox();
             label3 = new Label();
+            panelTheme = new Panel();
+            comboBoxTheme = new ComboBox();
+            labelTheme = new Label();
             checkBoxAutoLoad = new CheckBox();
             checkBoxRatings = new CheckBox();
             checkBoxUpdateSearch = new CheckBox();
@@ -198,6 +201,7 @@ namespace BulkCrapUninstaller.Forms
             resources.ApplyResources(flowLayoutPanel3, "flowLayoutPanel3");
             flowLayoutPanel3.Controls.Add(checkBoxColorblind);
             flowLayoutPanel3.Controls.Add(checkBoxDpiaware);
+            flowLayoutPanel3.Controls.Add(panelTheme);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
             // checkBoxColorblind
@@ -218,6 +222,30 @@ namespace BulkCrapUninstaller.Forms
             panel5.Controls.Add(comboBoxDoubleClick);
             panel5.Controls.Add(label3);
             panel5.Name = "panel5";
+            // 
+            // panelTheme
+            // 
+            panelTheme.Controls.Add(comboBoxTheme);
+            panelTheme.Controls.Add(labelTheme);
+            panelTheme.Name = "panelTheme";
+            panelTheme.AutoSize = true;
+            panelTheme.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            // 
+            // labelTheme
+            // 
+            resources.ApplyResources(labelTheme, "labelTheme");
+            labelTheme.AutoSize = true;
+            labelTheme.Name = "labelTheme";
+            if (string.IsNullOrEmpty(labelTheme.Text)) labelTheme.Text = "Theme";
+            // 
+            // comboBoxTheme
+            // 
+            resources.ApplyResources(comboBoxTheme, "comboBoxTheme");
+            comboBoxTheme.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTheme.FormattingEnabled = true;
+            comboBoxTheme.Location = new System.Drawing.Point(0, 16);
+            comboBoxTheme.Name = "comboBoxTheme";
+            comboBoxTheme.Size = new System.Drawing.Size(121, 23);
             // 
             // comboBoxDoubleClick
             // 
@@ -871,5 +899,8 @@ namespace BulkCrapUninstaller.Forms
         private Panel panel5;
         private ComboBox comboBoxDoubleClick;
         private Label label3;
+        private Panel panelTheme;
+        private ComboBox comboBoxTheme;
+        private Label labelTheme;
     }
 }

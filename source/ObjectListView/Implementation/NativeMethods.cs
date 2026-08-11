@@ -1144,16 +1144,16 @@ namespace BrightIdeasSoftware
 
         public static int GetWindowLong(IntPtr hWnd, int nIndex) {
             if (IntPtr.Size == 4)
-                return (int)GetWindowLong32(hWnd, nIndex);
+                return unchecked((int)(long)GetWindowLong32(hWnd, nIndex));
             else
-                return (int)(long)GetWindowLongPtr64(hWnd, nIndex);
+                return unchecked((int)(long)GetWindowLongPtr64(hWnd, nIndex));
         }
 
         public static int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong) {
             if (IntPtr.Size == 4)
-                return (int)SetWindowLongPtr32(hWnd, nIndex, dwNewLong);
+                return unchecked((int)(long)SetWindowLongPtr32(hWnd, nIndex, dwNewLong));
             else
-                return (int)(long)SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
+                return unchecked((int)(long)SetWindowLongPtr64(hWnd, nIndex, dwNewLong));
         }
 
         [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]

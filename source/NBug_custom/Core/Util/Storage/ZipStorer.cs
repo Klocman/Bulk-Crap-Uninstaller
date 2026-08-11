@@ -1,4 +1,4 @@
-// ZipStorer, by Jaime Olivares
+ï»¿// ZipStorer, by Jaime Olivares
 // Website: zipstorer.codeplex.com
 // Version: 2.35 (March 14, 2010)
 
@@ -605,7 +605,7 @@ namespace NBug.Core.Util.Storage
             // check signature
             var signature = new byte[4];
             ZipFileStream.Seek(_zfe.HeaderOffset, SeekOrigin.Begin);
-            ZipFileStream.Read(signature, 0, 4);
+            ZipFileStream.ReadExactly(signature, 0, 4);
             if (BitConverter.ToUInt32(signature, 0) != 0x04034b50)
             {
                 return false;
@@ -711,13 +711,13 @@ namespace NBug.Core.Util.Storage
 
         /* DOS Date and time:
             MS-DOS date. The date is a packed value with the following format. Bits Description
-                0-4 Day of the month (1–31)
+                0-4 Day of the month (1â€“31)
                 5-8 Month (1 = January, 2 = February, and so on)
                 9-15 Year offset from 1980 (add 1980 to get actual year)
             MS-DOS time. The time is a packed value with the following format. Bits Description
                 0-4 Second divided by 2
-                5-10 Minute (0–59)
-                11-15 Hour (0–23 on a 24-hour clock)
+                5-10 Minute (0â€“59)
+                11-15 Hour (0â€“23 on a 24-hour clock)
         */
 
         #region Methods
@@ -772,9 +772,9 @@ namespace NBug.Core.Util.Storage
             var buffer = new byte[2];
 
             ZipFileStream.Seek(_headerOffset + 26, SeekOrigin.Begin);
-            ZipFileStream.Read(buffer, 0, 2);
+            ZipFileStream.ReadExactly(buffer, 0, 2);
             var filenameSize = BitConverter.ToUInt16(buffer, 0);
-            ZipFileStream.Read(buffer, 0, 2);
+            ZipFileStream.ReadExactly(buffer, 0, 2);
             var extraSize = BitConverter.ToUInt16(buffer, 0);
 
             return (uint) (30 + filenameSize + extraSize + _headerOffset);
@@ -857,7 +857,7 @@ namespace NBug.Core.Util.Storage
                         ExistingFiles = entries;
                         CentralDirImage = new byte[centralSize];
                         ZipFileStream.Seek(centralDirOffset, SeekOrigin.Begin);
-                        ZipFileStream.Read(CentralDirImage, 0, centralSize);
+                        ZipFileStream.ReadExactly(CentralDirImage, 0, centralSize);
 
                         // Leave the pointer at the begining of central dir, to append new files
                         ZipFileStream.Seek(centralDirOffset, SeekOrigin.Begin);

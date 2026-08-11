@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Forms;
+using BulkCrapUninstaller.Themes;
 using Klocman;
 using Klocman.Extensions;
 using Klocman.Forms;
@@ -63,6 +64,8 @@ namespace BulkCrapUninstaller
                     if(Properties.Settings.Default.WindowDpiAware)
                         Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
+                    ThemeManager.ApplyTheme(Properties.Settings.Default.MiscTheme);
+
                     var startupMgr = args.Contains("/startupmanager", StringComparison.OrdinalIgnoreCase) || 
                                      args.Contains("/sm", StringComparison.OrdinalIgnoreCase);
 
@@ -110,6 +113,9 @@ namespace BulkCrapUninstaller
         {
             try
             {
+                // Ensure the shared CustomMessageBox is themed even for the second-instance dialog
+                ThemeManager.ApplyTheme(Properties.Settings.Default.MiscTheme);
+
                 var location = Assembly.GetAssembly(typeof(EntryPoint))!.Location;
                 if (location.EndsWith(".dll")) location = location.Substring(0, location.Length - 3) + "exe";
                 var otherBcu = Process.GetProcesses().FirstOrDefault(x =>

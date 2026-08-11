@@ -1,9 +1,11 @@
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace BulkCrapUninstaller.Forms
 {
     public partial class CustomNoteDialog : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string NoteText
         {
             get => txtNote.Text;

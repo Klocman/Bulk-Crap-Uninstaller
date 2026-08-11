@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BulkCrapUninstaller.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
@@ -235,6 +235,9 @@
     </Setting>
     <Setting Name="UninstallerListDoubleClickAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="BulkCrapUninstaller.Forms.UninstallerListDoubleClickAction" Scope="User">
       <Value Profile="(Default)">OpenProperties</Value>
+    </Setting>
+    <Setting Name="MiscTheme" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default</Value>
     </Setting>
   </Settings>
 </SettingsFile>
