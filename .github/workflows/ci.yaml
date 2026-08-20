@@ -19,6 +19,19 @@ jobs:
     - name: Restore
       run: msbuild source\BulkCrapUninstaller.sln /t:Restore /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
     
+    - name: Test
+      run: >
+           dotnet test source\BulkCrapUninstallerTests\BulkCrapUninstallerTests.csproj --configuration Release --no-restore
+           -p:Platform="Any CPU" --logger "trx;LogFileName=tests.trx" --results-directory "${{ github.workspace }}\TestResults"
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      with:
+        name: ${{ github.event.repository.name }}_${{ github.sha }}_test-results
+        path: TestResults
+        if-no-files-found: warn
+
     - name: Build
       run: >
            msbuild source\BulkCrapUninstaller.sln /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
