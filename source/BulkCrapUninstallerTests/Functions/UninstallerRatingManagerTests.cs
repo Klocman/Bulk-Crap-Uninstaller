@@ -9,9 +9,9 @@ namespace BulkCrapUninstallerTests.Functions
     [TestClass]
     public class UninstallerRatingManagerTests
     {
-        private static readonly string[] TestEntryNames = {"Test_1", "Test_2", "Test_3", "Test_4"};
+        private static readonly string[] TestEntryNames = ["Test_1", "Test_2", "Test_3", "Test_4"];
         private UninstallerRatingManager _manager;
-        
+
         [TestInitialize]
         public void TestInitialize()
         {
@@ -67,14 +67,14 @@ namespace BulkCrapUninstallerTests.Functions
             }
 
             _manager.SetMyRating(TestEntryNames[0], UninstallerRating.Good);
-            Assert.AreEqual((int) UninstallerRating.Good, _manager.GetRating(TestEntryNames[0]).MyRating);
+            Assert.AreEqual((int)UninstallerRating.Good, _manager.GetRating(TestEntryNames[0]).MyRating);
 
             var rating = _manager.GetRating("Test_SetMyRatingTest");
-            var newRating = rating.MyRating == (int) UninstallerRating.Bad
+            var newRating = rating.MyRating == (int)UninstallerRating.Bad
                 ? UninstallerRating.Good
                 : UninstallerRating.Bad;
             _manager.SetMyRating("Test_SetMyRatingTest", newRating);
-            Assert.AreEqual((int) newRating, _manager.GetRating("Test_SetMyRatingTest").MyRating);
+            Assert.AreEqual((int)newRating, _manager.GetRating("Test_SetMyRatingTest").MyRating);
         }
 
         [TestMethod]

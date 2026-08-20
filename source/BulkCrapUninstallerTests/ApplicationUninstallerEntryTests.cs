@@ -6,7 +6,7 @@ namespace BulkCrapUninstallerTests
     [TestClass]
     public class ApplicationUninstallerEntryTests
     {
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("Tweak-TestEntry", true)]
         [DataRow("tweak-TestEntry", true)]
         [DataRow("Steam App 42", false)]

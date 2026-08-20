@@ -11,7 +11,7 @@ namespace BulkCrapUninstallerTests.Functions
         [TestMethod]
         public void GetStartupUninstallListPath_ReturnsNullWhenThereAreNoArguments()
         {
-            var result = StartupArgumentTools.GetStartupUninstallListPath(Array.Empty<string>());
+            var result = StartupArgumentTools.GetStartupUninstallListPath([]);
 
             Assert.IsNull(result);
         }
@@ -19,7 +19,7 @@ namespace BulkCrapUninstallerTests.Functions
         [TestMethod]
         public void GetStartupUninstallListPath_ReturnsNullForNonBculArgument()
         {
-            var result = StartupArgumentTools.GetStartupUninstallListPath(new[] { "BCUninstaller.exe", "/setup" });
+            var result = StartupArgumentTools.GetStartupUninstallListPath(["BCUninstaller.exe", "/setup"]);
 
             Assert.IsNull(result);
         }
@@ -27,7 +27,7 @@ namespace BulkCrapUninstallerTests.Functions
         [TestMethod]
         public void GetStartupUninstallListPath_ReturnsNullForMissingBculFile()
         {
-            var result = StartupArgumentTools.GetStartupUninstallListPath(new[] { "BCUninstaller.exe", @"C:\missing\Default.bcul" });
+            var result = StartupArgumentTools.GetStartupUninstallListPath(["BCUninstaller.exe", @"C:\missing\Default.bcul"]);
 
             Assert.IsNull(result);
         }
@@ -41,7 +41,7 @@ namespace BulkCrapUninstallerTests.Functions
             {
                 File.WriteAllText(tempPath, "<UninstallList />");
 
-                var result = StartupArgumentTools.GetStartupUninstallListPath(new[] { "BCUninstaller.exe", tempPath });
+                var result = StartupArgumentTools.GetStartupUninstallListPath(["BCUninstaller.exe", tempPath]);
 
                 Assert.AreEqual(tempPath, result);
             }
