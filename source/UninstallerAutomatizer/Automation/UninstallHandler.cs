@@ -120,24 +120,25 @@ namespace UninstallerAutomatizer
                 while (true)
                 {
                     using (var server = new NamedPipeServerStream("UninstallAutomatizerDaemon", PipeDirection.In))
-                    using (var reader = new StreamReader(server))
                     {
                         server.WaitForConnection();
-                        Debug.WriteLine("Client connected through pipe");
-                        while (true)
+                        using (var reader = new StreamReader(server))
                         {
-                            var line = reader.ReadLine()?.ToLowerInvariant();
-
-                            Debug.WriteLine("Received through pipe: " + (line ?? "NULL"));
-
-                            if (line == null)
+                            Debug.WriteLine("Client connected through pipe");
+                            while (true)
                             {
-                                Debug.WriteLine("Client disconnected from pipe");
-                                break;
-                            }
+                                var line = reader.ReadLine()?.ToLowerInvariant();
 
-                            if (line == "stop")
-                                return;
+                                Debug.WriteLine("Received through pipe: " + (line ?? "NULL"));
+
+                                if (line == null)
+                                {
+                                    Debug.WriteLine("Client disconnected from pipe");
+                                    break;
+                                }
+
+                                if (line == "stop")
+                                    return;
 
                             int pid;
                             if (!int.TryParse(line, out pid))
