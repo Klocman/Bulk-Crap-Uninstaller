@@ -104,7 +104,7 @@ namespace UninstallerAutomatizer
             IsDaemon = true;
             OnStatusUpdate(new UninstallHandlerUpdateArgs(UninstallHandlerUpdateKind.Normal, Localization.UninstallHandler_StartDaemon));
 
-            _automationThread = new Thread(DaemonThread) { Name = "AutomationThread", IsBackground = false, Priority = ThreadPriority.AboveNormal };
+            _automationThread = new Thread(DaemonThread) { Name = "AutomationThread", IsBackground = true, Priority = ThreadPriority.AboveNormal };
             _automationThread.Start();
         }
 
@@ -117,10 +117,10 @@ namespace UninstallerAutomatizer
         {
             try
             {
-                using (var server = new NamedPipeServerStream("UninstallAutomatizerDaemon", PipeDirection.In))
-                using (var reader = new StreamReader(server))
+                while (true)
                 {
-                    while (true)
+                    using (var server = new NamedPipeServerStream("UninstallAutomatizerDaemon", PipeDirection.In))
+                    using (var reader = new StreamReader(server))
                     {
                         server.WaitForConnection();
                         Debug.WriteLine("Client connected through pipe");
@@ -132,8 +132,8 @@ namespace UninstallerAutomatizer
 
                             if (line == null)
                             {
-                                Thread.Sleep(500);
-                                continue;
+                                Debug.WriteLine("Client disconnected from pipe");
+                                break;
                             }
 
                             if (line == "stop")
