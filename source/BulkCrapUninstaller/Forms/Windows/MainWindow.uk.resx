@@ -123,6 +123,9 @@
   <data name="olvColumnPublisher.Text" xml:space="preserve">
     <value>Видавець</value>
   </data>
+  <data name="olvColumnCertificate.Text" xml:space="preserve">
+    <value>Сертифікат</value>
+  </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
     <value>Рейтинг користувачів</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="olvColumnSystemComponent.Text" xml:space="preserve">
     <value>Компонент системи</value>
+  </data>
+  <data name="olvColumnIntegrity.Text" xml:space="preserve">
+    <value>Цілісність</value>
   </data>
   <data name="olvColumnProtected.Text" xml:space="preserve">
     <value>Захищено</value>
@@ -314,6 +320,9 @@
   </data>
   <data name="useSystemThemeToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Використовувати системну тему</value>
+  </data>
+  <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Автоматично підібрати ширину всіх стовпців</value>
   </data>
   <data name="viewWindowsStoreAppsToolStripMenuItem.Text" xml:space="preserve">
     <value>Перегляд програм Магазину Windows</value>
@@ -530,6 +539,9 @@
   </data>
   <data name="viewWindowsFeaturesToolStripMenuItem.Text" xml:space="preserve">
     <value>Перегляд компонентів Windows</value>
+  </data>
+  <data name="viewInvalidToolStripMenuItem.Text" xml:space="preserve">
+    <value>Перегляд недійсних</value>
   </data>
   <data name="modifyToolStripMenuItem.Text" xml:space="preserve">
     <value>Змінені</value>
