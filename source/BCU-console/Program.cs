@@ -11,7 +11,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Text.Json;
 using System.Threading;
 using UninstallTools;
 using UninstallTools.Factory;
@@ -34,12 +33,12 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Unins
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
 
-BCU-console export [drive:][path]filename [/Q] [/U] [/V] [/F=json] - Export installed application data to a file.
+BCU-console export [drive:][path]filename [/Q] [/U] [/V] [/F=<Format>] - Export installed application data to a file.
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
  filename       – Specifies filename of the file to save the exported application information to
                   (xml by default, json when /F=json is passed).
 
-BCU-console list [/Q] [/U] [/V] [/F=json] - Display a list of installed applications.
+BCU-console list [/Q] [/U] [/V] [/F=<Format>] - Display a list of installed applications.
 
 Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
@@ -51,10 +50,10 @@ Switches:
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
- /F=json        - Output in JSON format instead of the default (plaintext table for list, xml file
-                  for export). ""--format=json"" is also accepted. When this switch is used all
-                  progress messages are written to standard error, so that standard output of
-                  ""list"" contains only the JSON document.
+ /F=<Format>    - Output format, valid formats are ""json"" and ""xml"" (the default is a plaintext
+                  table for list and an xml file for export). ""--format=<Format>"" is also accepted.
+                  When this switch is used all progress messages are written to standard error, so
+                  that standard output of ""list"" contains only the serialized document.
 
 Return codes:
  0	- The operation completed successfully.
@@ -122,14 +121,16 @@ Return codes:
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
             var format = GetFormatArgument(args);
-            if (format != null && !format.Equals("json", StringComparison.OrdinalIgnoreCase))
-                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", only \"json\" is supported");
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
 
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             if (format != null)
             {
-                _dataOutput.WriteLine(SerializeEntriesToJson(apps));
+                _dataOutput.WriteLine(format.Equals("json", StringComparison.OrdinalIgnoreCase)
+                    ? ApplicationEntrySerializer.SerializeApplicationEntriesToJson(apps)
+                    : ApplicationEntrySerializer.SerializeApplicationEntriesToXml(apps));
                 return 0;
             }
 
@@ -175,8 +176,8 @@ Return codes:
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
             var format = GetFormatArgument(args);
-            if (format != null && !format.Equals("json", StringComparison.OrdinalIgnoreCase))
-                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", only \"json\" is supported");
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
 
             args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal) &&
                                    !x.StartsWith("--", StringComparison.Ordinal)).ToArray();
@@ -187,8 +188,8 @@ Return codes:
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             Console.WriteLine(@"Exporting data...");
-            if (format != null)
-                File.WriteAllText(args[0], SerializeEntriesToJson(apps), new UTF8Encoding(false));
+            if (format != null && format.Equals("json", StringComparison.OrdinalIgnoreCase))
+                ApplicationEntrySerializer.SerializeApplicationEntriesToJson(args[0], apps);
             else
                 ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
             Console.WriteLine(@"Success!");
@@ -407,39 +408,10 @@ Return codes:
             return null;
         }
 
-        private static string SerializeEntriesToJson(IEnumerable<ApplicationUninstallerEntry> apps)
+        private static bool IsSupportedFormat(string format)
         {
-            var entries = apps.Select(x => new
-            {
-                x.DisplayName,
-                x.DisplayVersion,
-                x.Publisher,
-                x.Comment,
-                x.AboutUrl,
-                x.InstallLocation,
-                x.InstallSource,
-                InstallDate = x.InstallDate == default ? null : x.InstallDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
-                EstimatedSizeKb = x.EstimatedSize.GetKbSize(),
-                x.UninstallString,
-                x.QuietUninstallString,
-                UninstallerKind = x.UninstallerKind.ToString(),
-                x.UninstallerLocation,
-                Is64Bit = x.Is64Bit.ToString(),
-                x.IsProtected,
-                x.IsRegistered,
-                x.IsOrphaned,
-                x.IsUpdate,
-                x.IsValid,
-                x.IsWebBrowser,
-                x.SystemComponent,
-                x.RegistryKeyName,
-                x.RegistryPath,
-                x.ParentKeyName,
-                BundleProviderKey = x.BundleProviderKey == Guid.Empty ? null : x.BundleProviderKey.ToString(),
-                x.QuietUninstallPossible,
-                x.UninstallPossible,
-            });
-            return JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
+            return format.Equals("json", StringComparison.OrdinalIgnoreCase) ||
+                   format.Equals("xml", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

@@ -3,9 +3,15 @@
     Apache License Version 2.0
 */
 
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Text.Json;
+using System.Xml.Serialization;
 using Klocman.Tools;
 
 namespace UninstallTools
@@ -32,6 +38,69 @@ namespace UninstallTools
                 .ToList() ?? new List<ApplicationUninstallerEntry>();
 
             SerializationTools.SerializeToXml(filename, new ApplicationEntrySerializer(sanitizedItems));
+        }
+
+        public static string SerializeApplicationEntriesToXml(IEnumerable<ApplicationUninstallerEntry> items)
+        {
+            var sanitizedItems = items?
+                .Select(CloneAndSanitizeForXmlExport)
+                .ToList() ?? new List<ApplicationUninstallerEntry>();
+
+            var serializer = new XmlSerializer(typeof(ApplicationEntrySerializer));
+            using (var writer = new Utf8StringWriter())
+            {
+                serializer.Serialize(writer, new ApplicationEntrySerializer(sanitizedItems));
+                return writer.ToString();
+            }
+        }
+
+        private sealed class Utf8StringWriter : StringWriter
+        {
+            public Utf8StringWriter() : base(CultureInfo.InvariantCulture)
+            {
+            }
+
+            public override Encoding Encoding => new UTF8Encoding(false);
+        }
+
+        public static void SerializeApplicationEntriesToJson(string filename, IEnumerable<ApplicationUninstallerEntry> items)
+        {
+            File.WriteAllText(filename, SerializeApplicationEntriesToJson(items), new UTF8Encoding(false));
+        }
+
+        public static string SerializeApplicationEntriesToJson(IEnumerable<ApplicationUninstallerEntry> items)
+        {
+            var entries = (items ?? Enumerable.Empty<ApplicationUninstallerEntry>()).Select(x => new
+            {
+                x.DisplayName,
+                x.DisplayVersion,
+                x.Publisher,
+                x.Comment,
+                x.AboutUrl,
+                x.InstallLocation,
+                x.InstallSource,
+                InstallDate = x.InstallDate == default ? null : x.InstallDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
+                EstimatedSizeKb = x.EstimatedSize.GetKbSize(),
+                x.UninstallString,
+                x.QuietUninstallString,
+                UninstallerKind = x.UninstallerKind.ToString(),
+                x.UninstallerLocation,
+                Is64Bit = x.Is64Bit.ToString(),
+                x.IsProtected,
+                x.IsRegistered,
+                x.IsOrphaned,
+                x.IsUpdate,
+                x.IsValid,
+                x.IsWebBrowser,
+                x.SystemComponent,
+                x.RegistryKeyName,
+                x.RegistryPath,
+                x.ParentKeyName,
+                BundleProviderKey = x.BundleProviderKey == Guid.Empty ? null : x.BundleProviderKey.ToString(),
+                x.QuietUninstallPossible,
+                x.UninstallPossible,
+            });
+            return JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
         }
 
         public ApplicationEntrySerializer(IEnumerable<ApplicationUninstallerEntry> items)
