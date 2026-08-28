@@ -28,7 +28,7 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Uninstall applications.
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/N] [/J=<Level>] - Uninstall applications.
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
@@ -49,10 +49,13 @@ Switches:
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
+ /N             - Dry run (preview) mode. Show which applications would be uninstalled and, when
+                  combined with /J, which junk items would be removed, without uninstalling or
+                  deleting anything. ""--dry-run"" is also accepted.
 
 Return codes:
  0	- The operation completed successfully.
- 1	- Invalid arguments.
+ 1	- Invalid arguments, or a dry run matched no applications.
  1223	- The operation was canceled by the user.");
         }
 
@@ -185,6 +188,8 @@ Return codes:
             var isVerbose = args.Any(x => x.Equals("/V", StringComparison.OrdinalIgnoreCase));
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
+            var isDryRun = args.Any(x => x.Equals("/N", StringComparison.OrdinalIgnoreCase) ||
+                                         x.Equals("--dry-run", StringComparison.OrdinalIgnoreCase));
 
             int junkArgumentIndex = Array.FindIndex(args, a => a.Equals("/J", StringComparison.OrdinalIgnoreCase));
             string junkArg = args.Where(a => a.Equals("/J", StringComparison.OrdinalIgnoreCase) || a.StartsWith("/J=", StringComparison.OrdinalIgnoreCase)).FirstOrDefault() ?? string.Empty;
@@ -201,14 +206,17 @@ Return codes:
                     junkConfidenceLevel = parsedJunkConfidenceLevel;
                 }
             }
-            if (isUnattended)
+            if (isUnattended && !isDryRun)
                 Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
-            return RunUninstall(list, isQuiet, isUnattended, isVerbose, junkConfidenceLevel);
+            return RunUninstall(list, isQuiet, isUnattended, isVerbose, isDryRun, junkConfidenceLevel);
         }
 
-        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose, ConfidenceLevel? junkConfidenceLevel = null)
+        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose, bool isDryRun, ConfidenceLevel? junkConfidenceLevel = null)
         {
+            if (isDryRun)
+                Console.WriteLine(@"DRY RUN: Nothing will be uninstalled and no files or registry entries will be deleted.");
+
             Console.WriteLine(@"Starting bulk uninstall...");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
@@ -217,11 +225,14 @@ Return codes:
             if (apps.Count == 0)
             {
                 Console.WriteLine(@"No applications matched the supplied uninstall list.");
-                return 0;
+                return isDryRun ? 1 : 0;
             }
 
             Console.WriteLine(@"{0} application(s) were matched by the list: {1}", apps.Count,
                           string.Join("; ", apps.Select(x => x.DisplayName)));
+
+            if (isDryRun)
+                return RunDryRun(apps, isQuiet, junkConfidenceLevel);
 
             Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
 
@@ -292,6 +303,43 @@ Return codes:
                     appJunk.ForEach(j => j.Delete());
                 }
             }
+            return 0;
+        }
+
+        private static int RunDryRun(IList<ApplicationUninstallerEntry> apps, bool isQuiet, ConfidenceLevel? junkConfidenceLevel)
+        {
+            Console.WriteLine();
+            Console.WriteLine(@"The following applications would be uninstalled:");
+            foreach (var app in apps)
+            {
+                var useQuiet = isQuiet && app.QuietUninstallPossible;
+                var command = useQuiet ? app.QuietUninstallString : app.UninstallString;
+                Console.WriteLine($@"{app.DisplayName} [{app.UninstallerKind}{(useQuiet ? ", quiet" : "")}] - {command}");
+            }
+
+            if (junkConfidenceLevel is not null)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Scanning for junk with a minimum confidence level of {junkConfidenceLevel}...");
+                Console.WriteLine(@"Note: The applications are still installed, so results may differ from the actual cleanup performed after they are uninstalled.");
+
+                var junk = JunkManager.FindJunk(apps, apps, _ => { })
+                    .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
+                    .ToList();
+
+                if (junk.Count == 0)
+                {
+                    Console.WriteLine(@"No junk found for any target applications.");
+                }
+                else
+                {
+                    Console.WriteLine($"The following {junk.Count} junk item(s) would be deleted:");
+                    junk.ForEach(j => Console.WriteLine(j.ToLongString()));
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(@"Dry run finished. No changes were made.");
             return 0;
         }
 
