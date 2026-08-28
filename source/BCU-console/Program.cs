@@ -49,9 +49,10 @@ Switches:
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
- /N             - Dry run (preview) mode. Show which applications would be uninstalled and, when
-                  combined with /J, which junk items would be removed, without uninstalling or
-                  deleting anything. ""--dry-run"" is also accepted.
+ /N             - Dry run (preview) mode. Runs the uninstall task in simulation mode to show which
+                  applications would be uninstalled and, when combined with /J, which junk items
+                  would be removed, without uninstalling or deleting anything. ""--dry-run"" is
+                  also accepted.
 
 Return codes:
  0	- The operation completed successfully.
@@ -231,12 +232,10 @@ Return codes:
             Console.WriteLine(@"{0} application(s) were matched by the list: {1}", apps.Count,
                           string.Join("; ", apps.Select(x => x.DisplayName)));
 
-            if (isDryRun)
-                return RunDryRun(apps, isQuiet, junkConfidenceLevel);
+            if (!isDryRun)
+                Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
 
-            Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
-
-            if (!isUnattended)
+            if (!isUnattended && !isDryRun)
             {
                 Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                 if (Console.ReadKey(true).Key != ConsoleKey.Y)
@@ -247,7 +246,7 @@ Return codes:
             var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting))
                 .ToList();
             var task = UninstallManager.CreateBulkUninstallTask(targets,
-                new BulkUninstallConfiguration(false, isQuiet, false, true, true));
+                new BulkUninstallConfiguration(false, isQuiet, isDryRun, true, true));
             var isDone = false;
             task.OnStatusChanged += (sender, args) =>
             {
@@ -279,18 +278,24 @@ Return codes:
 
             if (junkConfidenceLevel is not null) {
                 Console.WriteLine($"Starting junk cleanup with a minimum confidence level of {junkConfidenceLevel}");
+                if (isDryRun)
+                    Console.WriteLine(@"Note: The applications are still installed, so results may differ from the actual cleanup performed after they are uninstalled.");
                 List<IJunkResult> remainingJunk = JunkManager.FindJunk(apps, apps, _ => { })
                     .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
                     .ToList();
 
                 if (!remainingJunk.Any()) {
                     Console.WriteLine($"No remaining junk found for any target applications.");
+                    if (isDryRun)
+                        Console.WriteLine(@"Dry run finished. No changes were made.");
                     return 0;
                 }
 
-                Console.WriteLine("The following junk items will be permanently deleted:");
+                Console.WriteLine(isDryRun
+                    ? "The following junk items would be permanently deleted:"
+                    : "The following junk items will be permanently deleted:");
                 remainingJunk.ForEach(Console.WriteLine);
-                if (!isUnattended) {
+                if (!isUnattended && !isDryRun) {
                     Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                     if (Console.ReadKey(true).Key != ConsoleKey.Y)
                         return CancelledByUser();
@@ -300,51 +305,24 @@ Return codes:
                     // ApplicationUninstallerEntry doesn't currently implement an equality operator so ToLongString() will do as an object "hash".
                     List<IJunkResult> appJunk = remainingJunk.Where(j => j.Application.ToLongString().Equals(entry.ToLongString())).ToList();
                     Console.WriteLine($"{entry.DisplayName} Junk - {appJunk.Count} Entries Found");
-                    appJunk.ForEach(j => j.Delete());
-                }
-            }
-            return 0;
-        }
-
-        private static int RunDryRun(IList<ApplicationUninstallerEntry> apps, bool isQuiet, ConfidenceLevel? junkConfidenceLevel)
-        {
-            Console.WriteLine();
-            Console.WriteLine(@"The following applications would be uninstalled:");
-            foreach (var app in apps)
-            {
-                var useQuiet = isQuiet && app.QuietUninstallPossible;
-                var command = useQuiet ? app.QuietUninstallString : app.UninstallString;
-                Console.WriteLine($@"{app.DisplayName} [{app.UninstallerKind}{(useQuiet ? ", quiet" : "")}] - {command}");
-            }
-
-            if (junkConfidenceLevel is not null)
-            {
-                Console.WriteLine();
-                Console.WriteLine($"Scanning for junk with a minimum confidence level of {junkConfidenceLevel}...");
-                Console.WriteLine(@"Note: The applications are still installed, so results may differ from the actual cleanup performed after they are uninstalled.");
-
-                var junk = JunkManager.FindJunk(apps, apps, _ => { })
-                    .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
-                    .ToList();
-
-                if (junk.Count == 0)
-                {
-                    Console.WriteLine(@"No junk found for any target applications.");
-                }
-                else
-                {
-                    Console.WriteLine($"The following {junk.Count} junk item(s) would be deleted:");
-                    junk.ForEach(j => Console.WriteLine(j.ToLongString()));
+                    if (!isDryRun)
+                        appJunk.ForEach(j => j.Delete());
                 }
             }
 
-            Console.WriteLine();
-            Console.WriteLine(@"Dry run finished. No changes were made.");
+            if (isDryRun)
+                Console.WriteLine(@"Dry run finished. No changes were made.");
             return 0;
         }
 
         public static void ClearCurrentConsoleLine()
         {
+            if (Console.IsOutputRedirected)
+            {
+                Console.WriteLine();
+                return;
+            }
+
             var currentLineCursor = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
