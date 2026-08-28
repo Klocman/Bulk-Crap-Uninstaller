@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using UninstallTools;
 using UninstallTools.Factory;
@@ -33,11 +34,12 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Unins
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
 
-BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed application data to xml file.
+BCU-console export [drive:][path]filename [/Q] [/U] [/V] [/F=json] - Export installed application data to a file.
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
- filename       – Specifies filename of the .xml file to save the exported application information to.
+ filename       – Specifies filename of the file to save the exported application information to
+                  (xml by default, json when /F=json is passed).
 
-BCU-console list [/Q] [/U] [/V] - Display a list of installed applications.
+BCU-console list [/Q] [/U] [/V] [/F=json] - Display a list of installed applications.
 
 Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
@@ -49,6 +51,10 @@ Switches:
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
+ /F=json        - Output in JSON format instead of the default (plaintext table for list, xml file
+                  for export). ""--format=json"" is also accepted. When this switch is used all
+                  progress messages are written to standard error, so that standard output of
+                  ""list"" contains only the JSON document.
 
 Return codes:
  0	- The operation completed successfully.
@@ -56,13 +62,21 @@ Return codes:
  1223	- The operation was canceled by the user.");
         }
 
+        private static TextWriter _dataOutput;
+
         private static int Main(string[] args)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
 
-            try { Console.OutputEncoding = Encoding.Unicode; }
+            var isMachineReadable = GetFormatArgument(args) != null;
+
+            try { Console.OutputEncoding = isMachineReadable ? new UTF8Encoding(false) : Encoding.Unicode; }
             catch (SystemException) { }
+
+            _dataOutput = Console.Out;
+            if (isMachineReadable)
+                Console.SetOut(Console.Error);
 
             var info = Assembly.GetExecutingAssembly();
             Console.WriteLine(info.FullName);
@@ -107,7 +121,19 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            var serializer = new ApplicationEntrySerializer(QueryApps(isQuiet, isUnattended, isVerbose));
+            var format = GetFormatArgument(args);
+            if (format != null && !format.Equals("json", StringComparison.OrdinalIgnoreCase))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", only \"json\" is supported");
+
+            var apps = QueryApps(isQuiet, isUnattended, isVerbose);
+
+            if (format != null)
+            {
+                _dataOutput.WriteLine(SerializeEntriesToJson(apps));
+                return 0;
+            }
+
+            var serializer = new ApplicationEntrySerializer(apps);
 
             Console.WriteLine($@"{"Display Name",-40}  {"Version",-20}  {"Source",-40}");
             var sb = new StringBuilder(82);
@@ -148,7 +174,12 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal)).ToArray();
+            var format = GetFormatArgument(args);
+            if (format != null && !format.Equals("json", StringComparison.OrdinalIgnoreCase))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", only \"json\" is supported");
+
+            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal) &&
+                                   !x.StartsWith("--", StringComparison.Ordinal)).ToArray();
             if (args.Length != 1)
                 return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
 
@@ -156,7 +187,10 @@ Return codes:
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             Console.WriteLine(@"Exporting data...");
-            ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
+            if (format != null)
+                File.WriteAllText(args[0], SerializeEntriesToJson(apps), new UTF8Encoding(false));
+            else
+                ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
             Console.WriteLine(@"Success!");
             return 0;
         }
@@ -359,6 +393,53 @@ Return codes:
         {
             Console.WriteLine("Invalid command syntax. " + message);
             return 87;
+        }
+
+        private static string GetFormatArgument(string[] args)
+        {
+            foreach (var arg in args)
+            {
+                if (arg.StartsWith("/F=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("/F=".Length);
+                if (arg.StartsWith("--format=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("--format=".Length);
+            }
+            return null;
+        }
+
+        private static string SerializeEntriesToJson(IEnumerable<ApplicationUninstallerEntry> apps)
+        {
+            var entries = apps.Select(x => new
+            {
+                x.DisplayName,
+                x.DisplayVersion,
+                x.Publisher,
+                x.Comment,
+                x.AboutUrl,
+                x.InstallLocation,
+                x.InstallSource,
+                InstallDate = x.InstallDate == default ? null : x.InstallDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
+                EstimatedSizeKb = x.EstimatedSize.GetKbSize(),
+                x.UninstallString,
+                x.QuietUninstallString,
+                UninstallerKind = x.UninstallerKind.ToString(),
+                x.UninstallerLocation,
+                Is64Bit = x.Is64Bit.ToString(),
+                x.IsProtected,
+                x.IsRegistered,
+                x.IsOrphaned,
+                x.IsUpdate,
+                x.IsValid,
+                x.IsWebBrowser,
+                x.SystemComponent,
+                x.RegistryKeyName,
+                x.RegistryPath,
+                x.ParentKeyName,
+                BundleProviderKey = x.BundleProviderKey == Guid.Empty ? null : x.BundleProviderKey.ToString(),
+                x.QuietUninstallPossible,
+                x.UninstallPossible,
+            });
+            return JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }
