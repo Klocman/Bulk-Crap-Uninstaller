@@ -316,7 +316,11 @@ namespace UninstallTools.Factory
 
                     entry.AboutUrl = manifest.Homepage;
 
-                    var shortcuts = manifest.Architecture?[install.Architecture]?.Shortcuts ?? manifest.Shortcuts;
+                    AppManifestArchitecture architectureSettings = null;
+                    if (!string.IsNullOrEmpty(install.Architecture))
+                        manifest.Architecture?.TryGetValue(install.Architecture, out architectureSettings);
+
+                    var shortcuts = architectureSettings?.Shortcuts ?? manifest.Shortcuts;
                     if (shortcuts != null)
                     {
                         var files = shortcuts.Select(x => Path.Combine(currentDir, x[0]))
@@ -344,7 +348,7 @@ namespace UninstallTools.Factory
                         }
                     }
 
-                    var bin = manifest.Architecture?[install.Architecture]?.Bin ?? manifest.Bin;
+                    var bin = architectureSettings?.Bin ?? manifest.Bin;
                     if (bin != null)
                     {
                         var filteredBins = bin.Select(x => Path.Combine(installDir, "current", x))
@@ -356,7 +360,7 @@ namespace UninstallTools.Factory
                         executables.AddRange(filteredBins);
                     }
 
-                    var env = manifest.Architecture?[install.Architecture]?.EnvAddPath ?? manifest.EnvAddPath;
+                    var env = architectureSettings?.EnvAddPath ?? manifest.EnvAddPath;
                     if (env is { Length: > 0 })
                     {
                         currentDir = Path.Combine(currentDir, env[0]);
