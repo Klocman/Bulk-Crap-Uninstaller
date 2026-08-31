@@ -549,7 +549,7 @@ namespace BulkCrapUninstaller.Functions
                 else
                 {
 
-                    foreach (var item in items)
+                    foreach (var item in items.ToList())
                     {
                         if (item.UninstallPossible && item.UninstallerKind != UninstallerType.SimpleDelete &&
                             MessageBoxes.UninstallFromDirectoryUninstallerFound(item.DisplayName, item.UninstallString))
