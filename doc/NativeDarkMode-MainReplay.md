@@ -48,9 +48,11 @@ host replay on Windows 11 at 200% DPI, not the production elevation/startup path
 
 ## Remaining work
 
-Real Properties page data and keyboard-only focus/navigation through the main
-window remain open. The light contrast native replay also showed blank selected
-text in the two search-filter dropdowns; that separate standard-control rendering
+Keyboard-only focus/navigation through the main window remains open. A later
+[Properties replay](NativeDarkMode-Properties.md) populated all four pages from an
+installed entry without finding a new rendering defect. The light contrast native
+replay also showed blank selected text in the two search-filter dropdowns; that
+separate standard-control rendering
 issue is the next useful investigation. Native selection of additional contrast
 themes, physical mixed-DPI moves, other supported Windows versions, production
 packaging and disposable-target removal workflows remain release gates.

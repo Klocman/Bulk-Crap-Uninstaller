@@ -46,6 +46,9 @@ These are local observations, not CI results.
 The environment was Windows 11 build 26100 at 200% DPI, with Desktop runtimes
 10.0.11 and 8.0.30. The visual host loaded the built application assemblies and
 exercised actual form classes, but did not run the production entry point.
+A subsequent read-only replay populated all four Properties pages from one
+installed entry in dark, light and both controlled contrast palettes; no
+production defect was found.
 The light-contrast test applied the installed hcwhite.theme color table while
 high contrast was active; it was not native Settings selection of that theme.
 
@@ -61,11 +64,9 @@ all-bad-confidence leftover-filtering issue is separate and unchanged.
 
 ## Bounded next investigations
 
-1. Properties pages with real application data; some specialist pages were
-   inspected only in missing-data states.
-2. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
+1. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
    surfaces. Avoid interpreting inspected dialog coverage as global coverage.
-3. Keyboard-only navigation, visible focus and screen-reader names/check states
+2. Keyboard-only navigation, visible focus and screen-reader names/check states
    across those surfaces.
 
 After these investigations, consolidate findings before extending individual

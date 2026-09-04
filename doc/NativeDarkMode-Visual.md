@@ -19,6 +19,10 @@ It initializes the theme manager and isolated portable settings, supplies the
 dialog owner normally established by MainWindow, and opens the real form classes.
 Its own manifest is asInvoker; the production manifest is unchanged.
 
+A later [Properties follow-up](NativeDarkMode-Properties.md) replaces the synthetic
+missing-data limitation for one installed entry. This report retains the earlier
+compiled-DLL replay as originally scoped.
+
 ## Observed coverage
 
 | Surface | Observed result | Scope limit |

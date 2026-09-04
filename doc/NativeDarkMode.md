@@ -129,6 +129,8 @@ for standard buttons/sidebar checkboxes in high contrast and restores their
 ordinary style afterward.
 The [primary list-checkbox follow-up](NativeDarkMode-ListCheckboxes.md) uses current
 contrast colors while preserving glyph geometry and ordinary renderer behavior.
+The [Properties data follow-up](NativeDarkMode-Properties.md) exercises all four
+pages from one installed entry across dark, light and controlled contrast palettes.
 A subsequent [DPI/high-contrast investigation](NativeDarkMode-Platform.md) confirmed
 startup/transition theme guards, but found fixed-column truncation in both light
 and dark modes and unreadable black icons in the dark high-contrast fallback.

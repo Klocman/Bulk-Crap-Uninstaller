@@ -81,6 +81,9 @@ The historical host error log did not grow. No scanner, uninstall, registry back
 deletion, certificate verification or production startup/elevation flow ran.
 
 Remaining review includes legend/treemap presentation when row tints are suppressed,
-the complete main-window formatting/refresh flow, Properties page navigation with
-real data, native Settings theme selection, other Windows versions and the broader
+the complete main-window formatting/refresh flow, native Settings theme selection,
+other Windows versions and the broader
 [accessibility/release checklist](NativeDarkMode-Checklist.md).
+
+A later [Properties replay](NativeDarkMode-Properties.md) populated all four pages
+from one installed entry in dark, light and both controlled contrast palettes.

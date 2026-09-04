@@ -1,6 +1,6 @@
 # Native dark-mode regression checklist
 
-Status as of 2026-09-04. A checked item records the specific evidence below; it does
+Status as of 2026-09-05. A checked item records the specific evidence below; it does
 not imply broader platform or real-execution coverage. Complete the open gates in
 an appropriate disposable test environment before proposing a default-on release.
 
@@ -81,7 +81,8 @@ palettes remain open.
 - [x] Legend explains neutral status colors and stays opaque in contrast; category visibility and ordinary palette/fade recover.
 - [x] Treemap uses outlined system-color tiles/selection without changing grouping, geometry or selected objects; cached brushes are released. See [legend/treemap follow-up](NativeDarkMode-LegendTreemap.md).
 - [x] Integrated main-list filtering/reload, empty-result treemap clearing and borderless legend positioning in the scoped 200% DPI contrast replay. See [main-window follow-up](NativeDarkMode-MainReplay.md).
-- [ ] Real Properties page data and keyboard-only main-window focus/navigation.
+- [x] Populate all four Properties pages from one real installed entry across dark, light and two live contrast palettes. See [Properties follow-up](NativeDarkMode-Properties.md).
+- [ ] Keyboard-only main-window focus/navigation.
 - [x] Correct selected text and popup palette in normal search-filter dropdowns after a live contrast transition. See [dropdown follow-up](NativeDarkMode-Dropdowns.md) for runtime/scope limits.
 - [x] Refresh copied hyperlink/plain-cell backgrounds in live contrast with certificate highlighting enabled. See [cell-background follow-up](NativeDarkMode-RowCells.md).
 - [x] Refresh the search edit's native background brush across live contrast changes, including disabled reload and recovery. See [search-field follow-up](NativeDarkMode-Search.md).
