@@ -9,6 +9,11 @@ namespace Klocman.Forms
 {
     public sealed partial class CustomMessageBox : Form
     {
+        /// <summary>
+        /// Optional application default, set before showing dialogs. Per-dialog settings take precedence.
+        /// </summary>
+        public static Color? DefaultHeadingColor { get; set; }
+
         public enum PressedButton
         {
             None,
@@ -65,6 +70,10 @@ namespace Klocman.Forms
                         FontStyle.Bold, GraphicsUnit.Point);
                 }
             }
+
+            var headingColor = settings.HeadingColor ?? DefaultHeadingColor;
+            if (headingColor.HasValue)
+                label1.ForeColor = headingColor.Value;
 
             Text = settings.Title;
             label1.Text = settings.LargeHeading;

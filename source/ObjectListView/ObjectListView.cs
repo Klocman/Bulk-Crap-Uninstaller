@@ -5843,8 +5843,10 @@ namespace BrightIdeasSoftware
         /// <returns>A byte array representing the state of the ObjectListView</returns>
         public virtual byte[] SaveState()
         {
+            EnsureColumnDpi();
             ObjectListViewState olvState = new ObjectListViewState();
             olvState.VersionNumber = 1;
+            olvState.ColumnDpi = columnDpi;
             olvState.NumberOfColumns = AllColumns.Count;
             olvState.CurrentView = View;
 
@@ -5904,6 +5906,7 @@ namespace BrightIdeasSoftware
                 // columns to the new ones, so we just give up.
                 if (olvState == null || olvState.NumberOfColumns != AllColumns.Count)
                     return false;
+                EnsureColumnDpi();
                 if (olvState.SortColumn == -1)
                 {
                     PrimarySortColumn = null;
@@ -5917,10 +5920,16 @@ namespace BrightIdeasSoftware
                 for (int i = 0; i < olvState.NumberOfColumns; i++)
                 {
                     OLVColumn column = AllColumns[i];
-                    column.Width = (int)olvState.ColumnWidths[i];
+                    // Old states contain device pixels without a DPI. Preserve them
+                    // as-is instead of guessing which monitor they came from.
+                    int width = (int)olvState.ColumnWidths[i];
+                    column.Width = olvState.ColumnDpi > 0 && width >= 0
+                        ? (int)Math.Round(width * (double)columnDpi / olvState.ColumnDpi)
+                        : width;
                     column.IsVisible = (bool)olvState.ColumnIsVisible[i];
                     column.LastDisplayIndex = (int)olvState.ColumnDisplayIndicies[i];
                 }
+                RememberRestoredColumnWidths();
                 // ReSharper disable RedundantCheckBeforeAssignment
                 if (olvState.IsShowingGroups != ShowGroups)
                     // ReSharper restore RedundantCheckBeforeAssignment
@@ -5942,6 +5951,8 @@ namespace BrightIdeasSoftware
         {
             // ReSharper disable NotAccessedField.Global
             public int VersionNumber = 1;
+            // Optional XML field: zero means legacy device-pixel widths.
+            public int ColumnDpi;
             // ReSharper restore NotAccessedField.Global
             public int NumberOfColumns = 1;
             public View CurrentView;
@@ -8009,6 +8020,7 @@ namespace BrightIdeasSoftware
         /// <param name="e"></param>
         protected virtual void HandleColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
+            if (scalingColumnWidths) return;
             if (!GetColumn(e.ColumnIndex).FillsFreeSpace)
                 ResizeFreeSpaceFillingColumns();
         }
@@ -8052,7 +8064,7 @@ namespace BrightIdeasSoftware
         protected virtual void ResizeFreeSpaceFillingColumns(int freeSpace)
         {
             // It's too confusing to dynamically resize columns at design time.
-            if (DesignMode)
+            if (DesignMode || scalingColumnWidths)
                 return;
 
             if (Frozen)
@@ -9711,6 +9723,7 @@ namespace BrightIdeasSoftware
 
         void ISupportInitialize.BeginInit()
         {
+            initializingColumnDpi = true;
             Frozen = true;
         }
 
@@ -9726,7 +9739,9 @@ namespace BrightIdeasSoftware
             if (UseSubItemCheckBoxes || (VirtualMode && CheckBoxes))
                 SetupSubItemCheckBoxes();
 
+            initializingColumnDpi = false;
             Frozen = false;
+            EnsureColumnDpi();
         }
 
         #endregion
@@ -10277,6 +10292,7 @@ namespace BrightIdeasSoftware
         /// </summary>
         protected virtual void OnControlCreated()
         {
+            EnsureColumnDpi();
 
             //Debug.WriteLine("OnControlCreated");
 
@@ -11859,7 +11875,7 @@ namespace BrightIdeasSoftware
                 RefreshItem(listViewItem);
             }
 
-            AutoResizeColumns();
+            ScaleColumnWidthsForDpi(deviceDpiNew);
 
             EndUpdate();
             ResumeLayout();

@@ -8,6 +8,9 @@
 
 		<ApplicationIcon>Resources\logo.ico</ApplicationIcon>
 		<StartupObject>BulkCrapUninstaller.EntryPoint</StartupObject>
+        <!-- Experimental opt-in. Libraries and the default build retain .NET 8. -->
+        <TargetFramework Condition="'$(EnableNativeDarkMode)' == 'true'">net10.0-windows10.0.18362.0</TargetFramework>
+        <OutputPath Condition="'$(EnableNativeDarkMode)' == 'true'">..\..\bin\NativeDark\$(Configuration)\$(Platform)\</OutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>

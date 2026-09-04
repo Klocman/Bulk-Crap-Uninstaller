@@ -28,6 +28,11 @@ namespace BulkCrapUninstaller.Forms
         public SettingsWindow()
         {
             InitializeComponent();
+            if (Theming.ThemeManager.IsEnabled)
+            {
+                foreach (TabPage page in tabControl.TabPages) Theming.ThemeManager.ApplyTabPage(page);
+                cacheSettings1.ConstrainExplanationWidth();
+            }
         }
 
         protected override void OnLoad(EventArgs e)
