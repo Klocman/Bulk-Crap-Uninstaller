@@ -101,6 +101,7 @@ internal static class ThemeManager
 
     internal static void ApplyControls(Form owner, params ToolStrip[] additionalMenus)
     {
+        ButtonContrastAdapter.Attach(owner);
         void Visit(Control control)
         {
             if (IsEnabled && control is ComboBox { DropDownStyle: ComboBoxStyle.DropDownList, DrawMode: DrawMode.Normal } dropdown
@@ -148,6 +149,7 @@ internal static class ThemeManager
 
     internal static void ApplyLoadingDialog(LoadingDialog dialog)
     {
+        ButtonContrastAdapter.Attach(dialog);
         if (!IsEnabled) return;
         void Visit(Control control)
         {
@@ -165,6 +167,7 @@ internal static class ThemeManager
 
     internal static void ApplyWizard(Form wizard)
     {
+        ButtonContrastAdapter.Attach(wizard);
         if (IsEnabled) wizard.BackColor = SystemColors.Control;
         void Visit(Control control)
         {
@@ -185,6 +188,7 @@ internal static class ThemeManager
 
     internal static void ApplyProperties(Form window, DataGridView grid)
     {
+        ButtonContrastAdapter.Attach(window);
         if (grid.ContextMenuStrip != null) ApplyMenu(window, grid.ContextMenuStrip);
         if (!StyledGrids.TryGetValue(grid, out _))
         {

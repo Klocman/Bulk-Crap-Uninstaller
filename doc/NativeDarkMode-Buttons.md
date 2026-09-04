@@ -6,13 +6,13 @@ DarkMode_Explorer association did not correct their themed rendering. WinForms'
 built-in Flat renderer produced readable palette-based backgrounds, check marks
 and keyboard-focus highlighting in the same replay.
 
-MainButtonContrastAdapter enrolls ordinary Standard Button and CheckBox controls
-in the main window's initial control tree. During high contrast it uses Flat;
+ButtonContrastAdapter enrolls ordinary Standard Button and CheckBox controls
+in explicitly adapted windows' initial control trees. During high contrast it uses Flat;
 afterward it restores Standard. Both runtime builds use this accessibility
 fallback. There is no dark-mode opt-in requirement for high contrast.
 
-Other forms, radio buttons and controls initially using custom flat styles are
-excluded. The adapter does not assign colors, change check states, invoke actions,
+Radio buttons, uninspected forms and controls initially using custom flat styles
+are excluded. The adapter does not assign colors, change check states, invoke actions,
 replace click handlers or set control bounds. It uses the framework's existing
 renderers. Attachments are idempotent, callbacks are coalesced on the UI thread,
 recreated handles are handled, and pending callbacks tolerate disposal. A caller's
@@ -46,6 +46,10 @@ enabled/disabled checks ran in both palettes.
 
 Main-list checkbox painting is separate from sidebar CheckBox controls; the
 [list-checkbox follow-up](NativeDarkMode-ListCheckboxes.md) covers that path.
-Other windows, native theme selection, other Windows/DPI
+The same adapter is now attached through the existing theme entry points for
+Settings, Wizard, Properties, loading dialogs, Progress and Junk review. An actual
+Settings replay covers 53 Button/CheckBox controls, input and recovery in both
+contrast palettes; constructor checks cover the other entry points. Uninspected
+windows, native theme selection, other Windows/DPI
 configurations and the full [release checklist](NativeDarkMode-Checklist.md) remain
 outside this correction.

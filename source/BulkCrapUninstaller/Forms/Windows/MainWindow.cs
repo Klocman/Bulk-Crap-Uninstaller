@@ -214,7 +214,6 @@ namespace BulkCrapUninstaller.Forms
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
             Theming.ThemeManager.ApplyList(uninstallerObjectListView);
             Theming.ThemeManager.ApplyControls(this);
-            Theming.MainButtonContrastAdapter.Attach(this);
             if (Theming.ThemeManager.IsEnabled)
             {
                 // Preserve the ordinary dark surface when filtering/reloading in

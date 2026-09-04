@@ -37,9 +37,9 @@ some related layout/refresh fixes documented in the individual follow-up notes.
 ## Latest validation and its limits
 
 Both default .NET 8 and opt-in .NET 10 builds passed. The latest external checker
-recorded 1,249 assertions across eight runs: .NET 10 ordinary default/dark/light
-override (150/152/150), .NET 8 dark bypass (147), and light/dark high contrast on
-both runtimes (164/161 in each palette). Primary and checkbox-column replays cover
+recorded 1,313 assertions across eight runs: .NET 10 ordinary default/dark/light
+override (158/160/158), .NET 8 dark bypass (155), and light/dark high contrast on
+both runtimes (172/169 in each palette). Button and checkbox replays cover
 mouse/Space checking, palette recovery and restoration of Windows appearance.
 These are local observations, not CI results.
 
@@ -61,13 +61,11 @@ all-bad-confidence leftover-filtering issue is separate and unchanged.
 
 ## Bounded next investigations
 
-1. Remaining buttons, sidebar painting and controls in other windows. The
-   `MainButtonContrastAdapter` intentionally enrolls only the main control tree.
-2. Properties pages with real application data; some specialist pages were
+1. Properties pages with real application data; some specialist pages were
    inspected only in missing-data states.
-3. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
+2. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
    surfaces. Avoid interpreting inspected dialog coverage as global coverage.
-4. Keyboard-only navigation, visible focus and screen-reader names/check states
+3. Keyboard-only navigation, visible focus and screen-reader names/check states
    across those surfaces.
 
 After these investigations, consolidate findings before extending individual

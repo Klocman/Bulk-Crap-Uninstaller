@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace BulkCrapUninstaller.Theming;
 
-// The main window's ordinary buttons/check boxes use managed palette-aware
-// drawing during high contrast. Other windows and custom styles are untouched.
-internal static class MainButtonContrastAdapter
+// Ordinary buttons/check boxes on explicitly adapted windows use managed
+// palette-aware drawing during high contrast. Custom styles are untouched.
+internal static class ButtonContrastAdapter
 {
     private static readonly ConditionalWeakTable<ButtonBase, Binding> Bindings = new();
 

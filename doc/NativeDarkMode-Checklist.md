@@ -88,7 +88,8 @@ palettes remain open.
 - [x] Use a palette-aware fallback for the main window's standard buttons/sidebar checkboxes, including keyboard focus and recovery. See [button follow-up](NativeDarkMode-Buttons.md) for native/automated reload coverage.
 - [x] Correct primary list-checkbox painting in controlled contrast transitions; see [scope and remaining checks](NativeDarkMode-ListCheckboxes.md).
 - [x] Correct checkbox columns in uninstall confirmation/related-app lists while preserving aspect putters and printing.
-- [ ] Review remaining sidebar painting and buttons/checkboxes in other windows.
+- [x] Adapt standard buttons/checkboxes in inspected Settings, Wizard, Properties, loading, Progress and Junk-review entry points.
+- [ ] Review buttons and custom painting in uninspected windows.
 - [ ] Native Settings selection of other contrast themes and overflow/split-button states.
 
 - [ ] Windows versions supported by the intended release, including Windows 10.
