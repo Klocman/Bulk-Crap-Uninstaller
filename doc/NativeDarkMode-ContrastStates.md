@@ -85,3 +85,8 @@ The full production matrix remains open, particularly per-application RGB row
 backgrounds, Properties grid selection, custom/third-party renderers, overflow and
 split-button interactions, native Settings selection of other contrast themes,
 keyboard-only navigation beyond these menu states, and screen-reader verification.
+
+A later [menu/overflow replay](NativeDarkMode-Menus.md) covers the actual nested,
+context and main/progress overflow surfaces. Source inventory found no application
+split/drop-down button controls. Other custom renderers and native Settings theme
+selection remain open.

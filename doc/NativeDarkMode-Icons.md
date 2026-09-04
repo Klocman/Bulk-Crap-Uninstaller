@@ -64,3 +64,7 @@ explicit RGB link/row colors on already-open dark forms and the complete product
 accessibility matrix remain open. Injected black/yellow palette tests do not claim
 native visual coverage for those schemes. Existing NU1510 and SYSLIB0057 build
 warnings remain visible. See [the checklist](NativeDarkMode-Checklist.md).
+
+A later [menu/overflow replay](NativeDarkMode-Menus.md) covers selected nested,
+context and overflow menu icons in ordinary dark plus both controlled contrast
+palettes. This report retains the earlier icon investigation's original scope.

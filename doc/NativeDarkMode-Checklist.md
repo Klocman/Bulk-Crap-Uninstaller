@@ -91,7 +91,8 @@ palettes remain open.
 - [x] Correct checkbox columns in uninstall confirmation/related-app lists while preserving aspect putters and printing.
 - [x] Adapt standard buttons/checkboxes in inspected Settings, Wizard, Properties, loading, Progress and Junk-review entry points.
 - [ ] Review buttons and custom painting in uninspected windows.
-- [ ] Native Settings selection of other contrast themes and overflow/split-button states.
+- [x] Render nested/context menus and actual main/progress toolbar overflow across dark, light and two live contrast palettes. Source contains no split/drop-down button controls. See [menu/overflow follow-up](NativeDarkMode-Menus.md).
+- [ ] Native Settings selection of other contrast themes.
 
 - [ ] Windows versions supported by the intended release, including Windows 10.
 - [ ] 100%, 125%, 150%, 200% DPI; moves between monitors of different DPI.

@@ -49,6 +49,9 @@ exercised actual form classes, but did not run the production entry point.
 A subsequent read-only replay populated all four Properties pages from one
 installed entry in dark, light and both controlled contrast palettes; no
 production defect was found.
+A second replay covered nested/context menus and the actual main/progress toolbar
+overflow in the same palettes. No split/drop-down button controls exist in source,
+and no production defect was found in the applicable surfaces.
 The light-contrast test applied the installed hcwhite.theme color table while
 high contrast was active; it was not native Settings selection of that theme.
 
@@ -64,8 +67,8 @@ all-bad-confidence leftover-filtering issue is separate and unchanged.
 
 ## Bounded next investigations
 
-1. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
-   surfaces. Avoid interpreting inspected dialog coverage as global coverage.
+1. Tooltips, native dialogs and HTML surfaces. Avoid interpreting inspected dialog
+   coverage as global coverage.
 2. Keyboard-only navigation, visible focus and screen-reader names/check states
    across those surfaces.
 

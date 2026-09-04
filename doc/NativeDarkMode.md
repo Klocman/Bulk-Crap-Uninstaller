@@ -131,6 +131,8 @@ The [primary list-checkbox follow-up](NativeDarkMode-ListCheckboxes.md) uses cur
 contrast colors while preserving glyph geometry and ordinary renderer behavior.
 The [Properties data follow-up](NativeDarkMode-Properties.md) exercises all four
 pages from one installed entry across dark, light and controlled contrast palettes.
+The [menu/overflow follow-up](NativeDarkMode-Menus.md) exercises actual nested and
+context menus plus the main and progress toolbar overflow paths.
 A subsequent [DPI/high-contrast investigation](NativeDarkMode-Platform.md) confirmed
 startup/transition theme guards, but found fixed-column truncation in both light
 and dark modes and unreadable black icons in the dark high-contrast fallback.
