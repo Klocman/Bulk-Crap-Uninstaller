@@ -37,11 +37,11 @@ some related layout/refresh fixes documented in the individual follow-up notes.
 ## Latest validation and its limits
 
 Both default .NET 8 and opt-in .NET 10 builds passed. The latest external checker
-recorded 1,173 assertions across eight runs: .NET 10 ordinary default/dark/light
-override (141/143/141), .NET 8 dark bypass (138), and light/dark high contrast on
-both runtimes (154/151 in each palette). The latest primary-checkbox replay passed
-14 native state checks, including mouse/Space checking, palette recovery and
-restoration of Windows appearance. These are local observations, not CI results.
+recorded 1,249 assertions across eight runs: .NET 10 ordinary default/dark/light
+override (150/152/150), .NET 8 dark bypass (147), and light/dark high contrast on
+both runtimes (164/161 in each palette). Primary and checkbox-column replays cover
+mouse/Space checking, palette recovery and restoration of Windows appearance.
+These are local observations, not CI results.
 
 The environment was Windows 11 build 26100 at 200% DPI, with Desktop runtimes
 10.0.11 and 8.0.30. The visual host loaded the built application assemblies and
@@ -61,20 +61,17 @@ all-bad-confidence leftover-filtering issue is separate and unchanged.
 
 ## Bounded next investigations
 
-1. Checkbox columns in uninstall confirmation and related-app lists. These use
-   `CheckStateRenderer`; the latest `ContrastListRenderer` correction covers only
-   primary row checkboxes. Begin with light/dark contrast and disabled states.
-2. Remaining buttons, sidebar painting and controls in other windows. The
+1. Remaining buttons, sidebar painting and controls in other windows. The
    `MainButtonContrastAdapter` intentionally enrolls only the main control tree.
-3. Properties pages with real application data; some specialist pages were
+2. Properties pages with real application data; some specialist pages were
    inspected only in missing-data states.
-4. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
+3. Remaining menu/overflow/split-button states, tooltips, native dialogs and HTML
    surfaces. Avoid interpreting inspected dialog coverage as global coverage.
-5. Keyboard-only navigation, visible focus and screen-reader names/check states
+4. Keyboard-only navigation, visible focus and screen-reader names/check states
    across those surfaces.
 
 After these investigations, consolidate findings before extending individual
-adapters. The release checklist still contains 35 open checks, many overlapping
+adapters. The release checklist still contains 34 open checks, many overlapping
 validation areas rather than known implementation defects: real startup and
 elevation, packaging/helpers, Windows and DPI coverage, localization/RTL, resource
 stability, and disposable uninstall/backup/cleanup workflows.

@@ -87,7 +87,7 @@ palettes remain open.
 - [x] Refresh the search edit's native background brush across live contrast changes, including disabled reload and recovery. See [search-field follow-up](NativeDarkMode-Search.md).
 - [x] Use a palette-aware fallback for the main window's standard buttons/sidebar checkboxes, including keyboard focus and recovery. See [button follow-up](NativeDarkMode-Buttons.md) for native/automated reload coverage.
 - [x] Correct primary list-checkbox painting in controlled contrast transitions; see [scope and remaining checks](NativeDarkMode-ListCheckboxes.md).
-- [ ] Review checkbox columns in the uninstall confirmation/related-app lists; these use separate renderers.
+- [x] Correct checkbox columns in uninstall confirmation/related-app lists while preserving aspect putters and printing.
 - [ ] Review remaining sidebar painting and buttons/checkboxes in other windows.
 - [ ] Native Settings selection of other contrast themes and overflow/split-button states.
 

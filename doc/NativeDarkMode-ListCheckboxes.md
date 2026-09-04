@@ -27,6 +27,12 @@ prototype's `artifacts/list-checkbox-contrast/REPORT.md` for final runs and evid
 The light test applies the installed hcwhite.theme color table with high contrast
 active; native Settings theme selection and the wider release matrix remain open.
 
+The uninstall confirmation and related-application controls also opt their three
+checkbox columns into ContrastCheckStateRenderer. That subclass preserves the
+separate CheckStateRenderer layout, hit testing, printing and aspect putter path,
+but uses the same current-color painter during high contrast. Other checkbox
+columns are not changed automatically.
+
 Shared ObjectListView code is unchanged by this correction. Screen-reader
-announcements, other checkbox columns and other Windows/DPI configurations still
-need the [release checklist](NativeDarkMode-Checklist.md).
+announcements and other Windows/DPI configurations still need the
+[release checklist](NativeDarkMode-Checklist.md).
