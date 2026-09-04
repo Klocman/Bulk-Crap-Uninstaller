@@ -1,6 +1,6 @@
 /*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
+    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    Uninstaller Types Definition
 */
 
 using Klocman.Localising;
@@ -37,6 +37,11 @@ namespace UninstallTools
         [LocalisedName(typeof(Localisation), "UninstallerType_Oculus")]
         Oculus,
         [LocalisedName(typeof(Localisation), nameof(Localisation.UninstallerType_PowerShell))]
-        PowerShell
+        PowerShell,
+        EpicGames,
+        Uplay,
+        Origin,
+        WinGet,
+        Scoop
     }
 }

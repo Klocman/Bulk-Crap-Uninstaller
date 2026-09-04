@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -212,6 +212,8 @@ namespace BulkCrapUninstaller.Forms
             _setMan.Selected.Subscribe((x, y) => splitContainerListAndMap.Panel2Collapsed = !y.NewValue, settings => settings.ShowTreeMap, this);
 
             uninstallerObjectListView.ContextMenuStrip = uninstallListContextMenuStrip;
+
+            InitializeProNavigationAndTools();
         }
 
         protected override void OnDpiChanged(DpiChangedEventArgs e)
@@ -1941,5 +1943,154 @@ namespace BulkCrapUninstaller.Forms
                 }
             }
         }
+
+        #region OpenUninstall Pro Navigation and Tools Integration
+        private void InitializeProNavigationAndTools()
+        {
+            try
+            {
+                // 1. Add Pro Tools Dropdown to ToolStrip
+                var proDropDown = new ToolStripDropDownButton
+                {
+                    Text = "Pro Tools & Cleanup",
+                    Font = new Font(Font, FontStyle.Bold),
+                    ForeColor = Color.DarkSlateBlue,
+                    DisplayStyle = ToolStripItemDisplayStyle.Text
+                };
+
+                var itemForced = new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval());
+                var itemMonitor = new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor());
+                var itemBackup = new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager());
+                var itemJunk = new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner());
+                var itemPrivacy = new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner());
+                var itemExt = new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions());
+                var itemTools = new ToolStripMenuItem("Windows Administrative Tools...", null, (s, e) => OpenWindowsTools());
+                var itemHistory = new ToolStripMenuItem("Operation History & Audit Log...", null, (s, e) => OpenOperationHistory());
+                var itemShred = new ToolStripMenuItem("Secure File & Folder Shredder...", null, (s, e) => OpenSecureDelete());
+
+                proDropDown.DropDownItems.AddRange(new ToolStripItem[]
+                {
+                    itemForced,
+                    new ToolStripSeparator(),
+                    itemMonitor,
+                    itemBackup,
+                    new ToolStripSeparator(),
+                    itemJunk,
+                    itemPrivacy,
+                    itemExt,
+                    new ToolStripSeparator(),
+                    itemTools,
+                    itemHistory,
+                    itemShred
+                });
+
+                toolStrip.Items.Insert(1, proDropDown);
+                toolStrip.Items.Insert(2, new ToolStripSeparator());
+
+                // 2. Add to Tools MenuStrip
+                if (toolsToolStripMenuItem != null)
+                {
+                    toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(1, new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(2, new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(3, new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(4, new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(5, new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(6, new ToolStripMenuItem("Windows Administrative Tools...", null, (s, e) => OpenWindowsTools()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(7, new ToolStripMenuItem("Operation History & Audit Log...", null, (s, e) => OpenOperationHistory()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(8, new ToolStripMenuItem("Secure File & Folder Shredder...", null, (s, e) => OpenSecureDelete()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(9, new ToolStripSeparator());
+                }
+
+                // 3. Add to Context Menu
+                if (uninstallListContextMenuStrip != null)
+                {
+                    uninstallListContextMenuStrip.Items.Add(new ToolStripSeparator());
+                    uninstallListContextMenuStrip.Items.Add(new ToolStripMenuItem("Forced Removal of Selected App...", null, (s, e) =>
+                    {
+                        var first = _listView.SelectedUninstallers.FirstOrDefault();
+                        OpenForcedRemoval(first?.InstallLocation ?? first?.DisplayName);
+                    }));
+                    uninstallListContextMenuStrip.Items.Add(new ToolStripMenuItem("Create Instant Backup of App...", null, (s, e) =>
+                    {
+                        var first = _listView.SelectedUninstallers.FirstOrDefault();
+                        if (first != null)
+                        {
+                            var reg = !string.IsNullOrEmpty(first.RegistryPath) ? new[] { first.RegistryPath } : null;
+                            var files = (!string.IsNullOrEmpty(first.InstallLocation) && Directory.Exists(first.InstallLocation)) ? new[] { first.InstallLocation } : null;
+                            var manifest = UninstallTools.Backup.BackupManager.CreateBackup(first.DisplayName, first.DisplayVersion, first.Publisher, reg, files, true);
+                            MessageBox.Show($"Backup created successfully!\n\nBackup ID: {manifest.BackupId}", "Backup Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }));
+                    uninstallListContextMenuStrip.Items.Add(new ToolStripMenuItem("Secure Shred Install Folder...", null, (s, e) =>
+                    {
+                        var first = _listView.SelectedUninstallers.FirstOrDefault();
+                        OpenSecureDelete(first?.InstallLocation);
+                    }));
+                }
+            }
+            catch (Exception ex)
+            {
+                UninstallTools.Core.StructuredLogger.Warning(UninstallTools.Core.LogCategory.General, "Failed initializing Pro navigation tools", ex.Message);
+            }
+        }
+
+        private void OpenForcedRemoval(string target = null)
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.ForcedUninstallWindow(target);
+            if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                _listView.InitiateListRefresh();
+            }
+        }
+
+        private void OpenInstallationMonitor()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.InstallationMonitorWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenBackupManager()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.BackupManagerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenJunkCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.JunkCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenPrivacyCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.PrivacyCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenBrowserExtensions()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.BrowserExtensionsWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenWindowsTools()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.WindowsToolsWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenOperationHistory()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.OperationHistoryWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenSecureDelete(string target = null)
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.SecureDeleteWindow(target);
+            dlg.ShowDialog(this);
+        }
+        #endregion
     }
 }
