@@ -91,6 +91,54 @@ namespace UninstallTools.SystemTools
                 },
                 new()
                 {
+                    Name = "Resource Monitor",
+                    Description = "Deep real-time monitoring of CPU, Disk, Network, and Memory handle usage.",
+                    ExecutableOrUri = Path.Combine(sys32, "resmon.exe"),
+                    RequiresAdmin = true,
+                    Category = "Diagnostics"
+                },
+                new()
+                {
+                    Name = "Performance Monitor",
+                    Description = "Advanced performance counter tracking and system diagnostic reports.",
+                    ExecutableOrUri = Path.Combine(sys32, "perfmon.msc"),
+                    RequiresAdmin = true,
+                    Category = "Diagnostics"
+                },
+                new()
+                {
+                    Name = "DirectX Diagnostic Tool",
+                    Description = "Detailed diagnostics for audio, video, graphics display, and direct draw components.",
+                    ExecutableOrUri = Path.Combine(sys32, "dxdiag.exe"),
+                    RequiresAdmin = false,
+                    Category = "Diagnostics"
+                },
+                new()
+                {
+                    Name = "Network Connections Control",
+                    Description = "Configure physical, virtual, and Wi-Fi network adapters and TCP/IP bindings.",
+                    ExecutableOrUri = Path.Combine(sys32, "ncpa.cpl"),
+                    RequiresAdmin = true,
+                    Category = "System Management"
+                },
+                new()
+                {
+                    Name = "Windows Defender Firewall",
+                    Description = "Manage inbound/outbound firewall rules and network isolation profiles.",
+                    ExecutableOrUri = Path.Combine(sys32, "firewall.cpl"),
+                    RequiresAdmin = true,
+                    Category = "Security"
+                },
+                new()
+                {
+                    Name = "Windows Memory Diagnostic",
+                    Description = "Check system RAM for physical hardware errors on reboot.",
+                    ExecutableOrUri = Path.Combine(sys32, "MdSched.exe"),
+                    RequiresAdmin = true,
+                    Category = "Hardware"
+                },
+                new()
+                {
                     Name = "Windows Optional Features",
                     Description = "Enable or disable optional Windows platform features and components.",
                     ExecutableOrUri = Path.Combine(sys32, "optionalfeatures.exe"),
