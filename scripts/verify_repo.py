@@ -151,6 +151,8 @@ def check_subsystems(verbose=False, quiet=False):
         "source/HelperTools/HelperTools.cs",
         "source/HelperTools/LogWriter.cs",
         "source/HelperTools/ProcessRunner.cs",
+        "source/HelperTools/InterProcessCommunication.cs",
+        "source/HelperTools/SystemEnvironmentInfo.cs",
         "source/EBUninstaller/Forms/Windows/ForcedUninstallWindow.cs",
         "source/EBUninstaller/Forms/Windows/BackupManagerWindow.cs",
         "source/EBUninstaller/Forms/Windows/InstallationMonitorWindow.cs",

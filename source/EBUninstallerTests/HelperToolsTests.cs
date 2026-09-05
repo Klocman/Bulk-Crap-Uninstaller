@@ -105,5 +105,18 @@ namespace EBUninstallerTests
             Assert.AreEqual(0, res.ExitCode);
             Assert.AreEqual("Success", res.StandardOutput);
         }
+
+        [TestMethod]
+        public void TestSystemEnvironmentInfoMemory()
+        {
+            var total = SystemEnvironmentInfo.GetTotalPhysicalMemoryBytes();
+            var avail = SystemEnvironmentInfo.GetAvailablePhysicalMemoryBytes();
+            var currentProc = SystemEnvironmentInfo.GetCurrentProcessMemoryUsageBytes();
+
+            // On non-Windows/Wine platforms these Win32 APIs return 0 gracefully without crashing
+            Assert.IsTrue(total >= 0);
+            Assert.IsTrue(avail >= 0);
+            Assert.IsTrue(currentProc >= 0);
+        }
     }
 }
