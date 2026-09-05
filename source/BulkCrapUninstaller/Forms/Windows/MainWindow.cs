@@ -2006,6 +2006,7 @@ namespace BulkCrapUninstaller.Forms
                     DisplayStyle = ToolStripItemDisplayStyle.Text
                 };
 
+                var itemWizard = new ToolStripMenuItem("Quick System Optimization Wizard...", null, (s, e) => OpenOptimizationWizard());
                 var itemHealth = new ToolStripMenuItem("Software Health & Hygiene Advisor...", null, (s, e) => OpenSoftwareHealth());
                 var itemForced = new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval());
                 var itemMonitor = new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor());
@@ -2020,6 +2021,8 @@ namespace BulkCrapUninstaller.Forms
 
                 proDropDown.DropDownItems.AddRange(new ToolStripItem[]
                 {
+                    itemWizard,
+                    new ToolStripSeparator(),
                     itemHealth,
                     new ToolStripSeparator(),
                     itemForced,
@@ -2042,12 +2045,13 @@ namespace BulkCrapUninstaller.Forms
                 // 4. Add to Tools MenuStrip
                 if (toolsToolStripMenuItem != null)
                 {
-                    toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Software Health & Hygiene Advisor...", null, (s, e) => OpenSoftwareHealth()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(1, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(2, new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(3, new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(4, new ToolStripMenuItem("Registry Optimizer & Repair...", null, (s, e) => OpenRegistryOptimizer()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(5, new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Quick System Optimization Wizard...", null, (s, e) => OpenOptimizationWizard()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(1, new ToolStripMenuItem("Software Health & Hygiene Advisor...", null, (s, e) => OpenSoftwareHealth()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(2, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(3, new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(4, new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(5, new ToolStripMenuItem("Registry Optimizer & Repair...", null, (s, e) => OpenRegistryOptimizer()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(6, new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
                     toolsToolStripMenuItem.DropDownItems.Insert(6, new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner()));
                     toolsToolStripMenuItem.DropDownItems.Insert(7, new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions()));
                     toolsToolStripMenuItem.DropDownItems.Insert(8, new ToolStripMenuItem("Windows Administrative Tools...", null, (s, e) => OpenWindowsTools()));
@@ -2191,6 +2195,12 @@ namespace BulkCrapUninstaller.Forms
                     filterEditor1.Search("true", ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate));
                     break;
             }
+        }
+
+        private void OpenOptimizationWizard()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Wizards.QuickOptimizationWizard();
+            dlg.ShowDialog(this);
         }
 
         private void OpenSoftwareHealth()
