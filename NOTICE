@@ -1,8 +1,8 @@
-Bulk Crap Uninstaller is a free open-source project hosted on GitHub. Marcin Szeniak is the project manager and lead developer.
-The official project is hosted at https://github.com/Klocman/Bulk-Crap-Uninstaller
+EBUninstaller Pro
+Copyright (c) 2026 EhabYT. All rights reserved.
+Hosted on GitHub: https://github.com/EhabYT/Bulk-Crap-Uninstaller
 
-In case of issues, please update to the latest official release. Non-official releases are not supported.
-If the issue presists, please post a bug report to https://github.com/Klocman/Bulk-Crap-Uninstaller/issues
+This project is an advanced open-source uninstaller and system maintenance suite derived from and honoring the original work of Bulk Crap Uninstaller by Marcin Szeniak (Klocman).
 
-If you wish to contribute, donate or otherwise help the project, please read the CONTRIBUTING file.
-https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/CONTRIBUTING.md
+Licensed under the Apache License, Version 2.0.
+See Licence.txt and docs/THIRD_PARTY_LICENSES.md for full license and third-party attribution details.

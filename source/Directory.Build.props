@@ -1,9 +1,11 @@
 <Project>
 	<PropertyGroup>
-		<Version>6.2</Version>
+		<Version>7.0.0</Version>
 
-		<Authors>https://github.com/Klocman/Bulk-Crap-Uninstaller</Authors>
-		<Copyright>Copyright Apache-2.0 © 2026</Copyright>
+		<Authors>EhabYT</Authors>
+		<Company>EhabYT</Company>
+		<Product>EBUninstaller Pro</Product>
+		<Copyright>Copyright © 2026 EhabYT. All rights reserved.</Copyright>
 
 		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 		<TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>

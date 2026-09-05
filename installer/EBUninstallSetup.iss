@@ -3,7 +3,7 @@
 
 #define MyAppName "EBUninstaller Pro"
 #define MyAppVersion "7.0.0"
-#define MyAppPublisher "EBUninstaller Project"
+#define MyAppPublisher "EhabYT"
 #define MyAppURL "https://github.com/EhabYT/Bulk-Crap-Uninstaller"
 #define MyAppExeName "BCUninstaller.exe"
 #define MyAppConsoleExeName "BCU-console.exe"
@@ -13,6 +13,7 @@ AppId={{D3F9E17A-72A8-4A1B-8DF9-E342B286E90F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
+AppCopyright=Copyright (C) 2026 EhabYT. All rights reserved.
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}

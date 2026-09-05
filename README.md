@@ -123,4 +123,4 @@ EBUninstaller.exe restore <BackupId> --verify
 
 ## License & Attribution
 
-EBUninstaller Pro is licensed under the [Apache License, Version 2.0](Licence.txt). Original Bulk Crap Uninstaller copyright notices and third-party open-source attributions are preserved in accordance with [NOTICE](NOTICE) and [THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).
+**EBUninstaller Pro** is developed and maintained by **EhabYT** (Copyright © 2026 EhabYT. All rights reserved). Licensed under the [Apache License, Version 2.0](Licence.txt). Original Bulk Crap Uninstaller copyright notices and third-party open-source attributions are preserved in accordance with [NOTICE](NOTICE) and [THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).
