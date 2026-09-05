@@ -1,0 +1,59 @@
+name: EBUninstaller Pro - Continuous Integration (CI)
+
+on: 
+  push:
+    branches:
+      - master
+      - main
+      - 'arena/**'
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  static-audit:
+    name: Repository Verification & Integrity Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Static Quality Audit
+        run: python3 scripts/verify_repo.py --verbose
+
+  build-and-test:
+    name: Windows .NET 8 Build, Test & Package
+    runs-on: windows-latest
+    needs: static-audit
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Setup Inno Setup Compiler
+        uses: caldera91/inno-setup-action@v1.1
+        continue-on-error: true
+
+      - name: Execute Automated Release Build & Test Suite
+        shell: pwsh
+        run: |
+          .\scripts\build.ps1 -Configuration Release -Platform "Any CPU" -BuildInstaller
+
+      - name: Upload Release Artifacts (Portable ZIP, Setup, Checksums)
+        uses: actions/upload-artifact@v4
+        with:
+          name: EBUninstaller_Pro_v7.0.0_Release
+          path: |
+            build/portable/*
+            build/installer/*
+            build/SHA256SUMS.txt

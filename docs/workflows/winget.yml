@@ -1,0 +1,23 @@
+name: EBUninstaller Pro - Publish to WinGet
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish:
+    name: Submit to Windows Package Manager (WinGet)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract Release Version
+        id: get-version
+        run: |
+          version=$(echo "${{ github.event.release.tag_name }}" | awk -F. '{printf "%d.%d.%d.%d\n", substr($1, 2), $2, $3, $4}')
+          echo "version=$version" >> $GITHUB_OUTPUT
+
+      - name: WinGet Releaser Action
+        uses: vedantmgoyal9/winget-releaser@main
+        with:
+          identifier: EhabYT.EBUninstallerPro
+          version: ${{ steps.get-version.outputs.version }}
+          token: ${{ secrets.WINGET_TOKEN }}
