@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Forced Removal Window
 */
 
@@ -40,7 +40,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Forced Application Removal";
+            Text = "EBUninstaller Pro - Forced Application Removal";
             Size = new Size(850, 580);
             MinimumSize = new Size(650, 450);
             StartPosition = FormStartPosition.CenterParent;

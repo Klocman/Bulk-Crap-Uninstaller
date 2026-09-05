@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Application Details & Inspection Panel
+    EBUninstaller Pro - Application Details & Inspection Panel
     Modern Windows 11 Styled Inspector
 */
 

@@ -28,11 +28,11 @@ namespace UninstallTools.History
                     try
                     {
                         var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                        _historyFilePath = Path.Combine(localAppData, "OpenUninstallPro", "History.json");
+                        _historyFilePath = Path.Combine(localAppData, "EBUninstallerPro", "History.json");
                     }
                     catch
                     {
-                        _historyFilePath = Path.Combine(Path.GetTempPath(), "OpenUninstallPro", "History.json");
+                        _historyFilePath = Path.Combine(Path.GetTempPath(), "EBUninstallerPro", "History.json");
                     }
                 }
                 return _historyFilePath;

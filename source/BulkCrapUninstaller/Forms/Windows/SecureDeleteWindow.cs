@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Secure File & Folder Deletion Window
 */
 
@@ -40,7 +40,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Secure File & Folder Shredder";
+            Text = "EBUninstaller Pro - Secure File & Folder Shredder";
             Size = new Size(850, 560);
             MinimumSize = new Size(650, 420);
             StartPosition = FormStartPosition.CenterParent;

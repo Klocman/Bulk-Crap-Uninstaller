@@ -1,6 +1,6 @@
-# Contributing to OpenUninstall Pro
+# Contributing to EBUninstaller Pro
 
-Thank you for your interest in contributing to OpenUninstall Pro! We welcome community contributions, bug reports, and feature pull requests.
+Thank you for your interest in contributing to EBUninstaller Pro! We welcome community contributions, bug reports, and feature pull requests.
 
 ---
 

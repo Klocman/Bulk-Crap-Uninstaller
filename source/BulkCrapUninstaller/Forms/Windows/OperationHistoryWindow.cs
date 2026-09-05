@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Operation History & Audit Log Window
 */
 
@@ -32,7 +32,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Operation History & Audit Log";
+            Text = "EBUninstaller Pro - Operation History & Audit Log";
             Size = new Size(950, 600);
             MinimumSize = new Size(700, 480);
             StartPosition = FormStartPosition.CenterParent;
@@ -192,7 +192,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void ExportCsv()
         {
-            using var sfd = new SaveFileDialog { FileName = "OpenUninstall_History.csv", Filter = "CSV File (*.csv)|*.csv" };
+            using var sfd = new SaveFileDialog { FileName = "EBUninstaller_History.csv", Filter = "CSV File (*.csv)|*.csv" };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 var csv = OperationHistoryManager.ExportHistoryToCsv();
@@ -203,7 +203,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void ExportJson()
         {
-            using var sfd = new SaveFileDialog { FileName = "OpenUninstall_History.json", Filter = "JSON File (*.json)|*.json" };
+            using var sfd = new SaveFileDialog { FileName = "EBUninstaller_History.json", Filter = "JSON File (*.json)|*.json" };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 var json = OperationHistoryManager.ExportHistoryToJson();

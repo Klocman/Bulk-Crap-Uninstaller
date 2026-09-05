@@ -1,6 +1,6 @@
 # Third-Party Open Source Software Licenses
 
-OpenUninstall Pro is licensed under the Apache License, Version 2.0. It incorporates and depends on the following open-source software libraries:
+EBUninstaller Pro is licensed under the Apache License, Version 2.0. It incorporates and depends on the following open-source software libraries:
 
 ---
 

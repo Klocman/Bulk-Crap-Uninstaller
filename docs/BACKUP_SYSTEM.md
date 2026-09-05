@@ -1,12 +1,12 @@
 # Backup and Recovery Subsystem
 
-The Backup and Recovery subsystem in OpenUninstall Pro provides automatic pre-operation protection, cryptographic verification, and one-click restoration.
+The Backup and Recovery subsystem in EBUninstaller Pro provides automatic pre-operation protection, cryptographic verification, and one-click restoration.
 
 ---
 
 ## 1. Backup Architecture
 
-Each backup package is stored under `%LOCALAPPDATA%\OpenUninstallPro\Backups\<BackupId>\`:
+Each backup package is stored under `%LOCALAPPDATA%\EBUninstallerPro\Backups\<BackupId>\`:
 
 ```
 Backups/

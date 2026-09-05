@@ -28,11 +28,11 @@ namespace UninstallTools.Exclusions
                     try
                     {
                         var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                        _storageFilePath = Path.Combine(localAppData, "OpenUninstallPro", "Exclusions.json");
+                        _storageFilePath = Path.Combine(localAppData, "EBUninstallerPro", "Exclusions.json");
                     }
                     catch
                     {
-                        _storageFilePath = Path.Combine(Path.GetTempPath(), "OpenUninstallPro", "Exclusions.json");
+                        _storageFilePath = Path.Combine(Path.GetTempPath(), "EBUninstallerPro", "Exclusions.json");
                     }
                 }
                 return _storageFilePath;

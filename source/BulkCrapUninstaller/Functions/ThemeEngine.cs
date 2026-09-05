@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Modern Windows 11 Theme Engine
+    EBUninstaller Pro - Modern Windows 11 Theme Engine
     Supports Dark Mode, Light Mode, and Windows System Theme Sync
 */
 

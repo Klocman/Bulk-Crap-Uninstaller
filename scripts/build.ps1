@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    OpenUninstall Pro - Automated Build and Release Script for Windows (.NET 8)
+    EBUninstaller Pro - Automated Build and Release Script for Windows (.NET 8)
 .DESCRIPTION
     Builds the solution in Release mode (x64, ARM64, AnyCPU), runs unit/integration tests,
     generates portable ZIP packages, and builds the Inno Setup installer.
@@ -21,7 +21,7 @@ $OutputDir = Join-Path $RepoRoot "bin\$Configuration\$Platform"
 $BuildDir = Join-Path $RepoRoot "build"
 
 Write-Host "=================================================================" -ForegroundColor Cyan
-Write-Host " Building OpenUninstall Pro ($Configuration - $Platform)        " -ForegroundColor Cyan
+Write-Host " Building EBUninstaller Pro ($Configuration - $Platform)        " -ForegroundColor Cyan
 Write-Host "=================================================================" -ForegroundColor Cyan
 
 # 1. Check dotnet CLI
@@ -52,7 +52,7 @@ if (-not $SkipTests) {
 
 # 4. Generate Portable Package
 Write-Host "`n[3/4] Creating Portable Release Package..." -ForegroundColor Yellow
-$PortableZip = Join-Path $BuildDir "portable\OpenUninstall_Pro_Portable.zip"
+$PortableZip = Join-Path $BuildDir "portable\EBUninstaller_Pro_Portable.zip"
 New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "portable") | Out-Null
 
 if (Test-Path $OutputDir) {
@@ -64,7 +64,7 @@ if (Test-Path $OutputDir) {
 if ($BuildInstaller) {
     Write-Host "`n[4/4] Compiling Inno Setup Installer..." -ForegroundColor Yellow
     $InnoCompiler = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-    $IssScript = Join-Path $RepoRoot "installer\OpenUninstallSetup.iss"
+    $IssScript = Join-Path $RepoRoot "installer\EBUninstallSetup.iss"
 
     if (Test-Path $InnoCompiler) {
         & $InnoCompiler $IssScript

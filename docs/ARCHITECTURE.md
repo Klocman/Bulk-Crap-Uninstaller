@@ -1,6 +1,6 @@
-# OpenUninstall Pro Architecture
+# EBUninstaller Pro Architecture
 
-OpenUninstall Pro is an independent, high-performance, modular Windows uninstaller and system maintenance application built on .NET 8, C#, and native Windows APIs.
+EBUninstaller Pro is an independent, high-performance, modular Windows uninstaller and system maintenance application built on .NET 8, C#, and native Windows APIs.
 
 ---
 

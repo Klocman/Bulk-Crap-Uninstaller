@@ -1,6 +1,6 @@
 # Advanced Leftover Detection Engine
 
-The Leftover Detection Engine in OpenUninstall Pro identifies remnants, residual configuration keys, and orphaned data left behind by official software uninstallers.
+The Leftover Detection Engine in EBUninstaller Pro identifies remnants, residual configuration keys, and orphaned data left behind by official software uninstallers.
 
 ---
 

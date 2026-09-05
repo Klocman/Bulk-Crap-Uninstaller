@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Unified CLI Automation Engine
     Apache License Version 2.0
 */
@@ -42,11 +42,11 @@ namespace BCU_console
         private static void ShowHelp()
         {
             Console.WriteLine(@"================================================================================
-OpenUninstall Pro - Professional Command-Line Automation Tool
+EBUninstaller Pro - Professional Command-Line Automation Tool
 ================================================================================
 
 USAGE:
-  OpenUninstall.exe <command> [arguments] [switches]
+  EBUninstaller.exe <command> [arguments] [switches]
 
 COMMANDS:
   list                          List all discovered installed applications

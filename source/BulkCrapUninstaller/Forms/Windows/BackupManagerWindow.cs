@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Backup Manager Window
 */
 
@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Backup & Recovery Center";
+            Text = "EBUninstaller Pro - Backup & Recovery Center";
             Size = new Size(900, 600);
             MinimumSize = new Size(700, 480);
             StartPosition = FormStartPosition.CenterParent;

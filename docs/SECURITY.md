@@ -1,6 +1,6 @@
 # Security Model & Guidelines
 
-OpenUninstall Pro is designed with a defense-in-depth security model to ensure safe, reliable system cleanup and prevent accidental data loss or privilege escalation vulnerabilities.
+EBUninstaller Pro is designed with a defense-in-depth security model to ensure safe, reliable system cleanup and prevent accidental data loss or privilege escalation vulnerabilities.
 
 ---
 

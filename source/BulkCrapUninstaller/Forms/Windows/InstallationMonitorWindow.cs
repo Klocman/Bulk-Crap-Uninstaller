@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Installation Monitor Window
 */
 
@@ -36,7 +36,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Installation Monitor & Snapshot Trace Center";
+            Text = "EBUninstaller Pro - Installation Monitor & Snapshot Trace Center";
             Size = new Size(950, 620);
             MinimumSize = new Size(720, 480);
             StartPosition = FormStartPosition.CenterParent;

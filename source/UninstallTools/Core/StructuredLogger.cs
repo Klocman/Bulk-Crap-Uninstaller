@@ -109,8 +109,8 @@ namespace UninstallTools.Core
             {
                 try
                 {
-                    var baseDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "OpenUninstallPro", "Logs");
-                    LogFilePath = Path.Combine(baseDir, $"OpenUninstall_{DateTime.UtcNow:yyyyMMdd}.log");
+                    var baseDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EBUninstallerPro", "Logs");
+                    LogFilePath = Path.Combine(baseDir, $"EBUninstaller_{DateTime.UtcNow:yyyyMMdd}.log");
                 }
                 catch
                 {

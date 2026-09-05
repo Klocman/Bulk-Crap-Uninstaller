@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenUninstall Pro - Repository Static Analysis & Architecture Verifier
+EBUninstaller Pro - Repository Static Analysis & Architecture Verifier
 Performs syntax, XML, C# structure, namespace consistency, and license compliance audits.
 """
 
@@ -157,7 +157,7 @@ def check_licenses():
 
 def main():
     print("=================================================================")
-    print(" OpenUninstall Pro - Repository Verification & Analysis          ")
+    print(" EBUninstaller Pro - Repository Verification & Analysis          ")
     print("=================================================================")
     
     ok1 = check_xml_files()

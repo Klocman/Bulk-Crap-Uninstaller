@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Junk Cleaner Window
 */
 
@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - System Junk Cleaner";
+            Text = "EBUninstaller Pro - System Junk Cleaner";
             Size = new Size(950, 600);
             MinimumSize = new Size(700, 480);
             StartPosition = FormStartPosition.CenterParent;

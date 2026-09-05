@@ -1,6 +1,6 @@
 # Development Guide
 
-This guide outlines coding standards, repository structure, and contribution conventions for OpenUninstall Pro.
+This guide outlines coding standards, repository structure, and contribution conventions for EBUninstaller Pro.
 
 ---
 

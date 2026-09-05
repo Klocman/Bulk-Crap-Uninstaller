@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Privacy Cleaner Window
 */
 
@@ -34,7 +34,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Privacy & Browser Cleaner";
+            Text = "EBUninstaller Pro - Privacy & Browser Cleaner";
             Size = new Size(950, 600);
             MinimumSize = new Size(700, 480);
             StartPosition = FormStartPosition.CenterParent;

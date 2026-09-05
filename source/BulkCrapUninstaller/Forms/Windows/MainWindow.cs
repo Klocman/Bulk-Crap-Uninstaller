@@ -162,6 +162,7 @@ namespace BulkCrapUninstaller.Forms
             {
                 isProbablyARM64 = true;
             }
+            Text = "EBUninstaller Pro";
             MainTitleBarText = Text.Append(" v", Program.AssemblyVersion.ToString(Program.AssemblyVersion.Build != 0 ? 3 : 2))
                 .AppendIf(!Program.IsInstalled, " ", Localisable.StrIsPortable)
                 .AppendIf(ProcessTools.Is64BitProcess, " ", Localisable.Str64Bit)
@@ -1947,7 +1948,7 @@ namespace BulkCrapUninstaller.Forms
             }
         }
 
-        #region OpenUninstall Pro Navigation and Tools Integration
+        #region EBUninstaller Pro Navigation and Tools Integration
         private void InitializeProNavigationAndTools()
         {
             try

@@ -1,6 +1,6 @@
 # Real-Time Installation Monitor & Snapshots
 
-OpenUninstall Pro includes a safe, user-mode installation monitoring engine and point-in-time snapshot diff system.
+EBUninstaller Pro includes a safe, user-mode installation monitoring engine and point-in-time snapshot diff system.
 
 ---
 

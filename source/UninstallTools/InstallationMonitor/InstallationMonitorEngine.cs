@@ -35,11 +35,11 @@ namespace UninstallTools.InstallationMonitor
                     try
                     {
                         var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                        _tracesDirectory = Path.Combine(localAppData, "OpenUninstallPro", "Traces");
+                        _tracesDirectory = Path.Combine(localAppData, "EBUninstallerPro", "Traces");
                     }
                     catch
                     {
-                        _tracesDirectory = Path.Combine(Path.GetTempPath(), "OpenUninstallPro", "Traces");
+                        _tracesDirectory = Path.Combine(Path.GetTempPath(), "EBUninstallerPro", "Traces");
                     }
                 }
 

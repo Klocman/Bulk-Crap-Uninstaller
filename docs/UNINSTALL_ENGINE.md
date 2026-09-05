@@ -1,6 +1,6 @@
 # Unified Uninstallation Engine
 
-OpenUninstall Pro implements a unified 10-phase pipeline for safely and completely uninstalling software on Windows.
+EBUninstaller Pro implements a unified 10-phase pipeline for safely and completely uninstalling software on Windows.
 
 ---
 

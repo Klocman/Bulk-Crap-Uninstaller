@@ -135,6 +135,7 @@ namespace UninstallTools.Localization
 
         private static string GetEnglishString(string key) => key switch
         {
+            "App_Title" => "EBUninstaller Pro",
             "ProTools_Menu" => "Pro Tools & Cleanup",
             "ForcedUninstall_Title" => "Forced Application Removal",
             "BackupManager_Title" => "Backup & Recovery Center",
@@ -150,6 +151,7 @@ namespace UninstallTools.Localization
 
         private static string GetGermanString(string key) => key switch
         {
+            "App_Title" => "EBUninstaller Pro",
             "ProTools_Menu" => "Pro-Bereinigung & Werkzeuge",
             "ForcedUninstall_Title" => "Erzwungene Programmdeinstallation",
             "BackupManager_Title" => "Sicherungs- & Wiederherstellungscenter",
@@ -165,6 +167,7 @@ namespace UninstallTools.Localization
 
         private static string GetArabicString(string key) => key switch
         {
+            "App_Title" => "EBUninstaller Pro - أداة إلغاء التثبيت المتقدمة",
             "ProTools_Menu" => "أدوات متقدمة وتنظيف",
             "ForcedUninstall_Title" => "إزالة البرامج بالقوة",
             "BackupManager_Title" => "مركز النسخ الاحتياطي والاستعادة",

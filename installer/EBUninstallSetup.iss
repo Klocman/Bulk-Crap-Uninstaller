@@ -1,10 +1,10 @@
-; OpenUninstall Pro - Modern Inno Setup Installer Script
+; EBUninstaller Pro - Modern Inno Setup Installer Script
 ; Professional Next-Generation Windows Uninstaller
 
-#define MyAppName "OpenUninstall Pro"
+#define MyAppName "EBUninstaller Pro"
 #define MyAppVersion "7.0.0"
-#define MyAppPublisher "OpenUninstall Project"
-#define MyAppURL "https://github.com/OpenUninstall/OpenUninstall"
+#define MyAppPublisher "EBUninstaller Project"
+#define MyAppURL "https://github.com/EhabYT/Bulk-Crap-Uninstaller"
 #define MyAppExeName "BCUninstaller.exe"
 #define MyAppConsoleExeName "BCU-console.exe"
 
@@ -21,7 +21,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=..\Licence.txt
 OutputDir=..\build\installer
-OutputBaseFilename=OpenUninstall_Pro_v{#MyAppVersion}_Setup
+OutputBaseFilename=EBUninstaller_Pro_v{#MyAppVersion}_Setup
 SetupIconFile=assets\logo.ico
 Compression=lzma2/ultra64
 SolidCompression=yes

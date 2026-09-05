@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# OpenUninstall Pro - Cross-platform build & verification runner
+# EBUninstaller Pro - Cross-platform build & verification runner
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -7,7 +7,7 @@ REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 BUILD_DIR="$REPO_ROOT/build"
 
 echo "================================================================="
-echo " OpenUninstall Pro - Build & Quality Verification Runner         "
+echo " EBUninstaller Pro - Build & Quality Verification Runner         "
 echo "================================================================="
 
 mkdir -p "$BUILD_DIR/portable" "$BUILD_DIR/installer"

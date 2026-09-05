@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Modern Windows 11 Navigation Command Bar
+    EBUninstaller Pro - Modern Windows 11 Navigation Command Bar
     Unified 13-Section Navigation Bar
 */
 

@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Browser Extension Manager Window
 */
 
@@ -36,7 +36,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Browser Extensions Manager";
+            Text = "EBUninstaller Pro - Browser Extensions Manager";
             Size = new Size(950, 600);
             MinimumSize = new Size(700, 480);
             StartPosition = FormStartPosition.CenterParent;

@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Professional Next-Generation Windows Uninstaller
+    EBUninstaller Pro - Professional Next-Generation Windows Uninstaller
     Windows Built-in Tools Center Window
 */
 
@@ -28,7 +28,7 @@ namespace BulkCrapUninstaller.Forms.Windows
 
         private void InitializeComponent()
         {
-            Text = "OpenUninstall Pro - Windows Administrative Tools Hub";
+            Text = "EBUninstaller Pro - Windows Administrative Tools Hub";
             Size = new Size(850, 520);
             MinimumSize = new Size(600, 400);
             StartPosition = FormStartPosition.CenterParent;

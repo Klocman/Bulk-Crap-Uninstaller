@@ -1,6 +1,6 @@
 # Build Instructions
 
-This document describes how to build OpenUninstall Pro from source.
+This document describes how to build EBUninstaller Pro from source.
 
 ---
 
@@ -54,8 +54,8 @@ To run the complete automated build, execute tests, create the portable ZIP pack
 
 Output artifacts will be generated in:
 * `bin\Release\AnyCPU\` (Compiled binaries)
-* `build\portable\OpenUninstall_Pro_Portable.zip` (Portable release)
-* `build\installer\OpenUninstall_Pro_v7.0.0_Setup.exe` (Inno Setup installer)
+* `build\portable\EBUninstaller_Pro_Portable.zip` (Portable release)
+* `build\installer\EBUninstaller_Pro_v7.0.0_Setup.exe` (Inno Setup installer)
 
 ---
 

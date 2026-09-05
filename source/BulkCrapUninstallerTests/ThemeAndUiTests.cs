@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Theme and UI Controls Test Suite
+    EBUninstaller Pro - Theme and UI Controls Test Suite
 */
 
 using System;
@@ -65,7 +65,7 @@ namespace BulkCrapUninstallerTests
             // Display valid application entry
             var entry = new ApplicationUninstallerEntry
             {
-                DisplayName = "OpenUninstall Pro Test Application",
+                DisplayName = "EBUninstaller Pro Test Application",
                 DisplayVersion = "1.0.0.0",
                 Publisher = "OpenUninstall Team",
                 InstallLocation = @"C:\Program Files\TestApp",

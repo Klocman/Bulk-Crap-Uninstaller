@@ -1,6 +1,6 @@
 # Testing Strategy & Test Suites
 
-OpenUninstall Pro maintains extensive test coverage across unit, integration, and lifecycle test suites.
+EBUninstaller Pro maintains extensive test coverage across unit, integration, and lifecycle test suites.
 
 ---
 
