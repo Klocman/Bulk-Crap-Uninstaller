@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using UninstallTools.Core;
 using UninstallTools.Startup;
+using UninstallTools.Startup.Normal;
 
 namespace UninstallTools.Startup
 {

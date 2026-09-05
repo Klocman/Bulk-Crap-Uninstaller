@@ -27,6 +27,9 @@ Write-Host "=================================================================" -
 Write-Host " Building EBUninstaller Pro ($Configuration - $Platform)        " -ForegroundColor Cyan
 Write-Host "=================================================================" -ForegroundColor Cyan
 
+# Unblock files in repository if downloaded from web (Mark of the Web / Zone.Identifier)
+Get-ChildItem -Path $RepoRoot -Recurse -ErrorAction SilentlyContinue | Unblock-File -ErrorAction SilentlyContinue
+
 # 0. Clean prior build if requested
 if ($Clean) {
     Write-Host "[Clean] Cleaning previous build outputs..." -ForegroundColor Yellow
