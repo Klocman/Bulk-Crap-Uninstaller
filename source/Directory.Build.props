@@ -34,8 +34,16 @@
 		<SelfContained>false</SelfContained>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Nullable>annotations</Nullable>
+		<LangVersion>latest</LangVersion>
 		<UseSourcePath>true</UseSourcePath>
+		<GenerateResourceWarnOnMissingType>true</GenerateResourceWarnOnMissingType>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<GenerateResourceErrorsAsWarnings>true</GenerateResourceErrorsAsWarnings>
 	</PropertyGroup>
+
+	<Target Name="UnblockResxFiles" BeforeTargets="BeforeResGen;PrepareResourceNames" Condition="'$(OS)' == 'Windows_NT'">
+		<Exec Command="powershell -NoProfile -NonInteractive -Command &quot;Get-ChildItem -Path '$(MSBuildProjectDirectory)' -Filter *.resx -Recurse -ErrorAction SilentlyContinue | Unblock-File -ErrorAction SilentlyContinue&quot;" ContinueOnError="true" IgnoreExitCode="true" />
+	</Target>
 	
 	<Import Project="HelperTools\HelperTools.projitems" Label="Shared" />
 

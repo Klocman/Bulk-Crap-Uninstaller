@@ -24,7 +24,7 @@ using System.Text;
 
 namespace Klocman
 {
-    public enum LogLevel
+    internal enum HelperLogLevel
     {
         Debug,
         Info,
@@ -49,15 +49,15 @@ namespace Klocman
         public static void WriteExceptionToLog(Exception ex)
         {
             if (ex == null) return;
-            WriteMessageToLog(LogLevel.Error, ex.ToString());
+            WriteMessageToLog(HelperLogLevel.Error, ex.ToString());
         }
 
         public static void WriteMessageToLog(string message)
         {
-            WriteMessageToLog(LogLevel.Info, message);
+            WriteMessageToLog(HelperLogLevel.Info, message);
         }
 
-        public static void WriteMessageToLog(LogLevel level, string message)
+        public static void WriteMessageToLog(HelperLogLevel level, string message)
         {
             if (string.IsNullOrEmpty(message)) return;
 
