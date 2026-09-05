@@ -106,6 +106,12 @@ def check_new_subsystems():
         "source/BulkCrapUninstaller/Forms/Windows/WindowsToolsWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/OperationHistoryWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/SecureDeleteWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/SoftwareHealthWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/RegistryOptimizerWindow.cs",
+        "source/UninstallTools/Core/UpdateManager.cs",
+        "source/UninstallTools/Detection/SoftwareHealthEngine.cs",
+        "source/UninstallTools/RegistryEngine/RegistryOptimizerEngine.cs",
+        "source/UninstallTools/WindowsIntegration/ShellIntegrationManager.cs",
         "source/BCU-console/Program.cs"
     ]
 
@@ -131,6 +137,7 @@ def check_unit_tests():
         "source/BulkCrapUninstallerTests/JunkAndPrivacyCleanerTests.cs",
         "source/BulkCrapUninstallerTests/LocalizationAndTargetModeTests.cs",
         "source/BulkCrapUninstallerTests/ThemeAndUiTests.cs",
+        "source/BulkCrapUninstallerTests/SoftwareHealthAndUpdaterTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"

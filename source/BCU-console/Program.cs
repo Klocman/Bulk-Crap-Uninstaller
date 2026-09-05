@@ -60,6 +60,9 @@ COMMANDS:
   rollback-trace <trace_id>     Remove all items recorded by an installation trace
   clean-junk                    Scan and clean system temporary and cache junk files
   clean-privacy                 Scan and clean browser and Windows privacy tracks
+  health                        Analyze software health, duplicate runtimes & hygiene score
+  optimize-registry             Scan and repair invalid registry references & dead paths
+  update                        Check for latest EBUninstaller Pro release updates
   startup                       Inspect and manage Windows startup applications
   extensions                    Inspect and manage installed browser extensions
   tools                         List and launch built-in Windows administrative tools
@@ -145,6 +148,20 @@ EXIT CODES:
                     case "clean-privacy":
                     case "privacy":
                         return ProcessCleanPrivacyCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "health":
+                    case "system-health":
+                        return ProcessHealthCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "optimize-registry":
+                    case "optreg":
+                    case "repair-registry":
+                        return ProcessOptimizeRegistryCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "update":
+                    case "check-update":
+                    case "check-updates":
+                        return ProcessUpdateCommand(args.Skip(1).ToArray(), isJson);
 
                     case "startup":
                         return ProcessStartupCommand(args.Skip(1).ToArray(), isJson);
@@ -835,6 +852,97 @@ EXIT CODES:
             }
 
             Console.WriteLine($"\nTotal Recorded Operations: {history.Count}");
+            return 0;
+        }
+
+        private static int ProcessHealthCommand(string[] args, bool isJson)
+        {
+            var apps = QueryApps(!isJson, false);
+            var report = UninstallTools.Detection.SoftwareHealthEngine.AnalyzeSystemHealth(apps);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine("\n================================================================================");
+            Console.WriteLine($"SYSTEM HYGIENE REPORT - SCORE: {report.HygieneScore}/100");
+            Console.WriteLine("================================================================================");
+            Console.WriteLine($"Total Applications Analyzed : {report.TotalAppsAnalyzed}");
+            Console.WriteLine($"Duplicate/Redundant Runtimes : {report.DuplicateRuntimesCount}");
+            Console.WriteLine($"Abandoned AppData Folders   : {report.OrphanedFoldersCount}");
+            Console.WriteLine($"Large Space Hogs (> 5 GB)   : {report.LargeAppsCount}");
+            Console.WriteLine($"Potential Space Savings     : {report.TotalPotentialSavingsBytes / (1024 * 1024.0):F1} MB\n");
+
+            Console.WriteLine("RECOMMENDATIONS:");
+            foreach (var rec in report.Recommendations)
+            {
+                Console.WriteLine($" [{rec.Severity}] {rec.Title}");
+                Console.WriteLine($"   -> {rec.Description}");
+            }
+
+            return 0;
+        }
+
+        private static int ProcessOptimizeRegistryCommand(string[] args, bool isJson)
+        {
+            var scan = UninstallTools.RegistryEngine.RegistryOptimizerEngine.ScanRegistryIssues();
+            var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase) || x.Equals("--unattended", StringComparison.OrdinalIgnoreCase));
+            var shouldFix = args.Any(x => x.Equals("--fix", StringComparison.OrdinalIgnoreCase) || x.Equals("-f", StringComparison.OrdinalIgnoreCase) || isUnattended);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(scan, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Found {scan.Issues.Count} registry issues across {scan.TotalKeysScanned} keys:");
+            foreach (var iss in scan.Issues)
+            {
+                Console.WriteLine($" - [{iss.IssueType}] {iss.KeyPath} -> {iss.Description}");
+            }
+
+            if (scan.Issues.Count == 0)
+            {
+                Console.WriteLine("No registry integrity issues detected. Registry is healthy.");
+                return 0;
+            }
+
+            if (!shouldFix)
+            {
+                Console.WriteLine("\nPass '--fix' or '/U' to automatically repair these registry issues.");
+                return 0;
+            }
+
+            var fixedCount = UninstallTools.RegistryEngine.RegistryOptimizerEngine.FixRegistryIssues(scan.Issues, true);
+            Console.WriteLine($"Registry optimization complete: {fixedCount} issues repaired.");
+            return 0;
+        }
+
+        private static int ProcessUpdateCommand(string[] args, bool isJson)
+        {
+            var updateTask = UninstallTools.Core.UpdateManager.CheckForUpdatesAsync(true);
+            updateTask.Wait();
+            var update = updateTask.Result;
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(update, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Current Version : {update.CurrentVersion}");
+            Console.WriteLine($"Latest Version  : {update.LatestVersion ?? "Unknown"}");
+            Console.WriteLine($"Update Available: {(update.IsUpdateAvailable ? "YES" : "No (Up to date)")}");
+
+            if (update.IsUpdateAvailable)
+            {
+                Console.WriteLine($"\nDownload URL: {update.DownloadUrl}");
+                if (!string.IsNullOrEmpty(update.ReleaseNotes))
+                    Console.WriteLine($"\nRelease Notes:\n{update.ReleaseNotes}");
+            }
+
             return 0;
         }
 

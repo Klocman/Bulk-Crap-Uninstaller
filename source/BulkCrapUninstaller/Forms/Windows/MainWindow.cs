@@ -1983,9 +1983,11 @@ namespace BulkCrapUninstaller.Forms
                     DisplayStyle = ToolStripItemDisplayStyle.Text
                 };
 
+                var itemHealth = new ToolStripMenuItem("Software Health & Hygiene Advisor...", null, (s, e) => OpenSoftwareHealth());
                 var itemForced = new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval());
                 var itemMonitor = new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor());
                 var itemBackup = new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager());
+                var itemRegOpt = new ToolStripMenuItem("Registry Optimizer & Integrity Repair...", null, (s, e) => OpenRegistryOptimizer());
                 var itemJunk = new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner());
                 var itemPrivacy = new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner());
                 var itemExt = new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions());
@@ -1995,11 +1997,13 @@ namespace BulkCrapUninstaller.Forms
 
                 proDropDown.DropDownItems.AddRange(new ToolStripItem[]
                 {
-                    itemForced,
+                    itemHealth,
                     new ToolStripSeparator(),
+                    itemForced,
                     itemMonitor,
                     itemBackup,
                     new ToolStripSeparator(),
+                    itemRegOpt,
                     itemJunk,
                     itemPrivacy,
                     itemExt,
@@ -2015,16 +2019,18 @@ namespace BulkCrapUninstaller.Forms
                 // 4. Add to Tools MenuStrip
                 if (toolsToolStripMenuItem != null)
                 {
-                    toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(1, new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(2, new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(3, new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(4, new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(5, new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(6, new ToolStripMenuItem("Windows Administrative Tools...", null, (s, e) => OpenWindowsTools()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(7, new ToolStripMenuItem("Operation History & Audit Log...", null, (s, e) => OpenOperationHistory()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(8, new ToolStripMenuItem("Secure File & Folder Shredder...", null, (s, e) => OpenSecureDelete()));
-                    toolsToolStripMenuItem.DropDownItems.Insert(9, new ToolStripSeparator());
+                    toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Software Health & Hygiene Advisor...", null, (s, e) => OpenSoftwareHealth()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(1, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(2, new ToolStripMenuItem("Installation Monitor & Snapshots...", null, (s, e) => OpenInstallationMonitor()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(3, new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(4, new ToolStripMenuItem("Registry Optimizer & Repair...", null, (s, e) => OpenRegistryOptimizer()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(5, new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(6, new ToolStripMenuItem("Browser & Privacy Cleaner...", null, (s, e) => OpenPrivacyCleaner()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(7, new ToolStripMenuItem("Browser Extension Manager...", null, (s, e) => OpenBrowserExtensions()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(8, new ToolStripMenuItem("Windows Administrative Tools...", null, (s, e) => OpenWindowsTools()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(9, new ToolStripMenuItem("Operation History & Audit Log...", null, (s, e) => OpenOperationHistory()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(10, new ToolStripMenuItem("Secure File & Folder Shredder...", null, (s, e) => OpenSecureDelete()));
+                    toolsToolStripMenuItem.DropDownItems.Insert(11, new ToolStripSeparator());
                 }
 
                 // 5. Add to Context Menu
@@ -2070,6 +2076,9 @@ namespace BulkCrapUninstaller.Forms
                 case "Apps":
                     uninstallerObjectListView.Focus();
                     break;
+                case "Health":
+                    OpenSoftwareHealth();
+                    break;
                 case "Uninstall":
                     toolStripButtonUninstall_Click(sender, EventArgs.Empty);
                     break;
@@ -2088,11 +2097,14 @@ namespace BulkCrapUninstaller.Forms
                 case "Junk":
                     OpenJunkCleaner();
                     break;
-                case "Extensions":
-                    OpenBrowserExtensions();
-                    break;
                 case "Privacy":
                     OpenPrivacyCleaner();
+                    break;
+                case "RegOpt":
+                    OpenRegistryOptimizer();
+                    break;
+                case "Extensions":
+                    OpenBrowserExtensions();
                     break;
                 case "Shredder":
                     OpenSecureDelete();
@@ -2107,6 +2119,18 @@ namespace BulkCrapUninstaller.Forms
                     OpenOperationHistory();
                     break;
             }
+        }
+
+        private void OpenSoftwareHealth()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.SoftwareHealthWindow(_listView.AllUninstallers);
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenRegistryOptimizer()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.RegistryOptimizerWindow();
+            dlg.ShowDialog(this);
         }
 
         private void OpenForcedRemoval(string target = null)

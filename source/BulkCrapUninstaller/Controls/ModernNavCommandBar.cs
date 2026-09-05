@@ -36,16 +36,18 @@ namespace BulkCrapUninstaller.Controls
                 AutoScroll = true
             };
 
-            // Add all 13 core navigation items
+            // Add core navigation items
             AddNavButton("Apps", "Applications", true);
+            AddNavButton("Health", "Health Advisor");
             AddNavButton("Uninstall", "Uninstall Pipeline");
             AddNavButton("Leftovers", "Leftovers Scanner");
             AddNavButton("Monitor", "Installation Monitor");
             AddNavButton("Backups", "Backup Center");
             AddNavButton("Startup", "Startup Manager");
             AddNavButton("Junk", "Junk Cleaner");
-            AddNavButton("Extensions", "Browser Extensions");
             AddNavButton("Privacy", "Privacy Cleaner");
+            AddNavButton("RegOpt", "Registry Optimizer");
+            AddNavButton("Extensions", "Browser Extensions");
             AddNavButton("Shredder", "Secure Shredder");
             AddNavButton("WinTools", "Windows Tools");
             AddNavButton("Settings", "Settings");
