@@ -31,12 +31,17 @@ namespace BulkCrapUninstallerTests
         {
             LanguageManager.SetLanguage(SupportedLanguage.English);
             Assert.AreEqual("System Junk Cleaner", LanguageManager.GetString("JunkCleaner_Title"));
+            Assert.AreEqual("EBUninstaller Pro", LanguageManager.GetString("App_Title"));
 
             LanguageManager.SetLanguage(SupportedLanguage.German);
             Assert.AreEqual("Systemmüll-Bereinigung", LanguageManager.GetString("JunkCleaner_Title"));
+            Assert.AreEqual("EBUninstaller Pro", LanguageManager.GetString("App_Title"));
 
             LanguageManager.SetLanguage(SupportedLanguage.Arabic);
             Assert.AreEqual("تنظيف ملفات النظام غير المرغوب فيها", LanguageManager.GetString("JunkCleaner_Title"));
+            Assert.AreEqual("EBUninstaller Pro - أداة إلغاء التثبيت المتقدمة", LanguageManager.GetString("App_Title"));
+            Assert.AreEqual("صحة النظام", LanguageManager.GetString("Nav_Health"));
+            Assert.AreEqual("إلغاء التثبيت", LanguageManager.GetString("Btn_Uninstall"));
 
             // Reset back to English
             LanguageManager.SetLanguage(SupportedLanguage.English);
