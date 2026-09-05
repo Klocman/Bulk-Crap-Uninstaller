@@ -74,4 +74,16 @@ if ($BuildInstaller) {
     }
 }
 
+# 6. Generate SHA-256 Checksums for Release
+Write-Host "`nGenerating SHA-256 Checksums..." -ForegroundColor Yellow
+$SumsFile = Join-Path $BuildDir "SHA256SUMS.txt"
+$ReleaseFiles = Get-ChildItem -Path $BuildDir -Recurse -File -Exclude "SHA256SUMS.txt"
+$Checksums = foreach ($file in $ReleaseFiles) {
+    $hash = (Get-FileHash -Path $file.FullName -Algorithm SHA256).Hash.ToLower()
+    $relPath = $file.FullName.Substring($BuildDir.Length + 1)
+    "$hash  $relPath"
+}
+$Checksums | Set-Content -Path $SumsFile -Encoding UTF8
+Write-Host "Checksums written to: $SumsFile" -ForegroundColor Green
+
 Write-Host "`nBuild process completed successfully!" -ForegroundColor Green
