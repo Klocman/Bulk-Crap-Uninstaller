@@ -131,6 +131,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/SoftwareHealthWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/RegistryOptimizerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/DuplicateAndEmptyFolderWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/ContextMenuManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -145,6 +146,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/SystemTools/MemoryTrimmerEngine.cs",
         "source/UninstallTools/SystemTools/AutoMaintenanceScheduler.cs",
         "source/UninstallTools/WindowsIntegration/ShellIntegrationManager.cs",
+        "source/UninstallTools/WindowsIntegration/ContextMenuManager.cs",
         "source/WinUpdateHelper/WUApiInterop.cs",
         "source/BCU-console/Program.cs"
     ]
@@ -183,6 +185,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/DriverAndMemoryTests.cs",
         "source/BulkCrapUninstallerTests/WizardAndOptimizationTests.cs",
         "source/BulkCrapUninstallerTests/EmptyDirectoryAndDuplicateTests.cs",
+        "source/BulkCrapUninstallerTests/ContextMenuManagerTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
