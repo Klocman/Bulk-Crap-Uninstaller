@@ -122,6 +122,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/SystemTools/WindowsDriverManager.cs",
         "source/UninstallTools/SystemTools/WindowsFirewallManager.cs",
         "source/UninstallTools/SystemTools/WindowsHostsFileManager.cs",
+        "source/UninstallTools/SystemTools/EnvironmentVariablesManager.cs",
         "source/UninstallTools/Exclusions/ExclusionManager.cs",
         "source/UninstallTools/History/OperationHistoryManager.cs",
         "source/UninstallTools/HunterMode/TargetModeController.cs",
@@ -157,6 +158,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/FontResidualsCleanerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/FirewallRulesManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/HostsFileManagerWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/EnvironmentVariablesWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -225,6 +227,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/FontResidualsCleanerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsFirewallManagerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsHostsFileManagerTests.cs",
+        "source/BulkCrapUninstallerTests/EnvironmentVariablesTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
