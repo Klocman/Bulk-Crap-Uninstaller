@@ -8,7 +8,7 @@
 
 param(
     [string]$Configuration = "Release",
-    [string]$Platform = "AnyCPU",
+    [string]$Platform = "Any CPU",
     [switch]$SkipTests,
     [switch]$BuildInstaller
 )
@@ -17,7 +17,7 @@ $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoRoot = Split-Path -Parent $ScriptDir
 $SolutionPath = Join-Path $RepoRoot "source\BulkCrapUninstaller.sln"
-$OutputDir = Join-Path $RepoRoot "bin\$Configuration\$Platform"
+$OutputDir = Join-Path $RepoRoot "bin\$Configuration\AnyCPU"
 $BuildDir = Join-Path $RepoRoot "build"
 
 Write-Host "=================================================================" -ForegroundColor Cyan
@@ -31,7 +31,7 @@ if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
 
 # 2. Build Solution
 Write-Host "`n[1/4] Compiling Solution..." -ForegroundColor Yellow
-dotnet build $SolutionPath -c $Configuration /p:Platform=$Platform
+dotnet build $SolutionPath -c $Configuration /p:Platform="$Platform" /p:Version="7.0.0"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Build failed with exit code $LASTEXITCODE"
@@ -55,9 +55,17 @@ Write-Host "`n[3/4] Creating Portable Release Package..." -ForegroundColor Yello
 $PortableZip = Join-Path $BuildDir "portable\EBUninstaller_Pro_Portable.zip"
 New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "portable") | Out-Null
 
+if (-not (Test-Path $OutputDir)) {
+    if (Test-Path (Join-Path $RepoRoot "bin\$Configuration\$Platform")) {
+        $OutputDir = Join-Path $RepoRoot "bin\$Configuration\$Platform"
+    }
+}
+
 if (Test-Path $OutputDir) {
     Compress-Archive -Path "$OutputDir\*" -DestinationPath $PortableZip -Force
     Write-Host "Portable package created: $PortableZip" -ForegroundColor Green
+} else {
+    Write-Warning "Output directory not found at $OutputDir"
 }
 
 # 5. Build Installer if requested

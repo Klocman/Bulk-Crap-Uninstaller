@@ -11,7 +11,8 @@
 		<TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>
 		<TargetPlatformVersion>8.0</TargetPlatformVersion>
 
-		<OutputPath>..\..\bin\$(Configuration)\$(Platform)\</OutputPath>
+		<OutputPath Condition="'$(Platform)' == 'Any CPU' or '$(Platform)' == 'AnyCPU'">..\..\bin\$(Configuration)\AnyCPU\</OutputPath>
+		<OutputPath Condition="'$(Platform)' != 'Any CPU' and '$(Platform)' != 'AnyCPU'">..\..\bin\$(Configuration)\$(Platform)\</OutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
