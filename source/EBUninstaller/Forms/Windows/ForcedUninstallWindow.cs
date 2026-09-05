@@ -238,8 +238,8 @@ namespace BulkCrapUninstaller.Forms.Windows
             _progressBar.Visible = false;
             if (result.Success)
             {
-                MessageBox.Show($"Forced removal completed successfully!\n\nRemoved: {result.RemovedItemsCount} items" +
-                                (result.BackupId != null ? $"\nBackup ID: {result.BackupId}" : ""),
+                var backupMsg = result.BackupId != null ? "\nBackup ID: " + result.BackupId : "";
+                MessageBox.Show($"Forced removal completed successfully!\n\nRemoved: {result.RemovedItemsCount} items" + backupMsg,
                     "Removal Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();

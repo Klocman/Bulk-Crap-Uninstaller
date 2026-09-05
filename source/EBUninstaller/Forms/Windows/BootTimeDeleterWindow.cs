@@ -93,7 +93,7 @@ namespace BulkCrapUninstaller.Forms.Windows
             foreach (var item in items)
             {
                 var lvi = new ListViewItem(item.SourcePath) { Tag = item };
-                lvi.SubItems.Add(item.IsDeleteOperation ? "Delete on Boot" : $"Rename to {item.DestinationPath}");
+                lvi.SubItems.Add(item.IsDeleteOperation ? "Delete on Boot" : "Rename to " + item.DestinationPath);
                 lvi.SubItems.Add(item.FileExistsOnDisk ? "Yes" : "Pending / Deleted");
                 lvi.SubItems.Add(item.FileSizeBytes > 0 ? $"{item.FileSizeBytes / 1024} KB" : "-");
                 _listView.Items.Add(lvi);

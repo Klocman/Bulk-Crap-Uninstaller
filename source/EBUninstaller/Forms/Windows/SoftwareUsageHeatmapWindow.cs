@@ -113,8 +113,8 @@ namespace BulkCrapUninstaller.Forms.Windows
                 var lvi = new ListViewItem(e.ApplicationName);
                 lvi.SubItems.Add(e.Publisher);
                 lvi.SubItems.Add(e.Category.ToString());
-                lvi.SubItems.Add(e.DaysSinceLastUsed >= 999 ? "Never / Unknown" : $"{e.DaysSinceLastUsed} days");
-                lvi.SubItems.Add(e.EstimatedSizeBytes > 0 ? $"{e.EstimatedSizeBytes / (1024 * 1024)} MB" : "-");
+                lvi.SubItems.Add(e.DaysSinceLastUsed >= 999 ? "Never / Unknown" : e.DaysSinceLastUsed + " days");
+                lvi.SubItems.Add(e.EstimatedSizeBytes > 0 ? (e.EstimatedSizeBytes / (1024 * 1024)) + " MB" : "-");
                 lvi.SubItems.Add($"{e.ReclaimPriorityScore}/100");
 
                 if (e.Category == UsageFrequencyCategory.ZombieInstallation)

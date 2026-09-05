@@ -199,7 +199,7 @@ namespace BulkCrapUninstaller.Forms.Windows
                 lvi.SubItems.Add(d.Provider);
                 lvi.SubItems.Add(d.StartupType.ToString());
                 lvi.SubItems.Add(d.IsOrphaned ? "⚠️ Orphaned" : "Active");
-                lvi.SubItems.Add(d.FileSizeBytes > 0 ? $"{d.FileSizeBytes / 1024} KB" : "-");
+                lvi.SubItems.Add(d.FileSizeBytes > 0 ? (d.FileSizeBytes / 1024) + " KB" : "-");
                 lvi.SubItems.Add(d.DriverPath);
 
                 if (d.IsOrphaned)

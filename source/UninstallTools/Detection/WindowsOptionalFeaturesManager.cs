@@ -204,9 +204,19 @@ namespace UninstallTools.Detection
 
             try
             {
-                string action = isCapability
-                    ? (enable ? $"/Online /Add-Capability /CapabilityName:\"{featureName}\"" : $"/Online /Remove-Capability /CapabilityName:\"{featureName}\"")
-                    : (enable ? $"/Online /Enable-Feature /FeatureName:\"{featureName}\" /NoRestart" : $"/Online /Disable-Feature /FeatureName:\"{featureName}\" /NoRestart");
+                string action;
+                if (isCapability)
+                {
+                    action = enable
+                        ? "/Online /Add-Capability /CapabilityName:\"" + featureName + "\""
+                        : "/Online /Remove-Capability /CapabilityName:\"" + featureName + "\"";
+                }
+                else
+                {
+                    action = enable
+                        ? "/Online /Enable-Feature /FeatureName:\"" + featureName + "\" /NoRestart"
+                        : "/Online /Disable-Feature /FeatureName:\"" + featureName + "\" /NoRestart";
+                }
 
                 var psi = new ProcessStartInfo
                 {

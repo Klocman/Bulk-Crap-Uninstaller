@@ -222,8 +222,8 @@ namespace BulkCrapUninstaller.Forms.Windows
             _progressBar.Visible = false;
             _btnScan.Enabled = true;
 
-            MessageBox.Show($"Privacy cleanup finished!\n\nCleaned: {result.CleanedItemsCount} items" +
-                            (result.FailedCount > 0 ? $"\nLocked/In-use tracks skipped: {result.FailedCount}" : ""),
+            var skippedMsg = result.FailedCount > 0 ? "\nLocked/In-use tracks skipped: " + result.FailedCount : "";
+            MessageBox.Show($"Privacy cleanup finished!\n\nCleaned: {result.CleanedItemsCount} items" + skippedMsg,
                 "Cleanup Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             StartScan();

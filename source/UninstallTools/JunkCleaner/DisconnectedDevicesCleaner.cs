@@ -80,13 +80,24 @@ namespace UninstallTools.JunkCleaner
                                     string classGuid = instanceKey.GetValue("ClassGUID") as string ?? string.Empty;
 
                                     // Resolve display string
-                                    string displayName = !string.IsNullOrEmpty(friendlyName) ? friendlyName :
-                                                         (!string.IsNullOrEmpty(devDesc) ? devDesc : $"{deviceGroup}\\{instanceName}");
+                                    string displayName;
+                                    if (!string.IsNullOrEmpty(friendlyName))
+                                    {
+                                        displayName = friendlyName;
+                                    }
+                                    else if (!string.IsNullOrEmpty(devDesc))
+                                    {
+                                        displayName = devDesc;
+                                    }
+                                    else
+                                    {
+                                        displayName = deviceGroup + @"\" + instanceName;
+                                    }
 
                                     if (displayName.Contains(";"))
                                         displayName = displayName.Substring(displayName.LastIndexOf(';') + 1);
 
-                                    string fullInstanceId = $@"{rootSubKey}\{deviceGroup}\{instanceName}";
+                                    string fullInstanceId = rootSubKey + @"\" + deviceGroup + @"\" + instanceName;
                                     bool isSys = IsSystemDevice(displayName, fullInstanceId);
 
                                     results.Add(new DisconnectedDeviceItem

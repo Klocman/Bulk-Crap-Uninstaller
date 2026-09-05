@@ -171,11 +171,17 @@ namespace BulkCrapUninstaller.Forms.Windows
                 sb.AppendLine();
                 sb.AppendLine($"REGISTRY ENTRIES ({manifest.RegistryEntries.Count}):");
                 foreach (var r in manifest.RegistryEntries)
-                    sb.AppendLine($" - {r.KeyPath} (SHA-256: {r.Sha256Hash?.Substring(0, 16)}...)");
+                {
+                    var hashPart = r.Sha256Hash != null && r.Sha256Hash.Length >= 16 ? r.Sha256Hash.Substring(0, 16) : r.Sha256Hash ?? "N/A";
+                    sb.AppendLine($" - {r.KeyPath} (SHA-256: {hashPart}...)");
+                }
                 sb.AppendLine();
                 sb.AppendLine($"FILE ARCHIVE ENTRIES ({manifest.FileEntries.Count}):");
                 foreach (var f in manifest.FileEntries)
-                    sb.AppendLine($" - {f.OriginalPath} [{f.Size / 1024.0:F1} KB] (SHA-256: {f.Sha256Hash?.Substring(0, 16)}...)");
+                {
+                    var hashPart = f.Sha256Hash != null && f.Sha256Hash.Length >= 16 ? f.Sha256Hash.Substring(0, 16) : f.Sha256Hash ?? "N/A";
+                    sb.AppendLine($" - {f.OriginalPath} [{f.Size / 1024.0:F1} KB] (SHA-256: {hashPart}...)");
+                }
 
                 _txtDetails.Text = sb.ToString();
             }

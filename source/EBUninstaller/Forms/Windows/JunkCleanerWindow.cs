@@ -204,8 +204,8 @@ namespace BulkCrapUninstaller.Forms.Windows
             _progressBar.Visible = false;
             _btnScan.Enabled = true;
 
-            MessageBox.Show($"Junk cleanup finished!\n\nDeleted: {result.DeletedFilesCount} files\nFreed: {result.BytesFreed / (1024.0 * 1024.0):F2} MB" +
-                            (result.FailedCount > 0 ? $"\nLocked/In-use files skipped: {result.FailedCount}" : ""),
+            var skippedMsg = result.FailedCount > 0 ? "\nLocked/In-use files skipped: " + result.FailedCount : "";
+            MessageBox.Show($"Junk cleanup finished!\n\nDeleted: {result.DeletedFilesCount} files\nFreed: {result.BytesFreed / (1024.0 * 1024.0):F2} MB" + skippedMsg,
                 "Cleanup Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             StartScan();
