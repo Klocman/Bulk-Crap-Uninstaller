@@ -155,6 +155,9 @@ namespace UninstallTools.Core
             }
         }
 
+        public static void Log(LogLevel level, string source, string message) =>
+            Log(level, LogCategory.General, message, null, source);
+
         public static void Trace(LogCategory category, string message, string details = null, string source = null) =>
             Log(LogLevel.Trace, category, message, details, source);
 

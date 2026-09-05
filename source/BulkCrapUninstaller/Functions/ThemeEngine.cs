@@ -190,4 +190,21 @@ namespace BulkCrapUninstaller.Functions
             catch { }
         }
     }
+
+    public static class ThemeManager
+    {
+        public static bool IsDarkModeEnabled => ThemeEngine.IsDarkModeActive;
+        public static ThemePalette Palette => ThemeEngine.CurrentPalette;
+        public static void ApplyTheme(Form form) => ThemeEngine.ApplyThemeToForm(form);
+    }
+}
+
+namespace BulkCrapUninstaller.Forms.Windows
+{
+    internal static class ThemeManager
+    {
+        public static bool IsDarkModeEnabled => BulkCrapUninstaller.Functions.ThemeEngine.IsDarkModeActive;
+        public static BulkCrapUninstaller.Functions.ThemePalette Palette => BulkCrapUninstaller.Functions.ThemeEngine.CurrentPalette;
+        public static void ApplyTheme(Form form) => BulkCrapUninstaller.Functions.ThemeEngine.ApplyThemeToForm(form);
+    }
 }

@@ -176,6 +176,8 @@ namespace UninstallTools.Core
             return false;
         }
 
+        public static bool IsProtectedPath(string path) => IsPathProtected(path);
+
         public static bool IsRegistryKeyProtected(string registryKeyPath)
         {
             if (string.IsNullOrWhiteSpace(registryKeyPath)) return true;
@@ -200,6 +202,8 @@ namespace UninstallTools.Core
 
             return false;
         }
+
+        public static bool IsProtectedRegistryKey(string registryKeyPath) => IsRegistryKeyProtected(registryKeyPath);
 
         public static bool IsReparsePointOrSymlink(string path)
         {
