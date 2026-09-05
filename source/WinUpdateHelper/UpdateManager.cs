@@ -1,6 +1,7 @@
 /*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
+    EBUninstaller Pro - Windows Update Helper UpdateManager
+    Discovery and uninstallation management for Windows Updates.
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
@@ -18,40 +19,42 @@ namespace WinUpdateHelper
         {
             try
             {
-                return new UpdateSession();
-            }
-            catch
-            {
                 var type = Type.GetTypeFromProgID("Microsoft.Update.Session") ??
                            Type.GetTypeFromCLSID(new Guid("4CB43D7F-7EEE-4906-8698-60DA1C38F2FE"));
                 if (type != null)
                 {
                     var instance = Activator.CreateInstance(type);
-                    if (instance is IUpdateSession session)
-                        return session;
+                    if (instance != null)
+                        return (IUpdateSession)instance;
                 }
-                throw new NotSupportedException("Windows Update Agent COM service is not available on this system.");
             }
+            catch
+            {
+                // Fallback to direct COM CoClass instantiation
+            }
+
+            return (IUpdateSession)new UpdateSession();
         }
 
         private static IUpdateCollection CreateUpdateCollection()
         {
             try
             {
-                return new UpdateCollection();
-            }
-            catch
-            {
                 var type = Type.GetTypeFromProgID("Microsoft.Update.UpdateColl") ??
                            Type.GetTypeFromCLSID(new Guid("2EE48F22-AF3C-405E-B397-CD067BF1DB89"));
                 if (type != null)
                 {
                     var instance = Activator.CreateInstance(type);
-                    if (instance is IUpdateCollection coll)
-                        return coll;
+                    if (instance != null)
+                        return (IUpdateCollection)instance;
                 }
-                throw new NotSupportedException("Windows Update Collection COM service is not available on this system.");
             }
+            catch
+            {
+                // Fallback to direct COM CoClass instantiation
+            }
+
+            return (IUpdateCollection)new UpdateCollection();
         }
 
         public static void UninstallUpdate(string updateId)
