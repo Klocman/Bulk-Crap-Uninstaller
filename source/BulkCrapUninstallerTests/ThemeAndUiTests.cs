@@ -93,5 +93,32 @@ namespace BulkCrapUninstallerTests
             Assert.IsNull(navigatedSection);
             nav.Dispose();
         }
+
+        [Test]
+        public void TestQuickFilterChipsBar()
+        {
+            var chips = new QuickFilterChipsBar();
+            Assert.IsNotNull(chips);
+
+            AppFilterCategory? selectedCat = null;
+            chips.FilterCategoryChanged += (s, cat) => selectedCat = cat;
+
+            chips.RefreshColors();
+            chips.Dispose();
+        }
+
+        [Test]
+        public void TestModernStatsDashboard()
+        {
+            var dash = new ModernStatsDashboard();
+            Assert.IsNotNull(dash);
+
+            dash.UpdateDashboard(100, 50L * 1024 * 1024 * 1024, 2, 500L * 1024 * 1024, 95);
+
+            bool batchFired = false;
+            dash.RequestBatchUninstall += (s, e) => batchFired = true;
+
+            dash.Dispose();
+        }
     }
 }

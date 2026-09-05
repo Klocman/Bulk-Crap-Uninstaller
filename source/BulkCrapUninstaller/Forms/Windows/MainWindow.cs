@@ -56,6 +56,8 @@ namespace BulkCrapUninstaller.Forms
 
         private BulkCrapUninstaller.Controls.AppDetailsPanel _appDetailsPanel;
         private BulkCrapUninstaller.Controls.ModernNavCommandBar _modernNavCommandBar;
+        private BulkCrapUninstaller.Controls.QuickFilterChipsBar _quickFilterChipsBar;
+        private BulkCrapUninstaller.Controls.ModernStatsDashboard _modernStatsDashboard;
 
         private bool _previousListLegendState = true;
         private bool _anyStoreApps;
@@ -1959,7 +1961,22 @@ namespace BulkCrapUninstaller.Forms
                 Controls.Add(_modernNavCommandBar);
                 _modernNavCommandBar.BringToFront();
 
-                // 2. Add AppDetailsPanel to Inspector Panel
+                // 2. Add Quick Filter Chips Bar
+                _quickFilterChipsBar = new BulkCrapUninstaller.Controls.QuickFilterChipsBar();
+                _quickFilterChipsBar.FilterCategoryChanged += OnQuickFilterCategoryChanged;
+                splitContainerListAndMap.Panel1.Controls.Add(_quickFilterChipsBar);
+                _quickFilterChipsBar.BringToFront();
+
+                // 3. Add Modern Stats Dashboard
+                _modernStatsDashboard = new BulkCrapUninstaller.Controls.ModernStatsDashboard();
+                _modernStatsDashboard.RequestBatchUninstall += (s, e) => toolStripButtonUninstall_Click(s, e);
+                _modernStatsDashboard.RequestScanLeftovers += (s, e) => OpenJunkRemove(_listView.SelectedUninstallers);
+                _modernStatsDashboard.RequestCleanJunk += (s, e) => OpenJunkCleaner();
+                _modernStatsDashboard.RequestHygieneAdvisor += (s, e) => OpenSoftwareHealth();
+                splitContainerListAndMap.Panel1.Controls.Add(_modernStatsDashboard);
+                _modernStatsDashboard.BringToFront();
+
+                // 4. Add AppDetailsPanel to Inspector Panel
                 _appDetailsPanel = new BulkCrapUninstaller.Controls.AppDetailsPanel();
                 _appDetailsPanel.RequestUninstall += (s, app) => _appUninstaller.RunUninstall(new[] { app }, _listView.AllUninstallers, false);
                 _appDetailsPanel.RequestForcedRemoval += (s, app) => OpenForcedRemoval(app?.InstallLocation ?? app?.DisplayName);
@@ -1972,9 +1989,15 @@ namespace BulkCrapUninstaller.Forms
                 {
                     var selected = _listView.SelectedUninstallers.FirstOrDefault();
                     _appDetailsPanel.DisplayApplication(selected);
+
+                    var allCount = _listView.AllUninstallers?.Count ?? 0;
+                    var allSize = _listView.AllUninstallers?.Sum(x => x.EstimatedSize.GetKbSize() * 1024L) ?? 0;
+                    var selCount = _listView.SelectedUninstallers?.Count ?? 0;
+                    var selSize = _listView.SelectedUninstallers?.Sum(x => x.EstimatedSize.GetKbSize() * 1024L) ?? 0;
+                    _modernStatsDashboard.UpdateDashboard(allCount, allSize, selCount, selSize, 100);
                 };
 
-                // 3. Add Pro Tools Dropdown to ToolStrip
+                // 5. Add Pro Tools Dropdown to ToolStrip
                 var proDropDown = new ToolStripDropDownButton
                 {
                     Text = "Pro Tools & Cleanup",
@@ -2117,6 +2140,55 @@ namespace BulkCrapUninstaller.Forms
                     break;
                 case "History":
                     OpenOperationHistory();
+                    break;
+            }
+        }
+
+        private void OnQuickFilterCategoryChanged(object sender, BulkCrapUninstaller.Controls.AppFilterCategory category)
+        {
+            var s = _setMan.Selected.Settings;
+            switch (category)
+            {
+                case BulkCrapUninstaller.Controls.AppFilterCategory.All:
+                    s.FilterShowStoreApps = true;
+                    s.FilterShowWinFeatures = true;
+                    s.FilterShowUpdates = true;
+                    s.FilterShowSystemComponents = true;
+                    s.AdvancedDisplayOrphans = true;
+                    filterEditor1.Search(null, ComparisonMethod.Any);
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.Win32:
+                    s.FilterShowStoreApps = false;
+                    s.FilterShowWinFeatures = false;
+                    s.FilterShowUpdates = false;
+                    s.FilterShowSystemComponents = false;
+                    s.AdvancedDisplayOrphans = false;
+                    filterEditor1.Search(null, ComparisonMethod.Any);
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.StoreApps:
+                    s.FilterShowStoreApps = true;
+                    s.FilterShowWinFeatures = false;
+                    s.FilterShowUpdates = false;
+                    s.FilterShowSystemComponents = false;
+                    filterEditor1.Search("StoreApp", ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.UninstallerKind));
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.Games:
+                    filterEditor1.Search("Steam", ComparisonMethod.Contains, nameof(ApplicationUninstallerEntry.UninstallerKind));
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.Portable:
+                    s.AdvancedDisplayOrphans = true;
+                    filterEditor1.Search("true", ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsOrphaned));
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.LargeApps:
+                    filterEditor1.Search(null, ComparisonMethod.Any);
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.SystemComponents:
+                    s.FilterShowSystemComponents = true;
+                    filterEditor1.Search("true", ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsProtected));
+                    break;
+                case BulkCrapUninstaller.Controls.AppFilterCategory.Updates:
+                    s.FilterShowUpdates = true;
+                    filterEditor1.Search("true", ComparisonMethod.Equals, nameof(ApplicationUninstallerEntry.IsUpdate));
                     break;
             }
         }
