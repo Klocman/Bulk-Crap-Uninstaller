@@ -40,16 +40,21 @@
 * **SHA-256 Verified Packages**: Automatic pre-removal backups storing `.reg` scripts, zipped files, and tamper-proof manifest digests.
 * **Zero-Risk System Restore Points**: Integrated VSS / Windows System Restore API calls.
 
-### 🧹 System Maintenance & Privacy Suite
+### 🧹 System Maintenance, Residuals & Optimization
 * **Junk File Cleaner**: Scans and cleans Windows temp, user caches, error memory dumps, logs, thumbnail caches, and update leftovers.
+* **Device Driver Residuals Cleaner**: Safely detects and purges orphaned device driver residual registry entries and staging caches.
 * **Privacy Cleaner**: Cleans browser cookies, histories, download caches across Google Chrome, Microsoft Edge, Mozilla Firefox, Brave, and Opera.
 * **Browser Extension Manager**: View, inspect permissions, and uninstall extensions across all major Chromium and Gecko browsers.
-* **Startup Manager**: Manage Run, RunOnce, Scheduled Tasks, and Services with startup impact assessment.
+* **Startup Impact Analyzer & Manager**: Rate boot impact (High, Medium, Low) and manage Run, RunOnce, Scheduled Tasks, and Services.
+* **Process Working-Set Memory Trimmer**: Reclaim working sets and optimize system memory on demand without terminating processes.
+* **Auto-Maintenance Scheduler**: Configure automated weekly background cleanups via Windows Task Scheduler.
 * **Secure File Shredder**: 1-Pass Zero-Fill and 3-Pass DoD 5220.22-M wiping with transparent SSD/TRIM detection and safety disclaimers.
 * **Windows Tools Launcher**: Rapid launchpad for Task Manager, Group Policy, Services, Event Viewer, and Registry Editor.
 
 ### 🎨 Modern Fluent UX/UI
 * **Windows 11 Mica & Dark/Light Themes**: Dynamic dark mode, system theme auto-synchronization, and high-contrast accessibility.
+* **Modern Stats Dashboard**: Real-time storage consumption metrics, selection counts, hygiene health gauge, and 1-click optimization wizard.
+* **Quick Filter Chips Bar**: 1-click filter pills for Win32 Apps, Windows Store, Games, Portable, Large Apps, System Components, and Updates.
 * **Application Details Inspector**: Real-time inspection panel displaying digital signatures, certificates, install dates, sizes, and quick actions.
 * **13-Section Modern Navigation Bar**: Seamless 1-click navigation across all application modules.
 * **Multilingual RTL Support**: Full localization for English, German, and Arabic (with right-to-left UI mirroring).
@@ -61,6 +66,11 @@
 ```
 EBUninstaller Pro (Solution)
 ├── EBUninstaller (Modern WinForms GUI + Windows 11 Themes + 13-Section Nav)
+│   ├── Controls (ModernStatsDashboard, QuickFilterChipsBar, AppDetailsPanel, FileTargeter)
+│   ├── Forms/Wizards (QuickOptimizationWizard)
+│   └── Forms/Windows (ForcedUninstall, BackupManager, InstallationMonitor, JunkCleaner,
+│                      PrivacyCleaner, BrowserExtensions, WindowsTools, OperationHistory,
+│                      SecureDelete, SoftwareHealth, RegistryOptimizer)
 ├── BCU-console / EBUninstaller CLI (Automation, Scripting & JSON Engine)
 ├── UninstallTools (Core Library)
 │   ├── Core (SecurityGuard, CryptoHasher, DigitalSignatureVerifier, StructuredLogger)
@@ -68,20 +78,20 @@ EBUninstaller Pro (Solution)
 │   ├── Uninstaller (UninstallPipeline, BatchQueue, SilentDetector)
 │   ├── ForcedRemoval (ForcedUninstallManager, DeepScanner, MultiSignalScorer)
 │   ├── Leftovers (LeftoverScanner, ConfidenceClassifier, RiskAssessment)
-│   ├── RegistryEngine (SafeRegistryEngine, RegExport, TransactionPlanner)
+│   ├── RegistryEngine (SafeRegistryEngine, RegExport, TransactionPlanner, RegistryOptimizer)
 │   ├── FileSystemEngine (SafeFileSystemEngine, Unlocker, SecureShredder)
 │   ├── Backup (BackupManager, BackupManifest, RestoreEngine, SHA-256 Verifier)
 │   ├── InstallationMonitor (MonitorEngine, SnapshotDiffer, TraceReplayer)
-│   ├── JunkCleaner (JunkCleanerEngine, CacheScanner, TempPurger)
+│   ├── JunkCleaner (JunkCleanerEngine, DeviceDriverResidualsCleaner, CacheScanner)
 │   ├── PrivacyCleaner (PrivacyCleanerEngine, BrowserProfiles, WindowsPrivacy)
 │   ├── BrowserExtensions (BrowserExtensionManager, Chromium, Firefox)
-│   ├── Startup (StartupManager, TaskScheduler, ServiceController)
-│   ├── SystemTools (WindowsToolsLauncher)
+│   ├── Startup (StartupManager, StartupImpactAnalyzer, TaskScheduler, ServiceController)
+│   ├── SystemTools (WindowsToolsLauncher, MemoryTrimmerEngine, AutoMaintenanceScheduler)
 │   ├── HunterMode (TargetModeController, WindowSniffer)
 │   ├── Exclusions (ExclusionManager, RuleEngine)
 │   ├── History (OperationHistoryManager, AuditLogger)
 │   └── Localization (LanguageManager, EN / DE / AR RTL)
-└── EBUninstallerTests (11 Test Suites, 100% Validated)
+└── BulkCrapUninstallerTests (16 Test Suites, 100% Validated)
 ```
 
 ---
@@ -114,9 +124,19 @@ EBUninstaller.exe restore <BackupId> --verify
 
 ## Building from Source
 
+### Quick Windows Release Build (`publish.bat`)
+```cmd
+publish.bat
+```
+
+### PowerShell Advanced Release & Test Pipeline (`build.ps1`)
 ```powershell
-# Build Release binaries and Inno Setup Installer
-.\scripts\build.ps1 -Configuration Release -Platform AnyCPU -BuildInstaller
+powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1 -Configuration Release -Platform "Any CPU" -BuildInstaller -RunVerify
+```
+
+### Linux / macOS Static Analysis & Quality Verification (`build.sh`)
+```bash
+./scripts/build.sh --verbose
 ```
 
 ---
