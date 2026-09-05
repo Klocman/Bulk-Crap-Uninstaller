@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<AssemblyName>BCUninstaller</AssemblyName>
+		<AssemblyName>EBUninstaller</AssemblyName>
 		
-		<Product>Bulk Crap Uninstaller</Product>
-		<AssemblyTitle>Remove large amounts of unwanted applications quickly</AssemblyTitle>
+		<Product>EBUninstaller Pro</Product>
+		<AssemblyTitle>EBUninstaller Pro - Professional Windows Uninstaller and System Optimization Suite</AssemblyTitle>
 
 		<ApplicationIcon>Resources\logo.ico</ApplicationIcon>
 		<StartupObject>BulkCrapUninstaller.EntryPoint</StartupObject>

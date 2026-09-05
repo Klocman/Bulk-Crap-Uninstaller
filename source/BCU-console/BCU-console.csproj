@@ -1,10 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
+		<AssemblyName>EBUninstaller-console</AssemblyName>
 		<RootNamespace>BCU_console</RootNamespace>
 
-		<Product>Command Line Interface for Bulk Crap Uninstaller</Product>
-		<AssemblyTitle>Command line utility that offers some of BCU's functionality for scripting</AssemblyTitle>
+		<Product>EBUninstaller Pro Console CLI</Product>
+		<AssemblyTitle>EBUninstaller Pro Command Line Interface for Scripting and Automation</AssemblyTitle>
 		
 		<ApplicationIcon>..\BulkCrapUninstaller\Resources\logo.ico</ApplicationIcon>
 		<StartupObject>BCU_console.Program</StartupObject>
