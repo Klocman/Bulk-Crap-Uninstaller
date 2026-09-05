@@ -36,7 +36,7 @@ namespace UninstallTools.WindowsIntegration
 
             try
             {
-                var targetExe = exePath ?? Assembly.GetEntryAssembly()?.Location ?? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BCUninstaller.exe");
+                var targetExe = exePath ?? Assembly.GetEntryAssembly()?.Location ?? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EBUninstaller.exe");
 
                 // 1. Directory Context Menu
                 using (var dirKey = Registry.CurrentUser.CreateSubKey($@"Software\Classes\Directory\shell\{ContextMenuKeyName}"))
