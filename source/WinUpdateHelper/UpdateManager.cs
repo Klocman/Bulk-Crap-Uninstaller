@@ -14,11 +14,51 @@ namespace WinUpdateHelper
 {
     internal static class UpdateManager
     {
+        private static IUpdateSession CreateUpdateSession()
+        {
+            try
+            {
+                return new UpdateSession();
+            }
+            catch
+            {
+                var type = Type.GetTypeFromProgID("Microsoft.Update.Session") ??
+                           Type.GetTypeFromCLSID(new Guid("4CB43D7F-7EEE-4906-8698-60DA1C38F2FE"));
+                if (type != null)
+                {
+                    var instance = Activator.CreateInstance(type);
+                    if (instance is IUpdateSession session)
+                        return session;
+                }
+                throw new NotSupportedException("Windows Update Agent COM service is not available on this system.");
+            }
+        }
+
+        private static IUpdateCollection CreateUpdateCollection()
+        {
+            try
+            {
+                return new UpdateCollection();
+            }
+            catch
+            {
+                var type = Type.GetTypeFromProgID("Microsoft.Update.UpdateColl") ??
+                           Type.GetTypeFromCLSID(new Guid("2EE48F22-AF3C-405E-B397-CD067BF1DB89"));
+                if (type != null)
+                {
+                    var instance = Activator.CreateInstance(type);
+                    if (instance is IUpdateCollection coll)
+                        return coll;
+                }
+                throw new NotSupportedException("Windows Update Collection COM service is not available on this system.");
+            }
+        }
+
         public static void UninstallUpdate(string updateId)
         {
             Console.WriteLine("Scanning updates...");
-            var wuaSession = new UpdateSessionClass();
-            var wuaSearcher = wuaSession.CreateUpdateSearcher();
+            IUpdateSession wuaSession = CreateUpdateSession();
+            IUpdateSearcher wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch =
                 wuaSearcher.Search($"Type='Software' and IsInstalled=1 and UpdateID='{updateId}' and IsPresent=1");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
@@ -28,10 +68,11 @@ namespace WinUpdateHelper
             if (!uninstallable.Any())
                 throw new ArgumentException("Selected update is not uninstallable");
 
-            var wuaInstaller = wuaSession.CreateUpdateInstaller();
-            wuaInstaller.Updates = new UpdateCollectionClass();
+            IUpdateInstaller wuaInstaller = wuaSession.CreateUpdateInstaller();
+            IUpdateCollection updateCollection = CreateUpdateCollection();
             foreach (var update in uninstallable)
-                wuaInstaller.Updates.Add(update);
+                updateCollection.Add(update);
+            wuaInstaller.Updates = updateCollection;
 
             Console.WriteLine("Uninstalling " + string.Join("; ", uninstallable.Select(x => x.Title)) + "...");
             WaitForInstallerBusy(wuaInstaller);
@@ -67,8 +108,8 @@ namespace WinUpdateHelper
 
         public static void WriteUpdateList()
         {
-            var wuaSession = new UpdateSessionClass();
-            var wuaSearcher = wuaSession.CreateUpdateSearcher();
+            IUpdateSession wuaSession = CreateUpdateSession();
+            IUpdateSearcher wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch = wuaSearcher.Search("IsInstalled=1 and IsPresent=1 and Type='Software'");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
             
