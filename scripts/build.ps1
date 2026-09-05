@@ -57,7 +57,7 @@ if ($LASTEXITCODE -ne 0) {
 # 3. Run Unit and Integration Tests
 if (-not $SkipTests) {
     Write-Host "`n[2/4] Executing Test Suite..." -ForegroundColor Yellow
-    $TestProjectPath = Join-Path $RepoRoot "source\BulkCrapUninstallerTests\BulkCrapUninstallerTests.csproj"
+    $TestProjectPath = if (Test-Path (Join-Path $RepoRoot "source\EBUninstallerTests\EBUninstallerTests.csproj")) { Join-Path $RepoRoot "source\EBUninstallerTests\EBUninstallerTests.csproj" } else { Join-Path $RepoRoot "source\BulkCrapUninstallerTests\BulkCrapUninstallerTests.csproj" }
     dotnet test $TestProjectPath -c $Configuration --no-build --logger "console;verbosity=normal"
 
     if ($LASTEXITCODE -ne 0) {

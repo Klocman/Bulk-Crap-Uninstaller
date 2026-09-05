@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<OutputPath>bin</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BulkCrapUninstaller\BulkCrapUninstaller.csproj" />
+    <ProjectReference Include="..\EBUninstaller\EBUninstaller.csproj" />
     <ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
   </ItemGroup>
   <ItemGroup>

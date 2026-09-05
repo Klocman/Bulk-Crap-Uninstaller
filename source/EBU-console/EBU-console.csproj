@@ -7,7 +7,7 @@
 		<Product>EBUninstaller Pro Console CLI</Product>
 		<AssemblyTitle>EBUninstaller Pro Command Line Interface for Scripting and Automation</AssemblyTitle>
 		
-		<ApplicationIcon>..\BulkCrapUninstaller\Resources\logo.ico</ApplicationIcon>
+		<ApplicationIcon>..\EBUninstaller\Resources\logo.ico</ApplicationIcon>
 		<StartupObject>BCU_console.Program</StartupObject>
 	</PropertyGroup>
 

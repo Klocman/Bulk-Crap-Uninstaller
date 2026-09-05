@@ -136,41 +136,41 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/Detection/ConfidenceScorer.cs",
         "source/UninstallTools/Detection/WindowsOptionalFeaturesManager.cs",
         "source/UninstallTools/Uninstaller/UninstallPipeline.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/ForcedUninstallWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/BackupManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/InstallationMonitorWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/JunkCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/PrivacyCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/BrowserExtensionsWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/WindowsToolsWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/OperationHistoryWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/SecureDeleteWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/SoftwareHealthWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/RegistryOptimizerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/DuplicateAndEmptyFolderWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/ContextMenuManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/ServicesOptimizerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/WindowsFeaturesManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/SoftwareAdvisorWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/CrashDumpCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/EventLogCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/FileUnlockerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/PackageManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/SystemRestorePointWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/DiskSpaceAnalyzerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/DriverManagementWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/FontResidualsCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/FirewallRulesManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/HostsFileManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/EnvironmentVariablesWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/DeveloperCacheCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/WslManagerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/DisconnectedDevicesCleanerWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Windows/ShellCacheRebuilderWindow.cs",
-        "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
-        "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
-        "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
-        "source/BulkCrapUninstaller/Controls/AppDetailsPanel.cs",
+        "source/EBUninstaller/Forms/Windows/ForcedUninstallWindow.cs",
+        "source/EBUninstaller/Forms/Windows/BackupManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/InstallationMonitorWindow.cs",
+        "source/EBUninstaller/Forms/Windows/JunkCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/PrivacyCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/BrowserExtensionsWindow.cs",
+        "source/EBUninstaller/Forms/Windows/WindowsToolsWindow.cs",
+        "source/EBUninstaller/Forms/Windows/OperationHistoryWindow.cs",
+        "source/EBUninstaller/Forms/Windows/SecureDeleteWindow.cs",
+        "source/EBUninstaller/Forms/Windows/SoftwareHealthWindow.cs",
+        "source/EBUninstaller/Forms/Windows/RegistryOptimizerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/DuplicateAndEmptyFolderWindow.cs",
+        "source/EBUninstaller/Forms/Windows/ContextMenuManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/ServicesOptimizerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/WindowsFeaturesManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/SoftwareAdvisorWindow.cs",
+        "source/EBUninstaller/Forms/Windows/CrashDumpCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/EventLogCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/FileUnlockerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/PackageManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/SystemRestorePointWindow.cs",
+        "source/EBUninstaller/Forms/Windows/DiskSpaceAnalyzerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/DriverManagementWindow.cs",
+        "source/EBUninstaller/Forms/Windows/FontResidualsCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/FirewallRulesManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/HostsFileManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/EnvironmentVariablesWindow.cs",
+        "source/EBUninstaller/Forms/Windows/DeveloperCacheCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/WslManagerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/DisconnectedDevicesCleanerWindow.cs",
+        "source/EBUninstaller/Forms/Windows/ShellCacheRebuilderWindow.cs",
+        "source/EBUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
+        "source/EBUninstaller/Controls/ModernStatsDashboard.cs",
+        "source/EBUninstaller/Controls/QuickFilterChipsBar.cs",
+        "source/EBUninstaller/Controls/AppDetailsPanel.cs",
         "source/UninstallTools/Core/UpdateManager.cs",
         "source/UninstallTools/Detection/SoftwareHealthEngine.cs",
         "source/UninstallTools/Detection/AppFilterEngine.cs",
@@ -184,7 +184,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/WindowsIntegration/ShellIntegrationManager.cs",
         "source/UninstallTools/WindowsIntegration/ContextMenuManager.cs",
         "source/WinUpdateHelper/WUApiInterop.cs",
-        "source/BCU-console/Program.cs"
+        "source/EBU-console/Program.cs"
     ]
 
     all_exist = True
@@ -192,10 +192,15 @@ def check_subsystems(verbose=False, quiet=False):
     for mod in required_modules:
         full_path = os.path.join(REPO_ROOT, mod)
         if not os.path.exists(full_path):
-            if not quiet:
-                print(f" [MISSING] {mod}")
-            missing.append(mod)
-            all_exist = False
+            # fallback to BulkCrapUninstaller / BCU-console if not migrated
+            alt_path = os.path.join(REPO_ROOT, mod.replace("EBUninstaller", "BulkCrapUninstaller").replace("EBU-console", "BCU-console"))
+            if not os.path.exists(alt_path):
+                if not quiet:
+                    print(f" [MISSING] {mod}")
+                missing.append(mod)
+                all_exist = False
+            elif verbose and not quiet:
+                print(f"   [OK] {mod}")
         elif verbose and not quiet:
             print(f"   [OK] {mod}")
 
@@ -207,51 +212,55 @@ def check_unit_tests(verbose=False, quiet=False):
     if not quiet:
         print("[Check 4/6] Verifying Test Suite Coverage...")
     test_files = [
-        "source/BulkCrapUninstallerTests/SecurityGuardTests.cs",
-        "source/BulkCrapUninstallerTests/CryptoHasherTests.cs",
-        "source/BulkCrapUninstallerTests/InstallationMonitorTests.cs",
-        "source/BulkCrapUninstallerTests/ExclusionAndHistoryTests.cs",
-        "source/BulkCrapUninstallerTests/LifecycleIntegrationTests.cs",
-        "source/BulkCrapUninstallerTests/JunkAndPrivacyCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/LocalizationAndTargetModeTests.cs",
-        "source/BulkCrapUninstallerTests/ThemeAndUiTests.cs",
-        "source/BulkCrapUninstallerTests/SoftwareHealthAndUpdaterTests.cs",
-        "source/BulkCrapUninstallerTests/FilterAndResidualsTests.cs",
-        "source/BulkCrapUninstallerTests/StartupImpactAndSchedulerTests.cs",
-        "source/BulkCrapUninstallerTests/DriverAndMemoryTests.cs",
-        "source/BulkCrapUninstallerTests/WizardAndOptimizationTests.cs",
-        "source/BulkCrapUninstallerTests/EmptyDirectoryAndDuplicateTests.cs",
-        "source/BulkCrapUninstallerTests/ContextMenuManagerTests.cs",
-        "source/BulkCrapUninstallerTests/WindowsServicesOptimizerTests.cs",
-        "source/BulkCrapUninstallerTests/WindowsOptionalFeaturesTests.cs",
-        "source/BulkCrapUninstallerTests/SoftwareSafetyAdvisorTests.cs",
-        "source/BulkCrapUninstallerTests/CrashDumpCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/EventLogCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/FileUnlockerTests.cs",
-        "source/BulkCrapUninstallerTests/PackageManagerTests.cs",
-        "source/BulkCrapUninstallerTests/SystemRestorePointTests.cs",
-        "source/BulkCrapUninstallerTests/DiskSpaceAnalyzerTests.cs",
-        "source/BulkCrapUninstallerTests/WindowsDriverManagerTests.cs",
-        "source/BulkCrapUninstallerTests/FontResidualsCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/WindowsFirewallManagerTests.cs",
-        "source/BulkCrapUninstallerTests/WindowsHostsFileManagerTests.cs",
-        "source/BulkCrapUninstallerTests/EnvironmentVariablesTests.cs",
-        "source/BulkCrapUninstallerTests/DeveloperCacheCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/WslManagerTests.cs",
-        "source/BulkCrapUninstallerTests/DisconnectedDevicesCleanerTests.cs",
-        "source/BulkCrapUninstallerTests/ShellCacheRebuilderTests.cs",
-        "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
-        "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
-        "source/BulkCrapUninstallerTests/UninstallListTests.cs"
+        "source/EBUninstallerTests/SecurityGuardTests.cs",
+        "source/EBUninstallerTests/CryptoHasherTests.cs",
+        "source/EBUninstallerTests/InstallationMonitorTests.cs",
+        "source/EBUninstallerTests/ExclusionAndHistoryTests.cs",
+        "source/EBUninstallerTests/LifecycleIntegrationTests.cs",
+        "source/EBUninstallerTests/JunkAndPrivacyCleanerTests.cs",
+        "source/EBUninstallerTests/LocalizationAndTargetModeTests.cs",
+        "source/EBUninstallerTests/ThemeAndUiTests.cs",
+        "source/EBUninstallerTests/SoftwareHealthAndUpdaterTests.cs",
+        "source/EBUninstallerTests/FilterAndResidualsTests.cs",
+        "source/EBUninstallerTests/StartupImpactAndSchedulerTests.cs",
+        "source/EBUninstallerTests/DriverAndMemoryTests.cs",
+        "source/EBUninstallerTests/WizardAndOptimizationTests.cs",
+        "source/EBUninstallerTests/EmptyDirectoryAndDuplicateTests.cs",
+        "source/EBUninstallerTests/ContextMenuManagerTests.cs",
+        "source/EBUninstallerTests/WindowsServicesOptimizerTests.cs",
+        "source/EBUninstallerTests/WindowsOptionalFeaturesTests.cs",
+        "source/EBUninstallerTests/SoftwareSafetyAdvisorTests.cs",
+        "source/EBUninstallerTests/CrashDumpCleanerTests.cs",
+        "source/EBUninstallerTests/EventLogCleanerTests.cs",
+        "source/EBUninstallerTests/FileUnlockerTests.cs",
+        "source/EBUninstallerTests/PackageManagerTests.cs",
+        "source/EBUninstallerTests/SystemRestorePointTests.cs",
+        "source/EBUninstallerTests/DiskSpaceAnalyzerTests.cs",
+        "source/EBUninstallerTests/WindowsDriverManagerTests.cs",
+        "source/EBUninstallerTests/FontResidualsCleanerTests.cs",
+        "source/EBUninstallerTests/WindowsFirewallManagerTests.cs",
+        "source/EBUninstallerTests/WindowsHostsFileManagerTests.cs",
+        "source/EBUninstallerTests/EnvironmentVariablesTests.cs",
+        "source/EBUninstallerTests/DeveloperCacheCleanerTests.cs",
+        "source/EBUninstallerTests/WslManagerTests.cs",
+        "source/EBUninstallerTests/DisconnectedDevicesCleanerTests.cs",
+        "source/EBUninstallerTests/ShellCacheRebuilderTests.cs",
+        "source/EBUninstallerTests/ApplicationUninstallerEntryTests.cs",
+        "source/EBUninstallerTests/ApplicationEntrySerializerTests.cs",
+        "source/EBUninstallerTests/UninstallListTests.cs"
     ]
 
     missing = []
     for tf in test_files:
         full_path = os.path.join(REPO_ROOT, tf)
         if not os.path.exists(full_path):
-            if not quiet:
-                print(f" [MISSING TEST] {tf}")
-            missing.append(tf)
+            alt_path = os.path.join(REPO_ROOT, tf.replace("EBUninstallerTests", "BulkCrapUninstallerTests"))
+            if not os.path.exists(alt_path):
+                if not quiet:
+                    print(f" [MISSING TEST] {tf}")
+                missing.append(tf)
+            elif verbose and not quiet:
+                print(f"   [OK] {tf}")
         elif verbose and not quiet:
             print(f"   [OK] {tf}")
 

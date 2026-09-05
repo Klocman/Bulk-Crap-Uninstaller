@@ -78,7 +78,11 @@ mkdir -p "$PORTABLE_DIR" "$INSTALLER_DIR"
 # 1. Compile Solution if dotnet is available
 if command -v dotnet &> /dev/null; then
     echo "[1/4] Compiling EBUninstaller Pro solution with dotnet CLI..."
-    dotnet build "$REPO_ROOT/source/BulkCrapUninstaller.sln" \
+    SLN_FILE="$REPO_ROOT/source/EBUninstaller.sln"
+    if [ ! -f "$SLN_FILE" ]; then
+        SLN_FILE="$REPO_ROOT/source/BulkCrapUninstaller.sln"
+    fi
+    dotnet build "$SLN_FILE" \
         --configuration "$CONFIG" \
         -p:Platform="$PLATFORM" \
         -p:Version="7.0.0"
@@ -86,7 +90,11 @@ if command -v dotnet &> /dev/null; then
     # 2. Execute Tests
     if [ "$SKIP_TESTS" = false ]; then
         echo "[2/4] Executing Unit & Integration Test Suite..."
-        dotnet test "$REPO_ROOT/source/BulkCrapUninstallerTests/BulkCrapUninstallerTests.csproj" \
+        TEST_PROJ="$REPO_ROOT/source/EBUninstallerTests/EBUninstallerTests.csproj"
+        if [ ! -f "$TEST_PROJ" ]; then
+            TEST_PROJ="$REPO_ROOT/source/BulkCrapUninstallerTests/BulkCrapUninstallerTests.csproj"
+        fi
+        dotnet test "$TEST_PROJ" \
             --configuration "$CONFIG" \
             --no-build \
             --logger "console;verbosity=normal"

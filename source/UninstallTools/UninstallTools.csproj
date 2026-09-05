@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="BulkCrapUninstallerTests" />
+		<InternalsVisibleTo Include="EBUninstallerTests" />
 	</ItemGroup>
 
 	<ItemGroup>

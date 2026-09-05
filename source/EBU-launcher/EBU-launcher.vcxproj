@@ -168,10 +168,10 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="BCU-launcher.rc" />
+    <ResourceCompile Include="EBU-launcher.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\BulkCrapUninstaller\Resources\logo.ico" />
+    <Image Include="..\EBUninstaller\Resources\logo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
