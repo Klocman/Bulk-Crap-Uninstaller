@@ -72,6 +72,11 @@ COMMANDS:
   tools                         List and launch built-in Windows administrative tools
   export <output_file>          Export installed application catalog to XML or JSON
   history                       Inspect uninstallation and cleanup operation history
+  runtimes                      Inspect installed Visual C++, .NET, DirectX & Java runtimes
+  bloat                         Scan and clean registry bloat (orphan CLSIDs, invalid SharedDLLs)
+  orphaned-services             Scan and clean broken Windows services with missing binaries
+  export-drivers <dir>          Export and backup all OEM third-party drivers
+  audit-report <output_file>    Generate comprehensive HTML/MD/CSV/JSON software audit report
   help | /?                     Display this help screen
 
 GLOBAL SWITCHES:
@@ -199,6 +204,29 @@ EXIT CODES:
 
                     case "history":
                         return ProcessHistoryCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "runtimes":
+                    case "redist":
+                    case "redistributables":
+                        return ProcessRuntimesCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "bloat":
+                    case "clean-bloat":
+                    case "registry-bloat":
+                        return ProcessRegistryBloatCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "orphaned-services":
+                    case "orphan-services":
+                    case "clean-services":
+                        return ProcessOrphanedServicesCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "export-drivers":
+                    case "backup-drivers":
+                        return ProcessExportDriversCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "audit-report":
+                    case "report":
+                        return ProcessAuditReportCommand(args.Skip(1).ToArray(), isJson);
 
                     default:
                         Console.WriteLine($"Unknown command '{args[0]}'. Use 'help' for usage.");
@@ -1018,19 +1046,159 @@ EXIT CODES:
             return 0;
         }
 
-        private static int ProcessScheduleMaintenanceCommand(string[] args, bool isJson)
+        private static int ProcessRuntimesCommand(string[] args, bool isJson)
         {
-            var isDelete = args.Any(x => x.Equals("--disable", StringComparison.OrdinalIgnoreCase) || x.Equals("-d", StringComparison.OrdinalIgnoreCase));
-            if (isDelete)
+            var runtimes = WindowsRuntimesManager.ScanInstalledRuntimes();
+
+            if (isJson)
             {
-                var ok = UninstallTools.SystemTools.AutoMaintenanceScheduler.DeleteScheduledMaintenance();
-                Console.WriteLine(ok ? "Scheduled maintenance disabled successfully." : "Failed to remove scheduled maintenance task.");
-                return ok ? 0 : 1;
+                Console.WriteLine(JsonSerializer.Serialize(runtimes, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
             }
 
-            var okSched = UninstallTools.SystemTools.AutoMaintenanceScheduler.ScheduleMaintenance(UninstallTools.SystemTools.MaintenanceFrequency.Weekly, true, true);
-            Console.WriteLine(okSched ? "Weekly automated maintenance task created successfully." : "Failed to create scheduled task.");
-            return okSched ? 0 : 1;
+            Console.WriteLine($@"{"Runtime Name",-45}  {"Category",-12}  {"Version",-15}  {"Arch",-6}  {"Status",-12}");
+            Console.WriteLine(new string('-', 98));
+
+            foreach (var r in runtimes)
+            {
+                var name = Truncate(r.Name, 45);
+                var cat = r.Category.ToString();
+                var ver = Truncate(r.Version, 15);
+                var arch = r.Architecture;
+                var status = r.IsSuperseded ? "Superseded" : "Active";
+                Console.WriteLine($@"{name,-45}  {cat,-12}  {ver,-15}  {arch,-6}  {status,-12}");
+            }
+
+            Console.WriteLine($"\nTotal Runtimes Detected: {runtimes.Count}");
+            return 0;
+        }
+
+        private static int ProcessRegistryBloatCommand(string[] args, bool isJson)
+        {
+            var doClean = args.Any(x => x.Equals("--clean", StringComparison.OrdinalIgnoreCase) || x.Equals("/C", StringComparison.OrdinalIgnoreCase));
+            var scan = RegistryBloatAnalyzer.ScanAllBloat();
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(scan, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Registry Bloat Scan Results ({scan.TotalCount} items detected in {scan.Duration.TotalSeconds:F2}s):");
+            Console.WriteLine($" - Orphaned CLSIDs       : {scan.OrphanedClsidsCount}");
+            Console.WriteLine($" - Stale App Paths        : {scan.StaleAppPathsCount}");
+            Console.WriteLine($" - Invalid SharedDLLs     : {scan.InvalidSharedDllsCount}");
+            Console.WriteLine($" - Obsolete MUICache      : {scan.ObsoleteMuiCacheCount}\n");
+
+            if (doClean && scan.TotalCount > 0)
+            {
+                var backupDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EBUninstaller", "Backups");
+                var cleaned = RegistryBloatAnalyzer.CleanBloatItems(scan.Items, backupDir);
+                Console.WriteLine($"Cleaned {cleaned} registry bloat entries. Backup saved to {backupDir}.");
+            }
+            else if (scan.TotalCount > 0)
+            {
+                Console.WriteLine("Pass '--clean' to remove these detected bloat entries.");
+            }
+
+            return 0;
+        }
+
+        private static int ProcessOrphanedServicesCommand(string[] args, bool isJson)
+        {
+            var doClean = args.Any(x => x.Equals("--clean", StringComparison.OrdinalIgnoreCase) || x.Equals("/C", StringComparison.OrdinalIgnoreCase));
+            var services = OrphanedServicesCleaner.ScanOrphanedServices();
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(services, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Detected {services.Count} orphaned Windows service(s):");
+            foreach (var s in services)
+            {
+                Console.WriteLine($" - {s.ServiceName,-25} [{s.StartTypeName}] {s.ParsedExecutablePath}");
+            }
+
+            if (doClean && services.Count > 0)
+            {
+                var backupDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EBUninstaller", "Backups");
+                var res = OrphanedServicesCleaner.RemoveOrphanedServices(services, backupDir);
+                Console.WriteLine($"\nRemoved {res.CleanedCount} orphaned services. Backup: {res.BackupRegPath}");
+            }
+
+            return 0;
+        }
+
+        private static int ProcessExportDriversCommand(string[] args, bool isJson)
+        {
+            var cleanArgs = args.Where(x => !x.StartsWith("-") && !x.StartsWith("/")).ToArray();
+            var targetDir = cleanArgs.Length > 0 ? cleanArgs[0] : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DriversBackup");
+
+            Console.WriteLine($"Exporting OEM third-party drivers to {targetDir}...");
+            var res = WindowsDriverBackupEngine.ExportDrivers(targetDir);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(res, new JsonSerializerOptions { WriteIndented = true }));
+                return res.Success ? 0 : 1;
+            }
+
+            if (res.Success)
+            {
+                Console.WriteLine($"Driver export complete! {res.ExportedCount} drivers backed up in {res.Duration.TotalSeconds:F1}s.");
+                Console.WriteLine($"Manifest created: {res.ManifestPath}");
+            }
+            else
+            {
+                Console.WriteLine($"Driver export failed: {res.ErrorMessage}");
+            }
+
+            return res.Success ? 0 : 1;
+        }
+
+        private static int ProcessAuditReportCommand(string[] args, bool isJson)
+        {
+            var cleanArgs = args.Where(x => !x.StartsWith("-") && !x.StartsWith("/")).ToArray();
+            var outPath = cleanArgs.Length > 0 ? cleanArgs[0] : "Software_Audit_Report.html";
+
+            var apps = QueryApps(true, false);
+            var reportItems = apps.Select(a => new UninstallTools.Reporting.ReportSoftwareItem
+            {
+                DisplayName = a.DisplayName ?? string.Empty,
+                DisplayVersion = a.DisplayVersion ?? string.Empty,
+                Publisher = a.Publisher ?? string.Empty,
+                InstallDate = a.InstallDate.ToString("yyyy-MM-dd"),
+                InstallLocation = a.InstallLocation ?? string.Empty,
+                EstimatedSizeBytes = a.EstimatedSize.GetSizeBytes(),
+                Architecture = a.Is64Bit.ToString(),
+                UninstallerType = a.UninstallerKind.ToString(),
+                IsValidSigned = a.IsRegistered,
+                SafetyScore = "Safe"
+            }).ToList();
+
+            string content;
+            if (outPath.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            {
+                content = UninstallTools.Reporting.SoftwareInventoryReportGenerator.GenerateJsonReport(reportItems);
+            }
+            else if (outPath.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
+            {
+                content = UninstallTools.Reporting.SoftwareInventoryReportGenerator.GenerateMarkdownReport(reportItems);
+            }
+            else if (outPath.EndsWith(".csv", StringComparison.OrdinalIgnoreCase))
+            {
+                content = UninstallTools.Reporting.SoftwareInventoryReportGenerator.GenerateCsvReport(reportItems);
+            }
+            else
+            {
+                content = UninstallTools.Reporting.SoftwareInventoryReportGenerator.GenerateHtmlReport(reportItems);
+            }
+
+            File.WriteAllText(outPath, content, Encoding.UTF8);
+            Console.WriteLine($"Software audit report generated successfully: {outPath}");
+            return 0;
         }
 
         #endregion
