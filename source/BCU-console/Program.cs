@@ -63,6 +63,10 @@ COMMANDS:
   health                        Analyze software health, duplicate runtimes & hygiene score
   optimize-registry             Scan and repair invalid registry references & dead paths
   update                        Check for latest EBUninstaller Pro release updates
+  trim-memory                   Trim process working sets and reclaim standby RAM
+  clean-drivers                 Scan and list disconnected device driver residuals
+  startup-impact                Analyze Windows boot performance and startup impact
+  schedule-maintenance          Configure automatic background cleanup tasks
   startup                       Inspect and manage Windows startup applications
   extensions                    Inspect and manage installed browser extensions
   tools                         List and launch built-in Windows administrative tools
@@ -162,6 +166,23 @@ EXIT CODES:
                     case "check-update":
                     case "check-updates":
                         return ProcessUpdateCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "trim-memory":
+                    case "trim-ram":
+                    case "free-ram":
+                        return ProcessTrimMemoryCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "clean-drivers":
+                    case "drivers":
+                        return ProcessCleanDriversCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "startup-impact":
+                    case "boot-impact":
+                        return ProcessStartupImpactCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "schedule-maintenance":
+                    case "autoclean":
+                        return ProcessScheduleMaintenanceCommand(args.Skip(1).ToArray(), isJson);
 
                     case "startup":
                         return ProcessStartupCommand(args.Skip(1).ToArray(), isJson);
@@ -944,6 +965,72 @@ EXIT CODES:
             }
 
             return 0;
+        }
+
+        private static int ProcessTrimMemoryCommand(string[] args, bool isJson)
+        {
+            var res = UninstallTools.SystemTools.MemoryTrimmerEngine.TrimSystemWorkingSet();
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(res, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Trimmed {res.TotalProcessesTrimmed}/{res.TotalProcessesInspected} running process working sets.");
+            Console.WriteLine($"Estimated RAM reclaimed: ~{res.EstimatedMemoryReclaimedBytes / (1024 * 1024.0):F1} MB.");
+            return 0;
+        }
+
+        private static int ProcessCleanDriversCommand(string[] args, bool isJson)
+        {
+            var drivers = UninstallTools.JunkCleaner.DeviceDriverResidualsCleaner.ScanDriverResiduals();
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(drivers, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Found {drivers.Count} hardware / peripheral driver entries:");
+            foreach (var d in drivers)
+            {
+                Console.WriteLine($" - [{d.DriverClass}] {d.DeviceName} ({d.HardwareId})");
+            }
+            return 0;
+        }
+
+        private static int ProcessStartupImpactCommand(string[] args, bool isJson)
+        {
+            var startups = StartupManager.GetAllStartupEntries().ToList();
+            var report = UninstallTools.Startup.StartupImpactAnalyzer.AnalyzeStartupItems(startups);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Total Startup Entries: {report.TotalStartupEntries} ({report.HighImpactCount} high impact, {report.DisabledCount} disabled)\n");
+            foreach (var r in report.Recommendations)
+            {
+                Console.WriteLine($" [{r.Impact}] {r.Entry.ProgramName} (Disabled: {r.Entry.Disabled})");
+                Console.WriteLine($"   -> {r.RecommendationReason}");
+            }
+            return 0;
+        }
+
+        private static int ProcessScheduleMaintenanceCommand(string[] args, bool isJson)
+        {
+            var isDelete = args.Any(x => x.Equals("--disable", StringComparison.OrdinalIgnoreCase) || x.Equals("-d", StringComparison.OrdinalIgnoreCase));
+            if (isDelete)
+            {
+                var ok = UninstallTools.SystemTools.AutoMaintenanceScheduler.DeleteScheduledMaintenance();
+                Console.WriteLine(ok ? "Scheduled maintenance disabled successfully." : "Failed to remove scheduled maintenance task.");
+                return ok ? 0 : 1;
+            }
+
+            var okSched = UninstallTools.SystemTools.AutoMaintenanceScheduler.ScheduleMaintenance(UninstallTools.SystemTools.MaintenanceFrequency.Weekly, true, true);
+            Console.WriteLine(okSched ? "Weekly automated maintenance task created successfully." : "Failed to create scheduled task.");
+            return okSched ? 0 : 1;
         }
 
         #endregion

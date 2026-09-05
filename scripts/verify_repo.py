@@ -112,8 +112,10 @@ def check_new_subsystems():
         "source/UninstallTools/Detection/SoftwareHealthEngine.cs",
         "source/UninstallTools/Detection/AppFilterEngine.cs",
         "source/UninstallTools/JunkCleaner/DriverAndSystemResidualsCleaner.cs",
+        "source/UninstallTools/JunkCleaner/DeviceDriverResidualsCleaner.cs",
         "source/UninstallTools/RegistryEngine/RegistryOptimizerEngine.cs",
         "source/UninstallTools/Startup/StartupImpactAnalyzer.cs",
+        "source/UninstallTools/SystemTools/MemoryTrimmerEngine.cs",
         "source/UninstallTools/SystemTools/AutoMaintenanceScheduler.cs",
         "source/UninstallTools/WindowsIntegration/ShellIntegrationManager.cs",
         "source/BCU-console/Program.cs"
@@ -144,6 +146,7 @@ def check_unit_tests():
         "source/BulkCrapUninstallerTests/SoftwareHealthAndUpdaterTests.cs",
         "source/BulkCrapUninstallerTests/FilterAndResidualsTests.cs",
         "source/BulkCrapUninstallerTests/StartupImpactAndSchedulerTests.cs",
+        "source/BulkCrapUninstallerTests/DriverAndMemoryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
