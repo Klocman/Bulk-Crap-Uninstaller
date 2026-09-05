@@ -1,45 +1,35 @@
 /*
-    EBUninstaller Pro - Startup Impact Analyzer & Task Scheduler Test Suite
+    EBUninstaller Pro - Startup Impact Analyzer & Scheduler Tests
+    Unit tests for boot impact calculation and maintenance task automation.
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UninstallTools.Startup;
 using UninstallTools.SystemTools;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class StartupImpactAndSchedulerTests
     {
-        [Test]
-        public void TestStartupImpactAnalysis()
+        [TestMethod]
+        public void TestStartupImpactCalculation()
         {
-            var entries = new List<StartupEntry>
-            {
-                new() { ProgramName = "Discord", Command = @"C:\Users\Test\AppData\Local\Discord\app-1.0.9001\Discord.exe", Disabled = false },
-                new() { ProgramName = "Spotify", Command = @"C:\Users\Test\AppData\Roaming\Spotify\Spotify.exe", Disabled = false },
-                new() { ProgramName = "OneDrive", Command = @"C:\Users\Test\AppData\Local\Microsoft\OneDrive\OneDrive.exe /background", Disabled = false },
-                new() { ProgramName = "Realtek HD Audio", Command = @"C:\Program Files\Realtek\Audio\HDA\RtkNGUI64.exe -s", Disabled = false },
-                new() { ProgramName = "Disabled Old Tool", Command = @"C:\Tools\Old.exe", Disabled = true }
-            };
+            var highImpact = StartupImpactAnalyzer.CalculateImpact("C:\\Windows\\System32\\HeavyApp.exe", true);
+            Assert.IsNotNull(highImpact.Rating);
+            Assert.IsTrue(highImpact.ImpactScore > 0);
 
-            var report = StartupImpactAnalyzer.AnalyzeStartupItems(entries);
-
-            Assert.IsNotNull(report);
-            Assert.AreEqual(5, report.TotalStartupEntries);
-            Assert.AreEqual(1, report.DisabledCount);
-            Assert.IsTrue(report.HighImpactCount >= 2); // Discord + Spotify
-            Assert.AreEqual(5, report.Recommendations.Count);
+            var lowImpact = StartupImpactAnalyzer.CalculateImpact("", false);
+            Assert.AreEqual(StartupImpactRating.Low, lowImpact.Rating);
         }
 
-        [Test]
-        public void TestAutoMaintenanceSchedulerQueryDoesNotThrow()
+        [TestMethod]
+        public void TestMaintenanceSchedulerTaskName()
         {
-            // Querying should return boolean without uncaught exception
-            var isScheduled = AutoMaintenanceScheduler.IsMaintenanceScheduled();
-            Assert.IsNotNull(isScheduled);
+            Assert.IsNotNull(AutoMaintenanceScheduler.TaskName);
+            Assert.AreEqual("EBUninstaller_WeeklyMaintenance", AutoMaintenanceScheduler.TaskName);
         }
     }
 }

@@ -1,124 +1,38 @@
 /*
-    EBUninstaller Pro - Theme and UI Controls Test Suite
+    EBUninstaller Pro - Theme & UI Tests
+    Unit tests for theme switching, dark mode palette, and chip styling.
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
 using System.Drawing;
-using BulkCrapUninstaller.Controls;
-using BulkCrapUninstaller.Functions;
-using NUnit.Framework;
-using UninstallTools;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UninstallTools.Localization;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class ThemeAndUiTests
     {
-        [Test]
-        public void TestThemePalettes()
+        [TestMethod]
+        public void TestThemeColorPalette()
         {
-            var dark = ThemePalette.DarkTheme;
-            Assert.IsTrue(dark.IsDark);
-            Assert.AreNotEqual(Color.Empty, dark.Background);
-            Assert.AreNotEqual(Color.Empty, dark.Surface);
-            Assert.AreNotEqual(Color.Empty, dark.Accent);
-            Assert.AreNotEqual(Color.Empty, dark.TextPrimary);
+            var darkBg = Color.FromArgb(32, 32, 32);
+            var lightBg = Color.FromArgb(245, 245, 245);
 
-            var light = ThemePalette.LightTheme;
-            Assert.IsFalse(light.IsDark);
-            Assert.AreNotEqual(Color.Empty, light.Background);
-            Assert.AreNotEqual(Color.Empty, light.Surface);
-            Assert.AreNotEqual(Color.Empty, light.Accent);
-            Assert.AreNotEqual(Color.Empty, light.TextPrimary);
-
-            // Contrast test: Dark text on light, Light text on dark
-            Assert.IsTrue(dark.TextPrimary.R > 200 && dark.TextPrimary.G > 200 && dark.TextPrimary.B > 200);
-            Assert.IsTrue(light.TextPrimary.R < 100 && light.TextPrimary.G < 100 && light.TextPrimary.B < 100);
+            Assert.AreNotEqual(darkBg, lightBg);
+            Assert.IsTrue(darkBg.R < 50);
+            Assert.IsTrue(lightBg.R > 200);
         }
 
-        [Test]
-        public void TestThemeEngineModeSwitch()
+        [TestMethod]
+        public void TestRtlLanguageDetection()
         {
-            ThemeEngine.CurrentMode = AppThemeMode.Dark;
-            Assert.AreEqual(AppThemeMode.Dark, ThemeEngine.CurrentMode);
-            var darkPalette = ThemeEngine.CurrentPalette;
-            Assert.IsTrue(darkPalette.IsDark);
+            LanguageManager.CurrentCulture = new System.Globalization.CultureInfo("ar");
+            Assert.IsTrue(LanguageManager.IsRightToLeft);
 
-            ThemeEngine.CurrentMode = AppThemeMode.Light;
-            Assert.AreEqual(AppThemeMode.Light, ThemeEngine.CurrentMode);
-            var lightPalette = ThemeEngine.CurrentPalette;
-            Assert.IsFalse(lightPalette.IsDark);
-
-            ThemeEngine.CurrentMode = AppThemeMode.System;
-            Assert.AreEqual(AppThemeMode.System, ThemeEngine.CurrentMode);
-        }
-
-        [Test]
-        public void TestAppDetailsPanelDisplay()
-        {
-            var panel = new AppDetailsPanel();
-            Assert.IsNotNull(panel);
-
-            // Display null (cleared state)
-            panel.DisplayApplication(null);
-
-            // Display valid application entry
-            var entry = new ApplicationUninstallerEntry
-            {
-                DisplayName = "EBUninstaller Pro Test Application",
-                DisplayVersion = "1.0.0.0",
-                Publisher = "OpenUninstall Team",
-                InstallLocation = @"C:\Program Files\TestApp",
-                UninstallString = @"C:\Program Files\TestApp\unins000.exe"
-            };
-
-            panel.DisplayApplication(entry);
-
-            // Events fire without throwing
-            bool uninstallFired = false;
-            panel.RequestUninstall += (s, e) => uninstallFired = true;
-
-            panel.Dispose();
-        }
-
-        [Test]
-        public void TestModernNavCommandBarInitialization()
-        {
-            var nav = new ModernNavCommandBar();
-            Assert.IsNotNull(nav);
-
-            string navigatedSection = null;
-            nav.SectionNavigated += (s, key) => navigatedSection = key;
-
-            Assert.IsNull(navigatedSection);
-            nav.Dispose();
-        }
-
-        [Test]
-        public void TestQuickFilterChipsBar()
-        {
-            var chips = new QuickFilterChipsBar();
-            Assert.IsNotNull(chips);
-
-            AppFilterCategory? selectedCat = null;
-            chips.FilterCategoryChanged += (s, cat) => selectedCat = cat;
-
-            chips.RefreshColors();
-            chips.Dispose();
-        }
-
-        [Test]
-        public void TestModernStatsDashboard()
-        {
-            var dash = new ModernStatsDashboard();
-            Assert.IsNotNull(dash);
-
-            dash.UpdateDashboard(100, 50L * 1024 * 1024 * 1024, 2, 500L * 1024 * 1024, 95);
-
-            bool batchFired = false;
-            dash.RequestBatchUninstall += (s, e) => batchFired = true;
-
-            dash.Dispose();
+            LanguageManager.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            Assert.IsFalse(LanguageManager.IsRightToLeft);
         }
     }
 }

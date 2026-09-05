@@ -6,39 +6,39 @@
 
 using System;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UninstallTools.Detection;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class WindowsOptionalFeaturesTests
     {
-        [Test]
+        [TestMethod]
         public void TestGetOptionalFeaturesStructure()
         {
             var features = WindowsOptionalFeaturesManager.GetOptionalFeatures();
-            Assert.That(features, Is.Not.Null);
+            Assert.IsNotNull(features);
 
             foreach (var f in features)
             {
-                Assert.That(f.FeatureName, Is.Not.Null);
-                Assert.That(f.DisplayName, Is.Not.Null);
+                Assert.IsNotNull(f.FeatureName);
+                Assert.IsNotNull(f.DisplayName);
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestCriticalFeatureProtection()
         {
             // Attempting to disable critical features like NetFx4Extended or kernel must be rejected
             bool result = WindowsOptionalFeaturesManager.SetFeatureState("NetFx4Extended-ASPNET45", false);
-            Assert.That(result, Is.False, "Critical .NET Framework feature must be protected.");
+            Assert.IsFalse(result, "Critical .NET Framework feature must be protected.");
 
             bool kernelResult = WindowsOptionalFeaturesManager.SetFeatureState("Microsoft-Windows-Kernel", false);
-            Assert.That(kernelResult, Is.False, "Critical Windows kernel feature must be protected.");
+            Assert.IsFalse(kernelResult, "Critical Windows kernel feature must be protected.");
         }
 
-        [Test]
+        [TestMethod]
         public void TestOptionalFeatureItemProperties()
         {
             var item = new WindowsOptionalFeatureItem
@@ -52,11 +52,11 @@ namespace BulkCrapUninstallerTests
                 IsCritical = false
             };
 
-            Assert.That(item.FeatureName, Is.EqualTo("Microsoft-Windows-Subsystem-Linux"));
-            Assert.That(item.DisplayName, Is.EqualTo("Subsystem Linux"));
-            Assert.That(item.State, Is.EqualTo(FeatureState.Enabled));
-            Assert.That(item.IsCapability, Is.False);
-            Assert.That(item.RestartRequired, Is.True);
+            Assert.AreEqual("Microsoft-Windows-Subsystem-Linux", item.FeatureName);
+            Assert.AreEqual("Subsystem Linux", item.DisplayName);
+            Assert.AreEqual(FeatureState.Enabled, item.State);
+            Assert.IsFalse(item.IsCapability);
+            Assert.IsTrue(item.RestartRequired);
         }
     }
 }

@@ -6,40 +6,40 @@
 
 using System;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UninstallTools.Startup;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class WindowsServicesOptimizerTests
     {
-        [Test]
+        [TestMethod]
         public void TestGetServicesStructure()
         {
             var services = WindowsServicesOptimizer.GetServices();
-            Assert.That(services, Is.Not.Null);
+            Assert.IsNotNull(services);
 
             foreach (var svc in services)
             {
-                Assert.That(svc.ServiceName, Is.Not.Null);
-                Assert.That(svc.DisplayName, Is.Not.Null);
-                Assert.That(svc.StartupMode, Is.Not.EqualTo(ServiceStartupMode.Unknown));
+                Assert.IsNotNull(svc.ServiceName);
+                Assert.IsNotNull(svc.DisplayName);
+                Assert.AreNotEqual(ServiceStartupMode.Unknown, svc.StartupMode);
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestCriticalSystemServiceProtection()
         {
             // Critical services like RpcSs, DcomLaunch, EventLog must be protected
             bool changeResult = WindowsServicesOptimizer.ChangeStartupMode("RpcSs", ServiceStartupMode.Disabled);
-            Assert.That(changeResult, Is.False, "Critical system service RpcSs must not be modifiable.");
+            Assert.IsFalse(changeResult, "Critical system service RpcSs must not be modifiable.");
 
             bool deleteResult = WindowsServicesOptimizer.DeleteOrphanedService("EventLog");
-            Assert.That(deleteResult, Is.False, "Critical system service EventLog must not be deletable.");
+            Assert.IsFalse(deleteResult, "Critical system service EventLog must not be deletable.");
         }
 
-        [Test]
+        [TestMethod]
         public void TestServiceItemProperties()
         {
             var item = new WindowsServiceItem
@@ -55,10 +55,10 @@ namespace BulkCrapUninstallerTests
                 IsCriticalSystem = false
             };
 
-            Assert.That(item.ServiceName, Is.EqualTo("TestService"));
-            Assert.That(item.IsOrphaned, Is.True);
-            Assert.That(item.IsMicrosoftService, Is.False);
-            Assert.That(item.IsCriticalSystem, Is.False);
+            Assert.AreEqual("TestService", item.ServiceName);
+            Assert.IsTrue(item.IsOrphaned);
+            Assert.IsFalse(item.IsMicrosoftService);
+            Assert.IsFalse(item.IsCriticalSystem);
         }
     }
 }

@@ -7,24 +7,24 @@
 using System;
 using System.IO;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UninstallTools.FileSystemEngine;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class EmptyDirectoryAndDuplicateTests
     {
         private string _tempTestDir = string.Empty;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _tempTestDir = Path.Combine(Path.GetTempPath(), "EBUninstaller_Test_" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(_tempTestDir);
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
             try
@@ -38,7 +38,7 @@ namespace BulkCrapUninstallerTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestScanAndCleanEmptyDirectories()
         {
             var emptySubdir1 = Path.Combine(_tempTestDir, "EmptyFolder1");
@@ -51,18 +51,18 @@ namespace BulkCrapUninstallerTests
             File.WriteAllText(Path.Combine(nonEmptySubdir, "test.txt"), "EBUninstaller Pro Unit Test Data");
 
             var results = EmptyDirectoryCleaner.ScanForEmptyDirectories(new[] { _tempTestDir });
-            Assert.That(results, Is.Not.Null);
-            Assert.That(results.Any(r => r.Path == emptySubdir1), Is.True, "EmptyFolder1 should be identified as empty.");
-            Assert.That(results.Any(r => r.Path == emptySubdir2), Is.True, "NestedEmpty should be identified as empty.");
-            Assert.That(results.Any(r => r.Path == nonEmptySubdir), Is.False, "NonEmptyFolder should not be identified as empty.");
+            Assert.IsNotNull(results);
+            Assert.IsTrue(results.Any(r => r.Path == emptySubdir1), "EmptyFolder1 should be identified as empty.");
+            Assert.IsTrue(results.Any(r => r.Path == emptySubdir2), "NestedEmpty should be identified as empty.");
+            Assert.IsFalse(results.Any(r => r.Path == nonEmptySubdir), "NonEmptyFolder should not be identified as empty.");
 
             int deleted = EmptyDirectoryCleaner.DeleteEmptyDirectories(results);
-            Assert.That(deleted, Is.GreaterThanOrEqualTo(2));
-            Assert.That(Directory.Exists(emptySubdir1), Is.False);
-            Assert.That(Directory.Exists(nonEmptySubdir), Is.True);
+            Assert.IsTrue(deleted >= 2);
+            Assert.IsFalse(Directory.Exists(emptySubdir1));
+            Assert.IsTrue(Directory.Exists(nonEmptySubdir));
         }
 
-        [Test]
+        [TestMethod]
         public void TestScanAndCleanDuplicateFiles()
         {
             var file1 = Path.Combine(_tempTestDir, "original.bin");
@@ -77,21 +77,21 @@ namespace BulkCrapUninstallerTests
             File.WriteAllBytes(file3, differentBytes);
 
             var duplicateGroups = DuplicateFileScanner.ScanForDuplicates(new[] { _tempTestDir }, minFileSizeBytes: 1);
-            Assert.That(duplicateGroups, Is.Not.Null);
-            Assert.That(duplicateGroups.Count, Is.EqualTo(1), "Exactly one duplicate group should be found.");
+            Assert.IsNotNull(duplicateGroups);
+            Assert.AreEqual(1, duplicateGroups.Count, "Exactly one duplicate group should be found.");
 
             var group = duplicateGroups[0];
-            Assert.That(group.Files.Count, Is.EqualTo(2));
-            Assert.That(group.Files.Any(f => f.IsOriginal), Is.True);
-            Assert.That(group.Files.Any(f => f.IsSelectedForRemoval), Is.True);
+            Assert.AreEqual(2, group.Files.Count);
+            Assert.IsTrue(group.Files.Any(f => f.IsOriginal));
+            Assert.IsTrue(group.Files.Any(f => f.IsSelectedForRemoval));
 
             var duplicateItem = group.Files.First(f => f.IsSelectedForRemoval);
             var (deletedCount, freedBytes) = DuplicateFileScanner.DeleteDuplicates(new[] { duplicateItem });
 
-            Assert.That(deletedCount, Is.EqualTo(1));
-            Assert.That(freedBytes, Is.EqualTo(identicalBytes.Length));
-            Assert.That(File.Exists(file1), Is.True, "Original file must be preserved.");
-            Assert.That(File.Exists(file2), Is.False, "Duplicate file must be deleted.");
+            Assert.AreEqual(1, deletedCount);
+            Assert.AreEqual(identicalBytes.Length, freedBytes);
+            Assert.IsTrue(File.Exists(file1), "Original file must be preserved.");
+            Assert.IsFalse(File.Exists(file2), "Duplicate file must be deleted.");
         }
     }
 }

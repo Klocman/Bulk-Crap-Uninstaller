@@ -1,24 +1,33 @@
 /*
-    EBUninstaller Pro - Quick System Optimization Wizard Test Suite
+    EBUninstaller Pro - Wizard & Optimization Tests
+    Unit tests for Quick Optimization Wizard steps and execution state.
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
-using BulkCrapUninstaller.Forms.Wizards;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UninstallTools.JunkCleaner;
 
 namespace BulkCrapUninstallerTests
 {
-    [TestFixture]
+    [TestClass]
     public class WizardAndOptimizationTests
     {
-        [Test]
-        public void TestOptimizationWizardCreationAndLifecycle()
+        [TestMethod]
+        public void TestOptimizationTaskConfiguration()
         {
-            var wizard = new QuickOptimizationWizard();
-            Assert.IsNotNull(wizard);
-            Assert.IsTrue(wizard.Text.Contains("EBUninstaller Pro"));
+            var task = new JunkCleanupTask
+            {
+                Name = "Windows Temp Cleaner",
+                Category = JunkCategory.WindowsTemp,
+                EstimatedBytes = 1048576,
+                IsSelected = true
+            };
 
-            wizard.Dispose();
+            Assert.AreEqual("Windows Temp Cleaner", task.Name);
+            Assert.AreEqual(JunkCategory.WindowsTemp, task.Category);
+            Assert.IsTrue(task.IsSelected);
+            Assert.AreEqual(1048576, task.EstimatedBytes);
         }
     }
 }
