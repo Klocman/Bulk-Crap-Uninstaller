@@ -24,15 +24,6 @@ using System.Text;
 
 namespace Klocman
 {
-    internal enum HelperLogLevel
-    {
-        Debug,
-        Info,
-        Warning,
-        Error,
-        Fatal
-    }
-
     internal sealed class LogWriter : StreamWriter
     {
         private static readonly object SyncLock = new object();
@@ -49,15 +40,15 @@ namespace Klocman
         public static void WriteExceptionToLog(Exception ex)
         {
             if (ex == null) return;
-            WriteMessageToLog(HelperLogLevel.Error, ex.ToString());
+            WriteMessageToLog("ERROR", ex.ToString());
         }
 
         public static void WriteMessageToLog(string message)
         {
-            WriteMessageToLog(HelperLogLevel.Info, message);
+            WriteMessageToLog("INFO", message);
         }
 
-        public static void WriteMessageToLog(HelperLogLevel level, string message)
+        public static void WriteMessageToLog(string level, string message)
         {
             if (string.IsNullOrEmpty(message)) return;
 
@@ -72,7 +63,8 @@ namespace Klocman
                         writer = new LogWriter(location);
                     }
 
-                    writer.WriteLine($"[{level.ToString().ToUpperInvariant()}] {message}");
+                    var tag = string.IsNullOrWhiteSpace(level) ? "INFO" : level.ToUpperInvariant();
+                    writer.WriteLine($"[{tag}] {message}");
                 }
                 catch (Exception ex)
                 {

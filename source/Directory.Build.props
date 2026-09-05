@@ -21,7 +21,6 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 
-		<TargetZone>LocalIntranet</TargetZone>
 		<GenerateManifests>false</GenerateManifests>
 		<SignManifests>false</SignManifests>
 
@@ -41,15 +40,11 @@
 		<GenerateResourceErrorsAsWarnings>true</GenerateResourceErrorsAsWarnings>
 	</PropertyGroup>
 
-	<Target Name="UnblockResxFiles" BeforeTargets="BeforeResGen;PrepareResourceNames" Condition="'$(OS)' == 'Windows_NT'">
-		<Exec Command="powershell -NoProfile -NonInteractive -Command &quot;Get-ChildItem -Path '$(MSBuildProjectDirectory)' -Filter *.resx -Recurse -ErrorAction SilentlyContinue | Unblock-File -ErrorAction SilentlyContinue&quot;" ContinueOnError="true" IgnoreExitCode="true" />
+	<Target Name="UnblockAllProjectFiles" BeforeTargets="BeforeBuild;BeforeResGen;PrepareResourceNames;ResolveAssemblyReferences" Condition="'$(OS)' == 'Windows_NT'">
+		<Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -NonInteractive -Command &quot;Get-ChildItem -Path '$(MSBuildThisFileDirectory)..' -Filter *.resx -Recurse -ErrorAction SilentlyContinue | Unblock-File -ErrorAction SilentlyContinue&quot;" ContinueOnError="true" IgnoreExitCode="true" />
 	</Target>
 	
 	<Import Project="HelperTools\HelperTools.projitems" Label="Shared" />
-
-	<ItemGroup>
-		<PackageReference Include="System.ServiceProcess.ServiceController" Version="[8.*,9)" />
-	</ItemGroup>
 
 	<PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
 		<RuntimeIdentifier></RuntimeIdentifier>

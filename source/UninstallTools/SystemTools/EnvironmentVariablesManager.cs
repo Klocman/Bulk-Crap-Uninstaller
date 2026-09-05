@@ -167,10 +167,12 @@ namespace UninstallTools.SystemTools
                 sb.AppendLine("Windows Registry Editor Version 5.00");
                 sb.AppendLine();
                 sb.AppendLine(@"[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]");
-                sb.AppendLine($"\"Path\"=\"{GetSystemPathRaw().Replace("\\", "\\\\").Replace("\"", "\\\"")}\"");
+                var escapedSys = GetSystemPathRaw().Replace(@"\", @"\\").Replace("\"", "\\\"");
+                sb.AppendLine($"\"Path\"=\"{escapedSys}\"");
                 sb.AppendLine();
                 sb.AppendLine(@"[HKEY_CURRENT_USER\Environment]");
-                sb.AppendLine($"\"Path\"=\"{GetUserPathRaw().Replace("\\", "\\\\").Replace("\"", "\\\"")}\"");
+                var escapedUser = GetUserPathRaw().Replace(@"\", @"\\").Replace("\"", "\\\"");
+                sb.AppendLine($"\"Path\"=\"{escapedUser}\"");
 
                 File.WriteAllText(backupPath, sb.ToString(), System.Text.Encoding.Unicode);
                 StructuredLogger.Log(LogLevel.Info, "EnvironmentVariablesManager", $"Backed up environment variables to {backupPath}");

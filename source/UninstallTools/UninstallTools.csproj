@@ -18,6 +18,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 		<PackageReference Include="System.Management" Version="[8.*,9)" />
+		<PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
 		<PackageReference Include="TaskScheduler" Version="2.12.2" />
 	</ItemGroup>
 	
