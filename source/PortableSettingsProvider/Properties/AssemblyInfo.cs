@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PortableSettingsProvider")]
 [assembly: AssemblyDescription("Library that allows saving of .NET settings to a portable file")]
 [assembly: AssemblyConfiguration("Release")]
-[assembly: AssemblyCompany("Marcin Szeniak, HakanL, CodeChimp")]
-[assembly: AssemblyProduct("PortableSettingsProvider")]
-[assembly: AssemblyCopyright("Copyright © 2007")]
+[assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

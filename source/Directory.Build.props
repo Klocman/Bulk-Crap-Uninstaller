@@ -32,6 +32,7 @@
 		
 		<UseAppHost>true</UseAppHost>
 		<SelfContained>false</SelfContained>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
 	
 	<Import Project="HelperTools\HelperTools.projitems" Label="Shared" />

@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="AssemblyInfo.cs" company="NBug Project">
 //   Copyright (c) 2011 - 2013 Teoman Soygul. Licensed under MIT license.
 // </copyright>
@@ -17,9 +17,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NBug")]
 [assembly: AssemblyDescription("NBug bug reporting library created by Teoman Soygul.")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NBug")]
-[assembly: AssemblyCopyright("Copyright © 2013 Teoman Soygul")]
 [assembly: AssemblyTrademark("")]
 
 #if DEBUG

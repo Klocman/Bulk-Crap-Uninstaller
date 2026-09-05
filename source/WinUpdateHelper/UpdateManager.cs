@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -9,7 +9,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Klocman;
-using WUApiLib;
 
 namespace WinUpdateHelper
 {
