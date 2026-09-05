@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    EBUninstaller Pro - Open Source Professional Windows Uninstaller
     Digital Signature and Certificate Verification Subsystem
 */
 

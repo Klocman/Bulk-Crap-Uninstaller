@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Complete Lifecycle Integration Test Suite
+    EBUninstaller Pro - Complete Lifecycle Integration Test Suite
     Tests the full end-to-end lifecycle:
     DISPOSABLE APP SETUP -> MONITOR -> BACKUP -> UNINSTALL -> SCAN LEFTOVERS -> CLEAN -> VERIFY -> RESTORE
 */
@@ -23,7 +23,7 @@ namespace BulkCrapUninstallerTests
         [TestMethod]
         public void FullApplicationLifecycle_SimulatedEnvironment_CompletesSuccessfully()
         {
-            var sandboxRoot = Path.Combine(Path.GetTempPath(), "OpenUninstall_LifecycleSandbox_" + Guid.NewGuid().ToString("N"));
+            var sandboxRoot = Path.Combine(Path.GetTempPath(), "EBUninstaller_LifecycleSandbox_" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(sandboxRoot);
 
             var appInstallDir = Path.Combine(sandboxRoot, "ProgramFiles", "TestApp2026");

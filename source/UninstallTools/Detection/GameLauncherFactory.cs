@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    EBUninstaller Pro - Open Source Professional Windows Uninstaller
     Game Launchers Discovery Factory (Epic, GOG, Ubisoft, Origin/EA, Battle.net)
 */
 

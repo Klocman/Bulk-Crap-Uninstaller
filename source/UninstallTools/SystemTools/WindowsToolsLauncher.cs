@@ -1,6 +1,7 @@
 /*
-    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    EBUninstaller Pro - Professional Windows Uninstaller & System Maintenance
     Windows Built-in Tools Launcher Subsystem
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;

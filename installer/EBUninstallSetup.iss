@@ -4,7 +4,7 @@
 #define MyAppName "EBUninstaller Pro"
 #define MyAppVersion "7.0.0"
 #define MyAppPublisher "EhabYT"
-#define MyAppURL "https://github.com/EhabYT/Bulk-Crap-Uninstaller"
+#define MyAppURL "https://github.com/EhabYT/EBUninstaller"
 #define MyAppExeName "BCUninstaller.exe"
 #define MyAppConsoleExeName "BCU-console.exe"
 

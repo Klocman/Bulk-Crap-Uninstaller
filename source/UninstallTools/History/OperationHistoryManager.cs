@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    EBUninstaller Pro - Open Source Professional Windows Uninstaller
     Operation History Manager Subsystem
 */
 

@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Open Source Professional Windows Uninstaller
+    EBUninstaller Pro - Open Source Professional Windows Uninstaller
     Core Structured Logging Subsystem
 */
 
@@ -119,7 +119,7 @@ namespace UninstallTools.Core
             }
             else
             {
-                LogFilePath = Path.Combine(logDir, $"OpenUninstall_{DateTime.UtcNow:yyyyMMdd}.log");
+                LogFilePath = Path.Combine(logDir, $"EBUninstaller_{DateTime.UtcNow:yyyyMMdd}.log");
             }
         }
 

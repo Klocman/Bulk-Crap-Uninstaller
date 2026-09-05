@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Exclusions, History, and Forced Removal
+    EBUninstaller Pro - Unit Tests for Exclusions, History, and Forced Removal
 */
 
 using System;
@@ -87,7 +87,7 @@ namespace BulkCrapUninstallerTests
         [TestMethod]
         public void BuildPlan_WithMockFolder_CreatesHighConfidenceDirectoryItem()
         {
-            var tempDir = Path.Combine(Path.GetTempPath(), "OpenUninstall_ForcedTest_" + Guid.NewGuid().ToString("N"));
+            var tempDir = Path.Combine(Path.GetTempPath(), "EBUninstaller_ForcedTest_" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(tempDir);
             File.WriteAllText(Path.Combine(tempDir, "mock_broken_app.exe"), "DATA");
 

@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Localization and Target Mode Subsystems
+    EBUninstaller Pro - Unit Tests for Localization and Target Mode Subsystems
 */
 
 using System;

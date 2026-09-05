@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Junk and Privacy Cleaners, and Browser Extensions
+    EBUninstaller Pro - Unit Tests for Junk and Privacy Cleaners, and Browser Extensions
 */
 
 using System;

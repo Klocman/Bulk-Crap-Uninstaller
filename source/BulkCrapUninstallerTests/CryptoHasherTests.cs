@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Cryptography and Confidence Scorer
+    EBUninstaller Pro - Unit Tests for Cryptography and Confidence Scorer
 */
 
 using System;
@@ -17,8 +17,8 @@ namespace BulkCrapUninstallerTests
         [TestMethod]
         public void ComputeSha256_KnownString_MatchesExpectedHash()
         {
-            // SHA256 of "OpenUninstallPro"
-            var input = "OpenUninstallPro";
+            // SHA256 of "EBUninstallerPro"
+            var input = "EBUninstallerPro";
             var hash = CryptoHasher.ComputeSha256(input, Encoding.UTF8);
 
             Assert.IsNotNull(hash);
@@ -60,7 +60,7 @@ namespace BulkCrapUninstallerTests
             var entry = new ApplicationUninstallerEntry
             {
                 DisplayName = "Test Suite Pro Application",
-                Publisher = "OpenUninstall",
+                Publisher = "EBUninstaller",
                 DisplayVersion = "1.0.0",
                 IsRegistered = true,
                 InstallDate = DateTime.UtcNow

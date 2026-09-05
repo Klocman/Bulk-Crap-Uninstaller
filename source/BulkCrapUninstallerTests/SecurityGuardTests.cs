@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Security Guard & Protection Subsystem
+    EBUninstaller Pro - Unit Tests for Security Guard & Protection Subsystem
 */
 
 using System;

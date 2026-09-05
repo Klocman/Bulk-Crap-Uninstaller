@@ -1,5 +1,5 @@
 /*
-    OpenUninstall Pro - Unit Tests for Installation Monitor and Backup Subsystems
+    EBUninstaller Pro - Unit Tests for Installation Monitor and Backup Subsystems
 */
 
 using System;
@@ -69,7 +69,7 @@ namespace BulkCrapUninstallerTests
                 Size = 10485760
             });
 
-            var tempDir = Path.Combine(Path.GetTempPath(), "OpenUninstall_Test_" + Guid.NewGuid().ToString("N"));
+            var tempDir = Path.Combine(Path.GetTempPath(), "EBUninstaller_Test_" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(tempDir);
 
             try
@@ -98,7 +98,7 @@ namespace BulkCrapUninstallerTests
         [TestMethod]
         public void CreateBackup_WithMockFiles_GeneratesValidManifestAndArchive()
         {
-            var tempBase = Path.Combine(Path.GetTempPath(), "OpenUninstall_BackupTest_" + Guid.NewGuid().ToString("N"));
+            var tempBase = Path.Combine(Path.GetTempPath(), "EBUninstaller_BackupTest_" + Guid.NewGuid().ToString("N"));
             var mockAppDir = Path.Combine(tempBase, "MockApp");
             Directory.CreateDirectory(mockAppDir);
 
