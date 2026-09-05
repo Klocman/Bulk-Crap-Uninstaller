@@ -129,6 +129,8 @@ def check_unit_tests():
         "source/BulkCrapUninstallerTests/ExclusionAndHistoryTests.cs",
         "source/BulkCrapUninstallerTests/LifecycleIntegrationTests.cs",
         "source/BulkCrapUninstallerTests/JunkAndPrivacyCleanerTests.cs",
+        "source/BulkCrapUninstallerTests/LocalizationAndTargetModeTests.cs",
+        "source/BulkCrapUninstallerTests/ThemeAndUiTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
