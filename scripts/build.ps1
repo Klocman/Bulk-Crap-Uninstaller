@@ -11,6 +11,8 @@ param(
     [string]$Platform = "Any CPU",
     [switch]$SkipTests,
     [switch]$BuildInstaller,
+    [switch]$Clean,
+    [switch]$RunVerify,
     [string]$InnoSetupPath = ""
 )
 
@@ -24,6 +26,17 @@ $BuildDir = Join-Path $RepoRoot "build"
 Write-Host "=================================================================" -ForegroundColor Cyan
 Write-Host " Building EBUninstaller Pro ($Configuration - $Platform)        " -ForegroundColor Cyan
 Write-Host "=================================================================" -ForegroundColor Cyan
+
+# 0. Clean prior build if requested
+if ($Clean) {
+    Write-Host "[Clean] Cleaning previous build outputs..." -ForegroundColor Yellow
+    if (Test-Path $BuildDir) {
+        Remove-Item -Path $BuildDir -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
+New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "portable") | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "installer") | Out-Null
 
 # 1. Check dotnet CLI
 if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
@@ -54,8 +67,6 @@ if (-not $SkipTests) {
 # 4. Generate Portable Package
 Write-Host "`n[3/4] Creating Portable Release Package..." -ForegroundColor Yellow
 $PortableZip = Join-Path $BuildDir "portable\EBUninstaller_Pro_Portable.zip"
-New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "portable") | Out-Null
-New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "installer") | Out-Null
 
 if (-not (Test-Path $OutputDir)) {
     if (Test-Path (Join-Path $RepoRoot "bin\$Configuration\$Platform")) {
@@ -99,16 +110,30 @@ if ($BuildInstaller) {
     }
 }
 
-# 6. Generate SHA-256 Checksums for Release
+# 6. Static Analysis Verification if requested
+if ($RunVerify) {
+    Write-Host "`nRunning Architecture & Static Quality Verification..." -ForegroundColor Yellow
+    if (Get-Command python -ErrorAction SilentlyContinue) {
+        python (Join-Path $RepoRoot "scripts\verify_repo.py")
+    } elseif (Get-Command python3 -ErrorAction SilentlyContinue) {
+        python3 (Join-Path $RepoRoot "scripts\verify_repo.py")
+    }
+}
+
+# 7. Generate SHA-256 Checksums for Release
 Write-Host "`nGenerating SHA-256 Checksums..." -ForegroundColor Yellow
 $SumsFile = Join-Path $BuildDir "SHA256SUMS.txt"
 $ReleaseFiles = Get-ChildItem -Path $BuildDir -Recurse -File -Exclude "SHA256SUMS.txt"
-$Checksums = foreach ($file in $ReleaseFiles) {
-    $hash = (Get-FileHash -Path $file.FullName -Algorithm SHA256).Hash.ToLower()
-    $relPath = $file.FullName.Substring($BuildDir.Length + 1)
-    "$hash  $relPath"
+if ($ReleaseFiles.Count -gt 0) {
+    $Checksums = foreach ($file in $ReleaseFiles) {
+        $hash = (Get-FileHash -Path $file.FullName -Algorithm SHA256).Hash.ToLower()
+        $relPath = $file.FullName.Substring($BuildDir.Length + 1)
+        "$hash  $relPath"
+    }
+    $Checksums | Set-Content -Path $SumsFile -Encoding UTF8
+    Write-Host "Checksums written to: $SumsFile" -ForegroundColor Green
 }
-$Checksums | Set-Content -Path $SumsFile -Encoding UTF8
-Write-Host "Checksums written to: $SumsFile" -ForegroundColor Green
 
-Write-Host "`nBuild process completed successfully!" -ForegroundColor Green
+Write-Host "`n=================================================================" -ForegroundColor Green
+Write-Host " [SUCCESS] Build process completed successfully!                 " -ForegroundColor Green
+Write-Host "=================================================================" -ForegroundColor Green
