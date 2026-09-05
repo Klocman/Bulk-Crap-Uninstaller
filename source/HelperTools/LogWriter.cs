@@ -1,7 +1,20 @@
-﻿/*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
-*/
+/*
+ * EBUninstaller Pro - Application Uninstaller & System Optimization Suite
+ * HelperTools Shared Utilities Subsystem
+ * Copyright (C) 2026 EBUninstaller Development Team & Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 using System;
 using System.Diagnostics;
@@ -11,53 +24,81 @@ using System.Text;
 
 namespace Klocman
 {
-    internal sealed class LogWriter(string path) : StreamWriter(path, true, Encoding.UTF8)
+    public enum LogLevel
     {
+        Debug,
+        Info,
+        Warning,
+        Error,
+        Fatal
+    }
+
+    internal sealed class LogWriter : StreamWriter
+    {
+        private static readonly object SyncLock = new object();
         private static LogWriter _currentLogger;
+        private readonly string _logFilePath;
+        private readonly long _maxSizeBytes;
+
+        public LogWriter(string path, long maxSizeBytes = 512 * 1024) : base(path, true, Encoding.UTF8)
+        {
+            _logFilePath = path;
+            _maxSizeBytes = maxSizeBytes;
+        }
 
         public static void WriteExceptionToLog(Exception ex)
         {
-            if (ex == null) throw new ArgumentNullException(nameof(ex));
-            WriteMessageToLog(ex.ToString());
+            if (ex == null) return;
+            WriteMessageToLog(LogLevel.Error, ex.ToString());
         }
 
-        /// <summary>
-        /// Writes a message to the log file with a UTC timestamp.
-        /// </summary>
         public static void WriteMessageToLog(string message)
         {
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            WriteMessageToLog(LogLevel.Info, message);
+        }
 
-            StreamWriter writer = _currentLogger;
-            try
+        public static void WriteMessageToLog(LogLevel level, string message)
+        {
+            if (string.IsNullOrEmpty(message)) return;
+
+            lock (SyncLock)
             {
-                var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
+                var writer = _currentLogger;
+                try
+                {
+                    if (writer == null || !writer.BaseStream.CanWrite)
+                    {
+                        var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
+                        writer = new LogWriter(location);
+                    }
 
-                if (writer == null || !writer.BaseStream.CanWrite)
-                    writer = new StreamWriter(location, true);
-
-                writer.Write(DateTime.UtcNow.ToLongTimeString());
-                writer.Write(" - ");
-                writer.WriteLine(message);
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(@"Failed to write to log file:\n" + ex);
-            }
-            finally
-            {
-                if (writer != null && writer != _currentLogger)
-                    writer.Dispose();
+                    writer.WriteLine($"[{level.ToString().ToUpperInvariant()}] {message}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[LogWriter Failed] {ex.Message}");
+                }
+                finally
+                {
+                    if (writer != null && writer != _currentLogger)
+                    {
+                        writer.Dispose();
+                    }
+                }
             }
         }
 
         private static string CreateLogFilenameForAssembly(Assembly assembly)
         {
-            var location = assembly.Location;
-            if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || location.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
-                location = location.Remove(location.Length - 4);
-            location += ".log";
+            var location = assembly?.Location;
+            if (string.IsNullOrEmpty(location))
+            {
+                location = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Application.log");
+            }
+            else if (location.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || location.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
+            {
+                location = location.Substring(0, location.Length - 4) + ".log";
+            }
             return location;
         }
 
@@ -65,43 +106,34 @@ namespace Klocman
         {
             base.Dispose(disposing);
             if (disposing)
+            {
                 Disposed = true;
+            }
         }
 
-        private bool Disposed { get; set; }
+        public bool Disposed { get; private set; }
 
-        /// <summary>
-        /// Start logging to a file reflecting the calling assembly name.
-        /// Hooks console out and error. Dispose before exiting.
-        /// If logging is already active, it will be restarted with the new calling assembly name.
-        /// </summary>
         public static LogWriter StartLogging()
         {
-            _currentLogger?.Dispose();
-
-            var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
-            return _currentLogger = StartLogging(location);
+            lock (SyncLock)
+            {
+                _currentLogger?.Dispose();
+                var location = CreateLogFilenameForAssembly(Assembly.GetCallingAssembly());
+                return _currentLogger = StartLogging(location);
+            }
         }
 
-        /// <summary>
-        /// Start logging to a file.
-        /// Hooks console out and error. Dispose before exiting.
-        /// </summary>
         private static LogWriter StartLogging(string logPath)
         {
             try
             {
-                // Limit log size to 100 kb
-                var fileInfo = new FileInfo(logPath);
-                if (fileInfo.Exists && fileInfo.Length > 1024 * 100)
-                    fileInfo.Delete();
+                // Rotate log if size exceeds limit
+                RotateLogIfNeeded(logPath, 512 * 1024);
 
-                // Create new log writer
                 var logWriter = new LogWriter(logPath);
 
-                // Make sure we can write to the file
                 logWriter.WriteSeparator();
-                logWriter.WriteLine("Application startup");
+                logWriter.WriteLine($"[STARTUP] Process: {Process.GetCurrentProcess().ProcessName} (PID {Environment.ProcessId}) - UTC: {DateTime.UtcNow:yyyy-MM-dd HH:mm:ss.fff}");
                 logWriter.Flush();
 
                 Console.SetOut(logWriter);
@@ -113,23 +145,37 @@ namespace Klocman
             }
             catch (Exception ex)
             {
-                // Ignore logging errors
-                Console.WriteLine(ex);
+                Console.WriteLine($"Failed to start LogWriter: {ex}");
                 return null;
             }
+        }
+
+        private static void RotateLogIfNeeded(string logPath, long maxBytes)
+        {
+            try
+            {
+                var fi = new FileInfo(logPath);
+                if (fi.Exists && fi.Length > maxBytes)
+                {
+                    var backup = logPath + ".old";
+                    if (File.Exists(backup)) File.Delete(backup);
+                    File.Move(logPath, backup);
+                }
+            }
+            catch { }
         }
 
         public void WriteSeparator()
         {
             if (Disposed) return;
-            base.WriteLine("--------------------------------------------------");
+            base.WriteLine("--------------------------------------------------------------------------------");
         }
 
         public override void WriteLine(string value)
         {
             if (Disposed) return;
-            value = DateTime.UtcNow.ToLongTimeString() + " - " + value;
-            base.WriteLine(value);
+            var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            base.WriteLine($"{timestamp} UTC - {value}");
             base.Flush();
         }
     }

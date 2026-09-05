@@ -145,6 +145,9 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/Detection/WindowsOptionalFeaturesManager.cs",
         "source/UninstallTools/Detection/SoftwareVulnerabilityChecker.cs",
         "source/UninstallTools/Uninstaller/UninstallPipeline.cs",
+        "source/HelperTools/HelperTools.cs",
+        "source/HelperTools/LogWriter.cs",
+        "source/HelperTools/ProcessRunner.cs",
         "source/EBUninstaller/Forms/Windows/ForcedUninstallWindow.cs",
         "source/EBUninstaller/Forms/Windows/BackupManagerWindow.cs",
         "source/EBUninstaller/Forms/Windows/InstallationMonitorWindow.cs",
@@ -285,6 +288,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/EBUninstallerTests/SoftwareVulnerabilityCheckerTests.cs",
         "source/EBUninstallerTests/InstalledFontsCleanerTests.cs",
         "source/EBUninstallerTests/ServiceDependencyTreeTests.cs",
+        "source/EBUninstallerTests/HelperToolsTests.cs",
         "source/EBUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/EBUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/EBUninstallerTests/UninstallListTests.cs"

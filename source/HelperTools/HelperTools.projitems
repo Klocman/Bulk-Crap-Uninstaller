@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)HelperTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProcessRunner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResultWin32.cs" />
   </ItemGroup>
   <ItemGroup>
