@@ -54,7 +54,7 @@ namespace UninstallTools.SystemTools
 
             try
             {
-                var consoleExe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BCU-console.exe");
+                var consoleExe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EBU-console.exe");
                 if (!File.Exists(consoleExe))
                 {
                     consoleExe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EBUninstaller.exe");

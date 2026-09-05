@@ -26,7 +26,7 @@ namespace BulkCrapUninstaller
     {
         public static bool IsRestarting { get; internal set; }
 
-        private const string MUTEX_NAME = @"Global\BCU-singleinstance";
+        private const string MUTEX_NAME = @"Global\EBU-singleinstance";
         private static Mutex _mutex;
 
         [STAThread]
@@ -137,7 +137,7 @@ namespace BulkCrapUninstaller
                 }
                 else
                 {
-                    CustomMessageBox.ShowDialog(null, new CmbBasicSettings("BCUninstaller is already running", "BCUninstaller is already running", "You can start only one instance of BCUninstaller. Close previous instances and try again. If you don't see the BCUninstaller window or it's not responding, try closing it with Task Manager.", DrawingTools.ExtractAssociatedIcon(location), "OK"));
+                    CustomMessageBox.ShowDialog(null, new CmbBasicSettings("EBUninstaller Pro is already running", "EBUninstaller Pro is already running", "You can start only one instance of EBUninstaller Pro. Close previous instances and try again. If you don't see the EBUninstaller Pro window or it's not responding, try closing it with Task Manager.", DrawingTools.ExtractAssociatedIcon(location), "OK"));
                 }
             }
             catch (Exception ex)

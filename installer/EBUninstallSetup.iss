@@ -6,7 +6,7 @@
 #define MyAppPublisher "EhabYT"
 #define MyAppURL "https://github.com/EhabYT/EBUninstaller"
 #define MyAppExeName "EBUninstaller.exe"
-#define MyAppConsoleExeName "EBUninstaller-console.exe"
+#define MyAppConsoleExeName "EBU-console.exe"
 
 [Setup]
 AppId={{D3F9E17A-72A8-4A1B-8DF9-E342B286E90F}

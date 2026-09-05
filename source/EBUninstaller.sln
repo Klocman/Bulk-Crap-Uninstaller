@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleTreeMap", "SimpleTree
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleTreeMapTestApp", "SimpleTreeMapTests\SimpleTreeMapTestApp.csproj", "{3F3D249F-885B-4AF5-B760-3900D077D66B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCU-console", "BCU-console\BCU-console.csproj", "{2E8CECA3-4872-439E-9A47-5304FB4BF705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBU-console", "BCU-console\BCU-console.csproj", "{2E8CECA3-4872-439E-9A47-5304FB4BF705}"
 	ProjectSection(ProjectDependencies) = postProject
 		{129CBF33-9E19-4D26-A601-5E8394907AE1} = {129CBF33-9E19-4D26-A601-5E8394907AE1}
 		{18FEDA0C-D147-4286-B39A-01204808106A} = {18FEDA0C-D147-4286-B39A-01204808106A}
@@ -80,7 +80,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSettingBinder", "NetSett
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBug", "NBug_custom\NBug.csproj", "{B5F0E648-A6E8-4D63-842C-90562148A930}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BCU-launcher", "BCU-launcher\BCU-launcher.vcxproj", "{C54B5AFD-C079-4852-960E-906B8CEE0E07}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EBU-launcher", "BCU-launcher\BCU-launcher.vcxproj", "{C54B5AFD-C079-4852-960E-906B8CEE0E07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

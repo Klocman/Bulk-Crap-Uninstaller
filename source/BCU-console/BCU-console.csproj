@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<AssemblyName>EBUninstaller-console</AssemblyName>
-		<RootNamespace>BCU_console</RootNamespace>
+		<AssemblyName>EBU-console</AssemblyName>
+		<RootNamespace>EBU_console</RootNamespace>
 
 		<Product>EBUninstaller Pro Console CLI</Product>
 		<AssemblyTitle>EBUninstaller Pro Command Line Interface for Scripting and Automation</AssemblyTitle>
