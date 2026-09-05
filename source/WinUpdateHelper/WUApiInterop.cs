@@ -1,6 +1,7 @@
 /*
     EBUninstaller Pro - Windows Update Agent Interop
     Native COM Interop Definitions for .NET 8+ (No tlbimp/ResolveComReference required)
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
@@ -21,11 +22,10 @@ namespace WinUpdateHelper
     }
 
     [ComImport]
-    [Guid("4CB43D7F-7EEE-4906-8698-60DA1C38F2FE")]
-    [ClassInterface(ClassInterfaceType.None)]
-    public class UpdateSessionClass : IUpdateSession
+    [Guid("81685850-D706-420C-9A30-E5820305E3DC")]
+    [CoClass(typeof(UpdateSessionClass))]
+    public interface UpdateSession : IUpdateSession
     {
-        // External COM implementation
     }
 
     [ComImport]
@@ -45,6 +45,14 @@ namespace WinUpdateHelper
         dynamic CreateUpdateDownloader();
         [DispId(6)]
         IUpdateInstaller CreateUpdateInstaller();
+    }
+
+    [ComImport]
+    [Guid("4CB43D7F-7EEE-4906-8698-60DA1C38F2FE")]
+    [ClassInterface(ClassInterfaceType.None)]
+    [TypeLibType(TypeLibTypeFlags.FCanCreate)]
+    public class UpdateSessionClass
+    {
     }
 
     [ComImport]
@@ -88,9 +96,9 @@ namespace WinUpdateHelper
     }
 
     [ComImport]
-    [Guid("2EE48F22-AF3C-405E-B397-CD067BF1DB89")]
-    [ClassInterface(ClassInterfaceType.None)]
-    public class UpdateCollectionClass : IUpdateCollection
+    [Guid("07FDD239-B2C2-4473-AB62-E4B6CDDD7E39")]
+    [CoClass(typeof(UpdateCollectionClass))]
+    public interface UpdateCollection : IUpdateCollection
     {
     }
 
@@ -119,6 +127,14 @@ namespace WinUpdateHelper
         void RemoveAt(int index);
         [DispId(-4)]
         new IEnumerator GetEnumerator();
+    }
+
+    [ComImport]
+    [Guid("2EE48F22-AF3C-405E-B397-CD067BF1DB89")]
+    [ClassInterface(ClassInterfaceType.None)]
+    [TypeLibType(TypeLibTypeFlags.FCanCreate)]
+    public class UpdateCollectionClass
+    {
     }
 
     [ComImport]
