@@ -115,6 +115,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/JunkCleaner/EventLogResidualsCleaner.cs",
         "source/UninstallTools/JunkCleaner/FontResidualsCleaner.cs",
         "source/UninstallTools/JunkCleaner/DeveloperCacheCleaner.cs",
+        "source/UninstallTools/JunkCleaner/DisconnectedDevicesCleaner.cs",
         "source/UninstallTools/PrivacyCleaner/PrivacyCleanerEngine.cs",
         "source/UninstallTools/PrivacyCleaner/PrivacyCleanerModels.cs",
         "source/UninstallTools/BrowserExtensions/BrowserExtensionManager.cs",
@@ -163,6 +164,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/EnvironmentVariablesWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/DeveloperCacheCleanerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/WslManagerWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/DisconnectedDevicesCleanerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -234,6 +236,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/EnvironmentVariablesTests.cs",
         "source/BulkCrapUninstallerTests/DeveloperCacheCleanerTests.cs",
         "source/BulkCrapUninstallerTests/WslManagerTests.cs",
+        "source/BulkCrapUninstallerTests/DisconnectedDevicesCleanerTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
