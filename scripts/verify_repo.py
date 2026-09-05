@@ -118,6 +118,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/Detection/GameLauncherFactory.cs",
         "source/UninstallTools/Detection/PackageManagersFactory.cs",
         "source/UninstallTools/Detection/ConfidenceScorer.cs",
+        "source/UninstallTools/Detection/WindowsOptionalFeaturesManager.cs",
         "source/UninstallTools/Uninstaller/UninstallPipeline.cs",
         "source/BulkCrapUninstaller/Forms/Windows/ForcedUninstallWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/BackupManagerWindow.cs",
@@ -133,6 +134,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/DuplicateAndEmptyFolderWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/ContextMenuManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/ServicesOptimizerWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/WindowsFeaturesManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -189,6 +191,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/EmptyDirectoryAndDuplicateTests.cs",
         "source/BulkCrapUninstallerTests/ContextMenuManagerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsServicesOptimizerTests.cs",
+        "source/BulkCrapUninstallerTests/WindowsOptionalFeaturesTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
