@@ -95,6 +95,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/Core/StructuredLogger.cs",
         "source/UninstallTools/Core/CryptoHasher.cs",
         "source/UninstallTools/Core/DigitalSignatureVerifier.cs",
+        "source/UninstallTools/Core/SoftwareSafetyAdvisor.cs",
         "source/UninstallTools/RegistryEngine/SafeRegistryEngine.cs",
         "source/UninstallTools/FileSystemEngine/SafeFileSystemEngine.cs",
         "source/UninstallTools/FileSystemEngine/EmptyDirectoryCleaner.cs",
@@ -135,6 +136,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/ContextMenuManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/ServicesOptimizerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/WindowsFeaturesManagerWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/SoftwareAdvisorWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -192,6 +194,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/ContextMenuManagerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsServicesOptimizerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsOptionalFeaturesTests.cs",
+        "source/BulkCrapUninstallerTests/SoftwareSafetyAdvisorTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
