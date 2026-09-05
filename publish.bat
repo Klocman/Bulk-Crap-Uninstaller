@@ -60,19 +60,28 @@ if exist "%BIN_DIR%" (
 :: 4. Build Inno Setup Installer
 echo.
 echo [3/3] Compiling Inno Setup Installer...
-set "ISCC_PATH=C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-if exist "%ISCC_PATH%" (
-    "%ISCC_PATH%" "%REPO_ROOT%installer\EBUninstallSetup.iss"
-    echo  -> Inno Setup installer compiled to: build\installer\
-) else (
-    set "ISCC_PATH64=C:\Program Files\Inno Setup 6\ISCC.exe"
-    if exist "%ISCC_PATH64%" (
-        "%ISCC_PATH64%" "%REPO_ROOT%installer\EBUninstallSetup.iss"
-        echo  -> Inno Setup installer compiled to: build\installer\
+set "ISCC_EXE="
+where iscc >nul 2>nul
+if %ERRORLEVEL% equ 0 (
+    for /f "tokens=*" %%i in ('where iscc') do set "ISCC_EXE=%%i"
+)
+if not defined ISCC_EXE if exist "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" set "ISCC_EXE=C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+if not defined ISCC_EXE if exist "C:\Program Files\Inno Setup 6\ISCC.exe" set "ISCC_EXE=C:\Program Files\Inno Setup 6\ISCC.exe"
+if not defined ISCC_EXE if exist "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" set "ISCC_EXE=C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
+if not defined ISCC_EXE if exist "%LOCALAPPDATA%\Programs\Inno Setup 6\ISCC.exe" set "ISCC_EXE=%LOCALAPPDATA%\Programs\Inno Setup 6\ISCC.exe"
+if not defined ISCC_EXE if exist "C:\ProgramData\chocolatey\bin\iscc.exe" set "ISCC_EXE=C:\ProgramData\chocolatey\bin\iscc.exe"
+
+if defined ISCC_EXE (
+    echo  -> Using Inno Setup: "%ISCC_EXE%"
+    "%ISCC_EXE%" "%REPO_ROOT%installer\EBUninstallSetup.iss"
+    if %ERRORLEVEL% equ 0 (
+        echo  -> Inno Setup installer compiled successfully to: build\installer\
     ) else (
-        echo [INFO] Inno Setup compiler (ISCC.exe) was not found in default program files.
-        echo        Script is ready at: installer\EBUninstallSetup.iss
+        echo [WARNING] Inno Setup compilation encountered an error.
     )
+) else (
+    echo [INFO] Inno Setup compiler (ISCC.exe) was not found.
+    echo        The setup script is ready at: installer\EBUninstallSetup.iss
 )
 
 echo.

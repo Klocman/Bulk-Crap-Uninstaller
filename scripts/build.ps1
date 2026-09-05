@@ -10,7 +10,8 @@ param(
     [string]$Configuration = "Release",
     [string]$Platform = "Any CPU",
     [switch]$SkipTests,
-    [switch]$BuildInstaller
+    [switch]$BuildInstaller,
+    [string]$InnoSetupPath = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -54,6 +55,7 @@ if (-not $SkipTests) {
 Write-Host "`n[3/4] Creating Portable Release Package..." -ForegroundColor Yellow
 $PortableZip = Join-Path $BuildDir "portable\EBUninstaller_Pro_Portable.zip"
 New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "portable") | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $BuildDir "installer") | Out-Null
 
 if (-not (Test-Path $OutputDir)) {
     if (Test-Path (Join-Path $RepoRoot "bin\$Configuration\$Platform")) {
@@ -71,14 +73,29 @@ if (Test-Path $OutputDir) {
 # 5. Build Installer if requested
 if ($BuildInstaller) {
     Write-Host "`n[4/4] Compiling Inno Setup Installer..." -ForegroundColor Yellow
-    $InnoCompiler = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
     $IssScript = Join-Path $RepoRoot "installer\EBUninstallSetup.iss"
 
-    if (Test-Path $InnoCompiler) {
+    $PossibleInnoPaths = @(
+        $InnoSetupPath,
+        (Get-Command iscc.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -ErrorAction SilentlyContinue),
+        "C:\Program Files (x86)\Inno Setup 6\ISCC.exe",
+        "C:\Program Files\Inno Setup 6\ISCC.exe",
+        "C:\Program Files (x86)\Inno Setup 5\ISCC.exe",
+        "C:\ProgramData\chocolatey\bin\iscc.exe",
+        "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
+    ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and (Test-Path $_) }
+
+    if ($PossibleInnoPaths.Count -gt 0) {
+        $InnoCompiler = $PossibleInnoPaths[0]
+        Write-Host " -> Using Inno Setup compiler: $InnoCompiler" -ForegroundColor Cyan
         & $InnoCompiler $IssScript
-        Write-Host "Installer compilation completed." -ForegroundColor Green
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Installer compilation completed successfully: build\installer\" -ForegroundColor Green
+        } else {
+            Write-Warning "Inno Setup compilation finished with exit code $LASTEXITCODE"
+        }
     } else {
-        Write-Warning "Inno Setup compiler (ISCC.exe) not found at default path. Skipping installer compilation."
+        Write-Warning "Inno Setup compiler (ISCC.exe) not found. Inno script is ready at: $IssScript"
     }
 }
 
