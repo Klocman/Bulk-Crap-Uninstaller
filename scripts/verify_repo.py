@@ -347,7 +347,9 @@ def check_installer_and_docs(verbose=False, quiet=False):
         "CONTRIBUTING.md",
         "publish.bat",
         "scripts/build.ps1",
-        "scripts/build.sh"
+        "scripts/build.sh",
+        "scripts/build_setup.bat",
+        "scripts/build_setup.ps1"
     ]
 
     missing = []

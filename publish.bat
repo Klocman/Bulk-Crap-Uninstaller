@@ -7,9 +7,13 @@ echo =================================================================
 
 set "CONFIG=Release"
 set "REPO_ROOT=%~dp0"
-set "SOLUTION=%REPO_ROOT%source\BulkCrapUninstaller.sln"
+set "SOLUTION=%REPO_ROOT%source\EBUninstaller.sln"
+if not exist "%SOLUTION%" set "SOLUTION=%REPO_ROOT%source\BulkCrapUninstaller.sln"
 set "BUILD_DIR=%REPO_ROOT%build"
 set "BIN_DIR=%REPO_ROOT%bin\Release\AnyCPU"
+
+:: 0. Unblock files if marked by web
+powershell -NoProfile -ExecutionPolicy Bypass -File "%REPO_ROOT%scripts\unblock_files.ps1" 2>nul
 
 :: 1. Clean previous builds
 if exist "%BUILD_DIR%" (

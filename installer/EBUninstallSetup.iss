@@ -8,10 +8,13 @@
 #define MyAppExeName "EBUninstaller.exe"
 #define MyAppConsoleExeName "EBU-console.exe"
 
+#include "CodeDependencies.iss"
+
 [Setup]
 AppId={{D3F9E17A-72A8-4A1B-8DF9-E342B286E90F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppCopyright=Copyright (C) 2026 EhabYT. All rights reserved.
 AppPublisherURL={#MyAppURL}
@@ -19,11 +22,14 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
+UninstallDisplayIcon={app}\{#MyAppExeName}
+WizardImageFile=assets\bigImage.bmp
+WizardSmallImageFile=assets\smallImage.bmp
+SetupIconFile=assets\logo.ico
 AllowNoIcons=yes
 LicenseFile=..\Licence.txt
 OutputDir=..\build\installer
 OutputBaseFilename=EBUninstallSetup
-SetupIconFile=assets\logo.ico
 Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
@@ -32,6 +38,12 @@ ArchitecturesInstallIn64BitMode=x64compatible arm64
 PrivilegesRequired=admin
 PrivilegesRequiredOverridesAllowed=commandline dialog
 UsedUserAreasWarning=no
+
+VersionInfoCompany={#MyAppPublisher}
+VersionInfoCopyright=Copyright (C) 2026 EhabYT. All rights reserved.
+VersionInfoProductName={#MyAppName}
+VersionInfoProductVersion={#MyAppVersion}
+VersionInfoTextVersion={#MyAppVersion}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -61,5 +73,14 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}\Logs"
+Type: filesandordirs; Name: "{app}\Backups"
 Type: filesandordirs; Name: "{app}\InfoCache.xml"
 Type: filesandordirs; Name: "{app}\CertCache.xml"
+Type: files; Name: "{app}\*.log"
+
+[Code]
+function InitializeSetup: Boolean;
+begin
+  Dependency_AddDotNet80Desktop;
+  Result := True;
+end;
