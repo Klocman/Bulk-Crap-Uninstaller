@@ -54,6 +54,9 @@ namespace BulkCrapUninstaller.Forms
         private readonly ListLegendWindow _listLegendWindow = new();
         private DebugWindow _debugWindow;
 
+        private BulkCrapUninstaller.Controls.AppDetailsPanel _appDetailsPanel;
+        private BulkCrapUninstaller.Controls.ModernNavCommandBar _modernNavCommandBar;
+
         private bool _previousListLegendState = true;
         private bool _anyStoreApps;
         private bool _anyWinFeatures;
@@ -1949,7 +1952,28 @@ namespace BulkCrapUninstaller.Forms
         {
             try
             {
-                // 1. Add Pro Tools Dropdown to ToolStrip
+                // 1. Add Modern Command Bar to Top
+                _modernNavCommandBar = new BulkCrapUninstaller.Controls.ModernNavCommandBar();
+                _modernNavCommandBar.SectionNavigated += OnModernNavSectionNavigated;
+                Controls.Add(_modernNavCommandBar);
+                _modernNavCommandBar.BringToFront();
+
+                // 2. Add AppDetailsPanel to Inspector Panel
+                _appDetailsPanel = new BulkCrapUninstaller.Controls.AppDetailsPanel();
+                _appDetailsPanel.RequestUninstall += (s, app) => _appUninstaller.RunUninstall(new[] { app }, _listView.AllUninstallers, false);
+                _appDetailsPanel.RequestForcedRemoval += (s, app) => OpenForcedRemoval(app?.InstallLocation ?? app?.DisplayName);
+                _appDetailsPanel.RequestScanLeftovers += (s, app) => OpenJunkRemove(new[] { app });
+
+                splitContainerListAndMap.Panel1.Controls.Add(_appDetailsPanel);
+                _appDetailsPanel.BringToFront();
+
+                uninstallerObjectListView.SelectionChanged += (s, e) =>
+                {
+                    var selected = _listView.SelectedUninstallers.FirstOrDefault();
+                    _appDetailsPanel.DisplayApplication(selected);
+                };
+
+                // 3. Add Pro Tools Dropdown to ToolStrip
                 var proDropDown = new ToolStripDropDownButton
                 {
                     Text = "Pro Tools & Cleanup",
@@ -1987,7 +2011,7 @@ namespace BulkCrapUninstaller.Forms
                 toolStrip.Items.Insert(1, proDropDown);
                 toolStrip.Items.Insert(2, new ToolStripSeparator());
 
-                // 2. Add to Tools MenuStrip
+                // 4. Add to Tools MenuStrip
                 if (toolsToolStripMenuItem != null)
                 {
                     toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2002,7 +2026,7 @@ namespace BulkCrapUninstaller.Forms
                     toolsToolStripMenuItem.DropDownItems.Insert(9, new ToolStripSeparator());
                 }
 
-                // 3. Add to Context Menu
+                // 5. Add to Context Menu
                 if (uninstallListContextMenuStrip != null)
                 {
                     uninstallListContextMenuStrip.Items.Add(new ToolStripSeparator());
@@ -2028,10 +2052,59 @@ namespace BulkCrapUninstaller.Forms
                         OpenSecureDelete(first?.InstallLocation);
                     }));
                 }
+
+                // Apply Modern Windows 11 Fluent Theme
+                ThemeEngine.ApplyThemeToForm(this);
             }
             catch (Exception ex)
             {
                 UninstallTools.Core.StructuredLogger.Warning(UninstallTools.Core.LogCategory.General, "Failed initializing Pro navigation tools", ex.Message);
+            }
+        }
+
+        private void OnModernNavSectionNavigated(object sender, string sectionKey)
+        {
+            switch (sectionKey)
+            {
+                case "Apps":
+                    uninstallerObjectListView.Focus();
+                    break;
+                case "Uninstall":
+                    toolStripButtonUninstall_Click(sender, EventArgs.Empty);
+                    break;
+                case "Leftovers":
+                    OpenJunkRemove(_listView.SelectedUninstallers);
+                    break;
+                case "Monitor":
+                    OpenInstallationMonitor();
+                    break;
+                case "Backups":
+                    OpenBackupManager();
+                    break;
+                case "Startup":
+                    openStartupManagerToolStripMenuItem_Click(sender, EventArgs.Empty);
+                    break;
+                case "Junk":
+                    OpenJunkCleaner();
+                    break;
+                case "Extensions":
+                    OpenBrowserExtensions();
+                    break;
+                case "Privacy":
+                    OpenPrivacyCleaner();
+                    break;
+                case "Shredder":
+                    OpenSecureDelete();
+                    break;
+                case "WinTools":
+                    OpenWindowsTools();
+                    break;
+                case "Settings":
+                    settingsToolStripMenuItem_Click(sender, EventArgs.Empty);
+                    break;
+                case "History":
+                    OpenOperationHistory();
+                    break;
             }
         }
 
