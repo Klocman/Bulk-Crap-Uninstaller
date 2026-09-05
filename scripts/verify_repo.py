@@ -108,6 +108,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/ForcedRemoval/ForcedUninstallModels.cs",
         "source/UninstallTools/JunkCleaner/JunkCleanerEngine.cs",
         "source/UninstallTools/JunkCleaner/JunkCleanerModels.cs",
+        "source/UninstallTools/JunkCleaner/CrashDumpCleaner.cs",
         "source/UninstallTools/PrivacyCleaner/PrivacyCleanerEngine.cs",
         "source/UninstallTools/PrivacyCleaner/PrivacyCleanerModels.cs",
         "source/UninstallTools/BrowserExtensions/BrowserExtensionManager.cs",
@@ -137,6 +138,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/ServicesOptimizerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/WindowsFeaturesManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/SoftwareAdvisorWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/CrashDumpCleanerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -195,6 +197,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/WindowsServicesOptimizerTests.cs",
         "source/BulkCrapUninstallerTests/WindowsOptionalFeaturesTests.cs",
         "source/BulkCrapUninstallerTests/SoftwareSafetyAdvisorTests.cs",
+        "source/BulkCrapUninstallerTests/CrashDumpCleanerTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
