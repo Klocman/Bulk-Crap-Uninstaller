@@ -33,15 +33,25 @@ protections are not part of the application or this PR.
 `source/BulkCrapUninstaller/Theming` contains the adapters. Shared-library changes
 are also present in KlocTools, ObjectListView and SimpleTreeMap. The patch includes
 some related layout/refresh fixes documented in the individual follow-up notes.
+Tooltip rendering is now explicitly set through `ThemeManager` for ObjectListView
+tooltip event handlers and the two known `ToolTip` owners in Properties/Settings
+and the uninstall wizard.
 
 ## Latest validation and its limits
 
-Both default .NET 8 and opt-in .NET 10 builds passed. The latest external checker
-recorded 1,313 assertions across eight runs: .NET 10 ordinary default/dark/light
-override (158/160/158), .NET 8 dark bypass (155), and light/dark high contrast on
-both runtimes (172/169 in each palette). Button and checkbox replays cover
-mouse/Space checking, palette recovery and restoration of Windows appearance.
-These are local observations, not CI results.
+After the focused repair pass, `Build-NativeDark.ps1` completed fresh default
+.NET 8 and opt-in .NET 10 builds. Fresh external-checker runs recorded 631
+assertions: .NET 10 ordinary default/dark/light override (158/160/158) and the
+.NET 8 dark bypass (155). A focused STA WinForms host recorded another 155
+assertions across .NET 10 dark/light-override and .NET 8 bypass runs (79/38/38).
+It checked native dialog names, roles, checked state and initial focus; both known
+`ToolTip` owners; ObjectListView cell/header tooltip colors; dialog mapping and
+owner-bound worker-thread marshalling; and current/legacy Feedback HTML fixtures.
+The dark Feedback fixture and a native tooltip window were rendered to bitmaps and
+checked for dark backgrounds and contrasting text colors. These are local
+observations, not CI results. An earlier eight-run contrast matrix recorded 1,313
+assertions, including button and checkbox replays, but was not repeated in this
+repair pass.
 
 The environment was Windows 11 build 26100 at 200% DPI, with Desktop runtimes
 10.0.11 and 8.0.30. The visual host loaded the built application assemblies and
@@ -55,11 +65,53 @@ and no production defect was found in the applicable surfaces.
 The light-contrast test applied the installed hcwhite.theme color table while
 high contrast was active; it was not native Settings selection of that theme.
 
+A separate network-dependent dark smoke passed 85 assertions. Because the local
+application firewall intentionally blocks `NativeDarkRepairCheck.exe`, the same
+compiled harness DLL was launched through the allowed .NET host. The current page
+loaded, its `wsite-content` DOM was adapted, its computed background matched the
+dark system color, and the rendered content remained readable. The blocked apphost
+run produced a themed navigation-error document as expected; that result was not
+treated as evidence about MSHTML or the remote page.
+
+A bounded production acceptance pass staged hash-identical copies of the fresh
+outputs in disposable portable directories. The exact .NET 10 executable followed
+its manifest/UAC elevation path and reached a responsive dark inventory, closing
+the production-launch check. Exact .NET 10 runs with no switch and with
+`--dark-mode --light-mode`, plus the default .NET 8 executable, reached ready light
+inventories. The two .NET 10 light captures were byte-identical. A second exact dark
+executable exited with code 0 after 3.2 seconds while the first remained responsive
+and the only BCU process.
+
+Windows integrity isolation prevented interactive automation of those elevated
+windows. The remaining UI campaign ran the same managed entry point through the
+medium-integrity .NET host. It covered a real 260-entry inventory, grouping, refresh,
+multiple-app Properties, all seven Settings pages, live dialogs, the uninstall
+wizard through its final summary, keyboard navigation, clipboard commands and
+native Save dialogs. The wizard was canceled explicitly on page 5 of 5 before any
+worker, cleanup or uninstall action started. Its related and running-app pages
+auto-skipped; returning Back also reset the 7-Zip exclusion before it was reapplied.
+Those limits leave the detailed production-executable rows open.
+
+The managed entry point saved `es-AR`, closed normally, and relaunched into a ready
+Spanish dark inventory. The English and Spanish restart confirmations exposed
+localized headings, details and named Yes/No buttons without visible truncation.
+English was restored and the app closed normally again; the portable settings file
+parsed successfully afterward. This is useful culture and close evidence, but it
+does not substitute for an elevated exact-executable `Application.Restart` cycle.
+
+Two checked applications produced byte-identical XML exports before and after a
+filter hid one of them. Both exports and the low-sensitivity clipboard command kept
+both names, and a Properties value was written through the native Save dialog. The
+filtered status count used the visible checked count while selected size and export
+used the complete checked set, exposing a pre-existing display mismatch. Local
+ignored evidence is under `artifacts/production-acceptance-20260905-025500`.
+
 The external prototype harnesses, raw logs, inventory screenshots and local
 `artifacts/` directories mentioned in the follow-up documents are not included
 in this PR. Those references describe historical evidence, not files available
-in this checkout. The build helper and implementation are included; the automated
-assertion counts cannot currently be reproduced from this checkout alone.
+in this checkout. The focused repair checker is also a local ignored artifact.
+The build helper and implementation are included; the automated assertion counts
+cannot currently be reproduced from this checkout alone.
 Making an isolated, portable regression harness is therefore a useful review task.
 
 Existing build warnings NU1510 and SYSLIB0057 remain unresolved. The documented
@@ -67,13 +119,36 @@ all-bad-confidence leftover-filtering issue is separate and unchanged.
 
 ## Bounded next investigations
 
-1. Tooltips, native dialogs and HTML surfaces. Avoid interpreting inspected dialog
-   coverage as global coverage.
-2. Keyboard-only navigation, visible focus and screen-reader names/check states
-   across those surfaces.
+1. Tooltip rendering and contrast, followed by native dialogs and HTML surfaces.
+   - Completed in this handoff: ObjectListView tooltip events and both known BCU
+     `ToolTip` components use theme system colors. Inspected `OK`/`OKCancel`
+     `MessageBox` flows use the themed dialog in dark mode; unsupported layouts and
+     unowned worker-thread calls retain the native implementation. Owner-bound calls
+     marshal to the UI thread. `FeedbackWindow` handles both the current Weebly DOM
+     and legacy IDs, using literal RGB foreground/background CSS in dark mode. The
+     live current page loaded and rendered through a host permitted by the local
+     application firewall.
+2. Keyboard-only navigation, visible focus and screen-reader metadata on those
+   repaired surfaces.
+   - Programmatically checked in this handoff: the standard WinForms accessibility
+     providers expose localized control names, roles and checkbox checked state, and
+     custom dialogs focus the first visible enabled action. The Feedback browser is
+     keyboard reachable and receives focus after loading. A real Narrator or other
+     screen-reader announcement pass remains open.
+
+3. Broader main-window keyboard and screen-reader checks.
+   - Completed in this handoff: an all-keyboard managed-entry-point pass covered
+     search focus/clearing, list movement and checking, the row context menu,
+     Tab/Shift+Tab and Properties. Observable behavior passed, although UI Automation
+     reported stale search focus after some transfers. A real screen-reader
+     announcement pass remains open.
+
+4. Next target: repeat the managed UI campaign from a same-integrity production
+   executable, including exact restart/culture handling, then cover the wizard's
+   related/running-process branches and direct Settings opening from Progress.
 
 After these investigations, consolidate findings before extending individual
-adapters. The release checklist still contains 34 open checks, many overlapping
+adapters. The release checklist still contains 31 open checks, many overlapping
 validation areas rather than known implementation defects: real startup and
 elevation, packaging/helpers, Windows and DPI coverage, localization/RTL, resource
 stability, and disposable uninstall/backup/cleanup workflows.

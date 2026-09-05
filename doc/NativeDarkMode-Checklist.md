@@ -16,7 +16,7 @@ an appropriate disposable test environment before proposing a default-on release
 - [x] Repeated initialization/list/image/menu application does not duplicate adaptation.
 - [x] Shared bitmap pixels remain unchanged; real leftover constructor uses the new list and style hook.
 - [x] Progress handle recreation and disposal with a pending callback finish without an exception.
-- [ ] Launch the real production entry point through its normal elevation/startup path.
+- [x] Launch the real production entry point through its normal elevation/startup path.
 - [ ] Replay the full visual matrix below against the integrated executable.
 - [ ] Verify packaging includes required runtimes/helpers and preserves installer upgrade behavior.
 - [ ] Validate clean startup, close/restart, existing-instance handling and culture selection.
@@ -24,6 +24,22 @@ an appropriate disposable test environment before proposing a default-on release
 The assembly checker runs unelevated with empty/in-memory controls; it invokes no
 production startup, inventory, backup or uninstall workflow. The .NET 10 cases used
 runtime 10.0.11; the .NET 8 case used runtime 8.0.30, all at DPI 192, high contrast off.
+
+On 2026-09-05, a hash-identical staged .NET 10 `BCUninstaller.exe --dark-mode`
+followed the application manifest/UAC path and reached a responsive elevated
+inventory. Windows integrity isolation allowed pixel and top-level-window
+observation but prevented Computer Use from driving the elevated controls. The
+detailed replay therefore used `dotnet BCUninstaller.dll --dark-mode`, which invokes
+the production managed entry point but does not close rows explicitly scoped to the
+production executable.
+
+The exact executable also reached ready light inventories with no .NET 10 switch,
+with `--dark-mode --light-mode`, and from the default .NET 8 output. The two .NET 10
+light screenshots were byte-identical. A second exact dark executable exited with
+code 0 after 3.2 seconds while the first remained responsive and the sole BCU
+process. Exact-executable graceful close, `Application.Restart`, and interactive
+culture handling remain open, so the combined lifecycle and light rows stay
+unchecked.
 
 ## Visual matrix
 
@@ -82,7 +98,7 @@ palettes remain open.
 - [x] Treemap uses outlined system-color tiles/selection without changing grouping, geometry or selected objects; cached brushes are released. See [legend/treemap follow-up](NativeDarkMode-LegendTreemap.md).
 - [x] Integrated main-list filtering/reload, empty-result treemap clearing and borderless legend positioning in the scoped 200% DPI contrast replay. See [main-window follow-up](NativeDarkMode-MainReplay.md).
 - [x] Populate all four Properties pages from one real installed entry across dark, light and two live contrast palettes. See [Properties follow-up](NativeDarkMode-Properties.md).
-- [ ] Keyboard-only main-window focus/navigation.
+- [x] Keyboard-only main-window focus/navigation.
 - [x] Correct selected text and popup palette in normal search-filter dropdowns after a live contrast transition. See [dropdown follow-up](NativeDarkMode-Dropdowns.md) for runtime/scope limits.
 - [x] Refresh copied hyperlink/plain-cell backgrounds in live contrast with certificate highlighting enabled. See [cell-background follow-up](NativeDarkMode-RowCells.md).
 - [x] Refresh the search edit's native background brush across live contrast changes, including disabled reload and recovery. See [search-field follow-up](NativeDarkMode-Search.md).
@@ -108,10 +124,24 @@ palettes remain open.
 - [ ] Disposable uninstall fixture: quiet/loud, cancellation, skip, terminate, retries and worker concurrency.
 - [ ] Restore points, sleep/shutdown prevention and walk-away dialogs through the real workflow.
 - [ ] Junk discovery, process checks, backup/cancel/failure, preview and deletion against disposable targets.
-- [ ] Clipboard and real save dialogs; selected versus filtered export semantics.
+- [x] Clipboard and real save dialogs; selected versus filtered export semantics.
 - [ ] Audit remaining uninspected windows and native MessageBox/HTML surfaces.
 - [ ] Decide minimum runtime and servicing requirements; resolve packaging/build warnings as appropriate.
 - [ ] Decide persisted preference/system-following scope separately; the current patch is startup-only and opt-in.
+
+The keyboard-only main-window pass exercised Ctrl+F/F3/Escape search handling,
+list movement and Space checking, the Menu-key context menu, Tab/Shift+Tab, and
+Alt+Enter Properties. UI Automation retained a stale search-field focus report
+after some transfers, while the visible filter, check state, context-menu focus and
+Properties transitions established the behavior. The broader visible-focus and
+screen-reader gate remains open.
+
+With two applications checked, the Program name clipboard command and XML export
+retained both applications before and after a filter hid one from view. Both native
+Save-dialog XML exports were byte-identical, and a Properties grid value was saved
+through the real Windows dialog. The filtered status count reported only the visible
+checked row while selected size and export used the complete persistent checked set;
+that pre-existing display mismatch is outside this theme pass.
 
 Keep the existing all-bad-confidence filtering bug separate from theme acceptance.
 Do not interpret synthetic fixture completion as evidence of successful removal.

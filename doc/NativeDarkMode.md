@@ -54,7 +54,8 @@ Small constructor hooks opt individual, inspected surfaces into:
 - Known BCU monochrome menu/instruction icons, copied without mutating shared assets.
 - Explicit Settings/wizard page backgrounds and Properties grid header/selection colors.
 - The shared loading/progress handle-lifecycle workaround.
-- BCU's existing custom message box for the leftover confidence-details OK dialog.
+- BCU's existing custom message box for inspected `OK`/`OKCancel` message flows in
+  dark mode.
 
 `NativeObjectListView` remains an ObjectListView subclass. In both builds it uses
 system contrast colors for selected rows and hyperlink cells. On .NET 10, adapted
@@ -81,10 +82,20 @@ The [legend/treemap follow-up](NativeDarkMode-LegendTreemap.md) explains that co
 behavior in the legend and paints neutral, outlined treemap tiles with system
 selection colors while retaining the original geometry and category palette.
 
-Two small support changes are included: optional heading colors for the shared
-CustomMessageBox (null retains its old behavior), and a serialization annotation on
-the existing runtime-only CustomNoteDialog property required by the .NET 10 analyzer.
-The Settings cache explanation wraps to its available width in adapted mode.
+Small support changes include optional heading colors and first-action focus for
+the shared CustomMessageBox (null retains its old heading behavior), direct theme
+registration for the two known BCU `ToolTip` components, and a serialization
+annotation on the existing runtime-only CustomNoteDialog property required by the
+.NET 10 analyzer. Standard WinForms accessibility providers retain responsibility
+for localized dialog names, roles and checkbox state. The Settings cache explanation
+wraps to its available width in adapted mode.
+
+`FeedbackWindow` now navigates directly to the current HTTPS contact page. Its
+document adapter supports both the current Weebly `wsite-content` structure and
+the legacy `container`/`content` IDs. In dark mode it applies literal RGB system
+foreground/background colors so the MSHTML host does not resolve CSS system-color
+keywords to a light palette. The browser enters the tab order and receives focus
+after the top-level document finishes loading.
 
 The accompanying [shared column DPI fix](ColumnDpi.md) applies to both runtimes and
 both light/dark modes: initial and hidden columns scale, manual widths survive DPI
@@ -104,6 +115,24 @@ An external, unelevated checker loads those actual assemblies and checks default
 dark opt-in, light override, repeated application, shared image preservation, the
 real leftover-review constructor hook, and progress recreation/pending-callback
 disposal. It does not run the production entry point or modify its manifest.
+
+After the dialog/tooltip/Feedback repair, fresh checker runs retained the expected
+.NET 10 default/dark/light-override counts (158/160/158) and .NET 8 bypass count
+(155). A separate local STA WinForms checker passed 79 dark assertions and 38 each
+for light override and .NET 8 bypass. It exercised real controls and native
+accessibility providers, including dialog focus and checkbox state, both known
+`ToolTip` owners, ObjectListView tooltip event colors, owner-bound worker-thread
+dialog marshalling, both Feedback DOM shapes, and rendered native-tooltip and dark
+Feedback bitmaps. These local checker sources are ignored artifacts and are not
+part of the patch. They do not replace a real screen-reader announcement pass.
+
+A network-dependent dark smoke passed 85 assertions. The local application
+firewall intentionally blocks the generated `NativeDarkRepairCheck.exe`, so the
+same compiled harness DLL was run through the allowed .NET host. The current page
+then loaded in MSHTML, its `wsite-content` DOM was adapted, its computed background
+matched the dark system color, and a rendered bitmap showed readable content. The
+blocked apphost run's themed navigation-error page was retained only as secondary
+error-surface evidence.
 
 An external visual host subsequently replayed the compiled integration DLL's main
 window, Properties, seven Settings pages, wizard, progress and leftover review.
@@ -144,10 +173,14 @@ test are still required. The .NET 10 build currently
 reports NU1510 for the existing Microsoft.VisualBasic package reference and SYSLIB0057
 for the existing certificate constructor. Neither warning is hidden by this patch.
 
-Native borders, disabled text, tooltips and HTML content are not fully adapted.
-Native MessageBox callers other than the one inspected leftover-details call can
-still be light. The separate general TabControl descendant-theming issue has no
-global workaround here; the real Settings dropdowns worked in the inspected flow.
+Native borders and disabled text are not fully adapted. The two known BCU `ToolTip`
+components and inspected ObjectListView tooltips are adapted; other tooltip owners
+have not been established. Inspected `OK`/`OKCancel` MessageBox callers use the
+themed dialog helper when dark mode and a safe UI context are available. Unsupported
+button layouts and unowned worker-thread calls retain native behavior; one
+leftover-details call path in `ThemeManager` remains intentionally light. The
+separate general TabControl descendant-theming issue has no global workaround here;
+the real Settings dropdowns worked in the inspected flow.
 
 The existing all-bad-confidence leftover list issue is not changed: its constructor
 checks and disables Hide bad confidence, leaving every finding filtered out. It

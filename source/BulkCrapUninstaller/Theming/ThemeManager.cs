@@ -97,6 +97,14 @@ internal static class ThemeManager
         list.HyperlinkStyle.Normal.ForeColor = Color.FromArgb(139, 194, 255);
         list.HyperlinkStyle.Visited.ForeColor = Color.FromArgb(206, 177, 255);
         list.HyperlinkStyle.Over.ForeColor = Color.FromArgb(186, 219, 255);
+        list.CellToolTipShowing += OnListToolTipShowing;
+        list.HeaderToolTipShowing += OnListToolTipShowing;
+    }
+
+    private static void OnListToolTipShowing(object sender, ToolTipShowingEventArgs args)
+    {
+        args.BackColor = SystemColors.Window;
+        args.ForeColor = SystemColors.WindowText;
     }
 
     internal static void ApplyControls(Form owner, params ToolStrip[] additionalMenus)
@@ -119,6 +127,13 @@ internal static class ThemeManager
         }
         Visit(owner);
         foreach (var menu in additionalMenus) ApplyMenu(owner, menu);
+    }
+
+    internal static void ApplyToolTip(ToolTip tooltip)
+    {
+        if (!IsEnabled) return;
+        tooltip.BackColor = SystemColors.Window;
+        tooltip.ForeColor = SystemColors.WindowText;
     }
 
     private static void ApplyMenu(Form owner, ToolStrip strip)

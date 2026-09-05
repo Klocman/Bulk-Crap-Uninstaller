@@ -204,7 +204,25 @@ namespace Klocman.Forms
             if (StartPosition == FormStartPosition.CenterParent && Owner != null && Owner.Visible)
                 this.CenterToForm(Owner);
 
+            FocusDefaultAction();
+
             Opacity = 1;
+        }
+
+        private void FocusDefaultAction()
+        {
+            if (buttonLeft.Visible && buttonLeft.Enabled)
+                buttonLeft.Focus();
+            else if (buttonMiddle.Visible && buttonMiddle.Enabled)
+                buttonMiddle.Focus();
+            else if (buttonRight.Visible && buttonRight.Enabled)
+                buttonRight.Focus();
+            else if (buttonLeft.Visible)
+                buttonLeft.Focus();
+            else if (buttonMiddle.Visible)
+                buttonMiddle.Focus();
+            else
+                buttonRight.Focus();
         }
 
         private void SetHeight()
