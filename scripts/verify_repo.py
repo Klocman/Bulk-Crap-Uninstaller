@@ -101,6 +101,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/UninstallTools/FileSystemEngine/EmptyDirectoryCleaner.cs",
         "source/UninstallTools/FileSystemEngine/DuplicateFileScanner.cs",
         "source/UninstallTools/FileSystemEngine/FileUnlockerManager.cs",
+        "source/UninstallTools/FileSystemEngine/DiskSpaceAnalyzer.cs",
         "source/UninstallTools/Backup/BackupManager.cs",
         "source/UninstallTools/Backup/BackupManifest.cs",
         "source/UninstallTools/Backup/SystemRestorePointManager.cs",
@@ -147,6 +148,7 @@ def check_subsystems(verbose=False, quiet=False):
         "source/BulkCrapUninstaller/Forms/Windows/FileUnlockerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/PackageManagerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Windows/SystemRestorePointWindow.cs",
+        "source/BulkCrapUninstaller/Forms/Windows/DiskSpaceAnalyzerWindow.cs",
         "source/BulkCrapUninstaller/Forms/Wizards/QuickOptimizationWizard.cs",
         "source/BulkCrapUninstaller/Controls/ModernStatsDashboard.cs",
         "source/BulkCrapUninstaller/Controls/QuickFilterChipsBar.cs",
@@ -210,6 +212,7 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/BulkCrapUninstallerTests/FileUnlockerTests.cs",
         "source/BulkCrapUninstallerTests/PackageManagerTests.cs",
         "source/BulkCrapUninstallerTests/SystemRestorePointTests.cs",
+        "source/BulkCrapUninstallerTests/DiskSpaceAnalyzerTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/BulkCrapUninstallerTests/ApplicationEntrySerializerTests.cs",
         "source/BulkCrapUninstallerTests/UninstallListTests.cs"
