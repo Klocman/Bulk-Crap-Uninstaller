@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,27 +9,12 @@ using System.Windows.Forms;
 using BrightIdeasSoftware;
 using Klocman.IO;
 using Klocman.Tools;
-using Scripting;
 using UniversalUninstaller.Properties;
 
 namespace UniversalUninstaller
 {
     public partial class TargetList : UserControl
     {
-        static readonly FileSystemObjectClass FileSystemObject;
-
-        static TargetList()
-        {
-            try
-            {
-                FileSystemObject = new FileSystemObjectClass();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(@"WARNING: Scripting.FileSystemObjectClass is not available - " + ex.Message);
-            }
-        }
-
         public TargetList()
         {
             InitializeComponent();
@@ -67,14 +52,17 @@ namespace UniversalUninstaller
             if (treeEntry.IsDirectory == false)
                 return FileSize.FromBytes(((FileInfo)treeEntry.FileSystemInfo).Length);
 
-            if (FileSystemObject == null || treeEntry.FileSystemInfo is not DirectoryInfo dirInfo || !dirInfo.Exists)
+            if (treeEntry.FileSystemInfo is not DirectoryInfo dirInfo || !dirInfo.Exists)
                 return FileSize.Empty;
 
             try
             {
-                var folder = FileSystemObject.GetFolder(dirInfo.FullName);
-                var size = new FileSize(Convert.ToInt64(folder.Size) / 1024);
-                return size;
+                var bytes = ScriptingFileSystem.GetDirectorySizeBytes(dirInfo.FullName);
+                if (bytes.HasValue)
+                {
+                    return FileSize.FromBytes(bytes.Value);
+                }
+                return FileSize.Empty;
             }
             catch (Exception ex)
             {

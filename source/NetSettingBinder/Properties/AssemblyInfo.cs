@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -8,9 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NetSettingBinder")]
 [assembly: AssemblyDescription("A tool for binding controls, variables and typed event handlers to custom Settings classes.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Marcin Szeniak")]
-[assembly: AssemblyProduct("NetSettingBinder")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 
@@ -12,24 +12,14 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="BulkCrapUninstallerTests" />
+		<InternalsVisibleTo Include="EBUninstallerTests" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 		<PackageReference Include="System.Management" Version="[8.*,9)" />
+		<PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
 		<PackageReference Include="TaskScheduler" Version="2.12.2" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<COMReference Include="Scripting">
-			<Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
-			<VersionMajor>1</VersionMajor>
-			<VersionMinor>0</VersionMinor>
-			<Lcid>0</Lcid>
-			<WrapperTool>tlbimp</WrapperTool>
-			<Isolated>False</Isolated>
-			<EmbedInteropTypes>false</EmbedInteropTypes>
-		</COMReference>
 	</ItemGroup>
 	
 	<ItemGroup>

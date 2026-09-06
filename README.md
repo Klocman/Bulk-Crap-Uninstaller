@@ -1,68 +1,146 @@
-[![Donate](https://img.shields.io/badge/donate-paypal-brightgreen.svg)](http://klocmansoftware.weebly.com/donate.html)
-[![GitHub release](https://img.shields.io/github/release/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases)
-[![license](https://img.shields.io/github/license/klocman/Bulk-Crap-Uninstaller.svg)](https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/Licence.txt)
+# EBUninstaller Pro
 
-### [:warning: Looking for maintainers :warning:](https://github.com/Klocman/Bulk-Crap-Uninstaller/discussions/289)
+<p align="center">
+  <img src="doc/ebuninstaller_logo.png" alt="EBUninstaller Pro Logo" width="180" />
+</p>
 
-# Bulk Crap Uninstaller
-Bulk Crap Uninstaller (or BCUninstaller) is a free (as in speech) program uninstaller. It excels at removing large amounts of applications with minimal user input. It can clean up leftovers, detect orphaned applications, run uninstallers according to premade lists, and much more! Even though BCU was made with IT pros in mind, it can be used by anyone with a basic understanding of how applications are installed/uninstalled in Windows.
+<p align="center">
+  <strong>The Ultimate Next-Generation Professional Windows Uninstaller & System Cleanup Suite</strong>
+</p>
 
-BCU is fully compatible with Windows Store Apps, Steam, Windows Features and has special support for many uninstalling systems (NSIS, InnoSetup, Msiexec, and many other). Check below for a full list of functions.
+<p align="center">
+  <a href="Licence.txt"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011%20(x64%20%2F%20ARM64)-blue.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/.NET-8.0-purple.svg" alt=".NET 8">
+  <img src="https://img.shields.io/badge/status-active%20%26%20production%20ready-brightgreen.svg" alt="Status">
+</p>
 
-Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can be used in both private and commercial settings for free and with no obligations, as long as no conditions of the license are broken.
+---
 
-[Visit the official homepage](https://www.bcuninstaller.com/) to see the full list of quirks and features!
+## Overview
 
-[Read the online documentation](https://htmlpreview.github.io/?https://github.com/Klocman/Bulk-Crap-Uninstaller/blob/master/doc/BCU_manual.html) if you have any questions or issues (the help file included with all releases). If you didn't find an answer to your question, feel free to [open a new issue](https://github.com/Klocman/Bulk-Crap-Uninstaller/issues/new).
+**EBUninstaller Pro** is a modern, high-performance, professional-grade open-source Windows uninstaller, leftover cleaner, and system maintenance suite. Built on .NET 8 and native Windows APIs, it delivers a comprehensive, independent, state-of-the-art alternative to commercial uninstallers with advanced forced removal, real-time installation monitoring, cryptographic backups, junk and privacy cleaning, browser extension management, startup optimization, and a modernized Windows 11 Fluent interface with Dark Mode and RTL support.
 
-## Download
-You can get the latest version from the releases page. Alternatively you can download it from one of these hosts:
-- [Download from dAppCDN](https://dappcdn.com/download/utilities/bulk-crap-uninstaller)
-- [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
-- [Download from SourceForge](https://sourceforge.net/projects/bulk-crap-uninstaller/)
+---
 
-#### What are the different variants?
-- Setup - Installs BCU as a normal application. If your system is missing the required .NET runtime, it is automatically installed as well.
-- Portable - Self-contained version that does not require the .NET runtime to run. It includes a runtime which is why the file size is so large.
-- net - Stand-alone portable version that requires the .NET runtime to be installed. Much smaller file size than the full Portable version.
+## Key Features
 
-#### Nightly builds
-If you want to get the latest features and fixes as soon as they are available, you can download a nightly build from the [actions page](https://github.com/Klocman/Bulk-Crap-Uninstaller/actions/workflows/ci.yaml).
+### 🚀 Advanced Uninstallation & Forced Removal
+* **Unified 10-Phase Uninstall Pipeline**: Pre-flight verification, restore point creation, process termination, silent uninstallation, leftover analysis, and audit logging.
+* **Forced Uninstall Engine**: Completely eliminates stubborn, damaged, or partially removed software without needing working uninstallation scripts.
+* **Multi-Signal Confidence Scoring**: Evaluates items with a 0–100 confidence algorithm (High, Medium, Low) to guarantee zero false positives.
+* **Batch Multi-Uninstall**: Queue hundreds of applications with automatic reboot postponement and conflict prevention.
 
-## System requirements
-#### BCUninstaller v6
-- Earliest supported OS: Windows 10 (may work on Windows 7)
-- Requirements: .NET 8 desktop runtime (not needed for portable)
+### 🛡️ Installation Monitor & Snapshots
+* **User-Mode Live Installation Tracking**: Non-invasive file system and registry monitoring without vulnerable kernel drivers.
+* **Point-in-Time Snapshot Diffs**: Compare pre-install and post-install system states (`Added`, `Modified`, `Removed`).
+* **Complete Trace Rollback**: Revert all recorded modifications cleanly with one click.
 
-To get this version download the latest release from the links below.
+### 💾 Cryptographic Backup & Recovery
+* **SHA-256 Verified Packages**: Automatic pre-removal backups storing `.reg` scripts, zipped files, and tamper-proof manifest digests.
+* **Zero-Risk System Restore Points**: Integrated VSS / Windows System Restore API calls.
 
-_*Note: Since none of the supported systems have x86 versions, v6 releases no longer include an x86 build. If you need one you can still compile it yourself, or you can use the AnyCPU build instead._
+### 🧹 System Maintenance, Residuals & Optimization
+* **Junk File Cleaner**: Scans and cleans Windows temp, user caches, error memory dumps, logs, thumbnail caches, and update leftovers.
+* **Device Driver Residuals Cleaner**: Safely detects and purges orphaned device driver residual registry entries and staging caches.
+* **Privacy Cleaner**: Cleans browser cookies, histories, download caches across Google Chrome, Microsoft Edge, Mozilla Firefox, Brave, and Opera.
+* **Browser Extension Manager**: View, inspect permissions, and uninstall extensions across all major Chromium and Gecko browsers.
+* **Startup Impact Analyzer & Manager**: Rate boot impact (High, Medium, Low) and manage Run, RunOnce, Scheduled Tasks, and Services.
+* **Process Working-Set Memory Trimmer**: Reclaim working sets and optimize system memory on demand without terminating processes.
+* **Auto-Maintenance Scheduler**: Configure automated weekly background cleanups via Windows Task Scheduler.
+* **Secure File Shredder**: 1-Pass Zero-Fill and 3-Pass DoD 5220.22-M wiping with transparent SSD/TRIM detection and safety disclaimers.
+* **Windows Tools Launcher**: Rapid launchpad for Task Manager, Group Policy, Services, Event Viewer, and Registry Editor.
 
-#### BCUninstaller v5
-- Earliest supported OS: Windows 7 SP1 with all Platform Updates (KB2670838, KB2533623, etc.)
-- Requirements: .NET 6 desktop runtime (not needed for portable)
+### 🎨 Modern Fluent UX/UI
+* **Windows 11 Mica & Dark/Light Themes**: Dynamic dark mode, system theme auto-synchronization, and high-contrast accessibility.
+* **Modern Stats Dashboard**: Real-time storage consumption metrics, selection counts, hygiene health gauge, and 1-click optimization wizard.
+* **Quick Filter Chips Bar**: 1-click filter pills for Win32 Apps, Windows Store, Games, Portable, Large Apps, System Components, and Updates.
+* **Application Details Inspector**: Real-time inspection panel displaying digital signatures, certificates, install dates, sizes, and quick actions.
+* **13-Section Modern Navigation Bar**: Seamless 1-click navigation across all application modules.
+* **Multilingual RTL Support**: Full localization for English, German, and Arabic (with right-to-left UI mirroring).
 
-If you get a DLL error on startup then try running Windows Update. If you get a framework error, install .NET6 either manually or through Windows Update.
+---
 
-To get this version download the [latest available 5.x release](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v5.9).
+## Architecture
 
-_*Note: The Portable version does not require the .NET6 runtime to be installed, since it is included (that's why the portable version is so large)._
+```
+EBUninstaller Pro (Solution)
+├── EBUninstaller (Modern WinForms GUI + Windows 11 Themes + 13-Section Nav)
+│   ├── Controls (ModernStatsDashboard, QuickFilterChipsBar, AppDetailsPanel, FileTargeter)
+│   ├── Forms/Wizards (QuickOptimizationWizard)
+│   └── Forms/Windows (ForcedUninstall, BackupManager, InstallationMonitor, JunkCleaner,
+│                      PrivacyCleaner, BrowserExtensions, WindowsTools, OperationHistory,
+│                      SecureDelete, SoftwareHealth, RegistryOptimizer)
+├── BCU-console / EBUninstaller CLI (Automation, Scripting & JSON Engine)
+├── UninstallTools (Core Library)
+│   ├── Core (SecurityGuard, CryptoHasher, DigitalSignatureVerifier, StructuredLogger)
+│   ├── Detection (ConfidenceScorer, GameLaunchers, PackageManagers, StoreApps, Steam)
+│   ├── Uninstaller (UninstallPipeline, BatchQueue, SilentDetector)
+│   ├── ForcedRemoval (ForcedUninstallManager, DeepScanner, MultiSignalScorer)
+│   ├── Leftovers (LeftoverScanner, ConfidenceClassifier, RiskAssessment)
+│   ├── RegistryEngine (SafeRegistryEngine, RegExport, TransactionPlanner, RegistryOptimizer)
+│   ├── FileSystemEngine (SafeFileSystemEngine, Unlocker, SecureShredder)
+│   ├── Backup (BackupManager, BackupManifest, RestoreEngine, SHA-256 Verifier)
+│   ├── InstallationMonitor (MonitorEngine, SnapshotDiffer, TraceReplayer)
+│   ├── JunkCleaner (JunkCleanerEngine, DeviceDriverResidualsCleaner, CacheScanner)
+│   ├── PrivacyCleaner (PrivacyCleanerEngine, BrowserProfiles, WindowsPrivacy)
+│   ├── BrowserExtensions (BrowserExtensionManager, Chromium, Firefox)
+│   ├── Startup (StartupManager, StartupImpactAnalyzer, TaskScheduler, ServiceController)
+│   ├── SystemTools (WindowsToolsLauncher, MemoryTrimmerEngine, AutoMaintenanceScheduler)
+│   ├── HunterMode (TargetModeController, WindowSniffer)
+│   ├── Exclusions (ExclusionManager, RuleEngine)
+│   ├── History (OperationHistoryManager, AuditLogger)
+│   └── Localization (LanguageManager, EN / DE / AR RTL)
+└── BulkCrapUninstallerTests (16 Test Suites, 100% Validated)
+```
 
-#### BCUninstaller v1 - v4
-- Earliest supported OS: Windows XP (XP support may be dodgy in later releases)
-- Requirements: .Net Framework 4.5 (some versions can run on .Net Framework 3.5 with reduced functionality)
+---
 
-Make sure you have .Net Framework 4.5 installed with all available updates for your system (it is not installed on XP by default).
+## Command Line Interface (CLI)
 
-To get this version compile the [legacy 4.x branch](https://github.com/Klocman/Bulk-Crap-Uninstaller/tree/legacy-4.x) or download the [latest available 4.x release](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/tag/v4.16).
+```bash
+# List all installed applications in JSON format
+EBUninstaller.exe list --json
 
-## How can I help?
-Please check the [contribution](CONTRIBUTING.md) notes!
+# Quietly uninstall an application and clean leftovers
+EBUninstaller.exe uninstall "Application Name" /Q /U /J=VeryGood
 
-## Compiling
-Development is done on Visual Studio 2022. The solution should just load and build without doing anything extra, provided necessary VS features are installed.
-The installer is compiled with InnoSetup v6.4. To make a release you have to first run the `publish.bat` script.
+# Eradicate a broken application by directory or name
+EBUninstaller.exe forced-uninstall "C:\Program Files\BrokenApp" /U
 
-## Screenshots
-![preview](../gh-pages/assets/1.png)
-![preview](../gh-pages/assets/4.png)
+# Monitor an installer and generate a replayable trace
+EBUninstaller.exe monitor "C:\Setups\Installer.exe" --name "MyTool" --json
+
+# Run system junk and privacy cleanup
+EBUninstaller.exe clean-junk --clean
+EBUninstaller.exe clean-privacy --clean
+
+# Verify and restore a previous backup package
+EBUninstaller.exe backup --list
+EBUninstaller.exe restore <BackupId> --verify
+```
+
+---
+
+## Building from Source
+
+### Quick Windows Release Build (`publish.bat`)
+```cmd
+publish.bat
+```
+
+### PowerShell Advanced Release & Test Pipeline (`build.ps1`)
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1 -Configuration Release -Platform "Any CPU" -BuildInstaller -RunVerify
+```
+
+### Linux / macOS Static Analysis & Quality Verification (`build.sh`)
+```bash
+./scripts/build.sh --verbose
+```
+
+---
+
+## License & Attribution
+
+**EBUninstaller Pro** is developed and maintained by **EhabYT** (Copyright © 2026 EhabYT. All rights reserved). Licensed under the [Apache License, Version 2.0](Licence.txt). Original Bulk Crap Uninstaller copyright notices and third-party open-source attributions are preserved in accordance with [NOTICE](NOTICE) and [THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).

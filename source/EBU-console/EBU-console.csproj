@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<AssemblyName>EBU-console</AssemblyName>
+		<RootNamespace>EBU_console</RootNamespace>
+
+		<Product>EBUninstaller Pro Console CLI</Product>
+		<AssemblyTitle>EBUninstaller Pro Command Line Interface for Scripting and Automation</AssemblyTitle>
+		
+		<ApplicationIcon>..\EBUninstaller\Resources\logo.ico</ApplicationIcon>
+		<StartupObject>BCU_console.Program</StartupObject>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\UninstallTools\UninstallTools.csproj" />
+	</ItemGroup>
+</Project>

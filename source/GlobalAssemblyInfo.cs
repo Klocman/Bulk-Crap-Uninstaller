@@ -1,5 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using System.Resources;
+
+[assembly: AssemblyCompany("EhabYT")]
+[assembly: AssemblyCopyright("Copyright © 2026 EhabYT. All rights reserved.")]
+[assembly: AssemblyProduct("EBUninstaller Pro")]
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Windows-only app")]
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Address properly at some point? Almost all of these get logged")]

@@ -1,20 +1,29 @@
-BCUninstaller by Marcin Szeniak collects the following information:
-- Anonymous usage statistics
-- Anonymous error reports
-- User-selected application ratings
+================================================================================
+EBUninstaller Pro - Privacy Policy & Offline Guarantee
+================================================================================
 
-All collected information is not personally identifiable, and does not include any sensitive information.
+EBUninstaller Pro is an open-source, privacy-first Windows uninstaller and system
+cleanup utility.
 
-During first start of BCU an user ID is generated to help keep track of application ratings and usage statistics. It can be freely changed and is not guaranteed to be unique.
+1. ZERO TELEMETRY & ZERO TRACKING
+   EBUninstaller Pro DOES NOT collect, transmit, or store any personal data, 
+   usage statistics, application inventories, hardware fingerprints, or telemetry.
+   The core uninstaller functions 100% offline.
 
-Marcin Szeniak collects this information in order to provide the following benefits:
-- Improve BCUninstaller
-- Provide overall application ratings
-- Help plan future features and/or applications
+2. LOCAL DATA STORAGE
+   All application configurations, exclusions, operation history logs, traces,
+   and backups are stored strictly locally on your computer in your local user profile:
+   - %LOCALAPPDATA%\EBUninstallerPro\
 
-Marcin Szeniak shares this information with the following parties:
-- No one
+   None of this information is ever uploaded or transmitted across the internet.
 
-User-selected application ratings are used to generate overall application ratings, which are visible to all users.
+3. OPTIONAL UPDATE CHECKS
+   If you explicitly check for application updates, EBUninstaller Pro queries the
+   public GitHub Releases API over HTTPS to retrieve the latest version tag.
+   No device identifiers or personal parameters are attached to update queries.
 
-This policy is subject to change without notice. Please check this page for the latest privacy policy. If you disagree with this policy, please discontinue use of the application.
+4. USER RIGHTS & OPEN SOURCE
+   EBUninstaller Pro is licensed under the Apache License, Version 2.0. You are
+   free to inspect, modify, and audit all source code directly in the repository.
+
+If you have questions regarding this policy, please open a discussion on the GitHub repository.

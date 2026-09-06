@@ -1,6 +1,7 @@
-﻿/*
-    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
-    Apache License Version 2.0
+/*
+    EBUninstaller Pro - Windows Update Helper UpdateManager
+    Discovery and uninstallation management for Windows Updates.
+    Copyright (c) 2026 EhabYT. All rights reserved.
 */
 
 using System;
@@ -9,17 +10,58 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Klocman;
-using WUApiLib;
 
 namespace WinUpdateHelper
 {
     internal static class UpdateManager
     {
+        private static IUpdateSession CreateUpdateSession()
+        {
+            try
+            {
+                var type = Type.GetTypeFromProgID("Microsoft.Update.Session") ??
+                           Type.GetTypeFromCLSID(new Guid("4CB43D7F-7EEE-4906-8698-60DA1C38F2FE"));
+                if (type != null)
+                {
+                    var instance = Activator.CreateInstance(type);
+                    if (instance != null)
+                        return (IUpdateSession)instance;
+                }
+            }
+            catch
+            {
+                // Fallback to direct COM CoClass instantiation
+            }
+
+            return (IUpdateSession)new UpdateSession();
+        }
+
+        private static IUpdateCollection CreateUpdateCollection()
+        {
+            try
+            {
+                var type = Type.GetTypeFromProgID("Microsoft.Update.UpdateColl") ??
+                           Type.GetTypeFromCLSID(new Guid("2EE48F22-AF3C-405E-B397-CD067BF1DB89"));
+                if (type != null)
+                {
+                    var instance = Activator.CreateInstance(type);
+                    if (instance != null)
+                        return (IUpdateCollection)instance;
+                }
+            }
+            catch
+            {
+                // Fallback to direct COM CoClass instantiation
+            }
+
+            return (IUpdateCollection)new UpdateCollection();
+        }
+
         public static void UninstallUpdate(string updateId)
         {
             Console.WriteLine("Scanning updates...");
-            var wuaSession = new UpdateSessionClass();
-            var wuaSearcher = wuaSession.CreateUpdateSearcher();
+            IUpdateSession wuaSession = CreateUpdateSession();
+            IUpdateSearcher wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch =
                 wuaSearcher.Search($"Type='Software' and IsInstalled=1 and UpdateID='{updateId}' and IsPresent=1");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
@@ -29,10 +71,11 @@ namespace WinUpdateHelper
             if (!uninstallable.Any())
                 throw new ArgumentException("Selected update is not uninstallable");
 
-            var wuaInstaller = wuaSession.CreateUpdateInstaller();
-            wuaInstaller.Updates = new UpdateCollectionClass();
+            IUpdateInstaller wuaInstaller = wuaSession.CreateUpdateInstaller();
+            IUpdateCollection updateCollection = CreateUpdateCollection();
             foreach (var update in uninstallable)
-                wuaInstaller.Updates.Add(update);
+                updateCollection.Add(update);
+            wuaInstaller.Updates = updateCollection;
 
             Console.WriteLine("Uninstalling " + string.Join("; ", uninstallable.Select(x => x.Title)) + "...");
             WaitForInstallerBusy(wuaInstaller);
@@ -68,8 +111,8 @@ namespace WinUpdateHelper
 
         public static void WriteUpdateList()
         {
-            var wuaSession = new UpdateSessionClass();
-            var wuaSearcher = wuaSession.CreateUpdateSearcher();
+            IUpdateSession wuaSession = CreateUpdateSession();
+            IUpdateSearcher wuaSearcher = wuaSession.CreateUpdateSearcher();
             var wuaSearch = wuaSearcher.Search("IsInstalled=1 and IsPresent=1 and Type='Software'");
             var updates = wuaSearch.Updates.OfType<IUpdate>().ToList();
             

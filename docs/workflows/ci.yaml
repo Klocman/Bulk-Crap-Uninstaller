@@ -1,0 +1,64 @@
+name: EBUninstaller Pro - CI
+
+on: 
+  push:
+    branches:
+      - master
+      - main
+      - 'arena/**'
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    name: Build, Test & Package
+    runs-on: windows-2022
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet Packages
+        run: dotnet restore source\BulkCrapUninstaller.sln
+
+      - name: Build Solution (Release)
+        run: dotnet build source\BulkCrapUninstaller.sln --configuration Release -p:Platform="Any CPU" -p:Version="7.0.0"
+
+      - name: Run Test Suite
+        run: dotnet test source\BulkCrapUninstallerTests\BulkCrapUninstallerTests.csproj --configuration Release --no-build --logger "console;verbosity=normal"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Repository Static Verification
+        run: python scripts\verify_repo.py --verbose
+
+      - name: Setup Inno Setup
+        uses: caldera91/inno-setup-action@v1.1
+        continue-on-error: true
+
+      - name: Package Release & Installer
+        shell: pwsh
+        run: |
+          .\scripts\build.ps1 -Configuration Release -Platform "Any CPU" -BuildInstaller
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: EBUninstaller_Pro_Release_${{ github.sha }}
+          path: |
+            build/portable/*
+            build/installer/*
+            build/SHA256SUMS.txt

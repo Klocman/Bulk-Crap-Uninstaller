@@ -1,15 +1,18 @@
 <Project>
 	<PropertyGroup>
-		<Version>6.2</Version>
+		<Version>7.0.0</Version>
 
-		<Authors>https://github.com/Klocman/Bulk-Crap-Uninstaller</Authors>
-		<Copyright>Copyright Apache-2.0 © 2026</Copyright>
+		<Authors>EhabYT</Authors>
+		<Company>EhabYT</Company>
+		<Product>EBUninstaller Pro</Product>
+		<Copyright>Copyright © 2026 EhabYT. All rights reserved.</Copyright>
 
 		<Platforms>AnyCPU;x64;x86;ARM64</Platforms>
 		<TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>
 		<TargetPlatformVersion>8.0</TargetPlatformVersion>
 
-		<OutputPath>..\..\bin\$(Configuration)\$(Platform)\</OutputPath>
+		<OutputPath Condition="'$(Platform)' == 'Any CPU' or '$(Platform)' == 'AnyCPU'">..\..\bin\$(Configuration)\AnyCPU\</OutputPath>
+		<OutputPath Condition="'$(Platform)' != 'Any CPU' and '$(Platform)' != 'AnyCPU'">..\..\bin\$(Configuration)\$(Platform)\</OutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
@@ -18,7 +21,6 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 
-		<TargetZone>LocalIntranet</TargetZone>
 		<GenerateManifests>false</GenerateManifests>
 		<SignManifests>false</SignManifests>
 
@@ -29,7 +31,18 @@
 		
 		<UseAppHost>true</UseAppHost>
 		<SelfContained>false</SelfContained>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Nullable>annotations</Nullable>
+		<LangVersion>latest</LangVersion>
+		<UseSourcePath>true</UseSourcePath>
+		<GenerateResourceWarnOnMissingType>true</GenerateResourceWarnOnMissingType>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<GenerateResourceErrorsAsWarnings>true</GenerateResourceErrorsAsWarnings>
 	</PropertyGroup>
+
+	<Target Name="UnblockAllProjectFiles" BeforeTargets="BeforeBuild;BeforeResGen;PrepareResourceNames;ResolveAssemblyReferences" Condition="'$(OS)' == 'Windows_NT'">
+		<Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -NonInteractive -Command &quot;Get-ChildItem -Path '$(MSBuildThisFileDirectory)..' -Filter *.resx -Recurse -ErrorAction SilentlyContinue | Unblock-File -ErrorAction SilentlyContinue&quot;" ContinueOnError="true" IgnoreExitCode="true" />
+	</Target>
 	
 	<Import Project="HelperTools\HelperTools.projitems" Label="Shared" />
 
