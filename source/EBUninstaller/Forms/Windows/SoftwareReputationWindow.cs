@@ -34,7 +34,7 @@ namespace BulkCrapUninstaller.Forms.Windows
         private Button _btnClose;
         private ComboBox _cboFilter;
 
-        public SoftwareReputationWindow(IEnumerable<ApplicationUninstallerEntry> apps)
+        public SoftwareReputationWindow(IEnumerable<ApplicationUninstallerEntry> apps = null)
         {
             _installedApps = apps?.ToList() ?? new List<ApplicationUninstallerEntry>();
             InitializeComponent();

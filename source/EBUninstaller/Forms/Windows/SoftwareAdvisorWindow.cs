@@ -30,9 +30,9 @@ namespace BulkCrapUninstaller.Forms.Windows
         private readonly List<ApplicationUninstallerEntry> _allApps;
         private List<SoftwareAdviceReport> _reports = new();
 
-        public SoftwareAdvisorWindow(IEnumerable<ApplicationUninstallerEntry> applications)
+        public SoftwareAdvisorWindow(IEnumerable<ApplicationUninstallerEntry> applications = null)
         {
-            _allApps = applications.ToList();
+            _allApps = applications?.ToList() ?? new List<ApplicationUninstallerEntry>();
             InitializeComponent();
             ApplyTheme();
             LoadData();

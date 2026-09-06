@@ -24,7 +24,7 @@ namespace BulkCrapUninstaller.Forms.Windows
         private Button _btnClose;
         private SystemHygieneReport _currentReport;
 
-        public SoftwareHealthWindow(IEnumerable<ApplicationUninstallerEntry> installedApps)
+        public SoftwareHealthWindow(IEnumerable<ApplicationUninstallerEntry> installedApps = null)
         {
             _installedApps = installedApps;
             InitializeComponent();

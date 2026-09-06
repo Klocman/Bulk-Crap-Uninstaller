@@ -36,7 +36,7 @@ namespace BulkCrapUninstaller.Forms
         private Button _btnClose;
         private Label _lblSummary;
 
-        public SoftwareInventoryReportWindow(IEnumerable<ReportSoftwareItem> items)
+        public SoftwareInventoryReportWindow(IEnumerable<ReportSoftwareItem> items = null)
         {
             _items = items?.ToList() ?? new List<ReportSoftwareItem>();
             InitializeComponents();

@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Forms.Windows
         private Label _lblSummary;
         private Button _btnClose;
 
-        public SoftwareUsageHeatmapWindow(IEnumerable<ApplicationUninstallerEntry> apps)
+        public SoftwareUsageHeatmapWindow(IEnumerable<ApplicationUninstallerEntry> apps = null)
         {
             _installedApps = apps?.ToList() ?? new List<ApplicationUninstallerEntry>();
             InitializeComponent();

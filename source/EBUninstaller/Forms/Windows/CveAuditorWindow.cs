@@ -32,7 +32,7 @@ namespace BulkCrapUninstaller.Forms.Windows
         private Label _lblSummary;
         private Button _btnClose;
 
-        public CveAuditorWindow(IEnumerable<ApplicationUninstallerEntry> apps)
+        public CveAuditorWindow(IEnumerable<ApplicationUninstallerEntry> apps = null)
         {
             _apps = apps?.ToList() ?? new List<ApplicationUninstallerEntry>();
             InitializeComponent();

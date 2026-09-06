@@ -33,7 +33,7 @@ namespace BulkCrapUninstaller.Forms.Windows
         private Label _lblSummary;
         private Button _btnClose;
 
-        public SoftwareLifetimeTrackerWindow(IEnumerable<ApplicationUninstallerEntry> apps)
+        public SoftwareLifetimeTrackerWindow(IEnumerable<ApplicationUninstallerEntry> apps = null)
         {
             _apps = apps?.ToList() ?? new List<ApplicationUninstallerEntry>();
             InitializeComponent();
