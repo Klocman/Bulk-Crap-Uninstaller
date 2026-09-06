@@ -15,7 +15,7 @@ copied tints when a highlighted status disappears. No shared ObjectListView chan
 list rebuild, handle recreation or new graphics resource is needed.
 Palette refreshes batch native list painting with BeginUpdate/EndUpdate.
 
-The same correction runs in the default .NET 8 and opt-in .NET 10 builds. It covers
+The same correction was exercised in the earlier .NET 8 and .NET 10 comparison builds. It covers
 both ordinary formatting and system-color notifications. High contrast uses
 SystemColors.Window; normal and colorblind status palettes return on recovery.
 

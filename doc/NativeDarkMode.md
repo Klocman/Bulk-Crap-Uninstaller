@@ -2,36 +2,26 @@
 
 This patch consolidates the Windows Forms adapters investigated against BCU's real
 main window, Properties, Settings, uninstall wizard, progress and leftover review.
-It is an opt-in developer integration, not a release-wide runtime migration.
+Dark mode remains an opt-in launch mode, while the solution now targets .NET 10.
 
 For the current status, evidence limitations and next investigations, see the
 [WIP continuation guide](NativeDarkMode-Handoff.md).
 
 ## Build and enable
 
-The ordinary solution/application build remains .NET 8. Setting the GUI project's
-`EnableNativeDarkMode=true` property selects .NET 10 for that project only. The
-supporting libraries retain their .NET 8 targets. The opt-in GUI output is separated
-under `bin/NativeDark` to avoid overwriting the default GUI output.
-
-On Windows, with .NET 8 and 10 SDKs, the .NET 10 Desktop runtime and Visual Studio
-desktop/C++ build tools installed, run:
+The shared build configuration targets the application and supporting projects at
+`.NET 10`. Because three projects retain COM references, building the complete
+solution requires Visual Studio 2026 full MSBuild with the desktop/C++ tools and
+the .NET 10 SDK. Use the repository's normal build path:
 
 ```powershell
-./Build-NativeDark.ps1 -DotNet10 'C:/path/to/dotnet10/dotnet.exe'
+msbuild source/BulkCrapUninstaller.sln /restore /t:Build /p:Configuration=Release /p:Platform="Any CPU"
 ```
 
-The script first builds the ordinary application/dependencies using VS MSBuild and
-the .NET 8 SDK, including the existing COM reference. It then publishes the GUI
-with the .NET 10 SDK and `BuildProjectReferences=false`, reusing those built libraries.
-Do not skip the dependency build after changing shared libraries. This is a GUI
-build helper; existing helper-executable/installer packaging still needs validation.
-
-Launch the opt-in executable with `--dark-mode` to activate the adapters. With no
+Launch the executable with `--dark-mode` to activate the adapters. With no
 switch it stays light. `--light-mode` takes precedence if both are present. The
-comparison is case-insensitive. The ordinary .NET 8 build ignores these theme
-switches. No theme setting is persisted, and there is no live light/dark switching
-or automatic system-theme following in this patch. In both runtime builds, scoped
+comparison is case-insensitive. No theme setting is persisted, and there is no live
+light/dark switching or automatic system-theme following in this patch. Scoped
 monochrome icons now follow high-contrast colors, including changes while open.
 
 The existing manifest, elevation requirements, single-instance mutex, application
@@ -57,7 +47,7 @@ Small constructor hooks opt individual, inspected surfaces into:
 - BCU's existing custom message box for inspected `OK`/`OKCancel` message flows in
   dark mode.
 
-`NativeObjectListView` remains an ObjectListView subclass. In both builds it uses
+`NativeObjectListView` remains an ObjectListView subclass. It uses
 system contrast colors for selected rows and hyperlink cells. On .NET 10, adapted
 ordinary Details lists also opt into implicit theming,
 repaint simple group-caption label rectangles after native drawing, and fill the
@@ -97,11 +87,6 @@ foreground/background colors so the MSHTML host does not resolve CSS system-colo
 keywords to a light palette. The browser enters the tab order and receives focus
 after the top-level document finishes loading.
 
-The accompanying [shared column DPI fix](ColumnDpi.md) applies to both runtimes and
-both light/dark modes: initial and hidden columns scale, manual widths survive DPI
-callbacks, and new saved layouts include their DPI. Legacy saved pixel widths are
-preserved rather than guessing their original DPI.
-
 ## Evidence and limitations
 
 The source consolidation builds on isolated real-window probes on Windows 11 build
@@ -110,11 +95,12 @@ list/refresh, Properties, seven Settings pages, wizard selection/navigation, syn
 progress states and leftover confidence review. Fixtures never validated actual
 uninstall execution, process termination, registry backup or junk deletion.
 
-The integrated application was built in both default .NET 8 and opt-in .NET 10 forms.
-An external, unelevated checker loads those actual assemblies and checks default-off,
-dark opt-in, light override, repeated application, shared image preservation, the
-real leftover-review constructor hook, and progress recreation/pending-callback
-disposal. It does not run the production entry point or modify its manifest.
+Before the solution-wide .NET 10 migration, the integrated application was built in
+default .NET 8 and opt-in .NET 10 forms. An external, unelevated checker loaded those
+assemblies and checked default-off, dark opt-in, light override, repeated application,
+shared image preservation, the real leftover-review constructor hook, and progress
+recreation/pending-callback disposal. It did not run the production entry point or
+modify its manifest.
 
 After the dialog/tooltip/Feedback repair, fresh checker runs retained the expected
 .NET 10 default/dark/light-override counts (158/160/158) and .NET 8 bypass count

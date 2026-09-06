@@ -1,18 +1,16 @@
 # Native dark-mode regression checklist
 
-Status as of 2026-09-05. A checked item records the specific evidence below; it does
+Status as of 2026-09-06. A checked item records the specific evidence below; it does
 not imply broader platform or real-execution coverage. Complete the open gates in
 an appropriate disposable test environment before proposing a default-on release.
 
 ## Consolidated patch checks
 
-- [x] Default .NET 8 GUI and dependency build succeeds with VS MSBuild.
-- [x] Opt-in .NET 10 GUI publishes while dependencies retain .NET 8 targets.
-- [x] Separate output paths preserve the default GUI binary.
+- [ ] Unified .NET 10 solution restores and builds with Visual Studio 2026 full MSBuild.
+- [x] The special GUI framework override and separate native-dark output path are removed.
 - [x] .NET 10 runtime checker: no switch leaves adapters disabled.
 - [x] .NET 10 runtime checker: --dark-mode enables adapters.
 - [x] .NET 10 runtime checker: --light-mode overrides --dark-mode.
-- [x] .NET 8 runtime checker: --dark-mode leaves adapters disabled.
 - [x] Repeated initialization/list/image/menu application does not duplicate adaptation.
 - [x] Shared bitmap pixels remain unchanged; real leftover constructor uses the new list and style hook.
 - [x] Progress handle recreation and disposal with a pending callback finish without an exception.
@@ -23,7 +21,8 @@ an appropriate disposable test environment before proposing a default-on release
 
 The assembly checker runs unelevated with empty/in-memory controls; it invokes no
 production startup, inventory, backup or uninstall workflow. The .NET 10 cases used
-runtime 10.0.11; the .NET 8 case used runtime 8.0.30, all at DPI 192, high contrast off.
+runtime 10.0.11 at DPI 192 with high contrast off. A historical .NET 8 bypass case
+predates the solution-wide framework migration.
 
 On 2026-09-05, a hash-identical staged .NET 10 `BCUninstaller.exe --dark-mode`
 followed the application manifest/UAC path and reached a responsive elevated
@@ -33,9 +32,9 @@ detailed replay therefore used `dotnet BCUninstaller.dll --dark-mode`, which inv
 the production managed entry point but does not close rows explicitly scoped to the
 production executable.
 
-The exact executable also reached ready light inventories with no .NET 10 switch,
-with `--dark-mode --light-mode`, and from the default .NET 8 output. The two .NET 10
-light screenshots were byte-identical. A second exact dark executable exited with
+The exact executable also reached ready light inventories with no switch and with
+`--dark-mode --light-mode`. Those two .NET 10 light screenshots were byte-identical.
+A historical .NET 8 output also remained light. A second exact dark executable exited with
 code 0 after 3.2 seconds while the first remained responsive and the sole BCU
 process. Exact-executable graceful close, `Application.Restart`, and interactive
 culture handling remain open, so the combined lifecycle and light rows stay
@@ -72,25 +71,23 @@ The complete production-executable matrix remains:
 - [ ] Progress: continuous/marquee recreation, selected objects across updates and repeated dialog opening/closing.
 - [ ] Leftovers: confidence groups, threshold selection, low-confidence warnings, details, filtering and checked results.
 - [ ] Dialogs: headings, icons, default/cancel buttons, ownership, keyboard access, focus and long localized explanations.
-- [ ] Light comparison: default build and opt-in build with no switch or --light-mode retain normal behavior.
+- [ ] Light comparison: the normal build with no switch or --light-mode retains normal behavior.
 
 ## Platform and accessibility gates
 
 The [platform investigation](NativeDarkMode-Platform.md) records real high-contrast
 startup/transition/recovery and a 96-logical/192-native DPI comparison. It found
 fixed-width column truncation in both light and dark modes, plus unreadable black
-icons in the actual dark high-contrast fallback. The [column fix](ColumnDpi.md) now
-addresses the first finding. The [icon fix](NativeDarkMode-Icons.md) addresses the
+icons in the actual dark high-contrast fallback. The DPI issue is outside this
+focused dark-mode change. The [icon fix](NativeDarkMode-Icons.md) addresses the
 observed black-on-dark failure; physical DPI moves and other native contrast
 palettes remain open.
 
 - [x] Actual contrast startup suppresses dark opt-in; an already-dark process disables/re-enables its dark flags across the observed system transition.
 - [x] Reproduced unchanged fixed-column pixel widths at control DPI 96 and 192, including the light-mode comparison.
-- [x] Scale fixed/hidden columns and constraints; preserve user sizing through repeated DPI callback tests, handle recreation and saved-layout restore in .NET 8/10.
-- [ ] Validate the column fix during physical mixed-DPI monitor moves and native 100/125/150% display sessions.
 - [x] Recolor scoped monochrome icons on real dark high-contrast startup, live entry and recovery; dynamically replaced completion image remains readable.
-- [x] Deterministic white/black/custom foreground, source preservation, colored-artwork exclusion and image binding disposal checks in both runtimes.
-- [x] Selected dropdown icons, checked toolbar icons and selected rows in configured dark contrast and a controlled light system-color table; both runtimes checked while contrast is active.
+- [x] Deterministic white/black/custom foreground, source preservation, colored-artwork exclusion and image binding disposal checks.
+- [x] Selected dropdown icons, checked toolbar icons and selected rows in configured dark contrast and a controlled light system-color table.
 - [x] Normal/visited/hovered link colors use HotTrack in high contrast; existing cells recover without rebuilding rows or losing selection. See [selection/link follow-up](NativeDarkMode-ContrastStates.md).
 - [x] Application status rows use system contrast backgrounds and restore normal/colorblind tints; existing row identity, checks, selection and horizontal scroll survive.
 - [x] Actual Properties selection pairs highlight colors across contrast palettes and data-source replacement. See [row/grid follow-up](NativeDarkMode-RowGrid.md).

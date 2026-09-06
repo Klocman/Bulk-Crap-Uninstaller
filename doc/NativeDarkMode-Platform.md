@@ -5,9 +5,9 @@ The 2026-09-04 platform pass used the same compiled integration DLL recorded in
 zero warnings/errors. No application code was changed during this investigation.
 The platform acceptance gate remains open: this pass found two concrete gaps.
 
-Follow-up: the [shared column DPI fix](ColumnDpi.md) now addresses the fixed-width
-finding below. The [contrast icon fix](NativeDarkMode-Icons.md) also addresses the
-observed black-on-dark failure. This document retains the original measurements
+The fixed-width DPI finding remains outside the focused dark-mode change. The
+[contrast icon fix](NativeDarkMode-Icons.md) addresses the observed black-on-dark
+failure. This document retains the original measurements
 as the reproduction; full physical/platform validation remains open.
 
 ## Fixed column widths at high DPI

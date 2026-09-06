@@ -24,8 +24,8 @@ uninstall, registry editing, backup or other execution operation.
   The dark neutral color is now captured as an ordinary RGB value at setup;
   TreeMap's paint-time contrast override continues to use live system colors.
 
-The upstream ObjectListView sorting contract and focused column-DPI patch are
-unchanged. ListRebuilt belongs to the application's NativeObjectListView subclass.
+The upstream ObjectListView sorting contract is unchanged. ListRebuilt belongs to
+the application's NativeObjectListView subclass.
 
 ## Validation scope
 

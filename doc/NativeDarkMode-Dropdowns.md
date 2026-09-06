@@ -17,7 +17,7 @@ Sources: [WinForms ComboBox](https://github.com/dotnet/winforms/blob/v10.0.0/src
 [SetWindowTheme contract](https://learn.microsoft.com/en-us/windows/win32/api/uxtheme/nf-uxtheme-setwindowtheme).
 
 `ComboBoxContrastAdapter` attaches once to normal DropDownList controls directly
-inside FilterEditor, only when the .NET 10 dark opt-in is active. The default .NET 8
+inside FilterEditor, only when the .NET 10 dark opt-in is active. In the historical .NET 8
 build, explicit light override, contrast-at-startup path, unrelated dropdowns,
 editable combos and owner-drawn controls do not acquire this adapter.
 

@@ -9,10 +9,14 @@ on:
 jobs:
 
   build:
-    runs-on: windows-2022
+    runs-on: windows-2025-vs2026
     
     steps:
     - uses: actions/checkout@v4
+
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
     
     - uses: microsoft/setup-msbuild@v2
 

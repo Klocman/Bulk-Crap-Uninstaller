@@ -6,7 +6,7 @@ This document retains the initial icon-fix evidence and assembly identity.
 
 The 2026-09-04 change fixes the observed black BCU instruction/toolbar icons on a
 dark high-contrast background. It applies to the inspected BCU UI assets in both
-the default .NET 8 and opt-in .NET 10 builds, including classic/light startup.
+the earlier .NET 8 and .NET 10 comparison builds, including classic/light startup.
 High contrast still suppresses the experimental dark control adapters.
 
 ## Implementation

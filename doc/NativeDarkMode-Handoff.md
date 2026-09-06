@@ -8,12 +8,12 @@ It does not implement that PR's broader core refactor or remove COM dependencies
 ## Start here
 
 Read [build instructions and architecture](NativeDarkMode.md), then the
-[regression checklist](NativeDarkMode-Checklist.md). Build on Windows with
-`Build-NativeDark.ps1` and launch `bin/NativeDark/publish/BCUninstaller.exe --dark-mode`.
-The build needs Visual Studio desktop/C++ tooling plus .NET 8 and .NET 10 SDKs.
-The default application stays on .NET 8. Only the optional GUI build targets
-.NET 10; dependencies retain their existing targets. No switch means light mode,
-and `--light-mode` overrides `--dark-mode`.
+[regression checklist](NativeDarkMode-Checklist.md). The solution and supporting
+projects target .NET 10 and use the repository's normal build/output path. Building
+the complete solution requires Visual Studio 2026 full MSBuild with desktop/C++
+tools and the .NET 10 SDK because three projects retain COM references. Launch
+`bin/Release/AnyCPU/BCUninstaller.exe --dark-mode`. No switch means light mode, and
+`--light-mode` overrides `--dark-mode`.
 
 The executable retains its real elevation and uninstall behavior. The external
 development host used for inspection disconnected execution actions; those
@@ -26,9 +26,7 @@ protections are not part of the application or this PR.
 - List headers/group captions, status rows, selection/link colors, monochrome
   icons, search fields/dropdowns, legend/treemap and progress lifecycle handling.
 - Live high-contrast entry/recovery fixes, including main-window buttons and
-  primary list checkboxes. Several accessibility fixes also apply to .NET 8.
-- A shared ObjectListView column-DPI fix, documented separately in
-  [ColumnDpi.md](ColumnDpi.md). This could be reviewed or extracted independently.
+  primary list checkboxes.
 
 `source/BulkCrapUninstaller/Theming` contains the adapters. Shared-library changes
 are also present in KlocTools, ObjectListView and SimpleTreeMap. The patch includes
@@ -39,8 +37,8 @@ and the uninstall wizard.
 
 ## Latest validation and its limits
 
-After the focused repair pass, `Build-NativeDark.ps1` completed fresh default
-.NET 8 and opt-in .NET 10 builds. Fresh external-checker runs recorded 631
+Before the solution-wide .NET 10 migration, the focused repair pass completed fresh
+.NET 8 and .NET 10 builds. Fresh external-checker runs recorded 631
 assertions: .NET 10 ordinary default/dark/light override (158/160/158) and the
 .NET 8 dark bypass (155). A focused STA WinForms host recorded another 155
 assertions across .NET 10 dark/light-override and .NET 8 bypass runs (79/38/38).
@@ -77,7 +75,7 @@ A bounded production acceptance pass staged hash-identical copies of the fresh
 outputs in disposable portable directories. The exact .NET 10 executable followed
 its manifest/UAC elevation path and reached a responsive dark inventory, closing
 the production-launch check. Exact .NET 10 runs with no switch and with
-`--dark-mode --light-mode`, plus the default .NET 8 executable, reached ready light
+`--dark-mode --light-mode`, plus the historical .NET 8 executable, reached ready light
 inventories. The two .NET 10 light captures were byte-identical. A second exact dark
 executable exited with code 0 after 3.2 seconds while the first remained responsive
 and the only BCU process.

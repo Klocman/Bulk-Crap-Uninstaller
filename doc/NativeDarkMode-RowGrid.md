@@ -41,7 +41,7 @@ contrast formatting hook without enabling dark-mode control adapters.
 
 ## Verification
 
-Default .NET 8 and opt-in .NET 10 application builds succeeded. Existing NU1510 and
+The earlier .NET 8 and .NET 10 comparison builds succeeded. Existing NU1510 and
 SYSLIB0057 warnings remain. The external checker and visual host built without
 warnings/errors, and copies matched their actual built application DLLs.
 
