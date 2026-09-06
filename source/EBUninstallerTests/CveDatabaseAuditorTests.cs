@@ -1,0 +1,50 @@
+/*
+ * EBUninstaller Pro - Application Uninstaller & System Optimization Suite
+ * Copyright (C) 2026 EBUninstaller Development Team & Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UninstallTools;
+using UninstallTools.Detection;
+
+namespace EBUninstallerTests
+{
+    [TestClass]
+    public class CveDatabaseAuditorTests
+    {
+        [TestMethod]
+        public void AuditApplications_NullInput_ReturnsEmpty()
+        {
+            var res = CveDatabaseAuditor.AuditApplications(null);
+            Assert.IsNotNull(res);
+            Assert.AreEqual(0, res.Count);
+        }
+
+        [TestMethod]
+        public void AuditApplications_VulnerableApps_DetectsCve()
+        {
+            var apps = new List<ApplicationUninstallerEntry>
+            {
+                new ApplicationUninstallerEntry { DisplayName = "WinRAR 6.20" },
+                new ApplicationUninstallerEntry { DisplayName = "Safe Application" }
+            };
+
+            var res = CveDatabaseAuditor.AuditApplications(apps);
+            Assert.IsTrue(res.Count > 0);
+            Assert.AreEqual("CVE-2023-38831", res[0].CveId);
+        }
+    }
+}
