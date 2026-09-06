@@ -526,7 +526,7 @@ The lists are separated by a single newline.</comment>
     <value>从目录卸载</value>
   </data>
   <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
-    <value>Issuer</value>
+    <value>颁发者</value>
   </data>
   <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
     <value>主题</value>
@@ -780,5 +780,33 @@ The lists are separated by a single newline.</comment>
   <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
     <value>卸载</value>
     <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallProgressWindow_TaskDoneNextStep" xml:space="preserve">
+    <value>任务已完成。关闭此窗口以继续；BCU可能会询问是否扫描残留项。</value>
+    <comment>Shown on the status bar after uninstallers finish</comment>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Title" xml:space="preserve">
+    <value>无法重命名“{0}”</value>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Details" xml:space="preserve">
+    <value>此类型的卸载程序不支持重命名（{0}）。</value>
+  </data>
+  <data name="CertificateColumn_NotFound" xml:space="preserve">
+    <value>未找到</value>
+  </data>
+  <data name="CertificateColumn_Verified" xml:space="preserve">
+    <value>已验证</value>
+  </data>
+  <data name="CertificateColumn_Unverified" xml:space="preserve">
+    <value>未验证</value>
+  </data>
+  <data name="IntegrityColumn_Invalid" xml:space="preserve">
+    <value>卸载程序缺失</value>
+  </data>
+  <data name="IntegrityColumn_Unregistered" xml:space="preserve">
+    <value>注册表项缺失</value>
+  </data>
+  <data name="IntegrityColumn_Good" xml:space="preserve">
+    <value>正常</value>
   </data>
 </root>

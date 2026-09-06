@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using UninstallTools;
@@ -33,11 +34,12 @@ BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/N] [/J=<Level>] - 
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
 
-BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed application data to xml file.
+BCU-console export [drive:][path]filename [/Q] [/U] [/V] [/F=<Format>] - Export installed application data to a file.
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
- filename       – Specifies filename of the .xml file to save the exported application information to.
+ filename       – Specifies filename of the file to save the exported application information to
+                  (xml by default, json when /F=json is passed).
 
-BCU-console list [/Q] [/U] [/V] - Display a list of installed applications.
+BCU-console list [/Q] [/U] [/V] [/F=<Format>] - Display a list of installed applications.
 
 Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
@@ -53,6 +55,10 @@ Switches:
                   applications would be uninstalled and, when combined with /J, which junk items
                   would be removed, without uninstalling or deleting anything. ""--dry-run"" is
                   also accepted.
+ /F=<Format>    - Output format, valid formats are ""json"" and ""xml"" (the default is a plaintext
+                  table for list and an xml file for export). ""--format=<Format>"" is also accepted.
+                  When this switch is used all progress messages are written to standard error, so
+                  that standard output of ""list"" contains only the serialized document.
 
 Return codes:
  0	- The operation completed successfully.
@@ -60,13 +66,60 @@ Return codes:
  1223	- The operation was canceled by the user.");
         }
 
+        /// <summary>
+        /// Holds the console window open after printing help, but only when doing so is both safe and useful:
+        /// skipped when input is redirected (a pipe, file, Task Scheduler or CI - where ReadKey would throw),
+        /// and only used when this process owns its console (a double-click) so it isn't shown to shell users.
+        /// </summary>
+        private static void WaitForKeyIfStandalone()
+        {
+            if (Console.IsInputRedirected || !LaunchedStandalone())
+                return;
+
+            Console.WriteLine();
+            Console.WriteLine(@"Press any key to exit...");
+            Console.ReadKey(true);
+        }
+
+        private static bool LaunchedStandalone()
+        {
+            // When double-clicked the process gets its own console, so it is the only one attached (count 1).
+            // When launched from a shell the console is shared, so more than one process is attached.
+            try
+            {
+                var processIds = new uint[2];
+                var count = GetConsoleProcessList(processIds, (uint)processIds.Length);
+                // count 0 means the call failed (e.g. no console); don't pause in that case.
+                return count == 1;
+            }
+            catch (DllNotFoundException)
+            {
+                return false;
+            }
+            catch (EntryPointNotFoundException)
+            {
+                return false;
+            }
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern uint GetConsoleProcessList(uint[] lpdwProcessList, uint dwProcessCount);
+
+        private static TextWriter _dataOutput;
+      
         private static int Main(string[] args)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
 
-            try { Console.OutputEncoding = Encoding.Unicode; }
+            var isMachineReadable = GetFormatArgument(args) != null;
+
+            try { Console.OutputEncoding = isMachineReadable ? new UTF8Encoding(false) : Encoding.Unicode; }
             catch (SystemException) { }
+
+            _dataOutput = Console.Out;
+            if (isMachineReadable)
+                Console.SetOut(Console.Error);
 
             var info = Assembly.GetExecutingAssembly();
             Console.WriteLine(info.FullName);
@@ -77,7 +130,7 @@ Return codes:
                     x.Equals("/?", StringComparison.OrdinalIgnoreCase)))
             {
                 ShowHelp();
-                Console.ReadKey();
+                WaitForKeyIfStandalone();
                 return 0;
             }
 
@@ -111,7 +164,21 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            var serializer = new ApplicationEntrySerializer(QueryApps(isQuiet, isUnattended, isVerbose));
+            var format = GetFormatArgument(args);
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
+
+            var apps = QueryApps(isQuiet, isUnattended, isVerbose);
+
+            if (format != null)
+            {
+                _dataOutput.WriteLine(format.Equals("json", StringComparison.OrdinalIgnoreCase)
+                    ? ApplicationEntrySerializer.SerializeApplicationEntriesToJson(apps)
+                    : ApplicationEntrySerializer.SerializeApplicationEntriesToXml(apps));
+                return 0;
+            }
+
+            var serializer = new ApplicationEntrySerializer(apps);
 
             Console.WriteLine($@"{"Display Name",-40}  {"Version",-20}  {"Source",-40}");
             var sb = new StringBuilder(82);
@@ -152,7 +219,12 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal)).ToArray();
+            var format = GetFormatArgument(args);
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
+
+            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal) &&
+                                   !x.StartsWith("--", StringComparison.Ordinal)).ToArray();
             if (args.Length != 1)
                 return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
 
@@ -160,7 +232,10 @@ Return codes:
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             Console.WriteLine(@"Exporting data...");
-            ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
+            if (format != null && format.Equals("json", StringComparison.OrdinalIgnoreCase))
+                ApplicationEntrySerializer.SerializeApplicationEntriesToJson(args[0], apps);
+            else
+                ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
             Console.WriteLine(@"Success!");
             return 0;
         }
@@ -385,6 +460,24 @@ Return codes:
         {
             Console.WriteLine("Invalid command syntax. " + message);
             return 87;
+        }
+
+        private static string GetFormatArgument(string[] args)
+        {
+            foreach (var arg in args)
+            {
+                if (arg.StartsWith("/F=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("/F=".Length);
+                if (arg.StartsWith("--format=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("--format=".Length);
+            }
+            return null;
+        }
+
+        private static bool IsSupportedFormat(string format)
+        {
+            return format.Equals("json", StringComparison.OrdinalIgnoreCase) ||
+                   format.Equals("xml", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

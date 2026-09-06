@@ -149,6 +149,9 @@ namespace BulkCrapUninstaller
                 "tr-CY",
                 "tr-TR",
 
+                // Ukrainian
+                "uk-UA",
+
                 // Vietnamese
                 "vi-VN",
 
