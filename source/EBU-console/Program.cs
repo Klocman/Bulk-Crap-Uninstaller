@@ -77,6 +77,11 @@ COMMANDS:
   orphaned-services             Scan and clean broken Windows services with missing binaries
   export-drivers <dir>          Export and backup all OEM third-party drivers
   audit-report <output_file>    Generate comprehensive HTML/MD/CSV/JSON software audit report
+  cve                           Audit installed software against offline CVE security database
+  vss                           Inspect Volume Shadow Copies and manage backup snapshots
+  patch-cache                   Scan and clean orphaned Windows Installer patch cache (.msp/.msi)
+  winsxs                        Analyze and optimize Windows WinSxS component store
+  multi-user                    Scan and map software installed across all Windows user profiles
   help | /?                     Display this help screen
 
 GLOBAL SWITCHES:
@@ -227,6 +232,27 @@ EXIT CODES:
                     case "audit-report":
                     case "report":
                         return ProcessAuditReportCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "cve":
+                    case "audit-cve":
+                        return ProcessCveCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "vss":
+                    case "shadow-copies":
+                    case "shadow-copy":
+                        return ProcessVssCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "patch-cache":
+                    case "clean-patches":
+                        return ProcessPatchCacheCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "winsxs":
+                    case "clean-winsxs":
+                        return ProcessWinSxSCommand(args.Skip(1).ToArray(), isJson);
+
+                    case "multi-user":
+                    case "multiuser":
+                        return ProcessMultiUserCommand(args.Skip(1).ToArray(), isJson);
 
                     default:
                         Console.WriteLine($"Unknown command '{args[0]}'. Use 'help' for usage.");
@@ -1198,6 +1224,142 @@ EXIT CODES:
 
             File.WriteAllText(outPath, content, Encoding.UTF8);
             Console.WriteLine($"Software audit report generated successfully: {outPath}");
+            return 0;
+        }
+
+        
+        private static int ProcessCveCommand(string[] args, bool isJson)
+        {
+            var apps = QueryApps(true, false);
+            var results = CveDatabaseAuditor.AuditApplications(apps);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(results, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"\n--- CVE Vulnerability Audit ({results.Count} vulnerabilities detected) ---");
+            if (results.Count == 0)
+            {
+                Console.WriteLine("No known CVE vulnerabilities detected for installed applications.");
+                return 0;
+            }
+
+            Console.WriteLine($@"{ "CVE ID",-18}  {"Severity",-10}  {"Application",-30}  {"Recommendation",-25}");
+            Console.WriteLine(new string('-', 90));
+            foreach (var r in results)
+            {
+                var id = Truncate(r.CveId, 18);
+                var sev = r.Severity.ToString();
+                var app = Truncate(r.AffectedProduct, 30);
+                var rec = Truncate(r.Recommendation, 25);
+                Console.WriteLine($@"{id,-18}  {sev,-10}  {app,-30}  {rec,-25}");
+            }
+            return 0;
+        }
+
+        private static int ProcessVssCommand(string[] args, bool isJson)
+        {
+            var doPurge = args.Any(x => x.Equals("--purge", StringComparison.OrdinalIgnoreCase) || x.Equals("/P", StringComparison.OrdinalIgnoreCase));
+            var keepValStr = GetArgValue(args, "--keep");
+            var keepCount = int.TryParse(keepValStr, out var k) ? k : 3;
+
+            var snapshots = VolumeShadowCopyManager.GetShadowCopies();
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(snapshots, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Discovered {snapshots.Count} Volume Shadow Copy snapshot(s):");
+            foreach (var s in snapshots)
+            {
+                Console.WriteLine($" - [{s.CreationTime:yyyy-MM-dd HH:mm}] {s.ShadowCopyId} ({s.VolumeName})");
+            }
+
+            if (doPurge && snapshots.Count > keepCount)
+            {
+                var purged = VolumeShadowCopyManager.PurgeOldestShadowCopies(keepCount);
+                Console.WriteLine($"\nPurged {purged} older shadow copy snapshot(s), retaining the {keepCount} most recent.");
+            }
+            return 0;
+        }
+
+        private static int ProcessPatchCacheCommand(string[] args, bool isJson)
+        {
+            var doClean = args.Any(x => x.Equals("--clean", StringComparison.OrdinalIgnoreCase) || x.Equals("/C", StringComparison.OrdinalIgnoreCase));
+            var items = PatchCacheResidualsCleaner.ScanPatchCache();
+            var orphaned = items.Where(x => x.IsOrphaned).ToList();
+            var reclaimableBytes = orphaned.Sum(x => x.SizeBytes);
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(new { total = items.Count, orphanedCount = orphaned.Count, reclaimableBytes, items }, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Windows Installer Patch Cache Scan ({items.Count} total patches, {orphaned.Count} orphaned):");
+            Console.WriteLine($"Reclaimable Storage: {reclaimableBytes / (1024.0 * 1024.0):F2} MB");
+
+            if (doClean && orphaned.Count > 0)
+            {
+                var cleaned = PatchCacheResidualsCleaner.CleanOrphanedPatches(orphaned);
+                Console.WriteLine($"Successfully cleaned {cleaned} orphaned installer patches.");
+            }
+            else if (orphaned.Count > 0)
+            {
+                Console.WriteLine("Pass '--clean' to delete orphaned patch residuals.");
+            }
+            return 0;
+        }
+
+        private static int ProcessWinSxSCommand(string[] args, bool isJson)
+        {
+            var doClean = args.Any(x => x.Equals("--clean", StringComparison.OrdinalIgnoreCase) || x.Equals("/C", StringComparison.OrdinalIgnoreCase));
+            var report = WinSxSStoreAnalyzer.AnalyzeComponentStore();
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine("WinSxS Component Store Analysis:");
+            Console.WriteLine($" - Total Store Size         : {report.StoreSizeBytes / (1024.0 * 1024.0 * 1024.0):F2} GB");
+            Console.WriteLine($" - Package / Driver Backups : {report.BackupsAndDisabledFeaturesBytes / (1024.0 * 1024.0):F2} MB");
+            Console.WriteLine($" - Cleanup Recommended      : {(report.CleanupRecommended ? "Yes" : "No")}");
+
+            if (doClean && report.CleanupRecommended)
+            {
+                Console.WriteLine("Starting DISM component store cleanup...");
+                var success = WinSxSStoreAnalyzer.RunComponentCleanup(false);
+                Console.WriteLine(success ? "WinSxS cleanup completed successfully." : "WinSxS cleanup failed.");
+            }
+            return 0;
+        }
+
+        private static int ProcessMultiUserCommand(string[] args, bool isJson)
+        {
+            var entries = MultiUserSoftwareMatrixEngine.ScanAllUserProfiles();
+
+            if (isJson)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true }));
+                return 0;
+            }
+
+            Console.WriteLine($"Multi-User Software Installation Matrix ({entries.Count} entries discovered):");
+            var grouped = entries.GroupBy(x => x.UserName);
+            foreach (var g in grouped)
+            {
+                Console.WriteLine($"\n[User: {g.Key} ({g.First().UserSid})]");
+                foreach (var item in g)
+                {
+                    Console.WriteLine($"  - {item.DisplayName} {item.DisplayVersion} ({item.Scope})");
+                }
+            }
             return 0;
         }
 

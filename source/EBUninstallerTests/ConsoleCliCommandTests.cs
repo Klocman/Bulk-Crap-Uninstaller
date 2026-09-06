@@ -33,7 +33,8 @@ namespace EBUninstallerTests
                 "clean-privacy", "health", "optimize-registry", "update",
                 "trim-memory", "clean-drivers", "startup-impact", "schedule-maintenance",
                 "startup", "extensions", "tools", "export", "history",
-                "runtimes", "bloat", "orphaned-services", "export-drivers", "audit-report"
+                "runtimes", "bloat", "orphaned-services", "export-drivers", "audit-report",
+                "cve", "vss", "patch-cache", "winsxs", "multi-user"
             };
 
             foreach (var cmd in validCommands)

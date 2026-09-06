@@ -371,6 +371,8 @@ def check_unit_tests(verbose=False, quiet=False):
         "source/EBUninstallerTests/MultiUserSoftwareMatrixEngineTests.cs",
         "source/EBUninstallerTests/ApplicationUninstallerEntryTests.cs",
         "source/EBUninstallerTests/ApplicationEntrySerializerTests.cs",
+        "source/EBUninstallerTests/DrawingToolsTests.cs",
+        "source/EBUninstallerTests/DynamicStringArrayConverterTests.cs",
         "source/EBUninstallerTests/UninstallListTests.cs"
     ]
 
