@@ -22,12 +22,12 @@ namespace BulkCrapUninstallerTests
                     CacheIdOverride = "Id\u0003value"
                 };
 
-                ApplicationEntrySerializer.SerializeApplicationEntries(path, new[] { entry });
+                ApplicationEntrySerializer.SerializeApplicationEntries(path, [entry]);
 
                 var result = SerializationTools.DeserializeFromXml<ApplicationEntrySerializer>(path);
 
                 Assert.IsNotNull(result);
-                Assert.AreEqual(1, result.Items.Count);
+                Assert.HasCount(1, result.Items);
                 Assert.AreEqual("Publisher", result.Items[0].Publisher);
                 Assert.AreEqual("Beforeafter \U0001F600", result.Items[0].Comment);
                 Assert.AreEqual("Idvalue", result.Items[0].CacheIdOverride);
