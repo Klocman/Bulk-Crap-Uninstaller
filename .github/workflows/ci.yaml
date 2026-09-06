@@ -18,7 +18,7 @@ jobs:
 
     - name: Restore
       run: msbuild source\BulkCrapUninstaller.sln /t:Restore /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
-
+    
     - name: Build
       run: >
            msbuild source\BulkCrapUninstaller.sln /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
