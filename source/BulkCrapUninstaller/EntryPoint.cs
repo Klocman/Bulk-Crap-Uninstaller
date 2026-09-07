@@ -27,6 +27,8 @@ namespace BulkCrapUninstaller
         public static bool IsRestarting { get; internal set; }
 
         private const string MUTEX_NAME = @"Global\BCU-singleinstance";
+        private const string SHORTCUT_UNINSTALL_MUTEX_NAME = @"Global\BCU-shortcut-uninstall";
+        private const string SHORTCUT_UNINSTALL_COMMAND = "shortcut-uninstall";
         private static Mutex _mutex;
 
         [STAThread]
@@ -50,7 +52,19 @@ namespace BulkCrapUninstaller
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.EnableVisualStyles();
 
-                    _mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
+                    var shortcutUninstallRequested = args.Length > 0 &&
+                                                     args[0].Equals(SHORTCUT_UNINSTALL_COMMAND,
+                                                         StringComparison.OrdinalIgnoreCase);
+                    if (shortcutUninstallRequested && (args.Length != 2 || string.IsNullOrWhiteSpace(args[1])))
+                    {
+                        MessageBox.Show("Specify exactly one shortcut path.", "BCUninstaller",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    var shortcutUninstallPath = shortcutUninstallRequested ? args[1] : null;
+                    var mutexName = shortcutUninstallRequested ? SHORTCUT_UNINSTALL_MUTEX_NAME : MUTEX_NAME;
+                    _mutex = new Mutex(true, mutexName, out var createdNew);
                     if (!createdNew)
                     {
                         _mutex.Dispose();
@@ -67,9 +81,16 @@ namespace BulkCrapUninstaller
                                      args.Contains("/sm", StringComparison.OrdinalIgnoreCase);
 
                     if (startupMgr)
+                    {
                         Application.Run(StartupManagerWindow.ShowManagerWindow());
+                    }
                     else
-                        Application.Run(new MainWindow());
+                    {
+                        var mainWindow = new MainWindow();
+                        if (shortcutUninstallPath != null)
+                            mainWindow.ConfigureShortcutUninstall(shortcutUninstallPath);
+                        Application.Run(mainWindow);
+                    }
                 }
                 finally
                 {
@@ -80,6 +101,9 @@ namespace BulkCrapUninstaller
 
         private static void ProcessShutdown()
         {
+            if (_mutex == null)
+                return;
+
             if (!IsRestarting && !_mutex.SafeWaitHandle.IsClosed)
                 _mutex.ReleaseMutex();
             _mutex.Dispose();
