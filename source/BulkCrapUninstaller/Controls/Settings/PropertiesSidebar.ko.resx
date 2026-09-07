@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>등록 안 된 응용 프로그램들을 표시</value>
+  </data>
+  <data name="checkBoxOrphans.ToolTip" xml:space="preserve">
+    <value>등록된 제거 프로그램이 없는 응용 프로그램들을 표시합니다. 이러한 응용 프로그램은 대부분의 프로그램 제거 관리 도구에서는 보이지 않지만, 여전히 저장 공간을 차지합니다. 등록되지 않은 항목은 빨간색으로 표시됩니다.
+
+경고: 이러한 응용 프로그램들을 제거하기 전에 다시 한번 확인하십시오. 여전히 필요한 응용 프로그램일 수 있습니다!</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>빠져 있는 언인스톨러들 도드라지게 하기</value>
+  </data>
+  <data name="checkBoxInvalidTest.ToolTip" xml:space="preserve">
+    <value>깨졌거나 누락된 제거 프로그램들은 회색으로 보여줍니다.</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>인증된 제거 프로그램들을 강조 표시</value>
+  </data>
+  <data name="checkBoxCertTest.ToolTip" xml:space="preserve">
+    <value>인증된 제거 프로그램들을 색상으로 구분여 보여집니다.
+인증서 검증이 올바르게 끝나면 녹색을, 그렇지 않으면 파란색으로 보여집니다.
+
+경고: 검증에는 시간이 오래 걸릴 수 있습니다.</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.Text" xml:space="preserve">
+    <value>마이크로소프트 제품들은 숨김</value>
+  </data>
+  <data name="checkBoxListHideMicrosoft.ToolTip" xml:space="preserve">
+    <value>마이크로소프트에서 낸 모든 제품들을 걸러내어 숨깁니다. 아주 간단합니다.</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>시스템 구성 요소들을 표시</value>
+  </data>
+  <data name="checkBoxListSysComp.ToolTip" xml:space="preserve">
+    <value>일부 제거 프로그램은 "시스템 구성 요소"로 표시되어 소프트웨어 추가/제거 목록에서 숨겨질 수 있습니다.
+드라이버들은 종종 이러한 꼬리표로 표시됩니다.</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>보호된 항목들을 표시</value>
+  </data>
+  <data name="checkBoxListProtected.ToolTip" xml:space="preserve">
+    <value>"NoRemove" 꼬리표가 붙은 보호된 항목들은 만든이가 제거하지 않기를 권장한다는 뜻입니다.</value>
+  </data>
+  <data name="checkBoxTweaks.Text" xml:space="preserve">
+    <value>조정 사항들을 표시</value>
+  </data>
+  <data name="checkBoxShowUpdates.Text" xml:space="preserve">
+    <value>업데이트들을 표시</value>
+  </data>
+  <data name="checkBoxShowUpdates.ToolTip" xml:space="preserve">
+    <value>다른 응용 프로그램들의 업데이트 프로그램들입니다. 보통 해당 응용 프로그램과 함께 제거되므로 무시해도 됩니다.</value>
+  </data>
+  <data name="checkBoxWinFeature.Text" xml:space="preserve">
+    <value>윈도우즈 기능들을 표시</value>
+  </data>
+  <data name="checkBoxShowStoreApps.Text" xml:space="preserve">
+    <value>윈도우즈 스토어 앱들을 표시</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>필터</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.Text" xml:space="preserve">
+    <value>체크 박스로 선택</value>
+  </data>
+  <data name="checkBoxViewCheckboxes.ToolTip" xml:space="preserve">
+    <value>목록의 선택 방식을 체크 상자로 바꿉니다. 이렇게 하면 한 번 클릭으로 모든 선택이 풀리지 않아 더 안전해집니다.
+
+여러 항목들을 드래그하여 선택한 뒤 스페이스 바를 눌러 선택할 수도 있습니다.</value>
+  </data>
+  <data name="checkBoxViewGroups.Text" xml:space="preserve">
+    <value>항목들을 무더기로 보이기</value>
+  </data>
+  <data name="checkBoxViewGroups.ToolTip" xml:space="preserve">
+    <value>목록 정렬 기준에 따라 항목들을 묶어서 보여줍니다.
+여러 열에서의 묶어보기는 지능형 걸러내기를 씁니다.</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.Text" xml:space="preserve">
+    <value>특별한 언인스톨러들을 강조 표시</value>
+  </data>
+  <data name="checkBoxHighlightSpecial.ToolTip" xml:space="preserve">
+    <value>윈도우즈 스토어 앱들이나 윈도우즈 기능 같은 특별한 응용 프로그램들은 색으로 구분하여 보여줍니다.</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>목록 보기 설정들</value>
+  </data>
+</root>

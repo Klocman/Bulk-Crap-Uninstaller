@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>...복원 지점을 생성하고 있음</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>...찌꺼기 파일 검색하고 있음</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>...제거 프로그램 목록을 채우고 있음</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>...찌꺼기 파일 제거하고 있음</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>...업데이트를 검색하고 있음</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>검색 조건과 일치하는 항목이 없습니다.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>BCUninstaller 내보내기
+게시자 | 판번호 | 날짜 | 크기 | 레지스트리 | 제거 프로그램 유형 | 제거 문자열 | 조용한 제거 문자열 | 주석</value>
+  </data>
+  <data name="StrIsPortable" xml:space="preserve">
+    <value>이동식</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>API 호출 실패</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>레지스트리 백업에 실패했는데, 그래도 계속하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>오류 세부 정보: 
+</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>찌꺼기 파일을 제거</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value> 
+ 
+오류 세부 정보:
+</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>계속하기 전에 레지스트리 백업을 만둘겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>나중에 두 번 클릭하여 모든 변경 사항을 롤백할 수 있습니다.
+
+파일과 디렉토리는 휴지통으로 이동되며, 거기서 복원할 수 있습니다.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>작업 실패</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>이 작업에는 하나의 항목만 선택해야 합니다</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>목록에서 정확히 하나의 제거 프로그램을 선택하십시오. 확인란을 사용 중인 경우 체크되어 있는지 확인하십시오.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>업데이트를 검색</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>온라인 콘텐츠를 열기</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>인터넷에 연결할 수 없습니다. 사용 가능한 네트워크가 없습니다.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>네트워크 케이블이 연결되어 있는지 확인하십시오. 
+와이파이를 사용하는 경우 신호 강도가 좋은지 확인하십시오.
+</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>피드백을 제출</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>BCU에 관한 피드백을 보내겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>1분도 걸리지 않지만 개발에 큰 도움이 됩니다! 버그 보고, 기능 요청, 또는 단순한 감사 인사 등 어떠한 피드백이든 환영합니다!
+상단 메뉴 모음(도움말 -&gt; 피드백 제출)에서 나중에 보낼 수 있습니다.
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>현재 판이 최신판입니다</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>현재 업데이트를 찾을 수 없으며, 최신판을 사용하고 있습니다.
+
+추가하고 싶은 기능이나 수정할 버그가 있으신가요? "도움말 -&gt; 피드백 제출" 메뉴를 사용하여 피드백을 보내주십시오.
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>업데이트를 확인하는 동안 오류가 발생했습니다</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>BCUninstaller가 방화벽에서 차단되어 있지 않은지, 인터넷에 정상적으로 연결되어 있는지 확인하십시오.
+
+</value>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>새로운 판번호 {0}이(가) 사용 가능합니다. 지금 업그레이드하겠습니까?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>BCUninstaller가 자동으로 업데이트를 다운로드하고 재시작 후 적용합니다. 이 과정에서 설정이 손실될 수 있으니 참고하시기 바랍니다.
+
+바뀐 내역:
+- {0}
+
+경고: 업데이트 중에 BCU 디렉토리 내의 "Update" 폴더와 "Update.zip" 파일이 삭제됩니다.
+</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Msi를 사용하여 제거</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>선택한 항목을 MsiExec 설치 프로그램으로 제거할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>선택한 제거 프로그램에 MsiExec와 함께 사용할 유효한 GUID가 없습니다.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>현재 제거 작업을 중지</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>현재 실행 중인 작업을 정말 중지하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>작업을 조기에 중지해도 변경 사항은 되돌려지지 않습니다. 현재 실행 중인 제거 프로그램은 중지되지 않으며, 작업이 완료될 때까지 기다립니다.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>복원 지점을 생성</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>새로운 복원 지점을 생성하지 못했습니다</value>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value>x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value>디버그</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>제거 진행 상황</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>이제 컴퓨터를 두고 자리를 비우셔도 됩니다</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>남은 제거 프로그램들은 사용자 개입 없이 완료될 것입니다. 혹시라도 제거 프로그램 중 하나가 충돌을 일으킬 수 있으므로 가끔씩 확인하는 것이 좋습니다.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>찌꺼기/잔여물 제거</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>신뢰도가 낮은 항목을 정말 수정하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>'좋음'보다 낮은 신뢰도로 표시된 항목을 제거하는 것은 매우 위험할 수 있습니다! 모든 단일 항목이 삭제해도 안전한지 확인하는 것이 좋습니다.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>레지스트리에서 키들을 제거</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>선택한 제거 프로그램 항목을 정말 제거하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>다음 항목들이 레지스트리에서 제거되며 제거 프로그램 목록에서 사라지지만, 프로그램 자체가 제거되지는 않습니다.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>내보내기 실패</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>내보낸 데이터를 저장하는 동안 오류가 발생했습니다</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>오류가 지속되면 바탕 화면과 같은 다른 디렉토리에 저장을 시도해 보십시오.</value>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>BCUninstaller가 {0}개의 응용 프로그램을 제거하는 중입니다</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>제거 프로그램의 이름을 변경</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>공급된 이름이 비어 있거나 잘못된 문자가 포함되어 있습니다</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>다음 문자 중 일부가 포함되어 있지 않은지 확인하십시오:
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>수행된 제거 작업에서 찌꺼기 파일이 있는지 확인하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>이 기능은 작동 방식을 이해하는 파워 사용자만을 위한 것입니다. 이러한 파일을 제거할 필요는 없으며 시스템 성능에 유의미한 영향을 미치지 않습니다.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>찌꺼기 파일을 찾지 못했습니다</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>찌꺼기 파일을 찾지 못했습니다. 여전히 잔여물이 남아있을 수 있으므로 BleachBit 같은 임시 파일 정리기를 실행해 볼 수 있습니다.</value>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>클립보드에 복사할 내용이 없습니다. 선택한 제거 프로그램에 이 정보가 없거나 아무것도 선택하지 않았습니다.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>클립보드에 복사</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>디렉토리 열기</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>이 작업은 {0}개의 디렉토리를 한 번에 엽니다. 계속하겠습니까?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>온라인에서 검색</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>검색할 내용이 없습니다</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>BCUninstaller를 제거</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>BCUninstaller를 정말 제거하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>떠난다니 아쉽습니다!
+1~2분 정도 여유가 있다면 제 누리집(http://klocmansoftware.weebly.com/)에 BCU를 제거한 이유를 남겨주세요. 
+타당한 문제점들은 최선을 다해 수정하겠습니다.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>계속하기 전에 복원 지점을 만드겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>제거하려는 응용 프로그램이 중요하거나 시스템 안정성에 필요한지 확실하지 않은 경우 복원 지점을 만드는 것이 좋습니다. 
+ 절차 후 문제가 발생하면 시스템 복원을 사용하여 변경 사항을 롤백할 수 있습니다.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>검색 페이지를 여는 동안 오류가 발생했습니다</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>제거 목록을 저장</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>목록을 파일로 저장하지 못했습니다</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>모든 응용 프로그램 설정을 정말 초기화하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>일부 응용 프로그램은 조용히 제거할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>일부 항목이 보호되어 수정할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>선택한 항목이 보호되어 수정할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>URL을 여는 동안 오류가 발생했습니다</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>현재 선택 항목을 유지하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>디렉토리를 여는 동안 오류가 발생했습니다</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>선택한 파일을 불러오기를 하지 못했습니다</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>선택된 제거 프로그램이 없어 제거할 내용이 없습니다</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>제거 프로그램들을 실행</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>응용 프로그램을 제거하려면 먼저 목록 보기에서 선택해야 합니다. 확인란을 사용 중인 경우 체크되어 있는지 확인하십시오.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>현재 선택 항목을 유지하도록 선택하면 열린 목록들과 병합됩니다</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>이 작업은 {0}개의 URL을 한 번에 엽니다. 계속하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>URL들을 열기</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>열 URL 없음</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>보호된 항목을 수정</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>영향을 받는 항목: {0}
+
+이 항목들을 수정하려면 설정 사이드바에서 제거 프로그램 보호를 비활성화해야 합니다. 원하는 경우 작업에서 이 항목들을 제거하고 다른 항목을 계속 진행할 수 있습니다.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>보호된 항목: {0}
+
+이 항목을 수정하려면 설정 패널에서 제거 프로그램 보호를 비활성화해야 합니다.
+</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>다음 항목들에 조용한 제거 프로그램이 누락되어 있습니다: {0}
+
+이 항목들에 대해 "일반" 제거 프로그램을 사용하겠습니까, 아니면 작업에서 제거하겠습니까?
+</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>조용한 제거</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>기본 설정을 복원</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>모든 설정이 영구적으로 손실됩니다. 이 작업을 완료하려면 BCUninstaller를 다시 시작해야 합니다.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>제거 목록을 열기</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>복원 지점이 생성되지 않았으므로 변경 사항을 복원할 수 없습니다! 그래도 제거를 계속하겠습니까?</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>"{0}" 이름 변경하고 있음</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>선택한 항목의 이름을 변경</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>작업 완료됨</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>제거하고 있음</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>선택을 기억</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>파일이 존재하지 않습니다.</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>표시할 내용이 없습니다. 이 응용 프로그램은 윈도우즈 설치 프로그램(MsiExec)를 사용하여 제거됩니다.</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>값</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>비어 있음</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>GUID 발견됨</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>GUID 누락됨</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>...아래 까지 선택</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>파일을 찾을 수 없습니다.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>...제거 후 명령을 실행하고 있음</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>...제거 전 명령을 실행하고 있음</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>준비</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0}개의 제거 프로그램이 선택됨</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>총 {0}개의 제거 프로그램들, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>다음 명령 실행에 실패했습니다:
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>외부 실행 실패</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>기본값</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>일부 설정은 응용 프로그램을 다시 시작할 때까지 적용되지 않습니다.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>새로운 설정을 적용하기 위해 BCU를 다시 시작하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>응용 프로그램 설정들을 변경</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>인증서가 누락되었습니다</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>감지된 응용 프로그램을 처리하고 있음, {0}개 남음...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>"종료"를 선택하면 실행 중인 제거 프로그램이 즉시 닫히며 제거가 완료되지 않을 수 있습니다. 대개 제거를 마치기 위해 제거 프로그램을 다시 실행하는 것이 가능합니다.
+
+또는 이 프로세스 대기를 건너뛸 수도 있습니다. 건너뛰면 제거 프로그램이 계속 작동하는 동안 작업이 다음 항목으로 이동합니다. 건너뛴 프로세스가 끝날 때까지 일부 제거 프로그램이 실행되지 못할 수 있음에 유의하십시오.
+
+</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>현재 실행 중인 제거 프로그램 대기를 건너뛰겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>현재 실행 중인 작업을 건너뛰기</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>다른 제거 작업이 이미 실행 중입니다. 완료될 때까지 기다린 후 다시 시도하십시오.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>평점: {0}
+
+좋음: {1}
+
+나쁨: {2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>평점 세부 정보</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>이 응용 프로그램에는 유효한 레지스트리 항목이 없습니다</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>이 응용 프로그램에는 유효한 제거 프로그램이 없습니다</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>윈도우즈 기능들 ...을 불러오고 있음</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>시작 프로그램 정보를 새로 고치는 중...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>열 디렉토리가 없습니다</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>사용 불가</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>평점을 사용할 수 없음</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>먼저 설정에서 평점을 활성화해야 합니다.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>올바르게 설치되지 않은 응용 프로그램은 평가할 수 없습니다.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0}개의 응용 프로그램들</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>평균 평점: {0}; 내 평점: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>충돌로 인해 다음 제거 프로그램들을 실행하지 못했습니다. 다른 제거 프로그램이 끝날 때까지 기다린 후 다시 시도하십시오. 
+{0}
+
+설정에서 충돌 감지를 비활성화할 수 있지만 권장하지 않습니다.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>강제 제거</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>일부 제거 프로그램을 실행하지 못했습니다</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>.NET Framework v4.0을 찾을 수 없음</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>.NET Framework v4.0을 찾을 수 없어 일부 기능이 비활성화됩니다</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>v4.0 프레임워크는 선택 사항이지만 권장됩니다. 프레임워크에 의존하는 기능은 설치할 때까지 비활성화됩니다.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>일부 제거 실패</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>실패한 조용한 제거 프로그램들을 일반 제거 방식으로 다시 실행하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>다음 제거 프로그램들이 다시 시작됩니다:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>지정된 디렉토리 스캔 중...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>제거하려는 응용 프로그램이 있는 디렉토리를 선택하십시오.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>디렉토리에서 제거</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>지정한 디렉토리에서 응용 프로그램을 찾을 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>올바른 디렉토리를 선택했는지, 응용 프로그램의 실행 파일이 여전히 존재하는지 확인하십시오.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>{0}의 제거 프로그램을 찾았습니다</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>이 제거 프로그램을 실행하겠습니까?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>발급자</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>주체</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>보관됨</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>확장명</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>표시 이름</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>발급자 이름</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>만료일</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>시작일</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>개인 키</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>개인 키 있음</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>공개 키</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>원시 데이터</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>일련번호</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>주체 이름</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>서명 알고리듬</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>판번호</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>지문</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>설정을 저장하지 못했습니다</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>...을 마무리하고 있음</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>아이콘들을 불러오고 있음</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>응용 프로그램을 검색</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>유효한 파일이나 디렉토리가 선택되지 않았습니다. 접근 권한이 있는지, 시스템 파일로 표시되어 있지 않은지 확인하십시오.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>응용 프로그램을 검색</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>{0} 안에서 응용 프로그램을 찾지 못했습니다</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>응용 프로그램을 수정</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>선택한 응용 프로그램을 수정할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>선택한 응용 프로그램에 지정된 수정 명령이 없습니다.
+설치 설정을 변경하려면 제거 후 다시 설치해야 할 수 있습니다.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>제거 목록을 저장</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>열린 제거 목록에 대한 변경 사항을 저장하겠습니까?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>열린 제거 목록에 닫으면 손실될 저장되지 않은 변경 사항이 있습니다.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>제거할 응용 프로그램이 있는 디렉토리를 선택하십시오.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>백업을 저장할 위치를 선택하십시오. 새 디렉토리가 생성됩니다.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>BCU가 v{0}로 업데이트되었습니다!</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>BCU 버전 {0}에 오신 것을 환영합니다!</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>{0}초 후에 PC를 절전 모드로 전환합니다. 취소하려면 절전 모드 확인란을 해제하십시오.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>아무것도 하지 않음</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>속성들을 열기</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>제거들</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Title" xml:space="preserve">
+    <value>{0} 이름을 변경할 수 없습니다</value>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Details" xml:space="preserve">
+    <value>이 제거 프로그램 종류는 ({0})로 이름 변경을 지원하지 않습니다 .</value>
+  </data>
+  <data name="CertificateColumn_NotFound" xml:space="preserve">
+    <value>찾을 수 없음</value>
+  </data>
+  <data name="CertificateColumn_Verified" xml:space="preserve">
+    <value>검증됨</value>
+  </data>
+  <data name="CertificateColumn_Unverified" xml:space="preserve">
+    <value>검증되지 않음</value>
+  </data>
+  <data name="IntegrityColumn_Invalid" xml:space="preserve">
+    <value>제거 프로그램 없음</value>
+  </data>
+  <data name="IntegrityColumn_Unregistered" xml:space="preserve">
+    <value>레지스트리 없음</value>
+  </data>
+  <data name="IntegrityColumn_Good" xml:space="preserve">
+    <value>좋음</value>
+  </data>
+</root>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>BCUninstaller를 써 주셔서 고맙습니다!</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>이 무료 오픈 소스 도구가 도움 되었다면, 잠시 시간을 내어 도움을 주시면 감사하겠습니다! 친구들에게 알려주고, 소셜 미디어에 공유하고, 피드백을 남겨주세요. 작은 도움이라도 큰 힘이 됩니다!</value>
+  </data>
+  <data name="buttonSendFeedback2.Text" xml:space="preserve">
+    <value>피드백을 보냄</value>
+  </data>
+  <data name="buttonRate.Text" xml:space="preserve">
+    <value>평점 (페이지 하단)</value>
+  </data>
+  <data name="buttonTwitter.Text" xml:space="preserve">
+    <value>트위터로 공유</value>
+  </data>
+  <data name="p1FeedbackHeading.Text" xml:space="preserve">
+    <value>문제점이나 누락된 기능이 있나요?</value>
+  </data>
+  <data name="p1FeedbackDesc.Text" xml:space="preserve">
+    <value>BCU를 쓰다가 문제가 발생했거나 새로운 기능을 제안하고 싶으시면 다음 링크를 확인해 주세요:</value>
+  </data>
+  <data name="buttonSubmitGithub.Text" xml:space="preserve">
+    <value>깃허브에 제출 (계정 필요)</value>
+  </data>
+  <data name="buttonSendFeedback.Text" xml:space="preserve">
+    <value>피드백을 보냄</value>
+  </data>
+  <data name="p1HelpHeading.Text" xml:space="preserve">
+    <value>도와주겠어요?</value>
+  </data>
+  <data name="p1HelpDesc.Text" xml:space="preserve">
+    <value>프로그래머가 아니어도 도움을 줄 수 있습니다! 업데이트를 더 빠르게 하기 위해 기부해 주거나, BCU를 모국어로 번역할 수도 있습니다. 작은 도움이라도 커다란 힘이 됩니다!</value>
+  </data>
+  <data name="buttonTranslate.Text" xml:space="preserve">
+    <value>BCU를 번역</value>
+  </data>
+  <data name="buttonIssues.Text" xml:space="preserve">
+    <value>깃허브의 이슈</value>
+  </data>
+  <data name="checkBoxNeverShow.Text" xml:space="preserve">
+    <value>이 창을 다시는 표시하지 않음</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>피드백을 보냄</value>
+  </data>
+</root>

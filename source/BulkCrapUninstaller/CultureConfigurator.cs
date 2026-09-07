@@ -127,6 +127,10 @@ namespace BulkCrapUninstaller
                 // ja - Japanese
                 "ja-JP",
 
+                // ko - Korean
+                //"ko-KP", // North
+                "ko-KR", // South
+
                 // nl - Dutch
                 "nl-NL",
                 "nl-BE",
