@@ -6638,12 +6638,16 @@ namespace BrightIdeasSoftware
             // When the underlying control is destroyed, we need to recreate and reconfigure its tooltip
             if (cellToolTip != null)
             {
-                cellToolTip.PushSettings();
-                BeginInvoke((MethodInvoker)delegate
+                try
                 {
-                    UpdateCellToolTipHandle();
-                    cellToolTip.PopSettings();
-                });
+                    cellToolTip.PushSettings();
+                    BeginInvoke((MethodInvoker)delegate
+                    {
+                        UpdateCellToolTipHandle();
+                        cellToolTip.PopSettings();
+                    });
+                }
+                catch (OverflowException) { }
             }
 
             return false;
@@ -11839,7 +11843,7 @@ namespace BrightIdeasSoftware
         protected override void RescaleConstantsForDpi(int deviceDpiOld, int deviceDpiNew)
         {
             base.RescaleConstantsForDpi(deviceDpiOld, deviceDpiNew);
-            
+
             SuspendLayout();
             BeginUpdate();
 
