@@ -24,12 +24,6 @@ jobs:
            msbuild source\BulkCrapUninstaller.sln /t:Publish /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
            /p:filealignment=512 /p:DeployOnBuild=true /p:PublishSingleFile=False /p:SelfContained=False /p:PublishReadyToRun=false /p:PublishTrimmed=False
            /p:PublishProtocol=FileSystem /p:PublishDir="${{ github.workspace }}\bin\publish"
-
-    - name: Restore ARM64
-      run: msbuild source\BulkCrapUninstaller.sln /t:Restore /p:Configuration=Release /p:Platform=ARM64 /verbosity:minimal
-
-    - name: Build ARM64
-      run: msbuild source\BulkCrapUninstaller.sln /t:Build /p:Configuration=Release /p:Platform=ARM64 /m /verbosity:minimal
            
     - name: Build launcher
       run: >
