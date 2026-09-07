@@ -44,6 +44,7 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Platform)'=='ARM64'">
 		<RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+		<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
