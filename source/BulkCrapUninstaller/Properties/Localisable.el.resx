@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoadingDialogTitleCreatingRestorePoint" xml:space="preserve">
+    <value>Δημιουργία ενός σημείου επαναφοράς...</value>
+  </data>
+  <data name="LoadingDialogTitleLookingForJunk" xml:space="preserve">
+    <value>Αναζήτηση για υπολείμματα...</value>
+  </data>
+  <data name="LoadingDialogTitlePopulatingList" xml:space="preserve">
+    <value>Δημιουργία λίστας απεγκατάστασης...</value>
+  </data>
+  <data name="LoadingDialogTitleRemovingJunk" xml:space="preserve">
+    <value>Διαγραφή υπολειμμάτων...</value>
+  </data>
+  <data name="LoadingDialogTitleSearchingForUpdates" xml:space="preserve">
+    <value>Αναζήτηση για ενημερώσεις...</value>
+  </data>
+  <data name="SearchNothingFoundMessage" xml:space="preserve">
+    <value>Δεν υπάρχουν καταχωρήσεις που να ταιριάζουν με το κριτήριο αναζήτησής σας.</value>
+  </data>
+  <data name="StrExportHeader" xml:space="preserve">
+    <value>Εξαγωγή BCUninstaller
+Εκδότης | Έκδοση | Ημερομηνία | Μέγεθος | Μητρώο | Τύπος απεγκαταστάτη | Κείμενο απεγκατάστασης | Κείμενο σιωπηρής απεγκατάστασης | Σχόλια</value>
+  </data>
+  <data name="SysRestoreGenericError" xml:space="preserve">
+    <value>Αποτυχία στην κλήση API</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Message" xml:space="preserve">
+    <value>To αντίγραφο ασφαλείας απέτυχε, θέλετε να συνεχίσουμε έτσι κι αλλιώς ?</value>
+  </data>
+  <data name="MessageBoxes_BackupFailedQuestion_Details" xml:space="preserve">
+    <value>Λεπτομέρειες σφάλματος:</value>
+  </data>
+  <data name="MessageBoxes_Title_Leftover_removal" xml:space="preserve">
+    <value>Αφαίρεση υπολειμμάτων</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Message" xml:space="preserve">
+    <value>Θέλετε να δημιουργήσετε ένα σημείο επαναφοράς πρίν συνεχίσετε ?</value>
+  </data>
+  <data name="MessageBoxes_BackupRegistryQuestion_Details" xml:space="preserve">
+    <value>Θα μπορείτε να αναιρέσετε όλες τις αλλαγές με διπλό κλικ σε αυτό στη συνέχεια. Τα αρχεία και οι φάκελοι θα μετακινηθούν στον κάδο ανακύκλωσης, από όπου μπορείτε να τα επαναφέρετε.</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Title" xml:space="preserve">
+    <value>Η ενέργεια απέτυχε</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Message" xml:space="preserve">
+    <value>Πρέπει να επιλέξετε μόνο μία καταχώρηση για αυτή την ενέργεια</value>
+  </data>
+  <data name="MessageBoxes_CanSelectOnlyOneItemInfo_Details" xml:space="preserve">
+    <value>Επιλέξτε μόνο έναν απεγκαταστάτη από τη λίστα. Αν χρησιμοποιείτε πλάισια ελέγχου σιγουρευτείτε ότι τα τσεκάρατε.</value>
+  </data>
+  <data name="MessageBoxes_Title_Search_for_updates" xml:space="preserve">
+    <value>Αναζήτηση για ενημερώσεις</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Open_online_content" xml:space="preserve">
+    <value>Άνοιγμα του on-line περιεχομένου</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Message" xml:space="preserve">
+    <value>Δε μπορεί να γίνει σύνδεση στο internet, δεν υπάρχουν διαθέσιμα δίκτυα.</value>
+  </data>
+  <data name="MessageBoxes_NoNetworkConnected_Details" xml:space="preserve">
+    <value>Σιγουρευτείτε ότι το καλώδιο σύνδεσης είναι συνδεδεμένο. Αν χρησιμοποιείτε Wi-Fi σιγουρευτείτε ότι έχετε καλό σήμα.</value>
+  </data>
+  <data name="MessageBoxes_Title_Submit_feedback" xml:space="preserve">
+    <value>Υποβολή σχολίων</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Message" xml:space="preserve">
+    <value>Θέλετε να στείλετε σχόλια σχετικά με το BCU ?</value>
+  </data>
+  <data name="MessageBoxes_AskToSubmitFeedback_Details" xml:space="preserve">
+    <value>Αυτό θα διαρκέσει ένα λεπτό αλλά θα βοηθήσει πολύ την ανάπτυξη ! Όλα τα σχόλια εκτιμούνται, είτε αναφορά σφάλματος, είτε αίτημα νέας δυνατότητας ή απλά ευχαριστήρια !
+
+Μπορείτε να το στείλετε αργότερα από την πάνω μπάρα μενού
+(Βοήθεια-&gt;Υποβολή σχολίων).</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Message" xml:space="preserve">
+    <value>Η τρέχουσα έκδοση είναι ενημερωμένη</value>
+  </data>
+  <data name="MessageBoxes_UpdateUptodate_Details" xml:space="preserve">
+    <value>Δε βρέθηκαν ενημερώσεις αυτή τη φορά, έχετε την τελευταία έκδοση.
+
+Θέλετε να προστεθεί κάποια λειτουργία ή να διορθωθεί ένα σφάλμα ? Παρακαλώ στείλτε μου σχόλια χρησιμοποιώντας το μενού "Βοήθεια-&gt;Υποβολή σχολίων".</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Message" xml:space="preserve">
+    <value>Προέκυψε ένα σφάλμα κατά τον έλεγχο για ενημερώσεις</value>
+  </data>
+  <data name="MessageBoxes_UpdateFailed_Details" xml:space="preserve">
+    <value>Σιγουρευτείτε ότι το BCUninstaller δεν είναι μπλοκαρισμένο από το τείχος προστασίας σας και ότι είστε συνδεδεμένοι στο internet.</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Title" xml:space="preserve">
+    <value>Απεγκατάσταση με χρήση Msi</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Message" xml:space="preserve">
+    <value>Η επιλεγμένη καταχώρηση δε μπορεί να απεγκατασταθεί με χρήση MsiExec εγκαταστάτη</value>
+  </data>
+  <data name="MessageBoxes_UninstallMsiGuidMissing_Details" xml:space="preserve">
+    <value>Ο επιλεγμένος απεγκαταστάτης δεν έχει έγκυρο Guid για χρήση με MsiExec.</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Title" xml:space="preserve">
+    <value>Διακοπή της τρέχουσας εργασίας απεγκατάστασης</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Message" xml:space="preserve">
+    <value>Θέλετε σίγουρα να σταματήσετε την τρέχουσα εργασία απεγκατάστασης ?</value>
+  </data>
+  <data name="MessageBoxes_TaskStopConfirmation_Details" xml:space="preserve">
+    <value>Η πρόωρη διακοπή της εργασίας δεν θα αναιρέσει καμία αλλαγή. Το πρόγραμμα απεγκατάστασης που εκτελείται αυτή τη στιγμή δεν θα διακοπεί, η εργασία θα περιμένει να ολοκληρωθεί.</value>
+  </data>
+  <data name="MessageBoxes_Title_Create_restore_point" xml:space="preserve">
+    <value>Δημιουργία σημείου επαναφοράς</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Message" xml:space="preserve">
+    <value>Αποτυχία δημιουργίας ενός νέου σημείου επαναφοράς</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Title" xml:space="preserve">
+    <value>Πρόοδος απεγκατάστασης</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Message" xml:space="preserve">
+    <value>Μπορείτε τώρα να φύγετε από τον υπολογιστή</value>
+  </data>
+  <data name="MessageBoxes_CanWalkAwayInfo_Details" xml:space="preserve">
+    <value>Οι εναπομείναντες απεγκαταστάτες πρέπει να ολοκληρωθούν χωρίς καμία παρεμβολή του χρήστη. Πρέπει ακόμη να ελέγχετε που και που για την περίπτωση που κάποιος απεγκαταστάτης κρασάρει.</value>
+  </data>
+  <data name="MessageBoxes_Title_Junk_Leftover_removal" xml:space="preserve">
+    <value>Διαγραφή Σκουπιδιών/Υπολειμμάτων</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Message" xml:space="preserve">
+    <value>Θέλετε πραγματικά να τροποποιήσετε τα στοιχεία χαμηλής αξιοπιστίας ?</value>
+  </data>
+  <data name="MessageBoxes_ConfirmLowConfidenceQuestion_Details" xml:space="preserve">
+    <value>Η αφαίρεση στοιχείων επισημασμένων με αξιοπιστία χαμηλότερης της Καλής μπορεί να είναι επικίνδυνη ! Προτείνεται να επιβεβαιώσετε ότι κάθε ένα στοιχείο είναι ασφαλές να διαγραφεί.</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Title" xml:space="preserve">
+    <value>Διαγραφή κλειδιών μητρώου</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Message" xml:space="preserve">
+    <value>Θέλετε σίγουρα να αφαιρέσετε τις επιλεγμένες καταχωρήσεις απεγκαταστατών ?</value>
+  </data>
+  <data name="MessageBoxes_DeleteRegKeysConfirmation_Details" xml:space="preserve">
+    <value>Τα ακόλουθα στοιχεία θα αφαιρεθούν από το μητρώο και θα εξαφανιστούν από τη λίστα απεγκαταστατών, αλλά δεν απεγκατασταθούν.
+
+{0}</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Title" xml:space="preserve">
+    <value>Η εξαξωγή απέτυχε</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Message" xml:space="preserve">
+    <value>Ένα σφάλμα προέκυψε κατά την αποθήκευση των εξαγόμενων δεδομένων</value>
+  </data>
+  <data name="MessageBoxes_ExportFailed_Details" xml:space="preserve">
+    <value>Αν το σφάλμα συνεχίζει προσπαθείστε να αποθηκεύσετε σε διαφορετικό κατάλογο, π.χ σρην επιφάνεια εργασίας.</value>
+  </data>
+  <data name="MessageBoxes_Title_Rename_uninstaller" xml:space="preserve">
+    <value>Μετονομασία απεγκαταστάτη</value>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Message" xml:space="preserve">
+    <value>Το επιλεγμένο όνομα είναι κενό ή περιέχει λανθασμένους χαρακτήρες</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Message" xml:space="preserve">
+    <value>Θέλετε να κοιτάξετε για υπολείμματα από την ολοκληρωμένη απεγκατάσταση/σεις ?</value>
+  </data>
+  <data name="MessageBoxes_LookForJunkQuestion_Details" xml:space="preserve">
+    <value>Παρακαλώ σημειώστε ότι αυτή η δυνατότητα απευθύνεται μόνο σε έμπειρους χρήστες που καταλαβαίνουν πώς λειτουργεί. Δεν είναι παραίτητο να αφαιρεθούν αυτά τα αρχεία και δεν θα επηρεάσουν την επίδοση του συστήματος με κανέναν ιδιαίτερο τρόπο.</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Message" xml:space="preserve">
+    <value>Δε βρέθηκαν υπολείμματα</value>
+  </data>
+  <data name="MessageBoxes_NoJunkFoundInfo_Details" xml:space="preserve">
+    <value>Δε βρέθηκαν υπολείμματα Ενδέχεται να υπάρχουν ακόμη κάποια κατάλοιπα, οπότε μπορείτε να εκτελέσετε ένα πρόγραμμα καθαρισμού προσωρινών αρχείων όπως το BleachBit.</value>
+  </data>
+  <data name="MessageBoxes_Error_details" xml:space="preserve">
+    <value>
+
+Λεπτομέρειες σφάλματος:
+</value>
+    <comment>Add space or newline afterwards and two newlines before</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Message" xml:space="preserve">
+    <value>Νέα έκδοση {0} είναι διαθέσιμη, θέλετε να γίνει αναβ΄θμιση τώρα ?</value>
+    <comment>0 is version number</comment>
+  </data>
+  <data name="MessageBoxes_UpdateAskToDownload_Details" xml:space="preserve">
+    <value>Το BCUninstaller θα κατεβάζει αυτόματα την ενημέρωση και θα την εφαρμόζει μετά από μία επανεκκίνηση. Παρακαλώ σημειώστε ότι μπορεί να χάσετε τις ρυθμίσεις σας κατά την διαδικασία.
+
+Αναφοράαλλαγών:
+- {0}
+
+Προειδοποίηση: Κατά τη διάρξεια της ενημέρωσης ο φάκελος "Update" και το αρχείο "Update.zip" μέσα στον κατάλογο του BCU θα διαγραφεί.</value>
+    <comment>0 is a list of changes separated by "- "</comment>
+  </data>
+  <data name="Str64Bit" xml:space="preserve">
+    <value> x64</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="StrDebug" xml:space="preserve">
+    <value> DEBUG</value>
+    <comment>keep space in front</comment>
+  </data>
+  <data name="MessageBoxes_GetSystemRestoreDescription" xml:space="preserve">
+    <value>Το BCUninstaller απεγκαθιστά {0) εφαρμογή/ες</value>
+    <comment>0 is the uninstaller count</comment>
+  </data>
+  <data name="MessageBoxes_InvalidNewEntryName_Details" xml:space="preserve">
+    <value>Σιγουρευτείτε ότι δεν έχετε συμπεριλάβει κανέναν από τους ακόλουθους χαρακτήρες:
+{0}</value>
+    <comment>0 is list of characters separated by spaces</comment>
+  </data>
+  <data name="MessageBoxes_NothingToCopy_Message" xml:space="preserve">
+    <value>Δεν υπάρχει τίποτα να αντιγραφεί στο πρόχειρο. Είτε ο επιλεγμένος απεγκαταστάτης έχει αυτό το κομμάτι πληροφοριών είτε δεν επιλέξατε κάτι.</value>
+  </data>
+  <data name="MessageBoxes_Title_Copy_to_clipboard" xml:space="preserve">
+    <value>Αντιγραφή στο πρόχειρο</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_directories" xml:space="preserve">
+    <value>Άνοιγμα καταλόγων</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoriesMessageBox_OpenMultiple" xml:space="preserve">
+    <value>Αυτή η ενέργεια θα ανοίξει {0} καταλόγους κατευθείαν, θέλετε σίγουρα να συνεχίσετε ?</value>
+    <comment>0 is number of directories to open
+</comment>
+  </data>
+  <data name="MessageBoxes_Title_Search_online" xml:space="preserve">
+    <value>Εύρεση στη γραμμή</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineMessageBox_NothingToSearchFor_Message" xml:space="preserve">
+    <value>Τίποτα για αναζήτηση</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Title" xml:space="preserve">
+    <value>Απεγκατάσταση του BCUninstaller</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Message" xml:space="preserve">
+    <value>Θέλετε σίγουρα να απεγκαταστήσετε το BCUninstaller ?</value>
+  </data>
+  <data name="MessageBoxes_SelfUninstallQuestion_Details" xml:space="preserve">
+    <value>Λυπάμαι που φεύγετε ! Αν έχετε 1-2 λεπτά παρακαλώ γράψτε δύο λέξεις γιατί απεγκαθιστάται το BCU στο site μου (http://klocmansoftware.weebly.com/). Θα κάνω ό,τι περνάει από το χέρι μου για να διορθώσω τυχόν υπαρκτά προβλήματα.</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Message" xml:space="preserve">
+    <value>Θέλετε να δημιουργήσετε ένα σημείο επαναφοράς πριν συνεχίσετε ?</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreBeginQuestion_Details" xml:space="preserve">
+    <value>Αν δεν είστε σίγουρος αν οι εφαρμογές που απεγκαθιστάται είναι σημαντικές ή απαιτούνται για την σταθερότητα του συστήματος προτείνεται να δημιουργήσετε ένα σημείο επαναφοράς.
+Αν οτιδήποτε κρασάρει μετά την διαδικασία μπορείτε να χρησιμοποιήσετε το Σημείο Επαναφοράς για να αναιρέσετε τις αλλαγές.</value>
+  </data>
+  <data name="MessageBoxes_SearchOnlineError_Message" xml:space="preserve">
+    <value>Ένα σφάλμα προέκυψε κατά το άνοιγμα της σελίδας αναζήτησης</value>
+  </data>
+  <data name="MessageBoxes_Title_Save_Uninstall_List" xml:space="preserve">
+    <value>Αποθήκευση της λίστας απεγκατάστασης</value>
+  </data>
+  <data name="MessageBoxes_SaveUninstallListError_Message" xml:space="preserve">
+    <value>Αποτυχία να αποθηκευτεί η λίστα σε ένα αρχείο</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Message" xml:space="preserve">
+    <value>Θέλετε σίγουρα να διαγράψετε όλες τις ρυθμίσεις της εφαρμογής ?</value>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Message" xml:space="preserve">
+    <value>Καποιες εφαρμογές δε μπορούν να απεγκατασταθούν σιωπηρά</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Message" xml:space="preserve">
+    <value>Κάποιες καταχωρήσεις είναι προστατευμένες και δε μπορούν να τροποποιηθούν</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Message" xml:space="preserve">
+    <value>Η επιλεγμένη καταχώρηση είναι προστατευμένη και δε μπορεί να τροποποιηθεί</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlError_Message" xml:space="preserve">
+    <value>Ένα σφάλμα προέκυψε κατά το άνοιγμα της διεύθυνσης URL</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Message" xml:space="preserve">
+    <value>Θέλετε να διατηρήσετε την τρέχουσα επιλογή ?</value>
+  </data>
+  <data name="MessageBoxes_OpenDirectoryError_Message" xml:space="preserve">
+    <value>Ένα σφάλμα προέκυψε κάτα το άνοιγμα του φακέλου</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListError_Message" xml:space="preserve">
+    <value>Αποτυχία να φορτωθούν τα επιλεγμένα αρχεία</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Message" xml:space="preserve">
+    <value>Δεν επιλέχθηκαν απεγκαταστάτες, τίποτα για απεγκατάσταση</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Title" xml:space="preserve">
+    <value>Εκτέλεση απεγκαταστατών</value>
+  </data>
+  <data name="MessageBoxes_NoUninstallersSelectedInfo_Details" xml:space="preserve">
+    <value>Για να απεγκαταστήσετε εφαρμογές πρέπει πρώτα να τις επιλέξετε από τη λίστα. Αν χρησιμοποιείτε πλαίσια επιλογής, σιγουρευτείτε ότι είναι τσεκαρισμένα.</value>
+  </data>
+  <data name="MessageBoxes_OpenUninstallListQuestion_Details" xml:space="preserve">
+    <value>Αν επιλέξετε να κρατήσετε την τρέχουσα επιλογή θα συγχωνευθούν με την ανοιχτή λίστα/ες</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_OpenMultiple_Message" xml:space="preserve">
+    <value>Αυτή η ενέργεια θα ανοίξει {0} διευθύνσεις URL κατευθείαν, είστε σίγουροι να συνεχίσετε ?</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_urls" xml:space="preserve">
+    <value>Άνοιγμα διευθύνσεων URLs</value>
+  </data>
+  <data name="MessageBoxes_OpenUrlsMessageBox_No_URLs_to_open_Title" xml:space="preserve">
+    <value>Δεν υπάρχουν διευθύνσεις URL για άνοιγμα</value>
+  </data>
+  <data name="MessageBoxes_Title_Modify_protected_items" xml:space="preserve">
+    <value>Τροποποίηση προστατευμένου στοιχείου</value>
+  </data>
+  <data name="MessageBoxes_ProtectedItemsWarningQuestion_Details" xml:space="preserve">
+    <value>Επηρεαζόμενες καταχωρήσεις:
+{0}
+
+Για να τροποιήσετε αυτές τις καταχωρήσεις χρειάζεται να απενεργοποιήσετε την προστασία απεγκαταστάτη από τις ρυθμίσεις της πλαϊνής μπάρας. Μπορείτε να τις αφαιρέσετε από την εργασία και να συνεχίσετε με άλλα στοιχεία αν θέλετε.</value>
+    <comment>0 names of protected uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_ProtectedItemError_Details" xml:space="preserve">
+    <value>Προστατευμένη καταχώρηση: {0}</value>
+    <comment>0 name of protected uninstaller</comment>
+  </data>
+  <data name="MessageBoxes_QuietUninstallersNotAvailableQuestion_Details" xml:space="preserve">
+    <value>Τα ακόλουθα στοιχεία δεν έχουν σιωπηρό απεγκαταστάτη:
+{0}
+
+Θέλετε να χρησιμοποιήσετε τους "ηχηρούς" απεγκαταστάτες για αυτά τα στοιχεία, ή να αφαιρεθούν από την εργασία ?</value>
+    <comment>0 is names of non-quiet uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_Title_Quiet_uninstall" xml:space="preserve">
+    <value>Σιωπηρή απεγκατάσταση</value>
+  </data>
+  <data name="MessageBoxes_Title_Restore_default_settings" xml:space="preserve">
+    <value>Επαναφορά των προεπιλεγμένων ρυθμίσεων</value>
+  </data>
+  <data name="MessageBoxes_ResetSettingsConfirmation_Details" xml:space="preserve">
+    <value>Όλες οι ρυθμίσεις σας θα χαθούν οριστικά. Το BCUninstaller θα επανεκκινηθεί για να ολοκληρωθεί αυτή η ενέργεια.</value>
+  </data>
+  <data name="MessageBoxes_Title_Open_Uninstall_List" xml:space="preserve">
+    <value>Άνοιγμα Λίστας Απεγκατάστασης</value>
+  </data>
+  <data name="MessageBoxes_SysRestoreContinueAfterError_Details" xml:space="preserve">
+    <value>Το σημείο επαναφοράς ΔΕΝ ΔΗΜΙΟΥΡΓΗΘΗΚΕ, δεν θα μπορείτε να αναιρέσετε τις αλλαγές ! Θέλετε να συνεχιστεί η απεγκατάσταση έτσι κι αλλιώς ?</value>
+  </data>
+  <data name="MainWindow_Rename_Description" xml:space="preserve">
+    <value>Μετονομάζεται το "{0}"</value>
+  </data>
+  <data name="MainWindow_Rename_Title" xml:space="preserve">
+    <value>Μετονομασία της επιλεγμένης καταχώρησης</value>
+  </data>
+  <data name="UninstallProgressWindow_TaskDone" xml:space="preserve">
+    <value>Η εργασία ολοκληρώθηκε</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="UninstallProgressWindow_Uninstalling" xml:space="preserve">
+    <value>Απεγκατάσταση</value>
+    <comment>Shown on the status bar</comment>
+  </data>
+  <data name="MessageBoxes_RememberChoiceCheckbox" xml:space="preserve">
+    <value>Απομνημόνευση της επιλογής</value>
+  </data>
+  <data name="PropertiesWindow_Table_Error" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorDoesntExist" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMsi" xml:space="preserve">
+    <value>Τίποτα για εμφάνιση. Η εφαρμογή απεγκαταστάθηκε με χρήση Windows Installer (MsiExec).</value>
+  </data>
+  <data name="PropertiesWindow_Table_Name" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="PropertiesWindow_Table_Value" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Άδειο</value>
+  </data>
+  <data name="GuidFound" xml:space="preserve">
+    <value>Βρέθηκε GUID</value>
+  </data>
+  <data name="GuidMissing" xml:space="preserve">
+    <value>Το GUID λείπει</value>
+  </data>
+  <data name="JunkRemove_SelectionBoxText" xml:space="preserve">
+    <value>Επιλογή κάτω στο...</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Το αρχείο δε βρέθηκε.</value>
+  </data>
+  <data name="LoadingDialogTitlePostUninstallCommands" xml:space="preserve">
+    <value>Εκτέλεση εντολών μετά την απεγκατάσταση...</value>
+  </data>
+  <data name="LoadingDialogTitlePreUninstallCommands" xml:space="preserve">
+    <value>Εκτέλεση εντολών πριν την απεγκατάσταση...</value>
+  </data>
+  <data name="MainWindow_Statusbar_StatusReady" xml:space="preserve">
+    <value>Έτοιμο</value>
+    <comment>Shows up when nothing else is displayed on the status bar.</comment>
+  </data>
+  <data name="MainWindow_Statusbar_StatusSelection" xml:space="preserve">
+    <value>{0} απεγκαταστάτες επιλέχθηκαν</value>
+    <comment>{0} is a number of selected uninstallers</comment>
+  </data>
+  <data name="MainWindow_Statusbar_Total" xml:space="preserve">
+    <value>{0} απεγκαταστάτες σε σύνολο, {1}</value>
+    <comment>{0} is a number of all uninstallers, {1} is a long file size (123 Megabytes)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Message" xml:space="preserve">
+    <value>Η ακόλουθη εντολή απέτυχε να εκτελεστεί:
+{0}</value>
+    <comment>{0} is a command line (c:\example.exe /help)</comment>
+  </data>
+  <data name="MessageBoxes_ExternalCommandFailed_Title" xml:space="preserve">
+    <value>Η εξωτερική εκτέλεση απέτυχε</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Προκαθορισμένη</value>
+    <comment>Used in language select box when you want to use the system language</comment>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Details" xml:space="preserve">
+    <value>Κάποιες ρυθμίσεις δεν θα εφαρμοστούν μέχρι να επανεκκινηθεί η εφαρμογή.</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Message" xml:space="preserve">
+    <value>Θέλετε να επανεκκινηθεί το BCU για να εφαρμοστούν οι νέες ρυθμίσεις ?</value>
+  </data>
+  <data name="MessageBoxes_RestartNeededForSettingChangeQuestion_Title" xml:space="preserve">
+    <value>Αλλαγή ρυθμίσεων εφαρμογής</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorNoCertificate" xml:space="preserve">
+    <value>Το πιστοποιητικό λείπει</value>
+  </data>
+  <data name="MainWindow_Statusbar_ProcessingUninstallers" xml:space="preserve">
+    <value>Επεξεργασία των εντοπισμένων εφαρμογών, {0} απομένουν...</value>
+    <comment>{1} = how many application uninstallers still need to be processed</comment>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Details" xml:space="preserve">
+    <value>Επιλέγοντας "Τερματισμό" θα κλείσει αμέσως ο εκτελούμενος απεγκαταστάτης και μπορεί το αποτέλεσμα στην απεγκατάσταση να μην ολοκληρωθεί. Συνήθως είναι δυνατό να εκτελεστεί ο απεγκαταστάτης ξάνα για να τελειώσει η απεγκατάσταση.
+
+Εναλλακτικά μπορείτε να αγνοήσετε την αναμονή για αυτή την διαδικασία. Η αγνόηση θα αφήσει τον απεγκαταστάτη να συνεχίζει να δουλεύει ενόσω η εργασία πηγαίνει στο επόμενο στοιχείο. Θυμηθείτε ότι κάποιοι απεγκαταστάτες μπορεί να αποτύχουν να εκτελεστούν μέχρι η αγνοημένη διεργασία να τελειώσει.</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Message" xml:space="preserve">
+    <value>Θέλετε να αγνοήσετε την αναμονή για τον εκτελούμενο απεγκαταστάτη ?</value>
+  </data>
+  <data name="MessageBoxes_TaskSkip_Title" xml:space="preserve">
+    <value>Αγνόηση της τρέχουσας εκτελούμενης εργασίας</value>
+  </data>
+  <data name="MessageBoxes_UninstallAlreadyRunning_Message" xml:space="preserve">
+    <value>Κάποια άλλη εργασία απεγκατάστασης εκτελείται ήδη.Παρακαλώ περιμένετε να τελειώσει αυτή και μετά προσπαθήστε ξανά.</value>
+  </data>
+  <data name="JunkRemove_Details_Message" xml:space="preserve">
+    <value>Βαθμολογία: {0}
+
+Θετικές:
+{1}
+
+Αρνητικές:
+{2}</value>
+    <comment>{0} - Rating as a string
+{1} - List of strings of positive parts of the rating
+{2} - List of strings of negative parts of the rating
+The lists are separated by a single newline.</comment>
+  </data>
+  <data name="JunkRemove_Details_Title" xml:space="preserve">
+    <value>Λεπτομέρειες βαθμολογίας</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingRegistry" xml:space="preserve">
+    <value>Αυτή η εφαρμογή δεν έχει μία έγκυρη καταχώρηση μητρώου</value>
+  </data>
+  <data name="PropertiesWindow_Table_ErrorMissingUninstaller" xml:space="preserve">
+    <value>Αυτή η εφαρμογή δεν έχει έναν έγκυρο απεγκαταστάτη</value>
+  </data>
+  <data name="LoadingDialogTitleLoadingWindowsFeatures" xml:space="preserve">
+    <value>Φόρτωση Δυνατοτήτων των Windows...</value>
+  </data>
+  <data name="MainWindow_Statusbar_RefreshingStartup" xml:space="preserve">
+    <value>Ανανέωση των πληροφοριών εκκίνησης...</value>
+    <comment>Shown when refreshing autostart information of the uninstallers</comment>
+  </data>
+  <data name="MessageBoxes_OpenDirectories_NoDirsToOpen" xml:space="preserve">
+    <value>Δεν υπάρχουν κατάλογοι για άνοιγμα</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Μη διαθέσιμη</value>
+    <comment>Used on application list when value is not available</comment>
+  </data>
+  <data name="MessageBoxes_RatingErrorTitle" xml:space="preserve">
+    <value>Μη διαθέσιμες βαθμολογίες</value>
+  </data>
+  <data name="MessageBoxes_RatingsDisabled_Message" xml:space="preserve">
+    <value>Πρέπει να ενεργοποιήσετε τις βαθμολογίες από τις ρυθμίσεις πρώτα.</value>
+  </data>
+  <data name="MessageBoxes_RatingUnavailable_Message" xml:space="preserve">
+    <value>Δε μπορείτε να βαθμολογήσετε εφαρμογές που δεν είναι εγκατεστημένες σωστά.</value>
+  </data>
+  <data name="RateTitle_Counted" xml:space="preserve">
+    <value>{0} εφαρμογές</value>
+    <comment>{0} is number of apps to rate, "Rate " will be automatically put in front of this string</comment>
+  </data>
+  <data name="RatingEntry_ToString" xml:space="preserve">
+    <value>Μέση βαθμολογία: {0}; Η βαθμολογία μου: {1}</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Message" xml:space="preserve">
+    <value>Τα ακόλουθα προγράμματα απεγκατάστασης απέτυχαν να εκτελεστούν, πιθανότατα λόγω διένεξης. Περιμένετε να ολοκληρωθούν οι άλλοι απεγκαταστάτες και δοκιμάστε ξανά.</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Title" xml:space="preserve">
+    <value>Υποχρεωτική απεγκατάσταση</value>
+  </data>
+  <data name="MessageBoxes_ForceRunUninstallFailedError_Header" xml:space="preserve">
+    <value>Αποτυχία να εκτελεστούν κάποιοι από τους απεγκαταστάτες</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Title" xml:space="preserve">
+    <value>Το .NET Framework v4.0 δε βρέθηκε</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Message" xml:space="preserve">
+    <value>Το NET Framework v4.0 δε βρέθηκε, κάποιες δυνατότητες θα είναι απενεργοιποιημένες</value>
+  </data>
+  <data name="MessageBoxes_Net4Missing_Details" xml:space="preserve">
+    <value>Το v4.0 framework είναι προαιρετικό, αλλά προτείνεται. Οι δυνατότητες που βασίζονται σε αυτό θα είναι απενεργοποιημένες μέχρι να το εγκαταστήσετε.</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Title" xml:space="preserve">
+    <value>Κάποιοι απεγκαταστάτες απέτυχαν</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Header" xml:space="preserve">
+    <value>Θέλετε να προσπαθήσετε να εκτελέσετε τους σιωπηρούς απεγκαταστάτες που απέτυχαν σαν ηχηροί ?</value>
+  </data>
+  <data name="MessageBoxes_AskToRetryFailedQuietAsLoud_Details" xml:space="preserve">
+    <value>Οι ακόλουθοι απεγκαταστάτες θα ξαναρχίσουν ηχηρά:</value>
+  </data>
+  <data name="UninstallFromDirectory_ScanningTitle" xml:space="preserve">
+    <value>Σάρωση για τον καθορισμένο κατάλογο...</value>
+  </data>
+  <data name="UninstallFromDirectory_FolderBrowse" xml:space="preserve">
+    <value>Επιλέξτε τους καταλόγους με τις εφαρμογές που θέλετε να καταργήσετε.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectory_Title" xml:space="preserve">
+    <value>Απεγκατάσταση από κατάλογο</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Message" xml:space="preserve">
+    <value>Δε βρέθηκαν εφαρμογές στον καθορισμένο κατάλογο</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryNothingFound_Details" xml:space="preserve">
+    <value>Σιγουρευτείτε ότι επιλέξατε τον σωστό κατάλογο και ότι τα εκτελέσιμα αρχεία της εφαρμογής υπάρχουν ακόμη.</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Message" xml:space="preserve">
+    <value>Βρέθηκε ένας απεγκαταστάτης για το {0}</value>
+  </data>
+  <data name="MessageBoxes_UninstallFromDirectoryUninstallerFound_Details" xml:space="preserve">
+    <value>Θέλετε να εκτελέσετε αυτό τον απεγκαταστάτη ?</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Issuer" xml:space="preserve">
+    <value>Εκδότης</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Subject" xml:space="preserve">
+    <value>Θέμα</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Archived" xml:space="preserve">
+    <value>Αρχειοθετημένο</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Extensions" xml:space="preserve">
+    <value>Επεκτάσεις</value>
+  </data>
+  <data name="LocalizedX509Certificate2_FriendlyName" xml:space="preserve">
+    <value>Φιλικό όνομα</value>
+  </data>
+  <data name="LocalizedX509Certificate2_IssuerName" xml:space="preserve">
+    <value>Όνομα Εκδότη</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotAfter" xml:space="preserve">
+    <value>Όχι Μετά</value>
+  </data>
+  <data name="LocalizedX509Certificate2_NotBefore" xml:space="preserve">
+    <value>Όχι Πριν</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PrivateKey" xml:space="preserve">
+    <value>Πρωτεύον Κλειδί</value>
+  </data>
+  <data name="LocalizedX509Certificate2_HasPrivateKey" xml:space="preserve">
+    <value>Έχει προτεύον κλειδί</value>
+  </data>
+  <data name="LocalizedX509Certificate2_PublicKey" xml:space="preserve">
+    <value>Δημόσιο Κλειδί</value>
+  </data>
+  <data name="LocalizedX509Certificate2_RawData" xml:space="preserve">
+    <value>Ακατέργαστα Δεδομένα</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SerialNumber" xml:space="preserve">
+    <value>Σειριακός Αριθμός</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SubjectName" xml:space="preserve">
+    <value>'Ονομα Κατόχου</value>
+  </data>
+  <data name="LocalizedX509Certificate2_SignatureAlgorithm" xml:space="preserve">
+    <value>Υπογραφή Αλγορίθμου</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Version" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+  <data name="LocalizedX509Certificate2_Thumbprint" xml:space="preserve">
+    <value>Αποτύπωμα</value>
+  </data>
+  <data name="Error_SaveSettingsFailed" xml:space="preserve">
+    <value>Αποτυχία αποθήκευσης ρυθμίσεων</value>
+  </data>
+  <data name="Progress_Finishing" xml:space="preserve">
+    <value>Τελείωμα...</value>
+  </data>
+  <data name="Progress_Finishing_Icons" xml:space="preserve">
+    <value>Φόρτωση εικονιδίων</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Title" xml:space="preserve">
+    <value>Αναζήτηση για την εφαρμογή</value>
+  </data>
+  <data name="TargetWindow_NoFilesSelected_Message" xml:space="preserve">
+    <value>Δεν επιλέχθηκαν έγκυρα αρχεία ή κατάλογοι. Σιγουρευτείτε ότι έχετε πρόσβαση σε αυτά, και ότι δεν είναι επισημασμένα σαν αρχεία συστήματος.</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Title" xml:space="preserve">
+    <value>Αναζήτηση για εφαρμογές</value>
+  </data>
+  <data name="Uninstaller_GetApplicationsFromDirectories_NothingFound_Message" xml:space="preserve">
+    <value>Αποτυχία να βρεθεί ποιοαδήποτε εφαρμογή μέσα στο {0}</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Title" xml:space="preserve">
+    <value>Τροποποίηση εφαρμογής</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Message" xml:space="preserve">
+    <value>Η επιλεγμένη εφαρμογή δε μπορεί να τροποποιηθεί</value>
+  </data>
+  <data name="MessageBoxes_ModifyCommandMissing_Details" xml:space="preserve">
+    <value>Η επιλεγμένη εφαρμογή δεν έχει καθορισμένη εντολή τροποποίησης. Μπορεί να είναι απαραίτητο να απεγκατασταθεί, και μετά να εγκατασταθεί ξανά για να αλλαχθούν οι συθμίσεις εγκατάστασης.</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Title" xml:space="preserve">
+    <value>Αποθήκευση λίστας απεγκατάστασης</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Message" xml:space="preserve">
+    <value>Να αποθηκευτούν οι αλλαγές στην ανοιχτή λίστα απεγκατάστασης ?</value>
+  </data>
+  <data name="MessageBoxes_AskToSaveUninstallList_Details" xml:space="preserve">
+    <value>Υπάρχουν μη αποθηκευμένες αλλαγές στην ανοιχτή λίστα απεγκατάστασης που θα χαθούν με το κλείσιμό της.</value>
+  </data>
+  <data name="FileTargeter_SelectDirectoryWithAppsToRemove" xml:space="preserve">
+    <value>Επιλέξτε τον κατάλογο με τις εφαρμογές προς απεγκατάσταση.</value>
+  </data>
+  <data name="JunkRemoveWindow_SelectBackupDirectoryTitle" xml:space="preserve">
+    <value>Επιλέξτε που θα αποθηκευτεί το αντίγραφο ασφαλείας. Ένας νέος κατάλογος θα δημιουργηθεί.</value>
+  </data>
+  <data name="NewsPopup_UpdatedTitle" xml:space="preserve">
+    <value>To BCU ενημερώθηκε στην v{0} !</value>
+  </data>
+  <data name="NewsPopup_FirstStartTitle" xml:space="preserve">
+    <value>Καλωσήρθατε στο BCU έκδοση {0} !</value>
+  </data>
+  <data name="UninstallProgressWindow_StatusPuttingToSleepInSeconds" xml:space="preserve">
+    <value>Το PC θα τεθεί σε αναστολή σε {0} δευτ. Αποεπιλέξτε το πλαίσιο επιλογής για ακύρωση.</value>
+  </data>
+  <data name="UninstallerListDoubleClickAction_DoNothing" xml:space="preserve">
+    <value>Δεν κάνει τίποτα</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Properties" xml:space="preserve">
+    <value>Ανοίγει τις ιδιότητες</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="UninstallerListDoubleClickAction_Uninstall" xml:space="preserve">
+    <value>Απεγκαθιστά</value>
+    <comment>Option for "Double clicking in application list..."</comment>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Title" xml:space="preserve">
+    <value>Αδυναμία μετονομασίας του {0}</value>
+  </data>
+  <data name="MessageBoxes_CantRenameUninstallerKind_Details" xml:space="preserve">
+    <value>Ο απεγκαταστάτης δεν υποστηρίζει μετονομασία ({0}).</value>
+  </data>
+  <data name="CertificateColumn_NotFound" xml:space="preserve">
+    <value>Δε βρέθηκε</value>
+  </data>
+  <data name="CertificateColumn_Verified" xml:space="preserve">
+    <value>Επαληθευμένο</value>
+  </data>
+  <data name="CertificateColumn_Unverified" xml:space="preserve">
+    <value>Μη επαληθευμένο</value>
+  </data>
+  <data name="IntegrityColumn_Invalid" xml:space="preserve">
+    <value>Χωρίς απεγκαταστάτη</value>
+  </data>
+  <data name="IntegrityColumn_Unregistered" xml:space="preserve">
+    <value>Χωρίς μητρώο</value>
+  </data>
+  <data name="IntegrityColumn_Good" xml:space="preserve">
+    <value>Καλή</value>
+  </data>
+</root>

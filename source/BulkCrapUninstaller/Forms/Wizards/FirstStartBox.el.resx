@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="labelProgress.Text" xml:space="preserve">
+    <value>1 / 6</value>
+  </data>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>Έξοδος από τον οδηγό</value>
+  </data>
+  <data name="buttonPrev.Text" xml:space="preserve">
+    <value>Πίσω</value>
+  </data>
+  <data name="buttonNext.Text" xml:space="preserve">
+    <value>Συνέχεια</value>
+  </data>
+  <data name="buttonMore.Text" xml:space="preserve">
+    <value>Περισσότερες ρυθμίσεις</value>
+  </data>
+  <data name="buttonHelp.Text" xml:space="preserve">
+    <value>Εμφάνιση βοήθειας</value>
+  </data>
+  <data name="buttonFinish.Text" xml:space="preserve">
+    <value>Ολοκλήρωση ρυθμίσεων</value>
+  </data>
+  <data name="p5finishContact.Text" xml:space="preserve">
+    <value>Μπορείτε τώρα να αρχίσετε να χρησιμοποιείτε το BCUninstaller. Αν έχετε οποιαδήποτε ερώτηση ή θέλετε να προτείνετε μία νέα δυνατότητα επισκεφθείτε τον παρακάτω σύνδεσμο.</value>
+  </data>
+  <data name="p5LinkContact.Text" xml:space="preserve">
+    <value>Άνοιγμα της φόρμας επαφής</value>
+  </data>
+  <data name="p5finishHomepage.Text" xml:space="preserve">
+    <value>Μπορείτε να διαβάσετε αναλυτικά αρχεία καταγραφής αλλαγών και να ανακαλύψετε περισσότερο λογισμικό μου στην αρχική σελίδα.</value>
+  </data>
+  <data name="p5LinkHomepage.Text" xml:space="preserve">
+    <value>Άνοιγμα της αρχικής σελίδας</value>
+  </data>
+  <data name="p5finishTitle.Text" xml:space="preserve">
+    <value>Οι ρυθμίσεις ολοκληρώθηκαν</value>
+  </data>
+  <data name="p4netTitle.Text" xml:space="preserve">
+    <value>Πρόσβαση στο δίκτυο</value>
+  </data>
+  <data name="p4netDesc.Text" xml:space="preserve">
+    <value>Το BCUninstaller μπορεί να προσπαθήσει να συνδεθεί στο internet για αυτούς τους λόγους:</value>
+  </data>
+  <data name="p4netDesc1.Text" xml:space="preserve">
+    <value>● Για αναζήτηση ενημερώσεων προγραμμάτων.</value>
+  </data>
+  <data name="p4netDesc2.Text" xml:space="preserve">
+    <value>● Για ανέβασμα αναφορών σφαλμάτων.</value>
+  </data>
+  <data name="p4netDesc3.Text" xml:space="preserve">
+    <value>● Για αποστολή ανώνυμων στατιστικών χρήσης.</value>
+  </data>
+  <data name="p4netDesc4.Text" xml:space="preserve">
+    <value>● Για την ανάκτηση και αποστολή αξιολογήσεων εφαρμογής.
+</value>
+  </data>
+  <data name="p4netErrors.Text" xml:space="preserve">
+    <value>Κάθε φορά που συμβαίνει ένα σφάλμα θα ερωτάστε αν θέλετε να το αποστείλετε. Μπορείτε να ελέγξετε τι δεδομένα στέλνονται στις αναφορές σφαλμάτων και χρήσης εξετάζοντας τα αντίστοιχα αρχεία XML στον φάκελο του BCUninstaller. Τα δεδομένα που αποστέλλονται δεν κοινοποιούνται σε τρίτους.</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>Αυτόματος έλεγχος για ενημερώσεις κατά την έναρξη της εφαρμογής</value>
+  </data>
+  <data name="p4netUpdateAdd.Text" xml:space="preserve">
+    <value>Μπορείτε να ψάξετε για ενημερώσεις χειροκίνητα από την μπάρα μενού.</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>Αυτόματη αποστολή ανώνυμων στατιστικών χρήσης</value>
+  </data>
+  <data name="p4netUsageAdd.Text" xml:space="preserve">
+    <value>Στέλνοντας αυτά τα στατιστικά θα βοηθηθεί η βελτίωση του BCUninstaller.</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>Ενεργοποίηση της βαθμολογίας εφαρμογών από τον χρήστη</value>
+  </data>
+  <data name="pCorTitle.Text" xml:space="preserve">
+    <value>Κατεστραμμένοι απεγκαταστάτες</value>
+  </data>
+  <data name="pCorDesc.Text" xml:space="preserve">
+    <value>Με την πάροδο του χρόνου, ίσως διαπιστώσετε ότι ορισμένες εφαρμογές αρνούνται να απεγκατασταθούν ή απλώς εξαφανίζονται από τα περισσότερα προγράμματα διαχείρισης απεγκατάστασης.</value>
+  </data>
+  <data name="pCorViewInvalidTitle.Text" xml:space="preserve">
+    <value>Κατεστραμμένοι ή ελλιπείς απεγκαταστάτες</value>
+  </data>
+  <data name="pCorViewInvalid.Text" xml:space="preserve">
+    <value>Σε κάποιες περιπτώσεις οι απεγκαταστάτες μπορεί να καταστραφούν, κάνοντάς τους μη απεγκαταστάσημους. Το BCUninstaller μπορεί να αφαιρέσει αυτές τις καταχωρήσεις εύκολα με την επιλογή "Χειροκίνητη απεγκατάσταση".</value>
+  </data>
+  <data name="checkBoxInvalidTest.Text" xml:space="preserve">
+    <value>Επισήμανση με χρώμα των μη έγκυρων προγραμμάτων απεγκατάστασης</value>
+  </data>
+  <data name="pCorViewinvalidComment.Text" xml:space="preserve">
+    <value>Οι λανθασμένοι απεγκαταστάτες είναι επισημασμένοι με γκρι.</value>
+  </data>
+  <data name="pCorOrphansTitle.Text" xml:space="preserve">
+    <value>Ακαταχώρητες εφαρμογές</value>
+  </data>
+  <data name="pCorOrphansMessage.Text" xml:space="preserve">
+    <value>Κάποιες φορές ολόκληρες εφαρμογές μπορεί να μείνουν στον δίσκο σας ακόμη και μετά την απεγκατάσταση. Αυτό επίσης μπορεί να συμβεί αν διαγραφεί μόνο ο απεγκαταστάτης.</value>
+  </data>
+  <data name="checkBoxOrphans.Text" xml:space="preserve">
+    <value>Εμφάνιση στη λίστα των ακαταχώρητων εφαρμογών</value>
+  </data>
+  <data name="pCorOrphansComment.Text" xml:space="preserve">
+    <value>Οι ακαταχώρητες εφαρμογές είναι επισημασμένες με κόκκινο. Αν ο κανονικός απεγκαταστάτης δε βρεθεί θα πρέπει να χρησιμοποιήσετε την "Χειροκίμητη απεγκατάσταση" για να τις αφαιρέσετε.</value>
+  </data>
+  <data name="p3advTitle.Text" xml:space="preserve">
+    <value>Προχωρημένοι χρήστες</value>
+  </data>
+  <data name="p3advDesc.Text" xml:space="preserve">
+    <value>Ενώ το BCUninstaller μπορεί να χρησιμοποιηθεί σαν βασικός απεγκαταστάτης, οι περισσότερες από τις λειτουργίες του απευθύνονται σε έμπειρους χρήστες.
+Συνεχίστε με προσοχή !</value>
+  </data>
+  <data name="p3advSyscompTitle.Text" xml:space="preserve">
+    <value>Στοιχεία συστήματος</value>
+  </data>
+  <data name="p3advSyscomp.Text" xml:space="preserve">
+    <value>Οι εφαρμογές που έχουν επισημανθεί ως "στοιχεία συστήματος" είναι κρυφές από τους περισσότερους βασικούς διαχεριστές απεγκαταστάσεων. Αυτή η ετικέτα δε σημαίνει ότι η εφαρμογή είναι μέρος του λειτουργικού συστήματος.</value>
+  </data>
+  <data name="checkBoxListSysComp.Text" xml:space="preserve">
+    <value>Εμφάνιση απεγκαταστατών επισημασμένων ως "στοιχεία συστήματος"</value>
+  </data>
+  <data name="p3advProtectTitle.Text" xml:space="preserve">
+    <value>Προστατευόμενοι απεγκαταστάτες</value>
+  </data>
+  <data name="p3advProtect.Text" xml:space="preserve">
+    <value>Τα προστατευόμενα στοιχεία είναι επισημασμένα με την ετικέτα "ΌχιΑφαίρεση", που σημαίνει ότι ο εκδότης δεν θέλει να τα αφαιρέσετε. Αυτή η ετικέτα χρησιμοποιείται συνήθως από μεγάλα πακέτα προγραμμάτων για να σας αποτρέψει από την απεγκατάσταση μεμονωμένων στοιχείων του.</value>
+  </data>
+  <data name="checkBoxListProtected.Text" xml:space="preserve">
+    <value>Εμφάνιση απεγκαταστατών επισημασμένων ως "προστατευόμενα"</value>
+  </data>
+  <data name="checkBoxDiisableProtection.Text" xml:space="preserve">
+    <value>Απενεργοποίηση της προστασίας απεγκαταστατών επισημασμένων ως "προστατευόμενο"</value>
+  </data>
+  <data name="p3advProtectAdd.Text" xml:space="preserve">
+    <value>Αυτό θα σας επιτρέψει να απεγκαταστήσετε προστατευόμενα στοιχεία.</value>
+  </data>
+  <data name="p2viewTitle.Text" xml:space="preserve">
+    <value>Εμφάνιση λίστας απεγκαταστάτη</value>
+  </data>
+  <data name="p2viewDetail.Text" xml:space="preserve">
+    <value>Όλοι οι απεγκαταστάτες που βρέθηκαν στο σύστημα σας είναι στη γενική λίστα. Εδώ είναι κάποιοι τρόποι να εξετάσετε αυτά τα δεδομένα:</value>
+  </data>
+  <data name="p2viewDetail1.Text" xml:space="preserve">
+    <value>● Χρήση φίλτρων και αναζήτηση για λέξεις κλειδιά (σε όλες τις στήλες)</value>
+  </data>
+  <data name="p2viewDetail2.Text" xml:space="preserve">
+    <value>● Ταξινόμηση των απεγκαταστατών ως ανά στήλη. Ελεύθερη αναδιάταξη στηλών.</value>
+  </data>
+  <data name="p2viewDetail3.Text" xml:space="preserve">
+    <value>● Ομαδοποίηση παρόμοιων απεγκαταστατών</value>
+  </data>
+  <data name="checkBoxGroups.Text" xml:space="preserve">
+    <value>Εμφάνιση των απεγκαταστατών σε ομάδες</value>
+  </data>
+  <data name="checkBoxCheckboxes.Text" xml:space="preserve">
+    <value>Επιλογή με χρήση πλαισίων επιλογής</value>
+  </data>
+  <data name="p2viewCertsTitle.Text" xml:space="preserve">
+    <value>Πιστοποιημένοι απεγκαταστάτες</value>
+  </data>
+  <data name="p2viewCerts.Text" xml:space="preserve">
+    <value>Τα προγράμματα απεγκατάστασης μπορούν να υπογραφούν με πιστοποιητικά που εκδίδονται από αρμόδιες αρχές. Εάν το πιστοποιητικό περάσει την επικύρωση, το πακέτο λογισμικού δεν έχει αλλοιωθεί και είναι αξιόπιστο.</value>
+  </data>
+  <data name="checkBoxCertTest.Text" xml:space="preserve">
+    <value>Επισήμανση των πιστοποιημένων απεγκαταστατών</value>
+  </data>
+  <data name="p2viewAdd.Text" xml:space="preserve">
+    <value>Οι επαληθευμένοι απεγκαταστάτες είναι επισημασμένοι με πράσινο, οι μη επαληθευμένοι με μπλε.
+Προσοχή: Η επαλήθευση μπορεί να πάρει αρκετό χρόνο.</value>
+  </data>
+  <data name="p1welcomeHeading.Text" xml:space="preserve">
+    <value>Καλωσήρθατε στο BCUninstaller !</value>
+  </data>
+  <data name="p1welcomeSubheading.Text" xml:space="preserve">
+    <value>Αυτός ο οδηγός θα σας κάνει μία γρήγορη επίδειξη και θα βοηθήσει να ρυθμιστεί η εφαρμογή.</value>
+  </data>
+  <data name="p1languageHeading.Text" xml:space="preserve">
+    <value>Επιλεγμένη γλώσσα</value>
+  </data>
+  <data name="p1languageDesc.Text" xml:space="preserve">
+    <value>Μπορείτε να αναγκάσετε το BCUninstaller να χρησιμοποιήσει συγκεκριμένη τοπική προσαρμογή εάν η προεπιλεγμένη γλώσσα είναι λανθασμένη. Θα πραγματοποιηθεί επανεκκίνηση για να εφαρμοστεί η νέα γλώσσα.</value>
+  </data>
+  <data name="buttonLanguageApply.Text" xml:space="preserve">
+    <value>Εφαρμογή</value>
+  </data>
+  <data name="p1languageExtradetails.Text" xml:space="preserve">
+    <value>Αν θέλετε να βοηθήσετε στη μετάφραση του BCUninstaller στη γλώσσα σας, κάντε κλικ στον παρακάτω σύνδεσμο για να έρθετε σε επαφή μαζί μου. Κάθε βοήθεια εκτιμάται ιδιαίτερα !</value>
+  </data>
+  <data name="p1linkLabelContact.Text" xml:space="preserve">
+    <value>Άνοιγμα της φόρμας επαφής</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Bulk crap unistaller</value>
+    <comment>The missing B is in an image next to the text</comment>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Καλωσήρθατε στο Bulk crap uninstaller</value>
+  </data>
+</root>

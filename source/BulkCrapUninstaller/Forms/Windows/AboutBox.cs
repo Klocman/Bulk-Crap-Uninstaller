@@ -52,6 +52,9 @@ namespace BulkCrapUninstaller.Forms
                 // de - German
                 new {culture =  CultureInfo.GetCultureInfo("de"), translator = "Dieter Hummel, Thomas Werk"},
 
+                // el - Greek
+                new {culture =  CultureInfo.GetCultureInfo("el"), translator = "buglocker"},
+
                 // es - Spanish
                 new {culture =  CultureInfo.GetCultureInfo("es"), translator = "MS-PC2, Freddynic159, Emilio J. Grao"},
 

@@ -84,6 +84,10 @@ namespace BulkCrapUninstaller
                 "de-LU",
                 "de-CH",
 
+                // el - Greek
+                "el-CY",
+                "el-GR",
+
                 // es - Spanish
                 "es-AR",
                 "es-BO",
