@@ -7,7 +7,7 @@ an appropriate disposable test environment before proposing a default-on release
 ## Consolidated patch checks
 
 - [x] Source baseline includes v6.3 and the current upstream master (`30da609`).
-- [ ] Unified .NET 10 solution restores and builds with Visual Studio 2026 full MSBuild.
+- [x] Unified .NET 10 solution restores and builds with Visual Studio 2026 full MSBuild.
 - [x] The special GUI framework override and separate native-dark output path are removed.
 - [x] .NET 10 runtime checker: no switch leaves adapters disabled.
 - [x] .NET 10 runtime checker: --dark-mode enables adapters.

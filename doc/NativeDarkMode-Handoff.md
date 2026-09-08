@@ -46,7 +46,11 @@ compiled and ran 56 tests: 52 passed, one was skipped, and three rating tests co
 not reach `bugsklocman.ddns.net:7721` because the local application firewall blocks
 that endpoint. Upstream's v6.3 CI passes the same suite. The v6.3 native launcher
 also built successfully with the local MFC-equipped Visual Studio installation.
-The refreshed full-solution CI run remains the authoritative post-merge check.
+[Fork CI run 34207844097](https://github.com/ObnubiladO/Bulk-Crap-Uninstaller/actions/runs/34207844097)
+then restored, built and published the complete .NET 10 solution with Visual Studio
+2026, passed the full test suite, and built the MFC launcher on Windows 2022. Its
+temporary source commit differs from `a4a99a7` only by enabling the workflow on the
+validation branch. The equivalent PR run still requires maintainer approval.
 
 Before the solution-wide .NET 10 migration, the focused repair pass completed fresh
 .NET 8 and .NET 10 builds. Fresh external-checker runs recorded 631
