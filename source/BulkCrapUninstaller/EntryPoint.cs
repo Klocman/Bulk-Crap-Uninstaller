@@ -49,6 +49,7 @@ namespace BulkCrapUninstaller
                 {
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.EnableVisualStyles();
+                    Theming.ThemeManager.Initialize(args);
 
                     _mutex = new Mutex(true, MUTEX_NAME, out var createdNew);
                     if (!createdNew)
