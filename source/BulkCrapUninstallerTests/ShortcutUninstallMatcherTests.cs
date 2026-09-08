@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BulkCrapUninstaller.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UninstallTools;
 
@@ -17,10 +18,11 @@ namespace BulkCrapUninstallerTests
                 CreateEntry("C:\\Tools\\Other\\uninstall.exe", "C:\\Tools\\Other")
             };
 
-            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "c:\\tools\\widget\\UNINSTALL.EXE");
+            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "c:\\tools\\widget\\UNINSTALL.EXE",
+                out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.Unique, result.Status);
-            Assert.AreSame(expected, result.Entry);
+            Assert.IsFalse(ambiguous);
+            Assert.AreSame(expected, result);
         }
 
         [TestMethod]
@@ -30,10 +32,10 @@ namespace BulkCrapUninstallerTests
             expected.SortedExecutables = new[] {"C:\\Launchers\\Widget.exe"};
 
             var result = ShortcutUninstallMatcher.MatchExecutablePath(
-                new List<ApplicationUninstallerEntry> {expected}, "c:\\launchers\\WIDGET.EXE");
+                new List<ApplicationUninstallerEntry> {expected}, "c:\\launchers\\WIDGET.EXE", out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.Unique, result.Status);
-            Assert.AreSame(expected, result.Entry);
+            Assert.IsFalse(ambiguous);
+            Assert.AreSame(expected, result);
         }
 
         [TestMethod]
@@ -42,10 +44,10 @@ namespace BulkCrapUninstallerTests
             var expected = CreateEntry("C:\\Apps\\Widget\\uninstall.exe", "C:\\Apps\\Widget");
 
             var result = ShortcutUninstallMatcher.MatchExecutablePath(
-                new List<ApplicationUninstallerEntry> {expected}, "C:\\Apps\\Widget\\bin\\Widget.exe");
+                new List<ApplicationUninstallerEntry> {expected}, "C:\\Apps\\Widget\\bin\\Widget.exe", out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.Unique, result.Status);
-            Assert.AreSame(expected, result.Entry);
+            Assert.IsFalse(ambiguous);
+            Assert.AreSame(expected, result);
         }
 
         [TestMethod]
@@ -55,10 +57,10 @@ namespace BulkCrapUninstallerTests
             var contained = CreateEntry("C:\\Apps\\Contained\\uninstall.exe", "C:\\Shared");
 
             var result = ShortcutUninstallMatcher.MatchExecutablePath(
-                new List<ApplicationUninstallerEntry> {exact, contained}, "C:\\Shared\\Tool.exe");
+                new List<ApplicationUninstallerEntry> {exact, contained}, "C:\\Shared\\Tool.exe", out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.Unique, result.Status);
-            Assert.AreSame(exact, result.Entry);
+            Assert.IsFalse(ambiguous);
+            Assert.AreSame(exact, result);
         }
 
         [TestMethod]
@@ -70,10 +72,11 @@ namespace BulkCrapUninstallerTests
                 CreateEntry("C:\\Apps\\Two\\uninstall.exe", "C:\\Shared")
             };
 
-            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "C:\\Shared\\Tool.exe");
+            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "C:\\Shared\\Tool.exe",
+                out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.Ambiguous, result.Status);
-            Assert.IsNull(result.Entry);
+            Assert.IsTrue(ambiguous);
+            Assert.IsNull(result);
         }
 
         [TestMethod]
@@ -85,10 +88,11 @@ namespace BulkCrapUninstallerTests
                 new ApplicationUninstallerEntry {DisplayName = "Incomplete entry"}
             };
 
-            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "C:\\Apps\\Unknown\\Unknown.exe");
+            var result = ShortcutUninstallMatcher.MatchExecutablePath(entries, "C:\\Apps\\Unknown\\Unknown.exe",
+                out var ambiguous);
 
-            Assert.AreEqual(ShortcutUninstallMatchStatus.NotFound, result.Status);
-            Assert.IsNull(result.Entry);
+            Assert.IsFalse(ambiguous);
+            Assert.IsNull(result);
         }
 
         private static ApplicationUninstallerEntry CreateEntry(string uninstallerPath, string installLocation)

@@ -11,7 +11,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="BCUninstaller" />
 		<InternalsVisibleTo Include="BulkCrapUninstallerTests" />
 	</ItemGroup>
 
@@ -22,7 +21,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <COMReference Include="Scripting">
+		<COMReference Include="Scripting">
 			<Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
 			<VersionMajor>1</VersionMajor>
 			<VersionMinor>0</VersionMinor>

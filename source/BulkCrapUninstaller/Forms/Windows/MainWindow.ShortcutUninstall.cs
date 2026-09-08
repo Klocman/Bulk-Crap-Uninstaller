@@ -4,7 +4,9 @@
 */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions.ApplicationList;
 using Klocman.Tools;
@@ -53,26 +55,77 @@ namespace BulkCrapUninstaller.Forms
                 return;
             }
 
-            var match = ShortcutUninstallMatcher.MatchExecutablePath(_listView.AllUninstallers, executablePath);
-            switch (match.Status)
+            var match = ShortcutUninstallMatcher.MatchExecutablePath(_listView.AllUninstallers, executablePath,
+                out var ambiguous);
+            if (ambiguous)
             {
-                case ShortcutUninstallMatchStatus.NotFound:
-                    ShowShortcutUninstallError("No installed application could be identified from this shortcut target.");
-                    return;
-                case ShortcutUninstallMatchStatus.Ambiguous:
-                    ShowShortcutUninstallError("More than one installed application matches this shortcut target. No application was uninstalled.");
-                    return;
-                case ShortcutUninstallMatchStatus.Unique:
-                    _appUninstaller.RunUninstall(new[] {match.Entry}, _listView.AllUninstallers, false);
-                    return;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                ShowShortcutUninstallError("More than one installed application matches this shortcut target. No application was uninstalled.");
+                return;
             }
+
+            if (match == null)
+            {
+                ShowShortcutUninstallError("No installed application could be identified from this shortcut target.");
+                return;
+            }
+
+            _appUninstaller.RunUninstall(new[] {match}, _listView.AllUninstallers, false);
         }
 
         private void ShowShortcutUninstallError(string message)
         {
             MessageBox.Show(this, message, "BCUninstaller", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    internal static class ShortcutUninstallMatcher
+    {
+        internal static ApplicationUninstallerEntry MatchExecutablePath(
+            IEnumerable<ApplicationUninstallerEntry> entries, string executablePath, out bool ambiguous)
+        {
+            ambiguous = false;
+            if (entries == null || string.IsNullOrWhiteSpace(executablePath))
+                return null;
+
+            var candidates = entries as IList<ApplicationUninstallerEntry> ?? new List<ApplicationUninstallerEntry>(entries);
+
+            var match = FindUnique(candidates,
+                entry => PathTools.PathsEqual(entry?.UninstallerFullFilename, executablePath), out ambiguous);
+            if (match != null || ambiguous)
+                return match;
+
+            match = FindUnique(candidates,
+                entry => entry?.GetSortedExecutables()
+                    .Any(path => PathTools.PathsEqual(path, executablePath)) == true, out ambiguous);
+            if (match != null || ambiguous)
+                return match;
+
+            return FindUnique(candidates,
+                entry => PathTools.SubPathIsInsideBasePath(entry?.InstallLocation, executablePath, true, false),
+                out ambiguous);
+        }
+
+        private static ApplicationUninstallerEntry FindUnique(IEnumerable<ApplicationUninstallerEntry> entries,
+            Func<ApplicationUninstallerEntry, bool> predicate, out bool ambiguous)
+        {
+            ambiguous = false;
+            ApplicationUninstallerEntry match = null;
+
+            foreach (var entry in entries)
+            {
+                if (!predicate(entry))
+                    continue;
+
+                if (match != null)
+                {
+                    ambiguous = true;
+                    return null;
+                }
+
+                match = entry;
+            }
+
+            return match;
         }
     }
 }
