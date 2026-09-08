@@ -5,10 +5,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using Klocman.Tools;
 
 namespace UninstallTools
@@ -87,95 +84,6 @@ namespace UninstallTools
             }
 
             return match == null ? ShortcutUninstallMatch.NotFound() : ShortcutUninstallMatch.Unique(match);
-        }
-    }
-
-    internal static class ShortcutTargetResolver
-    {
-        private const uint StgmRead = 0;
-        private const int MaxPathLength = 32768;
-
-        public static bool TryGetExecutableTarget(string shortcutPath, out string executablePath)
-        {
-            executablePath = null;
-            if (string.IsNullOrWhiteSpace(shortcutPath) ||
-                !shortcutPath.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase) ||
-                !File.Exists(shortcutPath))
-                return false;
-
-            IShellLinkW shellLink = null;
-            try
-            {
-                shellLink = (IShellLinkW)new ShellLink();
-                var persistFile = (IPersistFile)shellLink;
-                persistFile.Load(shortcutPath, StgmRead);
-
-                var targetPath = new StringBuilder(MaxPathLength);
-                Marshal.ThrowExceptionForHR(shellLink.GetPath(targetPath, targetPath.Capacity, IntPtr.Zero, 0));
-
-                var target = targetPath.ToString();
-                if (string.IsNullOrWhiteSpace(target) ||
-                    !target.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) ||
-                    !File.Exists(target))
-                    return false;
-
-                executablePath = target;
-                return true;
-            }
-            catch (COMException)
-            {
-                return false;
-            }
-            catch (IOException)
-            {
-                return false;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                return false;
-            }
-            catch (ArgumentException)
-            {
-                return false;
-            }
-            catch (NotSupportedException)
-            {
-                return false;
-            }
-            finally
-            {
-                if (shellLink != null)
-                    Marshal.FinalReleaseComObject(shellLink);
-            }
-        }
-
-        [ComImport]
-        [Guid("000214F9-0000-0000-C000-000000000046")]
-        private class ShellLink
-        {
-        }
-
-        [ComImport]
-        [Guid("000214F9-0000-0000-C000-000000000046")]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        private interface IShellLinkW
-        {
-            [PreserveSig]
-            int GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder file,
-                int maxPathLength, IntPtr findData, uint flags);
-        }
-
-        [ComImport]
-        [Guid("0000010B-0000-0000-C000-000000000046")]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        private interface IPersistFile
-        {
-            void GetClassID(out Guid classId);
-
-            [PreserveSig]
-            int IsDirty();
-
-            void Load([MarshalAs(UnmanagedType.LPWStr)] string fileName, uint mode);
         }
     }
 }

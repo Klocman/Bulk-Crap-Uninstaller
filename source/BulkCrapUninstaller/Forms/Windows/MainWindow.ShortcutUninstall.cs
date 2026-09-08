@@ -4,8 +4,10 @@
 */
 
 using System;
+using System.IO;
 using System.Windows.Forms;
 using BulkCrapUninstaller.Functions.ApplicationList;
+using Klocman.Tools;
 using UninstallTools;
 
 namespace BulkCrapUninstaller.Forms
@@ -32,7 +34,20 @@ namespace BulkCrapUninstaller.Forms
 
         private void ProcessShortcutUninstall(string shortcutPath)
         {
-            if (!ShortcutTargetResolver.TryGetExecutableTarget(shortcutPath, out var executablePath))
+            string executablePath;
+            try
+            {
+                executablePath = WindowsTools.ResolveShortcut(shortcutPath);
+            }
+            catch (Exception)
+            {
+                ShowShortcutUninstallError("The shortcut could not be resolved to an existing executable file.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(executablePath) ||
+                !executablePath.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) ||
+                !File.Exists(executablePath))
             {
                 ShowShortcutUninstallError("The shortcut could not be resolved to an existing executable file.");
                 return;
