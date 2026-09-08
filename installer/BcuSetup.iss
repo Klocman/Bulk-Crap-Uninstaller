@@ -185,12 +185,7 @@ Source: "{#InputDir}\win-x86\CleanLogs.bat";    DestDir: "{app}\win-x86"; Compon
 [Registry]
 Root: HKCR; Subkey: "lnkfile\shell\BCUninstaller.Uninstall"; ValueType: string; ValueName: "MUIVerb"; ValueData: "Uninstall with BCUninstaller"; Flags: uninsdeletekey; Tasks: shortcutcontextmenu; Check: IsNotPortable
 Root: HKCR; Subkey: "lnkfile\shell\BCUninstaller.Uninstall"; ValueType: string; ValueName: "Icon"; ValueData: "{app}\{#MyAppExeName}"; Tasks: shortcutcontextmenu; Check: IsNotPortable
-#ifdef Light
 Root: HKCR; Subkey: "lnkfile\shell\BCUninstaller.Uninstall\command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" shortcut-uninstall ""%1"""; Tasks: shortcutcontextmenu; Check: IsNotPortable
-#else
-Root: HKCR; Subkey: "lnkfile\shell\BCUninstaller.Uninstall\command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" shortcut-uninstall ""%1"""; Tasks: shortcutcontextmenu; Check: Is64BitInstallMode and IsNotPortable
-Root: HKCR; Subkey: "lnkfile\shell\BCUninstaller.Uninstall\command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" shortcut-uninstall ""%1"""; Tasks: shortcutcontextmenu; Check: not Is64BitInstallMode and IsNotPortable
-#endif
 
 [InstallDelete]
 Name: {app}\BCU-launcher.exe; Type: files
